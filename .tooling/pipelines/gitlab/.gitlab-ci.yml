@@ -5,8 +5,8 @@ cache:
     - node_modules
 
 stages:
-  - Setup
-  - Lint
+  - Init
+  - Test
   - Build
   - Deploy
 
@@ -14,7 +14,7 @@ include:
   - local: '.tooling/pipelines/gitlab.dev.yml'
   - local: '.tooling/pipelines/gitlab.alpha.yml'
   - local: '.tooling/pipelines/gitlab.beta.yml'
-  - local: '.tooling/pipelines/gitlab.release.yml'
+  - local: '.tooling/pipelines/gitlab.preprod.yml'
   - local: '.tooling/pipelines/gitlab.prod.yml'
 
 #-------------------------------------------#
@@ -24,21 +24,21 @@ Init-Vars:
     - 0-dev
     - 1-alpha
     - 2-beta
-    - 3-release
+    - 3-preprod
     - 4-production
-  stage: Setup
+  stage: Init
   script:
     - echo "Node = $(node -v)"
     - echo "NPM = $(npm -v)"
     - echo "CI_PAGES_URL = ${CI_PAGES_URL}"
 
-NPM-Install:
+Install-Deps:
   only:
     - 0-dev
     - 1-alpha
     - 2-beta
-    - 3-release
+    - 3-preprod
     - 4-production
-  stage: Setup
+  stage: Init
   script:
     - npm ci

@@ -1,7 +1,7 @@
 Lint-Code-Prod:
   only:
     - 4-production
-  stage: Lint
+  stage: Test
   allow_failure: true
   script:
     - npm run lint
@@ -14,7 +14,7 @@ Build-App-Prod:
   stage: Build
   allow_failure: true
   script:
-    - npm run build-app-prod
+    - npm run app--build-prod
 
 Build-DS-Prod:
   only:
@@ -22,4 +22,4 @@ Build-DS-Prod:
   stage: Build
   allow_failure: true
   script:
-    - npm run build-ds-prod
+    - npm run ds--build-prod

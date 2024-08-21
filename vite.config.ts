@@ -10,7 +10,7 @@ const BUILD_MODE = process.env.BUILD_MODE
 const IS_VALID_BUILD = Boolean(BUILD_MODE) // Preview is not loading env
 
 // Reset NODE_ENV
-process.env.NODE_ENV = BUILD_MODE === 'localhost' ? 'development' : 'production'
+process.env.NODE_ENV = BUILD_MODE === 'local' ? 'development' : 'production'
 
 // Show env logs
 IS_VALID_BUILD && showBlueLogs('[ENV]', '\nNODE_ENV =', process.env.NODE_ENV, '\nBUILD_MODE =', BUILD_MODE)

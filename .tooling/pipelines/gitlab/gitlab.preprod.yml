@@ -1,25 +1,25 @@
-Lint-Code-Release:
+Lint-Code-PreProd:
   only:
-    - 3-release
-  stage: Lint
+    - 3-preprod
+  stage: Test
   allow_failure: true
   script:
     - npm run lint
 
 #-------------------------------------------#
 
-Build-App-Release:
+Build-App-PreProd:
   only:
-    - 3-release
+    - 3-preprod
   stage: Build
   allow_failure: true
   script:
-    - npm run build-app-prod
+    - npm run app--build-prod
 
-Build-DS-Release:
+Build-DS-PreProd:
   only:
-    - 3-release
+    - 3-preprod
   stage: Build
   allow_failure: true
   script:
-    - npm run build-ds-prod
+    - npm run ds--build-prod

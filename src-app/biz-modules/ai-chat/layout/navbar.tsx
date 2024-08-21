@@ -20,7 +20,7 @@ const useChats = (): [Chat[], boolean] => {
 }
 
 export const NavBar = () => {
-	const storybookUrl = ENV__BUILD_MODE === 'localhost' ? 'http://localhost:9000' : '/storybook'
+	const storybookUrl = ENV__BUILD_MODE === 'local' ? 'http://localhost:9000' : '/storybook'
 	const [chats, loading] = useChats()
 
 	return (
