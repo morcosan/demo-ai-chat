@@ -1,0 +1,25 @@
+Lint-Code-Beta:
+  only:
+    - 2-beta
+  stage: Lint
+  allow_failure: true
+  script:
+    - npm run lint
+
+#-------------------------------------------#
+
+Build-App-Beta:
+  only:
+    - 2-beta
+  stage: Build
+  allow_failure: true
+  script:
+    - npm run build-app-beta
+
+Build-DS-Beta:
+  only:
+    - 2-beta
+  stage: Build
+  allow_failure: true
+  script:
+    - npm run build-ds-prod

@@ -1,0 +1,44 @@
+image: node:latest
+
+cache:
+  paths:
+    - node_modules
+
+stages:
+  - Setup
+  - Lint
+  - Build
+  - Deploy
+
+include:
+  - local: '.tooling/pipelines/gitlab.dev.yml'
+  - local: '.tooling/pipelines/gitlab.alpha.yml'
+  - local: '.tooling/pipelines/gitlab.beta.yml'
+  - local: '.tooling/pipelines/gitlab.release.yml'
+  - local: '.tooling/pipelines/gitlab.prod.yml'
+
+#-------------------------------------------#
+
+Init-Vars:
+  only:
+    - 0-dev
+    - 1-alpha
+    - 2-beta
+    - 3-release
+    - 4-production
+  stage: Setup
+  script:
+    - echo "Node = $(node -v)"
+    - echo "NPM = $(npm -v)"
+    - echo "CI_PAGES_URL = ${CI_PAGES_URL}"
+
+NPM-Install:
+  only:
+    - 0-dev
+    - 1-alpha
+    - 2-beta
+    - 3-release
+    - 4-production
+  stage: Setup
+  script:
+    - npm ci

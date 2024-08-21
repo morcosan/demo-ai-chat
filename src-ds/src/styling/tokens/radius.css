@@ -1,0 +1,10 @@
+:host,
+:root {
+	--ds-radius-xs: 2px;
+	--ds-radius-sm: 4px;
+	--ds-radius-md: 8px;
+	--ds-radius-lg: 12px;
+	--ds-radius-xl: 16px;
+	--ds-radius-max: 999px;
+	--ds-radius-full: 100%;
+}

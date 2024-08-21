@@ -1,0 +1,8 @@
+:host,
+:root {
+	--ds-font-size-xs: 0.75rem; /* 12px */
+	--ds-font-size-sm: 0.875rem; /* 14px */
+	--ds-font-size-md: 1rem; /* 16px */
+	--ds-font-size-lg: 1.25rem; /* 20px */
+	--ds-font-size-xl: 1.5rem; /* 24px */
+}

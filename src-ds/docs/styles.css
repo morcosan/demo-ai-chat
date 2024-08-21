@@ -1,0 +1,36 @@
+#storybook-root {
+	padding: 0 !important;
+}
+
+table.docs {
+	width: 100%;
+
+	tr {
+		border-bottom: 1px solid #ccc;
+
+		&:last-child {
+			border-bottom: none;
+		}
+	}
+
+	th,
+	td {
+		text-align: left;
+		padding: var(--ds-spacing-xs-4);
+		vertical-align: middle;
+
+		&:first-child {
+			padding-left: 8px;
+		}
+
+		pre {
+			margin: 0;
+			overflow: hidden;
+		}
+	}
+
+	th {
+		font-weight: bold;
+		font-size: var(--ds-font-size-md);
+	}
+}

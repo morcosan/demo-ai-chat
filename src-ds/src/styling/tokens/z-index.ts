@@ -1,0 +1,20 @@
+export const Z_INDEX_TOKENS: DesignToken[] = [
+	{ name: 'z-index-0', css: 'var(--ds-z-index-0)', value: 0 },
+	{ name: 'z-index-1', css: 'var(--ds-z-index-1)', value: 1000 },
+	{ name: 'z-index-2', css: 'var(--ds-z-index-2)', value: 2000 },
+	{ name: 'z-index-3', css: 'var(--ds-z-index-3)', value: 3000 },
+	{ name: 'z-index-4', css: 'var(--ds-z-index-4)', value: 4000 },
+	{ name: 'z-index-5', css: 'var(--ds-z-index-5)', value: 5000 },
+	{ name: 'z-index-6', css: 'var(--ds-z-index-6)', value: 6000 },
+	{ name: 'z-index-7', css: 'var(--ds-z-index-7)', value: 7000 },
+	{ name: 'z-index-8', css: 'var(--ds-z-index-8)', value: 8000 },
+	{ name: 'z-index-9', css: 'var(--ds-z-index-9)', value: 9000 },
+
+	{ name: 'z-index-page', css: 'var(--ds-z-index-page)', value: 0, refName: 'z-index-0' },
+	{ name: 'z-index-sticky', css: 'var(--ds-z-index-sticky)', value: 1000, refName: 'z-index-1' },
+	{ name: 'z-index-modal', css: 'var(--ds-z-index-modal)', value: 2000, refName: 'z-index-2' },
+	{ name: 'z-index-popup', css: 'var(--ds-z-index-popup)', value: 3000, refName: 'z-index-3' },
+	{ name: 'z-index-dropdown', css: 'var(--ds-z-index-dropdown)', value: 4000, refName: 'z-index-4' },
+	{ name: 'z-index-toast', css: 'var(--ds-z-index-toast)', value: 5000, refName: 'z-index-5' },
+	{ name: 'z-index-tooltip', css: 'var(--ds-z-index-tooltip)', value: 9000, refName: 'z-index-9' },
+]

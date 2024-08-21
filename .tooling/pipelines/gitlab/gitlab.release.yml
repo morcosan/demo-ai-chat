@@ -1,0 +1,25 @@
+Lint-Code-Release:
+  only:
+    - 3-release
+  stage: Lint
+  allow_failure: true
+  script:
+    - npm run lint
+
+#-------------------------------------------#
+
+Build-App-Release:
+  only:
+    - 3-release
+  stage: Build
+  allow_failure: true
+  script:
+    - npm run build-app-prod
+
+Build-DS-Release:
+  only:
+    - 3-release
+  stage: Build
+  allow_failure: true
+  script:
+    - npm run build-ds-prod

@@ -1,0 +1,12 @@
+interface Props {
+	size: 'xs' | 'md'
+	label: string
+}
+
+export const Button = (props: Props) => {
+	return (
+		<button>
+			{props.label} {props.size}
+		</button>
+	)
+}

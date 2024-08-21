@@ -1,0 +1,8 @@
+:host,
+:root {
+	--ds-font-weight-xs: 300;
+	--ds-font-weight-sm: 400;
+	--ds-font-weight-md: 500;
+	--ds-font-weight-lg: 600;
+	--ds-font-weight-xl: 700;
+}

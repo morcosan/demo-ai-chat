@@ -1,0 +1,44 @@
+Lint-Code-Dev:
+  only:
+    - 0-dev
+  stage: Lint
+  script:
+    - npm run lint
+
+#-------------------------------------------#
+
+Build-App-Dev:
+  only:
+    - 0-dev
+  stage: Build
+  script:
+    - npm run build-app-dev
+  artifacts:
+    paths:
+      - __dist-app
+
+Build-DS-Dev:
+  only:
+    - 0-dev
+  stage: Build
+  script:
+    - npm run build-ds-dev
+  artifacts:
+    paths:
+      - __dist-ds
+
+#-------------------------------------------#
+
+# GitLab requires 'pages' as job name
+pages:
+  only:
+    - 0-dev
+  stage: Deploy
+  script:
+    - mkdir -p public
+    - cp -r __dist-app/* public/
+    - mkdir -p public/storybook
+    - cp -r __dist-ds/* public/storybook/
+  artifacts:
+    paths:
+      - public

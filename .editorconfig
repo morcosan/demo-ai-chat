@@ -1,0 +1,15 @@
+root = true
+
+[*]
+charset = utf-8
+end_of_line = lf
+indent_style = tab
+insert_final_newline = true
+max_line_length = 120
+
+[*.md]
+insert_final_newline = false
+
+[*.yml] # YAML files don't allow tabs and Prettier enforces 2 spaces
+indent_style = space 
+tab_width = 2
