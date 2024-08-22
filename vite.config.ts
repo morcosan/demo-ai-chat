@@ -7,6 +7,7 @@ import { showBlueLogs } from './.tooling/console'
 
 const ROOT_DIR = process.cwd()
 const BUILD_MODE = process.env.BUILD_MODE
+const ROOT_URL_PATH = process.env.ROOT_URL_PATH
 const IS_VALID_BUILD = Boolean(BUILD_MODE) // Preview is not loading env
 
 // Reset NODE_ENV
@@ -30,9 +31,11 @@ export default defineConfig({
 	define: {
 		ENV__BUILD_MODE: JSON.stringify(BUILD_MODE),
 		ENV__BUILD_TIME: JSON.stringify(new Date().getTime()),
+		ENV__ROOT_URL_PATH: JSON.stringify(ROOT_URL_PATH),
 	},
 
 	root: `${ROOT_DIR}/src-app`,
+	base: ROOT_URL_PATH,
 	publicDir: 'public',
 
 	build: {
