@@ -1,14 +1,4 @@
-Lint-Code-Alpha:
-  only:
-    - 1-alpha
-  stage: Test
-  allow_failure: true
-  script:
-    - npm run lint
-
-#-------------------------------------------#
-
-Build-App-Alpha:
+Build_App_Alpha:
   only:
     - 1-alpha
   stage: Build
@@ -16,7 +6,7 @@ Build-App-Alpha:
   script:
     - npm run app--build-alpha
 
-Build-DS-Alpha:
+Build_DS_Alpha:
   only:
     - 1-alpha
   stage: Build

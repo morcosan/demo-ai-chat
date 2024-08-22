@@ -11,15 +11,15 @@ stages:
   - Deploy
 
 include:
-  - local: '.tooling/pipelines/gitlab.dev.yml'
-  - local: '.tooling/pipelines/gitlab.alpha.yml'
-  - local: '.tooling/pipelines/gitlab.beta.yml'
-  - local: '.tooling/pipelines/gitlab.preprod.yml'
-  - local: '.tooling/pipelines/gitlab.prod.yml'
+  - local: '.tooling/gitlab/dev.yml'
+  - local: '.tooling/gitlab/alpha.yml'
+  - local: '.tooling/gitlab/beta.yml'
+  - local: '.tooling/gitlab/preprod.yml'
+  - local: '.tooling/gitlab/prod.yml'
 
 #-------------------------------------------#
 
-Init-Vars:
+Init_Vars:
   only:
     - 0-dev
     - 1-alpha
@@ -32,7 +32,7 @@ Init-Vars:
     - echo "NPM = $(npm -v)"
     - echo "CI_PAGES_URL = ${CI_PAGES_URL}"
 
-Install-Deps:
+Install_Deps:
   only:
     - 0-dev
     - 1-alpha
@@ -42,3 +42,16 @@ Install-Deps:
   stage: Init
   script:
     - npm ci
+
+#-------------------------------------------#
+
+Lint_Code:
+  only:
+    - 0-dev
+    - 1-alpha
+    - 2-beta
+    - 3-preprod
+    - 4-production
+  stage: Test
+  script:
+    - npm run lint

@@ -1,14 +1,4 @@
-Lint-Code-PreProd:
-  only:
-    - 3-preprod
-  stage: Test
-  allow_failure: true
-  script:
-    - npm run lint
-
-#-------------------------------------------#
-
-Build-App-PreProd:
+Build_App_PreProd:
   only:
     - 3-preprod
   stage: Build
@@ -16,7 +6,7 @@ Build-App-PreProd:
   script:
     - npm run app--build-prod
 
-Build-DS-PreProd:
+Build_DS_PreProd:
   only:
     - 3-preprod
   stage: Build

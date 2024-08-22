@@ -1,13 +1,4 @@
-Lint-Code-Dev:
-  only:
-    - 0-dev
-  stage: Test
-  script:
-    - npm run lint
-
-#-------------------------------------------#
-
-Build-App-Dev:
+Build_App_Dev:
   only:
     - 0-dev
   stage: Build
@@ -17,7 +8,7 @@ Build-App-Dev:
     paths:
       - __dist-app
 
-Build-DS-Dev:
+Build_DS_Dev:
   only:
     - 0-dev
   stage: Build
