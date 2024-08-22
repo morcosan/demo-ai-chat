@@ -1,0 +1,15 @@
+Build_App_Prod:
+  only:
+    - 4-production
+  stage: Build
+  allow_failure: true
+  script:
+    - npm run app--build-prod
+
+Build_DS_Prod:
+  only:
+    - 4-production
+  stage: Build
+  allow_failure: true
+  script:
+    - npm run ds--build-prod

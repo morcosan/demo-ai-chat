@@ -1,0 +1,7 @@
+runs:
+  using: composite
+  steps:
+    - run: echo "Node = $(node -v)"
+      shell: bash
+    - run: echo "NPM = $(npm -v)"
+      shell: bash
