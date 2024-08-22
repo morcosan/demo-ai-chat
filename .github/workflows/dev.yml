@@ -1,0 +1,88 @@
+name: Dev
+
+on:
+  pull_request:
+    branches:
+      - 0-dev
+    types:
+      - closed
+
+jobs:
+  Init_Vars:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: ./.github/actions/init-vars
+
+  Install_Deps:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: ./.github/actions/install-deps
+
+  #-------------------------------------------#
+
+  Lint_Code:
+    needs: [Init_Vars, Install_Deps]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: ./.github/actions/lint-code
+
+  #-------------------------------------------#
+
+  Build_App:
+    needs: Lint_Code
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: ./.github/actions/build-app
+        with:
+          NPM_Script: app--build-dev
+
+  Build_DS:
+    needs: Lint_Code
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: ./.github/actions/build-ds
+        with:
+          NPM_Script: ds--build-dev
+
+  #-------------------------------------------#
+
+  Create_Pages:
+    needs: [Build_App, Build_DS]
+    runs-on: ubuntu-latest
+    steps:
+      # Create new folder
+      - run: mkdir -p public
+      - run: mkdir -p public/storybook
+      # Download app and ds artifacts
+      - uses: actions/download-artifact@v4
+        with:
+          name: dist-app-${{ github.run_id }}
+          path: public
+      - uses: actions/download-artifact@v4
+        with:
+          name: dist-ds-${{ github.run_id }}
+          path: public/storybook
+      # Create 404 page
+      - run: cp public/index.html public/404.html
+      # Create pages artifact
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: public
+
+  Deploy_Pages:
+    needs: [Create_Pages]
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.Deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/deploy-pages@v4
+        id: Deployment

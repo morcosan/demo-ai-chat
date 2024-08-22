@@ -1,0 +1,11 @@
+runs:
+  using: composite
+  steps:
+    - uses: actions/cache@v4
+      id: Cache
+      with:
+        path: node_modules
+        key: node_modules-${{ hashFiles('**/package-lock.json') }}
+    - if: ${{ steps.Cache.outputs.cache-hit != 'true' }}
+      run: npm ci
+      shell: bash

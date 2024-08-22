@@ -1,0 +1,15 @@
+Build_App_Alpha:
+  only:
+    - 1-alpha
+  stage: Build
+  allow_failure: true
+  script:
+    - npm run app--build-alpha
+
+Build_DS_Alpha:
+  only:
+    - 1-alpha
+  stage: Build
+  allow_failure: true
+  script:
+    - npm run ds--build-dev

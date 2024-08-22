@@ -1,0 +1,50 @@
+name: Production
+
+on:
+  pull_request:
+    branches:
+      - 4-production
+    types:
+      - closed
+
+jobs:
+  Init_Vars:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: ./.github/actions/init-vars
+
+  Install_Deps:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: ./.github/actions/install-deps
+
+  #-------------------------------------------#
+
+  Lint_Code:
+    needs: [Init_Vars, Install_Deps]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: ./.github/actions/lint-code
+
+  #-------------------------------------------#
+
+  Build_App:
+    needs: Lint_Code
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: ./.github/actions/build-app
+        with:
+          NPM_Script: app--build-prod
+
+  Build_DS:
+    needs: Lint_Code
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: ./.github/actions/build-ds
+        with:
+          NPM_Script: ds--build-prod
