@@ -1,0 +1,21 @@
+inputs:
+  NPM_Script:
+    required: true
+
+runs:
+  using: composite
+  steps:
+    - uses: actions/cache@v4
+      with:
+        path: node_modules
+        key: node_modules-${{ hashFiles('**/package-lock.json') }}
+
+    # Run build
+    - run: npm run ${{inputs.NPM_Script}}
+      shell: bash
+
+    # Create artifact
+    - uses: actions/upload-artifact@v4
+      with:
+        name: dist-app-${{ github.run_id }}
+        path: __dist-app

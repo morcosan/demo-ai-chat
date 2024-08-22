@@ -1,9 +1,11 @@
 import { mockAPI } from '@api/mock'
 import { useEffect, useState } from 'react'
+import { useLocation } from 'react-router-dom'
 import { ApiResponse, UrlQuery } from '../types'
 
 const useQuery = () => {
-	const params = new URLSearchParams(window.location.search)
+	const location = useLocation()
+	const params = new URLSearchParams(location.search)
 	const query: UrlQuery = {}
 
 	for (const [key, value] of params.entries()) {
@@ -14,6 +16,7 @@ const useQuery = () => {
 }
 
 export const ApiConsole = () => {
+	const location = useLocation()
 	const path = location.pathname
 	const query = useQuery()
 	const [resp, setResp] = useState<ApiResponse | null>(null)

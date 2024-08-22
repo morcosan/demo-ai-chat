@@ -1,0 +1,57 @@
+image: node:latest
+
+cache:
+  paths:
+    - node_modules
+
+stages:
+  - Init
+  - Test
+  - Build
+  - Deploy
+
+include:
+  - local: '.tooling/gitlab/dev.yml'
+  - local: '.tooling/gitlab/alpha.yml'
+  - local: '.tooling/gitlab/beta.yml'
+  - local: '.tooling/gitlab/preprod.yml'
+  - local: '.tooling/gitlab/prod.yml'
+
+#-------------------------------------------#
+
+Init_Vars:
+  only:
+    - 0-dev
+    - 1-alpha
+    - 2-beta
+    - 3-preprod
+    - 4-production
+  stage: Init
+  script:
+    - echo "Node = $(node -v)"
+    - echo "NPM = $(npm -v)"
+    - echo "CI_PAGES_URL = ${CI_PAGES_URL}"
+
+Install_Deps:
+  only:
+    - 0-dev
+    - 1-alpha
+    - 2-beta
+    - 3-preprod
+    - 4-production
+  stage: Init
+  script:
+    - npm ci
+
+#-------------------------------------------#
+
+Lint_Code:
+  only:
+    - 0-dev
+    - 1-alpha
+    - 2-beta
+    - 3-preprod
+    - 4-production
+  stage: Test
+  script:
+    - npm run lint
