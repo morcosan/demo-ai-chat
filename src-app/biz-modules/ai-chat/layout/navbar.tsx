@@ -20,7 +20,7 @@ const useChats = (): [Chat[], boolean] => {
 }
 
 export const NavBar = () => {
-	const storybookUrl = ENV__BUILD_MODE === 'localhost' ? 'http://localhost:9000' : '/storybook'
+	const storybookUrl = ENV__BUILD_MODE === 'local' ? 'http://localhost:9000' : `${ENV__ROOT_URL_PATH}/storybook`
 	const [chats, loading] = useChats()
 
 	return (
@@ -41,9 +41,7 @@ export const NavBar = () => {
 
 			<div className="flex justify-center gap-md-0">
 				<a href={storybookUrl}>DS Docs</a>
-				<Link to={'/api'} className="block text-center">
-					API Docs
-				</Link>
+				<Link to={'/api'}>API Docs</Link>
 			</div>
 
 			<button className="bg-grey-2 p-xs-6">Account</button>

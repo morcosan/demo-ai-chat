@@ -1,28 +1,19 @@
-Lint-Code-Dev:
-  only:
-    - 0-dev
-  stage: Lint
-  script:
-    - npm run lint
-
-#-------------------------------------------#
-
-Build-App-Dev:
+Build_App_Dev:
   only:
     - 0-dev
   stage: Build
   script:
-    - npm run build-app-dev
+    - npm run app--build-dev
   artifacts:
     paths:
       - __dist-app
 
-Build-DS-Dev:
+Build_DS_Dev:
   only:
     - 0-dev
   stage: Build
   script:
-    - npm run build-ds-dev
+    - npm run ds--build-dev
   artifacts:
     paths:
       - __dist-ds

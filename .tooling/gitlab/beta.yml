@@ -1,0 +1,15 @@
+Build_App_Beta:
+  only:
+    - 2-beta
+  stage: Build
+  allow_failure: true
+  script:
+    - npm run app--build-beta
+
+Build_DS_Beta:
+  only:
+    - 2-beta
+  stage: Build
+  allow_failure: true
+  script:
+    - npm run ds--build-prod
