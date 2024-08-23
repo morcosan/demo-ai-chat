@@ -1,7 +1,7 @@
-import globals from 'globals'
 import jsESLint from '@eslint/js'
 import reactHooks from 'eslint-plugin-react-hooks'
 import reactRefresh from 'eslint-plugin-react-refresh'
+import globals from 'globals'
 import tsESLint from 'typescript-eslint'
 
 export default tsESLint.config(
