@@ -1,11 +1,7 @@
 name: Dev
 
 on:
-  pull_request_target:
-    branches:
-      - 0-dev
-    types:
-      - closed
+  workflow_dispatch:
 
 jobs:
   Init_Vars:
@@ -94,8 +90,5 @@ jobs:
       url: ${{ steps.Deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-        with:
-          ref: 0-dev
       - uses: actions/deploy-pages@v4
         id: Deployment
