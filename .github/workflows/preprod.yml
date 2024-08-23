@@ -1,20 +1,26 @@
-name: Pre-prod
+name: 3-preprod
 
 on:
-  pull_request:
-    branches:
-      - 3-preprod
-    types:
-      - closed
+  workflow_dispatch:
 
 jobs:
+  Check_Branch:
+    runs-on: ubuntu-latest
+    steps:
+      - if: ${{ github.ref_name != '3-preprod' }}
+        run: |
+          echo "Pipeline can only run on 3-preprod"
+          exit 1
+
   Init_Vars:
+    needs: [Check_Branch]
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - uses: ./.github/actions/init-vars
 
   Install_Deps:
+    needs: [Check_Branch]
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
