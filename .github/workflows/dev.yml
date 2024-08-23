@@ -2,6 +2,8 @@ name: Dev
 
 on:
   workflow_dispatch:
+    inputs:
+      morco: wtf
 
 jobs:
   Init_Vars:
