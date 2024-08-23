@@ -3,13 +3,14 @@ name: Dev
 on:
   workflow_dispatch:
     inputs:
-      description: 'Log level'
-      default: 'warning'
-      type: choice
-      options:
-        - info
-        - warning
-        - debug
+      logLevel:
+        description: 'Log level'
+        default: 'warning'
+        type: choice
+        options:
+          - info
+          - warning
+          - debug
 
 jobs:
   Init_Vars:
