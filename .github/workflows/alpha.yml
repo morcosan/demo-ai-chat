@@ -1,20 +1,26 @@
 name: Alpha
 
 on:
-  pull_request:
-    branches:
-      - 1-alpha
-    types:
-      - closed
+  workflow_dispatch:
 
 jobs:
+  Check_Branch:
+    runs-on: ubuntu-latest
+    steps:
+      - if: ${{ github.ref_name != '1-alpha' }}
+        run: |
+          echo "Pipeline can only run on 1-alpha"
+          exit 1
+
   Init_Vars:
+    needs: [Check_Branch]
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - uses: ./.github/actions/init-vars
 
   Install_Deps:
+    needs: [Check_Branch]
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
