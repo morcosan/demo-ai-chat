@@ -1,4 +1,4 @@
-name: Alpha
+name: 1-alpha
 
 on:
   workflow_dispatch:

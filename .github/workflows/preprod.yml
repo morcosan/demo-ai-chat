@@ -1,4 +1,4 @@
-name: Pre-prod
+name: 3-preprod
 
 on:
   workflow_dispatch:

@@ -1,4 +1,4 @@
-name: Beta
+name: 2-beta
 
 on:
   workflow_dispatch:
