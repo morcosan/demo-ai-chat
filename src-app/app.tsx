@@ -1,11 +1,17 @@
-import { Suspense } from 'react'
+import { loadAppTheme } from '@app/core-modules/app-theme'
+import { StrictMode, Suspense } from 'react'
 import { Router } from './routing'
+import './styles/index.css'
+
+loadAppTheme()
 
 const App = () => {
 	return (
-		<Suspense fallback={null}>
-			<Router />
-		</Suspense>
+		<StrictMode>
+			<Suspense fallback={null}>
+				<Router />
+			</Suspense>
+		</StrictMode>
 	)
 }
 

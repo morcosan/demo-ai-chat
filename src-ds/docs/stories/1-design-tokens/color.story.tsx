@@ -11,27 +11,67 @@ export default {
 	title: 'Design tokens / Color',
 
 	component: () => {
+		const primitiveTokens = COLOR_TOKENS.filter((token: DesignToken) => !token.ref)
+		const semanticTokens = COLOR_TOKENS.filter((token: DesignToken) => token.ref)
+
 		return (
 			<DocsPage title="Color tokens">
+				<h2 className="font-size-lg mb-xs-9">Semantic tokens</h2>
 				<table className="docs">
 					<thead>
 						<tr>
 							<th>Name</th>
-							<th>Value (px)</th>
+							<th>Value (light)</th>
+							<th>Reference (light)</th>
+							<th>Value (dark)</th>
+							<th>Reference (dark)</th>
 							<th>CSS variable</th>
-							<th>Reference</th>
 						</tr>
 					</thead>
 					<tbody>
-						{COLOR_TOKENS.map((token: DesignToken) => (
+						{semanticTokens.map((token: DesignToken) => (
 							<tr key={token.name}>
-								<td className="flex items-center gap-xs-3">
-									<div className="h-sm-1 w-sm-1" style={{ background: token.css }}></div>
-									{token.name}
+								<td>{token.name}</td>
+								<td>
+									<div className="flex items-center gap-xs-3">
+										<div className="h-sm-1 w-sm-1" style={{ background: (token.value as ThemeRecord).light }} />
+										{(token.value as ThemeRecord)['light']}
+									</div>
 								</td>
-								<td>{token.value}</td>
+								<td>{(token.ref as ThemeRecord).light}</td>
+								<td>
+									<div className="flex items-center gap-xs-3">
+										<div className="h-sm-1 w-sm-1" style={{ background: (token.value as ThemeRecord).dark }} />
+										{(token.value as ThemeRecord).dark}
+									</div>
+								</td>
+								<td>{(token.ref as ThemeRecord).dark}</td>
 								<td>{token.css}</td>
-								<td>{token.refName || '-'}</td>
+							</tr>
+						))}
+					</tbody>
+				</table>
+
+				<h2 className="font-size-lg mb-xs-9 mt-sm-9">Primitive tokens</h2>
+				<table className="docs">
+					<thead>
+						<tr>
+							<th>Name</th>
+							<th>Value</th>
+							<th>CSS variable</th>
+						</tr>
+					</thead>
+					<tbody>
+						{primitiveTokens.map((token: DesignToken) => (
+							<tr key={token.name}>
+								<td>{token.name}</td>
+								<td>
+									<div className="flex items-center gap-xs-3">
+										<div className="h-sm-1 w-sm-1" style={{ background: token.css }}></div>
+										{String(token.value)}
+									</div>
+								</td>
+								<td>{token.css}</td>
 							</tr>
 						))}
 					</tbody>

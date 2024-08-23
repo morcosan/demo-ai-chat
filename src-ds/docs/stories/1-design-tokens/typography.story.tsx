@@ -20,17 +20,15 @@ export default {
 							<th>Value (rem)</th>
 							<th>Value (px)</th>
 							<th>CSS variable</th>
-							<th>Reference</th>
 						</tr>
 					</thead>
 					<tbody>
 						{FONT_SIZE_TOKENS.map((token: DesignToken) => (
 							<tr key={token.name}>
 								<td style={{ fontSize: token.css }}>{token.name}</td>
-								<td>{token.value} rem</td>
+								<td>{String(token.value)} rem</td>
 								<td>{Number(token.value) * 16} px</td>
 								<td>{token.css}</td>
-								<td>{token.refName || '-'}</td>
 							</tr>
 						))}
 					</tbody>
@@ -42,16 +40,14 @@ export default {
 							<th>Name</th>
 							<th>Value</th>
 							<th>CSS variable</th>
-							<th>Reference</th>
 						</tr>
 					</thead>
 					<tbody>
 						{FONT_WEIGHT_TOKENS.map((token: DesignToken) => (
 							<tr key={token.name}>
 								<td style={{ fontWeight: token.css }}>{token.name}</td>
-								<td>{token.value}</td>
+								<td>{String(token.value)}</td>
 								<td>{token.css}</td>
-								<td>{token.refName || '-'}</td>
 							</tr>
 						))}
 					</tbody>
@@ -63,7 +59,6 @@ export default {
 							<th>Name</th>
 							<th>Value</th>
 							<th>CSS variable</th>
-							<th>Reference</th>
 						</tr>
 					</thead>
 					<tbody>
@@ -72,9 +67,8 @@ export default {
 								<td style={{ lineHeight: token.css }}>
 									<div className="border border-grey-3">{token.name}</div>
 								</td>
-								<td>{token.value} em</td>
+								<td>{String(token.value)} em</td>
 								<td>{token.css}</td>
-								<td>{token.refName || '-'}</td>
 							</tr>
 						))}
 					</tbody>

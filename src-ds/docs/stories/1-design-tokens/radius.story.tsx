@@ -17,30 +17,32 @@ export default {
 					<thead>
 						<tr>
 							<th>Name</th>
-							<th>Value (px)</th>
+							<th>Value</th>
+							<th>Preview</th>
 							<th>CSS variable</th>
-							<th>Reference</th>
 						</tr>
 					</thead>
 					<tbody>
 						{RADIUS_TOKENS.map((token: DesignToken) => (
 							<tr key={token.name}>
-								<td className="flex items-center gap-xs-3">
-									<div
-										className="h-sm-4 w-sm-4 border border-b-0 border-r-0 border-grey-5"
-										style={{ borderRadius: token.css }}
-									/>
-									<div
-										className="h-sm-4 w-sm-7 border border-b-0 border-r-0 border-grey-5"
-										style={{ borderRadius: token.css }}
-									/>
-									{token.name}
+								<td>{token.name}</td>
+								<td>
+									{String(token.value)} {token.unit}
 								</td>
 								<td>
-									{token.value} {token.unit}
+									<div className="flex items-center gap-xs-3">
+										<div
+											className="h-sm-4 w-sm-4 border border-b-0 border-r-0 border-grey-5"
+											style={{ borderRadius: token.css }}
+										/>
+										<div
+											className="h-sm-4 w-sm-7 border border-b-0 border-r-0 border-grey-5"
+											style={{ borderRadius: token.css }}
+										/>
+									</div>
 								</td>
+
 								<td>{token.css}</td>
-								<td>{token.refName || '-'}</td>
 							</tr>
 						))}
 					</tbody>
