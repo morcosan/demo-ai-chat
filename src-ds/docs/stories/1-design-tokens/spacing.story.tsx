@@ -18,9 +18,8 @@ export default {
 					<thead>
 						<tr>
 							<th>Name</th>
-							<th>Value (px)</th>
+							<th>Value</th>
 							<th>CSS variable</th>
-							<th>Reference</th>
 						</tr>
 					</thead>
 					<tbody>
@@ -28,9 +27,8 @@ export default {
 							<Fragment key={token.name}>
 								<tr key={token.name} className="!border-b-0">
 									<td>{token.name}</td>
-									<td>{token.value} px</td>
+									<td>{String(token.value)} px</td>
 									<td>{token.css}</td>
-									<td>{token.refName || '-'}</td>
 								</tr>
 								<tr>
 									<td colSpan={4} className="relative -top-xs-2 !py-0">

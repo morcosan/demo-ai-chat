@@ -31,9 +31,40 @@ export const COLOR_TOKENS: DesignToken[] = [
 	{ name: 'color-orange-3', css: 'var(--ds-color-orange-3)', value: '#ea580c' },
 	{ name: 'color-orange-4', css: 'var(--ds-color-orange-4)', value: '#9a3412' },
 
-	{ name: 'color-background', css: 'var(--ds-color-background)', value: 0, refName: 'color-white' },
-	{ name: 'color-navbar', css: 'var(--ds-color-navbar)', value: 0, refName: 'color-white' },
-	{ name: 'color-primary', css: 'var(--ds-color-primary)', value: 0, refName: 'color-purple-3' },
-	{ name: 'color-secondary', css: 'var(--ds-color-secondary)', value: 0, refName: 'color-blue-3' },
-	{ name: 'color-text', css: 'var(--ds-color-text)', value: 0, refName: 'color-grey-9' },
+	{
+		name: 'color-background',
+		css: 'var(--ds-color-background)',
+		value: { light: '#fff', dark: '#111827' },
+		ref: { light: 'color-white', dark: 'color-grey-9' },
+	},
+	{
+		name: 'color-navbar',
+		css: 'var(--ds-color-navbar)',
+		value: { light: '#fff', dark: '#111827' },
+		ref: { light: 'color-white', dark: 'color-grey-9' },
+	},
+	{
+		name: 'color-primary',
+		css: 'var(--ds-color-primary)',
+		value: { light: '#9333ea', dark: '#c084fc' },
+		ref: { light: 'color-purple-3', dark: 'color-purple-2' },
+	},
+	{
+		name: 'color-secondary',
+		css: 'var(--ds-color-secondary)',
+		value: { light: '#0284c7', dark: '#38bdf8' },
+		ref: { light: 'color-blue-3', dark: 'color-blue-2' },
+	},
+	{
+		name: 'color-text',
+		css: 'var(--ds-color-text)',
+		value: { light: '#111827', dark: '#fff' },
+		ref: { light: 'color-grey-9', dark: 'color-white' },
+	},
+	{
+		name: 'color-text-inverse',
+		css: 'var(--ds-color-text-inverse)',
+		value: { light: '#fff', dark: '#111827' },
+		ref: { light: 'color-white', dark: 'color-grey-9' },
+	},
 ]

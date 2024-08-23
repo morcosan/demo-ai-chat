@@ -1,5 +1,6 @@
 import { API } from '@app/api'
 import { Chat } from '@app/api/types'
+import { getAppTheme, setAppTheme } from '@app/core-modules/app-theme'
 import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 
@@ -20,12 +21,23 @@ const useChats = (): [Chat[], boolean] => {
 }
 
 export const NavBar = () => {
+	const [theme, setTheme] = useState(getAppTheme())
 	const storybookUrl = ENV__BUILD_MODE === 'local' ? 'http://localhost:9000' : `${ENV__ROOT_URL_PATH}/storybook`
 	const [chats, loading] = useChats()
 
+	const getButtonStyle = (buttonTheme: Theme) => ({
+		background: theme === buttonTheme ? 'var(--ds-color-primary)' : '',
+		color: theme === buttonTheme ? 'var(--ds-color-text-inverse)' : '',
+	})
+
+	const onClickTheme = (theme: Theme) => {
+		setTheme(theme)
+		setAppTheme(theme)
+	}
+
 	return (
 		<div className="z-sticky flex h-full w-lg-9 flex-col gap-xs-4 bg-navbar p-xs-4 shadow-xl">
-			<button className="bg-grey-2 p-xs-6">New chat</button>
+			<button className="bg-primary p-xs-6 text-text-inverse">New chat</button>
 
 			<div className="flex-1 p-xs-4">
 				{loading
@@ -39,12 +51,25 @@ export const NavBar = () => {
 						: 'No chats found'}
 			</div>
 
-			<div className="flex justify-center gap-md-0">
+			<div className="flex justify-center gap-sm-0 p-xs-6">
+				<button
+					className="flex-1 p-xs-3"
+					style={getButtonStyle('light')}
+					onClick={onClickTheme.bind(this, 'light')}
+				>
+					☀️ Light
+				</button>
+				<button className="flex-1 p-xs-3" style={getButtonStyle('dark')} onClick={onClickTheme.bind(this, 'dark')}>
+					🌙 Dark
+				</button>
+			</div>
+
+			<div className="flex justify-center gap-md-0 p-xs-6">
 				<a href={storybookUrl}>DS Docs</a>
 				<Link to={'/api'}>API Docs</Link>
 			</div>
 
-			<button className="bg-grey-2 p-xs-6">Account</button>
+			<button className="bg-secondary p-xs-6 text-text-inverse">Account</button>
 		</div>
 	)
 }

@@ -2,15 +2,15 @@
 :root {
 	--ds-color-white: #fff;
 
-	--ds-color-grey-1: #f3f4f6;
-	--ds-color-grey-2: #e5e7eb;
-	--ds-color-grey-3: #d1d5db;
-	--ds-color-grey-4: #9ca3af;
-	--ds-color-grey-5: #6b7280;
-	--ds-color-grey-6: #4b5563;
-	--ds-color-grey-7: #374151;
-	--ds-color-grey-8: #1f2937;
-	--ds-color-grey-9: #111827;
+	--ds-color-grey-1: #f4f4f5;
+	--ds-color-grey-2: #e4e4e7;
+	--ds-color-grey-3: #d4d4d8;
+	--ds-color-grey-4: #a1a1aa;
+	--ds-color-grey-5: #71717a;
+	--ds-color-grey-6: #52525b;
+	--ds-color-grey-7: #3f3f46;
+	--ds-color-grey-8: #27272a;
+	--ds-color-grey-9: #18181b;
 
 	--ds-color-purple-1: #e9d5ff;
 	--ds-color-purple-2: #c084fc;
@@ -40,4 +40,14 @@
 	--ds-color-primary: var(--ds-color-purple-3);
 	--ds-color-secondary: var(--ds-color-blue-3);
 	--ds-color-text: var(--ds-color-grey-9);
+	--ds-color-text-inverse: var(--ds-color-white);
+}
+
+[data-theme='dark'] {
+	--ds-color-background: var(--ds-color-grey-9);
+	--ds-color-navbar: var(--ds-color-grey-9);
+	--ds-color-primary: var(--ds-color-purple-2);
+	--ds-color-secondary: var(--ds-color-blue-2);
+	--ds-color-text: var(--ds-color-white);
+	--ds-color-text-inverse: var(--ds-color-grey-9);
 }
