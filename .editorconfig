@@ -11,5 +11,5 @@ max_line_length = 120
 insert_final_newline = false
 
 [*.yml] # YAML files don't allow tabs and Prettier enforces 2 spaces
-indent_style = space 
+indent_style = space
 tab_width = 2
