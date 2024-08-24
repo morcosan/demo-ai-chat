@@ -3,6 +3,7 @@ import reactHooks from 'eslint-plugin-react-hooks'
 import reactRefresh from 'eslint-plugin-react-refresh'
 import globals from 'globals'
 import tsESLint from 'typescript-eslint'
+import { dsPlugin } from './.tooling/eslint/ds-plugin.js'
 
 export default tsESLint.config(
 	{
@@ -26,6 +27,7 @@ export default tsESLint.config(
 		plugins: {
 			'react-hooks': reactHooks,
 			'react-refresh': reactRefresh,
+			'@ds': dsPlugin,
 		},
 
 		rules: {
@@ -36,6 +38,7 @@ export default tsESLint.config(
 			'@typescript-eslint/no-unsafe-function-type': 'off',
 			'@typescript-eslint/no-unused-expressions': 'off',
 			'@typescript-eslint/no-unused-vars': 'warn',
+			'@ds/only-import-from-release': 'error',
 		},
 	}
 )
