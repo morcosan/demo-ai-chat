@@ -15,9 +15,9 @@ table.docs {
 
 	th,
 	td {
-		text-align: left;
-		padding: var(--ds-spacing-xs-4);
 		vertical-align: middle;
+		padding: var(--ds-spacing-xs-4);
+		text-align: left;
 
 		&:first-child {
 			padding-left: 8px;

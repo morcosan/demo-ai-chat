@@ -10,7 +10,7 @@ const ApiDocs = () => {
 		<div className="h-screen w-screen p-sm-0 font-mono">
 			{location.pathname === '/api' ? (
 				ENDPOINTS.map((endpoint: string) => (
-					<Link to={endpoint} key={endpoint} className="mb-xs-6 block">
+					<Link key={endpoint} to={endpoint} className="mb-xs-6 block">
 						{endpoint}
 					</Link>
 				))

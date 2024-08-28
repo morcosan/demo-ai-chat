@@ -67,7 +67,7 @@ export default {
 								<td>{token.name}</td>
 								<td>
 									<div className="flex items-center gap-xs-3">
-										<div className="h-sm-1 w-sm-1" style={{ background: token.css }}></div>
+										<div className="h-sm-1 w-sm-1" style={{ background: token.css }} />
 										{String(token.value)}
 									</div>
 								</td>

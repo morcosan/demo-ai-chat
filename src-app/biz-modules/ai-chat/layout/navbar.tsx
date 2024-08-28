@@ -37,7 +37,9 @@ export const NavBar = () => {
 
 	return (
 		<div className="z-sticky flex h-full w-lg-9 flex-col gap-xs-4 bg-navbar p-xs-4 shadow-xl">
-			<button className="bg-primary p-xs-6 text-text-inverse">New chat</button>
+			<button type="button" className="bg-primary p-xs-6 text-text-inverse">
+				New chat
+			</button>
 
 			<div className="flex-1 p-xs-4">
 				{loading
@@ -53,23 +55,31 @@ export const NavBar = () => {
 
 			<div className="flex justify-center gap-sm-0 p-xs-6">
 				<button
+					type="button"
 					className="flex-1 p-xs-3"
 					style={getButtonStyle('light')}
 					onClick={onClickTheme.bind(this, 'light')}
 				>
 					☀️ Light
 				</button>
-				<button className="flex-1 p-xs-3" style={getButtonStyle('dark')} onClick={onClickTheme.bind(this, 'dark')}>
+				<button
+					type="button"
+					className="flex-1 p-xs-3"
+					style={getButtonStyle('dark')}
+					onClick={onClickTheme.bind(this, 'dark')}
+				>
 					🌙 Dark
 				</button>
 			</div>
 
 			<div className="flex justify-center gap-md-0 p-xs-6">
 				<a href={storybookUrl}>DS Docs</a>
-				<Link to={'/api'}>API Docs</Link>
+				<Link to="/api">API Docs</Link>
 			</div>
 
-			<button className="bg-secondary p-xs-6 text-text-inverse">Account</button>
+			<button type="button" className="bg-secondary p-xs-6 text-text-inverse">
+				Account
+			</button>
 		</div>
 	)
 }

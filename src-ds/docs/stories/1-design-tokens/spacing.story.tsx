@@ -32,7 +32,7 @@ export default {
 								</tr>
 								<tr>
 									<td colSpan={4} className="relative -top-xs-2 !py-0">
-										<div className="h-xs-2 bg-grey-3" style={{ width: token.css }}></div>
+										<div className="h-xs-2 bg-grey-3" style={{ width: token.css }} />
 									</td>
 								</tr>
 							</Fragment>

@@ -5,7 +5,7 @@ interface Props {
 
 export const Button = (props: Props) => {
 	return (
-		<button>
+		<button type="button">
 			{props.label} {props.size}
 		</button>
 	)

@@ -10,8 +10,8 @@
 @import '../tokens/z-index.css';
 
 :root {
-	color: var(--ds-color-text);
 	background-color: var(--ds-color-background);
+	color: var(--ds-color-text);
 }
 
 a {
