@@ -8,7 +8,11 @@ export const dsPlugin = {
 				ImportDeclaration: (node) => {
 					const path = node.source.value
 					const isDS = path.startsWith('@ds/') || path.includes('../src-ds/')
-					const isValid = path.startsWith('@ds/release') || path.startsWith('@ds/docs')
+					const isValid =
+						path.startsWith('@ds/release') ||
+						path.startsWith('@ds/docs') ||
+						path.startsWith('@ds/changelog') ||
+						path.includes('version.json')
 
 					if (isDS && !isValid) {
 						context.report({
