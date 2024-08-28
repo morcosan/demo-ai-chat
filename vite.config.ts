@@ -4,17 +4,26 @@ import './.env' // Must be first
 import react from '@vitejs/plugin-react'
 import { defineConfig } from 'vite'
 import { showBlueLogs } from './.tooling/console'
+import { createBuildNumber } from './.tooling/versioning'
 
 const ROOT_DIR = process.cwd()
 const BUILD_MODE = process.env.BUILD_MODE
 const ROOT_URL_PATH = process.env.ROOT_URL_PATH
 const IS_VALID_BUILD = Boolean(BUILD_MODE) // Preview is not loading env
+const BUILD_NUMBER = createBuildNumber()
 
 // Reset NODE_ENV
 process.env.NODE_ENV = BUILD_MODE === 'local' ? 'development' : 'production'
 
 // Show env logs
-IS_VALID_BUILD && showBlueLogs('[ENV]', '\nNODE_ENV =', process.env.NODE_ENV, '\nBUILD_MODE =', BUILD_MODE)
+if (IS_VALID_BUILD) {
+	showBlueLogs(
+		'[ENV]',
+		`\nNODE_ENV = ${process.env.NODE_ENV}`,
+		`\nBUILD_MODE = ${BUILD_MODE}`,
+		`\nBUILD_NUMBER = ${BUILD_NUMBER}`
+	)
+}
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -30,7 +39,7 @@ export default defineConfig({
 
 	define: {
 		ENV__BUILD_MODE: JSON.stringify(BUILD_MODE),
-		ENV__BUILD_TIME: JSON.stringify(new Date().getTime()),
+		ENV__BUILD_NUMBER: JSON.stringify(BUILD_NUMBER),
 		ENV__ROOT_URL_PATH: JSON.stringify(ROOT_URL_PATH),
 	},
 
