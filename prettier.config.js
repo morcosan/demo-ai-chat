@@ -13,7 +13,7 @@ export default {
 	useTabs: true,
 
 	// Plugins
-	plugins: ['prettier-plugin-organize-imports', 'prettier-plugin-css-order', 'prettier-plugin-tailwindcss'],
+	plugins: ['prettier-plugin-css-order', 'prettier-plugin-organize-imports', 'prettier-plugin-tailwindcss'],
 
 	// Plugin: css-order
 	cssDeclarationSorterOrder: 'concentric-css',
