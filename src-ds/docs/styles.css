@@ -34,3 +34,26 @@ table.docs {
 		font-size: var(--ds-font-size-md);
 	}
 }
+
+ul.docs,
+ol.docs {
+	display: flex;
+	flex-direction: column;
+	gap: calc(var(--ds-font-size-md) / 8);
+	margin: calc(var(--ds-font-size-md) / 8) 0 calc(var(--ds-font-size-md) / 4);
+	padding-left: var(--ds-spacing-sm-1);
+}
+ul.docs {
+	list-style: disc;
+}
+ol.docs {
+	list-style: auto;
+}
+
+.docs code {
+	background-color: var(--ds-color-grey-1);
+	padding: 0 4px;
+	color: var(--ds-color-purple-3);
+	font-size: var(--ds-font-size-sm);
+	white-space: nowrap;
+}
