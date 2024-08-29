@@ -1,10 +1,10 @@
 import { API } from '@app/api'
 import { Chat } from '@app/api/types'
-import { getAppTheme, setAppTheme } from '@app/core-modules/app-theme'
+import { useAppTheme } from '@app/core-modules/app-theme'
 import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 
-const useChats = (): [Chat[], boolean] => {
+const useChatListing = () => {
 	const [chats, setChats] = useState([] as Chat[])
 	const [loading, setLoading] = useState(true)
 
@@ -17,23 +17,22 @@ const useChats = (): [Chat[], boolean] => {
 		}
 	}, [])
 
-	return [chats, loading]
+	return { chats, loading }
 }
 
 export const NavBar = () => {
-	const [theme, setTheme] = useState(getAppTheme())
-	const storybookUrl = ENV__BUILD_MODE === 'local' ? 'http://localhost:9000' : `${ENV__ROOT_URL_PATH}/storybook`
-	const [chats, loading] = useChats()
+	const { isLight, isDark, setTheme } = useAppTheme()
+	const { chats, loading } = useChatListing()
 
-	const getButtonStyle = (buttonTheme: Theme) => ({
-		background: theme === buttonTheme ? 'var(--ds-color-primary)' : '',
-		color: theme === buttonTheme ? 'var(--ds-color-text-inverse)' : '',
+	const storybookUrl = ENV__BUILD_MODE === 'local' ? 'http://localhost:9000' : `${ENV__ROOT_URL_PATH}/storybook`
+
+	const getButtonStyle = (enabled: boolean) => ({
+		background: enabled ? 'var(--ds-color-primary)' : '',
+		color: enabled ? 'var(--ds-color-text-inverse)' : '',
 	})
 
-	const onClickTheme = (theme: Theme) => {
-		setTheme(theme)
-		setAppTheme(theme)
-	}
+	const setLightTheme = () => setTheme('light')
+	const setDarkTheme = () => setTheme('dark')
 
 	return (
 		<div className="z-sticky flex h-full w-lg-9 flex-col gap-xs-4 bg-navbar p-xs-4 shadow-xl">
@@ -54,20 +53,10 @@ export const NavBar = () => {
 			</div>
 
 			<div className="flex justify-center gap-sm-0 p-xs-6">
-				<button
-					type="button"
-					className="flex-1 p-xs-3"
-					style={getButtonStyle('light')}
-					onClick={onClickTheme.bind(this, 'light')}
-				>
+				<button type="button" className="flex-1 p-xs-3" style={getButtonStyle(isLight)} onClick={setLightTheme}>
 					☀️ Light
 				</button>
-				<button
-					type="button"
-					className="flex-1 p-xs-3"
-					style={getButtonStyle('dark')}
-					onClick={onClickTheme.bind(this, 'dark')}
-				>
+				<button type="button" className="flex-1 p-xs-3" style={getButtonStyle(isDark)} onClick={setDarkTheme}>
 					🌙 Dark
 				</button>
 			</div>

@@ -1,18 +1,49 @@
+import { useMemo, useReducer } from 'react'
+
+interface State {
+	theme: Theme
+}
+
 const THEMES: Theme[] = ['light', 'dark']
+const DEFAULTS: State = {
+	theme: 'light',
+}
 
-export const loadAppTheme = () => {
-	let theme = localStorage.getItem('theme') as Theme | null
+const reducer = (state: State, action: Partial<State>): State => {
+	const { theme } = action
 
-	if (!theme || !THEMES.includes(theme)) {
-		theme = 'light'
+	if (theme) return { ...state, theme }
+
+	return state
+}
+
+export const useAppTheme = () => {
+	const [state, dispatch] = useReducer(reducer, DEFAULTS)
+
+	const isDark = useMemo(() => state.theme === 'dark', [state.theme])
+	const isLight = useMemo(() => state.theme === 'light', [state.theme])
+
+	const setTheme = (theme: Theme) => {
+		dispatch({ theme })
+		localStorage.setItem('theme', theme)
+		document.documentElement.setAttribute('data-theme', theme)
 	}
 
-	setAppTheme(theme)
-}
+	const loadTheme = () => {
+		let theme = localStorage.getItem('theme') as Theme | null
 
-export const setAppTheme = (theme: Theme) => {
-	document.documentElement.setAttribute('data-theme', theme)
-	localStorage.setItem('theme', theme)
-}
+		if (!theme || !THEMES.includes(theme)) {
+			theme = 'light'
+		}
 
-export const getAppTheme = (): Theme => document.documentElement.getAttribute('data-theme') as Theme
+		setTheme(theme)
+	}
+
+	return {
+		...state,
+		isDark,
+		isLight,
+		setTheme,
+		loadTheme,
+	}
+}
