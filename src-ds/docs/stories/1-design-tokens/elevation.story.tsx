@@ -30,20 +30,20 @@ export default {
 									<div className="flex items-center gap-xs-7">
 										<div
 											className="h-sm-8 w-sm-8"
-											style={{ boxShadow: String((token.value as ThemeRecord).light) }}
+											style={{ boxShadow: String((token.value as TokenValue).light) }}
 										/>
 										<div
 											className="h-sm-8 w-sm-8"
-											style={{ boxShadow: String((token.value as ThemeRecord).dark) }}
+											style={{ boxShadow: String((token.value as TokenValue).dark) }}
 										/>
 									</div>
 								</td>
 								<td>
 									<div className="grid grid-cols-[40px_auto]">
 										<div>Light:</div>
-										<div>{(token.value as ThemeRecord).light}</div>
+										<div>{(token.value as TokenValue).light}</div>
 										<div>Dark:</div>
-										<div>{(token.value as ThemeRecord).dark}</div>
+										<div>{(token.value as TokenValue).dark}</div>
 									</div>
 								</td>
 								<td>{token.css}</td>
