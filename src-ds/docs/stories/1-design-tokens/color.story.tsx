@@ -34,18 +34,18 @@ export default {
 								<td>{token.name}</td>
 								<td>
 									<div className="flex items-center gap-xs-3">
-										<div className="h-sm-1 w-sm-1" style={{ background: (token.value as ThemeRecord).light }} />
-										{(token.value as ThemeRecord)['light']}
+										<div className="h-sm-1 w-sm-1" style={{ background: (token.value as TokenValue).light }} />
+										{(token.value as TokenValue).light}
 									</div>
 								</td>
-								<td>{(token.ref as ThemeRecord).light}</td>
+								<td>{(token.ref as TokenString).light}</td>
 								<td>
 									<div className="flex items-center gap-xs-3">
-										<div className="h-sm-1 w-sm-1" style={{ background: (token.value as ThemeRecord).dark }} />
-										{(token.value as ThemeRecord).dark}
+										<div className="h-sm-1 w-sm-1" style={{ background: (token.value as TokenValue).dark }} />
+										{(token.value as TokenValue).dark}
 									</div>
 								</td>
-								<td>{(token.ref as ThemeRecord).dark}</td>
+								<td>{(token.ref as TokenString).dark}</td>
 								<td>{token.css}</td>
 							</tr>
 						))}

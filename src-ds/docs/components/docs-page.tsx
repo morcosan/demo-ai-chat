@@ -1,9 +1,7 @@
-import { ReactNode } from 'react'
 import { toggleControls } from '../utilities/storybook'
 
-interface Props {
+interface Props extends ReactProps {
 	title: string
-	children: ReactNode
 	type?: 'component' | 'default'
 }
 

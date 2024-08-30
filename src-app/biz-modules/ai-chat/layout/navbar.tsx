@@ -1,6 +1,6 @@
 import { API } from '@app/api'
 import { Chat } from '@app/api/types'
-import { useAppTheme } from '@app/core-modules/app-theme'
+import { useColorThemeStore } from '@app/core-modules/color-theme'
 import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 
@@ -21,7 +21,7 @@ const useChatListing = () => {
 }
 
 export const NavBar = () => {
-	const { isLight, isDark, setTheme } = useAppTheme()
+	const { isLight, isDark, changeTheme } = useColorThemeStore()
 	const { chats, loading } = useChatListing()
 
 	const storybookUrl = ENV__BUILD_MODE === 'local' ? 'http://localhost:9000' : `${ENV__ROOT_URL_PATH}/storybook`
@@ -31,8 +31,8 @@ export const NavBar = () => {
 		color: enabled ? 'var(--ds-color-text-inverse)' : '',
 	})
 
-	const setLightTheme = () => setTheme('light')
-	const setDarkTheme = () => setTheme('dark')
+	const setLightTheme = () => changeTheme('light')
+	const setDarkTheme = () => changeTheme('dark')
 
 	return (
 		<div className="z-sticky flex h-full w-lg-9 flex-col gap-xs-4 bg-navbar p-xs-4 shadow-xl">

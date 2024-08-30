@@ -1,20 +1,16 @@
-import { useAppTheme } from '@app/core-modules/app-theme'
-import { StrictMode, Suspense, useEffect } from 'react'
+import { ColorThemeStore } from '@app/core-modules/color-theme/store.tsx'
+import { StrictMode, Suspense } from 'react'
 import { Router } from './routing'
 import './styles/index.css'
 
 const App = () => {
-	const { loadTheme } = useAppTheme()
-
-	useEffect(() => {
-		loadTheme()
-	}, [])
-
 	return (
 		<StrictMode>
-			<Suspense fallback={null}>
-				<Router />
-			</Suspense>
+			<ColorThemeStore>
+				<Suspense fallback={null}>
+					<Router />
+				</Suspense>
+			</ColorThemeStore>
 		</StrictMode>
 	)
 }

@@ -1,10 +1,16 @@
 declare interface DesignToken {
 	name: string
 	css: string
-	value: number | string | ThemeRecord
+	value: number | string | TokenValue
 	unit?: string
-	ref?: string | ThemeRecord
+	ref?: string | TokenString
 }
 
-declare type Theme = 'light' | 'dark'
-declare type ThemeRecord = Record<Theme, number | string>
+declare type TokenValue = Record<ColorTheme, number | string>
+declare type TokenString = Record<ColorTheme, string>
+
+declare type ColorTheme = 'light' | 'dark'
+
+declare interface ReactProps {
+	children: any
+}
