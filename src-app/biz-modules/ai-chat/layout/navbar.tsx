@@ -1,6 +1,6 @@
 import { API } from '@app/api'
 import { Chat } from '@app/api/types'
-import { useColorThemeStore } from '@app/core-modules/color-theme'
+import { useColorThemeStore } from '@ds/release'
 import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 
@@ -34,9 +34,14 @@ export const NavBar = () => {
 	const setLightTheme = () => changeTheme('light')
 	const setDarkTheme = () => changeTheme('dark')
 
+	const buttonClass = [
+		'relative z-0 p-xs-6 text-color-text-inverse',
+		'before:absolute-overlay before:hover:bg-color-hover before:z-[-1]',
+	].join(' ')
+
 	return (
-		<div className="z-sticky flex h-full w-lg-9 flex-col gap-xs-4 bg-navbar p-xs-4 shadow-xl">
-			<button type="button" className="bg-primary p-xs-6 text-text-inverse">
+		<div className="z-sticky flex h-full w-lg-9 flex-col gap-xs-4 bg-color-navbar p-xs-4 shadow-xl">
+			<button type="button" className={buttonClass + ' bg-color-primary'}>
 				New chat
 			</button>
 
@@ -45,7 +50,12 @@ export const NavBar = () => {
 					? 'Loading...'
 					: chats.length
 						? chats.map((chat: Chat) => (
-								<Link key={chat.id} to={`/chat/${chat.id}`} target="_self" className="m-xs-5 block">
+								<Link
+									key={chat.id}
+									to={`/chat/${chat.id}`}
+									target="_self"
+									className="block p-xs-5 hover:bg-color-hover-bg"
+								>
 									{chat.id} {chat.title}
 								</Link>
 							))
@@ -53,20 +63,34 @@ export const NavBar = () => {
 			</div>
 
 			<div className="flex justify-center gap-sm-0 p-xs-6">
-				<button type="button" className="flex-1 p-xs-3" style={getButtonStyle(isLight)} onClick={setLightTheme}>
+				<button
+					type="button"
+					className="flex-1 p-xs-3 hover:bg-color-hover-bg"
+					style={getButtonStyle(isLight)}
+					onClick={setLightTheme}
+				>
 					☀️ Light
 				</button>
-				<button type="button" className="flex-1 p-xs-3" style={getButtonStyle(isDark)} onClick={setDarkTheme}>
+				<button
+					type="button"
+					className="flex-1 p-xs-3 hover:bg-color-hover-bg"
+					style={getButtonStyle(isDark)}
+					onClick={setDarkTheme}
+				>
 					🌙 Dark
 				</button>
 			</div>
 
-			<div className="flex justify-center gap-md-0 p-xs-6">
-				<a href={storybookUrl}>DS Docs</a>
-				<Link to="/api">API Docs</Link>
+			<div className="flex justify-center gap-md-0">
+				<a href={storybookUrl} className="p-xs-6 hover:bg-color-hover-bg">
+					DS Docs
+				</a>
+				<Link to="/api" className="p-xs-6 hover:bg-color-hover-bg">
+					API Docs
+				</Link>
 			</div>
 
-			<button type="button" className="bg-secondary p-xs-6 text-text-inverse">
+			<button type="button" className={buttonClass + ' bg-color-secondary'}>
 				Account
 			</button>
 		</div>

@@ -5,32 +5,39 @@
 @tailwind variants;
 
 @layer utilities {
-	.font-size-xs {
-		font-size: var(--ds-font-size-xs);
-	}
-	.font-size-sm {
-		font-size: var(--ds-font-size-sm);
-	}
-	.font-size-md {
-		font-size: var(--ds-font-size-md);
-	}
-	.font-size-lg {
-		font-size: var(--ds-font-size-lg);
-	}
-	.font-size-xl {
-		font-size: var(--ds-font-size-xl);
+	.flex-center {
+		justify-content: center;
+		align-items: center;
 	}
 
-	.line-height-0 {
-		line-height: var(--ds-line-height-0);
+	.absolute-center {
+		--tw-translate-x: -50%;
+		--tw-translate-y: -50%;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(var(--tw-translate-x), var(--tw-translate-y));
 	}
-	.line-height-1 {
-		line-height: var(--ds-line-height-1);
+
+	.absolute-center-x {
+		--tw-translate-x: -50%;
+		position: absolute;
+		left: 50%;
+		transform: translate(var(--tw-translate-x), var(--tw-translate-y));
 	}
-	.line-height-sm {
-		line-height: var(--ds-line-height-sm);
+
+	.absolute-center-y {
+		--tw-translate-y: -50%;
+		position: absolute;
+		top: 50%;
+		transform: translate(var(--tw-translate-x), var(--tw-translate-y));
 	}
-	.line-height-md {
-		line-height: var(--ds-line-height-md);
+
+	.absolute-overlay {
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
 	}
 }

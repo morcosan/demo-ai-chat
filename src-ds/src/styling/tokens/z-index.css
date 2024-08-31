@@ -1,24 +1,22 @@
 :host,
 :root {
-	--ds-z-index-0: 0;
-	--ds-z-index-1: 1000;
-	--ds-z-index-2: 2000;
-	--ds-z-index-3: 3000;
-	--ds-z-index-4: 4000;
-	--ds-z-index-5: 5000;
-	--ds-z-index-6: 6000;
-	--ds-z-index-7: 7000;
-	--ds-z-index-8: 8000;
-	--ds-z-index-9: 9000;
+	--ds-z-index-z1: 1000;
+	--ds-z-index-z2: 2000;
+	--ds-z-index-z3: 3000;
+	--ds-z-index-z4: 4000;
+	--ds-z-index-z5: 5000;
+	--ds-z-index-z6: 6000;
+	--ds-z-index-z7: 7000;
+	--ds-z-index-z8: 8000;
+	--ds-z-index-z9: 9000;
 }
 
 :host,
 :root {
-	--ds-z-index-page: var(--ds-z-index-0);
-	--ds-z-index-sticky: var(--ds-z-index-1);
-	--ds-z-index-modal: var(--ds-z-index-2);
-	--ds-z-index-popup: var(--ds-z-index-3);
-	--ds-z-index-dropdown: var(--ds-z-index-4);
-	--ds-z-index-toast: var(--ds-z-index-5);
-	--ds-z-index-tooltip: var(--ds-z-index-9);
+	--ds-z-index-sticky: var(--ds-z-index-z1);
+	--ds-z-index-modal: var(--ds-z-index-z2);
+	--ds-z-index-popup: var(--ds-z-index-z3);
+	--ds-z-index-dropdown: var(--ds-z-index-z4);
+	--ds-z-index-toast: var(--ds-z-index-z5);
+	--ds-z-index-tooltip: var(--ds-z-index-z9);
 }

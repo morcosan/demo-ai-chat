@@ -1,0 +1,14 @@
+button,
+a,
+input,
+textarea,
+select,
+video,
+audio,
+[tabindex] {
+	outline-offset: 4px;
+}
+
+[data-a11y-theme='pointer'] * {
+	outline: none !important;
+}

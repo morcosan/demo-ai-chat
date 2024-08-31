@@ -31,23 +31,53 @@
 	--ds-color-orange-2: #fdba74;
 	--ds-color-orange-3: #ea580c;
 	--ds-color-orange-4: #9a3412;
+
+	--ds-color-black-glass-1: rgba(0, 0, 0, 0.08);
+	--ds-color-black-glass-2: rgba(0, 0, 0, 0.16);
+	--ds-color-black-glass-3: rgba(0, 0, 0, 0.32);
+	--ds-color-black-glass-4: rgba(0, 0, 0, 0.64);
+
+	--ds-color-white-glass-1: rgba(255, 255, 255, 0.08);
+	--ds-color-white-glass-2: rgba(255, 255, 255, 0.16);
+	--ds-color-white-glass-3: rgba(255, 255, 255, 0.32);
+	--ds-color-white-glass-4: rgba(255, 255, 255, 0.64);
 }
 
 :host,
 :root {
 	--ds-color-background: var(--ds-color-white);
 	--ds-color-navbar: var(--ds-color-white);
+
 	--ds-color-primary: var(--ds-color-purple-3);
 	--ds-color-secondary: var(--ds-color-blue-3);
+
 	--ds-color-text: var(--ds-color-grey-9);
 	--ds-color-text-inverse: var(--ds-color-white);
+
+	--ds-color-hover: var(--ds-color-black-glass-2);
+	--ds-color-hover-bg: var(--ds-color-black-glass-1);
+	--ds-color-hover-inverse: var(--ds-color-white-glass-1);
+
+	--ds-color-modal-overlay: var(--ds-color-black-glass-4);
+
+	--ds-color-border: var(--ds-color-grey-3);
+	--ds-color-border-active: var(--ds-color-grey-5);
 }
 
-[data-theme='dark'] {
+[data-color-theme='dark'] {
 	--ds-color-background: var(--ds-color-grey-9);
 	--ds-color-navbar: var(--ds-color-grey-9);
+
 	--ds-color-primary: var(--ds-color-purple-2);
 	--ds-color-secondary: var(--ds-color-blue-2);
+
 	--ds-color-text: var(--ds-color-white);
 	--ds-color-text-inverse: var(--ds-color-grey-9);
+
+	--ds-color-hover: var(--ds-color-white-glass-2);
+	--ds-color-hover-bg: var(--ds-color-white-glass-1);
+	--ds-color-hover-inverse: var(--ds-color-black-glass-1);
+
+	--ds-color-border: var(--ds-color-grey-7);
+	--ds-color-border-active: var(--ds-color-grey-5);
 }
