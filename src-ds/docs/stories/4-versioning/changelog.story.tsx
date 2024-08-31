@@ -27,12 +27,13 @@ export default {
 			<DocsPage title="Changelog">
 				{CHANGELOG.map((entry: LogEntry) => (
 					<>
-						<h2 className="font-size-lg mt-md-2 font-weight-lg">
+						<h2 className="mt-md-2 text-size-lg font-weight-md">
 							{entry.version}{' '}
-							<span className="font-size-xs ml-xs-4 font-weight-sm">- {entry.date || 'Latest'}</span>
+							<span className="ml-xs-4 text-size-xs font-weight-sm">- {entry.date || 'Latest'}</span>
 						</h2>
 						{entry.changes.docs?.length ? getListing('📚 Documentation:', entry.changes.docs) : ''}
 						{entry.changes.token?.length ? getListing('🎨 Design tokens:', entry.changes.token) : ''}
+						{entry.changes.core?.length ? getListing('🧱 Web core:', entry.changes.core) : ''}
 						{entry.changes.component?.length ? getListing('🧩 Components:', entry.changes.component) : ''}
 						{entry.changes.deprecate?.length ? getListing('💀 Deprecations:', entry.changes.deprecate) : ''}
 						{entry.changes.breaking?.length ? getListing('💥 Breaking changes:', entry.changes.breaking) : ''}

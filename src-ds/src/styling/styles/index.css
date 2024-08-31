@@ -9,6 +9,8 @@
 @import '../tokens/spacing.css';
 @import '../tokens/z-index.css';
 
+@import 'a11y.css';
+
 :root {
 	background-color: var(--ds-color-background);
 	color: var(--ds-color-text);
