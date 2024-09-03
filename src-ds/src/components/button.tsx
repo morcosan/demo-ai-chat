@@ -27,6 +27,7 @@ export const Button = (props: ButtonProps) => {
 	/**
 	 * State logic
 	 */
+	const linkType = useMemo(() => props.linkType || 'new-tab', [props.linkType])
 	const isDisabled = useMemo(() => props.disabled || props.loading, [props.disabled, props.loading])
 
 	/**
@@ -88,16 +89,16 @@ export const Button = (props: ButtonProps) => {
 	 * Link logic
 	 */
 	const linkTarget = useMemo((): HTMLAttributeAnchorTarget => {
-		if (props.linkType === 'new-tab') return '_blank'
-		if (props.linkType === 'same-tab') return '_top'
+		if (linkType === 'new-tab') return '_blank'
+		if (linkType === 'same-tab') return '_top'
 		return ''
-	}, [props.linkType])
+	}, [linkType])
 
 	/**
 	 * Event logic
 	 */
 	const onClick = (event: MouseEvent) => {
-		if (isDisabled || props.linkType === 'inactive') event.preventDefault()
+		if (isDisabled || linkType === 'inactive') event.preventDefault()
 		if (isDisabled) return
 
 		if (isPointer) {

@@ -50,14 +50,14 @@ const meta: Meta<typeof Button> = {
 			{
 				name: 'variant',
 				type: 'ButtonVariant',
-				default: `'solid-primary'`,
+				default: `undefined`,
 				details: `Property that determines color and highlight`,
 				required: true,
 			},
 			{
 				name: 'size',
 				type: 'ButtonSize',
-				default: `'md'`,
+				default: `undefined`,
 				details: `Property that determines total height`,
 				required: true,
 			},
