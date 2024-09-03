@@ -13,12 +13,13 @@ export interface ButtonProps extends ReactProps {
 	expanded?: boolean
 	loading?: boolean
 	disabled?: boolean
+	pressed?: boolean
 	noHover?: boolean
 	linkTo?: ReactTo
 	linkHref?: string
 	linkType?: LinkType
 
-	onClick(event: MouseEvent): void
+	onClick?(event: MouseEvent): void
 }
 
 export const Button = (props: ButtonProps) => {
@@ -29,24 +30,30 @@ export const Button = (props: ButtonProps) => {
 	 */
 	const linkType = useMemo(() => props.linkType || 'new-tab', [props.linkType])
 	const isDisabled = useMemo(() => props.disabled || props.loading, [props.disabled, props.loading])
+	const isSolid = useMemo(
+		() => (['solid-primary', 'solid-secondary'] as ButtonVariant[]).includes(props.variant),
+		[props.variant]
+	)
 
 	/**
 	 * CSS logic
 	 */
-	const baseButtonClass = [
-		'relative z-0 before:absolute-overlay before:z-[-1]',
-		'inline-flex items-center justify-center',
-	].join(' ')
+	const baseButtonClass = 'relative z-0 before:absolute-overlay before:z-[-1]'
 	const baseSpinnerClass = 'absolute-overlay flex-center pointer-events-none select-none'
 
 	const disabledClass = useMemo(() => (isDisabled ? 'opacity-30 cursor-default' : ''), [isDisabled])
 
-	const hoverClass = useMemo(
-		() => (isDisabled || props.noHover ? '' : 'before:hover:bg-color-hover before:focus:bg-color-hover'),
-		[isDisabled, props.noHover]
-	)
-
-	const widthClass = useMemo(() => (props.expanded ? 'w-full' : ''), [props.expanded])
+	const hoverClass = useMemo(() => {
+		if (isDisabled) return ''
+		if (props.pressed) {
+			return isSolid ? 'before:bg-color-hover' : 'before:bg-color-hover-bg'
+		} else {
+			if (props.noHover) return ''
+			return isSolid
+				? 'before:hover:bg-color-hover before:focus:bg-color-hover'
+				: 'before:hover:bg-color-hover-bg before:focus:bg-color-hover-bg'
+		}
+	}, [isDisabled, isSolid, props.pressed, props.noHover])
 
 	const variantClass = useMemo(() => {
 		if (props.variant === 'solid-primary') return 'bg-color-primary text-color-text-inverse'
@@ -57,12 +64,21 @@ export const Button = (props: ButtonProps) => {
 	}, [props.variant])
 
 	const sizeClass = useMemo(() => {
-		if (props.size === 'xs') return 'px-xs-4 h-button-xs text-size-xs'
-		if (props.size === 'sm') return 'px-xs-6 h-button-sm text-size-sm'
-		if (props.size === 'md') return 'px-xs-8 h-button-md text-size-md'
-		if (props.size === 'lg') return 'px-sm-0 h-button-lg text-size-lg'
+		if (props.size === 'xs') return 'h-button-xs text-size-xs'
+		if (props.size === 'sm') return 'h-button-sm text-size-sm'
+		if (props.size === 'md') return 'h-button-md text-size-md'
+		if (props.size === 'lg') return 'h-button-lg text-size-lg'
 		return ''
 	}, [props.size])
+
+	const paddingClass = useMemo(() => {
+		if (props.expanded) return 'w-full'
+		if (props.size === 'xs') return 'px-xs-4'
+		if (props.size === 'sm') return 'px-xs-6'
+		if (props.size === 'md') return 'px-xs-8'
+		if (props.size === 'lg') return 'px-sm-0'
+		return ''
+	}, [props.size, props.expanded])
 
 	const roundedClass = useMemo(() => {
 		if (props.square) return ''
@@ -74,16 +90,21 @@ export const Button = (props: ButtonProps) => {
 	}, [props.size, props.square])
 
 	const classes = [variantClass, sizeClass, roundedClass]
-	const classesButton = [baseButtonClass, ...classes, widthClass, hoverClass, disabledClass, props.className]
+	const classesButton = [baseButtonClass, ...classes, paddingClass, hoverClass, disabledClass, props.className]
 	const classesSpinner = [baseSpinnerClass, ...classes]
 
 	const buttonClass = useMemo(() => classesButton.filter(Boolean).join(' '), classesButton)
 	const spinnerClass = useMemo(() => classesSpinner.filter(Boolean).join(' '), classesSpinner)
 
-	const childrenClass = useMemo(
-		() => `pointer-events-none select-none ${props.loading ? 'opacity-0' : ''}`,
-		[props.loading]
-	)
+	const childrenClass = useMemo(() => {
+		return [
+			'flex items-center justify-center w-full',
+			'pointer-events-none select-none',
+			props.loading ? 'opacity-0' : '',
+		]
+			.filter(Boolean)
+			.join(' ')
+	}, [props.loading])
 
 	/**
 	 * Link logic
@@ -125,7 +146,7 @@ export const Button = (props: ButtonProps) => {
 				)}
 			</>
 		),
-		[props.children, props.loading, spinnerClass]
+		[props.children, props.loading, childrenClass, spinnerClass]
 	)
 
 	return props.linkTo ? (

@@ -12,6 +12,7 @@ export const story: StoryObj<typeof Button> = {
 		expanded: false,
 		loading: false,
 		disabled: false,
+		pressed: false,
 		noHover: false,
 		linkTo: '',
 		linkHref: '',
@@ -36,6 +37,7 @@ const meta: Meta<typeof Button> = {
 			expanded: 'boolean',
 			loading: 'boolean',
 			disabled: 'boolean',
+			pressed: 'boolean',
 			noHover: 'boolean',
 			linkTo: 'text',
 			linkHref: 'text',
@@ -62,7 +64,12 @@ const meta: Meta<typeof Button> = {
 				required: true,
 			},
 			{ name: 'square', type: 'boolean', default: `false`, details: `Flag for removing rounded corners` },
-			{ name: 'expanded', type: 'boolean', default: `false`, details: `Flag for making the button full width` },
+			{
+				name: 'expanded',
+				type: 'boolean',
+				default: `false`,
+				details: `Flag for making the button full width and removing padding`,
+			},
 			{
 				name: 'loading',
 				type: 'boolean',
@@ -76,10 +83,16 @@ const meta: Meta<typeof Button> = {
 				details: `Flag for enabling disabled state (non-interactive)`,
 			},
 			{
+				name: 'pressed',
+				type: 'boolean',
+				default: `false`,
+				details: `Flag for permanently showing hover / focus highlight`,
+			},
+			{
 				name: 'noHover',
 				type: 'boolean',
 				default: `false`,
-				details: `Flag for removing the hover and focus highlight`,
+				details: `Flag for removing the hover / focus highlight`,
 			},
 			{
 				name: 'linkTo',
