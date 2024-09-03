@@ -59,4 +59,10 @@ export const SPACING_TOKENS: DesignToken[] = [
 	{ name: 'spacing-xxl-7', value: 1360, unit: 'px' },
 	{ name: 'spacing-xxl-8', value: 1440, unit: 'px' },
 	{ name: 'spacing-xxl-9', value: 1520, unit: 'px' },
+
+	{ name: 'spacing-button-xs', value: 24, unit: 'px', ref: 'spacing-sm-0' },
+	{ name: 'spacing-button-sm', value: 32, unit: 'px', ref: 'spacing-sm-2' },
+	{ name: 'spacing-button-md', value: 40, unit: 'px', ref: 'spacing-sm-4' },
+	{ name: 'spacing-button-lg', value: 48, unit: 'px', ref: 'spacing-sm-6' },
+	{ name: 'spacing-field', value: 40, unit: 'px', ref: 'spacing-sm-4' },
 ]

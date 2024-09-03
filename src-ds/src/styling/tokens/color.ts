@@ -11,12 +11,12 @@ export const COLOR_TOKENS: DesignToken[] = [
 	{ name: 'color-grey-8', value: '#1f2937' },
 	{ name: 'color-grey-9', value: '#111827' },
 
-	{ name: 'color-purple-1', value: '#e9d5ff' },
+	{ name: 'color-purple-1', value: '#f3e8ff' },
 	{ name: 'color-purple-2', value: '#c084fc' },
 	{ name: 'color-purple-3', value: '#9333ea' },
 	{ name: 'color-purple-4', value: '#6b21a8' },
 
-	{ name: 'color-blue-1', value: '#bae6fd' },
+	{ name: 'color-blue-1', value: '#e0f2fe' },
 	{ name: 'color-blue-2', value: '#38bdf8' },
 	{ name: 'color-blue-3', value: '#0284c7' },
 	{ name: 'color-blue-4', value: '#075985' },
@@ -27,7 +27,7 @@ export const COLOR_TOKENS: DesignToken[] = [
 	{ name: 'color-green-4', value: '#166534' },
 
 	{ name: 'color-orange-1', value: '#ffedd5' },
-	{ name: 'color-orange-2', value: '#fdba74' },
+	{ name: 'color-orange-2', value: '#fb923c' },
 	{ name: 'color-orange-3', value: '#ea580c' },
 	{ name: 'color-orange-4', value: '#9a3412' },
 
@@ -51,6 +51,21 @@ export const COLOR_TOKENS: DesignToken[] = [
 		ref: { light: 'color-white', dark: 'color-grey-9' },
 	},
 	{
+		name: 'color-text-default',
+		value: { light: '#111827', dark: '#f4f4f5' },
+		ref: { light: 'color-grey-9', dark: 'color-grey-1' },
+	},
+	{
+		name: 'color-text-subtle',
+		value: { light: '#71717a', dark: '#a1a1aa' },
+		ref: { light: 'color-grey-5', dark: 'color-grey-4' },
+	},
+	{
+		name: 'color-text-inverse',
+		value: { light: '#fff', dark: '#111827' },
+		ref: { light: 'color-white', dark: 'color-grey-9' },
+	},
+	{
 		name: 'color-primary',
 		value: { light: '#9333ea', dark: '#c084fc' },
 		ref: { light: 'color-purple-3', dark: 'color-purple-2' },
@@ -61,14 +76,54 @@ export const COLOR_TOKENS: DesignToken[] = [
 		ref: { light: 'color-blue-3', dark: 'color-blue-2' },
 	},
 	{
-		name: 'color-text',
-		value: { light: '#111827', dark: '#fff' },
-		ref: { light: 'color-grey-9', dark: 'color-white' },
+		name: 'color-success',
+		value: { light: '#16a34a', dark: '#86efac' },
+		ref: { light: 'color-green-3', dark: 'color-green-2' },
 	},
 	{
-		name: 'color-text-inverse',
-		value: { light: '#fff', dark: '#111827' },
-		ref: { light: 'color-white', dark: 'color-grey-9' },
+		name: 'color-failure',
+		value: { light: '#ea580c', dark: '#fb923c' },
+		ref: { light: 'color-orange-3', dark: 'color-orange-2' },
+	},
+	{
+		name: 'color-primary-bg',
+		value: { light: '#f3e8ff', dark: '#581c87' },
+		ref: { light: 'color-purple-1', dark: 'color-purple-4' },
+	},
+	{
+		name: 'color-secondary-bg',
+		value: { light: '#e0f2fe', dark: '#075985' },
+		ref: { light: 'color-blue-1', dark: 'color-blue-4' },
+	},
+	{
+		name: 'color-success-bg',
+		value: { light: '#dcfce7', dark: '#166534' },
+		ref: { light: 'color-green-1', dark: 'color-green-4' },
+	},
+	{
+		name: 'color-failure-bg',
+		value: { light: '#ffedd5', dark: '#9a3412' },
+		ref: { light: 'color-orange-1', dark: 'color-orange-4' },
+	},
+	{
+		name: 'color-primary-text',
+		value: { light: '#581c87', dark: '#f3e8ff' },
+		ref: { light: 'color-purple-4', dark: 'color-purple-1' },
+	},
+	{
+		name: 'color-secondary-text',
+		value: { light: '#075985', dark: '#e0f2fe' },
+		ref: { light: 'color-blue-4', dark: 'color-blue-1' },
+	},
+	{
+		name: 'color-success-text',
+		value: { light: '#166534', dark: '#dcfce7' },
+		ref: { light: 'color-green-4', dark: 'color-green-1' },
+	},
+	{
+		name: 'color-failure-text',
+		value: { light: '#9a3412', dark: '#ffedd5' },
+		ref: { light: 'color-orange-4', dark: 'color-orange-1' },
 	},
 	{
 		name: 'color-hover',

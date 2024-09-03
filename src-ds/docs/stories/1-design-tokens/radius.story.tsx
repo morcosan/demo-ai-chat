@@ -35,11 +35,11 @@ export default {
 								<td>
 									<div className="flex items-center gap-xs-9">
 										<div
-											className="h-sm-4 w-sm-4 border border-b-0 border-r-0 border-color-grey-5"
+											className="h-sm-4 w-sm-4 border-2 border-b-0 border-r-0 border-color-text-subtle"
 											style={{ borderRadius: `var(--ds-${token.name})` }}
 										/>
 										<div
-											className="h-sm-4 w-sm-9 border border-b-0 border-r-0 border-color-grey-5"
+											className="h-sm-4 w-md-0 border-2 border-b-0 border-r-0 border-color-text-subtle"
 											style={{ borderRadius: `var(--ds-${token.name})` }}
 										/>
 									</div>

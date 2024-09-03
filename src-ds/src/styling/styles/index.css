@@ -13,7 +13,7 @@
 
 :root {
 	background-color: var(--ds-color-background);
-	color: var(--ds-color-text);
+	color: var(--ds-color-text-default);
 }
 
 a {
