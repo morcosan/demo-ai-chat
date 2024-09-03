@@ -78,7 +78,7 @@ export default {
 									<pre>{token.name}</pre>
 								</td>
 								<td>
-									<pre>{String(token.ref || '-')}</pre>
+									<pre>{String(token.ref)}</pre>
 								</td>
 								<td>
 									<code>{String(token.value)}</code>

@@ -17,12 +17,13 @@ export const CHANGELOG: LogEntry[] = [
 		date: null,
 		changes: {
 			docs: ['Created basic Storybook docs for design tokens, web core and versioning'],
-			token: ['Added basic tokens for color, elevation, radius, spacing and typography'],
+			token: ['Added basic tokens for ^color^, ^elevation^, ^radius^, ^spacing^ and ^typography^'],
 			core: [
 				'Added ^Keyboard^ enum for keyboard keys',
-				'Added color themes system with ^light^ and ^dark^ themes',
-				'Added accessibility theme system with ^default^ and ^pointer^ themes',
+				'Added ^ColorTheme^ system with ^light^ and ^dark^ themes',
+				'Added ^A11yTheme^ system with ^default^ and ^pointer^ themes',
 			],
+			component: ['Created ^Button^ component'],
 		},
 	},
 ]
