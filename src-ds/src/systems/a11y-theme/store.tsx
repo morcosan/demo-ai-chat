@@ -37,7 +37,6 @@ export const A11yThemeProvider = ({ children }: ReactProps) => {
 		window.addEventListener('keydown', onKeyDownWindow, true)
 
 		return () => {
-			console.log('destroy')
 			window.removeEventListener('mousedown', onMouseDownWindow)
 			window.removeEventListener('keydown', onKeyDownWindow)
 		}

@@ -26,7 +26,7 @@ export default {
 		return (
 			<DocsPage title="Changelog">
 				{CHANGELOG.map((entry: LogEntry) => (
-					<>
+					<div key={entry.version}>
 						<h2 className="mt-md-2 text-size-lg font-weight-md">
 							{entry.version}{' '}
 							<span className="ml-xs-4 text-size-xs font-weight-sm">- {entry.date || 'Latest'}</span>
@@ -37,7 +37,7 @@ export default {
 						{entry.changes.component?.length ? getListing('🧩 Components:', entry.changes.component) : ''}
 						{entry.changes.deprecate?.length ? getListing('💀 Deprecations:', entry.changes.deprecate) : ''}
 						{entry.changes.breaking?.length ? getListing('💥 Breaking changes:', entry.changes.breaking) : ''}
-					</>
+					</div>
 				))}
 			</DocsPage>
 		)

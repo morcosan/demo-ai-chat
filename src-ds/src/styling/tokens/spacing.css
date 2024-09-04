@@ -72,3 +72,12 @@
 	--ds-spacing-xxl-8: 1440px;
 	--ds-spacing-xxl-9: 1520px;
 }
+
+:host,
+:root {
+	--ds-spacing-button-xs: var(--ds-spacing-sm-0);
+	--ds-spacing-button-sm: var(--ds-spacing-sm-2);
+	--ds-spacing-button-md: var(--ds-spacing-sm-4);
+	--ds-spacing-button-lg: var(--ds-spacing-sm-6);
+	--ds-spacing-field: var(--ds-spacing-sm-4);
+}
