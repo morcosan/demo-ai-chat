@@ -96,7 +96,7 @@ export const UserSettings = () => {
 					</span>
 				</Button>
 
-				<Button linkTo={storybookUrl} variant="text-default" size="md" expanded>
+				<Button linkHref={storybookUrl} variant="text-default" size="md" expanded>
 					<span className={`${actionClass} justify-between`}>
 						<span className="flex items-center">
 							<StorybookIcon className={actionIconClass} />
@@ -106,7 +106,7 @@ export const UserSettings = () => {
 					</span>
 				</Button>
 
-				<Button linkTo="https://github.com/morcosan/demo-ai-chat" variant="text-default" size="md" expanded>
+				<Button linkHref="https://github.com/morcosan/demo-ai-chat" variant="text-default" size="md" expanded>
 					<span className={`${actionClass} justify-between`}>
 						<span className="flex items-center">
 							{Boolean(isLight) && <GitHubBlackIcon className={actionIconClass} />}
