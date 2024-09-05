@@ -62,7 +62,7 @@ code.docs {
 pre.docs {
 	& code {
 		display: block;
-		background: var(--ds-color-grey-1);
+		background: var(--ds-color-bg-preview);
 		padding: var(--ds-spacing-xs-2);
 		width: 100%;
 		white-space: unset;
@@ -72,7 +72,7 @@ pre.docs {
 .docs-grid-bg {
 	background-image: linear-gradient(#eee 1px, transparent 1px), linear-gradient(90deg, #eee 1px, transparent 1px);
 	background-size: 8px 8px;
-	background-color: var(--ds-color-background);
+	background-color: var(--ds-color-bg-default);
 }
 
 /**
@@ -81,12 +81,5 @@ pre.docs {
 [data-color-theme='dark'] {
 	.docs-grid-bg {
 		background-image: linear-gradient(#333 1px, transparent 1px), linear-gradient(90deg, #333 1px, transparent 1px);
-	}
-
-	pre.docs {
-		& code {
-			display: block;
-			background: var(--ds-color-grey-9);
-		}
 	}
 }

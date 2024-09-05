@@ -17,10 +17,10 @@ const useQuery = () => {
 
 export const ApiConsole = () => {
 	const location = useLocation()
-	const path = location.pathname
+	const path = location.pathname.replace(/^\/docs/, '')
 	const query = useQuery()
 	const [resp, setResp] = useState<ApiResponse | null>(null)
-	const codeClass = 'p-xs-3 bg-color-grey-6 text-color-white'
+	const codeClass = 'p-xs-3 bg-color-bg-preview'
 
 	useEffect(() => {
 		!resp && mockAPI.get(path, query).then((resp: ApiResponse) => setResp(resp))

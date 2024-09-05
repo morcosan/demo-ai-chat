@@ -41,15 +41,31 @@ export const COLOR_TOKENS: DesignToken[] = [
 	{ name: 'color-white-glass-4', value: 'rgba(255, 255, 255, 0.64)' },
 
 	{
-		name: 'color-background',
+		name: 'color-bg-default',
+		value: { light: '#fff', dark: '#27272a' },
+		ref: { light: 'color-white', dark: 'color-grey-8' },
+	},
+	{
+		name: 'color-bg-preview',
+		value: { light: 'rgba(0, 0, 0, 0.08)', dark: 'rgba(0, 0, 0, 0.32)' },
+		ref: { light: 'black-glass-1', dark: 'black-glass-3' },
+	},
+	{
+		name: 'color-bg-navbar',
 		value: { light: '#fff', dark: '#111827' },
 		ref: { light: 'color-white', dark: 'color-grey-9' },
 	},
 	{
-		name: 'color-navbar',
-		value: { light: '#fff', dark: '#111827' },
-		ref: { light: 'color-white', dark: 'color-grey-9' },
+		name: 'color-bg-scrollbar',
+		value: { light: 'rgba(0, 0, 0, 0.16)', dark: 'rgba(255, 255, 255, 0.16)' },
+		ref: { light: 'color-black-glass-2', dark: 'color-white-glass-2' },
 	},
+	{
+		name: 'color-bg-scrollbar-hover',
+		value: { light: 'rgba(0, 0, 0, 0.32)', dark: 'rgba(255, 255, 255, 0.32)' },
+		ref: { light: 'color-black-glass-3', dark: 'color-white-glass-3' },
+	},
+
 	{
 		name: 'color-text-default',
 		value: { light: '#111827', dark: '#f4f4f5' },
@@ -65,6 +81,7 @@ export const COLOR_TOKENS: DesignToken[] = [
 		value: { light: '#fff', dark: '#111827' },
 		ref: { light: 'color-white', dark: 'color-grey-9' },
 	},
+
 	{
 		name: 'color-primary',
 		value: { light: '#9333ea', dark: '#c084fc' },
@@ -85,6 +102,7 @@ export const COLOR_TOKENS: DesignToken[] = [
 		value: { light: '#ea580c', dark: '#fb923c' },
 		ref: { light: 'color-orange-3', dark: 'color-orange-2' },
 	},
+
 	{
 		name: 'color-primary-bg',
 		value: { light: '#f3e8ff', dark: '#581c87' },
@@ -105,6 +123,7 @@ export const COLOR_TOKENS: DesignToken[] = [
 		value: { light: '#ffedd5', dark: '#9a3412' },
 		ref: { light: 'color-orange-1', dark: 'color-orange-4' },
 	},
+
 	{
 		name: 'color-primary-text',
 		value: { light: '#581c87', dark: '#f3e8ff' },
@@ -125,6 +144,7 @@ export const COLOR_TOKENS: DesignToken[] = [
 		value: { light: '#9a3412', dark: '#ffedd5' },
 		ref: { light: 'color-orange-4', dark: 'color-orange-1' },
 	},
+
 	{
 		name: 'color-hover',
 		value: { light: 'rgba(0, 0, 0, 0.16)', dark: 'rgba(255, 255, 255, 0.16)' },
@@ -140,15 +160,22 @@ export const COLOR_TOKENS: DesignToken[] = [
 		value: { light: 'rgba(255, 255, 255, 0.08)', dark: 'rgba(0, 0, 0, 0.08)' },
 		ref: { light: 'color-white-glass-1', dark: 'color-black-glass-1' },
 	},
+
 	{
 		name: 'color-modal-overlay',
 		value: { light: 'rgba(0, 0, 0, 0.64)', dark: 'rgba(0, 0, 0, 0.64)' },
 		ref: { light: 'color-black-glass-4', dark: 'color-black-glass-4' },
 	},
+
 	{
 		name: 'color-border',
 		value: { light: '#d4d4d8', dark: '#3f3f46' },
 		ref: { light: 'color-grey-3', dark: 'color-grey-7' },
+	},
+	{
+		name: 'color-border-soft',
+		value: { light: '#f4f4f5', dark: '#18181b' },
+		ref: { light: 'color-grey-1', dark: 'color-grey-9' },
 	},
 	{
 		name: 'color-border-active',

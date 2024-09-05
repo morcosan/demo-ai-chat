@@ -18,6 +18,7 @@ export interface ButtonProps extends ReactProps {
 	linkTo?: ReactTo
 	linkHref?: string
 	linkType?: LinkType
+	tooltip?: string
 
 	onClick?(event: MouseEvent): void
 }
@@ -38,7 +39,7 @@ export const Button = (props: ButtonProps) => {
 	/**
 	 * CSS logic
 	 */
-	const baseButtonClass = 'relative z-0 before:absolute-overlay before:z-[-1]'
+	const baseButtonClass = 'relative z-0 before:absolute-overlay before:z-[-1] font-weight-md'
 	const baseSpinnerClass = 'absolute-overlay flex-center pointer-events-none select-none'
 
 	const disabledClass = useMemo(() => (isDisabled ? 'opacity-30 cursor-default' : ''), [isDisabled])
@@ -64,10 +65,10 @@ export const Button = (props: ButtonProps) => {
 	}, [props.variant])
 
 	const sizeClass = useMemo(() => {
-		if (props.size === 'xs') return 'h-button-xs text-size-xs'
-		if (props.size === 'sm') return 'h-button-sm text-size-sm'
-		if (props.size === 'md') return 'h-button-md text-size-md'
-		if (props.size === 'lg') return 'h-button-lg text-size-lg'
+		if (props.size === 'xs') return 'min-h-button-xs h-button-xs text-size-xs'
+		if (props.size === 'sm') return 'min-h-button-sm h-button-sm text-size-sm'
+		if (props.size === 'md') return 'min-h-button-md h-button-md text-size-md'
+		if (props.size === 'lg') return 'min-h-button-lg h-button-lg text-size-lg'
 		return ''
 	}, [props.size])
 
@@ -111,9 +112,9 @@ export const Button = (props: ButtonProps) => {
 	 */
 	const linkTarget = useMemo((): HTMLAttributeAnchorTarget => {
 		if (linkType === 'new-tab') return '_blank'
-		if (linkType === 'same-tab') return '_top'
+		if (linkType === 'same-tab') return props.linkTo ? '_self' : '_top' // React router only works with "_self"
 		return ''
-	}, [linkType])
+	}, [linkType, props.linkTo])
 
 	/**
 	 * Event logic
@@ -154,6 +155,7 @@ export const Button = (props: ButtonProps) => {
 			to={props.linkTo}
 			target={linkTarget}
 			tabIndex={tabIndex}
+			title={props.tooltip}
 			className={buttonClass}
 			style={props.style}
 			onClick={onClick}
@@ -166,6 +168,7 @@ export const Button = (props: ButtonProps) => {
 			target={linkTarget}
 			rel="noopener noreferrer"
 			tabIndex={tabIndex}
+			title={props.tooltip}
 			className={buttonClass}
 			style={props.style}
 			onClick={onClick}
@@ -173,7 +176,14 @@ export const Button = (props: ButtonProps) => {
 			{slot}
 		</a>
 	) : (
-		<button type="button" disabled={isDisabled} className={buttonClass} style={props.style} onClick={onClick}>
+		<button
+			type="button"
+			title={props.tooltip}
+			disabled={isDisabled}
+			className={buttonClass}
+			style={props.style}
+			onClick={onClick}
+		>
 			{slot}
 		</button>
 	)

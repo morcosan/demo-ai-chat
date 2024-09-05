@@ -25,3 +25,8 @@ declare type ReactTo = string | Partial<ReactPath>
 
 declare type JsxProps<C> = C extends JsxFn<infer P> ? P : unknown
 declare type JsxFn<P> = (props: P) => unknown
+
+declare interface Pagination {
+	page: number
+	count: number
+}
