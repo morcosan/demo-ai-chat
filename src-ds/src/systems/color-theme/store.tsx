@@ -22,6 +22,8 @@ interface Props extends ReactProps {
 export const ColorThemeProvider = ({ children, cookieKey }: Props) => {
 	const [theme, setTheme] = useState('light' as ColorTheme)
 
+	const MEDIA_QUERY_DARK = '(prefers-color-scheme: dark)'
+
 	const isDark = useMemo(() => theme === 'dark', [theme])
 	const isLight = useMemo(() => theme === 'light', [theme])
 
@@ -40,7 +42,12 @@ export const ColorThemeProvider = ({ children, cookieKey }: Props) => {
 	useEffect(() => {
 		const THEMES: ColorTheme[] = ['light', 'dark']
 		const theme = getCookie()
-		changeTheme(theme && THEMES.includes(theme) ? theme : 'light')
+
+		if (theme && THEMES.includes(theme)) {
+			changeTheme(theme)
+		} else {
+			changeTheme(window.matchMedia(MEDIA_QUERY_DARK).matches ? 'dark' : 'light')
+		}
 	}, [])
 
 	return <Context.Provider value={store}>{children}</Context.Provider>
