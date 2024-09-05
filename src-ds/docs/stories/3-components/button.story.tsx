@@ -17,6 +17,7 @@ export const story: StoryObj<typeof Button> = {
 		linkTo: '',
 		linkHref: '',
 		linkType: 'new-tab',
+		tooltip: 'Tooltip',
 		children: 'Click me',
 		className: '',
 		style: {},
@@ -42,6 +43,7 @@ const meta: Meta<typeof Button> = {
 			linkTo: 'text',
 			linkHref: 'text',
 			linkType: ['new-tab', 'same-tab', 'inactive'],
+			tooltip: 'text',
 		},
 		['children'],
 		['onClick']
@@ -111,6 +113,12 @@ const meta: Meta<typeof Button> = {
 				type: 'LinkType',
 				default: `'new-tab'`,
 				details: `Link behavior when ^linkTo^ or ^linkHref^ is set`,
+			},
+			{
+				name: 'tooltip',
+				type: 'string',
+				default: `undefined`,
+				details: `Text to be displayed as tooltip on hover / focus`,
 			},
 		]
 		const SLOTS: DocsSlotDef[] = [

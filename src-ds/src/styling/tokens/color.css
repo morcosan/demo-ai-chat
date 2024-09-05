@@ -45,8 +45,11 @@
 
 :host,
 :root {
-	--ds-color-background: var(--ds-color-white);
-	--ds-color-navbar: var(--ds-color-white);
+	--ds-color-bg-default: var(--ds-color-white);
+	--ds-color-bg-preview: var(--ds-color-black-glass-1);
+	--ds-color-bg-navbar: var(--ds-color-white);
+	--ds-color-bg-scrollbar: var(--ds-color-black-glass-2);
+	--ds-color-bg-scrollbar-hover: var(--ds-color-black-glass-3);
 
 	--ds-color-text-default: var(--ds-color-grey-9);
 	--ds-color-text-subtle: var(--ds-color-grey-5);
@@ -74,12 +77,16 @@
 	--ds-color-modal-overlay: var(--ds-color-black-glass-4);
 
 	--ds-color-border: var(--ds-color-grey-3);
+	--ds-color-border-soft: var(--ds-color-grey-2);
 	--ds-color-border-active: var(--ds-color-grey-5);
 }
 
 [data-color-theme='dark'] {
-	--ds-color-background: var(--ds-color-grey-8);
-	--ds-color-navbar: var(--ds-color-grey-8);
+	--ds-color-bg-default: var(--ds-color-grey-8);
+	--ds-color-bg-preview: var(--ds-color-black-glass-3);
+	--ds-color-bg-navbar: var(--ds-color-grey-8);
+	--ds-color-bg-scrollbar: var(--ds-color-white-glass-2);
+	--ds-color-bg-scrollbar-hover: var(--ds-color-white-glass-3);
 
 	--ds-color-text-default: var(--ds-color-grey-1);
 	--ds-color-text-subtle: var(--ds-color-grey-4);
@@ -105,5 +112,6 @@
 	--ds-color-hover-inverse: var(--ds-color-black-glass-1);
 
 	--ds-color-border: var(--ds-color-grey-7);
+	--ds-color-border-soft: var(--ds-color-grey-9);
 	--ds-color-border-active: var(--ds-color-grey-5);
 }

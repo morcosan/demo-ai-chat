@@ -3,6 +3,7 @@ import './.env' // Must be first
 
 import react from '@vitejs/plugin-react'
 import { defineConfig } from 'vite'
+import svgr from 'vite-plugin-svgr'
 import { showBlueLogs } from './.tooling/console'
 import { createBuildNumber, getDsVersion } from './.tooling/versioning'
 
@@ -29,7 +30,7 @@ if (IS_VALID_BUILD) {
 
 // https://vitejs.dev/config/
 export default defineConfig({
-	plugins: [react()],
+	plugins: [react(), svgr({ include: '**/*.svg' })],
 
 	resolve: {
 		alias: {

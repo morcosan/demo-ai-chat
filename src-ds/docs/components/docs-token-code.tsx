@@ -20,7 +20,7 @@ export const DocsTokenCode = ({ icon, value, size }: Props) => {
 		'hover:z-popup focus:z-popup',
 		'hover:shadow-md focus:shadow-md',
 		'border',
-		'hover:bg-color-background focus:bg-color-background',
+		'hover:bg-color-bg-default focus:bg-color-bg-default',
 		'hover:scale-[1.1] focus:scale-[1.1]',
 	].join(' ')
 
@@ -36,13 +36,13 @@ export const DocsTokenCode = ({ icon, value, size }: Props) => {
 	return (
 		<div className={`relative h-sm-4 ${size || 'w-md-8'}`}>
 			<button type="button" className={buttonClass} onClick={onClick}>
-				<code className="pointer-events-none flex !w-full items-center gap-xs-2 !bg-color-background">
+				<code className="!bg-color-bg-default pointer-events-none flex !w-full items-center gap-xs-2">
 					<img src={icon} className="ml-px mt-px h-xs-6 max-w-unset" alt="" />
 					<span className="truncate">{value}</span>
 				</code>
 
 				{Boolean(copied) && (
-					<div className="flex-center absolute-overlay bg-color-success-bg text-color-success-text text-size-sm">
+					<div className="flex-center absolute-overlay bg-color-success-bg text-size-sm text-color-success-text">
 						Copied
 					</div>
 				)}

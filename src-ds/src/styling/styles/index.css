@@ -9,13 +9,18 @@
 @import '../tokens/spacing.css';
 @import '../tokens/z-index.css';
 
-@import 'a11y.css';
+@import '_a11y.css';
+@import '_scrollbar.css';
 
 :root {
-	background-color: var(--ds-color-background);
+	background-color: var(--ds-color-bg-default);
 	color: var(--ds-color-text-default);
 }
 
 a {
 	color: var(--ds-color-primary);
+}
+
+hr {
+	border-color: var(--ds-color-border);
 }

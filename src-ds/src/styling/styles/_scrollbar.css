@@ -1,0 +1,23 @@
+/* Chromium */
+::-webkit-scrollbar {
+	width: 10px;
+}
+::-webkit-scrollbar-track {
+	background: transparent;
+}
+::-webkit-scrollbar-thumb {
+	border-radius: var(--ds-radius-sm);
+	background: var(--ds-color-bg-scrollbar);
+}
+::-webkit-scrollbar-thumb:hover {
+	background: var(--ds-color-bg-scrollbar-hover);
+}
+::-webkit-scrollbar-corner {
+	background: transparent;
+}
+
+/* Firefox */
+/**
+ * Not needed
+ * Firefox automatically adjusts scrollbar based on element's background color
+ */

@@ -12,7 +12,7 @@ const _chats: Chat[] = []
 
 export const chatsService = {
 	init() {
-		randomArray(3, 50).forEach(() => {
+		randomArray(3, 100).forEach(() => {
 			_chats.push({
 				id: randomId(),
 				title: randomText(),
@@ -33,7 +33,7 @@ export const chatsService = {
 			status: STATUS_SUCCESS,
 			data: {
 				count: _chats.length,
-				items: _chats.slice(page - 1, count * page),
+				items: _chats.slice(count * (page - 1), count * page),
 			},
 		}
 	},

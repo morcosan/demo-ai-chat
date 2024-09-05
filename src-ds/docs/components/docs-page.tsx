@@ -44,7 +44,7 @@ export const DocsPage = ({ title, type, slots, children }: Props) => {
 			<h1 className="mb-sm-6 text-size-xxl">{title}</h1>
 
 			{/* Color theme selector */}
-			<div className="absolute right-[18px] top-0 z-sticky flex whitespace-nowrap bg-color-background text-size-sm shadow-sm">
+			<div className="bg-color-bg-default absolute right-[18px] top-0 z-sticky flex whitespace-nowrap text-size-sm shadow-sm">
 				<Button variant={getVariant(isLight)} size="sm" square onClick={() => changeTheme('light')}>
 					☀️ Light
 				</Button>
