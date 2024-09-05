@@ -1,6 +1,6 @@
-import { API } from '@app/api'
-import { Chat, ChatListing } from '@app/api/types.ts'
 import { createContext, useEffect, useMemo, useState } from 'react'
+import { API } from '../api'
+import { Chat, ChatListing } from '../api/types'
 
 export interface Store {
 	allChats: Chat[]

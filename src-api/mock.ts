@@ -5,7 +5,7 @@ import { applyNetwork, RESP_NOT_FOUND } from './utilities/network'
 chatsService.init()
 
 export const mockAPI = {
-	async get(path: string, query: UrlQuery): Promise<ApiResponse> {
+	async get<T>(path: string, query: UrlQuery): Promise<ApiResponse<T>> {
 		let resp = RESP_NOT_FOUND
 
 		if (path === '/api/chats') resp = await chatsService.getChats(query)
