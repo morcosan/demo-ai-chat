@@ -1,5 +1,4 @@
-import { ApiResponse, Chat, ChatsResponse, ChatsUrlQuery, MessagesUrlQuery } from '../types'
-import { STATUS_SUCCESS } from '../types/constants'
+import { ApiResponse, Chat, ChatsResponse, ChatsUrlQuery, MessagesUrlQuery, STATUS_SUCCESS } from '../types'
 import { RESP_NOT_FOUND } from '../utilities/network'
 import { extractInt, isGreaterThanZero } from '../utilities/parsers'
 import { randomArray, randomId, randomRecentDate, randomText } from '../utilities/random'
@@ -21,7 +20,7 @@ export const chatsService = {
 		})
 	},
 
-	async getChats(query: ChatsUrlQuery): Promise<ApiResponse<ChatsResponse | null>> {
+	async getChats(query: ChatsUrlQuery): Promise<ApiResponse<ChatsResponse>> {
 		const page = extractInt(query.page, DEFAULT_PAGE, isGreaterThanZero)
 		const count = extractInt(query.count, DEFAULT_COUNT, isGreaterThanZero)
 
@@ -38,7 +37,7 @@ export const chatsService = {
 		}
 	},
 
-	async getMessages(query: MessagesUrlQuery): Promise<ApiResponse<[] | null>> {
+	async getMessages(query: MessagesUrlQuery): Promise<ApiResponse<[]>> {
 		console.log(query)
 		return {
 			status: STATUS_SUCCESS,

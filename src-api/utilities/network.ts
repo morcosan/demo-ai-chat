@@ -1,5 +1,4 @@
-import { ApiResponse } from '../types'
-import { STATUS_NOT_FOUND, STATUS_SERVER_ERROR } from '../types/constants'
+import { ApiResponse, STATUS_NOT_FOUND, STATUS_SERVER_ERROR } from '../types'
 import { randomInt, randomTrue } from './random'
 
 export const RESP_NOT_FOUND: ApiResponse = { status: STATUS_NOT_FOUND, data: null }
