@@ -1,3 +1,5 @@
+export * from './constants'
+
 export interface Chat {
 	id: number
 	title: string
@@ -9,15 +11,15 @@ export interface Chat {
  */
 export interface ApiResponse<T = any> {
 	status: number
-	data: T
+	data: T | null
 	error?: string
 }
-export type UrlQuery = Record<string, string | number>
+export type UrlQuery = Record<string, string | number | undefined>
 
 /**
  * Payload
  */
-export interface ChatsUrlQuery {
+export interface ChatsUrlQuery extends UrlQuery {
 	count?: string | number
 	page?: string | number
 }

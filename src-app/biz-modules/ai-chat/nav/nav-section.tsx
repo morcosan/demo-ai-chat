@@ -1,9 +1,9 @@
-import { Chat } from '@app/api/types.ts'
 import { useAiChatStore } from '@app/biz-modules/ai-chat/state'
 import { Button } from '@ds/release'
 import LogoIcon from '@ds/release/assets/logo.svg'
 import { debounce } from 'lodash'
 import { UIEvent } from 'react'
+import { Chat } from '../api/types'
 
 export const AiChatNavSection = () => {
 	const { allChats, allChatsLoading, moreChatsLoading, chatPagination, activeChat, loadMoreChats } =
