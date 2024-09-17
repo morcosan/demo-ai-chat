@@ -3,7 +3,7 @@ import { DocsPage } from '@ds/docs/components/docs-page.tsx'
 import { DocsTokenCoding } from '@ds/docs/components/docs-token-coding.tsx'
 import { DocsTokenThemeGrid } from '@ds/docs/components/docs-token-theme-grid.tsx'
 import '@ds/docs/setup'
-import { SHADOW_TOKENS, Z_INDEX_TOKENS } from '@ds/release'
+import { getTokenValue_Z_INDEX, TOKENS__SHADOW, TOKENS__Z_INDEX } from '@ds/release'
 import type { StoryObj } from '@storybook/react'
 
 export const story: StoryObj = {}
@@ -14,8 +14,10 @@ export default {
 	title: 'Design tokens / Elevation',
 
 	component: () => {
-		const primitiveTokens = Z_INDEX_TOKENS.filter((token: DesignToken) => !token.ref)
-		const semanticTokens = Z_INDEX_TOKENS.filter((token: DesignToken) => token.ref)
+		type ZIndexKey = keyof typeof TOKENS__Z_INDEX
+
+		const primitiveTokens = Object.entries<DesignToken<number>>(TOKENS__Z_INDEX).filter(([, token]) => !token.$ref)
+		const semanticTokens = Object.entries<DesignToken<number>>(TOKENS__Z_INDEX).filter(([, token]) => token.$ref)
 
 		return (
 			<DocsPage title="Elevation tokens">
@@ -23,38 +25,38 @@ export default {
 				<table className="docs">
 					<thead>
 						<tr>
-							<th>Name</th>
+							<th>Token</th>
 							<th>Value</th>
 							<th className="w-full">Preview</th>
 							<th>Coding</th>
 						</tr>
 					</thead>
 					<tbody>
-						{SHADOW_TOKENS.map((token: DesignToken) => (
-							<tr key={token.name}>
+						{Object.entries(TOKENS__SHADOW).map(([name, token]) => (
+							<tr key={name}>
 								<td>
-									<pre>{token.name}</pre>
+									<pre>{name}</pre>
 								</td>
 								<td>
 									<DocsTokenThemeGrid
-										lightSlot={<code>{(token.value as TokenValue).light}</code>}
-										darkSlot={<code>{(token.value as TokenValue).dark}</code>}
+										lightSlot={<code>{token.$value.light}</code>}
+										darkSlot={<code>{token.$value.dark}</code>}
 									/>
 								</td>
 								<td>
 									<div className="flex items-center gap-xs-7">
-										<div
-											className="h-sm-8 w-sm-8"
-											style={{ boxShadow: String((token.value as TokenValue).light) }}
-										/>
-										<div
-											className="h-sm-8 w-sm-8"
-											style={{ boxShadow: String((token.value as TokenValue).dark) }}
-										/>
+										<div className="h-sm-8 w-sm-8" style={{ boxShadow: String(token.$value.light) }} />
+										<div className="h-sm-8 w-sm-8" style={{ boxShadow: String(token.$value.dark) }} />
 									</div>
 								</td>
 								<td>
-									<DocsTokenCoding token={token} twVars={[token.name]} cssSize="w-lg-2" />
+									<DocsTokenCoding
+										tsVar={`$shadow['${name}']`}
+										tsSize="w-lg-1"
+										twVars={[`shadow-${name}`]}
+										cssVar={token.$css}
+										cssSize="w-lg-2"
+									/>
 								</td>
 							</tr>
 						))}
@@ -65,28 +67,30 @@ export default {
 				<table className="docs">
 					<thead>
 						<tr>
-							<th>Name</th>
+							<th>Token</th>
 							<th>Reference</th>
 							<th className="w-full">Value</th>
 							<th>Coding</th>
 						</tr>
 					</thead>
 					<tbody>
-						{semanticTokens.map((token: DesignToken) => (
-							<tr key={token.name}>
+						{semanticTokens.map(([name, token]) => (
+							<tr key={name}>
 								<td>
-									<pre>{token.name}</pre>
+									<pre>{name}</pre>
 								</td>
 								<td>
-									<pre>{String(token.ref)}</pre>
+									<pre>{token.$ref as string}</pre>
 								</td>
 								<td>
-									<code>{String(token.value)}</code>
+									<code>{getTokenValue_Z_INDEX(token.$ref as ZIndexKey)}</code>
 								</td>
 								<td>
 									<DocsTokenCoding
-										token={token}
-										twVars={[`z-${token.name.replace('z-index-', '')}`]}
+										tsVar={`$zIndex['${name}']`}
+										tsSize="w-lg-1"
+										twVars={[`z-${name}`]}
+										cssVar={token.$css}
 										cssSize="w-lg-2"
 									/>
 								</td>
@@ -99,25 +103,27 @@ export default {
 				<table className="docs">
 					<thead>
 						<tr>
-							<th>Name</th>
+							<th>Token</th>
 							<th className="w-full">Value</th>
 							<th>Coding</th>
 						</tr>
 					</thead>
 					<tbody>
-						{primitiveTokens.map((token: DesignToken) => (
-							<tr key={token.name}>
+						{primitiveTokens.map(([name, token]) => (
+							<tr key={name}>
 								<td>
-									<pre>{token.name}</pre>
+									<pre>{name}</pre>
 								</td>
 								<td>
-									<code>{String(token.value)}</code>
+									<code>{token.$value}</code>
 								</td>
 								<td>
 									<DocsTokenCoding
-										token={token}
-										twVars={[`z-${token.name.replace('z-index-', '')}`]}
+										tsVar={`$zIndex['${name}']`}
+										tsSize="w-lg-1"
+										twVars={[`z-${name.replace('z-index-', '')}`]}
 										twSize="w-md-5"
+										cssVar={token.$css}
 										cssSize="w-lg-3"
 									/>
 								</td>

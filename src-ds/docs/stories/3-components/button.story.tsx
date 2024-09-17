@@ -1,6 +1,7 @@
 import { DocsPage } from '@ds/docs/components/docs-page.tsx'
 import { createArgTypes } from '@ds/docs/setup.ts'
 import { Button, ButtonProps } from '@ds/release'
+import LogoutSvg from '@ds/release/assets/icons/logout.svg'
 import { action } from '@storybook/addon-actions'
 import type { Meta, StoryObj } from '@storybook/react'
 
@@ -8,15 +9,11 @@ export const story: StoryObj<typeof Button> = {
 	args: {
 		variant: 'solid-primary',
 		size: 'md',
-		square: false,
-		expanded: false,
 		loading: false,
 		disabled: false,
 		pressed: false,
-		noHover: false,
-		linkTo: '',
 		linkHref: '',
-		linkType: 'new-tab',
+		linkType: 'internal',
 		tooltip: 'Tooltip',
 		children: 'Click me',
 		className: '',
@@ -32,17 +29,21 @@ const meta: Meta<typeof Button> = {
 
 	argTypes: createArgTypes<typeof Button>(
 		{
-			variant: ['solid-primary', 'solid-secondary', 'text-default', 'text-inverse'],
+			variant: [
+				'solid-primary',
+				'solid-secondary',
+				'solid-danger',
+				'text-default',
+				'text-danger',
+				'item-text-default',
+				'item-text-danger',
+			],
 			size: ['xs', 'sm', 'md', 'lg'],
-			square: 'boolean',
-			expanded: 'boolean',
 			loading: 'boolean',
 			disabled: 'boolean',
 			pressed: 'boolean',
-			noHover: 'boolean',
-			linkTo: 'text',
 			linkHref: 'text',
-			linkType: ['new-tab', 'same-tab', 'inactive'],
+			linkType: ['internal', 'external', 'inactive'],
 			tooltip: 'text',
 		},
 		['children'],
@@ -54,23 +55,14 @@ const meta: Meta<typeof Button> = {
 			{
 				name: 'variant',
 				type: 'ButtonVariant',
-				default: `undefined`,
+				default: `'solid-primary'`,
 				details: `Property that determines color and highlight`,
-				required: true,
 			},
 			{
 				name: 'size',
 				type: 'ButtonSize',
-				default: `undefined`,
+				default: `'md'`,
 				details: `Property that determines total height`,
-				required: true,
-			},
-			{ name: 'square', type: 'boolean', default: `false`, details: `Flag for removing rounded corners` },
-			{
-				name: 'expanded',
-				type: 'boolean',
-				default: `false`,
-				details: `Flag for making the button full width and removing padding`,
 			},
 			{
 				name: 'loading',
@@ -91,18 +83,6 @@ const meta: Meta<typeof Button> = {
 				details: `Flag for permanently showing hover / focus highlight`,
 			},
 			{
-				name: 'noHover',
-				type: 'boolean',
-				default: `false`,
-				details: `Flag for removing the hover / focus highlight`,
-			},
-			{
-				name: 'linkTo',
-				type: 'ReactTo',
-				default: `undefined`,
-				details: `URL path for transforming the button into React link`,
-			},
-			{
 				name: 'linkHref',
 				type: 'string',
 				default: `undefined`,
@@ -111,8 +91,13 @@ const meta: Meta<typeof Button> = {
 			{
 				name: 'linkType',
 				type: 'LinkType',
-				default: `'new-tab'`,
-				details: `Link behavior when ^linkTo^ or ^linkHref^ is set`,
+				default: `'internal'`,
+				details: `
+					Link behavior when ^linkHref^ is set
+					^internal^ creates a router Link component
+					^external^ creates an ^<a>^ link that opens in new tab
+					^inactive^ creates an ^<a>^ link without any behavior
+				`,
 			},
 			{
 				name: 'tooltip',
@@ -136,14 +121,29 @@ const meta: Meta<typeof Button> = {
 			},
 		]
 		const TYPES = `
-			type ButtonVariant = 'solid-primary' | 'solid-secondary' | 'text-default' | 'text-inverse'
+			type ButtonVariant =
+				| 'solid-primary'
+				| 'solid-secondary'
+				| 'solid-danger'
+				| 'text-default'
+				| 'text-danger'
+				| 'item-text-default'
+				| 'item-text-danger'
 			type ButtonSize = 'xs' | 'sm' | 'md' | 'lg'
-			type LinkType = 'new-tab' | 'same-tab' | 'inactive'
+			type LinkType = 'internal' | 'external' | 'inactive'
 		`
 
 		return (
 			<DocsPage title="Button" type="component" slots={{ PROPS, SLOTS, EVENTS, TYPES }}>
 				<Button {...props} />
+
+				<br />
+				<br />
+				<br />
+
+				<Button {...props}>
+					<LogoutSvg className="mr-xs-4 h-xs-7 w-xs-7" /> With icon
+				</Button>
 			</DocsPage>
 		)
 	},

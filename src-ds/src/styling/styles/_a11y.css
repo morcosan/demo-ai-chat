@@ -6,9 +6,9 @@ select,
 video,
 audio,
 [tabindex] {
-	outline-offset: 4px;
+	outline-offset: var(--ds-spacing-outline);
 }
 
-[data-a11y-theme='pointer'] * {
+[data-a11y-mode='pointer'] * {
 	outline: none !important;
 }

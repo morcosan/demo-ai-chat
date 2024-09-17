@@ -2,7 +2,7 @@ import { DocsHeader } from '@ds/docs/components/docs-header.tsx'
 import { DocsPage } from '@ds/docs/components/docs-page.tsx'
 import { DocsTokenCoding } from '@ds/docs/components/docs-token-coding.tsx'
 import '@ds/docs/setup'
-import { FONT_SIZE_TOKENS, FONT_WEIGHT_TOKENS, LINE_HEIGHT_TOKENS } from '@ds/release'
+import { TOKENS__FONT_SIZE, TOKENS__FONT_WEIGHT, TOKENS__LINE_HEIGHT } from '@ds/release'
 import type { StoryObj } from '@storybook/react'
 
 export const story: StoryObj = {}
@@ -19,29 +19,31 @@ export default {
 				<table className="docs">
 					<thead>
 						<tr>
-							<th>Name</th>
+							<th>Token</th>
 							<th>Value</th>
 							<th className="w-full">Value (px)</th>
 							<th>Coding</th>
 						</tr>
 					</thead>
 					<tbody>
-						{FONT_SIZE_TOKENS.map((token: DesignToken) => (
-							<tr key={token.name}>
-								<td style={{ fontSize: `var(--ds-${token.name})` }}>
-									<pre>{token.name}</pre>
+						{Object.entries(TOKENS__FONT_SIZE).map(([name, token]) => (
+							<tr key={name}>
+								<td style={{ fontSize: `var(${token.$css})` }}>
+									<pre>{name}</pre>
 								</td>
 								<td>
-									<code>{String(token.value)}rem</code>
+									<code>{token.$value}</code>
 								</td>
 								<td>
-									<code>{Number(token.value) * 16}px</code>
+									<code>{Number(token.$value.replace('rem', '')) * 16}px</code>
 								</td>
 								<td>
 									<DocsTokenCoding
-										token={token}
-										twVars={[`text-${token.name.replace('font-', '')}`]}
+										tsVar={`$fontSize['${name}']`}
+										tsSize="w-lg-2"
+										twVars={[`text-size-${name}`]}
 										twSize="w-lg-1"
+										cssVar={token.$css}
 										cssSize="w-lg-4"
 									/>
 								</td>
@@ -54,25 +56,27 @@ export default {
 				<table className="docs">
 					<thead>
 						<tr>
-							<th>Name</th>
+							<th>Token</th>
 							<th className="w-full">Value</th>
 							<th>Coding</th>
 						</tr>
 					</thead>
 					<tbody>
-						{FONT_WEIGHT_TOKENS.map((token: DesignToken) => (
-							<tr key={token.name}>
-								<td style={{ fontWeight: `var(--ds-${token.name})` }}>
-									<pre>{token.name}</pre>
+						{Object.entries(TOKENS__FONT_WEIGHT).map(([name, token]) => (
+							<tr key={name}>
+								<td style={{ fontWeight: `var(${token.$css})` }}>
+									<pre>{name}</pre>
 								</td>
 								<td>
-									<code>{String(token.value)}</code>
+									<code>{token.$value}</code>
 								</td>
 								<td>
 									<DocsTokenCoding
-										token={token}
-										twVars={[`font-${token.name.replace('font-', '')}`]}
+										tsVar={`$fontWeight['${name}']`}
+										tsSize="w-lg-2"
+										twVars={[`font-weight-${name}`]}
 										twSize="w-lg-1"
+										cssVar={token.$css}
 										cssSize="w-lg-4"
 									/>
 								</td>
@@ -85,25 +89,27 @@ export default {
 				<table className="docs">
 					<thead>
 						<tr>
-							<th>Name</th>
+							<th>Token</th>
 							<th className="w-full">Value</th>
 							<th>Coding</th>
 						</tr>
 					</thead>
 					<tbody>
-						{LINE_HEIGHT_TOKENS.map((token: DesignToken) => (
-							<tr key={token.name}>
-								<td style={{ lineHeight: `var(--ds-${token.name})` }}>
-									<pre className="border border-color-purple-2">{token.name}</pre>
+						{Object.entries(TOKENS__LINE_HEIGHT).map(([name, token]) => (
+							<tr key={name}>
+								<td style={{ lineHeight: `var(${token.$css})` }}>
+									<pre className="border border-color-purple-2">{name}</pre>
 								</td>
 								<td>
-									<code>{String(token.value)}em</code>
+									<code>{token.$value}</code>
 								</td>
 								<td>
 									<DocsTokenCoding
-										token={token}
-										twVars={[`leading-${token.name.replace('line-height-', '')}`]}
+										tsVar={`$lineHeight['${name}']`}
+										tsSize="w-lg-2"
+										twVars={[`leading-${name}`]}
 										twSize="w-lg-1"
+										cssVar={token.$css}
 										cssSize="w-lg-4"
 									/>
 								</td>

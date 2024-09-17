@@ -1,5 +1,5 @@
-import { ApiResponse, Chat, ChatsResponse, ChatsUrlQuery, MessagesUrlQuery, STATUS_SUCCESS } from '../types'
-import { RESP_NOT_FOUND } from '../utilities/network'
+import { ApiResponse, Chat, ChatsResponse, ChatsUrlQuery, MessagesUrlQuery, STATUS__SUCCESS } from '../types'
+import { RESP__NOT_FOUND } from '../utilities/network'
 import { extractInt, isGreaterThanZero } from '../utilities/parsers'
 import { randomArray, randomId, randomRecentDate, randomText } from '../utilities/random'
 import { isValidPagination } from '../utilities/validators'
@@ -25,11 +25,11 @@ export const chatsService = {
 		const count = extractInt(query.count, DEFAULT_COUNT, isGreaterThanZero)
 
 		if (!isValidPagination(page, count, _chats.length)) {
-			return { ...RESP_NOT_FOUND, error: `Page ${page} not found for ${_chats.length} chats` }
+			return { ...RESP__NOT_FOUND, error: `Page ${page} not found for ${_chats.length} chats` }
 		}
 
 		return {
-			status: STATUS_SUCCESS,
+			status: STATUS__SUCCESS,
 			data: {
 				count: _chats.length,
 				items: _chats.slice(count * (page - 1), count * page),
@@ -40,7 +40,7 @@ export const chatsService = {
 	async getMessages(query: MessagesUrlQuery): Promise<ApiResponse<[]>> {
 		console.log(query)
 		return {
-			status: STATUS_SUCCESS,
+			status: STATUS__SUCCESS,
 			data: [],
 		}
 	},

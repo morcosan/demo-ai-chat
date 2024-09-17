@@ -1,18 +1,14 @@
 interface Props {
-	token: DesignToken
-	theme?: ColorTheme
+	value: string
 }
 
-export const DocsColorToken = ({ token, theme }: Props) => {
-	const bg = theme ? (token.value as TokenValue)[theme] : token.value
-	const text = theme ? (token.value as TokenValue)[theme] : token.value
-
+export const DocsColorToken = ({ value }: Props) => {
 	return (
 		<div className="flex items-center gap-xs-3">
 			<div className="docs-grid-bg h-sm-1 w-sm-1 overflow-hidden border border-color-border !bg-[length:33%_33%]">
-				<div className="h-full w-full" style={{ background: String(bg) }} />
+				<div className="h-full w-full" style={{ background: value }} />
 			</div>
-			<code>{String(text)}</code>
+			<code>{value}</code>
 		</div>
 	)
 }

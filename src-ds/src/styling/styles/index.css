@@ -1,13 +1,6 @@
 @import '../tailwind';
 
-@import '../tokens/color.css';
-@import '../tokens/font-size.css';
-@import '../tokens/font-weight.css';
-@import '../tokens/line-height.css';
-@import '../tokens/radius.css';
-@import '../tokens/shadow.css';
-@import '../tokens/spacing.css';
-@import '../tokens/z-index.css';
+@import '../tokens/index.css';
 
 @import '_a11y.css';
 @import '_scrollbar.css';

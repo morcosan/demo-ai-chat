@@ -71,6 +71,7 @@ export default tsESLint.config(
 					reservedFirst: true,
 				},
 			],
+			'react/no-unknown-property': ['error', { ignore: ['css'] }],
 
 			...reactHooksPlugin.configs.recommended.rules,
 			'react-hooks/exhaustive-deps': 'off', // This rule is broken, it gives false positives all the time
@@ -81,6 +82,7 @@ export default tsESLint.config(
 			'@typescript-eslint/no-unsafe-function-type': 'off',
 			'@typescript-eslint/no-unused-expressions': 'off',
 			'@typescript-eslint/no-unused-vars': 'warn',
+			'@typescript-eslint/ban-ts-comment': ['error', { 'ts-ignore': 'allow-with-description' }],
 
 			'@ds/only-import-from-release': 'error',
 		},

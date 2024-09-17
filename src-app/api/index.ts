@@ -1,7 +1,7 @@
 import { mockAPI } from '@api/mock'
-import { createCachedAPI } from './partials/caching'
+import { createCachedAPI } from './_caching'
 
-export { clearDataCache } from './partials/caching'
-export * from './partials/types'
+export { clearDataCache } from './_caching'
+export * from './_types'
 
 export const chatsAPI = createCachedAPI(mockAPI)

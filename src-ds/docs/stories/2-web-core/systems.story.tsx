@@ -10,7 +10,6 @@ story.storyName = 'Systems'
 interface System {
 	name: string
 	hook: string
-	type: string
 	provider: string
 	details: string
 }
@@ -27,25 +26,29 @@ export default {
 	component: () => {
 		const systems = [
 			{
-				name: 'A11y theme',
-				hook: 'useA11yThemeStore',
-				type: 'A11yThemeStore',
-				provider: 'A11yThemeProvider',
-				details: 'System responsible with changing accessibility theme for keyboard navigation',
+				name: 'UI A11y',
+				hook: 'useUiA11y',
+				provider: 'UiA11yProvider',
+				details: 'System responsible with changing accessibility mode for keyboard navigation',
 			},
 			{
-				name: 'Color theme',
-				hook: 'useColorThemeStore',
-				type: 'ColorThemeStore',
-				provider: 'ColorThemeProvider',
-				details: 'System responsible with changing color theme',
+				name: 'UI Theme',
+				hook: 'useUiTheme',
+				provider: 'UiThemeProvider',
+				details: 'System responsible with changing the color theme',
+			},
+			{
+				name: 'UI Library',
+				hook: 'useUiLibrary',
+				provider: 'UiLibraryProvider',
+				details: 'System responsible with changing UI component libraries',
 			},
 		]
 		const attributes = [
-			{ code: '[data-color-theme="light"]', details: 'Display ^light^ color theme' },
-			{ code: '[data-color-theme="dark"]', details: 'Display ^dark^ color theme' },
-			{ code: '[data-a11y-theme="default"]', details: 'Show tab navigation outline' },
-			{ code: '[data-a11y-theme="pointer"]', details: 'Hide tab navigation outline' },
+			{ code: '[data-color-scheme="light"]', details: 'Display ^light^ color theme' },
+			{ code: '[data-color-scheme="dark"]', details: 'Display ^dark^ color theme' },
+			{ code: '[data-a11y-mode="default"]', details: 'Show tab navigation outline' },
+			{ code: '[data-a11y-mode="pointer"]', details: 'Hide tab navigation outline' },
 		]
 
 		return (
@@ -55,9 +58,8 @@ export default {
 					<thead>
 						<tr>
 							<th>System</th>
-							<th>Store hook</th>
-							<th>Store type</th>
-							<th>Store provider</th>
+							<th>Hook</th>
+							<th>Provider</th>
 							<th>Description</th>
 						</tr>
 					</thead>
@@ -67,9 +69,6 @@ export default {
 								<td>{system.name}</td>
 								<td>
 									<code>{system.hook}</code>
-								</td>
-								<td>
-									<code>{system.type}</code>
 								</td>
 								<td>
 									<code>{system.provider}</code>

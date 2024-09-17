@@ -13,6 +13,7 @@ const ROOT_URL_PATH = process.env.ROOT_URL_PATH
 const IS_VALID_BUILD = Boolean(BUILD_MODE) // Preview is not loading env
 const BUILD_NUMBER = createBuildNumber()
 const DS_VERSION = getDsVersion()
+const USE_CSS_VARS = process.env.USE_CSS_VARS === 'true'
 
 // Reset NODE_ENV
 process.env.NODE_ENV = BUILD_MODE === 'local' ? 'development' : 'production'
@@ -24,13 +25,14 @@ if (IS_VALID_BUILD) {
 		`\nNODE_ENV = ${process.env.NODE_ENV}`,
 		`\nBUILD_MODE = ${BUILD_MODE}`,
 		`\nBUILD_NUMBER = ${BUILD_NUMBER}`,
-		`\nDS_VERSION = ${DS_VERSION}`
+		`\nDS_VERSION = ${DS_VERSION}`,
+		`\nUSE_CSS_VARS = ${USE_CSS_VARS}`
 	)
 }
 
 // https://vitejs.dev/config/
 export default defineConfig({
-	plugins: [react(), svgr({ include: '**/*.svg' })],
+	plugins: [react({ jsxImportSource: '@emotion/react' }), svgr({ include: '**/*.svg' })],
 
 	resolve: {
 		alias: {
@@ -45,6 +47,7 @@ export default defineConfig({
 		ENV__BUILD_NUMBER: JSON.stringify(BUILD_NUMBER),
 		ENV__DS_VERSION: JSON.stringify(DS_VERSION),
 		ENV__ROOT_URL_PATH: JSON.stringify(ROOT_URL_PATH),
+		ENV__USE_CSS_VARS: JSON.stringify(USE_CSS_VARS),
 	},
 
 	root: `${ROOT_DIR}/src-app`,

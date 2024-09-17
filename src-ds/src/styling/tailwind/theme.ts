@@ -1,30 +1,32 @@
-import { COLOR_TOKENS } from '../tokens/color'
-import { FONT_SIZE_TOKENS } from '../tokens/font-size.ts'
-import { FONT_WEIGHT_TOKENS } from '../tokens/font-weight'
-import { LINE_HEIGHT_TOKENS } from '../tokens/line-height.ts'
-import { RADIUS_TOKENS } from '../tokens/radius'
-import { SHADOW_TOKENS } from '../tokens/shadow.ts'
-import { SPACING_TOKENS } from '../tokens/spacing'
-import { Z_INDEX_TOKENS } from '../tokens/z-index'
+import {
+	TOKENS__COLOR,
+	TOKENS__FONT_SIZE,
+	TOKENS__FONT_WEIGHT,
+	TOKENS__LINE_HEIGHT,
+	TOKENS__RADIUS,
+	TOKENS__SHADOW,
+	TOKENS__SPACING,
+	TOKENS__Z_INDEX,
+} from '../tokens'
 
-const createConfig = (tokens: DesignToken[], prefix: string): Record<string, string | number> => {
-	const reduceFn = (sum: Record<string, string>, token: DesignToken) => ({
-		...sum,
-		[token.name.replace(prefix, '')]: `var(--ds-${token.name})`,
-	})
-
-	return tokens.reduce(reduceFn, {})
+const createTokens = (tokenGroup: DesignTokenGroup, twPrefix: string): Record<string, string> => {
+	return Object.fromEntries(
+		Object.entries<DesignToken>(tokenGroup).map(([key, token]) => [twPrefix + key, `var(${token.$css})`])
+	)
 }
 
-export const theme = {
-	borderRadius: createConfig(RADIUS_TOKENS, 'radius-'),
-	boxShadow: createConfig(SHADOW_TOKENS, 'shadow-'),
-	colors: createConfig(COLOR_TOKENS, 'N/A'),
-	fontSize: createConfig(FONT_SIZE_TOKENS, 'font-'),
-	fontWeight: createConfig(FONT_WEIGHT_TOKENS, 'font-'),
-	lineHeight: createConfig(LINE_HEIGHT_TOKENS, 'line-height-'),
-	spacing: createConfig(SPACING_TOKENS, 'spacing-'),
-	zIndex: createConfig(Z_INDEX_TOKENS, 'z-index-'),
+// USE_CSS_VARS env cannot be used with Tailwind, so CSS vars cannot be completely removed
+// Tailwind doesn't support multiple theme configs, it requires `dark:` prefix for each class
+// https://tailwindcss.com/docs/dark-mode
+export const TAILWIND_THEME = {
+	borderRadius: createTokens(TOKENS__RADIUS, ''),
+	boxShadow: createTokens(TOKENS__SHADOW, ''),
+	colors: createTokens(TOKENS__COLOR, 'color-'),
+	fontSize: createTokens(TOKENS__FONT_SIZE, 'size-'),
+	fontWeight: createTokens(TOKENS__FONT_WEIGHT, 'weight-'),
+	lineHeight: createTokens(TOKENS__LINE_HEIGHT, ''),
+	spacing: createTokens(TOKENS__SPACING, ''),
+	zIndex: createTokens(TOKENS__Z_INDEX, ''),
 
 	extend: {
 		borderRadius: { none: 0 },
