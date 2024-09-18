@@ -1,5 +1,5 @@
-import BackIcon from '@app/library/assets/icons-fa-v6/arrow-left.svg'
 import { Button } from '@ds/release'
+import BackSvg from '@ds/release/icons/back.svg'
 import { Link, useLocation } from 'react-router-dom'
 import { ApiConsole } from './api-console'
 
@@ -24,7 +24,7 @@ const ApiDocsPage = () => {
 				<>
 					<h1 className="mb-sm-0 flex items-center text-size-xxl font-weight-lg">
 						<Button linkHref="/docs/api" variant="item-text-default" className="mr-xs-5 w-sm-4">
-							<BackIcon className="h-sm-0 w-sm-0" />
+							<BackSvg className="h-sm-0 w-sm-0" />
 						</Button>
 						API Docs
 					</h1>

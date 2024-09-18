@@ -1,12 +1,12 @@
-import { MouseEvent, useState } from 'react'
+import { MouseEvent, ReactNode, useState } from 'react'
 
 interface Props {
-	icon: string
+	iconSvg: ReactNode
 	value: string
 	size?: string
 }
 
-export const DocsTokenCode = ({ icon, value, size }: Props) => {
+export const DocsTokenCode = ({ iconSvg, value, size }: Props) => {
 	const [copied, setCopied] = useState(false)
 
 	const buttonClass = [
@@ -42,7 +42,7 @@ export const DocsTokenCode = ({ icon, value, size }: Props) => {
 		<div className={`relative h-sm-4 ${size || 'w-md-8'}`}>
 			<button type="button" className={buttonClass} onClick={onClick}>
 				<code className="pointer-events-none flex !w-full items-center gap-xs-2 !bg-color-bg-default">
-					<img src={icon} className="ml-px mt-px h-xs-6 max-w-unset" alt="" />
+					<span className="ml-px mt-px block h-xs-6">{iconSvg}</span>
 					<span className="truncate">{value}</span>
 				</code>
 
