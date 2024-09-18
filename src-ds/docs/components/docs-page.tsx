@@ -1,9 +1,14 @@
-import { Button, useColorThemeStore } from '@ds/release'
-import { useEffect } from 'react'
+import { EventsTable } from '@ds/docs/components/partials/events-table'
+import { PropsTable } from '@ds/docs/components/partials/props-table'
+import { SlotsTable } from '@ds/docs/components/partials/slots-table'
+import { Button, useUiLibrary, useUiTheme } from '@ds/release'
+import { ChangeEvent, useEffect } from 'react'
 import { renderHtml } from '../utilities/docs.ts'
 import { toggleControls } from '../utilities/storybook'
 import { DocsHeader } from './docs-header.tsx'
 import { DocsPlayground } from './docs-playground.tsx'
+
+type SelectEvent = ChangeEvent<HTMLSelectElement>
 
 interface ComponentSlots {
 	PROPS?: DocsPropDef[]
@@ -19,36 +24,37 @@ interface Props extends ReactProps {
 }
 
 export const DocsPage = ({ title, type, slots, children }: Props) => {
-	const { isLight, isDark, changeTheme } = useColorThemeStore()
+	const { isLight, isDark, changeTheme } = useUiTheme()
+	const { uiLibrary, changeUiLibrary } = useUiLibrary()
 
 	const getVariant = (enabled: boolean) => (enabled ? 'solid-primary' : 'text-default')
 
-	const getNameFlag = (required?: boolean) => {
-		return required ? (
-			<span title="Required" className="cursor-default px-xs-3 font-weight-xl text-color-failure">
-				*
-			</span>
-		) : (
-			<span title="Optional" className="cursor-default px-xs-3 text-size-sm text-color-text-subtle">
-				?
-			</span>
-		)
-	}
-
 	useEffect(() => {
-		toggleControls(type === 'component')
+		// Requires a small delay
+		wait(100).then(() => toggleControls(type === 'component'))
 	}, [])
 
 	return (
 		<div className="h-screen w-screen overflow-x-hidden overflow-y-scroll px-sm-3 py-sm-2">
 			<h1 className="mb-sm-6 text-size-xxl">{title}</h1>
 
-			{/* Color theme selector */}
-			<div className="bg-color-bg-default absolute right-[18px] top-0 z-sticky flex whitespace-nowrap text-size-sm shadow-sm">
-				<Button variant={getVariant(isLight)} size="sm" square onClick={() => changeTheme('light')}>
+			{/* UI library selector */}
+			<select
+				className="absolute right-lg-3 top-0 z-sticky h-button-h-sm bg-color-bg-default pl-xs-3 pr-xs-2 shadow-sm"
+				value={uiLibrary}
+				onChange={(event: SelectEvent) => changeUiLibrary(event.target?.value as UiLibrary)}
+			>
+				<option value={'custom' as UiLibrary}>Custom</option>
+				<option value={'material' as UiLibrary}>Material UI</option>
+				<option value={'antdesign' as UiLibrary}>Ant Design</option>
+			</select>
+
+			{/* UI theme selector */}
+			<div className="absolute right-[12px] top-0 z-sticky flex whitespace-nowrap bg-color-bg-default text-size-sm">
+				<Button variant={getVariant(isLight)} size="sm" className="shadow-sm" onClick={() => changeTheme('light')}>
 					☀️ Light
 				</Button>
-				<Button variant={getVariant(isDark)} size="sm" square onClick={() => changeTheme('dark')}>
+				<Button variant={getVariant(isDark)} size="sm" className="shadow-sm" onClick={() => changeTheme('dark')}>
 					🌙 Dark
 				</Button>
 			</div>
@@ -59,98 +65,9 @@ export const DocsPage = ({ title, type, slots, children }: Props) => {
 						<DocsHeader>Playground</DocsHeader>
 						<DocsPlayground>{children}</DocsPlayground>
 
-						{Boolean(slots?.PROPS) && (
-							<>
-								<DocsHeader>Props</DocsHeader>
-								<table className="docs">
-									<thead>
-										<tr>
-											<th>Property</th>
-											<th>Type</th>
-											<th>Default</th>
-											<th className="w-full">Description</th>
-										</tr>
-									</thead>
-									<tbody>
-										{slots?.PROPS?.map((propDef: DocsPropDef) => (
-											<tr key={propDef.name}>
-												<td>
-													<pre className="inline">{propDef.name}</pre>
-													{getNameFlag(propDef.required)}
-												</td>
-												<td>
-													<code>{propDef.type}</code>
-												</td>
-												<td>
-													<code>{propDef.default}</code>
-												</td>
-												<td dangerouslySetInnerHTML={{ __html: renderHtml(propDef.details) }} />
-											</tr>
-										))}
-									</tbody>
-								</table>
-							</>
-						)}
-
-						{Boolean(slots?.SLOTS) && (
-							<>
-								<DocsHeader>Slots</DocsHeader>
-								<table className="docs">
-									<thead>
-										<tr>
-											<th>Slot</th>
-											<th className="w-full">Description</th>
-										</tr>
-									</thead>
-									<tbody>
-										{slots?.SLOTS?.map((slotDef: DocsSlotDef) => (
-											<tr key={slotDef.name}>
-												<td>
-													<pre className="inline">{slotDef.name}</pre>
-													{getNameFlag(slotDef.required)}
-												</td>
-												<td dangerouslySetInnerHTML={{ __html: renderHtml(slotDef.details) }} />
-											</tr>
-										))}
-									</tbody>
-								</table>
-							</>
-						)}
-
-						{Boolean(slots?.EVENTS) && (
-							<>
-								<DocsHeader>Events</DocsHeader>
-								<table className="docs">
-									<thead>
-										<tr>
-											<th>Event</th>
-											<th>Params</th>
-											<th className="w-full">Description</th>
-										</tr>
-									</thead>
-									<tbody>
-										{slots?.EVENTS?.map((eventDef: DocsEventDef) => (
-											<tr key={eventDef.name}>
-												<td>
-													<pre>{eventDef.name}</pre>
-												</td>
-												<td>
-													{eventDef.params
-														? eventDef.params.map((param: string) => (
-																<code key={param} className="block">
-																	{param}
-																</code>
-															))
-														: '-'}
-												</td>
-												<td dangerouslySetInnerHTML={{ __html: renderHtml(eventDef.details) }} />
-											</tr>
-										))}
-									</tbody>
-								</table>
-							</>
-						)}
-
+						{Boolean(slots?.PROPS) && <PropsTable propDefs={slots?.PROPS || []} />}
+						{Boolean(slots?.SLOTS) && <SlotsTable slotDefs={slots?.SLOTS || []} />}
+						{Boolean(slots?.EVENTS) && <EventsTable eventDefs={slots?.EVENTS || []} />}
 						{Boolean(slots?.TYPES) && (
 							<>
 								<DocsHeader>Types</DocsHeader>

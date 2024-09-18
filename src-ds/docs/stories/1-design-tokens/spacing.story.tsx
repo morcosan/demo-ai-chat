@@ -2,7 +2,7 @@ import { DocsHeader } from '@ds/docs/components/docs-header.tsx'
 import { DocsPage } from '@ds/docs/components/docs-page.tsx'
 import { DocsTokenCoding } from '@ds/docs/components/docs-token-coding.tsx'
 import '@ds/docs/setup'
-import { SPACING_TOKENS } from '@ds/release'
+import { getTokenValue_SPACING, TOKENS__SPACING } from '@ds/release'
 import type { StoryObj } from '@storybook/react'
 import { Fragment } from 'react'
 
@@ -14,8 +14,10 @@ export default {
 	title: 'Design tokens / Spacing',
 
 	component: () => {
-		const primitiveTokens = SPACING_TOKENS.filter((token: DesignToken) => !token.ref)
-		const semanticTokens = SPACING_TOKENS.filter((token: DesignToken) => token.ref)
+		type SpacingKey = keyof typeof TOKENS__SPACING
+
+		const primitiveTokens = Object.entries<DesignToken<string>>(TOKENS__SPACING).filter(([, token]) => !token.$ref)
+		const semanticTokens = Object.entries<DesignToken<string>>(TOKENS__SPACING).filter(([, token]) => token.$ref)
 
 		return (
 			<DocsPage title="Spacing tokens">
@@ -23,35 +25,32 @@ export default {
 				<table className="docs">
 					<thead>
 						<tr>
-							<th>Name</th>
+							<th>Token</th>
 							<th>Reference</th>
 							<th className="w-full">Value</th>
 							<th>Coding</th>
 						</tr>
 					</thead>
 					<tbody>
-						{semanticTokens.map((token: DesignToken) => (
-							<Fragment key={token.name}>
-								<tr key={token.name} className="!border-b-0">
+						{semanticTokens.map(([name, token]) => (
+							<Fragment key={name}>
+								<tr key={name} className="!border-b-0">
 									<td>
-										<pre>{token.name}</pre>
+										<pre>{name}</pre>
 									</td>
 									<td>
-										<pre>{String(token.ref)}</pre>
+										<pre>{token.$ref as string}</pre>
 									</td>
 									<td>
-										<code>{String(token.value)}px</code>
+										<code>{getTokenValue_SPACING(token.$ref as SpacingKey)}</code>
 									</td>
 									<td>
 										<DocsTokenCoding
-											token={token}
-											twVars={[
-												`w-${token.name.replace('spacing-', '')}`,
-												`h-${token.name.replace('spacing-', '')}`,
-												`m-${token.name.replace('spacing-', '')}`,
-												`p-${token.name.replace('spacing-', '')}`,
-											]}
+											tsVar={`$spacing['${name}']`}
+											tsSize="w-lg-2"
+											twVars={[`w-${name}`, `h-${name}`, `m-${name}`, `p-${name}`]}
 											twSize="w-md-4"
+											cssVar={token.$css}
 											cssSize="w-lg-6"
 										/>
 									</td>
@@ -61,7 +60,7 @@ export default {
 									<td colSpan={4} className="relative !py-0">
 										<div
 											className="absolute bottom-0 left-0 h-xs-1 bg-color-text-subtle"
-											style={{ width: `var(--ds-${token.name})` }}
+											style={{ width: `var(${token.$css})` }}
 										/>
 									</td>
 								</tr>
@@ -74,31 +73,28 @@ export default {
 				<table className="docs">
 					<thead>
 						<tr>
-							<th>Name</th>
+							<th>Token</th>
 							<th className="w-full">Value</th>
 							<th>Coding</th>
 						</tr>
 					</thead>
 					<tbody>
-						{primitiveTokens.map((token: DesignToken) => (
-							<Fragment key={token.name}>
-								<tr key={token.name} className="!border-b-0">
+						{primitiveTokens.map(([name, token]) => (
+							<Fragment key={name}>
+								<tr key={name} className="!border-b-0">
 									<td>
-										<pre>{token.name}</pre>
+										<pre>{name}</pre>
 									</td>
 									<td>
-										<code>{String(token.value)}px</code>
+										<code>{token.$value}</code>
 									</td>
 									<td>
 										<DocsTokenCoding
-											token={token}
-											twVars={[
-												`w-${token.name.replace('spacing-', '')}`,
-												`h-${token.name.replace('spacing-', '')}`,
-												`m-${token.name.replace('spacing-', '')}`,
-												`p-${token.name.replace('spacing-', '')}`,
-											]}
+											tsVar={`$spacing['${name}']`}
+											tsSize="w-lg-2"
+											twVars={[`w-${name}`, `h-${name}`, `m-${name}`, `p-${name}`]}
 											twSize="w-md-4"
+											cssVar={token.$css}
 											cssSize="w-lg-6"
 										/>
 									</td>
@@ -108,7 +104,7 @@ export default {
 									<td colSpan={4} className="relative !py-0">
 										<div
 											className="absolute bottom-0 left-0 h-xs-1 bg-color-text-subtle"
-											style={{ width: `var(--ds-${token.name})` }}
+											style={{ width: `var(${token.$css})` }}
 										/>
 									</td>
 								</tr>

@@ -4,7 +4,7 @@ import { DocsPage } from '@ds/docs/components/docs-page.tsx'
 import { DocsTokenCoding } from '@ds/docs/components/docs-token-coding.tsx'
 import { DocsTokenThemeGrid } from '@ds/docs/components/docs-token-theme-grid.tsx'
 import '@ds/docs/setup'
-import { COLOR_TOKENS } from '@ds/release'
+import { getTokenValue_COLOR, TOKENS__COLOR } from '@ds/release'
 import type { StoryObj } from '@storybook/react'
 
 export const story: StoryObj = {}
@@ -15,8 +15,10 @@ export default {
 	title: 'Design tokens / Color',
 
 	component: () => {
-		const primitiveTokens = COLOR_TOKENS.filter((token: DesignToken) => !token.ref)
-		const semanticTokens = COLOR_TOKENS.filter((token: DesignToken) => token.ref)
+		type ColorKey = keyof typeof TOKENS__COLOR
+
+		const primitiveTokens = Object.entries<DesignToken>(TOKENS__COLOR).filter(([, token]) => !token.$ref)
+		const semanticTokens = Object.entries<DesignToken>(TOKENS__COLOR).filter(([, token]) => token.$ref)
 
 		return (
 			<DocsPage title="Color tokens">
@@ -24,34 +26,35 @@ export default {
 				<table className="docs">
 					<thead>
 						<tr>
-							<th>Name</th>
+							<th>Token</th>
 							<th>Reference</th>
 							<th className="w-full">Value</th>
 							<th>Coding</th>
 						</tr>
 					</thead>
 					<tbody>
-						{semanticTokens.map((token: DesignToken) => (
-							<tr key={token.name}>
+						{semanticTokens.map(([name, token]) => (
+							<tr key={name}>
 								<td>
-									<pre>{token.name}</pre>
+									<pre>{name}</pre>
 								</td>
 								<td>
 									<DocsTokenThemeGrid
-										lightSlot={<pre>{(token.ref as TokenString).light}</pre>}
-										darkSlot={<pre>{(token.ref as TokenString).dark}</pre>}
+										lightSlot={<pre>{(token.$ref as DesignTokenThemeValue).light}</pre>}
+										darkSlot={<pre>{(token.$ref as DesignTokenThemeValue).dark}</pre>}
 									/>
 								</td>
 								<td>
 									<DocsTokenThemeGrid
-										lightSlot={<DocsColorToken token={token} theme="light" />}
-										darkSlot={<DocsColorToken token={token} theme="dark" />}
+										lightSlot={<DocsColorToken value={getTokenValue_COLOR(name as ColorKey, 'light')} />}
+										darkSlot={<DocsColorToken value={getTokenValue_COLOR(name as ColorKey, 'dark')} />}
 									/>
 								</td>
 								<td>
 									<DocsTokenCoding
-										token={token}
-										twVars={[`bg-${token.name}`, `text-${token.name}`, `border-${token.name}`]}
+										tsVar={`$color['${name}']`}
+										twVars={[`bg-color-${name}`, `text-color-${name}`, `border-color-${name}`]}
+										cssVar={token.$css}
 									/>
 								</td>
 							</tr>
@@ -63,24 +66,25 @@ export default {
 				<table className="docs">
 					<thead>
 						<tr>
-							<th>Name</th>
+							<th>Token</th>
 							<th className="w-full">Value</th>
 							<th>Coding</th>
 						</tr>
 					</thead>
 					<tbody>
-						{primitiveTokens.map((token: DesignToken) => (
-							<tr key={token.name}>
+						{primitiveTokens.map(([name, token]) => (
+							<tr key={name}>
 								<td>
-									<pre>{token.name}</pre>
+									<pre>{name}</pre>
 								</td>
 								<td>
-									<DocsColorToken token={token} />
+									<DocsColorToken value={getTokenValue_COLOR(name as ColorKey)} />
 								</td>
 								<td>
 									<DocsTokenCoding
-										token={token}
-										twVars={[`bg-${token.name}`, `text-${token.name}`, `border-${token.name}`]}
+										tsVar={`$color['${name}']`}
+										twVars={[`bg-color-${name}`, `text-color-${name}`, `border-color-${name}`]}
+										cssVar={token.$css}
 									/>
 								</td>
 							</tr>

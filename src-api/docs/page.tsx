@@ -23,15 +23,8 @@ const ApiDocsPage = () => {
 			) : (
 				<>
 					<h1 className="mb-sm-0 flex items-center text-size-xxl font-weight-lg">
-						<Button
-							linkTo="/docs/api"
-							linkType="same-tab"
-							variant="text-default"
-							size="md"
-							className="flex-center mr-xs-5 w-sm-4"
-							expanded
-						>
-							<BackIcon className="h-sm-0 w-sm-0 fill-color-text-default" />
+						<Button linkHref="/docs/api" variant="item-text-default" className="mr-xs-5 w-sm-4">
+							<BackIcon className="h-sm-0 w-sm-0" />
 						</Button>
 						API Docs
 					</h1>

@@ -17,12 +17,12 @@ export const AiChatNavSection = () => {
 
 	return (
 		<>
-			<Button linkTo="/chat/0" linkType="same-tab" variant="solid-primary" size="md" expanded>
+			<Button linkHref="/chat/0">
 				<LogoIcon className="-ml-xs-4 mr-xs-3 h-xs-9 w-xs-9" />
 				New chat
 			</Button>
 
-			<div className="mt-xs-8 px-xs-4 text-size-sm text-color-text-subtle">
+			<div className="mt-xs-8 px-button-px-item text-size-sm text-color-text-subtle">
 				Chats {Boolean(chatPagination.count) && <span className="text-size-xs">({chatPagination.count})</span>}
 			</div>
 
@@ -37,17 +37,13 @@ export const AiChatNavSection = () => {
 						{allChats.map((chat: Chat) => (
 							<Button
 								key={chat.id}
-								linkTo={`/chat/${chat.id}`}
-								linkType="same-tab"
-								variant={activeChat?.id === chat.id ? 'solid-secondary' : 'text-default'}
-								noHover={Boolean(activeChat?.id === chat.id)}
+								linkHref={`/chat/${chat.id}`}
+								variant="item-text-default"
+								pressed={Boolean(activeChat?.id === chat.id)}
 								tooltip={chat.title}
-								size="md"
-								expanded
+								className={activeChat?.id === chat.id ? '!border border-color-primary' : ''}
 							>
-								<span className={`w-full truncate px-xs-4 ${activeChat?.id === chat.id ? '' : 'font-weight-sm'}`}>
-									{chat.title}
-								</span>
+								<span className="truncate">{chat.title}</span>
 							</Button>
 						))}
 						{Boolean(moreChatsLoading) && (

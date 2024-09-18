@@ -19,6 +19,11 @@
 		"uninstall": "rmdir /s /q \"node_modules\""
 	},
 	"dependencies": {
+		"@emotion/cache": "^11.13.1",
+		"@emotion/react": "^11.13.3",
+		"@mui/lab": "^6.0.0-beta.9",
+		"@mui/material": "^6.0.2",
+		"antd": "^5.20.6",
 		"lodash": "^4.17.21",
 		"react": "^18.3.1",
 		"react-dom": "^18.3.1",
@@ -27,9 +32,9 @@
 	"devDependencies": {
 		"@eslint/js": "^9.8.0",
 		"@faker-js/faker": "^8.4.1",
-		"@storybook/addon-essentials": "^8.2.9",
-		"@storybook/react-vite": "^8.2.9",
-		"@storybook/theming": "^8.2.9",
+		"@storybook/addon-essentials": "^8.3.0",
+		"@storybook/react-vite": "^8.3.0",
+		"@storybook/theming": "^8.3.0",
 		"@types/lodash": "^4.17.7",
 		"@types/node": "^22.2.0",
 		"@types/react": "^18.3.3",
@@ -48,7 +53,7 @@
 		"prettier-plugin-css-order": "^2.1.2",
 		"prettier-plugin-organize-imports": "^4.0.0",
 		"prettier-plugin-tailwindcss": "^0.6.6",
-		"storybook": "^8.2.9",
+		"storybook": "^8.3.0",
 		"tailwindcss": "^3.4.10",
 		"tsx": "^4.17.0",
 		"typescript": "^5.5.3",

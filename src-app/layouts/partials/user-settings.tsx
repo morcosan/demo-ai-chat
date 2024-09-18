@@ -6,11 +6,14 @@ import DocsIcon from '@app/library/assets/icons-fa-v6/circle-question.svg'
 import SettingsIcon from '@app/library/assets/icons-fa-v6/gear.svg'
 import NewTabIcon from '@app/library/assets/icons-fa-v6/up-right-from-square.svg'
 import StorybookIcon from '@app/library/assets/storybook.svg'
-import { Button, useColorThemeStore } from '@ds/release'
-import { useEffect, useMemo, useRef, useState } from 'react'
+import { Button, useUiLibrary, useUiTheme } from '@ds/release'
+import { ChangeEvent, useEffect, useMemo, useRef, useState } from 'react'
+
+type SelectEvent = ChangeEvent<HTMLSelectElement>
 
 export const UserSettings = () => {
-	const { isLight, isDark, changeTheme } = useColorThemeStore()
+	const { isLight, isDark, changeTheme } = useUiTheme()
+	const { uiLibrary, changeUiLibrary } = useUiLibrary()
 	const [opened, setOpened] = useState(false)
 
 	const storybookUrl = ENV__BUILD_MODE === 'local' ? 'http://localhost:9000' : `${ENV__ROOT_URL_PATH}/storybook`
@@ -28,10 +31,8 @@ export const UserSettings = () => {
 	}, [opened])
 
 	const hrClass = 'my-xs-2'
-
-	const actionClass = 'flex w-full items-center px-xs-5 text-left font-weight-sm'
-	const actionIconClass = 'mr-xs-5 h-xs-8 w-xs-8 fill-color-text-default'
-	const newTabIconClass = 'ml-xs-4 mr-px h-xs-6 w-xs-6 fill-color-text-subtle'
+	const actionIconClass = 'mr-button-px-item h-xs-8 w-xs-8'
+	const newTabIconClass = 'ml-auto mr-px h-xs-6 w-xs-6 fill-color-text-subtle'
 
 	const wrapperRef = useRef<HTMLDivElement>(null)
 
@@ -54,17 +55,37 @@ export const UserSettings = () => {
 
 	return (
 		<div ref={wrapperRef} className="relative">
-			<Button variant="text-default" size="lg" pressed={opened} expanded onClick={() => setOpened(!opened)}>
-				<span className="flex w-full items-center gap-xs-4 px-xs-4">
-					<img src={avatar} alt="" className="h-sm-3 w-sm-3 rounded-full" />
-					<span className="text-size-md font-weight-sm">{name}</span>
-				</span>
+			<Button
+				variant="item-text-default"
+				size="lg"
+				className="w-full"
+				pressed={opened}
+				onClick={() => setOpened(!opened)}
+			>
+				<img src={avatar} alt="" className="h-sm-2 w-sm-2 rounded-full" />
+				<span className="ml-button-px-item text-size-md font-weight-sm">{name}</span>
 			</Button>
 
 			{/* MENU */}
 			<div className={menuClass}>
-				<div className="flex items-center justify-between px-xs-5">
-					<span>Theme:</span>
+				{/* UI LIBRARY */}
+				<div className="mb-xs-1 mt-xs-3 flex items-center justify-between px-button-px-item">
+					<span>UI Library:</span>
+
+					<select
+						className="h-button-h-sm rounded-sm border border-color-border bg-color-bg-default px-xs-2 text-size-xs"
+						value={uiLibrary}
+						onChange={(event: SelectEvent) => changeUiLibrary(event.target?.value as UiLibrary)}
+					>
+						<option value={'custom' as UiLibrary}>Custom</option>
+						<option value={'material' as UiLibrary}>Material UI</option>
+						<option value={'antdesign' as UiLibrary}>Ant Design</option>
+					</select>
+				</div>
+
+				{/* THEME */}
+				<div className="flex items-center justify-between px-button-px-item">
+					<span>UI Theme:</span>
 
 					<div className="flex flex-col gap-xs-1">
 						<Button
@@ -86,53 +107,41 @@ export const UserSettings = () => {
 
 				<hr className={hrClass} />
 
-				<Button linkTo="/docs/api" variant="text-default" size="md" expanded>
-					<span className={`${actionClass} justify-between`}>
-						<span className="flex items-center">
-							<DocsIcon className={actionIconClass} />
-							API Docs
-						</span>
-						<NewTabIcon className={newTabIconClass} />
-					</span>
+				<Button linkHref="/docs/api" linkType="external" variant="item-text-default">
+					<DocsIcon className={actionIconClass} />
+					API Docs
+					<NewTabIcon className={newTabIconClass} />
 				</Button>
 
-				<Button linkHref={storybookUrl} variant="text-default" size="md" expanded>
-					<span className={`${actionClass} justify-between`}>
-						<span className="flex items-center">
-							<StorybookIcon className={actionIconClass} />
-							Design System
-						</span>
-						<NewTabIcon className={newTabIconClass} />
-					</span>
+				<Button linkHref={storybookUrl} linkType="external" variant="item-text-default">
+					<StorybookIcon className={actionIconClass} />
+					Design System
+					<NewTabIcon className={newTabIconClass} />
 				</Button>
 
-				<Button linkHref="https://github.com/morcosan/demo-ai-chat" variant="text-default" size="md" expanded>
-					<span className={`${actionClass} justify-between`}>
-						<span className="flex items-center">
-							{Boolean(isLight) && <GitHubBlackIcon className={actionIconClass} />}
-							{Boolean(isDark) && <GitHubWhiteIcon className={actionIconClass} />}
-							GitHub Repo
-						</span>
-						<NewTabIcon className={newTabIconClass} />
-					</span>
+				<Button
+					linkHref="https://github.com/morcosan/demo-ai-chat"
+					linkType="external"
+					variant="item-text-default"
+				>
+					{Boolean(isLight) && <GitHubBlackIcon className={actionIconClass} />}
+					{Boolean(isDark) && <GitHubWhiteIcon className={actionIconClass} />}
+					GitHub Repo
+					<NewTabIcon className={newTabIconClass} />
 				</Button>
 
 				<hr className={hrClass} />
 
-				<Button linkTo="/settings" linkType="same-tab" variant="text-default" size="md" expanded>
-					<span className={actionClass}>
-						<SettingsIcon className={actionIconClass} />
-						Settings
-					</span>
+				<Button linkHref="/settings" variant="item-text-default">
+					<SettingsIcon className={actionIconClass} />
+					Settings
 				</Button>
 
 				<hr className={hrClass} />
 
-				<Button linkTo="/logout" linkType="same-tab" variant="text-default" size="md" expanded>
-					<span className={`${actionClass} !font-weight-md text-color-failure`}>
-						<LogoutIcon className={`${actionIconClass} !fill-color-failure`} />
-						Sign out
-					</span>
+				<Button linkHref="/logout" variant="item-text-danger">
+					<LogoutIcon className={actionIconClass} />
+					Sign out
 				</Button>
 			</div>
 		</div>

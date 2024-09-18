@@ -8,11 +8,13 @@
 
 		/* Bundler mode */
 		"moduleResolution": "bundler",
+		"resolveJsonModule": true,
 		"allowImportingTsExtensions": true,
 		"isolatedModules": true,
 		"moduleDetection": "force",
 		"noEmit": true,
 		"jsx": "react-jsx",
+		"jsxImportSource": "@emotion/react",
 		"typeRoots": ["./types"],
 		"paths": {
 			// Webstorm bug:

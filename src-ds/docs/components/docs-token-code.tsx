@@ -24,28 +24,29 @@ export const DocsTokenCode = ({ icon, value, size }: Props) => {
 		'hover:scale-[1.1] focus:scale-[1.1]',
 	].join(' ')
 
+	const textClass = [
+		'flex-center absolute-overlay bg-color-success-bg',
+		'text-size-sm font-weight-md text-color-success-text-default',
+	].join(' ')
+
 	const onClick = (event: MouseEvent) => {
 		const button = event.target as HTMLButtonElement
 		button.blur()
 
 		navigator.clipboard.writeText(value)
 		setCopied(true)
-		wait(700).then(() => setCopied(false))
+		wait(600).then(() => setCopied(false))
 	}
 
 	return (
 		<div className={`relative h-sm-4 ${size || 'w-md-8'}`}>
 			<button type="button" className={buttonClass} onClick={onClick}>
-				<code className="!bg-color-bg-default pointer-events-none flex !w-full items-center gap-xs-2">
+				<code className="pointer-events-none flex !w-full items-center gap-xs-2 !bg-color-bg-default">
 					<img src={icon} className="ml-px mt-px h-xs-6 max-w-unset" alt="" />
 					<span className="truncate">{value}</span>
 				</code>
 
-				{Boolean(copied) && (
-					<div className="flex-center absolute-overlay bg-color-success-bg text-size-sm text-color-success-text">
-						Copied
-					</div>
-				)}
+				{Boolean(copied) && <div className={textClass}>Copied</div>}
 			</button>
 		</div>
 	)

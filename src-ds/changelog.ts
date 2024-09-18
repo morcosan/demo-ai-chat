@@ -20,8 +20,9 @@ export const CHANGELOG: LogEntry[] = [
 			token: ['Added basic tokens for ^color^, ^elevation^, ^radius^, ^spacing^ and ^typography^'],
 			core: [
 				'Added ^Keyboard^ enum for keyboard keys',
-				'Added ^ColorTheme^ system with ^light^ and ^dark^ themes',
-				'Added ^A11yTheme^ system with ^default^ and ^pointer^ themes',
+				'Added ^UiTheme^ system with ^light^ and ^dark^ themes',
+				'Added ^UiLibrary^ system with ^Material UI^ and ^Ant Design^ libraries',
+				'Added ^UiA11y^ system with ^default^ and ^pointer^ modes',
 			],
 			component: ['Created ^Button^ component'],
 		},
