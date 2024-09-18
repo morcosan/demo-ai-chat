@@ -1,5 +1,6 @@
 import { AiChatProvider } from '@app/biz-modules/ai-chat/state'
-import { UiA11yProvider, UiLibraryProvider, UiThemeProvider, Wrapper, Wrappers } from '@ds/release'
+import { UiA11yProvider, UiLibraryProvider, UiThemeProvider } from '@ds/release'
+import { Wrapper, Wrappers } from '@utils/release'
 import { StrictMode, Suspense } from 'react'
 import { Router } from './routing'
 import './styles/index.css'

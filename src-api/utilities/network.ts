@@ -1,5 +1,5 @@
+import { randomInt, randomTrue } from '@utils/release'
 import { ApiResponse, STATUS__NOT_FOUND, STATUS__SERVER_ERROR } from '../types'
-import { randomInt, randomTrue } from './random'
 
 export const RESP__NOT_FOUND: ApiResponse = { status: STATUS__NOT_FOUND, data: null }
 export const RESP__SERVER_ERROR: ApiResponse = { status: STATUS__SERVER_ERROR, data: null }

@@ -36,6 +36,7 @@ export default defineConfig({
 	resolve: {
 		alias: {
 			'@ds': `${ROOT_DIR}/src-ds`,
+			'@utils': `${ROOT_DIR}/src-utils`,
 		},
 	},
 

@@ -1,4 +1,3 @@
-import { randomAvatar, randomFullName } from '@api/utilities/random.ts'
 import GitHubBlackIcon from '@app/library/assets/github-black.svg'
 import GitHubWhiteIcon from '@app/library/assets/github-white.svg'
 import LogoutIcon from '@app/library/assets/icons-fa-v6/arrow-right-from-bracket.svg'
@@ -7,6 +6,7 @@ import SettingsIcon from '@app/library/assets/icons-fa-v6/gear.svg'
 import NewTabIcon from '@app/library/assets/icons-fa-v6/up-right-from-square.svg'
 import StorybookIcon from '@app/library/assets/storybook.svg'
 import { Button, useUiLibrary, useUiTheme } from '@ds/release'
+import { randomAvatar, randomFullName } from '@utils/release'
 import { ChangeEvent, useEffect, useMemo, useRef, useState } from 'react'
 
 type SelectEvent = ChangeEvent<HTMLSelectElement>

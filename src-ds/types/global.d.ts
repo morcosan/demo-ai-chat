@@ -1,6 +1,4 @@
-import { CSSObject } from '@emotion/react'
-import { CSSProperties, ReactNode } from 'react'
-
+export {}
 declare global {
 	// Based on Design Tokens Format Module: https://tr.designtokens.org/format
 	type DesignToken<V = DesignTokenValue> =
@@ -34,27 +32,7 @@ declare global {
 		| 'spacing'
 		| 'zIndex'
 
-	type ColorDesignToken = DesignToken<ColorDesignTokenValue>
-	type ColorDesignTokenGroup = DesignTokenGroup<ColorDesignTokenValue>
-	type ColorDesignTokenValue = string | Record<ColorScheme, string>
-
 	type A11yMode = 'default' | 'pointer'
 	type ColorScheme = 'light' | 'dark'
 	type UiLibrary = 'custom' | 'material' | 'antdesign'
-
-	interface ReactProps {
-		className?: string
-		style?: CSSProperties
-		children?: ReactNode
-	}
-
-	type JsxProps<C> = C extends JsxFn<infer P> ? P : unknown
-	type JsxFn<P> = (props: P) => unknown
-
-	type CSS = CSSObject
-
-	interface Pagination {
-		page: number
-		count: number
-	}
 }

@@ -1,6 +1,5 @@
-import { ATTR_KEY__COLOR_SCHEME } from '@ds/release'
 import { useEffect, useMemo, useState } from 'react'
-import { Context, Store } from './_context'
+import { ATTR_KEY__COLOR_SCHEME, Context, Store } from './_context'
 import { TOKENS__DARK_THEME, TOKENS__LIGHT_THEME, ThemeTokens } from './_tokens'
 
 interface Props extends ReactProps {

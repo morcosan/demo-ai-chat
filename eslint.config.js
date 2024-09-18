@@ -4,7 +4,7 @@ import reactHooksPlugin from 'eslint-plugin-react-hooks'
 import reactRefreshPlugin from 'eslint-plugin-react-refresh'
 import globals from 'globals'
 import tsESLint from 'typescript-eslint'
-import { dsPlugin } from './.tooling/eslint/ds-plugin.js'
+import { customPlugin } from './.tooling/eslint/custom-plugin.js'
 
 export default tsESLint.config(
 	{
@@ -33,7 +33,7 @@ export default tsESLint.config(
 			react: reactPlugin,
 			'react-hooks': reactHooksPlugin,
 			'react-refresh': reactRefreshPlugin,
-			'@ds': dsPlugin,
+			custom: customPlugin,
 		},
 
 		rules: {
@@ -84,7 +84,7 @@ export default tsESLint.config(
 			'@typescript-eslint/no-unused-vars': 'warn',
 			'@typescript-eslint/ban-ts-comment': ['error', { 'ts-ignore': 'allow-with-description' }],
 
-			'@ds/only-import-from-release': 'error',
+			'custom/only-import-from-release': 'error',
 		},
 	}
 )

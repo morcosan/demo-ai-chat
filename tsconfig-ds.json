@@ -15,16 +15,16 @@
 		"noEmit": true,
 		"jsx": "react-jsx",
 		"jsxImportSource": "@emotion/react",
-		"typeRoots": ["./types"],
 		"paths": {
 			// Webstorm bug:
 			// Aliases are missing code highlighting if tsconfig file is inside a folder
 			// Highlight must be manually configured as `tsconfig*.json` in `Settings | File Types | TypeScript Config`
-			"@ds/*": ["./src-ds/*"]
+			"@ds/*": ["./src-ds/*"],
+			"@utils/*": ["./src-utils/*"]
 		},
 
 		/* Linting */
 		"strict": true
 	},
-	"include": ["./src-ds", "./types", "./tailwind.config.ts", "./.storybook/preview.tsx"]
+	"include": ["./src-ds", "./src-utils", "./tailwind.config.ts", "./.storybook/preview.tsx"]
 }
