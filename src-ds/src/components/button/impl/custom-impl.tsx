@@ -1,4 +1,4 @@
-import { CSS__ABSOLUTE_OVERLAY } from '@ds/release'
+import { CSS__ABSOLUTE_OVERLAY } from '@utils/release'
 import { useMemo } from 'react'
 import { ButtonProps } from '../types'
 import { useButtonBase } from './_base'

@@ -1,7 +1,7 @@
+import { randomArray, randomId, randomRecentDate, randomText } from '@utils/release'
 import { ApiResponse, Chat, ChatsResponse, ChatsUrlQuery, MessagesUrlQuery, STATUS__SUCCESS } from '../types'
 import { RESP__NOT_FOUND } from '../utilities/network'
 import { extractInt, isGreaterThanZero } from '../utilities/parsers'
-import { randomArray, randomId, randomRecentDate, randomText } from '../utilities/random'
 import { isValidPagination } from '../utilities/validators'
 
 const DEFAULT_COUNT = 10

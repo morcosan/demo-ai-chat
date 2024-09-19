@@ -1,5 +1,6 @@
-import { UiA11yProvider, UiLibraryProvider, UiThemeProvider, Wrapper, Wrappers } from '@ds/release'
+import { UiA11yProvider, UiLibraryProvider, UiThemeProvider } from '@ds/release'
 import { Preview } from '@storybook/react'
+import { Wrapper, Wrappers } from '@utils/release'
 import { MemoryRouter } from 'react-router-dom'
 
 type Type = typeof UiA11yProvider | typeof UiThemeProvider | typeof UiLibraryProvider

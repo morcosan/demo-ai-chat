@@ -1,4 +1,5 @@
-import { CSS__ABSOLUTE_OVERLAY, Keyboard, useUiA11y, useUiTheme } from '@ds/release'
+import { useUiA11y, useUiTheme } from '@ds/release'
+import { CSS__ABSOLUTE_OVERLAY, Keyboard } from '@utils/release'
 import { KeyboardEvent, MouseEvent, useCallback, useMemo, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { ButtonProps, ButtonVariant } from '../types'
