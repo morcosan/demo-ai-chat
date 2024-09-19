@@ -1,0 +1,50 @@
+import { ComponentType, MouseEvent, useState } from 'react'
+
+export interface Icon {
+	name: string
+	elem: ComponentType<{ className?: string }>
+	coding: string
+}
+
+interface Props {
+	icon: Icon
+}
+
+export const DocIconItem = ({ icon }: Props) => {
+	const [copied, setCopied] = useState(false)
+
+	const buttonClass = [
+		'relative flex h-md-8 w-md-8 flex-col overflow-hidden rounded-sm border border-color-border',
+		'fill-color-text-default stroke-color-text-default',
+		'hover:shadow-md focus:shadow-md',
+		'hover:scale-[1.05] focus:scale-[1.05]',
+	].join(' ')
+
+	const copiedClass = [
+		'flex-center absolute-overlay bg-color-success-bg',
+		'text-size-sm font-weight-md text-color-success-text-default',
+	].join(' ')
+
+	const onClick = (event: MouseEvent) => {
+		const button = event.target as HTMLButtonElement
+		button.blur()
+
+		navigator.clipboard.writeText(icon.coding)
+		setCopied(true)
+		wait(600).then(() => setCopied(false))
+	}
+
+	return (
+		<button type="button" title={icon.coding} className={buttonClass} onClick={onClick}>
+			<span className="flex-center docs-grid-bg pointer-events-none w-full flex-1">
+				<icon.elem className="max-h-[40px] max-w-[40px]" />
+			</span>
+
+			<span className="pointer-events-none w-full border-t border-color-border py-xs-1 text-center">
+				{icon.name}
+			</span>
+
+			{Boolean(copied) && <div className={copiedClass}>Copied</div>}
+		</button>
+	)
+}

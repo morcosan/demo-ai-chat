@@ -1,11 +1,11 @@
-import GitHubBlackIcon from '@app/library/assets/github-black.svg'
-import GitHubWhiteIcon from '@app/library/assets/github-white.svg'
-import LogoutIcon from '@app/library/assets/icons-fa-v6/arrow-right-from-bracket.svg'
-import DocsIcon from '@app/library/assets/icons-fa-v6/circle-question.svg'
-import SettingsIcon from '@app/library/assets/icons-fa-v6/gear.svg'
-import NewTabIcon from '@app/library/assets/icons-fa-v6/up-right-from-square.svg'
-import StorybookIcon from '@app/library/assets/storybook.svg'
 import { Button, useUiLibrary, useUiTheme } from '@ds/release'
+import InfoSvg from '@ds/release/icons/info.svg'
+import LogoutSvg from '@ds/release/icons/logout.svg'
+import NewTabSvg from '@ds/release/icons/new-tab.svg'
+import SettingSvg from '@ds/release/icons/setting.svg'
+import GithubBlackSvg from '@ds/release/logos/github-black.svg'
+import GithubWhiteSvg from '@ds/release/logos/github-white.svg'
+import StorybookSvg from '@ds/release/logos/storybook.svg'
 import { randomAvatar, randomFullName } from '@utils/release'
 import { ChangeEvent, useEffect, useMemo, useRef, useState } from 'react'
 
@@ -108,15 +108,15 @@ export const UserSettings = () => {
 				<hr className={hrClass} />
 
 				<Button linkHref="/docs/api" linkType="external" variant="item-text-default">
-					<DocsIcon className={actionIconClass} />
+					<InfoSvg className={actionIconClass} />
 					API Docs
-					<NewTabIcon className={newTabIconClass} />
+					<NewTabSvg className={newTabIconClass} />
 				</Button>
 
 				<Button linkHref={storybookUrl} linkType="external" variant="item-text-default">
-					<StorybookIcon className={actionIconClass} />
+					<StorybookSvg className={actionIconClass} />
 					Design System
-					<NewTabIcon className={newTabIconClass} />
+					<NewTabSvg className={newTabIconClass} />
 				</Button>
 
 				<Button
@@ -124,23 +124,23 @@ export const UserSettings = () => {
 					linkType="external"
 					variant="item-text-default"
 				>
-					{Boolean(isLight) && <GitHubBlackIcon className={actionIconClass} />}
-					{Boolean(isDark) && <GitHubWhiteIcon className={actionIconClass} />}
+					{Boolean(isLight) && <GithubBlackSvg className={actionIconClass} />}
+					{Boolean(isDark) && <GithubWhiteSvg className={actionIconClass} />}
 					GitHub Repo
-					<NewTabIcon className={newTabIconClass} />
+					<NewTabSvg className={newTabIconClass} />
 				</Button>
 
 				<hr className={hrClass} />
 
 				<Button linkHref="/settings" variant="item-text-default">
-					<SettingsIcon className={actionIconClass} />
+					<SettingSvg className={actionIconClass} />
 					Settings
 				</Button>
 
 				<hr className={hrClass} />
 
 				<Button linkHref="/logout" variant="item-text-danger">
-					<LogoutIcon className={actionIconClass} />
+					<LogoutSvg className={actionIconClass} />
 					Sign out
 				</Button>
 			</div>

@@ -8,8 +8,8 @@ export const story: StoryObj = {}
 story.storyName = 'Changelog'
 
 export default {
-	id: 'Versioning / Changelog',
-	title: 'Versioning / Changelog',
+	id: 'Changelog',
+	title: 'Changelog',
 
 	component: () => {
 		const getListing = (title: string, changes: string[]) => (
@@ -33,6 +33,7 @@ export default {
 						</h2>
 						{entry.changes.docs?.length ? getListing('📚 Documentation:', entry.changes.docs) : ''}
 						{entry.changes.token?.length ? getListing('🎨 Design tokens:', entry.changes.token) : ''}
+						{entry.changes.asset?.length ? getListing('🖼️ Assets:', entry.changes.asset) : ''}
 						{entry.changes.core?.length ? getListing('🧱 Web core:', entry.changes.core) : ''}
 						{entry.changes.component?.length ? getListing('🧩 Components:', entry.changes.component) : ''}
 						{entry.changes.deprecate?.length ? getListing('💀 Deprecations:', entry.changes.deprecate) : ''}

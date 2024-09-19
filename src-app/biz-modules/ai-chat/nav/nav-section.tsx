@@ -1,6 +1,6 @@
 import { useAiChatStore } from '@app/biz-modules/ai-chat/state'
 import { Button } from '@ds/release'
-import LogoIcon from '@ds/release/assets/logo.svg'
+import AiChatSvg from '@ds/release/logos/ai-chat.svg'
 import { debounce } from 'lodash'
 import { UIEvent } from 'react'
 import { Chat } from '../api/types'
@@ -18,7 +18,7 @@ export const AiChatNavSection = () => {
 	return (
 		<>
 			<Button linkHref="/chat/0">
-				<LogoIcon className="-ml-xs-4 mr-xs-3 h-xs-9 w-xs-9" />
+				<AiChatSvg className="-ml-xs-4 mr-xs-3 h-xs-9 w-xs-9" />
 				New chat
 			</Button>
 
