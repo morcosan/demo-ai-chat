@@ -7,15 +7,14 @@ import { useButtonBase } from './_base'
 type MuiVariant = 'text' | 'outlined' | 'contained'
 
 export const MuiImpl = (props: ButtonProps) => {
-	const { propsBase, cssAll, isDisabled, isVItem, isVSolid, variant } = useButtonBase(props)
+	const { propsBase, cssAll, isDisabled, isVItem, isVSolid, dVariant, dState } = useButtonBase(props)
 
-	const muiVariant = useMemo((): MuiVariant => (isVSolid ? 'contained' : 'text'), [variant])
+	const muiVariant = useMemo((): MuiVariant => (isVSolid ? 'contained' : 'text'), [dVariant])
 
 	const cssButton: CSS = {
 		minWidth: 'unset',
 		paddingTop: '0',
 		paddingBottom: '0',
-		lineHeight: 'unset',
 		textTransform: 'none',
 		outline: 'revert',
 		opacity: 1,
@@ -35,7 +34,7 @@ export const MuiImpl = (props: ButtonProps) => {
 				stroke: props.loading ? 'transparent' : 'currentColor',
 			},
 		}),
-		[variant, props.loading]
+		[dVariant, props.loading]
 	)
 
 	const propsButton = {
@@ -44,6 +43,7 @@ export const MuiImpl = (props: ButtonProps) => {
 		disabled: isDisabled,
 		loading: props.loading,
 		disableElevation: true,
+		disableRipple: dState !== 'default',
 		sx: [...cssAll, cssButton, cssChildren],
 	}
 

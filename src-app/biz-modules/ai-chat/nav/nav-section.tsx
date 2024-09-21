@@ -38,10 +38,9 @@ export const AiChatNavSection = () => {
 							<Button
 								key={chat.id}
 								linkHref={`/chat/${chat.id}`}
-								variant="item-text-default"
-								pressed={Boolean(activeChat?.id === chat.id)}
+								variant={activeChat?.id === chat.id ? 'item-solid-secondary' : 'item-text-default'}
+								state={activeChat?.id === chat.id ? 'selected' : 'default'}
 								tooltip={chat.title}
-								className={activeChat?.id === chat.id ? '!border border-color-primary' : ''}
 							>
 								<span className="truncate">{chat.title}</span>
 							</Button>

@@ -5,6 +5,7 @@ import react from '@vitejs/plugin-react'
 import { defineConfig } from 'vite'
 import svgr from 'vite-plugin-svgr'
 import { showBlueLogs } from '../.tooling/console'
+import { viteBuildPlugin, viteServerPlugin } from '../.tooling/storybook/styles-plugin'
 import { createBuildNumber, getDsVersion } from '../.tooling/versioning'
 
 const ROOT_DIR = process.cwd()
@@ -31,7 +32,12 @@ if (IS_VALID_BUILD) {
 
 // https://vitejs.dev/config/
 export default defineConfig({
-	plugins: [react({ jsxImportSource: '@emotion/react' }), svgr({ include: '**/*.svg' })],
+	plugins: [
+		react({ jsxImportSource: '@emotion/react' }),
+		svgr({ include: '**/*.svg' }),
+		viteServerPlugin(),
+		viteBuildPlugin(),
+	],
 
 	resolve: {
 		alias: {

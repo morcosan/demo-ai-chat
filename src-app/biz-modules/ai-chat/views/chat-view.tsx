@@ -26,7 +26,7 @@ export const ChatView = () => {
 			)}
 
 			<input
-				className="bg-color-bg-default h-sm-0 border border-color-border p-sm-0 focus:border-color-border-active"
+				className="h-sm-0 border border-color-border-default bg-color-bg-field p-sm-0 focus:border-color-border-active"
 				placeholder="Ask a question"
 			/>
 		</div>

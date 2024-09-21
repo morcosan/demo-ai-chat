@@ -1,5 +1,5 @@
 import { useUiLibrary } from '@ds/release'
-import { AntdImpl } from './impl/antd-impl'
+import { AntImpl } from './impl/ant-impl'
 import { CustomImpl } from './impl/custom-impl'
 import { MuiImpl } from './impl/mui-impl'
 import { ButtonProps } from './types'
@@ -11,5 +11,5 @@ export const Button = (props: ButtonProps) => {
 
 	if (uiLibrary === 'custom') return <CustomImpl {...props} />
 	if (uiLibrary === 'material') return <MuiImpl {...props} />
-	if (uiLibrary === 'antdesign') return <AntdImpl {...props} />
+	if (uiLibrary === 'antdesign') return <AntImpl {...props} />
 }

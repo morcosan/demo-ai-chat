@@ -1,12 +1,12 @@
 import { ThemeConfig } from 'antd'
 import { getTokenValue_COLOR } from '../tokens'
 
-const createAntdTheme = (scheme: ColorScheme): ThemeConfig => ({
+const createThemeConfig = (theme: ColorTheme): ThemeConfig => ({
 	hashed: false,
 	token: {
-		colorPrimary: getTokenValue_COLOR('primary', scheme),
+		colorPrimary: getTokenValue_COLOR('primary', theme),
 	},
 })
 
-export const ANTD_LIGHT_THEME = createAntdTheme('light')
-export const ANTD_DARK_THEME = createAntdTheme('dark')
+export const ANT_LIGHT_THEME_CONFIG = createThemeConfig('light')
+export const ANT_DARK_THEME_CONFIG = createThemeConfig('dark')

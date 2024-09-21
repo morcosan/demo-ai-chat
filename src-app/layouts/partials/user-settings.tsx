@@ -12,7 +12,7 @@ import { ChangeEvent, useEffect, useMemo, useRef, useState } from 'react'
 type SelectEvent = ChangeEvent<HTMLSelectElement>
 
 export const UserSettings = () => {
-	const { isLight, isDark, changeTheme } = useUiTheme()
+	const { isUiLight, isUiDark, changeColorTheme } = useUiTheme()
 	const { uiLibrary, changeUiLibrary } = useUiLibrary()
 	const [opened, setOpened] = useState(false)
 
@@ -26,10 +26,12 @@ export const UserSettings = () => {
 			opened ? 'block' : 'hidden',
 			'absolute bottom-0 right-0 translate-x-full z-popup shadow-lg',
 			'flex w-lg-6 p-xs-4 flex-col gap-xs-3 bg-color-bg-default',
-			'border border-color-border-soft rounded-md',
+			'border border-color-border-shadow rounded-md',
 		].join(' ')
 	}, [opened])
-
+	const selectClass = [
+		'h-button-h-sm rounded-sm border border-color-border-default bg-color-bg-default px-xs-2 text-size-xs',
+	].join(' ')
 	const hrClass = 'my-xs-2'
 	const actionIconClass = 'mr-button-px-item h-xs-8 w-xs-8'
 	const newTabIconClass = 'ml-auto mr-px h-xs-6 w-xs-6 fill-color-text-subtle'
@@ -59,7 +61,7 @@ export const UserSettings = () => {
 				variant="item-text-default"
 				size="lg"
 				className="w-full"
-				pressed={opened}
+				state={opened ? 'pressed' : 'default'}
 				onClick={() => setOpened(!opened)}
 			>
 				<img src={avatar} alt="" className="h-sm-2 w-sm-2 rounded-full" />
@@ -73,7 +75,7 @@ export const UserSettings = () => {
 					<span>UI Library:</span>
 
 					<select
-						className="h-button-h-sm rounded-sm border border-color-border bg-color-bg-default px-xs-2 text-size-xs"
+						className={selectClass}
 						value={uiLibrary}
 						onChange={(event: SelectEvent) => changeUiLibrary(event.target?.value as UiLibrary)}
 					>
@@ -89,16 +91,16 @@ export const UserSettings = () => {
 
 					<div className="flex flex-col gap-xs-1">
 						<Button
-							variant={isLight ? 'solid-primary' : 'text-default'}
+							variant={isUiLight ? 'solid-primary' : 'text-default'}
 							size="xs"
-							onClick={() => changeTheme('light')}
+							onClick={() => changeColorTheme('light')}
 						>
 							☀️ Light&nbsp;
 						</Button>
 						<Button
-							variant={isDark ? 'solid-primary' : 'text-default'}
+							variant={isUiDark ? 'solid-primary' : 'text-default'}
 							size="xs"
-							onClick={() => changeTheme('dark')}
+							onClick={() => changeColorTheme('dark')}
 						>
 							🌙 Dark&nbsp;
 						</Button>
@@ -124,8 +126,8 @@ export const UserSettings = () => {
 					linkType="external"
 					variant="item-text-default"
 				>
-					{Boolean(isLight) && <GithubBlackSvg className={actionIconClass} />}
-					{Boolean(isDark) && <GithubWhiteSvg className={actionIconClass} />}
+					{Boolean(isUiLight) && <GithubBlackSvg className={actionIconClass} />}
+					{Boolean(isUiDark) && <GithubWhiteSvg className={actionIconClass} />}
 					GitHub Repo
 					<NewTabSvg className={newTabIconClass} />
 				</Button>

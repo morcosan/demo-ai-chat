@@ -10,7 +10,7 @@ import { TOKENS__Z_INDEX } from './_z-index'
 const getTokenValue = <K extends string, V>(
 	tokenGroup: DesignTokenGroup<V>,
 	tokenName: K,
-	scheme?: ColorScheme
+	theme?: ColorTheme
 ): V => {
 	const token = tokenGroup[tokenName] as DesignToken<V>
 	if (!token) return undefined as V
@@ -20,7 +20,7 @@ const getTokenValue = <K extends string, V>(
 
 	if (token.$value !== undefined) {
 		if (typeof token.$value === 'object') {
-			value = (token.$value as DesignTokenThemeValue<V>)[scheme as ColorScheme]
+			value = (token.$value as DesignTokenThemeValue<V>)[theme as ColorTheme]
 			if (!value) return undefined as V
 		} else {
 			value = token.$value
@@ -29,13 +29,13 @@ const getTokenValue = <K extends string, V>(
 
 	if (token.$ref !== undefined) {
 		if (typeof token.$ref === 'object') {
-			ref = (token.$ref as DesignTokenThemeValue<string>)[scheme as ColorScheme]
+			ref = (token.$ref as DesignTokenThemeValue<string>)[theme as ColorTheme]
 			if (!ref) return undefined as V
 		} else {
 			ref = token.$ref
 		}
 
-		value = getTokenValue<K, V>(tokenGroup, ref as K, scheme)
+		value = getTokenValue<K, V>(tokenGroup, ref as K, theme)
 	}
 
 	return value
@@ -49,7 +49,7 @@ type Radius = keyof typeof TOKENS__RADIUS
 type Shadow = keyof typeof TOKENS__SHADOW
 type Spacing = keyof typeof TOKENS__SPACING
 type ZIndex = keyof typeof TOKENS__Z_INDEX
-type CS = ColorScheme
+type CS = ColorTheme
 type ThemeValue<V> = DesignTokenThemeValue<V>
 
 const gV = getTokenValue

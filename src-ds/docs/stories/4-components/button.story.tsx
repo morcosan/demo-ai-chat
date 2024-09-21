@@ -7,17 +7,21 @@ import type { Meta, StoryObj } from '@storybook/react'
 
 export const story: StoryObj<typeof Button> = {
 	args: {
+		// Slots
+		children: 'Test qyp',
+		// Props
 		variant: 'solid-primary',
 		size: 'md',
+		state: 'default',
 		loading: false,
 		disabled: false,
-		pressed: false,
 		linkHref: '',
 		linkType: 'internal',
 		tooltip: 'Tooltip',
-		children: 'Click me',
+		// Html
 		className: '',
 		style: {},
+		// Events
 		onClick: action('onClick'),
 	},
 }
@@ -35,13 +39,14 @@ const meta: Meta<typeof Button> = {
 				'solid-danger',
 				'text-default',
 				'text-danger',
+				'item-solid-secondary',
 				'item-text-default',
 				'item-text-danger',
 			],
 			size: ['xs', 'sm', 'md', 'lg'],
+			state: ['default', 'pressed', 'selected'],
 			loading: 'boolean',
 			disabled: 'boolean',
-			pressed: 'boolean',
 			linkHref: 'text',
 			linkType: ['internal', 'external', 'inactive'],
 			tooltip: 'text',
@@ -65,6 +70,12 @@ const meta: Meta<typeof Button> = {
 				details: `Property that determines total height`,
 			},
 			{
+				name: 'state',
+				type: 'ButtonState',
+				default: `'default'`,
+				details: `Property for enforcing a specific button state`,
+			},
+			{
 				name: 'loading',
 				type: 'boolean',
 				default: `false`,
@@ -75,12 +86,6 @@ const meta: Meta<typeof Button> = {
 				type: 'boolean',
 				default: `false`,
 				details: `Flag for enabling disabled state (non-interactive)`,
-			},
-			{
-				name: 'pressed',
-				type: 'boolean',
-				default: `false`,
-				details: `Flag for permanently showing hover / focus highlight`,
 			},
 			{
 				name: 'linkHref',
@@ -127,9 +132,11 @@ const meta: Meta<typeof Button> = {
 				| 'solid-danger'
 				| 'text-default'
 				| 'text-danger'
+				| 'item-solid-secondary'
 				| 'item-text-default'
 				| 'item-text-danger'
 			type ButtonSize = 'xs' | 'sm' | 'md' | 'lg'
+			type ButtonState = 'default' | 'pressed' | 'selected'
 			type LinkType = 'internal' | 'external' | 'inactive'
 		`
 

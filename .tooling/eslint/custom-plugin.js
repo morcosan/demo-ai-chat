@@ -15,7 +15,8 @@ export const customPlugin = {
 							path.startsWith('@ds/release') ||
 							path.startsWith('@ds/docs') ||
 							path.startsWith('@ds/changelog') ||
-							path.includes('version.json')
+							path.includes('version.json') ||
+							context.filename.includes('.storybook')
 
 						if (!isValid) {
 							context.report({
@@ -27,7 +28,7 @@ export const customPlugin = {
 					}
 
 					if (isUtils) {
-						const isValid = path.startsWith('@utils/release')
+						const isValid = path.startsWith('@utils/release') || context.filename.includes('.storybook')
 
 						if (!isValid) {
 							context.report({

@@ -11,7 +11,7 @@ export const DocsTokenCode = ({ iconSvg, value, size }: Props) => {
 
 	const buttonClass = [
 		'origin-center absolute-center overflow-hidden',
-		'border-color-border rounded-xs',
+		'border-color-border-default rounded-xs',
 		'w-full min-w-full px-xs-0',
 		'hover:w-fit focus:w-fit',
 		'hover:w-fit focus:w-fit',

@@ -1,0 +1,42 @@
+[data-test-id='sb-preview-toolbar'] {
+	z-index: var(--ds-z-index-sticky) !important;
+	box-shadow: var(--ds-shadow-sm) !important;
+	background-color: var(--ds-color-bg-default) !important;
+
+	& a,
+	& button {
+		background-color: transparent !important;
+		padding: 0 var(--ds-spacing-xs-4) !important;
+		height: var(--ds-spacing-sm-2) !important;
+		color: var(--ds-color-text-default) !important;
+		font-weight: var(--ds-font-weight-sm) !important;
+		font-size: var(--ds-font-size-sm) !important;
+
+		&.JS_TRIGGER:focus,
+		&:hover {
+			background-color: var(--ds-color-hover-default) !important;
+		}
+
+		&:active {
+			background-color: var(--ds-color-hover-pressed) !important;
+		}
+
+		&.JS_SELECTED {
+			background-color: var(--ds-color-yellow-3) !important;
+			color: var(--ds-color-yellow-4) !important;
+
+			& svg path {
+				fill: var(--ds-color-yellow-4) !important;
+			}
+		}
+
+		& svg {
+			width: var(--ds-spacing-xs-7) !important;
+			height: var(--ds-spacing-xs-7) !important;
+
+			path {
+				fill: var(--ds-color-text-default) !important;
+			}
+		}
+	}
+}

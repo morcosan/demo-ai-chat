@@ -45,8 +45,8 @@ export default {
 			},
 		]
 		const attributes = [
-			{ code: '[data-color-scheme="light"]', details: 'Display ^light^ color theme' },
-			{ code: '[data-color-scheme="dark"]', details: 'Display ^dark^ color theme' },
+			{ code: '[data-color-theme="light"]', details: 'Display ^light^ color theme' },
+			{ code: '[data-color-theme="dark"]', details: 'Display ^dark^ color theme' },
 			{ code: '[data-a11y-mode="default"]', details: 'Show tab navigation outline' },
 			{ code: '[data-a11y-mode="pointer"]', details: 'Hide tab navigation outline' },
 		]

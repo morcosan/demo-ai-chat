@@ -6,9 +6,15 @@ select,
 video,
 audio,
 [tabindex] {
-	outline-offset: var(--ds-spacing-outline);
+	outline-offset: var(--ds-spacing-a11y-outline);
 }
 
 [data-a11y-mode='pointer'] * {
 	outline: none !important;
+}
+
+/* Fix Ant Design overrides */
+a,
+a:focus {
+	outline: revert;
 }

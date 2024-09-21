@@ -1,3 +1,5 @@
+/* Font weight tokens */
+
 :host,
 :root {
 	--ds-font-weight-xs: 300;

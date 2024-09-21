@@ -1,4 +1,4 @@
-import { TAILWIND_THEME } from './src-ds/release/tailwind'
+import { TAILWIND_THEME } from './src-ds/release/styling/tailwind'
 
 /** @type {import('tailwindcss').Config} */
 export default {

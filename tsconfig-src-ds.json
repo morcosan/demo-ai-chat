@@ -27,5 +27,5 @@
 		/* Linting */
 		"strict": true
 	},
-	"include": ["./src-ds", "./src-utils", "./tailwind.config.ts", "./.storybook/preview.tsx"]
+	"include": ["./src-ds", "./src-utils", "./.storybook/preview.tsx"]
 }

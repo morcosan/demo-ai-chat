@@ -14,7 +14,7 @@ export const DocIconItem = ({ icon }: Props) => {
 	const [copied, setCopied] = useState(false)
 
 	const buttonClass = [
-		'relative flex h-md-8 w-md-8 flex-col overflow-hidden rounded-sm border border-color-border',
+		'relative flex h-md-8 w-md-8 flex-col overflow-hidden rounded-sm border border-color-border-default',
 		'fill-color-text-default stroke-color-text-default',
 		'hover:shadow-md focus:shadow-md',
 		'hover:scale-[1.05] focus:scale-[1.05]',
@@ -40,7 +40,7 @@ export const DocIconItem = ({ icon }: Props) => {
 				<icon.elem className="max-h-[40px] max-w-[40px]" />
 			</span>
 
-			<span className="pointer-events-none w-full border-t border-color-border py-xs-1 text-center">
+			<span className="pointer-events-none w-full border-t border-color-border-default py-xs-1 text-center">
 				{icon.name}
 			</span>
 

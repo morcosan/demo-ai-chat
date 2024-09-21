@@ -1,4 +1,5 @@
-import '@ds/release/setup' // Must be first
+import '@ds/release/styling/index.css'
+import '@utils/release'
 import { createRoot } from 'react-dom/client'
 import App from './app.tsx'
 

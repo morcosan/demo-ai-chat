@@ -1,3 +1,5 @@
+/* Z-index tokens */
+
 :host,
 :root {
 	--ds-z-index-z1: 1000;

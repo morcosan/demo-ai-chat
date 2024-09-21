@@ -15,5 +15,5 @@ a {
 }
 
 hr {
-	border-color: var(--ds-color-border);
+	border-color: var(--ds-color-border-subtle);
 }
