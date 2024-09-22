@@ -1,3 +1,5 @@
+/* Spacing tokens */
+
 :host,
 :root {
 	/* Increment by 2px */
@@ -88,5 +90,5 @@
 
 	--ds-spacing-field-h: var(--ds-spacing-button-h-md);
 
-	--ds-spacing-outline: var(--ds-spacing-xs-1);
+	--ds-spacing-a11y-outline: var(--ds-spacing-xs-0);
 }

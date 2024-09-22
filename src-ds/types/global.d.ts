@@ -20,7 +20,7 @@ declare global {
 		readonly $description?: string
 		readonly [key: string]: DesignToken<V>
 	}
-	type DesignTokenThemeValue<V = string | number> = Record<ColorScheme, V>
+	type DesignTokenThemeValue<V = string | number> = Record<ColorTheme, V>
 	type DesignTokenValue<V = string | number> = V | DesignTokenThemeValue<V>
 	type DesignTokenType =
 		| 'color'
@@ -33,6 +33,6 @@ declare global {
 		| 'zIndex'
 
 	type A11yMode = 'default' | 'pointer'
-	type ColorScheme = 'light' | 'dark'
+	type ColorTheme = 'light' | 'dark'
 	type UiLibrary = 'custom' | 'material' | 'antdesign'
 }

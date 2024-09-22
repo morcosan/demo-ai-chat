@@ -1,19 +1,20 @@
 export const TOKENS__COLOR = {
 	white: { $value: '#fff', $css: '--ds-color-white' },
-	'grey-1': { $value: '#f3f4f6', $css: '--ds-color-grey-1' },
-	'grey-2': { $value: '#e5e7eb', $css: '--ds-color-grey-2' },
-	'grey-3': { $value: '#d1d5db', $css: '--ds-color-grey-3' },
-	'grey-4': { $value: '#9ca3af', $css: '--ds-color-grey-4' },
-	'grey-5': { $value: '#6b7280', $css: '--ds-color-grey-5' },
-	'grey-6': { $value: '#4b5563', $css: '--ds-color-grey-6' },
-	'grey-7': { $value: '#374151', $css: '--ds-color-grey-7' },
-	'grey-8': { $value: '#1f2937', $css: '--ds-color-grey-8' },
-	'grey-9': { $value: '#111827', $css: '--ds-color-grey-9' },
+	'grey-0': { $value: '#fafafa', $css: '--ds-color-grey-0' },
+	'grey-1': { $value: '#f4f4f5', $css: '--ds-color-grey-1' },
+	'grey-2': { $value: '#e4e4e7', $css: '--ds-color-grey-2' },
+	'grey-3': { $value: '#d4d4d8', $css: '--ds-color-grey-3' },
+	'grey-4': { $value: '#a1a1aa', $css: '--ds-color-grey-4' },
+	'grey-5': { $value: '#71717a', $css: '--ds-color-grey-5' },
+	'grey-6': { $value: '#52525b', $css: '--ds-color-grey-6' },
+	'grey-7': { $value: '#3f3f46', $css: '--ds-color-grey-7' },
+	'grey-8': { $value: '#27272a', $css: '--ds-color-grey-8' },
+	'grey-9': { $value: '#18181b', $css: '--ds-color-grey-9' },
 
 	'purple-1': { $value: '#f3e8ff', $css: '--ds-color-purple-1' },
 	'purple-2': { $value: '#c084fc', $css: '--ds-color-purple-2' },
 	'purple-3': { $value: '#9333ea', $css: '--ds-color-purple-3' },
-	'purple-4': { $value: '#6b21a8', $css: '--ds-color-purple-4' },
+	'purple-4': { $value: '#4c1874', $css: '--ds-color-purple-4' },
 
 	'yellow-1': { $value: '#fef9c3', $css: '--ds-color-yellow-1' },
 	'yellow-2': { $value: '#fef08a', $css: '--ds-color-yellow-2' },
@@ -30,10 +31,10 @@ export const TOKENS__COLOR = {
 	'red-3': { $value: '#dc2626', $css: '--ds-color-red-3' },
 	'red-4': { $value: '#5e1717', $css: '--ds-color-red-4' },
 
-	'blue-1': { $value: '#e0f2fe', $css: '--ds-color-blue-1' },
-	'blue-2': { $value: '#38bdf8', $css: '--ds-color-blue-2' },
-	'blue-3': { $value: '#0284c7', $css: '--ds-color-blue-3' },
-	'blue-4': { $value: '#075985', $css: '--ds-color-blue-4' },
+	'blue-1': { $value: '#dbeafe', $css: '--ds-color-blue-1' },
+	'blue-2': { $value: '#60a5fa', $css: '--ds-color-blue-2' },
+	'blue-3': { $value: '#2563eb', $css: '--ds-color-blue-3' },
+	'blue-4': { $value: '#1e40af', $css: '--ds-color-blue-4' },
 
 	'black-glass-1': { $value: 'rgba(0, 0, 0, 0.08)', $css: '--ds-color-black-glass-1' },
 	'black-glass-2': { $value: 'rgba(0, 0, 0, 0.16)', $css: '--ds-color-black-glass-2' },
@@ -56,8 +57,9 @@ export const TOKENS__COLOR = {
 	'white-glass-9': { $value: 'rgba(255, 255, 255, 0.72)', $css: '--ds-color-white-glass-9' },
 
 	'bg-default': { $ref: { light: 'white', dark: 'grey-8' }, $css: '--ds-color-bg-default' },
-	'bg-preview': { $ref: { light: 'black-glass-1', dark: 'black-glass-3' }, $css: '--ds-color-bg-preview' },
+	'bg-field': { $ref: { light: 'white', dark: 'grey-9' }, $css: '--ds-color-bg-field' },
 	'bg-navbar': { $ref: { light: 'white', dark: 'grey-9' }, $css: '--ds-color-bg-navbar' },
+	'bg-preview': { $ref: { light: 'black-glass-1', dark: 'black-glass-3' }, $css: '--ds-color-bg-preview' },
 	'bg-scrollbar': { $ref: { light: 'black-glass-2', dark: 'white-glass-2' }, $css: '--ds-color-bg-scrollbar' },
 	'bg-scrollbar-hover': {
 		$ref: { light: 'black-glass-3', dark: 'white-glass-3' },
@@ -67,6 +69,7 @@ export const TOKENS__COLOR = {
 	'text-default': { $ref: { light: 'grey-9', dark: 'grey-1' }, $css: '--ds-color-text-default' },
 	'text-subtle': { $ref: { light: 'grey-5', dark: 'grey-4' }, $css: '--ds-color-text-subtle' },
 	'text-inverse': { $ref: { light: 'white', dark: 'grey-9' }, $css: '--ds-color-text-inverse' },
+	'text-preview': { $ref: { light: 'blue-4', dark: 'blue-1' }, $css: '--ds-color-text-preview' },
 
 	primary: { $ref: { light: 'purple-3', dark: 'purple-2' }, $css: '--ds-color-primary' },
 	'primary-bg': { $ref: { light: 'purple-1', dark: 'purple-4' }, $css: '--ds-color-primary-bg' },
@@ -104,10 +107,13 @@ export const TOKENS__COLOR = {
 	'hover-2': { $ref: { light: 'black-glass-2', dark: 'black-glass-3' }, $css: '--ds-color-hover-2' },
 	'hover-3': { $ref: { light: 'black-glass-3', dark: 'black-glass-4' }, $css: '--ds-color-hover-3' },
 	'hover-4': { $ref: { light: 'black-glass-4', dark: 'black-glass-5' }, $css: '--ds-color-hover-4' },
+	'hover-default': { $ref: { light: 'hover-1', dark: 'hover-2' }, $css: '--ds-color-hover-default' },
+	'hover-pressed': { $ref: { light: 'hover-2', dark: 'hover-4' }, $css: '--ds-color-hover-pressed' },
 
 	'modal-overlay': { $ref: { light: 'black-glass-6', dark: 'black-glass-6' }, $css: '--ds-color-modal-overlay' },
 
-	border: { $ref: { light: 'grey-3', dark: 'grey-7' }, $css: '--ds-color-border' },
-	'border-soft': { $ref: { light: 'grey-1', dark: 'grey-9' }, $css: '--ds-color-border-soft' },
-	'border-active': { $ref: { light: 'grey-5', dark: 'grey-5' }, $css: '--ds-color-border-active' },
+	'border-default': { $ref: { light: 'grey-3', dark: 'grey-6' }, $css: '--ds-color-border-default' },
+	'border-subtle': { $ref: { light: 'grey-2', dark: 'grey-7' }, $css: '--ds-color-border-subtle' },
+	'border-shadow': { $ref: { light: 'grey-1', dark: 'grey-9' }, $css: '--ds-color-border-shadow' },
+	'border-active': { $ref: { light: 'grey-5', dark: 'grey-4' }, $css: '--ds-color-border-active' },
 } as const satisfies DesignTokenGroup<string>

@@ -78,5 +78,5 @@ export const TOKENS__SPACING = {
 
 	'field-h': { $ref: 'button-h-md', $css: '--ds-spacing-field-h' },
 
-	outline: { $ref: 'xs-1', $css: '--ds-spacing-outline' },
+	'a11y-outline': { $ref: 'xs-0', $css: '--ds-spacing-a11y-outline' },
 } as const satisfies DesignTokenGroup<string>

@@ -1,0 +1,28 @@
+body,
+body div {
+	font-family: inherit !important;
+
+	--monospace: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
+}
+
+a,
+button {
+	outline: revert !important;
+	box-shadow: none !important;
+
+	& svg {
+		pointer-events: none !important;
+	}
+}
+
+div:has(> #preview-loader),
+#storybook-preview-iframe {
+	background-color: var(--ds-color-bg-default) !important;
+}
+
+a[href='#storybook-preview-wrapper']:focus {
+	background-color: var(--ds-color-primary) !important;
+	padding: var(--ds-spacing-xs-1) var(--ds-spacing-xs-3) !important;
+	color: var(--color) !important;
+	font-size: var(--ds-font-size-xs) !important;
+}

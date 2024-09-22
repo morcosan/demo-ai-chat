@@ -1,7 +1,10 @@
+/* Color tokens */
+
 :host,
 :root {
 	--ds-color-white: #fff;
 
+	--ds-color-grey-0: #fafafa;
 	--ds-color-grey-1: #f4f4f5;
 	--ds-color-grey-2: #e4e4e7;
 	--ds-color-grey-3: #d4d4d8;
@@ -32,10 +35,10 @@
 	--ds-color-red-3: #dc2626;
 	--ds-color-red-4: #5e1717;
 
-	--ds-color-blue-1: #e0f2fe;
-	--ds-color-blue-2: #38bdf8;
-	--ds-color-blue-3: #0284c7;
-	--ds-color-blue-4: #075985;
+	--ds-color-blue-1: #dbeafe;
+	--ds-color-blue-2: #60a5fa;
+	--ds-color-blue-3: #2563eb;
+	--ds-color-blue-4: #1e40af;
 
 	--ds-color-black-glass-1: rgba(0, 0, 0, 0.08);
 	--ds-color-black-glass-2: rgba(0, 0, 0, 0.16);
@@ -61,14 +64,16 @@
 :host,
 :root {
 	--ds-color-bg-default: var(--ds-color-white);
-	--ds-color-bg-preview: var(--ds-color-black-glass-1);
+	--ds-color-bg-field: var(--ds-color-grey-0);
 	--ds-color-bg-navbar: var(--ds-color-white);
+	--ds-color-bg-preview: var(--ds-color-grey-1);
 	--ds-color-bg-scrollbar: var(--ds-color-black-glass-2);
 	--ds-color-bg-scrollbar-hover: var(--ds-color-black-glass-3);
 
 	--ds-color-text-default: var(--ds-color-grey-9);
 	--ds-color-text-subtle: var(--ds-color-grey-5);
 	--ds-color-text-inverse: var(--ds-color-white);
+	--ds-color-text-preview: var(--ds-color-blue-4);
 
 	--ds-color-primary: var(--ds-color-purple-3);
 	--ds-color-primary-bg: var(--ds-color-purple-1);
@@ -94,24 +99,29 @@
 	--ds-color-hover-2: var(--ds-color-black-glass-2);
 	--ds-color-hover-3: var(--ds-color-black-glass-3);
 	--ds-color-hover-4: var(--ds-color-black-glass-4);
+	--ds-color-hover-default: var(--ds-color-hover-1);
+	--ds-color-hover-pressed: var(--ds-color-hover-2);
 
 	--ds-color-modal-overlay: var(--ds-color-black-glass-6);
 
-	--ds-color-border: var(--ds-color-grey-3);
-	--ds-color-border-soft: var(--ds-color-grey-2);
+	--ds-color-border-default: var(--ds-color-grey-3);
+	--ds-color-border-subtle: var(--ds-color-grey-2);
+	--ds-color-border-shadow: var(--ds-color-grey-1);
 	--ds-color-border-active: var(--ds-color-grey-5);
 }
 
-[data-color-scheme='dark'] {
+[data-color-theme='dark'] {
 	--ds-color-bg-default: var(--ds-color-grey-8);
-	--ds-color-bg-preview: var(--ds-color-black-glass-3);
+	--ds-color-bg-field: var(--ds-color-grey-9);
 	--ds-color-bg-navbar: var(--ds-color-grey-8);
+	--ds-color-bg-preview: var(--ds-color-black-glass-3);
 	--ds-color-bg-scrollbar: var(--ds-color-white-glass-2);
 	--ds-color-bg-scrollbar-hover: var(--ds-color-white-glass-3);
 
 	--ds-color-text-default: var(--ds-color-grey-1);
 	--ds-color-text-subtle: var(--ds-color-grey-4);
 	--ds-color-text-inverse: var(--ds-color-grey-9);
+	--ds-color-text-preview: var(--ds-color-blue-1);
 
 	--ds-color-primary: var(--ds-color-purple-2);
 	--ds-color-primary-bg: var(--ds-color-purple-4);
@@ -137,8 +147,11 @@
 	--ds-color-hover-2: var(--ds-color-black-glass-3);
 	--ds-color-hover-3: var(--ds-color-black-glass-4);
 	--ds-color-hover-4: var(--ds-color-black-glass-5);
+	--ds-color-hover-default: var(--ds-color-hover-2);
+	--ds-color-hover-pressed: var(--ds-color-hover-4);
 
-	--ds-color-border: var(--ds-color-grey-7);
-	--ds-color-border-soft: var(--ds-color-grey-9);
-	--ds-color-border-active: var(--ds-color-grey-5);
+	--ds-color-border-default: var(--ds-color-grey-6);
+	--ds-color-border-subtle: var(--ds-color-grey-7);
+	--ds-color-border-shadow: var(--ds-color-grey-9);
+	--ds-color-border-active: var(--ds-color-grey-4);
 }

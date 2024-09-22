@@ -29,5 +29,5 @@
 		/* Linting */
 		"strict": true
 	},
-	"include": ["./src-api", "./src-app", "./src-ds", "./src-utils", "./tailwind.config.ts"]
+	"include": ["./src-api", "./src-app", "./src-ds", "./src-utils"]
 }

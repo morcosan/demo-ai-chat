@@ -12,6 +12,8 @@ const config: StorybookConfig = {
 		'@storybook/addon-actions', // This must be after controls
 		'@storybook/addon-measure',
 		'@storybook/addon-outline',
+		'@storybook/addon-a11y',
+		'@storybook/addon-toolbars',
 	],
 
 	staticDirs: [`${ROOT_DIR}/src-ds/docs/public`],

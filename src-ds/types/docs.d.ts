@@ -37,3 +37,25 @@ declare type DocsControlType =
 	| 'date'
 	| 'text'
 	| Array<string | number>
+
+declare interface StoryGlobals {
+	colorTheme?: ColorTheme
+	uiLibrary?: UiLibrary
+	measureEnabled?: boolean
+	outline?: boolean
+}
+declare interface StoryGlobalTypes {
+	colorTheme?: StoryGlobalConfig<ColorTheme>
+	uiLibrary?: StoryGlobalConfig<UiLibrary>
+}
+declare interface StoryGlobalConfig<T> {
+	description: string
+	toolbar: {
+		items: Array<{
+			value: T
+			title: string
+			icon: string
+		}>
+		dynamicTitle: true
+	}
+}

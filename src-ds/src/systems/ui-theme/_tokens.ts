@@ -21,25 +21,25 @@ export interface ThemeTokens {
 	$zIndex: Record<keyof typeof TOKENS__Z_INDEX, string>
 }
 
-const mapTokens = (tokenGroup: DesignTokenGroup, scheme: ColorScheme) => {
+const mapTokens = (tokenGroup: DesignTokenGroup, theme: ColorTheme) => {
 	return Object.fromEntries(
 		Object.entries<DesignToken>(tokenGroup).map(([tokenName, token]) => [
 			tokenName,
-			ENV__USE_CSS_VARS ? `var(${token.$css})` : String(getTokenValue(tokenGroup, tokenName, scheme)),
+			ENV__USE_CSS_VARS ? `var(${token.$css})` : String(getTokenValue(tokenGroup, tokenName, theme)),
 		])
 	) as Record<string, string>
 }
 
-const createTokens = (scheme: ColorScheme): ThemeTokens => {
+const createTokens = (theme: ColorTheme): ThemeTokens => {
 	return {
-		$color: mapTokens(TOKENS__COLOR, scheme),
-		$fontSize: mapTokens(TOKENS__FONT_SIZE, scheme),
-		$fontWeight: mapTokens(TOKENS__FONT_WEIGHT, scheme),
-		$lineHeight: mapTokens(TOKENS__LINE_HEIGHT, scheme),
-		$radius: mapTokens(TOKENS__RADIUS, scheme),
-		$shadow: mapTokens(TOKENS__SHADOW, scheme),
-		$spacing: mapTokens(TOKENS__SPACING, scheme),
-		$zIndex: mapTokens(TOKENS__Z_INDEX, scheme),
+		$color: mapTokens(TOKENS__COLOR, theme),
+		$fontSize: mapTokens(TOKENS__FONT_SIZE, theme),
+		$fontWeight: mapTokens(TOKENS__FONT_WEIGHT, theme),
+		$lineHeight: mapTokens(TOKENS__LINE_HEIGHT, theme),
+		$radius: mapTokens(TOKENS__RADIUS, theme),
+		$shadow: mapTokens(TOKENS__SHADOW, theme),
+		$spacing: mapTokens(TOKENS__SPACING, theme),
+		$zIndex: mapTokens(TOKENS__Z_INDEX, theme),
 	}
 }
 

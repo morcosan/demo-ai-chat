@@ -12,6 +12,8 @@ export default {
 	title: 'Design tokens / Radius',
 
 	component: () => {
+		const previewClass = 'h-sm-4 border-2 bg-color-bg-preview border-b-0 border-r-0 border-color-primary'
+
 		return (
 			<DocsPage title="Radius tokens">
 				<table className="docs">
@@ -34,14 +36,8 @@ export default {
 								</td>
 								<td>
 									<div className="flex items-center gap-xs-9">
-										<div
-											className="h-sm-4 w-sm-4 border-2 border-b-0 border-r-0 border-color-text-subtle"
-											style={{ borderRadius: `var(${token.$css})` }}
-										/>
-										<div
-											className="h-sm-4 w-md-0 border-2 border-b-0 border-r-0 border-color-text-subtle"
-											style={{ borderRadius: `var(${token.$css})` }}
-										/>
+										<div className={`w-sm-4 ${previewClass}`} style={{ borderRadius: `var(${token.$css})` }} />
+										<div className={`w-sm-9 ${previewClass}`} style={{ borderRadius: `var(${token.$css})` }} />
 									</div>
 								</td>
 								<td>

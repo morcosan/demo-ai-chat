@@ -1,4 +1,4 @@
-import { createTheme, darken, lighten, PaletteColorOptions } from '@mui/material'
+import { createTheme, darken, lighten, PaletteColorOptions, Theme } from '@mui/material'
 import {
 	getTokenValue_COLOR,
 	getTokenValue_FONT_SIZE,
@@ -14,14 +14,14 @@ const createMuiColor = (color: string): PaletteColorOptions => {
 	}
 }
 
-const createMuiTheme = (scheme: ColorScheme) => {
+const createThemeConfig = (theme: ColorTheme): Theme => {
 	return createTheme({
 		palette: {
-			mode: scheme,
-			primary: createMuiColor(getTokenValue_COLOR('primary', scheme)),
-			secondary: createMuiColor(getTokenValue_COLOR('secondary', scheme)),
-			success: createMuiColor(getTokenValue_COLOR('success', scheme)),
-			error: createMuiColor(getTokenValue_COLOR('danger', scheme)),
+			mode: theme,
+			primary: createMuiColor(getTokenValue_COLOR('primary', theme)),
+			secondary: createMuiColor(getTokenValue_COLOR('secondary', theme)),
+			success: createMuiColor(getTokenValue_COLOR('success', theme)),
+			error: createMuiColor(getTokenValue_COLOR('danger', theme)),
 		},
 		typography: {
 			fontFamily: 'inherit',
@@ -44,5 +44,5 @@ const createMuiTheme = (scheme: ColorScheme) => {
 	})
 }
 
-export const MUI_LIGHT_THEME = createMuiTheme('light')
-export const MUI_DARK_THEME = createMuiTheme('dark')
+export const MUI_LIGHT_THEME_CONFIG = createThemeConfig('light')
+export const MUI_DARK_THEME_CONFIG = createThemeConfig('dark')
