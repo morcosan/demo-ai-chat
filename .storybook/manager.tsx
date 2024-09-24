@@ -3,7 +3,7 @@ import { create } from '@storybook/theming'
 import { useEffect } from 'react'
 import { ATTR_KEY__COLOR_THEME, COLOR_THEMES } from '../src-ds/release/.storybook'
 import { COOKIE__DS_COLOR_THEME } from '../src-utils/release'
-import { TOOLTIP__COLOR_THEME, TOOLTIP__UI_LIBRARY } from './_constants'
+import { TOOLTIP__COLOR_THEME, TOOLTIP__PLAYGROUND_STYLE, TOOLTIP__UI_LIBRARY } from './_constants'
 
 addons.setConfig({
 	theme: create({
@@ -44,7 +44,11 @@ addons.add('custom', {
 
 		useEffect(() => {
 			window.__GLOBALS__ = globals
-			window.__TOOLTIPS__ = { colorTheme: TOOLTIP__COLOR_THEME, uiLibrary: TOOLTIP__UI_LIBRARY }
+			window.__TOOLTIPS__ = {
+				playgroundStyle: TOOLTIP__PLAYGROUND_STYLE,
+				uiLibrary: TOOLTIP__UI_LIBRARY,
+				colorTheme: TOOLTIP__COLOR_THEME,
+			}
 			setHtmlAttr(globals.colorTheme)
 		}, [globals])
 
