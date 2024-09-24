@@ -35,6 +35,8 @@ const fixA11yPopup = () => {
 	let selectedId
 
 	const button = document.querySelector(selector)
+	if (!button) return
+
 	button.classList.add('JS_TRIGGER')
 	button.addEventListener('click', () => {
 		// Wait for popup to be created

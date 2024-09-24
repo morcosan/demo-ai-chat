@@ -1,6 +1,6 @@
 @import '../tailwind';
 
-@import '../tokens/index.css';
+@import '../tokens';
 
 @import '_a11y.css';
 @import '_scrollbar.css';
@@ -16,4 +16,5 @@ a {
 
 hr {
 	border-color: var(--ds-color-border-subtle);
+	width: 100%;
 }

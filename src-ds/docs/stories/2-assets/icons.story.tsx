@@ -26,7 +26,13 @@ export default {
 		})
 
 		return (
-			<DocsPage title="Icons">
+			<DocsPage
+				title={
+					<span>
+						Icons <span className="align-middle text-size-md text-color-text-subtle">({icons.length})</span>
+					</span>
+				}
+			>
 				<div className="flex flex-wrap gap-xs-9">
 					{icons.map((icon) => (
 						<DocIconItem key={icon.name} icon={icon} />

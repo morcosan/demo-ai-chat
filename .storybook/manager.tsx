@@ -2,15 +2,13 @@ import { addons, types, useGlobals } from '@storybook/manager-api'
 import { create } from '@storybook/theming'
 import { useEffect } from 'react'
 import { ATTR_KEY__COLOR_THEME, COLOR_THEMES } from '../src-ds/release/.storybook'
-import { COOKIE__DS_COLOR_THEME } from '../src-utils/src/constants/cookie'
+import { COOKIE__DS_COLOR_THEME } from '../src-utils/release'
 import { TOOLTIP__COLOR_THEME, TOOLTIP__UI_LIBRARY } from './_constants'
 
 addons.setConfig({
 	theme: create({
 		base: 'light',
 		brandTitle: 'AI Chat Design',
-		brandUrl: 'STORYBOOK_LOGO_LINK',
-		brandTarget: '_self',
 	}),
 	isFullscreen: false,
 	showNav: true,
@@ -35,8 +33,12 @@ addons.add('custom', {
 			const theme = localStorage.getItem(COOKIE__DS_COLOR_THEME) as ColorTheme | null | undefined
 
 			if (theme && COLOR_THEMES.includes(theme)) {
-				setGlobals({ ...globals, colorTheme: theme })
 				setHtmlAttr(theme)
+
+				// Storybook cannot update globals instantly (dunno why)
+				wait(300).then(() => {
+					setGlobals({ ...globals, colorTheme: theme })
+				})
 			}
 		}, [])
 

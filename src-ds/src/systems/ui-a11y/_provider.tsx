@@ -7,6 +7,11 @@ export const UiA11yProvider = ({ children }: ReactProps) => {
 
 	const isPointer = useMemo(() => a11yMode === 'pointer', [a11yMode])
 
+	const forceA11yMode = (mode: A11yMode) => {
+		setA11yMode(mode)
+		setHtmlAttr(mode)
+	}
+
 	const setHtmlAttr = (mode: A11yMode) => document.documentElement.setAttribute(ATTR_KEY__A11Y_MODE, mode)
 
 	const onMouseDownWindow = (event: MouseEvent) => {
@@ -35,7 +40,7 @@ export const UiA11yProvider = ({ children }: ReactProps) => {
 		}
 	}, [])
 
-	const store: Store = useMemo(() => ({ a11yMode, isPointer }), [a11yMode])
+	const store: Store = useMemo(() => ({ a11yMode, isPointer, forceA11yMode }), [a11yMode])
 
 	return <Context.Provider value={store}>{children}</Context.Provider>
 }

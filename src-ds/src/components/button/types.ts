@@ -1,5 +1,6 @@
 import { MouseEvent } from 'react'
 
+export type ButtonSize = 'xs' | 'sm' | 'md' | 'lg'
 export type ButtonVariant =
 	| 'solid-primary'
 	| 'solid-secondary'
@@ -9,14 +10,13 @@ export type ButtonVariant =
 	| 'item-solid-secondary'
 	| 'item-text-default'
 	| 'item-text-danger'
-export type ButtonSize = 'xs' | 'sm' | 'md' | 'lg'
-export type ButtonState = 'default' | 'pressed' | 'selected'
+export type ButtonHighlight = 'default' | 'pressed' | 'selected'
 export type LinkType = 'internal' | 'external' | 'inactive'
 
 export interface ButtonProps extends ReactProps {
-	variant?: ButtonVariant
 	size?: ButtonSize
-	state?: ButtonState
+	variant?: ButtonVariant
+	highlight?: ButtonHighlight
 	loading?: boolean
 	disabled?: boolean
 	linkHref?: string

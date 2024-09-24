@@ -2,6 +2,7 @@ import { readFileSync, writeFileSync } from 'node:fs'
 import { IncomingMessage, ServerResponse } from 'node:http'
 import postcss from 'postcss'
 import postcssImport from 'postcss-import'
+import tailwindcss from 'tailwindcss'
 import { Plugin, ResolvedConfig, ViteDevServer } from 'vite'
 
 const PUBLIC_TOKENS_CSS_PATH = '/ds-styles.css'
@@ -9,7 +10,7 @@ const SOURCE_TOKENS_CSS_PATH = process.cwd() + '/src-ds/release/.storybook/style
 
 const _createStylesCss = async (): Promise<string> => {
 	const cssCode = readFileSync(SOURCE_TOKENS_CSS_PATH)
-	const result = await postcss([postcssImport]).process(cssCode, { from: SOURCE_TOKENS_CSS_PATH })
+	const result = await postcss([postcssImport, tailwindcss()]).process(cssCode, { from: SOURCE_TOKENS_CSS_PATH })
 
 	return result.css
 }

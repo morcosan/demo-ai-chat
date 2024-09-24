@@ -1,10 +1,16 @@
-import { ButtonSize, LinkType, useUiA11y, useUiTheme } from '@ds/release'
-import { CSS__ABSOLUTE_OVERLAY, Keyboard } from '@utils/release'
+import { useUiA11y, useUiTheme } from '@ds/release'
+import { CSS__ABSOLUTE_OVERLAY, Keyboard, useDefaults } from '@utils/release'
 import { KeyboardEvent, MouseEvent, useCallback, useMemo, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { ButtonProps, ButtonState, ButtonVariant } from '../types'
+import { ButtonProps, ButtonVariant } from '../types'
 
-export const useButtonBase = (props: ButtonProps) => {
+export const useButtonBase = (rawProps: ButtonProps) => {
+	const props = useDefaults<ButtonProps>(rawProps, {
+		size: 'md',
+		variant: 'solid-primary',
+		highlight: 'default',
+		linkType: 'internal',
+	})
 	const navigate = useNavigate()
 	const { isPointer } = useUiA11y()
 	const { $color, $fontSize, $fontWeight, $lineHeight, $spacing, $radius, isUiLight } = useUiTheme()
@@ -23,21 +29,16 @@ export const useButtonBase = (props: ButtonProps) => {
 	const VARIANTS_DANGER: ButtonVariant[] = ['solid-danger', 'text-danger', 'item-text-danger']
 	const VARIANTS_DEFAULT: ButtonVariant[] = ['text-default', 'item-text-default']
 
-	const dVariant = useMemo((): ButtonVariant => props.variant || 'solid-primary', [props.variant])
-	const dSize = useMemo((): ButtonSize => props.size || 'md', [props.size])
-	const dState = useMemo((): ButtonState => props.state || 'default', [props.state])
-	const dLinkType = useMemo((): LinkType => props.linkType || 'internal', [props.linkType])
-
-	const linkTarget = useMemo(() => (dLinkType === 'internal' ? '_self' : '_blank'), [dLinkType])
+	const linkTarget = useMemo(() => (props.linkType === 'internal' ? '_self' : '_blank'), [props.linkType])
 	const isDisabled = useMemo(() => props.disabled || props.loading, [props.disabled, props.loading])
 	const tabIndex = useMemo(() => (isDisabled ? -1 : 0), [isDisabled])
-	const isVDanger = useMemo(() => VARIANTS_DANGER.includes(dVariant), [dVariant])
-	const isVDefault = useMemo(() => VARIANTS_DEFAULT.includes(dVariant), [dVariant])
-	const isVItem = useMemo(() => VARIANTS_ITEM.includes(dVariant), [dVariant])
-	const isVPrimary = useMemo(() => VARIANTS_PRIMARY.includes(dVariant), [dVariant])
-	const isVSecondary = useMemo(() => VARIANTS_SECONDARY.includes(dVariant), [dVariant])
-	const isVSolid = useMemo(() => VARIANTS_SOLID.includes(dVariant), [dVariant])
-	const isVText = useMemo(() => VARIANTS_TEXT.includes(dVariant), [dVariant])
+	const isVDanger = useMemo(() => VARIANTS_DANGER.includes(props.variant as ButtonVariant), [props.variant])
+	const isVDefault = useMemo(() => VARIANTS_DEFAULT.includes(props.variant as ButtonVariant), [props.variant])
+	const isVItem = useMemo(() => VARIANTS_ITEM.includes(props.variant as ButtonVariant), [props.variant])
+	const isVPrimary = useMemo(() => VARIANTS_PRIMARY.includes(props.variant as ButtonVariant), [props.variant])
+	const isVSecondary = useMemo(() => VARIANTS_SECONDARY.includes(props.variant as ButtonVariant), [props.variant])
+	const isVSolid = useMemo(() => VARIANTS_SOLID.includes(props.variant as ButtonVariant), [props.variant])
+	const isVText = useMemo(() => VARIANTS_TEXT.includes(props.variant as ButtonVariant), [props.variant])
 
 	const cssTextColorFn = (color: string) => ({ color, fill: color, stroke: color })
 	const cssBgColorFn = (backgroundColor: string) => ({ backgroundColor })
@@ -82,18 +83,18 @@ export const useButtonBase = (props: ButtonProps) => {
 		if (isVDanger && !isVSolid) return cssTextColorFn($color['danger'])
 		if (isVDefault) return cssTextColorFn($color['text-default'])
 		return {}
-	}, [dVariant, isUiLight])
+	}, [isUiLight, props.variant])
 
 	const cssBgColor = useMemo((): CSS => {
 		if (isVPrimary) return cssBgColorFn($color['primary'])
 		if (isVSecondary) return cssBgColorFn($color['secondary'])
 		if (isVDanger && isVSolid) return cssBgColorFn($color['danger'])
 		return {}
-	}, [dVariant, isUiLight])
+	}, [isUiLight, props.variant])
 
 	const cssHover = useMemo((): CSS => {
 		if (isDisabled) return {}
-		if (dState === 'default') {
+		if (props.highlight === 'default') {
 			return isVText
 				? cssHoverFn($color['hover-default'])
 				: isVSecondary
@@ -101,11 +102,11 @@ export const useButtonBase = (props: ButtonProps) => {
 					: cssHoverFn(isUiLight ? $color['hover-2'] : $color['hover-1'])
 		}
 		return {}
-	}, [isDisabled, isUiLight, dVariant, dState])
+	}, [isDisabled, isUiLight, props.variant, props.highlight])
 
 	const cssPressed = useMemo((): CSS => {
-		if (isDisabled || dState === 'selected') return {}
-		if (isPressed || dState === 'pressed') {
+		if (isDisabled || props.highlight === 'selected') return {}
+		if (isPressed || props.highlight === 'pressed') {
 			return isVText
 				? cssPressedFn($color['hover-pressed'])
 				: isVSecondary
@@ -113,42 +114,42 @@ export const useButtonBase = (props: ButtonProps) => {
 					: cssPressedFn(isUiLight ? $color['hover-4'] : $color['hover-2'])
 		}
 		return {}
-	}, [isDisabled, isPressed, isUiLight, isVSecondary, dVariant, dState])
+	}, [isDisabled, isPressed, isUiLight, isVSecondary, props.variant, props.highlight])
 
 	const cssSize = useMemo((): CSS => {
-		if (dSize === 'xs') return cssSizeFn($spacing['button-h-xs'])
-		if (dSize === 'sm') return cssSizeFn($spacing['button-h-sm'])
-		if (dSize === 'md') return cssSizeFn($spacing['button-h-md'])
-		if (dSize === 'lg') return cssSizeFn($spacing['button-h-lg'])
+		if (props.size === 'xs') return cssSizeFn($spacing['button-h-xs'])
+		if (props.size === 'sm') return cssSizeFn($spacing['button-h-sm'])
+		if (props.size === 'md') return cssSizeFn($spacing['button-h-md'])
+		if (props.size === 'lg') return cssSizeFn($spacing['button-h-lg'])
 		return {}
-	}, [dSize, isUiLight])
+	}, [props.size, isUiLight])
 
 	const cssPadding = useMemo((): CSS => {
 		if (isVItem) return cssPaddingFn($spacing['button-px-item'])
-		if (dSize === 'xs') return cssPaddingFn($spacing['button-px-xs'])
-		if (dSize === 'sm') return cssPaddingFn($spacing['button-px-sm'])
-		if (dSize === 'md') return cssPaddingFn($spacing['button-px-md'])
-		if (dSize === 'lg') return cssPaddingFn($spacing['button-px-lg'])
+		if (props.size === 'xs') return cssPaddingFn($spacing['button-px-xs'])
+		if (props.size === 'sm') return cssPaddingFn($spacing['button-px-sm'])
+		if (props.size === 'md') return cssPaddingFn($spacing['button-px-md'])
+		if (props.size === 'lg') return cssPaddingFn($spacing['button-px-lg'])
 		return {}
-	}, [dSize, isVItem, isUiLight])
+	}, [isVItem, isUiLight, props.size])
 
 	const cssRadius = useMemo((): CSS => {
-		if (dSize === 'xs') return cssRadiusFn($radius['sm'])
-		if (dSize === 'sm') return cssRadiusFn($radius['sm'])
-		if (dSize === 'md') return cssRadiusFn($radius['md'])
-		if (dSize === 'lg') return cssRadiusFn($radius['lg'])
+		if (props.size === 'xs') return cssRadiusFn($radius['sm'])
+		if (props.size === 'sm') return cssRadiusFn($radius['sm'])
+		if (props.size === 'md') return cssRadiusFn($radius['md'])
+		if (props.size === 'lg') return cssRadiusFn($radius['lg'])
 		return {}
-	}, [dSize, isUiLight])
+	}, [isUiLight, props.size])
 
 	const cssFont = useMemo((): CSS => {
 		if (isVItem && isVDefault) return { fontWeight: $fontWeight['sm'], fontSize: 'unset' }
 		if (isVItem && !isVDefault) return { fontWeight: $fontWeight['md'], fontSize: 'unset' }
-		if (dSize === 'xs') return cssFontFn($fontSize['xs'])
-		if (dSize === 'sm') return cssFontFn($fontSize['sm'])
-		if (dSize === 'md') return cssFontFn($fontSize['md'])
-		if (dSize === 'lg') return cssFontFn($fontSize['lg'])
+		if (props.size === 'xs') return cssFontFn($fontSize['xs'])
+		if (props.size === 'sm') return cssFontFn($fontSize['sm'])
+		if (props.size === 'md') return cssFontFn($fontSize['md'])
+		if (props.size === 'lg') return cssFontFn($fontSize['lg'])
 		return {}
-	}, [dSize, dVariant, isVItem, isUiLight])
+	}, [isVItem, isUiLight, props.size])
 
 	const cssAll = [
 		cssBase,
@@ -165,15 +166,15 @@ export const useButtonBase = (props: ButtonProps) => {
 
 	const onClick = useCallback(
 		(event: MouseEvent) => {
-			if (isDisabled || dLinkType !== 'external') event.preventDefault()
+			if (isDisabled || props.linkType !== 'external') event.preventDefault()
 			if (isDisabled) return
 
 			isPointer && (event.target as HTMLButtonElement).blur()
 			props.onClick?.(event)
 
-			if (props.linkHref && dLinkType === 'internal') navigate(props.linkHref)
+			if (props.linkHref && props.linkType === 'internal') navigate(props.linkHref)
 		},
-		[isDisabled, isPointer, dLinkType, props.linkHref]
+		[isDisabled, isPointer, props.linkType, props.linkHref, props.onClick]
 	)
 
 	const onMouseDown = () => setIsPressed(true)
@@ -230,10 +231,6 @@ export const useButtonBase = (props: ButtonProps) => {
 		cssRadius,
 		cssSize,
 		cssTextColor,
-		dLinkType,
-		dSize,
-		dState,
-		dVariant,
 		isDisabled,
 		isVDanger,
 		isVDefault,
@@ -243,6 +240,7 @@ export const useButtonBase = (props: ButtonProps) => {
 		isVSolid,
 		isVText,
 		linkTarget,
+		props,
 		propsBase,
 	}
 }
