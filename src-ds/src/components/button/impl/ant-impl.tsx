@@ -5,23 +5,13 @@ import { useMemo } from 'react'
 import { ButtonProps } from '../types'
 import { useButtonBase } from './_base'
 
-export const AntImpl = (props: ButtonProps) => {
+export const AntImpl = (rawProps: ButtonProps) => {
 	const { $color, $spacing, isUiLight } = useUiTheme()
-	const {
-		cssAll,
-		dState,
-		dVariant,
-		isVDanger,
-		isVDefault,
-		isVItem,
-		isVPrimary,
-		isVSecondary,
-		isVSolid,
-		isVText,
-		propsBase,
-	} = useButtonBase(props)
+	const buttonBase = useButtonBase(rawProps)
+	const { cssAll, isVDanger, isVDefault, isVItem, isVPrimary, isVSecondary, isVSolid, isVText } = buttonBase
+	const { props, propsBase } = buttonBase
 
-	const antType = useMemo((): ButtonType => (isVSolid ? 'primary' : 'text'), [dVariant])
+	const antType = useMemo((): ButtonType => (isVSolid ? 'primary' : 'text'), [props.variant])
 
 	const cssHover = useMemo((): CSS => {
 		// AntDesign will try to enforce hover colors
@@ -32,15 +22,16 @@ export const AntImpl = (props: ButtonProps) => {
 		if (isVPrimary && !isUiLight) return cssFn($color['primary-text-inverse'], $color['primary'])
 		if (isVSecondary && isUiLight) return cssFn($color['secondary-text-default'], $color['secondary'])
 		if (isVSecondary && !isUiLight) return cssFn($color['secondary-text-inverse'], $color['secondary'])
-		if (isVDanger && isVSolid) return cssFn($color['text-inverse'], $color['danger'])
+		if (isVDanger && isVSolid && isUiLight) return cssFn($color['text-inverse'], $color['danger'])
+		if (isVDanger && isVSolid && !isUiLight) return cssFn($color['danger-text-inverse'], $color['danger'])
 		if (isVDanger && isVText) return cssFn($color['danger'], 'transparent')
 		if (isVDefault) return cssFn($color['text-default'], 'transparent')
 		return {}
-	}, [dVariant, isUiLight])
+	}, [isUiLight, props.variant])
 
 	const cssWave = useMemo((): CSS => {
-		return dState !== 'default' ? { '& .ant-wave': { display: 'none' } } : {}
-	}, [dState])
+		return props.highlight !== 'default' ? { '& .ant-wave': { display: 'none' } } : {}
+	}, [props.highlight])
 
 	const cssButton = useMemo(
 		(): CSS => ({

@@ -6,10 +6,10 @@ import { useButtonBase } from './_base'
 // There is no exported type for variants
 type MuiVariant = 'text' | 'outlined' | 'contained'
 
-export const MuiImpl = (props: ButtonProps) => {
-	const { propsBase, cssAll, isDisabled, isVItem, isVSolid, dVariant, dState } = useButtonBase(props)
+export const MuiImpl = (rawProps: ButtonProps) => {
+	const { propsBase, cssAll, isDisabled, isVItem, isVSolid, props } = useButtonBase(rawProps)
 
-	const muiVariant = useMemo((): MuiVariant => (isVSolid ? 'contained' : 'text'), [dVariant])
+	const muiVariant = useMemo((): MuiVariant => (isVSolid ? 'contained' : 'text'), [props.variant])
 
 	const cssButton: CSS = {
 		minWidth: 'unset',
@@ -34,7 +34,7 @@ export const MuiImpl = (props: ButtonProps) => {
 				stroke: props.loading ? 'transparent' : 'currentColor',
 			},
 		}),
-		[dVariant, props.loading]
+		[props.variant, props.loading]
 	)
 
 	const propsButton = {
@@ -43,7 +43,7 @@ export const MuiImpl = (props: ButtonProps) => {
 		disabled: isDisabled,
 		loading: props.loading,
 		disableElevation: true,
-		disableRipple: dState !== 'default',
+		disableRipple: props.highlight !== 'default',
 		sx: [...cssAll, cssButton, cssChildren],
 	}
 

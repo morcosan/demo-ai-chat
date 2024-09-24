@@ -39,7 +39,7 @@ export const AiChatNavSection = () => {
 								key={chat.id}
 								linkHref={`/chat/${chat.id}`}
 								variant={activeChat?.id === chat.id ? 'item-solid-secondary' : 'item-text-default'}
-								state={activeChat?.id === chat.id ? 'selected' : 'default'}
+								highlight={activeChat?.id === chat.id ? 'selected' : 'default'}
 								tooltip={chat.title}
 							>
 								<span className="truncate">{chat.title}</span>

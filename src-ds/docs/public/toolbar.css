@@ -3,6 +3,11 @@
 	box-shadow: var(--ds-shadow-sm) !important;
 	background-color: var(--ds-color-bg-default) !important;
 
+	/* Delimiter */
+	& > div > div > span {
+		background-color: var(--ds-color-border-default) !important;
+	}
+
 	& a,
 	& button {
 		background-color: transparent !important;

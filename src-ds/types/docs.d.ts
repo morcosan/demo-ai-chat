@@ -38,13 +38,17 @@ declare type DocsControlType =
 	| 'text'
 	| Array<string | number>
 
+declare type DocsPlaygroundStyle = 'tiles' | 'grid' | 'blank'
+
 declare interface StoryGlobals {
+	playgroundStyle?: DocsPlaygroundStyle
 	colorTheme?: ColorTheme
 	uiLibrary?: UiLibrary
 	measureEnabled?: boolean
 	outline?: boolean
 }
 declare interface StoryGlobalTypes {
+	playgroundStyle?: StoryGlobalConfig<DocsPlaygroundStyle>
 	colorTheme?: StoryGlobalConfig<ColorTheme>
 	uiLibrary?: StoryGlobalConfig<UiLibrary>
 }

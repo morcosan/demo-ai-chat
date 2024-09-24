@@ -19,6 +19,7 @@ export default {
 
 		const primitiveTokens = Object.entries<DesignToken>(TOKENS__COLOR).filter(([, token]) => !token.$ref)
 		const semanticTokens = Object.entries<DesignToken>(TOKENS__COLOR).filter(([, token]) => token.$ref)
+		const DELAY = 1200
 
 		return (
 			<DocsPage title="Color tokens">
@@ -55,6 +56,7 @@ export default {
 										tsVar={`$color['${name}']`}
 										twVars={[`bg-color-${name}`, `text-color-${name}`, `border-color-${name}`]}
 										cssVar={token.$css}
+										delay={DELAY}
 									/>
 								</td>
 							</tr>
@@ -85,6 +87,7 @@ export default {
 										tsVar={`$color['${name}']`}
 										twVars={[`bg-color-${name}`, `text-color-${name}`, `border-color-${name}`]}
 										cssVar={token.$css}
+										delay={DELAY}
 									/>
 								</td>
 							</tr>

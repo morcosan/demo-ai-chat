@@ -3,7 +3,7 @@ import { useMemo } from 'react'
 import { ButtonProps } from '../types'
 import { useButtonBase } from './_base'
 
-export const CustomImpl = (props: ButtonProps) => {
+export const CustomImpl = (rawProps: ButtonProps) => {
 	const {
 		cssBase,
 		cssBgColor,
@@ -17,8 +17,9 @@ export const CustomImpl = (props: ButtonProps) => {
 		cssTextColor,
 		isDisabled,
 		isVItem,
+		props,
 		propsBase,
-	} = useButtonBase(props)
+	} = useButtonBase(rawProps)
 
 	const cssBgBase: CSS = {
 		...CSS__ABSOLUTE_OVERLAY,
