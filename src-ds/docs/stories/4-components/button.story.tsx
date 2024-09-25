@@ -1,7 +1,6 @@
 import { DocsPage } from '@ds/docs/components/docs-page.tsx'
 import { createArgTypes } from '@ds/docs/setup.ts'
-import { Button, ButtonProps, ButtonVariant } from '@ds/release'
-import LogoutSvg from '@ds/release/icons/logout.svg'
+import { Button, ButtonProps, ButtonVariant, LogoutSvg } from '@ds/release'
 import { action } from '@storybook/addon-actions'
 import type { Meta, StoryObj } from '@storybook/react'
 import { useMemo } from 'react'

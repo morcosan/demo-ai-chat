@@ -1,4 +1,4 @@
-import AiChatSvg from '@ds/release/logos/ai-chat.svg'
+import { AiChatSvg } from '@ds/release'
 import { Link } from 'react-router-dom'
 
 export const AppLogo = () => {

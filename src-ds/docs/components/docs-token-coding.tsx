@@ -1,7 +1,5 @@
 import { DocsTokenCode } from '@ds/docs/components/docs-token-code.tsx'
-import CssSvg from '@ds/release/logos/css.svg'
-import TailwindSvg from '@ds/release/logos/tailwind.svg'
-import TypescriptSvg from '@ds/release/logos/typescript.svg'
+import { CssSvg, TailwindSvg, TypescriptSvg } from '@ds/release'
 import { useEffect, useState } from 'react'
 
 interface Props {

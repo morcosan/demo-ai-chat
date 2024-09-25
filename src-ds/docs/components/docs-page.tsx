@@ -2,9 +2,7 @@ import { useDocsPlayground } from '@ds/docs/components/docs-playground-provider'
 import { EventsTable } from '@ds/docs/components/partials/events-table'
 import { PropsTable } from '@ds/docs/components/partials/props-table'
 import { SlotsTable } from '@ds/docs/components/partials/slots-table'
-import { Button } from '@ds/release'
-import MaximizeSvg from '@ds/release/icons/maximize.svg'
-import MinimizeSvg from '@ds/release/icons/minimize.svg'
+import { IconButton, MaximizeSvg, MinimizeSvg } from '@ds/release'
 import { ReactNode, useCallback, useEffect, useRef, useState } from 'react'
 import { renderHtml } from '../utilities/docs.ts'
 import { toggleControls } from '../utilities/storybook'
@@ -59,14 +57,10 @@ export const DocsPage = ({ title, type, slots, children }: Props) => {
 							className={`flex flex-col ${playExpanded ? 'h-screen pb-sm-1 pt-xs-4' : ''}`}
 						>
 							<DocsHeader className={playExpanded ? '!mb-xs-4 !mt-0' : ''}>
-								<span className="mr-xs-4">Playground</span>
-								<Button variant="text-default" size="sm" tooltip={playTooltip} onClick={onClickTogglePlay}>
-									{playExpanded ? (
-										<MinimizeSvg className="h-xs-6 w-xs-6" />
-									) : (
-										<MaximizeSvg className="h-xs-6 w-xs-6" />
-									)}
-								</Button>
+								<span className="mr-xs-5">Playground</span>
+								<IconButton size="sm" tooltip={playTooltip} onClick={onClickTogglePlay}>
+									{playExpanded ? <MinimizeSvg className="h-xs-6" /> : <MaximizeSvg className="h-xs-6" />}
+								</IconButton>
 							</DocsHeader>
 							<DocsPlayground className="flex-1">{children}</DocsPlayground>
 						</div>

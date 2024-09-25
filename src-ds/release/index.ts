@@ -4,9 +4,16 @@
 export * from '../src/styling/tokens'
 
 /**
+ * Assets
+ */
+export * from './assets/icons'
+export * from './assets/logos'
+
+/**
  * Components
  */
 export * from '../src/components/button'
+export * from '../src/components/icon-button'
 
 /**
  * Systems

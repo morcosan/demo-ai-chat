@@ -1,4 +1,5 @@
 import { MouseEvent } from 'react'
+import { LinkType } from '../_shared/types'
 
 export type ButtonSize = 'xs' | 'sm' | 'md' | 'lg'
 export type ButtonVariant =
@@ -11,7 +12,6 @@ export type ButtonVariant =
 	| 'item-text-default'
 	| 'item-text-danger'
 export type ButtonHighlight = 'default' | 'pressed' | 'selected'
-export type LinkType = 'internal' | 'external' | 'inactive'
 
 export interface ButtonProps extends ReactProps {
 	size?: ButtonSize

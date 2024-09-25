@@ -1,17 +1,16 @@
 import LoadingButton from '@mui/lab/LoadingButton'
-import { ButtonProps } from '../_types'
-import { useButtonBase } from './_base'
+import { IconButtonProps } from '../_types'
+import { useIconButtonBase } from './_base'
 
 // There is no exported type for variants
 type MuiVariant = 'text' | 'outlined' | 'contained'
 
-export const MuiImpl = (rawProps: ButtonProps) => {
-	const { baseBindings, cssAll, isDisabled, isVItem, isVSolid, props } = useButtonBase(rawProps)
+export const MuiImpl = (rawProps: IconButtonProps) => {
+	const { baseBindings, cssAll, isDisabled, isVSolid, props } = useIconButtonBase(rawProps)
 
 	const cssButton: CSS = {
 		minWidth: 'unset',
-		paddingTop: '0',
-		paddingBottom: '0',
+		padding: '0',
 		textTransform: 'none',
 		outline: 'revert',
 		opacity: 1,
@@ -21,7 +20,7 @@ export const MuiImpl = (rawProps: ButtonProps) => {
 		'& .MuiLoadingButton-label': {
 			display: 'flex',
 			alignItems: 'center',
-			justifyContent: isVItem ? 'unset' : 'center',
+			justifyContent: 'center',
 			width: '100%',
 			height: '100%',
 			pointerEvents: 'none',
@@ -37,7 +36,7 @@ export const MuiImpl = (rawProps: ButtonProps) => {
 		disabled: isDisabled,
 		loading: props.loading,
 		disableElevation: true,
-		disableRipple: props.highlight !== 'default',
+		disableRipple: props.pressed,
 		sx: [...cssAll, cssButton, cssChildren],
 	}
 

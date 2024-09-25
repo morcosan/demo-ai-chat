@@ -1,24 +1,21 @@
 import { CSS__ABSOLUTE_OVERLAY } from '@utils/release'
-import { ButtonProps } from '../_types'
-import { useButtonBase } from './_base'
+import { IconButtonProps } from '../_types'
+import { useIconButtonBase } from './_base'
 
-export const CustomImpl = (rawProps: ButtonProps) => {
+export const CustomImpl = (rawProps: IconButtonProps) => {
 	const {
 		cssBase,
 		cssBgColor,
-		cssFont,
 		cssHover,
 		cssDisabled,
-		cssPadding,
 		cssPressed,
 		cssRadius,
 		cssSize,
 		cssTextColor,
 		isDisabled,
-		isVItem,
 		props,
 		baseBindings,
-	} = useButtonBase(rawProps)
+	} = useIconButtonBase(rawProps)
 
 	const cssBgBase: CSS = {
 		...CSS__ABSOLUTE_OVERLAY,
@@ -31,7 +28,7 @@ export const CustomImpl = (rawProps: ButtonProps) => {
 	const cssChildren: CSS = {
 		display: 'flex',
 		alignItems: 'center',
-		justifyContent: isVItem ? '' : 'center',
+		justifyContent: 'center',
 		width: '100%',
 		height: '100%',
 		opacity: props.loading ? 0 : 1,
@@ -39,9 +36,9 @@ export const CustomImpl = (rawProps: ButtonProps) => {
 		userSelect: 'none',
 	}
 
-	const bindings = {
+	const buttonBindings = {
 		...baseBindings,
-		css: [cssBase, cssTextColor, cssSize, cssPadding, cssPressed, cssRadius, cssFont, cssHover, cssDisabled],
+		css: [cssBase, cssTextColor, cssSize, cssPressed, cssRadius, cssHover, cssDisabled],
 	}
 
 	const slot = (
@@ -58,9 +55,9 @@ export const CustomImpl = (rawProps: ButtonProps) => {
 	)
 
 	return props.linkHref ? (
-		<a {...bindings}>{slot}</a>
+		<a {...buttonBindings}>{slot}</a>
 	) : (
-		<button type="button" disabled={isDisabled} {...bindings}>
+		<button type="button" disabled={isDisabled} {...buttonBindings}>
 			{slot}
 		</button>
 	)
