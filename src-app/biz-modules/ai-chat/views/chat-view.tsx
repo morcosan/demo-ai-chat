@@ -1,4 +1,5 @@
 import { useAiChatStore } from '@app/biz-modules/ai-chat/state'
+import { IconButton, SendSvg } from '@ds/release'
 import { useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 
@@ -25,10 +26,19 @@ export const ChatView = () => {
 				</div>
 			)}
 
-			<input
-				className="h-sm-0 border border-color-border-default bg-color-bg-field p-sm-0 focus:border-color-border-active"
-				placeholder="Ask a question"
-			/>
+			<div className="h-field-h-lg relative">
+				<input
+					className={
+						'h-full w-full rounded-md px-xs-7 ' +
+						'border border-color-border-default bg-color-bg-field focus:border-color-border-active'
+					}
+					placeholder="Ask a question"
+				/>
+
+				<IconButton tooltip="Send message" variant="solid-primary" className="absolute-center-y right-xs-4">
+					<SendSvg className="h-xs-8" />
+				</IconButton>
+			</div>
 		</div>
 	)
 }

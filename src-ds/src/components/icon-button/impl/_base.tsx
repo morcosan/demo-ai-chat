@@ -2,31 +2,28 @@ import { useUiTheme } from '@ds/release'
 import { CSS__ABSOLUTE_OVERLAY, useDefaults } from '@utils/release'
 import { useMemo } from 'react'
 import { useClickable } from '../../_shared/clickable'
-import { ButtonProps, ButtonVariant } from '../_types'
+import { IconButtonProps, IconButtonVariant } from '../_types'
 
-type Variant = ButtonVariant | undefined
+type Variant = IconButtonVariant | undefined
 
-const VARIANTS_DANGER: Variant[] = ['solid-danger', 'text-danger', 'item-text-danger']
-const VARIANTS_DEFAULT: Variant[] = ['text-default', 'item-text-default']
-const VARIANTS_ITEM: Variant[] = ['item-text-default', 'item-text-danger', 'item-solid-secondary']
+const VARIANTS_SOLID: Variant[] = ['solid-primary', 'solid-secondary', 'solid-danger']
+const VARIANTS_TEXT: Variant[] = ['text-default', 'text-danger']
 const VARIANTS_PRIMARY: Variant[] = ['solid-primary']
-const VARIANTS_SECONDARY: Variant[] = ['solid-secondary', 'item-solid-secondary']
-const VARIANTS_SOLID: Variant[] = ['solid-primary', 'solid-secondary', 'solid-danger', 'item-solid-secondary']
-const VARIANTS_TEXT: Variant[] = ['text-default', 'text-danger', 'item-text-default', 'item-text-danger']
+const VARIANTS_SECONDARY: Variant[] = ['solid-secondary']
+const VARIANTS_DANGER: Variant[] = ['solid-danger', 'text-danger']
+const VARIANTS_DEFAULT: Variant[] = ['text-default']
 
-export const useButtonBase = (rawProps: ButtonProps) => {
-	const props = useDefaults<ButtonProps>(rawProps, {
+export const useIconButtonBase = (rawProps: IconButtonProps) => {
+	const props = useDefaults<IconButtonProps>(rawProps, {
 		size: 'md',
-		variant: 'solid-primary',
-		highlight: 'default',
+		variant: 'text-default',
 		linkType: 'internal',
 	})
-	const { $color, $fontSize, $fontWeight, $lineHeight, $spacing, $radius, isUiLight } = useUiTheme()
+	const { $color, $spacing, $radius, isUiLight } = useUiTheme()
 	const { bindings, isDisabled, isPressed } = useClickable(props)
 
 	const isVDanger = VARIANTS_DANGER.includes(props.variant)
 	const isVDefault = VARIANTS_DEFAULT.includes(props.variant)
-	const isVItem = VARIANTS_ITEM.includes(props.variant)
 	const isVPrimary = VARIANTS_PRIMARY.includes(props.variant)
 	const isVSecondary = VARIANTS_SECONDARY.includes(props.variant)
 	const isVSolid = VARIANTS_SOLID.includes(props.variant)
@@ -34,9 +31,7 @@ export const useButtonBase = (rawProps: ButtonProps) => {
 
 	const cssTextColorFn = (color: string) => ({ color, fill: color, stroke: color })
 	const cssBgColorFn = (backgroundColor: string) => ({ backgroundColor })
-	const cssSizeFn = (height: string) => ({ height, minHeight: height })
-	const cssPaddingFn = (padding: string) => ({ paddingLeft: padding, paddingRight: padding })
-	const cssFontFn = (fontSize: string) => ({ fontSize, fontWeight: $fontWeight['md'] })
+	const cssSizeFn = (size: string) => ({ height: size, minHeight: size, width: size, minWidth: size })
 	const cssRadiusFn = (borderRadius: string) => ({ borderRadius, '&::before': { borderRadius } })
 	const cssPressedFn = (color: string) => ({ '&::before': { backgroundColor: color + ' !important' } })
 	const cssHoverFn = (backgroundColor: string) => ({
@@ -48,7 +43,6 @@ export const useButtonBase = (rawProps: ButtonProps) => {
 		position: 'relative',
 		zIndex: 0,
 		border: '0 solid transparent',
-		lineHeight: $lineHeight['sm'], // Needed for font descender
 
 		'&::before': {
 			...CSS__ABSOLUTE_OVERLAY,
@@ -72,18 +66,18 @@ export const useButtonBase = (rawProps: ButtonProps) => {
 		if (isVDanger && !isVSolid) return cssTextColorFn($color['danger'])
 		if (isVDefault) return cssTextColorFn($color['text-default'])
 		return {}
-	}, [$color, props.variant])
+	}, [isUiLight, props.variant])
 
 	const cssBgColor = useMemo((): CSS => {
 		if (isVPrimary) return cssBgColorFn($color['primary'])
 		if (isVSecondary) return cssBgColorFn($color['secondary'])
 		if (isVDanger && isVSolid) return cssBgColorFn($color['danger'])
 		return {}
-	}, [$color, props.variant])
+	}, [isUiLight, props.variant])
 
 	const cssHover = useMemo((): CSS => {
 		if (isDisabled) return {}
-		if (props.highlight === 'default') {
+		if (!props.pressed) {
 			return isVText
 				? cssHoverFn($color['hover-default'])
 				: isVSecondary
@@ -91,11 +85,11 @@ export const useButtonBase = (rawProps: ButtonProps) => {
 					: cssHoverFn(isUiLight ? $color['hover-2'] : $color['hover-1'])
 		}
 		return {}
-	}, [$color, isDisabled, props.variant, props.highlight])
+	}, [$color, isDisabled, props.variant, props.pressed])
 
 	const cssPressed = useMemo((): CSS => {
-		if (isDisabled || props.highlight === 'selected') return {}
-		if (isPressed || props.highlight === 'pressed') {
+		if (isDisabled) return {}
+		if (isPressed || props.pressed) {
 			return isVText
 				? cssPressedFn($color['hover-pressed'])
 				: isVSecondary
@@ -103,49 +97,18 @@ export const useButtonBase = (rawProps: ButtonProps) => {
 					: cssPressedFn(isUiLight ? $color['hover-4'] : $color['hover-2'])
 		}
 		return {}
-	}, [$color, isDisabled, isPressed, props.variant, props.highlight])
+	}, [$color, isDisabled, isPressed, props.variant, props.pressed])
 
 	const cssSize = useMemo((): CSS => {
 		if (props.size === 'xs') return cssSizeFn($spacing['button-h-xs'])
 		if (props.size === 'sm') return cssSizeFn($spacing['button-h-sm'])
 		if (props.size === 'md') return cssSizeFn($spacing['button-h-md'])
-		if (props.size === 'lg') return cssSizeFn($spacing['button-h-lg'])
 		return {}
-	}, [$spacing, props.size])
+	}, [isUiLight, props.size])
 
-	const cssPadding = useMemo((): CSS => {
-		if (isVItem) return cssPaddingFn($spacing['button-px-item'])
-		if (props.size === 'xs') return cssPaddingFn($spacing['button-px-xs'])
-		if (props.size === 'sm') return cssPaddingFn($spacing['button-px-sm'])
-		if (props.size === 'md') return cssPaddingFn($spacing['button-px-md'])
-		if (props.size === 'lg') return cssPaddingFn($spacing['button-px-lg'])
-		return {}
-	}, [$spacing, props.size, props.variant])
+	const cssRadius: CSS = isVText ? cssRadiusFn($radius['full']) : cssRadiusFn($radius['sm'])
 
-	const cssRadius: CSS = cssRadiusFn(props.size === 'lg' ? $radius['md'] : $radius['sm'])
-
-	const cssFont = useMemo((): CSS => {
-		if (isVItem && isVDefault) return { fontWeight: $fontWeight['sm'], fontSize: 'unset' }
-		if (isVItem && !isVDefault) return { fontWeight: $fontWeight['md'], fontSize: 'unset' }
-		if (props.size === 'xs') return cssFontFn($fontSize['xs'])
-		if (props.size === 'sm') return cssFontFn($fontSize['sm'])
-		if (props.size === 'md') return cssFontFn($fontSize['md'])
-		if (props.size === 'lg') return cssFontFn($fontSize['lg'])
-		return {}
-	}, [$fontSize, props.size, props.variant])
-
-	const cssAll = [
-		cssBase,
-		cssBgColor,
-		cssDisabled,
-		cssFont,
-		cssHover,
-		cssPadding,
-		cssPressed,
-		cssRadius,
-		cssSize,
-		cssTextColor,
-	]
+	const cssAll = [cssBase, cssBgColor, cssDisabled, cssHover, cssPressed, cssRadius, cssSize, cssTextColor]
 
 	const baseBindings = {
 		...bindings,
@@ -160,9 +123,7 @@ export const useButtonBase = (rawProps: ButtonProps) => {
 		cssBase,
 		cssBgColor,
 		cssDisabled,
-		cssFont,
 		cssHover,
-		cssPadding,
 		cssPressed,
 		cssRadius,
 		cssSize,
@@ -170,7 +131,6 @@ export const useButtonBase = (rawProps: ButtonProps) => {
 		isDisabled,
 		isVDanger,
 		isVDefault,
-		isVItem,
 		isVPrimary,
 		isVSecondary,
 		isVSolid,

@@ -1,6 +1,5 @@
 import { useAiChatStore } from '@app/biz-modules/ai-chat/state'
-import { Button } from '@ds/release'
-import AiChatSvg from '@ds/release/logos/ai-chat.svg'
+import { AiChatSvg, Button, DotsSvg, IconButton } from '@ds/release'
 import { debounce } from 'lodash'
 import { UIEvent } from 'react'
 import { Chat } from '../api/types'
@@ -22,8 +21,13 @@ export const AiChatNavSection = () => {
 				New chat
 			</Button>
 
-			<div className="mt-xs-8 px-button-px-item text-size-sm text-color-text-subtle">
-				Chats {Boolean(chatPagination.count) && <span className="text-size-xs">({chatPagination.count})</span>}
+			<div className="mt-xs-8 flex items-center justify-between">
+				<span className="px-button-px-item text-size-sm text-color-text-subtle">
+					Chats {Boolean(chatPagination.count) && <span className="text-size-xs">({chatPagination.count})</span>}
+				</span>
+				<IconButton tooltip="Show options" size="sm">
+					<DotsSvg className="h-xs-8" />
+				</IconButton>
 			</div>
 
 			<div className="-mr-xs-4 flex flex-1 flex-col overflow-y-auto pr-xs-4" onScroll={onScroll}>

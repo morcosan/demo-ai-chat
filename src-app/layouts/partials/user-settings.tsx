@@ -1,11 +1,15 @@
-import { Button, useUiLibrary, useUiTheme } from '@ds/release'
-import InfoSvg from '@ds/release/icons/info.svg'
-import LogoutSvg from '@ds/release/icons/logout.svg'
-import NewTabSvg from '@ds/release/icons/new-tab.svg'
-import SettingSvg from '@ds/release/icons/setting.svg'
-import GithubBlackSvg from '@ds/release/logos/github-black.svg'
-import GithubWhiteSvg from '@ds/release/logos/github-white.svg'
-import StorybookSvg from '@ds/release/logos/storybook.svg'
+import {
+	Button,
+	GithubBlackSvg,
+	GithubWhiteSvg,
+	InfoSvg,
+	LogoutSvg,
+	NewTabSvg,
+	SettingsSvg,
+	StorybookSvg,
+	useUiLibrary,
+	useUiTheme,
+} from '@ds/release'
 import { randomAvatar, randomFullName } from '@utils/release'
 import { ChangeEvent, useEffect, useMemo, useRef, useState } from 'react'
 
@@ -109,7 +113,7 @@ export const UserSettings = () => {
 
 				<hr className={hrClass} />
 
-				<Button linkHref="/docs/api" linkType="external" variant="item-text-default">
+				<Button linkHref={`${ENV__ROOT_URL_PATH}/docs/api`} linkType="external" variant="item-text-default">
 					<InfoSvg className={actionIconClass} />
 					API Docs
 					<NewTabSvg className={newTabIconClass} />
@@ -135,7 +139,7 @@ export const UserSettings = () => {
 				<hr className={hrClass} />
 
 				<Button linkHref="/settings" variant="item-text-default">
-					<SettingSvg className={actionIconClass} />
+					<SettingsSvg className={actionIconClass} />
 					Settings
 				</Button>
 

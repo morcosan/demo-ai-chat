@@ -13,7 +13,7 @@ export default {
 	title: 'Assets / Icons',
 
 	component: () => {
-		const files = import.meta.glob('@ds/release/icons/*.svg', { eager: true, import: 'default' })
+		const files = import.meta.glob('@ds/release/assets/icons/*.svg', { eager: true, import: 'default' })
 
 		const icons: Icon[] = Object.keys(files).map((path: string) => {
 			const name = path.split('/').pop()!.replace('.svg', '')
@@ -21,7 +21,7 @@ export default {
 			return {
 				name,
 				elem: files[path] as ComponentType,
-				coding: `import ${upperFirst(camelCase(name))}Svg from '@ds/release/icons/${name}.svg'`,
+				coding: `<${upperFirst(camelCase(name))}Svg className="" />`,
 			}
 		})
 

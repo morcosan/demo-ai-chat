@@ -2,14 +2,13 @@ import { useUiTheme } from '@ds/release'
 import { Button } from 'antd'
 import { ButtonType } from 'antd/es/button'
 import { useMemo } from 'react'
-import { ButtonProps } from '../_types'
-import { useButtonBase } from './_base'
+import { IconButtonProps } from '../_types'
+import { useIconButtonBase } from './_base'
 
-export const AntImpl = (rawProps: ButtonProps) => {
+export const AntImpl = (rawProps: IconButtonProps) => {
 	const { $color, $spacing, isUiLight } = useUiTheme()
-	const buttonBase = useButtonBase(rawProps)
-	const { cssAll, isVDanger, isVDefault, isVItem, isVPrimary, isVSecondary, isVSolid, isVText } = buttonBase
-	const { props, baseBindings } = buttonBase
+	const buttonBase = useIconButtonBase(rawProps)
+	const { cssAll, isVDanger, isVDefault, isVPrimary, isVSecondary, isVSolid, props, baseBindings } = buttonBase
 
 	const cssHover = useMemo((): CSS => {
 		// AntDesign will try to enforce hover colors
@@ -22,14 +21,15 @@ export const AntImpl = (rawProps: ButtonProps) => {
 		if (isVSecondary && !isUiLight) return cssFn($color['secondary-text-inverse'], $color['secondary'])
 		if (isVDanger && isVSolid && isUiLight) return cssFn($color['text-inverse'], $color['danger'])
 		if (isVDanger && isVSolid && !isUiLight) return cssFn($color['danger-text-inverse'], $color['danger'])
-		if (isVDanger && isVText) return cssFn($color['danger'], 'transparent')
+		if (isVDanger) return cssFn($color['danger'], 'transparent')
 		if (isVDefault) return cssFn($color['text-default'], 'transparent')
 		return {}
 	}, [isUiLight, props.variant])
 
-	const cssWave: CSS = props.highlight !== 'default' ? { '& .ant-wave': { display: 'none' } } : {}
+	const cssWave: CSS = props.pressed ? { '& .ant-wave': { display: 'none' } } : {}
 
 	const cssButton: CSS = {
+		padding: 0,
 		opacity: 1,
 		fill: 'currentColor',
 		stroke: 'currentColor',
@@ -50,16 +50,16 @@ export const AntImpl = (rawProps: ButtonProps) => {
 		// AntDesign will force 'display: inline-block' on first <span> child
 		// CSS for children must be applied via '& > span:last-child'
 		'& > span:last-child': {
-			display: 'flex',
+			display: props.loading ? 'none' : 'flex',
 			alignItems: 'center',
-			justifyContent: isVItem ? 'unset' : 'center',
+			justifyContent: 'center',
 			width: '100%',
 			height: '100%',
 			pointerEvents: 'none',
 		},
 	}
 
-	const bindings = {
+	const buttonBindings = {
 		...baseBindings,
 		type: (isVSolid ? 'primary' : 'text') satisfies ButtonType,
 		loading: props.loading,
@@ -70,5 +70,5 @@ export const AntImpl = (rawProps: ButtonProps) => {
 	// AntDesign will wrap only text nodes inside <span>, not all children
 	const slot = <span>{props.children}</span>
 
-	return <Button {...bindings}>{slot}</Button>
+	return <Button {...buttonBindings}>{slot}</Button>
 }
