@@ -61,7 +61,7 @@ export const UserSettings = () => {
 				variant="item-text-default"
 				size="lg"
 				className="w-full"
-				state={opened ? 'pressed' : 'default'}
+				highlight={opened ? 'pressed' : 'default'}
 				onClick={() => setOpened(!opened)}
 			>
 				<img src={avatar} alt="" className="h-sm-2 w-sm-2 rounded-full" />

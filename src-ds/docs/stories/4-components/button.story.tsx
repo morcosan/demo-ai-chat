@@ -1,18 +1,19 @@
 import { DocsPage } from '@ds/docs/components/docs-page.tsx'
 import { createArgTypes } from '@ds/docs/setup.ts'
-import { Button, ButtonProps } from '@ds/release'
+import { Button, ButtonProps, ButtonVariant } from '@ds/release'
 import LogoutSvg from '@ds/release/icons/logout.svg'
 import { action } from '@storybook/addon-actions'
 import type { Meta, StoryObj } from '@storybook/react'
+import { useMemo } from 'react'
 
 export const story: StoryObj<typeof Button> = {
 	args: {
 		// Slots
 		children: 'Test qyp',
 		// Props
-		variant: 'solid-primary',
 		size: 'md',
-		state: 'default',
+		variant: 'solid-primary',
+		highlight: 'default',
 		loading: false,
 		disabled: false,
 		linkHref: '',
@@ -33,6 +34,7 @@ const meta: Meta<typeof Button> = {
 
 	argTypes: createArgTypes<typeof Button>(
 		{
+			size: ['xs', 'sm', 'md', 'lg'],
 			variant: [
 				'solid-primary',
 				'solid-secondary',
@@ -43,8 +45,7 @@ const meta: Meta<typeof Button> = {
 				'item-text-default',
 				'item-text-danger',
 			],
-			size: ['xs', 'sm', 'md', 'lg'],
-			state: ['default', 'pressed', 'selected'],
+			highlight: ['default', 'pressed', 'selected'],
 			loading: 'boolean',
 			disabled: 'boolean',
 			linkHref: 'text',
@@ -55,25 +56,26 @@ const meta: Meta<typeof Button> = {
 		['onClick']
 	),
 
-	component: (props: ButtonProps) => {
+	component: function Story(props: ButtonProps) {
 		const PROPS: DocsPropDef[] = [
+			{
+				name: 'size',
+				type: 'ButtonSize',
+				default: `'md'`,
+				details: `Property that determines total height and padding`,
+			},
 			{
 				name: 'variant',
 				type: 'ButtonVariant',
 				default: `'solid-primary'`,
 				details: `Property that determines color and highlight`,
 			},
+
 			{
-				name: 'size',
-				type: 'ButtonSize',
-				default: `'md'`,
-				details: `Property that determines total height`,
-			},
-			{
-				name: 'state',
-				type: 'ButtonState',
+				name: 'highlight',
+				type: 'ButtonHighlight',
 				default: `'default'`,
-				details: `Property for enforcing a specific button state`,
+				details: `Property for enforcing a specific button highlight`,
 			},
 			{
 				name: 'loading',
@@ -126,6 +128,7 @@ const meta: Meta<typeof Button> = {
 			},
 		]
 		const TYPES = `
+			type ButtonSize = 'xs' | 'sm' | 'md' | 'lg'
 			type ButtonVariant =
 				| 'solid-primary'
 				| 'solid-secondary'
@@ -135,22 +138,63 @@ const meta: Meta<typeof Button> = {
 				| 'item-solid-secondary'
 				| 'item-text-default'
 				| 'item-text-danger'
-			type ButtonSize = 'xs' | 'sm' | 'md' | 'lg'
-			type ButtonState = 'default' | 'pressed' | 'selected'
+			type ButtonHighlight = 'default' | 'pressed' | 'selected'
 			type LinkType = 'internal' | 'external' | 'inactive'
 		`
 
+		const svg = <LogoutSvg className="mr-xs-4 h-xs-7 w-xs-7" />
+		const variants: ButtonVariant[] = [
+			'solid-primary',
+			'solid-secondary',
+			'solid-danger',
+			'text-default',
+			'text-danger',
+			'item-solid-secondary',
+			'item-text-default',
+			'item-text-danger',
+		]
+		const EXAMPLES = useMemo(
+			() => (
+				<div className="flex flex-wrap items-center gap-xs-7 p-sm-0" css={{ hr: { border: 'none' } }}>
+					{variants.map((variant) => (
+						<div key={variant} className="flex flex-wrap items-center gap-xs-7">
+							<Button variant={variant} className="w-lg-4">
+								{svg} {variant}
+							</Button>
+							<Button variant={variant} highlight="pressed">
+								{svg} pressed
+							</Button>
+							<Button variant={variant} highlight="selected">
+								{svg} selected
+							</Button>
+							<Button variant={variant} loading>
+								{svg} loading
+							</Button>
+							<Button variant={variant} disabled>
+								{svg} disabled
+							</Button>
+							<Button variant={variant} size="xs">
+								xs
+							</Button>
+							<Button variant={variant} size="sm">
+								sm
+							</Button>
+							<Button variant={variant} size="md">
+								md
+							</Button>
+							<Button variant={variant} size="lg">
+								lg
+							</Button>
+						</div>
+					))}
+				</div>
+			),
+			[]
+		)
+
 		return (
-			<DocsPage title="Button" type="component" slots={{ PROPS, SLOTS, EVENTS, TYPES }}>
+			<DocsPage title="Button" type="component" slots={{ PROPS, SLOTS, EVENTS, TYPES, EXAMPLES }}>
 				<Button {...props} />
-
-				<br />
-				<br />
-				<br />
-
-				<Button {...props}>
-					<LogoutSvg className="mr-xs-4 h-xs-7 w-xs-7" /> With icon
-				</Button>
 			</DocsPage>
 		)
 	},

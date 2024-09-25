@@ -1,3 +1,4 @@
+import { useDocsPlayground } from '@ds/docs/components/docs-playground-provider'
 import { ComponentType, MouseEvent, useState } from 'react'
 
 export interface Icon {
@@ -11,6 +12,7 @@ interface Props {
 }
 
 export const DocIconItem = ({ icon }: Props) => {
+	const { playgroundBgClass } = useDocsPlayground()
 	const [copied, setCopied] = useState(false)
 
 	const buttonClass = [
@@ -36,7 +38,7 @@ export const DocIconItem = ({ icon }: Props) => {
 
 	return (
 		<button type="button" title={icon.coding} className={buttonClass} onClick={onClick}>
-			<span className="flex-center docs-grid-bg pointer-events-none w-full flex-1">
+			<span className={`flex-center pointer-events-none w-full flex-1 ${playgroundBgClass}`}>
 				<icon.elem className="max-h-[40px] max-w-[40px]" />
 			</span>
 

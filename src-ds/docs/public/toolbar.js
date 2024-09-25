@@ -15,6 +15,7 @@ const toggleSelected = (selector, active) => {
 
 const fixPopups = () => {
 	const selectors = [
+		`button[title="${window.__TOOLTIPS__.playgroundStyle}"]`,
 		`button[title="${window.__TOOLTIPS__.uiLibrary}"]`,
 		`button[title="${window.__TOOLTIPS__.colorTheme}"]`,
 	]
@@ -24,6 +25,7 @@ const fixPopups = () => {
 		button.classList.add('JS_TRIGGER')
 		button.addEventListener('click', () => {
 			// Wait for popup to be created
+			waitHtmlUpdate(() => toggleSelected('#list-item-' + window.__GLOBALS__.playgroundStyle, true))
 			waitHtmlUpdate(() => toggleSelected('#list-item-' + window.__GLOBALS__.uiLibrary, true))
 			waitHtmlUpdate(() => toggleSelected('#list-item-' + window.__GLOBALS__.colorTheme, true))
 		})
@@ -35,6 +37,8 @@ const fixA11yPopup = () => {
 	let selectedId
 
 	const button = document.querySelector(selector)
+	if (!button) return
+
 	button.classList.add('JS_TRIGGER')
 	button.addEventListener('click', () => {
 		// Wait for popup to be created

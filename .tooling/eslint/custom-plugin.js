@@ -12,7 +12,7 @@ export const customPlugin = {
 
 					if (isDS) {
 						const isValid =
-							path.startsWith('@ds/release') ||
+							(path.startsWith('@ds/release') && path !== '@ds/release/index.ts') ||
 							path.startsWith('@ds/docs') ||
 							path.startsWith('@ds/changelog') ||
 							path.includes('version.json') ||

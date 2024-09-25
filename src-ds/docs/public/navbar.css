@@ -22,12 +22,8 @@
  */
 
 .sidebar-header {
-	& a {
-		border: none !important;
-		color: var(--ds-color-purple-2) !important;
-		font-weight: var(--ds-font-weight-sm) !important;
-		font-size: var(--ds-font-size-lg) !important;
-	}
+	margin-top: -4px !important;
+	padding: 0 !important;
 
 	& a:not([href='#storybook-preview-wrapper']),
 	& button {
@@ -45,6 +41,10 @@
 /**
  * Search field
  */
+
+label[for='storybook-explorer-searchfield'] + div {
+	margin-top: var(--ds-spacing-xs-5) !important;
+}
 
 .search-field {
 	--padding: 32px;

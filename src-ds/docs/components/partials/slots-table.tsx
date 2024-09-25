@@ -8,7 +8,7 @@ interface Props {
 export const SlotsTable = ({ slotDefs }: Props) => {
 	const getNameFlag = (required?: boolean) => {
 		return required ? (
-			<span title="Required" className="text-color-danger cursor-default px-xs-3 font-weight-xl">
+			<span title="Required" className="cursor-default px-xs-3 font-weight-xl text-color-danger">
 				*
 			</span>
 		) : (
