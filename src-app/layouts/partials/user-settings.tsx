@@ -113,7 +113,7 @@ export const UserSettings = () => {
 
 				<hr className={hrClass} />
 
-				<Button linkHref="/docs/api" linkType="external" variant="item-text-default">
+				<Button linkHref={`${ENV__ROOT_URL_PATH}/docs/api`} linkType="external" variant="item-text-default">
 					<InfoSvg className={actionIconClass} />
 					API Docs
 					<NewTabSvg className={newTabIconClass} />
