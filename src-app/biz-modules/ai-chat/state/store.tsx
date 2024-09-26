@@ -71,8 +71,8 @@ export const AiChatProvider = ({ children }: ReactProps) => {
 		}
 	}, [allChats])
 
-	const store = useMemo(
-		(): Store => ({
+	const store: Store = useMemo(
+		() => ({
 			allChats,
 			allChatsLoading,
 			moreChatsLoading,

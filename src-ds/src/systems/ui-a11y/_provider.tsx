@@ -5,7 +5,7 @@ import { ATTR_KEY__A11Y_MODE, Context, Store } from './_context'
 export const UiA11yProvider = ({ children }: ReactProps) => {
 	const [a11yMode, setA11yMode] = useState<A11yMode>('default')
 
-	const isPointer = useMemo(() => a11yMode === 'pointer', [a11yMode])
+	const isPointer = a11yMode === 'pointer'
 
 	const forceA11yMode = (mode: A11yMode) => {
 		setA11yMode(mode)

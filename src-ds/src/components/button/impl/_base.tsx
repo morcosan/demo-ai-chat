@@ -1,6 +1,7 @@
+// noinspection DuplicatedCode
+
 import { useUiTheme } from '@ds/release'
 import { CSS__ABSOLUTE_OVERLAY, useDefaults } from '@utils/release'
-import { useMemo } from 'react'
 import { useClickable } from '../../_shared/clickable'
 import { ButtonProps, ButtonVariant } from '../_types'
 
@@ -62,7 +63,7 @@ export const useButtonBase = (rawProps: ButtonProps) => {
 		pointerEvents: isDisabled ? 'none' : 'unset',
 	}
 
-	const cssTextColor = useMemo((): CSS => {
+	const cssTextColor: CSS = (() => {
 		if (isVSecondary && isUiLight) return cssTextColorFn($color['secondary-text-default'])
 		if (isVSecondary && !isUiLight) return cssTextColorFn($color['secondary-text-inverse'])
 		if (isVPrimary && isUiLight) return cssTextColorFn($color['text-inverse'])
@@ -72,16 +73,16 @@ export const useButtonBase = (rawProps: ButtonProps) => {
 		if (isVDanger && !isVSolid) return cssTextColorFn($color['danger'])
 		if (isVDefault) return cssTextColorFn($color['text-default'])
 		return {}
-	}, [$color, props.variant])
+	})()
 
-	const cssBgColor = useMemo((): CSS => {
+	const cssBgColor: CSS = (() => {
 		if (isVPrimary) return cssBgColorFn($color['primary'])
 		if (isVSecondary) return cssBgColorFn($color['secondary'])
 		if (isVDanger && isVSolid) return cssBgColorFn($color['danger'])
 		return {}
-	}, [$color, props.variant])
+	})()
 
-	const cssHover = useMemo((): CSS => {
+	const cssHover: CSS = (() => {
 		if (isDisabled) return {}
 		if (props.highlight === 'default') {
 			return isVText
@@ -91,9 +92,9 @@ export const useButtonBase = (rawProps: ButtonProps) => {
 					: cssHoverFn(isUiLight ? $color['hover-2'] : $color['hover-1'])
 		}
 		return {}
-	}, [$color, isDisabled, props.variant, props.highlight])
+	})()
 
-	const cssPressed = useMemo((): CSS => {
+	const cssPressed: CSS = (() => {
 		if (isDisabled || props.highlight === 'selected') return {}
 		if (isPressed || props.highlight === 'pressed') {
 			return isVText
@@ -103,28 +104,28 @@ export const useButtonBase = (rawProps: ButtonProps) => {
 					: cssPressedFn(isUiLight ? $color['hover-4'] : $color['hover-2'])
 		}
 		return {}
-	}, [$color, isDisabled, isPressed, props.variant, props.highlight])
+	})()
 
-	const cssSize = useMemo((): CSS => {
+	const cssSize: CSS = (() => {
 		if (props.size === 'xs') return cssSizeFn($spacing['button-h-xs'])
 		if (props.size === 'sm') return cssSizeFn($spacing['button-h-sm'])
 		if (props.size === 'md') return cssSizeFn($spacing['button-h-md'])
 		if (props.size === 'lg') return cssSizeFn($spacing['button-h-lg'])
 		return {}
-	}, [$spacing, props.size])
+	})()
 
-	const cssPadding = useMemo((): CSS => {
+	const cssPadding: CSS = (() => {
 		if (isVItem) return cssPaddingFn($spacing['button-px-item'])
 		if (props.size === 'xs') return cssPaddingFn($spacing['button-px-xs'])
 		if (props.size === 'sm') return cssPaddingFn($spacing['button-px-sm'])
 		if (props.size === 'md') return cssPaddingFn($spacing['button-px-md'])
 		if (props.size === 'lg') return cssPaddingFn($spacing['button-px-lg'])
 		return {}
-	}, [$spacing, props.size, props.variant])
+	})()
 
 	const cssRadius: CSS = cssRadiusFn(props.size === 'lg' ? $radius['md'] : $radius['sm'])
 
-	const cssFont = useMemo((): CSS => {
+	const cssFont: CSS = (() => {
 		if (isVItem && isVDefault) return { fontWeight: $fontWeight['sm'], fontSize: 'unset' }
 		if (isVItem && !isVDefault) return { fontWeight: $fontWeight['md'], fontSize: 'unset' }
 		if (props.size === 'xs') return cssFontFn($fontSize['xs'])
@@ -132,7 +133,7 @@ export const useButtonBase = (rawProps: ButtonProps) => {
 		if (props.size === 'md') return cssFontFn($fontSize['md'])
 		if (props.size === 'lg') return cssFontFn($fontSize['lg'])
 		return {}
-	}, [$fontSize, props.size, props.variant])
+	})()
 
 	const cssAll = [
 		cssBase,

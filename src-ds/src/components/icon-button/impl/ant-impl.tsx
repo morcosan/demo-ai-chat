@@ -1,7 +1,8 @@
+// noinspection DuplicatedCode
+
 import { useUiTheme } from '@ds/release'
 import { Button } from 'antd'
 import { ButtonType } from 'antd/es/button'
-import { useMemo } from 'react'
 import { IconButtonProps } from '../_types'
 import { useIconButtonBase } from './_base'
 
@@ -10,7 +11,7 @@ export const AntImpl = (rawProps: IconButtonProps) => {
 	const buttonBase = useIconButtonBase(rawProps)
 	const { cssAll, isVDanger, isVDefault, isVPrimary, isVSecondary, isVSolid, props, baseBindings } = buttonBase
 
-	const cssHover = useMemo((): CSS => {
+	const cssHover: CSS = (() => {
 		// AntDesign will try to enforce hover colors
 		const cssFn = (color: string, backgroundColor: string) => ({
 			'&:not(:disabled):not(.ant-btn-disabled):hover': { color, backgroundColor },
@@ -24,7 +25,7 @@ export const AntImpl = (rawProps: IconButtonProps) => {
 		if (isVDanger) return cssFn($color['danger'], 'transparent')
 		if (isVDefault) return cssFn($color['text-default'], 'transparent')
 		return {}
-	}, [isUiLight, props.variant])
+	})()
 
 	const cssWave: CSS = props.pressed ? { '& .ant-wave': { display: 'none' } } : {}
 

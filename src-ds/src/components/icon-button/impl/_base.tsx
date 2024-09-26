@@ -1,6 +1,7 @@
+// noinspection DuplicatedCode
+
 import { useUiTheme } from '@ds/release'
 import { CSS__ABSOLUTE_OVERLAY, useDefaults } from '@utils/release'
-import { useMemo } from 'react'
 import { useClickable } from '../../_shared/clickable'
 import { IconButtonProps, IconButtonVariant } from '../_types'
 
@@ -56,7 +57,7 @@ export const useIconButtonBase = (rawProps: IconButtonProps) => {
 		pointerEvents: isDisabled ? 'none' : 'unset',
 	}
 
-	const cssTextColor = useMemo((): CSS => {
+	const cssTextColor: CSS = (() => {
 		if (isVSecondary && isUiLight) return cssTextColorFn($color['secondary-text-default'])
 		if (isVSecondary && !isUiLight) return cssTextColorFn($color['secondary-text-inverse'])
 		if (isVPrimary && isUiLight) return cssTextColorFn($color['text-inverse'])
@@ -66,16 +67,16 @@ export const useIconButtonBase = (rawProps: IconButtonProps) => {
 		if (isVDanger && !isVSolid) return cssTextColorFn($color['danger'])
 		if (isVDefault) return cssTextColorFn($color['text-default'])
 		return {}
-	}, [isUiLight, props.variant])
+	})()
 
-	const cssBgColor = useMemo((): CSS => {
+	const cssBgColor: CSS = (() => {
 		if (isVPrimary) return cssBgColorFn($color['primary'])
 		if (isVSecondary) return cssBgColorFn($color['secondary'])
 		if (isVDanger && isVSolid) return cssBgColorFn($color['danger'])
 		return {}
-	}, [isUiLight, props.variant])
+	})()
 
-	const cssHover = useMemo((): CSS => {
+	const cssHover: CSS = (() => {
 		if (isDisabled) return {}
 		if (!props.pressed) {
 			return isVText
@@ -85,9 +86,9 @@ export const useIconButtonBase = (rawProps: IconButtonProps) => {
 					: cssHoverFn(isUiLight ? $color['hover-2'] : $color['hover-1'])
 		}
 		return {}
-	}, [$color, isDisabled, props.variant, props.pressed])
+	})()
 
-	const cssPressed = useMemo((): CSS => {
+	const cssPressed: CSS = (() => {
 		if (isDisabled) return {}
 		if (isPressed || props.pressed) {
 			return isVText
@@ -97,14 +98,14 @@ export const useIconButtonBase = (rawProps: IconButtonProps) => {
 					: cssPressedFn(isUiLight ? $color['hover-4'] : $color['hover-2'])
 		}
 		return {}
-	}, [$color, isDisabled, isPressed, props.variant, props.pressed])
+	})()
 
-	const cssSize = useMemo((): CSS => {
+	const cssSize: CSS = (() => {
 		if (props.size === 'xs') return cssSizeFn($spacing['button-h-xs'])
 		if (props.size === 'sm') return cssSizeFn($spacing['button-h-sm'])
 		if (props.size === 'md') return cssSizeFn($spacing['button-h-md'])
 		return {}
-	}, [isUiLight, props.size])
+	})()
 
 	const cssRadius: CSS = isVText ? cssRadiusFn($radius['full']) : cssRadiusFn($radius['sm'])
 
