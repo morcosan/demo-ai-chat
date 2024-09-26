@@ -2,7 +2,7 @@ import { DocsPlaygroundProvider } from '@ds/docs/components/docs-playground-prov
 import { UiA11yProvider, UiLibraryProvider, UiThemeProvider } from '@ds/release'
 import { Preview } from '@storybook/react'
 import { COOKIE__DS_COLOR_THEME, COOKIE__DS_UI_LIBRARY, Wrapper, Wrappers } from '@utils/release'
-import { StrictMode, useMemo } from 'react'
+import { StrictMode } from 'react'
 import { MemoryRouter } from 'react-router-dom'
 import { TOOLTIP__COLOR_THEME, TOOLTIP__PLAYGROUND_STYLE, TOOLTIP__UI_LIBRARY } from './_constants'
 
@@ -65,16 +65,13 @@ const preview: Preview = {
 				| typeof UiLibraryProvider
 				| typeof UiThemeProvider
 
-			const providers = useMemo(
-				(): Wrapper<Type>[] => [
-					{ elem: UiA11yProvider },
-					{ elem: DocsPlaygroundProvider, props: { playgroundStyle: globals.playgroundStyle } },
-					{ elem: UiThemeProvider, props: { cookieKey: COOKIE__DS_COLOR_THEME, colorTheme: globals.colorTheme } },
-					// Must be last, it forces re-rendering
-					{ elem: UiLibraryProvider, props: { cookieKey: COOKIE__DS_UI_LIBRARY, uiLibrary: globals.uiLibrary } },
-				],
-				[globals.colorTheme, globals.uiLibrary, globals.playgroundStyle]
-			)
+			const providers: Wrapper<Type>[] = [
+				{ elem: UiA11yProvider },
+				{ elem: DocsPlaygroundProvider, props: { playgroundStyle: globals.playgroundStyle } },
+				{ elem: UiThemeProvider, props: { cookieKey: COOKIE__DS_COLOR_THEME, colorTheme: globals.colorTheme } },
+				// Must be last, it forces re-rendering
+				{ elem: UiLibraryProvider, props: { cookieKey: COOKIE__DS_UI_LIBRARY, uiLibrary: globals.uiLibrary } },
+			]
 
 			return (
 				<StrictMode>

@@ -1,4 +1,4 @@
-import { useUiA11y } from '@ds/release'
+import { isA11yModePointer } from '@ds/release'
 import { Keyboard } from '@utils/release'
 import { KeyboardEvent, MouseEvent, useCallback, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
@@ -14,7 +14,6 @@ export interface ClickableProps {
 
 export const useClickable = (props: ClickableProps) => {
 	const navigate = useNavigate()
-	const { isPointer } = useUiA11y()
 	const [isPressed, setIsPressed] = useState(false)
 
 	const linkTarget = props.linkType === 'internal' ? '_self' : '_blank'
@@ -26,12 +25,18 @@ export const useClickable = (props: ClickableProps) => {
 			if (isDisabled || props.linkType !== 'external') event.preventDefault()
 			if (isDisabled) return
 
-			isPointer && (event.target as HTMLElement).blur()
 			props.onClick?.(event)
 
-			if (props.linkHref && props.linkType === 'internal') navigate(props.linkHref)
+			if (isA11yModePointer()) {
+				const button = event.target as HTMLElement
+				button.blur()
+			}
+
+			if (props.linkHref && props.linkType === 'internal') {
+				navigate(props.linkHref)
+			}
 		},
-		[isDisabled, isPointer, props.linkType, props.linkHref, props.onClick]
+		[isDisabled, props.linkType, props.linkHref, props.onClick]
 	)
 
 	const onMouseDown = () => setIsPressed(true)

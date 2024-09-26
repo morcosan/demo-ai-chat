@@ -12,8 +12,8 @@ export const UiThemeProvider = (props: Props) => {
 	const [colorTheme, setColorTheme] = useState<ColorTheme>('light')
 	const [tokens, setTokens] = useState<ThemeTokens>(TOKENS__LIGHT_THEME)
 
-	const isUiDark = useMemo(() => colorTheme === 'dark', [colorTheme])
-	const isUiLight = useMemo(() => colorTheme === 'light', [colorTheme])
+	const isUiDark = colorTheme === 'dark'
+	const isUiLight = colorTheme === 'light'
 
 	const htmlElem = document.documentElement
 	const setHtmlAttr = (theme: ColorTheme) => htmlElem.setAttribute(ATTR_KEY__COLOR_THEME, theme)

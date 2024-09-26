@@ -25,14 +25,12 @@ export const UserSettings = () => {
 	const avatar = useMemo(() => randomAvatar(), [])
 	const name = useMemo(() => randomFullName(), [])
 
-	const menuClass = useMemo(() => {
-		return [
-			opened ? 'block' : 'hidden',
-			'absolute bottom-0 right-0 translate-x-full z-popup shadow-lg',
-			'flex w-lg-6 p-xs-4 flex-col gap-xs-3 bg-color-bg-default',
-			'border border-color-border-shadow rounded-md',
-		].join(' ')
-	}, [opened])
+	const menuClass = [
+		opened ? 'block' : 'hidden',
+		'absolute bottom-0 right-0 translate-x-full z-popup shadow-lg',
+		'flex w-lg-6 p-xs-4 flex-col gap-xs-3 bg-color-bg-default',
+		'border border-color-border-shadow rounded-md',
+	].join(' ')
 	const selectClass = [
 		'h-button-h-sm rounded-sm border border-color-border-default bg-color-bg-default px-xs-2 text-size-xs',
 	].join(' ')
