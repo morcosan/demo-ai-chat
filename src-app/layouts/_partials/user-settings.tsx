@@ -58,7 +58,7 @@ export const UserSettings = () => {
 	}, [])
 
 	return (
-		<div ref={wrapperRef} className="relative">
+		<div ref={wrapperRef} className="relative mt-xs-4">
 			<Button
 				variant="item-text-default"
 				size="lg"

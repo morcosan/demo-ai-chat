@@ -56,6 +56,13 @@ const meta: Meta<typeof Button> = {
 	),
 
 	component: function Story(props: ButtonProps) {
+		const SLOTS: DocsSlotDef[] = [
+			{
+				name: 'children',
+				details: `Content to be rendered inside the button`,
+				required: true,
+			},
+		]
 		const PROPS: DocsPropDef[] = [
 			{
 				name: 'size',
@@ -91,7 +98,6 @@ const meta: Meta<typeof Button> = {
 			{
 				name: 'linkHref',
 				type: 'string',
-				default: `undefined`,
 				details: `URL path for transforming the button into ^<a>^ link`,
 			},
 			{
@@ -108,15 +114,7 @@ const meta: Meta<typeof Button> = {
 			{
 				name: 'tooltip',
 				type: 'string',
-				default: `undefined`,
 				details: `Text to be displayed as tooltip on hover / focus`,
-			},
-		]
-		const SLOTS: DocsSlotDef[] = [
-			{
-				name: 'children',
-				details: `Content to be rendered inside the button`,
-				required: true,
 			},
 		]
 		const EVENTS: DocsEventDef[] = [
@@ -154,9 +152,9 @@ const meta: Meta<typeof Button> = {
 		]
 		const EXAMPLES = useMemo(
 			() => (
-				<div className="flex flex-wrap items-center gap-xs-7 p-sm-0" css={{ hr: { border: 'none' } }}>
+				<div className="flex flex-wrap items-center gap-xs-7 p-sm-0">
 					{variants.map((variant) => (
-						<div key={variant} className="flex flex-wrap items-center gap-xs-7">
+						<div key={variant} className="flex w-full flex-wrap items-center gap-xs-7">
 							<Button variant={variant} className="w-lg-4">
 								{svg} {variant}
 							</Button>
@@ -192,7 +190,7 @@ const meta: Meta<typeof Button> = {
 		)
 
 		return (
-			<DocsPage title="Button" type="component" slots={{ PROPS, SLOTS, EVENTS, TYPES, EXAMPLES }}>
+			<DocsPage title="Button" type="component" slots={{ SLOTS, PROPS, EVENTS, TYPES, EXAMPLES }}>
 				<Button {...props} />
 			</DocsPage>
 		)

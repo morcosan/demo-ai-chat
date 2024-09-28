@@ -265,6 +265,7 @@
 		}
 
 		/* Text fields */
+		& input[type='number'],
 		& textarea {
 			/*outline: revert !important;*/
 			box-shadow: none !important;

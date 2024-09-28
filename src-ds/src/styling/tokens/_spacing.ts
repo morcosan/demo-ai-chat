@@ -76,9 +76,14 @@ export const TOKENS__SPACING = {
 	'button-px-lg': { $ref: 'sm-0', $css: '--ds-spacing-button-px-lg' },
 	'button-px-item': { $ref: 'xs-5', $css: '--ds-spacing-button-px-item' },
 
-	'field-h-sm': { $ref: 'sm-0', $css: '--ds-spacing-field-h-sm' },
+	'field-h-sm': { $ref: 'sm-2', $css: '--ds-spacing-field-h-sm' },
 	'field-h-md': { $ref: 'sm-4', $css: '--ds-spacing-field-h-md' },
-	'field-h-lg': { $ref: 'sm-8', $css: '--ds-spacing-field-h-lg' },
+	'field-h-lg': { $ref: 'sm-6', $css: '--ds-spacing-field-h-lg' },
+	'field-h-xl': { $ref: 'sm-8', $css: '--ds-spacing-field-h-xl' },
+
+	'scrollbar-w': { $ref: 'xs-4', $css: '--ds-spacing-scrollbar-w' },
+	'scrollbar-h': { $ref: 'xs-2', $css: '--ds-spacing-scrollbar-h' },
 
 	'a11y-outline': { $ref: 'xs-0', $css: '--ds-spacing-a11y-outline' },
+	'a11y-padding': { $ref: 'xs-1', $css: '--ds-spacing-a11y-padding' },
 } as const satisfies DesignTokenGroup<string>

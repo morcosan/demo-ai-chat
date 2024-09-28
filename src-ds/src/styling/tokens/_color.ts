@@ -1,5 +1,7 @@
 export const TOKENS__COLOR = {
 	white: { $value: '#fff', $css: '--ds-color-white' },
+	black: { $value: '#18181b', $css: '--ds-color-black' },
+
 	'grey-0': { $value: '#fafafa', $css: '--ds-color-grey-0' },
 	'grey-1': { $value: '#f4f4f5', $css: '--ds-color-grey-1' },
 	'grey-2': { $value: '#e4e4e7', $css: '--ds-color-grey-2' },
@@ -9,7 +11,7 @@ export const TOKENS__COLOR = {
 	'grey-6': { $value: '#52525b', $css: '--ds-color-grey-6' },
 	'grey-7': { $value: '#3f3f46', $css: '--ds-color-grey-7' },
 	'grey-8': { $value: '#27272a', $css: '--ds-color-grey-8' },
-	'grey-9': { $value: '#18181b', $css: '--ds-color-grey-9' },
+	'grey-9': { $value: '#202024', $css: '--ds-color-grey-9' },
 
 	'purple-1': { $value: '#f3e8ff', $css: '--ds-color-purple-1' },
 	'purple-2': { $value: '#c084fc', $css: '--ds-color-purple-2' },
@@ -66,9 +68,10 @@ export const TOKENS__COLOR = {
 		$css: '--ds-color-bg-scrollbar-hover',
 	},
 
-	'text-default': { $ref: { light: 'grey-9', dark: 'grey-1' }, $css: '--ds-color-text-default' },
+	'text-default': { $ref: { light: 'black', dark: 'white' }, $css: '--ds-color-text-default' },
 	'text-subtle': { $ref: { light: 'grey-5', dark: 'grey-4' }, $css: '--ds-color-text-subtle' },
-	'text-inverse': { $ref: { light: 'white', dark: 'grey-9' }, $css: '--ds-color-text-inverse' },
+	'text-placeholder': { $ref: { light: 'grey-4', dark: 'grey-5' }, $css: '--ds-color-text-placeholder' },
+	'text-inverse': { $ref: { light: 'white', dark: 'black' }, $css: '--ds-color-text-inverse' },
 	'text-preview': { $ref: { light: 'blue-4', dark: 'blue-1' }, $css: '--ds-color-text-preview' },
 
 	primary: { $ref: { light: 'purple-3', dark: 'purple-2' }, $css: '--ds-color-primary' },
@@ -112,8 +115,9 @@ export const TOKENS__COLOR = {
 
 	'modal-overlay': { $ref: { light: 'black-glass-6', dark: 'black-glass-6' }, $css: '--ds-color-modal-overlay' },
 
+	'border-active': { $ref: { light: 'grey-6', dark: 'grey-4' }, $css: '--ds-color-border-active' },
+	'border-hover': { $ref: { light: 'grey-4', dark: 'grey-5' }, $css: '--ds-color-border-hover' },
 	'border-default': { $ref: { light: 'grey-3', dark: 'grey-6' }, $css: '--ds-color-border-default' },
 	'border-subtle': { $ref: { light: 'grey-2', dark: 'grey-7' }, $css: '--ds-color-border-subtle' },
 	'border-shadow': { $ref: { light: 'grey-1', dark: 'grey-9' }, $css: '--ds-color-border-shadow' },
-	'border-active': { $ref: { light: 'grey-5', dark: 'grey-4' }, $css: '--ds-color-border-active' },
 } as const satisfies DesignTokenGroup<string>

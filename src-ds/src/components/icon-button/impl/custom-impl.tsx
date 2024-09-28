@@ -36,7 +36,7 @@ export const CustomImpl = (rawProps: IconButtonProps) => {
 		userSelect: 'none',
 	}
 
-	const buttonBindings = {
+	const bindings = {
 		...baseBindings,
 		css: [cssBase, cssTextColor, cssSize, cssPressed, cssRadius, cssHover, cssDisabled],
 	}
@@ -55,9 +55,9 @@ export const CustomImpl = (rawProps: IconButtonProps) => {
 	)
 
 	return props.linkHref ? (
-		<a {...buttonBindings}>{slot}</a>
+		<a {...bindings}>{slot}</a>
 	) : (
-		<button type="button" disabled={isDisabled} {...buttonBindings}>
+		<button type="button" disabled={isDisabled} {...bindings}>
 			{slot}
 		</button>
 	)

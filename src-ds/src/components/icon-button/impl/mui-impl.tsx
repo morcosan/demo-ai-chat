@@ -9,7 +9,6 @@ export const MuiImpl = (rawProps: IconButtonProps) => {
 	const { baseBindings, cssAll, isDisabled, isVSolid, props } = useIconButtonBase(rawProps)
 
 	const cssButton: CSS = {
-		minWidth: 'unset',
 		padding: '0',
 		textTransform: 'none',
 		outline: 'revert',
@@ -30,7 +29,7 @@ export const MuiImpl = (rawProps: IconButtonProps) => {
 		},
 	}
 
-	const buttonBindings = {
+	const bindings = {
 		...baseBindings,
 		variant: (isVSolid ? 'contained' : 'text') satisfies MuiVariant,
 		disabled: isDisabled,
@@ -40,5 +39,5 @@ export const MuiImpl = (rawProps: IconButtonProps) => {
 		sx: [...cssAll, cssButton, cssChildren],
 	}
 
-	return <LoadingButton {...buttonBindings}>{props.children}</LoadingButton>
+	return <LoadingButton {...bindings}>{props.children}</LoadingButton>
 }

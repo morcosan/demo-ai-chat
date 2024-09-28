@@ -45,11 +45,17 @@ const meta: Meta<typeof IconButton> = {
 	),
 
 	component: function Story(props: IconButtonProps) {
+		const SLOTS: DocsSlotDef[] = [
+			{
+				name: 'children',
+				details: `Icon to be rendered inside the button`,
+				required: true,
+			},
+		]
 		const PROPS: DocsPropDef[] = [
 			{
 				name: 'tooltip',
 				type: 'string',
-				default: `undefined`,
 				details: `Text to be displayed as tooltip on hover / focus`,
 				required: true,
 			},
@@ -86,7 +92,6 @@ const meta: Meta<typeof IconButton> = {
 			{
 				name: 'linkHref',
 				type: 'string',
-				default: `undefined`,
 				details: `URL path for transforming the button into ^<a>^ link`,
 			},
 			{
@@ -99,13 +104,6 @@ const meta: Meta<typeof IconButton> = {
 					^external^ creates an ^<a>^ link that opens in new tab
 					^inactive^ creates an ^<a>^ link without any behavior
 				`,
-			},
-		]
-		const SLOTS: DocsSlotDef[] = [
-			{
-				name: 'children',
-				details: `Icon to be rendered inside the button`,
-				required: true,
 			},
 		]
 		const EVENTS: DocsEventDef[] = [
@@ -136,7 +134,7 @@ const meta: Meta<typeof IconButton> = {
 		]
 		const EXAMPLES = useMemo(
 			() => (
-				<div className="flex flex-wrap items-center gap-xs-7 p-sm-0" css={{ hr: { border: 'none' } }}>
+				<div className="flex flex-wrap items-center gap-xs-7 p-sm-0">
 					{variants.map((variant) => (
 						<div key={variant} className="flex w-full flex-wrap items-center gap-xs-7">
 							<IconButton tooltip={variant} variant={variant}>
@@ -168,7 +166,7 @@ const meta: Meta<typeof IconButton> = {
 		)
 
 		return (
-			<DocsPage title="IconButton" type="component" slots={{ PROPS, SLOTS, EVENTS, TYPES, EXAMPLES }}>
+			<DocsPage title="Icon Button" type="component" slots={{ SLOTS, PROPS, EVENTS, TYPES, EXAMPLES }}>
 				<IconButton {...props}>{svg}</IconButton>
 			</DocsPage>
 		)

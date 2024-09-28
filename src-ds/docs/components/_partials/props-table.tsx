@@ -42,7 +42,7 @@ export const PropsTable = ({ propDefs }: Props) => {
 								<code>{propDef.type}</code>
 							</td>
 							<td>
-								<code>{propDef.default}</code>
+								<code>{propDef.default || 'undefined'}</code>
 							</td>
 							<td dangerouslySetInnerHTML={{ __html: renderHtml(propDef.details) }} />
 						</tr>

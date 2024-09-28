@@ -1,8 +1,8 @@
 declare interface DocsPropDef {
 	name: string
 	type: string
-	default: string
 	details: string
+	default?: string
 	required?: boolean
 }
 
@@ -13,6 +13,12 @@ declare interface DocsSlotDef {
 }
 
 declare interface DocsEventDef {
+	name: string
+	details: string
+	params?: string[]
+}
+
+declare interface DocsMethodDef {
 	name: string
 	details: string
 	params?: string[]

@@ -34,7 +34,7 @@ export const TAILWIND_THEME = {
 		margin: { 0: 0, px: '1px', auto: 'auto' },
 		padding: { 0: 0, px: '1px' },
 		width: { screen: '100vw' },
-		zIndex: { 0: 0 },
+		zIndex: { 0: 0, 1: 1 },
 		spacing: {
 			0: 0,
 			px: '1px',
