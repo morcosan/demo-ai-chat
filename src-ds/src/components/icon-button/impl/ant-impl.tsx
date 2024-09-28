@@ -60,7 +60,7 @@ export const AntImpl = (rawProps: IconButtonProps) => {
 		},
 	}
 
-	const buttonBindings = {
+	const bindings = {
 		...baseBindings,
 		type: (isVSolid ? 'primary' : 'text') satisfies ButtonType,
 		loading: props.loading,
@@ -71,5 +71,5 @@ export const AntImpl = (rawProps: IconButtonProps) => {
 	// AntDesign will wrap only text nodes inside <span>, not all children
 	const slot = <span>{props.children}</span>
 
-	return <Button {...buttonBindings}>{slot}</Button>
+	return <Button {...bindings}>{slot}</Button>
 }

@@ -1,7 +1,7 @@
 /* Chromium */
 ::-webkit-scrollbar {
-	width: 10px;
-	height: 6px;
+	width: var(--ds-spacing-scrollbar-w);
+	height: var(--ds-spacing-scrollbar-h);
 }
 ::-webkit-scrollbar-track {
 	background: transparent;

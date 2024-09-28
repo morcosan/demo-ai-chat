@@ -15,6 +15,15 @@
 			fill: var(--ds-color-white) !important;
 		}
 	}
+
+	#storybook-explorer-menu::after {
+		display: block !important;
+		padding-right: var(--ds-spacing-sm-0) !important;
+		content: 'Powered by Storybook' !important;
+		color: var(--ds-color-grey-4) !important;
+		font-size: var(--ds-font-size-xs) !important;
+		text-align: center !important;
+	}
 }
 
 /**
@@ -195,6 +204,7 @@ label[for='storybook-explorer-searchfield'] + div {
 
 #storybook-explorer-tree {
 	margin-top: var(--ds-spacing-sm-4) !important;
+	padding-bottom: var(--ds-spacing-md-9) !important;
 }
 
 .sidebar-item {
