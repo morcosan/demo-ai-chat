@@ -1,4 +1,4 @@
-import { AiChatNavSection } from '@app/biz-modules/ai-chat/nav/nav-section.tsx'
+import { AiChatNavSection } from '@app/biz-modules/ai-chat/views/nav-section.tsx'
 import { AppLogo } from '@app/layouts/_partials/app-logo.tsx'
 import { UserSettings } from '@app/layouts/_partials/user-settings.tsx'
 

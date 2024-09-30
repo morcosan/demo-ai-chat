@@ -23,7 +23,7 @@ export interface ChatsApiData {
 	count: number
 	items: ChatDTO[]
 }
-export interface MessagesApiQuery {
+export interface MessagesApiQuery extends ApiQuery {
 	chatId?: string | number
 	subchatId?: string | number
 	count?: string | number

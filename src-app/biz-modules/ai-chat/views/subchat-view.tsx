@@ -1,14 +1,13 @@
-import { useMessageMock } from '@app/biz-modules/ai-chat/views/_partials/message-mock'
+import { useMessageListing } from '@app/biz-modules/ai-chat/hooks/message-listing'
 import { IconButton, SendSvg, TextField } from '@ds/release'
 
 export const SubchatView = () => {
-	const { messages, messagesRef, question, questionRef, questionText, onChange, onSubmit, sendMessage } =
-		useMessageMock()
+	const { messages, listingRef, input, inputRef, inputText, onChange, onSubmit, submit } = useMessageListing()
 
 	return (
 		<div className="h-full w-xl-4 p-xs-4">
 			<div className="flex h-full w-full flex-col gap-xs-4 border border-color-border-shadow p-xs-4 shadow-md">
-				<div ref={messagesRef} className="flex-1 overflow-y-auto pb-xs-9">
+				<div ref={listingRef} className="flex-1 overflow-y-auto pb-xs-9">
 					<h2 className="text-size-lg font-weight-md">Sub-chat</h2>
 
 					<div className="flex flex-col items-end gap-xs-4">
@@ -21,19 +20,19 @@ export const SubchatView = () => {
 				</div>
 
 				<TextField
-					ref={questionRef}
+					ref={inputRef}
 					id="new-chat-question"
 					size="lg"
-					value={question}
+					value={input}
 					placeholder="Ask a question..."
 					ariaLabel="New message"
 					slotRight={
 						<IconButton
 							tooltip="Send message"
 							variant="solid-secondary"
-							disabled={!questionText}
+							disabled={!inputText}
 							size="sm"
-							onClick={sendMessage}
+							onClick={submit}
 						>
 							<SendSvg className="h-xs-7" />
 						</IconButton>

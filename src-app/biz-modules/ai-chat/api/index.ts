@@ -1,6 +1,13 @@
-import { chatsAPI, ChatsApiData, ChatsApiQuery, STATUS__SUCCESS } from '@app/api'
-import { mapDtoToChat } from './mappers'
-import { ChatListing } from './types'
+import {
+	chatsAPI,
+	ChatsApiData,
+	ChatsApiQuery,
+	MessagesApiData,
+	MessagesApiQuery,
+	STATUS__SUCCESS,
+} from '@app/api'
+import { mapDtoToChat, mapDtoToMessage } from './mappers'
+import { ChatListing, MessageListing } from './types'
 
 export const API = {
 	async getChats(page?: number): Promise<ChatListing> {
@@ -12,6 +19,20 @@ export const API = {
 
 		return resp.status === STATUS__SUCCESS && resp.data
 			? { chats: resp.data.items.map(mapDtoToChat), count: resp.data.count }
+			: { chats: [], count: 0 }
+	},
+
+	async getMessages(chatId: number, subchatId?: number, page?: number): Promise<MessageListing> {
+		const query: MessagesApiQuery = {
+			count: 10,
+			page: page || 1,
+			chatId,
+			subchatId,
+		}
+		const resp = await chatsAPI.get<MessagesApiData>('/api/messages', query)
+
+		return resp.status === STATUS__SUCCESS && resp.data
+			? { chats: resp.data.items.map(mapDtoToMessage), count: resp.data.count }
 			: { chats: [], count: 0 }
 	},
 }
