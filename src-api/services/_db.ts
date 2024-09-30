@@ -1,5 +1,13 @@
 import { addMinutesToDate } from '@api/utilities/various'
-import { randomArray, randomFalse, randomId, randomLongText, randomRecentDate, randomText } from '@utils/release'
+import {
+	randomArray,
+	randomFalse,
+	randomId,
+	randomInt,
+	randomLongText,
+	randomRecentDate,
+	randomText,
+} from '@utils/release'
 import { Chat, Message } from '../types'
 
 const createChats = () => {
@@ -21,7 +29,7 @@ const createMessages = (chats: Chat[]) => {
 				chatId: chat.id,
 				subchatId: 0,
 				parentId: chat.id,
-				text: randomLongText(1),
+				text: randomLongText(randomInt(1, 3)),
 				role: 'user',
 				datetime: date.toISOString(),
 			}
@@ -30,7 +38,7 @@ const createMessages = (chats: Chat[]) => {
 				chatId: chat.id,
 				subchatId: 0,
 				parentId: chat.id,
-				text: randomLongText(10),
+				text: randomLongText(randomInt(5, 20)),
 				role: 'agent',
 				datetime: addMinutesToDate(date, 5).toISOString(),
 			}

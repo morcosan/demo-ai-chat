@@ -2,7 +2,7 @@ import { IconButton, SendSvg, TextField, TextFieldRef } from '@ds/release'
 import { withRef } from '@utils/release'
 import { KeyboardEvent, Ref } from 'react'
 
-interface Props {
+interface Props extends ReactProps {
 	input: string
 	inputText: string
 	primary?: boolean
@@ -18,7 +18,6 @@ export const InputField = withRef('InputField', (props: Props, ref: Ref<TextFiel
 		<TextField
 			ref={ref}
 			id={props.primary ? 'input-chat' : 'input-subchat'}
-			disabled={props.disabled}
 			size={props.primary ? 'xl' : 'lg'}
 			value={props.input}
 			placeholder="Ask a question..."
@@ -36,6 +35,8 @@ export const InputField = withRef('InputField', (props: Props, ref: Ref<TextFiel
 			}
 			maxLength={1000}
 			maxRows={10}
+			disabled={props.disabled}
+			className={props.className}
 			multiline
 			onChange={props.onChange}
 			onSubmit={props.onPressEnter}
