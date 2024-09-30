@@ -17,6 +17,7 @@ export const randomArray = (min: number, max?: number) => Array.from(Array(rando
 
 // String
 export const randomText = (words: number = 5) => capitalize(faker.lorem.words(words))
+export const randomLongText = (sentences: number = 5) => capitalize(faker.lorem.sentences(sentences))
 
 // Date
 export const randomRecentDate = () => faker.date.recent().toISOString()

@@ -1,4 +1,4 @@
-import { ApiResponse, DefaultAPI, UrlQuery } from './_types'
+import { ApiQuery, ApiResponse, DefaultAPI } from './_types'
 
 /**
  * Data Cache
@@ -30,7 +30,7 @@ export const clearPendingRequest = (url: string) => delete _requestCache[url]
  * Cached API
  */
 export const createCachedAPI = (api: DefaultAPI): DefaultAPI => ({
-	async get<T>(path: string, query: UrlQuery): Promise<ApiResponse<T>> {
+	async get<T>(path: string, query: ApiQuery): Promise<ApiResponse<T>> {
 		const url = path + JSON.stringify(query)
 
 		// Check if data is already in cache

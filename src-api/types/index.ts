@@ -10,22 +10,28 @@ export interface ApiResponse<T = any> {
 	data: T | null
 	error?: string
 }
-export type UrlQuery = Record<string, string | number | undefined>
+export type ApiQuery = Record<string, string | number | undefined>
 
 /**
  * Payload
  */
-export interface ChatsUrlQuery extends UrlQuery {
+export interface ChatsApiQuery extends ApiQuery {
 	count?: string | number
 	page?: string | number
 }
-export interface ChatsResponse {
+export interface ChatsApiData {
 	count: number
 	items: ChatDTO[]
 }
-export interface MessagesUrlQuery {
+export interface MessagesApiQuery {
+	chatId?: string | number
+	subchatId?: string | number
 	count?: string | number
 	page?: string | number
+}
+export interface MessagesApiData {
+	count: number
+	items: MessageDTO[]
 }
 
 /**
@@ -34,10 +40,23 @@ export interface MessagesUrlQuery {
 export interface Chat {
 	id: number
 	title: string
-	createDate: string
+	date: string
 }
+
+export interface Message {
+	id: number
+	chatId: number
+	subchatId: number
+	parentId: number
+	text: string
+	role: MessageRole
+	date: string
+}
+
+export type MessageRole = 'user' | 'agent' | 'system'
 
 /**
  * DTOs
  */
 export type ChatDTO = Chat
+export type MessageDTO = Message

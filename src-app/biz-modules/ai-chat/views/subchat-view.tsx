@@ -1,7 +1,7 @@
 import { useMessageMock } from '@app/biz-modules/ai-chat/views/_partials/message-mock'
 import { IconButton, SendSvg, TextField } from '@ds/release'
 
-export const SubChatView = () => {
+export const SubchatView = () => {
 	const { messages, messagesRef, question, questionRef, questionText, onChange, onSubmit, sendMessage } =
 		useMessageMock()
 
