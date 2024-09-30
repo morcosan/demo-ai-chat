@@ -16,17 +16,17 @@ export const useMessageListing = () => {
 
 	const onChange = (value: string) => setInput(value)
 
-	const onSubmit = useCallback(
+	const onPressEnter = useCallback(
 		(event: KeyboardEvent) => {
 			if (!event.shiftKey && inputText) {
 				event.preventDefault()
-				submit()
+				onSubmit()
 			}
 		},
 		[inputText]
 	)
 
-	const submit = () => {
+	const onSubmit = () => {
 		setMessages([...messages, { text: inputText, time: new Date().getTime() }])
 		setInput('')
 		inputRef.current?.focus()
@@ -42,7 +42,7 @@ export const useMessageListing = () => {
 		messages,
 
 		onChange,
+		onPressEnter,
 		onSubmit,
-		submit,
 	}
 }

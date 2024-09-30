@@ -1,13 +1,14 @@
+import { InputField } from '@app/biz-modules/ai-chat/components/input-field'
 import { useMessageListing } from '@app/biz-modules/ai-chat/hooks/message-listing'
 import { useAiChatStore } from '@app/biz-modules/ai-chat/state'
-import { IconButton, SendSvg, TextField } from '@ds/release'
 import { useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 
 export const ChatView = () => {
 	const { activeChat, loadChat } = useAiChatStore()
 	const { chatId } = useParams()
-	const { messages, listingRef, input, inputRef, inputText, onChange, onSubmit, submit } = useMessageListing()
+	const { messages, listingRef, input, inputRef, inputText, onChange, onPressEnter, onSubmit } =
+		useMessageListing()
 
 	useEffect(() => {
 		const id = parseInt(String(chatId))
@@ -34,22 +35,13 @@ export const ChatView = () => {
 				</div>
 			)}
 
-			<TextField
+			<InputField
 				ref={inputRef}
-				id="new-chat-question"
-				size="xl"
-				value={input}
-				placeholder="Ask a question..."
-				ariaLabel="New message"
-				slotRight={
-					<IconButton tooltip="Send message" variant="solid-primary" disabled={!inputText} onClick={submit}>
-						<SendSvg className="h-xs-9" />
-					</IconButton>
-				}
-				maxLength={1000}
-				maxRows={10}
-				multiline
+				input={input}
+				inputText={inputText}
+				primary
 				onChange={onChange}
+				onPressEnter={onPressEnter}
 				onSubmit={onSubmit}
 			/>
 		</div>

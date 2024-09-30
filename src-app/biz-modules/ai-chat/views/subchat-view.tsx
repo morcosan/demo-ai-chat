@@ -1,8 +1,9 @@
+import { InputField } from '@app/biz-modules/ai-chat/components/input-field'
 import { useMessageListing } from '@app/biz-modules/ai-chat/hooks/message-listing'
-import { IconButton, SendSvg, TextField } from '@ds/release'
 
 export const SubchatView = () => {
-	const { messages, listingRef, input, inputRef, inputText, onChange, onSubmit, submit } = useMessageListing()
+	const { messages, listingRef, input, inputRef, inputText, onChange, onPressEnter, onSubmit } =
+		useMessageListing()
 
 	return (
 		<div className="h-full w-xl-4 p-xs-4">
@@ -19,28 +20,12 @@ export const SubchatView = () => {
 					</div>
 				</div>
 
-				<TextField
+				<InputField
 					ref={inputRef}
-					id="new-chat-question"
-					size="lg"
-					value={input}
-					placeholder="Ask a question..."
-					ariaLabel="New message"
-					slotRight={
-						<IconButton
-							tooltip="Send message"
-							variant="solid-secondary"
-							disabled={!inputText}
-							size="sm"
-							onClick={submit}
-						>
-							<SendSvg className="h-xs-7" />
-						</IconButton>
-					}
-					maxLength={1000}
-					maxRows={10}
-					multiline
+					input={input}
+					inputText={inputText}
 					onChange={onChange}
+					onPressEnter={onPressEnter}
 					onSubmit={onSubmit}
 				/>
 			</div>

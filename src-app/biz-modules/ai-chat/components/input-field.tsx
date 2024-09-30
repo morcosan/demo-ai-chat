@@ -1,42 +1,42 @@
-import { ButtonVariant, IconButton, SendSvg, TextField, TextFieldRef } from '@ds/release'
-import { withRef } from '@utils/src/various/react'
-import { ChangeEvent, KeyboardEvent, Ref } from 'react'
+import { IconButton, SendSvg, TextField, TextFieldRef } from '@ds/release'
+import { withRef } from '@utils/release'
+import { KeyboardEvent, Ref } from 'react'
 
 interface Props {
-	value: string
-	valueText: string
-	variant: ButtonVariant
+	input: string
+	inputText: string
+	primary?: boolean
 
-	submit(): void
-	onChange?(value: string, event: ChangeEvent): void
-	onSubmit?(event: KeyboardEvent): void
+	onChange(value: string): void
+	onPressEnter(event: KeyboardEvent): void
+	onSubmit(): void
 }
 
 export const InputField = withRef('InputField', (props: Props, ref: Ref<TextFieldRef>) => {
 	return (
 		<TextField
 			ref={ref}
-			id="new-chat-question"
-			size="lg"
-			value={props.value}
+			id={props.primary ? 'input-chat' : 'input-subchat'}
+			size={props.primary ? 'xl' : 'lg'}
+			value={props.input}
 			placeholder="Ask a question..."
 			ariaLabel="New message"
 			slotRight={
 				<IconButton
 					tooltip="Send message"
-					variant="solid-secondary"
-					disabled={!props.valueText}
-					size="sm"
-					onClick={props.submit}
+					variant={props.primary ? 'solid-primary' : 'solid-secondary'}
+					size={props.primary ? 'md' : 'sm'}
+					disabled={!props.inputText}
+					onClick={props.onSubmit}
 				>
-					<SendSvg className="h-xs-7" />
+					<SendSvg className={props.primary ? 'h-xs-9' : 'h-xs-7'} />
 				</IconButton>
 			}
 			maxLength={1000}
 			maxRows={10}
 			multiline
 			onChange={props.onChange}
-			onSubmit={props.onSubmit}
+			onSubmit={props.onPressEnter}
 		/>
 	)
 })
