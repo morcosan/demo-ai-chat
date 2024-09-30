@@ -33,7 +33,7 @@ export const ChatView = () => {
 					) : (
 						<div className="mx-auto flex max-w-xxl-1 flex-col">
 							{titleSlot}
-							<div className="mt-sm-5 flex flex-col gap-xs-9">
+							<div className="mt-sm-5 flex flex-col">
 								{chatMessages.map((message: Message) => (
 									<MessageBubble key={message.datetime} message={message} />
 								))}

@@ -9,11 +9,11 @@ export const MessageBubble = ({ message }: Props) => {
 	return (
 		<div className="flex flex-col items-end">
 			{message.role === 'user' ? (
-				<div className="w-fit max-w-[70%] rounded-md bg-color-primary-bg px-xs-5 py-xs-3">
+				<div className="mb-xs-5 w-fit max-w-[70%] rounded-md bg-color-primary-bg px-xs-5 py-xs-3">
 					<div className="whitespace-pre-wrap">{message.text}</div>
 				</div>
 			) : (
-				<div className="px-xs-5 py-xs-1">
+				<div className="mb-sm-4 px-xs-5 py-xs-1">
 					<div className="mb-xs-4 flex items-center gap-xs-1">
 						<div className="flex-center h-sm-0 w-sm-0 rounded-full">
 							<AiChatSvg className="h-xs-8" />
