@@ -9,7 +9,7 @@ export const MessageBubble = ({ message }: Props) => {
 	return (
 		<div className="flex flex-col items-end">
 			{message.role === 'user' ? (
-				<div className="mb-xs-5 w-fit max-w-[70%] rounded-md bg-color-primary-bg px-xs-5 py-xs-3">
+				<div className="mb-xs-5 w-fit max-w-[70%] rounded-md bg-color-primary-bg px-xs-6 py-xs-3 shadow-md">
 					<div className="whitespace-pre-wrap">{message.text}</div>
 				</div>
 			) : (
