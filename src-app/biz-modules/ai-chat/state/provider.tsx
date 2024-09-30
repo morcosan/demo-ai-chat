@@ -5,8 +5,7 @@ import { Chat, ChatListing, Message } from '../api/types'
 export interface Store {
 	allChats: Chat[]
 	allChatsPagination: Pagination
-	allChatsLoading: boolean
-	moreChatsLoading: boolean
+	allChatsLoading: ListLoading
 
 	activeChat: Chat | null
 	activeChatMessages: Message[]
@@ -28,7 +27,6 @@ export const Context = createContext<Store>({
 	allChats: [],
 	allChatsPagination: { page: 0, count: 0 },
 	allChatsLoading: false,
-	moreChatsLoading: false,
 
 	activeChat: null,
 	activeChatMessages: [],
@@ -49,8 +47,7 @@ export const Context = createContext<Store>({
 export const AiChatProvider = ({ children }: ReactProps) => {
 	const [allChats, setAllChats] = useState([] as Chat[])
 	const [allChatsPagination, setAllChatsPagination] = useState({ page: 0, count: 0 } as Pagination)
-	const [allChatsLoading, setAllChatsLoading] = useState(false)
-	const [moreChatsLoading, setMoreChatsLoading] = useState(false)
+	const [allChatsLoading, setAllChatsLoading] = useState<ListLoading>(false)
 
 	const [activeChat, setActiveChat] = useState(null as Chat | null)
 	const [activeChatMessages, setActiveChatMessages] = useState([] as Message[])
@@ -65,16 +62,15 @@ export const AiChatProvider = ({ children }: ReactProps) => {
 	const [pendingChatId, setPendingChatId] = useState(0)
 
 	const loadMoreChats = async () => {
-		if (allChatsLoading || moreChatsLoading) return
+		if (allChatsLoading) return
 		if (allChats.length && allChats.length >= allChatsPagination.count) return
 
-		allChatsPagination.page === 0 ? setAllChatsLoading(true) : setMoreChatsLoading(true)
+		setAllChatsLoading(allChatsPagination.page === 0 ? 'all' : 'more')
 
 		const listing: ChatListing = await API.getChats(allChatsPagination.page + 1)
 
 		setAllChats([...allChats, ...listing.chats])
 		setAllChatsLoading(false)
-		setMoreChatsLoading(false)
 		setAllChatsPagination({ page: allChatsPagination.page + 1, count: listing.count })
 	}
 
@@ -111,7 +107,6 @@ export const AiChatProvider = ({ children }: ReactProps) => {
 			allChats,
 			allChatsPagination,
 			allChatsLoading,
-			moreChatsLoading,
 
 			activeChat,
 			activeChatMessages,
@@ -128,7 +123,7 @@ export const AiChatProvider = ({ children }: ReactProps) => {
 			loadActiveSubchat,
 			loadMoreMessages,
 		}),
-		[allChats, allChatsLoading, moreChatsLoading, allChatsPagination, activeChat, activeChatLoading]
+		[allChats, allChatsLoading, allChatsPagination, activeChat, activeChatLoading]
 	)
 
 	return <Context.Provider value={store}>{children}</Context.Provider>

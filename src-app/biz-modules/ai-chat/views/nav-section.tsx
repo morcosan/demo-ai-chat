@@ -5,8 +5,7 @@ import { UIEvent, useState } from 'react'
 import { Chat } from '../api/types'
 
 export const AiChatNavSection = () => {
-	const aiChat = useAiChat()
-	const { allChats, allChatsLoading, moreChatsLoading, allChatsPagination, activeChat, loadMoreChats } = aiChat
+	const { allChats, allChatsLoading, allChatsPagination, activeChat, loadMoreChats } = useAiChat()
 	const [search, setSearch] = useState('')
 
 	const searchText = search.trim()
@@ -60,7 +59,7 @@ export const AiChatNavSection = () => {
 				className="-mx-scrollbar-w flex flex-1 flex-col overflow-y-scroll py-a11y-padding pl-scrollbar-w"
 				onScroll={onScroll}
 			>
-				{allChatsLoading ? (
+				{allChatsLoading === 'all' ? (
 					<div className="mt-xs-2 flex px-xs-4">
 						<span className="mr-xs-4 animate-spin">⌛</span>
 						Loading chats...
@@ -79,10 +78,10 @@ export const AiChatNavSection = () => {
 								<span className="truncate">{chat.title}</span>
 							</Button>
 						))}
-						{Boolean(moreChatsLoading) && (
+						{allChatsLoading === 'more' && (
 							<div className="my-xs-6 flex px-xs-4">
 								<span className="mr-xs-4 animate-spin">⌛</span>
-								Loading chats...
+								Loading more chats...
 							</div>
 						)}
 					</>
