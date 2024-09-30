@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { API } from '../api'
-import { Chat, ChatListing } from '../api/types'
+import { Chat } from '../api/types'
 
 export interface AllChatsStore {
 	allChats: Chat[]
@@ -25,9 +25,9 @@ export const useAllChatsStore = (): AllChatsStore => {
 		if (allChatsLoading) return
 		if (allChats.length && allChats.length >= allChatsPagination.count) return
 
-		setAllChatsLoading(allChatsPagination.page === 0 ? 'all' : 'more')
+		setAllChatsLoading(allChatsPagination.page === 0 ? 'full' : 'more')
 
-		const listing: ChatListing = await API.getChats(allChatsPagination.page + 1)
+		const listing = await API.getChats(allChatsPagination.page + 1)
 
 		setAllChats([...allChats, ...listing.chats])
 		setAllChatsLoading(false)
@@ -35,9 +35,7 @@ export const useAllChatsStore = (): AllChatsStore => {
 	}
 
 	useEffect(() => {
-		if (!allChatsPagination.page) {
-			loadMoreChats()
-		}
+		!allChatsPagination.page && loadMoreChats()
 	}, [])
 
 	return {

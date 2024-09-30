@@ -1,7 +1,7 @@
 import { createContext, useMemo } from 'react'
-import { activeChatDefaults, ActiveChatStore, useActiveChatStore } from './_active-chat-store'
-import { activeSubchatDefaults, ActiveSubchatStore, useActiveSubchatStore } from './_active-subchat-store'
 import { allChatsDefaults, AllChatsStore, useAllChatsStore } from './_all-chats-store'
+import { activeChatDefaults, ActiveChatStore, useActiveChatStore } from './_chat-store'
+import { activeSubchatDefaults, ActiveSubchatStore, useActiveSubchatStore } from './_subchat-store'
 
 export interface Store extends AllChatsStore, ActiveChatStore, ActiveSubchatStore {}
 

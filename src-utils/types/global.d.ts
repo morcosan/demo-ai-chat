@@ -19,5 +19,5 @@ declare global {
 		count: number
 	}
 
-	type ListLoading = false | 'all' | 'more'
+	type ListLoading = false | 'full' | 'more'
 }

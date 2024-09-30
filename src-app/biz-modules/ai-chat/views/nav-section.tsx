@@ -59,7 +59,7 @@ export const AiChatNavSection = () => {
 				className="-mx-scrollbar-w flex flex-1 flex-col overflow-y-scroll py-a11y-padding pl-scrollbar-w"
 				onScroll={onScroll}
 			>
-				{allChatsLoading === 'all' ? (
+				{allChatsLoading === 'full' ? (
 					<div className="mt-xs-2 flex px-xs-4">
 						<span className="mr-xs-4 animate-spin">⌛</span>
 						Loading chats...

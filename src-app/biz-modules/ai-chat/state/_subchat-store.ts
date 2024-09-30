@@ -3,38 +3,38 @@ import { Chat, Message } from '../api/types'
 
 export interface ActiveSubchatStore {
 	activeSubchat: Chat | null
-	activeSubchatMessages: Message[]
-	activeSubchatPagination: Pagination
-	activeSubchatLoading: ListLoading
-	loadActiveSubchat(chatId: number): void
+	subchatMessages: Message[]
+	subchatPagination: Pagination
+	subchatLoading: ListLoading
+	loadSubchat(chatId: number): void
 	loadMoreSubchatMessages(): void
 }
 
 export const activeSubchatDefaults: ActiveSubchatStore = {
 	activeSubchat: null,
-	activeSubchatMessages: [],
-	activeSubchatPagination: { page: 0, count: 0 },
-	activeSubchatLoading: false,
-	loadActiveSubchat: () => {},
+	subchatMessages: [],
+	subchatPagination: { page: 0, count: 0 },
+	subchatLoading: false,
+	loadSubchat: () => {},
 	loadMoreSubchatMessages: () => {},
 }
 
 export const useActiveSubchatStore = (allChats: Chat[]): ActiveSubchatStore => {
 	const [activeSubchat, setActiveSubchat] = useState(null as Chat | null)
-	const [activeSubchatMessages, setActiveSubchatMessages] = useState([] as Message[])
-	const [activeSubchatPagination, setActiveSubchatPagination] = useState({ page: 0, count: 0 } as Pagination)
-	const [activeSubchatLoading, setActiveSubchatLoading] = useState<ListLoading>(false)
+	const [subchatMessages, setSubchatMessages] = useState([] as Message[])
+	const [subchatPagination, setSubchatPagination] = useState({ page: 0, count: 0 } as Pagination)
+	const [subchatLoading, setSubchatLoading] = useState<ListLoading>(false)
 	const [pendingChatId, setPendingChatId] = useState(0)
 
-	const loadActiveSubchat = async (chatId: number) => {
-		if (activeSubchatLoading) return
+	const loadSubchat = async (chatId: number) => {
+		if (subchatLoading) return
 
-		setActiveSubchatLoading('all')
+		setSubchatLoading('full')
 
 		const chat = allChats.find((chat: Chat) => chat.id === chatId) || null
 
 		setActiveSubchat(chat)
-		setActiveSubchatLoading(false)
+		setSubchatLoading(false)
 		setPendingChatId(chat ? 0 : chatId)
 	}
 
@@ -42,16 +42,16 @@ export const useActiveSubchatStore = (allChats: Chat[]): ActiveSubchatStore => {
 
 	useEffect(() => {
 		if (pendingChatId && !activeSubchat) {
-			loadActiveSubchat(pendingChatId)
+			loadSubchat(pendingChatId)
 		}
 	}, [allChats])
 
 	return {
 		activeSubchat,
-		activeSubchatMessages,
-		activeSubchatPagination,
-		activeSubchatLoading,
-		loadActiveSubchat,
+		subchatMessages,
+		subchatPagination,
+		subchatLoading,
+		loadSubchat,
 		loadMoreSubchatMessages,
 	}
 }

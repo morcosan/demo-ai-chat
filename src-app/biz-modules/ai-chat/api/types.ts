@@ -8,6 +8,6 @@ export interface ChatListing {
 	count: number
 }
 export interface MessageListing {
-	chats: Message[]
+	messages: Message[]
 	count: number
 }

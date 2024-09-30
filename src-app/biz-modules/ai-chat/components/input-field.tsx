@@ -6,6 +6,7 @@ interface Props {
 	input: string
 	inputText: string
 	primary?: boolean
+	disabled?: boolean
 
 	onChange(value: string): void
 	onPressEnter(event: KeyboardEvent): void
@@ -17,6 +18,7 @@ export const InputField = withRef('InputField', (props: Props, ref: Ref<TextFiel
 		<TextField
 			ref={ref}
 			id={props.primary ? 'input-chat' : 'input-subchat'}
+			disabled={props.disabled}
 			size={props.primary ? 'xl' : 'lg'}
 			value={props.input}
 			placeholder="Ask a question..."
@@ -26,7 +28,7 @@ export const InputField = withRef('InputField', (props: Props, ref: Ref<TextFiel
 					tooltip="Send message"
 					variant={props.primary ? 'solid-primary' : 'solid-secondary'}
 					size={props.primary ? 'md' : 'sm'}
-					disabled={!props.inputText}
+					disabled={props.disabled || !props.inputText}
 					onClick={props.onSubmit}
 				>
 					<SendSvg className={props.primary ? 'h-xs-9' : 'h-xs-7'} />
