@@ -17,6 +17,6 @@ export const mapDtoToMessage = (dto: MessageDTO): Message => {
 		parentId: dto.parentId || 0,
 		text: dto.text || '',
 		role: dto.role || '',
-		date: dto.date || '',
+		datetime: dto.datetime || '',
 	}
 }

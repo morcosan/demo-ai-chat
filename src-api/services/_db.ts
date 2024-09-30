@@ -23,7 +23,7 @@ const createMessages = (chats: Chat[]) => {
 				parentId: chat.id,
 				text: randomLongText(1),
 				role: 'user',
-				date: date.toISOString(),
+				datetime: date.toISOString(),
 			}
 			const agentMessage: Message = {
 				id: randomId(),
@@ -32,7 +32,7 @@ const createMessages = (chats: Chat[]) => {
 				parentId: chat.id,
 				text: randomLongText(10),
 				role: 'agent',
-				date: addMinutesToDate(date, 5).toISOString(),
+				datetime: addMinutesToDate(date, 5).toISOString(),
 			}
 
 			messages.push(userMessage, agentMessage)
@@ -56,7 +56,7 @@ const addSubchats = (message: Message, messages: Message[]) => {
 			parentId: message.id,
 			text: randomLongText(1),
 			role: 'user',
-			date: addMinutesToDate(message.date, (index + 1) * 5).toISOString(),
+			datetime: addMinutesToDate(message.datetime, (index + 1) * 5).toISOString(),
 		})
 	})
 }

@@ -1,10 +1,6 @@
 import { TextFieldRef } from '@ds/release'
 import { KeyboardEvent, useCallback, useRef, useState } from 'react'
-
-interface Message {
-	text: string
-	time: number
-}
+import { Message } from '../api/types'
 
 export const useMessageListing = () => {
 	const [input, setInput] = useState<string>('')
@@ -27,7 +23,7 @@ export const useMessageListing = () => {
 	)
 
 	const onSubmit = () => {
-		setMessages([...messages, { text: inputText, time: new Date().getTime() }])
+		// setMessages([...messages, { text: inputText, datetime: new Date().toISOString() }])
 		setInput('')
 		inputRef.current?.focus()
 

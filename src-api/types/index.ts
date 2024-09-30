@@ -50,7 +50,7 @@ export interface Message {
 	parentId: number
 	text: string
 	role: MessageRole
-	date: string
+	datetime: string
 }
 
 export type MessageRole = 'user' | 'agent' | 'system'

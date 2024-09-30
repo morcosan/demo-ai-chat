@@ -1,15 +1,15 @@
-import { useAiChatStore } from '@app/biz-modules/ai-chat/state'
+import { useAiChat } from '@app/biz-modules/ai-chat/state'
 import { AiChatSvg, Button, CloseSvg, DotsSvg, IconButton, SearchSvg, TextField } from '@ds/release'
 import { debounce } from 'lodash'
 import { UIEvent, useState } from 'react'
 import { Chat } from '../api/types'
 
 export const AiChatNavSection = () => {
-	const { allChats, allChatsLoading, moreChatsLoading, chatPagination, activeChat, loadMoreChats } =
-		useAiChatStore()
-	const [searchValue, setSearchValue] = useState('')
+	const aiChat = useAiChat()
+	const { allChats, allChatsLoading, moreChatsLoading, allChatsPagination, activeChat, loadMoreChats } = aiChat
+	const [search, setSearch] = useState('')
 
-	const searchKeyword = searchValue.trim()
+	const searchText = search.trim()
 
 	const onScroll = debounce((event: UIEvent) => {
 		const container = event.target as HTMLElement
@@ -28,7 +28,8 @@ export const AiChatNavSection = () => {
 			{/* OPTIONS */}
 			<div className="mt-sm-0 flex items-center justify-between">
 				<span className="ml-xs-1 text-size-sm text-color-text-subtle">
-					Chats {Boolean(chatPagination.count) && <span className="text-size-xs">({chatPagination.count})</span>}
+					Chats{' '}
+					{Boolean(allChatsPagination.count) && <span className="text-size-xs">({allChatsPagination.count})</span>}
 				</span>
 				<IconButton tooltip="Show options" size="sm" className="-mr-xs-0">
 					<DotsSvg className="h-xs-8" />
@@ -38,20 +39,20 @@ export const AiChatNavSection = () => {
 			{/* SEARCH */}
 			<TextField
 				id="chat-search"
-				value={searchValue}
+				value={search}
 				placeholder="Search chat..."
 				ariaLabel="Search chat"
 				size="sm"
 				className="mb-xs-4 mt-xs-1"
 				slotLeft={<SearchSvg className="ml-xs-2 mr-xs-0 mt-px h-full w-xs-5 min-w-xs-5" />}
 				slotRight={
-					Boolean(searchKeyword) && (
-						<IconButton tooltip="Clear search" variant="text-danger" size="xs" onClick={() => setSearchValue('')}>
+					Boolean(searchText) && (
+						<IconButton tooltip="Clear search" variant="text-danger" size="xs" onClick={() => setSearch('')}>
 							<CloseSvg className="h-xs-6" />
 						</IconButton>
 					)
 				}
-				onChange={setSearchValue}
+				onChange={setSearch}
 			/>
 
 			{/* LISTING */}

@@ -1,18 +1,19 @@
 import { InputField } from '@app/biz-modules/ai-chat/components/input-field'
+import { MessageBubble } from '@app/biz-modules/ai-chat/components/message-bubble'
 import { useMessageListing } from '@app/biz-modules/ai-chat/hooks/message-listing'
-import { useAiChatStore } from '@app/biz-modules/ai-chat/state'
+import { useAiChat } from '@app/biz-modules/ai-chat/state'
 import { useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 
 export const ChatView = () => {
-	const { activeChat, loadChat } = useAiChatStore()
+	const { activeChat, loadActiveChat } = useAiChat()
 	const { chatId } = useParams()
 	const { messages, listingRef, input, inputRef, inputText, onChange, onPressEnter, onSubmit } =
 		useMessageListing()
 
 	useEffect(() => {
 		const id = parseInt(String(chatId))
-		loadChat(isNaN(id) ? 0 : id)
+		loadActiveChat(isNaN(id) ? 0 : id)
 	}, [chatId])
 
 	return (
@@ -23,9 +24,7 @@ export const ChatView = () => {
 
 					<div className="flex flex-col items-end gap-xs-4">
 						{messages.map((message) => (
-							<pre key={message.time} className="px-xs-5 py-xs-1">
-								{message.text}
-							</pre>
+							<MessageBubble key={message.datetime} message={message} />
 						))}
 					</div>
 				</div>

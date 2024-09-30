@@ -1,53 +1,86 @@
 import { createContext, useEffect, useMemo, useState } from 'react'
 import { API } from '../api'
-import { Chat, ChatListing } from '../api/types'
+import { Chat, ChatListing, Message } from '../api/types'
 
 export interface Store {
 	allChats: Chat[]
+	allChatsPagination: Pagination
 	allChatsLoading: boolean
 	moreChatsLoading: boolean
-	chatPagination: Pagination
+
 	activeChat: Chat | null
+	activeChatMessages: Message[]
+	activeChatPagination: Pagination
 	activeChatLoading: boolean
+
+	activeSubchat: Chat | null
+	activeSubchatMessages: Message[]
+	activeSubchatPagination: Pagination
+	activeSubchatLoading: boolean
+
 	loadMoreChats(): void
-	loadChat(chatId: number): void
+	loadActiveChat(chatId: number): void
+	loadActiveSubchat(subchatId: number): void
+	loadMoreMessages(chatId: number, subchatId?: number): void
 }
 
 export const Context = createContext<Store>({
 	allChats: [],
+	allChatsPagination: { page: 0, count: 0 },
 	allChatsLoading: false,
 	moreChatsLoading: false,
-	chatPagination: { page: 0, count: 0 },
+
 	activeChat: null,
+	activeChatMessages: [],
+	activeChatPagination: { page: 0, count: 0 },
 	activeChatLoading: false,
+
+	activeSubchat: null,
+	activeSubchatMessages: [],
+	activeSubchatPagination: { page: 0, count: 0 },
+	activeSubchatLoading: false,
+
 	loadMoreChats: () => {},
-	loadChat: () => {},
+	loadActiveChat: () => {},
+	loadActiveSubchat: () => {},
+	loadMoreMessages: () => {},
 })
 
 export const AiChatProvider = ({ children }: ReactProps) => {
 	const [allChats, setAllChats] = useState([] as Chat[])
+	const [allChatsPagination, setAllChatsPagination] = useState({ page: 0, count: 0 } as Pagination)
 	const [allChatsLoading, setAllChatsLoading] = useState(false)
 	const [moreChatsLoading, setMoreChatsLoading] = useState(false)
-	const [chatPagination, setChatPagination] = useState({ page: 0, count: 0 } as Pagination)
+
 	const [activeChat, setActiveChat] = useState(null as Chat | null)
+	const [activeChatMessages, setActiveChatMessages] = useState([] as Message[])
+	const [activeChatPagination, setActiveChatPagination] = useState({ page: 0, count: 0 } as Pagination)
 	const [activeChatLoading, setActiveChatLoading] = useState(false)
+
+	const [activeSubchat, setActiveSubchat] = useState(null as Chat | null)
+	const [activeSubchatMessages, setActiveSubchatMessages] = useState([] as Message[])
+	const [activeSubchatPagination, setActiveSubchatPagination] = useState({ page: 0, count: 0 } as Pagination)
+	const [activeSubchatLoading, setActiveSubchatLoading] = useState(false)
+
 	const [pendingChatId, setPendingChatId] = useState(0)
 
 	const loadMoreChats = async () => {
 		if (allChatsLoading || moreChatsLoading) return
-		if (allChats.length && allChats.length >= chatPagination.count) return
+		if (allChats.length && allChats.length >= allChatsPagination.count) return
 
-		chatPagination.page === 0 ? setAllChatsLoading(true) : setMoreChatsLoading(true)
+		allChatsPagination.page === 0 ? setAllChatsLoading(true) : setMoreChatsLoading(true)
 
-		const listing: ChatListing = await API.getChats(chatPagination.page + 1)
+		const listing: ChatListing = await API.getChats(allChatsPagination.page + 1)
 
 		setAllChats([...allChats, ...listing.chats])
 		setAllChatsLoading(false)
 		setMoreChatsLoading(false)
-		setChatPagination({ page: chatPagination.page + 1, count: listing.count })
+		setAllChatsPagination({ page: allChatsPagination.page + 1, count: listing.count })
 	}
 
-	const loadChat = async (chatId: number) => {
+	const loadMoreMessages = async (chatId: number, subchatId?: number) => {}
+
+	const loadActiveChat = async (chatId: number) => {
 		if (activeChatLoading) return
 
 		setActiveChatLoading(true)
@@ -59,30 +92,43 @@ export const AiChatProvider = ({ children }: ReactProps) => {
 		setPendingChatId(chat ? 0 : chatId)
 	}
 
+	const loadActiveSubchat = async (subchatId: number) => {}
+
 	useEffect(() => {
-		if (!chatPagination.page) {
+		if (!allChatsPagination.page) {
 			loadMoreChats()
 		}
 	}, [])
 
 	useEffect(() => {
 		if (pendingChatId && !activeChat) {
-			loadChat(pendingChatId)
+			loadActiveChat(pendingChatId)
 		}
 	}, [allChats])
 
 	const store: Store = useMemo(
 		() => ({
 			allChats,
+			allChatsPagination,
 			allChatsLoading,
 			moreChatsLoading,
-			chatPagination,
+
 			activeChat,
+			activeChatMessages,
+			activeChatPagination,
 			activeChatLoading,
+
+			activeSubchat,
+			activeSubchatMessages,
+			activeSubchatPagination,
+			activeSubchatLoading,
+
 			loadMoreChats,
-			loadChat,
+			loadActiveChat,
+			loadActiveSubchat,
+			loadMoreMessages,
 		}),
-		[allChats, allChatsLoading, moreChatsLoading, chatPagination, activeChat, activeChatLoading]
+		[allChats, allChatsLoading, moreChatsLoading, allChatsPagination, activeChat, activeChatLoading]
 	)
 
 	return <Context.Provider value={store}>{children}</Context.Provider>
