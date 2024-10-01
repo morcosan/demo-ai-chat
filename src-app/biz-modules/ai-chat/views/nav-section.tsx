@@ -1,8 +1,8 @@
-import { useAiChat } from '@app/biz-modules/ai-chat/state'
 import { AiChatSvg, Button, CloseSvg, DotsSvg, IconButton, SearchSvg, TextField } from '@ds/release'
 import { debounce } from 'lodash'
 import { UIEvent, useState } from 'react'
 import { Chat } from '../api/types'
+import { useAiChat } from '../state'
 
 export const AiChatNavSection = () => {
 	const { allChats, allChatsLoading, allChatsPagination, activeChat, loadMoreChats } = useAiChat()
