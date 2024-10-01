@@ -1,10 +1,10 @@
-import { MessageItem } from '@app/biz-modules/ai-chat/components/message-item'
 import { Button } from '@ds/release'
 import { useEffect } from 'react'
 import { useSearchParams } from 'react-router-dom'
 import { Message, Subchat } from '../api/types'
 import { InputField } from '../components/input-field'
 import { LoadingText } from '../components/loading-text'
+import { MessageItem } from '../components/message-item'
 import { SubchatBubble } from '../components/subchat-bubble'
 import { useMessageListing } from '../hooks/message-listing'
 import { useAiChat } from '../state'
@@ -46,7 +46,7 @@ export const SubchatView = () => {
 				) : activeSubchat ? (
 					// MESSAGES
 					<div className="flex h-full w-full flex-col gap-xs-5">
-						<div className="mt-xs-3 flex flex-1 flex-col overflow-y-scroll px-xs-3 pt-xs-4">
+						<div ref={listingRef} className="mt-xs-3 flex flex-1 flex-col overflow-y-scroll px-xs-3 pt-xs-4">
 							{subchatMessages.map((message: Message) => (
 								<MessageItem key={message.datetime} message={message} secondary />
 							))}

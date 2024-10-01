@@ -35,8 +35,13 @@ export const useAllSubchatsStore = (activeChat: Chat | null): AllSubchatsStore =
 	}
 
 	useEffect(() => {
-		!allSubchatsPagination.page && loadMoreSubchats()
+		setAllSubchats([])
+		setAllSubchatsPagination({ page: 0, count: 0 })
 	}, [activeChat])
+
+	useEffect(() => {
+		!allSubchatsPagination.page && loadMoreSubchats()
+	}, [allSubchatsPagination])
 
 	return {
 		allSubchats,

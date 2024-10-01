@@ -30,13 +30,12 @@ export const useSubchatStore = (allSubchats: Subchat[]): SubchatStore => {
 	const loadSubchat = async (subchatId: number) => {
 		if (subchatLoading) return
 
-		setSubchatLoading('full')
-
 		const subchat = allSubchats.find((subchat: Subchat) => subchat.id === subchatId) || null
 
 		setActiveSubchat(subchat)
-		setSubchatLoading(false)
 		setPendingSubchatId(subchat ? 0 : subchatId)
+		setSubchatMessages([])
+		setSubchatPagination({ page: 0, count: 0 })
 	}
 
 	const loadMoreSubchatMessages = async () => {
