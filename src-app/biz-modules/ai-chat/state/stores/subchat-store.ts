@@ -1,8 +1,9 @@
+import { API } from '@app/biz-modules/ai-chat/api'
 import { useEffect, useState } from 'react'
-import { Chat, Message } from '../../api/types'
+import { Message, Subchat } from '../../api/types'
 
 export interface SubchatStore {
-	activeSubchat: Chat | null
+	activeSubchat: Subchat | null
 	subchatMessages: Message[]
 	subchatPagination: Pagination
 	subchatLoading: ListLoading
@@ -19,32 +20,47 @@ export const subchatDefaults: SubchatStore = {
 	loadMoreSubchatMessages: () => {},
 }
 
-export const useSubchatStore = (allChats: Chat[]): SubchatStore => {
-	const [activeSubchat, setActiveSubchat] = useState(null as Chat | null)
+export const useSubchatStore = (allSubchats: Subchat[]): SubchatStore => {
+	const [activeSubchat, setActiveSubchat] = useState(null as Subchat | null)
 	const [subchatMessages, setSubchatMessages] = useState([] as Message[])
 	const [subchatPagination, setSubchatPagination] = useState({ page: 0, count: 0 } as Pagination)
 	const [subchatLoading, setSubchatLoading] = useState<ListLoading>(false)
-	const [pendingChatId, setPendingChatId] = useState(0)
+	const [pendingSubchatId, setPendingSubchatId] = useState(0)
 
-	const loadSubchat = async (chatId: number) => {
+	const loadSubchat = async (subchatId: number) => {
 		if (subchatLoading) return
 
 		setSubchatLoading('full')
 
-		const chat = allChats.find((chat: Chat) => chat.id === chatId) || null
+		const subchat = allSubchats.find((subchat: Subchat) => subchat.id === subchatId) || null
 
-		setActiveSubchat(chat)
+		setActiveSubchat(subchat)
 		setSubchatLoading(false)
-		setPendingChatId(chat ? 0 : chatId)
+		setPendingSubchatId(subchat ? 0 : subchatId)
 	}
 
-	const loadMoreSubchatMessages = async () => {}
+	const loadMoreSubchatMessages = async () => {
+		if (subchatLoading || !activeSubchat) return
+		if (subchatMessages.length && subchatMessages.length >= subchatPagination.count) return
+
+		setSubchatLoading(subchatPagination.page === 0 ? 'full' : 'more')
+
+		const listing = await API.getMessages(activeSubchat.chatId, activeSubchat.id, subchatPagination.page + 1)
+
+		setSubchatMessages([...listing.messages, ...subchatMessages])
+		setSubchatLoading(false)
+		setSubchatPagination({ page: subchatPagination.page + 1, count: listing.count })
+	}
 
 	useEffect(() => {
-		if (pendingChatId && !activeSubchat) {
-			loadSubchat(pendingChatId)
+		!subchatPagination.page && loadMoreSubchatMessages()
+	}, [activeSubchat])
+
+	useEffect(() => {
+		if (pendingSubchatId && !activeSubchat) {
+			loadSubchat(pendingSubchatId)
 		}
-	}, [allChats])
+	}, [allSubchats])
 
 	return {
 		activeSubchat,

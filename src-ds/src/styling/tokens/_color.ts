@@ -21,7 +21,7 @@ export const TOKENS__COLOR = {
 	'yellow-1': { $value: '#fef9c3', $css: '--ds-color-yellow-1' },
 	'yellow-2': { $value: '#fef08a', $css: '--ds-color-yellow-2' },
 	'yellow-3': { $value: '#fde047', $css: '--ds-color-yellow-3' },
-	'yellow-4': { $value: '#713f12', $css: '--ds-color-yellow-4' },
+	'yellow-4': { $value: '#815a2c', $css: '--ds-color-yellow-4' },
 
 	'green-1': { $value: '#dcfce7', $css: '--ds-color-green-1' },
 	'green-2': { $value: '#86efac', $css: '--ds-color-green-2' },

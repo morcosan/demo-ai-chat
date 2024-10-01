@@ -8,13 +8,13 @@ import {
 	randomRecentDate,
 	randomText,
 } from '@utils/release'
-import { Chat, Message } from '../types'
+import { Chat, Message, MessageRole } from '../types'
 
-const createChats = () => {
+const createChats = (): Chat[] => {
 	return randomArray(3, 100).map(() => ({
 		id: randomId(),
 		title: randomText(),
-		date: randomRecentDate(),
+		datetime: randomRecentDate(),
 	}))
 }
 
@@ -54,6 +54,8 @@ const createMessages = (chats: Chat[]) => {
 }
 
 const addSubchats = (message: Message, messages: Message[]) => {
+	const roles: MessageRole[] = message.role === 'user' ? ['agent', 'user'] : ['user', 'agent']
+
 	message.subchatId = message.id
 
 	randomArray(1, 10).forEach((_, index: number) => {
@@ -63,7 +65,7 @@ const addSubchats = (message: Message, messages: Message[]) => {
 			subchatId: message.id,
 			parentId: message.id,
 			text: randomLongText(1),
-			role: 'user',
+			role: roles[index % 2],
 			datetime: addMinutesToDate(message.datetime, (index + 1) * 5).toISOString(),
 		})
 	})
