@@ -32,7 +32,7 @@ const meta: Meta<typeof IconButton> = {
 	argTypes: createArgTypes<typeof IconButton>(
 		{
 			tooltip: 'text',
-			size: ['xs', 'sm', 'md'],
+			size: ['xs', 'sm', 'md', 'lg'],
 			variant: ['text-default', 'text-danger', 'solid-primary', 'solid-secondary', 'solid-danger'],
 			pressed: 'boolean',
 			loading: 'boolean',
@@ -114,7 +114,7 @@ const meta: Meta<typeof IconButton> = {
 			},
 		]
 		const TYPES = `
-			type IconButtonSize = 'xs' | 'sm' | 'md'
+			type IconButtonSize = 'xs' | 'sm' | 'md' | 'lg'
 			type IconButtonVariant =
 				| 'text-default'
 				| 'text-danger'
@@ -156,6 +156,9 @@ const meta: Meta<typeof IconButton> = {
 								{svg}
 							</IconButton>
 							<IconButton tooltip={variant + ' md'} variant={variant} size="md">
+								{svg}
+							</IconButton>
+							<IconButton tooltip={variant + ' lg'} variant={variant} size="lg">
 								{svg}
 							</IconButton>
 						</div>

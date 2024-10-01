@@ -104,6 +104,7 @@ export const useIconButtonBase = (rawProps: IconButtonProps) => {
 		if (props.size === 'xs') return cssSizeFn($spacing['button-h-xs'])
 		if (props.size === 'sm') return cssSizeFn($spacing['button-h-sm'])
 		if (props.size === 'md') return cssSizeFn($spacing['button-h-md'])
+		if (props.size === 'lg') return cssSizeFn($spacing['button-h-lg'])
 		return {}
 	})()
 

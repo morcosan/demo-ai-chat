@@ -1,13 +1,15 @@
-import { AiChatSvg } from '@ds/release'
+import SubchatSvg from '@app/library/assets/icons/subchat.svg'
+import { AiChatSvg, IconButton } from '@ds/release'
 import { Message } from '../api/types'
 
 interface Props {
 	message: Message
+	widthClass: string
 }
 
-export const MessageBubble = ({ message }: Props) => {
+export const MessageBubble = ({ message, widthClass }: Props) => {
 	return (
-		<div className="flex flex-col items-end">
+		<div className="relative flex flex-col items-end">
 			{message.role === 'user' ? (
 				<div className="mb-xs-5 w-fit max-w-[70%] rounded-md bg-color-primary-bg px-xs-6 py-xs-3 shadow-md">
 					<div className="whitespace-pre-wrap">{message.text}</div>
@@ -22,6 +24,24 @@ export const MessageBubble = ({ message }: Props) => {
 					</div>
 
 					{message.text}
+				</div>
+			)}
+
+			{/* SUBCHAT BUTTON */}
+			{message.subchatSize > 0 && (
+				<div className={`flex-center absolute right-0 top-0 translate-x-full ${widthClass}`}>
+					<IconButton
+						tooltip="Open subchat"
+						size="lg"
+						className={message.role === 'user' ? '-mt-xs-1' : 'mt-sm-1'}
+					>
+						<span className="relative">
+							<SubchatSvg className="h-sm-1 fill-color-text-placeholder" />
+							<span className="absolute-center pb-xs-0 text-size-xs font-weight-md text-color-text-subtle">
+								{message.subchatSize}
+							</span>
+						</span>
+					</IconButton>
 				</div>
 			)}
 		</div>

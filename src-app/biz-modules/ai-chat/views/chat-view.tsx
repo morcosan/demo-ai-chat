@@ -11,6 +11,9 @@ export const ChatView = () => {
 	const { chatId } = useParams()
 	const { listingRef, input, inputRef, inputText, onChange, onPressEnter, onSubmit } = useMessageListing()
 
+	const wrapperClass = 'mx-auto w-full max-w-xxl-2 px-md-0'
+	const widthClass = 'w-md-0'
+
 	useEffect(() => {
 		const id = parseInt(String(chatId))
 		loadChat(isNaN(id) ? 0 : id)
@@ -23,7 +26,7 @@ export const ChatView = () => {
 			{activeChat ? (
 				<div ref={listingRef} className="flex-1 overflow-y-auto pb-sm-5">
 					{chatLoading === 'full' ? (
-						<div className="mx-auto flex h-full max-w-xxl-1 flex-col">
+						<div className={`${wrapperClass} flex h-full flex-col`}>
 							{titleSlot}
 							<div className="flex-center flex-1 px-xs-4 text-size-lg">
 								<span className="mr-xs-4 animate-spin">⌛</span>
@@ -31,11 +34,11 @@ export const ChatView = () => {
 							</div>
 						</div>
 					) : (
-						<div className="mx-auto flex max-w-xxl-1 flex-col">
+						<div className={`${wrapperClass} flex flex-col`}>
 							{titleSlot}
 							<div className="mt-sm-5 flex flex-col">
 								{chatMessages.map((message: Message) => (
-									<MessageBubble key={message.datetime} message={message} />
+									<MessageBubble key={message.datetime} message={message} widthClass={widthClass} />
 								))}
 							</div>
 						</div>
@@ -47,17 +50,19 @@ export const ChatView = () => {
 				</div>
 			)}
 
-			<InputField
-				ref={inputRef}
-				input={input}
-				inputText={inputText}
-				disabled={Boolean(chatLoading)}
-				className="mx-auto w-full max-w-xxl-1"
-				primary
-				onChange={onChange}
-				onPressEnter={onPressEnter}
-				onSubmit={onSubmit}
-			/>
+			<div className={wrapperClass}>
+				<InputField
+					ref={inputRef}
+					input={input}
+					inputText={inputText}
+					disabled={Boolean(chatLoading)}
+					className="w-full"
+					primary
+					onChange={onChange}
+					onPressEnter={onPressEnter}
+					onSubmit={onSubmit}
+				/>
+			</div>
 		</div>
 	)
 }
