@@ -34,6 +34,7 @@ export const useActiveChatStore = (allChats: Chat[]): ActiveChatStore => {
 
 		setActiveChat(chat)
 		setPendingChatId(chat ? 0 : chatId)
+		setChatMessages([])
 		setChatPagination({ page: 0, count: 0 })
 	}
 
