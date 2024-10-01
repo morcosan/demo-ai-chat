@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom'
 import { Message } from '../api/types'
 import { InputField } from '../components/input-field'
 import { LoadingText } from '../components/loading-text'
-import { MessageBubble } from '../components/message-bubble'
+import { MessageItem } from '../components/message-item'
 import { useMessageListing } from '../hooks/message-listing'
 import { useAiChat } from '../state'
 
@@ -36,7 +36,7 @@ export const ChatView = () => {
 							{titleSlot}
 							<div className="mt-sm-5 flex flex-col">
 								{chatMessages.map((message: Message) => (
-									<MessageBubble key={message.datetime} message={message} widthClass={widthClass} />
+									<MessageItem key={message.datetime} message={message} widthClass={widthClass} />
 								))}
 							</div>
 						</div>

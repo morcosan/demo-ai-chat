@@ -14,6 +14,7 @@ export const mapDtoToSubchat = (dto: SubchatDTO): Subchat => {
 		id: dto.id || 0,
 		chatId: dto.chatId || 0,
 		text: (dto.text || '').substring(0, 100),
+		size: dto.size || 0,
 		datetime: dto.datetime || '',
 	}
 }

@@ -2,6 +2,7 @@ import { Button } from '@ds/release'
 import { Subchat } from '../api/types'
 import { InputField } from '../components/input-field'
 import { LoadingText } from '../components/loading-text'
+import { SubchatBubble } from '../components/subchat-bubble'
 import { useMessageListing } from '../hooks/message-listing'
 import { useAiChat } from '../state'
 
@@ -56,7 +57,7 @@ export const SubchatView = () => {
 				) : (
 					// SUBCHATS
 					<div className="h-full w-full overflow-y-scroll pb-xs-9 pl-scrollbar-w">
-						<div className="mb-xs-4 mt-xs-2 pl-scrollbar-w text-color-text-subtle">Sub-chats</div>
+						<div className="mb-xs-4 ml-scrollbar-w mt-xs-2 pl-xs-1 text-color-text-subtle">Sub-chats</div>
 
 						{allSubchats.map((subchat: Subchat) => (
 							<Button
@@ -66,7 +67,8 @@ export const SubchatView = () => {
 								size="lg"
 								className="block"
 							>
-								<span className="truncate">{subchat.text}</span>
+								<SubchatBubble count={subchat.size} className="mr-xs-2" />
+								<span className="truncate pb-xs-0 text-color-secondary-text-default">{subchat.text}</span>
 							</Button>
 						))}
 					</div>

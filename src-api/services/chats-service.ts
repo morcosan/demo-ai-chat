@@ -51,6 +51,7 @@ export const chatsService = {
 					id: message.id,
 					chatId: message.chatId,
 					text: message.text,
+					size: db.filter((other: Message) => other.subchatId === message.id).length,
 					datetime: message.datetime,
 				})
 			)

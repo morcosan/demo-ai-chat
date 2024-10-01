@@ -73,6 +73,7 @@ export interface SubchatDTO {
 	id: number
 	chatId: number
 	text: string
+	size: number
 	datetime: string
 }
 
