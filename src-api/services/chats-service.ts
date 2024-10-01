@@ -6,6 +6,7 @@ import {
 	MessagesApiData,
 	MessagesApiQuery,
 	STATUS__SUCCESS,
+	SubchatDTO,
 	SubchatsApiData,
 	SubchatsApiQuery,
 } from '../types'
@@ -43,7 +44,16 @@ export const chatsService = {
 		if (!chatId) return { ...RESP__NOT_FOUND, error: `Chat ID ${query.chatId} not found` }
 
 		const db = DB__MESSAGES.filter((message: Message) => message.chatId === chatId)
-		const subchats = db.filter((message: Message) => message.subchatId === message.id)
+		const subchats = db
+			.filter((message: Message) => message.subchatId === message.id)
+			.map(
+				(message: Message): SubchatDTO => ({
+					id: message.id,
+					chatId: message.chatId,
+					text: message.text,
+					datetime: message.datetime,
+				})
+			)
 
 		if (!isValidPagination(page, count, subchats.length)) {
 			return { ...RESP__NOT_FOUND, error: `Page ${page} not found for ${subchats.length} subchats` }

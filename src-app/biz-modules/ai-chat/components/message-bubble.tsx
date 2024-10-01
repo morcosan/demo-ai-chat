@@ -31,7 +31,7 @@ export const MessageBubble = ({ message, widthClass }: Props) => {
 			{message.subchatSize > 0 && (
 				<div className={`flex-center absolute right-0 top-0 translate-x-full ${widthClass}`}>
 					<IconButton
-						tooltip="Open subchat"
+						tooltip={`Open subchat (${message.subchatSize} messages)`}
 						size="lg"
 						className={message.role === 'user' ? '-mt-xs-1' : 'mt-sm-1'}
 					>

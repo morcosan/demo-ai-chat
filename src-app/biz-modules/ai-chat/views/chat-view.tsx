@@ -2,6 +2,7 @@ import { useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import { Message } from '../api/types'
 import { InputField } from '../components/input-field'
+import { LoadingText } from '../components/loading-text'
 import { MessageBubble } from '../components/message-bubble'
 import { useMessageListing } from '../hooks/message-listing'
 import { useAiChat } from '../state'
@@ -28,10 +29,7 @@ export const ChatView = () => {
 					{chatLoading === 'full' ? (
 						<div className={`${wrapperClass} flex h-full flex-col`}>
 							{titleSlot}
-							<div className="flex-center flex-1 px-xs-4 text-size-lg">
-								<span className="mr-xs-4 animate-spin">⌛</span>
-								Loading messages...
-							</div>
+							<LoadingText text="Loading messages..." className="flex-center flex-1" />
 						</div>
 					) : (
 						<div className={`${wrapperClass} flex flex-col`}>

@@ -52,13 +52,6 @@ export interface Chat {
 	datetime: string
 }
 
-export interface Subchat {
-	id: number
-	chatId: number
-	title: string
-	datetime: string
-}
-
 export interface Message {
 	id: number
 	chatId: number
@@ -75,7 +68,13 @@ export type MessageRole = 'user' | 'agent' | 'system'
  * DTOs
  */
 export type ChatDTO = Chat
-export type SubchatDTO = Subchat
+
+export interface SubchatDTO {
+	id: number
+	chatId: number
+	text: string
+	datetime: string
+}
 
 export interface MessageDTO extends Message {
 	subchatSize: number

@@ -2,6 +2,7 @@ import { AiChatSvg, Button, CloseSvg, DotsSvg, IconButton, SearchSvg, TextField 
 import { debounce } from 'lodash'
 import { UIEvent, useState } from 'react'
 import { Chat } from '../api/types'
+import { LoadingText } from '../components/loading-text'
 import { useAiChat } from '../state'
 
 export const AiChatNavSection = () => {
@@ -60,10 +61,7 @@ export const AiChatNavSection = () => {
 				onScroll={onScroll}
 			>
 				{allChatsLoading === 'full' ? (
-					<div className="mt-xs-2 flex px-xs-4">
-						<span className="mr-xs-4 animate-spin">⌛</span>
-						Loading chats...
-					</div>
+					<LoadingText text="Loading chats..." className="mt-xs-2 px-xs-4" />
 				) : allChats.length ? (
 					<>
 						{allChats.map((chat: Chat) => (
@@ -78,12 +76,7 @@ export const AiChatNavSection = () => {
 								<span className="truncate">{chat.title}</span>
 							</Button>
 						))}
-						{allChatsLoading === 'more' && (
-							<div className="my-xs-6 flex px-xs-4">
-								<span className="mr-xs-4 animate-spin">⌛</span>
-								Loading more chats...
-							</div>
-						)}
+						{allChatsLoading === 'more' && <LoadingText text="Loading chats..." className="my-xs-6 px-xs-4" />}
 					</>
 				) : (
 					<div className="mt-xs-2 flex px-xs-4">There are no chats</div>
