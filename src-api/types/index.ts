@@ -23,6 +23,15 @@ export interface ChatsApiData {
 	count: number
 	items: ChatDTO[]
 }
+export interface SubchatsApiQuery extends ApiQuery {
+	chatId?: string | number
+	count?: string | number
+	page?: string | number
+}
+export interface SubchatsApiData {
+	count: number
+	items: SubchatDTO[]
+}
 export interface MessagesApiQuery extends ApiQuery {
 	chatId?: string | number
 	subchatId?: string | number
@@ -40,7 +49,14 @@ export interface MessagesApiData {
 export interface Chat {
 	id: number
 	title: string
-	date: string
+	datetime: string
+}
+
+export interface Subchat {
+	id: number
+	chatId: number
+	title: string
+	datetime: string
 }
 
 export interface Message {
@@ -59,6 +75,7 @@ export type MessageRole = 'user' | 'agent' | 'system'
  * DTOs
  */
 export type ChatDTO = Chat
+export type SubchatDTO = Subchat
 
 export interface MessageDTO extends Message {
 	subchatSize: number

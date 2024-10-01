@@ -1,28 +1,37 @@
 import { createContext, useMemo } from 'react'
-import { allChatsDefaults, AllChatsStore, useAllChatsStore } from './_all-chats-store'
-import { activeChatDefaults, ActiveChatStore, useActiveChatStore } from './_chat-store'
-import { activeSubchatDefaults, ActiveSubchatStore, useActiveSubchatStore } from './_subchat-store'
+import { allChatsDefaults, AllChatsStore, useAllChatsStore } from './stores/all-chats-store'
+import { allSubchatsDefaults, AllSubchatsStore, useAllSubchatsStore } from './stores/all-subchats-store'
+import { chatDefaults, ChatStore, useChatStore } from './stores/chat-store'
+import { subchatDefaults, SubchatStore, useSubchatStore } from './stores/subchat-store'
 
-export interface Store extends AllChatsStore, ActiveChatStore, ActiveSubchatStore {}
+export interface Store extends AllChatsStore, AllSubchatsStore, ChatStore, SubchatStore {}
 
 export const Context = createContext<Store>({
 	...allChatsDefaults,
-	...activeChatDefaults,
-	...activeSubchatDefaults,
+	...chatDefaults,
+	...allSubchatsDefaults,
+	...subchatDefaults,
 })
 
 export const AiChatProvider = ({ children }: ReactProps) => {
 	const allChatsStore = useAllChatsStore()
-	const activeChatStore = useActiveChatStore(allChatsStore.allChats)
-	const activeSubchatStore = useActiveSubchatStore(allChatsStore.allChats)
+	const chatStore = useChatStore(allChatsStore.allChats)
+	const allSubchatsStore = useAllSubchatsStore(chatStore.activeChat)
+	const subchatStore = useSubchatStore(allChatsStore.allChats)
 
 	const store: Store = useMemo(
 		() => ({
 			...allChatsStore,
-			...activeChatStore,
-			...activeSubchatStore,
+			...allSubchatsStore,
+			...chatStore,
+			...subchatStore,
 		}),
-		[...Object.values(allChatsStore), ...Object.values(activeChatStore), ...Object.values(activeSubchatStore)]
+		[
+			...Object.values(allChatsStore),
+			...Object.values(chatStore),
+			...Object.values(allSubchatsStore),
+			...Object.values(subchatStore),
+		]
 	)
 
 	return <Context.Provider value={store}>{children}</Context.Provider>

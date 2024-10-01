@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
-import { Chat, Message } from '../api/types'
+import { Chat, Message } from '../../api/types'
 
-export interface ActiveSubchatStore {
+export interface SubchatStore {
 	activeSubchat: Chat | null
 	subchatMessages: Message[]
 	subchatPagination: Pagination
@@ -10,7 +10,7 @@ export interface ActiveSubchatStore {
 	loadMoreSubchatMessages(): void
 }
 
-export const activeSubchatDefaults: ActiveSubchatStore = {
+export const subchatDefaults: SubchatStore = {
 	activeSubchat: null,
 	subchatMessages: [],
 	subchatPagination: { page: 0, count: 0 },
@@ -19,7 +19,7 @@ export const activeSubchatDefaults: ActiveSubchatStore = {
 	loadMoreSubchatMessages: () => {},
 }
 
-export const useActiveSubchatStore = (allChats: Chat[]): ActiveSubchatStore => {
+export const useSubchatStore = (allChats: Chat[]): SubchatStore => {
 	const [activeSubchat, setActiveSubchat] = useState(null as Chat | null)
 	const [subchatMessages, setSubchatMessages] = useState([] as Message[])
 	const [subchatPagination, setSubchatPagination] = useState({ page: 0, count: 0 } as Pagination)

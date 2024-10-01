@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
-import { API } from '../api'
-import { Chat } from '../api/types'
+import { API } from '../../api'
+import { Chat } from '../../api/types'
 
 export interface AllChatsStore {
 	allChats: Chat[]

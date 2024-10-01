@@ -5,9 +5,11 @@ import {
 	MessagesApiData,
 	MessagesApiQuery,
 	STATUS__SUCCESS,
+	SubchatsApiData,
+	SubchatsApiQuery,
 } from '@app/api'
-import { mapDtoToChat, mapDtoToMessage } from './mappers'
-import { ChatListing, MessageListing } from './types'
+import { mapDtoToChat, mapDtoToMessage, mapDtoToSubchat } from './mappers'
+import { ChatListing, MessageListing, SubchatListing } from './types'
 
 export const API = {
 	async getChats(page?: number): Promise<ChatListing> {
@@ -20,6 +22,19 @@ export const API = {
 		return resp.status === STATUS__SUCCESS && resp.data
 			? { chats: resp.data.items.map(mapDtoToChat), count: resp.data.count }
 			: { chats: [], count: 0 }
+	},
+
+	async getSubchats(chatId: number, page?: number): Promise<SubchatListing> {
+		const query: SubchatsApiQuery = {
+			count: 20,
+			page: page || 1,
+			chatId,
+		}
+		const resp = await chatsAPI.get<SubchatsApiData>('/api/subchats', query)
+
+		return resp.status === STATUS__SUCCESS && resp.data
+			? { subchats: resp.data.items.map(mapDtoToSubchat), count: resp.data.count }
+			: { subchats: [], count: 0 }
 	},
 
 	async getMessages(chatId: number, subchatId?: number, page?: number): Promise<MessageListing> {
