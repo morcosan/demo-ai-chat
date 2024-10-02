@@ -45,59 +45,69 @@ export const SubchatView = () => {
 					<LoadingText text="Loading messages..." className="flex-center h-full" />
 				) : noSubchats ? (
 					<div className="flex-center h-full w-full text-color-text-subtle">No sub-chats</div>
-				) : activeSubchat ? (
-					// MESSAGES
-					<div className="flex h-full w-full flex-col gap-xs-5 pt-xs-1">
-						<div ref={listingRef} className="flex flex-1 flex-col overflow-y-scroll px-xs-3 pb-sm-1">
-							{/* TOOLBAR */}
-							<StickyToolbar variant="subchat" className="-mx-xs-1 mb-xs-9 px-xs-3 py-xs-2">
-								<div className="flex items-center gap-xs-2">
-									<IconButton linkHref={`/chat/${activeChat?.id}`} tooltip="Back to subchats" size="sm">
-										<ArrowBackSvg className="h-xs-5" />
-									</IconButton>
-
-									{Boolean(subchatPagination.count) && (
-										<div className="text-size-sm text-color-text-subtle">{subchatPagination.count} messages</div>
-									)}
-								</div>
-							</StickyToolbar>
-
-							{/* LISTING */}
-							{subchatMessages.map((message: Message) => (
-								<MessageItem key={message.datetime} message={message} secondary />
-							))}
-						</div>
-
-						{/* INPUT FIELD */}
-						<div className="mx-scrollbar-w mb-xs-6 px-xs-1">
-							<InputField
-								ref={inputRef}
-								input={input}
-								inputText={inputText}
-								className="w-full"
-								onChange={onChange}
-								onPressEnter={onPressEnter}
-								onSubmit={onSubmit}
-							/>
-						</div>
-					</div>
 				) : (
-					// SUBCHATS
-					<div className="h-full w-full overflow-y-scroll pb-sm-1 pl-scrollbar-w">
-						<div className="mb-xs-4 ml-scrollbar-w mt-xs-9 pl-xs-1 text-color-text-subtle">Sub-chats</div>
+					<div className="flex h-full w-full flex-col gap-xs-5 py-xs-1">
+						{activeSubchat ? (
+							// MESSAGES
+							<>
+								<div ref={listingRef} className="flex flex-1 flex-col overflow-y-scroll px-xs-3 pb-sm-1">
+									{/* TOOLBAR */}
+									<StickyToolbar variant="subchat" className="-mx-xs-1 mb-xs-9 px-xs-3 py-xs-1">
+										<div className="flex items-center gap-xs-2">
+											<IconButton linkHref={`/chat/${activeChat?.id}`} tooltip="Back to subchats" size="sm">
+												<ArrowBackSvg className="h-xs-5" />
+											</IconButton>
 
-						{allSubchats.map((subchat: Subchat) => (
-							<Button
-								key={subchat.id}
-								linkHref={`/chat/${subchat.chatId}?subchat=${subchat.id}`}
-								variant="item-text-default"
-								size="lg"
-								className="block"
-							>
-								<SubchatBubble count={subchat.size} className="mr-xs-2" />
-								<span className="truncate pb-xs-0 text-color-secondary-text-default">{subchat.text}</span>
-							</Button>
-						))}
+											{Boolean(subchatPagination.count) && (
+												<div className="text-size-sm text-color-text-subtle">
+													{subchatPagination.count} messages
+												</div>
+											)}
+										</div>
+									</StickyToolbar>
+
+									{/* LISTING */}
+									{subchatMessages.map((message: Message) => (
+										<MessageItem key={message.datetime} message={message} secondary />
+									))}
+								</div>
+								{/* INPUT FIELD */}
+								<div className="mx-scrollbar-w mb-xs-5 px-xs-1">
+									<InputField
+										ref={inputRef}
+										input={input}
+										inputText={inputText}
+										className="w-full"
+										onChange={onChange}
+										onPressEnter={onPressEnter}
+										onSubmit={onSubmit}
+									/>
+								</div>
+							</>
+						) : (
+							// SUBCHATS
+							<div className="flex-1 overflow-y-scroll pb-sm-1 pl-scrollbar-w">
+								{/* TOOLBAR */}
+								<StickyToolbar variant="subchat" className="mb-xs-2 px-xs-9 py-xs-1">
+									<div className="flex h-button-h-sm items-center text-size-sm text-color-text-subtle">
+										Sub-chats
+									</div>
+								</StickyToolbar>
+
+								{allSubchats.map((subchat: Subchat) => (
+									<Button
+										key={subchat.id}
+										linkHref={`/chat/${subchat.chatId}?subchat=${subchat.id}`}
+										variant="item-text-default"
+										size="lg"
+										className="block"
+									>
+										<SubchatBubble count={subchat.size} className="mr-xs-2" />
+										<span className="truncate pb-xs-0 text-color-secondary-text-default">{subchat.text}</span>
+									</Button>
+								))}
+							</div>
+						)}
 					</div>
 				)}
 			</div>
