@@ -28,7 +28,7 @@ export const useSubchatStore = (allSubchats: Subchat[]): SubchatStore => {
 	const [pendingSubchatId, setPendingSubchatId] = useState(0)
 
 	const loadSubchat = async (subchatId: number) => {
-		if (subchatLoading) return
+		if (subchatLoading || subchatId === activeSubchat?.id) return
 
 		const subchat = allSubchats.find((subchat: Subchat) => subchat.id === subchatId) || null
 

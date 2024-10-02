@@ -58,7 +58,7 @@ const addSubchats = (message: Message, messages: Message[]) => {
 
 	message.subchatId = message.id
 
-	randomArray(1, 10).forEach((_, index: number) => {
+	randomArray(1, 20).forEach((_, index: number) => {
 		messages.push({
 			id: randomId(),
 			chatId: message.chatId,

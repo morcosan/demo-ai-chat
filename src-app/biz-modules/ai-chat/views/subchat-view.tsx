@@ -5,6 +5,7 @@ import { Message, Subchat } from '../api/types'
 import { InputField } from '../components/input-field'
 import { LoadingText } from '../components/loading-text'
 import { MessageItem } from '../components/message-item'
+import { StickyToolbar } from '../components/sticky-toolbar'
 import { SubchatBubble } from '../components/subchat-bubble'
 import { useMessageListing } from '../hooks/message-listing'
 import { useAiChat } from '../state'
@@ -18,6 +19,7 @@ export const SubchatView = () => {
 		chatLoading,
 		subchatLoading,
 		subchatMessages,
+		subchatPagination,
 		loadSubchat,
 	} = useAiChat()
 	const { listingRef, input, inputRef, inputText, onChange, onPressEnter, onSubmit } = useMessageListing()
@@ -45,8 +47,19 @@ export const SubchatView = () => {
 					<div className="flex-center h-full w-full text-color-text-subtle">No sub-chats</div>
 				) : activeSubchat ? (
 					// MESSAGES
-					<div className="flex h-full w-full flex-col gap-xs-5">
-						<div ref={listingRef} className="mt-xs-3 flex flex-1 flex-col overflow-y-scroll px-xs-3 pt-xs-4">
+					<div className="flex h-full w-full flex-col gap-xs-5 pt-xs-1">
+						<div ref={listingRef} className="flex flex-1 flex-col overflow-y-scroll px-xs-3">
+							{/* TOOLBAR */}
+							<StickyToolbar size="sm" className="pb-xs-3 pt-xs-4">
+								<div className="">
+									{Boolean(subchatPagination.count) && (
+										<div className="mt-xs-1 text-size-xs text-color-text-subtle">
+											{subchatPagination.count} messages
+										</div>
+									)}
+								</div>
+							</StickyToolbar>
+
 							{subchatMessages.map((message: Message) => (
 								<MessageItem key={message.datetime} message={message} secondary />
 							))}
