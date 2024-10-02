@@ -1,6 +1,6 @@
 import { debounce } from 'lodash'
 import { UIEvent, useEffect } from 'react'
-import { useParams } from 'react-router-dom'
+import { useParams, useSearchParams } from 'react-router-dom'
 import { Message } from '../api/types'
 import { InputField } from '../components/input-field'
 import { LoadingText } from '../components/loading-text'
@@ -31,6 +31,9 @@ export const ChatView = () => {
 		scrollMessages,
 	} = useMessageListing()
 	const { chatId } = useParams()
+	const [searchParams] = useSearchParams()
+
+	const subchatId = parseInt(String(searchParams.get('subchat')))
 
 	const wrapperClass = 'mx-auto w-full max-w-xxl-2 px-md-0'
 	const widthClass = 'w-md-0'
@@ -83,7 +86,12 @@ export const ChatView = () => {
 								)}
 								{/* MESSAGES */}
 								{chatMessages.map((message: Message) => (
-									<MessageItem key={message.datetime} message={message} widthClass={widthClass} />
+									<MessageItem
+										key={message.datetime}
+										message={message}
+										subchatId={subchatId}
+										widthClass={widthClass}
+									/>
 								))}
 							</div>
 						)}

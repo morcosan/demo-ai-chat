@@ -37,7 +37,8 @@ export const SubchatView = () => {
 		scrollMessages,
 	} = useMessageListing()
 	const [searchParams] = useSearchParams()
-	const subchatId = searchParams.get('subchat')
+
+	const subchatId = parseInt(String(searchParams.get('subchat')))
 
 	const noSubchats = !activeChat || (activeSubchat && !subchatMessages.length)
 
@@ -57,8 +58,7 @@ export const SubchatView = () => {
 	}, [subchatPagination.page])
 
 	useEffect(() => {
-		const id = parseInt(String(subchatId))
-		loadSubchat(isNaN(id) ? 0 : id)
+		loadSubchat(isNaN(subchatId) ? 0 : subchatId)
 	}, [subchatId])
 
 	return (

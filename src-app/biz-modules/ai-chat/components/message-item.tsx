@@ -6,9 +6,10 @@ interface Props {
 	message: Message
 	widthClass?: string
 	secondary?: boolean
+	subchatId?: number
 }
 
-export const MessageItem = ({ message, widthClass, secondary }: Props) => {
+export const MessageItem = ({ message, widthClass, secondary, subchatId }: Props) => {
 	const wrapperClass = message.role === 'user' ? 'mb-xs-9' : secondary ? 'mb-sm-2' : 'mb-sm-4'
 	const userItemClass = secondary ? 'max-w-[80%] bg-color-secondary-bg' : 'max-w-[70%] bg-color-primary-bg'
 
@@ -37,6 +38,7 @@ export const MessageItem = ({ message, widthClass, secondary }: Props) => {
 					<IconButton
 						tooltip={`Open subchat (${message.subchatSize} messages)`}
 						linkHref={`/chat/${message.chatId}?subchat=${message.id}`}
+						pressed={message.id === subchatId}
 						size="lg"
 						className={message.role === 'user' ? '-mt-xs-1' : 'mt-sm-1'}
 					>
