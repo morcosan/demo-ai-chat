@@ -10,7 +10,6 @@ import { useMessageListing } from '../hooks/message-listing'
 import { useAiChat } from '../state'
 
 export const ChatView = () => {
-	const { chatId } = useParams()
 	const {
 		activeChat,
 		canLoadChatMessages,
@@ -31,6 +30,7 @@ export const ChatView = () => {
 		saveScrollPosition,
 		scrollMessages,
 	} = useMessageListing()
+	const { chatId } = useParams()
 
 	const wrapperClass = 'mx-auto w-full max-w-xxl-2 px-md-0'
 	const widthClass = 'w-md-0'
@@ -47,13 +47,13 @@ export const ChatView = () => {
 	}, 300)
 
 	useEffect(() => {
+		scrollMessages()
+	}, [chatPagination.page])
+
+	useEffect(() => {
 		const id = parseInt(String(chatId))
 		loadChat(isNaN(id) ? 0 : id)
 	}, [chatId])
-
-	useEffect(() => {
-		scrollMessages()
-	}, [chatPagination.page])
 
 	return (
 		<div className="flex h-full flex-1 flex-col gap-xs-5 py-xs-1">
@@ -72,13 +72,16 @@ export const ChatView = () => {
 							</h1>
 						</StickyToolbar>
 
+						{/* LISTING */}
 						{chatLoading === 'full' ? (
 							<LoadingText text="Loading messages..." className="flex-center flex-1" />
 						) : (
 							<div className="flex flex-col">
+								{/* LOAD MORE */}
 								{chatLoading === 'more' && (
 									<LoadingText text="Loading previous messages..." className="flex-center mb-md-0" />
 								)}
+								{/* MESSAGES */}
 								{chatMessages.map((message: Message) => (
 									<MessageItem key={message.datetime} message={message} widthClass={widthClass} />
 								))}

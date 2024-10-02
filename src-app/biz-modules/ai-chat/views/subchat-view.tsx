@@ -1,5 +1,6 @@
 import { ArrowBackSvg, Button, IconButton } from '@ds/release'
-import { useEffect } from 'react'
+import { debounce } from 'lodash'
+import { UIEvent, useEffect } from 'react'
 import { useSearchParams } from 'react-router-dom'
 import { Message, Subchat } from '../api/types'
 import { InputField } from '../components/input-field'
@@ -16,27 +17,49 @@ export const SubchatView = () => {
 		activeSubchat,
 		allSubchats,
 		allSubchatsLoading,
+		canLoadSubchatMessages,
 		chatLoading,
 		subchatLoading,
 		subchatMessages,
 		subchatPagination,
 		loadSubchat,
+		loadMoreSubchatMessages,
 	} = useAiChat()
-	const listing = useMessageListing()
-	const { listingRef, input, inputRef, inputText, onChange, onPressEnter, onSubmit, scrollToBottom } = listing
+	const {
+		listingRef,
+		input,
+		inputRef,
+		inputText,
+		onChange,
+		onPressEnter,
+		onSubmit,
+		saveScrollPosition,
+		scrollMessages,
+	} = useMessageListing()
 	const [searchParams] = useSearchParams()
 	const subchatId = searchParams.get('subchat')
 
 	const noSubchats = !activeChat || (activeSubchat && !subchatMessages.length)
 
+	const onScrollMessages = debounce((event: UIEvent) => {
+		const THRESHOLD = 50 // px
+		const container = event.target as HTMLElement
+		const isScrollStart = container.scrollTop <= THRESHOLD
+
+		if (isScrollStart && canLoadSubchatMessages) {
+			saveScrollPosition()
+			loadMoreSubchatMessages()
+		}
+	}, 300)
+
+	useEffect(() => {
+		scrollMessages()
+	}, [subchatPagination.page])
+
 	useEffect(() => {
 		const id = parseInt(String(subchatId))
 		loadSubchat(isNaN(id) ? 0 : id)
 	}, [subchatId])
-
-	useEffect(() => {
-		scrollToBottom()
-	}, [subchatPagination.page])
 
 	return (
 		<div className="relative ml-xs-2 h-full w-[30%]">
@@ -46,7 +69,7 @@ export const SubchatView = () => {
 			<div className="h-full w-full">
 				{chatLoading === 'full' || allSubchatsLoading ? (
 					<LoadingText text="Loading subchats..." className="flex-center h-full" />
-				) : subchatLoading ? (
+				) : subchatLoading === 'full' ? (
 					<LoadingText text="Loading messages..." className="flex-center h-full" />
 				) : noSubchats ? (
 					<div className="flex-center h-full w-full text-color-text-subtle">No sub-chats</div>
@@ -58,6 +81,7 @@ export const SubchatView = () => {
 								<div
 									ref={listingRef}
 									className="flex flex-1 flex-col overflow-y-scroll pb-sm-1 pl-scrollbar-w pr-a11y-padding"
+									onScroll={onScrollMessages}
 								>
 									{/* TOOLBAR */}
 									<StickyToolbar variant="subchat" className="-mx-a11y-padding mb-xs-9 px-xs-2 py-xs-1">
@@ -74,7 +98,11 @@ export const SubchatView = () => {
 										</div>
 									</StickyToolbar>
 
-									{/* LISTING */}
+									{/* LOAD MORE */}
+									{subchatLoading === 'more' && (
+										<LoadingText text="Loading previous messages..." className="flex-center mb-sm-2" />
+									)}
+									{/* MESSAGES */}
 									{subchatMessages.map((message: Message) => (
 										<MessageItem key={message.datetime} message={message} secondary />
 									))}

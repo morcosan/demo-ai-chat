@@ -7,6 +7,7 @@ export interface SubchatStore {
 	subchatMessages: Message[]
 	subchatPagination: Pagination
 	subchatLoading: ListLoading
+	canLoadSubchatMessages: boolean
 	loadSubchat(chatId: number): void
 	loadMoreSubchatMessages(): void
 }
@@ -16,6 +17,7 @@ export const subchatDefaults: SubchatStore = {
 	subchatMessages: [],
 	subchatPagination: { page: 0, count: 0 },
 	subchatLoading: false,
+	canLoadSubchatMessages: false,
 	loadSubchat: () => {},
 	loadMoreSubchatMessages: () => {},
 }
@@ -26,6 +28,8 @@ export const useSubchatStore = (allSubchats: Subchat[]): SubchatStore => {
 	const [subchatPagination, setSubchatPagination] = useState({ page: 0, count: 0 } as Pagination)
 	const [subchatLoading, setSubchatLoading] = useState<ListLoading>(false)
 	const [pendingSubchatId, setPendingSubchatId] = useState(0)
+
+	const canLoadSubchatMessages = !subchatMessages.length || subchatMessages.length < subchatPagination.count
 
 	const loadSubchat = async (subchatId: number) => {
 		if (subchatLoading || subchatId === activeSubchat?.id) return
@@ -39,8 +43,7 @@ export const useSubchatStore = (allSubchats: Subchat[]): SubchatStore => {
 	}
 
 	const loadMoreSubchatMessages = async () => {
-		if (subchatLoading || !activeSubchat) return
-		if (subchatMessages.length && subchatMessages.length >= subchatPagination.count) return
+		if (subchatLoading || !activeSubchat || !canLoadSubchatMessages) return
 
 		setSubchatLoading(subchatPagination.page === 0 ? 'full' : 'more')
 
@@ -66,6 +69,7 @@ export const useSubchatStore = (allSubchats: Subchat[]): SubchatStore => {
 		subchatMessages,
 		subchatPagination,
 		subchatLoading,
+		canLoadSubchatMessages,
 		loadSubchat,
 		loadMoreSubchatMessages,
 	}

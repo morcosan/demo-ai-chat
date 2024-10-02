@@ -14,7 +14,10 @@ export const useMessageListing = () => {
 	const saveScrollPosition = () => setScrollHeight(listingRef.current?.scrollHeight || 0)
 	const scrollToSaved = () => listingRef.current?.scrollTo(0, listingRef.current.scrollHeight - scrollHeight)
 	const scrollToBottom = () => listingRef.current?.scrollTo(0, listingRef.current.scrollHeight)
-	const scrollMessages = () => (scrollHeight ? scrollToSaved() : scrollToBottom())
+	const scrollMessages = () => {
+		scrollHeight ? scrollToSaved() : scrollToBottom()
+		setScrollHeight(0)
+	}
 
 	const onChange = (value: string) => setInput(value)
 
@@ -47,6 +50,5 @@ export const useMessageListing = () => {
 		onSubmit,
 		saveScrollPosition,
 		scrollMessages,
-		scrollToBottom,
 	}
 }
