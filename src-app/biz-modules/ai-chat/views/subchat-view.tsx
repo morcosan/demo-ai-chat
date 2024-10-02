@@ -22,7 +22,8 @@ export const SubchatView = () => {
 		subchatPagination,
 		loadSubchat,
 	} = useAiChat()
-	const { listingRef, input, inputRef, inputText, onChange, onPressEnter, onSubmit } = useMessageListing()
+	const listing = useMessageListing()
+	const { listingRef, input, inputRef, inputText, onChange, onPressEnter, onSubmit, scrollToBottom } = listing
 	const [searchParams] = useSearchParams()
 	const subchatId = searchParams.get('subchat')
 
@@ -32,6 +33,10 @@ export const SubchatView = () => {
 		const id = parseInt(String(subchatId))
 		loadSubchat(isNaN(id) ? 0 : id)
 	}, [subchatId])
+
+	useEffect(() => {
+		scrollToBottom()
+	}, [subchatPagination.page])
 
 	return (
 		<div className="relative ml-xs-2 h-full w-[30%]">

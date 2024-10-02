@@ -11,7 +11,8 @@ import { useAiChat } from '../state'
 export const ChatView = () => {
 	const { activeChat, loadChat, chatLoading, chatMessages, chatPagination } = useAiChat()
 	const { chatId } = useParams()
-	const { listingRef, input, inputRef, inputText, onChange, onPressEnter, onSubmit } = useMessageListing()
+	const listing = useMessageListing()
+	const { listingRef, input, inputRef, inputText, onChange, onPressEnter, onSubmit, scrollToBottom } = listing
 
 	const wrapperClass = 'mx-auto w-full max-w-xxl-2 px-md-0'
 	const widthClass = 'w-md-0'
@@ -20,6 +21,10 @@ export const ChatView = () => {
 		const id = parseInt(String(chatId))
 		loadChat(isNaN(id) ? 0 : id)
 	}, [chatId])
+
+	useEffect(() => {
+		scrollToBottom()
+	}, [chatPagination.page])
 
 	return (
 		<div className="flex h-full flex-1 flex-col gap-xs-5 py-xs-1">

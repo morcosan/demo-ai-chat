@@ -10,6 +10,8 @@ export const useMessageListing = () => {
 
 	const inputText = input.trim()
 
+	const scrollToBottom = () => listingRef.current?.scrollTo(0, listingRef.current.scrollHeight)
+
 	const onChange = (value: string) => setInput(value)
 
 	const onPressEnter = useCallback(
@@ -26,8 +28,7 @@ export const useMessageListing = () => {
 		// setMessages([...messages, { text: inputText, datetime: new Date().toISOString() }])
 		setInput('')
 		inputRef.current?.focus()
-
-		wait(100).then(() => listingRef.current?.scrollTo(0, listingRef.current.scrollHeight))
+		wait(100).then(scrollToBottom)
 	}
 
 	return {
@@ -40,5 +41,6 @@ export const useMessageListing = () => {
 		onChange,
 		onPressEnter,
 		onSubmit,
+		scrollToBottom,
 	}
 }
