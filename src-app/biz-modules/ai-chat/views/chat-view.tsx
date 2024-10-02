@@ -27,7 +27,7 @@ export const ChatView = () => {
 				<div ref={listingRef} className="flex-1 overflow-y-auto pb-sm-5">
 					<div className={`${wrapperClass} ${chatLoading === 'full' ? 'h-full' : ''} flex flex-col pt-sm-0`}>
 						{/* TOOLBAR */}
-						<StickyToolbar size="md" className="-mx-md-0 pb-xs-3">
+						<StickyToolbar variant="chat" className="-mx-md-0 pb-xs-3">
 							<h1 className="mx-md-0 px-xs-5 text-size-xl font-weight-md">
 								{activeChat?.title}
 								{Boolean(chatPagination.count) && (

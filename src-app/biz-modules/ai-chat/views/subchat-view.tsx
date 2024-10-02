@@ -1,4 +1,4 @@
-import { Button } from '@ds/release'
+import { ArrowBackSvg, Button, IconButton } from '@ds/release'
 import { useEffect } from 'react'
 import { useSearchParams } from 'react-router-dom'
 import { Message, Subchat } from '../api/types'
@@ -48,23 +48,27 @@ export const SubchatView = () => {
 				) : activeSubchat ? (
 					// MESSAGES
 					<div className="flex h-full w-full flex-col gap-xs-5 pt-xs-1">
-						<div ref={listingRef} className="flex flex-1 flex-col overflow-y-scroll px-xs-3">
+						<div ref={listingRef} className="flex flex-1 flex-col overflow-y-scroll px-xs-3 pb-sm-1">
 							{/* TOOLBAR */}
-							<StickyToolbar size="sm" className="pb-xs-3 pt-xs-4">
-								<div className="">
+							<StickyToolbar variant="subchat" className="-mx-xs-1 mb-xs-9 px-xs-3 py-xs-2">
+								<div className="flex items-center gap-xs-2">
+									<IconButton linkHref={`/chat/${activeChat?.id}`} tooltip="Back to subchats" size="sm">
+										<ArrowBackSvg className="h-xs-5" />
+									</IconButton>
+
 									{Boolean(subchatPagination.count) && (
-										<div className="mt-xs-1 text-size-xs text-color-text-subtle">
-											{subchatPagination.count} messages
-										</div>
+										<div className="text-size-sm text-color-text-subtle">{subchatPagination.count} messages</div>
 									)}
 								</div>
 							</StickyToolbar>
 
+							{/* LISTING */}
 							{subchatMessages.map((message: Message) => (
 								<MessageItem key={message.datetime} message={message} secondary />
 							))}
 						</div>
 
+						{/* INPUT FIELD */}
 						<div className="mx-scrollbar-w mb-xs-6 px-xs-1">
 							<InputField
 								ref={inputRef}

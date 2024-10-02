@@ -1,14 +1,18 @@
 import { useEffect, useRef, useState } from 'react'
 
 interface Props extends ReactProps {
-	size: 'sm' | 'md'
+	variant: 'chat' | 'subchat'
 }
 
-export const StickyToolbar = ({ size, children, className }: Props) => {
+export const StickyToolbar = ({ variant, children, className }: Props) => {
 	const [isSticky, setIsSticky] = useState(false)
 	const stickyRef = useRef<HTMLDivElement>(null)
 
-	const shadowClass = isSticky ? (size === 'sm' ? 'shadow-below-sm' : 'shadow-below-md') : ''
+	const wrapperClass = (() => {
+		if (variant === 'chat') return isSticky ? 'border-b border-color-border-shadow shadow-below-md' : ''
+		if (variant === 'subchat') return 'border-b border-color-border-shadow shadow-below-sm'
+		return ''
+	})()
 
 	useEffect(() => {
 		const element = stickyRef.current
@@ -30,7 +34,7 @@ export const StickyToolbar = ({ size, children, className }: Props) => {
 	}, [])
 
 	return (
-		<div ref={stickyRef} className={`sticky top-0 z-sticky bg-color-bg-default ${shadowClass} ${className}`}>
+		<div ref={stickyRef} className={`sticky top-0 z-sticky bg-color-bg-default ${wrapperClass} ${className}`}>
 			{children}
 		</div>
 	)
