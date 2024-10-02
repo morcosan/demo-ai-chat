@@ -64,7 +64,7 @@ const addSubchats = (message: Message, messages: Message[]) => {
 			chatId: message.chatId,
 			subchatId: message.id,
 			parentId: message.id,
-			text: randomLongText(1),
+			text: randomLongText(randomInt(1, 3)),
 			role: roles[index % 2],
 			datetime: addMinutesToDate(message.datetime, (index + 1) * 5).toISOString(),
 		})
