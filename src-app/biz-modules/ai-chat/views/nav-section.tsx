@@ -57,7 +57,7 @@ export const AiChatNavSection = () => {
 
 			{/* LISTING */}
 			<div
-				className="-mx-scrollbar-w flex flex-1 flex-col overflow-y-scroll py-a11y-padding pl-scrollbar-w"
+				className="-mx-a11y-scrollbar flex flex-1 flex-col overflow-y-scroll py-a11y-padding pl-a11y-scrollbar pr-a11y-padding"
 				onScroll={onScroll}
 			>
 				{allChatsLoading === 'full' ? (

@@ -4,12 +4,14 @@ import { UserSettings } from '@app/layouts/_partials/user-settings.tsx'
 
 export const NavBar = () => {
 	return (
-		<nav className="z-sticky flex h-full min-w-lg-7 max-w-lg-7 flex-col bg-color-bg-navbar p-scrollbar-w shadow-lg">
-			<AppLogo />
+		<nav className="z-sticky h-full min-w-lg-7 max-w-lg-7 bg-color-bg-navbar shadow-lg">
+			<div className="flex h-full flex-col px-a11y-scrollbar py-scrollbar-w">
+				<AppLogo />
 
-			<AiChatNavSection />
+				<AiChatNavSection />
 
-			<UserSettings />
+				<UserSettings />
+			</div>
 		</nav>
 	)
 }

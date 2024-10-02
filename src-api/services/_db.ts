@@ -22,7 +22,7 @@ const createMessages = (chats: Chat[]) => {
 	const messages: Message[] = []
 
 	chats.forEach((chat: Chat) => {
-		randomArray(1, 50).forEach(() => {
+		randomArray(1, 70).forEach(() => {
 			const date = new Date(randomRecentDate())
 			const userMessage: Message = {
 				id: randomId(),

@@ -55,9 +55,12 @@ export const SubchatView = () => {
 						{activeSubchat ? (
 							// MESSAGES
 							<>
-								<div ref={listingRef} className="flex flex-1 flex-col overflow-y-scroll px-xs-3 pb-sm-1">
+								<div
+									ref={listingRef}
+									className="flex flex-1 flex-col overflow-y-scroll pb-sm-1 pl-scrollbar-w pr-a11y-padding"
+								>
 									{/* TOOLBAR */}
-									<StickyToolbar variant="subchat" className="-mx-xs-1 mb-xs-9 px-xs-3 py-xs-1">
+									<StickyToolbar variant="subchat" className="-mx-a11y-padding mb-xs-9 px-xs-2 py-xs-1">
 										<div className="flex items-center gap-xs-2">
 											<IconButton linkHref={`/chat/${activeChat?.id}`} tooltip="Back to subchats" size="sm">
 												<ArrowBackSvg className="h-xs-5" />
@@ -77,7 +80,7 @@ export const SubchatView = () => {
 									))}
 								</div>
 								{/* INPUT FIELD */}
-								<div className="mx-scrollbar-w mb-xs-5 px-xs-1">
+								<div className="mx-a11y-scrollbar mb-xs-5">
 									<InputField
 										ref={inputRef}
 										input={input}
@@ -91,11 +94,11 @@ export const SubchatView = () => {
 							</>
 						) : (
 							// SUBCHATS
-							<div className="flex-1 overflow-y-scroll pb-sm-1 pl-scrollbar-w">
+							<div className="flex-1 overflow-y-scroll pb-sm-1 pl-scrollbar-w pr-a11y-padding">
 								{/* TOOLBAR */}
-								<StickyToolbar variant="subchat" className="mb-xs-2 px-xs-9 py-xs-1">
+								<StickyToolbar variant="subchat" className="-mx-a11y-padding mb-xs-2 px-xs-9 py-xs-1">
 									<div className="flex h-button-h-sm items-center text-size-sm text-color-text-subtle">
-										Sub-chats
+										Sub-chats ({allSubchats.length})
 									</div>
 								</StickyToolbar>
 
