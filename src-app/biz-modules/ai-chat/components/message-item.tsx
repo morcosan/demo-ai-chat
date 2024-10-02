@@ -9,16 +9,17 @@ interface Props {
 }
 
 export const MessageItem = ({ message, widthClass, secondary }: Props) => {
-	const userClass = secondary ? 'max-w-[80%] bg-color-secondary-bg' : 'max-w-[70%] bg-color-primary-bg'
+	const wrapperClass = message.role === 'user' ? 'mb-xs-9' : secondary ? 'mb-sm-2' : 'mb-sm-4'
+	const userItemClass = secondary ? 'max-w-[80%] bg-color-secondary-bg' : 'max-w-[70%] bg-color-primary-bg'
 
 	return (
-		<div className="relative flex flex-col items-end">
+		<div className={`group relative flex flex-col items-end ${wrapperClass}`}>
 			{message.role === 'user' ? (
-				<div className={`mb-xs-9 w-fit rounded-md px-xs-6 py-xs-3 shadow-sm ${userClass}`}>
+				<div className={`w-fit rounded-md px-xs-6 py-xs-3 shadow-sm ${userItemClass}`}>
 					<div className="whitespace-pre-wrap">{message.text}</div>
 				</div>
 			) : (
-				<div className={`${secondary ? 'mb-sm-2' : 'mb-sm-4'} w-full px-xs-5 py-xs-1`}>
+				<div className="w-full px-xs-5 py-xs-1">
 					<div className={`${secondary ? 'mb-xs-2' : 'mb-xs-4'} flex items-center gap-xs-1`}>
 						<div className="flex-center h-sm-0 w-sm-0 rounded-full">
 							<AiChatSvg className="h-xs-8" />

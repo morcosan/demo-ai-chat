@@ -7,6 +7,7 @@ export interface ChatStore {
 	chatMessages: Message[]
 	chatPagination: Pagination
 	chatLoading: ListLoading
+	canLoadChatMessages: boolean
 	loadChat(chatId: number): void
 	loadMoreChatMessages(): void
 }
@@ -16,6 +17,7 @@ export const chatDefaults: ChatStore = {
 	chatMessages: [],
 	chatPagination: { page: 0, count: 0 },
 	chatLoading: false,
+	canLoadChatMessages: false,
 	loadChat: () => {},
 	loadMoreChatMessages: () => {},
 }
@@ -26,6 +28,8 @@ export const useChatStore = (allChats: Chat[]): ChatStore => {
 	const [chatPagination, setChatPagination] = useState({ page: 0, count: 0 } as Pagination)
 	const [chatLoading, setChatLoading] = useState<ListLoading>(false)
 	const [pendingChatId, setPendingChatId] = useState(0)
+
+	const canLoadChatMessages = !chatMessages.length || chatMessages.length < chatPagination.count
 
 	const loadChat = async (chatId: number) => {
 		if (chatLoading || chatId === activeChat?.id) return
@@ -39,8 +43,7 @@ export const useChatStore = (allChats: Chat[]): ChatStore => {
 	}
 
 	const loadMoreChatMessages = async () => {
-		if (chatLoading || !activeChat) return
-		if (chatMessages.length && chatMessages.length >= chatPagination.count) return
+		if (chatLoading || !activeChat || !canLoadChatMessages) return
 
 		setChatLoading(chatPagination.page === 0 ? 'full' : 'more')
 
@@ -63,9 +66,10 @@ export const useChatStore = (allChats: Chat[]): ChatStore => {
 
 	return {
 		activeChat,
+		canLoadChatMessages,
+		chatLoading,
 		chatMessages,
 		chatPagination,
-		chatLoading,
 		loadChat,
 		loadMoreChatMessages,
 	}

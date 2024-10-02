@@ -90,7 +90,7 @@ export const chatsService = {
 			status: STATUS__SUCCESS,
 			data: {
 				count: messages.length,
-				items: messages.slice(count * (page - 1), count * page).map((message: Message) => ({
+				items: messages.slice(-count * page, -count * (page - 1) || undefined).map((message: Message) => ({
 					...message,
 					subchatSize: db.filter((other: Message) => other.subchatId === message.id).length,
 				})),

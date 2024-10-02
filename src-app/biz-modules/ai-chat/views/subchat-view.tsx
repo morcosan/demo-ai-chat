@@ -44,7 +44,7 @@ export const SubchatView = () => {
 			<div className="absolute -left-xs-1 top-0 h-full w-xs-1 bg-color-border-shadow" />
 
 			<div className="h-full w-full">
-				{chatLoading || allSubchatsLoading ? (
+				{chatLoading === 'full' || allSubchatsLoading ? (
 					<LoadingText text="Loading subchats..." className="flex-center h-full" />
 				) : subchatLoading ? (
 					<LoadingText text="Loading messages..." className="flex-center h-full" />

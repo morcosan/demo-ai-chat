@@ -11,7 +11,7 @@ export const AiChatNavSection = () => {
 
 	const searchText = search.trim()
 
-	const onScroll = debounce((event: UIEvent) => {
+	const onScrollChats = debounce((event: UIEvent) => {
 		const container = event.target as HTMLElement
 		const isScrollEnd = container.offsetHeight + container.scrollTop >= container.scrollHeight
 		isScrollEnd && loadMoreChats()
@@ -57,8 +57,8 @@ export const AiChatNavSection = () => {
 
 			{/* LISTING */}
 			<div
-				className="-mx-a11y-scrollbar flex flex-1 flex-col overflow-y-scroll py-a11y-padding pl-a11y-scrollbar pr-a11y-padding"
-				onScroll={onScroll}
+				className="-mx-a11y-scrollbar flex flex-1 flex-col overflow-y-scroll p-a11y-padding !pl-a11y-scrollbar"
+				onScroll={onScrollChats}
 			>
 				{allChatsLoading === 'full' ? (
 					<LoadingText text="Loading chats..." className="mt-xs-2 px-xs-4" />

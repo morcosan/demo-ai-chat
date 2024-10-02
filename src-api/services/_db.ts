@@ -22,8 +22,9 @@ const createMessages = (chats: Chat[]) => {
 	const messages: Message[] = []
 
 	chats.forEach((chat: Chat) => {
-		randomArray(1, 70).forEach(() => {
-			const date = new Date(randomRecentDate())
+		const date = new Date(randomRecentDate())
+
+		randomArray(1, 70).forEach((_, index: number) => {
 			const userMessage: Message = {
 				id: randomId(),
 				chatId: chat.id,
@@ -31,7 +32,7 @@ const createMessages = (chats: Chat[]) => {
 				parentId: chat.id,
 				text: randomLongText(randomInt(1, 3)),
 				role: 'user',
-				datetime: date.toISOString(),
+				datetime: addMinutesToDate(date, index * 2 * 5).toISOString(),
 			}
 			const agentMessage: Message = {
 				id: randomId(),
@@ -40,7 +41,7 @@ const createMessages = (chats: Chat[]) => {
 				parentId: chat.id,
 				text: randomLongText(randomInt(5, 20)),
 				role: 'agent',
-				datetime: addMinutesToDate(date, 5).toISOString(),
+				datetime: addMinutesToDate(date, (index * 2 + 1) * 5).toISOString(),
 			}
 
 			messages.push(userMessage, agentMessage)
@@ -66,7 +67,7 @@ const addSubchats = (message: Message, messages: Message[]) => {
 			parentId: message.id,
 			text: randomLongText(randomInt(1, 3)),
 			role: roles[index % 2],
-			datetime: addMinutesToDate(message.datetime, (index + 1) * 5).toISOString(),
+			datetime: addMinutesToDate(message.datetime, (index + 1) * 10).toISOString(),
 		})
 	})
 }
