@@ -39,7 +39,7 @@ export const MessageItem = ({ message, secondary, subchatId }: Props) => {
 			{!secondary && (
 				<div className={`flex-center absolute right-0 top-0 ${secondary ? '' : 'w-md-0'}`}>
 					<IconButton
-						tooltip={`Open subchat (${message.subchatSize} messages)`}
+						tooltip={message.subchatSize ? `Open subchat (${message.subchatSize} messages)` : 'Create subchat'}
 						linkHref={`/chat/${message.chatId}?subchat=${message.id}`}
 						pressed={message.id === subchatId}
 						size="lg"
