@@ -25,10 +25,11 @@ export const API = {
 			: { chats: [], count: 0 }
 	},
 
-	async getSubchats(chatId: number, page?: number): Promise<SubchatListing> {
+	async getSubchats(chatId: number, subchatIds?: number[], page?: number): Promise<SubchatListing> {
 		const query: SubchatsApiQuery = {
 			count: 30,
 			page: page || 1,
+			subchatIds: (subchatIds || []).join(','),
 			chatId,
 		}
 		const resp = await chatsAPI.get<SubchatsApiData>('/api/subchats', query)

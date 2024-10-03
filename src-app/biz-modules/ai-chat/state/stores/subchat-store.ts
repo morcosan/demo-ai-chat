@@ -1,6 +1,6 @@
 import { API } from '@app/biz-modules/ai-chat/api'
 import { useEffect, useState } from 'react'
-import { Message, Subchat } from '../../api/types'
+import { Chat, Message, Subchat } from '../../api/types'
 
 export interface SubchatStore {
 	activeSubchat: Subchat | null
@@ -24,7 +24,7 @@ export const subchatDefaults: SubchatStore = {
 	loadMoreSubchatMessages: () => {},
 }
 
-export const useSubchatStore = (allSubchats: Subchat[]): SubchatStore => {
+export const useSubchatStore = (activeChat: Chat | null, allSubchats: Subchat[]): SubchatStore => {
 	const [activeSubchat, setActiveSubchat] = useState(null as Subchat | null)
 	const [subchatMessages, setSubchatMessages] = useState([] as Message[])
 	const [subchatPagination, setSubchatPagination] = useState({ page: 0, count: 0 } as Pagination)
@@ -33,9 +33,13 @@ export const useSubchatStore = (allSubchats: Subchat[]): SubchatStore => {
 	const canLoadSubchatMessages = !subchatMessages.length || subchatMessages.length < subchatPagination.count
 
 	const loadActiveSubchat = async (subchatId: number) => {
-		if (subchatLoading || isNaN(subchatId) || subchatId === activeSubchat?.id) return
+		if (subchatLoading || !activeChat || isNaN(subchatId) || subchatId === activeSubchat?.id) return
 
-		const subchat = allSubchats.find((subchat: Subchat) => subchat.id === subchatId) || null
+		let subchat = allSubchats.find((subchat: Subchat) => subchat.id === subchatId) || null
+		if (!subchat) {
+			const listing = await API.getSubchats(activeChat.id, [subchatId])
+			subchat = listing.subchats[0] || null
+		}
 
 		setActiveSubchat(subchat)
 		setSubchatMessages([])

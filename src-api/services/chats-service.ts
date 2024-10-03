@@ -27,7 +27,6 @@ export const chatsService = {
 
 		if (chatIds.length) {
 			const items = DB__CHATS.filter((chat: Chat) => chatIds.includes(chat.id))
-
 			return {
 				status: STATUS__SUCCESS,
 				data: { count: items.length, items },
@@ -51,21 +50,28 @@ export const chatsService = {
 		const page = extractInt(query.page, DEFAULT_PAGE, isGreaterThanZero)
 		const count = extractInt(query.count, DEFAULT_COUNT, isGreaterThanZero)
 		const chatId = extractInt(query.chatId, 0, isGreaterThanZero)
+		const subchatIds = extractIntArray(query.subchatIds, isGreaterThanZero)
 
 		if (!chatId) return { ...RESP__NOT_FOUND, error: `Chat ID ${query.chatId} not found` }
 
 		const db = DB__MESSAGES.filter((message: Message) => message.chatId === chatId)
-		const subchats = db
-			.filter((message: Message) => message.subchatId === message.id)
-			.map(
-				(message: Message): SubchatDTO => ({
-					id: message.id,
-					chatId: message.chatId,
-					text: message.text,
-					size: db.filter((other: Message) => other.subchatId === message.id).length,
-					datetime: message.datetime,
-				})
-			)
+		const dtoFn = (message: Message): SubchatDTO => ({
+			id: message.id,
+			chatId: message.chatId,
+			text: message.text,
+			size: db.filter((other: Message) => other.subchatId === message.id).length,
+			datetime: message.datetime,
+		})
+
+		if (subchatIds.length) {
+			const items = db.filter((message: Message) => subchatIds.includes(message.id)).map(dtoFn)
+			return {
+				status: STATUS__SUCCESS,
+				data: { count: items.length, items },
+			}
+		}
+
+		const subchats = db.filter((message: Message) => message.subchatId === message.id).map(dtoFn)
 
 		if (!isValidPagination(page, count, subchats.length)) {
 			return { ...RESP__NOT_FOUND, error: `Page ${page} not found for ${subchats.length} subchats` }

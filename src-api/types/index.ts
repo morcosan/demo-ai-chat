@@ -26,6 +26,7 @@ export interface ChatsApiData {
 }
 export interface SubchatsApiQuery extends ApiQuery {
 	chatId?: string | number
+	subchatIds?: string
 	count?: string | number
 	page?: string | number
 }

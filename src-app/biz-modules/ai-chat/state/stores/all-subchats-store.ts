@@ -21,13 +21,14 @@ export const useAllSubchatsStore = (activeChat: Chat | null): AllSubchatsStore =
 	const [allSubchatsPagination, setAllSubchatsPagination] = useState({ page: 0, count: 0 } as Pagination)
 	const [allSubchatsLoading, setAllSubchatsLoading] = useState<ListLoading>(false)
 
+	const canLoadAllSubchats = !allSubchats.length || allSubchats.length < allSubchatsPagination.count
+
 	const loadMoreSubchats = async () => {
-		if (allSubchatsLoading || !activeChat) return
-		if (allSubchats.length && allSubchats.length >= allSubchatsPagination.count) return
+		if (allSubchatsLoading || !activeChat || !canLoadAllSubchats) return
 
 		setAllSubchatsLoading(allSubchatsPagination.page === 0 ? 'full' : 'more')
 
-		const listing = await API.getSubchats(activeChat.id, allSubchatsPagination.page + 1)
+		const listing = await API.getSubchats(activeChat.id, [], allSubchatsPagination.page + 1)
 
 		setAllSubchats([...allSubchats, ...listing.subchats])
 		setAllSubchatsLoading(false)

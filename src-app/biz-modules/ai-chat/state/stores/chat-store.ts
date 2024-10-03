@@ -36,7 +36,6 @@ export const useChatStore = (allChats: Chat[]): ChatStore => {
 		if (chatLoading || isNaN(chatId) || chatId === activeChat?.id) return
 
 		let chat = allChats.find((chat: Chat) => chat.id === chatId) || null
-
 		if (!chat) {
 			const listing = await API.getChats([chatId])
 			chat = listing.chats[0] || null

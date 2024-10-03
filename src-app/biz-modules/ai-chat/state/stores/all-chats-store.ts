@@ -21,9 +21,10 @@ export const useAllChatsStore = (): AllChatsStore => {
 	const [allChatsPagination, setAllChatsPagination] = useState({ page: 0, count: 0 } as Pagination)
 	const [allChatsLoading, setAllChatsLoading] = useState<ListLoading>(false)
 
+	const canLoadAllChats = !allChats.length || allChats.length < allChatsPagination.count
+
 	const loadMoreChats = async () => {
-		if (allChatsLoading) return
-		if (allChats.length && allChats.length >= allChatsPagination.count) return
+		if (allChatsLoading || !canLoadAllChats) return
 
 		setAllChatsLoading(allChatsPagination.page === 0 ? 'full' : 'more')
 
