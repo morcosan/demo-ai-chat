@@ -15,9 +15,9 @@ export const Context = createContext<Store>({
 
 export const AiChatProvider = ({ children }: ReactProps) => {
 	const allChatsStore = useAllChatsStore()
-	const chatStore = useChatStore(allChatsStore.allChats)
-	const allSubchatsStore = useAllSubchatsStore(chatStore.activeChat)
-	const subchatStore = useSubchatStore(chatStore.activeChat, allSubchatsStore.allSubchats)
+	const chatStore = useChatStore(allChatsStore)
+	const allSubchatsStore = useAllSubchatsStore(chatStore)
+	const subchatStore = useSubchatStore(chatStore, allSubchatsStore)
 
 	const store: Store = useMemo(
 		() => ({

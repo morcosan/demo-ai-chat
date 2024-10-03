@@ -1,6 +1,7 @@
 import { API } from '@app/biz-modules/ai-chat/api'
 import { useEffect, useState } from 'react'
 import { Chat, Message } from '../../api/types'
+import { AllChatsStore } from './all-chats-store'
 
 export interface ChatStore {
 	activeChat: Chat | null
@@ -24,7 +25,8 @@ export const chatDefaults: ChatStore = {
 	loadMoreChatMessages: () => {},
 }
 
-export const useChatStore = (allChats: Chat[]): ChatStore => {
+export const useChatStore = (allChatsStore: AllChatsStore): ChatStore => {
+	const { allChats } = allChatsStore
 	const [activeChat, setActiveChat] = useState(null as Chat | null)
 	const [chatMessages, setChatMessages] = useState([] as Message[])
 	const [chatPagination, setChatPagination] = useState({ page: 0, count: 0 } as Pagination)

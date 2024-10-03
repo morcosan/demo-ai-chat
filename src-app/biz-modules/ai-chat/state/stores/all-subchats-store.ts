@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { API } from '../../api'
-import { Chat, Subchat } from '../../api/types'
+import { Subchat } from '../../api/types'
+import { ChatStore } from './chat-store'
 
 export interface AllSubchatsStore {
 	allSubchats: Subchat[]
@@ -16,7 +17,8 @@ export const allSubchatsDefaults: AllSubchatsStore = {
 	loadMoreSubchats: () => {},
 }
 
-export const useAllSubchatsStore = (activeChat: Chat | null): AllSubchatsStore => {
+export const useAllSubchatsStore = (chatStore: ChatStore): AllSubchatsStore => {
+	const { activeChat } = chatStore
 	const [allSubchats, setAllSubchats] = useState([] as Subchat[])
 	const [allSubchatsPagination, setAllSubchatsPagination] = useState({ page: 0, count: 0 } as Pagination)
 	const [allSubchatsLoading, setAllSubchatsLoading] = useState<ListLoading>(false)

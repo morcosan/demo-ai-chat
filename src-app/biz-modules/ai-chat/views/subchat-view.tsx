@@ -42,7 +42,11 @@ export const SubchatView = () => {
 
 	const subchatId = parseInt(String(searchParams.get('subchat')))
 
-	const noSubchats = !activeChat || !allSubchats.length || (activeSubchat && !subchatMessages.length)
+	const noSubchats = (() => {
+		if (subchatLoading) return false
+		if (!activeChat || !allSubchats.length) return true
+		return Boolean(activeSubchat && !subchatMessages.length)
+	})()
 
 	const onScrollMessages = debounce((event: UIEvent) => {
 		const THRESHOLD = 50 // px
@@ -69,7 +73,7 @@ export const SubchatView = () => {
 
 	useEffect(() => {
 		subchatId ? loadSubchat() : resetActiveSubchat()
-	}, [subchatId])
+	}, [activeChat, subchatId])
 
 	return (
 		<div className="relative ml-xs-2 h-full w-[30%]">
@@ -79,8 +83,6 @@ export const SubchatView = () => {
 			<div className="h-full w-full">
 				{chatLoading === 'full' || allSubchatsLoading ? (
 					<LoadingText text="Loading subchats..." className="flex-center h-full" />
-				) : subchatLoading === 'full' ? (
-					<LoadingText text="Loading messages..." className="flex-center h-full" />
 				) : noSubchats ? (
 					<div className="flex-center h-full w-full text-color-text-subtle">No sub-chats</div>
 				) : (
@@ -108,17 +110,24 @@ export const SubchatView = () => {
 										</div>
 									</StickyToolbar>
 
-									{/* LOAD MORE */}
-									<LoadingText
-										text="Loading previous messages..."
-										className="flex-center min-h-sm-1 text-size-xs"
-										style={{ visibility: subchatLoading === 'more' ? 'visible' : 'hidden' }}
-									/>
-									{/* MESSAGES */}
-									{subchatMessages.map((message: Message) => (
-										<MessageItem key={message.datetime} message={message} secondary />
-									))}
+									{subchatLoading === 'full' ? (
+										<LoadingText text="Loading messages..." className="flex-center h-full" />
+									) : (
+										<>
+											{/* LOAD MORE */}
+											<LoadingText
+												text="Loading previous messages..."
+												className="flex-center min-h-sm-1 text-size-xs"
+												style={{ visibility: subchatLoading === 'more' ? 'visible' : 'hidden' }}
+											/>
+											{/* MESSAGES */}
+											{subchatMessages.map((message: Message) => (
+												<MessageItem key={message.datetime} message={message} secondary />
+											))}
+										</>
+									)}
 								</div>
+
 								{/* INPUT FIELD */}
 								<div className="mx-a11y-scrollbar mb-xs-5">
 									<InputField
@@ -134,7 +143,10 @@ export const SubchatView = () => {
 							</>
 						) : (
 							// SUBCHATS
-							<div className="flex-1 overflow-y-scroll pb-sm-1 pl-scrollbar-w pr-a11y-padding">
+							<div
+								ref={(elem) => elem && (elem.scrollTop = 0)}
+								className="flex-1 overflow-y-scroll pb-sm-1 pl-scrollbar-w pr-a11y-padding"
+							>
 								{/* TOOLBAR */}
 								<StickyToolbar variant="subchat" className="-mx-a11y-padding mb-xs-2 px-xs-9 py-xs-1">
 									<div className="flex h-button-h-sm items-center text-size-sm text-color-text-subtle">
