@@ -1,7 +1,7 @@
 import { ArrowBackSvg, Button, IconButton } from '@ds/release'
 import { debounce } from 'lodash'
 import { UIEvent, useEffect } from 'react'
-import { useSearchParams } from 'react-router-dom'
+import { useNavigate, useSearchParams } from 'react-router-dom'
 import { Message, Subchat } from '../api/types'
 import { InputField } from '../components/input-field'
 import { LoadingText } from '../components/loading-text'
@@ -38,6 +38,7 @@ export const SubchatView = () => {
 		scrollMessages,
 	} = useMessageListing()
 	const [searchParams] = useSearchParams()
+	const navigate = useNavigate()
 
 	const subchatId = parseInt(String(searchParams.get('subchat')))
 
@@ -58,8 +59,16 @@ export const SubchatView = () => {
 		scrollMessages()
 	}, [subchatPagination.page])
 
+	const loadSubchat = async () => {
+		const success = await loadActiveSubchat(subchatId)
+		if (success === false) {
+			searchParams.delete('subchat')
+			navigate({ search: searchParams.toString() }, { replace: true })
+		}
+	}
+
 	useEffect(() => {
-		subchatId ? loadActiveSubchat(subchatId) : resetActiveSubchat()
+		subchatId ? loadSubchat() : resetActiveSubchat()
 	}, [subchatId])
 
 	return (
