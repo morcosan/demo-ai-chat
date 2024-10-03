@@ -17,6 +17,8 @@ export const AiChatNavSection = () => {
 		isScrollEnd && loadMoreChats()
 	}, 300)
 
+	const hasExtraChat = Boolean(activeChat && !allChats.some((chat: Chat) => chat.id === activeChat.id))
+
 	return (
 		<>
 			{/* TITLE */}
@@ -82,6 +84,19 @@ export const AiChatNavSection = () => {
 					<div className="mt-xs-2 flex px-xs-4">No chats</div>
 				)}
 			</div>
+
+			{/* EXTRA ACTIVE CHAT */}
+			{Boolean(hasExtraChat) && (
+				<Button
+					linkHref={`/chat/${activeChat?.id}`}
+					variant="item-solid-secondary"
+					highlight="selected"
+					tooltip={activeChat?.title}
+					className="focus:z-1"
+				>
+					<span className="truncate">{activeChat?.title}</span>
+				</Button>
+			)}
 		</>
 	)
 }
