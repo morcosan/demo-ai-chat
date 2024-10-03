@@ -4,17 +4,20 @@ import { SubchatBubble } from '../components/subchat-bubble'
 
 interface Props {
 	message: Message
-	widthClass?: string
 	secondary?: boolean
 	subchatId?: number
 }
 
-export const MessageItem = ({ message, widthClass, secondary, subchatId }: Props) => {
+export const MessageItem = ({ message, secondary, subchatId }: Props) => {
 	const wrapperClass = message.role === 'user' ? 'mb-xs-9' : secondary ? 'mb-sm-2' : 'mb-sm-4'
 	const userItemClass = secondary ? 'max-w-[80%] bg-color-secondary-bg' : 'max-w-[70%] bg-color-primary-bg'
+	const subchatClass = [
+		message.role === 'user' ? '-mt-xs-1' : 'mt-sm-1',
+		message.subchatSize ? '' : 'hidden group-hover:block',
+	].join(' ')
 
 	return (
-		<div className={`group relative flex flex-col items-end ${wrapperClass}`}>
+		<div className={`group relative flex flex-col items-end px-md-0 ${wrapperClass}`}>
 			{message.role === 'user' ? (
 				<div className={`w-fit rounded-md px-xs-6 py-xs-3 shadow-sm ${userItemClass}`}>
 					<div className="whitespace-pre-wrap">{message.text}</div>
@@ -33,14 +36,14 @@ export const MessageItem = ({ message, widthClass, secondary, subchatId }: Props
 			)}
 
 			{/* SUBCHAT BUTTON */}
-			{message.subchatSize > 0 && !secondary && (
-				<div className={`flex-center absolute right-0 top-0 translate-x-full ${widthClass || ''}`}>
+			{!secondary && (
+				<div className={`flex-center absolute right-0 top-0 ${secondary ? '' : 'w-md-0'}`}>
 					<IconButton
 						tooltip={`Open subchat (${message.subchatSize} messages)`}
 						linkHref={`/chat/${message.chatId}?subchat=${message.id}`}
 						pressed={message.id === subchatId}
 						size="lg"
-						className={message.role === 'user' ? '-mt-xs-1' : 'mt-sm-1'}
+						className={subchatClass}
 					>
 						<SubchatBubble count={message.subchatSize} />
 					</IconButton>

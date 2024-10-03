@@ -35,8 +35,7 @@ export const ChatView = () => {
 
 	const subchatId = parseInt(String(searchParams.get('subchat')))
 
-	const wrapperClass = 'mx-auto w-full max-w-xxl-2 px-md-0'
-	const widthClass = 'w-md-0'
+	const wrapperClass = 'mx-auto w-full max-w-xxl-2'
 
 	const onScrollMessages = debounce((event: UIEvent) => {
 		const THRESHOLD = 50 // px
@@ -64,7 +63,7 @@ export const ChatView = () => {
 				<div ref={listingRef} className="flex-1 overflow-y-auto pb-sm-5" onScroll={onScrollMessages}>
 					<div className={`${wrapperClass} ${chatLoading === 'full' ? 'h-full' : ''} flex flex-col pt-sm-0`}>
 						{/* TOOLBAR */}
-						<StickyToolbar variant="chat" className="-mx-md-0 mb-md-2 pb-xs-3">
+						<StickyToolbar variant="chat" className="mb-md-2 pb-xs-3">
 							<h1 className="mx-md-0 px-xs-5 text-size-xl font-weight-md">
 								{activeChat?.title}
 								{Boolean(chatPagination.count) && (
@@ -86,12 +85,7 @@ export const ChatView = () => {
 								)}
 								{/* MESSAGES */}
 								{chatMessages.map((message: Message) => (
-									<MessageItem
-										key={message.datetime}
-										message={message}
-										subchatId={subchatId}
-										widthClass={widthClass}
-									/>
+									<MessageItem key={message.datetime} message={message} subchatId={subchatId} />
 								))}
 							</div>
 						)}
@@ -103,7 +97,7 @@ export const ChatView = () => {
 				</div>
 			)}
 
-			<div className={wrapperClass}>
+			<div className={`px-md-0 ${wrapperClass}`}>
 				<InputField
 					ref={inputRef}
 					input={input}
