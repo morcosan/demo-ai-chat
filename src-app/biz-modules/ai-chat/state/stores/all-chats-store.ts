@@ -27,7 +27,7 @@ export const useAllChatsStore = (): AllChatsStore => {
 
 		setAllChatsLoading(allChatsPagination.page === 0 ? 'full' : 'more')
 
-		const listing = await API.getChats(allChatsPagination.page + 1)
+		const listing = await API.getChats([], allChatsPagination.page + 1)
 
 		setAllChats([...allChats, ...listing.chats])
 		setAllChatsLoading(false)

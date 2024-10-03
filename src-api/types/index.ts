@@ -16,6 +16,7 @@ export type ApiQuery = Record<string, string | number | undefined>
  * Payload
  */
 export interface ChatsApiQuery extends ApiQuery {
+	chatIds?: string
 	count?: string | number
 	page?: string | number
 }

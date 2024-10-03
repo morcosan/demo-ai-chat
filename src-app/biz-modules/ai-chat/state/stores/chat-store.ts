@@ -34,7 +34,12 @@ export const useChatStore = (allChats: Chat[]): ChatStore => {
 	const loadChat = async (chatId: number) => {
 		if (chatLoading || chatId === activeChat?.id) return
 
-		const chat = allChats.find((chat: Chat) => chat.id === chatId) || null
+		let chat = allChats.find((chat: Chat) => chat.id === chatId) || null
+
+		if (!chat) {
+			const listing = await API.getChats([chatId])
+			chat = listing.chats[0] || null
+		}
 
 		setActiveChat(chat)
 		setPendingChatId(chat ? 0 : chatId)

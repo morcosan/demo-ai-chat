@@ -7,4 +7,11 @@ export const extractInt = (text: string | number = '', fallback: number = 0, che
 	return checkFn ? (checkFn(result) ? result : fallback) : result
 }
 
+export const extractIntArray = (text: string = '', checkFn?: IntCheckFn): number[] => {
+	return text
+		.split(',')
+		.map((value: string) => parseInt(String(value)))
+		.filter((value: number) => !isNaN(value) && (checkFn ? checkFn(value) : true))
+}
+
 export const isGreaterThanZero = (value: number) => value > 0

@@ -12,8 +12,9 @@ import { mapDtoToChat, mapDtoToMessage, mapDtoToSubchat } from './mappers'
 import { ChatListing, MessageListing, SubchatListing } from './types'
 
 export const API = {
-	async getChats(page?: number): Promise<ChatListing> {
+	async getChats(chatIds?: number[], page?: number): Promise<ChatListing> {
 		const query: ChatsApiQuery = {
+			chatIds: (chatIds || []).join(','),
 			count: 20,
 			page: page || 1,
 		}

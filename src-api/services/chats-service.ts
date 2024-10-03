@@ -1,5 +1,6 @@
 import {
 	ApiResponse,
+	Chat,
 	ChatsApiData,
 	ChatsApiQuery,
 	Message,
@@ -11,7 +12,7 @@ import {
 	SubchatsApiQuery,
 } from '../types'
 import { RESP__NOT_FOUND } from '../utilities/network'
-import { extractInt, isGreaterThanZero } from '../utilities/parsers'
+import { extractInt, extractIntArray, isGreaterThanZero } from '../utilities/parsers'
 import { isValidPagination } from '../utilities/validators'
 import { DB__CHATS, DB__MESSAGES } from './_db'
 
@@ -22,6 +23,16 @@ export const chatsService = {
 	async getChats(query: ChatsApiQuery): Promise<ApiResponse<ChatsApiData>> {
 		const page = extractInt(query.page, DEFAULT_PAGE, isGreaterThanZero)
 		const count = extractInt(query.count, DEFAULT_COUNT, isGreaterThanZero)
+		const chatIds = extractIntArray(query.chatIds, isGreaterThanZero)
+
+		if (chatIds.length) {
+			const items = DB__CHATS.filter((chat: Chat) => chatIds.includes(chat.id))
+
+			return {
+				status: STATUS__SUCCESS,
+				data: { count: items.length, items },
+			}
+		}
 
 		if (!isValidPagination(page, count, DB__CHATS.length)) {
 			return { ...RESP__NOT_FOUND, error: `Page ${page} not found for ${DB__CHATS.length} chats` }
