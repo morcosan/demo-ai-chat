@@ -79,7 +79,7 @@ export const AiChatNavSection = () => {
 						{allChatsLoading === 'more' && <LoadingText text="Loading chats..." className="my-xs-6 px-xs-4" />}
 					</>
 				) : (
-					<div className="mt-xs-2 flex px-xs-4">There are no chats</div>
+					<div className="mt-xs-2 flex px-xs-4">No chats</div>
 				)}
 			</div>
 		</>

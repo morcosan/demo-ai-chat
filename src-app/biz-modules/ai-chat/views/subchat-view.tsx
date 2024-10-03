@@ -40,7 +40,7 @@ export const SubchatView = () => {
 
 	const subchatId = parseInt(String(searchParams.get('subchat')))
 
-	const noSubchats = !activeChat || (activeSubchat && !subchatMessages.length)
+	const noSubchats = !activeChat || !allSubchats.length || (activeSubchat && !subchatMessages.length)
 
 	const onScrollMessages = debounce((event: UIEvent) => {
 		const THRESHOLD = 50 // px
