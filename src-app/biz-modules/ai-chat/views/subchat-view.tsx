@@ -17,6 +17,7 @@ export const SubchatView = () => {
 		activeSubchat,
 		allSubchats,
 		allSubchatsLoading,
+		allSubchatsPagination,
 		canLoadSubchatMessages,
 		chatLoading,
 		subchatLoading,
@@ -24,6 +25,7 @@ export const SubchatView = () => {
 		subchatPagination,
 		loadActiveSubchat,
 		loadMoreSubchatMessages,
+		loadMoreSubchats,
 		resetActiveSubchat,
 	} = useAiChat()
 	const {
@@ -63,6 +65,12 @@ export const SubchatView = () => {
 		scrollMessages()
 	}, [subchatPagination.page])
 
+	const onScrollSubchats = debounce((event: UIEvent) => {
+		const container = event.target as HTMLElement
+		const isScrollEnd = container.offsetHeight + container.scrollTop >= container.scrollHeight
+		isScrollEnd && loadMoreSubchats()
+	}, 300)
+
 	const loadSubchat = async () => {
 		const success = await loadActiveSubchat(subchatId)
 		if (success === false) {
@@ -81,7 +89,7 @@ export const SubchatView = () => {
 			<div className="absolute -left-xs-1 top-0 h-full w-xs-1 bg-color-border-shadow" />
 
 			<div className="h-full w-full">
-				{chatLoading === 'full' || allSubchatsLoading ? (
+				{chatLoading === 'full' || allSubchatsLoading === 'full' ? (
 					<LoadingText text="Loading subchats..." className="flex-center h-full" />
 				) : noSubchats ? (
 					<div className="flex-center h-full w-full text-color-text-subtle">No sub-chats</div>
@@ -143,14 +151,11 @@ export const SubchatView = () => {
 							</>
 						) : (
 							// SUBCHATS
-							<div
-								ref={(elem) => elem && (elem.scrollTop = 0)}
-								className="flex-1 overflow-y-scroll pb-sm-1 pl-scrollbar-w pr-a11y-padding"
-							>
+							<div className="flex-1 overflow-y-scroll pl-scrollbar-w pr-a11y-padding" onScroll={onScrollSubchats}>
 								{/* TOOLBAR */}
 								<StickyToolbar variant="subchat" className="-mx-a11y-padding mb-xs-2 px-xs-9 py-xs-1">
 									<div className="flex h-button-h-sm items-center text-size-sm text-color-text-subtle">
-										Sub-chats ({allSubchats.length})
+										Sub-chats ({allSubchatsPagination.count})
 									</div>
 								</StickyToolbar>
 
@@ -166,6 +171,11 @@ export const SubchatView = () => {
 										<span className="truncate pb-xs-0 text-color-secondary-text-default">{subchat.text}</span>
 									</Button>
 								))}
+								<LoadingText
+									text="Loading subchats..."
+									className="min-h-sm-4 pl-sm-0 text-size-sm"
+									style={{ visibility: allSubchatsLoading === 'more' ? 'visible' : 'hidden' }}
+								/>
 							</div>
 						)}
 					</div>

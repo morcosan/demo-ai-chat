@@ -78,7 +78,13 @@ export const AiChatNavSection = () => {
 								<span className="truncate">{chat.title}</span>
 							</Button>
 						))}
-						{allChatsLoading === 'more' && <LoadingText text="Loading chats..." className="my-xs-6 px-xs-4" />}
+						{allChats.length < allChatsPagination.count && (
+							<LoadingText
+								text="Loading chats..."
+								className="min-h-sm-0 px-button-px-item text-size-sm"
+								style={{ visibility: allChatsLoading === 'more' ? 'visible' : 'hidden' }}
+							/>
+						)}
 					</>
 				) : (
 					<div className="mt-xs-2 flex px-xs-4">No chats</div>
