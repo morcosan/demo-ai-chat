@@ -24,6 +24,7 @@ export const SubchatView = () => {
 		subchatPagination,
 		loadActiveSubchat,
 		loadMoreSubchatMessages,
+		resetActiveSubchat,
 	} = useAiChat()
 	const {
 		listingRef,
@@ -58,7 +59,7 @@ export const SubchatView = () => {
 	}, [subchatPagination.page])
 
 	useEffect(() => {
-		loadActiveSubchat(subchatId)
+		subchatId ? loadActiveSubchat(subchatId) : resetActiveSubchat()
 	}, [subchatId])
 
 	return (

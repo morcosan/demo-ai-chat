@@ -9,6 +9,7 @@ export interface SubchatStore {
 	subchatLoading: ListLoading
 	canLoadSubchatMessages: boolean
 	loadActiveSubchat(chatId: number): Promise<boolean | undefined>
+	resetActiveSubchat(): void
 	loadMoreSubchatMessages(): void
 }
 
@@ -19,6 +20,7 @@ export const subchatDefaults: SubchatStore = {
 	subchatLoading: false,
 	canLoadSubchatMessages: false,
 	loadActiveSubchat: async () => false,
+	resetActiveSubchat: () => {},
 	loadMoreSubchatMessages: () => {},
 }
 
@@ -27,7 +29,6 @@ export const useSubchatStore = (allSubchats: Subchat[]): SubchatStore => {
 	const [subchatMessages, setSubchatMessages] = useState([] as Message[])
 	const [subchatPagination, setSubchatPagination] = useState({ page: 0, count: 0 } as Pagination)
 	const [subchatLoading, setSubchatLoading] = useState<ListLoading>(false)
-	const [pendingSubchatId, setPendingSubchatId] = useState(0)
 
 	const canLoadSubchatMessages = !subchatMessages.length || subchatMessages.length < subchatPagination.count
 
@@ -37,11 +38,16 @@ export const useSubchatStore = (allSubchats: Subchat[]): SubchatStore => {
 		const subchat = allSubchats.find((subchat: Subchat) => subchat.id === subchatId) || null
 
 		setActiveSubchat(subchat)
-		setPendingSubchatId(subchat ? 0 : subchatId)
 		setSubchatMessages([])
 		setSubchatPagination({ page: 0, count: 0 })
 
 		return Boolean(subchat)
+	}
+
+	const resetActiveSubchat = () => {
+		setActiveSubchat(null)
+		setSubchatMessages([])
+		setSubchatPagination({ page: 0, count: 0 })
 	}
 
 	const loadMoreSubchatMessages = async () => {
@@ -60,12 +66,6 @@ export const useSubchatStore = (allSubchats: Subchat[]): SubchatStore => {
 		!subchatPagination.page && loadMoreSubchatMessages()
 	}, [activeSubchat])
 
-	useEffect(() => {
-		if (pendingSubchatId && !activeSubchat) {
-			loadActiveSubchat(pendingSubchatId)
-		}
-	}, [allSubchats])
-
 	return {
 		activeSubchat,
 		subchatMessages,
@@ -73,6 +73,7 @@ export const useSubchatStore = (allSubchats: Subchat[]): SubchatStore => {
 		subchatLoading,
 		canLoadSubchatMessages,
 		loadActiveSubchat,
+		resetActiveSubchat,
 		loadMoreSubchatMessages,
 	}
 }

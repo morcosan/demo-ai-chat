@@ -90,7 +90,7 @@ export const ChatView = () => {
 								{/* LOAD MORE */}
 								<LoadingText
 									text="Loading previous messages..."
-									className="flex-center min-h-md-2 text-size-sm"
+									className="flex-center min-h-md-0 text-size-sm"
 									style={{ visibility: chatLoading === 'more' ? 'visible' : 'hidden' }}
 								/>
 								{/* MESSAGES */}

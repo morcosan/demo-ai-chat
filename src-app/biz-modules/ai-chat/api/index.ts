@@ -40,7 +40,7 @@ export const API = {
 
 	async getMessages(chatId: number, subchatId?: number, page?: number): Promise<MessageListing> {
 		const query: MessagesApiQuery = {
-			count: 10,
+			count: 20,
 			page: page || 1,
 			chatId,
 			subchatId,
