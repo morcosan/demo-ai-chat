@@ -22,7 +22,7 @@ export const SubchatView = () => {
 		subchatLoading,
 		subchatMessages,
 		subchatPagination,
-		loadSubchat,
+		loadActiveSubchat,
 		loadMoreSubchatMessages,
 	} = useAiChat()
 	const {
@@ -58,7 +58,7 @@ export const SubchatView = () => {
 	}, [subchatPagination.page])
 
 	useEffect(() => {
-		loadSubchat(isNaN(subchatId) ? 0 : subchatId)
+		loadActiveSubchat(subchatId)
 	}, [subchatId])
 
 	return (

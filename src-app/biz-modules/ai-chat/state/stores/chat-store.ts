@@ -8,7 +8,8 @@ export interface ChatStore {
 	chatPagination: Pagination
 	chatLoading: ListLoading
 	canLoadChatMessages: boolean
-	loadChat(chatId: number): void
+	loadActiveChat(chatId: number): Promise<boolean | undefined>
+	resetActiveChat(): void
 	loadMoreChatMessages(): void
 }
 
@@ -18,7 +19,8 @@ export const chatDefaults: ChatStore = {
 	chatPagination: { page: 0, count: 0 },
 	chatLoading: false,
 	canLoadChatMessages: false,
-	loadChat: () => {},
+	loadActiveChat: async () => false,
+	resetActiveChat: () => {},
 	loadMoreChatMessages: () => {},
 }
 
@@ -27,12 +29,11 @@ export const useChatStore = (allChats: Chat[]): ChatStore => {
 	const [chatMessages, setChatMessages] = useState([] as Message[])
 	const [chatPagination, setChatPagination] = useState({ page: 0, count: 0 } as Pagination)
 	const [chatLoading, setChatLoading] = useState<ListLoading>(false)
-	const [pendingChatId, setPendingChatId] = useState(0)
 
 	const canLoadChatMessages = !chatMessages.length || chatMessages.length < chatPagination.count
 
-	const loadChat = async (chatId: number) => {
-		if (chatLoading || chatId === activeChat?.id) return
+	const loadActiveChat = async (chatId: number) => {
+		if (chatLoading || isNaN(chatId) || chatId === activeChat?.id) return
 
 		let chat = allChats.find((chat: Chat) => chat.id === chatId) || null
 
@@ -42,7 +43,14 @@ export const useChatStore = (allChats: Chat[]): ChatStore => {
 		}
 
 		setActiveChat(chat)
-		setPendingChatId(chat ? 0 : chatId)
+		setChatMessages([])
+		setChatPagination({ page: 0, count: 0 })
+
+		return Boolean(chat)
+	}
+
+	const resetActiveChat = () => {
+		setActiveChat(null)
 		setChatMessages([])
 		setChatPagination({ page: 0, count: 0 })
 	}
@@ -63,19 +71,14 @@ export const useChatStore = (allChats: Chat[]): ChatStore => {
 		!chatPagination.page && loadMoreChatMessages()
 	}, [activeChat])
 
-	useEffect(() => {
-		if (pendingChatId && !activeChat) {
-			loadChat(pendingChatId)
-		}
-	}, [allChats])
-
 	return {
 		activeChat,
 		canLoadChatMessages,
 		chatLoading,
 		chatMessages,
 		chatPagination,
-		loadChat,
+		loadActiveChat,
+		resetActiveChat,
 		loadMoreChatMessages,
 	}
 }

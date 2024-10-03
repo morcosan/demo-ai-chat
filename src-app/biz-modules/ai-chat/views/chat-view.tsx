@@ -1,6 +1,6 @@
 import { debounce } from 'lodash'
 import { UIEvent, useEffect } from 'react'
-import { useParams, useSearchParams } from 'react-router-dom'
+import { useNavigate, useParams, useSearchParams } from 'react-router-dom'
 import { Message } from '../api/types'
 import { InputField } from '../components/input-field'
 import { LoadingText } from '../components/loading-text'
@@ -16,8 +16,9 @@ export const ChatView = () => {
 		chatLoading,
 		chatMessages,
 		chatPagination,
-		loadChat,
+		loadActiveChat,
 		loadMoreChatMessages,
+		resetActiveChat,
 	} = useAiChat()
 	const {
 		input,
@@ -32,6 +33,7 @@ export const ChatView = () => {
 	} = useMessageListing()
 	const { chatId } = useParams()
 	const [searchParams] = useSearchParams()
+	const navigate = useNavigate()
 
 	const subchatId = parseInt(String(searchParams.get('subchat')))
 
@@ -52,14 +54,20 @@ export const ChatView = () => {
 		scrollMessages()
 	}, [chatPagination.page])
 
+	const loadChat = async () => {
+		const success = await loadActiveChat(parseInt(chatId || ''))
+		if (success === false) {
+			navigate('/chat')
+		}
+	}
+
 	useEffect(() => {
-		const id = parseInt(String(chatId))
-		loadChat(isNaN(id) ? 0 : id)
+		chatId ? loadChat() : resetActiveChat()
 	}, [chatId])
 
 	return (
 		<div className="flex h-full flex-1 flex-col gap-xs-5 py-xs-1">
-			{activeChat ? (
+			{activeChat || chatId ? (
 				<div ref={listingRef} className="flex-1 overflow-y-auto pb-sm-5" onScroll={onScrollMessages}>
 					<div className={`${wrapperClass} ${chatLoading === 'full' ? 'h-full' : ''} flex flex-col pt-sm-0`}>
 						{/* TOOLBAR */}

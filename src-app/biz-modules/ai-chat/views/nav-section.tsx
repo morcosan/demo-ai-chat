@@ -20,7 +20,7 @@ export const AiChatNavSection = () => {
 	return (
 		<>
 			{/* TITLE */}
-			<Button linkHref="/chat/0">
+			<Button linkHref="/chat">
 				<AiChatSvg className="-ml-xs-4 mr-xs-3 h-xs-9 w-xs-9" />
 				New chat
 			</Button>
