@@ -151,7 +151,10 @@ export const SubchatView = () => {
 							</>
 						) : (
 							// SUBCHATS
-							<div className="flex-1 overflow-y-scroll pl-scrollbar-w pr-a11y-padding" onScroll={onScrollSubchats}>
+							<div
+								className="flex-1 overflow-y-scroll pb-xs-9 pl-scrollbar-w pr-a11y-padding"
+								onScroll={onScrollSubchats}
+							>
 								{/* TOOLBAR */}
 								<StickyToolbar variant="subchat" className="-mx-a11y-padding mb-xs-2 px-xs-9 py-xs-1">
 									<div className="flex h-button-h-sm items-center text-size-sm text-color-text-subtle">
@@ -171,11 +174,13 @@ export const SubchatView = () => {
 										<span className="truncate pb-xs-0 text-color-secondary-text-default">{subchat.text}</span>
 									</Button>
 								))}
-								<LoadingText
-									text="Loading subchats..."
-									className="min-h-sm-4 pl-sm-0 text-size-sm"
-									style={{ visibility: allSubchatsLoading === 'more' ? 'visible' : 'hidden' }}
-								/>
+								{allSubchats.length < allSubchatsPagination.count && (
+									<LoadingText
+										text="Loading subchats..."
+										className="min-h-sm-4 pl-sm-0 text-size-sm"
+										style={{ visibility: allSubchatsLoading === 'more' ? 'visible' : 'hidden' }}
+									/>
+								)}
 							</div>
 						)}
 					</div>

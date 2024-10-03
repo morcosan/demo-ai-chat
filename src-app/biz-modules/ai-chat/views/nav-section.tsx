@@ -63,7 +63,7 @@ export const AiChatNavSection = () => {
 				onScroll={onScrollChats}
 			>
 				{allChatsLoading === 'full' ? (
-					<LoadingText text="Loading chats..." className="mt-xs-2 px-xs-4" />
+					<LoadingText text="Loading chats..." className="min-h-sm-4 px-button-px-item text-size-sm" />
 				) : allChats.length ? (
 					<>
 						{allChats.map((chat: Chat) => (
@@ -81,7 +81,7 @@ export const AiChatNavSection = () => {
 						{allChats.length < allChatsPagination.count && (
 							<LoadingText
 								text="Loading chats..."
-								className="min-h-sm-0 px-button-px-item text-size-sm"
+								className="min-h-sm-4 px-button-px-item text-size-sm"
 								style={{ visibility: allChatsLoading === 'more' ? 'visible' : 'hidden' }}
 							/>
 						)}
@@ -98,7 +98,7 @@ export const AiChatNavSection = () => {
 					variant="item-solid-secondary"
 					highlight="selected"
 					tooltip={activeChat?.title}
-					className="focus:z-1"
+					className="mb-a11y-padding focus:z-1"
 				>
 					<span className="truncate">{activeChat?.title}</span>
 				</Button>
