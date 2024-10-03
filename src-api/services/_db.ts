@@ -21,10 +21,11 @@ const createChats = (): Chat[] => {
 const createMessages = (chats: Chat[]) => {
 	const messages: Message[] = []
 
-	chats.forEach((chat: Chat) => {
+	chats.forEach((chat: Chat, chatIndex: number) => {
 		const date = new Date(randomRecentDate())
+		const isBig = chatIndex < 10
 
-		randomArray(1, 70).forEach((_, index: number) => {
+		randomArray(1, isBig ? 70 : 10).forEach((_, index: number) => {
 			const userMessage: Message = {
 				id: randomId(),
 				chatId: chat.id,
@@ -46,8 +47,8 @@ const createMessages = (chats: Chat[]) => {
 
 			messages.push(userMessage, agentMessage)
 
-			randomFalse() && addSubchats(userMessage, messages)
-			randomFalse() && addSubchats(agentMessage, messages)
+			isBig && randomFalse() && addSubchats(userMessage, messages)
+			isBig && randomFalse() && addSubchats(agentMessage, messages)
 		})
 	})
 
