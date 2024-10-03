@@ -71,7 +71,7 @@ export const ChatView = () => {
 				<div ref={listingRef} className="flex-1 overflow-y-auto pb-sm-5" onScroll={onScrollMessages}>
 					<div className={`${wrapperClass} ${chatLoading === 'full' ? 'h-full' : ''} flex flex-col pt-sm-0`}>
 						{/* TOOLBAR */}
-						<StickyToolbar variant="chat" className="mb-md-2 pb-xs-3">
+						<StickyToolbar variant="chat" className="pb-xs-3">
 							<h1 className="mx-md-0 px-xs-5 text-size-xl font-weight-md">
 								{activeChat?.title}
 								{Boolean(chatPagination.count) && (
@@ -88,9 +88,11 @@ export const ChatView = () => {
 						) : (
 							<div className="flex flex-col">
 								{/* LOAD MORE */}
-								{chatLoading === 'more' && (
-									<LoadingText text="Loading previous messages..." className="flex-center mb-md-0" />
-								)}
+								<LoadingText
+									text="Loading previous messages..."
+									className="flex-center min-h-md-2 text-size-sm"
+									style={{ visibility: chatLoading === 'more' ? 'visible' : 'hidden' }}
+								/>
 								{/* MESSAGES */}
 								{chatMessages.map((message: Message) => (
 									<MessageItem key={message.datetime} message={message} subchatId={subchatId} />

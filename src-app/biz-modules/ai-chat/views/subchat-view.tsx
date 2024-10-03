@@ -84,7 +84,7 @@ export const SubchatView = () => {
 									onScroll={onScrollMessages}
 								>
 									{/* TOOLBAR */}
-									<StickyToolbar variant="subchat" className="-mx-a11y-padding mb-xs-9 px-xs-2 py-xs-1">
+									<StickyToolbar variant="subchat" className="-mx-a11y-padding px-xs-2 py-xs-1">
 										<div className="flex items-center gap-xs-2">
 											<IconButton linkHref={`/chat/${activeChat?.id}`} tooltip="Back to subchats" size="sm">
 												<ArrowBackSvg className="h-xs-5" />
@@ -99,9 +99,11 @@ export const SubchatView = () => {
 									</StickyToolbar>
 
 									{/* LOAD MORE */}
-									{subchatLoading === 'more' && (
-										<LoadingText text="Loading previous messages..." className="flex-center mb-sm-2" />
-									)}
+									<LoadingText
+										text="Loading previous messages..."
+										className="flex-center min-h-sm-1 text-size-xs"
+										style={{ visibility: subchatLoading === 'more' ? 'visible' : 'hidden' }}
+									/>
 									{/* MESSAGES */}
 									{subchatMessages.map((message: Message) => (
 										<MessageItem key={message.datetime} message={message} secondary />

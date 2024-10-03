@@ -9,7 +9,10 @@ interface Props {
 }
 
 export const MessageItem = ({ message, secondary, subchatId }: Props) => {
-	const wrapperClass = message.role === 'user' ? 'mb-xs-9' : secondary ? 'mb-sm-2' : 'mb-sm-4'
+	const wrapperClass = [
+		secondary ? '' : 'px-md-0',
+		message.role === 'user' ? 'mb-xs-9' : secondary ? 'mb-sm-2' : 'mb-sm-4',
+	].join(' ')
 	const userItemClass = secondary ? 'max-w-[80%] bg-color-secondary-bg' : 'max-w-[70%] bg-color-primary-bg'
 	const subchatClass = [
 		message.role === 'user' ? '-mt-xs-1' : 'mt-sm-1',
@@ -17,7 +20,7 @@ export const MessageItem = ({ message, secondary, subchatId }: Props) => {
 	].join(' ')
 
 	return (
-		<div className={`group relative flex flex-col items-end px-md-0 ${wrapperClass}`}>
+		<div className={`group relative flex flex-col items-end ${wrapperClass}`}>
 			{message.role === 'user' ? (
 				<div className={`w-fit rounded-md px-xs-6 py-xs-3 shadow-sm ${userItemClass}`}>
 					<div className="whitespace-pre-wrap">{message.text}</div>
