@@ -2,7 +2,10 @@ import { ChatDTO, MessageDTO, SubchatDTO } from '@api/types'
 
 export type Chat = ChatDTO
 export type Subchat = SubchatDTO
-export type Message = MessageDTO
+
+export interface Message extends MessageDTO {
+	ghost?: boolean
+}
 
 export interface ChatListing {
 	chats: Chat[]

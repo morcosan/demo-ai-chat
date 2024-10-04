@@ -1,5 +1,5 @@
 import { addMinutesToDate } from '@api/utilities/various'
-import { randomId, randomInt, randomLongText } from '@utils/src/random'
+import { randomId, randomInt, randomLongText } from '@utils/release'
 import {
 	ApiResponse,
 	Chat,

@@ -1,7 +1,7 @@
 import { TextFieldRef } from '@ds/release'
 import { KeyboardEvent, useCallback, useRef, useState } from 'react'
 
-export const useMessageListing = (createMessageFn: Function) => {
+export const useMessageListing = (postMessageFn: Function) => {
 	const [input, setInput] = useState<string>('')
 	const [scrollHeight, setScrollHeight] = useState(0)
 	const inputRef = useRef<TextFieldRef>(null)
@@ -30,7 +30,7 @@ export const useMessageListing = (createMessageFn: Function) => {
 	)
 
 	const onSubmit = () => {
-		createMessageFn(inputText)
+		postMessageFn(inputText)
 		setInput('')
 		inputRef.current?.focus()
 		wait(100).then(scrollToBottom)

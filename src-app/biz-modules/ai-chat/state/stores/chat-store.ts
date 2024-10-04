@@ -1,3 +1,4 @@
+import { MessageRole } from '@api/types'
 import { API } from '@app/biz-modules/ai-chat/api'
 import { uniqBy } from 'lodash'
 import { useEffect, useState } from 'react'
@@ -10,7 +11,7 @@ export interface ChatStore {
 	chatPagination: Pagination
 	chatLoading: ListLoading
 	canLoadChatMessages: boolean
-	createChatMessage(text: string): void
+	postChatMessage(text: string): void
 	loadActiveChat(chatId: number): Promise<boolean | undefined>
 	loadMoreChatMessages(): void
 	resetActiveChat(): void
@@ -22,7 +23,7 @@ export const chatDefaults: ChatStore = {
 	chatPagination: { page: 0, count: 0 },
 	chatLoading: false,
 	canLoadChatMessages: false,
-	createChatMessage: () => {},
+	postChatMessage: () => {},
 	loadActiveChat: async () => false,
 	loadMoreChatMessages: () => {},
 	resetActiveChat: () => {},
@@ -71,17 +72,30 @@ export const useChatStore = (allChatsStore: AllChatsStore): ChatStore => {
 		setChatPagination({ page: chatPagination.page + 1, count: listing.count })
 	}
 
-	const createChatMessage = async (text: string) => {
+	const postChatMessage = async (text: string) => {
 		if (chatLoading || !activeChat) return
 
 		setChatLoading('post')
+		setChatMessages([...chatMessages, newGhostMessage('user', text), newGhostMessage('agent')])
 
 		const listing = await API.postMessage(activeChat.id, 0, text)
 
-		setChatMessages([...chatMessages, ...listing.messages])
-		setChatLoading(false)
-		setChatPagination({ ...chatPagination, count: chatPagination.count + listing.count })
+		// setChatMessages([...chatMessages.slice(0, -2), ...listing.messages])
+		// setChatLoading(false)
+		// setChatPagination({ ...chatPagination, count: chatPagination.count + listing.count })
 	}
+
+	const newGhostMessage = (role: MessageRole, text?: string): Message => ({
+		id: role === 'user' ? -1 : -2,
+		chatId: activeChat!.id,
+		subchatId: 0,
+		parentId: activeChat!.id,
+		text: (role === 'user' && text) || '',
+		role: role,
+		datetime: role === 'user' ? new Date().toISOString() : new Date(new Date().getTime() + 1000).toISOString(),
+		subchatSize: 0,
+		ghost: true,
+	})
 
 	useEffect(() => {
 		!chatPagination.page && loadMoreChatMessages()
@@ -93,7 +107,7 @@ export const useChatStore = (allChatsStore: AllChatsStore): ChatStore => {
 		chatLoading,
 		chatMessages,
 		chatPagination,
-		createChatMessage,
+		postChatMessage,
 		loadActiveChat,
 		loadMoreChatMessages,
 		resetActiveChat,

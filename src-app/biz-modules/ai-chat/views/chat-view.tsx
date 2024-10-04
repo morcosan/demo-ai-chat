@@ -16,7 +16,7 @@ export const ChatView = () => {
 		chatLoading,
 		chatMessages,
 		chatPagination,
-		createChatMessage,
+		postChatMessage,
 		loadActiveChat,
 		loadMoreChatMessages,
 		resetActiveChat,
@@ -31,7 +31,7 @@ export const ChatView = () => {
 		onSubmit,
 		saveScrollPosition,
 		scrollMessages,
-	} = useMessageListing(createChatMessage)
+	} = useMessageListing(postChatMessage)
 	const { chatId } = useParams()
 	const [searchParams] = useSearchParams()
 	const navigate = useNavigate()
