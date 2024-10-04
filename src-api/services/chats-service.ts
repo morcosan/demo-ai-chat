@@ -138,7 +138,7 @@ export const chatsService = {
 			chatId: chatId,
 			subchatId: 0,
 			parentId: chatId,
-			text: text + ' ' + randomLongText(randomInt(5, 20)),
+			text: `"${text}": ` + randomLongText(randomInt(1, 40)),
 			role: 'agent',
 			datetime: addMinutesToDate(userMessage.datetime, 1).toISOString(),
 		}
