@@ -116,7 +116,7 @@ export const useSubchatStore = (chatStore: ChatStore, allSubchatsStore: AllSubch
 
 		const listing = await API.postMessage(activeChat.id, activeSubchat.id, text)
 
-		setSubchatMessages([...subchatMessages.slice(0, -2), ...listing.messages])
+		setSubchatMessages([...subchatMessages, ...listing.messages])
 		setSubchatLoading(false)
 		setSubchatPagination({ ...subchatPagination, count: subchatPagination.count + listing.count })
 		updateChatAndSubchats(subchatPagination.count + listing.count)

@@ -87,7 +87,7 @@ export const useChatStore = (allChatsStore: AllChatsStore): ChatStore => {
 
 		const listing = await API.postMessage(activeChat.id, 0, text)
 
-		setChatMessages([...chatMessages.slice(0, -2), ...listing.messages])
+		setChatMessages([...chatMessages, ...listing.messages])
 		setChatLoading(false)
 		setChatPagination({ ...chatPagination, count: chatPagination.count + listing.count })
 	}
