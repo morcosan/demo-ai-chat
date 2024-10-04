@@ -87,7 +87,7 @@ export const ChatView = () => {
 								/>
 								{/* MESSAGES */}
 								{chatMessages.map((message: Message) => (
-									<MessageItem key={message.datetime} message={message} subchatId={subchatId} />
+									<MessageItem key={message.id} message={message} subchatId={subchatId} />
 								))}
 							</div>
 						)}

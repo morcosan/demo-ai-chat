@@ -124,11 +124,16 @@ export const chatsService = {
 		if (!chatId) return { ...RESP__NOT_FOUND, error: `Chat ID ${chatId} not found` }
 		if (!text) return { ...RESP__NOT_FOUND, error: `Text ${text} is empty` }
 
+		if (subchatId) {
+			const exists = DB__MESSAGES.some((msg: Message) => msg.chatId === chatId && msg.id === subchatId)
+			if (!exists) return { ...RESP__NOT_FOUND, error: `Subchat ID ${subchatId} not found` }
+		}
+
 		const userMessage: Message = {
 			id: randomId(),
 			chatId: chatId,
-			subchatId: 0,
-			parentId: chatId,
+			subchatId: subchatId || 0,
+			parentId: subchatId || chatId,
 			text: text,
 			role: 'user',
 			datetime: new Date().toISOString(),
@@ -136,8 +141,8 @@ export const chatsService = {
 		const agentMessage: Message = {
 			id: randomId(),
 			chatId: chatId,
-			subchatId: 0,
-			parentId: chatId,
+			subchatId: subchatId || 0,
+			parentId: subchatId || chatId,
 			text: `"${text}": ` + randomLongText(randomInt(1, 40)),
 			role: 'agent',
 			datetime: addMinutesToDate(userMessage.datetime, 1).toISOString(),

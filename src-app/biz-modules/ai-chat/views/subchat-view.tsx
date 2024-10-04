@@ -69,7 +69,7 @@ export const SubchatView = () => {
 						/>
 						{/* MESSAGES */}
 						{subchatMessages.map((message: Message) => (
-							<MessageItem key={message.datetime} message={message} secondary />
+							<MessageItem key={message.id} message={message} secondary />
 						))}
 					</>
 				)}
@@ -81,6 +81,8 @@ export const SubchatView = () => {
 					ref={inputRef}
 					input={input}
 					inputText={inputText}
+					loading={subchatLoading === 'post'}
+					disabled={subchatLoading === 'full' || subchatLoading === 'more'}
 					className="w-full"
 					onChange={onChange}
 					onPressEnter={onPressEnter}
