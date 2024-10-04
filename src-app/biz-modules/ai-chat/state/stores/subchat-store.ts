@@ -1,4 +1,5 @@
 import { API } from '@app/biz-modules/ai-chat/api'
+import { uniqBy } from 'lodash'
 import { useEffect, useState } from 'react'
 import { Message, MessageListing, Subchat } from '../../api/types'
 import { newGhostMessage } from './_utils'
@@ -96,7 +97,7 @@ export const useSubchatStore = (chatStore: ChatStore, allSubchatsStore: AllSubch
 			}
 		}
 
-		setSubchatMessages([...listing.messages, ...subchatMessages])
+		setSubchatMessages(uniqBy([...listing.messages, ...subchatMessages], (msg: Message) => msg.id))
 		setSubchatLoading(false)
 		setSubchatPagination({ page: subchatPagination.page + 1, count: listing.count })
 	}

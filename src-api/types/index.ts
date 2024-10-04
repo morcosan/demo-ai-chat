@@ -63,7 +63,6 @@ export interface Chat {
 export interface Message {
 	id: number
 	chatId: number
-	subchatId: number
 	parentId: number
 	text: string
 	role: MessageRole

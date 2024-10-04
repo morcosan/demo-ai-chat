@@ -29,7 +29,6 @@ const createMessages = (chats: Chat[]) => {
 			const userMessage: Message = {
 				id: randomId(),
 				chatId: chat.id,
-				subchatId: 0,
 				parentId: chat.id,
 				text: randomLongText(randomInt(1, 3)),
 				role: 'user',
@@ -38,7 +37,6 @@ const createMessages = (chats: Chat[]) => {
 			const agentMessage: Message = {
 				id: randomId(),
 				chatId: chat.id,
-				subchatId: 0,
 				parentId: chat.id,
 				text: randomLongText(randomInt(5, 20)),
 				role: 'agent',
@@ -58,13 +56,10 @@ const createMessages = (chats: Chat[]) => {
 const addSubchats = (message: Message, messages: Message[]) => {
 	const roles: MessageRole[] = message.role === 'user' ? ['agent', 'user'] : ['user', 'agent']
 
-	message.subchatId = message.id
-
 	randomArray(1, 30).forEach((_, index: number) => {
 		messages.push({
 			id: randomId(),
 			chatId: message.chatId,
-			subchatId: message.id,
 			parentId: message.id,
 			text: randomLongText(randomInt(1, 3)),
 			role: roles[index % 2],

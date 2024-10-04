@@ -62,7 +62,7 @@ export const chatsService = {
 			id: message.id,
 			chatId: message.chatId,
 			text: message.text,
-			size: db.filter((other: Message) => other.subchatId === message.id).length,
+			size: (db.filter((other: Message) => other.parentId === message.id).length || -1) + 1,
 			datetime: message.datetime,
 		})
 
@@ -74,7 +74,8 @@ export const chatsService = {
 			}
 		}
 
-		const subchats = db.filter((message: Message) => message.subchatId === message.id).map(dtoFn)
+		const dbSubchatIds = db.filter((msg: Message) => msg.parentId !== chatId).map((msg: Message) => msg.parentId)
+		const subchats = db.filter((message: Message) => dbSubchatIds.includes(message.id)).map(dtoFn)
 
 		if (!isValidPagination(page, count, subchats.length)) {
 			return { ...RESP__NOT_FOUND, error: `Page ${page} not found for ${subchats.length} subchats` }
@@ -99,7 +100,7 @@ export const chatsService = {
 
 		const db = DB__MESSAGES.filter((message: Message) => message.chatId === chatId)
 		const messages = subchatId
-			? db.filter((message: Message) => message.subchatId === subchatId)
+			? db.filter((message: Message) => message.id === subchatId || message.parentId === subchatId)
 			: db.filter((message: Message) => message.parentId === chatId)
 
 		if (!isValidPagination(page, count, messages.length)) {
@@ -112,7 +113,7 @@ export const chatsService = {
 				count: messages.length,
 				items: messages.slice(-count * page, -count * (page - 1) || undefined).map((message: Message) => ({
 					...message,
-					subchatSize: db.filter((other: Message) => other.subchatId === message.id).length,
+					subchatSize: (db.filter((other: Message) => other.parentId === message.id).length || -1) + 1,
 				})),
 			},
 		}
@@ -132,7 +133,6 @@ export const chatsService = {
 		const userMessage: Message = {
 			id: randomId(),
 			chatId: chatId,
-			subchatId: subchatId || 0,
 			parentId: subchatId || chatId,
 			text: text,
 			role: 'user',
@@ -141,7 +141,6 @@ export const chatsService = {
 		const agentMessage: Message = {
 			id: randomId(),
 			chatId: chatId,
-			subchatId: subchatId || 0,
 			parentId: subchatId || chatId,
 			text: `"${text}": ` + randomLongText(randomInt(1, 40)),
 			role: 'agent',
