@@ -17,18 +17,10 @@ export const SubchatView = () => {
 		subchatMessages,
 		subchatPagination,
 		loadMoreSubchatMessages,
+		postSubchatMessage,
 	} = useAiChat()
-	const {
-		listingRef,
-		input,
-		inputRef,
-		inputText,
-		onChange,
-		onPressEnter,
-		onSubmit,
-		saveScrollPosition,
-		scrollMessages,
-	} = useMessageListing()
+	const { listingRef, input, inputRef, inputText, onChange, onPressEnter, onSubmit, saveScrollPos, scrollToPos } =
+		useMessageListing(subchatLoading, postSubchatMessage)
 
 	const onScroll = debounce((event: UIEvent) => {
 		const THRESHOLD = 50 // px
@@ -36,14 +28,14 @@ export const SubchatView = () => {
 		const isScrollStart = container.scrollTop <= THRESHOLD
 
 		if (isScrollStart && canLoadSubchatMessages) {
-			saveScrollPosition()
+			saveScrollPos()
 			loadMoreSubchatMessages()
 		}
 	}, 300)
 
 	useEffect(() => {
-		scrollMessages()
-	}, [subchatPagination.page])
+		scrollToPos()
+	}, [subchatPagination])
 
 	return (
 		<div className="flex h-full flex-col py-xs-1">

@@ -21,17 +21,8 @@ export const ChatView = () => {
 		loadMoreChatMessages,
 		resetActiveChat,
 	} = useAiChat()
-	const {
-		input,
-		inputRef,
-		inputText,
-		listingRef,
-		onChange,
-		onPressEnter,
-		onSubmit,
-		saveScrollPosition,
-		scrollMessages,
-	} = useMessageListing(postChatMessage)
+	const { input, inputRef, inputText, listingRef, onChange, onPressEnter, onSubmit, saveScrollPos, scrollToPos } =
+		useMessageListing(chatLoading, postChatMessage)
 	const { chatId } = useParams()
 	const [searchParams] = useSearchParams()
 	const navigate = useNavigate()
@@ -40,20 +31,20 @@ export const ChatView = () => {
 
 	const widthClass = 'mx-auto w-full max-w-xxl-2'
 
-	const onScrollMessages = debounce((event: UIEvent) => {
+	const onScroll = debounce((event: UIEvent) => {
 		const THRESHOLD = 50 // px
 		const container = event.target as HTMLElement
 		const isScrollStart = container.scrollTop <= THRESHOLD
 
 		if (isScrollStart && canLoadChatMessages) {
-			saveScrollPosition()
+			saveScrollPos()
 			loadMoreChatMessages()
 		}
 	}, 300)
 
 	useEffect(() => {
-		scrollMessages()
-	}, [chatPagination.page])
+		scrollToPos()
+	}, [chatPagination])
 
 	const loadChat = async () => {
 		const success = await loadActiveChat(parseInt(chatId || ''))
@@ -69,7 +60,7 @@ export const ChatView = () => {
 	return (
 		<div className="flex h-full flex-1 flex-col gap-xs-5 py-xs-1">
 			{activeChat || chatId ? (
-				<div ref={listingRef} className="flex-1 overflow-y-auto pb-sm-5" onScroll={onScrollMessages}>
+				<div ref={listingRef} className="flex-1 overflow-y-auto pb-sm-5" onScroll={onScroll}>
 					<div className={`${widthClass} ${chatLoading === 'full' ? 'h-full' : ''} flex flex-col pt-sm-0`}>
 						{/* TOOLBAR */}
 						<StickyToolbar variant="chat" className="pb-xs-3">

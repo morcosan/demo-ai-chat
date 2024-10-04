@@ -77,12 +77,13 @@ export const useChatStore = (allChatsStore: AllChatsStore): ChatStore => {
 
 		setChatLoading('post')
 		setChatMessages([...chatMessages, newGhostMessage('user', text), newGhostMessage('agent')])
+		setChatPagination({ ...chatPagination, count: chatPagination.count + 1 })
 
 		const listing = await API.postMessage(activeChat.id, 0, text)
 
-		// setChatMessages([...chatMessages.slice(0, -2), ...listing.messages])
-		// setChatLoading(false)
-		// setChatPagination({ ...chatPagination, count: chatPagination.count + listing.count })
+		setChatMessages([...chatMessages.slice(0, -2), ...listing.messages])
+		setChatLoading(false)
+		setChatPagination({ ...chatPagination, count: chatPagination.count + listing.count })
 	}
 
 	const newGhostMessage = (role: MessageRole, text?: string): Message => ({

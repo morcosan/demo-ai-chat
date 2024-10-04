@@ -11,8 +11,9 @@ export interface SubchatStore {
 	subchatLoading: ListLoading
 	canLoadSubchatMessages: boolean
 	loadActiveSubchat(chatId: number): Promise<boolean | undefined>
-	resetActiveSubchat(): void
 	loadMoreSubchatMessages(): void
+	postSubchatMessage(text: string): void
+	resetActiveSubchat(): void
 }
 
 export const subchatDefaults: SubchatStore = {
@@ -22,8 +23,9 @@ export const subchatDefaults: SubchatStore = {
 	subchatLoading: false,
 	canLoadSubchatMessages: false,
 	loadActiveSubchat: async () => false,
-	resetActiveSubchat: () => {},
 	loadMoreSubchatMessages: () => {},
+	postSubchatMessage: () => {},
+	resetActiveSubchat: () => {},
 }
 
 export const useSubchatStore = (chatStore: ChatStore, allSubchatsStore: AllSubchatsStore): SubchatStore => {
@@ -99,6 +101,8 @@ export const useSubchatStore = (chatStore: ChatStore, allSubchatsStore: AllSubch
 		setSubchatPagination({ page: subchatPagination.page + 1, count: listing.count })
 	}
 
+	const postSubchatMessage = async (text: string) => {}
+
 	useEffect(() => {
 		!subchatPagination.page && loadMoreSubchatMessages()
 	}, [activeSubchat])
@@ -110,7 +114,8 @@ export const useSubchatStore = (chatStore: ChatStore, allSubchatsStore: AllSubch
 		subchatLoading,
 		canLoadSubchatMessages,
 		loadActiveSubchat,
-		resetActiveSubchat,
 		loadMoreSubchatMessages,
+		postSubchatMessage,
+		resetActiveSubchat,
 	}
 }

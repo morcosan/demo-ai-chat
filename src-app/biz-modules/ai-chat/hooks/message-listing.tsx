@@ -1,7 +1,7 @@
 import { TextFieldRef } from '@ds/release'
 import { KeyboardEvent, useCallback, useRef, useState } from 'react'
 
-export const useMessageListing = (postMessageFn: Function) => {
+export const useMessageListing = (loading: ListLoading, postMessageFn: Function) => {
 	const [input, setInput] = useState<string>('')
 	const [scrollHeight, setScrollHeight] = useState(0)
 	const inputRef = useRef<TextFieldRef>(null)
@@ -9,10 +9,10 @@ export const useMessageListing = (postMessageFn: Function) => {
 
 	const inputText = input.trim()
 
-	const saveScrollPosition = () => setScrollHeight(listingRef.current?.scrollHeight || 0)
+	const saveScrollPos = () => setScrollHeight(listingRef.current?.scrollHeight || 0)
 	const scrollToSaved = () => listingRef.current?.scrollTo(0, listingRef.current.scrollHeight - scrollHeight)
 	const scrollToBottom = () => listingRef.current?.scrollTo(0, listingRef.current.scrollHeight)
-	const scrollMessages = () => {
+	const scrollToPos = () => {
 		scrollHeight ? scrollToSaved() : scrollToBottom()
 		setScrollHeight(0)
 	}
@@ -21,7 +21,7 @@ export const useMessageListing = (postMessageFn: Function) => {
 
 	const onPressEnter = useCallback(
 		(event: KeyboardEvent) => {
-			if (!event.shiftKey && inputText) {
+			if (!event.shiftKey) {
 				event.preventDefault()
 				onSubmit()
 			}
@@ -30,10 +30,11 @@ export const useMessageListing = (postMessageFn: Function) => {
 	)
 
 	const onSubmit = () => {
+		if (loading) return
+
 		postMessageFn(inputText)
 		setInput('')
 		inputRef.current?.focus()
-		wait(100).then(scrollToBottom)
 	}
 
 	return {
@@ -42,10 +43,10 @@ export const useMessageListing = (postMessageFn: Function) => {
 		inputText,
 		listingRef,
 
+		scrollToPos,
 		onChange,
 		onPressEnter,
 		onSubmit,
-		saveScrollPosition,
-		scrollMessages,
+		saveScrollPos,
 	}
 }

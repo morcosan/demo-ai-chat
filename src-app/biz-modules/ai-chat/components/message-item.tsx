@@ -23,8 +23,14 @@ export const MessageItem = ({ message, secondary, subchatId }: Props) => {
 	return (
 		<div className={`group relative flex flex-col items-end ${wrapperClass}`}>
 			{message.role === 'user' ? (
-				<div className={`w-fit rounded-md px-xs-6 py-xs-3 shadow-sm ${userItemClass}`}>
+				<div className={`relative w-fit rounded-md px-xs-6 py-xs-3 shadow-sm ${userItemClass}`}>
 					<div className="whitespace-pre-wrap">{message.text}</div>
+
+					{Boolean(message.ghost && message.role === 'user') && (
+						<div className="absolute bottom-0 right-0 translate-y-full leading-1">
+							<span className="px-xs-1 text-size-xs text-color-text-placeholder">Sending...</span>
+						</div>
+					)}
 				</div>
 			) : (
 				<div className="w-full px-xs-5 py-xs-1">
@@ -35,7 +41,16 @@ export const MessageItem = ({ message, secondary, subchatId }: Props) => {
 						<span className="mb-xs-0 text-size-sm text-color-text-subtle">Lorem Ipsum GPT</span>
 					</div>
 
-					{message.text}
+					{message.ghost ? (
+						<div className="flex animate-pulse flex-col gap-xs-2">
+							<div className="h-[var(--ds-line-height-md)] rounded-sm bg-color-text-placeholder" />
+							<div className="h-[var(--ds-line-height-md)] rounded-sm bg-color-text-placeholder" />
+							<div className="h-[var(--ds-line-height-md)] rounded-sm bg-color-text-placeholder" />
+							<div className="h-[var(--ds-line-height-md)] w-2/3 rounded-sm bg-color-text-placeholder" />
+						</div>
+					) : (
+						message.text
+					)}
 				</div>
 			)}
 

@@ -29,7 +29,7 @@ export const InputField = withRef('InputField', (props: Props, ref: Ref<TextFiel
 					variant={props.primary ? 'solid-primary' : 'solid-secondary'}
 					size={props.primary ? 'md' : 'sm'}
 					loading={props.loading}
-					disabled={props.disabled || !props.inputText}
+					disabled={props.disabled || (!props.loading && !props.inputText)}
 					onClick={props.onSubmit}
 				>
 					<SendSvg className={props.primary ? 'h-xs-9' : 'h-xs-7'} />
