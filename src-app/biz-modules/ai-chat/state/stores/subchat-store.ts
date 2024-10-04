@@ -43,8 +43,11 @@ export const useSubchatStore = (chatStore: ChatStore, allSubchatsStore: AllSubch
 
 		let subchat = allSubchats.find((subchat: Subchat) => subchat.id === subchatId) || null
 		if (!subchat) {
-			const listing = await API.getSubchats(activeChat.id, [subchatId])
-			subchat = listing.subchats[0] || null
+			subchat = getSubchatFromChatMessages(subchatId)
+			if (!subchat) {
+				const listing = await API.getSubchats(activeChat.id, [subchatId])
+				subchat = listing.subchats[0] || null
+			}
 		}
 
 		setActiveSubchat(subchat)
@@ -59,6 +62,20 @@ export const useSubchatStore = (chatStore: ChatStore, allSubchatsStore: AllSubch
 		setActiveSubchat(null)
 		setSubchatMessages([])
 		setSubchatPagination({ page: 0, count: 0 })
+	}
+
+	const getSubchatFromChatMessages = (subchatId: number): Subchat | null => {
+		const message = chatStore.chatMessages.find((message: Message) => message.id === subchatId) || null
+
+		return message
+			? {
+					id: message.id,
+					chatId: message.chatId,
+					text: message.text,
+					size: message.subchatSize,
+					datetime: message.datetime,
+				}
+			: null
 	}
 
 	const loadMoreSubchatMessages = async () => {
