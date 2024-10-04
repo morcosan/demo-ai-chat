@@ -1,10 +1,8 @@
 import { TextFieldRef } from '@ds/release'
 import { KeyboardEvent, useCallback, useRef, useState } from 'react'
-import { Message } from '../api/types'
 
-export const useMessageListing = () => {
+export const useMessageListing = (createMessageFn: Function) => {
 	const [input, setInput] = useState<string>('')
-	const [messages, setMessages] = useState<Message[]>([])
 	const [scrollHeight, setScrollHeight] = useState(0)
 	const inputRef = useRef<TextFieldRef>(null)
 	const listingRef = useRef<HTMLDivElement>(null)
@@ -32,7 +30,7 @@ export const useMessageListing = () => {
 	)
 
 	const onSubmit = () => {
-		// setMessages([...messages, { text: inputText, datetime: new Date().toISOString() }])
+		createMessageFn(inputText)
 		setInput('')
 		inputRef.current?.focus()
 		wait(100).then(scrollToBottom)
@@ -43,7 +41,6 @@ export const useMessageListing = () => {
 		inputRef,
 		inputText,
 		listingRef,
-		messages,
 
 		onChange,
 		onPressEnter,

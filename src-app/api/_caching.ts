@@ -1,4 +1,4 @@
-import { ApiQuery, ApiResponse, DefaultAPI } from './_types'
+import { ApiPayload, ApiQuery, ApiResponse, DefaultAPI } from './_types'
 
 /**
  * Data Cache
@@ -51,5 +51,9 @@ export const createCachedAPI = (api: DefaultAPI): DefaultAPI => ({
 		clearPendingRequest(url)
 
 		return newData
+	},
+
+	async post<T>(path: string, payload: ApiPayload): Promise<ApiResponse<T>> {
+		return api.post<T>(path, payload)
 	},
 })

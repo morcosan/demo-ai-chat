@@ -16,6 +16,7 @@ export const ChatView = () => {
 		chatLoading,
 		chatMessages,
 		chatPagination,
+		createChatMessage,
 		loadActiveChat,
 		loadMoreChatMessages,
 		resetActiveChat,
@@ -30,14 +31,14 @@ export const ChatView = () => {
 		onSubmit,
 		saveScrollPosition,
 		scrollMessages,
-	} = useMessageListing()
+	} = useMessageListing(createChatMessage)
 	const { chatId } = useParams()
 	const [searchParams] = useSearchParams()
 	const navigate = useNavigate()
 
 	const subchatId = parseInt(String(searchParams.get('subchat')))
 
-	const wrapperClass = 'mx-auto w-full max-w-xxl-2'
+	const widthClass = 'mx-auto w-full max-w-xxl-2'
 
 	const onScrollMessages = debounce((event: UIEvent) => {
 		const THRESHOLD = 50 // px
@@ -69,7 +70,7 @@ export const ChatView = () => {
 		<div className="flex h-full flex-1 flex-col gap-xs-5 py-xs-1">
 			{activeChat || chatId ? (
 				<div ref={listingRef} className="flex-1 overflow-y-auto pb-sm-5" onScroll={onScrollMessages}>
-					<div className={`${wrapperClass} ${chatLoading === 'full' ? 'h-full' : ''} flex flex-col pt-sm-0`}>
+					<div className={`${widthClass} ${chatLoading === 'full' ? 'h-full' : ''} flex flex-col pt-sm-0`}>
 						{/* TOOLBAR */}
 						<StickyToolbar variant="chat" className="pb-xs-3">
 							<h1 className="mx-md-0 px-xs-5 text-size-xl font-weight-md">
@@ -107,12 +108,13 @@ export const ChatView = () => {
 				</div>
 			)}
 
-			<div className={`px-md-0 ${wrapperClass}`}>
+			<div className={`px-md-0 ${widthClass}`}>
 				<InputField
 					ref={inputRef}
 					input={input}
 					inputText={inputText}
-					disabled={Boolean(chatLoading)}
+					loading={chatLoading === 'post'}
+					disabled={chatLoading === 'full' || chatLoading === 'more'}
 					className="mb-xs-5 w-full"
 					primary
 					onChange={onChange}

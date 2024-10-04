@@ -1,3 +1,5 @@
+import { addMinutesToDate } from '@api/utilities/various'
+import { randomId, randomInt, randomLongText } from '@utils/src/random'
 import {
 	ApiResponse,
 	Chat,
@@ -5,6 +7,7 @@ import {
 	ChatsApiQuery,
 	Message,
 	MessagesApiData,
+	MessagesApiPayload,
 	MessagesApiQuery,
 	STATUS__SUCCESS,
 	SubchatDTO,
@@ -111,6 +114,42 @@ export const chatsService = {
 					...message,
 					subchatSize: db.filter((other: Message) => other.subchatId === message.id).length,
 				})),
+			},
+		}
+	},
+
+	async postMessage(payload: MessagesApiPayload): Promise<ApiResponse<MessagesApiData>> {
+		const { chatId, subchatId, text } = payload
+
+		if (!chatId) return { ...RESP__NOT_FOUND, error: `Chat ID ${chatId} not found` }
+		if (!text) return { ...RESP__NOT_FOUND, error: `Text ${text} is empty` }
+
+		const userMessage: Message = {
+			id: randomId(),
+			chatId: chatId,
+			subchatId: 0,
+			parentId: chatId,
+			text: text,
+			role: 'user',
+			datetime: new Date().toISOString(),
+		}
+		const agentMessage: Message = {
+			id: randomId(),
+			chatId: chatId,
+			subchatId: 0,
+			parentId: chatId,
+			text: text + ' ' + randomLongText(randomInt(5, 20)),
+			role: 'agent',
+			datetime: addMinutesToDate(userMessage.datetime, 1).toISOString(),
+		}
+
+		DB__MESSAGES.push(userMessage, agentMessage)
+
+		return {
+			status: STATUS__SUCCESS,
+			data: {
+				count: 2,
+				items: [userMessage, agentMessage].map((message: Message) => ({ ...message, subchatSize: 0 })),
 			},
 		}
 	},

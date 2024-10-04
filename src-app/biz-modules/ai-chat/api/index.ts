@@ -2,7 +2,9 @@ import {
 	chatsAPI,
 	ChatsApiData,
 	ChatsApiQuery,
+	clearDataCache,
 	MessagesApiData,
+	MessagesApiPayload,
 	MessagesApiQuery,
 	STATUS__SUCCESS,
 	SubchatsApiData,
@@ -47,6 +49,17 @@ export const API = {
 			subchatId,
 		}
 		const resp = await chatsAPI.get<MessagesApiData>('/api/messages', query)
+
+		return resp.status === STATUS__SUCCESS && resp.data
+			? { messages: resp.data.items.map(mapDtoToMessage), count: resp.data.count }
+			: { messages: [], count: 0 }
+	},
+
+	async postMessage(chatId: number, subchatId?: number, text?: string): Promise<MessageListing> {
+		const payload: MessagesApiPayload = { chatId, subchatId, text }
+		const resp = await chatsAPI.post<MessagesApiData>('/api/messages', payload)
+
+		clearDataCache('/api/messages')
 
 		return resp.status === STATUS__SUCCESS && resp.data
 			? { messages: resp.data.items.map(mapDtoToMessage), count: resp.data.count }

@@ -1,4 +1,5 @@
 import { API } from '@app/biz-modules/ai-chat/api'
+import { uniqBy } from 'lodash'
 import { useEffect, useState } from 'react'
 import { Chat, Message } from '../../api/types'
 import { AllChatsStore } from './all-chats-store'
@@ -9,9 +10,10 @@ export interface ChatStore {
 	chatPagination: Pagination
 	chatLoading: ListLoading
 	canLoadChatMessages: boolean
+	createChatMessage(text: string): void
 	loadActiveChat(chatId: number): Promise<boolean | undefined>
-	resetActiveChat(): void
 	loadMoreChatMessages(): void
+	resetActiveChat(): void
 }
 
 export const chatDefaults: ChatStore = {
@@ -20,9 +22,10 @@ export const chatDefaults: ChatStore = {
 	chatPagination: { page: 0, count: 0 },
 	chatLoading: false,
 	canLoadChatMessages: false,
+	createChatMessage: () => {},
 	loadActiveChat: async () => false,
-	resetActiveChat: () => {},
 	loadMoreChatMessages: () => {},
+	resetActiveChat: () => {},
 }
 
 export const useChatStore = (allChatsStore: AllChatsStore): ChatStore => {
@@ -63,9 +66,21 @@ export const useChatStore = (allChatsStore: AllChatsStore): ChatStore => {
 
 		const listing = await API.getMessages(activeChat.id, 0, chatPagination.page + 1)
 
-		setChatMessages([...listing.messages, ...chatMessages])
+		setChatMessages(uniqBy([...listing.messages, ...chatMessages], (msg: Message) => msg.id))
 		setChatLoading(false)
 		setChatPagination({ page: chatPagination.page + 1, count: listing.count })
+	}
+
+	const createChatMessage = async (text: string) => {
+		if (chatLoading || !activeChat) return
+
+		setChatLoading('post')
+
+		const listing = await API.postMessage(activeChat.id, 0, text)
+
+		setChatMessages([...chatMessages, ...listing.messages])
+		setChatLoading(false)
+		setChatPagination({ ...chatPagination, count: chatPagination.count + listing.count })
 	}
 
 	useEffect(() => {
@@ -78,8 +93,9 @@ export const useChatStore = (allChatsStore: AllChatsStore): ChatStore => {
 		chatLoading,
 		chatMessages,
 		chatPagination,
+		createChatMessage,
 		loadActiveChat,
-		resetActiveChat,
 		loadMoreChatMessages,
+		resetActiveChat,
 	}
 }

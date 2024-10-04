@@ -1,5 +1,5 @@
 import { chatsService } from './services/chats-service'
-import { ApiQuery, ApiResponse } from './types'
+import { ApiPayload, ApiQuery, ApiResponse } from './types'
 import { applyNetwork, RESP__NOT_FOUND } from './utilities/network'
 
 export const mockAPI = {
@@ -12,6 +12,17 @@ export const mockAPI = {
 
 		resp = await applyNetwork(resp)
 		LOG_DEV(path, query, resp)
+
+		return resp
+	},
+
+	async post<T>(path: string, payload: ApiPayload): Promise<ApiResponse<T>> {
+		let resp = RESP__NOT_FOUND
+
+		if (path === '/api/messages') resp = await chatsService.postMessage(payload)
+
+		resp = await applyNetwork(resp)
+		LOG_DEV(path, payload, resp)
 
 		return resp
 	},

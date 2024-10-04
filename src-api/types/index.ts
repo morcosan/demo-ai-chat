@@ -11,6 +11,7 @@ export interface ApiResponse<T = any> {
 	error?: string
 }
 export type ApiQuery = Record<string, string | number | undefined>
+export type ApiPayload = Record<string, unknown>
 
 /**
  * Payload
@@ -43,6 +44,11 @@ export interface MessagesApiQuery extends ApiQuery {
 export interface MessagesApiData {
 	count: number
 	items: MessageDTO[]
+}
+export interface MessagesApiPayload extends ApiPayload {
+	chatId?: number
+	subchatId?: number
+	text?: string
 }
 
 /**

@@ -6,6 +6,7 @@ interface Props extends ReactProps {
 	input: string
 	inputText: string
 	primary?: boolean
+	loading?: boolean
 	disabled?: boolean
 
 	onChange(value: string): void
@@ -27,6 +28,7 @@ export const InputField = withRef('InputField', (props: Props, ref: Ref<TextFiel
 					tooltip="Send message"
 					variant={props.primary ? 'solid-primary' : 'solid-secondary'}
 					size={props.primary ? 'md' : 'sm'}
+					loading={props.loading}
 					disabled={props.disabled || !props.inputText}
 					onClick={props.onSubmit}
 				>
