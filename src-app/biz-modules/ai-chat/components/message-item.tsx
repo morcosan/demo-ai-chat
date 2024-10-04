@@ -16,7 +16,8 @@ export const MessageItem = ({ message, secondary, subchatId }: Props) => {
 	const userItemClass = secondary ? 'max-w-[80%] bg-color-secondary-bg' : 'max-w-[70%] bg-color-primary-bg'
 	const subchatClass = [
 		message.role === 'user' ? '-mt-xs-1' : 'mt-sm-1',
-		message.subchatSize ? '' : 'hidden group-hover:block',
+		message.subchatSize ? '' : 'opacity-0 group-hover:opacity-100 focus:opacity-100',
+		message.id === subchatId ? '!opacity-100' : '',
 	].join(' ')
 
 	return (
