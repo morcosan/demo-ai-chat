@@ -1,32 +1,105 @@
-import { useAiChatStore } from '@app/biz-modules/ai-chat/state'
-import { useMessageMock } from '@app/biz-modules/ai-chat/views/_partials/message-mock'
-import { IconButton, SendSvg, TextField } from '@ds/release'
-import { useEffect } from 'react'
-import { useParams } from 'react-router-dom'
+import { debounce } from 'lodash'
+import { UIEvent, useEffect } from 'react'
+import { useNavigate, useParams, useSearchParams } from 'react-router-dom'
+import { Message } from '../api/types'
+import { InputField } from '../components/input-field'
+import { LoadingText } from '../components/loading-text'
+import { MessageItem } from '../components/message-item'
+import { StickyToolbar } from '../components/sticky-toolbar'
+import { useMessageListing } from '../hooks/message-listing'
+import { useAiChat } from '../state'
 
 export const ChatView = () => {
-	const { activeChat, loadChat } = useAiChatStore()
-	const { chatId } = useParams()
-	const { messages, messagesRef, question, questionRef, questionText, onChange, onSubmit, sendMessage } =
-		useMessageMock()
+	const {
+		activeChat,
+		allChatsLoading,
+		canLoadChatMessages,
+		chatLoading,
+		chatMessages,
+		chatPagination,
+		postChatMessage,
+		loadActiveChat,
+		loadMoreChatMessages,
+		resetActiveChat,
+	} = useAiChat()
+	const { input, inputRef, inputText, listingRef, onChange, onPressEnter, onSubmit, saveScrollPos, scrollToPos } =
+		useMessageListing(chatLoading, postChatMessage)
+	const { chatId: chatIdStr } = useParams()
+	const [searchParams] = useSearchParams()
+	const navigate = useNavigate()
+
+	const chatId = parseInt(chatIdStr || '')
+	const subchatId = parseInt(String(searchParams.get('subchat')))
+
+	const widthClass = 'mx-auto w-full max-w-xxl-2'
+
+	const onScroll = debounce((event: UIEvent) => {
+		const THRESHOLD = 50 // px
+		const container = event.target as HTMLElement
+		const isScrollStart = container.scrollTop <= THRESHOLD
+
+		if (isScrollStart && canLoadChatMessages) {
+			saveScrollPos()
+			loadMoreChatMessages()
+		}
+	}, 300)
 
 	useEffect(() => {
-		const id = parseInt(String(chatId))
-		loadChat(isNaN(id) ? 0 : id)
+		scrollToPos()
+	}, [chatPagination])
+
+	const loadChat = async () => {
+		const success = await loadActiveChat(chatId)
+		if (success === false) {
+			navigate('/chat')
+		}
+	}
+
+	useEffect(() => {
+		isNaN(chatId) || !chatId ? resetActiveChat() : loadChat()
 	}, [chatId])
 
-	return (
-		<div className="mx-auto flex h-full max-w-xxl-1 flex-1 flex-col gap-xs-4 p-xs-5">
-			{activeChat || messages.length ? (
-				<div ref={messagesRef} className="flex-1 overflow-y-auto pb-xs-9">
-					<h1 className="mt-xs-9 text-size-xl font-weight-md">{activeChat?.title}</h1>
+	useEffect(() => {
+		// Navigate to new chat
+		if (!activeChat || !activeChat.id) return
+		if (activeChat.id === chatId) return
+		navigate(`/chat/${activeChat.id}`)
+	}, [activeChat])
 
-					<div className="flex flex-col items-end gap-xs-4">
-						{messages.map((message) => (
-							<pre key={message.time} className="px-xs-5 py-xs-1">
-								{message.text}
-							</pre>
-						))}
+	return (
+		<div className="relative flex h-full flex-1 flex-col gap-xs-5 py-xs-1">
+			{activeChat || chatId ? (
+				<div ref={listingRef} className="flex-1 overflow-y-auto pb-sm-5" onScroll={onScroll}>
+					<div className={`${widthClass} ${chatLoading === 'full' ? 'h-full' : ''} flex flex-col pt-sm-0`}>
+						{/* TOOLBAR */}
+						<StickyToolbar variant="chat" className="pb-xs-4">
+							<h1 className="mx-md-0 px-xs-5 pt-xs-0 text-size-xl font-weight-md">
+								{activeChat?.title}
+								{Boolean(chatPagination.count) && (
+									<div className="mt-xs-0 text-size-xs text-color-text-subtle">
+										{chatPagination.count} messages
+									</div>
+								)}
+							</h1>
+						</StickyToolbar>
+
+						{/* LISTING */}
+						{chatLoading === 'full' ? (
+							<LoadingText text="Loading messages..." className="absolute-overlay flex-center" />
+						) : (
+							<div className="flex flex-col">
+								{/* LOAD MORE */}
+								<LoadingText
+									text="Loading previous messages..."
+									className="flex-center min-h-md-0 text-size-sm"
+									style={{ visibility: chatLoading === 'more' ? 'visible' : 'hidden' }}
+								/>
+								{/* MESSAGES */}
+								{chatMessages.map((message: Message) => (
+									<MessageItem key={message.id} message={message} subchatId={subchatId} />
+								))}
+							</div>
+						)}
 					</div>
 				</div>
 			) : (
@@ -35,29 +108,20 @@ export const ChatView = () => {
 				</div>
 			)}
 
-			<TextField
-				ref={questionRef}
-				id="new-chat-question"
-				size="xl"
-				value={question}
-				placeholder="Ask a question..."
-				ariaLabel="New message"
-				slotRight={
-					<IconButton
-						tooltip="Send message"
-						variant="solid-primary"
-						disabled={!questionText}
-						onClick={sendMessage}
-					>
-						<SendSvg className="h-xs-9" />
-					</IconButton>
-				}
-				maxLength={1000}
-				maxRows={10}
-				multiline
-				onChange={onChange}
-				onSubmit={onSubmit}
-			/>
+			<div className={`px-md-0 ${widthClass}`}>
+				<InputField
+					ref={inputRef}
+					input={input}
+					inputText={inputText}
+					loading={chatLoading === 'update' || Boolean(allChatsLoading)}
+					disabled={chatLoading === 'full' || chatLoading === 'more'}
+					className="mb-xs-5 w-full"
+					primary
+					onChange={onChange}
+					onPressEnter={onPressEnter}
+					onSubmit={onSubmit}
+				/>
+			</div>
 		</div>
 	)
 }

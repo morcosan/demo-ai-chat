@@ -86,4 +86,5 @@ export const TOKENS__SPACING = {
 
 	'a11y-outline': { $ref: 'xs-0', $css: '--ds-spacing-a11y-outline' },
 	'a11y-padding': { $ref: 'xs-1', $css: '--ds-spacing-a11y-padding' },
+	'a11y-scrollbar': { $ref: 'xs-6', $css: '--ds-spacing-a11y-scrollbar' },
 } as const satisfies DesignTokenGroup<string>

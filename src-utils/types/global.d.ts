@@ -18,4 +18,6 @@ declare global {
 		page: number
 		count: number
 	}
+
+	type ListLoading = false | 'full' | 'more' | 'update'
 }

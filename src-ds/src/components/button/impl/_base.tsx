@@ -59,7 +59,7 @@ export const useButtonBase = (rawProps: ButtonProps) => {
 	}
 
 	const cssDisabled: CSS = {
-		opacity: props.disabled ? 0.3 : 1,
+		opacity: props.disabled && !props.loading ? 0.3 : 1,
 		pointerEvents: isDisabled ? 'none' : 'unset',
 	}
 

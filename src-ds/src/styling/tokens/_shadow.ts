@@ -41,4 +41,25 @@ export const TOKENS__SHADOW = {
 		},
 		$css: '--ds-shadow-xl',
 	},
+	'below-sm': {
+		$value: {
+			light: '0 6px 6px -6px rgb(0 0 0 / 0.15)',
+			dark: '0 6px 6px -6px rgb(0 0 0 / 0.6)',
+		},
+		$css: '--ds-shadow-below-sm',
+	},
+	'below-md': {
+		$value: {
+			light: '0 10px 10px -10px rgb(0 0 0 / 0.15)',
+			dark: '0 10px 10px -10px rgb(0 0 0 / 0.6)',
+		},
+		$css: '--ds-shadow-below-md',
+	},
+	'below-lg': {
+		$value: {
+			light: '0 14px 14px -14px rgb(0 0 0 / 0.15)',
+			dark: '0 14px 14px -14px rgb(0 0 0 / 0.6)',
+		},
+		$css: '--ds-shadow-below-lg',
+	},
 } as const satisfies DesignTokenGroup<DesignTokenThemeValue<string>>

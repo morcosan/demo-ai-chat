@@ -19,7 +19,7 @@ export const CHANGELOG: LogEntry[] = [
 		changes: {
 			docs: ['Created basic Storybook docs for design tokens, web core and versioning'],
 			token: ['Added basic tokens for ^color^, ^elevation^, ^radius^, ^spacing^ and ^typography^'],
-			asset: ['Added 13 icons and 11 logos'],
+			asset: ['Added 15 icons and 11 logos'],
 			core: [
 				'Added ^UiTheme^ system with ^light^ and ^dark^ themes',
 				'Added ^UiLibrary^ system with ^Material UI^ and ^Ant Design^ libraries',
