@@ -8,6 +8,9 @@
 	--ds-shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.15), 0 4px 6px -4px rgb(0 0 0 / 0.15);
 	--ds-shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.15), 0 8px 10px -6px rgb(0 0 0 / 0.15);
 	--ds-shadow-inner: inset 0 2px 4px 0 rgb(0 0 0 / 0.1);
+	--ds-shadow-below-sm: 0 6px 6px -6px rgb(0 0 0 / 0.15);
+	--ds-shadow-below-md: 0 10px 10px -10px rgb(0 0 0 / 0.15);
+	--ds-shadow-below-lg: 0 14px 14px -14px rgb(0 0 0 / 0.15);
 }
 
 [data-color-theme='dark'] {
@@ -17,4 +20,7 @@
 	--ds-shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.4), 0 4px 6px -4px rgb(0 0 0 / 0.4);
 	--ds-shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.4), 0 8px 10px -6px rgb(0 0 0 / 0.4);
 	--ds-shadow-inner: inset 0 2px 4px 0 rgb(0 0 0 / 0.2);
+	--ds-shadow-below-sm: 0 6px 6px -6px rgb(0 0 0 / 0.6);
+	--ds-shadow-below-md: 0 10px 10px -10px rgb(0 0 0 / 0.6);
+	--ds-shadow-below-lg: 0 14px 14px -14px rgb(0 0 0 / 0.6);
 }

@@ -1,26 +1,28 @@
-import { useAiChatStore } from '@app/biz-modules/ai-chat/state'
 import { AiChatSvg, Button, CloseSvg, DotsSvg, IconButton, SearchSvg, TextField } from '@ds/release'
 import { debounce } from 'lodash'
 import { UIEvent, useState } from 'react'
 import { Chat } from '../api/types'
+import { LoadingText } from '../components/loading-text'
+import { useAiChat } from '../state'
 
 export const AiChatNavSection = () => {
-	const { allChats, allChatsLoading, moreChatsLoading, chatPagination, activeChat, loadMoreChats } =
-		useAiChatStore()
-	const [searchValue, setSearchValue] = useState('')
+	const { allChats, allChatsLoading, allChatsPagination, activeChat, loadMoreChats } = useAiChat()
+	const [search, setSearch] = useState('')
 
-	const searchKeyword = searchValue.trim()
+	const searchText = search.trim()
 
-	const onScroll = debounce((event: UIEvent) => {
+	const onScrollChats = debounce((event: UIEvent) => {
 		const container = event.target as HTMLElement
 		const isScrollEnd = container.offsetHeight + container.scrollTop >= container.scrollHeight
 		isScrollEnd && loadMoreChats()
 	}, 300)
 
+	const hasExtraChat = Boolean(activeChat && !allChats.some((chat: Chat) => chat.id === activeChat.id))
+
 	return (
 		<>
 			{/* TITLE */}
-			<Button linkHref="/chat/0">
+			<Button linkHref="/chat" loading={allChatsLoading === 'update'}>
 				<AiChatSvg className="-ml-xs-4 mr-xs-3 h-xs-9 w-xs-9" />
 				New chat
 			</Button>
@@ -28,7 +30,8 @@ export const AiChatNavSection = () => {
 			{/* OPTIONS */}
 			<div className="mt-sm-0 flex items-center justify-between">
 				<span className="ml-xs-1 text-size-sm text-color-text-subtle">
-					Chats {Boolean(chatPagination.count) && <span className="text-size-xs">({chatPagination.count})</span>}
+					Chats{' '}
+					{Boolean(allChatsPagination.count) && <span className="text-size-xs">({allChatsPagination.count})</span>}
 				</span>
 				<IconButton tooltip="Show options" size="sm" className="-mr-xs-0">
 					<DotsSvg className="h-xs-8" />
@@ -38,32 +41,29 @@ export const AiChatNavSection = () => {
 			{/* SEARCH */}
 			<TextField
 				id="chat-search"
-				value={searchValue}
+				value={search}
 				placeholder="Search chat..."
 				ariaLabel="Search chat"
 				size="sm"
 				className="mb-xs-4 mt-xs-1"
 				slotLeft={<SearchSvg className="ml-xs-2 mr-xs-0 mt-px h-full w-xs-5 min-w-xs-5" />}
 				slotRight={
-					Boolean(searchKeyword) && (
-						<IconButton tooltip="Clear search" variant="text-danger" size="xs" onClick={() => setSearchValue('')}>
+					Boolean(searchText) && (
+						<IconButton tooltip="Clear search" variant="text-danger" size="xs" onClick={() => setSearch('')}>
 							<CloseSvg className="h-xs-6" />
 						</IconButton>
 					)
 				}
-				onChange={setSearchValue}
+				onChange={setSearch}
 			/>
 
 			{/* LISTING */}
 			<div
-				className="-mx-scrollbar-w flex flex-1 flex-col overflow-y-scroll py-a11y-padding pl-scrollbar-w"
-				onScroll={onScroll}
+				className="-mx-a11y-scrollbar flex flex-1 flex-col overflow-y-scroll p-a11y-padding !pl-a11y-scrollbar"
+				onScroll={onScrollChats}
 			>
-				{allChatsLoading ? (
-					<div className="mt-xs-2 flex px-xs-4">
-						<span className="mr-xs-4 animate-spin">⌛</span>
-						Loading chats...
-					</div>
+				{allChatsLoading === 'full' ? (
+					<LoadingText text="Loading chats..." className="min-h-sm-4 px-button-px-item text-size-sm" />
 				) : allChats.length ? (
 					<>
 						{allChats.map((chat: Chat) => (
@@ -78,17 +78,31 @@ export const AiChatNavSection = () => {
 								<span className="truncate">{chat.title}</span>
 							</Button>
 						))}
-						{Boolean(moreChatsLoading) && (
-							<div className="my-xs-6 flex px-xs-4">
-								<span className="mr-xs-4 animate-spin">⌛</span>
-								Loading chats...
-							</div>
+						{allChats.length < allChatsPagination.count && (
+							<LoadingText
+								text="Loading chats..."
+								className="min-h-sm-4 px-button-px-item text-size-sm"
+								style={{ visibility: allChatsLoading === 'more' ? 'visible' : 'hidden' }}
+							/>
 						)}
 					</>
 				) : (
-					<div className="mt-xs-2 flex px-xs-4">There are no chats</div>
+					<div className="mt-xs-2 flex px-xs-4">No chats</div>
 				)}
 			</div>
+
+			{/* EXTRA ACTIVE CHAT */}
+			{Boolean(hasExtraChat) && (
+				<Button
+					linkHref={`/chat/${activeChat?.id}`}
+					variant="item-solid-secondary"
+					highlight="selected"
+					tooltip={activeChat?.title}
+					className="mb-a11y-padding focus:z-1"
+				>
+					<span className="truncate">{activeChat?.title}</span>
+				</Button>
+			)}
 		</>
 	)
 }

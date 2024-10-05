@@ -1,7 +1,7 @@
 import { MouseEvent } from 'react'
 import { LinkType } from '../_shared/types'
 
-export type IconButtonSize = 'xs' | 'sm' | 'md'
+export type IconButtonSize = 'xs' | 'sm' | 'md' | 'lg'
 export type IconButtonVariant =
 	| 'text-default'
 	| 'text-danger'

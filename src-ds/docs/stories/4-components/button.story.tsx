@@ -87,7 +87,10 @@ const meta: Meta<typeof Button> = {
 				name: 'loading',
 				type: 'boolean',
 				default: `false`,
-				details: `Flag for enabling loading state (non-interactive)`,
+				details: `
+					Flag for enabling loading state (non-interactive)
+					It has priority over ^disabled^ prop
+				`,
 			},
 			{
 				name: 'disabled',

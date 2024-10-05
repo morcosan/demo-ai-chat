@@ -11,7 +11,7 @@ const Root = () => {
 	return (
 		<Routes>
 			<Route path="/" element={<AiChatPage />} />
-			<Route path="/chat/:chatId" element={<AiChatPage />} />
+			<Route path="/chat/:chatId?" element={<AiChatPage />} />
 			<Route path="/docs/api/*" element={<ApiDocsPage />} />
 			<Route path="/settings" element={<SettingsPage />} />
 			<Route path="/logout" element={<LogoutPage />} />

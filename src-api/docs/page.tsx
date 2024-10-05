@@ -2,7 +2,11 @@ import { ArrowBackSvg, IconButton } from '@ds/release'
 import { Link, useLocation } from 'react-router-dom'
 import { ApiConsole } from './api-console'
 
-const ENDPOINTS = ['/api/chats?page=1&count=5', '/api/messages']
+const ENDPOINTS = [
+	'/api/chats?page=1&count=5',
+	'/api/subchats?page=1&count=5&chatId=1001',
+	'/api/messages?page=1&count=5&chatId=1001',
+]
 
 const ApiDocsPage = () => {
 	const location = useLocation()

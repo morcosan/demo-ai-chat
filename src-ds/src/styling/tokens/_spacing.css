@@ -98,4 +98,5 @@
 
 	--ds-spacing-a11y-outline: var(--ds-spacing-xs-0);
 	--ds-spacing-a11y-padding: var(--ds-spacing-xs-1);
+	--ds-spacing-a11y-scrollbar: var(--ds-spacing-xs-6);
 }

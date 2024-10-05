@@ -1,3 +1,4 @@
+import { useSettings } from '@app/biz-modules/user-settings/state'
 import {
 	Button,
 	GithubBlackSvg,
@@ -10,19 +11,19 @@ import {
 	useUiLibrary,
 	useUiTheme,
 } from '@ds/release'
-import { randomAvatar, randomFullName } from '@utils/release'
+import { randomFullName } from '@utils/release'
 import { ChangeEvent, useEffect, useMemo, useRef, useState } from 'react'
 
 type SelectEvent = ChangeEvent<HTMLSelectElement>
 
 export const UserSettings = () => {
+	const { avatar } = useSettings()
 	const { isUiLight, isUiDark, changeColorTheme } = useUiTheme()
 	const { uiLibrary, changeUiLibrary } = useUiLibrary()
 	const [opened, setOpened] = useState(false)
 
 	const storybookUrl = ENV__BUILD_MODE === 'local' ? 'http://localhost:9000' : `${ENV__ROOT_URL_PATH}/storybook`
 
-	const avatar = useMemo(() => randomAvatar(), [])
 	const name = useMemo(() => randomFullName(), [])
 
 	const menuClass = [
