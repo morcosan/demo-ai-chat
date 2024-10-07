@@ -18,14 +18,15 @@ const AiChatPage = () => {
 		subchatLoading,
 		loadActiveSubchat,
 		resetActiveSubchat,
+		setActiveTab,
 	} = useAiChat()
 	const [searchParams] = useSearchParams()
 	const navigate = useNavigate()
 
 	const subchatId = parseInt(String(searchParams.get('subchat')))
 
-	const hasChatView = activeTab === AiChatTab.ALL || activeTab === AiChatTab.CHAT
-	const hasSubchatView = activeTab === AiChatTab.ALL || activeTab === AiChatTab.SUBCHAT
+	const hasChatView = activeTab === AiChatTab.BOTH || activeTab === AiChatTab.CHAT
+	const hasSubchatView = activeTab === AiChatTab.BOTH || activeTab === AiChatTab.SUBCHAT
 
 	const loadSubchat = async () => {
 		const success = await loadActiveSubchat(subchatId)
@@ -37,6 +38,7 @@ const AiChatPage = () => {
 
 	useEffect(() => {
 		subchatId ? loadSubchat() : resetActiveSubchat()
+		subchatId && activeTab === AiChatTab.CHAT && setActiveTab(AiChatTab.SUBCHAT)
 	}, [activeChat, subchatId])
 
 	return (
@@ -44,9 +46,11 @@ const AiChatPage = () => {
 			{Boolean(hasChatView) && <ChatView />}
 
 			{Boolean(hasSubchatView) && (
-				<div className="relative ml-xs-2 h-full w-[30%]">
+				<div className={`relative h-full ${activeTab === AiChatTab.BOTH ? 'ml-xs-2 w-[30%]' : 'w-full'}`}>
 					{/* DELIMITER */}
-					<div className="absolute -left-xs-1 top-0 h-full w-xs-1 bg-color-border-shadow" />
+					{activeTab === AiChatTab.BOTH && (
+						<div className="absolute -left-xs-1 top-0 h-full w-xs-1 bg-color-border-shadow" />
+					)}
 
 					{chatLoading === 'full' || allSubchatsLoading === 'full' ? (
 						<LoadingText text="Loading subchats..." className="flex-center h-full" />

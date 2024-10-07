@@ -12,6 +12,7 @@ import { useAiChat } from '../state'
 export const ChatView = () => {
 	const {
 		activeChat,
+		activeTab,
 		allChatsLoading,
 		canLoadChatMessages,
 		chatLoading,
@@ -96,7 +97,7 @@ export const ChatView = () => {
 								/>
 								{/* MESSAGES */}
 								{chatMessages.map((message: Message) => (
-									<MessageItem key={message.id} message={message} subchatId={subchatId} />
+									<MessageItem key={message.id} message={message} subchatId={subchatId} activeTab={activeTab} />
 								))}
 							</div>
 						)}

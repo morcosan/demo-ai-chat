@@ -1,11 +1,11 @@
 import { AiChatSvg, Button, CloseSvg, DotsSvg, IconButton, SearchSvg, TextField } from '@ds/release'
 import { debounce } from 'lodash'
 import { UIEvent, useState } from 'react'
-import { Chat } from '../api/types'
-import { LoadingText } from '../components/loading-text'
-import { useAiChat } from '../state'
+import { Chat } from '../../api/types'
+import { LoadingText } from '../../components/loading-text'
+import { useAiChat } from '../../state'
 
-export const AiChatNavSection = () => {
+export const AiChatNavMenu = () => {
 	const { allChats, allChatsLoading, allChatsPagination, activeChat, loadMoreChats } = useAiChat()
 	const [search, setSearch] = useState('')
 

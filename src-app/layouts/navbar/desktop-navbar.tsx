@@ -1,5 +1,5 @@
 import { AiChatTab, useAiChat } from '@app/biz-modules/ai-chat/state'
-import { AiChatNavSection } from '@app/biz-modules/ai-chat/views/nav-section'
+import { AiChatNavMenu } from '@app/biz-modules/ai-chat/views/nav/nav-menu'
 import { useEffect, useRef, useState } from 'react'
 import { AppLogo } from './_app-logo'
 import { SettingsButton } from './_settings-button'
@@ -35,7 +35,7 @@ export const DesktopNavbar = () => {
 	}, [])
 
 	useEffect(() => {
-		setActiveTab(AiChatTab.ALL)
+		setActiveTab(AiChatTab.BOTH)
 	}, [])
 
 	return (
@@ -45,7 +45,7 @@ export const DesktopNavbar = () => {
 				<AppLogo className="mb-xs-9" />
 
 				{/* AI CHAT */}
-				<AiChatNavSection />
+				<AiChatNavMenu />
 
 				{/* SETTINGS */}
 				<div ref={settingsRef} className="relative">

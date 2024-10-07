@@ -5,7 +5,7 @@ import { subchatDefaults, SubchatStore } from '@app/biz-modules/ai-chat/state/st
 import { createContext } from 'react'
 
 export enum AiChatTab {
-	ALL,
+	BOTH,
 	CHAT,
 	SUBCHAT,
 }
@@ -20,6 +20,6 @@ export const Context = createContext<Store>({
 	...chatDefaults,
 	...allSubchatsDefaults,
 	...subchatDefaults,
-	activeTab: AiChatTab.ALL,
+	activeTab: AiChatTab.BOTH,
 	setActiveTab: () => {},
 })

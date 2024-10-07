@@ -6,7 +6,7 @@ import { useChatStore } from './stores/chat-store'
 import { useSubchatStore } from './stores/subchat-store'
 
 export const AiChatProvider = ({ children }: ReactProps) => {
-	const [activeTab, setActiveTab] = useState<AiChatTab>(AiChatTab.ALL)
+	const [activeTab, setActiveTab] = useState<AiChatTab>(AiChatTab.BOTH)
 	const allChatsStore = useAllChatsStore()
 	const chatStore = useChatStore(allChatsStore)
 	const allSubchatsStore = useAllSubchatsStore(chatStore)
