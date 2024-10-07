@@ -1,5 +1,5 @@
 import { LoadingText } from '@app/biz-modules/ai-chat/components/loading-text'
-import { useAiChat } from '@app/biz-modules/ai-chat/state'
+import { AiChatTab, useAiChat } from '@app/biz-modules/ai-chat/state'
 import { ChatView } from '@app/biz-modules/ai-chat/views/chat-view'
 import { SubchatView } from '@app/biz-modules/ai-chat/views/subchat-view'
 import { SubchatsView } from '@app/biz-modules/ai-chat/views/subchats-view'
@@ -11,6 +11,7 @@ const AiChatPage = () => {
 	const {
 		activeChat,
 		activeSubchat,
+		activeTab,
 		allSubchats,
 		allSubchatsLoading,
 		chatLoading,
@@ -22,6 +23,9 @@ const AiChatPage = () => {
 	const navigate = useNavigate()
 
 	const subchatId = parseInt(String(searchParams.get('subchat')))
+
+	const hasChatView = activeTab === AiChatTab.ALL || activeTab === AiChatTab.CHAT
+	const hasSubchatView = activeTab === AiChatTab.ALL || activeTab === AiChatTab.SUBCHAT
 
 	const loadSubchat = async () => {
 		const success = await loadActiveSubchat(subchatId)
@@ -37,24 +41,26 @@ const AiChatPage = () => {
 
 	return (
 		<AppLayout pageClassName="flex">
-			<ChatView />
+			{Boolean(hasChatView) && <ChatView />}
 
-			<div className="relative ml-xs-2 h-full w-[30%]">
-				{/* DELIMITER */}
-				<div className="absolute -left-xs-1 top-0 h-full w-xs-1 bg-color-border-shadow" />
+			{Boolean(hasSubchatView) && (
+				<div className="relative ml-xs-2 h-full w-[30%]">
+					{/* DELIMITER */}
+					<div className="absolute -left-xs-1 top-0 h-full w-xs-1 bg-color-border-shadow" />
 
-				{chatLoading === 'full' || allSubchatsLoading === 'full' ? (
-					<LoadingText text="Loading subchats..." className="flex-center h-full" />
-				) : !activeChat ? (
-					<div />
-				) : !allSubchats.length && !subchatLoading && !activeSubchat ? (
-					<div className="flex-center h-full w-full text-color-text-subtle">No sub-chats</div>
-				) : activeSubchat ? (
-					<SubchatView />
-				) : (
-					<SubchatsView />
-				)}
-			</div>
+					{chatLoading === 'full' || allSubchatsLoading === 'full' ? (
+						<LoadingText text="Loading subchats..." className="flex-center h-full" />
+					) : !activeChat ? (
+						<div />
+					) : !allSubchats.length && !subchatLoading && !activeSubchat ? (
+						<div className="flex-center h-full w-full text-color-text-subtle">No sub-chats</div>
+					) : activeSubchat ? (
+						<SubchatView />
+					) : (
+						<SubchatsView />
+					)}
+				</div>
+			)}
 		</AppLayout>
 	)
 }

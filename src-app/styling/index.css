@@ -1,0 +1,4 @@
+:host,
+:root {
+	--app-spacing-navbar-h: var(--ds-spacing-sm-6);
+}

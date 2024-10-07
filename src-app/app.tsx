@@ -4,7 +4,7 @@ import { UiA11yProvider, UiLibraryProvider, UiThemeProvider, UiViewportProvider 
 import { COOKIE__APP_COLOR_THEME, COOKIE__APP_UI_LIBRARY, Wrapper, Wrappers } from '@utils/release'
 import { StrictMode, Suspense } from 'react'
 import { Router } from './routing'
-import './styles/index.css'
+import './styling/index.css'
 
 type Type =
 	| typeof AiChatProvider
