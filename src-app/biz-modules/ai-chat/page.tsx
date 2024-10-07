@@ -1,9 +1,9 @@
 import { LoadingText } from '@app/biz-modules/ai-chat/components/loading-text'
 import { useAiChat } from '@app/biz-modules/ai-chat/state'
-import { ChatView } from '@app/biz-modules/ai-chat/views/chat-view.tsx'
-import { SubchatView } from '@app/biz-modules/ai-chat/views/subchat-view.tsx'
+import { ChatView } from '@app/biz-modules/ai-chat/views/chat-view'
+import { SubchatView } from '@app/biz-modules/ai-chat/views/subchat-view'
 import { SubchatsView } from '@app/biz-modules/ai-chat/views/subchats-view'
-import { AppLayout } from '@app/layouts/app-layout.tsx'
+import { AppLayout } from '@app/layouts/app-layout'
 import { useEffect } from 'react'
 import { useNavigate, useSearchParams } from 'react-router-dom'
 

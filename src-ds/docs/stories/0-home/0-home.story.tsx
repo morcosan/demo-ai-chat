@@ -1,4 +1,4 @@
-import { DocsPage } from '@ds/docs/components/docs-page.tsx'
+import { DocsPage } from '@ds/docs/components/docs-page'
 import '@ds/docs/setup'
 import type { StoryObj } from '@storybook/react'
 

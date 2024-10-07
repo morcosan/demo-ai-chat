@@ -1,4 +1,4 @@
-import { DocsTokenCode } from '@ds/docs/components/docs-token-code.tsx'
+import { DocsTokenCode } from '@ds/docs/components/docs-token-code'
 import { CssSvg, TailwindSvg, TypescriptSvg } from '@ds/release'
 import { useEffect, useState } from 'react'
 

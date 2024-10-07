@@ -87,6 +87,7 @@ export default tsESLint.config(
 			'@typescript-eslint/ban-ts-comment': ['error', { 'ts-ignore': 'allow-with-description' }],
 
 			'custom/only-import-from-release': 'error',
+			'custom/no-ts-extension-for-ts-imports': 'error',
 		},
 	}
 )

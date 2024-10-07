@@ -1,4 +1,4 @@
-import { AppLayout } from '@app/layouts/app-layout.tsx'
+import { AppLayout } from '@app/layouts/app-layout'
 
 const SettingsPage = () => {
 	return (

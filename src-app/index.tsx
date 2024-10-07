@@ -1,7 +1,7 @@
 import '@ds/release/styling/index.css'
 import '@utils/release'
 import { createRoot } from 'react-dom/client'
-import App from './app.tsx'
+import App from './app'
 
 LOG('BUILD_MODE:', ENV__BUILD_MODE)
 LOG('BUILD_NUMBER:', ENV__BUILD_NUMBER)

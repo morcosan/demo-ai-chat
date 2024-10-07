@@ -5,7 +5,7 @@ const AiChatPage = lazy(() => import('@app/biz-modules/ai-chat/page'))
 const ApiDocsPage = lazy(() => import('@api/docs/page'))
 const LogoutPage = lazy(() => import('@app/core-modules/logout-page/page'))
 const NotFoundPage = lazy(() => import('@app/core-modules/404-page/page'))
-const SettingsPage = lazy(() => import('@app/biz-modules/user-settings/page.tsx'))
+const SettingsPage = lazy(() => import('@app/biz-modules/user-settings/page'))
 
 const Root = () => {
 	return (
