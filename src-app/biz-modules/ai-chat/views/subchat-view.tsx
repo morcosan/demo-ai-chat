@@ -7,11 +7,12 @@ import { LoadingText } from '../components/loading-text'
 import { MessageItem } from '../components/message-item'
 import { StickyToolbar } from '../components/sticky-toolbar'
 import { useMessageListing } from '../hooks/message-listing'
-import { useAiChat } from '../state'
+import { AiChatTab, useAiChat } from '../state'
 
 export const SubchatView = () => {
 	const {
 		activeChat,
+		activeTab,
 		canLoadSubchatMessages,
 		subchatLoading,
 		subchatMessages,
@@ -47,9 +48,13 @@ export const SubchatView = () => {
 				{/* TOOLBAR */}
 				<StickyToolbar variant="subchat" className="-mx-a11y-padding px-xs-2 py-xs-1">
 					<div className="flex items-center gap-xs-2">
-						<IconButton linkHref={`/chat/${activeChat?.id}`} tooltip="Back to subchats" size="sm">
-							<ArrowBackSvg className="h-xs-5" />
-						</IconButton>
+						{activeTab === AiChatTab.BOTH ? (
+							<IconButton linkHref={`/chat/${activeChat?.id}`} tooltip="Back to subchats" size="sm">
+								<ArrowBackSvg className="h-xs-5" />
+							</IconButton>
+						) : (
+							<div className="w-xs-0" />
+						)}
 
 						{Boolean(subchatPagination.count) && (
 							<div className="pb-px text-size-sm">{subchatPagination.count} messages</div>

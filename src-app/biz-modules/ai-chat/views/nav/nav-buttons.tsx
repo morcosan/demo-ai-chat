@@ -1,12 +1,27 @@
 import { Button } from '@ds/release'
+import { useNavigate, useSearchParams } from 'react-router-dom'
 import { SubchatIcon } from '../../components/subchat-icon'
 import { AiChatTab, useAiChat } from '../../state'
 
 export const AiChatNavButtons = ({ className = '' }: ReactProps) => {
-	const { activeTab, allSubchatsPagination, setActiveTab } = useAiChat()
+	const { activeTab, activeSubchat, allSubchatsPagination, setActiveTab } = useAiChat()
+	const [searchParams] = useSearchParams()
+	const navigate = useNavigate()
 
-	const onToggleSubchatTab = () => {
-		setActiveTab(activeTab === AiChatTab.CHAT ? AiChatTab.SUBCHAT : AiChatTab.CHAT)
+	const resetSubchatUrl = () => {
+		searchParams.delete('subchat')
+		navigate({ search: searchParams.toString() }, { replace: true })
+	}
+
+	const onClick = () => {
+		resetSubchatUrl()
+
+		if (activeTab === AiChatTab.CHAT) {
+			// Wait for reset
+			wait(activeSubchat ? 100 : 0).then(() => setActiveTab(AiChatTab.SUBCHAT))
+		} else {
+			setActiveTab(AiChatTab.CHAT)
+		}
 	}
 
 	return (
@@ -15,7 +30,7 @@ export const AiChatNavButtons = ({ className = '' }: ReactProps) => {
 			variant="item-text-default"
 			highlight={activeTab === AiChatTab.SUBCHAT ? 'pressed' : 'default'}
 			className={`px-xs-4 ${className}`}
-			onClick={onToggleSubchatTab}
+			onClick={onClick}
 		>
 			<SubchatIcon count={allSubchatsPagination.count} />
 		</Button>

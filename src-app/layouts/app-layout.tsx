@@ -12,21 +12,21 @@ interface Props extends ReactProps {
 
 export const AppLayout = ({ pageClassName = '', children }: Props) => {
 	const [navTab, setNavTab] = useState<NavTab>(NavTab.MODULE)
-	const { isViewportMaxMD } = useUiViewport()
+	const { isViewportMaxLG } = useUiViewport()
 
 	const onToggleNavMenu = () => setNavTab(navTab !== NavTab.MODULE ? NavTab.MODULE : NavTab.MENU)
 	const onToggleSettings = () => setNavTab(navTab === NavTab.SETTINGS ? NavTab.MENU : NavTab.SETTINGS)
 
 	useEffect(() => {
 		setNavTab(NavTab.MODULE)
-	}, [isViewportMaxMD])
+	}, [isViewportMaxLG])
 
 	return (
 		<div
-			className={`flex ${isViewportMaxMD ? 'flex-col' : ''} h-screen w-screen`}
-			style={{ paddingTop: isViewportMaxMD ? 'var(--app-spacing-navbar-h)' : 0 }}
+			className={`flex ${isViewportMaxLG ? 'flex-col' : ''} h-screen w-screen`}
+			style={{ paddingTop: isViewportMaxLG ? 'var(--app-spacing-navbar-h)' : 0 }}
 		>
-			{isViewportMaxMD ? <MobileNavbar onToggleNavMenu={onToggleNavMenu} /> : <DesktopNavbar />}
+			{isViewportMaxLG ? <MobileNavbar onToggleNavMenu={onToggleNavMenu} /> : <DesktopNavbar />}
 
 			{navTab === NavTab.MODULE ? (
 				<div className={`h-full w-full flex-1 ${pageClassName}`}>{children}</div>

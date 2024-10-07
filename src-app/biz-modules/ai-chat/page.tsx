@@ -1,11 +1,11 @@
-import { LoadingText } from '@app/biz-modules/ai-chat/components/loading-text'
-import { AiChatTab, useAiChat } from '@app/biz-modules/ai-chat/state'
-import { ChatView } from '@app/biz-modules/ai-chat/views/chat-view'
-import { SubchatView } from '@app/biz-modules/ai-chat/views/subchat-view'
-import { SubchatsView } from '@app/biz-modules/ai-chat/views/subchats-view'
 import { AppLayout } from '@app/layouts/app-layout'
 import { useEffect } from 'react'
 import { useNavigate, useSearchParams } from 'react-router-dom'
+import { LoadingText } from './components/loading-text'
+import { AiChatTab, useAiChat } from './state'
+import { ChatView } from './views/chat-view'
+import { SubchatView } from './views/subchat-view'
+import { SubchatsView } from './views/subchats-view'
 
 const AiChatPage = () => {
 	const {
@@ -28,17 +28,24 @@ const AiChatPage = () => {
 	const hasChatView = activeTab === AiChatTab.BOTH || activeTab === AiChatTab.CHAT
 	const hasSubchatView = activeTab === AiChatTab.BOTH || activeTab === AiChatTab.SUBCHAT
 
+	const resetSubchatUrl = () => {
+		searchParams.delete('subchat')
+		navigate({ search: searchParams.toString() }, { replace: true })
+	}
+
 	const loadSubchat = async () => {
 		const success = await loadActiveSubchat(subchatId)
 		if (success === false) {
-			searchParams.delete('subchat')
-			navigate({ search: searchParams.toString() }, { replace: true })
+			resetSubchatUrl()
 		}
 	}
 
 	useEffect(() => {
 		subchatId ? loadSubchat() : resetActiveSubchat()
-		subchatId && activeTab === AiChatTab.CHAT && setActiveTab(AiChatTab.SUBCHAT)
+
+		if (subchatId && activeTab === AiChatTab.CHAT) {
+			setActiveTab(AiChatTab.SUBCHAT)
+		}
 	}, [activeChat, subchatId])
 
 	return (
