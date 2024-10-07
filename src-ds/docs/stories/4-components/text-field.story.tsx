@@ -1,4 +1,4 @@
-import { DocsPage } from '@ds/docs/components/docs-page.tsx'
+import { DocsPage } from '@ds/docs/components/docs-page'
 import { createArgTypes } from '@ds/docs/setup.ts'
 import {
 	IconButton,

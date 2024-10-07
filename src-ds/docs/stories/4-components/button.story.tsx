@@ -1,4 +1,4 @@
-import { DocsPage } from '@ds/docs/components/docs-page.tsx'
+import { DocsPage } from '@ds/docs/components/docs-page'
 import { createArgTypes } from '@ds/docs/setup.ts'
 import { Button, ButtonProps, ButtonVariant, LogoutSvg } from '@ds/release'
 import { action } from '@storybook/addon-actions'

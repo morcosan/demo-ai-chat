@@ -7,8 +7,8 @@ import { IconButton, MaximizeSvg, MinimizeSvg } from '@ds/release'
 import { ReactNode, useCallback, useEffect, useRef, useState } from 'react'
 import { renderHtml } from '../utilities/docs.ts'
 import { toggleControls } from '../utilities/storybook'
-import { DocsHeader } from './docs-header.tsx'
-import { DocsPlayground } from './docs-playground.tsx'
+import { DocsHeader } from './docs-header'
+import { DocsPlayground } from './docs-playground'
 
 interface ComponentSlots {
 	PROPS?: DocsPropDef[]

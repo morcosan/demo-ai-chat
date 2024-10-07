@@ -1,5 +1,5 @@
 import { DocIconItem, Icon } from '@ds/docs/components/docs-icon-item'
-import { DocsPage } from '@ds/docs/components/docs-page.tsx'
+import { DocsPage } from '@ds/docs/components/docs-page'
 import '@ds/docs/setup'
 import type { StoryObj } from '@storybook/react'
 import { camelCase, upperFirst } from 'lodash'

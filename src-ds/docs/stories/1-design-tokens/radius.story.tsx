@@ -1,5 +1,5 @@
-import { DocsPage } from '@ds/docs/components/docs-page.tsx'
-import { DocsTokenCoding } from '@ds/docs/components/docs-token-coding.tsx'
+import { DocsPage } from '@ds/docs/components/docs-page'
+import { DocsTokenCoding } from '@ds/docs/components/docs-token-coding'
 import '@ds/docs/setup'
 import { TOKENS__RADIUS } from '@ds/release'
 import type { StoryObj } from '@storybook/react'
