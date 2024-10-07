@@ -39,8 +39,11 @@ export const DesktopNavbar = () => {
 	}, [])
 
 	return (
-		<nav className="z-navbar h-full min-w-lg-7 max-w-lg-7 bg-color-bg-navbar shadow-lg">
-			<div className="flex h-full w-full flex-col px-a11y-scrollbar py-scrollbar-w">
+		<nav className="z-navbar h-full min-w-lg-7 max-w-lg-7 shadow-lg">
+			<div
+				className="flex h-full w-full flex-col px-a11y-scrollbar py-scrollbar-w"
+				style={{ background: 'var(--app-color-bg-navbar)' }}
+			>
 				{/* LOGO */}
 				<AppLogo className="mb-xs-9" />
 

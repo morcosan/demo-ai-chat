@@ -60,7 +60,6 @@ export const TOKENS__COLOR = {
 
 	'bg-default': { $ref: { light: 'white', dark: 'grey-8' }, $css: '--ds-color-bg-default' },
 	'bg-field': { $ref: { light: 'white', dark: 'grey-9' }, $css: '--ds-color-bg-field' },
-	'bg-navbar': { $ref: { light: 'white', dark: 'grey-9' }, $css: '--ds-color-bg-navbar' },
 	'bg-preview': { $ref: { light: 'black-glass-1', dark: 'black-glass-3' }, $css: '--ds-color-bg-preview' },
 	'bg-scrollbar': { $ref: { light: 'black-glass-2', dark: 'white-glass-2' }, $css: '--ds-color-bg-scrollbar' },
 	'bg-scrollbar-hover': {

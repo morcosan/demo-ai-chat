@@ -1,4 +1,9 @@
 :host,
 :root {
+	--app-color-bg-navbar: var(--ds-color-white);
 	--app-spacing-navbar-h: var(--ds-spacing-sm-6);
+}
+
+[data-color-theme='dark'] {
+	--app-color-bg-navbar: var(--ds-color-grey-8);
 }
