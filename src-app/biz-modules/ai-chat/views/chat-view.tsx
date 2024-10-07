@@ -68,19 +68,22 @@ export const ChatView = () => {
 	}, [activeChat])
 
 	return (
-		<div className="relative flex h-full flex-1 flex-col gap-xs-5 py-xs-1">
+		<div className="flex h-full flex-1 flex-col gap-xs-5 py-xs-1">
 			{activeChat || chatId ? (
 				<div ref={listingRef} className="flex-1 overflow-y-auto pb-sm-5" onScroll={onScroll}>
 					<div className={`${widthClass} ${chatLoading === 'full' ? 'h-full' : ''} flex flex-col pt-sm-0`}>
 						{/* TOOLBAR */}
 						<StickyToolbar variant="chat" className="pb-xs-4">
-							<h1 className="mx-md-0 px-xs-5 pt-xs-0 text-size-xl font-weight-md">
-								{activeChat?.title}
-								{Boolean(chatPagination.count) && (
-									<div className="mt-xs-0 text-size-xs text-color-text-subtle">
-										{chatPagination.count} messages
-									</div>
-								)}
+							<h1 className="px-md-0">
+								<div className="px-xs-5 pt-xs-0 text-size-xl font-weight-md">
+									<div className="line-clamp-2">{activeChat?.title}</div>
+
+									{Boolean(chatPagination.count) && (
+										<div className="mt-xs-0 text-size-xs text-color-text-subtle">
+											{chatPagination.count} messages
+										</div>
+									)}
+								</div>
 							</h1>
 						</StickyToolbar>
 
