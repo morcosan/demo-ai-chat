@@ -1,4 +1,5 @@
 import {
+	TOKENS__BREAKPOINT,
 	TOKENS__COLOR,
 	TOKENS__FONT_SIZE,
 	TOKENS__FONT_WEIGHT,
@@ -25,6 +26,7 @@ export const TAILWIND_THEME = {
 	fontSize: createTokens(TOKENS__FONT_SIZE, 'size-'),
 	fontWeight: createTokens(TOKENS__FONT_WEIGHT, 'weight-'),
 	lineHeight: createTokens(TOKENS__LINE_HEIGHT, ''),
+	screens: createTokens(TOKENS__BREAKPOINT, ''),
 	spacing: createTokens(TOKENS__SPACING, ''),
 	zIndex: createTokens(TOKENS__Z_INDEX, ''),
 

@@ -43,6 +43,12 @@ export default {
 				provider: 'UiLibraryProvider',
 				details: 'System responsible with changing UI component libraries',
 			},
+			{
+				name: 'UI Viewport',
+				hook: 'useUiViewport',
+				provider: 'UiViewportProvider',
+				details: 'System responsible with detecting viewport size',
+			},
 		]
 		const attributes = [
 			{ code: '[data-color-theme="light"]', details: 'Display ^light^ color theme' },
