@@ -67,7 +67,7 @@ export const MessageItem = ({ message, secondary, subchatId, activeTab }: Props)
 						highlight={message.id === subchatId && activeTab === AiChatTab.BOTH ? 'pressed' : 'default'}
 						className={subchatClass}
 					>
-						<SubchatIcon count={message.subchatSize} />
+						<SubchatIcon count={message.subchatSize || -1} />
 					</Button>
 				</div>
 			)}
