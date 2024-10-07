@@ -1,6 +1,6 @@
-import { AiChatSvg, IconButton } from '@ds/release'
+import { AiChatSvg, Button } from '@ds/release'
 import { Message } from '../api/types'
-import { SubchatBubble } from '../components/subchat-bubble'
+import { SubchatIcon } from './subchat-icon'
 
 interface Props {
 	message: Message
@@ -15,7 +15,8 @@ export const MessageItem = ({ message, secondary, subchatId }: Props) => {
 	].join(' ')
 	const userItemClass = secondary ? 'max-w-[80%] bg-color-secondary-bg' : 'max-w-[70%] bg-color-primary-bg'
 	const subchatClass = [
-		message.role === 'user' ? '-mt-xs-1' : 'mt-sm-1',
+		'px-xs-3',
+		message.role === 'user' ? '' : 'mt-sm-2',
 		message.subchatSize ? '' : 'opacity-0 group-hover:opacity-100 focus:opacity-100',
 		message.id === subchatId ? '!opacity-100' : '',
 	].join(' ')
@@ -57,15 +58,15 @@ export const MessageItem = ({ message, secondary, subchatId }: Props) => {
 			{/* SUBCHAT BUTTON */}
 			{!secondary && !message.loading && (
 				<div className={`flex-center absolute right-0 top-0 ${secondary ? '' : 'w-md-0'}`}>
-					<IconButton
+					<Button
 						tooltip={message.subchatSize ? `Open subchat (${message.subchatSize} messages)` : 'Create subchat'}
 						linkHref={`/chat/${message.chatId}?subchat=${message.id}`}
-						pressed={message.id === subchatId}
-						size="lg"
+						variant="item-text-default"
+						highlight={message.id === subchatId ? 'pressed' : 'default'}
 						className={subchatClass}
 					>
-						<SubchatBubble count={message.subchatSize} />
-					</IconButton>
+						<SubchatIcon count={message.subchatSize} />
+					</Button>
 				</div>
 			)}
 		</div>

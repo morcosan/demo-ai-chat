@@ -4,7 +4,7 @@ import { UIEvent } from 'react'
 import { Subchat } from '../api/types'
 import { LoadingText } from '../components/loading-text'
 import { StickyToolbar } from '../components/sticky-toolbar'
-import { SubchatBubble } from '../components/subchat-bubble'
+import { SubchatIcon } from '../components/subchat-icon'
 import { useAiChat } from '../state'
 
 export const SubchatsView = () => {
@@ -21,7 +21,7 @@ export const SubchatsView = () => {
 			<div className="h-full overflow-y-scroll pb-xs-9 pl-scrollbar-w pr-a11y-padding" onScroll={onScroll}>
 				{/* TOOLBAR */}
 				<StickyToolbar variant="subchat" className="-mx-a11y-padding mb-xs-2 px-xs-9 py-xs-1">
-					<div className="flex h-button-h-sm items-center text-size-sm text-color-text-subtle">
+					<div className="flex h-button-h-sm items-center text-size-sm">
 						Sub-chats ({allSubchatsPagination.count})
 					</div>
 				</StickyToolbar>
@@ -34,8 +34,8 @@ export const SubchatsView = () => {
 						size="lg"
 						className="block"
 					>
-						<SubchatBubble count={subchat.size} className="mr-xs-2" />
-						<span className="truncate pb-xs-0 text-color-secondary-text-default">{subchat.text}</span>
+						<SubchatIcon count={subchat.size} className="mr-xs-4 min-w-sm-3" />
+						<span className="truncate pb-xs-0">{subchat.text}</span>
 					</Button>
 				))}
 				{allSubchats.length < allSubchatsPagination.count && (
