@@ -116,7 +116,7 @@ export const ChatView = () => {
 				</div>
 			) : (
 				<div className="flex-center flex-1 flex-col overflow-y-auto">
-					<h1 className="mt-xs-4 text-size-xl">Start a new conversation</h1>
+					<h1 className="mt-xs-4 text-size-xl font-weight-xs text-color-text-subtle">Start a new conversation</h1>
 				</div>
 			)}
 
