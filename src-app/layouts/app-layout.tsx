@@ -1,3 +1,4 @@
+import { AiChatView, useAiChat } from '@app/biz-modules/ai-chat/state'
 import { SettingsMenu } from '@app/layouts/navbar/_settings-menu'
 import { useUiViewport } from '@ds/release'
 import { useEffect, useState } from 'react'
@@ -11,12 +12,19 @@ interface Props extends ReactProps {
 }
 
 export const AppLayout = ({ pageClassName = '', children }: Props) => {
+	const { isViewportMaxLG } = useUiViewport()
+	const { activeView, setActiveView } = useAiChat()
 	const [hasMenu, setHasMenu] = useState(false)
 	const [hasSettings, setHasSettings] = useState(false)
-	const { isViewportMaxLG } = useUiViewport()
 	const location = useLocation()
 
-	const onToggleNavMenu = () => setHasMenu(!hasMenu)
+	const onToggleNavMenu = () => {
+		setHasMenu(!hasMenu)
+
+		if (activeView === AiChatView.MOBILE_SUBCHAT) {
+			setActiveView(AiChatView.MOBILE_CHAT)
+		}
+	}
 	const onToggleSettings = () => setHasSettings(!hasSettings)
 
 	useEffect(() => {
@@ -27,12 +35,16 @@ export const AppLayout = ({ pageClassName = '', children }: Props) => {
 		setHasMenu(false)
 	}, [location.pathname])
 
+	useEffect(() => {
+		activeView === AiChatView.MOBILE_SUBCHAT && setHasMenu(false)
+	}, [activeView])
+
 	return (
 		<div
 			className={`flex ${isViewportMaxLG ? 'flex-col' : ''} h-screen w-screen`}
 			style={{ paddingTop: isViewportMaxLG ? 'var(--app-spacing-navbar-h)' : 0 }}
 		>
-			{isViewportMaxLG ? <MobileNavbar onToggleNavMenu={onToggleNavMenu} /> : <DesktopNavbar />}
+			{isViewportMaxLG ? <MobileNavbar hasMenu={hasMenu} onToggleNavMenu={onToggleNavMenu} /> : <DesktopNavbar />}
 
 			<div
 				className={[

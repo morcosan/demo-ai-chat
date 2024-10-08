@@ -5,6 +5,7 @@ import { subchatDefaults, SubchatStore } from '@app/biz-modules/ai-chat/state/st
 import { createContext } from 'react'
 
 export enum AiChatView {
+	NONE,
 	DESKTOP,
 	MOBILE_CHAT,
 	MOBILE_SUBCHAT,

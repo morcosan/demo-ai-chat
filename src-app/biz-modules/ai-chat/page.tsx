@@ -1,4 +1,5 @@
 import { AppLayout } from '@app/layouts/app-layout'
+import { useUiViewport } from '@ds/release'
 import { useEffect } from 'react'
 import { useNavigate, useSearchParams } from 'react-router-dom'
 import { LoadingText } from './components/loading-text'
@@ -8,6 +9,7 @@ import { SubchatView } from './views/subchat-view'
 import { SubchatsView } from './views/subchats-view'
 
 const AiChatPage = () => {
+	const { isViewportMaxLG } = useUiViewport()
 	const {
 		activeChat,
 		activeSubchat,
@@ -36,6 +38,14 @@ const AiChatPage = () => {
 			resetSubchatUrl()
 		}
 	}
+
+	useEffect(() => {
+		setActiveView(isViewportMaxLG ? AiChatView.MOBILE_CHAT : AiChatView.DESKTOP)
+
+		return () => {
+			setActiveView(AiChatView.NONE)
+		}
+	}, [isViewportMaxLG])
 
 	useEffect(() => {
 		subchatId ? loadSubchat() : resetActiveSubchat()
@@ -73,17 +83,19 @@ const AiChatPage = () => {
 			)}
 
 			{/* MOBILE */}
-			<div
-				className={[
-					'fixed bottom-0 left-0 right-0 z-popup',
-					'border-t border-color-border-shadow shadow-lg',
-					'transition-transform duration-300 ease-out',
-					activeView === AiChatView.MOBILE_SUBCHAT ? 'translate-x-0' : 'translate-x-full',
-				].join(' ')}
-				style={{ top: 'var(--app-spacing-navbar-h)', background: 'var(--app-color-bg-navbar)' }}
-			>
-				{subchatSlot}
-			</div>
+			{activeView !== AiChatView.DESKTOP && (
+				<div
+					className={[
+						'fixed bottom-0 left-0 right-0 z-popup',
+						'border-t border-color-border-shadow shadow-lg',
+						'transition-transform duration-300 ease-out',
+						activeView === AiChatView.MOBILE_SUBCHAT ? 'translate-x-0' : 'translate-x-full',
+					].join(' ')}
+					style={{ top: 'var(--app-spacing-navbar-h)', background: 'var(--app-color-bg-navbar)' }}
+				>
+					{subchatSlot}
+				</div>
+			)}
 		</AppLayout>
 	)
 }
