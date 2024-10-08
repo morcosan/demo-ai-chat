@@ -56,7 +56,7 @@ type ThemeValue<V> = DesignTokenThemeValue<V>
 
 const gV = getTokenValue
 
-const getTokenValue_BREAKPOINT = (k: Breakpoint, cs?: CS) => gV<Breakpoint, number>(TOKENS__BREAKPOINT, k, cs)
+const getTokenValue_BREAKPOINT = (k: Breakpoint, cs?: CS) => gV<Breakpoint, string>(TOKENS__BREAKPOINT, k, cs)
 const getTokenValue_COLOR = (k: Color, cs?: CS) => gV<Color, string>(TOKENS__COLOR, k, cs)
 const getTokenValue_FONT_SIZE = (k: FontSize, cs?: CS) => gV<FontSize, string>(TOKENS__FONT_SIZE, k, cs)
 const getTokenValue_FONT_WEIGHT = (k: FontWeight, cs?: CS) => gV<FontWeight, number>(TOKENS__FONT_WEIGHT, k, cs)
