@@ -1,7 +1,8 @@
-import { TextFieldRef } from '@ds/release'
+import { TextFieldRef, useUiViewport } from '@ds/release'
 import { KeyboardEvent, useCallback, useRef, useState } from 'react'
 
 export const useMessageListing = (loading: ListLoading, postMessageFn: Function) => {
+	const { isViewportMaxLG } = useUiViewport()
 	const [input, setInput] = useState<string>('')
 	const [scrollHeight, setScrollHeight] = useState(0)
 	const inputRef = useRef<TextFieldRef>(null)
@@ -21,10 +22,11 @@ export const useMessageListing = (loading: ListLoading, postMessageFn: Function)
 
 	const onPressEnter = useCallback(
 		(event: KeyboardEvent) => {
-			if (!event.shiftKey) {
-				event.preventDefault()
-				onSubmit()
-			}
+			if (isViewportMaxLG) return // Disable submit when pressing Enter on mobile
+			if (event.shiftKey) return // Allow new lines only with Shift+Enter on desktop
+
+			event.preventDefault()
+			onSubmit()
 		},
 		[inputText, loading]
 	)
