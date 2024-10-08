@@ -81,6 +81,8 @@ export const MuiImpl = (rawProps: TextFieldProps, ref: Ref<TextFieldRef>) => {
 			style={props.style}
 			onChange={onChange}
 			onKeyDown={onKeyDown}
+			onFocus={props.onFocus}
+			onBlur={props.onBlur}
 		/>
 	)
 }

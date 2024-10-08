@@ -54,6 +54,8 @@ export const CustomImpl = (rawProps: TextFieldProps, ref: Ref<TextFieldRef>) => 
 		readOnly: props.readonly,
 		disabled: props.disabled,
 		css: cssInput,
+		onFocus: props.onFocus,
+		onBlur: props.onBlur,
 		onKeyDown,
 		onChange,
 	}

@@ -55,8 +55,10 @@ export const AntImpl = (rawProps: TextFieldProps, ref: Ref<TextFieldRef>) => {
 		'aria-label': props.ariaLabel,
 		'aria-description': props.ariaDescription,
 		maxLength: props.maxLength || undefined,
-		onChange: onChange,
-		onKeyDown: onKeyDown,
+		onFocus: props.onFocus,
+		onBlur: props.onBlur,
+		onChange,
+		onKeyDown,
 	}
 	const bindingsInput = {
 		...bindingsBase,
