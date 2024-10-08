@@ -41,7 +41,7 @@ export const AppLayout = ({ pageClassName = '', children }: Props) => {
 
 	return (
 		<div
-			className={`flex ${isViewportMaxLG ? 'flex-col' : ''} h-screen w-screen`}
+			className={`flex ${isViewportMaxLG ? 'flex-col' : ''} h-full w-full`}
 			style={{ paddingTop: isViewportMaxLG ? 'var(--app-spacing-navbar-h)' : 0 }}
 		>
 			{isViewportMaxLG ? <MobileNavbar hasMenu={hasMenu} onToggleNavMenu={onToggleNavMenu} /> : <DesktopNavbar />}
