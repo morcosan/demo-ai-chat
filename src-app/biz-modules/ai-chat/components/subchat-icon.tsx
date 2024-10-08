@@ -5,6 +5,9 @@ interface Props extends ReactProps {
 }
 
 export const SubchatIcon = ({ count, className = '' }: Props) => {
+	const isPlus = count < 0
+
+	const subtleClass = 'text-color-text-placeholder fill-color-text-placeholder stroke-color-text-placeholder'
 	const colorClass = [
 		'text-color-secondary-text-default',
 		'fill-color-secondary-text-default',
@@ -12,10 +15,10 @@ export const SubchatIcon = ({ count, className = '' }: Props) => {
 	].join(' ')
 
 	return (
-		<span className={`flex items-center ${colorClass} ${className}`}>
+		<span className={`flex items-center ${isPlus ? subtleClass : colorClass} ${className}`}>
 			<SplitSvg className="mr-xs-0 h-xs-9 min-w-xs-9" />
 
-			{count >= 0 ? <span className="text-size-xs font-weight-md">{count}</span> : <PlusSvg className="w-xs-4" />}
+			{isPlus ? <PlusSvg className="w-xs-4" /> : <span className="text-size-xs font-weight-md">{count}</span>}
 		</span>
 	)
 }

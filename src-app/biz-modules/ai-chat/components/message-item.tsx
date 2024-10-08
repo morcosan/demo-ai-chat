@@ -11,14 +11,19 @@ interface Props {
 
 export const MessageItem = ({ message, secondary, subchatId, onClickSubchat }: Props) => {
 	const wrapperClass = [
-		secondary ? '' : 'px-md-0',
-		message.role === 'user' ? 'mb-xs-9' : secondary ? 'mb-sm-2' : 'mb-sm-4',
+		secondary ? '' : 'px-xs-5 lg:px-md-0',
+		message.role === 'user' ? 'lg:mb-xs-9' : secondary ? 'mb-sm-2' : 'mb-sm-4',
 	].join(' ')
 	const userItemClass = secondary ? 'max-w-[80%] bg-color-secondary-bg' : 'max-w-[70%] bg-color-primary-bg'
 	const subchatClass = [
+		'flex-center lg:absolute lg:right-0 lg:top-0',
+		message.loading ? 'invisible' : '',
+		secondary ? '' : 'w-md-0',
+	].join(' ')
+	const subchatButtonClass = [
 		'px-xs-3',
-		message.role === 'user' ? '' : 'mt-sm-2',
-		message.subchatSize ? '' : 'opacity-0 group-hover:opacity-100 focus:opacity-100',
+		message.role === 'user' ? '' : 'lg:mt-sm-2',
+		message.subchatSize ? '' : 'lg:opacity-0 lg:group-hover:opacity-100 focus:opacity-100',
 		message.id === subchatId ? '!opacity-100' : '',
 	].join(' ')
 
@@ -57,14 +62,14 @@ export const MessageItem = ({ message, secondary, subchatId, onClickSubchat }: P
 			)}
 
 			{/* SUBCHAT BUTTON */}
-			{!secondary && !message.loading && (
-				<div className={`lg:flex-center absolute right-0 top-0 hidden ${secondary ? '' : 'w-md-0'}`}>
+			{!secondary && (
+				<div className={subchatClass}>
 					<Button
 						tooltip={message.subchatSize ? `Open subchat (${message.subchatSize} messages)` : 'Create subchat'}
 						linkHref={`/chat/${message.chatId}?subchat=${message.id}`}
 						variant="item-text-default"
 						highlight={message.id === subchatId ? 'pressed' : 'default'}
-						className={subchatClass}
+						className={subchatButtonClass}
 						onClick={onClickSubchat}
 					>
 						<SubchatIcon count={message.subchatSize || -1} />

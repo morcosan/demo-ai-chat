@@ -120,14 +120,14 @@ export const ChatView = () => {
 				</div>
 			)}
 
-			<div className={`px-md-0 ${widthClass}`}>
+			<div className={`px-xs-7 pb-xs-5 lg:px-md-0 ${widthClass}`}>
 				<InputField
 					ref={inputRef}
 					input={input}
 					inputText={inputText}
 					loading={chatLoading === 'update' || Boolean(allChatsLoading)}
 					disabled={chatLoading === 'full' || chatLoading === 'more'}
-					className="mb-xs-5 w-full"
+					className="w-full"
 					primary
 					onChange={onChange}
 					onPressEnter={onPressEnter}
