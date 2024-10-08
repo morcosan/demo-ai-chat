@@ -4,21 +4,24 @@ import { SubchatIcon } from './subchat-icon'
 
 interface Props {
 	message: Message
-	secondary?: boolean
 	subchatId?: number
+	isSubchat?: boolean
 	onClickSubchat?: () => void
 }
 
-export const MessageItem = ({ message, secondary, subchatId, onClickSubchat }: Props) => {
+export const MessageItem = ({ message, subchatId, isSubchat, onClickSubchat }: Props) => {
 	const wrapperClass = [
-		secondary ? '' : 'px-xs-5 lg:px-md-0',
-		message.role === 'user' ? 'lg:mb-xs-9' : secondary ? 'mb-sm-2' : 'mb-sm-4',
+		isSubchat ? '' : 'px-xs-5 lg:px-md-0',
+		isSubchat && message.role === 'user' ? 'mb-xs-9' : '',
+		isSubchat && message.role === 'agent' ? 'mb-sm-2' : '',
+		!isSubchat && message.role === 'user' ? 'lg:mb-xs-9' : '',
+		!isSubchat && message.role === 'agent' ? 'mb-sm-4' : '',
 	].join(' ')
-	const userItemClass = secondary ? 'max-w-[80%] bg-color-secondary-bg' : 'max-w-[70%] bg-color-primary-bg'
+	const userItemClass = isSubchat ? 'max-w-[80%] bg-color-secondary-bg' : 'max-w-[70%] bg-color-primary-bg'
 	const subchatClass = [
 		'flex-center lg:absolute lg:right-0 lg:top-0',
 		message.loading ? 'invisible' : '',
-		secondary ? '' : 'w-md-0',
+		isSubchat ? '' : 'w-md-0',
 	].join(' ')
 	const subchatButtonClass = [
 		'px-xs-3',
@@ -41,7 +44,7 @@ export const MessageItem = ({ message, secondary, subchatId, onClickSubchat }: P
 				</div>
 			) : (
 				<div className="w-full px-xs-5 py-xs-1">
-					<div className={`${secondary ? 'mb-xs-2' : 'mb-xs-4'} flex items-center gap-xs-1`}>
+					<div className={`${isSubchat ? 'mb-xs-2' : 'mb-xs-4'} flex items-center gap-xs-1`}>
 						<div className="flex-center h-sm-0 w-sm-0 rounded-full">
 							<AiChatSvg className="h-xs-8" />
 						</div>
@@ -62,7 +65,7 @@ export const MessageItem = ({ message, secondary, subchatId, onClickSubchat }: P
 			)}
 
 			{/* SUBCHAT BUTTON */}
-			{!secondary && (
+			{!isSubchat && (
 				<div className={subchatClass}>
 					<Button
 						tooltip={message.subchatSize ? `Open subchat (${message.subchatSize} messages)` : 'Create subchat'}

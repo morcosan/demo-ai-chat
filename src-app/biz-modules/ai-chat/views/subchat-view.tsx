@@ -69,7 +69,7 @@ export const SubchatView = () => {
 						/>
 						{/* MESSAGES */}
 						{subchatMessages.map((message: Message) => (
-							<MessageItem key={message.id} message={message} secondary />
+							<MessageItem key={message.id} message={message} isSubchat />
 						))}
 					</>
 				)}
