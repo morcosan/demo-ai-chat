@@ -23,7 +23,7 @@ export const SettingsButton = ({ highlight, onClick }: Props) => {
 		>
 			<img src={avatar} alt="" className="h-sm-2 w-sm-2 rounded-full" />
 			<span className="ml-button-px-item flex flex-col items-start leading-1">
-				<span>{name}</span>
+				<span className="py-xs-0">{name}</span>
 				<span className="text-size-xs text-color-text-subtle">Settings</span>
 			</span>
 		</Button>
