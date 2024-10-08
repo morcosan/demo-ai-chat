@@ -16,9 +16,10 @@ interface Props extends ReactProps {
 
 export const InputField = withRef('InputField', (props: Props, ref: Ref<TextFieldRef>) => {
 	const onFocus = (event: FocusEvent) => {
-		// Bring field into view on mobile (otherwise hidden by floating keyboard)
+		// On mobile, the field is covered by the floating keyboard
 		const target = event.target as HTMLElement
-		target.scrollIntoView({ behavior: 'smooth', block: 'center' })
+		// Wait for floating keyboard to appear
+		wait(500).then(() => target.scrollIntoView({ behavior: 'smooth', block: 'center' }))
 	}
 
 	return (
