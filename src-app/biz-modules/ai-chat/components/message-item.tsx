@@ -58,7 +58,7 @@ export const MessageItem = ({ message, secondary, subchatId, onClickSubchat }: P
 
 			{/* SUBCHAT BUTTON */}
 			{!secondary && !message.loading && (
-				<div className={`flex-center absolute right-0 top-0 ${secondary ? '' : 'w-md-0'}`}>
+				<div className={`lg:flex-center absolute right-0 top-0 hidden ${secondary ? '' : 'w-md-0'}`}>
 					<Button
 						tooltip={message.subchatSize ? `Open subchat (${message.subchatSize} messages)` : 'Create subchat'}
 						linkHref={`/chat/${message.chatId}?subchat=${message.id}`}

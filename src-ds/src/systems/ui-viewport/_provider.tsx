@@ -1,24 +1,31 @@
-import { getTokenValue_BREAKPOINT } from '@ds/release'
+import { TOKENS__BREAKPOINT } from '@ds/release'
 import { debounce } from 'lodash'
 import { useEffect, useMemo, useState } from 'react'
 import { Context, Store } from './_context'
 
+const BREAKPOINT = Object.fromEntries(
+	Object.entries(TOKENS__BREAKPOINT).map(([key, token]: [string, DesignToken]) => [
+		key,
+		parseInt(token.$value as string),
+	])
+)
+
 export const UiViewportProvider = ({ children }: ReactProps) => {
 	const [viewportWidth, setViewportWidth] = useState(0)
 
-	const isViewportMinXS = viewportWidth >= getTokenValue_BREAKPOINT('xs')
-	const isViewportMinSM = viewportWidth >= getTokenValue_BREAKPOINT('sm')
-	const isViewportMinMD = viewportWidth >= getTokenValue_BREAKPOINT('md')
-	const isViewportMinLG = viewportWidth >= getTokenValue_BREAKPOINT('lg')
-	const isViewportMinXL = viewportWidth >= getTokenValue_BREAKPOINT('xl')
-	const isViewportMinXXL = viewportWidth >= getTokenValue_BREAKPOINT('xl')
+	const isViewportMinXS = viewportWidth >= BREAKPOINT['xs']
+	const isViewportMinSM = viewportWidth >= BREAKPOINT['sm']
+	const isViewportMinMD = viewportWidth >= BREAKPOINT['md']
+	const isViewportMinLG = viewportWidth >= BREAKPOINT['lg']
+	const isViewportMinXL = viewportWidth >= BREAKPOINT['xl']
+	const isViewportMinXXL = viewportWidth >= BREAKPOINT['xl']
 
-	const isViewportMaxXS = viewportWidth < getTokenValue_BREAKPOINT('xs')
-	const isViewportMaxSM = viewportWidth < getTokenValue_BREAKPOINT('sm')
-	const isViewportMaxMD = viewportWidth < getTokenValue_BREAKPOINT('md')
-	const isViewportMaxLG = viewportWidth < getTokenValue_BREAKPOINT('lg')
-	const isViewportMaxXL = viewportWidth < getTokenValue_BREAKPOINT('xl')
-	const isViewportMaxXXL = viewportWidth < getTokenValue_BREAKPOINT('xxl')
+	const isViewportMaxXS = viewportWidth < BREAKPOINT['xs']
+	const isViewportMaxSM = viewportWidth < BREAKPOINT['sm']
+	const isViewportMaxMD = viewportWidth < BREAKPOINT['md']
+	const isViewportMaxLG = viewportWidth < BREAKPOINT['lg']
+	const isViewportMaxXL = viewportWidth < BREAKPOINT['xl']
+	const isViewportMaxXXL = viewportWidth < BREAKPOINT['xxl']
 
 	const isViewportXS = isViewportMinXS && isViewportMaxSM
 	const isViewportSM = isViewportMinSM && isViewportMaxMD

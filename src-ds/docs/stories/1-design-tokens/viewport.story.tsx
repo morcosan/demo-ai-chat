@@ -2,8 +2,9 @@ import { DocsHeader } from '@ds/docs/components/docs-header'
 import { DocsPage } from '@ds/docs/components/docs-page'
 import { DocsTokenCoding } from '@ds/docs/components/docs-token-coding'
 import '@ds/docs/setup'
-import { TOKENS__BREAKPOINT } from '@ds/release'
+import { DesktopSvg, LaptopSvg, PhoneSvg, TabletSvg, TOKENS__BREAKPOINT, WidescreenSvg } from '@ds/release'
 import type { StoryObj } from '@storybook/react'
+import { ReactNode } from 'react'
 
 export const story: StoryObj = {}
 story.storyName = 'Viewport'
@@ -13,6 +14,20 @@ export default {
 	title: 'Design tokens / Viewport',
 
 	component: () => {
+		interface Breakpoint {
+			icon: ReactNode
+			title: string
+		}
+
+		const breakpointMap: Record<string, Breakpoint> = {
+			xs: { icon: <PhoneSvg className="w-xs-9" />, title: 'Phone' },
+			sm: { icon: <TabletSvg className="w-sm-0" />, title: 'Tablet' },
+			md: { icon: <TabletSvg className="w-sm-0 -rotate-90" />, title: 'Tablet' },
+			lg: { icon: <LaptopSvg className="w-sm-4" />, title: 'Laptop' },
+			xl: { icon: <DesktopSvg className="w-sm-4" />, title: 'Desktop' },
+			xxl: { icon: <WidescreenSvg className="w-sm-5" />, title: 'Widescreen' },
+		}
+
 		return (
 			<DocsPage title="Viewport tokens">
 				<DocsHeader>Breakpoint tokens</DocsHeader>
@@ -27,8 +42,15 @@ export default {
 					<tbody>
 						{Object.entries(TOKENS__BREAKPOINT).map(([name, token]) => (
 							<tr key={name}>
-								<td style={{ fontSize: `var(${token.$css})` }}>
-									<pre>{name}</pre>
+								<td>
+									<div className="flex items-center gap-xs-4 fill-color-text-subtle">
+										<div className="flex-center w-sm-5">{breakpointMap[name].icon}</div>
+
+										<div className="flex flex-col whitespace-nowrap leading-1">
+											<pre>{name}</pre>
+											<div className="text-size-xs text-color-text-subtle">{breakpointMap[name].title}</div>
+										</div>
+									</div>
 								</td>
 								<td>
 									<code>{token.$value}</code>

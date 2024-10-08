@@ -10,9 +10,12 @@ import {
 	TOKENS__Z_INDEX,
 } from '../tokens'
 
-const createTokens = (tokenGroup: DesignTokenGroup, twPrefix: string): Record<string, string> => {
+const createTokens = (tokens: DesignTokenGroup, twPrefix: string, direct?: boolean): Record<string, string> => {
 	return Object.fromEntries(
-		Object.entries<DesignToken>(tokenGroup).map(([key, token]) => [twPrefix + key, `var(${token.$css})`])
+		Object.entries<DesignToken>(tokens).map(([key, token]) => [
+			twPrefix + key,
+			direct ? (token.$value as string) : `var(${token.$css})`,
+		])
 	)
 }
 
@@ -26,7 +29,7 @@ export const TAILWIND_THEME = {
 	fontSize: createTokens(TOKENS__FONT_SIZE, 'size-'),
 	fontWeight: createTokens(TOKENS__FONT_WEIGHT, 'weight-'),
 	lineHeight: createTokens(TOKENS__LINE_HEIGHT, ''),
-	screens: createTokens(TOKENS__BREAKPOINT, ''),
+	screens: createTokens(TOKENS__BREAKPOINT, '', true),
 	spacing: createTokens(TOKENS__SPACING, ''),
 	zIndex: createTokens(TOKENS__Z_INDEX, ''),
 
