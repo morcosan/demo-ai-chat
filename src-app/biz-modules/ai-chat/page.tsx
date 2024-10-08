@@ -27,6 +27,8 @@ const AiChatPage = () => {
 
 	const subchatId = parseInt(String(searchParams.get('subchat')))
 
+	const isSubchatView = activeView === AiChatView.MOBILE_SUBCHAT
+
 	const resetSubchatUrl = () => {
 		searchParams.delete('subchat')
 		navigate({ search: searchParams.toString() }, { replace: true })
@@ -77,14 +79,20 @@ const AiChatPage = () => {
 				</div>
 			)}
 
-			{/* MOBILE */}
+			{/* MOBILE OVERLAY */}
+			<div
+				className="absolute-overlay z-popup backdrop-blur-sm"
+				style={{ top: 'var(--app-spacing-navbar-h)', display: isSubchatView ? 'block' : 'none' }}
+				onClick={() => setActiveView(AiChatView.MOBILE_CHAT)}
+			/>
+			{/* MOBILE CONTENT */}
 			{activeView !== AiChatView.DESKTOP && (
 				<div
 					className={[
-						'fixed bottom-0 left-0 right-0 z-popup',
-						'border-t border-color-border-shadow shadow-lg',
+						'fixed bottom-0 left-0 right-0 z-popup ml-button-h-md',
+						'border-l border-t border-color-border-shadow shadow-lg',
 						'transition-transform duration-300 ease-out',
-						activeView === AiChatView.MOBILE_SUBCHAT ? 'translate-x-0' : 'translate-x-full',
+						isSubchatView ? 'translate-x-0' : 'translate-x-full',
 					].join(' ')}
 					style={{ top: 'var(--app-spacing-navbar-h)', background: 'var(--app-color-bg-navbar)' }}
 				>

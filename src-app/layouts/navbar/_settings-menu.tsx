@@ -41,7 +41,7 @@ export const SettingsMenu = ({ onClickBack }: Props) => {
 					<IconButton tooltip="Go back to menu" onClick={onClickBack}>
 						<ArrowBackSvg className="h-xs-7" />
 					</IconButton>
-					<span className="pb-px text-size-lg">Quick settings</span>
+					<span className="pb-xs-0 text-size-lg">Quick settings</span>
 				</div>
 			)}
 

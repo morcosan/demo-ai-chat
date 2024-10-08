@@ -46,10 +46,17 @@ export const AppLayout = ({ pageClassName = '', children }: Props) => {
 		>
 			{isViewportMaxLG ? <MobileNavbar hasMenu={hasMenu} onToggleNavMenu={onToggleNavMenu} /> : <DesktopNavbar />}
 
+			{/* MENU OVERLAY */}
+			<div
+				className="absolute-overlay z-popup backdrop-blur-sm"
+				style={{ top: 'var(--app-spacing-navbar-h)', display: hasMenu ? 'block' : 'none' }}
+				onClick={() => setHasMenu(false)}
+			/>
+			{/* MENU CONTENT */}
 			<div
 				className={[
-					'fixed bottom-0 left-0 right-0 z-popup',
-					'border-t border-color-border-shadow shadow-lg',
+					'fixed bottom-0 left-0 right-0 z-popup mr-button-h-md',
+					'border-r border-t border-color-border-shadow shadow-lg',
 					'transition-transform duration-300 ease-out',
 					hasMenu ? 'translate-x-0' : '-translate-x-full',
 				].join(' ')}
@@ -62,6 +69,7 @@ export const AppLayout = ({ pageClassName = '', children }: Props) => {
 				)}
 			</div>
 
+			{/* PAGE CONTENT */}
 			<div className={`h-full w-full flex-1 ${pageClassName}`}>{children}</div>
 		</div>
 	)
