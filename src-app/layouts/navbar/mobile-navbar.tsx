@@ -10,7 +10,7 @@ interface Props {
 export const MobileNavbar = ({ hasMenu, onToggleNavMenu }: Props) => {
 	return (
 		<nav
-			className="fixed left-0 top-0 z-navbar w-full border-t border-color-border-shadow shadow-md"
+			className="fixed left-0 top-0 z-navbar w-full border-t border-color-border-shadow shadow-sm"
 			style={{ minHeight: 'var(--app-spacing-navbar-h)', height: 'var(--app-spacing-navbar-h)' }}
 		>
 			<div className="flex h-full items-center px-xs-2" style={{ background: 'var(--app-color-bg-navbar)' }}>
