@@ -1,6 +1,6 @@
 import { ArrowBackSvg, IconButton } from '@ds/release'
 import { debounce } from 'lodash'
-import { FocusEvent, UIEvent, useEffect } from 'react'
+import { UIEvent, useEffect } from 'react'
 import { Message } from '../api/types'
 import { InputField } from '../components/input-field'
 import { LoadingText } from '../components/loading-text'
@@ -21,12 +21,6 @@ export const SubchatView = () => {
 	} = useAiChat()
 	const { listingRef, input, inputRef, inputText, onChange, onPressEnter, onSubmit, saveScrollPos, scrollToPos } =
 		useMessageListing(subchatLoading, postSubchatMessage)
-
-	const onFocusField = (event: FocusEvent) => {
-		// Bring field into view on mobile (otherwise hidden by floating keyboard)
-		const target = event.target as HTMLElement
-		target.scrollIntoView({ behavior: 'smooth', block: 'center' })
-	}
 
 	const onScroll = debounce((event: UIEvent) => {
 		const THRESHOLD = 50 // px
@@ -93,7 +87,6 @@ export const SubchatView = () => {
 					onChange={onChange}
 					onPressEnter={onPressEnter}
 					onSubmit={onSubmit}
-					onFocus={onFocusField}
 				/>
 			</div>
 		</div>

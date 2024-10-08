@@ -10,12 +10,17 @@ interface Props extends ReactProps {
 	disabled?: boolean
 
 	onChange(value: string): void
-	onFocus(event: FocusEvent): void
 	onPressEnter(event: KeyboardEvent): void
 	onSubmit(): void
 }
 
 export const InputField = withRef('InputField', (props: Props, ref: Ref<TextFieldRef>) => {
+	const onFocus = (event: FocusEvent) => {
+		// Bring field into view on mobile (otherwise hidden by floating keyboard)
+		const target = event.target as HTMLElement
+		target.scrollIntoView({ behavior: 'smooth', block: 'center' })
+	}
+
 	return (
 		<TextField
 			ref={ref}
@@ -43,7 +48,7 @@ export const InputField = withRef('InputField', (props: Props, ref: Ref<TextFiel
 			multiline
 			onChange={props.onChange}
 			onSubmit={props.onPressEnter}
-			onFocus={props.onFocus}
+			onFocus={onFocus}
 		/>
 	)
 })
