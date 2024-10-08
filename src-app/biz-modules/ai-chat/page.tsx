@@ -55,18 +55,17 @@ const AiChatPage = () => {
 		}
 	}, [activeChat, subchatId])
 
-	const subchatSlot =
-		chatLoading === 'full' || allSubchatsLoading === 'full' ? (
-			<LoadingText text="Loading subchats..." className="flex-center h-full" />
-		) : !activeChat ? (
-			<div />
-		) : !allSubchats.length && !subchatLoading && !activeSubchat ? (
-			<div className="flex-center h-full w-full text-color-text-subtle">No sub-chats</div>
-		) : activeSubchat ? (
-			<SubchatView />
-		) : (
-			<SubchatsView />
-		)
+	const subchatSlot = !activeChat ? (
+		<div />
+	) : activeSubchat ? (
+		<SubchatView />
+	) : chatLoading === 'full' || allSubchatsLoading === 'full' ? (
+		<LoadingText text="Loading subchats..." className="flex-center h-full" />
+	) : !allSubchats.length && !subchatLoading ? (
+		<div className="flex-center h-full w-full text-color-text-subtle">No sub-chats</div>
+	) : (
+		<SubchatsView />
+	)
 
 	return (
 		<AppLayout pageClassName="flex">

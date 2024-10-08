@@ -8,6 +8,7 @@ export interface AllSubchatsStore {
 	allSubchatsPagination: Pagination
 	allSubchatsLoading: ListLoading
 	loadMoreSubchats(): void
+	resetAllSubchats(): void
 	updateSubchat(subchat: Subchat): void
 }
 
@@ -16,6 +17,7 @@ export const allSubchatsDefaults: AllSubchatsStore = {
 	allSubchatsPagination: { page: 0, count: 0 },
 	allSubchatsLoading: false,
 	loadMoreSubchats: () => {},
+	resetAllSubchats: () => {},
 	updateSubchat: () => {},
 }
 
@@ -28,7 +30,7 @@ export const useAllSubchatsStore = (chatStore: ChatStore): AllSubchatsStore => {
 	const canLoadAllSubchats = !allSubchats.length || allSubchats.length < allSubchatsPagination.count
 
 	const loadMoreSubchats = async () => {
-		if (allSubchatsLoading || !activeChat || !canLoadAllSubchats) return
+		if (allSubchatsLoading || !activeChat || !activeChat.id || !canLoadAllSubchats) return
 
 		setAllSubchatsLoading(allSubchatsPagination.page === 0 ? 'full' : 'more')
 
@@ -45,11 +47,13 @@ export const useAllSubchatsStore = (chatStore: ChatStore): AllSubchatsStore => {
 		setAllSubchats([...allSubchats])
 	}
 
+	const resetAllSubchats = () => {
+		setAllSubchats([])
+		setAllSubchatsPagination({ page: 0, count: 0 })
+	}
+
 	useEffect(() => {
-		if (activeChat?.id) {
-			setAllSubchats([])
-			setAllSubchatsPagination({ page: 0, count: 0 })
-		}
+		resetAllSubchats()
 	}, [activeChat])
 
 	useEffect(() => {
@@ -60,6 +64,7 @@ export const useAllSubchatsStore = (chatStore: ChatStore): AllSubchatsStore => {
 		allSubchats,
 		allSubchatsPagination,
 		allSubchatsLoading,
+		resetAllSubchats,
 		loadMoreSubchats,
 		updateSubchat,
 	}
