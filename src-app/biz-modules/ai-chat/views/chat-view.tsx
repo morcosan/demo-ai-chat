@@ -1,5 +1,5 @@
 import { debounce } from 'lodash'
-import { UIEvent, useEffect } from 'react'
+import { FocusEvent, UIEvent, useEffect } from 'react'
 import { useNavigate, useParams, useSearchParams } from 'react-router-dom'
 import { Message } from '../api/types'
 import { InputField } from '../components/input-field'
@@ -36,6 +36,12 @@ export const ChatView = () => {
 	const widthClass = 'mx-auto w-full max-w-xxl-2'
 
 	const onClickSubchat = () => activeView === AiChatView.MOBILE_CHAT && setActiveView(AiChatView.MOBILE_SUBCHAT)
+
+	const onFocusField = (event: FocusEvent) => {
+		// Bring field into view on mobile (otherwise hidden by floating keyboard)
+		const target = event.target as HTMLElement
+		target.scrollIntoView({ behavior: 'smooth', block: 'center' })
+	}
 
 	const onScroll = debounce((event: UIEvent) => {
 		const THRESHOLD = 50 // px
@@ -132,6 +138,7 @@ export const ChatView = () => {
 					onChange={onChange}
 					onPressEnter={onPressEnter}
 					onSubmit={onSubmit}
+					onFocus={onFocusField}
 				/>
 			</div>
 		</div>

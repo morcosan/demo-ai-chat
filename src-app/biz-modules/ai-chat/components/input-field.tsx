@@ -1,6 +1,6 @@
 import { IconButton, SendSvg, TextField, TextFieldRef } from '@ds/release'
 import { withRef } from '@utils/release'
-import { KeyboardEvent, Ref } from 'react'
+import { FocusEvent, KeyboardEvent, Ref } from 'react'
 
 interface Props extends ReactProps {
 	input: string
@@ -10,6 +10,7 @@ interface Props extends ReactProps {
 	disabled?: boolean
 
 	onChange(value: string): void
+	onFocus(event: FocusEvent): void
 	onPressEnter(event: KeyboardEvent): void
 	onSubmit(): void
 }
@@ -42,6 +43,7 @@ export const InputField = withRef('InputField', (props: Props, ref: Ref<TextFiel
 			multiline
 			onChange={props.onChange}
 			onSubmit={props.onPressEnter}
+			onFocus={props.onFocus}
 		/>
 	)
 })
