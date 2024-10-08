@@ -36,7 +36,7 @@ export const AppLayout = ({ pageClassName = '', children }: Props) => {
 
 			<div
 				className={[
-					'absolute bottom-0 left-0 z-popup w-full',
+					'fixed bottom-0 left-0 right-0 z-popup',
 					'border-t border-color-border-shadow shadow-lg',
 					'transition-transform duration-300 ease-out',
 					hasMenu ? 'translate-x-0' : '-translate-x-full',

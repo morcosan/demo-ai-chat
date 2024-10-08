@@ -4,15 +4,15 @@ import { chatDefaults, ChatStore } from '@app/biz-modules/ai-chat/state/stores/c
 import { subchatDefaults, SubchatStore } from '@app/biz-modules/ai-chat/state/stores/subchat-store'
 import { createContext } from 'react'
 
-export enum AiChatTab {
-	BOTH,
-	CHAT,
-	SUBCHAT,
+export enum AiChatView {
+	DESKTOP,
+	MOBILE_CHAT,
+	MOBILE_SUBCHAT,
 }
 
 export interface Store extends AllChatsStore, AllSubchatsStore, ChatStore, SubchatStore {
-	activeTab: AiChatTab
-	setActiveTab(tab: AiChatTab): void
+	activeView: AiChatView
+	setActiveView(tab: AiChatView): void
 }
 
 export const Context = createContext<Store>({
@@ -20,6 +20,6 @@ export const Context = createContext<Store>({
 	...chatDefaults,
 	...allSubchatsDefaults,
 	...subchatDefaults,
-	activeTab: AiChatTab.BOTH,
-	setActiveTab: () => {},
+	activeView: AiChatView.DESKTOP,
+	setActiveView: () => {},
 })

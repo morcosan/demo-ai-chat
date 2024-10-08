@@ -1,16 +1,16 @@
 import { AiChatSvg, Button } from '@ds/release'
 import { Message } from '../api/types'
-import { AiChatTab } from '../state'
+import { AiChatView } from '../state'
 import { SubchatIcon } from './subchat-icon'
 
 interface Props {
 	message: Message
 	secondary?: boolean
 	subchatId?: number
-	activeTab?: AiChatTab
+	activeView?: AiChatView
 }
 
-export const MessageItem = ({ message, secondary, subchatId, activeTab }: Props) => {
+export const MessageItem = ({ message, secondary, subchatId, activeView }: Props) => {
 	const wrapperClass = [
 		secondary ? '' : 'px-md-0',
 		message.role === 'user' ? 'mb-xs-9' : secondary ? 'mb-sm-2' : 'mb-sm-4',
@@ -64,7 +64,7 @@ export const MessageItem = ({ message, secondary, subchatId, activeTab }: Props)
 						tooltip={message.subchatSize ? `Open subchat (${message.subchatSize} messages)` : 'Create subchat'}
 						linkHref={`/chat/${message.chatId}?subchat=${message.id}`}
 						variant="item-text-default"
-						highlight={message.id === subchatId && activeTab === AiChatTab.BOTH ? 'pressed' : 'default'}
+						highlight={message.id === subchatId && activeView === AiChatView.DESKTOP ? 'pressed' : 'default'}
 						className={subchatClass}
 					>
 						<SubchatIcon count={message.subchatSize || -1} />

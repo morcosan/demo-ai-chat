@@ -1,4 +1,4 @@
-import { AiChatTab, useAiChat } from '@app/biz-modules/ai-chat/state'
+import { AiChatView, useAiChat } from '@app/biz-modules/ai-chat/state'
 import { AiChatNavButtons } from '@app/biz-modules/ai-chat/views/nav/nav-buttons'
 import { IconButton, MenuSvg } from '@ds/release'
 import { useEffect } from 'react'
@@ -9,10 +9,10 @@ interface Props {
 }
 
 export const MobileNavbar = ({ onToggleNavMenu }: Props) => {
-	const { setActiveTab } = useAiChat()
+	const { setActiveView } = useAiChat()
 
 	useEffect(() => {
-		setActiveTab(AiChatTab.CHAT)
+		setActiveView(AiChatView.MOBILE_CHAT)
 	}, [])
 
 	return (

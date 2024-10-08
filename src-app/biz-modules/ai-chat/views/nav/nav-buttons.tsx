@@ -1,34 +1,18 @@
 import { Button } from '@ds/release'
-import { useNavigate, useSearchParams } from 'react-router-dom'
 import { SubchatIcon } from '../../components/subchat-icon'
-import { AiChatTab, useAiChat } from '../../state'
+import { AiChatView, useAiChat } from '../../state'
 
 export const AiChatNavButtons = ({ className = '' }: ReactProps) => {
-	const { activeTab, activeSubchat, allSubchatsPagination, setActiveTab } = useAiChat()
-	const [searchParams] = useSearchParams()
-	const navigate = useNavigate()
+	const { activeView, allSubchatsPagination, setActiveView } = useAiChat()
 
-	const resetSubchatUrl = () => {
-		searchParams.delete('subchat')
-		navigate({ search: searchParams.toString() }, { replace: true })
-	}
-
-	const onClick = () => {
-		resetSubchatUrl()
-
-		if (activeTab === AiChatTab.CHAT) {
-			// Wait for reset
-			wait(activeSubchat ? 100 : 0).then(() => setActiveTab(AiChatTab.SUBCHAT))
-		} else {
-			setActiveTab(AiChatTab.CHAT)
-		}
-	}
+	const onClick = () =>
+		setActiveView(activeView === AiChatView.MOBILE_CHAT ? AiChatView.MOBILE_SUBCHAT : AiChatView.MOBILE_CHAT)
 
 	return (
 		<Button
 			tooltip={`Show subchats (${allSubchatsPagination.count})`}
 			variant="item-text-default"
-			highlight={activeTab === AiChatTab.SUBCHAT ? 'pressed' : 'default'}
+			highlight={activeView === AiChatView.MOBILE_SUBCHAT ? 'pressed' : 'default'}
 			className={`px-xs-4 ${className}`}
 			onClick={onClick}
 		>

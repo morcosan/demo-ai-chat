@@ -1,12 +1,12 @@
 import { useMemo, useState } from 'react'
-import { AiChatTab, Context, Store } from './_context'
+import { AiChatView, Context, Store } from './_context'
 import { useAllChatsStore } from './stores/all-chats-store'
 import { useAllSubchatsStore } from './stores/all-subchats-store'
 import { useChatStore } from './stores/chat-store'
 import { useSubchatStore } from './stores/subchat-store'
 
 export const AiChatProvider = ({ children }: ReactProps) => {
-	const [activeTab, setActiveTab] = useState<AiChatTab>(AiChatTab.BOTH)
+	const [activeView, setActiveView] = useState<AiChatView>(AiChatView.DESKTOP)
 	const allChatsStore = useAllChatsStore()
 	const chatStore = useChatStore(allChatsStore)
 	const allSubchatsStore = useAllSubchatsStore(chatStore)
@@ -18,8 +18,8 @@ export const AiChatProvider = ({ children }: ReactProps) => {
 			...allSubchatsStore,
 			...chatStore,
 			...subchatStore,
-			activeTab,
-			setActiveTab,
+			activeView,
+			setActiveView,
 		}),
 		[
 			...Object.values(allChatsStore),

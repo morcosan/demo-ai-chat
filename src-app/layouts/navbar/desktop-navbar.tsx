@@ -1,4 +1,4 @@
-import { AiChatTab, useAiChat } from '@app/biz-modules/ai-chat/state'
+import { AiChatView, useAiChat } from '@app/biz-modules/ai-chat/state'
 import { AiChatNavMenu } from '@app/biz-modules/ai-chat/views/nav/nav-menu'
 import { useEffect, useRef, useState } from 'react'
 import { AppLogo } from './_app-logo'
@@ -6,7 +6,7 @@ import { SettingsButton } from './_settings-button'
 import { SettingsMenu } from './_settings-menu'
 
 export const DesktopNavbar = () => {
-	const { setActiveTab } = useAiChat()
+	const { setActiveView } = useAiChat()
 	const [openedSettings, setOpenedSettings] = useState(false)
 
 	const settingsRef = useRef<HTMLDivElement>(null)
@@ -35,7 +35,7 @@ export const DesktopNavbar = () => {
 	}, [])
 
 	useEffect(() => {
-		setActiveTab(AiChatTab.BOTH)
+		setActiveView(AiChatView.DESKTOP)
 	}, [])
 
 	return (

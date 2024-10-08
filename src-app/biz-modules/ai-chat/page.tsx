@@ -2,7 +2,7 @@ import { AppLayout } from '@app/layouts/app-layout'
 import { useEffect } from 'react'
 import { useNavigate, useSearchParams } from 'react-router-dom'
 import { LoadingText } from './components/loading-text'
-import { AiChatTab, useAiChat } from './state'
+import { AiChatView, useAiChat } from './state'
 import { ChatView } from './views/chat-view'
 import { SubchatView } from './views/subchat-view'
 import { SubchatsView } from './views/subchats-view'
@@ -11,22 +11,19 @@ const AiChatPage = () => {
 	const {
 		activeChat,
 		activeSubchat,
-		activeTab,
+		activeView,
 		allSubchats,
 		allSubchatsLoading,
 		chatLoading,
 		subchatLoading,
 		loadActiveSubchat,
 		resetActiveSubchat,
-		setActiveTab,
+		setActiveView,
 	} = useAiChat()
 	const [searchParams] = useSearchParams()
 	const navigate = useNavigate()
 
 	const subchatId = parseInt(String(searchParams.get('subchat')))
-
-	const hasChatView = activeTab === AiChatTab.BOTH || activeTab === AiChatTab.CHAT
-	const hasSubchatView = activeTab === AiChatTab.BOTH || activeTab === AiChatTab.SUBCHAT
 
 	const resetSubchatUrl = () => {
 		searchParams.delete('subchat')
@@ -43,35 +40,50 @@ const AiChatPage = () => {
 	useEffect(() => {
 		subchatId ? loadSubchat() : resetActiveSubchat()
 
-		if (subchatId && activeTab === AiChatTab.CHAT) {
-			setActiveTab(AiChatTab.SUBCHAT)
+		if (subchatId && activeView === AiChatView.MOBILE_CHAT) {
+			setActiveView(AiChatView.MOBILE_SUBCHAT)
 		}
 	}, [activeChat, subchatId])
 
+	const subchatSlot =
+		chatLoading === 'full' || allSubchatsLoading === 'full' ? (
+			<LoadingText text="Loading subchats..." className="flex-center h-full" />
+		) : !activeChat ? (
+			<div />
+		) : !allSubchats.length && !subchatLoading && !activeSubchat ? (
+			<div className="flex-center h-full w-full text-color-text-subtle">No sub-chats</div>
+		) : activeSubchat ? (
+			<SubchatView />
+		) : (
+			<SubchatsView />
+		)
+
 	return (
 		<AppLayout pageClassName="flex">
-			{Boolean(hasChatView) && <ChatView />}
+			<ChatView />
 
-			{Boolean(hasSubchatView) && (
-				<div className={`relative h-full ${activeTab === AiChatTab.BOTH ? 'ml-xs-2 w-[30%]' : 'w-full'}`}>
+			{/* DESKTOP */}
+			{activeView === AiChatView.DESKTOP && (
+				<div className="relative ml-xs-2 h-full w-[30%]">
 					{/* DELIMITER */}
-					{activeTab === AiChatTab.BOTH && (
-						<div className="absolute -left-xs-1 top-0 h-full w-xs-1 bg-color-border-shadow" />
-					)}
-
-					{chatLoading === 'full' || allSubchatsLoading === 'full' ? (
-						<LoadingText text="Loading subchats..." className="flex-center h-full" />
-					) : !activeChat ? (
-						<div />
-					) : !allSubchats.length && !subchatLoading && !activeSubchat ? (
-						<div className="flex-center h-full w-full text-color-text-subtle">No sub-chats</div>
-					) : activeSubchat ? (
-						<SubchatView />
-					) : (
-						<SubchatsView />
-					)}
+					<div className="absolute -left-xs-1 top-0 h-full w-xs-1 bg-color-border-shadow" />
+					{/* VIEW */}
+					{subchatSlot}
 				</div>
 			)}
+
+			{/* MOBILE */}
+			<div
+				className={[
+					'fixed bottom-0 left-0 right-0 z-popup',
+					'border-t border-color-border-shadow shadow-lg',
+					'transition-transform duration-300 ease-out',
+					activeView === AiChatView.MOBILE_SUBCHAT ? 'translate-x-0' : 'translate-x-full',
+				].join(' ')}
+				style={{ top: 'var(--app-spacing-navbar-h)', background: 'var(--app-color-bg-navbar)' }}
+			>
+				{subchatSlot}
+			</div>
 		</AppLayout>
 	)
 }
