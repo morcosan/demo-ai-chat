@@ -49,10 +49,6 @@ const AiChatPage = () => {
 
 	useEffect(() => {
 		subchatId ? loadSubchat() : resetActiveSubchat()
-
-		if (subchatId && activeView === AiChatView.MOBILE_CHAT) {
-			setActiveView(AiChatView.MOBILE_SUBCHAT)
-		}
 	}, [activeChat, subchatId])
 
 	const subchatSlot = !activeChat ? (

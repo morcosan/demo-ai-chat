@@ -7,7 +7,7 @@ import { LoadingText } from '../components/loading-text'
 import { MessageItem } from '../components/message-item'
 import { StickyToolbar } from '../components/sticky-toolbar'
 import { useMessageListing } from '../hooks/message-listing'
-import { useAiChat } from '../state'
+import { AiChatView, useAiChat } from '../state'
 
 export const ChatView = () => {
 	const {
@@ -18,10 +18,11 @@ export const ChatView = () => {
 		chatLoading,
 		chatMessages,
 		chatPagination,
-		postChatMessage,
 		loadActiveChat,
 		loadMoreChatMessages,
+		postChatMessage,
 		resetActiveChat,
+		setActiveView,
 	} = useAiChat()
 	const { input, inputRef, inputText, listingRef, onChange, onPressEnter, onSubmit, saveScrollPos, scrollToPos } =
 		useMessageListing(chatLoading, postChatMessage)
@@ -33,6 +34,8 @@ export const ChatView = () => {
 	const subchatId = parseInt(String(searchParams.get('subchat')))
 
 	const widthClass = 'mx-auto w-full max-w-xxl-2'
+
+	const onClickSubchat = () => activeView === AiChatView.MOBILE_CHAT && setActiveView(AiChatView.MOBILE_SUBCHAT)
 
 	const onScroll = debounce((event: UIEvent) => {
 		const THRESHOLD = 50 // px
@@ -100,7 +103,12 @@ export const ChatView = () => {
 								/>
 								{/* MESSAGES */}
 								{chatMessages.map((message: Message) => (
-									<MessageItem key={message.id} message={message} subchatId={subchatId} activeView={activeView} />
+									<MessageItem
+										key={message.id}
+										message={message}
+										subchatId={subchatId}
+										onClickSubchat={onClickSubchat}
+									/>
 								))}
 							</div>
 						)}
