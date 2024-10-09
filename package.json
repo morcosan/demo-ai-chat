@@ -15,7 +15,7 @@
 		"ds--preview": "vite preview --config .storybook/vite.config.ts",
 		"lint": "eslint .",
 		"lint-fix": "eslint . --fix",
-		"lint-ts": "tsc -b",
+		"lint-typescript": "tsc -b",
 		"clear-cache": "rmdir /s /q \"node_modules/.cache\"",
 		"uninstall": "rmdir /s /q \"node_modules\""
 	},

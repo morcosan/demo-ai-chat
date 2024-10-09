@@ -1,4 +1,4 @@
-import { MouseEvent, ReactNode, useState } from 'react'
+import { ReactNode, useState } from 'react'
 
 interface Props {
 	iconSvg: ReactNode
@@ -29,7 +29,7 @@ export const DocsTokenCode = ({ iconSvg, value, size, loading }: Props) => {
 		'text-size-sm font-weight-md text-color-success-text-default',
 	].join(' ')
 
-	const onClick = (event: MouseEvent) => {
+	const onClick = (event: ReactMouseEvent) => {
 		const button = event.target as HTMLButtonElement
 		button.blur()
 
@@ -47,7 +47,7 @@ export const DocsTokenCode = ({ iconSvg, value, size, loading }: Props) => {
 			<button type="button" className={buttonClass} onClick={onClick}>
 				<code className="pointer-events-none flex !w-full items-center gap-xs-2 !bg-color-bg-default">
 					<span className="ml-px mt-px block h-xs-6">{iconSvg}</span>
-					<span className="truncate">{value}</span>
+					<span className="line-clamp-1">{value}</span>
 				</code>
 
 				{Boolean(copied) && <div className={copiedClass}>Copied</div>}

@@ -124,7 +124,7 @@ const meta: Meta<typeof Button> = {
 			{
 				name: 'onClick',
 				details: `Event emitted when button is clicked, tapped or triggered via ^Enter^ / ^Space^ keys`,
-				params: [`event: MouseEvent`],
+				params: [`event: ReactMouseEvent`],
 			},
 		]
 		const TYPES = `

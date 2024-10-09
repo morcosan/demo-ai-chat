@@ -1,4 +1,3 @@
-import { MouseEvent } from 'react'
 import { LinkType } from '../_shared/types'
 
 export type ButtonSize = 'xs' | 'sm' | 'md' | 'lg'
@@ -23,5 +22,5 @@ export interface ButtonProps extends ReactProps {
 	linkType?: LinkType
 	tooltip?: string
 
-	onClick?(event: MouseEvent): void
+	onClick?(event: ReactMouseEvent): void
 }

@@ -1,22 +1,32 @@
-import { AiChatSvg, IconButton } from '@ds/release'
+import { AiChatSvg, Button } from '@ds/release'
 import { Message } from '../api/types'
-import { SubchatBubble } from '../components/subchat-bubble'
+import { SubchatIcon } from './subchat-icon'
 
 interface Props {
 	message: Message
-	secondary?: boolean
 	subchatId?: number
+	isSubchat?: boolean
+	onClickSubchat?: () => void
 }
 
-export const MessageItem = ({ message, secondary, subchatId }: Props) => {
+export const MessageItem = ({ message, subchatId, isSubchat, onClickSubchat }: Props) => {
 	const wrapperClass = [
-		secondary ? '' : 'px-md-0',
-		message.role === 'user' ? 'mb-xs-9' : secondary ? 'mb-sm-2' : 'mb-sm-4',
+		isSubchat ? '' : 'px-xs-5 lg:px-md-0',
+		isSubchat && message.role === 'user' ? 'mb-xs-9' : '',
+		isSubchat && message.role === 'agent' ? 'mb-sm-2' : '',
+		!isSubchat && message.role === 'user' ? 'lg:mb-xs-9' : '',
+		!isSubchat && message.role === 'agent' ? 'mb-sm-4' : '',
 	].join(' ')
-	const userItemClass = secondary ? 'max-w-[80%] bg-color-secondary-bg' : 'max-w-[70%] bg-color-primary-bg'
+	const userItemClass = isSubchat ? 'max-w-[80%] bg-color-secondary-bg' : 'max-w-[70%] bg-color-primary-bg'
 	const subchatClass = [
-		message.role === 'user' ? '-mt-xs-1' : 'mt-sm-1',
-		message.subchatSize ? '' : 'opacity-0 group-hover:opacity-100 focus:opacity-100',
+		'flex-center lg:absolute lg:right-0 lg:top-0',
+		message.loading ? 'invisible' : '',
+		isSubchat ? '' : 'w-md-0',
+	].join(' ')
+	const subchatButtonClass = [
+		'px-xs-3',
+		message.role === 'user' ? '' : 'lg:mt-sm-2',
+		message.subchatSize ? '' : 'lg:opacity-0 lg:group-hover:opacity-100 focus:opacity-100',
 		message.id === subchatId ? '!opacity-100' : '',
 	].join(' ')
 
@@ -34,7 +44,7 @@ export const MessageItem = ({ message, secondary, subchatId }: Props) => {
 				</div>
 			) : (
 				<div className="w-full px-xs-5 py-xs-1">
-					<div className={`${secondary ? 'mb-xs-2' : 'mb-xs-4'} flex items-center gap-xs-1`}>
+					<div className={`${isSubchat ? 'mb-xs-2' : 'mb-xs-4'} flex items-center gap-xs-1`}>
 						<div className="flex-center h-sm-0 w-sm-0 rounded-full">
 							<AiChatSvg className="h-xs-8" />
 						</div>
@@ -55,17 +65,18 @@ export const MessageItem = ({ message, secondary, subchatId }: Props) => {
 			)}
 
 			{/* SUBCHAT BUTTON */}
-			{!secondary && !message.loading && (
-				<div className={`flex-center absolute right-0 top-0 ${secondary ? '' : 'w-md-0'}`}>
-					<IconButton
+			{!isSubchat && (
+				<div className={subchatClass}>
+					<Button
 						tooltip={message.subchatSize ? `Open subchat (${message.subchatSize} messages)` : 'Create subchat'}
 						linkHref={`/chat/${message.chatId}?subchat=${message.id}`}
-						pressed={message.id === subchatId}
-						size="lg"
-						className={subchatClass}
+						variant="item-text-default"
+						highlight={message.id === subchatId ? 'pressed' : 'default'}
+						className={subchatButtonClass}
+						onClick={onClickSubchat}
 					>
-						<SubchatBubble count={message.subchatSize} />
-					</IconButton>
+						<SubchatIcon count={message.subchatSize || -1} />
+					</Button>
 				</div>
 			)}
 		</div>

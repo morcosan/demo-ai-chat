@@ -1,8 +1,13 @@
 import { CSSObject } from '@emotion/react'
-import { CSSProperties, ReactNode } from 'react'
+import { ChangeEvent, CSSProperties, FocusEvent, KeyboardEvent, MouseEvent, ReactNode } from 'react'
 
 export {}
 declare global {
+	export type ReactChangeEvent<T = unknown> = ChangeEvent<T>
+	export type ReactFocusEvent = FocusEvent
+	export type ReactKeyboardEvent = KeyboardEvent
+	export type ReactMouseEvent = MouseEvent
+
 	interface ReactProps {
 		className?: string
 		style?: CSSProperties

@@ -52,7 +52,7 @@ export const SubchatView = () => {
 						</IconButton>
 
 						{Boolean(subchatPagination.count) && (
-							<div className="text-size-sm text-color-text-subtle">{subchatPagination.count} messages</div>
+							<div className="pb-px text-size-sm">{subchatPagination.count} messages</div>
 						)}
 					</div>
 				</StickyToolbar>
@@ -69,7 +69,7 @@ export const SubchatView = () => {
 						/>
 						{/* MESSAGES */}
 						{subchatMessages.map((message: Message) => (
-							<MessageItem key={message.id} message={message} secondary />
+							<MessageItem key={message.id} message={message} isSubchat />
 						))}
 					</>
 				)}

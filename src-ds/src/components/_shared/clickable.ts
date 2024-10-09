@@ -1,6 +1,6 @@
 import { isA11yModePointer } from '@ds/release'
 import { Keyboard } from '@utils/release'
-import { KeyboardEvent, MouseEvent, useCallback, useState } from 'react'
+import { useCallback, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { LinkType } from './types'
 
@@ -9,7 +9,7 @@ export interface ClickableProps {
 	disabled?: boolean
 	linkHref?: string
 	linkType?: LinkType
-	onClick?(event: MouseEvent): void
+	onClick?(event: ReactMouseEvent): void
 }
 
 export const useClickable = (props: ClickableProps) => {
@@ -21,7 +21,7 @@ export const useClickable = (props: ClickableProps) => {
 	const tabIndex = isDisabled ? -1 : 0
 
 	const onClick = useCallback(
-		(event: MouseEvent) => {
+		(event: ReactMouseEvent) => {
 			if (isDisabled || props.linkType !== 'external') event.preventDefault()
 			if (isDisabled) return
 
@@ -43,14 +43,14 @@ export const useClickable = (props: ClickableProps) => {
 	const onMouseLeave = () => setIsPressed(false)
 	const onMouseUp = () => setIsPressed(false)
 
-	const onKeyDown = (event: KeyboardEvent) => {
+	const onKeyDown = (event: ReactKeyboardEvent) => {
 		if (event.key === Keyboard.SPACE || event.key === Keyboard.ENTER) {
 			event.preventDefault()
 			setIsPressed(true)
 		}
 	}
 
-	const onKeyUp = (event: KeyboardEvent) => {
+	const onKeyUp = (event: ReactKeyboardEvent) => {
 		if (event.key === Keyboard.SPACE || event.key === Keyboard.ENTER) {
 			const elem = event.target as HTMLButtonElement
 			elem.click()

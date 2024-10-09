@@ -1,6 +1,6 @@
 import { useUiTheme } from '@ds/release'
 import { Input, InputRef } from 'antd'
-import { ChangeEvent, Ref, useCallback } from 'react'
+import { Ref, useCallback } from 'react'
 import { TextFieldProps, TextFieldRef } from '../_types'
 import { InputElement, useTextFieldBase } from './_base'
 
@@ -38,7 +38,7 @@ export const AntImpl = (rawProps: TextFieldProps, ref: Ref<TextFieldRef>) => {
 	}
 
 	const onChange = useCallback(
-		(event: ChangeEvent<InputElement>) => props.onChange?.(event.target.value, event),
+		(event: ReactChangeEvent<InputElement>) => props.onChange?.(event.target.value, event),
 		[props.onChange]
 	)
 
@@ -55,8 +55,10 @@ export const AntImpl = (rawProps: TextFieldProps, ref: Ref<TextFieldRef>) => {
 		'aria-label': props.ariaLabel,
 		'aria-description': props.ariaDescription,
 		maxLength: props.maxLength || undefined,
-		onChange: onChange,
-		onKeyDown: onKeyDown,
+		onFocus: props.onFocus,
+		onBlur: props.onBlur,
+		onChange,
+		onKeyDown,
 	}
 	const bindingsInput = {
 		...bindingsBase,

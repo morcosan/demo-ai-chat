@@ -15,7 +15,7 @@ const createChats = (): Chat[] => {
 
 	return randomArray(3, 100).map((_, index: number) => ({
 		id: randomId(),
-		title: randomText(),
+		title: randomText(10),
 		createdAt: addMinutesToDate(date, index * 5).toISOString(),
 	}))
 }

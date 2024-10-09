@@ -1,4 +1,3 @@
-import { MouseEvent } from 'react'
 import { LinkType } from '../_shared/types'
 
 export type IconButtonSize = 'xs' | 'sm' | 'md' | 'lg'
@@ -19,5 +18,5 @@ export interface IconButtonProps extends ReactProps {
 	linkHref?: string
 	linkType?: LinkType
 
-	onClick?(event: MouseEvent): void
+	onClick?(event: ReactMouseEvent): void
 }

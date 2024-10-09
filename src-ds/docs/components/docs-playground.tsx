@@ -1,6 +1,6 @@
 import { useDocsPlayground } from '@ds/docs/components/docs-playground-provider'
 import { useUiA11y } from '@ds/release'
-import { FocusEvent, useRef } from 'react'
+import { useRef } from 'react'
 
 export const DocsPlayground = ({ children, className }: ReactProps) => {
 	const { forceA11yMode } = useUiA11y()
@@ -14,7 +14,7 @@ export const DocsPlayground = ({ children, className }: ReactProps) => {
 		'text-color-text-subtle text-size-xs text-center',
 	].join(' ')
 
-	const onFocusInput = (event: FocusEvent) => {
+	const onFocusInput = (event: ReactFocusEvent) => {
 		forceA11yMode('default')
 
 		// Remove selection

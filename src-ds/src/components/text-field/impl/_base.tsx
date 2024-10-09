@@ -1,6 +1,6 @@
 import { TextFieldProps, TextFieldRef, useUiTheme } from '@ds/release'
 import { CSS__ABSOLUTE_OVERLAY, CSS_A11Y_OUTLINE_PROXY, defineRef, Keyboard, useDefaults } from '@utils/release'
-import { KeyboardEvent, Ref, useCallback, useRef } from 'react'
+import { Ref, useCallback, useRef } from 'react'
 
 export type InputElement = HTMLInputElement & HTMLTextAreaElement
 
@@ -129,7 +129,7 @@ export const useTextFieldBase = (rawProps: TextFieldProps, ref: Ref<TextFieldRef
 	}
 
 	const onKeyDown = useCallback(
-		(event: KeyboardEvent) => {
+		(event: ReactKeyboardEvent) => {
 			if (event.key === Keyboard.ENTER) {
 				props.onSubmit?.(event)
 			}

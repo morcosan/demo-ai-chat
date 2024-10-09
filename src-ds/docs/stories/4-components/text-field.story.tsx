@@ -36,6 +36,8 @@ export const story: StoryObj<typeof TextField> = {
 		// Events
 		onChange: action('onChange'),
 		onSubmit: action('onSubmit'),
+		onFocus: action('onFocus'),
+		onBlur: action('onBlur'),
 	},
 }
 story.storyName = 'Text Field'
@@ -59,7 +61,7 @@ const meta: Meta<typeof TextField> = {
 			disabled: 'boolean',
 		},
 		['slotLeft', 'slotRight'],
-		['onChange', 'onSubmit']
+		['onChange', 'onSubmit', 'onFocus', 'onBlur']
 	),
 
 	component: function Story(props: TextFieldProps) {
@@ -155,12 +157,22 @@ const meta: Meta<typeof TextField> = {
 			{
 				name: 'onChange',
 				details: `Event emitted when the field is edited and ^value^ prop must change`,
-				params: [`value: string`, `event: ChangeEvent`],
+				params: [`value: string`, `event: ReactChangeEvent`],
 			},
 			{
 				name: 'onSubmit',
 				details: `Event emitted when ^Enter^ key is pressed, before ^onChange^ is emitted`,
-				params: [`event: KeyboardEvent`],
+				params: [`event: ReactKeyboardEvent`],
+			},
+			{
+				name: 'onFocus',
+				details: `Event emitted when the field receives keyboard focus`,
+				params: [`event: ReactFocusEvent`],
+			},
+			{
+				name: 'onBlur',
+				details: `Event emitted when the field loses keyboard focus`,
+				params: [`event: ReactFocusEvent`],
 			},
 		]
 

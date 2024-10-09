@@ -1,4 +1,4 @@
-import { ChangeEvent, Ref, useCallback, useEffect } from 'react'
+import { Ref, useCallback, useEffect } from 'react'
 import { TextFieldProps, TextFieldRef } from '../_types'
 import { InputElement, useTextFieldBase } from './_base'
 
@@ -6,7 +6,7 @@ export const CustomImpl = (rawProps: TextFieldProps, ref: Ref<TextFieldRef>) => 
 	const { props, cssInput, cssWrapper, inputRef, onKeyDown } = useTextFieldBase(rawProps, ref)
 
 	const onChange = useCallback(
-		(event: ChangeEvent<InputElement>) => {
+		(event: ReactChangeEvent<InputElement>) => {
 			props.onChange?.(event.target.value, event)
 			updateInputHeight()
 		},
@@ -54,6 +54,8 @@ export const CustomImpl = (rawProps: TextFieldProps, ref: Ref<TextFieldRef>) => 
 		readOnly: props.readonly,
 		disabled: props.disabled,
 		css: cssInput,
+		onFocus: props.onFocus,
+		onBlur: props.onBlur,
 		onKeyDown,
 		onChange,
 	}
