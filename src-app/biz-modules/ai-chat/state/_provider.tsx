@@ -6,7 +6,7 @@ import { useChatStore } from './stores/chat-store'
 import { useSubchatStore } from './stores/subchat-store'
 
 export const AiChatProvider = ({ children }: ReactProps) => {
-	const [activeView, setActiveView] = useState<AiChatView>(AiChatView.DESKTOP)
+	const [activeView, setActiveView] = useState<AiChatView>(AiChatView.NONE)
 	const allChatsStore = useAllChatsStore()
 	const chatStore = useChatStore(allChatsStore)
 	const allSubchatsStore = useAllSubchatsStore(chatStore)
