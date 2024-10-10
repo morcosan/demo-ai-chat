@@ -3,18 +3,22 @@ import { createArgTypes } from '@ds/docs/setup.ts'
 import { Button, Modal, ModalProps, ModalRef } from '@ds/release'
 import type { Meta, StoryObj } from '@storybook/react'
 import { randomLongText } from '@utils/release'
-import { useRef } from 'react'
+import { useMemo, useRef } from 'react'
 
 export const story: StoryObj<typeof Modal> = {
 	args: {
-		title: 'Title for modal',
+		// Slots
+		slotTitle: 'Modal title',
+		slotButtons: '<button class="p-xs-3 bg-color-primary text-color-text-inverse rounded-md">Submit</button>',
+		children: randomLongText(20),
+		// Props
 		width: 'md',
-		expanded: false,
+		height: 'fit',
 		noClose: false,
-		children: randomLongText(),
-		buttons: '<button class="p-xs-3 bg-color-primary text-color-white rounded-md">Submit</button>',
+		// Html
 		className: '',
 		style: {},
+		// Events
 	},
 }
 story.storyName = 'Modal'
@@ -25,12 +29,11 @@ const meta: Meta<typeof Modal> = {
 
 	argTypes: createArgTypes<typeof Modal>(
 		{
-			title: 'text',
 			width: ['xs', 'sm', 'md', 'lg', 'xl', 'full'],
-			expanded: 'boolean',
+			height: ['fit', 'full'],
 			noClose: 'boolean',
 		},
-		['children', 'buttons']
+		['slotTitle', 'slotButtons', 'children']
 	),
 
 	component: function Story(props: ModalProps) {
@@ -45,24 +48,46 @@ const meta: Meta<typeof Modal> = {
 		const modal2Ref = useRef(null as ModalRef | null)
 		const modal3Ref = useRef(null as ModalRef | null)
 
-		const overlapTriggers = (
-			<div className="flex gap-xs-9">
-				<Button variant="solid-secondary" onClick={() => modal1Ref.current?.open()}>
-					Open modal #1
-				</Button>
+		const overlapTriggers = useMemo(
+			() => (
+				<div className="flex gap-xs-9">
+					<Button variant="solid-secondary" onClick={() => modal1Ref.current?.open()}>
+						Open modal #1
+					</Button>
 
-				<Button variant="solid-secondary" onClick={() => modal2Ref.current?.open()}>
-					Open modal #2
-				</Button>
+					<Button variant="solid-secondary" onClick={() => modal2Ref.current?.open()}>
+						Open modal #2
+					</Button>
 
-				<Button variant="solid-secondary" onClick={() => modal3Ref.current?.open()}>
-					Open modal #3
-				</Button>
-			</div>
+					<Button variant="solid-secondary" onClick={() => modal3Ref.current?.open()}>
+						Open modal #3
+					</Button>
+				</div>
+			),
+			[]
+		)
+
+		const EXAMPLES = useMemo(
+			() => (
+				<>
+					<div className="flex-center py-sm-2">{overlapTriggers}</div>
+
+					<Modal ref={modal1Ref} slotTitle="Modal #1" width="md">
+						{overlapTriggers}
+					</Modal>
+					<Modal ref={modal2Ref} slotTitle="Modal #2" width="md">
+						{overlapTriggers}
+					</Modal>
+					<Modal ref={modal3Ref} slotTitle="Modal #3" width="md">
+						{overlapTriggers}
+					</Modal>
+				</>
+			),
+			[]
 		)
 
 		return (
-			<DocsPage title="Modal" type="component" slots={{ PROPS, SLOTS, EVENTS, TYPES }}>
+			<DocsPage title="Modal" type="component" slots={{ PROPS, SLOTS, EVENTS, TYPES, EXAMPLES }}>
 				<Button variant="solid-primary" onClick={() => modalRef.current?.open()}>
 					Open modal
 				</Button>
@@ -70,20 +95,8 @@ const meta: Meta<typeof Modal> = {
 				<Modal
 					ref={modalRef}
 					{...props}
-					buttons={<div dangerouslySetInnerHTML={{ __html: String(props.buttons) }} />}
+					slotButtons={<div dangerouslySetInnerHTML={{ __html: String(props.slotButtons) }} />}
 				/>
-
-				<div className="mt-sm-9">{overlapTriggers}</div>
-
-				<Modal ref={modal1Ref} title="Modal #1" width="md">
-					{overlapTriggers}
-				</Modal>
-				<Modal ref={modal2Ref} title="Modal #2" width="md">
-					{overlapTriggers}
-				</Modal>
-				<Modal ref={modal3Ref} title="Modal #3" width="md">
-					{overlapTriggers}
-				</Modal>
 			</DocsPage>
 		)
 	},

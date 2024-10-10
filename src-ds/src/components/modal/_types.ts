@@ -1,15 +1,15 @@
 import { ReactNode } from 'react'
 
 export type ModalWidth = 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'full'
+export type ModalHeight = 'fit' | 'full'
 
 export interface ModalProps extends ReactProps {
-	title: ReactNode
 	width: ModalWidth
-	expanded?: boolean
+	height?: ModalHeight
 	noClose?: boolean
 
-	// Slots
-	buttons?: ReactNode
+	slotTitle: ReactNode
+	slotButtons?: ReactNode
 }
 
 export interface ModalRef {
