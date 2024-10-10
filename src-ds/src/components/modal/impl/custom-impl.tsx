@@ -32,7 +32,7 @@ export const CustomImpl = (rawProps: ModalProps, ref: Ref<ModalRef>) => {
 		right: 0,
 		width: '100%',
 		height: '100%',
-		padding: $spacing['sm-0'],
+		padding: $spacing['xs-9'],
 		zIndex: `calc(${$zIndex['modal']} + ${modalId})`,
 
 		'&::before': {
@@ -84,7 +84,9 @@ export const CustomImpl = (rawProps: ModalProps, ref: Ref<ModalRef>) => {
 	const cssModalBody: CSS = {
 		flex: '1 1 0%',
 		margin: `0 calc(-1 * ${calcPaddingX})`,
-		padding: `0 calc(${calcPaddingX} - ${$spacing['scrollbar-w']}) 0 ${calcPaddingX}`,
+		padding: `${$spacing['a11y-padding']} 0`,
+		paddingLeft: calcPaddingX,
+		paddingRight: `calc(${calcPaddingX} - ${$spacing['scrollbar-w']})`,
 		overflowY: 'scroll',
 	}
 
