@@ -11,8 +11,8 @@ export const CustomImpl = (rawProps: ModalProps, ref: Ref<ModalRef>) => {
 		height: 'fit',
 	})
 	const { $color, $spacing, $radius, $shadow, $zIndex } = useUiTheme()
-	const [opened, setOpened] = useState(false)
 	const [modalId, setModalId] = useState(0)
+	const [zIndex, setZIndex] = useState(0)
 	const modalRef = useRef<HTMLDivElement | null>(null)
 	const triggerRef = useRef<HTMLElement | null>(null)
 	const focusTrap1Ref = useRef<HTMLDivElement | null>(null)
@@ -23,47 +23,11 @@ export const CustomImpl = (rawProps: ModalProps, ref: Ref<ModalRef>) => {
 		close: closeModal,
 	}))
 
-	const cssWrapper: CSS = {
-		display: opened ? 'block' : 'none',
-		position: 'fixed',
-		top: 0,
-		bottom: 0,
-		left: 0,
-		right: 0,
-		width: '100%',
-		height: '100%',
-		padding: $spacing['xs-9'],
-		zIndex: `calc(${$zIndex['modal']} + ${modalId})`,
-
-		'&::before': {
-			content: `''`,
-			position: 'fixed',
-			top: 0,
-			bottom: 0,
-			left: 0,
-			right: 0,
-			zIndex: -1,
-			backgroundColor: $color['black-glass-5'],
-			backdropFilter: 'blur(4px)',
-		},
-	}
-
+	const calcMargin = $spacing['xs-9']
 	const calcPaddingX = $spacing['sm-0']
 	const calcPaddingY = $spacing['xs-8']
-
-	const cssModal: CSS = {
-		display: 'flex',
-		flexDirection: 'column',
-		gap: $spacing['sm-0'],
-		width: '100%',
-		maxHeight: '100%',
-		margin: `0 auto`,
-		padding: `${calcPaddingY} ${calcPaddingX}`,
-		border: `1px solid ${$color['border-shadow']}`,
-		borderRadius: $radius['lg'],
-		backgroundColor: $color['bg-default'],
-		boxShadow: $shadow['lg'],
-	}
+	const durationIn = 300
+	const durationOut = 150
 
 	const cssModalWidth: CSS = (() => {
 		if (props.width === 'xs') return { maxWidth: $spacing['modal-xs'] }
@@ -81,6 +45,50 @@ export const CustomImpl = (rawProps: ModalProps, ref: Ref<ModalRef>) => {
 		return {}
 	})()
 
+	const cssWrapper: CSS = {
+		visibility: modalId ? 'visible' : 'hidden',
+		position: 'fixed',
+		top: 0,
+		bottom: 0,
+		left: 0,
+		right: 0,
+		width: '100%',
+		height: '100%',
+		padding: calcMargin,
+		zIndex: `calc(${$zIndex['modal']} + ${zIndex})`,
+		transition: modalId ? 'none' : `visibility ${durationOut}ms ease-in`,
+
+		'&::before': {
+			content: `''`,
+			position: 'fixed',
+			top: 0,
+			bottom: 0,
+			left: 0,
+			right: 0,
+			zIndex: -1,
+			backgroundColor: $color['black-glass-5'],
+			backdropFilter: 'blur(4px)',
+			opacity: modalId ? 1 : 0,
+			transition: modalId ? `opacity ${durationIn}ms ease-out` : `opacity ${durationOut}ms ease-in`,
+		},
+	}
+
+	const cssModal: CSS = {
+		display: 'flex',
+		flexDirection: 'column',
+		gap: $spacing['sm-0'],
+		width: '100%',
+		maxHeight: '100%',
+		margin: `0 auto`,
+		padding: `${calcPaddingY} ${calcPaddingX}`,
+		border: `1px solid ${$color['border-shadow']}`,
+		borderRadius: $radius['lg'],
+		backgroundColor: $color['bg-default'],
+		boxShadow: $shadow['lg'],
+		transform: modalId ? 'translateY(0)' : `translateY(calc(-3 * ${calcMargin}))`,
+		transition: `transform ${durationIn}ms ease-out`,
+	}
+
 	const cssModalBody: CSS = {
 		flex: '1 1 0%',
 		margin: `0 calc(-1 * ${calcPaddingX})`,
@@ -95,23 +103,25 @@ export const CustomImpl = (rawProps: ModalProps, ref: Ref<ModalRef>) => {
 	}
 
 	const openModal = () => {
-		if (opened) return
+		if (modalId) return
 
 		_lastModalId++
 		setModalId(_lastModalId)
-		setOpened(true)
+		setZIndex(_lastModalId)
 		triggerRef.current = document.activeElement as HTMLElement | null
 	}
 
 	const closeModal = () => {
+		if (!modalId) return
+
 		_lastModalId--
 		setModalId(0)
-		setOpened(false)
+		wait(durationOut).then(() => setZIndex(0))
 		triggerRef.current?.focus()
 	}
 
 	const onKeyDownWindow = (event: KeyboardEvent) => {
-		if (modalId !== _lastModalId) return
+		if (!modalId || modalId !== _lastModalId) return
 
 		if (event.key == Keyboard.ESCAPE) {
 			event.stopPropagation()
@@ -122,7 +132,7 @@ export const CustomImpl = (rawProps: ModalProps, ref: Ref<ModalRef>) => {
 	const onFocusInWindow = (event: FocusEvent) => {
 		const target = event.target as HTMLElement
 
-		if (modalId !== _lastModalId) return
+		if (!modalId || modalId !== _lastModalId) return
 		if (!target || !modalRef.current) return
 		if (modalRef.current.contains(target)) return
 
@@ -135,10 +145,8 @@ export const CustomImpl = (rawProps: ModalProps, ref: Ref<ModalRef>) => {
 	}
 
 	useEffect(() => {
-		opened && modalRef.current?.focus()
-	}, [opened])
+		modalId && modalRef.current?.focus()
 
-	useEffect(() => {
 		window.addEventListener('focusin', onFocusInWindow)
 		window.addEventListener('keydown', onKeyDownWindow)
 
