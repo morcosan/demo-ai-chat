@@ -87,4 +87,10 @@ export const TOKENS__SPACING = {
 	'a11y-outline': { $ref: 'xs-0', $css: '--ds-spacing-a11y-outline' },
 	'a11y-padding': { $ref: 'xs-1', $css: '--ds-spacing-a11y-padding' },
 	'a11y-scrollbar': { $ref: 'xs-6', $css: '--ds-spacing-a11y-scrollbar' },
+
+	'modal-xs': { $ref: 'xl-0', $css: '--ds-spacing-modal-xs' },
+	'modal-sm': { $ref: 'xl-4', $css: '--ds-spacing-modal-sm' },
+	'modal-md': { $ref: 'xl-9', $css: '--ds-spacing-modal-md' },
+	'modal-lg': { $ref: 'xxl-2', $css: '--ds-spacing-modal-lg' },
+	'modal-xl': { $ref: 'xxl-5', $css: '--ds-spacing-modal-xl' },
 } as const satisfies DesignTokenGroup<string>
