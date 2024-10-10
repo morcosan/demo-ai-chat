@@ -10,30 +10,31 @@ interface Props {
 }
 
 export const MessageItem = ({ message, subchatId, isSubchat, onClickSubchat }: Props) => {
-	const wrapperClass = [
-		isSubchat ? '' : 'px-xs-5 lg:px-md-0',
-		isSubchat && message.role === 'user' ? 'mb-xs-9' : '',
-		isSubchat && message.role === 'agent' ? 'mb-sm-2' : '',
-		!isSubchat && message.role === 'user' ? 'lg:mb-xs-9' : '',
-		!isSubchat && message.role === 'agent' ? 'mb-sm-4' : '',
-	].join(' ')
+	const wrapperClass = cx({
+		'group relative flex flex-col items-end': true,
+		'px-xs-5 lg:px-md-0': !isSubchat,
+		'mb-xs-9': isSubchat && message.role === 'user',
+		'mb-sm-2': isSubchat && message.role === 'agent',
+		'lg:mb-xs-9': !isSubchat && message.role === 'user',
+		'mb-sm-4': !isSubchat && message.role === 'agent',
+	})
 	const userItemClass = isSubchat ? 'max-w-[80%] bg-color-secondary-bg' : 'max-w-[70%] bg-color-primary-bg'
-	const subchatClass = [
-		'flex-center lg:absolute lg:right-0 lg:top-0',
-		message.loading ? 'invisible' : '',
-		isSubchat ? '' : 'w-md-0',
-	].join(' ')
-	const subchatButtonClass = [
-		'px-xs-3',
-		message.role === 'user' ? '' : 'lg:mt-sm-2',
-		message.subchatSize ? '' : 'lg:opacity-0 lg:group-hover:opacity-100 focus:opacity-100',
-		message.id === subchatId ? '!opacity-100' : '',
-	].join(' ')
+	const subchatClass = cx({
+		'flex-center lg:absolute lg:right-0 lg:top-0': true,
+		invisible: message.loading,
+		'w-md-0': !isSubchat,
+	})
+	const subchatButtonClass = cx({
+		'px-xs-3': true,
+		'lg:mt-sm-2': message.role === 'agent',
+		'focus:opacity-100 lg:opacity-0 lg:group-hover:opacity-100': !message.subchatSize,
+		'!opacity-100': message.id === subchatId,
+	})
 
 	return (
-		<div className={`group relative flex flex-col items-end ${wrapperClass}`}>
+		<div className={wrapperClass}>
 			{message.role === 'user' ? (
-				<div className={`relative w-fit rounded-md px-xs-6 py-xs-3 shadow-sm ${userItemClass}`}>
+				<div className={cx('relative w-fit rounded-md px-xs-6 py-xs-3 shadow-sm', userItemClass)}>
 					<div className="whitespace-pre-wrap">{message.text}</div>
 
 					{Boolean(message.loading && message.role === 'user') && (
@@ -44,7 +45,7 @@ export const MessageItem = ({ message, subchatId, isSubchat, onClickSubchat }: P
 				</div>
 			) : (
 				<div className="w-full px-xs-5 py-xs-1">
-					<div className={`${isSubchat ? 'mb-xs-2' : 'mb-xs-4'} flex items-center gap-xs-1`}>
+					<div className={cx('flex items-center gap-xs-1', isSubchat ? 'mb-xs-2' : 'mb-xs-4')}>
 						<div className="flex-center h-sm-0 w-sm-0 rounded-full">
 							<AiChatSvg className="h-xs-8" />
 						</div>

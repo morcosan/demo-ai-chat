@@ -15,17 +15,17 @@ export const DocIconItem = ({ icon }: Props) => {
 	const { playgroundBgClass } = useDocsPlayground()
 	const [copied, setCopied] = useState(false)
 
-	const buttonClass = [
+	const buttonClass = cx(
 		'relative flex h-md-8 w-md-8 flex-col overflow-hidden rounded-sm border border-color-border-default',
 		'fill-color-text-default stroke-color-text-default',
 		'hover:shadow-md focus:shadow-md',
-		'hover:scale-[1.05] focus:scale-[1.05]',
-	].join(' ')
+		'hover:scale-[1.05] focus:scale-[1.05]'
+	)
 
-	const copiedClass = [
+	const copiedClass = cx(
 		'flex-center absolute-overlay bg-color-success-bg',
-		'text-size-sm font-weight-md text-color-success-text-default',
-	].join(' ')
+		'text-size-sm font-weight-md text-color-success-text-default'
+	)
 
 	const onClick = (event: ReactMouseEvent) => {
 		const button = event.target as HTMLButtonElement
@@ -38,7 +38,7 @@ export const DocIconItem = ({ icon }: Props) => {
 
 	return (
 		<button type="button" title={icon.coding} className={buttonClass} onClick={onClick}>
-			<span className={`flex-center pointer-events-none w-full flex-1 ${playgroundBgClass}`}>
+			<span className={cx('flex-center pointer-events-none w-full flex-1', playgroundBgClass)}>
 				<icon.elem className="max-h-[40px] max-w-[40px]" />
 			</span>
 

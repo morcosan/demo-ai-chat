@@ -49,12 +49,12 @@ export const DocsPage = ({ title, type, slots, children }: Props) => {
 
 	return (
 		<div className="px-sm-3 py-sm-2">
-			<h1 className={`${type === 'component' ? 'mb-md-2' : 'mb-sm-6'} text-size-xxl`}>{title}</h1>
+			<h1 className={cx(type === 'component' ? 'mb-md-2' : 'mb-sm-6', 'text-size-xxl')}>{title}</h1>
 
 			<div className="pb-md-0">
 				{type === 'component' ? (
 					<>
-						<div ref={playWrapperRef} className={`flex flex-col ${playExpanded ? 'mt-0 h-screen pb-sm-1' : ''}`}>
+						<div ref={playWrapperRef} className={cx('flex flex-col', playExpanded && 'mt-0 h-screen pb-sm-1')}>
 							<DocsHeader className={playExpanded ? '!mb-xs-4 !mt-0' : '!mt-0'}>
 								<span className="mr-xs-5">Playground</span>
 								<IconButton size="sm" tooltip={playTooltip} onClick={onClickTogglePlay}>
@@ -67,7 +67,7 @@ export const DocsPage = ({ title, type, slots, children }: Props) => {
 						{Boolean(slots?.EXAMPLES) && (
 							<>
 								<DocsHeader>Examples</DocsHeader>
-								<div className={`rounded-md border border-color-border-default ${playgroundBgClass}`}>
+								<div className={cx('rounded-md border border-color-border-default', playgroundBgClass)}>
 									{slots?.EXAMPLES}
 								</div>
 							</>

@@ -74,7 +74,7 @@ export const ChatView = () => {
 		<div className="relative flex h-full flex-1 flex-col gap-xs-5 py-xs-1">
 			{activeChat || chatId ? (
 				<div ref={listingRef} className="flex-1 overflow-y-auto pb-sm-5" onScroll={onScroll}>
-					<div className={`${widthClass} ${chatLoading === 'full' ? 'h-full' : ''} flex flex-col pt-sm-0`}>
+					<div className={cx(widthClass, chatLoading === 'full' && 'h-full', 'flex flex-col pt-sm-0')}>
 						{/* TOOLBAR */}
 						<StickyToolbar variant="chat" className="pb-xs-4">
 							<h1 className="px-xs-5 lg:px-md-0">
@@ -120,7 +120,7 @@ export const ChatView = () => {
 				</div>
 			)}
 
-			<div className={`px-xs-7 pb-xs-5 lg:px-md-0 ${widthClass}`}>
+			<div className={cx('px-xs-7 pb-xs-5 lg:px-md-0', widthClass)}>
 				<InputField
 					ref={inputRef}
 					input={input}
