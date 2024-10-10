@@ -1,5 +1,5 @@
 import { useDocsPlayground } from '@ds/docs/components/docs-playground-provider'
-import { ComponentType, MouseEvent, useState } from 'react'
+import { ComponentType, useState } from 'react'
 
 export interface Icon {
 	name: string
@@ -27,7 +27,7 @@ export const DocIconItem = ({ icon }: Props) => {
 		'text-size-sm font-weight-md text-color-success-text-default',
 	].join(' ')
 
-	const onClick = (event: MouseEvent) => {
+	const onClick = (event: ReactMouseEvent) => {
 		const button = event.target as HTMLButtonElement
 		button.blur()
 

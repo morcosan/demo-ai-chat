@@ -1,4 +1,4 @@
-import { ChangeEvent, KeyboardEvent, ReactNode } from 'react'
+import { ReactNode } from 'react'
 
 export type TextFieldSize = 'sm' | 'md' | 'lg' | 'xl'
 
@@ -19,8 +19,10 @@ export interface TextFieldProps extends ReactProps {
 	slotLeft?: ReactNode
 	slotRight?: ReactNode
 
-	onChange?(value: string, event: ChangeEvent): void
-	onSubmit?(event: KeyboardEvent): void
+	onChange?(value: string, event: ReactChangeEvent): void
+	onSubmit?(event: ReactKeyboardEvent): void
+	onFocus?(event: ReactFocusEvent): void
+	onBlur?(event: ReactFocusEvent): void
 }
 
 export interface TextFieldRef {

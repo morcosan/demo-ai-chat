@@ -5,7 +5,7 @@ import { CustomImpl } from './impl/custom-impl'
 import { MuiImpl } from './impl/mui-impl'
 
 export type { LinkType } from '../_shared/types'
-export type { ButtonProps, ButtonSize, ButtonVariant } from './_types'
+export type { ButtonHighlight, ButtonProps, ButtonSize, ButtonVariant } from './_types'
 
 export const Button = (props: ButtonProps) => {
 	const { uiLibrary } = useUiLibrary()

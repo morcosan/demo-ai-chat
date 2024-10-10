@@ -32,7 +32,7 @@ export const subchatDefaults: SubchatStore = {
 
 export const useSubchatStore = (chatStore: ChatStore, allSubchatsStore: AllSubchatsStore): SubchatStore => {
 	const { activeChat, chatMessages, updateMessage } = chatStore
-	const { allSubchats, updateSubchat } = allSubchatsStore
+	const { allSubchats, resetAllSubchats, updateSubchat } = allSubchatsStore
 	const [activeSubchat, setActiveSubchat] = useState(null as Subchat | null)
 	const [subchatMessages, setSubchatMessages] = useState([] as Message[])
 	const [subchatPagination, setSubchatPagination] = useState({ page: 0, count: 0 } as Pagination)
@@ -129,7 +129,7 @@ export const useSubchatStore = (chatStore: ChatStore, allSubchatsStore: AllSubch
 		message && updateMessage({ ...message, subchatSize })
 
 		const subchat = allSubchats.find((subchat: Subchat) => subchat.id === activeSubchat.id)
-		subchat && updateSubchat({ ...subchat, size: subchatSize })
+		subchat ? updateSubchat({ ...subchat, size: subchatSize }) : resetAllSubchats()
 	}
 
 	useEffect(() => {

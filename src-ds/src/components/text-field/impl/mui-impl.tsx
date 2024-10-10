@@ -1,6 +1,6 @@
 import { useUiTheme } from '@ds/release'
 import TextField from '@mui/material/TextField'
-import { ChangeEvent, Ref, useCallback, useEffect, useState } from 'react'
+import { Ref, useCallback, useEffect, useState } from 'react'
 import { TextFieldProps, TextFieldRef } from '../_types'
 import { InputElement, useTextFieldBase } from './_base'
 
@@ -40,7 +40,7 @@ export const MuiImpl = (rawProps: TextFieldProps, ref: Ref<TextFieldRef>) => {
 	}
 
 	const onChange = useCallback(
-		(event: ChangeEvent<InputElement>) => {
+		(event: ReactChangeEvent<InputElement>) => {
 			props.multiline && setInnerValue(event.target.value)
 			props.onChange?.(event.target.value, event)
 		},
@@ -81,6 +81,8 @@ export const MuiImpl = (rawProps: TextFieldProps, ref: Ref<TextFieldRef>) => {
 			style={props.style}
 			onChange={onChange}
 			onKeyDown={onKeyDown}
+			onFocus={props.onFocus}
+			onBlur={props.onBlur}
 		/>
 	)
 }

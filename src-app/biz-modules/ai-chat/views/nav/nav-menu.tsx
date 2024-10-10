@@ -1,11 +1,15 @@
 import { AiChatSvg, Button, CloseSvg, DotsSvg, IconButton, SearchSvg, TextField } from '@ds/release'
 import { debounce } from 'lodash'
 import { UIEvent, useState } from 'react'
-import { Chat } from '../api/types'
-import { LoadingText } from '../components/loading-text'
-import { useAiChat } from '../state'
+import { Chat } from '../../api/types'
+import { LoadingText } from '../../components/loading-text'
+import { useAiChat } from '../../state'
 
-export const AiChatNavSection = () => {
+interface Props {
+	collapsed?: boolean
+}
+
+export const AiChatNavMenu = ({ collapsed }: Props) => {
 	const { allChats, allChatsLoading, allChatsPagination, activeChat, loadMoreChats } = useAiChat()
 	const [search, setSearch] = useState('')
 
@@ -23,17 +27,21 @@ export const AiChatNavSection = () => {
 		<>
 			{/* TITLE */}
 			<Button linkHref="/chat" loading={allChatsLoading === 'update'}>
-				<AiChatSvg className="-ml-xs-4 mr-xs-3 h-xs-9 w-xs-9" />
-				New chat
+				<div className={collapsed ? '' : '-ml-xs-4 mr-xs-3'}>
+					<AiChatSvg className="h-xs-9 w-xs-9" />
+				</div>
+				<span className={collapsed ? 'hidden' : ''}>New chat</span>
 			</Button>
 
 			{/* OPTIONS */}
-			<div className="mt-sm-0 flex items-center justify-between">
+			<div className="mt-sm-0 flex h-button-h-sm w-full items-center justify-between">
 				<span className="ml-xs-1 text-size-sm text-color-text-subtle">
 					Chats{' '}
-					{Boolean(allChatsPagination.count) && <span className="text-size-xs">({allChatsPagination.count})</span>}
+					{Boolean(allChatsPagination.count && !collapsed) && (
+						<span className="text-size-xs">({allChatsPagination.count})</span>
+					)}
 				</span>
-				<IconButton tooltip="Show options" size="sm" className="-mr-xs-0">
+				<IconButton tooltip="Show options" size="sm" className={collapsed ? 'hidden' : '-mr-xs-0'}>
 					<DotsSvg className="h-xs-8" />
 				</IconButton>
 			</div>
@@ -60,10 +68,15 @@ export const AiChatNavSection = () => {
 			{/* LISTING */}
 			<div
 				className="-mx-a11y-scrollbar flex flex-1 flex-col overflow-y-scroll p-a11y-padding !pl-a11y-scrollbar"
+				style={{ width: 'calc(100% + 2 * var(--ds-spacing-a11y-scrollbar))' }}
 				onScroll={onScrollChats}
 			>
 				{allChatsLoading === 'full' ? (
-					<LoadingText text="Loading chats..." className="min-h-sm-4 px-button-px-item text-size-sm" />
+					<LoadingText
+						text="Loading chats..."
+						collapsed={collapsed}
+						className="min-h-sm-4 px-button-px-item text-size-sm"
+					/>
 				) : allChats.length ? (
 					<>
 						{allChats.map((chat: Chat) => (
@@ -75,13 +88,14 @@ export const AiChatNavSection = () => {
 								tooltip={chat.title}
 								className="focus:z-1"
 							>
-								<span className="truncate">{chat.title}</span>
+								<span className="line-clamp-1">{chat.title}</span>
 							</Button>
 						))}
 						{allChats.length < allChatsPagination.count && (
 							<LoadingText
 								text="Loading chats..."
-								className="min-h-sm-4 px-button-px-item text-size-sm"
+								collapsed={collapsed}
+								className="line-clamp-1 min-h-sm-4 px-button-px-item text-size-sm"
 								style={{ visibility: allChatsLoading === 'more' ? 'visible' : 'hidden' }}
 							/>
 						)}
@@ -98,9 +112,9 @@ export const AiChatNavSection = () => {
 					variant="item-solid-secondary"
 					highlight="selected"
 					tooltip={activeChat?.title}
-					className="mb-a11y-padding focus:z-1"
+					className="mb-a11y-padding w-full focus:z-1"
 				>
-					<span className="truncate">{activeChat?.title}</span>
+					<span className="line-clamp-1">{activeChat?.title}</span>
 				</Button>
 			)}
 		</>

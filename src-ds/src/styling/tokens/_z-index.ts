@@ -10,9 +10,10 @@ export const TOKENS__Z_INDEX = {
 	lv9: { $value: 9000, $css: '--ds-z-index-lv9' },
 
 	sticky: { $ref: 'lv1', $css: '--ds-z-index-sticky' },
-	modal: { $ref: 'lv2', $css: '--ds-z-index-modal' },
-	popup: { $ref: 'lv3', $css: '--ds-z-index-popup' },
-	dropdown: { $ref: 'lv4', $css: '--ds-z-index-dropdown' },
-	toast: { $ref: 'lv5', $css: '--ds-z-index-toast' },
+	navbar: { $ref: 'lv2', $css: '--ds-z-index-navbar' },
+	modal: { $ref: 'lv3', $css: '--ds-z-index-modal' },
+	popup: { $ref: 'lv4', $css: '--ds-z-index-popup' },
+	dropdown: { $ref: 'lv5', $css: '--ds-z-index-dropdown' },
+	toast: { $ref: 'lv6', $css: '--ds-z-index-toast' },
 	tooltip: { $ref: 'lv9', $css: '--ds-z-index-tooltip' },
 } as const satisfies DesignTokenGroup<number>

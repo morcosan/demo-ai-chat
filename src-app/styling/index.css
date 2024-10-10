@@ -1,0 +1,19 @@
+/*
+ * On mobile, 100vh includes URL bar, which creates vertical scroll when it's visible
+ * Solution: use height 100% on all parent elements
+ */
+html,
+body,
+#root {
+	height: 100%;
+}
+
+:host,
+:root {
+	--app-color-bg-navbar: var(--ds-color-white);
+	--app-spacing-navbar-h: var(--ds-spacing-sm-6);
+}
+
+[data-color-theme='dark'] {
+	--app-color-bg-navbar: var(--ds-color-grey-8);
+}

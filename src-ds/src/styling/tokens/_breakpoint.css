@@ -1,0 +1,11 @@
+/* Breakpoint tokens */
+
+:host,
+:root {
+	--ds-breakpoint-xs: 320px;
+	--ds-breakpoint-sm: 640px;
+	--ds-breakpoint-md: 768px;
+	--ds-breakpoint-lg: 1024px;
+	--ds-breakpoint-xl: 1440px;
+	--ds-breakpoint-xxl: 1920px;
+}

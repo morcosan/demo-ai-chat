@@ -7,20 +7,22 @@ import { LoadingText } from '../components/loading-text'
 import { MessageItem } from '../components/message-item'
 import { StickyToolbar } from '../components/sticky-toolbar'
 import { useMessageListing } from '../hooks/message-listing'
-import { useAiChat } from '../state'
+import { AiChatView, useAiChat } from '../state'
 
 export const ChatView = () => {
 	const {
 		activeChat,
+		activeView,
 		allChatsLoading,
 		canLoadChatMessages,
 		chatLoading,
 		chatMessages,
 		chatPagination,
-		postChatMessage,
 		loadActiveChat,
 		loadMoreChatMessages,
+		postChatMessage,
 		resetActiveChat,
+		setActiveView,
 	} = useAiChat()
 	const { input, inputRef, inputText, listingRef, onChange, onPressEnter, onSubmit, saveScrollPos, scrollToPos } =
 		useMessageListing(chatLoading, postChatMessage)
@@ -32,6 +34,8 @@ export const ChatView = () => {
 	const subchatId = parseInt(String(searchParams.get('subchat')))
 
 	const widthClass = 'mx-auto w-full max-w-xxl-2'
+
+	const onClickSubchat = () => activeView === AiChatView.MOBILE_CHAT && setActiveView(AiChatView.MOBILE_SUBCHAT)
 
 	const onScroll = debounce((event: UIEvent) => {
 		const THRESHOLD = 50 // px
@@ -50,9 +54,9 @@ export const ChatView = () => {
 
 	const loadChat = async () => {
 		const success = await loadActiveChat(chatId)
-		if (success === false) {
-			navigate('/chat')
-		}
+
+		if (success === false) navigate('/chat')
+		if (success === undefined && activeChat) navigate(`/chat/${activeChat.id}`)
 	}
 
 	useEffect(() => {
@@ -73,13 +77,16 @@ export const ChatView = () => {
 					<div className={`${widthClass} ${chatLoading === 'full' ? 'h-full' : ''} flex flex-col pt-sm-0`}>
 						{/* TOOLBAR */}
 						<StickyToolbar variant="chat" className="pb-xs-4">
-							<h1 className="mx-md-0 px-xs-5 pt-xs-0 text-size-xl font-weight-md">
-								{activeChat?.title}
-								{Boolean(chatPagination.count) && (
-									<div className="mt-xs-0 text-size-xs text-color-text-subtle">
-										{chatPagination.count} messages
-									</div>
-								)}
+							<h1 className="px-xs-5 lg:px-md-0">
+								<div className="px-xs-5 pt-xs-0 text-size-xl font-weight-md">
+									<div className="line-clamp-2">{activeChat?.title}</div>
+
+									{Boolean(chatPagination.count) && (
+										<div className="mt-xs-0 text-size-xs text-color-text-subtle">
+											{chatPagination.count} messages
+										</div>
+									)}
+								</div>
 							</h1>
 						</StickyToolbar>
 
@@ -96,7 +103,12 @@ export const ChatView = () => {
 								/>
 								{/* MESSAGES */}
 								{chatMessages.map((message: Message) => (
-									<MessageItem key={message.id} message={message} subchatId={subchatId} />
+									<MessageItem
+										key={message.id}
+										message={message}
+										subchatId={subchatId}
+										onClickSubchat={onClickSubchat}
+									/>
 								))}
 							</div>
 						)}
@@ -104,18 +116,18 @@ export const ChatView = () => {
 				</div>
 			) : (
 				<div className="flex-center flex-1 flex-col overflow-y-auto">
-					<h1 className="mt-xs-4 text-size-xxl">Start a new conversation</h1>
+					<h1 className="mt-xs-4 text-size-xl font-weight-xs text-color-text-subtle">Start a new conversation</h1>
 				</div>
 			)}
 
-			<div className={`px-md-0 ${widthClass}`}>
+			<div className={`px-xs-7 pb-xs-5 lg:px-md-0 ${widthClass}`}>
 				<InputField
 					ref={inputRef}
 					input={input}
 					inputText={inputText}
 					loading={chatLoading === 'update' || Boolean(allChatsLoading)}
 					disabled={chatLoading === 'full' || chatLoading === 'more'}
-					className="mb-xs-5 w-full"
+					className="w-full"
 					primary
 					onChange={onChange}
 					onPressEnter={onPressEnter}

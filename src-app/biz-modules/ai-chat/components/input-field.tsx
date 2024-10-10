@@ -1,6 +1,6 @@
 import { IconButton, SendSvg, TextField, TextFieldRef } from '@ds/release'
 import { withRef } from '@utils/release'
-import { KeyboardEvent, Ref } from 'react'
+import { Ref } from 'react'
 
 interface Props extends ReactProps {
 	input: string
@@ -10,11 +10,18 @@ interface Props extends ReactProps {
 	disabled?: boolean
 
 	onChange(value: string): void
-	onPressEnter(event: KeyboardEvent): void
+	onPressEnter(event: ReactKeyboardEvent): void
 	onSubmit(): void
 }
 
 export const InputField = withRef('InputField', (props: Props, ref: Ref<TextFieldRef>) => {
+	const onFocus = (event: ReactFocusEvent) => {
+		// On mobile, the field is covered by the floating keyboard
+		const target = event.target as HTMLElement
+		// Wait for floating keyboard to appear
+		wait(500).then(() => target.scrollIntoView({ behavior: 'smooth', block: 'center' }))
+	}
+
 	return (
 		<TextField
 			ref={ref}
@@ -42,6 +49,7 @@ export const InputField = withRef('InputField', (props: Props, ref: Ref<TextFiel
 			multiline
 			onChange={props.onChange}
 			onSubmit={props.onPressEnter}
+			onFocus={onFocus}
 		/>
 	)
 })
