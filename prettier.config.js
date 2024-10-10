@@ -22,4 +22,5 @@ export default {
 
 	// Plugin: tailwindcss
 	tailwindConfig: './tailwind.config.ts',
+	tailwindFunctions: ['clsx', 'cx'],
 }

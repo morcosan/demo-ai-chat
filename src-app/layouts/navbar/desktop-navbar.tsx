@@ -19,25 +19,25 @@ export const DesktopNavbar = () => {
 
 	const isNavCollapsed = !hasNavHover && !isNavPinned
 
-	const settingsMenuClass = [
+	const settingsMenuClass = cx(
 		isSettingsOpened ? 'block' : 'hidden',
-		'absolute bottom-0 right-0 translate-x-full z-popup shadow-lg',
-		'w-lg-6 bg-color-bg-default border border-color-border-shadow rounded-md',
-	].join(' ')
+		'absolute bottom-0 right-0 z-popup translate-x-full shadow-lg',
+		'w-lg-6 rounded-md border border-color-border-shadow bg-color-bg-default'
+	)
 
 	const expandedClass = 'w-lg-7 min-w-lg-7'
 	const collapsedClass = 'w-md-3 min-w-md-3'
-	const navbarClass = [
-		`absolute left-0 top-0 h-full z-navbar`,
+	const navbarClass = cx(
+		`absolute left-0 top-0 z-navbar h-full`,
 		isNavCollapsed ? collapsedClass : expandedClass,
 		'flex flex-col px-a11y-scrollbar py-scrollbar-w',
-		'border-r border-color-border-shadow shadow-lg',
-	].join(' ')
+		'border-r border-color-border-shadow shadow-lg'
+	)
 
-	const pinClass = [
+	const pinClass = cx(
 		'h-xs-6',
-		isNavPinned ? 'fill-color-secondary-text-default' : 'rotate-45 fill-color-text-subtle',
-	].join(' ')
+		isNavPinned ? 'fill-color-secondary-text-default' : 'rotate-45 fill-color-text-subtle'
+	)
 
 	const loadPinConfig = () => {
 		const cookie = localStorage.getItem(COOKIE__PINNED_NAVBAR)
@@ -88,11 +88,10 @@ export const DesktopNavbar = () => {
 	}, [])
 
 	return (
-		<div className={`relative h-full ${isNavPinned ? expandedClass : collapsedClass}`}>
+		<div className={cx('relative h-full', isNavPinned ? expandedClass : collapsedClass)}>
 			{/* NAV OVERLAY */}
 			<div
-				className="absolute-overlay z-tooltip"
-				style={{ display: isNavCollapsed ? 'block' : 'none' }}
+				className={cx('absolute-overlay z-tooltip', !isNavCollapsed && 'hidden')}
 				onMouseDown={onMouseDownNavOverlay}
 				onMouseEnter={() => setHasNavHover(true)}
 			/>
@@ -113,7 +112,7 @@ export const DesktopNavbar = () => {
 				{/* PIN */}
 				<IconButton
 					tooltip={isNavPinned ? 'Unpin nav menu' : 'Pin nav menu'}
-					className={`absolute right-xs-1 top-xs-1 ${isNavCollapsed ? 'hidden' : ''}`}
+					className={cx('absolute right-xs-1 top-xs-1', isNavCollapsed && 'hidden')}
 					onClick={onClickPin}
 				>
 					<PinSvg className={pinClass} />

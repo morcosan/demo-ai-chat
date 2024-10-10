@@ -36,8 +36,8 @@ export default {
 								</td>
 								<td>
 									<div className="flex items-center gap-xs-9">
-										<div className={`w-sm-4 ${previewClass}`} style={{ borderRadius: `var(${token.$css})` }} />
-										<div className={`w-sm-9 ${previewClass}`} style={{ borderRadius: `var(${token.$css})` }} />
+										<div className={cx('w-sm-4', previewClass)} style={{ borderRadius: `var(${token.$css})` }} />
+										<div className={cx('w-sm-9', previewClass)} style={{ borderRadius: `var(${token.$css})` }} />
 									</div>
 								</td>
 								<td>

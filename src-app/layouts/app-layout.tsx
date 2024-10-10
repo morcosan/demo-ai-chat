@@ -11,7 +11,7 @@ interface Props extends ReactProps {
 	pageClassName?: string
 }
 
-export const AppLayout = ({ pageClassName = '', children }: Props) => {
+export const AppLayout = ({ pageClassName, children }: Props) => {
 	const { isViewportMaxLG } = useUiViewport()
 	const { activeView, setActiveView } = useAiChat()
 	const [hasMenu, setHasMenu] = useState(false)
@@ -41,25 +41,25 @@ export const AppLayout = ({ pageClassName = '', children }: Props) => {
 
 	return (
 		<div
-			className={`flex ${isViewportMaxLG ? 'flex-col' : ''} h-full w-full`}
+			className={cx('flex h-full w-full', isViewportMaxLG && 'flex-col')}
 			style={{ paddingTop: isViewportMaxLG ? 'var(--app-spacing-navbar-h)' : 0 }}
 		>
 			{isViewportMaxLG ? <MobileNavbar hasMenu={hasMenu} onToggleNavMenu={onToggleNavMenu} /> : <DesktopNavbar />}
 
 			{/* MENU OVERLAY */}
 			<div
-				className="absolute-overlay z-popup backdrop-blur-sm"
-				style={{ top: 'var(--app-spacing-navbar-h)', display: hasMenu ? 'block' : 'none' }}
+				className={cx('absolute-overlay z-popup backdrop-blur-sm', !hasMenu && 'hidden')}
+				style={{ top: 'var(--app-spacing-navbar-h)' }}
 				onClick={() => setHasMenu(false)}
 			/>
 			{/* MENU CONTENT */}
 			<div
-				className={[
+				className={cx(
 					'fixed bottom-0 left-0 right-0 z-popup mr-button-h-md',
 					'border-r border-t border-color-border-shadow shadow-lg',
 					'transition-transform duration-300 ease-out',
-					hasMenu ? 'translate-x-0' : '-translate-x-full',
-				].join(' ')}
+					hasMenu ? 'translate-x-0' : '-translate-x-full'
+				)}
 				style={{ top: 'var(--app-spacing-navbar-h)', background: 'var(--app-color-bg-navbar)' }}
 			>
 				{hasSettings ? (
@@ -70,7 +70,7 @@ export const AppLayout = ({ pageClassName = '', children }: Props) => {
 			</div>
 
 			{/* PAGE CONTENT */}
-			<div className={`h-full w-full flex-1 ${pageClassName}`}>{children}</div>
+			<div className={cx('h-full w-full flex-1', pageClassName)}>{children}</div>
 		</div>
 	)
 }

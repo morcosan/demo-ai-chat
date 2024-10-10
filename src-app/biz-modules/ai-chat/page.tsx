@@ -81,19 +81,19 @@ const AiChatPage = () => {
 
 			{/* MOBILE OVERLAY */}
 			<div
-				className="absolute-overlay z-popup backdrop-blur-sm"
-				style={{ top: 'var(--app-spacing-navbar-h)', display: isSubchatView ? 'block' : 'none' }}
+				className={cx('absolute-overlay z-popup backdrop-blur-sm', !isSubchatView && 'hidden')}
+				style={{ top: 'var(--app-spacing-navbar-h)' }}
 				onClick={() => setActiveView(AiChatView.MOBILE_CHAT)}
 			/>
 			{/* MOBILE CONTENT */}
 			{activeView !== AiChatView.DESKTOP && (
 				<div
-					className={[
+					className={cx(
 						'fixed bottom-0 left-0 right-0 z-popup ml-button-h-md',
 						'border-l border-t border-color-border-shadow shadow-lg',
 						'transition-transform duration-300 ease-out',
-						isSubchatView ? 'translate-x-0' : 'translate-x-full',
-					].join(' ')}
+						isSubchatView ? 'translate-x-0' : 'translate-x-full'
+					)}
 					style={{ top: 'var(--app-spacing-navbar-h)', background: 'var(--app-color-bg-navbar)' }}
 				>
 					{subchatSlot}

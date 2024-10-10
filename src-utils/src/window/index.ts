@@ -1,3 +1,7 @@
+import clsx from 'clsx'
+
+window.cx = clsx
+
 window.wait = (time: number) => new Promise((resolve) => setTimeout(resolve, time))
 
 window.LOG = (...args: unknown[]) => {

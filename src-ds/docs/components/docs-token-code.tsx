@@ -10,9 +10,9 @@ interface Props {
 export const DocsTokenCode = ({ iconSvg, value, size, loading }: Props) => {
 	const [copied, setCopied] = useState(false)
 
-	const buttonClass = [
-		'origin-center absolute-center overflow-hidden',
-		'border border-color-border-default rounded-xs',
+	const buttonClass = cx(
+		'absolute-center origin-center overflow-hidden',
+		'rounded-xs border border-color-border-default',
 		'w-full min-w-full px-xs-0',
 		'hover:w-fit focus:w-fit',
 		'hover:w-fit focus:w-fit',
@@ -21,13 +21,13 @@ export const DocsTokenCode = ({ iconSvg, value, size, loading }: Props) => {
 		'hover:z-popup focus:z-popup',
 		'hover:shadow-md focus:shadow-md',
 		'hover:bg-color-bg-default focus:bg-color-bg-default',
-		'hover:scale-[1.1] focus:scale-[1.1]',
-	].join(' ')
+		'hover:scale-[1.1] focus:scale-[1.1]'
+	)
 
-	const copiedClass = [
+	const copiedClass = cx(
 		'flex-center absolute-overlay bg-color-success-bg',
-		'text-size-sm font-weight-md text-color-success-text-default',
-	].join(' ')
+		'text-size-sm font-weight-md text-color-success-text-default'
+	)
 
 	const onClick = (event: ReactMouseEvent) => {
 		const button = event.target as HTMLButtonElement
@@ -39,11 +39,11 @@ export const DocsTokenCode = ({ iconSvg, value, size, loading }: Props) => {
 	}
 
 	return loading ? (
-		<div className={`flex-center h-sm-4 ${size || 'w-md-8'} rounded-xs border border-color-border-subtle`}>
+		<div className={cx('flex-center h-sm-4 rounded-xs border border-color-border-subtle', size || 'w-md-8')}>
 			...
 		</div>
 	) : (
-		<div className={`relative h-sm-4 ${size || 'w-md-8'}`}>
+		<div className={cx('relative h-sm-4', size || 'w-md-8')}>
 			<button type="button" className={buttonClass} onClick={onClick}>
 				<code className="pointer-events-none flex !w-full items-center gap-xs-2 !bg-color-bg-default">
 					<span className="ml-px mt-px block h-xs-6">{iconSvg}</span>

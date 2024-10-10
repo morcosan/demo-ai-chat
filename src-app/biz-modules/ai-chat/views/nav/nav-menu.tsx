@@ -27,10 +27,10 @@ export const AiChatNavMenu = ({ collapsed }: Props) => {
 		<>
 			{/* TITLE */}
 			<Button linkHref="/chat" loading={allChatsLoading === 'update'}>
-				<div className={collapsed ? '' : '-ml-xs-4 mr-xs-3'}>
+				<div className={cx(!collapsed && '-ml-xs-4 mr-xs-3')}>
 					<AiChatSvg className="h-xs-9 w-xs-9" />
 				</div>
-				<span className={collapsed ? 'hidden' : ''}>New chat</span>
+				<span className={cx(collapsed && 'hidden')}>New chat</span>
 			</Button>
 
 			{/* OPTIONS */}

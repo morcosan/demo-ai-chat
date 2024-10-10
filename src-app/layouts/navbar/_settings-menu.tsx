@@ -25,9 +25,6 @@ export const SettingsMenu = ({ onClickBack }: Props) => {
 
 	const storybookUrl = ENV__BUILD_MODE === 'local' ? 'http://localhost:9000' : `${ENV__ROOT_URL_PATH}/storybook`
 
-	const selectClass = [
-		'h-button-h-sm rounded-sm border border-color-border-default bg-color-bg-default px-xs-2 text-size-xs',
-	].join(' ')
 	const hrClass = 'my-xs-2'
 	const actionIconClass = 'mr-button-px-item h-xs-8 w-xs-8'
 	const newTabIconClass = 'ml-auto mr-px h-xs-6 w-xs-6 fill-color-text-subtle'
@@ -49,7 +46,10 @@ export const SettingsMenu = ({ onClickBack }: Props) => {
 				<span>UI Library:</span>
 
 				<select
-					className={selectClass}
+					className={cx(
+						'h-button-h-sm border border-color-border-default px-xs-2',
+						'rounded-sm bg-color-bg-default text-size-xs'
+					)}
 					value={uiLibrary}
 					onChange={(event: SelectEvent) => changeUiLibrary(event.target?.value as UiLibrary)}
 				>

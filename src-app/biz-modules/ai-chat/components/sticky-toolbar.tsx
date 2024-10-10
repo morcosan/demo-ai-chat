@@ -8,12 +8,11 @@ export const StickyToolbar = ({ variant, children, className }: Props) => {
 	const [isSticky, setIsSticky] = useState(false)
 	const stickyRef = useRef<HTMLDivElement>(null)
 
-	const stickyClass = [
-		'sticky top-0 z-sticky bg-color-bg-default border-color-border-shadow',
-		variant === 'chat' && isSticky ? 'border-b shadow-below-sm' : '',
-		variant === 'subchat' ? 'border-b shadow-below-sm' : '',
-		className || '',
-	].join(' ')
+	const stickyClass = cx(
+		'sticky top-0 z-sticky border-color-border-shadow bg-color-bg-default',
+		{ 'border-b shadow-below-sm': (variant === 'chat' && isSticky) || variant === 'subchat' },
+		className
+	)
 
 	useEffect(() => {
 		const element = stickyRef.current

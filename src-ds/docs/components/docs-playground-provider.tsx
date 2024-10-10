@@ -18,12 +18,11 @@ interface Props extends ReactProps {
 export const useDocsPlayground = () => useContext(Context)
 
 export const DocsPlaygroundProvider = ({ children, playgroundStyle }: Props) => {
-	const playgroundBgClass = (() => {
-		if (playgroundStyle === 'tiles') return 'docs-bg docs-bg-tiles'
-		if (playgroundStyle === 'grid') return 'docs-bg docs-bg-grid'
-		if (playgroundStyle === 'blank') return 'docs-bg docs-bg-blank'
-		return ''
-	})()
+	const playgroundBgClass = cx({
+		'docs-bg docs-bg-tiles': playgroundStyle === 'tiles',
+		'docs-bg docs-bg-grid': playgroundStyle === 'grid',
+		'docs-bg docs-bg-blank': playgroundStyle === 'blank',
+	})
 
 	const store: Store = useMemo(
 		() => ({ playgroundBgClass, playgroundStyle: playgroundStyle as DocsPlaygroundStyle }),
