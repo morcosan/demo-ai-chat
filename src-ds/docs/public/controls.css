@@ -272,6 +272,8 @@
 			border: 1px solid var(--ds-color-border-default) !important;
 			border-radius: var(--ds-radius-sm) !important;
 			background-color: var(--ds-color-bg-field) !important;
+			min-height: var(--ds-spacing-field-h-sm) !important;
+			max-height: var(--ds-spacing-lg-8) !important;
 			color: var(--ds-color-text-default) !important;
 			font-size: var(--ds-font-size-sm) !important;
 
