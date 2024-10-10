@@ -165,7 +165,7 @@ export const CustomImpl = (rawProps: ModalProps, ref: Ref<ModalRef>) => {
 			<div ref={modalRef} css={[cssModal, cssModalWidth, cssModalHeight]} tabIndex={-1}>
 				{/* HEADER */}
 				<div className="flex items-center justify-between">
-					<div className="text-size-lg font-weight-lg">{props.slotTitle}</div>
+					<div className="min-h-button-h-md text-size-lg font-weight-lg">{props.slotTitle}</div>
 
 					{/* CLOSE-X */}
 					{!props.noClose && (
