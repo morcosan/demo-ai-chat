@@ -50,16 +50,14 @@ const meta: Meta<typeof Modal> = {
 
 		const overlapTriggers = useMemo(
 			() => (
-				<div className="flex gap-xs-9">
-					<Button variant="solid-secondary" onClick={() => modal1Ref.current?.open()}>
+				<div className="flex gap-xs-5">
+					<Button variant="text-default" onClick={() => modal1Ref.current?.open()}>
 						Open modal #1
 					</Button>
-
-					<Button variant="solid-secondary" onClick={() => modal2Ref.current?.open()}>
+					<Button variant="text-default" onClick={() => modal2Ref.current?.open()}>
 						Open modal #2
 					</Button>
-
-					<Button variant="solid-secondary" onClick={() => modal3Ref.current?.open()}>
+					<Button variant="text-default" onClick={() => modal3Ref.current?.open()}>
 						Open modal #3
 					</Button>
 				</div>
@@ -72,13 +70,13 @@ const meta: Meta<typeof Modal> = {
 				<>
 					<div className="flex-center py-sm-2">{overlapTriggers}</div>
 
-					<Modal ref={modal1Ref} slotTitle="Modal #1" width="md">
+					<Modal ref={modal1Ref} slotTitle="Modal #1" width="sm">
 						{overlapTriggers}
 					</Modal>
 					<Modal ref={modal2Ref} slotTitle="Modal #2" width="md">
 						{overlapTriggers}
 					</Modal>
-					<Modal ref={modal3Ref} slotTitle="Modal #3" width="md">
+					<Modal ref={modal3Ref} slotTitle="Modal #3" width="lg">
 						{overlapTriggers}
 					</Modal>
 				</>
@@ -88,7 +86,7 @@ const meta: Meta<typeof Modal> = {
 
 		return (
 			<DocsPage title="Modal" type="component" slots={{ PROPS, SLOTS, EVENTS, TYPES, EXAMPLES }}>
-				<Button variant="solid-primary" onClick={() => modalRef.current?.open()}>
+				<Button variant="text-default" onClick={() => modalRef.current?.open()}>
 					Open modal
 				</Button>
 

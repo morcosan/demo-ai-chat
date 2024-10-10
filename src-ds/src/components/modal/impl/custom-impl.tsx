@@ -3,6 +3,8 @@ import { Keyboard, queryElementsWithTabIndex, useDefaults } from '@utils/release
 import { Ref, useEffect, useImperativeHandle, useRef, useState } from 'react'
 import { ModalProps, ModalRef } from '../_types'
 
+let _lastModalId = 0
+
 export const CustomImpl = (rawProps: ModalProps, ref: Ref<ModalRef>) => {
 	const props = useDefaults<ModalProps>(rawProps, {
 		width: 'md',
@@ -10,6 +12,7 @@ export const CustomImpl = (rawProps: ModalProps, ref: Ref<ModalRef>) => {
 	})
 	const { $color, $spacing, $radius, $shadow, $zIndex } = useUiTheme()
 	const [opened, setOpened] = useState(false)
+	const [modalId, setModalId] = useState(0)
 	const modalRef = useRef<HTMLDivElement | null>(null)
 	const triggerRef = useRef<HTMLElement | null>(null)
 	const focusTrap1Ref = useRef<HTMLDivElement | null>(null)
@@ -30,7 +33,7 @@ export const CustomImpl = (rawProps: ModalProps, ref: Ref<ModalRef>) => {
 		width: '100%',
 		height: '100%',
 		padding: $spacing['sm-0'],
-		zIndex: $zIndex['modal'],
+		zIndex: `calc(${$zIndex['modal']} + ${modalId})`,
 
 		'&::before': {
 			content: `''`,
@@ -90,22 +93,34 @@ export const CustomImpl = (rawProps: ModalProps, ref: Ref<ModalRef>) => {
 	}
 
 	const openModal = () => {
+		if (opened) return
+
+		_lastModalId++
+		setModalId(_lastModalId)
 		setOpened(true)
 		triggerRef.current = document.activeElement as HTMLElement | null
 	}
 
 	const closeModal = () => {
+		_lastModalId--
+		setModalId(0)
 		setOpened(false)
 		triggerRef.current?.focus()
 	}
 
 	const onKeyDownWindow = (event: KeyboardEvent) => {
-		event.key == Keyboard.ESCAPE && closeModal()
+		if (modalId !== _lastModalId) return
+
+		if (event.key == Keyboard.ESCAPE) {
+			event.stopPropagation()
+			closeModal()
+		}
 	}
 
 	const onFocusInWindow = (event: FocusEvent) => {
 		const target = event.target as HTMLElement
 
+		if (modalId !== _lastModalId) return
 		if (!target || !modalRef.current) return
 		if (modalRef.current.contains(target)) return
 
@@ -118,23 +133,18 @@ export const CustomImpl = (rawProps: ModalProps, ref: Ref<ModalRef>) => {
 	}
 
 	useEffect(() => {
-		if (opened) {
-			modalRef.current?.focus()
-			window.addEventListener('focusin', onFocusInWindow)
-		}
-
-		return () => {
-			window.removeEventListener('focusin', onFocusInWindow)
-		}
+		opened && modalRef.current?.focus()
 	}, [opened])
 
 	useEffect(() => {
+		window.addEventListener('focusin', onFocusInWindow)
 		window.addEventListener('keydown', onKeyDownWindow)
 
 		return () => {
+			window.removeEventListener('focusin', onFocusInWindow)
 			window.removeEventListener('keydown', onKeyDownWindow)
 		}
-	}, [])
+	}, [modalId])
 
 	return (
 		<div css={cssWrapper}>
