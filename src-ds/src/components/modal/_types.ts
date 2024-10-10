@@ -4,7 +4,7 @@ export type ModalWidth = 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'full'
 export type ModalHeight = 'fit' | 'full'
 
 export interface ModalProps extends ReactProps {
-	width: ModalWidth
+	width?: ModalWidth
 	height?: ModalHeight
 	noClose?: boolean
 
