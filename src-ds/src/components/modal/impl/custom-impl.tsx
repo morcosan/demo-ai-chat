@@ -7,6 +7,7 @@ import { useModalBase } from './_base'
 export const CustomImpl = (rawProps: ModalProps) => {
 	const {
 		calcMargin,
+		calcZIndex,
 		cssModalBase,
 		cssModalBody,
 		cssModalCloseX,
@@ -14,13 +15,13 @@ export const CustomImpl = (rawProps: ModalProps) => {
 		cssModalFooter,
 		cssModalTitle,
 		props,
-		closeActiveId,
-		isActiveId,
-		openActiveId,
+		closeActiveIndex,
+		isActiveIndex,
+		openActiveIndex,
+		setZIndex,
 	} = useModalBase(rawProps)
-	const { $color, $zIndex } = useUiTheme()
-	const [modalId, setModalId] = useState(0)
-	const [zIndex, setZIndex] = useState(0)
+	const { $color } = useUiTheme()
+	const [modalIndex, setModalIndex] = useState(0)
 	const modalRef = useRef<HTMLDivElement | null>(null)
 	const triggerRef = useRef<HTMLElement | null>(null)
 	const focusTrap1Ref = useRef<HTMLDivElement | null>(null)
@@ -30,7 +31,7 @@ export const CustomImpl = (rawProps: ModalProps) => {
 	const ANIM_TIME__HIDE = 150
 
 	const cssWrapper: CSS = {
-		visibility: modalId ? 'visible' : 'hidden',
+		visibility: modalIndex ? 'visible' : 'hidden',
 		position: 'fixed',
 		top: 0,
 		bottom: 0,
@@ -39,8 +40,8 @@ export const CustomImpl = (rawProps: ModalProps) => {
 		width: '100%',
 		height: '100%',
 		padding: calcMargin,
-		zIndex: `calc(${$zIndex['modal']} + ${zIndex})`,
-		transition: modalId ? 'none' : `visibility ${ANIM_TIME__HIDE}ms ease-in`,
+		zIndex: calcZIndex,
+		transition: modalIndex ? 'none' : `visibility ${ANIM_TIME__HIDE}ms ease-in`,
 
 		'&::before': {
 			content: `''`,
@@ -52,38 +53,40 @@ export const CustomImpl = (rawProps: ModalProps) => {
 			zIndex: -1,
 			backgroundColor: $color['black-glass-5'],
 			backdropFilter: 'blur(4px)',
-			opacity: modalId ? 1 : 0,
-			transition: modalId ? `opacity ${ANIM_TIME__SHOW}ms ease-out` : `opacity ${ANIM_TIME__HIDE}ms ease-in`,
+			opacity: modalIndex ? 1 : 0,
+			transition: modalIndex ? `opacity ${ANIM_TIME__SHOW}ms ease-out` : `opacity ${ANIM_TIME__HIDE}ms ease-in`,
 		},
 	}
 
 	const cssModal: CSS = {
 		...cssModalBase,
 		...cssModalContent,
-		transform: modalId ? 'translateY(0)' : `translateY(calc(-3 * ${calcMargin}))`,
+		transform: modalIndex ? 'translateY(0)' : `translateY(calc(-3 * ${calcMargin}))`,
 		transition: `transform ${ANIM_TIME__SHOW}ms ease-out`,
 	}
 
 	const openModal = () => {
-		if (modalId) return
+		if (modalIndex) return
 
-		const id = openActiveId()
-		setModalId(id)
-		setZIndex(id)
+		const index = openActiveIndex()
+		setModalIndex(index)
+		setZIndex(index)
+
 		triggerRef.current = document.activeElement as HTMLElement | null
 	}
 
 	const closeModal = () => {
-		if (!modalId) return
+		if (!modalIndex) return
 
-		closeActiveId()
-		setModalId(0)
+		closeActiveIndex()
+		setModalIndex(0)
 		wait(ANIM_TIME__HIDE).then(() => setZIndex(0))
+
 		triggerRef.current?.focus()
 	}
 
 	const onKeyDownWindow = (event: KeyboardEvent) => {
-		if (!isActiveId(modalId)) return
+		if (!isActiveIndex(modalIndex)) return
 		if (event.key !== Keyboard.ESCAPE) return
 		if (props.noClose) return
 
@@ -94,7 +97,7 @@ export const CustomImpl = (rawProps: ModalProps) => {
 	const onFocusInWindow = (event: FocusEvent) => {
 		const target = event.target as HTMLElement
 
-		if (!isActiveId(modalId)) return
+		if (!isActiveIndex(modalIndex)) return
 		if (!target || !modalRef.current) return
 		if (modalRef.current.contains(target)) return
 
@@ -111,11 +114,11 @@ export const CustomImpl = (rawProps: ModalProps) => {
 	}, [props.opened])
 
 	useEffect(() => {
-		modalId && modalRef.current?.focus()
-	}, [modalId])
+		modalIndex && modalRef.current?.focus()
+	}, [modalIndex])
 
 	useEffect(() => {
-		if (modalId) {
+		if (modalIndex) {
 			window.addEventListener('focusin', onFocusInWindow)
 			window.addEventListener('keydown', onKeyDownWindow)
 		}
@@ -123,7 +126,7 @@ export const CustomImpl = (rawProps: ModalProps) => {
 			window.removeEventListener('focusin', onFocusInWindow)
 			window.removeEventListener('keydown', onKeyDownWindow)
 		}
-	}, [modalId, props.noClose])
+	}, [modalIndex, props.noClose])
 
 	return (
 		<div css={cssWrapper}>

@@ -1,19 +1,22 @@
 import { useUiTheme } from '@ds/release'
 import { useDefaults } from '@utils/release'
+import { useState } from 'react'
 import { ModalProps } from '../_types'
 
-let _activeModalId = 0
+let _activeIndex = 0
 
 export const useModalBase = (rawProps: ModalProps) => {
 	const props = useDefaults<ModalProps>(rawProps, {
 		width: 'md',
 		height: 'fit',
 	})
-	const { $color, $fontSize, $fontWeight, $spacing, $radius, $shadow } = useUiTheme()
+	const { $color, $fontSize, $fontWeight, $spacing, $radius, $shadow, $zIndex } = useUiTheme()
+	const [zIndex, setZIndex] = useState(0)
 
 	const calcMargin = $spacing['xs-9']
 	const calcContentPX = $spacing['sm-0']
 	const calcContentPY = $spacing['xs-8']
+	const calcZIndex = `calc(${$zIndex['modal']} + ${zIndex})`
 
 	const cssModalWidth: CSS = (() => {
 		if (props.width === 'xs') return { maxWidth: $spacing['modal-xs'], width: '100%' }
@@ -34,6 +37,8 @@ export const useModalBase = (rawProps: ModalProps) => {
 	const cssModalBase: CSS = {
 		...cssModalWidth,
 		...cssModalHeight,
+		display: 'flex',
+		flexDirection: 'column',
 		margin: `0 auto`,
 		border: `1px solid ${$color['border-shadow']}`,
 		borderRadius: $radius['lg'],
@@ -79,15 +84,19 @@ export const useModalBase = (rawProps: ModalProps) => {
 		fill: $color['text-subtle'],
 	}
 
-	const openActiveId = () => {
-		_activeModalId++
-		return _activeModalId
+	const openActiveIndex = () => {
+		_activeIndex++
+		return _activeIndex
 	}
-	const closeActiveId = () => (_activeModalId = _activeModalId > 1 ? _activeModalId - 1 : 0)
-	const isActiveId = (id: number) => id && id === _activeModalId
+	const closeActiveIndex = () => {
+		_activeIndex = _activeIndex > 1 ? _activeIndex - 1 : 0
+		return 0
+	}
+	const isActiveIndex = (index: number) => index && index === _activeIndex
 
 	return {
 		calcMargin,
+		calcZIndex,
 		cssModalBase,
 		cssModalBody,
 		cssModalCloseX,
@@ -95,8 +104,9 @@ export const useModalBase = (rawProps: ModalProps) => {
 		cssModalFooter,
 		cssModalTitle,
 		props,
-		closeActiveId,
-		isActiveId,
-		openActiveId,
+		closeActiveIndex,
+		isActiveIndex,
+		openActiveIndex,
+		setZIndex,
 	}
 }

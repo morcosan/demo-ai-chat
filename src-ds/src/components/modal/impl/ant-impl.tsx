@@ -1,11 +1,12 @@
 import { Button, CloseSvg, useUiTheme } from '@ds/release'
 import { Modal } from 'antd'
-import { useEffect, useState } from 'react'
+import { useEffect } from 'react'
 import { ModalProps } from '../_types'
 import { useModalBase } from './_base'
 
 export const AntImpl = (rawProps: ModalProps) => {
 	const {
+		calcZIndex,
 		cssModalBase,
 		cssModalBody,
 		cssModalCloseX,
@@ -13,11 +14,18 @@ export const AntImpl = (rawProps: ModalProps) => {
 		cssModalFooter,
 		cssModalTitle,
 		props,
-		openActiveId,
-		closeActiveId,
+		closeActiveIndex,
+		openActiveIndex,
+		setZIndex,
 	} = useModalBase(rawProps)
-	const { $color, $fontSize, $lineHeight, $radius, $spacing, $zIndex } = useUiTheme()
-	const [modalId, setModalId] = useState(0)
+	const { $color, $fontSize, $lineHeight, $radius, $spacing } = useUiTheme()
+
+	const cssContent: CSS = {
+		display: 'flex',
+		flexDirection: 'column',
+		height: '100%',
+		overflow: 'hidden',
+	}
 
 	const cssModal: CSS = {
 		...cssModalBase,
@@ -42,8 +50,13 @@ export const AntImpl = (rawProps: ModalProps) => {
 			...cssModalTitle,
 			color: $color['text-default'],
 		},
+		'& > [tabindex]': {
+			...cssContent,
+		},
 		'& .ant-modal-content': {
 			...cssModalContent,
+			...cssContent,
+			boxShadow: 'none',
 		},
 		'& .ant-modal-body': {
 			...cssModalBody,
@@ -54,15 +67,8 @@ export const AntImpl = (rawProps: ModalProps) => {
 		},
 	}
 
-	const calcZIndex = `calc(${$zIndex['modal']} + ${modalId})`
-
 	useEffect(() => {
-		if (props.opened) {
-			setModalId(openActiveId())
-		} else {
-			closeActiveId()
-			setModalId(0)
-		}
+		setZIndex(props.opened ? openActiveIndex() : closeActiveIndex())
 	}, [props.opened])
 
 	const slotFooter = (
