@@ -89,6 +89,8 @@ export const AntImpl = (rawProps: ModalProps) => {
 			open={props.opened}
 			title={props.slotTitle}
 			footer={slotFooter}
+			keyboard={!props.noClose}
+			closable={!props.noClose}
 			maskClosable={false}
 			zIndex={calcZIndex as any}
 			wrapClassName="p-xs-9 backdrop-blur-sm"
