@@ -1,19 +1,14 @@
 import { useUiLibrary } from '@ds/release'
-import { withRef } from '@utils/release'
-import { Ref } from 'react'
-import { ModalProps, ModalRef } from './_types'
+import { ModalProps } from './_types'
+import { AntImpl } from './impl/ant-impl'
 import { CustomImpl } from './impl/custom-impl'
 
-export type { ModalProps, ModalRef, ModalWidth } from './_types'
+export type { ModalProps, ModalWidth } from './_types'
 
-const CustomImp = withRef('CustomImpl', CustomImpl)
-// const MuiImp = withRef('MuiImpl', MuiImpl)
-// const AntImp = withRef('AntImpl', AntImpl)
-
-export const Modal = withRef('Modal', (props: ModalProps, ref: Ref<ModalRef>) => {
+export const Modal = (props: ModalProps) => {
 	const { uiLibrary } = useUiLibrary()
 
-	if (uiLibrary === 'custom') return <CustomImp {...props} ref={ref} />
-	// if (uiLibrary === 'material') return <MuiImp {...props} ref={ref} />
-	// if (uiLibrary === 'antdesign') return <AntImp {...props} ref={ref} />
-})
+	if (uiLibrary === 'custom') return <CustomImpl {...props} />
+	// if (uiLibrary === 'material') return <MuiImpl {...props} />
+	if (uiLibrary === 'antdesign') return <AntImpl {...props} />
+}

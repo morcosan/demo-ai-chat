@@ -1,15 +1,13 @@
 import { Button, CloseSvg, IconButton, useUiTheme } from '@ds/release'
-import { Keyboard, queryElementsWithTabIndex, useDefaults } from '@utils/release'
-import { Ref, useEffect, useImperativeHandle, useRef, useState } from 'react'
-import { ModalProps, ModalRef } from '../_types'
+import { Keyboard, queryElementsWithTabIndex } from '@utils/release'
+import { useEffect, useRef, useState } from 'react'
+import { ModalProps } from '../_types'
+import { useModalBase } from './_base'
 
 let _lastModalId = 0
 
-export const CustomImpl = (rawProps: ModalProps, ref: Ref<ModalRef>) => {
-	const props = useDefaults<ModalProps>(rawProps, {
-		width: 'md',
-		height: 'fit',
-	})
+export const CustomImpl = (rawProps: ModalProps) => {
+	const { props } = useModalBase(rawProps)
 	const { $color, $spacing, $radius, $shadow, $zIndex } = useUiTheme()
 	const [modalId, setModalId] = useState(0)
 	const [zIndex, setZIndex] = useState(0)
@@ -17,11 +15,6 @@ export const CustomImpl = (rawProps: ModalProps, ref: Ref<ModalRef>) => {
 	const triggerRef = useRef<HTMLElement | null>(null)
 	const focusTrap1Ref = useRef<HTMLDivElement | null>(null)
 	const focusTrap2Ref = useRef<HTMLDivElement | null>(null)
-
-	useImperativeHandle(ref, () => ({
-		open: openModal,
-		close: closeModal,
-	}))
 
 	const calcMargin = $spacing['xs-9']
 	const calcPaddingX = $spacing['sm-0']
@@ -100,6 +93,7 @@ export const CustomImpl = (rawProps: ModalProps, ref: Ref<ModalRef>) => {
 
 	const cssCloseX: CSS = {
 		marginRight: `calc(${calcPaddingY} - ${calcPaddingX})`,
+		fill: $color['text-subtle'],
 	}
 
 	const openModal = () => {
@@ -125,7 +119,7 @@ export const CustomImpl = (rawProps: ModalProps, ref: Ref<ModalRef>) => {
 
 		if (event.key == Keyboard.ESCAPE) {
 			event.stopPropagation()
-			closeModal()
+			props.onClose?.()
 		}
 	}
 
@@ -145,10 +139,15 @@ export const CustomImpl = (rawProps: ModalProps, ref: Ref<ModalRef>) => {
 	}
 
 	useEffect(() => {
-		modalId && modalRef.current?.focus()
+		props.opened ? openModal() : closeModal()
+	}, [props.opened])
 
-		window.addEventListener('focusin', onFocusInWindow)
-		window.addEventListener('keydown', onKeyDownWindow)
+	useEffect(() => {
+		if (modalId) {
+			modalRef.current?.focus()
+			window.addEventListener('focusin', onFocusInWindow)
+			window.addEventListener('keydown', onKeyDownWindow)
+		}
 
 		return () => {
 			window.removeEventListener('focusin', onFocusInWindow)
@@ -169,7 +168,7 @@ export const CustomImpl = (rawProps: ModalProps, ref: Ref<ModalRef>) => {
 
 					{/* CLOSE-X */}
 					{!props.noClose && (
-						<IconButton tooltip="Close" variant="text-default" css={cssCloseX} onClick={closeModal}>
+						<IconButton tooltip="Close" variant="text-default" css={cssCloseX} onClick={props.onClose}>
 							<CloseSvg className="h-xs-7" />
 						</IconButton>
 					)}
@@ -182,7 +181,7 @@ export const CustomImpl = (rawProps: ModalProps, ref: Ref<ModalRef>) => {
 				<div className="flex items-center justify-end gap-xs-3">
 					{/* CLOSE */}
 					{!props.noClose && (
-						<Button variant="text-default" onClick={closeModal}>
+						<Button variant="text-default" onClick={props.onClose}>
 							Close
 						</Button>
 					)}

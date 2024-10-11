@@ -1,9 +1,10 @@
 import { DocsPage } from '@ds/docs/components/docs-page.tsx'
 import { createArgTypes } from '@ds/docs/setup.ts'
-import { Button, Modal, ModalProps, ModalRef } from '@ds/release'
+import { Button, Modal, ModalProps } from '@ds/release'
+import { action } from '@storybook/addon-actions'
 import type { Meta, StoryObj } from '@storybook/react'
 import { randomLongText } from '@utils/release'
-import { useMemo, useRef } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 
 export const story: StoryObj<typeof Modal> = {
 	args: {
@@ -12,6 +13,7 @@ export const story: StoryObj<typeof Modal> = {
 		slotButtons: '<button class="p-xs-3 bg-color-primary text-color-text-inverse rounded-md">Submit</button>',
 		children: randomLongText(20),
 		// Props
+		opened: false,
 		width: 'md',
 		height: 'fit',
 		noClose: false,
@@ -19,6 +21,7 @@ export const story: StoryObj<typeof Modal> = {
 		className: '',
 		style: {},
 		// Events
+		onClose: action('onClose'),
 	},
 }
 story.storyName = 'Modal'
@@ -29,11 +32,13 @@ const meta: Meta<typeof Modal> = {
 
 	argTypes: createArgTypes<typeof Modal>(
 		{
+			opened: 'boolean',
 			width: ['xs', 'sm', 'md', 'lg', 'xl', 'full'],
 			height: ['fit', 'full'],
 			noClose: 'boolean',
 		},
-		['slotTitle', 'slotButtons', 'children']
+		['slotTitle', 'slotButtons', 'children'],
+		['onClose']
 	),
 
 	component: function Story(props: ModalProps) {
@@ -43,21 +48,25 @@ const meta: Meta<typeof Modal> = {
 		const TYPES = `
 		`
 
-		const modalRef = useRef(null as ModalRef | null)
-		const modal1Ref = useRef(null as ModalRef | null)
-		const modal2Ref = useRef(null as ModalRef | null)
-		const modal3Ref = useRef(null as ModalRef | null)
+		const [opened, setOpened] = useState(false)
+		const [opened1, setOpened1] = useState(false)
+		const [opened2, setOpened2] = useState(false)
+		const [opened3, setOpened3] = useState(false)
 
-		const overlapTriggers = useMemo(
+		useEffect(() => {
+			setOpened(props.opened)
+		}, [props.opened])
+
+		const slotTriggers = useMemo(
 			() => (
 				<div className="flex gap-xs-5">
-					<Button variant="text-default" onClick={() => modal1Ref.current?.open()}>
+					<Button variant="text-default" onClick={() => setOpened1(true)}>
 						Open modal #1
 					</Button>
-					<Button variant="text-default" onClick={() => modal2Ref.current?.open()}>
+					<Button variant="text-default" onClick={() => setOpened2(true)}>
 						Open modal #2
 					</Button>
-					<Button variant="text-default" onClick={() => modal3Ref.current?.open()}>
+					<Button variant="text-default" onClick={() => setOpened3(true)}>
 						Open modal #3
 					</Button>
 				</div>
@@ -65,35 +74,36 @@ const meta: Meta<typeof Modal> = {
 			[]
 		)
 
-		const EXAMPLES = useMemo(
-			() => (
-				<>
-					<div className="flex-center py-sm-2">{overlapTriggers}</div>
+		const EXAMPLES = (
+			<>
+				<div className="flex-center py-sm-2">{slotTriggers}</div>
 
-					<Modal ref={modal1Ref} slotTitle="Modal #1" width="sm">
-						{overlapTriggers}
-					</Modal>
-					<Modal ref={modal2Ref} slotTitle="Modal #2" width="md">
-						{overlapTriggers}
-					</Modal>
-					<Modal ref={modal3Ref} slotTitle="Modal #3" width="lg">
-						{overlapTriggers}
-					</Modal>
-				</>
-			),
-			[]
+				<Modal opened={opened1} slotTitle="Modal #1" width="sm" onClose={() => setOpened1(false)}>
+					{slotTriggers}
+				</Modal>
+				<Modal opened={opened2} slotTitle="Modal #2" width="md" onClose={() => setOpened2(false)}>
+					{slotTriggers}
+				</Modal>
+				<Modal opened={opened3} slotTitle="Modal #3" width="lg" onClose={() => setOpened3(false)}>
+					{slotTriggers}
+				</Modal>
+			</>
 		)
 
 		return (
 			<DocsPage title="Modal" type="component" slots={{ PROPS, SLOTS, EVENTS, TYPES, EXAMPLES }}>
-				<Button variant="text-default" onClick={() => modalRef.current?.open()}>
+				<Button variant="text-default" onClick={() => setOpened(true)}>
 					Open modal
 				</Button>
 
 				<Modal
-					ref={modalRef}
 					{...props}
+					opened={opened}
 					slotButtons={<div dangerouslySetInnerHTML={{ __html: String(props.slotButtons) }} />}
+					onClose={() => {
+						setOpened(false)
+						props.onClose?.()
+					}}
 				/>
 			</DocsPage>
 		)
