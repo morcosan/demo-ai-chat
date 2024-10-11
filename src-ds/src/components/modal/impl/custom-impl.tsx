@@ -116,11 +116,11 @@ export const CustomImpl = (rawProps: ModalProps) => {
 
 	const onKeyDownWindow = (event: KeyboardEvent) => {
 		if (!modalId || modalId !== _lastModalId) return
+		if (event.key !== Keyboard.ESCAPE) return
+		if (props.noClose) return
 
-		if (event.key == Keyboard.ESCAPE) {
-			event.stopPropagation()
-			props.onClose?.()
-		}
+		event.stopPropagation()
+		props.onClose?.()
 	}
 
 	const onFocusInWindow = (event: FocusEvent) => {
@@ -143,17 +143,19 @@ export const CustomImpl = (rawProps: ModalProps) => {
 	}, [props.opened])
 
 	useEffect(() => {
+		modalId && modalRef.current?.focus()
+	}, [modalId])
+
+	useEffect(() => {
 		if (modalId) {
-			modalRef.current?.focus()
 			window.addEventListener('focusin', onFocusInWindow)
 			window.addEventListener('keydown', onKeyDownWindow)
 		}
-
 		return () => {
 			window.removeEventListener('focusin', onFocusInWindow)
 			window.removeEventListener('keydown', onKeyDownWindow)
 		}
-	}, [modalId])
+	}, [modalId, props.noClose])
 
 	return (
 		<div css={cssWrapper}>
