@@ -16,7 +16,7 @@ export const AntImpl = (rawProps: ModalProps) => {
 		openActiveId,
 		closeActiveId,
 	} = useModalBase(rawProps)
-	const { $color, $fontSize, $lineHeight, $zIndex } = useUiTheme()
+	const { $color, $fontSize, $lineHeight, $radius, $spacing, $zIndex } = useUiTheme()
 	const [modalId, setModalId] = useState(0)
 
 	const cssModal: CSS = {
@@ -34,6 +34,9 @@ export const AntImpl = (rawProps: ModalProps) => {
 		},
 		'& .ant-modal-close': {
 			...cssModalCloseX,
+			width: $spacing['button-h-md'],
+			height: $spacing['button-h-md'],
+			borderRadius: $radius['full'],
 		},
 		'& .ant-modal-title': {
 			...cssModalTitle,
