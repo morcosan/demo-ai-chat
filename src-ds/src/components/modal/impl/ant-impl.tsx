@@ -39,12 +39,7 @@ export const AntImpl = (rawProps: ModalProps) => {
 		},
 		'& .ant-modal-header': {
 			margin: 0,
-		},
-		'& .ant-modal-close': {
-			...cssModalCloseX,
-			width: $spacing['button-h-md'],
-			height: $spacing['button-h-md'],
-			borderRadius: $radius['full'],
+			backgroundColor: $color['bg-default'],
 		},
 		'& .ant-modal-title': {
 			...cssModalTitle,
@@ -64,6 +59,23 @@ export const AntImpl = (rawProps: ModalProps) => {
 		'& .ant-modal-footer': {
 			...cssModalFooter,
 			margin: 0,
+		},
+		'& .ant-modal-close': {
+			...cssModalCloseX,
+			width: $spacing['button-h-md'],
+			height: $spacing['button-h-md'],
+			borderRadius: $radius['full'],
+
+			'&:hover, &:focus': {
+				backgroundColor: $color['hover-default'],
+			},
+			'&:active': {
+				backgroundColor: $color['hover-pressed'],
+			},
+			'&:focus-visible': {
+				outline: 'revert',
+				outlineOffset: 'unset',
+			},
 		},
 	}
 

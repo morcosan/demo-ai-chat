@@ -43,7 +43,6 @@ export const useModalBase = (rawProps: ModalProps) => {
 		border: `1px solid ${$color['border-shadow']}`,
 		borderRadius: $radius['lg'],
 		boxShadow: $shadow['lg'],
-		backgroundColor: $color['bg-default'],
 	}
 
 	const cssModalContent: CSS = {
@@ -51,6 +50,8 @@ export const useModalBase = (rawProps: ModalProps) => {
 		flexDirection: 'column',
 		gap: $spacing['sm-0'],
 		padding: `${calcContentPY} ${calcContentPX}`,
+		backgroundColor: $color['bg-default'],
+		color: $color['text-default'],
 	}
 
 	const cssModalTitle: CSS = {
