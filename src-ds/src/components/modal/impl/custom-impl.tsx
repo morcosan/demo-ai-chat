@@ -4,10 +4,8 @@ import { useEffect, useRef, useState } from 'react'
 import { ModalProps } from '../_types'
 import { useModalBase } from './_base'
 
-let _lastModalId = 0
-
 export const CustomImpl = (rawProps: ModalProps) => {
-	const { props } = useModalBase(rawProps)
+	const { props, cssModalHeight, cssModalWidth, isActiveId, openActiveId, closeActiveId } = useModalBase(rawProps)
 	const { $color, $spacing, $radius, $shadow, $zIndex } = useUiTheme()
 	const [modalId, setModalId] = useState(0)
 	const [zIndex, setZIndex] = useState(0)
@@ -21,22 +19,6 @@ export const CustomImpl = (rawProps: ModalProps) => {
 	const calcPaddingY = $spacing['xs-8']
 	const ANIM_TIME__SHOW = 300
 	const ANIM_TIME__HIDE = 150
-
-	const cssModalWidth: CSS = (() => {
-		if (props.width === 'xs') return { maxWidth: $spacing['modal-xs'] }
-		if (props.width === 'sm') return { maxWidth: $spacing['modal-sm'] }
-		if (props.width === 'md') return { maxWidth: $spacing['modal-md'] }
-		if (props.width === 'lg') return { maxWidth: $spacing['modal-lg'] }
-		if (props.width === 'xl') return { maxWidth: $spacing['modal-xl'] }
-		if (props.width === 'full') return { maxWidth: '100%' }
-		return {}
-	})()
-
-	const cssModalHeight: CSS = (() => {
-		if (props.height === 'fit') return { height: 'fit-content' }
-		if (props.height === 'full') return { height: '100%' }
-		return {}
-	})()
 
 	const cssWrapper: CSS = {
 		visibility: modalId ? 'visible' : 'hidden',
@@ -67,11 +49,11 @@ export const CustomImpl = (rawProps: ModalProps) => {
 	}
 
 	const cssModal: CSS = {
+		...cssModalWidth,
+		...cssModalHeight,
 		display: 'flex',
 		flexDirection: 'column',
 		gap: $spacing['sm-0'],
-		width: '100%',
-		maxHeight: '100%',
 		margin: `0 auto`,
 		padding: `${calcPaddingY} ${calcPaddingX}`,
 		border: `1px solid ${$color['border-shadow']}`,
@@ -99,23 +81,23 @@ export const CustomImpl = (rawProps: ModalProps) => {
 	const openModal = () => {
 		if (modalId) return
 
-		_lastModalId++
-		setModalId(_lastModalId)
-		setZIndex(_lastModalId)
+		const id = openActiveId()
+		setModalId(id)
+		setZIndex(id)
 		triggerRef.current = document.activeElement as HTMLElement | null
 	}
 
 	const closeModal = () => {
 		if (!modalId) return
 
-		_lastModalId--
+		closeActiveId()
 		setModalId(0)
 		wait(ANIM_TIME__HIDE).then(() => setZIndex(0))
 		triggerRef.current?.focus()
 	}
 
 	const onKeyDownWindow = (event: KeyboardEvent) => {
-		if (!modalId || modalId !== _lastModalId) return
+		if (!isActiveId(modalId)) return
 		if (event.key !== Keyboard.ESCAPE) return
 		if (props.noClose) return
 
@@ -126,7 +108,7 @@ export const CustomImpl = (rawProps: ModalProps) => {
 	const onFocusInWindow = (event: FocusEvent) => {
 		const target = event.target as HTMLElement
 
-		if (!modalId || modalId !== _lastModalId) return
+		if (!isActiveId(modalId)) return
 		if (!target || !modalRef.current) return
 		if (modalRef.current.contains(target)) return
 
@@ -162,8 +144,8 @@ export const CustomImpl = (rawProps: ModalProps) => {
 			{/* FOCUS TRAP */}
 			<div ref={focusTrap1Ref} tabIndex={0} />
 
-			{/* CONTENT */}
-			<div ref={modalRef} css={[cssModal, cssModalWidth, cssModalHeight]} tabIndex={-1}>
+			{/* MODAL */}
+			<div ref={modalRef} tabIndex={-1} className={props.className} style={props.style} css={[cssModal]}>
 				{/* HEADER */}
 				<div className="flex items-center justify-between">
 					<div className="min-h-button-h-md text-size-lg font-weight-lg">{props.slotTitle}</div>
