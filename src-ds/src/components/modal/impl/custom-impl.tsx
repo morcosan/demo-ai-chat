@@ -1,11 +1,13 @@
 import { Button, CloseSvg, IconButton, useUiTheme } from '@ds/release'
-import { Keyboard, queryElementsWithTabIndex } from '@utils/release'
+import { CSS__FIXED_OVERLAY, Keyboard, queryElementsWithTabIndex } from '@utils/release'
 import { useEffect, useRef, useState } from 'react'
 import { ModalProps } from '../_types'
 import { useModalBase } from './_base'
 
 export const CustomImpl = (rawProps: ModalProps) => {
 	const {
+		ANIM_TIME__HIDE,
+		ANIM_TIME__SHOW,
 		calcWrapperPXY,
 		calcZIndex,
 		cssModalBase,
@@ -27,29 +29,16 @@ export const CustomImpl = (rawProps: ModalProps) => {
 	const focusTrap1Ref = useRef<HTMLDivElement | null>(null)
 	const focusTrap2Ref = useRef<HTMLDivElement | null>(null)
 
-	const ANIM_TIME__SHOW = 300
-	const ANIM_TIME__HIDE = 150
-
 	const cssWrapper: CSS = {
+		...CSS__FIXED_OVERLAY,
 		visibility: modalIndex ? 'visible' : 'hidden',
-		position: 'fixed',
-		top: 0,
-		bottom: 0,
-		left: 0,
-		right: 0,
-		width: '100%',
-		height: '100%',
 		padding: calcWrapperPXY,
 		zIndex: calcZIndex,
 		transition: modalIndex ? 'none' : `visibility ${ANIM_TIME__HIDE}ms ease-in`,
 
 		'&::before': {
+			...CSS__FIXED_OVERLAY,
 			content: `''`,
-			position: 'fixed',
-			top: 0,
-			bottom: 0,
-			left: 0,
-			right: 0,
 			zIndex: -1,
 			backgroundColor: $color['black-glass-5'],
 			backdropFilter: 'blur(4px)',

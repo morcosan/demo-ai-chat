@@ -13,6 +13,9 @@ export const useModalBase = (rawProps: ModalProps) => {
 	const { $color, $fontSize, $fontWeight, $spacing, $radius, $shadow, $zIndex } = useUiTheme()
 	const [zIndex, setZIndex] = useState(0)
 
+	const ANIM_TIME__SHOW = 300
+	const ANIM_TIME__HIDE = 150
+
 	const classWrapperPXY = 'p-xs-9'
 
 	const calcWrapperPXY = $spacing['xs-9']
@@ -99,6 +102,8 @@ export const useModalBase = (rawProps: ModalProps) => {
 	const isActiveIndex = (index: number) => index && index === _activeIndex
 
 	return {
+		ANIM_TIME__HIDE,
+		ANIM_TIME__SHOW,
 		calcWrapperPXY,
 		calcZIndex,
 		classWrapperPXY,
@@ -109,6 +114,7 @@ export const useModalBase = (rawProps: ModalProps) => {
 		cssModalFooter,
 		cssModalTitle,
 		props,
+		zIndex,
 		closeActiveIndex,
 		isActiveIndex,
 		openActiveIndex,
