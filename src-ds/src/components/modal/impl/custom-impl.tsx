@@ -6,7 +6,7 @@ import { useModalBase } from './_base'
 
 export const CustomImpl = (rawProps: ModalProps) => {
 	const {
-		calcMargin,
+		calcWrapperPXY,
 		calcZIndex,
 		cssModalBase,
 		cssModalBody,
@@ -39,7 +39,7 @@ export const CustomImpl = (rawProps: ModalProps) => {
 		right: 0,
 		width: '100%',
 		height: '100%',
-		padding: calcMargin,
+		padding: calcWrapperPXY,
 		zIndex: calcZIndex,
 		transition: modalIndex ? 'none' : `visibility ${ANIM_TIME__HIDE}ms ease-in`,
 
@@ -61,7 +61,7 @@ export const CustomImpl = (rawProps: ModalProps) => {
 	const cssModal: CSS = {
 		...cssModalBase,
 		...cssModalContent,
-		transform: modalIndex ? 'translateY(0)' : `translateY(calc(-3 * ${calcMargin}))`,
+		transform: modalIndex ? 'translateY(0)' : `translateY(calc(-3 * ${calcWrapperPXY}))`,
 		transition: `transform ${ANIM_TIME__SHOW}ms ease-out`,
 	}
 

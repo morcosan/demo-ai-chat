@@ -7,6 +7,7 @@ import { useModalBase } from './_base'
 export const AntImpl = (rawProps: ModalProps) => {
 	const {
 		calcZIndex,
+		classWrapperPXY,
 		cssModalBase,
 		cssModalBody,
 		cssModalCloseX,
@@ -67,9 +68,11 @@ export const AntImpl = (rawProps: ModalProps) => {
 			width: $spacing['button-h-md'],
 			height: $spacing['button-h-md'],
 			borderRadius: $radius['full'],
+			fill: 'currentColor',
 
 			'&:hover, &:focus': {
 				backgroundColor: $color['hover-default'],
+				color: $color['text-subtle'],
 			},
 			'&:active': {
 				backgroundColor: $color['hover-pressed'],
@@ -107,7 +110,7 @@ export const AntImpl = (rawProps: ModalProps) => {
 			closable={!props.noClose}
 			maskClosable={false}
 			zIndex={calcZIndex as any}
-			wrapClassName="p-xs-9 backdrop-blur-sm"
+			wrapClassName={cx(classWrapperPXY, 'backdrop-blur-sm')}
 			closeIcon={<CloseSvg className="h-xs-7" />}
 			className={props.className}
 			style={props.style}

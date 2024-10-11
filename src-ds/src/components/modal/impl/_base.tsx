@@ -13,7 +13,9 @@ export const useModalBase = (rawProps: ModalProps) => {
 	const { $color, $fontSize, $fontWeight, $spacing, $radius, $shadow, $zIndex } = useUiTheme()
 	const [zIndex, setZIndex] = useState(0)
 
-	const calcMargin = $spacing['xs-9']
+	const classWrapperPXY = 'p-xs-9'
+
+	const calcWrapperPXY = $spacing['xs-9']
 	const calcContentPX = $spacing['sm-0']
 	const calcContentPY = $spacing['xs-8']
 	const calcZIndex = `calc(${$zIndex['modal']} + ${zIndex})`
@@ -37,6 +39,7 @@ export const useModalBase = (rawProps: ModalProps) => {
 	const cssModalBase: CSS = {
 		...cssModalWidth,
 		...cssModalHeight,
+		position: 'relative',
 		display: 'flex',
 		flexDirection: 'column',
 		margin: `0 auto`,
@@ -82,7 +85,7 @@ export const useModalBase = (rawProps: ModalProps) => {
 		position: 'absolute',
 		top: calcContentPY,
 		right: calcContentPY,
-		fill: $color['text-subtle'],
+		color: $color['text-subtle'],
 	}
 
 	const openActiveIndex = () => {
@@ -96,8 +99,9 @@ export const useModalBase = (rawProps: ModalProps) => {
 	const isActiveIndex = (index: number) => index && index === _activeIndex
 
 	return {
-		calcMargin,
+		calcWrapperPXY,
 		calcZIndex,
+		classWrapperPXY,
 		cssModalBase,
 		cssModalBody,
 		cssModalCloseX,
