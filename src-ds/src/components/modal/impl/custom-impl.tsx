@@ -26,8 +26,8 @@ export const CustomImpl = (rawProps: ModalProps, ref: Ref<ModalRef>) => {
 	const calcMargin = $spacing['xs-9']
 	const calcPaddingX = $spacing['sm-0']
 	const calcPaddingY = $spacing['xs-8']
-	const durationIn = 300
-	const durationOut = 150
+	const ANIM_TIME__SHOW = 300
+	const ANIM_TIME__HIDE = 150
 
 	const cssModalWidth: CSS = (() => {
 		if (props.width === 'xs') return { maxWidth: $spacing['modal-xs'] }
@@ -56,7 +56,7 @@ export const CustomImpl = (rawProps: ModalProps, ref: Ref<ModalRef>) => {
 		height: '100%',
 		padding: calcMargin,
 		zIndex: `calc(${$zIndex['modal']} + ${zIndex})`,
-		transition: modalId ? 'none' : `visibility ${durationOut}ms ease-in`,
+		transition: modalId ? 'none' : `visibility ${ANIM_TIME__HIDE}ms ease-in`,
 
 		'&::before': {
 			content: `''`,
@@ -69,7 +69,7 @@ export const CustomImpl = (rawProps: ModalProps, ref: Ref<ModalRef>) => {
 			backgroundColor: $color['black-glass-5'],
 			backdropFilter: 'blur(4px)',
 			opacity: modalId ? 1 : 0,
-			transition: modalId ? `opacity ${durationIn}ms ease-out` : `opacity ${durationOut}ms ease-in`,
+			transition: modalId ? `opacity ${ANIM_TIME__SHOW}ms ease-out` : `opacity ${ANIM_TIME__HIDE}ms ease-in`,
 		},
 	}
 
@@ -86,7 +86,7 @@ export const CustomImpl = (rawProps: ModalProps, ref: Ref<ModalRef>) => {
 		backgroundColor: $color['bg-default'],
 		boxShadow: $shadow['lg'],
 		transform: modalId ? 'translateY(0)' : `translateY(calc(-3 * ${calcMargin}))`,
-		transition: `transform ${durationIn}ms ease-out`,
+		transition: `transform ${ANIM_TIME__SHOW}ms ease-out`,
 	}
 
 	const cssModalBody: CSS = {
@@ -116,7 +116,7 @@ export const CustomImpl = (rawProps: ModalProps, ref: Ref<ModalRef>) => {
 
 		_lastModalId--
 		setModalId(0)
-		wait(durationOut).then(() => setZIndex(0))
+		wait(ANIM_TIME__HIDE).then(() => setZIndex(0))
 		triggerRef.current?.focus()
 	}
 
