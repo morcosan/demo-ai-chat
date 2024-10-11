@@ -47,6 +47,8 @@ export const AntImpl = (rawProps: ModalProps) => {
 		},
 		'& > [tabindex]': {
 			...cssContent,
+			outline: 'revert !important',
+			borderRadius: $radius['lg'],
 		},
 		'& .ant-modal-content': {
 			...cssModalContent,

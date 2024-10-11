@@ -71,6 +71,7 @@ export const CustomImpl = (rawProps: ModalProps) => {
 		const index = openActiveIndex()
 		setModalIndex(index)
 		setZIndex(index)
+		wait(ANIM_TIME__SHOW).then(() => modalRef.current?.focus())
 
 		triggerRef.current = document.activeElement as HTMLElement | null
 	}
@@ -112,10 +113,6 @@ export const CustomImpl = (rawProps: ModalProps) => {
 	useEffect(() => {
 		props.opened ? openModal() : closeModal()
 	}, [props.opened])
-
-	useEffect(() => {
-		modalIndex && modalRef.current?.focus()
-	}, [modalIndex])
 
 	useEffect(() => {
 		if (modalIndex) {
