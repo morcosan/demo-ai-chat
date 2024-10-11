@@ -1,4 +1,4 @@
-import { Button, CloseSvg, useUiTheme } from '@ds/release'
+import { CloseSvg, useUiTheme } from '@ds/release'
 import { Modal } from 'antd'
 import { useEffect } from 'react'
 import { ModalProps } from '../_types'
@@ -15,6 +15,7 @@ export const AntImpl = (rawProps: ModalProps) => {
 		cssModalFooter,
 		cssModalTitle,
 		props,
+		slotFooter,
 		closeActiveIndex,
 		openActiveIndex,
 		setZIndex,
@@ -87,19 +88,6 @@ export const AntImpl = (rawProps: ModalProps) => {
 	useEffect(() => {
 		setZIndex(props.opened ? openActiveIndex() : closeActiveIndex())
 	}, [props.opened])
-
-	const slotFooter = (
-		<>
-			{/* CLOSE */}
-			{!props.noClose && (
-				<Button variant="text-default" onClick={props.onClose}>
-					Close
-				</Button>
-			)}
-			{/* BUTTONS */}
-			{props.slotButtons}
-		</>
-	)
 
 	return (
 		<Modal

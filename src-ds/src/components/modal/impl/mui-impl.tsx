@@ -1,4 +1,4 @@
-import { Button, CloseSvg, IconButton, useUiTheme } from '@ds/release'
+import { CloseSvg, IconButton, useUiTheme } from '@ds/release'
 import Modal from '@mui/material/Modal'
 import { useEffect } from 'react'
 import { ModalProps } from '../_types'
@@ -18,6 +18,7 @@ export const MuiImpl = (rawProps: ModalProps) => {
 		cssModalFooter,
 		cssModalTitle,
 		props,
+		slotFooter,
 		zIndex,
 		closeActiveIndex,
 		openActiveIndex,
@@ -72,16 +73,7 @@ export const MuiImpl = (rawProps: ModalProps) => {
 				<div css={cssModalBody}>{props.children}</div>
 
 				{/* FOOTER */}
-				<div css={cssModalFooter}>
-					{/* CLOSE */}
-					{!props.noClose && (
-						<Button variant="text-default" onClick={props.onClose}>
-							Close
-						</Button>
-					)}
-					{/* BUTTONS */}
-					{props.slotButtons}
-				</div>
+				<div css={cssModalFooter}>{slotFooter}</div>
 			</div>
 		</Modal>
 	)

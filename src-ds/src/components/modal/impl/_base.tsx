@@ -1,4 +1,4 @@
-import { useUiTheme } from '@ds/release'
+import { Button, useUiTheme } from '@ds/release'
 import { useDefaults } from '@utils/release'
 import { useState } from 'react'
 import { ModalProps } from '../_types'
@@ -101,6 +101,17 @@ export const useModalBase = (rawProps: ModalProps) => {
 	}
 	const isActiveIndex = (index: number) => index && index === _activeIndex
 
+	const slotFooter = (
+		<>
+			{!props.noClose && (
+				<Button variant="text-default" onClick={props.onClose}>
+					Close
+				</Button>
+			)}
+			{props.slotButtons}
+		</>
+	)
+
 	return {
 		ANIM_TIME__HIDE,
 		ANIM_TIME__SHOW,
@@ -114,6 +125,7 @@ export const useModalBase = (rawProps: ModalProps) => {
 		cssModalFooter,
 		cssModalTitle,
 		props,
+		slotFooter,
 		zIndex,
 		closeActiveIndex,
 		isActiveIndex,

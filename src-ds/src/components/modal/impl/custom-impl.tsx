@@ -1,4 +1,4 @@
-import { Button, CloseSvg, IconButton, useUiTheme } from '@ds/release'
+import { CloseSvg, IconButton, useUiTheme } from '@ds/release'
 import { CSS__FIXED_OVERLAY, Keyboard, queryElementsWithTabIndex } from '@utils/release'
 import { useEffect, useRef, useState } from 'react'
 import { ModalProps } from '../_types'
@@ -17,6 +17,7 @@ export const CustomImpl = (rawProps: ModalProps) => {
 		cssModalFooter,
 		cssModalTitle,
 		props,
+		slotFooter,
 		closeActiveIndex,
 		isActiveIndex,
 		openActiveIndex,
@@ -135,16 +136,7 @@ export const CustomImpl = (rawProps: ModalProps) => {
 				<div css={cssModalBody}>{props.children}</div>
 
 				{/* FOOTER */}
-				<div css={cssModalFooter}>
-					{/* CLOSE */}
-					{!props.noClose && (
-						<Button variant="text-default" onClick={props.onClose}>
-							Close
-						</Button>
-					)}
-					{/* BUTTONS */}
-					{props.slotButtons}
-				</div>
+				<div css={cssModalFooter}>{slotFooter}</div>
 			</div>
 
 			{/* FOCUS TRAP */}
