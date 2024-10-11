@@ -5,8 +5,20 @@ import { ModalProps } from '../_types'
 import { useModalBase } from './_base'
 
 export const CustomImpl = (rawProps: ModalProps) => {
-	const { props, cssModalHeight, cssModalWidth, isActiveId, openActiveId, closeActiveId } = useModalBase(rawProps)
-	const { $color, $spacing, $radius, $shadow, $zIndex } = useUiTheme()
+	const {
+		calcMargin,
+		cssModalBase,
+		cssModalBody,
+		cssModalCloseX,
+		cssModalContent,
+		cssModalFooter,
+		cssModalTitle,
+		props,
+		closeActiveId,
+		isActiveId,
+		openActiveId,
+	} = useModalBase(rawProps)
+	const { $color, $zIndex } = useUiTheme()
 	const [modalId, setModalId] = useState(0)
 	const [zIndex, setZIndex] = useState(0)
 	const modalRef = useRef<HTMLDivElement | null>(null)
@@ -14,9 +26,6 @@ export const CustomImpl = (rawProps: ModalProps) => {
 	const focusTrap1Ref = useRef<HTMLDivElement | null>(null)
 	const focusTrap2Ref = useRef<HTMLDivElement | null>(null)
 
-	const calcMargin = $spacing['xs-9']
-	const calcPaddingX = $spacing['sm-0']
-	const calcPaddingY = $spacing['xs-8']
 	const ANIM_TIME__SHOW = 300
 	const ANIM_TIME__HIDE = 150
 
@@ -49,33 +58,10 @@ export const CustomImpl = (rawProps: ModalProps) => {
 	}
 
 	const cssModal: CSS = {
-		...cssModalWidth,
-		...cssModalHeight,
-		display: 'flex',
-		flexDirection: 'column',
-		gap: $spacing['sm-0'],
-		margin: `0 auto`,
-		padding: `${calcPaddingY} ${calcPaddingX}`,
-		border: `1px solid ${$color['border-shadow']}`,
-		borderRadius: $radius['lg'],
-		backgroundColor: $color['bg-default'],
-		boxShadow: $shadow['lg'],
+		...cssModalBase,
+		...cssModalContent,
 		transform: modalId ? 'translateY(0)' : `translateY(calc(-3 * ${calcMargin}))`,
 		transition: `transform ${ANIM_TIME__SHOW}ms ease-out`,
-	}
-
-	const cssModalBody: CSS = {
-		flex: '1 1 0%',
-		margin: `0 calc(-1 * ${calcPaddingX})`,
-		padding: `${$spacing['a11y-padding']} 0`,
-		paddingLeft: calcPaddingX,
-		paddingRight: `calc(${calcPaddingX} - ${$spacing['scrollbar-w']})`,
-		overflowY: 'scroll',
-	}
-
-	const cssCloseX: CSS = {
-		marginRight: `calc(${calcPaddingY} - ${calcPaddingX})`,
-		fill: $color['text-subtle'],
 	}
 
 	const openModal = () => {
@@ -146,23 +132,21 @@ export const CustomImpl = (rawProps: ModalProps) => {
 
 			{/* MODAL */}
 			<div ref={modalRef} tabIndex={-1} className={props.className} style={props.style} css={[cssModal]}>
-				{/* HEADER */}
-				<div className="flex items-center justify-between">
-					<div className="min-h-button-h-md text-size-lg font-weight-lg">{props.slotTitle}</div>
+				{/* TITLE */}
+				<div css={cssModalTitle}>{props.slotTitle}</div>
 
-					{/* CLOSE-X */}
-					{!props.noClose && (
-						<IconButton tooltip="Close" variant="text-default" css={cssCloseX} onClick={props.onClose}>
-							<CloseSvg className="h-xs-7" />
-						</IconButton>
-					)}
-				</div>
+				{/* CLOSE-X */}
+				{!props.noClose && (
+					<IconButton tooltip="Close" variant="text-default" css={cssModalCloseX} onClick={props.onClose}>
+						<CloseSvg className="h-xs-7" />
+					</IconButton>
+				)}
 
 				{/* BODY */}
 				<div css={cssModalBody}>{props.children}</div>
 
 				{/* FOOTER */}
-				<div className="flex items-center justify-end gap-xs-3">
+				<div css={cssModalFooter}>
 					{/* CLOSE */}
 					{!props.noClose && (
 						<Button variant="text-default" onClick={props.onClose}>
