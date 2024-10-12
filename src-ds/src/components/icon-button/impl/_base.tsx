@@ -30,7 +30,7 @@ export const useIconButtonBase = (rawProps: IconButtonProps) => {
 	const isVSolid = VARIANTS_SOLID.includes(props.variant)
 	const isVText = VARIANTS_TEXT.includes(props.variant)
 
-	const cssTextColorFn = (color: string) => ({ color, fill: color, stroke: color })
+	const cssTextColorFn = (color: string) => ({ color, fill: 'currentColor', stroke: 'currentColor' })
 	const cssBgColorFn = (backgroundColor: string) => ({ backgroundColor })
 	const cssSizeFn = (size: string) => ({ height: size, minHeight: size, width: size, minWidth: size })
 	const cssRadiusFn = (borderRadius: string) => ({ borderRadius, '&::before': { borderRadius } })
