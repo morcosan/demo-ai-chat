@@ -18,3 +18,9 @@ hr {
 	border-color: var(--ds-color-border-subtle);
 	width: 100%;
 }
+
+svg,
+svg path {
+	fill: currentColor;
+	stroke: currentColor;
+}

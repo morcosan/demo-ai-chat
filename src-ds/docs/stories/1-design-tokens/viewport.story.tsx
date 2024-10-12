@@ -43,7 +43,7 @@ export default {
 						{Object.entries(TOKENS__BREAKPOINT).map(([name, token]) => (
 							<tr key={name}>
 								<td>
-									<div className="flex items-center gap-xs-4 fill-color-text-subtle">
+									<div className="flex items-center gap-xs-4 text-color-text-subtle">
 										<div className="flex-center w-sm-5">{breakpointMap[name].icon}</div>
 
 										<div className="flex flex-col whitespace-nowrap leading-1">

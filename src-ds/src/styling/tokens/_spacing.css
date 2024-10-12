@@ -99,4 +99,10 @@
 	--ds-spacing-a11y-outline: var(--ds-spacing-xs-0);
 	--ds-spacing-a11y-padding: var(--ds-spacing-xs-1);
 	--ds-spacing-a11y-scrollbar: var(--ds-spacing-xs-6);
+
+	--ds-spacing-modal-xs: var(--ds-spacing-xl-0);
+	--ds-spacing-modal-sm: var(--ds-spacing-xl-4);
+	--ds-spacing-modal-md: var(--ds-spacing-xl-9);
+	--ds-spacing-modal-lg: var(--ds-spacing-xxl-2);
+	--ds-spacing-modal-xl: var(--ds-spacing-xxl-5);
 }

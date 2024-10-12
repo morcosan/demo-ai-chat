@@ -14,6 +14,7 @@ export * from './assets/logos'
  */
 export * from '../src/components/button'
 export * from '../src/components/icon-button'
+export * from '../src/components/modal'
 export * from '../src/components/text-field'
 
 /**
