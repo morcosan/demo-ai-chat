@@ -39,7 +39,6 @@ export const LANGUAGES = {
 	km_KH: { flag: 'kh', name: 'ខ្មែរ', nameEn: 'Khmer', region: 'asia' },
 	ko_KR: { flag: 'kr', name: '한국어', nameEn: 'Korean', region: 'asia' },
 	ms_MY: { flag: 'my', name: 'Melayu', nameEn: 'Malay', region: 'asia' },
-	ru_RU: { flag: 'ru', name: 'Русский', nameEn: 'Russian', region: 'asia' },
 	th_TH: { flag: 'th', name: 'ไทย', nameEn: 'Thai', region: 'asia' },
 	tr_TR: { flag: 'tr', name: 'Türkçe', nameEn: 'Turkish', region: 'asia' },
 	ur_PK: { flag: 'pk', name: 'اردو', nameEn: 'Urdu', region: 'asia' },
