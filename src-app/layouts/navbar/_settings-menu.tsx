@@ -1,4 +1,4 @@
-import { getActiveFlagSvg } from '@app/i18n'
+import { getActiveFlagSvg, getActiveLanguage } from '@app/i18n'
 import {
 	ArrowBackSvg,
 	Button,
@@ -110,7 +110,7 @@ export const SettingsMenu = ({ onClickBack, onClickLanguage }: Props) => {
 
 			<Button variant="item-text-default" onClick={onClickLanguage}>
 				<FlagSvg className={cx(actionIconClass, 'rounded-sm')} />
-				Language
+				Language ({getActiveLanguage().name})
 			</Button>
 
 			<Button linkHref="/settings" variant="item-text-default">

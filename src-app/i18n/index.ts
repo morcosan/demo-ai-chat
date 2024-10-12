@@ -18,8 +18,8 @@ i18n
 		},
 	} satisfies InitOptions)
 
-export const getLocale = () => i18n.language
-export const setLocale = (locale: Locale) => i18n.changeLanguage(locale)
+export const getActiveLocale = () => i18n.language as Locale
+export const setActiveLocale = (locale: Locale) => i18n.changeLanguage(locale)
 export const getActiveLanguage = () => LANGUAGES[i18n.language as Locale]
 export const getActiveFlagSvg = () => FLAG_SVGS[i18n.language as Locale]
 export * from './_languages'

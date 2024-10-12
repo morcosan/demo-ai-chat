@@ -54,13 +54,15 @@ export interface Language {
 	nameEn: string
 	region: Region
 }
-export type Region = 'default' | 'europe' | 'asia' | 'africa'
+export type Region = 'default' | 'europe' | 'asia' | 'africa' | 'america'
 export type Locale = keyof typeof LANGUAGES
 
 const ASSETS = import.meta.glob('@app/library/assets/flags/*.svg', { eager: true }) as SvgGlobImport
 const REGEX = /\/flags\/(.*)\.svg$/
 
-export const FLAG_SVGS = Object.keys(ASSETS).reduce(
+type FlagSvgs = Record<Locale, JsxFn>
+
+export const FLAG_SVGS: FlagSvgs = Object.keys(ASSETS).reduce(
 	(acc, path) => {
 		const flag = path.match(REGEX)?.[1] as string
 		const entry = Object.entries(LANGUAGES).find(([, lang]) => lang.flag === flag)
@@ -68,5 +70,5 @@ export const FLAG_SVGS = Object.keys(ASSETS).reduce(
 
 		return locale ? { ...acc, [locale]: ASSETS[path].default } : acc
 	},
-	{} as Record<Locale, JsxFn>
+	Object.fromEntries(Object.keys(LANGUAGES).map((locale) => [locale, () => {}])) as unknown as FlagSvgs
 )
