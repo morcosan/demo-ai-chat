@@ -1,5 +1,13 @@
 import { CSSObject } from '@emotion/react'
-import { ChangeEvent, CSSProperties, FocusEvent, KeyboardEvent, MouseEvent, ReactNode } from 'react'
+import {
+	ChangeEvent,
+	CSSProperties,
+	FocusEvent,
+	JSXElementConstructor,
+	KeyboardEvent,
+	MouseEvent,
+	ReactNode,
+} from 'react'
 
 export {}
 declare global {
@@ -15,7 +23,9 @@ declare global {
 	}
 
 	type JsxProps<C> = C extends JsxFn<infer P> ? P : unknown
-	type JsxFn<P> = (props: P) => unknown
+	type JsxFn<P = ReactProps> = JSXElementConstructor<P>
+
+	type SvgGlobImport = Record<string, { default: JsxFn }>
 
 	type CSS = CSSObject
 
@@ -25,6 +35,4 @@ declare global {
 	}
 
 	type ListLoading = false | 'full' | 'more' | 'update'
-
-	type SvgGlobImport = Record<string, { default: ReactNode }>
 }

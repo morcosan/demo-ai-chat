@@ -1,3 +1,4 @@
+import { getActiveFlagSvg } from '@app/i18n'
 import {
 	ArrowBackSvg,
 	Button,
@@ -22,6 +23,8 @@ interface Props {
 export const SettingsMenu = ({ onClickBack }: Props) => {
 	const { isUiLight, isUiDark, changeColorTheme } = useUiTheme()
 	const { uiLibrary, changeUiLibrary } = useUiLibrary()
+
+	const FlagSvg = getActiveFlagSvg()
 
 	const storybookUrl = ENV__BUILD_MODE === 'local' ? 'http://localhost:9000' : `${ENV__ROOT_URL_PATH}/storybook`
 
@@ -105,8 +108,8 @@ export const SettingsMenu = ({ onClickBack }: Props) => {
 			<hr className={hrClass} />
 
 			<Button linkHref="/settings" variant="item-text-default">
-				<SettingsSvg className={actionIconClass} />
-				Change language
+				<FlagSvg className={cx(actionIconClass, 'rounded-sm')} />
+				Language
 			</Button>
 
 			<Button linkHref="/settings" variant="item-text-default">

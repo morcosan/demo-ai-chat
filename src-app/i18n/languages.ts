@@ -1,12 +1,8 @@
 export const LANGUAGES = {
-	/*
-	 * Default
-	 */
+	// Default
 	en_US: { flag: 'us', name: 'English', nameEn: 'English', region: 'default' },
 
-	/*
-	 * Europe
-	 */
+	// Europe
 	bg_BG: { flag: 'bg', name: 'български', nameEn: 'Bulgarian', region: 'europe' },
 	cs_CZ: { flag: 'cz', name: 'Čeština', nameEn: 'Czech', region: 'europe' },
 	da_DK: { flag: 'dk', name: 'Dansk', nameEn: 'Danish', region: 'europe' },
@@ -32,9 +28,7 @@ export const LANGUAGES = {
 	sv_SE: { flag: 'se', name: 'Svenska', nameEn: 'Swedish', region: 'europe' },
 	uk_UA: { flag: 'ua', name: 'Українська', nameEn: 'Ukrainian', region: 'europe' },
 
-	/*
-	 * Asia
-	 */
+	// Asia
 	ar_AE: { flag: 'ae', name: 'العربية', nameEn: 'Arabic', region: 'asia' },
 	az_AZ: { flag: 'az', name: 'Azərbaycanca', nameEn: 'Azerbaijani', region: 'asia' },
 	hi_IN: { flag: 'in', name: 'हिन्दी', nameEn: 'Hindi', region: 'asia' },
@@ -62,3 +56,17 @@ export interface Language {
 }
 export type Region = 'default' | 'europe' | 'asia' | 'africa'
 export type Locale = keyof typeof LANGUAGES
+
+const ASSETS = import.meta.glob('@app/library/assets/flags/*.svg', { eager: true }) as SvgGlobImport
+const REGEX = /\/flags\/(.*)\.svg$/
+
+export const FLAG_SVGS = Object.keys(ASSETS).reduce(
+	(acc, path) => {
+		const flag = path.match(REGEX)?.[1] as string
+		const entry = Object.entries(LANGUAGES).find(([, lang]) => lang.flag === flag)
+		const locale = entry?.[0]
+
+		return locale ? { ...acc, [locale]: ASSETS[path].default } : acc
+	},
+	{} as Record<Locale, JsxFn>
+)
