@@ -7,7 +7,11 @@ import { SettingsMenu } from './_settings-menu'
 
 const COOKIE__PINNED_NAVBAR = 'app-pinned-navbar'
 
-export const DesktopNavbar = () => {
+interface Props {
+	onClickLanguage(): void
+}
+
+export const DesktopNavbar = (props: Props) => {
 	const { isViewportMinXL } = useUiViewport()
 	const [isSettingsOpened, setIsSettingsOpened] = useState(false)
 	const [isNavPinned, setIsNavPinned] = useState(false)
@@ -50,6 +54,11 @@ export const DesktopNavbar = () => {
 	const onClickPin = () => {
 		setIsNavPinned(!isNavPinned)
 		localStorage.setItem(COOKIE__PINNED_NAVBAR, !isNavPinned ? 'true' : 'false')
+	}
+
+	const onClickLanguage = () => {
+		setIsSettingsOpened(false)
+		props.onClickLanguage()
 	}
 
 	const onClickWindow = (event: MouseEvent) => {
@@ -129,7 +138,7 @@ export const DesktopNavbar = () => {
 						onClick={onToggleSettings}
 					/>
 					<div className={settingsMenuClass}>
-						<SettingsMenu />
+						<SettingsMenu onClickLanguage={onClickLanguage} />
 					</div>
 				</div>
 			</nav>

@@ -17,10 +17,11 @@ import {
 type SelectEvent = ReactChangeEvent<HTMLSelectElement>
 
 interface Props {
+	onClickLanguage(): void
 	onClickBack?(): void
 }
 
-export const SettingsMenu = ({ onClickBack }: Props) => {
+export const SettingsMenu = ({ onClickBack, onClickLanguage }: Props) => {
 	const { isUiLight, isUiDark, changeColorTheme } = useUiTheme()
 	const { uiLibrary, changeUiLibrary } = useUiLibrary()
 
@@ -107,7 +108,7 @@ export const SettingsMenu = ({ onClickBack }: Props) => {
 
 			<hr className={hrClass} />
 
-			<Button linkHref="/settings" variant="item-text-default">
+			<Button variant="item-text-default" onClick={onClickLanguage}>
 				<FlagSvg className={cx(actionIconClass, 'rounded-sm')} />
 				Language
 			</Button>
