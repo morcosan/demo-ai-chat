@@ -106,6 +106,11 @@ export const SettingsMenu = ({ onClickBack }: Props) => {
 
 			<Button linkHref="/settings" variant="item-text-default">
 				<SettingsSvg className={actionIconClass} />
+				Change language
+			</Button>
+
+			<Button linkHref="/settings" variant="item-text-default">
+				<SettingsSvg className={actionIconClass} />
 				Settings
 			</Button>
 

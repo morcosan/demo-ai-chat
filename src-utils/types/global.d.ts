@@ -3,10 +3,10 @@ import { ChangeEvent, CSSProperties, FocusEvent, KeyboardEvent, MouseEvent, Reac
 
 export {}
 declare global {
-	export type ReactChangeEvent<T = unknown> = ChangeEvent<T>
-	export type ReactFocusEvent = FocusEvent
-	export type ReactKeyboardEvent = KeyboardEvent
-	export type ReactMouseEvent = MouseEvent
+	type ReactChangeEvent<T = unknown> = ChangeEvent<T>
+	type ReactFocusEvent = FocusEvent
+	type ReactKeyboardEvent = KeyboardEvent
+	type ReactMouseEvent = MouseEvent
 
 	interface ReactProps {
 		className?: string
@@ -25,4 +25,6 @@ declare global {
 	}
 
 	type ListLoading = false | 'full' | 'more' | 'update'
+
+	type SvgGlobImport = Record<string, { default: ReactNode }>
 }

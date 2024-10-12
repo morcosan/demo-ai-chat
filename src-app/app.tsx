@@ -3,6 +3,7 @@ import { SettingsProvider } from '@app/biz-modules/user-settings/state'
 import { UiA11yProvider, UiLibraryProvider, UiThemeProvider, UiViewportProvider } from '@ds/release'
 import { COOKIE__APP_COLOR_THEME, COOKIE__APP_UI_LIBRARY, Wrapper, Wrappers } from '@utils/release'
 import { StrictMode, Suspense } from 'react'
+import './i18n'
 import { Router } from './routing'
 import './styling/index.css'
 
