@@ -16,8 +16,8 @@ export const DocIconItem = ({ icon }: Props) => {
 	const [copied, setCopied] = useState(false)
 
 	const buttonClass = cx(
-		'relative flex h-md-8 w-md-8 flex-col overflow-hidden rounded-sm border border-color-border-default',
-		'fill-color-text-default stroke-color-text-default',
+		'relative flex h-md-8 w-md-8 flex-col overflow-hidden',
+		'rounded-sm border border-color-border-default text-color-text-default',
 		'hover:shadow-md focus:shadow-md',
 		'hover:scale-[1.05] focus:scale-[1.05]'
 	)

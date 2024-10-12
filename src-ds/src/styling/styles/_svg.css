@@ -1,0 +1,7 @@
+/*
+ * Allow all icons to be colorized using text color
+ */
+svg[data-ds='icon'] path {
+	fill: currentColor;
+	stroke: currentColor;
+}

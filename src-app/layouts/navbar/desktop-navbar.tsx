@@ -36,7 +36,7 @@ export const DesktopNavbar = () => {
 
 	const pinClass = cx(
 		'h-xs-6',
-		isNavPinned ? 'fill-color-secondary-text-default' : 'rotate-45 fill-color-text-subtle'
+		isNavPinned ? 'text-color-secondary-text-default' : 'rotate-45 text-color-text-subtle'
 	)
 
 	const loadPinConfig = () => {

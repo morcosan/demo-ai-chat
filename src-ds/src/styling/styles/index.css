@@ -4,6 +4,7 @@
 
 @import '_a11y.css';
 @import '_scrollbar.css';
+@import '_svg.css';
 
 :root {
 	background-color: var(--ds-color-bg-default);

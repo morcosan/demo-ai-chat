@@ -27,7 +27,7 @@ export const SettingsMenu = ({ onClickBack }: Props) => {
 
 	const hrClass = 'my-xs-2'
 	const actionIconClass = 'mr-button-px-item h-xs-8 w-xs-8'
-	const newTabIconClass = 'ml-auto mr-px h-xs-6 w-xs-6 fill-color-text-subtle'
+	const newTabIconClass = 'ml-auto mr-px h-xs-6 w-xs-6 text-color-text-subtle'
 
 	return (
 		<div className="flex w-full flex-col gap-xs-3 p-xs-4">
