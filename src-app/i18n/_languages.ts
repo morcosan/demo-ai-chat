@@ -29,8 +29,9 @@ export const LANGUAGES = {
 	uk_UA: { flag: 'ua', name: 'Українська', nameEn: 'Ukrainian', region: 'europe' },
 
 	// Asia
-	ar_AE: { flag: 'ae', name: 'العربية', nameEn: 'Arabic', region: 'asia' },
+	ar_AE: { flag: 'ps', name: 'العربية', nameEn: 'Arabic', region: 'asia' },
 	az_AZ: { flag: 'az', name: 'Azərbaycanca', nameEn: 'Azerbaijani', region: 'asia' },
+	fil_PH: { flag: 'ph', name: 'Filipino', nameEn: 'Filipino', region: 'asia' },
 	hi_IN: { flag: 'in', name: 'हिन्दी', nameEn: 'Hindi', region: 'asia' },
 	id_ID: { flag: 'id', name: 'Indonesia', nameEn: 'Indonesian', region: 'asia' },
 	ja_JP: { flag: 'jp', name: '日本語', nameEn: 'Japanese', region: 'asia' },

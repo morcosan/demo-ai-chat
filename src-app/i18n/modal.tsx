@@ -1,4 +1,4 @@
-import { Button, Modal } from '@ds/release'
+import { Button, CheckSvg, Modal } from '@ds/release'
 import { useEffect, useMemo, useState } from 'react'
 import { FLAG_SVGS, getActiveLocale, LANGUAGES, Locale, Region, setActiveLocale } from './index'
 
@@ -86,9 +86,10 @@ export const I18nModal = ({ opened, onClose }: Props) => {
 									className="w-lg-3"
 									onClick={() => setLocale(item.locale)}
 								>
-									<span className="flex gap-button-px-item">
+									<span className="flex w-full items-center gap-button-px-item">
 										<item.flag className="h-xs-9 w-xs-9" />
 										{item.name}
+										{locale === item.locale && <CheckSvg className="ml-auto h-xs-7" />}
 									</span>
 								</Button>
 							))}
