@@ -1,6 +1,8 @@
 export const LANGUAGES = {
 	// Default
 	en_US: { flag: 'us', name: 'English', nameEn: 'English', region: 'default' },
+	uk_UA: { flag: 'ua', name: 'Українська', nameEn: 'Ukrainian', region: 'default' },
+	ar_AE: { flag: 'ps', name: 'العربية', nameEn: 'Arabic', region: 'default' },
 
 	// Europe
 	bg_BG: { flag: 'bg', name: 'български', nameEn: 'Bulgarian', region: 'europe' },
@@ -26,10 +28,8 @@ export const LANGUAGES = {
 	sq_AL: { flag: 'al', name: 'Shqipërisht', nameEn: 'Albanian', region: 'europe' },
 	sr_RS: { flag: 'rs', name: 'Српски', nameEn: 'Serbian', region: 'europe' },
 	sv_SE: { flag: 'se', name: 'Svenska', nameEn: 'Swedish', region: 'europe' },
-	uk_UA: { flag: 'ua', name: 'Українська', nameEn: 'Ukrainian', region: 'europe' },
 
 	// Asia
-	ar_AE: { flag: 'ps', name: 'العربية', nameEn: 'Arabic', region: 'asia' },
 	az_AZ: { flag: 'az', name: 'Azərbaycanca', nameEn: 'Azerbaijani', region: 'asia' },
 	fil_PH: { flag: 'ph', name: 'Filipino', nameEn: 'Filipino', region: 'asia' },
 	hi_IN: { flag: 'in', name: 'हिन्दी', nameEn: 'Hindi', region: 'asia' },

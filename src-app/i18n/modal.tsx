@@ -34,7 +34,7 @@ export const I18nModal = ({ opened, onClose }: Props) => {
 					region: language.region,
 					flag: FLAG_SVGS[locale as Locale],
 				})),
-				(item: LanguageItem) => item.nameEn
+				(item: LanguageItem) => (item.region === 'default' ? '' : item.nameEn)
 			),
 		[]
 	)
