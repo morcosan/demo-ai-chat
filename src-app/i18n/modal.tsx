@@ -74,6 +74,32 @@ export const I18nModal = ({ opened, onClose }: Props) => {
 		</Button>
 	)
 
+	const renderItem = (item: LanguageItem) => {
+		const isSelected = locale === item.locale
+
+		return (
+			<Button
+				key={item.locale}
+				variant={isSelected ? 'item-solid-secondary' : 'item-text-default'}
+				highlight={isSelected ? 'selected' : 'default'}
+				size="lg"
+				className="px-0"
+				onClick={() => setLocale(item.locale)}
+			>
+				<span className="flex w-full items-center text-left">
+					<item.flag className="mx-xs-6 w-sm-0" style={{ fill: 'initial', stroke: 'initial' }} />
+
+					<span className={cx('flex flex-col leading-1', isSelected ? 'font-weight-md' : 'font-weight-sm')}>
+						<span className={cx(!isSelected && 'text-color-text-default')}>{item.name}</span>
+						<span className={cx(!isSelected && 'text-color-text-subtle', 'text-size-xs')}>{item.nameEn}</span>
+					</span>
+
+					{locale === item.locale && <CheckSvg className="ml-auto mr-xs-4 h-xs-7" />}
+				</span>
+			</Button>
+		)
+	}
+
 	return (
 		<Modal opened={opened} width="lg" slotTitle="Change language" slotButtons={slotButtons} onClose={onClose}>
 			<div className="flex flex-col gap-sm-5">
@@ -81,33 +107,7 @@ export const I18nModal = ({ opened, onClose }: Props) => {
 					<div key={region.title}>
 						<div className="mb-xs-5 text-size-lg">{region.title}</div>
 
-						<div className={cx(gridColClass, 'gap-x-xs-6 gap-y-xs-1')}>
-							{region.items.map((item) => (
-								<Button
-									key={item.locale}
-									variant={locale === item.locale ? 'item-solid-secondary' : 'item-text-default'}
-									highlight={locale === item.locale ? 'selected' : 'default'}
-									size="lg"
-									className="px-0"
-									onClick={() => setLocale(item.locale)}
-								>
-									<span className="flex w-full items-center text-left">
-										<item.flag className="mx-xs-6 w-sm-0" style={{ fill: 'initial', stroke: 'initial' }} />
-
-										<span className="flex flex-col font-weight-sm leading-1">
-											<span className={cx(locale !== item.locale && 'text-color-text-subtle', 'font-weight-md')}>
-												{item.name}
-											</span>
-											<span className={cx(locale !== item.locale && 'text-color-text-subtle', 'text-size-xs')}>
-												{item.nameEn}
-											</span>
-										</span>
-
-										{locale === item.locale && <CheckSvg className="ml-auto mr-xs-4 h-xs-7" />}
-									</span>
-								</Button>
-							))}
-						</div>
+						<div className={cx(gridColClass, 'gap-x-xs-6 gap-y-xs-1')}>{region.items.map(renderItem)}</div>
 					</div>
 				))}
 			</div>
