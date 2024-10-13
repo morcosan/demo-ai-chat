@@ -109,8 +109,10 @@ export const SettingsMenu = ({ onClickBack, onClickLanguage }: Props) => {
 			<hr className={hrClass} />
 
 			<Button variant="item-text-default" onClick={onClickLanguage}>
-				<FlagSvg className={cx(actionIconClass, 'rounded-sm')} />
-				Language ({getActiveLanguage().name})
+				<FlagSvg className={cx(actionIconClass, 'h-unset')} style={{ fill: 'initial', stroke: 'initial' }} />
+				<span className="flex flex-1 items-center justify-between">
+					Language <span className="ml-xs-1 text-size-sm text-color-text-subtle">{getActiveLanguage().name}</span>
+				</span>
 			</Button>
 
 			<Button linkHref="/settings" variant="item-text-default">
