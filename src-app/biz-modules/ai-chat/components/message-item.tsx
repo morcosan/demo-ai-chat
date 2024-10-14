@@ -69,7 +69,7 @@ export const MessageItem = ({ message, subchatId, isSubchat, onClickSubchat }: P
 			{!isSubchat && (
 				<div className={subchatClass}>
 					<Button
-						tooltip={t('aiChat.openSubchat', { count: message.subchatSize })}
+						tooltip={t('aiChat.actions.openSubchat', { count: message.subchatSize })}
 						linkHref={`/chat/${message.chatId}?subchat=${message.id}`}
 						variant="item-text-default"
 						highlight={message.id === subchatId ? 'pressed' : 'default'}

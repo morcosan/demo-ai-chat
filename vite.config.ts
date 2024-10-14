@@ -39,6 +39,7 @@ export default defineConfig({
 			'@api': `${ROOT_DIR}/src-api`,
 			'@app': `${ROOT_DIR}/src-app`,
 			'@ds': `${ROOT_DIR}/src-ds`,
+			'@i18n': `${ROOT_DIR}/src-i18n`,
 			'@utils': `${ROOT_DIR}/src-utils`,
 		},
 	},

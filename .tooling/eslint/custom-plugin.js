@@ -8,6 +8,7 @@ export const customPlugin = {
 				ImportDeclaration: (node) => {
 					const path = node.source.value
 					const isDS = path.startsWith('@ds/') || path.includes('../src-ds/')
+					const isI18n = path.startsWith('@i18n/') || path.includes('../src-i18n/')
 					const isUtils = path.startsWith('@utils/') || path.includes('../src-utils/')
 
 					if (isDS) {
@@ -23,6 +24,18 @@ export const customPlugin = {
 								node,
 								message: "DS imports must use '@ds/release'",
 								fix: (fixer) => fixer.replaceText(node.source, `'@ds/release'`),
+							})
+						}
+					}
+
+					if (isI18n) {
+						const isValid = path.startsWith('@i18n/release')
+
+						if (!isValid) {
+							context.report({
+								node,
+								message: "Utils imports must use '@i18n/release'",
+								fix: (fixer) => fixer.replaceText(node.source, `'@i18n/release'`),
 							})
 						}
 					}

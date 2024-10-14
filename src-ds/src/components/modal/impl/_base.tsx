@@ -105,7 +105,7 @@ export const useModalBase = (rawProps: ModalProps) => {
 		<>
 			{!props.noClose && (
 				<Button variant="text-default" onClick={props.onClose}>
-					Close
+					{t('core.actions.close')}
 				</Button>
 			)}
 			{props.slotButtons}

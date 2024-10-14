@@ -1,4 +1,3 @@
-import { getActiveFlagSvg, getActiveLanguage } from '@app/i18n'
 import {
 	ArrowBackSvg,
 	Button,
@@ -13,6 +12,7 @@ import {
 	useUiLibrary,
 	useUiTheme,
 } from '@ds/release'
+import { getActiveFlagSvg, getActiveLanguage } from '@i18n/release'
 
 type SelectEvent = ReactChangeEvent<HTMLSelectElement>
 
@@ -125,7 +125,7 @@ export const SettingsMenu = ({ onClickBack, onClickLanguage }: Props) => {
 
 			<Button linkHref="/logout" variant="item-text-danger">
 				<LogoutSvg className={actionIconClass} />
-				{t('core.signOut')}
+				{t('core.actions.signOut')}
 			</Button>
 		</div>
 	)

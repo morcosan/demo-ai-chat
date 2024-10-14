@@ -1,5 +1,5 @@
 import { AiChatView, useAiChat } from '@app/biz-modules/ai-chat/state'
-import { I18nModal } from '@app/i18n/modal'
+import { I18nModal } from '@app/core-modules/i18n-modal'
 import { SettingsMenu } from '@app/layouts/navbar/_settings-menu'
 import { useUiViewport } from '@ds/release'
 import { useEffect, useState } from 'react'

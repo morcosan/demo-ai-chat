@@ -1,9 +1,10 @@
 import { AiChatProvider } from '@app/biz-modules/ai-chat/state'
 import { SettingsProvider } from '@app/biz-modules/user-settings/state'
 import { UiA11yProvider, UiLibraryProvider, UiThemeProvider, UiViewportProvider } from '@ds/release'
+import '@i18n/release'
 import { COOKIE__APP_COLOR_THEME, COOKIE__APP_UI_LIBRARY, Wrapper, Wrappers } from '@utils/release'
 import { StrictMode, Suspense } from 'react'
-import './i18n'
+import { useTranslation } from 'react-i18next'
 import { Router } from './routing'
 import './styling/index.css'
 
@@ -27,6 +28,9 @@ const providers: Wrapper<Type>[] = [
 ]
 
 const App = () => {
+	// Since t() is on window, whole app must be updated when language changes
+	useTranslation()
+
 	return (
 		<Wrappers wrappers={providers}>
 			<Suspense fallback={null}>

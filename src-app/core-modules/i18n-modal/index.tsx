@@ -1,7 +1,7 @@
 import { Button, CheckSvg, Modal } from '@ds/release'
+import { FLAG_SVGS, getActiveLocale, LANGUAGES, Locale, Region, setActiveLocale } from '@i18n/release'
 import { sortBy } from 'lodash'
 import { useMemo } from 'react'
-import { FLAG_SVGS, getActiveLocale, LANGUAGES, Locale, Region, setActiveLocale } from './index'
 
 interface Props {
 	opened: boolean
@@ -9,6 +9,7 @@ interface Props {
 }
 
 interface RegionItem {
+	key: Region
 	title: string
 	items: LanguageItem[]
 }
@@ -40,27 +41,25 @@ export const I18nModal = ({ opened, onClose }: Props) => {
 	const regionItems: RegionItem[] = useMemo(
 		() => [
 			{
-				title: 'Default',
+				key: 'default',
+				title: t('core.default'),
 				items: items.filter((item: LanguageItem) => item.region === 'default'),
 			},
 			{
-				title: 'Europe',
+				key: 'europe',
+				title: t('core.europe'),
 				items: items.filter((item: LanguageItem) => item.region === 'europe'),
 			},
 			{
-				title: 'Asia',
+				key: 'asia',
+				title: t('core.asia'),
 				items: items.filter((item: LanguageItem) => item.region === 'asia'),
 			},
 		],
-		[]
+		[getActiveLocale()]
 	)
 
 	const gridColClass = 'grid xs:grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 '
-
-	const onSubmit = (locale: Locale) => {
-		setActiveLocale(locale)
-		onClose()
-	}
 
 	const renderItem = (item: LanguageItem) => {
 		const isSelected = getActiveLocale() === item.locale
@@ -72,7 +71,7 @@ export const I18nModal = ({ opened, onClose }: Props) => {
 				highlight={isSelected ? 'selected' : 'default'}
 				size="lg"
 				className="px-0"
-				onClick={() => onSubmit(item.locale)}
+				onClick={() => setActiveLocale(item.locale)}
 			>
 				<span className="flex w-full items-center text-left">
 					<item.flag className="mx-xs-6 w-sm-0" style={{ fill: 'initial', stroke: 'initial' }} />
@@ -89,10 +88,10 @@ export const I18nModal = ({ opened, onClose }: Props) => {
 	}
 
 	return (
-		<Modal opened={opened} width="lg" slotTitle="Change language" noFooter onClose={onClose}>
+		<Modal opened={opened} width="lg" slotTitle={t('core.actions.changeLanguage')} noFooter onClose={onClose}>
 			<div className="flex flex-col gap-sm-5">
 				{regionItems.map((region) => (
-					<div key={region.title}>
+					<div key={region.key}>
 						<div className="mb-xs-5 text-size-lg">{region.title}</div>
 
 						<div className={cx(gridColClass, 'gap-x-xs-6 gap-y-xs-1')}>{region.items.map(renderItem)}</div>

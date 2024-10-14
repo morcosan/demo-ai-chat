@@ -1,27 +1,36 @@
 {
 	"core": {
+		"actions": {
+			"changeLanguage": "Change language",
+			"close": "Close",
+			"openMenu": "Open menu",
+			"signOut": "Sign out"
+		},
 		"apiDocs": "API Docs",
+		"asia": "Asia",
 		"custom": "Custom",
 		"darkTheme": "Dark",
+		"default": "Default",
 		"designSystem": "Design System",
+		"europe": "Europe",
 		"githubRepo": "GitHub Repo",
 		"language": "Language",
 		"lightTheme": "Light",
-		"openMenu": "Open menu",
 		"quickSettings": "Quick settings",
 		"settings": "Settings",
-		"signOut": "Sign out",
 		"uiLibrary": "UI Library:",
 		"uiTheme": "UI Theme:"
 	},
 	"aiChat": {
+		"actions": {
+			"openSubchat_other": "Open subchat ({count} messages)",
+			"openSubchat_zero": "Create subchat"
+		},
 		"chats": "Chats",
 		"inputPlaceholder": "Ask a question...",
 		"loadingMessages": "Loading messages...",
 		"loadingPreviousMessages": "Loading previous messages...",
 		"newChat": "New chat",
-		"openSubchat_other": "Open subchat ({count} messages)",
-		"openSubchat_zero": "Create subchat",
 		"sendMessage": "Send message",
 		"showSubchats": "Show subchats ({count})",
 		"subchats": "Sub-chats",
