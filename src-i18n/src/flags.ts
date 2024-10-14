@@ -1,6 +1,6 @@
 import { LANGUAGES, Locale } from './languages'
 
-const ASSETS = import.meta.glob('../release/flags/*.svg', { eager: true }) as SvgGlobImport
+const ASSETS = import.meta.glob('./flags/*.svg', { eager: true }) as SvgGlobImport
 const REGEX = /\/flags\/(.*)\.svg$/
 
 type FlagSvgs = Record<Locale, JsxFn>

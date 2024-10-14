@@ -1,8 +1,8 @@
-import { i18n } from '../src/config'
-import { FLAG_SVGS } from '../src/flags'
-import { Language, LANGUAGES, Locale, Region } from '../src/languages'
+import { i18n } from './src/config'
+import { FLAG_SVGS } from './src/flags'
+import { Language, LANGUAGES, Locale, Region } from './src/languages'
 
-export * from '../src/languages'
+export * from './src/languages'
 
 export { FLAG_SVGS, i18n, LANGUAGES }
 export type { Language, Locale, Region }

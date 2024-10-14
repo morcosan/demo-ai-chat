@@ -1,10 +1,10 @@
 import i18n, { InitOptions } from 'i18next'
 import LanguageDetector from 'i18next-browser-languagedetector'
 import { initReactI18next } from 'react-i18next'
-import en_US from '../translations/en_US.json'
-import pl_PL from '../translations/pl_PL.json'
-import ro_RO from '../translations/ro_RO.json'
 import { LANGUAGES } from './languages'
+import en_US from './translations/en_US.json'
+import pl_PL from './translations/pl_PL.json'
+import ro_RO from './translations/ro_RO.json'
 
 i18n
 	.use(LanguageDetector)
