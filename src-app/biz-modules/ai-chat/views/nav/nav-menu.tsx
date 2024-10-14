@@ -72,7 +72,7 @@ export const AiChatNavMenu = ({ collapsed }: Props) => {
 			>
 				{allChatsLoading === 'full' ? (
 					<LoadingText
-						text="Loading chats..."
+						text={t('aiChat.loadingChats')}
 						collapsed={collapsed}
 						className="min-h-sm-4 px-button-px-item text-size-sm"
 					/>
@@ -92,7 +92,7 @@ export const AiChatNavMenu = ({ collapsed }: Props) => {
 						))}
 						{allChats.length < allChatsPagination.count && (
 							<LoadingText
-								text="Loading chats..."
+								text={t('aiChat.loadingChats')}
 								collapsed={collapsed}
 								className="line-clamp-1 min-h-sm-4 px-button-px-item text-size-sm"
 								style={{ visibility: allChatsLoading === 'more' ? 'visible' : 'hidden' }}

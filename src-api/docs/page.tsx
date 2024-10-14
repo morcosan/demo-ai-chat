@@ -26,7 +26,7 @@ const ApiDocsPage = () => {
 			) : (
 				<>
 					<h1 className="mb-sm-0 flex items-center text-size-xxl font-weight-lg">
-						<IconButton tooltip="Go back" linkHref="/docs/api" className="mr-xs-5">
+						<IconButton tooltip={t('core.actions.back')} linkHref="/docs/api" className="mr-xs-5">
 							<ArrowBackSvg className="h-xs-9" />
 						</IconButton>
 						API Docs

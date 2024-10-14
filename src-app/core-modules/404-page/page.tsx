@@ -7,7 +7,7 @@ const NotFoundPage = () => {
 			<h1 className="text-size-xxl font-weight-xl">Page not found</h1>
 
 			<Button linkHref="/" size="lg" className="mt-lg-0">
-				Go back to homepage
+				{t('core.actions.backToHome')}
 			</Button>
 		</div>
 	)

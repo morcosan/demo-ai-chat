@@ -40,7 +40,7 @@ export const SubchatsView = () => {
 				))}
 				{allSubchats.length < allSubchatsPagination.count && (
 					<LoadingText
-						text="Loading subchats..."
+						text={t('aiChat.loadingSubchats')}
 						className="min-h-sm-4 pl-sm-0 text-size-sm"
 						style={{ visibility: allSubchatsLoading === 'more' ? 'visible' : 'hidden' }}
 					/>

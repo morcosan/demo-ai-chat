@@ -1,10 +1,12 @@
 {
 	"core": {
 		"actions": {
+			"back": "Înapoi",
+			"backToHome": "Înapoi la pagina principală",
 			"changeLanguage": "Schimbă limba",
 			"close": "Închide",
 			"openMenu": "Deschide meniul",
-			"signOut": "Deconectare"
+			"signOut": "Deconectează-te"
 		},
 		"apiDocs": "Documentație API",
 		"asia": "Asia",
@@ -13,27 +15,31 @@
 		"default": "Implicit",
 		"designSystem": "Sistem de design",
 		"europe": "Europa",
-		"githubRepo": "Repozitoriu GitHub",
+		"githubRepo": "Repo GitHub",
 		"language": "Limbă",
 		"lightTheme": "Luminos",
+		"loading": "Se încarcă...",
 		"quickSettings": "Setări rapide",
 		"settings": "Setări",
-		"uiLibrary": "Biblioteca UI:",
-		"uiTheme": "Tema UI:"
+		"uiLibrary": "Bibliotecă UI:",
+		"uiTheme": "Temă UI:"
 	},
 	"aiChat": {
 		"actions": {
+			"backToSubchats": "Înapoi la subchat-uri",
 			"openSubchat_other": "Deschide subchat ({count} mesaje)",
 			"openSubchat_zero": "Creează subchat"
 		},
 		"chats": "Chat-uri",
 		"inputPlaceholder": "Pune o întrebare...",
+		"loadingChats": "Se încarcă chat-urile...",
 		"loadingMessages": "Se încarcă mesajele...",
 		"loadingPreviousMessages": "Se încarcă mesajele anterioare...",
+		"loadingSubchats": "Se încarcă subchat-urile...",
 		"newChat": "Chat nou",
 		"sendMessage": "Trimite mesaj",
-		"showSubchats": "Afișează subchaturi ({count})",
-		"subchats": "Sub-chat-uri",
+		"showSubchats": "Afișează subchat-uri ({count})",
+		"subchats": "Subchat-uri",
 		"xMessages_one": "1 mesaj",
 		"xMessages_few": "{count} mesaje",
 		"xMessages_other": "{count} mesaje"

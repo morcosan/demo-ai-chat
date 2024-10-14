@@ -1,6 +1,8 @@
 {
 	"core": {
 		"actions": {
+			"back": "Wróć",
+			"backToHome": "Wróć na stronę główną",
 			"changeLanguage": "Zmień język",
 			"close": "Zamknij",
 			"openMenu": "Otwórz menu",
@@ -11,11 +13,12 @@
 		"custom": "Niestandardowy",
 		"darkTheme": "Ciemny",
 		"default": "Domyślny",
-		"designSystem": "System projektowania",
+		"designSystem": "System projektowy",
 		"europe": "Europa",
 		"githubRepo": "Repozytorium GitHub",
 		"language": "Język",
 		"lightTheme": "Jasny",
+		"loading": "Ładowanie...",
 		"quickSettings": "Szybkie ustawienia",
 		"settings": "Ustawienia",
 		"uiLibrary": "Biblioteka UI:",
@@ -23,13 +26,16 @@
 	},
 	"aiChat": {
 		"actions": {
+			"backToSubchats": "Wróć do podczatów",
 			"openSubchat_other": "Otwórz podczat ({count} wiadomości)",
 			"openSubchat_zero": "Utwórz podczat"
 		},
 		"chats": "Czaty",
 		"inputPlaceholder": "Zadaj pytanie...",
+		"loadingChats": "Ładowanie czatów...",
 		"loadingMessages": "Ładowanie wiadomości...",
 		"loadingPreviousMessages": "Ładowanie poprzednich wiadomości...",
+		"loadingSubchats": "Ładowanie podczatów...",
 		"newChat": "Nowy czat",
 		"sendMessage": "Wyślij wiadomość",
 		"showSubchats": "Pokaż podczaty ({count})",

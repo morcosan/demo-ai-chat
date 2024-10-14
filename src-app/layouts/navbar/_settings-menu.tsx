@@ -38,7 +38,7 @@ export const SettingsMenu = ({ onClickBack, onClickLanguage }: Props) => {
 			{/* BACK BUTTON */}
 			{Boolean(onClickBack) && (
 				<div className="mb-sm-0 mt-xs-3 flex items-center gap-xs-3">
-					<IconButton tooltip="Go back to menu" onClick={onClickBack}>
+					<IconButton tooltip={t('core.actions.back')} onClick={onClickBack}>
 						<ArrowBackSvg className="h-xs-7" />
 					</IconButton>
 					<span className="pb-xs-0 text-size-lg">{t('core.quickSettings')}</span>

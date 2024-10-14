@@ -1,6 +1,8 @@
 {
 	"core": {
 		"actions": {
+			"back": "Back",
+			"backToHome": "Back to homepage",
 			"changeLanguage": "Change language",
 			"close": "Close",
 			"openMenu": "Open menu",
@@ -16,6 +18,7 @@
 		"githubRepo": "GitHub Repo",
 		"language": "Language",
 		"lightTheme": "Light",
+		"loading": "Loading...",
 		"quickSettings": "Quick settings",
 		"settings": "Settings",
 		"uiLibrary": "UI Library:",
@@ -23,17 +26,20 @@
 	},
 	"aiChat": {
 		"actions": {
+			"backToSubchats": "Back to subchats",
 			"openSubchat_other": "Open subchat ({count} messages)",
 			"openSubchat_zero": "Create subchat"
 		},
 		"chats": "Chats",
 		"inputPlaceholder": "Ask a question...",
+		"loadingChats": "Loading chats...",
 		"loadingMessages": "Loading messages...",
 		"loadingPreviousMessages": "Loading previous messages...",
+		"loadingSubchats": "Loading subchats...",
 		"newChat": "New chat",
 		"sendMessage": "Send message",
 		"showSubchats": "Show subchats ({count})",
-		"subchats": "Sub-chats",
+		"subchats": "Subchats",
 		"xMessages_one": "1 message",
 		"xMessages_other": "{count} messages"
 	}
