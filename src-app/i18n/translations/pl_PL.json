@@ -1,18 +1,16 @@
 {
-	"general": {
-		"action": {
-			"signOut": "Wyloguj się"
-		},
-		"language": "Język",
-		"settings": "Ustawienia"
-	},
 	"core": {
 		"apiDocs": "Dokumentacja API",
 		"custom": "Niestandardowy",
 		"darkTheme": "Ciemny",
-		"designSystem": "System Projektowania",
+		"designSystem": "System projektowania",
 		"githubRepo": "Repozytorium GitHub",
+		"language": "Język",
 		"lightTheme": "Jasny",
+		"openMenu": "Otwórz menu",
+		"quickSettings": "Szybkie ustawienia",
+		"settings": "Ustawienia",
+		"signOut": "Wyloguj się",
 		"uiLibrary": "Biblioteka UI:",
 		"uiTheme": "Motyw UI:"
 	},
@@ -22,10 +20,14 @@
 		"loadingMessages": "Ładowanie wiadomości...",
 		"loadingPreviousMessages": "Ładowanie poprzednich wiadomości...",
 		"newChat": "Nowy czat",
-		"openSubchat_other": "Otwórz podczat ({count} wiadomości)",
-		"openSubchat_zero": "Utwórz podczat",
-		"subchats": "Podczaty",
+		"openSubchat_other": "Otwórz sub-czat ({count} wiadomości)",
+		"openSubchat_zero": "Utwórz sub-czat",
+		"sendMessage": "Wyślij wiadomość",
+		"showSubchats": "Pokaż sub-czaty ({count})",
+		"subchats": "Sub-czaty",
 		"xMessages_one": "1 wiadomość",
+		"xMessages_few": "{count} wiadomości",
+		"xMessages_many": "{count} wiadomości",
 		"xMessages_other": "{count} wiadomości"
 	}
 }

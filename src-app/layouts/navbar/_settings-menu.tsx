@@ -41,7 +41,7 @@ export const SettingsMenu = ({ onClickBack, onClickLanguage }: Props) => {
 					<IconButton tooltip="Go back to menu" onClick={onClickBack}>
 						<ArrowBackSvg className="h-xs-7" />
 					</IconButton>
-					<span className="pb-xs-0 text-size-lg">Quick settings</span>
+					<span className="pb-xs-0 text-size-lg">{t('core.quickSettings')}</span>
 				</div>
 			)}
 
@@ -111,21 +111,21 @@ export const SettingsMenu = ({ onClickBack, onClickLanguage }: Props) => {
 			<Button variant="item-text-default" onClick={onClickLanguage}>
 				<FlagSvg className={cx(actionIconClass, 'h-unset')} style={{ fill: 'initial', stroke: 'initial' }} />
 				<span className="flex flex-1 items-center justify-between">
-					{t('general.language')}
+					{t('core.language')}
 					<span className="ml-xs-1 text-size-sm text-color-text-subtle">{getActiveLanguage().name}</span>
 				</span>
 			</Button>
 
 			<Button linkHref="/settings" variant="item-text-default">
 				<SettingsSvg className={actionIconClass} />
-				{t('general.settings')}
+				{t('core.settings')}
 			</Button>
 
 			<hr className={hrClass} />
 
 			<Button linkHref="/logout" variant="item-text-danger">
 				<LogoutSvg className={actionIconClass} />
-				{t('general.action.signOut')}
+				{t('core.signOut')}
 			</Button>
 		</div>
 	)

@@ -1,18 +1,16 @@
 {
-	"general": {
-		"action": {
-			"signOut": "Sign out"
-		},
-		"language": "Language",
-		"settings": "Settings"
-	},
 	"core": {
 		"apiDocs": "API Docs",
 		"custom": "Custom",
 		"darkTheme": "Dark",
 		"designSystem": "Design System",
 		"githubRepo": "GitHub Repo",
+		"language": "Language",
 		"lightTheme": "Light",
+		"openMenu": "Open menu",
+		"quickSettings": "Quick settings",
+		"settings": "Settings",
+		"signOut": "Sign out",
 		"uiLibrary": "UI Library:",
 		"uiTheme": "UI Theme:"
 	},
@@ -24,6 +22,8 @@
 		"newChat": "New chat",
 		"openSubchat_other": "Open subchat ({count} messages)",
 		"openSubchat_zero": "Create subchat",
+		"sendMessage": "Send message",
+		"showSubchats": "Show subchats ({count})",
 		"subchats": "Sub-chats",
 		"xMessages_one": "1 message",
 		"xMessages_other": "{count} messages"

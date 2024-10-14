@@ -26,7 +26,7 @@ export const DesktopNavbar = (props: Props) => {
 	const settingsMenuClass = cx(
 		isSettingsOpened ? 'block' : 'hidden',
 		'absolute bottom-0 right-0 z-popup translate-x-full shadow-lg',
-		'w-lg-6 rounded-md border border-color-border-shadow bg-color-bg-default'
+		'w-lg-7 rounded-md border border-color-border-shadow bg-color-bg-default'
 	)
 
 	const expandedClass = 'w-lg-7 min-w-lg-7'

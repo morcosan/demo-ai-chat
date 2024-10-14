@@ -32,7 +32,7 @@ export const InputField = withRef('InputField', (props: Props, ref: Ref<TextFiel
 			ariaLabel="New message"
 			slotRight={
 				<IconButton
-					tooltip="Send message"
+					tooltip={t('aiChat.sendMessage')}
 					variant={props.primary ? 'solid-primary' : 'solid-secondary'}
 					size={props.primary ? 'md' : 'sm'}
 					loading={props.loading}
