@@ -21,8 +21,6 @@ i18n
 			order: ['queryString', 'cookie', 'localStorage', 'navigator', 'htmlTag'],
 			caches: ['localStorage'],
 		},
-		pluralSeparator: '.',
-		contextSeparator: '.',
 		interpolation: {
 			escapeValue: false, // React already escapes by default
 			prefix: '{',

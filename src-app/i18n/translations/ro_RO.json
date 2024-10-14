@@ -10,10 +10,24 @@
 		"apiDocs": "Documentație API",
 		"custom": "Personalizat",
 		"darkTheme": "Întunecat",
-		"designSystem": "Sistem de Design",
-		"githubRepo": "Repo GitHub",
-		"lightTheme": "Deschis",
+		"designSystem": "Sistem de design",
+		"githubRepo": "Repozitoriu GitHub",
+		"lightTheme": "Luminos",
 		"uiLibrary": "Bibliotecă UI:",
 		"uiTheme": "Temă UI:"
+	},
+	"aiChat": {
+		"chats": "Conversații",
+		"inputPlaceholder": "Pune o întrebare...",
+		"loadingMessages": "Se încarcă mesajele...",
+		"loadingPreviousMessages": "Se încarcă mesajele anterioare...",
+		"newChat": "Conversație nouă",
+		"openSubchat_other": "Deschide sub-conversație ({count} mesaje)",
+		"openSubchat_zero": "Creează sub-conversație",
+		"subchats": "Sub-conversații",
+		"xMessages_one": "1 mesaj",
+		"xMessages_few": "{count} mesaje",
+		"xMessages_many": "{count} mesaje",
+		"xMessages_other": "{count} mesaje"
 	}
 }

@@ -28,7 +28,7 @@ export const InputField = withRef('InputField', (props: Props, ref: Ref<TextFiel
 			id={props.primary ? 'input-chat' : 'input-subchat'}
 			size={props.primary ? 'xl' : 'lg'}
 			value={props.input}
-			placeholder="Ask a question..."
+			placeholder={t('aiChat.inputPlaceholder')}
 			ariaLabel="New message"
 			slotRight={
 				<IconButton

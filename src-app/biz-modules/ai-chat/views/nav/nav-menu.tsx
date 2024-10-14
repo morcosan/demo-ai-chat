@@ -30,13 +30,13 @@ export const AiChatNavMenu = ({ collapsed }: Props) => {
 				<div className={cx(!collapsed && '-ml-xs-4 mr-xs-3')}>
 					<AiChatSvg className="h-xs-9 w-xs-9" />
 				</div>
-				<span className={cx(collapsed && 'hidden')}>New chat</span>
+				<span className={cx(collapsed && 'hidden')}>{t('aiChat.newChat')}</span>
 			</Button>
 
 			{/* OPTIONS */}
 			<div className="mt-sm-0 flex h-button-h-sm w-full items-center justify-between">
 				<span className="ml-xs-1 truncate text-size-sm text-color-text-subtle">
-					{t('core.chats')}
+					{t('aiChat.chats')}
 					&nbsp;
 					{Boolean(allChatsPagination.count) && <span className="text-size-xs">({allChatsPagination.count})</span>}
 				</span>

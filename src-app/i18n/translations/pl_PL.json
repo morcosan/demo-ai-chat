@@ -1,9 +1,33 @@
 {
-	"settings": {
-		"one": "Polish one",
-		"two": "Polish two",
-		"few": "Polish few",
-		"many": "Polish many",
-		"other": "Polish other"
+	"general": {
+		"action": {
+			"signOut": "Wyloguj się"
+		},
+		"language": "Język",
+		"settings": "Ustawienia"
+	},
+	"core": {
+		"apiDocs": "Dokumentacja API",
+		"custom": "Niestandardowe",
+		"darkTheme": "Ciemny",
+		"designSystem": "System projektowy",
+		"githubRepo": "Repozytorium GitHub",
+		"lightTheme": "Jasny",
+		"uiLibrary": "Biblioteka UI:",
+		"uiTheme": "Motyw UI:"
+	},
+	"aiChat": {
+		"chats": "Czaty",
+		"inputPlaceholder": "Zadaj pytanie...",
+		"loadingMessages": "Ładowanie wiadomości...",
+		"loadingPreviousMessages": "Ładowanie poprzednich wiadomości...",
+		"newChat": "Nowy czat",
+		"openSubchat_other": "Otwórz subczat ({count} wiadomości)",
+		"openSubchat_zero": "Utwórz subczat",
+		"subchats": "Subczaty",
+		"xMessages_one": "1 wiadomość",
+		"xMessages_few": "{count} wiadomości",
+		"xMessages_many": "{count} wiadomości",
+		"xMessages_other": "{count} wiadomości"
 	}
 }
