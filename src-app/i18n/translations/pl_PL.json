@@ -8,9 +8,9 @@
 	},
 	"core": {
 		"apiDocs": "Dokumentacja API",
-		"custom": "Niestandardowe",
+		"custom": "Niestandardowy",
 		"darkTheme": "Ciemny",
-		"designSystem": "System projektowy",
+		"designSystem": "System Projektowania",
 		"githubRepo": "Repozytorium GitHub",
 		"lightTheme": "Jasny",
 		"uiLibrary": "Biblioteka UI:",
@@ -22,12 +22,10 @@
 		"loadingMessages": "Ładowanie wiadomości...",
 		"loadingPreviousMessages": "Ładowanie poprzednich wiadomości...",
 		"newChat": "Nowy czat",
-		"openSubchat_other": "Otwórz subczat ({count} wiadomości)",
-		"openSubchat_zero": "Utwórz subczat",
-		"subchats": "Subczaty",
+		"openSubchat_other": "Otwórz podczat ({count} wiadomości)",
+		"openSubchat_zero": "Utwórz podczat",
+		"subchats": "Podczaty",
 		"xMessages_one": "1 wiadomość",
-		"xMessages_few": "{count} wiadomości",
-		"xMessages_many": "{count} wiadomości",
 		"xMessages_other": "{count} wiadomości"
 	}
 }

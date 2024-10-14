@@ -1,19 +1,19 @@
 {
 	"general": {
 		"action": {
-			"signOut": "Deconectare"
+			"signOut": "Deconectează-te"
 		},
 		"language": "Limbă",
 		"settings": "Setări"
 	},
 	"core": {
-		"apiDocs": "Documentație API",
+		"apiDocs": "Documentația API",
 		"custom": "Personalizat",
 		"darkTheme": "Întunecat",
-		"designSystem": "Sistem de design",
+		"designSystem": "Sistem de Design",
 		"githubRepo": "Repozitoriu GitHub",
 		"lightTheme": "Luminos",
-		"uiLibrary": "Bibliotecă UI:",
+		"uiLibrary": "Biblioteca UI:",
 		"uiTheme": "Temă UI:"
 	},
 	"aiChat": {
@@ -22,12 +22,10 @@
 		"loadingMessages": "Se încarcă mesajele...",
 		"loadingPreviousMessages": "Se încarcă mesajele anterioare...",
 		"newChat": "Conversație nouă",
-		"openSubchat_other": "Deschide sub-conversație ({count} mesaje)",
-		"openSubchat_zero": "Creează sub-conversație",
-		"subchats": "Sub-conversații",
+		"openSubchat_other": "Deschide subchat ({count} mesaje)",
+		"openSubchat_zero": "Creează subchat",
+		"subchats": "Subconversații",
 		"xMessages_one": "1 mesaj",
-		"xMessages_few": "{count} mesaje",
-		"xMessages_many": "{count} mesaje",
 		"xMessages_other": "{count} mesaje"
 	}
 }
