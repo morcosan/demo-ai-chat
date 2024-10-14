@@ -22,8 +22,8 @@
 		"./.storybook/vite.config.ts",
 		"./.tooling",
 		"./.tooling/types",
-		"./src-ds/types",
-		"./src-utils/types",
+		"./src-ds/@types",
+		"./src-utils/@types",
 		"./tailwind.config.ts",
 		"./vite.config.ts"
 	]
