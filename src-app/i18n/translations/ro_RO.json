@@ -1,0 +1,19 @@
+{
+	"general": {
+		"action": {
+			"signOut": "Deconectare"
+		},
+		"language": "Limbă",
+		"settings": "Setări"
+	},
+	"core": {
+		"apiDocs": "Documentație API",
+		"custom": "Personalizat",
+		"darkTheme": "Întunecat",
+		"designSystem": "Sistem de Design",
+		"githubRepo": "Repo GitHub",
+		"lightTheme": "Deschis",
+		"uiLibrary": "Bibliotecă UI:",
+		"uiTheme": "Temă UI:"
+	}
+}

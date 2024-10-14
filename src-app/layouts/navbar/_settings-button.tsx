@@ -26,7 +26,7 @@ export const SettingsButton = ({ highlight, collapsed, onClick }: Props) => {
 
 			<span className={cx('ml-button-px-item flex-col items-start leading-1', collapsed ? 'hidden' : 'flex')}>
 				<span className="line-clamp-1 py-xs-0">{name}</span>
-				<span className="text-size-xs text-color-text-subtle">Settings</span>
+				<span className="text-size-xs text-color-text-subtle">{t('general.settings')}</span>
 			</span>
 		</Button>
 	)

@@ -1,0 +1,20 @@
+{
+	"general": {
+		"action": {
+			"signOut": "Sign out"
+		},
+		"language": "Language",
+		"settings": "Settings"
+	},
+	"core": {
+		"apiDocs": "API Docs",
+		"custom": "Custom",
+		"darkTheme": "Dark",
+		"designSystem": "Design System",
+		"githubRepo": "GitHub Repo",
+		"lightTheme": "Light",
+		"uiLibrary": "UI Library:",
+		"uiTheme": "UI Theme:",
+		"chats": "Chats"
+	}
+}

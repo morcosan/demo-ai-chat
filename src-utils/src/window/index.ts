@@ -1,6 +1,9 @@
 import clsx from 'clsx'
+import i18n from 'i18next'
 
 window.cx = clsx
+
+window.t = i18n.t
 
 window.wait = (time: number) => new Promise((resolve) => setTimeout(resolve, time))
 

@@ -1,6 +1,6 @@
 import { Button, CheckSvg, Modal } from '@ds/release'
 import { sortBy } from 'lodash'
-import { useEffect, useMemo, useState } from 'react'
+import { useMemo } from 'react'
 import { FLAG_SVGS, getActiveLocale, LANGUAGES, Locale, Region, setActiveLocale } from './index'
 
 interface Props {
@@ -22,8 +22,6 @@ interface LanguageItem {
 }
 
 export const I18nModal = ({ opened, onClose }: Props) => {
-	const [locale, setLocale] = useState(getActiveLocale())
-
 	const items: LanguageItem[] = useMemo(
 		() =>
 			sortBy(
@@ -59,23 +57,13 @@ export const I18nModal = ({ opened, onClose }: Props) => {
 
 	const gridColClass = 'grid xs:grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 '
 
-	const onSubmit = () => {
+	const onSubmit = (locale: Locale) => {
 		setActiveLocale(locale)
 		onClose()
 	}
 
-	useEffect(() => {
-		opened && setLocale(getActiveLocale())
-	}, [opened])
-
-	const slotButtons = (
-		<Button variant="solid-primary" onClick={onSubmit}>
-			Apply
-		</Button>
-	)
-
 	const renderItem = (item: LanguageItem) => {
-		const isSelected = locale === item.locale
+		const isSelected = getActiveLocale() === item.locale
 
 		return (
 			<Button
@@ -84,7 +72,7 @@ export const I18nModal = ({ opened, onClose }: Props) => {
 				highlight={isSelected ? 'selected' : 'default'}
 				size="lg"
 				className="px-0"
-				onClick={() => setLocale(item.locale)}
+				onClick={() => onSubmit(item.locale)}
 			>
 				<span className="flex w-full items-center text-left">
 					<item.flag className="mx-xs-6 w-sm-0" style={{ fill: 'initial', stroke: 'initial' }} />
@@ -94,14 +82,14 @@ export const I18nModal = ({ opened, onClose }: Props) => {
 						<span className={cx(!isSelected && 'text-color-text-subtle', 'text-size-xs')}>{item.nameEn}</span>
 					</span>
 
-					{locale === item.locale && <CheckSvg className="ml-auto mr-xs-4 h-xs-7" />}
+					{Boolean(isSelected) && <CheckSvg className="ml-auto mr-xs-4 h-xs-7" />}
 				</span>
 			</Button>
 		)
 	}
 
 	return (
-		<Modal opened={opened} width="lg" slotTitle="Change language" slotButtons={slotButtons} onClose={onClose}>
+		<Modal opened={opened} width="lg" slotTitle="Change language" noFooter onClose={onClose}>
 			<div className="flex flex-col gap-sm-5">
 				{regionItems.map((region) => (
 					<div key={region.title}>

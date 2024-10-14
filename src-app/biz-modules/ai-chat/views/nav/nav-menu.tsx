@@ -35,11 +35,10 @@ export const AiChatNavMenu = ({ collapsed }: Props) => {
 
 			{/* OPTIONS */}
 			<div className="mt-sm-0 flex h-button-h-sm w-full items-center justify-between">
-				<span className="ml-xs-1 text-size-sm text-color-text-subtle">
-					Chats{' '}
-					{Boolean(allChatsPagination.count && !collapsed) && (
-						<span className="text-size-xs">({allChatsPagination.count})</span>
-					)}
+				<span className="ml-xs-1 truncate text-size-sm text-color-text-subtle">
+					{t('core.chats')}
+					&nbsp;
+					{Boolean(allChatsPagination.count) && <span className="text-size-xs">({allChatsPagination.count})</span>}
 				</span>
 				<IconButton tooltip="Show options" size="sm" className={collapsed ? 'hidden' : '-mr-xs-0'}>
 					<DotsSvg className="h-xs-8" />
