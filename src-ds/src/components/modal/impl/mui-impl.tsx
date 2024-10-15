@@ -1,4 +1,4 @@
-import { CloseSvg, IconButton, useUiTheme } from '@ds/release'
+import { CloseSvg, IconButton } from '@ds/release'
 import Modal from '@mui/material/Modal'
 import { useEffect } from 'react'
 import { ModalProps } from '../_types'
@@ -17,6 +17,7 @@ export const MuiImpl = (rawProps: ModalProps) => {
 		cssModalContent,
 		cssModalFooter,
 		cssModalTitle,
+		cssOverlayBase,
 		props,
 		slotFooter,
 		zIndex,
@@ -24,15 +25,13 @@ export const MuiImpl = (rawProps: ModalProps) => {
 		openActiveIndex,
 		setZIndex,
 	} = useModalBase(rawProps)
-	const { $color } = useUiTheme()
 
 	const cssWrapper: CSS = {
 		padding: calcWrapperPXY,
 		zIndex: calcZIndex,
 
 		'& .MuiModal-backdrop': {
-			backgroundColor: $color['black-glass-5'],
-			backdropFilter: 'blur(4px)',
+			...cssOverlayBase,
 		},
 	}
 
@@ -43,7 +42,10 @@ export const MuiImpl = (rawProps: ModalProps) => {
 		transition: `transform ${ANIM_TIME__SHOW}ms ease-out`,
 	}
 
-	const onClose = (_: object, reason: MuiCloseReason) => reason === 'escapeKeyDown' && props.onClose?.()
+	const onClose = (_: object, reason: MuiCloseReason) => {
+		if (reason === 'escapeKeyDown') props.onClose?.()
+		if (reason === 'backdropClick') props.shallow && props.onClose?.()
+	}
 
 	useEffect(() => {
 		setZIndex(props.opened ? openActiveIndex() : closeActiveIndex())

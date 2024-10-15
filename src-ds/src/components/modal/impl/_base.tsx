@@ -1,5 +1,5 @@
 import { Button, useUiTheme } from '@ds/release'
-import { useDefaults } from '@utils/release'
+import { CSS__FIXED_OVERLAY, useDefaults } from '@utils/release'
 import { useState } from 'react'
 import { ModalProps } from '../_types'
 
@@ -49,6 +49,13 @@ export const useModalBase = (rawProps: ModalProps) => {
 		border: `1px solid ${$color['border-shadow']}`,
 		borderRadius: $radius['lg'],
 		boxShadow: $shadow['lg'],
+	}
+
+	const cssOverlayBase: CSS = {
+		...CSS__FIXED_OVERLAY,
+		zIndex: -1,
+		backgroundColor: props.shallow ? $color['hover-2'] : $color['hover-4'],
+		backdropFilter: props.shallow ? 'blur(2px)' : 'blur(4px)',
 	}
 
 	const cssModalContent: CSS = {
@@ -124,6 +131,7 @@ export const useModalBase = (rawProps: ModalProps) => {
 		cssModalContent,
 		cssModalFooter,
 		cssModalTitle,
+		cssOverlayBase,
 		props,
 		slotFooter,
 		zIndex,
