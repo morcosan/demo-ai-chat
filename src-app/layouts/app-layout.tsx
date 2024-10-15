@@ -54,7 +54,7 @@ export const AppLayout = ({ pageClassName, children }: Props) => {
 
 			{/* MENU OVERLAY */}
 			<div
-				className={cx('absolute-overlay z-modal backdrop-blur-sm', !hasMenu && 'hidden')}
+				className={cx('absolute-overlay z-modal backdrop-blur-subtle', !hasMenu && 'hidden')}
 				style={{ top: 'var(--app-spacing-navbar-h)' }}
 				onClick={() => setHasMenu(false)}
 			/>

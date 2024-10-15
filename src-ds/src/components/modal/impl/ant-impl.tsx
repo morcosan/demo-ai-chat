@@ -99,7 +99,7 @@ export const AntImpl = (rawProps: ModalProps) => {
 			closable={!props.noClose}
 			maskClosable={props.shallow || false}
 			zIndex={calcZIndex as any}
-			wrapClassName={cx(classWrapperPXY, props.shallow ? 'ds-modal-shallow' : 'ds-modal')}
+			wrapClassName={cx(classWrapperPXY, props.shallow ? 'ds-modal-shallow' : 'ds-modal-default')}
 			closeIcon={<CloseSvg className="h-xs-7" />}
 			className={props.className}
 			style={props.style}

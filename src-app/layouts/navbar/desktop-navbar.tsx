@@ -106,7 +106,7 @@ export const DesktopNavbar = (props: Props) => {
 			/>
 
 			{/* PAGE OVERLAY */}
-			<div className={isNavCollapsed || isNavPinned ? 'hidden' : 'fixed-overlay z-navbar backdrop-blur-xs'} />
+			<div className={isNavCollapsed || isNavPinned ? 'hidden' : 'fixed-overlay z-navbar backdrop-blur-subtle'} />
 
 			{/* NAVBAR */}
 			<nav

@@ -1,3 +1,4 @@
+import { TOKENS__BLUR } from './_blur'
 import { TOKENS__BREAKPOINT } from './_breakpoint'
 import { TOKENS__COLOR } from './_color'
 import { TOKENS__FONT_SIZE } from './_font-size'
@@ -42,6 +43,7 @@ const getTokenValue = <K extends string, V>(
 	return value
 }
 
+type Blur = keyof typeof TOKENS__BLUR
 type Breakpoint = keyof typeof TOKENS__BREAKPOINT
 type Color = keyof typeof TOKENS__COLOR
 type FontSize = keyof typeof TOKENS__FONT_SIZE
@@ -56,6 +58,7 @@ type ThemeValue<V> = DesignTokenThemeValue<V>
 
 const gV = getTokenValue
 
+const getTokenValue_BLUR = (k: Blur, cs?: CS) => gV<Blur, string>(TOKENS__BLUR, k, cs)
 const getTokenValue_BREAKPOINT = (k: Breakpoint, cs?: CS) => gV<Breakpoint, string>(TOKENS__BREAKPOINT, k, cs)
 const getTokenValue_COLOR = (k: Color, cs?: CS) => gV<Color, string>(TOKENS__COLOR, k, cs)
 const getTokenValue_FONT_SIZE = (k: FontSize, cs?: CS) => gV<FontSize, string>(TOKENS__FONT_SIZE, k, cs)
@@ -68,6 +71,7 @@ const getTokenValue_Z_INDEX = (k: ZIndex, cs?: CS) => gV<ZIndex, number>(TOKENS_
 
 export {
 	getTokenValue,
+	getTokenValue_BLUR,
 	getTokenValue_BREAKPOINT,
 	getTokenValue_COLOR,
 	getTokenValue_FONT_SIZE,
@@ -77,6 +81,7 @@ export {
 	getTokenValue_SHADOW,
 	getTokenValue_SPACING,
 	getTokenValue_Z_INDEX,
+	TOKENS__BLUR,
 	TOKENS__BREAKPOINT,
 	TOKENS__COLOR,
 	TOKENS__FONT_SIZE,

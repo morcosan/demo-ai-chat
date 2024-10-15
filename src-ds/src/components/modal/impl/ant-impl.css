@@ -14,13 +14,13 @@
 			content: '';
 		}
 
-		&.ds-modal::before {
-			backdrop-filter: blur(4px);
+		&.ds-modal-default::before {
+			backdrop-filter: blur(var(--ds-blur-default));
 			background-color: var(--ds-color-hover-4);
 		}
 
 		&.ds-modal-shallow::before {
-			backdrop-filter: blur(2px);
+			backdrop-filter: blur(var(--ds-blur-subtle));
 			background-color: var(--ds-color-hover-2);
 		}
 	}

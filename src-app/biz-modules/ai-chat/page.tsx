@@ -81,7 +81,7 @@ const AiChatPage = () => {
 
 			{/* MOBILE OVERLAY */}
 			<div
-				className={cx('absolute-overlay z-popup backdrop-blur-sm', !isSubchatView && 'hidden')}
+				className={cx('absolute-overlay z-popup backdrop-blur-subtle', !isSubchatView && 'hidden')}
 				style={{ top: 'var(--app-spacing-navbar-h)' }}
 				onClick={() => setActiveView(AiChatView.MOBILE_CHAT)}
 			/>

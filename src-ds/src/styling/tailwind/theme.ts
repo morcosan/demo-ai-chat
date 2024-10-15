@@ -1,4 +1,5 @@
 import {
+	TOKENS__BLUR,
 	TOKENS__BREAKPOINT,
 	TOKENS__COLOR,
 	TOKENS__FONT_SIZE,
@@ -23,6 +24,7 @@ const createTokens = (tokens: DesignTokenGroup, twPrefix: string, direct?: boole
 // Tailwind doesn't support multiple theme configs, it requires `dark:` prefix for each class
 // https://tailwindcss.com/docs/dark-mode
 export const TAILWIND_THEME = {
+	backdropBlur: createTokens(TOKENS__BLUR, ''),
 	borderRadius: createTokens(TOKENS__RADIUS, ''),
 	boxShadow: createTokens(TOKENS__SHADOW, ''),
 	colors: createTokens(TOKENS__COLOR, 'color-'),
@@ -62,6 +64,5 @@ export const TAILWIND_THEME = {
 			'4/6': '66.666667%',
 			'5/6': '83.333333%',
 		},
-		backdropBlur: { xxs: '1px', xs: '2px' },
 	},
 }

@@ -1,0 +1,12 @@
+/* Blur tokens */
+
+:host,
+:root {
+	--ds-blur-xs: 1px;
+	--ds-blur-sm: 2px;
+	--ds-blur-md: 4px;
+	--ds-blur-lg: 6px;
+
+	--ds-blur-subtle: var(--ds-blur-sm);
+	--ds-blur-default: var(--ds-blur-md);
+}
