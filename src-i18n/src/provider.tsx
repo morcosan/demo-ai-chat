@@ -36,11 +36,11 @@ export const I18nProvider = ({ children }: ReactProps) => {
 
 	const store: Store = useMemo(
 		() => ({
-			isUpdating,
-			isLoaded: isLocaleReady(i18n.language as Locale),
 			ActiveFlagSvg: FLAG_SVGS[i18n.language as Locale],
 			activeLanguage: LANGUAGES[i18n.language as Locale],
 			activeLocale: i18n.language as Locale,
+			isLoaded: isLocaleReady(i18n.language as Locale),
+			isUpdating,
 			changeLocale,
 		}),
 		[i18n.language, isUpdating]
