@@ -1,7 +1,7 @@
 import { Button, CheckSvg, Modal } from '@ds/release'
-import { FLAG_SVGS, getActiveLocale, LANGUAGES, Locale, Region, setActiveLocale } from '@i18n/release'
+import { FLAG_SVGS, LANGUAGES, Locale, Region, useI18n } from '@i18n/release'
 import { sortBy } from 'lodash'
-import { useMemo } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 
 interface Props {
 	opened: boolean
@@ -23,6 +23,9 @@ interface LanguageItem {
 }
 
 export const I18nModal = ({ opened, onClose }: Props) => {
+	const { loading, activeLocale, changeLocale } = useI18n()
+	const [currentLocale, setCurrentLocale] = useState(activeLocale)
+
 	const items: LanguageItem[] = useMemo(
 		() =>
 			sortBy(
@@ -56,25 +59,37 @@ export const I18nModal = ({ opened, onClose }: Props) => {
 				items: items.filter((item: LanguageItem) => item.region === 'asia'),
 			},
 		],
-		[getActiveLocale()]
+		[activeLocale, loading]
 	)
 
 	const gridColClass = 'grid xs:grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 '
 
+	const onClickItem = (locale: Locale) => {
+		setCurrentLocale(locale)
+		changeLocale(locale)
+	}
+
 	const renderItem = (item: LanguageItem) => {
-		const isSelected = getActiveLocale() === item.locale
+		const isSelected = activeLocale === item.locale
+		const isLoading = !isSelected && currentLocale == item.locale
 
 		return (
 			<Button
 				key={item.locale}
 				variant={isSelected ? 'item-solid-secondary' : 'item-text-default'}
-				highlight={isSelected ? 'selected' : 'default'}
+				highlight={isSelected ? 'selected' : isLoading ? 'pressed' : 'default'}
 				size="lg"
 				className="px-0"
-				onClick={() => setActiveLocale(item.locale)}
+				onClick={() => onClickItem(item.locale)}
 			>
 				<span className="flex w-full items-center text-left">
-					<item.flag className="mx-xs-6 w-sm-0" style={{ fill: 'initial', stroke: 'initial' }} />
+					{isLoading ? (
+						<span className="flex-center mx-xs-6 w-sm-0">
+							<span className="animate-spin">⌛</span>
+						</span>
+					) : (
+						<item.flag className="mx-xs-6 w-sm-0" style={{ fill: 'initial', stroke: 'initial' }} />
+					)}
 
 					<span className={cx('flex flex-col leading-1', isSelected ? 'font-weight-md' : 'font-weight-sm')}>
 						<span className={cx(!isSelected && 'text-color-text-default')}>{item.name}</span>
@@ -86,6 +101,10 @@ export const I18nModal = ({ opened, onClose }: Props) => {
 			</Button>
 		)
 	}
+
+	useEffect(() => {
+		!loading && setCurrentLocale(activeLocale)
+	}, [loading, activeLocale])
 
 	return (
 		<Modal

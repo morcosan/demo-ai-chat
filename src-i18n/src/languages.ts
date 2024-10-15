@@ -48,6 +48,8 @@ export const LANGUAGES = {
 	'zh-CN': { flag: 'cn', name: '中国语訳', nameEn: 'Chinese', region: 'asia' },
 } as const satisfies Record<string, Language>
 
+export const DEFAULT_LOCALE = 'en-US'
+
 export interface Language {
 	flag: string
 	name: string

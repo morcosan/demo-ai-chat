@@ -1,4 +1,3 @@
-import '@i18n/release'
 import { ArgTypes } from '@storybook/csf'
 import '@utils/release'
 import './styles.css'

@@ -1,5 +1,6 @@
 import { DocsPlaygroundProvider } from '@ds/docs/components/docs-playground-provider'
 import { UiA11yProvider, UiLibraryProvider, UiThemeProvider } from '@ds/release'
+import { I18nProvider } from '@i18n/release'
 import { Preview } from '@storybook/react'
 import { COOKIE__DS_COLOR_THEME, COOKIE__DS_UI_LIBRARY, Wrapper, Wrappers } from '@utils/release'
 import { StrictMode } from 'react'
@@ -61,11 +62,13 @@ const preview: Preview = {
 		(Story, { globals }: { globals: StoryGlobals }) => {
 			type Type =
 				| typeof DocsPlaygroundProvider
+				| typeof I18nProvider
 				| typeof UiA11yProvider
 				| typeof UiLibraryProvider
 				| typeof UiThemeProvider
 
 			const providers: Wrapper<Type>[] = [
+				{ elem: I18nProvider },
 				{ elem: UiA11yProvider },
 				{ elem: DocsPlaygroundProvider, props: { playgroundStyle: globals.playgroundStyle } },
 				{ elem: UiThemeProvider, props: { cookieKey: COOKIE__DS_COLOR_THEME, colorTheme: globals.colorTheme } },

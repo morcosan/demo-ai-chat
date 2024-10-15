@@ -12,7 +12,7 @@ import {
 	useUiLibrary,
 	useUiTheme,
 } from '@ds/release'
-import { getActiveFlagSvg, getActiveLanguage } from '@i18n/release'
+import { useI18n } from '@i18n/release'
 
 type SelectEvent = ReactChangeEvent<HTMLSelectElement>
 
@@ -22,10 +22,9 @@ interface Props {
 }
 
 export const SettingsMenu = ({ onClickBack, onClickLanguage }: Props) => {
+	const { activeLanguage, ActiveFlagSvg } = useI18n()
 	const { isUiLight, isUiDark, changeColorTheme } = useUiTheme()
 	const { uiLibrary, changeUiLibrary } = useUiLibrary()
-
-	const FlagSvg = getActiveFlagSvg()
 
 	const storybookUrl = ENV__BUILD_MODE === 'local' ? 'http://localhost:9000' : `${ENV__ROOT_URL_PATH}/storybook`
 
@@ -109,10 +108,10 @@ export const SettingsMenu = ({ onClickBack, onClickLanguage }: Props) => {
 			<hr className={hrClass} />
 
 			<Button variant="item-text-default" onClick={onClickLanguage}>
-				<FlagSvg className={cx(actionIconClass, 'h-unset')} style={{ fill: 'initial', stroke: 'initial' }} />
+				<ActiveFlagSvg className={cx(actionIconClass, 'h-unset')} style={{ fill: 'initial', stroke: 'initial' }} />
 				<span className="flex flex-1 items-center justify-between">
 					{t('core.language')}
-					<span className="ml-xs-1 text-size-sm text-color-text-subtle">{getActiveLanguage().name}</span>
+					<span className="ml-xs-1 text-size-sm text-color-text-subtle">{activeLanguage.name}</span>
 				</span>
 			</Button>
 

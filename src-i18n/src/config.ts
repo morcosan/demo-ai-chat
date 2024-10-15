@@ -1,28 +1,29 @@
 import i18n, { InitOptions } from 'i18next'
 import LanguageDetector from 'i18next-browser-languagedetector'
 import { initReactI18next } from 'react-i18next'
-import { LANGUAGES } from './languages'
-import enUS from './translations/en-US.json'
-import plPL from './translations/pl-PL.json'
-import roRO from './translations/ro-RO.json'
+import { DEFAULT_LOCALE, LANGUAGES } from './languages'
 
 i18n
 	.use(LanguageDetector)
 	.use(initReactI18next)
 	.init({
-		resources: {
-			'en-US': { translation: enUS },
-			'pl-PL': { translation: plPL },
-			'ro-RO': { translation: roRO },
-		},
-		fallbackLng: 'en-US',
-		supportedLngs: Object.keys(LANGUAGES),
+		// Dynamic loading
+		resources: {},
+		load: 'currentOnly',
+		initImmediate: false,
+		react: { useSuspense: false },
+
+		// Language detection
 		detection: {
 			order: ['querystring', 'cookie', 'localStorage', 'navigator', 'htmlTag'],
 			caches: ['localStorage'],
 			lookupLocalStorage: 'app-lang',
 			lookupQuerystring: 'lang',
 		},
+		supportedLngs: Object.keys(LANGUAGES),
+		fallbackLng: DEFAULT_LOCALE,
+
+		// Translation value
 		interpolation: {
 			escapeValue: false, // React already escapes by default
 			prefix: '{',
@@ -30,6 +31,5 @@ i18n
 		},
 	} satisfies InitOptions)
 
-i18n.on('languageChanged', (lang: string) => (document.documentElement.lang = lang))
-
+export const I18N_NS = 'translation'
 export { i18n }
