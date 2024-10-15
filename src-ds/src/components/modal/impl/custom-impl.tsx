@@ -128,7 +128,7 @@ export const CustomImpl = (rawProps: ModalProps) => {
 				{/* CLOSE-X */}
 				{!props.noClose && (
 					<IconButton
-						tooltip={t('core.actions.close')}
+						tooltip={t('core.action.close')}
 						variant="text-default"
 						css={cssModalCloseX}
 						onClick={props.onClose}

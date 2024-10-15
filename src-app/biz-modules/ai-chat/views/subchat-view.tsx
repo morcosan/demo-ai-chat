@@ -47,11 +47,7 @@ export const SubchatView = () => {
 				{/* TOOLBAR */}
 				<StickyToolbar variant="subchat" className="-mx-a11y-padding px-xs-2 py-xs-1">
 					<div className="flex items-center gap-xs-2">
-						<IconButton
-							linkHref={`/chat/${activeChat?.id}`}
-							tooltip={t('aiChat.actions.backToSubchats')}
-							size="sm"
-						>
+						<IconButton linkHref={`/chat/${activeChat?.id}`} tooltip={t('aiChat.action.backToSubchats')} size="sm">
 							<ArrowBackSvg className="h-xs-5" />
 						</IconButton>
 

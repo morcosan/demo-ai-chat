@@ -1,6 +1,6 @@
 {
 	"core": {
-		"actions": {
+		"action": {
 			"back": "Back",
 			"backToHome": "Back to homepage",
 			"changeLanguage": "Change language",
@@ -25,7 +25,7 @@
 		"uiTheme": "UI Theme:"
 	},
 	"aiChat": {
-		"actions": {
+		"action": {
 			"backToSubchats": "Back to subchats",
 			"openSubchat_other": "Open subchat ({count} messages)",
 			"openSubchat_zero": "Create subchat"

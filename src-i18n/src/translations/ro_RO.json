@@ -1,6 +1,6 @@
 {
 	"core": {
-		"actions": {
+		"action": {
 			"back": "Înapoi",
 			"backToHome": "Înapoi la pagina principală",
 			"changeLanguage": "Schimbă limba",
@@ -25,7 +25,7 @@
 		"uiTheme": "Temă UI:"
 	},
 	"aiChat": {
-		"actions": {
+		"action": {
 			"backToSubchats": "Înapoi la subchat-uri",
 			"openSubchat_other": "Deschide subchat ({count} mesaje)",
 			"openSubchat_zero": "Creează subchat"

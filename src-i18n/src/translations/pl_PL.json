@@ -1,6 +1,6 @@
 {
 	"core": {
-		"actions": {
+		"action": {
 			"back": "Wróć",
 			"backToHome": "Wróć na stronę główną",
 			"changeLanguage": "Zmień język",
@@ -25,7 +25,7 @@
 		"uiTheme": "Motyw UI:"
 	},
 	"aiChat": {
-		"actions": {
+		"action": {
 			"backToSubchats": "Wróć do podczatów",
 			"openSubchat_other": "Otwórz podczat ({count} wiadomości)",
 			"openSubchat_zero": "Utwórz podczat"
