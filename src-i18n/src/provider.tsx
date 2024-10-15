@@ -46,7 +46,5 @@ export const I18nProvider = ({ children }: ReactProps) => {
 		[i18n.language, isUpdating]
 	)
 
-	console.log('render', i18n.language)
-
 	return <Context.Provider value={store}>{children}</Context.Provider>
 }
