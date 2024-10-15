@@ -2,8 +2,8 @@ import { AiChatProvider } from '@app/biz-modules/ai-chat/state'
 import { SettingsProvider } from '@app/biz-modules/user-settings/state'
 import { LoadingScreen } from '@app/core-modules/loading-screen'
 import { UiA11yProvider, UiLibraryProvider, UiThemeProvider, UiViewportProvider } from '@ds/release'
-import { I18nProvider } from '@i18n/release'
-import { COOKIE__APP_COLOR_THEME, COOKIE__APP_UI_LIBRARY, Wrapper, Wrappers } from '@utils/release'
+import { I18nProvider, initI18n } from '@i18n/release'
+import { COOKIE_KEY, Wrapper, Wrappers } from '@utils/release'
 import { StrictMode, Suspense } from 'react'
 import { useTranslation } from 'react-i18next'
 import { Router } from './routing'
@@ -28,9 +28,11 @@ const providers: Wrapper<Type>[] = [
 	{ elem: SettingsProvider },
 	{ elem: UiA11yProvider },
 	{ elem: UiViewportProvider },
-	{ elem: UiThemeProvider, props: { cookieKey: COOKIE__APP_COLOR_THEME } },
-	{ elem: UiLibraryProvider, props: { cookieKey: COOKIE__APP_UI_LIBRARY } }, // Must be last, it forces re-rendering
+	{ elem: UiThemeProvider, props: { cookieKey: COOKIE_KEY.appColorTheme } },
+	{ elem: UiLibraryProvider, props: { cookieKey: COOKIE_KEY.appUiLibrary } }, // Must be last, it forces re-rendering
 ]
+
+initI18n(COOKIE_KEY.appLanguage)
 
 const App = () => {
 	// Having t() on window requires updating the entire app
