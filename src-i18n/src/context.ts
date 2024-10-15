@@ -3,7 +3,8 @@ import { FLAG_SVGS } from './flags'
 import { DEFAULT_LOCALE, Language, LANGUAGES, Locale } from './languages'
 
 export interface Store {
-	loading: boolean
+	isLoaded: boolean
+	isUpdating: boolean
 	ActiveFlagSvg: JsxFn
 	activeLanguage: Language
 	activeLocale: Locale
@@ -11,7 +12,8 @@ export interface Store {
 }
 
 export const Context = createContext<Store>({
-	loading: false,
+	isLoaded: false,
+	isUpdating: false,
 	ActiveFlagSvg: FLAG_SVGS[DEFAULT_LOCALE],
 	activeLanguage: LANGUAGES[DEFAULT_LOCALE],
 	activeLocale: DEFAULT_LOCALE,

@@ -23,7 +23,7 @@ interface LanguageItem {
 }
 
 export const I18nModal = ({ opened, onClose }: Props) => {
-	const { loading, activeLocale, changeLocale } = useI18n()
+	const { isUpdating, activeLocale, changeLocale } = useI18n()
 	const [currentLocale, setCurrentLocale] = useState(activeLocale)
 
 	const items: LanguageItem[] = useMemo(
@@ -59,7 +59,7 @@ export const I18nModal = ({ opened, onClose }: Props) => {
 				items: items.filter((item: LanguageItem) => item.region === 'asia'),
 			},
 		],
-		[activeLocale, loading]
+		[activeLocale, isUpdating]
 	)
 
 	const gridColClass = 'grid xs:grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 '
@@ -103,8 +103,8 @@ export const I18nModal = ({ opened, onClose }: Props) => {
 	}
 
 	useEffect(() => {
-		!loading && setCurrentLocale(activeLocale)
-	}, [loading, activeLocale])
+		!isUpdating && setCurrentLocale(activeLocale)
+	}, [isUpdating, activeLocale])
 
 	return (
 		<Modal

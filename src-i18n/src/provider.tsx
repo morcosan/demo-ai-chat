@@ -1,4 +1,3 @@
-import { AiChatSvg } from '@ds/release'
 import { FLAG_SVGS, I18N_NS } from '@i18n/release'
 import { useEffect, useMemo, useState } from 'react'
 import { useTranslation } from 'react-i18next'
@@ -7,60 +6,47 @@ import { LANGUAGES, Locale } from './languages'
 
 export const I18nProvider = ({ children }: ReactProps) => {
 	const { i18n } = useTranslation()
-	const [loading, setLoading] = useState(true)
+	const [isUpdating, setIsUpdating] = useState(true)
 
-	const hasJsonForLocale = (locale: Locale) => Boolean(i18n.getResourceBundle(locale, I18N_NS))
+	const isLocaleReady = (locale: Locale) => Boolean(i18n.getResourceBundle(locale, I18N_NS))
 
-	const isReady = hasJsonForLocale(i18n.language as Locale)
+	const changeLocale = async (locale: Locale) => {
+		if (!isLocaleReady(locale)) {
+			setIsUpdating(true)
 
-	const fetchJsonFile = async (locale: Locale): Promise<boolean> => {
-		if (hasJsonForLocale(locale)) return true
+			try {
+				const json = await import(`./translations/${locale}.json`)
+				i18n.addResourceBundle(locale, I18N_NS, json, true, true)
+			} catch (error) {
+				setIsUpdating(false)
+				return
+			}
 
-		setLoading(true)
-		// await wait(15000)
-
-		try {
-			const json = await import(`./translations/${locale}.json`)
-			i18n.addResourceBundle(locale, I18N_NS, json, true, true)
-		} catch (error) {
-			setLoading(false)
-			return false
+			setIsUpdating(false)
 		}
-
-		setLoading(false)
-		return true
-	}
-
-	const setActiveLocale = async (locale: Locale) => {
-		const success = await fetchJsonFile(locale)
-		if (!success) return
 
 		i18n.changeLanguage(locale)
 		document.documentElement.lang = locale
 	}
 
 	useEffect(() => {
-		setActiveLocale(i18n.language as Locale)
+		// Use detected language
+		changeLocale(i18n.language as Locale)
 	}, [])
 
 	const store: Store = useMemo(
 		() => ({
-			loading,
+			isUpdating,
+			isLoaded: isLocaleReady(i18n.language as Locale),
 			ActiveFlagSvg: FLAG_SVGS[i18n.language as Locale],
 			activeLanguage: LANGUAGES[i18n.language as Locale],
 			activeLocale: i18n.language as Locale,
-			changeLocale: setActiveLocale,
+			changeLocale,
 		}),
-		[i18n.language, loading]
+		[i18n.language, isUpdating]
 	)
 
-	return (
-		<Context.Provider value={store}>
-			{children}
+	console.log('render', i18n.language)
 
-			<div className={cx('fixed-overlay z-tooltip bg-color-bg-default', isReady ? 'hidden' : 'flex-center')}>
-				<AiChatSvg className="h-1/4 w-1/3 animate-pulse" />
-			</div>
-		</Context.Provider>
-	)
+	return <Context.Provider value={store}>{children}</Context.Provider>
 }
