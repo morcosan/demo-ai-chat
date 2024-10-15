@@ -80,11 +80,11 @@ export default tsESLint.config(
 
 			'react-refresh/only-export-components': ['warn', { allowConstantExport: true }],
 
+			'@typescript-eslint/ban-ts-comment': ['error', { 'ts-ignore': 'allow-with-description' }],
 			'@typescript-eslint/no-explicit-any': 'off',
 			'@typescript-eslint/no-unsafe-function-type': 'off',
 			'@typescript-eslint/no-unused-expressions': 'off',
-			'@typescript-eslint/no-unused-vars': 'warn',
-			'@typescript-eslint/ban-ts-comment': ['error', { 'ts-ignore': 'allow-with-description' }],
+			'@typescript-eslint/no-unused-vars': ['warn', { caughtErrors: 'none' }],
 
 			'custom/only-import-from-release': 'error',
 			'custom/no-ts-extension-for-ts-imports': 'error',
