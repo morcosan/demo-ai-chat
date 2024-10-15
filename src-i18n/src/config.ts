@@ -15,7 +15,7 @@ i18n
 			'pl-PL': { translation: plPL },
 			'ro-RO': { translation: roRO },
 		},
-		fallbackLng: 'en_US',
+		fallbackLng: 'en-US',
 		supportedLngs: Object.keys(LANGUAGES),
 		detection: {
 			order: ['querystring', 'cookie', 'localStorage', 'navigator', 'htmlTag'],
