@@ -6,6 +6,7 @@ export const CustomImpl = (rawProps: ButtonProps) => {
 	const {
 		cssBase,
 		cssBgColor,
+		cssBorder,
 		cssFont,
 		cssHover,
 		cssDisabled,
@@ -46,7 +47,7 @@ export const CustomImpl = (rawProps: ButtonProps) => {
 
 	const slot = (
 		<>
-			<span css={[cssBgBase, cssBgColor, cssRadius, cssBgDisabled]} />
+			<span css={[cssBgBase, cssBgColor, cssBorder, cssRadius, cssBgDisabled]} />
 			<span css={cssChildren}>{props.children}</span>
 
 			{Boolean(props.loading) && (

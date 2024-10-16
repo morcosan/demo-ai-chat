@@ -38,6 +38,9 @@ const meta: Meta<typeof Button> = {
 				'solid-primary',
 				'solid-secondary',
 				'solid-danger',
+				'ghost-primary',
+				'ghost-secondary',
+				'ghost-danger',
 				'text-default',
 				'text-danger',
 				'item-solid-secondary',
@@ -133,6 +136,9 @@ const meta: Meta<typeof Button> = {
 				| 'solid-primary'
 				| 'solid-secondary'
 				| 'solid-danger'
+				| 'ghost-primary'
+				| 'ghost-secondary'
+				| 'ghost-danger'
 				| 'text-default'
 				| 'text-danger'
 				| 'item-solid-secondary'
@@ -147,6 +153,9 @@ const meta: Meta<typeof Button> = {
 			'solid-primary',
 			'solid-secondary',
 			'solid-danger',
+			'ghost-primary',
+			'ghost-secondary',
+			'ghost-danger',
 			'text-default',
 			'text-danger',
 			'item-solid-secondary',

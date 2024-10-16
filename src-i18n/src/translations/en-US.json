@@ -28,7 +28,8 @@
 		"action": {
 			"backToSubchats": "Back to subchats",
 			"openSubchat_other": "Open subchat ({count} messages)",
-			"openSubchat_zero": "Create subchat"
+			"openSubchat_zero": "Create subchat",
+			"searchChats": "Search..."
 		},
 		"chats": "Chats",
 		"inputPlaceholder": "Ask a question...",

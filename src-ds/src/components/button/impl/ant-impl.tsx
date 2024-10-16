@@ -8,15 +8,31 @@ import { useButtonBase } from './_base'
 
 export const AntImpl = (rawProps: ButtonProps) => {
 	const { $color, $spacing, isUiLight } = useUiTheme()
-	const buttonBase = useButtonBase(rawProps)
-	const { cssAll, isVDanger, isVDefault, isVItem, isVPrimary, isVSecondary, isVSolid, isVText } = buttonBase
-	const { props, baseBindings } = buttonBase
+	const {
+		baseBindings,
+		cssAll,
+		cssBase,
+		isVDanger,
+		isVDefault,
+		isVGhost,
+		isVItem,
+		isVPrimary,
+		isVSecondary,
+		isVSolid,
+		isVText,
+		props,
+	} = useButtonBase(rawProps)
 
 	const cssHover: CSS = (() => {
 		// AntDesign will try to enforce hover colors
 		const cssFn = (color: string, backgroundColor: string) => ({
 			'&:not(:disabled):not(.ant-btn-disabled):hover': { color, backgroundColor },
 		})
+		if (isVGhost) {
+			if (isVPrimary) return cssFn($color['primary'], 'transparent')
+			if (isVSecondary) return cssFn($color['secondary-text-default'], 'transparent')
+			if (isVDanger) return cssFn($color['danger'], 'transparent')
+		}
 		if (isVPrimary && isUiLight) return cssFn($color['text-inverse'], $color['primary'])
 		if (isVPrimary && !isUiLight) return cssFn($color['primary-text-inverse'], $color['primary'])
 		if (isVSecondary && isUiLight) return cssFn($color['secondary-text-default'], $color['secondary'])
@@ -34,6 +50,22 @@ export const AntImpl = (rawProps: ButtonProps) => {
 		opacity: 1,
 		fill: 'currentColor',
 		stroke: 'currentColor',
+
+		'&.ant-btn-default': {
+			background: 'unset',
+
+			'&:not(:disabled):hover': {
+				borderColor: 'unset',
+			},
+		},
+
+		'&::before': {
+			...(cssBase['&::before'] as CSS),
+			top: '-1px',
+			left: '-1px',
+			right: '-1px',
+			bottom: '-1px',
+		},
 
 		'&:not(:disabled):focus-visible': {
 			outline: 'revert',
@@ -62,7 +94,7 @@ export const AntImpl = (rawProps: ButtonProps) => {
 
 	const bindings = {
 		...baseBindings,
-		type: (isVSolid ? 'primary' : 'text') satisfies ButtonType,
+		type: (isVSolid ? 'primary' : isVGhost ? 'default' : 'text') satisfies ButtonType,
 		loading: props.loading,
 		disabled: props.disabled,
 		css: [...cssAll, cssButton, cssHover, cssChildren, cssWave],

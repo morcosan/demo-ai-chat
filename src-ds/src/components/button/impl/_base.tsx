@@ -7,11 +7,12 @@ import { ButtonProps, ButtonVariant } from '../_types'
 
 type Variant = ButtonVariant | undefined
 
-const VARIANTS_DANGER: Variant[] = ['solid-danger', 'text-danger', 'item-text-danger']
+const VARIANTS_DANGER: Variant[] = ['solid-danger', 'ghost-danger', 'text-danger', 'item-text-danger']
 const VARIANTS_DEFAULT: Variant[] = ['text-default', 'item-text-default']
+const VARIANTS_GHOST: Variant[] = ['ghost-primary', 'ghost-secondary', 'ghost-danger']
 const VARIANTS_ITEM: Variant[] = ['item-text-default', 'item-text-danger', 'item-solid-secondary']
-const VARIANTS_PRIMARY: Variant[] = ['solid-primary']
-const VARIANTS_SECONDARY: Variant[] = ['solid-secondary', 'item-solid-secondary']
+const VARIANTS_PRIMARY: Variant[] = ['solid-primary', 'ghost-primary']
+const VARIANTS_SECONDARY: Variant[] = ['solid-secondary', 'ghost-secondary', 'item-solid-secondary']
 const VARIANTS_SOLID: Variant[] = ['solid-primary', 'solid-secondary', 'solid-danger', 'item-solid-secondary']
 const VARIANTS_TEXT: Variant[] = ['text-default', 'text-danger', 'item-text-default', 'item-text-danger']
 
@@ -27,6 +28,7 @@ export const useButtonBase = (rawProps: ButtonProps) => {
 
 	const isVDanger = VARIANTS_DANGER.includes(props.variant)
 	const isVDefault = VARIANTS_DEFAULT.includes(props.variant)
+	const isVGhost = VARIANTS_GHOST.includes(props.variant)
 	const isVItem = VARIANTS_ITEM.includes(props.variant)
 	const isVPrimary = VARIANTS_PRIMARY.includes(props.variant)
 	const isVSecondary = VARIANTS_SECONDARY.includes(props.variant)
@@ -35,6 +37,7 @@ export const useButtonBase = (rawProps: ButtonProps) => {
 
 	const cssTextColorFn = (color: string) => ({ color, fill: 'currentColor', stroke: 'currentColor' })
 	const cssBgColorFn = (backgroundColor: string) => ({ backgroundColor })
+	const cssBorderFn = (color: string) => ({ border: `1px solid ${color}` })
 	const cssSizeFn = (height: string) => ({ height, minHeight: height })
 	const cssPaddingFn = (padding: string) => ({ paddingLeft: padding, paddingRight: padding })
 	const cssFontFn = (fontSize: string) => ({ fontSize, fontWeight: $fontWeight['md'] })
@@ -64,6 +67,11 @@ export const useButtonBase = (rawProps: ButtonProps) => {
 	}
 
 	const cssTextColor: CSS = (() => {
+		if (isVGhost) {
+			if (isVPrimary) return cssTextColorFn($color['primary'])
+			if (isVSecondary) return cssTextColorFn($color['secondary-text-default'])
+			if (isVDanger) return cssTextColorFn($color['danger'])
+		}
 		if (isVSecondary && isUiLight) return cssTextColorFn($color['secondary-text-default'])
 		if (isVSecondary && !isUiLight) return cssTextColorFn($color['secondary-text-inverse'])
 		if (isVPrimary && isUiLight) return cssTextColorFn($color['text-inverse'])
@@ -76,16 +84,30 @@ export const useButtonBase = (rawProps: ButtonProps) => {
 	})()
 
 	const cssBgColor: CSS = (() => {
-		if (isVPrimary) return cssBgColorFn($color['primary'])
-		if (isVSecondary) return cssBgColorFn($color['secondary'])
+		if (isVPrimary && !isVGhost) return cssBgColorFn($color['primary'])
+		if (isVSecondary && !isVGhost) return cssBgColorFn($color['secondary'])
 		if (isVDanger && isVSolid) return cssBgColorFn($color['danger'])
 		return {}
+	})()
+
+	const cssBorder: CSS = (() => {
+		if (isVGhost) {
+			if (isVPrimary) return cssBorderFn($color['primary'])
+			if (isVSecondary) return cssBorderFn($color['secondary-text-default'])
+			if (isVDanger) return cssBorderFn($color['danger'])
+		}
+		if (isVSolid) {
+			if (isVPrimary) return cssBorderFn($color['primary'])
+			if (isVSecondary) return cssBorderFn($color['secondary'])
+			if (isVDanger) return cssBorderFn($color['danger'])
+		}
+		return cssBorderFn('transparent')
 	})()
 
 	const cssHover: CSS = (() => {
 		if (isDisabled) return {}
 		if (props.highlight === 'default') {
-			return isVText
+			return isVText || isVGhost
 				? cssHoverFn($color['hover-default'])
 				: isVSecondary
 					? cssHoverFn($color['hover-1'])
@@ -97,7 +119,7 @@ export const useButtonBase = (rawProps: ButtonProps) => {
 	const cssPressed: CSS = (() => {
 		if (isDisabled || props.highlight === 'selected') return {}
 		if (isPressed || props.highlight === 'pressed') {
-			return isVText
+			return isVText || isVGhost
 				? cssPressedFn($color['hover-pressed'])
 				: isVSecondary
 					? cssPressedFn($color['hover-2'])
@@ -138,6 +160,7 @@ export const useButtonBase = (rawProps: ButtonProps) => {
 	const cssAll = [
 		cssBase,
 		cssBgColor,
+		cssBorder,
 		cssDisabled,
 		cssFont,
 		cssHover,
@@ -160,6 +183,7 @@ export const useButtonBase = (rawProps: ButtonProps) => {
 		cssAll,
 		cssBase,
 		cssBgColor,
+		cssBorder,
 		cssDisabled,
 		cssFont,
 		cssHover,
@@ -171,6 +195,7 @@ export const useButtonBase = (rawProps: ButtonProps) => {
 		isDisabled,
 		isVDanger,
 		isVDefault,
+		isVGhost,
 		isVItem,
 		isVPrimary,
 		isVSecondary,
