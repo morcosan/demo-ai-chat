@@ -42,6 +42,7 @@ export default defineConfig({
 	resolve: {
 		alias: {
 			'@ds': `${ROOT_DIR}/src-ds`,
+			'@i18n': `${ROOT_DIR}/src-i18n`,
 			'@utils': `${ROOT_DIR}/src-utils`,
 		},
 	},

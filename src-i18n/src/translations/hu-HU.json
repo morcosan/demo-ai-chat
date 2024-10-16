@@ -1,0 +1,47 @@
+{
+	"core": {
+		"action": {
+			"back": "Vissza",
+			"backToHome": "Vissza a kezdőlapra",
+			"changeLanguage": "Nyelv váltása",
+			"close": "Bezárás",
+			"openMenu": "Menü megnyitása",
+			"signOut": "Kijelentkezés"
+		},
+		"apiDocs": "API dokumentáció",
+		"asia": "Ázsia",
+		"custom": "Egyéni",
+		"darkTheme": "Sötét",
+		"default": "Alapértelmezett",
+		"designSystem": "Tervezési rendszer",
+		"europe": "Európa",
+		"githubRepo": "GitHub repozitórium",
+		"language": "Nyelv",
+		"lightTheme": "Világos",
+		"loading": "Betöltés...",
+		"quickSettings": "Gyors beállítások",
+		"settings": "Beállítások",
+		"uiLibrary": "UI könyvtár:",
+		"uiTheme": "UI téma:"
+	},
+	"aiChat": {
+		"action": {
+			"backToSubchats": "Vissza az alcsevegésekhez",
+			"openSubchat_zero": "Alcsevegés létrehozása",
+			"openSubchat_one": "Alcsevegés megnyitása (1 üzenet)",
+			"openSubchat_other": "Alcsevegés megnyitása ({count} üzenet)"
+		},
+		"chats": "Csevegések",
+		"inputPlaceholder": "Kérdezzen valamit...",
+		"loadingChats": "Csevegések betöltése...",
+		"loadingMessages": "Üzenetek betöltése...",
+		"loadingPreviousMessages": "Előző üzenetek betöltése...",
+		"loadingSubchats": "Alcsevegések betöltése...",
+		"newChat": "Új csevegés",
+		"sendMessage": "Üzenet küldése",
+		"showSubchats": "Alcsevegések mutatása ({count})",
+		"subchats": "Alcsevegések",
+		"xMessages_one": "1 üzenet",
+		"xMessages_other": "{count} üzenet"
+	}
+}

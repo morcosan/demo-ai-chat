@@ -22,7 +22,7 @@ export const SubchatsView = () => {
 				{/* TOOLBAR */}
 				<StickyToolbar variant="subchat" className="-mx-a11y-padding mb-xs-2 px-xs-9 py-xs-1">
 					<div className="flex h-button-h-sm items-center text-size-sm">
-						Sub-chats ({allSubchatsPagination.count})
+						{t('aiChat.subchats')} ({allSubchatsPagination.count})
 					</div>
 				</StickyToolbar>
 
@@ -40,7 +40,7 @@ export const SubchatsView = () => {
 				))}
 				{allSubchats.length < allSubchatsPagination.count && (
 					<LoadingText
-						text="Loading subchats..."
+						text={t('aiChat.loadingSubchats')}
 						className="min-h-sm-4 pl-sm-0 text-size-sm"
 						style={{ visibility: allSubchatsLoading === 'more' ? 'visible' : 'hidden' }}
 					/>

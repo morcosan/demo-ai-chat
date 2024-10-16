@@ -1,0 +1,47 @@
+{
+	"core": {
+		"action": {
+			"back": "Quay lại",
+			"backToHome": "Quay về trang chủ",
+			"changeLanguage": "Thay đổi ngôn ngữ",
+			"close": "Đóng",
+			"openMenu": "Mở menu",
+			"signOut": "Đăng xuất"
+		},
+		"apiDocs": "Tài liệu API",
+		"asia": "Châu Á",
+		"custom": "Tùy chỉnh",
+		"darkTheme": "Tối",
+		"default": "Mặc định",
+		"designSystem": "Hệ thống thiết kế",
+		"europe": "Châu Âu",
+		"githubRepo": "Kho lưu trữ GitHub",
+		"language": "Ngôn ngữ",
+		"lightTheme": "Sáng",
+		"loading": "Đang tải...",
+		"quickSettings": "Cài đặt nhanh",
+		"settings": "Cài đặt",
+		"uiLibrary": "Thư viện UI:",
+		"uiTheme": "Giao diện UI:"
+	},
+	"aiChat": {
+		"action": {
+			"backToSubchats": "Quay lại cuộc trò chuyện phụ",
+			"openSubchat_zero": "Tạo cuộc trò chuyện phụ",
+			"openSubchat_one": "Mở cuộc trò chuyện phụ (1 tin nhắn)",
+			"openSubchat_other": "Mở cuộc trò chuyện phụ ({count} tin nhắn)"
+		},
+		"chats": "Trò chuyện",
+		"inputPlaceholder": "Đặt câu hỏi...",
+		"loadingChats": "Đang tải cuộc trò chuyện...",
+		"loadingMessages": "Đang tải tin nhắn...",
+		"loadingPreviousMessages": "Đang tải tin nhắn trước đó...",
+		"loadingSubchats": "Đang tải cuộc trò chuyện phụ...",
+		"newChat": "Cuộc trò chuyện mới",
+		"sendMessage": "Gửi tin nhắn",
+		"showSubchats": "Hiển thị cuộc trò chuyện phụ ({count})",
+		"subchats": "Cuộc trò chuyện phụ",
+		"xMessages_one": "1 tin nhắn",
+		"xMessages_other": "{count} tin nhắn"
+	}
+}

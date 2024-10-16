@@ -35,7 +35,7 @@ export const ApiConsole = () => {
 			<pre className={codeClass}>{JSON.stringify(query, null, 2)}</pre>
 			<br />
 			API Response:
-			<pre className={codeClass}>{resp ? JSON.stringify(resp, null, 2) : 'Loading...'}</pre>
+			<pre className={codeClass}>{resp ? JSON.stringify(resp, null, 2) : t('core.loading')}</pre>
 		</>
 	)
 }

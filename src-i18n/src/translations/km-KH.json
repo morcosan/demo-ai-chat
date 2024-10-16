@@ -1,0 +1,47 @@
+{
+	"core": {
+		"action": {
+			"back": "ត្រឡប់ក្រោយ",
+			"backToHome": "ត្រឡប់ទៅទំព័រដើម",
+			"changeLanguage": "ប្តូរភាសា",
+			"close": "បិទ",
+			"openMenu": "បើកម៉ឺនុយ",
+			"signOut": "ចេញ"
+		},
+		"apiDocs": "ឯកសារ API",
+		"asia": "អាស៊ី",
+		"custom": "ផ្ទាល់ខ្លួន",
+		"darkTheme": "ងងឹត",
+		"default": "លំនាំដើម",
+		"designSystem": "ប្រព័ន្ធរចនា",
+		"europe": "អឺរ៉ុប",
+		"githubRepo": "ឃ្លាំង GitHub",
+		"language": "ភាសា",
+		"lightTheme": "ភ្លឺ",
+		"loading": "កំពុងផ្ទុក...",
+		"quickSettings": "ការកំណត់រហ័ស",
+		"settings": "ការកំណត់",
+		"uiLibrary": "បណ្ណាល័យ UI:",
+		"uiTheme": "រូបរាង UI:"
+	},
+	"aiChat": {
+		"action": {
+			"backToSubchats": "ត្រឡប់ទៅជជែករងវិញ",
+			"openSubchat_zero": "បង្កើតជជែករង",
+			"openSubchat_one": "បើកជជែករង (១ សារ)",
+			"openSubchat_other": "បើកជជែករង ({count} សារ)"
+		},
+		"chats": "ការជជែក",
+		"inputPlaceholder": "សួរសំណួរ...",
+		"loadingChats": "កំពុងផ្ទុកការជជែក...",
+		"loadingMessages": "កំពុងផ្ទុកសារ...",
+		"loadingPreviousMessages": "កំពុងផ្ទុកសារមុនៗ...",
+		"loadingSubchats": "កំពុងផ្ទុកជជែករង...",
+		"newChat": "ជជែកថ្មី",
+		"sendMessage": "ផ្ញើសារ",
+		"showSubchats": "បង្ហាញជជែករង ({count})",
+		"subchats": "ជជែករង",
+		"xMessages_one": "១ សារ",
+		"xMessages_other": "{count} សារ"
+	}
+}

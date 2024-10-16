@@ -1,0 +1,47 @@
+{
+	"core": {
+		"action": {
+			"back": "Indietro",
+			"backToHome": "Torna alla home page",
+			"changeLanguage": "Cambia lingua",
+			"close": "Chiudi",
+			"openMenu": "Apri menu",
+			"signOut": "Esci"
+		},
+		"apiDocs": "Documentazione API",
+		"asia": "Asia",
+		"custom": "Personalizzato",
+		"darkTheme": "Scuro",
+		"default": "Predefinito",
+		"designSystem": "Sistema di design",
+		"europe": "Europa",
+		"githubRepo": "Repository GitHub",
+		"language": "Lingua",
+		"lightTheme": "Chiaro",
+		"loading": "Caricamento...",
+		"quickSettings": "Impostazioni rapide",
+		"settings": "Impostazioni",
+		"uiLibrary": "Libreria UI:",
+		"uiTheme": "Tema UI:"
+	},
+	"aiChat": {
+		"action": {
+			"backToSubchats": "Torna alle sottochat",
+			"openSubchat_zero": "Crea sottochat",
+			"openSubchat_one": "Apri sottochat (1 messaggio)",
+			"openSubchat_other": "Apri sottochat ({count} messaggi)"
+		},
+		"chats": "Chat",
+		"inputPlaceholder": "Fai una domanda...",
+		"loadingChats": "Caricamento chat...",
+		"loadingMessages": "Caricamento messaggi...",
+		"loadingPreviousMessages": "Caricamento messaggi precedenti...",
+		"loadingSubchats": "Caricamento sottochat...",
+		"newChat": "Nuova chat",
+		"sendMessage": "Invia messaggio",
+		"showSubchats": "Mostra sottochat ({count})",
+		"subchats": "Sottochat",
+		"xMessages_one": "1 messaggio",
+		"xMessages_other": "{count} messaggi"
+	}
+}

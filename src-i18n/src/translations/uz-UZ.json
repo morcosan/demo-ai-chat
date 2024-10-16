@@ -1,0 +1,47 @@
+{
+	"core": {
+		"action": {
+			"back": "Orqaga",
+			"backToHome": "Bosh sahifaga qaytish",
+			"changeLanguage": "Tilni o'zgartirish",
+			"close": "Yopish",
+			"openMenu": "Menyuni ochish",
+			"signOut": "Chiqish"
+		},
+		"apiDocs": "API hujjatlari",
+		"asia": "Osiyo",
+		"custom": "Maxsus",
+		"darkTheme": "Qorong'i",
+		"default": "Standart",
+		"designSystem": "Dizayn tizimi",
+		"europe": "Yevropa",
+		"githubRepo": "GitHub ombori",
+		"language": "Til",
+		"lightTheme": "Yorug'",
+		"loading": "Yuklanmoqda...",
+		"quickSettings": "Tezkor sozlamalar",
+		"settings": "Sozlamalar",
+		"uiLibrary": "UI kutubxonasi:",
+		"uiTheme": "UI mavzusi:"
+	},
+	"aiChat": {
+		"action": {
+			"backToSubchats": "Quyi chatlarga qaytish",
+			"openSubchat_zero": "Quyi chat yaratish",
+			"openSubchat_one": "Quyi chatni ochish (1 ta xabar)",
+			"openSubchat_other": "Quyi chatni ochish ({count} ta xabar)"
+		},
+		"chats": "Chatlar",
+		"inputPlaceholder": "Savol bering...",
+		"loadingChats": "Chatlar yuklanmoqda...",
+		"loadingMessages": "Xabarlar yuklanmoqda...",
+		"loadingPreviousMessages": "Oldingi xabarlar yuklanmoqda...",
+		"loadingSubchats": "Quyi chatlar yuklanmoqda...",
+		"newChat": "Yangi chat",
+		"sendMessage": "Xabar yuborish",
+		"showSubchats": "Quyi chatlarni ko'rsatish ({count})",
+		"subchats": "Quyi chatlar",
+		"xMessages_one": "1 ta xabar",
+		"xMessages_other": "{count} ta xabar"
+	}
+}

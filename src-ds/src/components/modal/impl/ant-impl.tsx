@@ -3,6 +3,7 @@ import { Modal } from 'antd'
 import { useEffect } from 'react'
 import { ModalProps } from '../_types'
 import { useModalBase } from './_base'
+import './ant-impl.css'
 
 export const AntImpl = (rawProps: ModalProps) => {
 	const {
@@ -96,9 +97,9 @@ export const AntImpl = (rawProps: ModalProps) => {
 			footer={slotFooter}
 			keyboard={!props.noClose}
 			closable={!props.noClose}
-			maskClosable={false}
+			maskClosable={props.shallow || false}
 			zIndex={calcZIndex as any}
-			wrapClassName={cx(classWrapperPXY, 'backdrop-blur-sm')}
+			wrapClassName={cx(classWrapperPXY, props.shallow ? 'ds-modal-shallow' : 'ds-modal-default')}
 			closeIcon={<CloseSvg className="h-xs-7" />}
 			className={props.className}
 			style={props.style}

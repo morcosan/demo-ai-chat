@@ -1,5 +1,6 @@
 import {
 	getTokenValue,
+	TOKENS__BLUR,
 	TOKENS__BREAKPOINT,
 	TOKENS__COLOR,
 	TOKENS__FONT_SIZE,
@@ -12,6 +13,7 @@ import {
 } from '../../styling/tokens'
 
 export interface ThemeTokens {
+	$blur: Record<keyof typeof TOKENS__BLUR, string>
 	$breakpoint: Record<keyof typeof TOKENS__BREAKPOINT, string>
 	$color: Record<keyof typeof TOKENS__COLOR, string>
 	$fontSize: Record<keyof typeof TOKENS__FONT_SIZE, string>
@@ -34,6 +36,7 @@ const mapTokens = (tokenGroup: DesignTokenGroup, theme: ColorTheme) => {
 
 const createTokens = (theme: ColorTheme): ThemeTokens => {
 	return {
+		$blur: mapTokens(TOKENS__BLUR, theme),
 		$breakpoint: mapTokens(TOKENS__BREAKPOINT, theme),
 		$color: mapTokens(TOKENS__COLOR, theme),
 		$fontSize: mapTokens(TOKENS__FONT_SIZE, theme),

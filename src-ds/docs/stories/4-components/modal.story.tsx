@@ -16,6 +16,7 @@ export const story: StoryObj<typeof Modal> = {
 		opened: false,
 		width: 'md',
 		height: 'fit',
+		shallow: false,
 		noClose: false,
 		noFooter: false,
 		// Html
@@ -36,6 +37,7 @@ const meta: Meta<typeof Modal> = {
 			opened: 'boolean',
 			width: ['xs', 'sm', 'md', 'lg', 'xl', 'full'],
 			height: ['fit', 'full'],
+			shallow: 'boolean',
 			noClose: 'boolean',
 			noFooter: 'boolean',
 		},
@@ -79,6 +81,15 @@ const meta: Meta<typeof Modal> = {
 				type: 'ModalHeight',
 				default: `'fit'`,
 				details: `Property that determines height and max-height for modal`,
+			},
+			{
+				name: 'shallow',
+				type: 'boolean',
+				default: `false`,
+				details: `
+					Flag for allowing the modal to close when clicking the overlay
+					It also makes the overlay less prominent 	
+				`,
 			},
 			{
 				name: 'noClose',

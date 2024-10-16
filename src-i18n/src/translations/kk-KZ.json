@@ -1,0 +1,47 @@
+{
+	"core": {
+		"action": {
+			"back": "Артқа",
+			"backToHome": "Басты бетке оралу",
+			"changeLanguage": "Тілді өзгерту",
+			"close": "Жабу",
+			"openMenu": "Мәзірді ашу",
+			"signOut": "Шығу"
+		},
+		"apiDocs": "API құжаттамасы",
+		"asia": "Азия",
+		"custom": "Реттелмелі",
+		"darkTheme": "Қараңғы",
+		"default": "Әдепкі",
+		"designSystem": "Дизайн жүйесі",
+		"europe": "Еуропа",
+		"githubRepo": "GitHub репозиторийі",
+		"language": "Тіл",
+		"lightTheme": "Жарық",
+		"loading": "Жүктелуде...",
+		"quickSettings": "Жылдам баптаулар",
+		"settings": "Баптаулар",
+		"uiLibrary": "UI кітапханасы:",
+		"uiTheme": "UI тақырыбы:"
+	},
+	"aiChat": {
+		"action": {
+			"backToSubchats": "Қосалқы чаттарға оралу",
+			"openSubchat_zero": "Қосалқы чат жасау",
+			"openSubchat_one": "Қосалқы чатты ашу (1 хабарлама)",
+			"openSubchat_other": "Қосалқы чатты ашу ({count} хабарлама)"
+		},
+		"chats": "Чаттар",
+		"inputPlaceholder": "Сұрақ қойыңыз...",
+		"loadingChats": "Чаттар жүктелуде...",
+		"loadingMessages": "Хабарламалар жүктелуде...",
+		"loadingPreviousMessages": "Алдыңғы хабарламалар жүктелуде...",
+		"loadingSubchats": "Қосалқы чаттар жүктелуде...",
+		"newChat": "Жаңа чат",
+		"sendMessage": "Хабарлама жіберу",
+		"showSubchats": "Қосалқы чаттарды көрсету ({count})",
+		"subchats": "Қосалқы чаттар",
+		"xMessages_one": "1 хабарлама",
+		"xMessages_other": "{count} хабарлама"
+	}
+}

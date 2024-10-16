@@ -11,7 +11,7 @@ export const AiChatNavButtons = ({ className }: ReactProps) => {
 
 	return activeView !== AiChatView.NONE && activeChat?.id ? (
 		<Button
-			tooltip={`Show subchats (${allSubchatsPagination.count})`}
+			tooltip={t('aiChat.showSubchats', { count: allSubchatsPagination.count })}
 			variant="item-text-default"
 			highlight={activeView === AiChatView.MOBILE_SUBCHAT ? 'pressed' : 'default'}
 			className={cx('px-xs-4', className)}

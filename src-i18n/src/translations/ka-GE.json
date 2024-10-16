@@ -1,0 +1,47 @@
+{
+	"core": {
+		"action": {
+			"back": "უკან",
+			"backToHome": "მთავარ გვერდზე დაბრუნება",
+			"changeLanguage": "ენის შეცვლა",
+			"close": "დახურვა",
+			"openMenu": "მენიუს გახსნა",
+			"signOut": "გასვლა"
+		},
+		"apiDocs": "API დოკუმენტაცია",
+		"asia": "აზია",
+		"custom": "მორგებული",
+		"darkTheme": "მუქი",
+		"default": "ნაგულისხმევი",
+		"designSystem": "დიზაინის სისტემა",
+		"europe": "ევროპა",
+		"githubRepo": "GitHub რეპოზიტორია",
+		"language": "ენა",
+		"lightTheme": "ნათელი",
+		"loading": "იტვირთება...",
+		"quickSettings": "სწრაფი პარამეტრები",
+		"settings": "პარამეტრები",
+		"uiLibrary": "UI ბიბლიოთეკა:",
+		"uiTheme": "UI თემა:"
+	},
+	"aiChat": {
+		"action": {
+			"backToSubchats": "ქვეჩატებზე დაბრუნება",
+			"openSubchat_zero": "ქვეჩატის შექმნა",
+			"openSubchat_one": "ქვეჩატის გახსნა (1 შეტყობინება)",
+			"openSubchat_other": "ქვეჩატის გახსნა ({count} შეტყობინება)"
+		},
+		"chats": "ჩატები",
+		"inputPlaceholder": "დასვით კითხვა...",
+		"loadingChats": "ჩატების ჩატვირთვა...",
+		"loadingMessages": "შეტყობინებების ჩატვირთვა...",
+		"loadingPreviousMessages": "წინა შეტყობინებების ჩატვირთვა...",
+		"loadingSubchats": "ქვეჩატების ჩატვირთვა...",
+		"newChat": "ახალი ჩატი",
+		"sendMessage": "შეტყობინების გაგზავნა",
+		"showSubchats": "ქვეჩატების ჩვენება ({count})",
+		"subchats": "ქვეჩატები",
+		"xMessages_one": "1 შეტყობინება",
+		"xMessages_other": "{count} შეტყობინება"
+	}
+}

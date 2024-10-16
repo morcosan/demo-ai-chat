@@ -1,0 +1,47 @@
+{
+	"core": {
+		"action": {
+			"back": "Geri",
+			"backToHome": "Ana səhifəyə qayıt",
+			"changeLanguage": "Dili dəyişdir",
+			"close": "Bağla",
+			"openMenu": "Menyunu aç",
+			"signOut": "Çıxış"
+		},
+		"apiDocs": "API sənədləri",
+		"asia": "Asiya",
+		"custom": "Xüsusi",
+		"darkTheme": "Tünd",
+		"default": "Standart",
+		"designSystem": "Dizayn sistemi",
+		"europe": "Avropa",
+		"githubRepo": "GitHub deposu",
+		"language": "Dil",
+		"lightTheme": "Açıq",
+		"loading": "Yüklənir...",
+		"quickSettings": "Sürətli parametrlər",
+		"settings": "Parametrlər",
+		"uiLibrary": "UI kitabxanası:",
+		"uiTheme": "UI mövzusu:"
+	},
+	"aiChat": {
+		"action": {
+			"backToSubchats": "Alt söhbətlərə qayıt",
+			"openSubchat_zero": "Alt söhbət yarat",
+			"openSubchat_one": "Alt söhbəti aç (1 mesaj)",
+			"openSubchat_other": "Alt söhbəti aç ({count} mesaj)"
+		},
+		"chats": "Söhbətlər",
+		"inputPlaceholder": "Sual verin...",
+		"loadingChats": "Söhbətlər yüklənir...",
+		"loadingMessages": "Mesajlar yüklənir...",
+		"loadingPreviousMessages": "Əvvəlki mesajlar yüklənir...",
+		"loadingSubchats": "Alt söhbətlər yüklənir...",
+		"newChat": "Yeni söhbət",
+		"sendMessage": "Mesaj göndər",
+		"showSubchats": "Alt söhbətləri göstər ({count})",
+		"subchats": "Alt söhbətlər",
+		"xMessages_one": "1 mesaj",
+		"xMessages_other": "{count} mesaj"
+	}
+}

@@ -1,0 +1,51 @@
+{
+	"core": {
+		"action": {
+			"back": "Wstecz",
+			"backToHome": "Powrót do strony głównej",
+			"changeLanguage": "Zmień język",
+			"close": "Zamknij",
+			"openMenu": "Otwórz menu",
+			"signOut": "Wyloguj się"
+		},
+		"apiDocs": "Dokumentacja API",
+		"asia": "Azja",
+		"custom": "Niestandardowy",
+		"darkTheme": "Ciemny",
+		"default": "Domyślny",
+		"designSystem": "System projektowania",
+		"europe": "Europa",
+		"githubRepo": "Repozytorium GitHub",
+		"language": "Język",
+		"lightTheme": "Jasny",
+		"loading": "Ładowanie...",
+		"quickSettings": "Szybkie ustawienia",
+		"settings": "Ustawienia",
+		"uiLibrary": "Biblioteka UI:",
+		"uiTheme": "Motyw UI:"
+	},
+	"aiChat": {
+		"action": {
+			"backToSubchats": "Powrót do podczatów",
+			"openSubchat_zero": "Utwórz podczat",
+			"openSubchat_one": "Otwórz podczat (1 wiadomość)",
+			"openSubchat_few": "Otwórz podczat ({count} wiadomości)",
+			"openSubchat_many": "Otwórz podczat ({count} wiadomości)",
+			"openSubchat_other": "Otwórz podczat ({count} wiadomości)"
+		},
+		"chats": "Czaty",
+		"inputPlaceholder": "Zadaj pytanie...",
+		"loadingChats": "Ładowanie czatów...",
+		"loadingMessages": "Ładowanie wiadomości...",
+		"loadingPreviousMessages": "Ładowanie poprzednich wiadomości...",
+		"loadingSubchats": "Ładowanie podczatów...",
+		"newChat": "Nowy czat",
+		"sendMessage": "Wyślij wiadomość",
+		"showSubchats": "Pokaż podczaty ({count})",
+		"subchats": "Podczaty",
+		"xMessages_one": "1 wiadomość",
+		"xMessages_few": "{count} wiadomości",
+		"xMessages_many": "{count} wiadomości",
+		"xMessages_other": "{count} wiadomości"
+	}
+}

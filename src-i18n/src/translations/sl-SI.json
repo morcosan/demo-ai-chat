@@ -1,0 +1,51 @@
+{
+	"core": {
+		"action": {
+			"back": "Nazaj",
+			"backToHome": "Nazaj na domačo stran",
+			"changeLanguage": "Spremeni jezik",
+			"close": "Zapri",
+			"openMenu": "Odpri meni",
+			"signOut": "Odjava"
+		},
+		"apiDocs": "API dokumentacija",
+		"asia": "Azija",
+		"custom": "Po meri",
+		"darkTheme": "Temno",
+		"default": "Privzeto",
+		"designSystem": "Oblikovalski sistem",
+		"europe": "Evropa",
+		"githubRepo": "GitHub repozitorij",
+		"language": "Jezik",
+		"lightTheme": "Svetlo",
+		"loading": "Nalaganje...",
+		"quickSettings": "Hitre nastavitve",
+		"settings": "Nastavitve",
+		"uiLibrary": "UI knjižnica:",
+		"uiTheme": "UI tema:"
+	},
+	"aiChat": {
+		"action": {
+			"backToSubchats": "Nazaj na podklepete",
+			"openSubchat_zero": "Ustvari podklepet",
+			"openSubchat_one": "Odpri podklepet (1 sporočilo)",
+			"openSubchat_two": "Odpri podklepet ({count} sporočili)",
+			"openSubchat_few": "Odpri podklepet ({count} sporočila)",
+			"openSubchat_other": "Odpri podklepet ({count} sporočil)"
+		},
+		"chats": "Klepeti",
+		"inputPlaceholder": "Postavite vprašanje...",
+		"loadingChats": "Nalaganje klepetov...",
+		"loadingMessages": "Nalaganje sporočil...",
+		"loadingPreviousMessages": "Nalaganje prejšnjih sporočil...",
+		"loadingSubchats": "Nalaganje podklepetov...",
+		"newChat": "Nov klepet",
+		"sendMessage": "Pošlji sporočilo",
+		"showSubchats": "Prikaži podklepete ({count})",
+		"subchats": "Podklepeti",
+		"xMessages_one": "1 sporočilo",
+		"xMessages_two": "{count} sporočili",
+		"xMessages_few": "{count} sporočila",
+		"xMessages_other": "{count} sporočil"
+	}
+}

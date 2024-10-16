@@ -30,16 +30,15 @@ export const AiChatNavMenu = ({ collapsed }: Props) => {
 				<div className={cx(!collapsed && '-ml-xs-4 mr-xs-3')}>
 					<AiChatSvg className="h-xs-9 w-xs-9" />
 				</div>
-				<span className={cx(collapsed && 'hidden')}>New chat</span>
+				<span className={cx(collapsed && 'hidden')}>{t('aiChat.newChat')}</span>
 			</Button>
 
 			{/* OPTIONS */}
 			<div className="mt-sm-0 flex h-button-h-sm w-full items-center justify-between">
-				<span className="ml-xs-1 text-size-sm text-color-text-subtle">
-					Chats{' '}
-					{Boolean(allChatsPagination.count && !collapsed) && (
-						<span className="text-size-xs">({allChatsPagination.count})</span>
-					)}
+				<span className="ml-xs-1 truncate text-size-sm text-color-text-subtle">
+					{t('aiChat.chats')}
+					&nbsp;
+					{Boolean(allChatsPagination.count) && <span className="text-size-xs">({allChatsPagination.count})</span>}
 				</span>
 				<IconButton tooltip="Show options" size="sm" className={collapsed ? 'hidden' : '-mr-xs-0'}>
 					<DotsSvg className="h-xs-8" />
@@ -73,7 +72,7 @@ export const AiChatNavMenu = ({ collapsed }: Props) => {
 			>
 				{allChatsLoading === 'full' ? (
 					<LoadingText
-						text="Loading chats..."
+						text={t('aiChat.loadingChats')}
 						collapsed={collapsed}
 						className="min-h-sm-4 px-button-px-item text-size-sm"
 					/>
@@ -93,7 +92,7 @@ export const AiChatNavMenu = ({ collapsed }: Props) => {
 						))}
 						{allChats.length < allChatsPagination.count && (
 							<LoadingText
-								text="Loading chats..."
+								text={t('aiChat.loadingChats')}
 								collapsed={collapsed}
 								className="line-clamp-1 min-h-sm-4 px-button-px-item text-size-sm"
 								style={{ visibility: allChatsLoading === 'more' ? 'visible' : 'hidden' }}

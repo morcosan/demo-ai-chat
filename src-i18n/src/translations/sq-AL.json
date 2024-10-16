@@ -1,0 +1,47 @@
+{
+	"core": {
+		"action": {
+			"back": "Kthehu",
+			"backToHome": "Kthehu në faqen kryesore",
+			"changeLanguage": "Ndrysho gjuhën",
+			"close": "Mbyll",
+			"openMenu": "Hap menynë",
+			"signOut": "Dilni"
+		},
+		"apiDocs": "Dokumentacioni i API",
+		"asia": "Azia",
+		"custom": "I personalizuar",
+		"darkTheme": "I errët",
+		"default": "I paracaktuar",
+		"designSystem": "Sistemi i dizajnit",
+		"europe": "Evropa",
+		"githubRepo": "Depoja e GitHub",
+		"language": "Gjuha",
+		"lightTheme": "I ndritshëm",
+		"loading": "Po ngarkohet...",
+		"quickSettings": "Cilësimet e shpejta",
+		"settings": "Cilësimet",
+		"uiLibrary": "Libraria UI:",
+		"uiTheme": "Tema UI:"
+	},
+	"aiChat": {
+		"action": {
+			"backToSubchats": "Kthehu tek nënbisedat",
+			"openSubchat_zero": "Krijo nënbisedë",
+			"openSubchat_one": "Hap nënbisedën (1 mesazh)",
+			"openSubchat_other": "Hap nënbisedën ({count} mesazhe)"
+		},
+		"chats": "Bisedat",
+		"inputPlaceholder": "Bëni një pyetje...",
+		"loadingChats": "Po ngarkohen bisedat...",
+		"loadingMessages": "Po ngarkohen mesazhet...",
+		"loadingPreviousMessages": "Po ngarkohen mesazhet e mëparshme...",
+		"loadingSubchats": "Po ngarkohen nënbisedat...",
+		"newChat": "Bisedë e re",
+		"sendMessage": "Dërgo mesazhin",
+		"showSubchats": "Shfaq nënbisedat ({count})",
+		"subchats": "Nënbisedat",
+		"xMessages_one": "1 mesazh",
+		"xMessages_other": "{count} mesazhe"
+	}
+}

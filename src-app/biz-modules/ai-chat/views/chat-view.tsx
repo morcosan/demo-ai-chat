@@ -83,7 +83,7 @@ export const ChatView = () => {
 
 									{Boolean(chatPagination.count) && (
 										<div className="mt-xs-0 text-size-xs text-color-text-subtle">
-											{chatPagination.count} messages
+											{t('aiChat.xMessages', { count: chatPagination.count })}
 										</div>
 									)}
 								</div>
@@ -92,12 +92,12 @@ export const ChatView = () => {
 
 						{/* LISTING */}
 						{chatLoading === 'full' ? (
-							<LoadingText text="Loading messages..." className="absolute-overlay flex-center" />
+							<LoadingText text={t('aiChat.loadingMessages')} className="absolute-overlay flex-center" />
 						) : (
 							<div className="flex flex-col">
 								{/* LOAD MORE */}
 								<LoadingText
-									text="Loading previous messages..."
+									text={t('aiChat.loadingPreviousMessages')}
 									className="flex-center min-h-md-0 text-size-sm"
 									style={{ visibility: chatLoading === 'more' ? 'visible' : 'hidden' }}
 								/>

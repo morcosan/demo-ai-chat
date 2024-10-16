@@ -1,5 +1,5 @@
 import { Button, useUiTheme } from '@ds/release'
-import { useDefaults } from '@utils/release'
+import { CSS__FIXED_OVERLAY, useDefaults } from '@utils/release'
 import { useState } from 'react'
 import { ModalProps } from '../_types'
 
@@ -10,7 +10,7 @@ export const useModalBase = (rawProps: ModalProps) => {
 		width: 'md',
 		height: 'fit',
 	})
-	const { $color, $fontSize, $fontWeight, $spacing, $radius, $shadow, $zIndex } = useUiTheme()
+	const { $blur, $color, $fontSize, $fontWeight, $spacing, $radius, $shadow, $zIndex } = useUiTheme()
 	const [zIndex, setZIndex] = useState(0)
 
 	const ANIM_TIME__SHOW = 300 // ms
@@ -49,6 +49,13 @@ export const useModalBase = (rawProps: ModalProps) => {
 		border: `1px solid ${$color['border-shadow']}`,
 		borderRadius: $radius['lg'],
 		boxShadow: $shadow['lg'],
+	}
+
+	const cssOverlayBase: CSS = {
+		...CSS__FIXED_OVERLAY,
+		zIndex: -1,
+		backgroundColor: props.shallow ? $color['hover-2'] : $color['hover-4'],
+		backdropFilter: props.shallow ? `blur(${$blur['subtle']})` : `blur(${$blur['default']})`,
 	}
 
 	const cssModalContent: CSS = {
@@ -105,7 +112,7 @@ export const useModalBase = (rawProps: ModalProps) => {
 		<>
 			{!props.noClose && (
 				<Button variant="text-default" onClick={props.onClose}>
-					Close
+					{t('core.action.close')}
 				</Button>
 			)}
 			{props.slotButtons}
@@ -124,6 +131,7 @@ export const useModalBase = (rawProps: ModalProps) => {
 		cssModalContent,
 		cssModalFooter,
 		cssModalTitle,
+		cssOverlayBase,
 		props,
 		slotFooter,
 		zIndex,

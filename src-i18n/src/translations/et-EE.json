@@ -1,0 +1,47 @@
+{
+	"core": {
+		"action": {
+			"back": "Tagasi",
+			"backToHome": "Tagasi avalehele",
+			"changeLanguage": "Muuda keelt",
+			"close": "Sulge",
+			"openMenu": "Ava menüü",
+			"signOut": "Logi välja"
+		},
+		"apiDocs": "API dokumentatsioon",
+		"asia": "Aasia",
+		"custom": "Kohandatud",
+		"darkTheme": "Tume",
+		"default": "Vaikimisi",
+		"designSystem": "Disainisüsteem",
+		"europe": "Euroopa",
+		"githubRepo": "GitHub'i repositoorium",
+		"language": "Keel",
+		"lightTheme": "Hele",
+		"loading": "Laadimine...",
+		"quickSettings": "Kiirseaded",
+		"settings": "Seaded",
+		"uiLibrary": "Kasutajaliidese teek:",
+		"uiTheme": "Kasutajaliidese teema:"
+	},
+	"aiChat": {
+		"action": {
+			"backToSubchats": "Tagasi alamvestlustesse",
+			"openSubchat_zero": "Loo alamvestlus",
+			"openSubchat_one": "Ava alamvestlus (1 sõnum)",
+			"openSubchat_other": "Ava alamvestlus ({count} sõnumit)"
+		},
+		"chats": "Vestlused",
+		"inputPlaceholder": "Esita küsimus...",
+		"loadingChats": "Vestluste laadimine...",
+		"loadingMessages": "Sõnumite laadimine...",
+		"loadingPreviousMessages": "Eelmiste sõnumite laadimine...",
+		"loadingSubchats": "Alamvestluste laadimine...",
+		"newChat": "Uus vestlus",
+		"sendMessage": "Saada sõnum",
+		"showSubchats": "Näita alamvestlusi ({count})",
+		"subchats": "Alamvestlused",
+		"xMessages_one": "1 sõnum",
+		"xMessages_other": "{count} sõnumit"
+	}
+}

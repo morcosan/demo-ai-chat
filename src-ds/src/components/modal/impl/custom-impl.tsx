@@ -1,4 +1,4 @@
-import { CloseSvg, IconButton, useUiTheme } from '@ds/release'
+import { CloseSvg, IconButton } from '@ds/release'
 import { CSS__FIXED_OVERLAY, Keyboard, queryElementsWithTabIndex } from '@utils/release'
 import { useEffect, useRef, useState } from 'react'
 import { ModalProps } from '../_types'
@@ -16,6 +16,7 @@ export const CustomImpl = (rawProps: ModalProps) => {
 		cssModalContent,
 		cssModalFooter,
 		cssModalTitle,
+		cssOverlayBase,
 		props,
 		slotFooter,
 		closeActiveIndex,
@@ -23,7 +24,6 @@ export const CustomImpl = (rawProps: ModalProps) => {
 		openActiveIndex,
 		setZIndex,
 	} = useModalBase(rawProps)
-	const { $color } = useUiTheme()
 	const [modalIndex, setModalIndex] = useState(0)
 	const modalRef = useRef<HTMLDivElement | null>(null)
 	const triggerRef = useRef<HTMLElement | null>(null)
@@ -36,16 +36,12 @@ export const CustomImpl = (rawProps: ModalProps) => {
 		padding: calcWrapperPXY,
 		zIndex: calcZIndex,
 		transition: modalIndex ? 'none' : `visibility ${ANIM_TIME__HIDE}ms ease-in`,
+	}
 
-		'&::before': {
-			...CSS__FIXED_OVERLAY,
-			content: `''`,
-			zIndex: -1,
-			backgroundColor: $color['black-glass-5'],
-			backdropFilter: 'blur(4px)',
-			opacity: modalIndex ? 1 : 0,
-			transition: modalIndex ? `opacity ${ANIM_TIME__SHOW}ms ease-out` : `opacity ${ANIM_TIME__HIDE}ms ease-in`,
-		},
+	const cssOverlay: CSS = {
+		...cssOverlayBase,
+		opacity: modalIndex ? 1 : 0,
+		transition: modalIndex ? `opacity ${ANIM_TIME__SHOW}ms ease-out` : `opacity ${ANIM_TIME__HIDE}ms ease-in`,
 	}
 
 	const cssModal: CSS = {
@@ -100,6 +96,8 @@ export const CustomImpl = (rawProps: ModalProps) => {
 		if (target === focusTrap2Ref.current) firstTarget.focus()
 	}
 
+	const onClickOverlay = () => props.shallow && props.onClose?.()
+
 	useEffect(() => {
 		props.opened ? openModal() : closeModal()
 	}, [props.opened])
@@ -117,6 +115,9 @@ export const CustomImpl = (rawProps: ModalProps) => {
 
 	return (
 		<div css={cssWrapper}>
+			{/* OVERLAY */}
+			<div css={cssOverlay} onClick={onClickOverlay} />
+
 			{/* FOCUS TRAP */}
 			<div ref={focusTrap1Ref} tabIndex={0} />
 
@@ -127,7 +128,12 @@ export const CustomImpl = (rawProps: ModalProps) => {
 
 				{/* CLOSE-X */}
 				{!props.noClose && (
-					<IconButton tooltip="Close" variant="text-default" css={cssModalCloseX} onClick={props.onClose}>
+					<IconButton
+						tooltip={t('core.action.close')}
+						variant="text-default"
+						css={cssModalCloseX}
+						onClick={props.onClose}
+					>
 						<CloseSvg className="h-xs-7" />
 					</IconButton>
 				)}

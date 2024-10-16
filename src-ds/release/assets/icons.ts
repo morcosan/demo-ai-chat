@@ -1,6 +1,7 @@
 export { default as ArrowBackSvg } from './icons/arrow-back.svg'
 export { default as ArrowNextSvg } from './icons/arrow-next.svg'
 export { default as ChatSvg } from './icons/chat.svg'
+export { default as CheckSvg } from './icons/check.svg'
 export { default as CloseSvg } from './icons/close.svg'
 export { default as ConfigSvg } from './icons/config.svg'
 export { default as DesktopSvg } from './icons/desktop.svg'

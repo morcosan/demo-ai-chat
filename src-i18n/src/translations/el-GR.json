@@ -1,0 +1,47 @@
+{
+	"core": {
+		"action": {
+			"back": "Πίσω",
+			"backToHome": "Επιστροφή στην αρχική σελίδα",
+			"changeLanguage": "Αλλαγή γλώσσας",
+			"close": "Κλείσιμο",
+			"openMenu": "Άνοιγμα μενού",
+			"signOut": "Αποσύνδεση"
+		},
+		"apiDocs": "Τεκμηρίωση API",
+		"asia": "Ασία",
+		"custom": "Προσαρμοσμένο",
+		"darkTheme": "Σκούρο",
+		"default": "Προεπιλογή",
+		"designSystem": "Σύστημα σχεδίασης",
+		"europe": "Ευρώπη",
+		"githubRepo": "Αποθετήριο GitHub",
+		"language": "Γλώσσα",
+		"lightTheme": "Φωτεινό",
+		"loading": "Φόρτωση...",
+		"quickSettings": "Γρήγορες ρυθμίσεις",
+		"settings": "Ρυθμίσεις",
+		"uiLibrary": "Βιβλιοθήκη UI:",
+		"uiTheme": "Θέμα UI:"
+	},
+	"aiChat": {
+		"action": {
+			"backToSubchats": "Επιστροφή στις υποσυνομιλίες",
+			"openSubchat_zero": "Δημιουργία υποσυνομιλίας",
+			"openSubchat_one": "Άνοιγμα υποσυνομιλίας (1 μήνυμα)",
+			"openSubchat_other": "Άνοιγμα υποσυνομιλίας ({count} μηνύματα)"
+		},
+		"chats": "Συνομιλίες",
+		"inputPlaceholder": "Κάντε μια ερώτηση...",
+		"loadingChats": "Φόρτωση συνομιλιών...",
+		"loadingMessages": "Φόρτωση μηνυμάτων...",
+		"loadingPreviousMessages": "Φόρτωση προηγούμενων μηνυμάτων...",
+		"loadingSubchats": "Φόρτωση υποσυνομιλιών...",
+		"newChat": "Νέα συνομιλία",
+		"sendMessage": "Αποστολή μηνύματος",
+		"showSubchats": "Εμφάνιση υποσυνομιλιών ({count})",
+		"subchats": "Υποσυνομιλίες",
+		"xMessages_one": "1 μήνυμα",
+		"xMessages_other": "{count} μηνύματα"
+	}
+}

@@ -1,0 +1,51 @@
+{
+	"core": {
+		"action": {
+			"back": "Назад",
+			"backToHome": "Повернутися на головну",
+			"changeLanguage": "Змінити мову",
+			"close": "Закрити",
+			"openMenu": "Відкрити меню",
+			"signOut": "Вийти"
+		},
+		"apiDocs": "Документація API",
+		"asia": "Азія",
+		"custom": "Користувацький",
+		"darkTheme": "Темна",
+		"default": "За замовчуванням",
+		"designSystem": "Система дизайну",
+		"europe": "Європа",
+		"githubRepo": "Репозиторій GitHub",
+		"language": "Мова",
+		"lightTheme": "Світла",
+		"loading": "Завантаження...",
+		"quickSettings": "Швидкі налаштування",
+		"settings": "Налаштування",
+		"uiLibrary": "Бібліотека інтерфейсу:",
+		"uiTheme": "Тема інтерфейсу:"
+	},
+	"aiChat": {
+		"action": {
+			"backToSubchats": "Повернутися до підчатів",
+			"openSubchat_zero": "Створити підчат",
+			"openSubchat_one": "Відкрити підчат (1 повідомлення)",
+			"openSubchat_few": "Відкрити підчат ({count} повідомлення)",
+			"openSubchat_many": "Відкрити підчат ({count} повідомлень)",
+			"openSubchat_other": "Відкрити підчат ({count} повідомлень)"
+		},
+		"chats": "Чати",
+		"inputPlaceholder": "Задайте питання...",
+		"loadingChats": "Завантаження чатів...",
+		"loadingMessages": "Завантаження повідомлень...",
+		"loadingPreviousMessages": "Завантаження попередніх повідомлень...",
+		"loadingSubchats": "Завантаження підчатів...",
+		"newChat": "Новий чат",
+		"sendMessage": "Надіслати повідомлення",
+		"showSubchats": "Показати підчати ({count})",
+		"subchats": "Підчати",
+		"xMessages_one": "1 повідомлення",
+		"xMessages_few": "{count} повідомлення",
+		"xMessages_many": "{count} повідомлень",
+		"xMessages_other": "{count} повідомлень"
+	}
+}

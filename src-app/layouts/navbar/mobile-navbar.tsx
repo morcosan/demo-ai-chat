@@ -15,7 +15,7 @@ export const MobileNavbar = ({ hasMenu, onToggleNavMenu }: Props) => {
 		>
 			<div className="flex h-full items-center px-xs-2" style={{ background: 'var(--app-color-bg-navbar)' }}>
 				{/* MENU */}
-				<IconButton tooltip="Open menu" pressed={hasMenu} onClick={onToggleNavMenu}>
+				<IconButton tooltip={t('core.action.openMenu')} pressed={hasMenu} onClick={onToggleNavMenu}>
 					<MenuSvg className="h-xs-9" />
 				</IconButton>
 
