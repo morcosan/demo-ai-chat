@@ -1,4 +1,4 @@
-import { AiChatSvg, Button, CloseSvg, DotsSvg, IconButton, SearchSvg, TextField } from '@ds/release'
+import { AiChatSvg, Button, DotsSvg, IconButton, SearchSvg } from '@ds/release'
 import { debounce } from 'lodash'
 import { UIEvent, useState } from 'react'
 import { Chat } from '../../api/types'
@@ -25,7 +25,7 @@ export const AiChatNavMenu = ({ collapsed }: Props) => {
 
 	return (
 		<>
-			{/* TITLE */}
+			{/* NEW CHAT */}
 			<Button linkHref="/chat" loading={allChatsLoading === 'update'}>
 				<div className={cx(!collapsed && '-ml-xs-4 mr-xs-3')}>
 					<AiChatSvg className="h-xs-9 w-xs-9" />
@@ -33,36 +33,23 @@ export const AiChatNavMenu = ({ collapsed }: Props) => {
 				<span className={cx(collapsed && 'hidden')}>{t('aiChat.newChat')}</span>
 			</Button>
 
+			{/* SEARCH */}
+			<Button variant="ghost-primary" className="mt-xs-7">
+				<SearchSvg className="w-xs-5 min-w-xs-5" />
+				{!collapsed && <span className="ml-xs-3">{t('aiChat.action.searchChats')}</span>}
+			</Button>
+
 			{/* OPTIONS */}
-			<div className="mt-sm-0 flex h-button-h-sm w-full items-center justify-between">
-				<span className="ml-xs-1 truncate text-size-sm text-color-text-subtle">
+			<div className="mt-xs-5 flex h-button-h-sm w-full items-center justify-between">
+				<span className="ml-button-px-item truncate text-size-sm text-color-text-subtle">
 					{t('aiChat.chats')}
 					&nbsp;
 					{Boolean(allChatsPagination.count) && <span className="text-size-xs">({allChatsPagination.count})</span>}
 				</span>
-				<IconButton tooltip="Show options" size="sm" className={collapsed ? 'hidden' : '-mr-xs-0'}>
+				<IconButton tooltip="Show options" size="sm" className={cx(collapsed && 'hidden')}>
 					<DotsSvg className="h-xs-8" />
 				</IconButton>
 			</div>
-
-			{/* SEARCH */}
-			<TextField
-				id="chat-search"
-				value={search}
-				placeholder="Search chat..."
-				ariaLabel="Search chat"
-				size="sm"
-				className="mb-xs-4 mt-xs-1"
-				slotLeft={<SearchSvg className="ml-xs-2 mr-xs-0 mt-px h-full w-xs-5 min-w-xs-5" />}
-				slotRight={
-					Boolean(searchText) && (
-						<IconButton tooltip="Clear search" variant="text-danger" size="xs" onClick={() => setSearch('')}>
-							<CloseSvg className="h-xs-6" />
-						</IconButton>
-					)
-				}
-				onChange={setSearch}
-			/>
 
 			{/* LISTING */}
 			<div

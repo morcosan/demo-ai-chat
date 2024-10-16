@@ -2,7 +2,7 @@ import { Button } from '@ds/release'
 import { SubchatIcon } from '../../components/subchat-icon'
 import { AiChatView, useAiChat } from '../../state'
 
-export const AiChatNavButtons = ({ className }: ReactProps) => {
+export const AiChatNavTopbar = ({ className }: ReactProps) => {
 	const { activeChat, activeView, allSubchatsPagination, setActiveView } = useAiChat()
 
 	const onClick = () => {

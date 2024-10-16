@@ -1,4 +1,4 @@
-import { AiChatNavButtons } from '@app/biz-modules/ai-chat/views/nav/nav-buttons'
+import { AiChatNavTopbar } from '@app/biz-modules/ai-chat/views/nav/nav-topbar'
 import { IconButton, MenuSvg } from '@ds/release'
 import { AppLogo } from './_app-logo'
 
@@ -23,7 +23,7 @@ export const MobileNavbar = ({ hasMenu, onToggleNavMenu }: Props) => {
 				<AppLogo className="ml-xs-3" mobile />
 
 				{/* SUBCHATS */}
-				<AiChatNavButtons className="ml-auto" />
+				<AiChatNavTopbar className="ml-auto" />
 			</div>
 		</nav>
 	)
