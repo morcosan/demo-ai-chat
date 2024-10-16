@@ -1,4 +1,4 @@
-import { AiChatNavMenu } from '@app/biz-modules/ai-chat/views/nav/nav-menu'
+import { AiChatNavMenu } from '@app/biz-modules/ai-chat/nav-menu'
 import { IconButton, PinSvg, useUiViewport } from '@ds/release'
 import { useEffect, useRef, useState } from 'react'
 import { AppLogo } from './_app-logo'

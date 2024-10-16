@@ -23,6 +23,7 @@ export const story: StoryObj<typeof Modal> = {
 		className: '',
 		style: {},
 		// Events
+		onOpen: action('onOpen'),
 		onClose: action('onClose'),
 	},
 }
@@ -42,7 +43,7 @@ const meta: Meta<typeof Modal> = {
 			noFooter: 'boolean',
 		},
 		['slotTitle', 'slotButtons', 'children'],
-		['onClose']
+		['onOpen', 'onClose']
 	),
 
 	component: function Story(props: ModalProps) {
@@ -105,6 +106,10 @@ const meta: Meta<typeof Modal> = {
 			},
 		]
 		const EVENTS: DocsEventDef[] = [
+			{
+				name: 'onOpen',
+				details: `Event emitted when modal is opened (after the transition animation)`,
+			},
 			{
 				name: 'onClose',
 				details: `Event emitted when any close button is clicked or when ^Escape^ key is pressed`,

@@ -11,6 +11,7 @@ export const AiChatProvider = ({ children }: ReactProps) => {
 	const chatStore = useChatStore(allChatsStore)
 	const allSubchatsStore = useAllSubchatsStore(chatStore)
 	const subchatStore = useSubchatStore(chatStore, allSubchatsStore)
+	const [showsSearch, setShowsSearch] = useState(false)
 
 	const store: Store = useMemo(
 		() => ({
@@ -19,13 +20,17 @@ export const AiChatProvider = ({ children }: ReactProps) => {
 			...chatStore,
 			...subchatStore,
 			activeView,
+			showsSearch,
 			setActiveView,
+			setShowsSearch,
 		}),
 		[
 			...Object.values(allChatsStore),
 			...Object.values(chatStore),
 			...Object.values(allSubchatsStore),
 			...Object.values(subchatStore),
+			activeView,
+			showsSearch,
 		]
 	)
 

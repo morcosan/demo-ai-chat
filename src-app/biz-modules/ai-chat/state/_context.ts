@@ -13,7 +13,9 @@ export enum AiChatView {
 
 export interface Store extends AllChatsStore, AllSubchatsStore, ChatStore, SubchatStore {
 	activeView: AiChatView
+	showsSearch: boolean
 	setActiveView(tab: AiChatView): void
+	setShowsSearch(value: boolean): void
 }
 
 export const Context = createContext<Store>({
@@ -22,5 +24,7 @@ export const Context = createContext<Store>({
 	...allSubchatsDefaults,
 	...subchatDefaults,
 	activeView: AiChatView.DESKTOP,
+	showsSearch: false,
 	setActiveView: () => {},
+	setShowsSearch: () => {},
 })

@@ -1,19 +1,16 @@
 import { AiChatSvg, Button, DotsSvg, IconButton, SearchSvg } from '@ds/release'
 import { debounce } from 'lodash'
-import { UIEvent, useState } from 'react'
-import { Chat } from '../../api/types'
-import { LoadingText } from '../../components/loading-text'
-import { useAiChat } from '../../state'
+import { UIEvent } from 'react'
+import { Chat } from './api/types'
+import { LoadingText } from './components/loading-text'
+import { useAiChat } from './state'
 
 interface Props {
 	collapsed?: boolean
 }
 
 export const AiChatNavMenu = ({ collapsed }: Props) => {
-	const { allChats, allChatsLoading, allChatsPagination, activeChat, loadMoreChats } = useAiChat()
-	const [search, setSearch] = useState('')
-
-	const searchText = search.trim()
+	const { allChats, allChatsLoading, allChatsPagination, activeChat, loadMoreChats, setShowsSearch } = useAiChat()
 
 	const onScrollChats = debounce((event: UIEvent) => {
 		const container = event.target as HTMLElement
@@ -34,7 +31,7 @@ export const AiChatNavMenu = ({ collapsed }: Props) => {
 			</Button>
 
 			{/* SEARCH */}
-			<Button variant="ghost-primary" className="mt-xs-7">
+			<Button variant="ghost-primary" className="mt-xs-7" onClick={() => setShowsSearch(true)}>
 				<SearchSvg className="w-xs-5 min-w-xs-5" />
 				{!collapsed && <span className="ml-xs-3">{t('aiChat.action.searchChats')}</span>}
 			</Button>

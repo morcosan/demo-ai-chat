@@ -29,7 +29,7 @@
 			"backToSubchats": "Back to subchats",
 			"openSubchat_other": "Open subchat ({count} messages)",
 			"openSubchat_zero": "Create subchat",
-			"searchChats": "Search..."
+			"searchChats": "Search chats..."
 		},
 		"chats": "Chats",
 		"inputPlaceholder": "Ask a question...",

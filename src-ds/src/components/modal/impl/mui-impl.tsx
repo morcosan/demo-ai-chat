@@ -58,6 +58,7 @@ export const MuiImpl = (rawProps: ModalProps) => {
 			className={props.className}
 			style={props.style}
 			sx={cssWrapper}
+			slotProps={{ backdrop: { onEntered: props.onOpen } }}
 			onClose={onClose}
 		>
 			<div tabIndex={-1} className={props.className} style={props.style} css={[cssModal]}>
