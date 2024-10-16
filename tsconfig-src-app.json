@@ -23,11 +23,12 @@
 			"@api/*": ["./src-api/*"],
 			"@app/*": ["./src-app/*"],
 			"@ds/*": ["./src-ds/*"],
+			"@i18n/*": ["./src-i18n/*"],
 			"@utils/*": ["./src-utils/*"]
 		},
 
 		/* Linting */
 		"strict": true
 	},
-	"include": ["./src-api", "./src-app", "./src-ds", "./src-utils"]
+	"include": ["./src-api", "./src-app", "./src-ds", "./src-i18n", "./src-utils"]
 }

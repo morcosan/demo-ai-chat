@@ -1,0 +1,48 @@
+{
+	"core": {
+		"action": {
+			"back": "Atpakaļ",
+			"backToHome": "Atpakaļ uz sākumlapu",
+			"changeLanguage": "Mainīt valodu",
+			"close": "Aizvērt",
+			"openMenu": "Atvērt izvēlni",
+			"signOut": "Izrakstīties"
+		},
+		"apiDocs": "API dokumentācija",
+		"asia": "Āzija",
+		"custom": "Pielāgots",
+		"darkTheme": "Tumšs",
+		"default": "Noklusējums",
+		"designSystem": "Dizaina sistēma",
+		"europe": "Eiropa",
+		"githubRepo": "GitHub repozitorijs",
+		"language": "Valoda",
+		"lightTheme": "Gaišs",
+		"loading": "Ielāde...",
+		"quickSettings": "Ātrās iestatījumi",
+		"settings": "Iestatījumi",
+		"uiLibrary": "UI bibliotēka:",
+		"uiTheme": "UI tēma:"
+	},
+	"aiChat": {
+		"action": {
+			"backToSubchats": "Atpakaļ uz apakšsarunām",
+			"openSubchat_zero": "Izveidot apakšsarunu",
+			"openSubchat_one": "Atvērt apakšsarunu (1 ziņa)",
+			"openSubchat_other": "Atvērt apakšsarunu ({count} ziņas)"
+		},
+		"chats": "Sarunas",
+		"inputPlaceholder": "Uzdodiet jautājumu...",
+		"loadingChats": "Ielādē sarunas...",
+		"loadingMessages": "Ielādē ziņas...",
+		"loadingPreviousMessages": "Ielādē iepriekšējās ziņas...",
+		"loadingSubchats": "Ielādē apakšsarunas...",
+		"newChat": "Jauna saruna",
+		"sendMessage": "Sūtīt ziņu",
+		"showSubchats": "Rādīt apakšsarunas ({count})",
+		"subchats": "Apakšsarunas",
+		"xMessages_zero": "Nav ziņu",
+		"xMessages_one": "1 ziņa",
+		"xMessages_other": "{count} ziņas"
+	}
+}

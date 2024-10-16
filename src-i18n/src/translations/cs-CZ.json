@@ -1,0 +1,51 @@
+{
+	"core": {
+		"action": {
+			"back": "Zpět",
+			"backToHome": "Zpět na domovskou stránku",
+			"changeLanguage": "Změnit jazyk",
+			"close": "Zavřít",
+			"openMenu": "Otevřít menu",
+			"signOut": "Odhlásit se"
+		},
+		"apiDocs": "API dokumentace",
+		"asia": "Asie",
+		"custom": "Vlastní",
+		"darkTheme": "Tmavý",
+		"default": "Výchozí",
+		"designSystem": "Designový systém",
+		"europe": "Evropa",
+		"githubRepo": "GitHub repozitář",
+		"language": "Jazyk",
+		"lightTheme": "Světlý",
+		"loading": "Načítání...",
+		"quickSettings": "Rychlé nastavení",
+		"settings": "Nastavení",
+		"uiLibrary": "UI knihovna:",
+		"uiTheme": "UI motiv:"
+	},
+	"aiChat": {
+		"action": {
+			"backToSubchats": "Zpět na podchaty",
+			"openSubchat_zero": "Vytvořit podchat",
+			"openSubchat_one": "Otevřít podchat (1 zpráva)",
+			"openSubchat_few": "Otevřít podchat ({count} zprávy)",
+			"openSubchat_many": "Otevřít podchat ({count} zpráv)",
+			"openSubchat_other": "Otevřít podchat ({count} zpráv)"
+		},
+		"chats": "Chaty",
+		"inputPlaceholder": "Položte otázku...",
+		"loadingChats": "Načítání chatů...",
+		"loadingMessages": "Načítání zpráv...",
+		"loadingPreviousMessages": "Načítání předchozích zpráv...",
+		"loadingSubchats": "Načítání podchatů...",
+		"newChat": "Nový chat",
+		"sendMessage": "Odeslat zprávu",
+		"showSubchats": "Zobrazit podchaty ({count})",
+		"subchats": "Podchaty",
+		"xMessages_one": "1 zpráva",
+		"xMessages_few": "{count} zprávy",
+		"xMessages_many": "{count} zpráv",
+		"xMessages_other": "{count} zpráv"
+	}
+}

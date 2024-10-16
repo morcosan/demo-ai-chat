@@ -1,0 +1,47 @@
+{
+	"core": {
+		"action": {
+			"back": "वापस",
+			"backToHome": "होमपेज पर वापस जाएं",
+			"changeLanguage": "भाषा बदलें",
+			"close": "बंद करें",
+			"openMenu": "मेनू खोलें",
+			"signOut": "साइन आउट करें"
+		},
+		"apiDocs": "API दस्तावेज़",
+		"asia": "एशिया",
+		"custom": "कस्टम",
+		"darkTheme": "डार्क",
+		"default": "डिफ़ॉल्ट",
+		"designSystem": "डिज़ाइन सिस्टम",
+		"europe": "यूरोप",
+		"githubRepo": "GitHub रिपॉजिटरी",
+		"language": "भाषा",
+		"lightTheme": "लाइट",
+		"loading": "लोड हो रहा है...",
+		"quickSettings": "त्वरित सेटिंग्स",
+		"settings": "सेटिंग्स",
+		"uiLibrary": "UI लाइब्रेरी:",
+		"uiTheme": "UI थीम:"
+	},
+	"aiChat": {
+		"action": {
+			"backToSubchats": "सबचैट्स पर वापस जाएं",
+			"openSubchat_zero": "सबचैट बनाएं",
+			"openSubchat_one": "सबचैट खोलें (1 संदेश)",
+			"openSubchat_other": "सबचैट खोलें ({count} संदेश)"
+		},
+		"chats": "चैट्स",
+		"inputPlaceholder": "एक प्रश्न पूछें...",
+		"loadingChats": "चैट्स लोड हो रही हैं...",
+		"loadingMessages": "संदेश लोड हो रहे हैं...",
+		"loadingPreviousMessages": "पिछले संदेश लोड हो रहे हैं...",
+		"loadingSubchats": "सबचैट्स लोड हो रही हैं...",
+		"newChat": "नई चैट",
+		"sendMessage": "संदेश भेजें",
+		"showSubchats": "सबचैट्स दिखाएं ({count})",
+		"subchats": "सबचैट्स",
+		"xMessages_one": "1 संदेश",
+		"xMessages_other": "{count} संदेश"
+	}
+}

@@ -1,7 +1,8 @@
 import { DocsPlaygroundProvider } from '@ds/docs/components/docs-playground-provider'
 import { UiA11yProvider, UiLibraryProvider, UiThemeProvider } from '@ds/release'
+import { I18nProvider, initI18n } from '@i18n/release'
 import { Preview } from '@storybook/react'
-import { COOKIE__DS_COLOR_THEME, COOKIE__DS_UI_LIBRARY, Wrapper, Wrappers } from '@utils/release'
+import { COOKIE_KEY, Wrapper, Wrappers } from '@utils/release'
 import { StrictMode } from 'react'
 import { MemoryRouter } from 'react-router-dom'
 import { TOOLTIP__COLOR_THEME, TOOLTIP__PLAYGROUND_STYLE, TOOLTIP__UI_LIBRARY } from './_constants'
@@ -14,6 +15,8 @@ if (window.parent !== window) {
 		DS_VERSION: ENV__DS_VERSION,
 	}
 }
+
+initI18n(COOKIE_KEY.dsLanguage)
 
 const preview: Preview = {
 	globalTypes: {
@@ -61,16 +64,18 @@ const preview: Preview = {
 		(Story, { globals }: { globals: StoryGlobals }) => {
 			type Type =
 				| typeof DocsPlaygroundProvider
+				| typeof I18nProvider
 				| typeof UiA11yProvider
 				| typeof UiLibraryProvider
 				| typeof UiThemeProvider
 
 			const providers: Wrapper<Type>[] = [
+				{ elem: I18nProvider },
 				{ elem: UiA11yProvider },
 				{ elem: DocsPlaygroundProvider, props: { playgroundStyle: globals.playgroundStyle } },
-				{ elem: UiThemeProvider, props: { cookieKey: COOKIE__DS_COLOR_THEME, colorTheme: globals.colorTheme } },
+				{ elem: UiThemeProvider, props: { cookieKey: COOKIE_KEY.dsColorTheme, colorTheme: globals.colorTheme } },
 				// Must be last, it forces re-rendering
-				{ elem: UiLibraryProvider, props: { cookieKey: COOKIE__DS_UI_LIBRARY, uiLibrary: globals.uiLibrary } },
+				{ elem: UiLibraryProvider, props: { cookieKey: COOKIE_KEY.dsUiLibrary, uiLibrary: globals.uiLibrary } },
 			]
 
 			return (

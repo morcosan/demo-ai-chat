@@ -1,0 +1,47 @@
+{
+	"core": {
+		"action": {
+			"back": "뒤로",
+			"backToHome": "홈페이지로 돌아가기",
+			"changeLanguage": "언어 변경",
+			"close": "닫기",
+			"openMenu": "메뉴 열기",
+			"signOut": "로그아웃"
+		},
+		"apiDocs": "API 문서",
+		"asia": "아시아",
+		"custom": "사용자 정의",
+		"darkTheme": "다크",
+		"default": "기본",
+		"designSystem": "디자인 시스템",
+		"europe": "유럽",
+		"githubRepo": "GitHub 저장소",
+		"language": "언어",
+		"lightTheme": "라이트",
+		"loading": "로딩 중...",
+		"quickSettings": "빠른 설정",
+		"settings": "설정",
+		"uiLibrary": "UI 라이브러리:",
+		"uiTheme": "UI 테마:"
+	},
+	"aiChat": {
+		"action": {
+			"backToSubchats": "서브채팅으로 돌아가기",
+			"openSubchat_zero": "서브채팅 만들기",
+			"openSubchat_one": "서브채팅 열기 (1개 메시지)",
+			"openSubchat_other": "서브채팅 열기 ({count}개 메시지)"
+		},
+		"chats": "채팅",
+		"inputPlaceholder": "질문을 입력하세요...",
+		"loadingChats": "채팅 로딩 중...",
+		"loadingMessages": "메시지 로딩 중...",
+		"loadingPreviousMessages": "이전 메시지 로딩 중...",
+		"loadingSubchats": "서브채팅 로딩 중...",
+		"newChat": "새 채팅",
+		"sendMessage": "메시지 보내기",
+		"showSubchats": "서브채팅 보기 ({count})",
+		"subchats": "서브채팅",
+		"xMessages_one": "1개 메시지",
+		"xMessages_other": "{count}개 메시지"
+	}
+}

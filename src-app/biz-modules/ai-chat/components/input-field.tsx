@@ -28,11 +28,11 @@ export const InputField = withRef('InputField', (props: Props, ref: Ref<TextFiel
 			id={props.primary ? 'input-chat' : 'input-subchat'}
 			size={props.primary ? 'xl' : 'lg'}
 			value={props.input}
-			placeholder="Ask a question..."
+			placeholder={t('aiChat.inputPlaceholder')}
 			ariaLabel="New message"
 			slotRight={
 				<IconButton
-					tooltip="Send message"
+					tooltip={t('aiChat.sendMessage')}
 					variant={props.primary ? 'solid-primary' : 'solid-secondary'}
 					size={props.primary ? 'md' : 'sm'}
 					loading={props.loading}

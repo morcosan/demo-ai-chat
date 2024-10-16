@@ -1,5 +1,5 @@
 export const TOKENS__BREAKPOINT = {
-	xs: { $value: '320px', $css: '--ds-breakpoint-xs' },
+	xs: { $value: '420px', $css: '--ds-breakpoint-xs' },
 	sm: { $value: '640px', $css: '--ds-breakpoint-sm' },
 	md: { $value: '768px', $css: '--ds-breakpoint-md' },
 	lg: { $value: '1024px', $css: '--ds-breakpoint-lg' },

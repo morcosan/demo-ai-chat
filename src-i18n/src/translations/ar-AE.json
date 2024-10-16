@@ -1,0 +1,54 @@
+{
+	"core": {
+		"action": {
+			"back": "رجوع",
+			"backToHome": "العودة إلى الصفحة الرئيسية",
+			"changeLanguage": "تغيير اللغة",
+			"close": "إغلاق",
+			"openMenu": "فتح القائمة",
+			"signOut": "تسجيل الخروج"
+		},
+		"apiDocs": "وثائق API",
+		"asia": "آسيا",
+		"custom": "مخصص",
+		"darkTheme": "داكن",
+		"default": "افتراضي",
+		"designSystem": "نظام التصميم",
+		"europe": "أوروبا",
+		"githubRepo": "مستودع GitHub",
+		"language": "اللغة",
+		"lightTheme": "فاتح",
+		"loading": "جارٍ التحميل...",
+		"quickSettings": "إعدادات سريعة",
+		"settings": "الإعدادات",
+		"uiLibrary": "مكتبة واجهة المستخدم:",
+		"uiTheme": "سمة واجهة المستخدم:"
+	},
+	"aiChat": {
+		"action": {
+			"backToSubchats": "العودة إلى الدردشات الفرعية",
+			"openSubchat_zero": "إنشاء دردشة فرعية",
+			"openSubchat_one": "فتح دردشة فرعية (رسالة واحدة)",
+			"openSubchat_two": "فتح دردشة فرعية (رسالتان)",
+			"openSubchat_few": "فتح دردشة فرعية ({count} رسائل)",
+			"openSubchat_many": "فتح دردشة فرعية ({count} رسالة)",
+			"openSubchat_other": "فتح دردشة فرعية ({count} رسالة)"
+		},
+		"chats": "الدردشات",
+		"inputPlaceholder": "اطرح سؤالاً...",
+		"loadingChats": "جارٍ تحميل الدردشات...",
+		"loadingMessages": "جارٍ تحميل الرسائل...",
+		"loadingPreviousMessages": "جارٍ تحميل الرسائل السابقة...",
+		"loadingSubchats": "جارٍ تحميل الدردشات الفرعية...",
+		"newChat": "دردشة جديدة",
+		"sendMessage": "إرسال رسالة",
+		"showSubchats": "إظهار الدردشات الفرعية ({count})",
+		"subchats": "الدردشات الفرعية",
+		"xMessages_zero": "لا توجد رسائل",
+		"xMessages_one": "رسالة واحدة",
+		"xMessages_two": "رسالتان",
+		"xMessages_few": "{count} رسائل",
+		"xMessages_many": "{count} رسالة",
+		"xMessages_other": "{count} رسالة"
+	}
+}

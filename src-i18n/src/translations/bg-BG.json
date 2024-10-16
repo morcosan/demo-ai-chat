@@ -1,0 +1,47 @@
+{
+	"core": {
+		"action": {
+			"back": "Назад",
+			"backToHome": "Обратно към началната страница",
+			"changeLanguage": "Смяна на езика",
+			"close": "Затвори",
+			"openMenu": "Отвори меню",
+			"signOut": "Изход"
+		},
+		"apiDocs": "API документация",
+		"asia": "Азия",
+		"custom": "По избор",
+		"darkTheme": "Тъмна",
+		"default": "По подразбиране",
+		"designSystem": "Система за дизайн",
+		"europe": "Европа",
+		"githubRepo": "GitHub хранилище",
+		"language": "Език",
+		"lightTheme": "Светла",
+		"loading": "Зареждане...",
+		"quickSettings": "Бързи настройки",
+		"settings": "Настройки",
+		"uiLibrary": "UI библиотека:",
+		"uiTheme": "UI тема:"
+	},
+	"aiChat": {
+		"action": {
+			"backToSubchats": "Обратно към подчатовете",
+			"openSubchat_zero": "Създай подчат",
+			"openSubchat_one": "Отвори подчат (1 съобщение)",
+			"openSubchat_other": "Отвори подчат ({count} съобщения)"
+		},
+		"chats": "Чатове",
+		"inputPlaceholder": "Задайте въпрос...",
+		"loadingChats": "Зареждане на чатове...",
+		"loadingMessages": "Зареждане на съобщения...",
+		"loadingPreviousMessages": "Зареждане на предишни съобщения...",
+		"loadingSubchats": "Зареждане на подчатове...",
+		"newChat": "Нов чат",
+		"sendMessage": "Изпрати съобщение",
+		"showSubchats": "Покажи подчатове ({count})",
+		"subchats": "Подчатове",
+		"xMessages_one": "1 съобщение",
+		"xMessages_other": "{count} съобщения"
+	}
+}

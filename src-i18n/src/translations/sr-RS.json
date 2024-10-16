@@ -1,0 +1,49 @@
+{
+	"core": {
+		"action": {
+			"back": "Назад",
+			"backToHome": "Назад на почетну страницу",
+			"changeLanguage": "Промени језик",
+			"close": "Затвори",
+			"openMenu": "Отвори мени",
+			"signOut": "Одјави се"
+		},
+		"apiDocs": "API документација",
+		"asia": "Азија",
+		"custom": "Прилагођено",
+		"darkTheme": "Тамно",
+		"default": "Подразумевано",
+		"designSystem": "Систем дизајна",
+		"europe": "Европа",
+		"githubRepo": "GitHub репозиторијум",
+		"language": "Језик",
+		"lightTheme": "Светло",
+		"loading": "Учитавање...",
+		"quickSettings": "Брзе поставке",
+		"settings": "Подешавања",
+		"uiLibrary": "UI библиотека:",
+		"uiTheme": "UI тема:"
+	},
+	"aiChat": {
+		"action": {
+			"backToSubchats": "Назад на подразговоре",
+			"openSubchat_zero": "Креирај подразговор",
+			"openSubchat_one": "Отвори подразговор (1 порука)",
+			"openSubchat_few": "Отвори подразговор ({count} поруке)",
+			"openSubchat_other": "Отвори подразговор ({count} порука)"
+		},
+		"chats": "Разговори",
+		"inputPlaceholder": "Поставите питање...",
+		"loadingChats": "Учитавање разговора...",
+		"loadingMessages": "Учитавање порука...",
+		"loadingPreviousMessages": "Учитавање претходних порука...",
+		"loadingSubchats": "Учитавање подразговора...",
+		"newChat": "Нови разговор",
+		"sendMessage": "Пошаљи поруку",
+		"showSubchats": "Прикажи подразговоре ({count})",
+		"subchats": "Подразговори",
+		"xMessages_one": "1 порука",
+		"xMessages_few": "{count} поруке",
+		"xMessages_other": "{count} порука"
+	}
+}

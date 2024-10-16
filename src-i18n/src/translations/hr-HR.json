@@ -1,0 +1,49 @@
+{
+	"core": {
+		"action": {
+			"back": "Natrag",
+			"backToHome": "Natrag na početnu stranicu",
+			"changeLanguage": "Promijeni jezik",
+			"close": "Zatvori",
+			"openMenu": "Otvori izbornik",
+			"signOut": "Odjava"
+		},
+		"apiDocs": "API dokumentacija",
+		"asia": "Azija",
+		"custom": "Prilagođeno",
+		"darkTheme": "Tamno",
+		"default": "Zadano",
+		"designSystem": "Sustav dizajna",
+		"europe": "Europa",
+		"githubRepo": "GitHub repozitorij",
+		"language": "Jezik",
+		"lightTheme": "Svijetlo",
+		"loading": "Učitavanje...",
+		"quickSettings": "Brze postavke",
+		"settings": "Postavke",
+		"uiLibrary": "UI biblioteka:",
+		"uiTheme": "UI tema:"
+	},
+	"aiChat": {
+		"action": {
+			"backToSubchats": "Natrag na podrazgovore",
+			"openSubchat_zero": "Stvori podrazgovor",
+			"openSubchat_one": "Otvori podrazgovor (1 poruka)",
+			"openSubchat_few": "Otvori podrazgovor ({count} poruke)",
+			"openSubchat_other": "Otvori podrazgovor ({count} poruka)"
+		},
+		"chats": "Razgovori",
+		"inputPlaceholder": "Postavite pitanje...",
+		"loadingChats": "Učitavanje razgovora...",
+		"loadingMessages": "Učitavanje poruka...",
+		"loadingPreviousMessages": "Učitavanje prethodnih poruka...",
+		"loadingSubchats": "Učitavanje podrazgovora...",
+		"newChat": "Novi razgovor",
+		"sendMessage": "Pošalji poruku",
+		"showSubchats": "Prikaži podrazgovore ({count})",
+		"subchats": "Podrazgovori",
+		"xMessages_one": "1 poruka",
+		"xMessages_few": "{count} poruke",
+		"xMessages_other": "{count} poruka"
+	}
+}

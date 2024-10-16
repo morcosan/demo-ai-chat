@@ -12,6 +12,9 @@ export default {
 	trailingComma: 'es5',
 	useTabs: true,
 
+	// Format SVG
+	overrides: [{ files: '*.svg', options: { parser: 'html' } }],
+
 	// Plugins
 	plugins: ['prettier-plugin-css-order', 'prettier-plugin-organize-imports', 'prettier-plugin-tailwindcss'],
 

@@ -1,0 +1,47 @@
+{
+	"core": {
+		"action": {
+			"back": "Tillbaka",
+			"backToHome": "Tillbaka till startsidan",
+			"changeLanguage": "Ändra språk",
+			"close": "Stäng",
+			"openMenu": "Öppna meny",
+			"signOut": "Logga ut"
+		},
+		"apiDocs": "API-dokumentation",
+		"asia": "Asien",
+		"custom": "Anpassad",
+		"darkTheme": "Mörkt",
+		"default": "Standard",
+		"designSystem": "Designsystem",
+		"europe": "Europa",
+		"githubRepo": "GitHub-repository",
+		"language": "Språk",
+		"lightTheme": "Ljust",
+		"loading": "Laddar...",
+		"quickSettings": "Snabbinställningar",
+		"settings": "Inställningar",
+		"uiLibrary": "UI-bibliotek:",
+		"uiTheme": "UI-tema:"
+	},
+	"aiChat": {
+		"action": {
+			"backToSubchats": "Tillbaka till underchatter",
+			"openSubchat_zero": "Skapa underchat",
+			"openSubchat_one": "Öppna underchat (1 meddelande)",
+			"openSubchat_other": "Öppna underchat ({count} meddelanden)"
+		},
+		"chats": "Chattar",
+		"inputPlaceholder": "Ställ en fråga...",
+		"loadingChats": "Laddar chattar...",
+		"loadingMessages": "Laddar meddelanden...",
+		"loadingPreviousMessages": "Laddar tidigare meddelanden...",
+		"loadingSubchats": "Laddar underchatter...",
+		"newChat": "Ny chatt",
+		"sendMessage": "Skicka meddelande",
+		"showSubchats": "Visa underchatter ({count})",
+		"subchats": "Underchatter",
+		"xMessages_one": "1 meddelande",
+		"xMessages_other": "{count} meddelanden"
+	}
+}

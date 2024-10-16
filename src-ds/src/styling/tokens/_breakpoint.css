@@ -2,7 +2,7 @@
 
 :host,
 :root {
-	--ds-breakpoint-xs: 320px;
+	--ds-breakpoint-xs: 420px;
 	--ds-breakpoint-sm: 640px;
 	--ds-breakpoint-md: 768px;
 	--ds-breakpoint-lg: 1024px;

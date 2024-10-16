@@ -1,0 +1,47 @@
+{
+	"core": {
+		"action": {
+			"back": "ย้อนกลับ",
+			"backToHome": "กลับไปหน้าแรก",
+			"changeLanguage": "เปลี่ยนภาษา",
+			"close": "ปิด",
+			"openMenu": "เปิดเมนู",
+			"signOut": "ออกจากระบบ"
+		},
+		"apiDocs": "เอกสาร API",
+		"asia": "เอเชีย",
+		"custom": "กำหนดเอง",
+		"darkTheme": "โหมดมืด",
+		"default": "ค่าเริ่มต้น",
+		"designSystem": "ระบบการออกแบบ",
+		"europe": "ยุโรป",
+		"githubRepo": "คลัง GitHub",
+		"language": "ภาษา",
+		"lightTheme": "โหมดสว่าง",
+		"loading": "กำลังโหลด...",
+		"quickSettings": "การตั้งค่าด่วน",
+		"settings": "การตั้งค่า",
+		"uiLibrary": "ไลบรารี UI:",
+		"uiTheme": "ธีม UI:"
+	},
+	"aiChat": {
+		"action": {
+			"backToSubchats": "กลับไปยังแชทย่อย",
+			"openSubchat_zero": "สร้างแชทย่อย",
+			"openSubchat_one": "เปิดแชทย่อย (1 ข้อความ)",
+			"openSubchat_other": "เปิดแชทย่อย ({count} ข้อความ)"
+		},
+		"chats": "แชท",
+		"inputPlaceholder": "ถามคำถาม...",
+		"loadingChats": "กำลังโหลดแชท...",
+		"loadingMessages": "กำลังโหลดข้อความ...",
+		"loadingPreviousMessages": "กำลังโหลดข้อความก่อนหน้า...",
+		"loadingSubchats": "กำลังโหลดแชทย่อย...",
+		"newChat": "แชทใหม่",
+		"sendMessage": "ส่งข้อความ",
+		"showSubchats": "แสดงแชทย่อย ({count})",
+		"subchats": "แชทย่อย",
+		"xMessages_one": "1 ข้อความ",
+		"xMessages_other": "{count} ข้อความ"
+	}
+}

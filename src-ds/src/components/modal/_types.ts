@@ -7,6 +7,7 @@ export interface ModalProps extends ReactProps {
 	opened: boolean
 	width?: ModalWidth
 	height?: ModalHeight
+	shallow?: boolean
 	noClose?: boolean
 	noFooter?: boolean
 

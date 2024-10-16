@@ -21,11 +21,12 @@
 			// Aliases are missing code highlighting if tsconfig file is inside a folder
 			// Highlight must be manually configured as `tsconfig*.json` in `Settings | File Types | TypeScript Config`
 			"@ds/*": ["./src-ds/*"],
+			"@i18n/*": ["./src-i18n/*"],
 			"@utils/*": ["./src-utils/*"]
 		},
 
 		/* Linting */
 		"strict": true
 	},
-	"include": ["./src-ds", "./src-utils", "./.storybook/preview.tsx"]
+	"include": ["./src-ds", "./src-i18n", "./src-utils", "./.storybook/preview.tsx"]
 }

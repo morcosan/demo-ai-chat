@@ -1,0 +1,47 @@
+{
+	"core": {
+		"action": {
+			"back": "Takaisin",
+			"backToHome": "Takaisin etusivulle",
+			"changeLanguage": "Vaihda kieli",
+			"close": "Sulje",
+			"openMenu": "Avaa valikko",
+			"signOut": "Kirjaudu ulos"
+		},
+		"apiDocs": "API-dokumentaatio",
+		"asia": "Aasia",
+		"custom": "Mukautettu",
+		"darkTheme": "Tumma",
+		"default": "Oletus",
+		"designSystem": "Suunnittelujärjestelmä",
+		"europe": "Eurooppa",
+		"githubRepo": "GitHub-varasto",
+		"language": "Kieli",
+		"lightTheme": "Vaalea",
+		"loading": "Ladataan...",
+		"quickSettings": "Pika-asetukset",
+		"settings": "Asetukset",
+		"uiLibrary": "Käyttöliittymäkirjasto:",
+		"uiTheme": "Käyttöliittymäteema:"
+	},
+	"aiChat": {
+		"action": {
+			"backToSubchats": "Takaisin alikeskusteluihin",
+			"openSubchat_zero": "Luo alikeskustelu",
+			"openSubchat_one": "Avaa alikeskustelu (1 viesti)",
+			"openSubchat_other": "Avaa alikeskustelu ({count} viestiä)"
+		},
+		"chats": "Keskustelut",
+		"inputPlaceholder": "Kysy kysymys...",
+		"loadingChats": "Ladataan keskusteluja...",
+		"loadingMessages": "Ladataan viestejä...",
+		"loadingPreviousMessages": "Ladataan aiempia viestejä...",
+		"loadingSubchats": "Ladataan alikeskusteluja...",
+		"newChat": "Uusi keskustelu",
+		"sendMessage": "Lähetä viesti",
+		"showSubchats": "Näytä alikeskustelut ({count})",
+		"subchats": "Alikeskustelut",
+		"xMessages_one": "1 viesti",
+		"xMessages_other": "{count} viestiä"
+	}
+}

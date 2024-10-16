@@ -1,0 +1,47 @@
+{
+	"core": {
+		"action": {
+			"back": "Til baka",
+			"backToHome": "Aftur á forsíðu",
+			"changeLanguage": "Skipta um tungumál",
+			"close": "Loka",
+			"openMenu": "Opna valmynd",
+			"signOut": "Skrá út"
+		},
+		"apiDocs": "API skjölun",
+		"asia": "Asía",
+		"custom": "Sérsniðið",
+		"darkTheme": "Dökkt",
+		"default": "Sjálfgefið",
+		"designSystem": "Hönnunarkerfi",
+		"europe": "Evrópa",
+		"githubRepo": "GitHub geymsla",
+		"language": "Tungumál",
+		"lightTheme": "Ljóst",
+		"loading": "Hleður...",
+		"quickSettings": "Flýtistillingar",
+		"settings": "Stillingar",
+		"uiLibrary": "Notendaviðmótssafn:",
+		"uiTheme": "Notendaviðmótsþema:"
+	},
+	"aiChat": {
+		"action": {
+			"backToSubchats": "Til baka í undirspjall",
+			"openSubchat_zero": "Búa til undirspjall",
+			"openSubchat_one": "Opna undirspjall (1 skilaboð)",
+			"openSubchat_other": "Opna undirspjall ({count} skilaboð)"
+		},
+		"chats": "Spjall",
+		"inputPlaceholder": "Spyrðu spurningar...",
+		"loadingChats": "Hleður spjall...",
+		"loadingMessages": "Hleður skilaboð...",
+		"loadingPreviousMessages": "Hleður fyrri skilaboð...",
+		"loadingSubchats": "Hleður undirspjall...",
+		"newChat": "Nýtt spjall",
+		"sendMessage": "Senda skilaboð",
+		"showSubchats": "Sýna undirspjall ({count})",
+		"subchats": "Undirspjall",
+		"xMessages_one": "1 skilaboð",
+		"xMessages_other": "{count} skilaboð"
+	}
+}

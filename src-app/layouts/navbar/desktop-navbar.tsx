@@ -7,7 +7,11 @@ import { SettingsMenu } from './_settings-menu'
 
 const COOKIE__PINNED_NAVBAR = 'app-pinned-navbar'
 
-export const DesktopNavbar = () => {
+interface Props {
+	onClickLanguage(): void
+}
+
+export const DesktopNavbar = (props: Props) => {
 	const { isViewportMinXL } = useUiViewport()
 	const [isSettingsOpened, setIsSettingsOpened] = useState(false)
 	const [isNavPinned, setIsNavPinned] = useState(false)
@@ -22,7 +26,7 @@ export const DesktopNavbar = () => {
 	const settingsMenuClass = cx(
 		isSettingsOpened ? 'block' : 'hidden',
 		'absolute bottom-0 right-0 z-popup translate-x-full shadow-lg',
-		'w-lg-6 rounded-md border border-color-border-shadow bg-color-bg-default'
+		'w-lg-7 rounded-md border border-color-border-shadow bg-color-bg-default'
 	)
 
 	const expandedClass = 'w-lg-7 min-w-lg-7'
@@ -50,6 +54,11 @@ export const DesktopNavbar = () => {
 	const onClickPin = () => {
 		setIsNavPinned(!isNavPinned)
 		localStorage.setItem(COOKIE__PINNED_NAVBAR, !isNavPinned ? 'true' : 'false')
+	}
+
+	const onClickLanguage = () => {
+		setIsSettingsOpened(false)
+		props.onClickLanguage()
 	}
 
 	const onClickWindow = (event: MouseEvent) => {
@@ -97,7 +106,7 @@ export const DesktopNavbar = () => {
 			/>
 
 			{/* PAGE OVERLAY */}
-			<div className={isNavCollapsed || isNavPinned ? 'hidden' : 'fixed-overlay z-navbar backdrop-blur-xs'} />
+			<div className={isNavCollapsed || isNavPinned ? 'hidden' : 'fixed-overlay z-navbar backdrop-blur-subtle'} />
 
 			{/* NAVBAR */}
 			<nav
@@ -129,7 +138,7 @@ export const DesktopNavbar = () => {
 						onClick={onToggleSettings}
 					/>
 					<div className={settingsMenuClass}>
-						<SettingsMenu />
+						<SettingsMenu onClickLanguage={onClickLanguage} />
 					</div>
 				</div>
 			</nav>

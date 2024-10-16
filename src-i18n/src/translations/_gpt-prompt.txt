@@ -1,0 +1,62 @@
+I will give you the translation json for english language.
+I will also give you a list of locales for the languages that I need.
+I want you to create a json file for each locale that I give you.
+I am using react i18n library.
+{
+	"key_zero": "zero",
+	"key_one": "singular",
+	"key_two": "two",
+	"key_few": "few",
+	"key_many": "many",
+	"key_other": "other"
+}
+For each language, you must check whether the language has multiple plural forms.
+If you see a key with "_other" suffix, create new keys for that translation according to i18n config.
+Create new keys only if the translation is different than "_other" translation.
+You must translate the json values in each language for each locale.
+Use the name of the locale plus ".json" extension for file name.
+Example: en-US.json
+Use tabs for indenting.
+Just give me the files, with no other text.
+
+uk-UA
+ar-AE
+bg-BG
+cs-CZ
+da-DK
+de-DE
+el-GR
+es-ES
+et-EE
+fi-FI
+fr-FR
+hr-HR
+hu-HU
+is-IS
+it-IT
+lv-LV
+nl-NL
+pl-PL
+pt-PT
+ro-RO
+sk-SK
+sl-SI
+sq-AL
+sr-RS
+sv-SE
+az-AZ
+fil-PH
+hi-IN
+id-ID
+ja-JP
+ka-GE
+kk-KZ
+km-KH
+ko-KR
+ms-MY
+th-TH
+tr-TR
+ur-PK
+uz-UZ
+vi-VN
+zh-CN

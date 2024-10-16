@@ -1,0 +1,47 @@
+{
+	"core": {
+		"action": {
+			"back": "واپس",
+			"backToHome": "ہوم پیج پر واپس جائیں",
+			"changeLanguage": "زبان تبدیل کریں",
+			"close": "بند کریں",
+			"openMenu": "مینو کھولیں",
+			"signOut": "لاگ آؤٹ کریں"
+		},
+		"apiDocs": "API دستاویزات",
+		"asia": "ایشیا",
+		"custom": "حسب ضرورت",
+		"darkTheme": "ڈارک",
+		"default": "ڈیفالٹ",
+		"designSystem": "ڈیزائن سسٹم",
+		"europe": "یورپ",
+		"githubRepo": "GitHub ریپوزٹری",
+		"language": "زبان",
+		"lightTheme": "لائٹ",
+		"loading": "لوڈ ہو رہا ہے...",
+		"quickSettings": "فوری ترتیبات",
+		"settings": "ترتیبات",
+		"uiLibrary": "UI لائبریری:",
+		"uiTheme": "UI تھیم:"
+	},
+	"aiChat": {
+		"action": {
+			"backToSubchats": "ذیلی چیٹس پر واپس جائیں",
+			"openSubchat_zero": "ذیلی چیٹ بنائیں",
+			"openSubchat_one": "ذیلی چیٹ کھولیں (1 پیغام)",
+			"openSubchat_other": "ذیلی چیٹ کھولیں ({count} پیغامات)"
+		},
+		"chats": "چیٹس",
+		"inputPlaceholder": "ایک سوال پوچھیں...",
+		"loadingChats": "چیٹس لوڈ ہو رہی ہیں...",
+		"loadingMessages": "پیغامات لوڈ ہو رہے ہیں...",
+		"loadingPreviousMessages": "پچھلے پیغامات لوڈ ہو رہے ہیں...",
+		"loadingSubchats": "ذیلی چیٹس لوڈ ہو رہی ہیں...",
+		"newChat": "نئی چیٹ",
+		"sendMessage": "پیغام بھیجیں",
+		"showSubchats": "ذیلی چیٹس دکھائیں ({count})",
+		"subchats": "ذیلی چیٹس",
+		"xMessages_one": "1 پیغام",
+		"xMessages_other": "{count} پیغامات"
+	}
+}

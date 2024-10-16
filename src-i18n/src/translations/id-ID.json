@@ -1,0 +1,47 @@
+{
+	"core": {
+		"action": {
+			"back": "Kembali",
+			"backToHome": "Kembali ke beranda",
+			"changeLanguage": "Ubah bahasa",
+			"close": "Tutup",
+			"openMenu": "Buka menu",
+			"signOut": "Keluar"
+		},
+		"apiDocs": "Dokumentasi API",
+		"asia": "Asia",
+		"custom": "Kustom",
+		"darkTheme": "Gelap",
+		"default": "Default",
+		"designSystem": "Sistem desain",
+		"europe": "Eropa",
+		"githubRepo": "Repositori GitHub",
+		"language": "Bahasa",
+		"lightTheme": "Terang",
+		"loading": "Memuat...",
+		"quickSettings": "Pengaturan cepat",
+		"settings": "Pengaturan",
+		"uiLibrary": "Pustaka UI:",
+		"uiTheme": "Tema UI:"
+	},
+	"aiChat": {
+		"action": {
+			"backToSubchats": "Kembali ke subchat",
+			"openSubchat_zero": "Buat subchat",
+			"openSubchat_one": "Buka subchat (1 pesan)",
+			"openSubchat_other": "Buka subchat ({count} pesan)"
+		},
+		"chats": "Obrolan",
+		"inputPlaceholder": "Ajukan pertanyaan...",
+		"loadingChats": "Memuat obrolan...",
+		"loadingMessages": "Memuat pesan...",
+		"loadingPreviousMessages": "Memuat pesan sebelumnya...",
+		"loadingSubchats": "Memuat subchat...",
+		"newChat": "Obrolan baru",
+		"sendMessage": "Kirim pesan",
+		"showSubchats": "Tampilkan subchat ({count})",
+		"subchats": "Subchat",
+		"xMessages_one": "1 pesan",
+		"xMessages_other": "{count} pesan"
+	}
+}

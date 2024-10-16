@@ -1,0 +1,47 @@
+{
+	"core": {
+		"action": {
+			"back": "Terug",
+			"backToHome": "Terug naar startpagina",
+			"changeLanguage": "Taal wijzigen",
+			"close": "Sluiten",
+			"openMenu": "Menu openen",
+			"signOut": "Uitloggen"
+		},
+		"apiDocs": "API-documentatie",
+		"asia": "Azië",
+		"custom": "Aangepast",
+		"darkTheme": "Donker",
+		"default": "Standaard",
+		"designSystem": "Ontwerpsysteem",
+		"europe": "Europa",
+		"githubRepo": "GitHub-repository",
+		"language": "Taal",
+		"lightTheme": "Licht",
+		"loading": "Laden...",
+		"quickSettings": "Snelle instellingen",
+		"settings": "Instellingen",
+		"uiLibrary": "UI-bibliotheek:",
+		"uiTheme": "UI-thema:"
+	},
+	"aiChat": {
+		"action": {
+			"backToSubchats": "Terug naar subchats",
+			"openSubchat_zero": "Subchat maken",
+			"openSubchat_one": "Subchat openen (1 bericht)",
+			"openSubchat_other": "Subchat openen ({count} berichten)"
+		},
+		"chats": "Chats",
+		"inputPlaceholder": "Stel een vraag...",
+		"loadingChats": "Chats laden...",
+		"loadingMessages": "Berichten laden...",
+		"loadingPreviousMessages": "Vorige berichten laden...",
+		"loadingSubchats": "Subchats laden...",
+		"newChat": "Nieuwe chat",
+		"sendMessage": "Bericht verzenden",
+		"showSubchats": "Subchats tonen ({count})",
+		"subchats": "Subchats",
+		"xMessages_one": "1 bericht",
+		"xMessages_other": "{count} berichten"
+	}
+}

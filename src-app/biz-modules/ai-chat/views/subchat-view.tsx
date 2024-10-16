@@ -47,23 +47,23 @@ export const SubchatView = () => {
 				{/* TOOLBAR */}
 				<StickyToolbar variant="subchat" className="-mx-a11y-padding px-xs-2 py-xs-1">
 					<div className="flex items-center gap-xs-2">
-						<IconButton linkHref={`/chat/${activeChat?.id}`} tooltip="Back to subchats" size="sm">
+						<IconButton linkHref={`/chat/${activeChat?.id}`} tooltip={t('aiChat.action.backToSubchats')} size="sm">
 							<ArrowBackSvg className="h-xs-5" />
 						</IconButton>
 
-						{Boolean(subchatPagination.count) && (
-							<div className="pb-px text-size-sm">{subchatPagination.count} messages</div>
-						)}
+						<div className="pb-px text-size-sm">
+							{Boolean(subchatPagination.count) && t('aiChat.xMessages', { count: subchatPagination.count })}
+						</div>
 					</div>
 				</StickyToolbar>
 
 				{subchatLoading === 'full' ? (
-					<LoadingText text="Loading messages..." className="flex-center h-full" />
+					<LoadingText text={t('aiChat.loadingMessages')} className="flex-center h-full" />
 				) : (
 					<>
 						{/* LOAD MORE */}
 						<LoadingText
-							text="Loading previous messages..."
+							text={t('aiChat.loadingPreviousMessages')}
 							className="flex-center min-h-sm-1 text-size-xs"
 							style={{ visibility: subchatLoading === 'more' ? 'visible' : 'hidden' }}
 						/>

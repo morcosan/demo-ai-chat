@@ -1,0 +1,47 @@
+{
+	"core": {
+		"action": {
+			"back": "Bumalik",
+			"backToHome": "Bumalik sa homepage",
+			"changeLanguage": "Palitan ang wika",
+			"close": "Isara",
+			"openMenu": "Buksan ang menu",
+			"signOut": "Mag-sign out"
+		},
+		"apiDocs": "Dokumentasyon ng API",
+		"asia": "Asya",
+		"custom": "Pasadya",
+		"darkTheme": "Madilim",
+		"default": "Default",
+		"designSystem": "Sistema ng disenyo",
+		"europe": "Europa",
+		"githubRepo": "GitHub repository",
+		"language": "Wika",
+		"lightTheme": "Maliwanag",
+		"loading": "Naglo-load...",
+		"quickSettings": "Mabilis na mga setting",
+		"settings": "Mga Setting",
+		"uiLibrary": "UI library:",
+		"uiTheme": "UI tema:"
+	},
+	"aiChat": {
+		"action": {
+			"backToSubchats": "Bumalik sa mga subchat",
+			"openSubchat_zero": "Gumawa ng subchat",
+			"openSubchat_one": "Buksan ang subchat (1 mensahe)",
+			"openSubchat_other": "Buksan ang subchat ({count} na mensahe)"
+		},
+		"chats": "Mga chat",
+		"inputPlaceholder": "Magtanong...",
+		"loadingChats": "Naglo-load ng mga chat...",
+		"loadingMessages": "Naglo-load ng mga mensahe...",
+		"loadingPreviousMessages": "Naglo-load ng mga nakaraang mensahe...",
+		"loadingSubchats": "Naglo-load ng mga subchat...",
+		"newChat": "Bagong chat",
+		"sendMessage": "Ipadala ang mensahe",
+		"showSubchats": "Ipakita ang mga subchat ({count})",
+		"subchats": "Mga subchat",
+		"xMessages_one": "1 mensahe",
+		"xMessages_other": "{count} na mensahe"
+	}
+}

@@ -1,0 +1,47 @@
+{
+	"core": {
+		"action": {
+			"back": "Tilbage",
+			"backToHome": "Tilbage til hjemmesiden",
+			"changeLanguage": "Skift sprog",
+			"close": "Luk",
+			"openMenu": "Åbn menu",
+			"signOut": "Log ud"
+		},
+		"apiDocs": "API-dokumentation",
+		"asia": "Asien",
+		"custom": "Tilpasset",
+		"darkTheme": "Mørk",
+		"default": "Standard",
+		"designSystem": "Designsystem",
+		"europe": "Europa",
+		"githubRepo": "GitHub-repository",
+		"language": "Sprog",
+		"lightTheme": "Lys",
+		"loading": "Indlæser...",
+		"quickSettings": "Hurtigindstillinger",
+		"settings": "Indstillinger",
+		"uiLibrary": "UI-bibliotek:",
+		"uiTheme": "UI-tema:"
+	},
+	"aiChat": {
+		"action": {
+			"backToSubchats": "Tilbage til underchats",
+			"openSubchat_zero": "Opret underchat",
+			"openSubchat_one": "Åbn underchat (1 besked)",
+			"openSubchat_other": "Åbn underchat ({count} beskeder)"
+		},
+		"chats": "Chats",
+		"inputPlaceholder": "Stil et spørgsmål...",
+		"loadingChats": "Indlæser chats...",
+		"loadingMessages": "Indlæser beskeder...",
+		"loadingPreviousMessages": "Indlæser tidligere beskeder...",
+		"loadingSubchats": "Indlæser underchats...",
+		"newChat": "Ny chat",
+		"sendMessage": "Send besked",
+		"showSubchats": "Vis underchats ({count})",
+		"subchats": "Underchats",
+		"xMessages_one": "1 besked",
+		"xMessages_other": "{count} beskeder"
+	}
+}
