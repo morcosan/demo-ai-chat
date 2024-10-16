@@ -1,4 +1,4 @@
-import { CloseSvg, IconButton, Modal, SearchSvg, TextField, TextFieldRef } from '@ds/release'
+import { Modal, SearchSvg, TextField, TextFieldRef } from '@ds/release'
 import { useRef, useState } from 'react'
 import { useAiChat } from './state'
 
@@ -15,16 +15,8 @@ export const AiChatNavSearchModal = () => {
 			id="chat-search"
 			value={search}
 			placeholder={t('aiChat.action.searchChats')}
-			size="sm"
-			className="mb-xs-4 mt-xs-1"
-			slotLeft={<SearchSvg className="ml-xs-2 mr-xs-0 mt-px h-full w-xs-5 min-w-xs-5" />}
-			slotRight={
-				Boolean(searchText) && (
-					<IconButton tooltip="Clear search" variant="text-danger" size="xs" onClick={() => setSearch('')}>
-						<CloseSvg className="h-xs-6" />
-					</IconButton>
-				)
-			}
+			slotLeft={<SearchSvg className="ml-xs-4 mr-xs-1 mt-px h-full w-xs-5 min-w-xs-5" />}
+			className="w-full font-weight-sm"
 			onChange={setSearch}
 		/>
 	)

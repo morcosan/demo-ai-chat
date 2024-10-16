@@ -71,6 +71,7 @@ export const useModalBase = (rawProps: ModalProps) => {
 		display: 'flex',
 		alignItems: 'center',
 		minHeight: $spacing['button-h-md'],
+		marginRight: $spacing['button-h-md'],
 		fontSize: $fontSize['lg'],
 		fontWeight: $fontWeight['lg'],
 	}

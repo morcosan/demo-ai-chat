@@ -37,7 +37,7 @@ export const AiChatNavMenu = ({ collapsed }: Props) => {
 			</Button>
 
 			{/* OPTIONS */}
-			<div className="mt-xs-5 flex h-button-h-sm w-full items-center justify-between">
+			<div className="mt-xs-7 flex h-button-h-sm w-full items-center justify-between">
 				<span className="ml-button-px-item truncate text-size-sm text-color-text-subtle">
 					{t('aiChat.chats')}
 					&nbsp;
