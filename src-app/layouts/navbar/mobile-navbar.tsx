@@ -1,4 +1,4 @@
-import { AiChatNavTopbar } from '@app/biz-modules/ai-chat/views/nav/nav-topbar'
+import { AiChatNavTopbar } from '@app/biz-modules/ai-chat/nav-topbar'
 import { IconButton, MenuSvg } from '@ds/release'
 import { AppLogo } from './_app-logo'
 

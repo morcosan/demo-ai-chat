@@ -1,6 +1,6 @@
 import { Button } from '@ds/release'
-import { SubchatIcon } from '../../components/subchat-icon'
-import { AiChatView, useAiChat } from '../../state'
+import { SubchatIcon } from './components/subchat-icon'
+import { AiChatView, useAiChat } from './state'
 
 export const AiChatNavTopbar = ({ className }: ReactProps) => {
 	const { activeChat, activeView, allSubchatsPagination, setActiveView } = useAiChat()
@@ -11,7 +11,7 @@ export const AiChatNavTopbar = ({ className }: ReactProps) => {
 
 	return activeView !== AiChatView.NONE && activeChat?.id ? (
 		<Button
-			tooltip={t('aiChat.showSubchats', { count: allSubchatsPagination.count })}
+			tooltip={t('aiChat.action.showSubchats', { count: allSubchatsPagination.count })}
 			variant="item-text-default"
 			highlight={activeView === AiChatView.MOBILE_SUBCHAT ? 'pressed' : 'default'}
 			className={cx('px-xs-4', className)}

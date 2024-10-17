@@ -60,7 +60,7 @@ const AiChatPage = () => {
 	) : chatLoading === 'full' || allSubchatsLoading === 'full' ? (
 		<LoadingText text={t('aiChat.loadingSubchats')} className="flex-center h-full" />
 	) : !allSubchats.length && !subchatLoading ? (
-		<div className="flex-center h-full w-full text-color-text-subtle">No sub-chats</div>
+		<div className="flex-center h-full w-full text-color-text-subtle">{t('aiChat.noSubchats')}</div>
 	) : (
 		<SubchatsView />
 	)

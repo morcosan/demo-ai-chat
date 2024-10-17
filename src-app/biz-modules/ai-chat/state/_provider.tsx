@@ -3,6 +3,7 @@ import { AiChatView, Context, Store } from './_context'
 import { useAllChatsStore } from './stores/all-chats-store'
 import { useAllSubchatsStore } from './stores/all-subchats-store'
 import { useChatStore } from './stores/chat-store'
+import { useSearchStore } from './stores/search-store'
 import { useSubchatStore } from './stores/subchat-store'
 
 export const AiChatProvider = ({ children }: ReactProps) => {
@@ -11,6 +12,7 @@ export const AiChatProvider = ({ children }: ReactProps) => {
 	const chatStore = useChatStore(allChatsStore)
 	const allSubchatsStore = useAllSubchatsStore(chatStore)
 	const subchatStore = useSubchatStore(chatStore, allSubchatsStore)
+	const searchStore = useSearchStore()
 
 	const store: Store = useMemo(
 		() => ({
@@ -18,6 +20,7 @@ export const AiChatProvider = ({ children }: ReactProps) => {
 			...allSubchatsStore,
 			...chatStore,
 			...subchatStore,
+			...searchStore,
 			activeView,
 			setActiveView,
 		}),
@@ -26,6 +29,8 @@ export const AiChatProvider = ({ children }: ReactProps) => {
 			...Object.values(chatStore),
 			...Object.values(allSubchatsStore),
 			...Object.values(subchatStore),
+			...Object.values(searchStore),
+			activeView,
 		]
 	)
 

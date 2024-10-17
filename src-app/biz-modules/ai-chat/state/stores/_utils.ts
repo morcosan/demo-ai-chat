@@ -1,5 +1,5 @@
 import { MessageRole } from '@api/types'
-import { Message } from '../../api/types'
+import { Message } from '../../api'
 
 export const GHOST_CHAT = {
 	id: 0,

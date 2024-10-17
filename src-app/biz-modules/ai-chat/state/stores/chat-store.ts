@@ -1,7 +1,7 @@
 import { API } from '@app/biz-modules/ai-chat/api'
 import { uniqBy } from 'lodash'
 import { useEffect, useState } from 'react'
-import { Chat, Message } from '../../api/types'
+import { Chat, Message } from '../../api'
 import { GHOST_CHAT, newGhostMessage } from './_utils'
 import { AllChatsStore } from './all-chats-store'
 
@@ -68,11 +68,11 @@ export const useChatStore = (allChatsStore: AllChatsStore): ChatStore => {
 
 		setChatLoading(chatPagination.page === 0 ? 'full' : 'more')
 
-		const listing = await API.getMessages(activeChat.id, 0, chatPagination.page + 1)
+		const listing = await API.getMessages(activeChat.id, 0, '', chatPagination.page + 1)
 
 		setChatMessages(uniqBy([...listing.messages, ...chatMessages], (msg: Message) => msg.id))
-		setChatLoading(false)
 		setChatPagination({ page: chatPagination.page + 1, count: listing.count })
+		setChatLoading(false)
 	}
 
 	const postChatMessage = async (text: string) => {
@@ -101,8 +101,8 @@ export const useChatStore = (allChatsStore: AllChatsStore): ChatStore => {
 		const listing = await API.postMessage(chat.id, 0, text)
 
 		setChatMessages([...chatMessages, ...listing.messages])
-		setChatLoading(false)
 		setChatPagination({ ...chatPagination, count: chatPagination.count + listing.count })
+		setChatLoading(false)
 
 		if (!activeChat) {
 			setShouldRename(true)

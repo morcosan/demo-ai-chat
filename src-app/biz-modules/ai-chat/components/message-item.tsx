@@ -1,5 +1,5 @@
 import { AiChatSvg, Button } from '@ds/release'
-import { Message } from '../api/types'
+import { Message } from '../api'
 import { SubchatIcon } from './subchat-icon'
 
 interface Props {

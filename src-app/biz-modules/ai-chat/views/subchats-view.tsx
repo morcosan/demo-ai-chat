@@ -1,7 +1,7 @@
 import { Button } from '@ds/release'
 import { debounce } from 'lodash'
 import { UIEvent } from 'react'
-import { Subchat } from '../api/types'
+import { Subchat } from '../api'
 import { LoadingText } from '../components/loading-text'
 import { StickyToolbar } from '../components/sticky-toolbar'
 import { SubchatIcon } from '../components/subchat-icon'
@@ -20,7 +20,7 @@ export const SubchatsView = () => {
 		<div className="h-full py-xs-1">
 			<div className="h-full overflow-y-scroll pb-xs-9 pl-scrollbar-w pr-a11y-padding" onScroll={onScroll}>
 				{/* TOOLBAR */}
-				<StickyToolbar variant="subchat" className="-mx-a11y-padding mb-xs-2 px-xs-9 py-xs-1">
+				<StickyToolbar className="-mx-a11y-padding mb-xs-2 px-xs-9 py-xs-1" permanent>
 					<div className="flex h-button-h-sm items-center text-size-sm">
 						{t('aiChat.subchats')} ({allSubchatsPagination.count})
 					</div>

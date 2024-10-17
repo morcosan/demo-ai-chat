@@ -1,4 +1,4 @@
-import { AiChatNavMenu } from '@app/biz-modules/ai-chat/views/nav/nav-menu'
+import { AiChatNavMenu } from '@app/biz-modules/ai-chat/nav-menu'
 import { SettingsButton } from './_settings-button'
 
 interface Props {

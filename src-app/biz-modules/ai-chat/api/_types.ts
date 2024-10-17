@@ -19,3 +19,7 @@ export interface MessageListing {
 	messages: Message[]
 	count: number
 }
+
+export interface SearchResult extends Message {
+	chat: Chat
+}

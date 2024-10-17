@@ -44,6 +44,7 @@ export interface MessagesApiQuery extends ApiQuery {
 	subchatId?: string | number
 	count?: string | number
 	page?: string | number
+	search?: string
 }
 export interface MessagesApiData {
 	count: number
