@@ -37,7 +37,7 @@ export const AiChatNavSearchModal = () => {
 			ref={searchRef}
 			id="chat-search"
 			value={searchValue}
-			placeholder={t('aiChat.action.searchChats')}
+			placeholder={t('aiChat.searchChatsPlaceholder')}
 			slotLeft={<SearchSvg className="ml-xs-4 mr-xs-1 mt-px h-full w-xs-5 min-w-xs-5" />}
 			className="w-full font-weight-sm"
 			onChange={onChangeSearch}

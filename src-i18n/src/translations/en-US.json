@@ -30,7 +30,7 @@
 			"openChat": "Open chat",
 			"openSubchat_other": "Open subchat ({count} messages)",
 			"openSubchat_zero": "Create subchat",
-			"searchChats": "Search chats...",
+			"searchChats": "Search chats",
 			"showMoreResults": "Show more results",
 			"showSubchats": "Show subchats ({count})",
 			"startSearching_other": "Type at least {count} characters"
@@ -44,6 +44,7 @@
 		"newChat": "New chat",
 		"noChats": "No chats",
 		"noSubchats": "No subchats",
+		"searchChatsPlaceholder": "Search chats...",
 		"searchingChats": "Searching chats...",
 		"sendMessage": "Send message",
 		"subchats": "Subchats",
