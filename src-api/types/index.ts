@@ -79,7 +79,9 @@ export type MessageRole = 'user' | 'agent' | 'system'
 /**
  * DTOs
  */
-export type ChatDTO = Chat
+export interface ChatDTO extends Chat {
+	size: number
+}
 
 export interface SubchatDTO {
 	id: number
