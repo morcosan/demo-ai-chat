@@ -11,8 +11,10 @@ import {
 	SubchatsApiData,
 	SubchatsApiQuery,
 } from '@app/api'
-import { mapDtoToChat, mapDtoToMessage, mapDtoToSubchat } from './mappers'
-import { ChatListing, MessageListing, SubchatListing } from './types'
+import { mapDtoToChat, mapDtoToMessage, mapDtoToSubchat } from './_mappers'
+import { ChatListing, MessageListing, SubchatListing } from './_types'
+
+export * from './_types'
 
 export const API = {
 	async getChats(chatIds?: number[], page?: number): Promise<ChatListing> {
@@ -64,12 +66,13 @@ export const API = {
 			: { subchats: [], count: 0 }
 	},
 
-	async getMessages(chatId: number, subchatId?: number, page?: number): Promise<MessageListing> {
+	async getMessages(chatId?: number, subchatId?: number, search?: string, page?: number): Promise<MessageListing> {
 		const query: MessagesApiQuery = {
 			count: 20,
 			page: page || 1,
 			chatId,
 			subchatId,
+			search,
 		}
 		const resp = await chatsAPI.get<MessagesApiData>('/api/messages', query)
 

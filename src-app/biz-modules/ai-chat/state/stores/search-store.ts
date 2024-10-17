@@ -1,5 +1,6 @@
+import { uniq } from 'lodash'
 import { useState } from 'react'
-import { SearchResult } from '../../api/types'
+import { API, Chat, Message, SearchResult } from '../../api'
 
 export interface SearchStore {
 	showsSearch: boolean
@@ -35,8 +36,6 @@ export const useSearchStore = (): SearchStore => {
 	const canLoadSearchResults = !searchResults.length || searchResults.length < searchPagination.count
 
 	const searchByKeyword = async (keyword: string) => {
-		console.log(keyword, searchLoading)
-
 		if (searchLoading) return
 		if (!keyword) {
 			clearSearch()
@@ -46,8 +45,21 @@ export const useSearchStore = (): SearchStore => {
 		setSearchKeyword(keyword)
 		setSearchLoading('full')
 
-		await wait(2000)
+		const messageListing = await API.getMessages(0, 0, keyword)
 
+		const chatIds = uniq(messageListing.messages.map((message: Message) => message.chatId))
+
+		const chatListing = await API.getChats(chatIds)
+
+		const results = messageListing.messages.map(
+			(message: Message): SearchResult => ({
+				...message,
+				chat: chatListing.chats.find((chat) => chat.id === message.chatId) as Chat,
+			})
+		)
+
+		setSearchResults([...searchResults, ...results])
+		setSearchPagination({ page: 1, count: messageListing.count })
 		setSearchLoading(false)
 	}
 

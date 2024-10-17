@@ -1,7 +1,7 @@
 import { debounce } from 'lodash'
 import { UIEvent, useEffect } from 'react'
 import { useNavigate, useParams, useSearchParams } from 'react-router-dom'
-import { Message } from '../api/types'
+import { Message } from '../api'
 import { InputField } from '../components/input-field'
 import { LoadingText } from '../components/loading-text'
 import { MessageItem } from '../components/message-item'

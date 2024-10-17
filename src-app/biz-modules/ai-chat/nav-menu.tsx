@@ -1,7 +1,7 @@
 import { AiChatSvg, Button, DotsSvg, IconButton, SearchSvg } from '@ds/release'
 import { debounce } from 'lodash'
 import { UIEvent } from 'react'
-import { Chat } from './api/types'
+import { Chat } from './api'
 import { LoadingText } from './components/loading-text'
 import { useAiChat } from './state'
 

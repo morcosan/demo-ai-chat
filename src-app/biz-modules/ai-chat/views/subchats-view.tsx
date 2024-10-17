@@ -1,7 +1,7 @@
 import { Button } from '@ds/release'
 import { debounce } from 'lodash'
 import { UIEvent } from 'react'
-import { Subchat } from '../api/types'
+import { Subchat } from '../api'
 import { LoadingText } from '../components/loading-text'
 import { StickyToolbar } from '../components/sticky-toolbar'
 import { SubchatIcon } from '../components/subchat-icon'
