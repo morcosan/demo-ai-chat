@@ -128,13 +128,19 @@ export const chatsService = {
 		const count = extractInt(query.count, DEFAULT_COUNT, isGreaterThanZero)
 		const chatId = extractInt(query.chatId, 0, isGreaterThanZero)
 		const subchatId = extractInt(query.subchatId, 0, isGreaterThanZero)
+		const search = query.search
+		let messages
 
-		if (!chatId) return { ...RESP__NOT_FOUND, error: `Chat ID ${query.chatId} not found` }
+		if (search) {
+			messages = DB__MESSAGES.filter((message: Message) => message.text.includes(search))
+		} else {
+			if (!chatId) return { ...RESP__NOT_FOUND, error: `Chat ID ${query.chatId} not found` }
 
-		const db = DB__MESSAGES.filter((message: Message) => message.chatId === chatId)
-		const messages = subchatId
-			? db.filter((message: Message) => message.id === subchatId || message.parentId === subchatId)
-			: db.filter((message: Message) => message.parentId === chatId)
+			const db = DB__MESSAGES.filter((message: Message) => message.chatId === chatId)
+			messages = subchatId
+				? db.filter((message: Message) => message.id === subchatId || message.parentId === subchatId)
+				: db.filter((message: Message) => message.parentId === chatId)
+		}
 
 		if (!isValidPagination(page, count, messages.length)) {
 			return { ...RESP__NOT_FOUND, error: `Page ${page} not found for ${messages.length} messages` }
@@ -146,7 +152,7 @@ export const chatsService = {
 				count: messages.length,
 				items: messages.slice(-count * page, -count * (page - 1) || undefined).map((message: Message) => ({
 					...message,
-					subchatSize: (db.filter((other: Message) => other.parentId === message.id).length || -1) + 1,
+					subchatSize: (DB__MESSAGES.filter((other: Message) => other.parentId === message.id).length || -1) + 1,
 				})),
 			},
 		}

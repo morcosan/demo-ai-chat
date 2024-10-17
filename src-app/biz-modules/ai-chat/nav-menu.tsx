@@ -84,7 +84,7 @@ export const AiChatNavMenu = ({ collapsed }: Props) => {
 						)}
 					</>
 				) : (
-					<div className="mt-xs-2 flex px-xs-4">No chats</div>
+					<div className="mt-xs-2 flex px-xs-4">{t('aiChat.noChats')}</div>
 				)}
 			</div>
 

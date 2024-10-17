@@ -29,7 +29,8 @@
 			"backToSubchats": "Back to subchats",
 			"openSubchat_other": "Open subchat ({count} messages)",
 			"openSubchat_zero": "Create subchat",
-			"searchChats": "Search chats..."
+			"searchChats": "Search chats...",
+			"startSearching": "Start typing"
 		},
 		"chats": "Chats",
 		"inputPlaceholder": "Ask a question...",
@@ -38,6 +39,10 @@
 		"loadingPreviousMessages": "Loading previous messages...",
 		"loadingSubchats": "Loading subchats...",
 		"newChat": "New chat",
+		"noChats": "No chats",
+		"noResults": "No results",
+		"noSubchats": "No subchats",
+		"searchingChats": "Searching chats...",
 		"sendMessage": "Send message",
 		"showSubchats": "Show subchats ({count})",
 		"subchats": "Subchats",
