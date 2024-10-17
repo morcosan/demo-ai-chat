@@ -76,7 +76,7 @@ export const AiChatNavSearchModal = () => {
 						</div>
 					</StickyToolbar>
 
-					<ul className="flex flex-col gap-sm-4 pb-button-px-item">
+					<ul className="flex flex-col gap-sm-5 pb-button-px-item">
 						{searchResults.map((result: SearchResult) => (
 							<SearchResultItem
 								key={result.id}

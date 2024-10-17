@@ -1,4 +1,4 @@
-import { Button } from '@ds/release'
+import { Button, SplitSvg } from '@ds/release'
 import { SearchResult } from '../api'
 import { HighlightedText } from './highlighted-text'
 
@@ -12,10 +12,10 @@ export const SearchResultItem = ({ result, keyword, onClick }: Props) => {
 	const isSubchat = result.parentId !== result.chatId
 
 	const messageClass = cx({
-		'rounded-md px-xs-3 py-xs-2 text-size-sm': true,
-		'bg-color-secondary-bg': isSubchat && result.role === 'user',
-		'bg-color-primary-bg': !isSubchat && result.role === 'user',
-		'bg-color-bg-preview': result.role === 'agent',
+		'mx-button-px-item mt-xs-1 rounded-sm px-xs-3 py-xs-2 text-size-sm': true,
+		'bg-color-secondary-bg text-color-secondary-text-default': result.role === 'user' && isSubchat,
+		'bg-color-primary-bg text-color-primary-text-default': result.role === 'user' && !isSubchat,
+		'bg-color-bg-preview text-color-text-subtle': result.role === 'agent',
 	})
 
 	return (
@@ -26,17 +26,25 @@ export const SearchResultItem = ({ result, keyword, onClick }: Props) => {
 				tooltip={t('aiChat.action.openChat')}
 				onClick={onClick}
 			>
-				<span className="truncate">{result.chat.title}</span>
+				<span className="flex w-full items-center gap-xs-1">
+					{Boolean(isSubchat) && <SplitSvg className="h-xs-9 min-w-xs-9 text-color-secondary-text-default" />}
+
+					<span className={cx('flex-1 truncate', isSubchat && 'text-color-secondary-text-default')}>
+						{result.chat.title}
+					</span>
+
+					<span className="ml-xs-3 hidden text-size-xs text-color-text-subtle sm:block">
+						{t('aiChat.xMessages', { count: result.chat.size })}
+					</span>
+				</span>
 			</Button>
 
-			<div className="px-button-px-item">
-				<div className="mb-xs-3 text-size-xs text-color-text-subtle">
-					{t('aiChat.xMessages', { count: result.chat.size })}
-				</div>
+			<div className="mb-xs-2 px-button-px-item text-size-xs text-color-text-subtle sm:hidden">
+				{t('aiChat.xMessages', { count: result.chat.size })}
+			</div>
 
-				<div className={messageClass}>
-					<HighlightedText text={result.text} keyword={keyword} />
-				</div>
+			<div className={messageClass}>
+				<HighlightedText text={result.text} keyword={keyword} />
 			</div>
 		</li>
 	)
