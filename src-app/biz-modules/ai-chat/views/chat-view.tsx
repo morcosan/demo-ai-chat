@@ -76,7 +76,7 @@ export const ChatView = () => {
 				<div ref={listingRef} className="flex-1 overflow-y-auto pb-sm-5" onScroll={onScroll}>
 					<div className={cx(widthClass, chatLoading === 'full' && 'h-full', 'flex flex-col pt-sm-0')}>
 						{/* TOOLBAR */}
-						<StickyToolbar variant="chat" className="pb-xs-4">
+						<StickyToolbar className="pb-xs-4">
 							<h1 className="px-xs-5 lg:px-md-0">
 								<div className="px-xs-5 pt-xs-0 text-size-xl font-weight-md">
 									<div className="line-clamp-2">{activeChat?.title}</div>

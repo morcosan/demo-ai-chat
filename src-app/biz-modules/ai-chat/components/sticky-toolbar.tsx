@@ -1,15 +1,15 @@
 import { useStickyHandler } from '@utils/release'
 
 interface Props extends ReactProps {
-	variant: 'chat' | 'subchat'
+	permanent?: boolean
 }
 
-export const StickyToolbar = ({ variant, children, className }: Props) => {
+export const StickyToolbar = ({ permanent, children, className }: Props) => {
 	const { isSticky, stickyRef } = useStickyHandler()
 
 	const stickyClass = cx(
-		'sticky top-0 z-sticky border-color-border-shadow bg-color-bg-default',
-		{ 'border-b shadow-below-sm': (variant === 'chat' && isSticky) || variant === 'subchat' },
+		'sticky top-0 z-sticky bg-color-bg-default',
+		(permanent || isSticky) && 'border-b border-color-border-shadow shadow-below-sm',
 		className
 	)
 
