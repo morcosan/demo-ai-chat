@@ -1,6 +1,6 @@
 import { uniq } from 'lodash'
 import { useState } from 'react'
-import { API, Chat, Message, SearchResult } from '../../api'
+import { API, Chat, Message, MIN_SEARCH_LENGTH, SearchResult } from '../../api'
 
 export interface SearchStore {
 	showsSearch: boolean
@@ -37,7 +37,7 @@ export const useSearchStore = (): SearchStore => {
 
 	const searchByKeyword = async (keyword: string) => {
 		if (searchLoading) return
-		if (!keyword) {
+		if (!keyword || keyword.length < MIN_SEARCH_LENGTH) {
 			clearSearch()
 			return
 		}

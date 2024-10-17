@@ -30,7 +30,8 @@
 			"openSubchat_other": "Open subchat ({count} messages)",
 			"openSubchat_zero": "Create subchat",
 			"searchChats": "Search chats...",
-			"startSearching": "Start typing"
+			"showMoreResults": "Show more results",
+			"startSearching_other": "Type at least {count} characters"
 		},
 		"chats": "Chats",
 		"inputPlaceholder": "Ask a question...",
@@ -40,13 +41,14 @@
 		"loadingSubchats": "Loading subchats...",
 		"newChat": "New chat",
 		"noChats": "No chats",
-		"noResults": "No results",
 		"noSubchats": "No subchats",
 		"searchingChats": "Searching chats...",
 		"sendMessage": "Send message",
 		"showSubchats": "Show subchats ({count})",
 		"subchats": "Subchats",
 		"xMessages_one": "1 message",
-		"xMessages_other": "{count} messages"
+		"xMessages_other": "{count} messages",
+		"xSearchResults_other": "{count} search results",
+		"xSearchResults_zero": "No search results"
 	}
 }

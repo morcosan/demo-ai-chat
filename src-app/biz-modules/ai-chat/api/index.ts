@@ -16,6 +16,8 @@ import { ChatListing, MessageListing, SubchatListing } from './_types'
 
 export * from './_types'
 
+export const MIN_SEARCH_LENGTH = 3
+
 export const API = {
 	async getChats(chatIds?: number[], page?: number): Promise<ChatListing> {
 		const query: ChatsApiQuery = {
@@ -67,6 +69,10 @@ export const API = {
 	},
 
 	async getMessages(chatId?: number, subchatId?: number, search?: string, page?: number): Promise<MessageListing> {
+		if (search && search.length < MIN_SEARCH_LENGTH) {
+			return { messages: [], count: 0 }
+		}
+
 		const query: MessagesApiQuery = {
 			count: 20,
 			page: page || 1,
