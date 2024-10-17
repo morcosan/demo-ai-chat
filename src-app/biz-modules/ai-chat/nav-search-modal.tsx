@@ -1,4 +1,5 @@
 import { Button, Modal, SearchSvg, TextField, TextFieldRef } from '@ds/release'
+import { useStickyHandler } from '@utils/release'
 import { debounce } from 'lodash'
 import { useCallback, useRef, useState } from 'react'
 import { MIN_SEARCH_LENGTH, SearchResult } from './api'
@@ -13,11 +14,18 @@ export const AiChatNavSearchModal = () => {
 		searchResults,
 		searchKeyword,
 		canLoadSearchResults,
+		loadMoreSearchResults,
 		searchByKeyword,
 		setShowsSearch,
 	} = useAiChat()
+	const { isSticky, stickyRef } = useStickyHandler()
 	const [searchValue, setSearchValue] = useState('')
 	const searchRef = useRef<TextFieldRef>(null)
+
+	const stickyClass = cx(
+		'sticky -top-a11y-padding z-sticky -mt-a11y-padding mb-xs-5 bg-color-bg-default',
+		isSticky && '____ border-b border-color-border-shadow shadow-below-sm'
+	)
 
 	const submitSearch = useCallback(
 		debounce((value: string) => searchByKeyword(value.trim()), 500),
@@ -56,8 +64,8 @@ export const AiChatNavSearchModal = () => {
 				<div className="flex-center h-lg-2 text-color-text-subtle">
 					{t('aiChat.action.startSearching', { count: MIN_SEARCH_LENGTH })}
 				</div>
-			) : searchLoading ? (
-				// LOADING
+			) : searchLoading === 'full' ? (
+				// FULL LOADING
 				<div className="flex-center h-lg-2">
 					<LoadingText text={t('aiChat.searchingChats')} />
 				</div>
@@ -66,8 +74,10 @@ export const AiChatNavSearchModal = () => {
 				<div className="flex-center h-lg-2 text-color-text-subtle">{t('aiChat.xSearchResults', { count: 0 })}</div>
 			) : (
 				<div className="flex min-h-lg-2 flex-col">
-					<div className="mb-xs-9 px-button-px-item text-size-sm text-color-text-subtle">
-						{t('aiChat.xSearchResults', { count: searchPagination.count })}
+					<div ref={stickyRef} className={stickyClass}>
+						<div className="px-button-px-item pb-xs-4 text-size-sm text-color-text-subtle">
+							{t('aiChat.xSearchResults', { count: searchPagination.count })}
+						</div>
 					</div>
 
 					<ul className="flex flex-col gap-sm-0 pb-button-px-item">
@@ -84,11 +94,19 @@ export const AiChatNavSearchModal = () => {
 						))}
 					</ul>
 
-					{Boolean(canLoadSearchResults) && (
-						<Button variant="text-default" className="mx-auto mt-xs-5">
-							{t('aiChat.action.showMoreResults')}
-						</Button>
-					)}
+					<div className="mx-auto mt-xs-4">
+						{searchLoading === 'more' ? (
+							<div className="flex-center h-button-h-md text-size-sm">
+								<LoadingText text={t('aiChat.searchingChats')} />
+							</div>
+						) : (
+							Boolean(canLoadSearchResults) && (
+								<Button variant="text-default" onClick={loadMoreSearchResults}>
+									{t('aiChat.action.showMoreResults')}
+								</Button>
+							)
+						)}
+					</div>
 				</div>
 			)}
 		</Modal>

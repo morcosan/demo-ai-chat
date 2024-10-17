@@ -1,4 +1,4 @@
-import { uniq } from 'lodash'
+import { uniq, uniqBy } from 'lodash'
 import { useState } from 'react'
 import { API, Chat, Message, MIN_SEARCH_LENGTH, SearchResult } from '../../api'
 
@@ -32,6 +32,7 @@ export const useSearchStore = (): SearchStore => {
 	const [searchResults, setSearchResults] = useState([] as SearchResult[])
 	const [searchPagination, setSearchPagination] = useState({ page: 0, count: 0 } as Pagination)
 	const [searchLoading, setSearchLoading] = useState<ListLoading>(false)
+	const [allChats, setAllChats] = useState<Chat[]>([])
 
 	const canLoadSearchResults = !searchResults.length || searchResults.length < searchPagination.count
 
@@ -44,23 +45,7 @@ export const useSearchStore = (): SearchStore => {
 
 		setSearchKeyword(keyword)
 		setSearchLoading('full')
-
-		const messageListing = await API.getMessages(0, 0, keyword)
-
-		const chatIds = uniq(messageListing.messages.map((message: Message) => message.chatId))
-
-		const chatListing = await API.getChats(chatIds)
-
-		const results = messageListing.messages.map(
-			(message: Message): SearchResult => ({
-				...message,
-				chat: chatListing.chats.find((chat) => chat.id === message.chatId) as Chat,
-			})
-		)
-
-		setSearchResults([...searchResults, ...results])
-		setSearchPagination({ page: 1, count: messageListing.count })
-		setSearchLoading(false)
+		fetchResults(keyword)
 	}
 
 	const clearSearch = () => {
@@ -70,7 +55,34 @@ export const useSearchStore = (): SearchStore => {
 	}
 
 	const loadMoreSearchResults = () => {
-		if (searchLoading || !canLoadSearchResults) return
+		if (searchLoading || !canLoadSearchResults || !searchKeyword) return
+
+		setSearchLoading('more')
+		fetchResults(searchKeyword)
+	}
+
+	const fetchResults = async (keyword: string) => {
+		const messageListing = await API.getMessages(0, 0, keyword, searchPagination.page + 1)
+
+		const newChatIds = uniq(
+			messageListing.messages
+				.map((message: Message) => message.chatId)
+				.filter((id: number) => !allChats.some((chat: Chat) => chat.id === id))
+		)
+		const chatListing = await API.getChats(newChatIds)
+		const chats = uniqBy([...allChats, ...chatListing.chats], (chat: Chat) => chat.id)
+
+		const results = messageListing.messages.map(
+			(message: Message): SearchResult => ({
+				...message,
+				chat: chats.find((chat) => chat.id === message.chatId) as Chat,
+			})
+		)
+
+		setAllChats(chats)
+		setSearchResults([...searchResults, ...results])
+		setSearchPagination({ page: searchPagination.page + 1, count: messageListing.count })
+		setSearchLoading(false)
 	}
 
 	return {

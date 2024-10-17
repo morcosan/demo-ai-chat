@@ -31,6 +31,7 @@
 			"openSubchat_zero": "Create subchat",
 			"searchChats": "Search chats...",
 			"showMoreResults": "Show more results",
+			"showSubchats": "Show subchats ({count})",
 			"startSearching_other": "Type at least {count} characters"
 		},
 		"chats": "Chats",
@@ -44,7 +45,6 @@
 		"noSubchats": "No subchats",
 		"searchingChats": "Searching chats...",
 		"sendMessage": "Send message",
-		"showSubchats": "Show subchats ({count})",
 		"subchats": "Subchats",
 		"xMessages_one": "1 message",
 		"xMessages_other": "{count} messages",
