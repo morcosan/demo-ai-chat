@@ -1,3 +1,4 @@
+import { HighlightedText } from '@app/biz-modules/ai-chat/components/highlighted-text'
 import { Button, Modal, SearchSvg, TextField, TextFieldRef } from '@ds/release'
 import { debounce } from 'lodash'
 import { useCallback, useRef, useState } from 'react'
@@ -67,6 +68,7 @@ export const AiChatNavSearchModal = () => {
 				// NO RESULTS
 				<div className="flex-center h-lg-2 text-color-text-subtle">{t('aiChat.xSearchResults', { count: 0 })}</div>
 			) : (
+				// RESULTS
 				<div className="flex min-h-lg-2 flex-col">
 					<StickyToolbar className="-top-a11y-padding -mt-a11y-padding mb-xs-3">
 						<div className="px-button-px-item pb-xs-5 text-size-sm text-color-text-subtle">
@@ -74,15 +76,19 @@ export const AiChatNavSearchModal = () => {
 						</div>
 					</StickyToolbar>
 
-					<ul className="flex flex-col gap-sm-0 pb-button-px-item">
+					<ul className="flex flex-col gap-sm-1 pb-button-px-item">
 						{searchResults.map((result: SearchResult) => (
 							<li key={result.id} className="flex flex-col">
-								<Button linkHref={`/chat/${result.chatId}`} variant="item-text-default">
+								<Button
+									linkHref={`/chat/${result.chatId}`}
+									variant="item-text-default"
+									onClick={() => setShowsSearch(false)}
+								>
 									<span className="truncate">{result.chat.title}</span>
 								</Button>
 
-								<div className="line-clamp-3 px-button-px-item text-size-sm text-color-text-subtle">
-									{result.text}
+								<div className="px-button-px-item text-size-sm text-color-text-subtle">
+									<HighlightedText text={result.text} keyword={searchKeyword} />
 								</div>
 							</li>
 						))}

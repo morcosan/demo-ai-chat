@@ -45,7 +45,7 @@ export const useSearchStore = (): SearchStore => {
 
 		setSearchKeyword(keyword)
 		setSearchLoading('full')
-		fetchResults(keyword)
+		fetchResults(keyword, [], { page: 0, count: 0 })
 	}
 
 	const clearSearch = () => {
@@ -58,11 +58,11 @@ export const useSearchStore = (): SearchStore => {
 		if (searchLoading || !canLoadSearchResults || !searchKeyword) return
 
 		setSearchLoading('more')
-		fetchResults(searchKeyword)
+		fetchResults(searchKeyword, searchResults, searchPagination)
 	}
 
-	const fetchResults = async (keyword: string) => {
-		const messageListing = await API.getMessages(0, 0, keyword, searchPagination.page + 1)
+	const fetchResults = async (keyword: string, prevResults: SearchResult[], pagination: Pagination) => {
+		const messageListing = await API.getMessages(0, 0, keyword, pagination.page + 1)
 
 		const newChatIds = uniq(
 			messageListing.messages
@@ -72,7 +72,7 @@ export const useSearchStore = (): SearchStore => {
 		const chatListing = await API.getChats(newChatIds)
 		const chats = uniqBy([...allChats, ...chatListing.chats], (chat: Chat) => chat.id)
 
-		const results = messageListing.messages.map(
+		const newResults = messageListing.messages.map(
 			(message: Message): SearchResult => ({
 				...message,
 				chat: chats.find((chat) => chat.id === message.chatId) as Chat,
@@ -80,8 +80,8 @@ export const useSearchStore = (): SearchStore => {
 		)
 
 		setAllChats(chats)
-		setSearchResults([...searchResults, ...results])
-		setSearchPagination({ page: searchPagination.page + 1, count: messageListing.count })
+		setSearchResults([...prevResults, ...newResults])
+		setSearchPagination({ page: pagination.page + 1, count: messageListing.count })
 		setSearchLoading(false)
 	}
 
