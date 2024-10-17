@@ -1,5 +1,5 @@
 import { HighlightedText } from '@app/biz-modules/ai-chat/components/highlighted-text'
-import { Button, Modal, SearchSvg, TextField, TextFieldRef } from '@ds/release'
+import { ArrowBackSvg, Button, Modal, SearchSvg, TextField, TextFieldRef } from '@ds/release'
 import { debounce } from 'lodash'
 import { useCallback, useRef, useState } from 'react'
 import { MIN_SEARCH_LENGTH, SearchResult } from './api'
@@ -9,6 +9,7 @@ import { useAiChat } from './state'
 
 export const AiChatNavSearchModal = () => {
 	const {
+		activeChat,
 		showsSearch,
 		searchPagination,
 		searchLoading,
@@ -47,7 +48,7 @@ export const AiChatNavSearchModal = () => {
 	return (
 		<Modal
 			opened={showsSearch}
-			width="md"
+			width="lg"
 			slotTitle={slotTitle}
 			shallow
 			noFooter
@@ -82,9 +83,21 @@ export const AiChatNavSearchModal = () => {
 								<Button
 									linkHref={`/chat/${result.chatId}`}
 									variant="item-text-default"
+									tooltip={
+										result.chatId === activeChat?.id
+											? t('aiChat.action.backToCurrentChat')
+											: t('aiChat.action.openChat')
+									}
 									onClick={() => setShowsSearch(false)}
 								>
-									<span className="truncate">{result.chat.title}</span>
+									<span className="flex items-center gap-xs-4 truncate">
+										{result.chatId === activeChat?.id ? (
+											<ArrowBackSvg className="w-xs-5 min-w-xs-5" />
+										) : (
+											<SearchSvg className="w-xs-5 min-w-xs-5" />
+										)}
+										{result.chat.title}
+									</span>
 								</Button>
 
 								<div className="px-button-px-item text-size-sm text-color-text-subtle">
