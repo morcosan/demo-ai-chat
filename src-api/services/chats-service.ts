@@ -18,7 +18,7 @@ import {
 import { RESP__NOT_FOUND } from '../utilities/network'
 import { extractInt, extractIntArray, isGreaterThanZero } from '../utilities/parsers'
 import { isValidPagination } from '../utilities/validators'
-import { DB__CHATS, DB__MESSAGES } from './_db'
+import { DB__CHATS, DB__MESSAGES, getChatSize } from './_db'
 
 const DEFAULT_COUNT = 10
 const DEFAULT_PAGE = 1
@@ -30,10 +30,13 @@ export const chatsService = {
 		const chatIds = extractIntArray(query.chatIds, isGreaterThanZero)
 
 		if (chatIds.length) {
-			const items = DB__CHATS.filter((chat: Chat) => chatIds.includes(chat.id))
+			const chats = DB__CHATS.filter((chat: Chat) => chatIds.includes(chat.id))
 			return {
 				status: STATUS__SUCCESS,
-				data: { count: items.length, items },
+				data: {
+					count: chats.length,
+					items: chats.map((chat: Chat) => ({ ...chat, size: getChatSize(chat) })),
+				},
 			}
 		}
 
@@ -41,11 +44,13 @@ export const chatsService = {
 			return { ...RESP__NOT_FOUND, error: `Page ${page} not found for ${DB__CHATS.length} chats` }
 		}
 
+		const chats = DB__CHATS.slice(count * (page - 1), count * page)
+
 		return {
 			status: STATUS__SUCCESS,
 			data: {
 				count: DB__CHATS.length,
-				items: DB__CHATS.slice(count * (page - 1), count * page),
+				items: chats.map((chat: Chat) => ({ ...chat, size: getChatSize(chat) })),
 			},
 		}
 	},
@@ -64,7 +69,7 @@ export const chatsService = {
 
 		return {
 			status: STATUS__SUCCESS,
-			data: { count: 1, items: [chat] },
+			data: { count: 1, items: [{ ...chat, size: getChatSize(chat) }] },
 		}
 	},
 
@@ -78,7 +83,7 @@ export const chatsService = {
 
 		return {
 			status: STATUS__SUCCESS,
-			data: { count: 1, items: [chat] },
+			data: { count: 1, items: [{ ...chat, size: getChatSize(chat) }] },
 		}
 	},
 
@@ -128,11 +133,11 @@ export const chatsService = {
 		const count = extractInt(query.count, DEFAULT_COUNT, isGreaterThanZero)
 		const chatId = extractInt(query.chatId, 0, isGreaterThanZero)
 		const subchatId = extractInt(query.subchatId, 0, isGreaterThanZero)
-		const search = query.search
+		const search = query.search?.toLowerCase()
 		let messages
 
 		if (search) {
-			messages = DB__MESSAGES.filter((message: Message) => message.text.includes(search))
+			messages = DB__MESSAGES.filter((message: Message) => message.text.toLowerCase().includes(search))
 		} else {
 			if (!chatId) return { ...RESP__NOT_FOUND, error: `Chat ID ${query.chatId} not found` }
 

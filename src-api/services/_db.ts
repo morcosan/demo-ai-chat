@@ -72,3 +72,7 @@ const addSubchats = (message: Message, messages: Message[]) => {
 
 export const DB__CHATS: Chat[] = createChats()
 export const DB__MESSAGES: Message[] = createMessages(DB__CHATS)
+
+export const getChatSize = (chat: Chat) => {
+	return DB__MESSAGES.filter((message: Message) => message.parentId === chat.id).length
+}

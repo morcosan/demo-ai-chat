@@ -6,6 +6,7 @@ export const mapDtoToChat = (dto: ChatDTO): Chat => {
 		id: dto.id || 0,
 		title: dto.title || '',
 		createdAt: dto.createdAt || '',
+		size: dto.size || 0,
 	}
 }
 

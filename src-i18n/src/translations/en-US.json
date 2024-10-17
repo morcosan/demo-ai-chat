@@ -26,7 +26,6 @@
 	},
 	"aiChat": {
 		"action": {
-			"backToCurrentChat": "Back to current chat",
 			"backToSubchats": "Back to subchats",
 			"openChat": "Open chat",
 			"openSubchat_other": "Open subchat ({count} messages)",

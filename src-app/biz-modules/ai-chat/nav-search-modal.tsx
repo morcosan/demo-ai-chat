@@ -1,5 +1,5 @@
-import { HighlightedText } from '@app/biz-modules/ai-chat/components/highlighted-text'
-import { ArrowBackSvg, Button, Modal, SearchSvg, TextField, TextFieldRef } from '@ds/release'
+import { SearchResultItem } from '@app/biz-modules/ai-chat/components/search-result-item'
+import { Button, Modal, SearchSvg, TextField, TextFieldRef } from '@ds/release'
 import { debounce } from 'lodash'
 import { useCallback, useRef, useState } from 'react'
 import { MIN_SEARCH_LENGTH, SearchResult } from './api'
@@ -9,7 +9,6 @@ import { useAiChat } from './state'
 
 export const AiChatNavSearchModal = () => {
 	const {
-		activeChat,
 		showsSearch,
 		searchPagination,
 		searchLoading,
@@ -77,33 +76,14 @@ export const AiChatNavSearchModal = () => {
 						</div>
 					</StickyToolbar>
 
-					<ul className="flex flex-col gap-sm-1 pb-button-px-item">
+					<ul className="flex flex-col gap-sm-4 pb-button-px-item">
 						{searchResults.map((result: SearchResult) => (
-							<li key={result.id} className="flex flex-col">
-								<Button
-									linkHref={`/chat/${result.chatId}`}
-									variant="item-text-default"
-									tooltip={
-										result.chatId === activeChat?.id
-											? t('aiChat.action.backToCurrentChat')
-											: t('aiChat.action.openChat')
-									}
-									onClick={() => setShowsSearch(false)}
-								>
-									<span className="flex items-center gap-xs-4 truncate">
-										{result.chatId === activeChat?.id ? (
-											<ArrowBackSvg className="w-xs-5 min-w-xs-5" />
-										) : (
-											<SearchSvg className="w-xs-5 min-w-xs-5" />
-										)}
-										{result.chat.title}
-									</span>
-								</Button>
-
-								<div className="px-button-px-item text-size-sm text-color-text-subtle">
-									<HighlightedText text={result.text} keyword={searchKeyword} />
-								</div>
-							</li>
+							<SearchResultItem
+								key={result.id}
+								result={result}
+								keyword={searchKeyword}
+								onClick={() => setShowsSearch(false)}
+							/>
 						))}
 					</ul>
 
