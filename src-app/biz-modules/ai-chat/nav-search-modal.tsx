@@ -37,7 +37,7 @@ export const AiChatNavSearchModal = () => {
 			ref={searchRef}
 			id="chat-search"
 			value={searchValue}
-			placeholder={t('aiChat.searchChatsPlaceholder')}
+			placeholder={t('core.searchPlaceholder')}
 			slotLeft={<SearchSvg className="ml-xs-4 mr-xs-1 mt-px h-full w-xs-5 min-w-xs-5" />}
 			className="w-full font-weight-sm"
 			onChange={onChangeSearch}
@@ -62,7 +62,7 @@ export const AiChatNavSearchModal = () => {
 			) : searchLoading === 'full' ? (
 				// FULL LOADING
 				<div className="flex-center h-lg-2">
-					<LoadingText text={t('aiChat.searchingChats')} />
+					<LoadingText text={t('core.searching')} />
 				</div>
 			) : !searchPagination.count || !searchResults.length ? (
 				// NO RESULTS
@@ -90,12 +90,12 @@ export const AiChatNavSearchModal = () => {
 					<div className="mx-auto mt-xs-4">
 						{searchLoading === 'more' ? (
 							<div className="flex-center h-button-h-md text-size-sm">
-								<LoadingText text={t('aiChat.searchingChats')} />
+								<LoadingText text={t('core.searching')} />
 							</div>
 						) : (
 							Boolean(canLoadSearchResults) && (
 								<Button variant="text-default" onClick={loadMoreSearchResults}>
-									{t('aiChat.action.showMoreResults')}
+									{t('core.action.searchMore')}
 								</Button>
 							)
 						)}

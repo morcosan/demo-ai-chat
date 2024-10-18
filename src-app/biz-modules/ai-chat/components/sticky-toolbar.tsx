@@ -1,6 +1,6 @@
 import { useStickyHandler } from '@utils/release'
 
-interface Props extends ReactProps {
+interface Props extends ReactPropsExtended {
 	permanent?: boolean
 	stretched?: boolean
 }

@@ -1,6 +1,6 @@
 import { uniq, uniqBy } from 'lodash'
 import { useState } from 'react'
-import { API, Chat, Message, MIN_SEARCH_LENGTH, SearchResult } from '../../api'
+import { API, Chat, Message, MIN_SEARCH_LENGTH, SearchResult, Subchat } from '../../api'
 
 export interface SearchStore {
 	showsSearch: boolean
@@ -32,7 +32,8 @@ export const useSearchStore = (): SearchStore => {
 	const [searchResults, setSearchResults] = useState([] as SearchResult[])
 	const [searchPagination, setSearchPagination] = useState({ page: 0, count: 0 } as Pagination)
 	const [searchLoading, setSearchLoading] = useState<ListLoading>(false)
-	const [allChats, setAllChats] = useState<Chat[]>([])
+	const [searchChats, setSearchChats] = useState<Chat[]>([])
+	const [searchSubchats, setSearchSubchats] = useState<Subchat[]>([])
 
 	const canLoadSearchResults = !searchResults.length || searchResults.length < searchPagination.count
 
@@ -45,12 +46,20 @@ export const useSearchStore = (): SearchStore => {
 
 		setSearchKeyword(keyword)
 		setSearchLoading('full')
-		fetchResults(keyword, [], { page: 0, count: 0 })
+		fetchResults({
+			keyword,
+			prevResults: [],
+			prevChats: [],
+			prevSubchats: [],
+			pagination: { page: 0, count: 0 },
+		})
 	}
 
 	const clearSearch = () => {
 		setSearchKeyword('')
 		setSearchResults([])
+		setSearchChats([])
+		setSearchSubchats([])
 		setSearchPagination({ page: 0, count: 0 })
 	}
 
@@ -58,28 +67,42 @@ export const useSearchStore = (): SearchStore => {
 		if (searchLoading || !canLoadSearchResults || !searchKeyword) return
 
 		setSearchLoading('more')
-		fetchResults(searchKeyword, searchResults, searchPagination)
+		fetchResults({
+			keyword: searchKeyword,
+			prevResults: searchResults,
+			prevChats: searchChats,
+			prevSubchats: searchSubchats,
+			pagination: searchPagination,
+		})
 	}
 
-	const fetchResults = async (keyword: string, prevResults: SearchResult[], pagination: Pagination) => {
+	interface SyncedData {
+		keyword: string
+		prevResults: SearchResult[]
+		prevChats: Chat[]
+		prevSubchats: Subchat[]
+		pagination: Pagination
+	}
+
+	const fetchResults = async ({ keyword, prevResults, prevChats, prevSubchats, pagination }: SyncedData) => {
 		const messageListing = await API.getMessages(0, 0, keyword, pagination.page + 1)
 
 		const newChatIds = uniq(
 			messageListing.messages
 				.map((message: Message) => message.chatId)
-				.filter((id: number) => !allChats.some((chat: Chat) => chat.id === id))
+				.filter((id: number) => !prevChats.some((chat: Chat) => chat.id === id))
 		)
 		const chatListing = await API.getChats(newChatIds)
-		const chats = uniqBy([...allChats, ...chatListing.chats], (chat: Chat) => chat.id)
+		const newChats = uniqBy([...prevChats, ...chatListing.chats], (chat: Chat) => chat.id)
 
 		const newResults = messageListing.messages.map(
 			(message: Message): SearchResult => ({
 				...message,
-				chat: chats.find((chat) => chat.id === message.chatId) as Chat,
+				chat: newChats.find((chat) => chat.id === message.chatId) as Chat,
 			})
 		)
 
-		setAllChats(chats)
+		setSearchChats(newChats)
 		setSearchResults([...prevResults, ...newResults])
 		setSearchPagination({ page: pagination.page + 1, count: messageListing.count })
 		setSearchLoading(false)

@@ -19,6 +19,11 @@ declare global {
 	interface ReactProps {
 		className?: string
 		style?: CSSProperties
+		children?: ReactNode
+	}
+	interface ReactPropsExtended {
+		className?: string
+		style?: CSSProperties
 		children?: ReactNode | ((...args) => ReactNode)
 	}
 
