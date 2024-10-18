@@ -3,6 +3,8 @@ import LanguageDetector from 'i18next-browser-languagedetector'
 import { initReactI18next } from 'react-i18next'
 import { DEFAULT_LOCALE, LANGUAGES } from './languages'
 
+window.t = i18n.t
+
 export const I18N_NS = 'translation'
 
 export const initI18n = (cookieKey: string) => {

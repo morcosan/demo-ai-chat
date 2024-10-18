@@ -34,6 +34,8 @@ declare global {
 
 	type CSS = CSSObject
 
+	type Datetime = string | number | Date
+
 	interface Pagination {
 		page: number
 		count: number
