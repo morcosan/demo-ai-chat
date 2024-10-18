@@ -45,8 +45,8 @@ export const SubchatView = () => {
 				onScroll={onScroll}
 			>
 				{/* TOOLBAR */}
-				<StickyToolbar className="-mx-a11y-padding px-xs-2 py-xs-1" permanent>
-					<div className="flex items-center gap-xs-2">
+				<StickyToolbar stretched permanent>
+					<div className="flex items-center gap-xs-2 px-xs-1 py-xs-1">
 						<IconButton linkHref={`/chat/${activeChat?.id}`} tooltip={t('aiChat.action.backToSubchats')} size="sm">
 							<ArrowBackSvg className="h-xs-5" />
 						</IconButton>

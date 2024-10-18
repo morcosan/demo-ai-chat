@@ -33,7 +33,7 @@ export const AiChatNavMenu = ({ collapsed }: Props) => {
 			{/* SEARCH */}
 			<Button variant="ghost-primary" className="mt-xs-7" onClick={() => setShowsSearch(true)}>
 				<SearchSvg className="w-xs-5 min-w-xs-5" />
-				{!collapsed && <span className="ml-xs-3">{t('aiChat.action.searchChats')}</span>}
+				{!collapsed && <span className="ml-xs-3">{t('core.action.search')}</span>}
 			</Button>
 
 			{/* OPTIONS */}

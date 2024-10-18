@@ -3,7 +3,7 @@
 :host,
 :root {
 	--ds-line-height-0: 0;
-	--ds-line-height-1: 1em;
-	--ds-line-height-sm: 1.25em;
-	--ds-line-height-md: 1.5em;
+	--ds-line-height-1: 1;
+	--ds-line-height-sm: 1.25;
+	--ds-line-height-md: 1.5;
 }
