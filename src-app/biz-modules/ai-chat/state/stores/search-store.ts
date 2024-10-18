@@ -152,7 +152,7 @@ export const useSearchStore = (): SearchStore => {
 		setSearchSubchats(allSubchats)
 		setSearchResults([...prevResults, ...newResults])
 		needsChats && setChatPagination({ page: chatPagination.page + 1, count: chatResultsListing.count })
-		needsMessages && setMessagePagination({ page: pagination.page + 1, count: messageResultsListing.count })
+		needsMessages && setMessagePagination({ page: messagePagination.page + 1, count: messageResultsListing.count })
 		setSearchLoading(false)
 	}
 
