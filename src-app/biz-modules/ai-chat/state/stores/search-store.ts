@@ -41,6 +41,24 @@ export const searchDefaults: SearchStore = {
 	setShowsSearch: () => {},
 }
 
+interface StateData {
+	keyword: string
+	prevResults: SearchResult[]
+	prevChats: Chat[]
+	prevSubchats: Subchat[]
+	pagination: Pagination
+}
+
+interface ReferenceData {
+	messageListing: MessageListing
+	prevChats: Chat[]
+	prevSubchats: Subchat[]
+}
+
+const PROMISE_CHAT_LISTING: Promise<ChatListing> = Promise.resolve({ chats: [], count: 0 })
+const PROMISE_SUBCHAT_LISTING: Promise<SubchatListing> = Promise.resolve({ subchats: [], count: 0 })
+const PROMISE_MESSAGE_LISTING: Promise<MessageListing> = Promise.resolve({ messages: [], count: 0 })
+
 export const useSearchStore = (): SearchStore => {
 	const [showsSearch, setShowsSearch] = useState(false)
 	const [searchKeyword, setSearchKeyword] = useState('')
@@ -48,8 +66,8 @@ export const useSearchStore = (): SearchStore => {
 	const [chatPagination, setChatPagination] = useState<Pagination>({ page: 0, count: 0 })
 	const [messagePagination, setMessagePagination] = useState<Pagination>({ page: 0, count: 0 })
 	const [searchLoading, setSearchLoading] = useState<ListLoading>(false)
-	const [searchChats, setSearchChats] = useState<Chat[]>([])
-	const [searchSubchats, setSearchSubchats] = useState<Subchat[]>([])
+	const [refChats, setRefChats] = useState<Chat[]>([])
+	const [refSubchats, setRefSubchats] = useState<Subchat[]>([])
 
 	const searchPagination = {
 		page: chatPagination.page + messagePagination.page,
@@ -77,8 +95,8 @@ export const useSearchStore = (): SearchStore => {
 
 	const clearSearch = () => {
 		setSearchKeyword('')
-		setSearchChats([])
-		setSearchSubchats([])
+		setRefChats([])
+		setRefSubchats([])
 		setSearchResults([])
 		setMessagePagination({ page: 0, count: 0 })
 	}
@@ -90,70 +108,70 @@ export const useSearchStore = (): SearchStore => {
 		fetchResults({
 			keyword: searchKeyword,
 			prevResults: searchResults,
-			prevChats: searchChats,
-			prevSubchats: searchSubchats,
+			prevChats: refChats,
+			prevSubchats: refSubchats,
 			pagination: searchPagination,
 		})
 	}
 
-	interface SyncedData {
-		keyword: string
-		prevResults: SearchResult[]
-		prevChats: Chat[]
-		prevSubchats: Subchat[]
-		pagination: Pagination
-	}
+	const fetchResults = async ({ keyword, prevResults, prevChats, prevSubchats, pagination }: StateData) => {
+		const chatResults = prevResults.filter((result: SearchResult) => !result.message)
+		const loadingChats = !chatPagination.page || chatPagination.count > chatResults.length
+		const loadingMessages = !pagination.page || !loadingChats
 
-	const fetchResults = async ({ keyword, prevResults, prevChats, prevSubchats, pagination }: SyncedData) => {
-		const chatResultsCount = prevResults.filter((result: SearchResult) => !result.message).length
-		const needsChats = !chatPagination.page || chatPagination.count > chatResultsCount
-		const needsMessages = !pagination.page || !needsChats
-		const messagesPage = pagination.page - chatPagination.page
-
-		const [chatResultsListing, messageResultsListing]: [ChatListing, MessageListing] = await Promise.all([
-			needsChats ? API.getChats([], chatPagination.page + 1, keyword) : Promise.resolve({ chats: [], count: 0 }),
-			needsMessages
-				? API.getMessages(0, 0, messagesPage + 1, keyword)
-				: Promise.resolve({ messages: [], count: 0 }),
+		const [chatListing, messageListing] = await Promise.all([
+			loadingChats //
+				? API.getChats([], chatPagination.page + 1, keyword)
+				: PROMISE_CHAT_LISTING,
+			loadingMessages
+				? API.getMessages(0, 0, pagination.page - chatPagination.page + 1, keyword)
+				: PROMISE_MESSAGE_LISTING,
 		])
 
-		prevChats = uniqBy([...prevChats, ...chatResultsListing.chats], (chat: Chat) => chat.id)
+		prevChats = uniqBy([...prevChats, ...chatListing.chats], (chat: Chat) => chat.id)
 
+		const { refChats, refSubchats } = await fetchReferences({ messageListing, prevChats, prevSubchats })
+
+		const results: SearchResult[] = [
+			...prevResults,
+			...chatListing.chats.map((chat: Chat) => ({ chat })),
+			...messageListing.messages.map((message: Message) => ({
+				message,
+				chat: refChats.find((chat: Chat) => chat.id === message.parentId),
+				subchat: refSubchats.find((subchat: Subchat) => subchat.id === message.parentId),
+			})),
+		]
+
+		setRefChats(refChats)
+		setRefSubchats(refSubchats)
+		setSearchResults(results)
+		loadingChats && setChatPagination({ page: chatPagination.page + 1, count: chatListing.count })
+		loadingMessages && setMessagePagination({ page: messagePagination.page + 1, count: messageListing.count })
+		setSearchLoading(false)
+	}
+
+	const fetchReferences = async ({ messageListing, prevChats, prevSubchats }: ReferenceData) => {
 		const newChatIds = uniq(
-			messageResultsListing.messages
+			messageListing.messages
 				.map((message: Message) => message.chatId)
 				.filter((id: number) => !prevChats.some((chat: Chat) => chat.id === id))
 		)
 		const newSubchatIds = uniq(
-			messageResultsListing.messages
+			messageListing.messages
 				.filter((message: Message) => message.parentId !== message.chatId)
 				.map((message: Message) => message.parentId)
 				.filter((id: number) => !prevSubchats.some((subchat: Subchat) => subchat.id === id))
 		)
 
-		const [chatListing, subchatListing]: [ChatListing, SubchatListing] = await Promise.all([
-			newChatIds.length ? API.getChats(newChatIds) : Promise.resolve({ chats: [], count: 0 }),
-			newSubchatIds.length ? API.getSubchats(0, newSubchatIds) : Promise.resolve({ subchats: [], count: 0 }),
+		const [chatListing, subchatListing] = await Promise.all([
+			newChatIds.length ? API.getChats(newChatIds) : PROMISE_CHAT_LISTING,
+			newSubchatIds.length ? API.getSubchats(0, newSubchatIds) : PROMISE_SUBCHAT_LISTING,
 		])
 
-		const allChats = [...prevChats, ...chatListing.chats]
-		const allSubchats = [...prevSubchats, ...subchatListing.subchats]
-
-		const newResults: SearchResult[] = [
-			...chatResultsListing.chats.map((chat: Chat) => ({ chat })),
-			...messageResultsListing.messages.map((message: Message) => ({
-				message,
-				chat: allChats.find((chat: Chat) => chat.id === message.parentId),
-				subchat: allSubchats.find((subchat: Subchat) => subchat.id === message.parentId),
-			})),
-		]
-
-		setSearchChats(allChats)
-		setSearchSubchats(allSubchats)
-		setSearchResults([...prevResults, ...newResults])
-		needsChats && setChatPagination({ page: chatPagination.page + 1, count: chatResultsListing.count })
-		needsMessages && setMessagePagination({ page: messagePagination.page + 1, count: messageResultsListing.count })
-		setSearchLoading(false)
+		return {
+			refChats: [...prevChats, ...chatListing.chats],
+			refSubchats: [...prevSubchats, ...subchatListing.subchats],
+		}
 	}
 
 	return {
