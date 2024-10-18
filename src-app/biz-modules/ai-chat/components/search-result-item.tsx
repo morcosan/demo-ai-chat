@@ -18,11 +18,12 @@ export const SearchResultItem = ({ result, keyword, onClick }: Props) => {
 
 	const title = isSubchat ? result.subchat?.text : result.chat?.title
 	const size = isSubchat ? result.subchat?.size : result.chat?.size
+	const linkHref = isSubchat ? `/chat/${result.chatId}?subchat=${result.parentId}` : `/chat/${result.chatId}`
 
 	return (
 		<li className="flex flex-col">
 			<Button
-				linkHref={`/chat/${result.chatId}`}
+				linkHref={linkHref}
 				variant="item-text-default"
 				tooltip={t('aiChat.action.openChat')}
 				onClick={onClick}
