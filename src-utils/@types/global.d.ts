@@ -19,7 +19,7 @@ declare global {
 	interface ReactProps {
 		className?: string
 		style?: CSSProperties
-		children?: ReactNode
+		children?: ReactNode | ((...args) => ReactNode)
 	}
 
 	type JsxProps<C> = C extends JsxFn<infer P> ? P : unknown

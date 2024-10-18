@@ -26,9 +26,7 @@ export const SearchResultItem = ({ result, keyword, onClick }: Props) => {
 					{Boolean(isSubchat) && <SplitSvg className="h-xs-9 min-w-xs-9 text-color-secondary-text-default" />}
 
 					{/* CHAT TITLE */}
-					<span className={cx('flex-1 truncate', isSubchat && 'text-color-secondary-text-default')}>
-						{result.chat.title}
-					</span>
+					<span className="flex-1 truncate">{result.chat.title}</span>
 
 					{/* MESSAGE COUNT */}
 					<span className="ml-xs-3 hidden text-size-xs text-color-text-subtle sm:block">
