@@ -16,16 +16,18 @@ const createChats = (): Chat[] => {
 	return randomArray(3, 100).map((_, index: number) => ({
 		id: randomId(),
 		title: randomText(10),
-		createdAt: addMinutesToDate(date, index * 5).toISOString(),
+		createdAt: addMinutesToDate(date, index * -1000).toISOString(),
 	}))
 }
 
 const createMessages = (chats: Chat[]) => {
 	const messages: Message[] = []
 
+	chats = [...chats].reverse()
+
 	chats.forEach((chat: Chat, chatIndex: number) => {
 		const date = new Date(randomRecentDate())
-		const isBig = chatIndex < 5
+		const isBig = chatIndex >= chats.length - 5
 
 		randomArray(1, isBig ? 70 : 10).forEach((_, index: number) => {
 			const userMessage: Message = {

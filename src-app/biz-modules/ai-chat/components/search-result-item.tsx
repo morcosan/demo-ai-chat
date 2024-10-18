@@ -13,6 +13,9 @@ export const SearchResultItem = ({ result, keyword, onClick }: Props) => {
 	const { avatar, name } = useSettings()
 	const isSubchat = result.parentId !== result.chatId
 
+	const title = isSubchat ? result.subchat?.text : result.chat?.title
+	const size = isSubchat ? result.subchat?.size : result.chat?.size
+
 	return (
 		<li className="flex flex-col">
 			<Button
@@ -26,18 +29,18 @@ export const SearchResultItem = ({ result, keyword, onClick }: Props) => {
 					{Boolean(isSubchat) && <SplitSvg className="h-xs-9 min-w-xs-9 text-color-secondary-text-default" />}
 
 					{/* CHAT TITLE */}
-					<span className="flex-1 truncate">{result.chat.title}</span>
+					<span className="flex-1 truncate">{title}</span>
 
 					{/* MESSAGE COUNT */}
 					<span className="ml-xs-3 hidden text-size-xs text-color-text-subtle sm:block">
-						{t('aiChat.xMessages', { count: result.chat.size })}
+						{t('aiChat.xMessages', { count: size })}
 					</span>
 				</span>
 			</Button>
 
 			{/* MESSAGE COUNT - MOBILE */}
 			<div className="mb-xs-2 px-button-px-item text-size-xs text-color-text-subtle sm:hidden">
-				{t('aiChat.xMessages', { count: result.chat.size })}
+				{t('aiChat.xMessages', { count: size })}
 			</div>
 
 			{/* AGENT NAME */}

@@ -21,5 +21,6 @@ export interface MessageListing {
 }
 
 export interface SearchResult extends Message {
-	chat: Chat
+	chat?: Chat
+	subchat?: Subchat
 }

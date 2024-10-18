@@ -1,4 +1,4 @@
-import { uniq, uniqBy } from 'lodash'
+import { uniq } from 'lodash'
 import { useState } from 'react'
 import { API, Chat, Message, MIN_SEARCH_LENGTH, SearchResult, Subchat } from '../../api'
 
@@ -92,17 +92,31 @@ export const useSearchStore = (): SearchStore => {
 				.map((message: Message) => message.chatId)
 				.filter((id: number) => !prevChats.some((chat: Chat) => chat.id === id))
 		)
-		const chatListing = await API.getChats(newChatIds)
-		const newChats = uniqBy([...prevChats, ...chatListing.chats], (chat: Chat) => chat.id)
+		const newSubchatIds = uniq(
+			messageListing.messages
+				.filter((message: Message) => message.parentId !== message.chatId)
+				.map((message: Message) => message.parentId)
+				.filter((id: number) => !prevSubchats.some((subchat: Subchat) => subchat.id === id))
+		)
+
+		const [chatListing, subchatListing] = await Promise.all([
+			API.getChats(newChatIds),
+			API.getSubchats(0, newSubchatIds),
+		])
+
+		const allChats = [...prevChats, ...chatListing.chats]
+		const allSubchats = [...prevSubchats, ...subchatListing.subchats]
 
 		const newResults = messageListing.messages.map(
 			(message: Message): SearchResult => ({
 				...message,
-				chat: newChats.find((chat) => chat.id === message.chatId) as Chat,
+				chat: allChats.find((chat: Chat) => chat.id === message.parentId),
+				subchat: allSubchats.find((subchat: Subchat) => subchat.id === message.parentId),
 			})
 		)
 
-		setSearchChats(newChats)
+		setSearchChats(allChats)
+		setSearchSubchats(allSubchats)
 		setSearchResults([...prevResults, ...newResults])
 		setSearchPagination({ page: pagination.page + 1, count: messageListing.count })
 		setSearchLoading(false)
