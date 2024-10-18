@@ -57,9 +57,9 @@ export const useSearchStore = (): SearchStore => {
 
 	const clearSearch = () => {
 		setSearchKeyword('')
-		setSearchResults([])
 		setSearchChats([])
 		setSearchSubchats([])
+		setSearchResults([])
 		setSearchPagination({ page: 0, count: 0 })
 	}
 
