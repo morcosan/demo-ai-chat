@@ -1,3 +1,4 @@
+import { useUiTheme } from '@ds/release'
 import { debounce } from 'lodash'
 import { UIEvent, useEffect } from 'react'
 import { useNavigate, useParams, useSearchParams } from 'react-router-dom'
@@ -26,6 +27,7 @@ export const ChatView = () => {
 	} = useAiChat()
 	const { input, inputRef, inputText, listingRef, onChange, onPressEnter, onSubmit, saveScrollPos, scrollToPos } =
 		useMessageListing(chatLoading, postChatMessage)
+	const { $lineHeight, $fontSize, $spacing } = useUiTheme()
 	const { chatId: chatIdStr } = useParams()
 	const [searchParams] = useSearchParams()
 	const navigate = useNavigate()
@@ -34,6 +36,12 @@ export const ChatView = () => {
 	const subchatId = parseInt(String(searchParams.get('subchat')))
 
 	const widthClass = 'mx-auto w-full max-w-xxl-2'
+
+	const calcH1LineHeight = $lineHeight['sm']
+	const calcH1Padding1 = $spacing['xs-3']
+	const calcH1Padding2 = $spacing['xs-3']
+	const calcH1FontSize = `calc(2 * ${$fontSize['xl']} + ${$fontSize['xs']})`
+	const calcH1Height = `calc(${$lineHeight['sm']} * ${calcH1FontSize} + ${calcH1Padding1} + ${calcH1Padding2})`
 
 	const onClickSubchat = () => activeView === AiChatView.MOBILE_CHAT && setActiveView(AiChatView.MOBILE_SUBCHAT)
 
@@ -76,18 +84,20 @@ export const ChatView = () => {
 				<div ref={listingRef} className="flex-1 overflow-y-auto pb-sm-5" onScroll={onScroll}>
 					<div className={cx(widthClass, chatLoading === 'full' && 'h-full', 'flex flex-col pt-sm-0')}>
 						{/* TOOLBAR */}
-						<StickyToolbar className="pb-xs-4">
-							<h1 className="px-xs-5 lg:px-md-0">
-								<div className="px-xs-5 pt-xs-0 text-size-xl font-weight-md">
-									<div className="line-clamp-2">{activeChat?.title}</div>
+						<StickyToolbar style={{ minHeight: calcH1Height, lineHeight: calcH1LineHeight }}>
+							{(isSticky: boolean) => (
+								<h1 className="mx-xs-5 px-xs-5 pt-xs-0 lg:mx-md-0" style={{ paddingBottom: calcH1Padding2 }}>
+									<div className={cx('text-size-xl font-weight-md', isSticky ? 'line-clamp-1' : 'line-clamp-2')}>
+										{activeChat?.title}
+									</div>
 
 									{Boolean(chatPagination.count) && (
-										<div className="mt-xs-0 text-size-xs text-color-text-subtle">
+										<div className="text-size-xs text-color-text-subtle" style={{ marginTop: calcH1Padding1 }}>
 											{t('aiChat.xMessages', { count: chatPagination.count })}
 										</div>
 									)}
-								</div>
-							</h1>
+								</h1>
+							)}
 						</StickyToolbar>
 
 						{/* LISTING */}

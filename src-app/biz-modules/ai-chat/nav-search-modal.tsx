@@ -70,13 +70,13 @@ export const AiChatNavSearchModal = () => {
 			) : (
 				// RESULTS
 				<div className="flex min-h-lg-2 flex-col">
-					<StickyToolbar className="!-top-a11y-padding -mt-a11y-padding mb-xs-3">
+					<StickyToolbar className="!-top-a11y-padding -mt-a11y-padding" stretched>
 						<div className="px-button-px-item pb-xs-5 text-size-sm text-color-text-subtle">
 							{t('aiChat.xSearchResults', { count: searchPagination.count })}
 						</div>
 					</StickyToolbar>
 
-					<ul className="flex flex-col gap-sm-7 pb-button-px-item">
+					<ul className="mt-xs-3 flex flex-col gap-sm-7 pb-button-px-item">
 						{searchResults.map((result: SearchResult) => (
 							<SearchResultItem
 								key={result.id}

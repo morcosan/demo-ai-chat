@@ -20,8 +20,8 @@ export const SubchatsView = () => {
 		<div className="h-full py-xs-1">
 			<div className="h-full overflow-y-scroll pb-xs-9 pl-scrollbar-w pr-a11y-padding" onScroll={onScroll}>
 				{/* TOOLBAR */}
-				<StickyToolbar className="-mx-a11y-padding mb-xs-2 px-xs-9 py-xs-1" permanent>
-					<div className="flex h-button-h-sm items-center text-size-sm">
+				<StickyToolbar stretched permanent>
+					<div className="flex h-button-h-md items-center px-xs-6 text-size-sm leading-1">
 						{t('aiChat.subchats')} ({allSubchatsPagination.count})
 					</div>
 				</StickyToolbar>
