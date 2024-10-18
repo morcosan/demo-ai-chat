@@ -6,7 +6,7 @@ import { InputField } from '../components/input-field'
 import { LoadingText } from '../components/loading-text'
 import { MessageItem } from '../components/message-item'
 import { StickyToolbar } from '../components/sticky-toolbar'
-import { useMessageListing } from '../hooks/message-listing'
+import { useScrollable } from '../hooks/scrollable'
 import { useAiChat } from '../state'
 
 export const SubchatView = () => {
@@ -19,8 +19,7 @@ export const SubchatView = () => {
 		loadMoreSubchatMessages,
 		postSubchatMessage,
 	} = useAiChat()
-	const { listingRef, input, inputRef, inputText, onChange, onPressEnter, onSubmit, saveScrollPos, scrollToPos } =
-		useMessageListing(subchatLoading, postSubchatMessage)
+	const { containerRef, saveScrollPos, scrollToPos } = useScrollable()
 
 	const onScroll = debounce((event: UIEvent) => {
 		const THRESHOLD = 50 // px
@@ -40,7 +39,7 @@ export const SubchatView = () => {
 	return (
 		<div className="flex h-full flex-col py-xs-1">
 			<div
-				ref={listingRef}
+				ref={containerRef}
 				className="flex flex-1 flex-col overflow-y-scroll pb-sm-1 pl-scrollbar-w pr-a11y-padding"
 				onScroll={onScroll}
 			>
@@ -78,15 +77,11 @@ export const SubchatView = () => {
 			{/* INPUT FIELD */}
 			<div className="mx-a11y-scrollbar mb-xs-5 mt-xs-5">
 				<InputField
-					ref={inputRef}
-					input={input}
-					inputText={inputText}
+					chatLoading={subchatLoading}
 					loading={subchatLoading === 'update'}
 					disabled={subchatLoading === 'full' || subchatLoading === 'more'}
+					postMessageFn={postSubchatMessage}
 					className="w-full"
-					onChange={onChange}
-					onPressEnter={onPressEnter}
-					onSubmit={onSubmit}
 				/>
 			</div>
 		</div>

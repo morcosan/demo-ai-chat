@@ -1,20 +1,42 @@
-import { IconButton, SendSvg, TextField, TextFieldRef } from '@ds/release'
-import { withRef } from '@utils/release'
-import { Ref } from 'react'
+import { IconButton, SendSvg, TextField, TextFieldRef, useUiViewport } from '@ds/release'
+import { useCallback, useRef, useState } from 'react'
 
 interface Props extends ReactProps {
-	input: string
-	inputText: string
 	primary?: boolean
 	loading?: boolean
+	chatLoading?: ListLoading
 	disabled?: boolean
-
-	onChange(value: string): void
-	onPressEnter(event: ReactKeyboardEvent): void
-	onSubmit(): void
+	postMessageFn: Function
 }
 
-export const InputField = withRef('InputField', (props: Props, ref: Ref<TextFieldRef>) => {
+export const InputField = (props: Props) => {
+	const { isViewportMaxLG } = useUiViewport()
+	const [input, setInput] = useState<string>('')
+	const inputRef = useRef<TextFieldRef>(null)
+
+	const inputText = input.trim()
+
+	const onChange = (value: string) => setInput(value)
+
+	const onPressEnter = useCallback(
+		(event: ReactKeyboardEvent) => {
+			if (isViewportMaxLG) return // Disable submit when pressing Enter on mobile
+			if (event.shiftKey) return // Allow new lines only with Shift+Enter on desktop
+
+			event.preventDefault()
+			onSubmit()
+		},
+		[inputText, props.chatLoading]
+	)
+
+	const onSubmit = useCallback(() => {
+		if (props.chatLoading || !inputText) return
+
+		props.postMessageFn(inputText)
+		setInput('')
+		inputRef.current?.focus()
+	}, [inputText, props.chatLoading])
+
 	const onFocus = (event: ReactFocusEvent) => {
 		// On mobile, the field is covered by the floating keyboard
 		const target = event.target as HTMLElement
@@ -24,10 +46,10 @@ export const InputField = withRef('InputField', (props: Props, ref: Ref<TextFiel
 
 	return (
 		<TextField
-			ref={ref}
+			ref={inputRef}
 			id={props.primary ? 'input-chat' : 'input-subchat'}
 			size={props.primary ? 'xl' : 'lg'}
-			value={props.input}
+			value={input}
 			placeholder={t('aiChat.inputPlaceholder')}
 			ariaLabel="New message"
 			slotRight={
@@ -36,8 +58,8 @@ export const InputField = withRef('InputField', (props: Props, ref: Ref<TextFiel
 					variant={props.primary ? 'solid-primary' : 'solid-secondary'}
 					size={props.primary ? 'md' : 'sm'}
 					loading={props.loading}
-					disabled={props.disabled || (!props.loading && !props.inputText)}
-					onClick={props.onSubmit}
+					disabled={props.disabled || (!props.loading && !inputText)}
+					onClick={onSubmit}
 				>
 					<SendSvg className={props.primary ? 'h-xs-9' : 'h-xs-7'} />
 				</IconButton>
@@ -47,9 +69,9 @@ export const InputField = withRef('InputField', (props: Props, ref: Ref<TextFiel
 			disabled={props.disabled}
 			className={props.className}
 			multiline
-			onChange={props.onChange}
-			onSubmit={props.onPressEnter}
+			onChange={onChange}
+			onSubmit={onPressEnter}
 			onFocus={onFocus}
 		/>
 	)
-})
+}

@@ -7,7 +7,7 @@ import { InputField } from '../components/input-field'
 import { LoadingText } from '../components/loading-text'
 import { MessageItem } from '../components/message-item'
 import { StickyToolbar } from '../components/sticky-toolbar'
-import { useMessageListing } from '../hooks/message-listing'
+import { useScrollable } from '../hooks/scrollable'
 import { AiChatView, useAiChat } from '../state'
 
 export const ChatView = () => {
@@ -25,8 +25,7 @@ export const ChatView = () => {
 		resetActiveChat,
 		setActiveView,
 	} = useAiChat()
-	const { input, inputRef, inputText, listingRef, onChange, onPressEnter, onSubmit, saveScrollPos, scrollToPos } =
-		useMessageListing(chatLoading, postChatMessage)
+	const { containerRef, saveScrollPos, scrollToPos } = useScrollable()
 	const { $lineHeight, $fontSize, $spacing } = useUiTheme()
 	const { chatId: chatIdStr } = useParams()
 	const [searchParams] = useSearchParams()
@@ -81,7 +80,7 @@ export const ChatView = () => {
 	return (
 		<div className="relative flex h-full flex-1 flex-col gap-xs-5 py-xs-1">
 			{activeChat || chatId ? (
-				<div ref={listingRef} className="flex-1 overflow-y-auto pb-sm-5" onScroll={onScroll}>
+				<div ref={containerRef} className="flex-1 overflow-y-auto pb-sm-5" onScroll={onScroll}>
 					<div className={cx(widthClass, chatLoading === 'full' && 'h-full', 'flex flex-col pt-sm-0')}>
 						{/* TOOLBAR */}
 						<StickyToolbar style={{ minHeight: calcH1Height, lineHeight: calcH1LineHeight }}>
@@ -132,16 +131,12 @@ export const ChatView = () => {
 
 			<div className={cx('px-xs-7 pb-xs-5 lg:px-md-0', widthClass)}>
 				<InputField
-					ref={inputRef}
-					input={input}
-					inputText={inputText}
+					chatLoading={chatLoading}
 					loading={chatLoading === 'update' || Boolean(allChatsLoading)}
 					disabled={chatLoading === 'full' || chatLoading === 'more'}
+					postMessageFn={postChatMessage}
 					className="w-full"
 					primary
-					onChange={onChange}
-					onPressEnter={onPressEnter}
-					onSubmit={onSubmit}
 				/>
 			</div>
 		</div>

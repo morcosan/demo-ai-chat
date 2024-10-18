@@ -12,6 +12,8 @@ interface Props {
 export const MessageItem = ({ message, subchatId, isSubchat, onClickSubchat }: Props) => {
 	const { $lineHeight } = useUiTheme()
 
+	console.log('render', message.id)
+
 	const wrapperClass = cx({
 		'group relative flex flex-col items-end': true,
 		'px-xs-5 lg:px-md-0': !isSubchat,
