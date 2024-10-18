@@ -50,6 +50,7 @@
 		"subchats": "Subchats",
 		"xMessages_one": "1 message",
 		"xMessages_other": "{count} messages",
+		"xSearchResults_one": "{count} search result",
 		"xSearchResults_other": "{count} search results",
 		"xSearchResults_zero": "No search results"
 	}

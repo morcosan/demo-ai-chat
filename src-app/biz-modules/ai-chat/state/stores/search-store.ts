@@ -1,6 +1,12 @@
 import { uniq } from 'lodash'
 import { useState } from 'react'
-import { API, Chat, Message, MIN_SEARCH_LENGTH, SearchResult, Subchat } from '../../api'
+import { API, Chat, Message, MIN_SEARCH_LENGTH, Subchat } from '../../api'
+
+export interface SearchResult {
+	chat?: Chat
+	subchat?: Subchat
+	message?: Message
+}
 
 export interface SearchStore {
 	showsSearch: boolean
@@ -29,12 +35,17 @@ export const searchDefaults: SearchStore = {
 export const useSearchStore = (): SearchStore => {
 	const [showsSearch, setShowsSearch] = useState(false)
 	const [searchKeyword, setSearchKeyword] = useState('')
-	const [searchResults, setSearchResults] = useState([] as SearchResult[])
-	const [searchPagination, setSearchPagination] = useState({ page: 0, count: 0 } as Pagination)
+	const [searchResults, setSearchResults] = useState<SearchResult[]>([])
+	const [chatPagination, setChatPagination] = useState<Pagination>({ page: 0, count: 0 })
+	const [messagePagination, setMessagePagination] = useState<Pagination>({ page: 0, count: 0 })
 	const [searchLoading, setSearchLoading] = useState<ListLoading>(false)
 	const [searchChats, setSearchChats] = useState<Chat[]>([])
 	const [searchSubchats, setSearchSubchats] = useState<Subchat[]>([])
 
+	const searchPagination = {
+		page: chatPagination.page + messagePagination.page,
+		count: chatPagination.count + messagePagination.count,
+	}
 	const canLoadSearchResults = !searchResults.length || searchResults.length < searchPagination.count
 
 	const searchByKeyword = async (keyword: string) => {
@@ -60,7 +71,7 @@ export const useSearchStore = (): SearchStore => {
 		setSearchChats([])
 		setSearchSubchats([])
 		setSearchResults([])
-		setSearchPagination({ page: 0, count: 0 })
+		setMessagePagination({ page: 0, count: 0 })
 	}
 
 	const loadMoreSearchResults = () => {
@@ -109,7 +120,7 @@ export const useSearchStore = (): SearchStore => {
 
 		const newResults = messageListing.messages.map(
 			(message: Message): SearchResult => ({
-				...message,
+				message,
 				chat: allChats.find((chat: Chat) => chat.id === message.parentId),
 				subchat: allSubchats.find((subchat: Subchat) => subchat.id === message.parentId),
 			})
@@ -118,7 +129,7 @@ export const useSearchStore = (): SearchStore => {
 		setSearchChats(allChats)
 		setSearchSubchats(allSubchats)
 		setSearchResults([...prevResults, ...newResults])
-		setSearchPagination({ page: pagination.page + 1, count: messageListing.count })
+		setMessagePagination({ page: pagination.page + 1, count: messageListing.count })
 		setSearchLoading(false)
 	}
 

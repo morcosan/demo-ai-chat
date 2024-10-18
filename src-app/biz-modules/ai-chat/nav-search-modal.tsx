@@ -2,10 +2,10 @@ import { SearchResultItem } from '@app/biz-modules/ai-chat/components/search-res
 import { Button, Modal, SearchSvg, TextField, TextFieldRef } from '@ds/release'
 import { debounce } from 'lodash'
 import { useCallback, useRef, useState } from 'react'
-import { MIN_SEARCH_LENGTH, SearchResult } from './api'
+import { MIN_SEARCH_LENGTH } from './api'
 import { LoadingText } from './components/loading-text'
 import { StickyToolbar } from './components/sticky-toolbar'
-import { useAiChat } from './state'
+import { SearchResult, useAiChat } from './state'
 
 export const AiChatNavSearchModal = () => {
 	const {
@@ -79,7 +79,7 @@ export const AiChatNavSearchModal = () => {
 					<ul className="mt-xs-3 flex flex-col gap-sm-7 pb-button-px-item">
 						{searchResults.map((result: SearchResult) => (
 							<SearchResultItem
-								key={result.id}
+								key={result.message?.id || result.chat?.id}
 								result={result}
 								keyword={searchKeyword}
 								onClick={() => setShowsSearch(false)}

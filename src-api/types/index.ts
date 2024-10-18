@@ -59,13 +59,13 @@ export interface MessagesApiPayload extends ApiPayload {
 /**
  * Chat API
  */
-export interface Chat {
+export interface DbChat {
 	id: number
 	title: string
 	createdAt: string
 }
 
-export interface Message {
+export interface DbMessage {
 	id: number
 	chatId: number
 	parentId: number
@@ -79,7 +79,7 @@ export type MessageRole = 'user' | 'agent' | 'system'
 /**
  * DTOs
  */
-export interface ChatDTO extends Chat {
+export interface ChatDTO extends DbChat {
 	size: number
 }
 
@@ -91,6 +91,6 @@ export interface SubchatDTO {
 	createdAt: string
 }
 
-export interface MessageDTO extends Message {
+export interface MessageDTO extends DbMessage {
 	subchatSize: number
 }
