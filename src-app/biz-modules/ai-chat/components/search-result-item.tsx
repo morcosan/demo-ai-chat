@@ -18,15 +18,16 @@ export const SearchResultItem = ({ result, keyword, onClick }: Props) => {
 	const chatId = result.message ? result.message.chatId : result.chat?.id
 	const isSubchat = result.message && result.message.parentId !== result.message.chatId
 	const subchatId = isSubchat ? result.message?.parentId : 0
-	const title = isSubchat ? result.subchat?.text : result.chat?.title
-	const size = isSubchat ? result.subchat?.size : result.chat?.size
+	const title = (isSubchat ? result.subchat?.text : result.chat?.title) || ''
+	const size = isSubchat ? result.subchat?.size : result.chat?.size || 0
 	const role = result.message?.role
-	const text = result.message?.text || ''
 	const createdAt = result.message ? result.message.createdAt : result.chat?.createdAt || ''
 	const linkHref = isSubchat ? `/chat/${chatId}?subchat=${subchatId}` : `/chat/${chatId}`
+	const lcKeyword = keyword.toLowerCase()
+	const text = result.message?.text.split('\n').find((line) => line.toLowerCase().includes(lcKeyword)) || ''
 
 	return (
-		<li className="flex flex-col">
+		<li className={cx('flex flex-col last:mb-0', result.message ? 'mb-sm-7' : 'mb-sm-4')}>
 			<Button
 				linkHref={linkHref}
 				variant="item-text-default"
@@ -38,7 +39,7 @@ export const SearchResultItem = ({ result, keyword, onClick }: Props) => {
 					{Boolean(isSubchat) && <SplitSvg className="h-xs-9 min-w-xs-9 text-color-secondary-text-default" />}
 
 					{/* CHAT TITLE */}
-					<span className="flex-1 truncate">{title}</span>
+					<HighlightedText text={title} keyword={keyword} className="flex-1 truncate" />
 
 					{/* MESSAGE COUNT */}
 					<span className="ml-xs-3 hidden text-size-xs text-color-text-subtle sm:block">
@@ -53,14 +54,14 @@ export const SearchResultItem = ({ result, keyword, onClick }: Props) => {
 			</div>
 
 			{/* AGENT + DATE */}
-			<div className="mt-xs-0 flex items-center gap-xs-2 px-button-px-item text-size-xs text-color-text-subtle">
+			<div className="flex items-center gap-xs-2 px-button-px-item text-size-xs text-color-text-subtle">
 				{/* AGENT */}
 				{Boolean(role) && (
 					<>
 						{role === 'agent' ? (
 							<AiChatSvg className="mt-px h-xs-6 w-xs-6 rounded-full" />
 						) : (
-							<img src={avatar} alt="" className="mt-px h-xs-6 w-xs-6 rounded-full" />
+							<img src={avatar} alt="" className="h-xs-6 w-xs-6 rounded-full" />
 						)}
 						<span>{role === 'agent' ? 'Lorem Ipsum GPT' : name} -</span>
 					</>
@@ -72,9 +73,11 @@ export const SearchResultItem = ({ result, keyword, onClick }: Props) => {
 
 			{/* MESSAGE */}
 			{Boolean(text) && (
-				<div className="mt-xs-2 px-button-px-item">
-					<HighlightedText text={text} keyword={keyword} className="text-size-sm text-color-text-subtle" />
-				</div>
+				<HighlightedText
+					text={text}
+					keyword={keyword}
+					className="mt-xs-2 px-button-px-item text-size-sm text-color-text-subtle"
+				/>
 			)}
 		</li>
 	)

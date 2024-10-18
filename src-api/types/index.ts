@@ -20,6 +20,7 @@ export interface ChatsApiQuery extends ApiQuery {
 	chatIds?: string
 	count?: string | number
 	page?: string | number
+	search?: string
 }
 export interface ChatsApiData {
 	count: number

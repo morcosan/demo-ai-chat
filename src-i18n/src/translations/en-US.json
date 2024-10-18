@@ -35,6 +35,7 @@
 			"openSubchat_other": "Open subchat ({count} messages)",
 			"openSubchat_zero": "Create subchat",
 			"showSubchats": "Show subchats ({count})",
+			"startSearching_one": "Type at least {count} character",
 			"startSearching_other": "Type at least {count} characters"
 		},
 		"chats": "Chats",

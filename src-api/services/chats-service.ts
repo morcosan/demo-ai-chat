@@ -28,6 +28,7 @@ export const chatsService = {
 		const page = extractInt(query.page, DEFAULT_PAGE, isGreaterThanZero)
 		const count = extractInt(query.count, DEFAULT_COUNT, isGreaterThanZero)
 		const chatIds = extractIntArray(query.chatIds, isGreaterThanZero)
+		const search = query.search?.toLowerCase()
 
 		if (chatIds.length) {
 			const chats = DB__CHATS.filter((chat: DbChat) => chatIds.includes(chat.id))
@@ -40,17 +41,21 @@ export const chatsService = {
 				},
 			}
 		} else {
+			const chats = search
+				? DB__CHATS.filter((chat: DbChat) => chat.title.toLowerCase().includes(search))
+				: DB__CHATS
+
 			if (!isValidPagination(page, count, DB__CHATS.length)) {
 				return { ...RESP__NOT_FOUND, error: `Page ${page} not found for ${DB__CHATS.length} chats` }
 			}
 
-			const chats = DB__CHATS.slice(count * (page - 1), count * page)
+			const pageChats = chats.slice(count * (page - 1), count * page)
 
 			return {
 				status: STATUS__SUCCESS,
 				data: {
-					count: DB__CHATS.length,
-					items: chats.map((chat: DbChat) => ({ ...chat, size: getChatSize(chat) })),
+					count: chats.length,
+					items: pageChats.map((chat: DbChat) => ({ ...chat, size: getChatSize(chat) })),
 				},
 			}
 		}

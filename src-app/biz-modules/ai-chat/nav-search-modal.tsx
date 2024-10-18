@@ -76,7 +76,7 @@ export const AiChatNavSearchModal = () => {
 						</div>
 					</StickyToolbar>
 
-					<ul className="mt-xs-3 flex flex-col gap-sm-7 pb-button-px-item">
+					<ul className="mt-xs-3 flex flex-col pb-button-px-item">
 						{searchResults.map((result: SearchResult) => (
 							<SearchResultItem
 								key={result.message?.id || result.chat?.id}
@@ -87,7 +87,7 @@ export const AiChatNavSearchModal = () => {
 						))}
 					</ul>
 
-					<div className="mx-auto mt-xs-4">
+					<div className="mx-auto mb-xs-5 mt-sm-0">
 						{searchLoading === 'more' ? (
 							<div className="flex-center h-button-h-md text-size-sm">
 								<LoadingText text={t('core.searching')} />

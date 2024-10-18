@@ -68,7 +68,7 @@ export const useChatStore = (allChatsStore: AllChatsStore): ChatStore => {
 
 		setChatLoading(chatPagination.page === 0 ? 'full' : 'more')
 
-		const listing = await API.getMessages(activeChat.id, 0, '', chatPagination.page + 1)
+		const listing = await API.getMessages(activeChat.id, 0, chatPagination.page + 1)
 
 		setChatMessages(uniqBy([...listing.messages, ...chatMessages], (msg: Message) => msg.id))
 		setChatPagination({ page: chatPagination.page + 1, count: listing.count })

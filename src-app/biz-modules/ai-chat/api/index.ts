@@ -19,11 +19,12 @@ export * from './_types'
 export const MIN_SEARCH_LENGTH = 3
 
 export const API = {
-	async getChats(chatIds?: number[], page?: number): Promise<ChatListing> {
+	async getChats(chatIds?: number[], page?: number, search?: string): Promise<ChatListing> {
 		const query: ChatsApiQuery = {
 			chatIds: (chatIds || []).join(','),
 			count: 20,
 			page: page || 1,
+			search,
 		}
 		const resp = await chatsAPI.get<ChatsApiData>('/api/chats', query)
 
@@ -68,7 +69,7 @@ export const API = {
 			: { subchats: [], count: 0 }
 	},
 
-	async getMessages(chatId?: number, subchatId?: number, search?: string, page?: number): Promise<MessageListing> {
+	async getMessages(chatId?: number, subchatId?: number, page?: number, search?: string): Promise<MessageListing> {
 		if (search && search.length < MIN_SEARCH_LENGTH) {
 			return { messages: [], count: 0 }
 		}

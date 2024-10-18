@@ -5,8 +5,7 @@ interface Props extends ReactProps {
 
 export const HighlightedText = ({ text, keyword, className }: Props) => {
 	const lcKeyword = keyword.toLowerCase()
-	const line = text.split('\n').find((line) => line.toLowerCase().includes(lcKeyword)) || ''
-	const parts = line.split(new RegExp(`(${keyword})`, 'gi'))
+	const parts = text.split(new RegExp(`(${keyword})`, 'gi'))
 
 	return (
 		<span className={className}>

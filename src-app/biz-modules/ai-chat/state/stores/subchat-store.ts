@@ -89,7 +89,7 @@ export const useSubchatStore = (chatStore: ChatStore, allSubchatsStore: AllSubch
 		let listing: MessageListing = { messages: [], count: 0 }
 
 		if (activeSubchat.size) {
-			listing = await API.getMessages(activeSubchat.chatId, activeSubchat.id, '', subchatPagination.page + 1)
+			listing = await API.getMessages(activeSubchat.chatId, activeSubchat.id, subchatPagination.page + 1)
 		} else {
 			const message = chatMessages.find((message: Message) => message.id === activeSubchat.id)
 			if (message) {
