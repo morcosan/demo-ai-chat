@@ -1,5 +1,3 @@
-import { capitalize } from 'lodash'
-
 export enum DateFormat {
 	DD_MM,
 	DD_MM_TT,
@@ -23,9 +21,9 @@ export const fixDatetime = (datetime: Datetime): Datetime => {
 
 export const formatDate = (datetime: Datetime, format: DateFormat, locale: Intl.LocalesArgument): string => {
 	const date = new Date(fixDatetime(datetime))
-	const year = 'numeric'
-	const month = 'short'
 	const day = 'numeric'
+	const month = 'short'
+	const year = 'numeric'
 	const hour = 'numeric'
 	const minute = 'numeric'
 	const weekday = 'long'
@@ -68,5 +66,5 @@ export const formatDate = (datetime: Datetime, format: DateFormat, locale: Intl.
 	if (format === DateFormat.WD_DD_MM_YY) options = { weekday, day, month, year }
 	if (format === DateFormat.WD_DD_MM_YY_TT) options = { weekday, day, month, year, hour, minute }
 
-	return capitalize(options ? date.toLocaleDateString(locale, options) : '')
+	return options ? date.toLocaleDateString(locale, options) : ''
 }
