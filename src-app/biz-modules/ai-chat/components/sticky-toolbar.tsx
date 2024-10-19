@@ -1,41 +1,25 @@
-import { useEffect, useRef, useState } from 'react'
+import { useStickyHandler } from '@utils/release'
 
-interface Props extends ReactProps {
-	variant: 'chat' | 'subchat'
+interface Props extends ReactPropsExtended {
+	permanent?: boolean
+	stretched?: boolean
 }
 
-export const StickyToolbar = ({ variant, children, className }: Props) => {
-	const [isSticky, setIsSticky] = useState(false)
-	const stickyRef = useRef<HTMLDivElement>(null)
+export const StickyToolbar = ({ permanent, stretched, children, className, style }: Props) => {
+	const { isSticky, stickyRef } = useStickyHandler()
 
-	const stickyClass = cx(
-		'sticky top-0 z-sticky border-color-border-shadow bg-color-bg-default',
-		{ 'border-b shadow-below-sm': (variant === 'chat' && isSticky) || variant === 'subchat' },
-		className
+	const stickyClass = cx('sticky top-0 z-sticky', stretched && '-mx-a11y-padding', className)
+	const slotClass = cx(
+		'bg-color-bg-default',
+		stretched && 'px-a11y-padding',
+		(permanent || isSticky) && 'border-b border-color-border-shadow shadow-below-sm'
 	)
 
-	useEffect(() => {
-		const element = stickyRef.current
-		if (!element) return
-
-		const sentinel = document.createElement('div')
-		element.parentElement?.insertBefore(sentinel, element)
-
-		const observer = new IntersectionObserver(([entry]) => setIsSticky(!entry.isIntersecting), {
-			threshold: [0],
-		})
-
-		observer.observe(sentinel)
-
-		return () => {
-			observer.disconnect()
-			sentinel.remove()
-		}
-	}, [])
+	const slot = typeof children === 'function' ? children(isSticky) : children
 
 	return (
-		<div ref={stickyRef} className={stickyClass}>
-			{children}
+		<div ref={stickyRef} className={stickyClass} style={style}>
+			<div className={slotClass}>{slot}</div>
 		</div>
 	)
 }

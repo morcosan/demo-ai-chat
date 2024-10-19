@@ -2,10 +2,12 @@
 	"core": {
 		"action": {
 			"back": "Indietro",
-			"backToHome": "Torna alla home page",
+			"backToHome": "Torna alla home",
 			"changeLanguage": "Cambia lingua",
 			"close": "Chiudi",
 			"openMenu": "Apri menu",
+			"search": "Cerca",
+			"searchMore": "Mostra più risultati",
 			"signOut": "Esci"
 		},
 		"apiDocs": "Documentazione API",
@@ -20,6 +22,8 @@
 		"lightTheme": "Chiaro",
 		"loading": "Caricamento...",
 		"quickSettings": "Impostazioni rapide",
+		"searchPlaceholder": "Cerca...",
+		"searching": "Ricerca in corso...",
 		"settings": "Impostazioni",
 		"uiLibrary": "Libreria UI:",
 		"uiTheme": "Tema UI:"
@@ -27,9 +31,13 @@
 	"aiChat": {
 		"action": {
 			"backToSubchats": "Torna alle sottochat",
+			"openChat": "Apri chat",
+			"openSubchat_one": "Apri sottochat ({count} messaggio)",
+			"openSubchat_other": "Apri sottochat ({count} messaggi)",
 			"openSubchat_zero": "Crea sottochat",
-			"openSubchat_one": "Apri sottochat (1 messaggio)",
-			"openSubchat_other": "Apri sottochat ({count} messaggi)"
+			"showSubchats": "Mostra sottochat ({count})",
+			"startSearching_one": "Digita almeno {count} carattere",
+			"startSearching_other": "Digita almeno {count} caratteri"
 		},
 		"chats": "Chat",
 		"inputPlaceholder": "Fai una domanda...",
@@ -38,10 +46,14 @@
 		"loadingPreviousMessages": "Caricamento messaggi precedenti...",
 		"loadingSubchats": "Caricamento sottochat...",
 		"newChat": "Nuova chat",
+		"noChats": "Nessuna chat",
+		"noSubchats": "Nessuna sottochat",
 		"sendMessage": "Invia messaggio",
-		"showSubchats": "Mostra sottochat ({count})",
 		"subchats": "Sottochat",
 		"xMessages_one": "1 messaggio",
-		"xMessages_other": "{count} messaggi"
+		"xMessages_other": "{count} messaggi",
+		"xSearchResults_zero": "Nessun risultato di ricerca",
+		"xSearchResults_one": "{count} risultato di ricerca",
+		"xSearchResults_other": "{count} risultati di ricerca"
 	}
 }

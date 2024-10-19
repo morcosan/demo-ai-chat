@@ -6,9 +6,11 @@
 			"changeLanguage": "Dili değiştir",
 			"close": "Kapat",
 			"openMenu": "Menüyü aç",
+			"search": "Ara",
+			"searchMore": "Daha fazla sonuç göster",
 			"signOut": "Oturumu kapat"
 		},
-		"apiDocs": "API Belgeleri",
+		"apiDocs": "API belgeleri",
 		"asia": "Asya",
 		"custom": "Özel",
 		"darkTheme": "Koyu",
@@ -20,6 +22,8 @@
 		"lightTheme": "Açık",
 		"loading": "Yükleniyor...",
 		"quickSettings": "Hızlı ayarlar",
+		"searchPlaceholder": "Ara...",
+		"searching": "Aranıyor...",
 		"settings": "Ayarlar",
 		"uiLibrary": "UI kütüphanesi:",
 		"uiTheme": "UI teması:"
@@ -27,9 +31,13 @@
 	"aiChat": {
 		"action": {
 			"backToSubchats": "Alt sohbetlere dön",
+			"openChat": "Sohbeti aç",
+			"openSubchat_one": "Alt sohbeti aç ({count} mesaj)",
+			"openSubchat_other": "Alt sohbeti aç ({count} mesaj)",
 			"openSubchat_zero": "Alt sohbet oluştur",
-			"openSubchat_one": "Alt sohbeti aç (1 mesaj)",
-			"openSubchat_other": "Alt sohbeti aç ({count} mesaj)"
+			"showSubchats": "Alt sohbetleri göster ({count})",
+			"startSearching_one": "En az {count} karakter yazın",
+			"startSearching_other": "En az {count} karakter yazın"
 		},
 		"chats": "Sohbetler",
 		"inputPlaceholder": "Bir soru sorun...",
@@ -38,10 +46,14 @@
 		"loadingPreviousMessages": "Önceki mesajlar yükleniyor...",
 		"loadingSubchats": "Alt sohbetler yükleniyor...",
 		"newChat": "Yeni sohbet",
+		"noChats": "Sohbet yok",
+		"noSubchats": "Alt sohbet yok",
 		"sendMessage": "Mesaj gönder",
-		"showSubchats": "Alt sohbetleri göster ({count})",
 		"subchats": "Alt sohbetler",
 		"xMessages_one": "1 mesaj",
-		"xMessages_other": "{count} mesaj"
+		"xMessages_other": "{count} mesaj",
+		"xSearchResults_zero": "Arama sonucu yok",
+		"xSearchResults_one": "{count} arama sonucu",
+		"xSearchResults_other": "{count} arama sonucu"
 	}
 }

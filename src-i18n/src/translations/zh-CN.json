@@ -6,6 +6,8 @@
 			"changeLanguage": "更改语言",
 			"close": "关闭",
 			"openMenu": "打开菜单",
+			"search": "搜索",
+			"searchMore": "显示更多结果",
 			"signOut": "退出登录"
 		},
 		"apiDocs": "API 文档",
@@ -20,6 +22,8 @@
 		"lightTheme": "浅色",
 		"loading": "加载中...",
 		"quickSettings": "快速设置",
+		"searchPlaceholder": "搜索...",
+		"searching": "搜索中...",
 		"settings": "设置",
 		"uiLibrary": "UI 库：",
 		"uiTheme": "UI 主题："
@@ -27,21 +31,29 @@
 	"aiChat": {
 		"action": {
 			"backToSubchats": "返回子对话",
+			"openChat": "打开对话",
+			"openSubchat_one": "打开子对话（{count} 条消息）",
+			"openSubchat_other": "打开子对话（{count} 条消息）",
 			"openSubchat_zero": "创建子对话",
-			"openSubchat_one": "打开子对话（1条消息）",
-			"openSubchat_other": "打开子对话（{count}条消息）"
+			"showSubchats": "显示子对话（{count}）",
+			"startSearching_one": "至少输入 {count} 个字符",
+			"startSearching_other": "至少输入 {count} 个字符"
 		},
 		"chats": "对话",
-		"inputPlaceholder": "提出问题...",
+		"inputPlaceholder": "提出一个问题...",
 		"loadingChats": "正在加载对话...",
 		"loadingMessages": "正在加载消息...",
 		"loadingPreviousMessages": "正在加载之前的消息...",
 		"loadingSubchats": "正在加载子对话...",
 		"newChat": "新对话",
+		"noChats": "没有对话",
+		"noSubchats": "没有子对话",
 		"sendMessage": "发送消息",
-		"showSubchats": "显示子对话（{count}）",
 		"subchats": "子对话",
-		"xMessages_one": "1条消息",
-		"xMessages_other": "{count}条消息"
+		"xMessages_one": "1 条消息",
+		"xMessages_other": "{count} 条消息",
+		"xSearchResults_zero": "无搜索结果",
+		"xSearchResults_one": "{count} 个搜索结果",
+		"xSearchResults_other": "{count} 个搜索结果"
 	}
 }

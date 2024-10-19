@@ -3,14 +3,16 @@
 		"action": {
 			"back": "Bumalik",
 			"backToHome": "Bumalik sa homepage",
-			"changeLanguage": "Palitan ang wika",
+			"changeLanguage": "Baguhin ang wika",
 			"close": "Isara",
 			"openMenu": "Buksan ang menu",
+			"search": "Maghanap",
+			"searchMore": "Ipakita ang higit pang resulta",
 			"signOut": "Mag-sign out"
 		},
-		"apiDocs": "Dokumentasyon ng API",
+		"apiDocs": "Mga dokumento ng API",
 		"asia": "Asya",
-		"custom": "Pasadya",
+		"custom": "Custom",
 		"darkTheme": "Madilim",
 		"default": "Default",
 		"designSystem": "Sistema ng disenyo",
@@ -20,16 +22,22 @@
 		"lightTheme": "Maliwanag",
 		"loading": "Naglo-load...",
 		"quickSettings": "Mabilis na mga setting",
+		"searchPlaceholder": "Maghanap...",
+		"searching": "Naghahanap...",
 		"settings": "Mga Setting",
 		"uiLibrary": "UI library:",
-		"uiTheme": "UI tema:"
+		"uiTheme": "UI theme:"
 	},
 	"aiChat": {
 		"action": {
-			"backToSubchats": "Bumalik sa mga subchat",
+			"backToSubchats": "Bumalik sa mga subchats",
+			"openChat": "Buksan ang chat",
+			"openSubchat_one": "Buksan ang subchat ({count} mensahe)",
+			"openSubchat_other": "Buksan ang subchat ({count} na mensahe)",
 			"openSubchat_zero": "Gumawa ng subchat",
-			"openSubchat_one": "Buksan ang subchat (1 mensahe)",
-			"openSubchat_other": "Buksan ang subchat ({count} na mensahe)"
+			"showSubchats": "Ipakita ang mga subchat ({count})",
+			"startSearching_one": "Mag-type ng hindi bababa sa {count} character",
+			"startSearching_other": "Mag-type ng hindi bababa sa {count} na character"
 		},
 		"chats": "Mga chat",
 		"inputPlaceholder": "Magtanong...",
@@ -38,10 +46,14 @@
 		"loadingPreviousMessages": "Naglo-load ng mga nakaraang mensahe...",
 		"loadingSubchats": "Naglo-load ng mga subchat...",
 		"newChat": "Bagong chat",
+		"noChats": "Walang mga chat",
+		"noSubchats": "Walang mga subchat",
 		"sendMessage": "Ipadala ang mensahe",
-		"showSubchats": "Ipakita ang mga subchat ({count})",
 		"subchats": "Mga subchat",
 		"xMessages_one": "1 mensahe",
-		"xMessages_other": "{count} na mensahe"
+		"xMessages_other": "{count} na mensahe",
+		"xSearchResults_zero": "Walang resulta ng paghahanap",
+		"xSearchResults_one": "{count} resulta ng paghahanap",
+		"xSearchResults_other": "{count} na resulta ng paghahanap"
 	}
 }

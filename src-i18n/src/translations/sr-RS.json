@@ -6,20 +6,24 @@
 			"changeLanguage": "Промени језик",
 			"close": "Затвори",
 			"openMenu": "Отвори мени",
+			"search": "Претрага",
+			"searchMore": "Прикажи више резултата",
 			"signOut": "Одјави се"
 		},
 		"apiDocs": "API документација",
 		"asia": "Азија",
 		"custom": "Прилагођено",
-		"darkTheme": "Тамно",
+		"darkTheme": "Тамна",
 		"default": "Подразумевано",
 		"designSystem": "Систем дизајна",
 		"europe": "Европа",
 		"githubRepo": "GitHub репозиторијум",
 		"language": "Језик",
-		"lightTheme": "Светло",
+		"lightTheme": "Светла",
 		"loading": "Учитавање...",
 		"quickSettings": "Брзе поставке",
+		"searchPlaceholder": "Претрага...",
+		"searching": "Претраживање...",
 		"settings": "Подешавања",
 		"uiLibrary": "UI библиотека:",
 		"uiTheme": "UI тема:"
@@ -27,10 +31,15 @@
 	"aiChat": {
 		"action": {
 			"backToSubchats": "Назад на подразговоре",
-			"openSubchat_zero": "Креирај подразговор",
-			"openSubchat_one": "Отвори подразговор (1 порука)",
+			"openChat": "Отвори разговор",
+			"openSubchat_one": "Отвори подразговор ({count} порука)",
 			"openSubchat_few": "Отвори подразговор ({count} поруке)",
-			"openSubchat_other": "Отвори подразговор ({count} порука)"
+			"openSubchat_other": "Отвори подразговор ({count} порука)",
+			"openSubchat_zero": "Креирај подразговор",
+			"showSubchats": "Прикажи подразговоре ({count})",
+			"startSearching_one": "Унесите бар {count} знак",
+			"startSearching_few": "Унесите бар {count} знака",
+			"startSearching_other": "Унесите бар {count} знакова"
 		},
 		"chats": "Разговори",
 		"inputPlaceholder": "Поставите питање...",
@@ -39,11 +48,16 @@
 		"loadingPreviousMessages": "Учитавање претходних порука...",
 		"loadingSubchats": "Учитавање подразговора...",
 		"newChat": "Нови разговор",
+		"noChats": "Нема разговора",
+		"noSubchats": "Нема подразговора",
 		"sendMessage": "Пошаљи поруку",
-		"showSubchats": "Прикажи подразговоре ({count})",
 		"subchats": "Подразговори",
 		"xMessages_one": "1 порука",
 		"xMessages_few": "{count} поруке",
-		"xMessages_other": "{count} порука"
+		"xMessages_other": "{count} порука",
+		"xSearchResults_zero": "Нема резултата претраге",
+		"xSearchResults_one": "{count} резултат претраге",
+		"xSearchResults_few": "{count} резултата претраге",
+		"xSearchResults_other": "{count} резултата претраге"
 	}
 }

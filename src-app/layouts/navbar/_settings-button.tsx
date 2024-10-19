@@ -1,7 +1,5 @@
 import { useSettings } from '@app/biz-modules/user-settings/state'
 import { Button, ButtonHighlight } from '@ds/release'
-import { randomFullName } from '@utils/release'
-import { useMemo } from 'react'
 
 interface Props {
 	highlight?: ButtonHighlight
@@ -10,9 +8,7 @@ interface Props {
 }
 
 export const SettingsButton = ({ highlight, collapsed, onClick }: Props) => {
-	const { avatar } = useSettings()
-
-	const name = useMemo(() => randomFullName(), [])
+	const { avatar, name } = useSettings()
 
 	return (
 		<Button

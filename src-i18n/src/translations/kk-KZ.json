@@ -6,6 +6,8 @@
 			"changeLanguage": "Тілді өзгерту",
 			"close": "Жабу",
 			"openMenu": "Мәзірді ашу",
+			"search": "Іздеу",
+			"searchMore": "Көбірек нәтиже көрсету",
 			"signOut": "Шығу"
 		},
 		"apiDocs": "API құжаттамасы",
@@ -17,19 +19,25 @@
 		"europe": "Еуропа",
 		"githubRepo": "GitHub репозиторийі",
 		"language": "Тіл",
-		"lightTheme": "Жарық",
+		"lightTheme": "Ашық",
 		"loading": "Жүктелуде...",
-		"quickSettings": "Жылдам баптаулар",
-		"settings": "Баптаулар",
+		"quickSettings": "Жылдам параметрлер",
+		"searchPlaceholder": "Іздеу...",
+		"searching": "Іздеу...",
+		"settings": "Параметрлер",
 		"uiLibrary": "UI кітапханасы:",
 		"uiTheme": "UI тақырыбы:"
 	},
 	"aiChat": {
 		"action": {
 			"backToSubchats": "Қосалқы чаттарға оралу",
+			"openChat": "Чатты ашу",
+			"openSubchat_one": "Қосалқы чатты ашу ({count} хабарлама)",
+			"openSubchat_other": "Қосалқы чатты ашу ({count} хабарлама)",
 			"openSubchat_zero": "Қосалқы чат жасау",
-			"openSubchat_one": "Қосалқы чатты ашу (1 хабарлама)",
-			"openSubchat_other": "Қосалқы чатты ашу ({count} хабарлама)"
+			"showSubchats": "Қосалқы чаттарды көрсету ({count})",
+			"startSearching_one": "Кем дегенде {count} таңба енгізіңіз",
+			"startSearching_other": "Кем дегенде {count} таңба енгізіңіз"
 		},
 		"chats": "Чаттар",
 		"inputPlaceholder": "Сұрақ қойыңыз...",
@@ -38,10 +46,14 @@
 		"loadingPreviousMessages": "Алдыңғы хабарламалар жүктелуде...",
 		"loadingSubchats": "Қосалқы чаттар жүктелуде...",
 		"newChat": "Жаңа чат",
+		"noChats": "Чаттар жоқ",
+		"noSubchats": "Қосалқы чаттар жоқ",
 		"sendMessage": "Хабарлама жіберу",
-		"showSubchats": "Қосалқы чаттарды көрсету ({count})",
 		"subchats": "Қосалқы чаттар",
 		"xMessages_one": "1 хабарлама",
-		"xMessages_other": "{count} хабарлама"
+		"xMessages_other": "{count} хабарлама",
+		"xSearchResults_zero": "Іздеу нәтижелері жоқ",
+		"xSearchResults_one": "{count} іздеу нәтижесі",
+		"xSearchResults_other": "{count} іздеу нәтижесі"
 	}
 }

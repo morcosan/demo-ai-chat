@@ -6,6 +6,8 @@
 			"changeLanguage": "Změnit jazyk",
 			"close": "Zavřít",
 			"openMenu": "Otevřít menu",
+			"search": "Hledat",
+			"searchMore": "Zobrazit další výsledky",
 			"signOut": "Odhlásit se"
 		},
 		"apiDocs": "API dokumentace",
@@ -20,6 +22,8 @@
 		"lightTheme": "Světlý",
 		"loading": "Načítání...",
 		"quickSettings": "Rychlé nastavení",
+		"searchPlaceholder": "Hledat...",
+		"searching": "Vyhledávání...",
 		"settings": "Nastavení",
 		"uiLibrary": "UI knihovna:",
 		"uiTheme": "UI motiv:"
@@ -27,11 +31,17 @@
 	"aiChat": {
 		"action": {
 			"backToSubchats": "Zpět na podchaty",
-			"openSubchat_zero": "Vytvořit podchat",
-			"openSubchat_one": "Otevřít podchat (1 zpráva)",
+			"openChat": "Otevřít chat",
+			"openSubchat_one": "Otevřít podchat ({count} zpráva)",
 			"openSubchat_few": "Otevřít podchat ({count} zprávy)",
 			"openSubchat_many": "Otevřít podchat ({count} zpráv)",
-			"openSubchat_other": "Otevřít podchat ({count} zpráv)"
+			"openSubchat_other": "Otevřít podchat ({count} zpráv)",
+			"openSubchat_zero": "Vytvořit podchat",
+			"showSubchats": "Zobrazit podchaty ({count})",
+			"startSearching_one": "Zadejte alespoň {count} znak",
+			"startSearching_few": "Zadejte alespoň {count} znaky",
+			"startSearching_many": "Zadejte alespoň {count} znaků",
+			"startSearching_other": "Zadejte alespoň {count} znaků"
 		},
 		"chats": "Chaty",
 		"inputPlaceholder": "Položte otázku...",
@@ -40,12 +50,18 @@
 		"loadingPreviousMessages": "Načítání předchozích zpráv...",
 		"loadingSubchats": "Načítání podchatů...",
 		"newChat": "Nový chat",
+		"noChats": "Žádné chaty",
+		"noSubchats": "Žádné podchaty",
 		"sendMessage": "Odeslat zprávu",
-		"showSubchats": "Zobrazit podchaty ({count})",
 		"subchats": "Podchaty",
 		"xMessages_one": "1 zpráva",
 		"xMessages_few": "{count} zprávy",
 		"xMessages_many": "{count} zpráv",
-		"xMessages_other": "{count} zpráv"
+		"xMessages_other": "{count} zpráv",
+		"xSearchResults_zero": "Žádné výsledky vyhledávání",
+		"xSearchResults_one": "{count} výsledek vyhledávání",
+		"xSearchResults_few": "{count} výsledky vyhledávání",
+		"xSearchResults_many": "{count} výsledků vyhledávání",
+		"xSearchResults_other": "{count} výsledků vyhledávání"
 	}
 }

@@ -20,6 +20,7 @@ export interface ChatsApiQuery extends ApiQuery {
 	chatIds?: string
 	count?: string | number
 	page?: string | number
+	search?: string
 }
 export interface ChatsApiData {
 	count: number
@@ -44,6 +45,7 @@ export interface MessagesApiQuery extends ApiQuery {
 	subchatId?: string | number
 	count?: string | number
 	page?: string | number
+	search?: string
 }
 export interface MessagesApiData {
 	count: number
@@ -58,13 +60,13 @@ export interface MessagesApiPayload extends ApiPayload {
 /**
  * Chat API
  */
-export interface Chat {
+export interface DbChat {
 	id: number
 	title: string
 	createdAt: string
 }
 
-export interface Message {
+export interface DbMessage {
 	id: number
 	chatId: number
 	parentId: number
@@ -78,7 +80,9 @@ export type MessageRole = 'user' | 'agent' | 'system'
 /**
  * DTOs
  */
-export type ChatDTO = Chat
+export interface ChatDTO extends DbChat {
+	size: number
+}
 
 export interface SubchatDTO {
 	id: number
@@ -88,6 +92,6 @@ export interface SubchatDTO {
 	createdAt: string
 }
 
-export interface MessageDTO extends Message {
+export interface MessageDTO extends DbMessage {
 	subchatSize: number
 }

@@ -6,6 +6,8 @@
 			"changeLanguage": "Zmeniť jazyk",
 			"close": "Zavrieť",
 			"openMenu": "Otvoriť menu",
+			"search": "Hľadať",
+			"searchMore": "Zobraziť viac výsledkov",
 			"signOut": "Odhlásiť sa"
 		},
 		"apiDocs": "API dokumentácia",
@@ -18,8 +20,10 @@
 		"githubRepo": "GitHub repozitár",
 		"language": "Jazyk",
 		"lightTheme": "Svetlý",
-		"loading": "Načítavanie...",
+		"loading": "Načítava sa...",
 		"quickSettings": "Rýchle nastavenia",
+		"searchPlaceholder": "Hľadať...",
+		"searching": "Vyhľadáva sa...",
 		"settings": "Nastavenia",
 		"uiLibrary": "UI knižnica:",
 		"uiTheme": "UI téma:"
@@ -27,25 +31,37 @@
 	"aiChat": {
 		"action": {
 			"backToSubchats": "Späť na podchaty",
-			"openSubchat_zero": "Vytvoriť podchat",
-			"openSubchat_one": "Otvoriť podchat (1 správa)",
+			"openChat": "Otvoriť chat",
+			"openSubchat_one": "Otvoriť podchat ({count} správa)",
 			"openSubchat_few": "Otvoriť podchat ({count} správy)",
 			"openSubchat_many": "Otvoriť podchat ({count} správ)",
-			"openSubchat_other": "Otvoriť podchat ({count} správ)"
+			"openSubchat_other": "Otvoriť podchat ({count} správ)",
+			"openSubchat_zero": "Vytvoriť podchat",
+			"showSubchats": "Zobraziť podchaty ({count})",
+			"startSearching_one": "Zadajte aspoň {count} znak",
+			"startSearching_few": "Zadajte aspoň {count} znaky",
+			"startSearching_many": "Zadajte aspoň {count} znakov",
+			"startSearching_other": "Zadajte aspoň {count} znakov"
 		},
 		"chats": "Chaty",
 		"inputPlaceholder": "Položte otázku...",
-		"loadingChats": "Načítavanie chatov...",
-		"loadingMessages": "Načítavanie správ...",
-		"loadingPreviousMessages": "Načítavanie predchádzajúcich správ...",
-		"loadingSubchats": "Načítavanie podchatov...",
+		"loadingChats": "Načítavajú sa chaty...",
+		"loadingMessages": "Načítavajú sa správy...",
+		"loadingPreviousMessages": "Načítavajú sa predchádzajúce správy...",
+		"loadingSubchats": "Načítavajú sa podchaty...",
 		"newChat": "Nový chat",
+		"noChats": "Žiadne chaty",
+		"noSubchats": "Žiadne podchaty",
 		"sendMessage": "Odoslať správu",
-		"showSubchats": "Zobraziť podchaty ({count})",
 		"subchats": "Podchaty",
 		"xMessages_one": "1 správa",
 		"xMessages_few": "{count} správy",
 		"xMessages_many": "{count} správ",
-		"xMessages_other": "{count} správ"
+		"xMessages_other": "{count} správ",
+		"xSearchResults_zero": "Žiadne výsledky vyhľadávania",
+		"xSearchResults_one": "{count} výsledok vyhľadávania",
+		"xSearchResults_few": "{count} výsledky vyhľadávania",
+		"xSearchResults_many": "{count} výsledkov vyhľadávania",
+		"xSearchResults_other": "{count} výsledkov vyhľadávania"
 	}
 }

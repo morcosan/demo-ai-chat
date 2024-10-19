@@ -1,12 +1,14 @@
 {
 	"core": {
 		"action": {
-			"back": "ត្រឡប់ក្រោយ",
+			"back": "ថយក្រោយ",
 			"backToHome": "ត្រឡប់ទៅទំព័រដើម",
-			"changeLanguage": "ប្តូរភាសា",
+			"changeLanguage": "ប្ដូរភាសា",
 			"close": "បិទ",
 			"openMenu": "បើកម៉ឺនុយ",
-			"signOut": "ចេញ"
+			"search": "ស្វែងរក",
+			"searchMore": "បង្ហាញលទ្ធផលបន្ថែម",
+			"signOut": "ចាកចេញ"
 		},
 		"apiDocs": "ឯកសារ API",
 		"asia": "អាស៊ី",
@@ -20,28 +22,38 @@
 		"lightTheme": "ភ្លឺ",
 		"loading": "កំពុងផ្ទុក...",
 		"quickSettings": "ការកំណត់រហ័ស",
+		"searchPlaceholder": "ស្វែងរក...",
+		"searching": "កំពុងស្វែងរក...",
 		"settings": "ការកំណត់",
 		"uiLibrary": "បណ្ណាល័យ UI:",
 		"uiTheme": "រូបរាង UI:"
 	},
 	"aiChat": {
 		"action": {
-			"backToSubchats": "ត្រឡប់ទៅជជែករងវិញ",
-			"openSubchat_zero": "បង្កើតជជែករង",
-			"openSubchat_one": "បើកជជែករង (១ សារ)",
-			"openSubchat_other": "បើកជជែករង ({count} សារ)"
+			"backToSubchats": "ត្រឡប់ទៅជជែកបន្ត",
+			"openChat": "បើកការជជែក",
+			"openSubchat_one": "បើកជជែកបន្ត ({count} សារ)",
+			"openSubchat_other": "បើកជជែកបន្ត ({count} សារ)",
+			"openSubchat_zero": "បង្កើតជជែកបន្ត",
+			"showSubchats": "បង្ហាញជជែកបន្ត ({count})",
+			"startSearching_one": "វាយបញ្ចូលយ៉ាងហោចណាស់ {count} តួអក្សរ",
+			"startSearching_other": "វាយបញ្ចូលយ៉ាងហោចណាស់ {count} តួអក្សរ"
 		},
 		"chats": "ការជជែក",
 		"inputPlaceholder": "សួរសំណួរ...",
 		"loadingChats": "កំពុងផ្ទុកការជជែក...",
 		"loadingMessages": "កំពុងផ្ទុកសារ...",
-		"loadingPreviousMessages": "កំពុងផ្ទុកសារមុនៗ...",
-		"loadingSubchats": "កំពុងផ្ទុកជជែករង...",
-		"newChat": "ជជែកថ្មី",
+		"loadingPreviousMessages": "កំពុងផ្ទុកសារមុន...",
+		"loadingSubchats": "កំពុងផ្ទុកជជែកបន្ត...",
+		"newChat": "ការជជែកថ្មី",
+		"noChats": "គ្មានការជជែក",
+		"noSubchats": "គ្មានជជែកបន្ត",
 		"sendMessage": "ផ្ញើសារ",
-		"showSubchats": "បង្ហាញជជែករង ({count})",
-		"subchats": "ជជែករង",
+		"subchats": "ជជែកបន្ត",
 		"xMessages_one": "១ សារ",
-		"xMessages_other": "{count} សារ"
+		"xMessages_other": "{count} សារ",
+		"xSearchResults_zero": "គ្មានលទ្ធផលស្វែងរក",
+		"xSearchResults_one": "{count} លទ្ធផលស្វែងរក",
+		"xSearchResults_other": "{count} លទ្ធផលស្វែងរក"
 	}
 }

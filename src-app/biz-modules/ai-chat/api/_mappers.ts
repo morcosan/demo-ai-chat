@@ -1,11 +1,12 @@
 import { ChatDTO, MessageDTO, SubchatDTO } from '@api/types'
-import { Chat, Message, Subchat } from './types'
+import { Chat, Message, Subchat } from './_types'
 
 export const mapDtoToChat = (dto: ChatDTO): Chat => {
 	return {
 		id: dto.id || 0,
 		title: dto.title || '',
 		createdAt: dto.createdAt || '',
+		size: dto.size || 0,
 	}
 }
 

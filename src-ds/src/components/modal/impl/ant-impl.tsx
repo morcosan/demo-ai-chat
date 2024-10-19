@@ -97,13 +97,14 @@ export const AntImpl = (rawProps: ModalProps) => {
 			footer={slotFooter}
 			keyboard={!props.noClose}
 			closable={!props.noClose}
-			maskClosable={props.shallow || false}
+			maskClosable={!props.persistent}
 			zIndex={calcZIndex as any}
-			wrapClassName={cx(classWrapperPXY, props.shallow ? 'ds-modal-shallow' : 'ds-modal-default')}
+			wrapClassName={cx(classWrapperPXY, props.persistent ? 'ds-modal-persistent' : 'ds-modal-default')}
 			closeIcon={<CloseSvg className="h-xs-7" />}
 			className={props.className}
 			style={props.style}
 			css={cssModal}
+			afterOpenChange={(opened: boolean) => opened && props.onOpen?.()}
 			onCancel={props.onClose}
 		>
 			{props.children}

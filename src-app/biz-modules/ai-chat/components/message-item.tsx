@@ -1,5 +1,5 @@
-import { AiChatSvg, Button } from '@ds/release'
-import { Message } from '../api/types'
+import { AiChatSvg, Button, useUiTheme } from '@ds/release'
+import { Message } from '../api'
 import { SubchatIcon } from './subchat-icon'
 
 interface Props {
@@ -10,6 +10,8 @@ interface Props {
 }
 
 export const MessageItem = ({ message, subchatId, isSubchat, onClickSubchat }: Props) => {
+	const { $lineHeight } = useUiTheme()
+
 	const wrapperClass = cx({
 		'group relative flex flex-col items-end': true,
 		'px-xs-5 lg:px-md-0': !isSubchat,
@@ -30,6 +32,8 @@ export const MessageItem = ({ message, subchatId, isSubchat, onClickSubchat }: P
 		'focus:opacity-100 lg:opacity-0 lg:group-hover:opacity-100': !message.subchatSize,
 		'!opacity-100': message.id === subchatId,
 	})
+	const skeletonClass = 'rounded-sm bg-color-text-placeholder'
+	const skeletonStyle = { height: `calc(${$lineHeight['md']} * 1em)` }
 
 	return (
 		<div className={wrapperClass}>
@@ -54,10 +58,10 @@ export const MessageItem = ({ message, subchatId, isSubchat, onClickSubchat }: P
 
 					{message.loading ? (
 						<div className="flex animate-pulse flex-col gap-xs-2">
-							<div className="h-[var(--ds-line-height-md)] rounded-sm bg-color-text-placeholder" />
-							<div className="h-[var(--ds-line-height-md)] rounded-sm bg-color-text-placeholder" />
-							<div className="h-[var(--ds-line-height-md)] rounded-sm bg-color-text-placeholder" />
-							<div className="h-[var(--ds-line-height-md)] w-2/3 rounded-sm bg-color-text-placeholder" />
+							<div className={skeletonClass} style={skeletonStyle} />
+							<div className={skeletonClass} style={skeletonStyle} />
+							<div className={skeletonClass} style={skeletonStyle} />
+							<div className={skeletonClass} style={{ ...skeletonStyle, width: '60%' }} />
 						</div>
 					) : (
 						message.text

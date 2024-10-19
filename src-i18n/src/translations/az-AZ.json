@@ -3,23 +3,27 @@
 		"action": {
 			"back": "Geri",
 			"backToHome": "Ana səhifəyə qayıt",
-			"changeLanguage": "Dili dəyişdir",
+			"changeLanguage": "Dili dəyiş",
 			"close": "Bağla",
 			"openMenu": "Menyunu aç",
+			"search": "Axtar",
+			"searchMore": "Daha çox nəticə göstər",
 			"signOut": "Çıxış"
 		},
 		"apiDocs": "API sənədləri",
 		"asia": "Asiya",
 		"custom": "Xüsusi",
-		"darkTheme": "Tünd",
+		"darkTheme": "Qaranlıq",
 		"default": "Standart",
 		"designSystem": "Dizayn sistemi",
 		"europe": "Avropa",
 		"githubRepo": "GitHub deposu",
 		"language": "Dil",
-		"lightTheme": "Açıq",
+		"lightTheme": "İşıqlı",
 		"loading": "Yüklənir...",
 		"quickSettings": "Sürətli parametrlər",
+		"searchPlaceholder": "Axtar...",
+		"searching": "Axtarılır...",
 		"settings": "Parametrlər",
 		"uiLibrary": "UI kitabxanası:",
 		"uiTheme": "UI mövzusu:"
@@ -27,9 +31,13 @@
 	"aiChat": {
 		"action": {
 			"backToSubchats": "Alt söhbətlərə qayıt",
+			"openChat": "Söhbəti aç",
+			"openSubchat_one": "Alt söhbəti aç ({count} mesaj)",
+			"openSubchat_other": "Alt söhbəti aç ({count} mesaj)",
 			"openSubchat_zero": "Alt söhbət yarat",
-			"openSubchat_one": "Alt söhbəti aç (1 mesaj)",
-			"openSubchat_other": "Alt söhbəti aç ({count} mesaj)"
+			"showSubchats": "Alt söhbətləri göstər ({count})",
+			"startSearching_one": "Ən azı {count} simvol daxil edin",
+			"startSearching_other": "Ən azı {count} simvol daxil edin"
 		},
 		"chats": "Söhbətlər",
 		"inputPlaceholder": "Sual verin...",
@@ -38,10 +46,14 @@
 		"loadingPreviousMessages": "Əvvəlki mesajlar yüklənir...",
 		"loadingSubchats": "Alt söhbətlər yüklənir...",
 		"newChat": "Yeni söhbət",
+		"noChats": "Söhbət yoxdur",
+		"noSubchats": "Alt söhbət yoxdur",
 		"sendMessage": "Mesaj göndər",
-		"showSubchats": "Alt söhbətləri göstər ({count})",
 		"subchats": "Alt söhbətlər",
 		"xMessages_one": "1 mesaj",
-		"xMessages_other": "{count} mesaj"
+		"xMessages_other": "{count} mesaj",
+		"xSearchResults_zero": "Axtarış nəticəsi yoxdur",
+		"xSearchResults_one": "{count} axtarış nəticəsi",
+		"xSearchResults_other": "{count} axtarış nəticəsi"
 	}
 }

@@ -1,7 +1,7 @@
 import { API } from '@app/biz-modules/ai-chat/api'
 import { uniqBy } from 'lodash'
 import { useEffect, useState } from 'react'
-import { Message, MessageListing, Subchat } from '../../api/types'
+import { Message, MessageListing, Subchat } from '../../api'
 import { newGhostMessage } from './_utils'
 import { AllSubchatsStore } from './all-subchats-store'
 import { ChatStore } from './chat-store'
@@ -55,9 +55,9 @@ export const useSubchatStore = (chatStore: ChatStore, allSubchatsStore: AllSubch
 		}
 
 		setActiveSubchat(subchat)
-		setSubchatLoading(false)
 		setSubchatMessages([])
 		setSubchatPagination({ page: 0, count: 0 })
+		setSubchatLoading(false)
 
 		return Boolean(subchat)
 	}
@@ -98,8 +98,8 @@ export const useSubchatStore = (chatStore: ChatStore, allSubchatsStore: AllSubch
 		}
 
 		setSubchatMessages(uniqBy([...listing.messages, ...subchatMessages], (msg: Message) => msg.id))
-		setSubchatLoading(false)
 		setSubchatPagination({ page: subchatPagination.page + 1, count: listing.count })
+		setSubchatLoading(false)
 	}
 
 	const postSubchatMessage = async (text: string) => {
@@ -117,8 +117,8 @@ export const useSubchatStore = (chatStore: ChatStore, allSubchatsStore: AllSubch
 		const listing = await API.postMessage(activeChat.id, activeSubchat.id, text)
 
 		setSubchatMessages([...subchatMessages, ...listing.messages])
-		setSubchatLoading(false)
 		setSubchatPagination({ ...subchatPagination, count: subchatPagination.count + listing.count })
+		setSubchatLoading(false)
 		updateChatAndSubchats(subchatPagination.count + listing.count)
 	}
 

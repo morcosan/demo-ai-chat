@@ -6,6 +6,8 @@
 			"changeLanguage": "Taal wijzigen",
 			"close": "Sluiten",
 			"openMenu": "Menu openen",
+			"search": "Zoeken",
+			"searchMore": "Meer resultaten tonen",
 			"signOut": "Uitloggen"
 		},
 		"apiDocs": "API-documentatie",
@@ -20,6 +22,8 @@
 		"lightTheme": "Licht",
 		"loading": "Laden...",
 		"quickSettings": "Snelle instellingen",
+		"searchPlaceholder": "Zoeken...",
+		"searching": "Zoeken...",
 		"settings": "Instellingen",
 		"uiLibrary": "UI-bibliotheek:",
 		"uiTheme": "UI-thema:"
@@ -27,9 +31,13 @@
 	"aiChat": {
 		"action": {
 			"backToSubchats": "Terug naar subchats",
-			"openSubchat_zero": "Subchat maken",
-			"openSubchat_one": "Subchat openen (1 bericht)",
-			"openSubchat_other": "Subchat openen ({count} berichten)"
+			"openChat": "Chat openen",
+			"openSubchat_one": "Subchat openen ({count} bericht)",
+			"openSubchat_other": "Subchat openen ({count} berichten)",
+			"openSubchat_zero": "Subchat aanmaken",
+			"showSubchats": "Subchats tonen ({count})",
+			"startSearching_one": "Typ ten minste {count} teken",
+			"startSearching_other": "Typ ten minste {count} tekens"
 		},
 		"chats": "Chats",
 		"inputPlaceholder": "Stel een vraag...",
@@ -38,10 +46,14 @@
 		"loadingPreviousMessages": "Vorige berichten laden...",
 		"loadingSubchats": "Subchats laden...",
 		"newChat": "Nieuwe chat",
+		"noChats": "Geen chats",
+		"noSubchats": "Geen subchats",
 		"sendMessage": "Bericht verzenden",
-		"showSubchats": "Subchats tonen ({count})",
 		"subchats": "Subchats",
 		"xMessages_one": "1 bericht",
-		"xMessages_other": "{count} berichten"
+		"xMessages_other": "{count} berichten",
+		"xSearchResults_zero": "Geen zoekresultaten",
+		"xSearchResults_one": "{count} zoekresultaat",
+		"xSearchResults_other": "{count} zoekresultaten"
 	}
 }

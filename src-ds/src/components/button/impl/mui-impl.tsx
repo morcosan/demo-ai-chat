@@ -6,7 +6,7 @@ import { useButtonBase } from './_base'
 type MuiVariant = 'text' | 'outlined' | 'contained'
 
 export const MuiImpl = (rawProps: ButtonProps) => {
-	const { baseBindings, cssAll, isDisabled, isVItem, isVSolid, props } = useButtonBase(rawProps)
+	const { baseBindings, cssAll, cssBase, isDisabled, isVGhost, isVItem, isVSolid, props } = useButtonBase(rawProps)
 
 	const cssButton: CSS = {
 		minWidth: 'unset',
@@ -15,6 +15,15 @@ export const MuiImpl = (rawProps: ButtonProps) => {
 		textTransform: 'none',
 		outline: 'revert',
 		opacity: 1,
+		borderWidth: isDisabled ? 0 : '1px',
+
+		'&::before': {
+			...(cssBase['&::before'] as CSS),
+			top: isDisabled ? 0 : '-1px',
+			left: isDisabled ? 0 : '-1px',
+			right: isDisabled ? 0 : '-1px',
+			bottom: isDisabled ? 0 : '-1px',
+		},
 	}
 
 	const cssChildren: CSS = {
@@ -33,7 +42,7 @@ export const MuiImpl = (rawProps: ButtonProps) => {
 
 	const buttonBindings = {
 		...baseBindings,
-		variant: (isVSolid ? 'contained' : 'text') satisfies MuiVariant,
+		variant: (isVSolid ? 'contained' : isVGhost ? 'outlined' : 'text') satisfies MuiVariant,
 		disabled: isDisabled,
 		loading: props.loading,
 		disableElevation: true,

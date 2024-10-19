@@ -105,14 +105,7 @@ export const I18nModal = ({ opened, onClose }: Props) => {
 	}, [isUpdating, activeLocale])
 
 	return (
-		<Modal
-			opened={opened}
-			width="lg"
-			slotTitle={t('core.action.changeLanguage')}
-			shallow
-			noFooter
-			onClose={onClose}
-		>
+		<Modal opened={opened} width="lg" slotTitle={t('core.action.changeLanguage')} noFooter onClose={onClose}>
 			<div className="flex flex-col gap-sm-5">
 				{regionItems.map((region) => (
 					<div key={region.key}>

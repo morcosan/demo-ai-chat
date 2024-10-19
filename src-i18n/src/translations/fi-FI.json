@@ -3,9 +3,11 @@
 		"action": {
 			"back": "Takaisin",
 			"backToHome": "Takaisin etusivulle",
-			"changeLanguage": "Vaihda kieli",
+			"changeLanguage": "Vaihda kieltä",
 			"close": "Sulje",
 			"openMenu": "Avaa valikko",
+			"search": "Haku",
+			"searchMore": "Näytä lisää tuloksia",
 			"signOut": "Kirjaudu ulos"
 		},
 		"apiDocs": "API-dokumentaatio",
@@ -15,21 +17,27 @@
 		"default": "Oletus",
 		"designSystem": "Suunnittelujärjestelmä",
 		"europe": "Eurooppa",
-		"githubRepo": "GitHub-varasto",
+		"githubRepo": "GitHub-repositorio",
 		"language": "Kieli",
 		"lightTheme": "Vaalea",
 		"loading": "Ladataan...",
 		"quickSettings": "Pika-asetukset",
+		"searchPlaceholder": "Haku...",
+		"searching": "Etsitään...",
 		"settings": "Asetukset",
 		"uiLibrary": "Käyttöliittymäkirjasto:",
-		"uiTheme": "Käyttöliittymäteema:"
+		"uiTheme": "Käyttöliittymän teema:"
 	},
 	"aiChat": {
 		"action": {
 			"backToSubchats": "Takaisin alikeskusteluihin",
+			"openChat": "Avaa keskustelu",
+			"openSubchat_one": "Avaa alikeskustelu ({count} viesti)",
+			"openSubchat_other": "Avaa alikeskustelu ({count} viestiä)",
 			"openSubchat_zero": "Luo alikeskustelu",
-			"openSubchat_one": "Avaa alikeskustelu (1 viesti)",
-			"openSubchat_other": "Avaa alikeskustelu ({count} viestiä)"
+			"showSubchats": "Näytä alikeskustelut ({count})",
+			"startSearching_one": "Kirjoita vähintään {count} merkki",
+			"startSearching_other": "Kirjoita vähintään {count} merkkiä"
 		},
 		"chats": "Keskustelut",
 		"inputPlaceholder": "Kysy kysymys...",
@@ -38,10 +46,14 @@
 		"loadingPreviousMessages": "Ladataan aiempia viestejä...",
 		"loadingSubchats": "Ladataan alikeskusteluja...",
 		"newChat": "Uusi keskustelu",
+		"noChats": "Ei keskusteluja",
+		"noSubchats": "Ei alikeskusteluja",
 		"sendMessage": "Lähetä viesti",
-		"showSubchats": "Näytä alikeskustelut ({count})",
 		"subchats": "Alikeskustelut",
 		"xMessages_one": "1 viesti",
-		"xMessages_other": "{count} viestiä"
+		"xMessages_other": "{count} viestiä",
+		"xSearchResults_zero": "Ei hakutuloksia",
+		"xSearchResults_one": "{count} hakutulos",
+		"xSearchResults_other": "{count} hakutulosta"
 	}
 }

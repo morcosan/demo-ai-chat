@@ -2,10 +2,12 @@
 	"core": {
 		"action": {
 			"back": "Назад",
-			"backToHome": "Обратно към началната страница",
+			"backToHome": "Връщане към началната страница",
 			"changeLanguage": "Смяна на езика",
-			"close": "Затвори",
-			"openMenu": "Отвори меню",
+			"close": "Затваряне",
+			"openMenu": "Отваряне на меню",
+			"search": "Търсене",
+			"searchMore": "Покажи повече резултати",
 			"signOut": "Изход"
 		},
 		"apiDocs": "API документация",
@@ -20,6 +22,8 @@
 		"lightTheme": "Светла",
 		"loading": "Зареждане...",
 		"quickSettings": "Бързи настройки",
+		"searchPlaceholder": "Търсене...",
+		"searching": "Търсене...",
 		"settings": "Настройки",
 		"uiLibrary": "UI библиотека:",
 		"uiTheme": "UI тема:"
@@ -27,9 +31,12 @@
 	"aiChat": {
 		"action": {
 			"backToSubchats": "Обратно към подчатовете",
-			"openSubchat_zero": "Създай подчат",
-			"openSubchat_one": "Отвори подчат (1 съобщение)",
-			"openSubchat_other": "Отвори подчат ({count} съобщения)"
+			"openChat": "Отваряне на чат",
+			"openSubchat_other": "Отваряне на подчат ({count} съобщения)",
+			"openSubchat_zero": "Създаване на подчат",
+			"showSubchats": "Покажи подчатове ({count})",
+			"startSearching_one": "Въведете поне {count} символ",
+			"startSearching_other": "Въведете поне {count} символа"
 		},
 		"chats": "Чатове",
 		"inputPlaceholder": "Задайте въпрос...",
@@ -38,10 +45,14 @@
 		"loadingPreviousMessages": "Зареждане на предишни съобщения...",
 		"loadingSubchats": "Зареждане на подчатове...",
 		"newChat": "Нов чат",
-		"sendMessage": "Изпрати съобщение",
-		"showSubchats": "Покажи подчатове ({count})",
+		"noChats": "Няма чатове",
+		"noSubchats": "Няма подчатове",
+		"sendMessage": "Изпращане на съобщение",
 		"subchats": "Подчатове",
 		"xMessages_one": "1 съобщение",
-		"xMessages_other": "{count} съобщения"
+		"xMessages_other": "{count} съобщения",
+		"xSearchResults_one": "{count} резултат от търсенето",
+		"xSearchResults_other": "{count} резултата от търсенето",
+		"xSearchResults_zero": "Няма резултати от търсенето"
 	}
 }

@@ -16,13 +16,14 @@ export const story: StoryObj<typeof Modal> = {
 		opened: false,
 		width: 'md',
 		height: 'fit',
-		shallow: false,
+		persistent: false,
 		noClose: false,
 		noFooter: false,
 		// Html
 		className: '',
 		style: {},
 		// Events
+		onOpen: action('onOpen'),
 		onClose: action('onClose'),
 	},
 }
@@ -37,12 +38,12 @@ const meta: Meta<typeof Modal> = {
 			opened: 'boolean',
 			width: ['xs', 'sm', 'md', 'lg', 'xl', 'full'],
 			height: ['fit', 'full'],
-			shallow: 'boolean',
+			persistent: 'boolean',
 			noClose: 'boolean',
 			noFooter: 'boolean',
 		},
 		['slotTitle', 'slotButtons', 'children'],
-		['onClose']
+		['onOpen', 'onClose']
 	),
 
 	component: function Story(props: ModalProps) {
@@ -83,12 +84,12 @@ const meta: Meta<typeof Modal> = {
 				details: `Property that determines height and max-height for modal`,
 			},
 			{
-				name: 'shallow',
+				name: 'persistent',
 				type: 'boolean',
 				default: `false`,
 				details: `
-					Flag for allowing the modal to close when clicking the overlay
-					It also makes the overlay less prominent 	
+					Flag for disabling overlay click for closing the modal
+					It also increases the background contrast 
 				`,
 			},
 			{
@@ -105,6 +106,10 @@ const meta: Meta<typeof Modal> = {
 			},
 		]
 		const EVENTS: DocsEventDef[] = [
+			{
+				name: 'onOpen',
+				details: `Event emitted when modal is opened (after the transition animation)`,
+			},
 			{
 				name: 'onClose',
 				details: `Event emitted when any close button is clicked or when ^Escape^ key is pressed`,

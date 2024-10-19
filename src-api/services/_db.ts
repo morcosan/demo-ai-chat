@@ -8,27 +8,29 @@ import {
 	randomRecentDate,
 	randomText,
 } from '@utils/release'
-import { Chat, Message, MessageRole } from '../types'
+import { DbChat, DbMessage, MessageRole } from '../types'
 
-const createChats = (): Chat[] => {
+const createChats = (): DbChat[] => {
 	const date = new Date(randomRecentDate())
 
 	return randomArray(3, 100).map((_, index: number) => ({
 		id: randomId(),
 		title: randomText(10),
-		createdAt: addMinutesToDate(date, index * 5).toISOString(),
+		createdAt: addMinutesToDate(date, index * -1000).toISOString(),
 	}))
 }
 
-const createMessages = (chats: Chat[]) => {
-	const messages: Message[] = []
+const createMessages = (chats: DbChat[]) => {
+	const messages: DbMessage[] = []
 
-	chats.forEach((chat: Chat, chatIndex: number) => {
+	chats = [...chats].reverse()
+
+	chats.forEach((chat: DbChat, chatIndex: number) => {
 		const date = new Date(randomRecentDate())
-		const isBig = chatIndex < 5
+		const isBig = chatIndex >= chats.length - 5
 
 		randomArray(1, isBig ? 70 : 10).forEach((_, index: number) => {
-			const userMessage: Message = {
+			const userMessage: DbMessage = {
 				id: randomId(),
 				chatId: chat.id,
 				parentId: chat.id,
@@ -36,7 +38,7 @@ const createMessages = (chats: Chat[]) => {
 				role: 'user',
 				createdAt: addMinutesToDate(date, index * 2 * 5).toISOString(),
 			}
-			const agentMessage: Message = {
+			const agentMessage: DbMessage = {
 				id: randomId(),
 				chatId: chat.id,
 				parentId: chat.id,
@@ -55,7 +57,7 @@ const createMessages = (chats: Chat[]) => {
 	return messages
 }
 
-const addSubchats = (message: Message, messages: Message[]) => {
+const addSubchats = (message: DbMessage, messages: DbMessage[]) => {
 	const roles: MessageRole[] = message.role === 'user' ? ['agent', 'user'] : ['user', 'agent']
 
 	randomArray(1, 30).forEach((_, index: number) => {
@@ -70,5 +72,9 @@ const addSubchats = (message: Message, messages: Message[]) => {
 	})
 }
 
-export const DB__CHATS: Chat[] = createChats()
-export const DB__MESSAGES: Message[] = createMessages(DB__CHATS)
+export const DB__CHATS: DbChat[] = createChats()
+export const DB__MESSAGES: DbMessage[] = createMessages(DB__CHATS)
+
+export const getChatSize = (chat: DbChat) => {
+	return DB__MESSAGES.filter((message: DbMessage) => message.parentId === chat.id).length
+}
