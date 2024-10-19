@@ -2,10 +2,12 @@
 	"core": {
 		"action": {
 			"back": "Vissza",
-			"backToHome": "Vissza a kezdőlapra",
+			"backToHome": "Vissza a főoldalra",
 			"changeLanguage": "Nyelv váltása",
 			"close": "Bezárás",
 			"openMenu": "Menü megnyitása",
+			"search": "Keresés",
+			"searchMore": "Több eredmény megjelenítése",
 			"signOut": "Kijelentkezés"
 		},
 		"apiDocs": "API dokumentáció",
@@ -13,13 +15,15 @@
 		"custom": "Egyéni",
 		"darkTheme": "Sötét",
 		"default": "Alapértelmezett",
-		"designSystem": "Tervezési rendszer",
+		"designSystem": "Designrendszer",
 		"europe": "Európa",
 		"githubRepo": "GitHub repozitórium",
 		"language": "Nyelv",
 		"lightTheme": "Világos",
 		"loading": "Betöltés...",
 		"quickSettings": "Gyors beállítások",
+		"searchPlaceholder": "Keresés...",
+		"searching": "Keresés...",
 		"settings": "Beállítások",
 		"uiLibrary": "UI könyvtár:",
 		"uiTheme": "UI téma:"
@@ -27,21 +31,29 @@
 	"aiChat": {
 		"action": {
 			"backToSubchats": "Vissza az alcsevegésekhez",
+			"openChat": "Csevegés megnyitása",
+			"openSubchat_one": "Alcsevegés megnyitása ({count} üzenet)",
+			"openSubchat_other": "Alcsevegés megnyitása ({count} üzenet)",
 			"openSubchat_zero": "Alcsevegés létrehozása",
-			"openSubchat_one": "Alcsevegés megnyitása (1 üzenet)",
-			"openSubchat_other": "Alcsevegés megnyitása ({count} üzenet)"
+			"showSubchats": "Alcsevegések megjelenítése ({count})",
+			"startSearching_one": "Írjon be legalább {count} karaktert",
+			"startSearching_other": "Írjon be legalább {count} karaktert"
 		},
 		"chats": "Csevegések",
-		"inputPlaceholder": "Kérdezzen valamit...",
+		"inputPlaceholder": "Tegyen fel egy kérdést...",
 		"loadingChats": "Csevegések betöltése...",
 		"loadingMessages": "Üzenetek betöltése...",
 		"loadingPreviousMessages": "Előző üzenetek betöltése...",
 		"loadingSubchats": "Alcsevegések betöltése...",
 		"newChat": "Új csevegés",
+		"noChats": "Nincsenek csevegések",
+		"noSubchats": "Nincsenek alcsevegések",
 		"sendMessage": "Üzenet küldése",
-		"showSubchats": "Alcsevegések mutatása ({count})",
 		"subchats": "Alcsevegések",
 		"xMessages_one": "1 üzenet",
-		"xMessages_other": "{count} üzenet"
+		"xMessages_other": "{count} üzenet",
+		"xSearchResults_zero": "Nincs találat",
+		"xSearchResults_one": "{count} találat",
+		"xSearchResults_other": "{count} találat"
 	}
 }

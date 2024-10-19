@@ -2,17 +2,19 @@
 	"core": {
 		"action": {
 			"back": "뒤로",
-			"backToHome": "홈페이지로 돌아가기",
+			"backToHome": "홈으로 돌아가기",
 			"changeLanguage": "언어 변경",
 			"close": "닫기",
 			"openMenu": "메뉴 열기",
+			"search": "검색",
+			"searchMore": "더 많은 결과 보기",
 			"signOut": "로그아웃"
 		},
 		"apiDocs": "API 문서",
 		"asia": "아시아",
-		"custom": "사용자 정의",
+		"custom": "사용자 지정",
 		"darkTheme": "다크",
-		"default": "기본",
+		"default": "기본값",
 		"designSystem": "디자인 시스템",
 		"europe": "유럽",
 		"githubRepo": "GitHub 저장소",
@@ -20,28 +22,38 @@
 		"lightTheme": "라이트",
 		"loading": "로딩 중...",
 		"quickSettings": "빠른 설정",
+		"searchPlaceholder": "검색...",
+		"searching": "검색 중...",
 		"settings": "설정",
 		"uiLibrary": "UI 라이브러리:",
 		"uiTheme": "UI 테마:"
 	},
 	"aiChat": {
 		"action": {
-			"backToSubchats": "서브채팅으로 돌아가기",
-			"openSubchat_zero": "서브채팅 만들기",
-			"openSubchat_one": "서브채팅 열기 (1개 메시지)",
-			"openSubchat_other": "서브채팅 열기 ({count}개 메시지)"
+			"backToSubchats": "서브챗으로 돌아가기",
+			"openChat": "채팅 열기",
+			"openSubchat_one": "서브챗 열기 ({count}개의 메시지)",
+			"openSubchat_other": "서브챗 열기 ({count}개의 메시지)",
+			"openSubchat_zero": "서브챗 만들기",
+			"showSubchats": "서브챗 보기 ({count})",
+			"startSearching_one": "최소 {count}자를 입력하세요",
+			"startSearching_other": "최소 {count}자를 입력하세요"
 		},
 		"chats": "채팅",
 		"inputPlaceholder": "질문을 입력하세요...",
-		"loadingChats": "채팅 로딩 중...",
-		"loadingMessages": "메시지 로딩 중...",
-		"loadingPreviousMessages": "이전 메시지 로딩 중...",
-		"loadingSubchats": "서브채팅 로딩 중...",
+		"loadingChats": "채팅을 불러오는 중...",
+		"loadingMessages": "메시지를 불러오는 중...",
+		"loadingPreviousMessages": "이전 메시지를 불러오는 중...",
+		"loadingSubchats": "서브챗을 불러오는 중...",
 		"newChat": "새 채팅",
+		"noChats": "채팅 없음",
+		"noSubchats": "서브챗 없음",
 		"sendMessage": "메시지 보내기",
-		"showSubchats": "서브채팅 보기 ({count})",
-		"subchats": "서브채팅",
-		"xMessages_one": "1개 메시지",
-		"xMessages_other": "{count}개 메시지"
+		"subchats": "서브챗",
+		"xMessages_one": "1개의 메시지",
+		"xMessages_other": "{count}개의 메시지",
+		"xSearchResults_zero": "검색 결과 없음",
+		"xSearchResults_one": "{count}개의 검색 결과",
+		"xSearchResults_other": "{count}개의 검색 결과"
 	}
 }

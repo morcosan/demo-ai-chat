@@ -21,6 +21,11 @@ declare global {
 		style?: CSSProperties
 		children?: ReactNode
 	}
+	interface ReactPropsExtended {
+		className?: string
+		style?: CSSProperties
+		children?: ReactNode | ((...args) => ReactNode)
+	}
 
 	type JsxProps<C> = C extends JsxFn<infer P> ? P : unknown
 	type JsxFn<P = ReactProps> = JSXElementConstructor<P>
@@ -28,6 +33,8 @@ declare global {
 	type SvgGlobImport = Record<string, { default: JsxFn }>
 
 	type CSS = CSSObject
+
+	type Datetime = string | number | Date
 
 	interface Pagination {
 		page: number

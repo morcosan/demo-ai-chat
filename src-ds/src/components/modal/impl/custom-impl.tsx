@@ -25,10 +25,10 @@ export const CustomImpl = (rawProps: ModalProps) => {
 		setZIndex,
 	} = useModalBase(rawProps)
 	const [modalIndex, setModalIndex] = useState(0)
-	const modalRef = useRef<HTMLDivElement | null>(null)
+	const modalRef = useRef<HTMLDivElement>(null)
 	const triggerRef = useRef<HTMLElement | null>(null)
-	const focusTrap1Ref = useRef<HTMLDivElement | null>(null)
-	const focusTrap2Ref = useRef<HTMLDivElement | null>(null)
+	const focusTrap1Ref = useRef<HTMLDivElement>(null)
+	const focusTrap2Ref = useRef<HTMLDivElement>(null)
 
 	const cssWrapper: CSS = {
 		...CSS__FIXED_OVERLAY,
@@ -57,7 +57,10 @@ export const CustomImpl = (rawProps: ModalProps) => {
 		const index = openActiveIndex()
 		setModalIndex(index)
 		setZIndex(index)
-		wait(ANIM_TIME__SHOW).then(() => modalRef.current?.focus())
+		wait(ANIM_TIME__SHOW).then(() => {
+			modalRef.current?.focus()
+			props.onOpen?.()
+		})
 
 		triggerRef.current = document.activeElement as HTMLElement | null
 	}
@@ -96,7 +99,7 @@ export const CustomImpl = (rawProps: ModalProps) => {
 		if (target === focusTrap2Ref.current) firstTarget.focus()
 	}
 
-	const onClickOverlay = () => props.shallow && props.onClose?.()
+	const onClickOverlay = () => !props.persistent && props.onClose?.()
 
 	useEffect(() => {
 		props.opened ? openModal() : closeModal()

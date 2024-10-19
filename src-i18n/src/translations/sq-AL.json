@@ -6,30 +6,38 @@
 			"changeLanguage": "Ndrysho gjuhën",
 			"close": "Mbyll",
 			"openMenu": "Hap menynë",
-			"signOut": "Dilni"
+			"search": "Kërko",
+			"searchMore": "Shfaq më shumë rezultate",
+			"signOut": "Dil"
 		},
 		"apiDocs": "Dokumentacioni i API",
-		"asia": "Azia",
-		"custom": "I personalizuar",
-		"darkTheme": "I errët",
-		"default": "I paracaktuar",
+		"asia": "Azi",
+		"custom": "E personalizuar",
+		"darkTheme": "E errët",
+		"default": "Parazgjedhur",
 		"designSystem": "Sistemi i dizajnit",
-		"europe": "Evropa",
-		"githubRepo": "Depoja e GitHub",
+		"europe": "Evropë",
+		"githubRepo": "Depoja në GitHub",
 		"language": "Gjuha",
-		"lightTheme": "I ndritshëm",
+		"lightTheme": "E ndriçuar",
 		"loading": "Po ngarkohet...",
 		"quickSettings": "Cilësimet e shpejta",
+		"searchPlaceholder": "Kërko...",
+		"searching": "Duke kërkuar...",
 		"settings": "Cilësimet",
 		"uiLibrary": "Libraria UI:",
 		"uiTheme": "Tema UI:"
 	},
 	"aiChat": {
 		"action": {
-			"backToSubchats": "Kthehu tek nënbisedat",
+			"backToSubchats": "Kthehu te nënbisedat",
+			"openChat": "Hap bisedën",
+			"openSubchat_one": "Hap nënbisedën ({count} mesazh)",
+			"openSubchat_other": "Hap nënbisedën ({count} mesazhe)",
 			"openSubchat_zero": "Krijo nënbisedë",
-			"openSubchat_one": "Hap nënbisedën (1 mesazh)",
-			"openSubchat_other": "Hap nënbisedën ({count} mesazhe)"
+			"showSubchats": "Shfaq nënbisedat ({count})",
+			"startSearching_one": "Shkruani të paktën {count} karakter",
+			"startSearching_other": "Shkruani të paktën {count} karaktere"
 		},
 		"chats": "Bisedat",
 		"inputPlaceholder": "Bëni një pyetje...",
@@ -38,10 +46,14 @@
 		"loadingPreviousMessages": "Po ngarkohen mesazhet e mëparshme...",
 		"loadingSubchats": "Po ngarkohen nënbisedat...",
 		"newChat": "Bisedë e re",
+		"noChats": "Nuk ka biseda",
+		"noSubchats": "Nuk ka nënbiseda",
 		"sendMessage": "Dërgo mesazhin",
-		"showSubchats": "Shfaq nënbisedat ({count})",
 		"subchats": "Nënbisedat",
 		"xMessages_one": "1 mesazh",
-		"xMessages_other": "{count} mesazhe"
+		"xMessages_other": "{count} mesazhe",
+		"xSearchResults_zero": "Asnjë rezultat kërkimi",
+		"xSearchResults_one": "{count} rezultat kërkimi",
+		"xSearchResults_other": "{count} rezultate kërkimi"
 	}
 }

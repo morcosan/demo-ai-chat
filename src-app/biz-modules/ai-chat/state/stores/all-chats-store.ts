@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react'
-import { API } from '../../api'
-import { Chat } from '../../api/types'
+import { API, Chat } from '../../api'
 import { GHOST_CHAT } from './_utils'
 
 export interface AllChatsStore {
@@ -36,8 +35,8 @@ export const useAllChatsStore = (): AllChatsStore => {
 		const listing = await API.getChats([], allChatsPagination.page + 1)
 
 		setAllChats([...allChats, ...listing.chats])
-		setAllChatsLoading(false)
 		setAllChatsPagination({ page: allChatsPagination.page + 1, count: listing.count })
+		setAllChatsLoading(false)
 	}
 
 	const createNewChat = async (): Promise<Chat | null> => {
@@ -49,8 +48,8 @@ export const useAllChatsStore = (): AllChatsStore => {
 		const listing = await API.createChat(GHOST_CHAT.title)
 
 		setAllChats([...listing.chats, ...allChats])
-		setAllChatsLoading(false)
 		setAllChatsPagination({ ...allChatsPagination, count: allChatsPagination.count + 1 })
+		setAllChatsLoading(false)
 
 		return listing.chats[0] || null
 	}

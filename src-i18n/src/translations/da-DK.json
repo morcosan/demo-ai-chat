@@ -2,15 +2,17 @@
 	"core": {
 		"action": {
 			"back": "Tilbage",
-			"backToHome": "Tilbage til hjemmesiden",
+			"backToHome": "Tilbage til forsiden",
 			"changeLanguage": "Skift sprog",
 			"close": "Luk",
 			"openMenu": "Åbn menu",
+			"search": "Søg",
+			"searchMore": "Vis flere resultater",
 			"signOut": "Log ud"
 		},
 		"apiDocs": "API-dokumentation",
 		"asia": "Asien",
-		"custom": "Tilpasset",
+		"custom": "Brugerdefineret",
 		"darkTheme": "Mørk",
 		"default": "Standard",
 		"designSystem": "Designsystem",
@@ -20,6 +22,8 @@
 		"lightTheme": "Lys",
 		"loading": "Indlæser...",
 		"quickSettings": "Hurtigindstillinger",
+		"searchPlaceholder": "Søg...",
+		"searching": "Søger...",
 		"settings": "Indstillinger",
 		"uiLibrary": "UI-bibliotek:",
 		"uiTheme": "UI-tema:"
@@ -27,9 +31,13 @@
 	"aiChat": {
 		"action": {
 			"backToSubchats": "Tilbage til underchats",
+			"openChat": "Åbn chat",
+			"openSubchat_one": "Åbn underchat ({count} besked)",
+			"openSubchat_other": "Åbn underchat ({count} beskeder)",
 			"openSubchat_zero": "Opret underchat",
-			"openSubchat_one": "Åbn underchat (1 besked)",
-			"openSubchat_other": "Åbn underchat ({count} beskeder)"
+			"showSubchats": "Vis underchats ({count})",
+			"startSearching_one": "Skriv mindst {count} tegn",
+			"startSearching_other": "Skriv mindst {count} tegn"
 		},
 		"chats": "Chats",
 		"inputPlaceholder": "Stil et spørgsmål...",
@@ -38,10 +46,14 @@
 		"loadingPreviousMessages": "Indlæser tidligere beskeder...",
 		"loadingSubchats": "Indlæser underchats...",
 		"newChat": "Ny chat",
+		"noChats": "Ingen chats",
+		"noSubchats": "Ingen underchats",
 		"sendMessage": "Send besked",
-		"showSubchats": "Vis underchats ({count})",
 		"subchats": "Underchats",
 		"xMessages_one": "1 besked",
-		"xMessages_other": "{count} beskeder"
+		"xMessages_other": "{count} beskeder",
+		"xSearchResults_zero": "Ingen søgeresultater",
+		"xSearchResults_one": "{count} søgeresultat",
+		"xSearchResults_other": "{count} søgeresultater"
 	}
 }

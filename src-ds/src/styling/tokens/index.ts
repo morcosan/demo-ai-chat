@@ -63,7 +63,7 @@ const getTokenValue_BREAKPOINT = (k: Breakpoint, cs?: CS) => gV<Breakpoint, stri
 const getTokenValue_COLOR = (k: Color, cs?: CS) => gV<Color, string>(TOKENS__COLOR, k, cs)
 const getTokenValue_FONT_SIZE = (k: FontSize, cs?: CS) => gV<FontSize, string>(TOKENS__FONT_SIZE, k, cs)
 const getTokenValue_FONT_WEIGHT = (k: FontWeight, cs?: CS) => gV<FontWeight, number>(TOKENS__FONT_WEIGHT, k, cs)
-const getTokenValue_LINE_HEIGHT = (k: LineHeight, cs?: CS) => gV<LineHeight, string>(TOKENS__LINE_HEIGHT, k, cs)
+const getTokenValue_LINE_HEIGHT = (k: LineHeight, cs?: CS) => gV<LineHeight, number>(TOKENS__LINE_HEIGHT, k, cs)
 const getTokenValue_RADIUS = (k: Radius, cs?: CS) => gV<Radius, string>(TOKENS__RADIUS, k, cs)
 const getTokenValue_SHADOW = (k: Shadow, cs?: CS) => gV<Shadow, ThemeValue<string>>(TOKENS__SHADOW, k, cs)
 const getTokenValue_SPACING = (k: Spacing, cs?: CS) => gV<Spacing, string>(TOKENS__SPACING, k, cs)

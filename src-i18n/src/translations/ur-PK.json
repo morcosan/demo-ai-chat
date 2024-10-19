@@ -6,7 +6,9 @@
 			"changeLanguage": "زبان تبدیل کریں",
 			"close": "بند کریں",
 			"openMenu": "مینو کھولیں",
-			"signOut": "لاگ آؤٹ کریں"
+			"search": "تلاش کریں",
+			"searchMore": "مزید نتائج دکھائیں",
+			"signOut": "سائن آؤٹ کریں"
 		},
 		"apiDocs": "API دستاویزات",
 		"asia": "ایشیا",
@@ -20,6 +22,8 @@
 		"lightTheme": "لائٹ",
 		"loading": "لوڈ ہو رہا ہے...",
 		"quickSettings": "فوری ترتیبات",
+		"searchPlaceholder": "تلاش کریں...",
+		"searching": "تلاش جاری ہے...",
 		"settings": "ترتیبات",
 		"uiLibrary": "UI لائبریری:",
 		"uiTheme": "UI تھیم:"
@@ -27,9 +31,13 @@
 	"aiChat": {
 		"action": {
 			"backToSubchats": "ذیلی چیٹس پر واپس جائیں",
+			"openChat": "چیٹ کھولیں",
+			"openSubchat_one": "ذیلی چیٹ کھولیں ({count} پیغام)",
+			"openSubchat_other": "ذیلی چیٹ کھولیں ({count} پیغامات)",
 			"openSubchat_zero": "ذیلی چیٹ بنائیں",
-			"openSubchat_one": "ذیلی چیٹ کھولیں (1 پیغام)",
-			"openSubchat_other": "ذیلی چیٹ کھولیں ({count} پیغامات)"
+			"showSubchats": "ذیلی چیٹس دکھائیں ({count})",
+			"startSearching_one": "کم از کم {count} حرف ٹائپ کریں",
+			"startSearching_other": "کم از کم {count} حروف ٹائپ کریں"
 		},
 		"chats": "چیٹس",
 		"inputPlaceholder": "ایک سوال پوچھیں...",
@@ -38,10 +46,14 @@
 		"loadingPreviousMessages": "پچھلے پیغامات لوڈ ہو رہے ہیں...",
 		"loadingSubchats": "ذیلی چیٹس لوڈ ہو رہی ہیں...",
 		"newChat": "نئی چیٹ",
+		"noChats": "کوئی چیٹ نہیں",
+		"noSubchats": "کوئی ذیلی چیٹ نہیں",
 		"sendMessage": "پیغام بھیجیں",
-		"showSubchats": "ذیلی چیٹس دکھائیں ({count})",
 		"subchats": "ذیلی چیٹس",
 		"xMessages_one": "1 پیغام",
-		"xMessages_other": "{count} پیغامات"
+		"xMessages_other": "{count} پیغامات",
+		"xSearchResults_zero": "کوئی تلاش کا نتیجہ نہیں",
+		"xSearchResults_one": "{count} تلاش کا نتیجہ",
+		"xSearchResults_other": "{count} تلاش کے نتائج"
 	}
 }

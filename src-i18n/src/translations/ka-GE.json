@@ -6,7 +6,9 @@
 			"changeLanguage": "ენის შეცვლა",
 			"close": "დახურვა",
 			"openMenu": "მენიუს გახსნა",
-			"signOut": "გასვლა"
+			"search": "ძიება",
+			"searchMore": "მეტი შედეგის ჩვენება",
+			"signOut": "გამოსვლა"
 		},
 		"apiDocs": "API დოკუმენტაცია",
 		"asia": "აზია",
@@ -20,28 +22,38 @@
 		"lightTheme": "ნათელი",
 		"loading": "იტვირთება...",
 		"quickSettings": "სწრაფი პარამეტრები",
+		"searchPlaceholder": "ძიება...",
+		"searching": "ძიება მიმდინარეობს...",
 		"settings": "პარამეტრები",
 		"uiLibrary": "UI ბიბლიოთეკა:",
 		"uiTheme": "UI თემა:"
 	},
 	"aiChat": {
 		"action": {
-			"backToSubchats": "ქვეჩატებზე დაბრუნება",
-			"openSubchat_zero": "ქვეჩატის შექმნა",
-			"openSubchat_one": "ქვეჩატის გახსნა (1 შეტყობინება)",
-			"openSubchat_other": "ქვეჩატის გახსნა ({count} შეტყობინება)"
+			"backToSubchats": "ქვე-ჩატებში დაბრუნება",
+			"openChat": "ჩატის გახსნა",
+			"openSubchat_one": "ქვე-ჩატის გახსნა ({count} შეტყობინება)",
+			"openSubchat_other": "ქვე-ჩატის გახსნა ({count} შეტყობინება)",
+			"openSubchat_zero": "ქვე-ჩატის შექმნა",
+			"showSubchats": "ქვე-ჩატების ჩვენება ({count})",
+			"startSearching_one": "შეიყვანეთ მინიმუმ {count} სიმბოლო",
+			"startSearching_other": "შეიყვანეთ მინიმუმ {count} სიმბოლო"
 		},
 		"chats": "ჩატები",
 		"inputPlaceholder": "დასვით კითხვა...",
 		"loadingChats": "ჩატების ჩატვირთვა...",
 		"loadingMessages": "შეტყობინებების ჩატვირთვა...",
 		"loadingPreviousMessages": "წინა შეტყობინებების ჩატვირთვა...",
-		"loadingSubchats": "ქვეჩატების ჩატვირთვა...",
+		"loadingSubchats": "ქვე-ჩატების ჩატვირთვა...",
 		"newChat": "ახალი ჩატი",
+		"noChats": "ჩატები არ არის",
+		"noSubchats": "ქვე-ჩატები არ არის",
 		"sendMessage": "შეტყობინების გაგზავნა",
-		"showSubchats": "ქვეჩატების ჩვენება ({count})",
-		"subchats": "ქვეჩატები",
+		"subchats": "ქვე-ჩატები",
 		"xMessages_one": "1 შეტყობინება",
-		"xMessages_other": "{count} შეტყობინება"
+		"xMessages_other": "{count} შეტყობინება",
+		"xSearchResults_zero": "ძიების შედეგები არ არის",
+		"xSearchResults_one": "{count} ძიების შედეგი",
+		"xSearchResults_other": "{count} ძიების შედეგი"
 	}
 }

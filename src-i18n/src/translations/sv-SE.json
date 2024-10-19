@@ -6,6 +6,8 @@
 			"changeLanguage": "Ändra språk",
 			"close": "Stäng",
 			"openMenu": "Öppna meny",
+			"search": "Sök",
+			"searchMore": "Visa fler resultat",
 			"signOut": "Logga ut"
 		},
 		"apiDocs": "API-dokumentation",
@@ -20,6 +22,8 @@
 		"lightTheme": "Ljust",
 		"loading": "Laddar...",
 		"quickSettings": "Snabbinställningar",
+		"searchPlaceholder": "Sök...",
+		"searching": "Söker...",
 		"settings": "Inställningar",
 		"uiLibrary": "UI-bibliotek:",
 		"uiTheme": "UI-tema:"
@@ -27,9 +31,13 @@
 	"aiChat": {
 		"action": {
 			"backToSubchats": "Tillbaka till underchatter",
+			"openChat": "Öppna chatt",
+			"openSubchat_one": "Öppna underchat ({count} meddelande)",
+			"openSubchat_other": "Öppna underchat ({count} meddelanden)",
 			"openSubchat_zero": "Skapa underchat",
-			"openSubchat_one": "Öppna underchat (1 meddelande)",
-			"openSubchat_other": "Öppna underchat ({count} meddelanden)"
+			"showSubchats": "Visa underchatter ({count})",
+			"startSearching_one": "Skriv minst {count} tecken",
+			"startSearching_other": "Skriv minst {count} tecken"
 		},
 		"chats": "Chattar",
 		"inputPlaceholder": "Ställ en fråga...",
@@ -38,10 +46,14 @@
 		"loadingPreviousMessages": "Laddar tidigare meddelanden...",
 		"loadingSubchats": "Laddar underchatter...",
 		"newChat": "Ny chatt",
+		"noChats": "Inga chattar",
+		"noSubchats": "Inga underchatter",
 		"sendMessage": "Skicka meddelande",
-		"showSubchats": "Visa underchatter ({count})",
 		"subchats": "Underchatter",
 		"xMessages_one": "1 meddelande",
-		"xMessages_other": "{count} meddelanden"
+		"xMessages_other": "{count} meddelanden",
+		"xSearchResults_zero": "Inga sökresultat",
+		"xSearchResults_one": "{count} sökresultat",
+		"xSearchResults_other": "{count} sökresultat"
 	}
 }

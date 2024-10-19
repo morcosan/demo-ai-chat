@@ -6,6 +6,8 @@
 			"changeLanguage": "Ubah bahasa",
 			"close": "Tutup",
 			"openMenu": "Buka menu",
+			"search": "Cari",
+			"searchMore": "Tampilkan lebih banyak hasil",
 			"signOut": "Keluar"
 		},
 		"apiDocs": "Dokumentasi API",
@@ -20,6 +22,8 @@
 		"lightTheme": "Terang",
 		"loading": "Memuat...",
 		"quickSettings": "Pengaturan cepat",
+		"searchPlaceholder": "Cari...",
+		"searching": "Mencari...",
 		"settings": "Pengaturan",
 		"uiLibrary": "Pustaka UI:",
 		"uiTheme": "Tema UI:"
@@ -27,21 +31,29 @@
 	"aiChat": {
 		"action": {
 			"backToSubchats": "Kembali ke subchat",
+			"openChat": "Buka chat",
+			"openSubchat_one": "Buka subchat ({count} pesan)",
+			"openSubchat_other": "Buka subchat ({count} pesan)",
 			"openSubchat_zero": "Buat subchat",
-			"openSubchat_one": "Buka subchat (1 pesan)",
-			"openSubchat_other": "Buka subchat ({count} pesan)"
+			"showSubchats": "Tampilkan subchat ({count})",
+			"startSearching_one": "Ketik setidaknya {count} karakter",
+			"startSearching_other": "Ketik setidaknya {count} karakter"
 		},
-		"chats": "Obrolan",
+		"chats": "Chat",
 		"inputPlaceholder": "Ajukan pertanyaan...",
-		"loadingChats": "Memuat obrolan...",
+		"loadingChats": "Memuat chat...",
 		"loadingMessages": "Memuat pesan...",
 		"loadingPreviousMessages": "Memuat pesan sebelumnya...",
 		"loadingSubchats": "Memuat subchat...",
-		"newChat": "Obrolan baru",
+		"newChat": "Chat baru",
+		"noChats": "Tidak ada chat",
+		"noSubchats": "Tidak ada subchat",
 		"sendMessage": "Kirim pesan",
-		"showSubchats": "Tampilkan subchat ({count})",
 		"subchats": "Subchat",
 		"xMessages_one": "1 pesan",
-		"xMessages_other": "{count} pesan"
+		"xMessages_other": "{count} pesan",
+		"xSearchResults_zero": "Tidak ada hasil pencarian",
+		"xSearchResults_one": "{count} hasil pencarian",
+		"xSearchResults_other": "{count} hasil pencarian"
 	}
 }

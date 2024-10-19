@@ -6,6 +6,8 @@
 			"changeLanguage": "言語を変更",
 			"close": "閉じる",
 			"openMenu": "メニューを開く",
+			"search": "検索",
+			"searchMore": "さらに結果を表示",
 			"signOut": "サインアウト"
 		},
 		"apiDocs": "APIドキュメント",
@@ -20,6 +22,8 @@
 		"lightTheme": "ライト",
 		"loading": "読み込み中...",
 		"quickSettings": "クイック設定",
+		"searchPlaceholder": "検索...",
+		"searching": "検索中...",
 		"settings": "設定",
 		"uiLibrary": "UIライブラリ:",
 		"uiTheme": "UIテーマ:"
@@ -27,21 +31,29 @@
 	"aiChat": {
 		"action": {
 			"backToSubchats": "サブチャットに戻る",
+			"openChat": "チャットを開く",
+			"openSubchat_one": "サブチャットを開く ({count} メッセージ)",
+			"openSubchat_other": "サブチャットを開く ({count} メッセージ)",
 			"openSubchat_zero": "サブチャットを作成",
-			"openSubchat_one": "サブチャットを開く（1メッセージ）",
-			"openSubchat_other": "サブチャットを開く（{count}メッセージ）"
+			"showSubchats": "サブチャットを表示 ({count})",
+			"startSearching_one": "最低 {count} 文字を入力してください",
+			"startSearching_other": "最低 {count} 文字を入力してください"
 		},
 		"chats": "チャット",
 		"inputPlaceholder": "質問を入力...",
 		"loadingChats": "チャットを読み込み中...",
 		"loadingMessages": "メッセージを読み込み中...",
-		"loadingPreviousMessages": "前のメッセージを読み込み中...",
+		"loadingPreviousMessages": "以前のメッセージを読み込み中...",
 		"loadingSubchats": "サブチャットを読み込み中...",
 		"newChat": "新しいチャット",
+		"noChats": "チャットがありません",
+		"noSubchats": "サブチャットがありません",
 		"sendMessage": "メッセージを送信",
-		"showSubchats": "サブチャットを表示 ({count})",
 		"subchats": "サブチャット",
-		"xMessages_one": "1メッセージ",
-		"xMessages_other": "{count}メッセージ"
+		"xMessages_one": "1 メッセージ",
+		"xMessages_other": "{count} メッセージ",
+		"xSearchResults_zero": "検索結果がありません",
+		"xSearchResults_one": "{count} 件の検索結果",
+		"xSearchResults_other": "{count} 件の検索結果"
 	}
 }

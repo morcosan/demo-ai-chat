@@ -2,10 +2,12 @@
 	"core": {
 		"action": {
 			"back": "Retour",
-			"backToHome": "Retour à la page d'accueil",
+			"backToHome": "Retour à l'accueil",
 			"changeLanguage": "Changer de langue",
 			"close": "Fermer",
 			"openMenu": "Ouvrir le menu",
+			"search": "Rechercher",
+			"searchMore": "Afficher plus de résultats",
 			"signOut": "Se déconnecter"
 		},
 		"apiDocs": "Documentation de l'API",
@@ -20,6 +22,8 @@
 		"lightTheme": "Clair",
 		"loading": "Chargement...",
 		"quickSettings": "Paramètres rapides",
+		"searchPlaceholder": "Rechercher...",
+		"searching": "Recherche en cours...",
 		"settings": "Paramètres",
 		"uiLibrary": "Bibliothèque UI :",
 		"uiTheme": "Thème UI :"
@@ -27,9 +31,13 @@
 	"aiChat": {
 		"action": {
 			"backToSubchats": "Retour aux sous-conversations",
+			"openChat": "Ouvrir la conversation",
+			"openSubchat_one": "Ouvrir la sous-conversation ({count} message)",
+			"openSubchat_other": "Ouvrir la sous-conversation ({count} messages)",
 			"openSubchat_zero": "Créer une sous-conversation",
-			"openSubchat_one": "Ouvrir la sous-conversation (1 message)",
-			"openSubchat_other": "Ouvrir la sous-conversation ({count} messages)"
+			"showSubchats": "Afficher les sous-conversations ({count})",
+			"startSearching_one": "Saisissez au moins {count} caractère",
+			"startSearching_other": "Saisissez au moins {count} caractères"
 		},
 		"chats": "Conversations",
 		"inputPlaceholder": "Posez une question...",
@@ -38,10 +46,14 @@
 		"loadingPreviousMessages": "Chargement des messages précédents...",
 		"loadingSubchats": "Chargement des sous-conversations...",
 		"newChat": "Nouvelle conversation",
+		"noChats": "Aucune conversation",
+		"noSubchats": "Aucune sous-conversation",
 		"sendMessage": "Envoyer le message",
-		"showSubchats": "Afficher les sous-conversations ({count})",
 		"subchats": "Sous-conversations",
 		"xMessages_one": "1 message",
-		"xMessages_other": "{count} messages"
+		"xMessages_other": "{count} messages",
+		"xSearchResults_zero": "Aucun résultat de recherche",
+		"xSearchResults_one": "{count} résultat de recherche",
+		"xSearchResults_other": "{count} résultats de recherche"
 	}
 }

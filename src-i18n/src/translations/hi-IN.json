@@ -6,6 +6,8 @@
 			"changeLanguage": "भाषा बदलें",
 			"close": "बंद करें",
 			"openMenu": "मेनू खोलें",
+			"search": "खोजें",
+			"searchMore": "अधिक परिणाम दिखाएं",
 			"signOut": "साइन आउट करें"
 		},
 		"apiDocs": "API दस्तावेज़",
@@ -20,28 +22,38 @@
 		"lightTheme": "लाइट",
 		"loading": "लोड हो रहा है...",
 		"quickSettings": "त्वरित सेटिंग्स",
+		"searchPlaceholder": "खोजें...",
+		"searching": "खोज रहा है...",
 		"settings": "सेटिंग्स",
 		"uiLibrary": "UI लाइब्रेरी:",
 		"uiTheme": "UI थीम:"
 	},
 	"aiChat": {
 		"action": {
-			"backToSubchats": "सबचैट्स पर वापस जाएं",
-			"openSubchat_zero": "सबचैट बनाएं",
-			"openSubchat_one": "सबचैट खोलें (1 संदेश)",
-			"openSubchat_other": "सबचैट खोलें ({count} संदेश)"
+			"backToSubchats": "उप-चैट पर वापस जाएं",
+			"openChat": "चैट खोलें",
+			"openSubchat_one": "उप-चैट खोलें ({count} संदेश)",
+			"openSubchat_other": "उप-चैट खोलें ({count} संदेश)",
+			"openSubchat_zero": "उप-चैट बनाएं",
+			"showSubchats": "उप-चैट दिखाएं ({count})",
+			"startSearching_one": "कम से कम {count} अक्षर टाइप करें",
+			"startSearching_other": "कम से कम {count} अक्षर टाइप करें"
 		},
-		"chats": "चैट्स",
+		"chats": "चैट",
 		"inputPlaceholder": "एक प्रश्न पूछें...",
-		"loadingChats": "चैट्स लोड हो रही हैं...",
+		"loadingChats": "चैट लोड हो रही हैं...",
 		"loadingMessages": "संदेश लोड हो रहे हैं...",
 		"loadingPreviousMessages": "पिछले संदेश लोड हो रहे हैं...",
-		"loadingSubchats": "सबचैट्स लोड हो रही हैं...",
+		"loadingSubchats": "उप-चैट लोड हो रही हैं...",
 		"newChat": "नई चैट",
+		"noChats": "कोई चैट नहीं",
+		"noSubchats": "कोई उप-चैट नहीं",
 		"sendMessage": "संदेश भेजें",
-		"showSubchats": "सबचैट्स दिखाएं ({count})",
-		"subchats": "सबचैट्स",
+		"subchats": "उप-चैट",
 		"xMessages_one": "1 संदेश",
-		"xMessages_other": "{count} संदेश"
+		"xMessages_other": "{count} संदेश",
+		"xSearchResults_zero": "कोई खोज परिणाम नहीं",
+		"xSearchResults_one": "{count} खोज परिणाम",
+		"xSearchResults_other": "{count} खोज परिणाम"
 	}
 }

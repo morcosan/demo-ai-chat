@@ -7,12 +7,13 @@ export interface ModalProps extends ReactProps {
 	opened: boolean
 	width?: ModalWidth
 	height?: ModalHeight
-	shallow?: boolean
+	persistent?: boolean
 	noClose?: boolean
 	noFooter?: boolean
 
 	slotTitle: ReactNode
 	slotButtons?: ReactNode
 
+	onOpen?(): void
 	onClose?(): void
 }

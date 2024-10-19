@@ -2,10 +2,12 @@
 	"core": {
 		"action": {
 			"back": "Natrag",
-			"backToHome": "Natrag na početnu stranicu",
+			"backToHome": "Povratak na početnu stranicu",
 			"changeLanguage": "Promijeni jezik",
 			"close": "Zatvori",
 			"openMenu": "Otvori izbornik",
+			"search": "Pretraži",
+			"searchMore": "Prikaži više rezultata",
 			"signOut": "Odjava"
 		},
 		"apiDocs": "API dokumentacija",
@@ -20,17 +22,24 @@
 		"lightTheme": "Svijetlo",
 		"loading": "Učitavanje...",
 		"quickSettings": "Brze postavke",
+		"searchPlaceholder": "Pretraži...",
+		"searching": "Pretraživanje...",
 		"settings": "Postavke",
 		"uiLibrary": "UI biblioteka:",
 		"uiTheme": "UI tema:"
 	},
 	"aiChat": {
 		"action": {
-			"backToSubchats": "Natrag na podrazgovore",
-			"openSubchat_zero": "Stvori podrazgovor",
-			"openSubchat_one": "Otvori podrazgovor (1 poruka)",
+			"backToSubchats": "Povratak na podrazgovore",
+			"openChat": "Otvori razgovor",
+			"openSubchat_one": "Otvori podrazgovor ({count} poruka)",
 			"openSubchat_few": "Otvori podrazgovor ({count} poruke)",
-			"openSubchat_other": "Otvori podrazgovor ({count} poruka)"
+			"openSubchat_other": "Otvori podrazgovor ({count} poruka)",
+			"openSubchat_zero": "Stvori podrazgovor",
+			"showSubchats": "Prikaži podrazgovore ({count})",
+			"startSearching_one": "Unesite barem {count} znak",
+			"startSearching_few": "Unesite barem {count} znaka",
+			"startSearching_other": "Unesite barem {count} znakova"
 		},
 		"chats": "Razgovori",
 		"inputPlaceholder": "Postavite pitanje...",
@@ -39,11 +48,16 @@
 		"loadingPreviousMessages": "Učitavanje prethodnih poruka...",
 		"loadingSubchats": "Učitavanje podrazgovora...",
 		"newChat": "Novi razgovor",
+		"noChats": "Nema razgovora",
+		"noSubchats": "Nema podrazgovora",
 		"sendMessage": "Pošalji poruku",
-		"showSubchats": "Prikaži podrazgovore ({count})",
 		"subchats": "Podrazgovori",
 		"xMessages_one": "1 poruka",
 		"xMessages_few": "{count} poruke",
-		"xMessages_other": "{count} poruka"
+		"xMessages_other": "{count} poruka",
+		"xSearchResults_zero": "Nema rezultata pretrage",
+		"xSearchResults_one": "{count} rezultat pretrage",
+		"xSearchResults_few": "{count} rezultata pretrage",
+		"xSearchResults_other": "{count} rezultata pretrage"
 	}
 }

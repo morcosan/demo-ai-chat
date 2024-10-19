@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react'
-import { API } from '../../api'
-import { Subchat } from '../../api/types'
+import { API, Subchat } from '../../api'
 import { ChatStore } from './chat-store'
 
 export interface AllSubchatsStore {
@@ -37,8 +36,8 @@ export const useAllSubchatsStore = (chatStore: ChatStore): AllSubchatsStore => {
 		const listing = await API.getSubchats(activeChat.id, [], allSubchatsPagination.page + 1)
 
 		setAllSubchats([...allSubchats, ...listing.subchats])
-		setAllSubchatsLoading(false)
 		setAllSubchatsPagination({ page: allSubchatsPagination.page + 1, count: listing.count })
+		setAllSubchatsLoading(false)
 	}
 
 	const updateSubchat = (subchat: Subchat) => {

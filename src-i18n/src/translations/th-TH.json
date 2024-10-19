@@ -2,10 +2,12 @@
 	"core": {
 		"action": {
 			"back": "ย้อนกลับ",
-			"backToHome": "กลับไปหน้าแรก",
+			"backToHome": "กลับสู่หน้าหลัก",
 			"changeLanguage": "เปลี่ยนภาษา",
 			"close": "ปิด",
 			"openMenu": "เปิดเมนู",
+			"search": "ค้นหา",
+			"searchMore": "แสดงผลลัพธ์เพิ่มเติม",
 			"signOut": "ออกจากระบบ"
 		},
 		"apiDocs": "เอกสาร API",
@@ -15,33 +17,43 @@
 		"default": "ค่าเริ่มต้น",
 		"designSystem": "ระบบการออกแบบ",
 		"europe": "ยุโรป",
-		"githubRepo": "คลัง GitHub",
+		"githubRepo": "พื้นที่เก็บ GitHub",
 		"language": "ภาษา",
 		"lightTheme": "โหมดสว่าง",
 		"loading": "กำลังโหลด...",
 		"quickSettings": "การตั้งค่าด่วน",
+		"searchPlaceholder": "ค้นหา...",
+		"searching": "กำลังค้นหา...",
 		"settings": "การตั้งค่า",
 		"uiLibrary": "ไลบรารี UI:",
 		"uiTheme": "ธีม UI:"
 	},
 	"aiChat": {
 		"action": {
-			"backToSubchats": "กลับไปยังแชทย่อย",
-			"openSubchat_zero": "สร้างแชทย่อย",
-			"openSubchat_one": "เปิดแชทย่อย (1 ข้อความ)",
-			"openSubchat_other": "เปิดแชทย่อย ({count} ข้อความ)"
+			"backToSubchats": "กลับไปยังการสนทนาย่อย",
+			"openChat": "เปิดการสนทนา",
+			"openSubchat_one": "เปิดการสนทนาย่อย ({count} ข้อความ)",
+			"openSubchat_other": "เปิดการสนทนาย่อย ({count} ข้อความ)",
+			"openSubchat_zero": "สร้างการสนทนาย่อย",
+			"showSubchats": "แสดงการสนทนาย่อย ({count})",
+			"startSearching_one": "พิมพ์อย่างน้อย {count} ตัวอักษร",
+			"startSearching_other": "พิมพ์อย่างน้อย {count} ตัวอักษร"
 		},
-		"chats": "แชท",
+		"chats": "การสนทนา",
 		"inputPlaceholder": "ถามคำถาม...",
-		"loadingChats": "กำลังโหลดแชท...",
+		"loadingChats": "กำลังโหลดการสนทนา...",
 		"loadingMessages": "กำลังโหลดข้อความ...",
 		"loadingPreviousMessages": "กำลังโหลดข้อความก่อนหน้า...",
-		"loadingSubchats": "กำลังโหลดแชทย่อย...",
-		"newChat": "แชทใหม่",
+		"loadingSubchats": "กำลังโหลดการสนทนาย่อย...",
+		"newChat": "การสนทนาใหม่",
+		"noChats": "ไม่มีการสนทนา",
+		"noSubchats": "ไม่มีการสนทนาย่อย",
 		"sendMessage": "ส่งข้อความ",
-		"showSubchats": "แสดงแชทย่อย ({count})",
-		"subchats": "แชทย่อย",
+		"subchats": "การสนทนาย่อย",
 		"xMessages_one": "1 ข้อความ",
-		"xMessages_other": "{count} ข้อความ"
+		"xMessages_other": "{count} ข้อความ",
+		"xSearchResults_zero": "ไม่มีผลการค้นหา",
+		"xSearchResults_one": "{count} ผลการค้นหา",
+		"xSearchResults_other": "{count} ผลการค้นหา"
 	}
 }

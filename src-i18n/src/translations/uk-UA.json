@@ -6,6 +6,8 @@
 			"changeLanguage": "Змінити мову",
 			"close": "Закрити",
 			"openMenu": "Відкрити меню",
+			"search": "Пошук",
+			"searchMore": "Показати більше результатів",
 			"signOut": "Вийти"
 		},
 		"apiDocs": "Документація API",
@@ -20,18 +22,26 @@
 		"lightTheme": "Світла",
 		"loading": "Завантаження...",
 		"quickSettings": "Швидкі налаштування",
+		"searchPlaceholder": "Пошук...",
+		"searching": "Пошук...",
 		"settings": "Налаштування",
-		"uiLibrary": "Бібліотека інтерфейсу:",
-		"uiTheme": "Тема інтерфейсу:"
+		"uiLibrary": "Бібліотека UI:",
+		"uiTheme": "Тема UI:"
 	},
 	"aiChat": {
 		"action": {
 			"backToSubchats": "Повернутися до підчатів",
+			"openChat": "Відкрити чат",
 			"openSubchat_zero": "Створити підчат",
 			"openSubchat_one": "Відкрити підчат (1 повідомлення)",
 			"openSubchat_few": "Відкрити підчат ({count} повідомлення)",
 			"openSubchat_many": "Відкрити підчат ({count} повідомлень)",
-			"openSubchat_other": "Відкрити підчат ({count} повідомлень)"
+			"openSubchat_other": "Відкрити підчат ({count} повідомлень)",
+			"showSubchats": "Показати підчати ({count})",
+			"startSearching_one": "Введіть хоча б {count} символ",
+			"startSearching_few": "Введіть хоча б {count} символи",
+			"startSearching_many": "Введіть хоча б {count} символів",
+			"startSearching_other": "Введіть хоча б {count} символів"
 		},
 		"chats": "Чати",
 		"inputPlaceholder": "Задайте питання...",
@@ -40,12 +50,18 @@
 		"loadingPreviousMessages": "Завантаження попередніх повідомлень...",
 		"loadingSubchats": "Завантаження підчатів...",
 		"newChat": "Новий чат",
+		"noChats": "Немає чатів",
+		"noSubchats": "Немає підчатів",
 		"sendMessage": "Надіслати повідомлення",
-		"showSubchats": "Показати підчати ({count})",
 		"subchats": "Підчати",
 		"xMessages_one": "1 повідомлення",
 		"xMessages_few": "{count} повідомлення",
 		"xMessages_many": "{count} повідомлень",
-		"xMessages_other": "{count} повідомлень"
+		"xMessages_other": "{count} повідомлень",
+		"xSearchResults_zero": "Немає результатів пошуку",
+		"xSearchResults_one": "{count} результат пошуку",
+		"xSearchResults_few": "{count} результати пошуку",
+		"xSearchResults_many": "{count} результатів пошуку",
+		"xSearchResults_other": "{count} результатів пошуку"
 	}
 }

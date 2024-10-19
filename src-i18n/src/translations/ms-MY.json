@@ -6,6 +6,8 @@
 			"changeLanguage": "Tukar bahasa",
 			"close": "Tutup",
 			"openMenu": "Buka menu",
+			"search": "Cari",
+			"searchMore": "Tunjukkan lebih banyak hasil",
 			"signOut": "Log keluar"
 		},
 		"apiDocs": "Dokumentasi API",
@@ -18,30 +20,40 @@
 		"githubRepo": "Repositori GitHub",
 		"language": "Bahasa",
 		"lightTheme": "Cerah",
-		"loading": "Sedang memuatkan...",
+		"loading": "Sedang memuat...",
 		"quickSettings": "Tetapan pantas",
+		"searchPlaceholder": "Cari...",
+		"searching": "Sedang mencari...",
 		"settings": "Tetapan",
-		"uiLibrary": "Perpustakaan UI:",
+		"uiLibrary": "Pustaka UI:",
 		"uiTheme": "Tema UI:"
 	},
 	"aiChat": {
 		"action": {
 			"backToSubchats": "Kembali ke subchat",
+			"openChat": "Buka perbualan",
+			"openSubchat_one": "Buka subchat ({count} mesej)",
+			"openSubchat_other": "Buka subchat ({count} mesej)",
 			"openSubchat_zero": "Buat subchat",
-			"openSubchat_one": "Buka subchat (1 mesej)",
-			"openSubchat_other": "Buka subchat ({count} mesej)"
+			"showSubchats": "Tunjukkan subchat ({count})",
+			"startSearching_one": "Taip sekurang-kurangnya {count} aksara",
+			"startSearching_other": "Taip sekurang-kurangnya {count} aksara"
 		},
 		"chats": "Perbualan",
 		"inputPlaceholder": "Tanya soalan...",
-		"loadingChats": "Memuatkan perbualan...",
-		"loadingMessages": "Memuatkan mesej...",
-		"loadingPreviousMessages": "Memuatkan mesej sebelumnya...",
-		"loadingSubchats": "Memuatkan subchat...",
-		"newChat": "Perbualan baru",
+		"loadingChats": "Memuat perbualan...",
+		"loadingMessages": "Memuat mesej...",
+		"loadingPreviousMessages": "Memuat mesej sebelumnya...",
+		"loadingSubchats": "Memuat subchat...",
+		"newChat": "Perbualan baharu",
+		"noChats": "Tiada perbualan",
+		"noSubchats": "Tiada subchat",
 		"sendMessage": "Hantar mesej",
-		"showSubchats": "Tunjukkan subchat ({count})",
 		"subchats": "Subchat",
 		"xMessages_one": "1 mesej",
-		"xMessages_other": "{count} mesej"
+		"xMessages_other": "{count} mesej",
+		"xSearchResults_zero": "Tiada hasil carian",
+		"xSearchResults_one": "{count} hasil carian",
+		"xSearchResults_other": "{count} hasil carian"
 	}
 }

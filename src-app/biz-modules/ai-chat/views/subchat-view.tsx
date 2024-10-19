@@ -1,7 +1,7 @@
 import { ArrowBackSvg, IconButton } from '@ds/release'
 import { debounce } from 'lodash'
 import { UIEvent, useEffect } from 'react'
-import { Message } from '../api/types'
+import { Message } from '../api'
 import { InputField } from '../components/input-field'
 import { LoadingText } from '../components/loading-text'
 import { MessageItem } from '../components/message-item'
@@ -45,8 +45,8 @@ export const SubchatView = () => {
 				onScroll={onScroll}
 			>
 				{/* TOOLBAR */}
-				<StickyToolbar variant="subchat" className="-mx-a11y-padding px-xs-2 py-xs-1">
-					<div className="flex items-center gap-xs-2">
+				<StickyToolbar stretched permanent>
+					<div className="flex items-center gap-xs-2 px-xs-1 py-xs-1">
 						<IconButton linkHref={`/chat/${activeChat?.id}`} tooltip={t('aiChat.action.backToSubchats')} size="sm">
 							<ArrowBackSvg className="h-xs-5" />
 						</IconButton>

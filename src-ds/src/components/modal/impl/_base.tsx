@@ -54,8 +54,8 @@ export const useModalBase = (rawProps: ModalProps) => {
 	const cssOverlayBase: CSS = {
 		...CSS__FIXED_OVERLAY,
 		zIndex: -1,
-		backgroundColor: props.shallow ? $color['hover-2'] : $color['hover-4'],
-		backdropFilter: props.shallow ? `blur(${$blur['subtle']})` : `blur(${$blur['default']})`,
+		backgroundColor: props.persistent ? $color['hover-4'] : $color['hover-2'],
+		backdropFilter: props.persistent ? `blur(${$blur['default']})` : `blur(${$blur['subtle']})`,
 	}
 
 	const cssModalContent: CSS = {
@@ -71,6 +71,7 @@ export const useModalBase = (rawProps: ModalProps) => {
 		display: 'flex',
 		alignItems: 'center',
 		minHeight: $spacing['button-h-md'],
+		marginRight: $spacing['button-h-md'],
 		fontSize: $fontSize['lg'],
 		fontWeight: $fontWeight['lg'],
 	}

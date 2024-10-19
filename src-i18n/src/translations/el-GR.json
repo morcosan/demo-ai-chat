@@ -6,20 +6,24 @@
 			"changeLanguage": "Αλλαγή γλώσσας",
 			"close": "Κλείσιμο",
 			"openMenu": "Άνοιγμα μενού",
+			"search": "Αναζήτηση",
+			"searchMore": "Εμφάνιση περισσότερων αποτελεσμάτων",
 			"signOut": "Αποσύνδεση"
 		},
 		"apiDocs": "Τεκμηρίωση API",
 		"asia": "Ασία",
 		"custom": "Προσαρμοσμένο",
-		"darkTheme": "Σκούρο",
+		"darkTheme": "Σκοτεινό",
 		"default": "Προεπιλογή",
-		"designSystem": "Σύστημα σχεδίασης",
+		"designSystem": "Σύστημα σχεδιασμού",
 		"europe": "Ευρώπη",
 		"githubRepo": "Αποθετήριο GitHub",
 		"language": "Γλώσσα",
 		"lightTheme": "Φωτεινό",
 		"loading": "Φόρτωση...",
 		"quickSettings": "Γρήγορες ρυθμίσεις",
+		"searchPlaceholder": "Αναζήτηση...",
+		"searching": "Αναζήτηση...",
 		"settings": "Ρυθμίσεις",
 		"uiLibrary": "Βιβλιοθήκη UI:",
 		"uiTheme": "Θέμα UI:"
@@ -27,9 +31,13 @@
 	"aiChat": {
 		"action": {
 			"backToSubchats": "Επιστροφή στις υποσυνομιλίες",
+			"openChat": "Άνοιγμα συνομιλίας",
+			"openSubchat_one": "Άνοιγμα υποσυνομιλίας ({count} μήνυμα)",
+			"openSubchat_other": "Άνοιγμα υποσυνομιλίας ({count} μηνύματα)",
 			"openSubchat_zero": "Δημιουργία υποσυνομιλίας",
-			"openSubchat_one": "Άνοιγμα υποσυνομιλίας (1 μήνυμα)",
-			"openSubchat_other": "Άνοιγμα υποσυνομιλίας ({count} μηνύματα)"
+			"showSubchats": "Εμφάνιση υποσυνομιλιών ({count})",
+			"startSearching_one": "Πληκτρολογήστε τουλάχιστον {count} χαρακτήρα",
+			"startSearching_other": "Πληκτρολογήστε τουλάχιστον {count} χαρακτήρες"
 		},
 		"chats": "Συνομιλίες",
 		"inputPlaceholder": "Κάντε μια ερώτηση...",
@@ -38,10 +46,14 @@
 		"loadingPreviousMessages": "Φόρτωση προηγούμενων μηνυμάτων...",
 		"loadingSubchats": "Φόρτωση υποσυνομιλιών...",
 		"newChat": "Νέα συνομιλία",
+		"noChats": "Δεν υπάρχουν συνομιλίες",
+		"noSubchats": "Δεν υπάρχουν υποσυνομιλίες",
 		"sendMessage": "Αποστολή μηνύματος",
-		"showSubchats": "Εμφάνιση υποσυνομιλιών ({count})",
 		"subchats": "Υποσυνομιλίες",
 		"xMessages_one": "1 μήνυμα",
-		"xMessages_other": "{count} μηνύματα"
+		"xMessages_other": "{count} μηνύματα",
+		"xSearchResults_zero": "Κανένα αποτέλεσμα αναζήτησης",
+		"xSearchResults_one": "{count} αποτέλεσμα αναζήτησης",
+		"xSearchResults_other": "{count} αποτελέσματα αναζήτησης"
 	}
 }

@@ -6,9 +6,11 @@
 			"changeLanguage": "Skipta um tungumál",
 			"close": "Loka",
 			"openMenu": "Opna valmynd",
+			"search": "Leita",
+			"searchMore": "Sýna fleiri niðurstöður",
 			"signOut": "Skrá út"
 		},
-		"apiDocs": "API skjölun",
+		"apiDocs": "API skjöl",
 		"asia": "Asía",
 		"custom": "Sérsniðið",
 		"darkTheme": "Dökkt",
@@ -20,28 +22,38 @@
 		"lightTheme": "Ljóst",
 		"loading": "Hleður...",
 		"quickSettings": "Flýtistillingar",
+		"searchPlaceholder": "Leita...",
+		"searching": "Leitar...",
 		"settings": "Stillingar",
-		"uiLibrary": "Notendaviðmótssafn:",
-		"uiTheme": "Notendaviðmótsþema:"
+		"uiLibrary": "UI safn:",
+		"uiTheme": "UI þema:"
 	},
 	"aiChat": {
 		"action": {
 			"backToSubchats": "Til baka í undirspjall",
+			"openChat": "Opna spjall",
+			"openSubchat_one": "Opna undirspjall ({count} skilaboð)",
+			"openSubchat_other": "Opna undirspjall ({count} skilaboð)",
 			"openSubchat_zero": "Búa til undirspjall",
-			"openSubchat_one": "Opna undirspjall (1 skilaboð)",
-			"openSubchat_other": "Opna undirspjall ({count} skilaboð)"
+			"showSubchats": "Sýna undirspjöll ({count})",
+			"startSearching_one": "Sláðu inn að minnsta kosti {count} staf",
+			"startSearching_other": "Sláðu inn að minnsta kosti {count} stafi"
 		},
-		"chats": "Spjall",
-		"inputPlaceholder": "Spyrðu spurningar...",
-		"loadingChats": "Hleður spjall...",
+		"chats": "Spjöll",
+		"inputPlaceholder": "Spurðu spurningar...",
+		"loadingChats": "Hleður spjöll...",
 		"loadingMessages": "Hleður skilaboð...",
 		"loadingPreviousMessages": "Hleður fyrri skilaboð...",
-		"loadingSubchats": "Hleður undirspjall...",
+		"loadingSubchats": "Hleður undirspjöll...",
 		"newChat": "Nýtt spjall",
+		"noChats": "Engin spjöll",
+		"noSubchats": "Engin undirspjöll",
 		"sendMessage": "Senda skilaboð",
-		"showSubchats": "Sýna undirspjall ({count})",
-		"subchats": "Undirspjall",
+		"subchats": "Undirspjöll",
 		"xMessages_one": "1 skilaboð",
-		"xMessages_other": "{count} skilaboð"
+		"xMessages_other": "{count} skilaboð",
+		"xSearchResults_zero": "Engar leitarniðurstöður",
+		"xSearchResults_one": "{count} leitarniðurstaða",
+		"xSearchResults_other": "{count} leitarniðurstöður"
 	}
 }
