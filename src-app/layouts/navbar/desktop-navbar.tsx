@@ -7,10 +7,11 @@ import { SettingsButton } from './_settings-button'
 import { SettingsMenu } from './_settings-menu'
 
 interface Props {
+	unselected?: boolean
 	onClickLanguage(): void
 }
 
-export const DesktopNavbar = (props: Props) => {
+export const DesktopNavbar = ({ unselected, onClickLanguage }: Props) => {
 	const { isNavPinned, setIsNavPinned } = useAppLayout()
 	const [isSettingsOpened, setIsSettingsOpened] = useState(false)
 	const [hasNavHover, setHasNavHover] = useState(false)
@@ -41,9 +42,9 @@ export const DesktopNavbar = (props: Props) => {
 		isNavPinned ? 'text-color-secondary-text-default' : 'rotate-45 text-color-text-subtle'
 	)
 
-	const onClickLanguage = () => {
+	const onClickLanguageItem = () => {
 		setIsSettingsOpened(false)
-		props.onClickLanguage()
+		onClickLanguage()
 	}
 
 	const onClickWindow = (event: MouseEvent) => {
@@ -112,7 +113,7 @@ export const DesktopNavbar = (props: Props) => {
 				</IconButton>
 
 				{/* AI CHAT */}
-				<AiChatNavMenu collapsed={isNavCollapsed} />
+				<AiChatNavMenu collapsed={isNavCollapsed} unselected={unselected} />
 
 				{/* SETTINGS */}
 				<div ref={settingsRef} className="relative">
@@ -122,7 +123,7 @@ export const DesktopNavbar = (props: Props) => {
 						onClick={onToggleSettings}
 					/>
 					<div className={settingsMenuClass}>
-						<SettingsMenu onClickLanguage={onClickLanguage} />
+						<SettingsMenu onClickLanguage={onClickLanguageItem} />
 					</div>
 				</div>
 			</nav>

@@ -9,10 +9,11 @@ import { MobileNavMenu } from './navbar/mobile-nav-menu'
 import { MobileNavbar } from './navbar/mobile-navbar'
 
 interface Props extends ReactProps {
+	unselected?: boolean
 	pageClassName?: string
 }
 
-export const AppLayout = ({ pageClassName, children }: Props) => {
+export const AppLayout = ({ unselected, pageClassName, children }: Props) => {
 	const { isViewportMaxLG } = useUiViewport()
 	const { activeView, setActiveView } = useAiChatLayout()
 	const [showsI18nModal, setShowsI18nModal] = useState(false)
@@ -44,7 +45,7 @@ export const AppLayout = ({ pageClassName, children }: Props) => {
 			{isViewportMaxLG ? (
 				<MobileNavbar hasMenu={showsNavMenu} onToggleNavMenu={onToggleNavMenu} />
 			) : (
-				<DesktopNavbar onClickLanguage={() => setShowsI18nModal(true)} />
+				<DesktopNavbar unselected={unselected} onClickLanguage={() => setShowsI18nModal(true)} />
 			)}
 
 			{/* MENU OVERLAY */}
@@ -66,7 +67,11 @@ export const AppLayout = ({ pageClassName, children }: Props) => {
 				{showsSettingsMenu ? (
 					<SettingsMenu onClickBack={onToggleSettings} onClickLanguage={() => setShowsI18nModal(true)} />
 				) : (
-					<MobileNavMenu onHideNavMenu={() => setShowsNavMenu(false)} onToggleSettings={onToggleSettings} />
+					<MobileNavMenu
+						unselected={unselected}
+						onHideNavMenu={() => setShowsNavMenu(false)}
+						onToggleSettings={onToggleSettings}
+					/>
 				)}
 			</div>
 

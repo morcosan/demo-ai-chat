@@ -1,7 +1,7 @@
 import { AppLayout } from '@app/layouts/app-layout'
 
 export const ConfigPage = () => {
-	return <AppLayout>config</AppLayout>
+	return <AppLayout unselected>config</AppLayout>
 }
 
 export default ConfigPage

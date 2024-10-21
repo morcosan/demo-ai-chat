@@ -1,6 +1,6 @@
 import { AiChatSvg, Button, IconButton, SearchSvg, SettingsSvg } from '@ds/release'
 import { debounce } from 'lodash'
-import { UIEvent, useMemo } from 'react'
+import { UIEvent, useEffect, useMemo } from 'react'
 import { Chat } from '../api'
 import { ChatItem } from '../components/items/chat-item'
 import { LoadingText } from '../components/loading-text'
@@ -8,11 +8,12 @@ import { useAiChat, useAiChatSearch } from '../state'
 
 interface Props {
 	collapsed?: boolean
+	unselected?: boolean
 	onHideNavMenu?(): void
 }
 
-export const AiChatNavMenu = ({ collapsed, onHideNavMenu }: Props) => {
-	const { allChats, allChatsLoading, allChatsPagination, activeChat, loadMoreChats } = useAiChat()
+export const AiChatNavMenu = ({ collapsed, unselected, onHideNavMenu }: Props) => {
+	const { allChats, allChatsLoading, allChatsPagination, activeChat, loadMoreChats, resetActiveChat } = useAiChat()
 	const { setShowsSearch } = useAiChatSearch()
 
 	const onScrollChats = debounce((event: UIEvent) => {
@@ -22,6 +23,10 @@ export const AiChatNavMenu = ({ collapsed, onHideNavMenu }: Props) => {
 	}, 300)
 
 	const hasExtraChat = Boolean(activeChat && !allChats.some((chat: Chat) => chat.id === activeChat.id))
+
+	useEffect(() => {
+		unselected && activeChat && resetActiveChat()
+	}, [])
 
 	const slotChats = useMemo(
 		() => (

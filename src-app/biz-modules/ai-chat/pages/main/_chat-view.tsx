@@ -68,9 +68,9 @@ export const ChatView = () => {
 
 	useEffect(() => {
 		// Navigate to new chat
-		if (!activeChat || !activeChat.id) return
-		if (activeChat.id === chatId) return
-		navigate(`/chat/${activeChat.id}`)
+		if ((isNaN(chatId) || !chatId) && activeChat?.id) {
+			navigate(`/chat/${activeChat.id}`)
+		}
 	}, [activeChat])
 
 	const slotMessages = useMemo(
