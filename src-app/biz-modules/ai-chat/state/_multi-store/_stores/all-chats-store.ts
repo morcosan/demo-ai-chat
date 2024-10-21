@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { API, Chat } from '../../api'
+import { API, Chat } from '../../../api'
 import { GHOST_CHAT } from './_utils'
 
 export interface AllChatsStore {

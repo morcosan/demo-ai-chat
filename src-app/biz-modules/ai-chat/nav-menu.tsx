@@ -1,16 +1,19 @@
 import { AiChatSvg, Button, DotsSvg, IconButton, SearchSvg } from '@ds/release'
 import { debounce } from 'lodash'
-import { UIEvent } from 'react'
+import { UIEvent, useMemo } from 'react'
 import { Chat } from './api'
+import { ChatItem } from './components/items/chat-item'
 import { LoadingText } from './components/loading-text'
-import { useAiChat } from './state'
+import { useAiChat, useAiChatSearch } from './state'
 
 interface Props {
 	collapsed?: boolean
+	onHideNavMenu?(): void
 }
 
-export const AiChatNavMenu = ({ collapsed }: Props) => {
-	const { allChats, allChatsLoading, allChatsPagination, activeChat, loadMoreChats, setShowsSearch } = useAiChat()
+export const AiChatNavMenu = ({ collapsed, onHideNavMenu }: Props) => {
+	const { allChats, allChatsLoading, allChatsPagination, activeChat, loadMoreChats } = useAiChat()
+	const { setShowsSearch } = useAiChatSearch()
 
 	const onScrollChats = debounce((event: UIEvent) => {
 		const container = event.target as HTMLElement
@@ -20,10 +23,21 @@ export const AiChatNavMenu = ({ collapsed }: Props) => {
 
 	const hasExtraChat = Boolean(activeChat && !allChats.some((chat: Chat) => chat.id === activeChat.id))
 
+	const slotChats = useMemo(
+		() => (
+			<ul>
+				{allChats.map((chat: Chat) => (
+					<ChatItem key={chat.id} chat={chat} activeChat={activeChat} onHideNavMenu={onHideNavMenu} />
+				))}
+			</ul>
+		),
+		[allChats, activeChat]
+	)
+
 	return (
 		<>
 			{/* NEW CHAT */}
-			<Button linkHref="/chat" loading={allChatsLoading === 'update'}>
+			<Button linkHref="/chat" loading={allChatsLoading === 'update'} onClick={onHideNavMenu}>
 				<div className={cx(!collapsed && '-ml-xs-4 mr-xs-3')}>
 					<AiChatSvg className="h-xs-9 w-xs-9" />
 				</div>
@@ -36,7 +50,7 @@ export const AiChatNavMenu = ({ collapsed }: Props) => {
 				{!collapsed && <span className="ml-xs-3">{t('core.action.search')}</span>}
 			</Button>
 
-			{/* OPTIONS */}
+			{/* HEADER */}
 			<div className="mt-xs-7 flex h-button-h-sm w-full items-center justify-between">
 				<span className="ml-button-px-item truncate text-size-sm text-color-text-subtle">
 					{t('aiChat.chats')}
@@ -62,18 +76,7 @@ export const AiChatNavMenu = ({ collapsed }: Props) => {
 					/>
 				) : allChats.length ? (
 					<>
-						{allChats.map((chat: Chat) => (
-							<Button
-								key={chat.id}
-								linkHref={`/chat/${chat.id}`}
-								variant={activeChat?.id === chat.id ? 'item-solid-secondary' : 'item-text-default'}
-								highlight={activeChat?.id === chat.id ? 'selected' : 'default'}
-								tooltip={chat.title}
-								className="focus:z-1"
-							>
-								<span className="line-clamp-1">{chat.title}</span>
-							</Button>
-						))}
+						{slotChats}
 						{allChats.length < allChatsPagination.count && (
 							<LoadingText
 								text={t('aiChat.loadingChats')}

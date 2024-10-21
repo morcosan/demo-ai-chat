@@ -1,5 +1,5 @@
 import { uniq, uniqBy } from 'lodash'
-import { useState } from 'react'
+import { useMemo, useState } from 'react'
 import {
 	API,
 	Chat,
@@ -10,36 +10,7 @@ import {
 	Subchat,
 	SubchatListing,
 } from '../../api'
-
-export interface SearchResult {
-	chat?: Chat
-	subchat?: Subchat
-	message?: Message
-}
-
-export interface SearchStore {
-	showsSearch: boolean
-	searchKeyword: string
-	searchResults: SearchResult[]
-	searchPagination: Pagination
-	searchLoading: ListLoading
-	canLoadSearchResults: boolean
-	loadMoreSearchResults(): void
-	searchByKeyword(keyword: string): Promise<void>
-	setShowsSearch(value: boolean): void
-}
-
-export const searchDefaults: SearchStore = {
-	showsSearch: false,
-	searchKeyword: '',
-	searchResults: [],
-	searchPagination: { page: 0, count: 0 },
-	searchLoading: false,
-	canLoadSearchResults: false,
-	loadMoreSearchResults: () => {},
-	searchByKeyword: async () => {},
-	setShowsSearch: () => {},
-}
+import { SearchContext, SearchResult, Store } from './context'
 
 interface StateData {
 	keyword: string
@@ -59,7 +30,7 @@ const PROMISE_CHAT_LISTING: Promise<ChatListing> = Promise.resolve({ chats: [], 
 const PROMISE_SUBCHAT_LISTING: Promise<SubchatListing> = Promise.resolve({ subchats: [], count: 0 })
 const PROMISE_MESSAGE_LISTING: Promise<MessageListing> = Promise.resolve({ messages: [], count: 0 })
 
-export const useSearchStore = (): SearchStore => {
+export const SearchProvider = ({ children }: ReactProps) => {
 	const [showsSearch, setShowsSearch] = useState(false)
 	const [searchKeyword, setSearchKeyword] = useState('')
 	const [searchResults, setSearchResults] = useState<SearchResult[]>([])
@@ -174,15 +145,20 @@ export const useSearchStore = (): SearchStore => {
 		}
 	}
 
-	return {
-		showsSearch,
-		searchKeyword,
-		searchResults,
-		searchPagination,
-		searchLoading,
-		canLoadSearchResults,
-		loadMoreSearchResults,
-		searchByKeyword,
-		setShowsSearch,
-	}
+	const store: Store = useMemo(
+		() => ({
+			showsSearch,
+			searchKeyword,
+			searchResults,
+			searchPagination,
+			searchLoading,
+			canLoadSearchResults,
+			loadMoreSearchResults,
+			searchByKeyword,
+			setShowsSearch,
+		}),
+		[showsSearch, searchKeyword, searchResults, searchPagination, searchLoading, canLoadSearchResults]
+	)
+
+	return <SearchContext.Provider value={store}>{children}</SearchContext.Provider>
 }

@@ -1,7 +1,7 @@
 import { API } from '@app/biz-modules/ai-chat/api'
 import { uniqBy } from 'lodash'
 import { useEffect, useState } from 'react'
-import { Chat, Message } from '../../api'
+import { Chat, Message } from '../../../api'
 import { GHOST_CHAT, newGhostMessage } from './_utils'
 import { AllChatsStore } from './all-chats-store'
 

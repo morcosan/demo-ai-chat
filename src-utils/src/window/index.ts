@@ -18,6 +18,6 @@ window.LOG = (...args: unknown[]) => {
 	console.log(...format.concat(args))
 }
 
-window.LOG_DEV = (...args: unknown[]) => {
-	LOG(...args)
-}
+window.LOG_DEV = (...args: unknown[]) => LOG(...args)
+
+window.log = (...args: unknown[]) => console.log(...args)

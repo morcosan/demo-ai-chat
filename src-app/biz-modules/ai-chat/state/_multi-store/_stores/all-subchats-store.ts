@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { API, Subchat } from '../../api'
+import { API, Subchat } from '../../../api'
 import { ChatStore } from './chat-store'
 
 export interface AllSubchatsStore {
