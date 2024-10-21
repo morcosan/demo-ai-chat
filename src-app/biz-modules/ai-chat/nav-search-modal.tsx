@@ -1,11 +1,11 @@
-import { SearchResultItem } from '@app/biz-modules/ai-chat/components/search-result-item'
 import { Button, Modal, SearchSvg, TextField, TextFieldRef } from '@ds/release'
 import { debounce } from 'lodash'
-import { useCallback, useRef, useState } from 'react'
+import { useCallback, useMemo, useRef, useState } from 'react'
 import { MIN_SEARCH_LENGTH } from './api'
+import { SearchResultItem } from './components/items/search-result-item'
 import { LoadingText } from './components/loading-text'
 import { StickyToolbar } from './components/sticky-toolbar'
-import { SearchResult, useAiChat } from './state'
+import { SearchResult, useAiChatSearch } from './state'
 
 export const AiChatNavSearchModal = () => {
 	const {
@@ -18,7 +18,7 @@ export const AiChatNavSearchModal = () => {
 		loadMoreSearchResults,
 		searchByKeyword,
 		setShowsSearch,
-	} = useAiChat()
+	} = useAiChatSearch()
 	const [searchValue, setSearchValue] = useState('')
 	const searchRef = useRef<TextFieldRef>(null)
 
@@ -42,6 +42,22 @@ export const AiChatNavSearchModal = () => {
 			className="w-full font-weight-sm"
 			onChange={onChangeSearch}
 		/>
+	)
+
+	const slotResults = useMemo(
+		() => (
+			<ul className="mt-xs-3 flex flex-col pb-button-px-item">
+				{searchResults.map((result: SearchResult) => (
+					<SearchResultItem
+						key={result.message?.id || result.chat?.id}
+						result={result}
+						keyword={searchKeyword}
+						onClick={() => setShowsSearch(false)}
+					/>
+				))}
+			</ul>
+		),
+		[searchResults, searchKeyword]
 	)
 
 	return (
@@ -75,16 +91,7 @@ export const AiChatNavSearchModal = () => {
 						</div>
 					</StickyToolbar>
 
-					<ul className="mt-xs-3 flex flex-col pb-button-px-item">
-						{searchResults.map((result: SearchResult) => (
-							<SearchResultItem
-								key={result.message?.id || result.chat?.id}
-								result={result}
-								keyword={searchKeyword}
-								onClick={() => setShowsSearch(false)}
-							/>
-						))}
-					</ul>
+					{slotResults}
 
 					<div className="mx-auto mb-xs-5 mt-sm-0">
 						{searchLoading === 'more' ? (

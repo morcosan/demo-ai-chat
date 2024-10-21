@@ -1,9 +1,10 @@
 import { Button } from '@ds/release'
 import { SubchatIcon } from './components/subchat-icon'
-import { AiChatView, useAiChat } from './state'
+import { AiChatView, useAiChat, useAiChatLayout } from './state'
 
 export const AiChatNavTopbar = ({ className }: ReactProps) => {
-	const { activeChat, activeView, allSubchatsPagination, setActiveView } = useAiChat()
+	const { activeChat, allSubchatsPagination } = useAiChat()
+	const { activeView, setActiveView } = useAiChatLayout()
 
 	const onClick = () => {
 		setActiveView(activeView === AiChatView.MOBILE_CHAT ? AiChatView.MOBILE_SUBCHAT : AiChatView.MOBILE_CHAT)

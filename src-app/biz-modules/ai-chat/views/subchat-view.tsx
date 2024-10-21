@@ -1,12 +1,12 @@
 import { ArrowBackSvg, IconButton } from '@ds/release'
 import { debounce } from 'lodash'
-import { UIEvent, useEffect } from 'react'
+import { UIEvent, useEffect, useMemo } from 'react'
 import { Message } from '../api'
-import { InputField } from '../components/input-field'
+import { MessageItem } from '../components/items/message-item'
 import { LoadingText } from '../components/loading-text'
-import { MessageItem } from '../components/message-item'
+import { NewMessageField } from '../components/new-message-field'
 import { StickyToolbar } from '../components/sticky-toolbar'
-import { useMessageListing } from '../hooks/message-listing'
+import { useScrollable } from '../hooks/scrollable'
 import { useAiChat } from '../state'
 
 export const SubchatView = () => {
@@ -19,8 +19,7 @@ export const SubchatView = () => {
 		loadMoreSubchatMessages,
 		postSubchatMessage,
 	} = useAiChat()
-	const { listingRef, input, inputRef, inputText, onChange, onPressEnter, onSubmit, saveScrollPos, scrollToPos } =
-		useMessageListing(subchatLoading, postSubchatMessage)
+	const { containerRef, saveScrollPos, scrollToPos } = useScrollable()
 
 	const onScroll = debounce((event: UIEvent) => {
 		const THRESHOLD = 50 // px
@@ -37,10 +36,21 @@ export const SubchatView = () => {
 		scrollToPos()
 	}, [subchatPagination])
 
+	const slotMessages = useMemo(
+		() => (
+			<ul>
+				{subchatMessages.map((message: Message) => (
+					<MessageItem key={message.id} message={message} isSubchat />
+				))}
+			</ul>
+		),
+		[subchatMessages]
+	)
+
 	return (
 		<div className="flex h-full flex-col py-xs-1">
 			<div
-				ref={listingRef}
+				ref={containerRef}
 				className="flex flex-1 flex-col overflow-y-scroll pb-sm-1 pl-scrollbar-w pr-a11y-padding"
 				onScroll={onScroll}
 			>
@@ -68,26 +78,14 @@ export const SubchatView = () => {
 							style={{ visibility: subchatLoading === 'more' ? 'visible' : 'hidden' }}
 						/>
 						{/* MESSAGES */}
-						{subchatMessages.map((message: Message) => (
-							<MessageItem key={message.id} message={message} isSubchat />
-						))}
+						{slotMessages}
 					</>
 				)}
 			</div>
 
-			{/* INPUT FIELD */}
+			{/* NEW MESSAGE FIELD */}
 			<div className="mx-a11y-scrollbar mb-xs-5 mt-xs-5">
-				<InputField
-					ref={inputRef}
-					input={input}
-					inputText={inputText}
-					loading={subchatLoading === 'update'}
-					disabled={subchatLoading === 'full' || subchatLoading === 'more'}
-					className="w-full"
-					onChange={onChange}
-					onPressEnter={onPressEnter}
-					onSubmit={onSubmit}
-				/>
+				<NewMessageField listLoading={subchatLoading} postMessageFn={postSubchatMessage} />
 			</div>
 		</div>
 	)
