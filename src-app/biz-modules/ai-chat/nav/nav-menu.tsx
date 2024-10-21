@@ -1,6 +1,7 @@
 import { AiChatSvg, Button, IconButton, SearchSvg, SettingsSvg } from '@ds/release'
 import { debounce } from 'lodash'
 import { UIEvent, useEffect, useMemo } from 'react'
+import { useLocation } from 'react-router-dom'
 import { Chat } from '../api'
 import { ChatItem } from '../components/items/chat-item'
 import { LoadingText } from '../components/loading-text'
@@ -15,6 +16,7 @@ interface Props {
 export const AiChatNavMenu = ({ collapsed, unselected, onHideNavMenu }: Props) => {
 	const { allChats, allChatsLoading, allChatsPagination, activeChat, loadMoreChats, resetActiveChat } = useAiChat()
 	const { setShowsSearch } = useAiChatSearch()
+	const location = useLocation()
 
 	const onScrollChats = debounce((event: UIEvent) => {
 		const container = event.target as HTMLElement
@@ -66,10 +68,11 @@ export const AiChatNavMenu = ({ collapsed, unselected, onHideNavMenu }: Props) =
 				<IconButton
 					tooltip={t('aiChat.action.manageChats')}
 					linkHref="/chats-config"
+					pressed={location.pathname === '/chats-config'}
 					size="sm"
 					className={cx(collapsed && 'hidden')}
 				>
-					<SettingsSvg className="h-xs-6" />
+					<SettingsSvg className="h-xs-6 text-color-text-subtle" />
 				</IconButton>
 			</div>
 
