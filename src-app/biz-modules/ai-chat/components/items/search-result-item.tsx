@@ -2,8 +2,8 @@ import { useSettings } from '@app/biz-modules/user-settings/state'
 import { AiChatSvg, Button, SplitSvg } from '@ds/release'
 import { useI18n } from '@i18n/release'
 import { DateFormat, formatDate } from '@utils/release'
-import { SearchResult } from '../state'
-import { HighlightedText } from './highlighted-text'
+import { SearchResult } from '../../state'
+import { HighlightedText } from '../highlighted-text'
 
 interface Props {
 	result: SearchResult

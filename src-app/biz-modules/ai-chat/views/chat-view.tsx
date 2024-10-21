@@ -1,19 +1,18 @@
 import { useUiTheme } from '@ds/release'
 import { debounce } from 'lodash'
-import { UIEvent, useEffect } from 'react'
+import { UIEvent, useEffect, useMemo } from 'react'
 import { useNavigate, useParams, useSearchParams } from 'react-router-dom'
 import { Message } from '../api'
-import { InputField } from '../components/input-field'
+import { MessageItem } from '../components/items/message-item'
 import { LoadingText } from '../components/loading-text'
-import { MessageItem } from '../components/message-item'
+import { NewMessageField } from '../components/new-message-field'
 import { StickyToolbar } from '../components/sticky-toolbar'
-import { useMessageListing } from '../hooks/message-listing'
-import { AiChatView, useAiChat } from '../state'
+import { useScrollable } from '../hooks/scrollable'
+import { useAiChat } from '../state'
 
 export const ChatView = () => {
 	const {
 		activeChat,
-		activeView,
 		allChatsLoading,
 		canLoadChatMessages,
 		chatLoading,
@@ -23,10 +22,8 @@ export const ChatView = () => {
 		loadMoreChatMessages,
 		postChatMessage,
 		resetActiveChat,
-		setActiveView,
 	} = useAiChat()
-	const { input, inputRef, inputText, listingRef, onChange, onPressEnter, onSubmit, saveScrollPos, scrollToPos } =
-		useMessageListing(chatLoading, postChatMessage)
+	const { containerRef, saveScrollPos, scrollToPos } = useScrollable()
 	const { $lineHeight, $fontSize, $spacing } = useUiTheme()
 	const { chatId: chatIdStr } = useParams()
 	const [searchParams] = useSearchParams()
@@ -42,8 +39,6 @@ export const ChatView = () => {
 	const calcH1Padding2 = $spacing['xs-3']
 	const calcH1FontSize = `calc(2 * ${$fontSize['xl']} + ${$fontSize['xs']})`
 	const calcH1Height = `calc(${$lineHeight['sm']} * ${calcH1FontSize} + ${calcH1Padding1} + ${calcH1Padding2})`
-
-	const onClickSubchat = () => activeView === AiChatView.MOBILE_CHAT && setActiveView(AiChatView.MOBILE_SUBCHAT)
 
 	const onScroll = debounce((event: UIEvent) => {
 		const THRESHOLD = 50 // px
@@ -78,10 +73,21 @@ export const ChatView = () => {
 		navigate(`/chat/${activeChat.id}`)
 	}, [activeChat])
 
+	const slotMessages = useMemo(
+		() => (
+			<ul>
+				{chatMessages.map((message: Message) => (
+					<MessageItem key={message.id} message={message} subchatId={subchatId} />
+				))}
+			</ul>
+		),
+		[chatMessages, subchatId]
+	)
+
 	return (
 		<div className="relative flex h-full flex-1 flex-col gap-xs-5 py-xs-1">
 			{activeChat || chatId ? (
-				<div ref={listingRef} className="flex-1 overflow-y-auto pb-sm-5" onScroll={onScroll}>
+				<div ref={containerRef} className="flex-1 overflow-y-auto pb-sm-5" onScroll={onScroll}>
 					<div className={cx(widthClass, chatLoading === 'full' && 'h-full', 'flex flex-col pt-sm-0')}>
 						{/* TOOLBAR */}
 						<StickyToolbar style={{ minHeight: calcH1Height, lineHeight: calcH1LineHeight }}>
@@ -112,14 +118,7 @@ export const ChatView = () => {
 									style={{ visibility: chatLoading === 'more' ? 'visible' : 'hidden' }}
 								/>
 								{/* MESSAGES */}
-								{chatMessages.map((message: Message) => (
-									<MessageItem
-										key={message.id}
-										message={message}
-										subchatId={subchatId}
-										onClickSubchat={onClickSubchat}
-									/>
-								))}
+								{slotMessages}
 							</div>
 						)}
 					</div>
@@ -130,18 +129,12 @@ export const ChatView = () => {
 				</div>
 			)}
 
+			{/* NEW MESSAGE FIELD */}
 			<div className={cx('px-xs-7 pb-xs-5 lg:px-md-0', widthClass)}>
-				<InputField
-					ref={inputRef}
-					input={input}
-					inputText={inputText}
-					loading={chatLoading === 'update' || Boolean(allChatsLoading)}
-					disabled={chatLoading === 'full' || chatLoading === 'more'}
-					className="w-full"
+				<NewMessageField
+					listLoading={allChatsLoading ? 'update' : chatLoading}
+					postMessageFn={postChatMessage}
 					primary
-					onChange={onChange}
-					onPressEnter={onPressEnter}
-					onSubmit={onSubmit}
 				/>
 			</div>
 		</div>

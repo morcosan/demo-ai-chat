@@ -8,7 +8,7 @@ interface Props extends ReactProps {
 
 export const AppLogo = ({ collapsed, mobile, className }: Props) => {
 	return (
-		<Link to="/" className={cx('flex w-fit p-xs-3', className)}>
+		<Link to="/" className={cx('flex w-fit p-xs-3', className)} onClick={() => location.reload()}>
 			{mobile ? (
 				<span className="flex items-center">
 					<AiChatSvg className="mr-xs-3 h-sm-0 w-sm-0 animate-pulse" />
