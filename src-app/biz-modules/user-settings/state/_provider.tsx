@@ -1,15 +1,6 @@
 import { randomAvatar, randomFullName } from '@utils/release'
-import { createContext, useMemo } from 'react'
-
-export interface Store {
-	avatar: string
-	name: string
-}
-
-export const Context = createContext<Store>({
-	avatar: '',
-	name: '',
-})
+import { useMemo } from 'react'
+import { Context, Store } from './_context'
 
 export const SettingsProvider = ({ children }: ReactProps) => {
 	const avatar = useMemo(() => randomAvatar(), [])
