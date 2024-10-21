@@ -1,20 +1,18 @@
-import { AiChatNavMenu } from '@app/biz-modules/ai-chat/nav-menu'
-import { IconButton, PinSvg, useUiViewport } from '@ds/release'
+import { AiChatNavMenu } from '@app/biz-modules/ai-chat/nav/nav-menu'
+import { IconButton, PinSvg } from '@ds/release'
 import { useEffect, useRef, useState } from 'react'
+import { useAppLayout } from '../state'
 import { AppLogo } from './_app-logo'
 import { SettingsButton } from './_settings-button'
 import { SettingsMenu } from './_settings-menu'
-
-const COOKIE__PINNED_NAVBAR = 'app-pinned-navbar'
 
 interface Props {
 	onClickLanguage(): void
 }
 
 export const DesktopNavbar = (props: Props) => {
-	const { isViewportMinXL } = useUiViewport()
+	const { isNavPinned, setIsNavPinned } = useAppLayout()
 	const [isSettingsOpened, setIsSettingsOpened] = useState(false)
-	const [isNavPinned, setIsNavPinned] = useState(false)
 	const [hasNavHover, setHasNavHover] = useState(false)
 	const [hasNavFocus, setHasNavFocus] = useState(false)
 
@@ -42,19 +40,6 @@ export const DesktopNavbar = (props: Props) => {
 		'h-xs-6',
 		isNavPinned ? 'text-color-secondary-text-default' : 'rotate-45 text-color-text-subtle'
 	)
-
-	const loadPinConfig = () => {
-		const cookie = localStorage.getItem(COOKIE__PINNED_NAVBAR)
-		const isPinned = cookie === 'true' || (cookie !== 'false' && isViewportMinXL)
-
-		localStorage.setItem(COOKIE__PINNED_NAVBAR, isPinned ? 'true' : 'false')
-		setIsNavPinned(isPinned)
-	}
-
-	const onClickPin = () => {
-		setIsNavPinned(!isNavPinned)
-		localStorage.setItem(COOKIE__PINNED_NAVBAR, !isNavPinned ? 'true' : 'false')
-	}
 
 	const onClickLanguage = () => {
 		setIsSettingsOpened(false)
@@ -88,7 +73,6 @@ export const DesktopNavbar = (props: Props) => {
 	}
 
 	useEffect(() => {
-		loadPinConfig()
 		window.addEventListener('mousedown', onClickWindow)
 
 		return () => {
@@ -122,7 +106,7 @@ export const DesktopNavbar = (props: Props) => {
 				<IconButton
 					tooltip={isNavPinned ? 'Unpin nav menu' : 'Pin nav menu'}
 					className={cx('absolute right-xs-1 top-xs-1', isNavCollapsed && 'hidden')}
-					onClick={onClickPin}
+					onClick={() => setIsNavPinned(!isNavPinned)}
 				>
 					<PinSvg className={pinClass} />
 				</IconButton>

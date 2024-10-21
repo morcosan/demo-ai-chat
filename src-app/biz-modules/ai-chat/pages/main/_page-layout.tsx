@@ -1,7 +1,7 @@
 import { AppLayout } from '@app/layouts/app-layout'
 import { useUiViewport } from '@ds/release'
 import { ReactNode, useEffect } from 'react'
-import { AiChatView, useAiChatLayout } from './state'
+import { AiChatView, useAiChatLayout } from '../../state'
 
 interface Props {
 	slotChatView?: ReactNode

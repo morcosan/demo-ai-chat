@@ -1,11 +1,11 @@
 import { Button } from '@ds/release'
 import { debounce } from 'lodash'
 import { UIEvent } from 'react'
-import { Subchat } from '../api'
-import { LoadingText } from '../components/loading-text'
-import { StickyToolbar } from '../components/sticky-toolbar'
-import { SubchatIcon } from '../components/subchat-icon'
-import { useAiChat } from '../state'
+import { Subchat } from '../../api'
+import { LoadingText } from '../../components/loading-text'
+import { StickyToolbar } from '../../components/sticky-toolbar'
+import { SubchatIcon } from '../../components/subchat-icon'
+import { useAiChat } from '../../state'
 
 export const SubchatsView = () => {
 	const { allSubchats, allSubchatsLoading, allSubchatsPagination, loadMoreSubchats } = useAiChat()

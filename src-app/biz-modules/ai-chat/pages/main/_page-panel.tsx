@@ -1,9 +1,9 @@
 import { useEffect } from 'react'
 import { useNavigate, useSearchParams } from 'react-router-dom'
-import { LoadingText } from './components/loading-text'
-import { useAiChat } from './state'
-import { SubchatView } from './views/subchat-view'
-import { SubchatsView } from './views/subchats-view'
+import { LoadingText } from '../../components/loading-text'
+import { useAiChat } from '../../state'
+import { SubchatView } from './_subchat-view'
+import { SubchatsView } from './_subchats-view'
 
 export const PagePanel = () => {
 	const {

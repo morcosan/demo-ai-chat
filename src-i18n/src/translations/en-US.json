@@ -31,6 +31,7 @@
 	"aiChat": {
 		"action": {
 			"backToSubchats": "Back to subchats",
+			"manageChats": "Manage chats",
 			"openChat": "Open chat",
 			"openSubchat_other": "Open subchat ({count} messages)",
 			"openSubchat_zero": "Create subchat",

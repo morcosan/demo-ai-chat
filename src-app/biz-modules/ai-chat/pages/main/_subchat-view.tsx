@@ -1,13 +1,13 @@
 import { ArrowBackSvg, IconButton } from '@ds/release'
 import { debounce } from 'lodash'
 import { UIEvent, useEffect, useMemo } from 'react'
-import { Message } from '../api'
-import { MessageItem } from '../components/items/message-item'
-import { LoadingText } from '../components/loading-text'
-import { NewMessageField } from '../components/new-message-field'
-import { StickyToolbar } from '../components/sticky-toolbar'
-import { useScrollable } from '../hooks/scrollable'
-import { useAiChat } from '../state'
+import { Message } from '../../api'
+import { MessageItem } from '../../components/items/message-item'
+import { LoadingText } from '../../components/loading-text'
+import { NewMessageField } from '../../components/new-message-field'
+import { StickyToolbar } from '../../components/sticky-toolbar'
+import { useScrollable } from '../../hooks/scrollable'
+import { useAiChat } from '../../state'
 
 export const SubchatView = () => {
 	const {

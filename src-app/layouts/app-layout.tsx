@@ -1,4 +1,4 @@
-import { AiChatNavSearchModal } from '@app/biz-modules/ai-chat/nav-search-modal'
+import { AiChatSearchModal } from '@app/biz-modules/ai-chat/nav/search-modal'
 import { AiChatView, useAiChatLayout } from '@app/biz-modules/ai-chat/state'
 import { I18nModal } from '@app/core-modules/i18n-modal'
 import { SettingsMenu } from '@app/layouts/navbar/_settings-menu'
@@ -75,7 +75,7 @@ export const AppLayout = ({ pageClassName, children }: Props) => {
 
 			{/* MODALS */}
 			<I18nModal opened={showsI18nModal} onClose={() => setShowsI18nModal(false)} />
-			<AiChatNavSearchModal />
+			<AiChatSearchModal />
 		</div>
 	)
 }

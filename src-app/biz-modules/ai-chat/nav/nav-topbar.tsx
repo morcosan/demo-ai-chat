@@ -1,6 +1,6 @@
 import { Button } from '@ds/release'
-import { SubchatIcon } from './components/subchat-icon'
-import { AiChatView, useAiChat, useAiChatLayout } from './state'
+import { SubchatIcon } from '../components/subchat-icon'
+import { AiChatView, useAiChat, useAiChatLayout } from '../state'
 
 export const AiChatNavTopbar = ({ className }: ReactProps) => {
 	const { activeChat, allSubchatsPagination } = useAiChat()

@@ -1,10 +1,10 @@
-import { AiChatSvg, Button, DotsSvg, IconButton, SearchSvg } from '@ds/release'
+import { AiChatSvg, Button, IconButton, SearchSvg, SettingsSvg } from '@ds/release'
 import { debounce } from 'lodash'
 import { UIEvent, useMemo } from 'react'
-import { Chat } from './api'
-import { ChatItem } from './components/items/chat-item'
-import { LoadingText } from './components/loading-text'
-import { useAiChat, useAiChatSearch } from './state'
+import { Chat } from '../api'
+import { ChatItem } from '../components/items/chat-item'
+import { LoadingText } from '../components/loading-text'
+import { useAiChat, useAiChatSearch } from '../state'
 
 interface Props {
 	collapsed?: boolean
@@ -57,8 +57,14 @@ export const AiChatNavMenu = ({ collapsed, onHideNavMenu }: Props) => {
 					&nbsp;
 					{Boolean(allChatsPagination.count) && <span className="text-size-xs">({allChatsPagination.count})</span>}
 				</span>
-				<IconButton tooltip="Show options" size="sm" className={cx(collapsed && 'hidden')}>
-					<DotsSvg className="h-xs-8" />
+
+				<IconButton
+					tooltip={t('aiChat.action.manageChats')}
+					linkHref="/chats-config"
+					size="sm"
+					className={cx(collapsed && 'hidden')}
+				>
+					<SettingsSvg className="h-xs-6" />
 				</IconButton>
 			</div>
 
