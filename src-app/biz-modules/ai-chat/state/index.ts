@@ -1,8 +1,12 @@
 import { useContext } from 'react'
-import { AiChatView, Context } from './_context'
-import { AiChatProvider } from './_provider'
+import { LayoutContext } from './_layout-store/context'
+import { MultiStoreContext } from './_multi-store/context'
+import { SearchContext } from './_search-store/context'
 
-export const useAiChat = () => useContext(Context)
+export const useAiChat = () => useContext(MultiStoreContext)
+export const useAiChatLayout = () => useContext(LayoutContext)
+export const useAiChatSearch = () => useContext(SearchContext)
 
-export type { SearchResult } from './stores/search-store'
-export { AiChatProvider, AiChatView }
+export { AiChatView } from './_layout-store/context'
+export { AiChatProvider } from './_provider'
+export type { SearchResult } from './_search-store/context'

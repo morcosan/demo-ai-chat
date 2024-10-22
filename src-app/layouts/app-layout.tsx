@@ -1,10 +1,9 @@
 import { AiChatNavSearchModal } from '@app/biz-modules/ai-chat/nav-search-modal'
-import { AiChatView, useAiChat } from '@app/biz-modules/ai-chat/state'
+import { AiChatView, useAiChatLayout } from '@app/biz-modules/ai-chat/state'
 import { I18nModal } from '@app/core-modules/i18n-modal'
 import { SettingsMenu } from '@app/layouts/navbar/_settings-menu'
 import { useUiViewport } from '@ds/release'
 import { useEffect, useState } from 'react'
-import { useLocation } from 'react-router-dom'
 import { DesktopNavbar } from './navbar/desktop-navbar'
 import { MobileNavMenu } from './navbar/mobile-nav-menu'
 import { MobileNavbar } from './navbar/mobile-navbar'
@@ -15,11 +14,10 @@ interface Props extends ReactProps {
 
 export const AppLayout = ({ pageClassName, children }: Props) => {
 	const { isViewportMaxLG } = useUiViewport()
-	const { activeView, setActiveView } = useAiChat()
+	const { activeView, setActiveView } = useAiChatLayout()
 	const [showsI18nModal, setShowsI18nModal] = useState(false)
 	const [showsNavMenu, setShowsNavMenu] = useState(false)
 	const [showsSettingsMenu, setShowsSettingsMenu] = useState(false)
-	const location = useLocation()
 
 	const onToggleNavMenu = () => {
 		setShowsNavMenu(!showsNavMenu)
@@ -33,10 +31,6 @@ export const AppLayout = ({ pageClassName, children }: Props) => {
 	useEffect(() => {
 		setShowsNavMenu(false)
 	}, [isViewportMaxLG])
-
-	useEffect(() => {
-		setShowsNavMenu(false)
-	}, [location.pathname])
 
 	useEffect(() => {
 		activeView === AiChatView.MOBILE_SUBCHAT && setShowsNavMenu(false)
@@ -72,7 +66,7 @@ export const AppLayout = ({ pageClassName, children }: Props) => {
 				{showsSettingsMenu ? (
 					<SettingsMenu onClickBack={onToggleSettings} onClickLanguage={() => setShowsI18nModal(true)} />
 				) : (
-					<MobileNavMenu onToggleSettings={onToggleSettings} />
+					<MobileNavMenu onHideNavMenu={() => setShowsNavMenu(false)} onToggleSettings={onToggleSettings} />
 				)}
 			</div>
 

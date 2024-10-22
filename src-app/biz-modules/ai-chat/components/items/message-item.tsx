@@ -1,15 +1,14 @@
-import { AiChatSvg, Button, useUiTheme } from '@ds/release'
-import { Message } from '../api'
-import { SubchatIcon } from './subchat-icon'
+import { AiChatSvg, useUiTheme } from '@ds/release'
+import { Message } from '../../api'
+import { SubchatButton } from '../subchat-button'
 
 interface Props {
 	message: Message
 	subchatId?: number
 	isSubchat?: boolean
-	onClickSubchat?: () => void
 }
 
-export const MessageItem = ({ message, subchatId, isSubchat, onClickSubchat }: Props) => {
+export const MessageItem = ({ message, subchatId, isSubchat }: Props) => {
 	const { $lineHeight } = useUiTheme()
 
 	const wrapperClass = cx({
@@ -26,17 +25,12 @@ export const MessageItem = ({ message, subchatId, isSubchat, onClickSubchat }: P
 		invisible: message.loading,
 		'w-md-0': !isSubchat,
 	})
-	const subchatButtonClass = cx({
-		'px-xs-3': true,
-		'lg:mt-sm-2': message.role === 'agent',
-		'focus:opacity-100 lg:opacity-0 lg:group-hover:opacity-100': !message.subchatSize,
-		'!opacity-100': message.id === subchatId,
-	})
+
 	const skeletonClass = 'rounded-sm bg-color-text-placeholder'
 	const skeletonStyle = { height: `calc(${$lineHeight['md']} * 1em)` }
 
 	return (
-		<div className={wrapperClass}>
+		<li className={wrapperClass}>
 			{message.role === 'user' ? (
 				<div className={cx('relative w-fit rounded-md px-xs-6 py-xs-3 shadow-sm', userItemClass)}>
 					<div className="whitespace-pre-wrap">{message.text}</div>
@@ -72,18 +66,9 @@ export const MessageItem = ({ message, subchatId, isSubchat, onClickSubchat }: P
 			{/* SUBCHAT BUTTON */}
 			{!isSubchat && (
 				<div className={subchatClass}>
-					<Button
-						tooltip={t('aiChat.action.openSubchat', { count: message.subchatSize })}
-						linkHref={`/chat/${message.chatId}?subchat=${message.id}`}
-						variant="item-text-default"
-						highlight={message.id === subchatId ? 'pressed' : 'default'}
-						className={subchatButtonClass}
-						onClick={onClickSubchat}
-					>
-						<SubchatIcon count={message.subchatSize || -1} />
-					</Button>
+					<SubchatButton message={message} subchatId={subchatId} />
 				</div>
 			)}
-		</div>
+		</li>
 	)
 }
