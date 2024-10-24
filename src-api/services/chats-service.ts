@@ -18,7 +18,7 @@ import {
 import { RESP__NOT_FOUND } from '../utilities/network'
 import { extractInt, extractIntArray, isGreaterThanZero } from '../utilities/parsers'
 import { isValidPagination } from '../utilities/validators'
-import { DB__CHATS, DB__MESSAGES, getChatSize } from './_db'
+import { DB__CHATS, DB__MESSAGES, getSizeForChat, resetDbChats, resetDbMessages } from './db'
 
 const DEFAULT_COUNT = 10
 const DEFAULT_PAGE = 1
@@ -37,7 +37,7 @@ export const chatsService = {
 				status: STATUS__SUCCESS,
 				data: {
 					count: chats.length,
-					items: chats.map((chat: DbChat) => ({ ...chat, size: getChatSize(chat) })),
+					items: chats.map((chat: DbChat) => ({ ...chat, size: getSizeForChat(chat) })),
 				},
 			}
 		} else {
@@ -55,7 +55,7 @@ export const chatsService = {
 				status: STATUS__SUCCESS,
 				data: {
 					count: chats.length,
-					items: pageChats.map((chat: DbChat) => ({ ...chat, size: getChatSize(chat) })),
+					items: pageChats.map((chat: DbChat) => ({ ...chat, size: getSizeForChat(chat) })),
 				},
 			}
 		}
@@ -75,7 +75,7 @@ export const chatsService = {
 
 		return {
 			status: STATUS__SUCCESS,
-			data: { count: 1, items: [{ ...chat, size: getChatSize(chat) }] },
+			data: { count: 1, items: [{ ...chat, size: getSizeForChat(chat) }] },
 		}
 	},
 
@@ -89,7 +89,7 @@ export const chatsService = {
 
 		return {
 			status: STATUS__SUCCESS,
-			data: { count: 1, items: [{ ...chat, size: getChatSize(chat) }] },
+			data: { count: 1, items: [{ ...chat, size: getSizeForChat(chat) }] },
 		}
 	},
 
@@ -237,6 +237,9 @@ export const chatsService = {
 	},
 
 	async postDatabase(): Promise<ApiResponse> {
+		resetDbChats()
+		resetDbMessages()
+
 		return { status: STATUS__SUCCESS, data: null }
 	},
 }

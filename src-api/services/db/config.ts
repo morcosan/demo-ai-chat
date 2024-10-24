@@ -1,4 +1,3 @@
-import { addMinutesToDate } from '@api/utilities/various'
 import {
 	randomArray,
 	randomFalse,
@@ -8,22 +7,50 @@ import {
 	randomRecentDate,
 	randomText,
 } from '@utils/release'
-import { DbChat, DbMessage, MessageRole } from '../types'
+import { COOKIE__CHATS, COOKIE__MESSAGES, DbChat, DbMessage, MessageRole } from '../../types'
+import { addMinutesToDate } from '../../utilities/various'
 
-const createChats = (): DbChat[] => {
+let _dbChats: DbChat[]
+let _dbMessages: DbMessage[]
+
+const getDbChats = () => _dbChats
+const getDbMessages = () => _dbMessages
+
+const initChats = () => {
+	try {
+		const json = localStorage.getItem(COOKIE__CHATS)
+		_dbChats = JSON.parse(json || '')
+	} catch (_) {
+		resetDbChats()
+	}
+}
+
+const initMessages = () => {
+	try {
+		const json = localStorage.getItem(COOKIE__MESSAGES)
+		_dbMessages = JSON.parse(json || '')
+	} catch (_) {
+		resetDbMessages()
+	}
+}
+
+const resetDbChats = () => {
 	const date = new Date(randomRecentDate())
-
-	return randomArray(3, 100).map((_, index: number) => ({
+	const chats = randomArray(3, 100).map((_, index: number) => ({
 		id: randomId(),
 		title: randomText(10),
 		createdAt: addMinutesToDate(date, index * -1000).toISOString(),
 	}))
+
+	localStorage.setItem(COOKIE__CHATS, JSON.stringify(chats))
+
+	_dbChats = chats
 }
 
-const createMessages = (chats: DbChat[]) => {
+const resetDbMessages = () => {
 	const messages: DbMessage[] = []
 
-	chats = [...chats].reverse()
+	const chats = [..._dbChats].reverse()
 
 	chats.forEach((chat: DbChat, chatIndex: number) => {
 		const date = new Date(randomRecentDate())
@@ -54,10 +81,12 @@ const createMessages = (chats: DbChat[]) => {
 		})
 	})
 
-	return messages
+	localStorage.setItem(COOKIE__MESSAGES, JSON.stringify(messages))
+
+	_dbMessages = messages
 }
 
-const addSubchats = (message: DbMessage, messages: DbMessage[]) => {
+export const addSubchats = (message: DbMessage, messages: DbMessage[]) => {
 	const roles: MessageRole[] = message.role === 'user' ? ['agent', 'user'] : ['user', 'agent']
 
 	randomArray(1, 30).forEach((_, index: number) => {
@@ -72,9 +101,4 @@ const addSubchats = (message: DbMessage, messages: DbMessage[]) => {
 	})
 }
 
-export const DB__CHATS: DbChat[] = createChats()
-export const DB__MESSAGES: DbMessage[] = createMessages(DB__CHATS)
-
-export const getChatSize = (chat: DbChat) => {
-	return DB__MESSAGES.filter((message: DbMessage) => message.parentId === chat.id).length
-}
+export { getDbChats, getDbMessages, initChats, initMessages, resetDbChats, resetDbMessages }

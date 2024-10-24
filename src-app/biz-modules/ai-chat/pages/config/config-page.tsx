@@ -109,10 +109,12 @@ export const ConfigPage = () => {
 		<AppLayout blank>
 			<div className="mb-sm-0 flex items-center lg:mb-sm-3">
 				<h1 className="flex items-center">
-					<span className="text-size-xl font-weight-lg lg:text-size-xxl">{t('aiChat.chats')}</span>
-					<span className="ml-xs-4 mt-xs-1 text-size-md font-weight-md text-color-text-subtle lg:text-size-lg">
-						({allChatsPagination.count})
-					</span>
+					<span className="mr-xs-4 text-size-xl font-weight-lg lg:text-size-xxl">{t('aiChat.chats')}</span>
+					{allChatsPagination.count > 0 && (
+						<span className="mt-xs-1 text-size-md font-weight-md text-color-text-subtle lg:text-size-lg">
+							({allChatsPagination.count})
+						</span>
+					)}
 				</h1>
 
 				<DatabaseReset />
