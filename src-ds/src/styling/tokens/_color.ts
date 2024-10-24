@@ -58,8 +58,9 @@ export const TOKENS__COLOR = {
 	'white-glass-8': { $value: 'rgba(255, 255, 255, 0.64)', $css: '--ds-color-white-glass-8' },
 	'white-glass-9': { $value: 'rgba(255, 255, 255, 0.72)', $css: '--ds-color-white-glass-9' },
 
-	'bg-default': { $ref: { light: 'white', dark: 'grey-8' }, $css: '--ds-color-bg-default' },
-	'bg-field': { $ref: { light: 'white', dark: 'grey-9' }, $css: '--ds-color-bg-field' },
+	'bg-default': { $ref: { light: 'grey-0', dark: 'grey-8' }, $css: '--ds-color-bg-default' },
+	'bg-card': { $ref: { light: 'white', dark: 'grey-7' }, $css: '--ds-color-bg-card' },
+	'bg-field': { $ref: { light: 'grey-1', dark: 'grey-9' }, $css: '--ds-color-bg-field' },
 	'bg-preview': { $ref: { light: 'black-glass-1', dark: 'black-glass-3' }, $css: '--ds-color-bg-preview' },
 	'bg-scrollbar': { $ref: { light: 'black-glass-2', dark: 'white-glass-2' }, $css: '--ds-color-bg-scrollbar' },
 	'bg-scrollbar-hover': {

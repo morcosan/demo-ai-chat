@@ -9,6 +9,7 @@ type MuiCloseReason = 'backdropClick' | 'escapeKeyDown'
 export const MuiImpl = (rawProps: ModalProps) => {
 	const {
 		ANIM_TIME__SHOW,
+		ANIM_TIME__HIDE,
 		calcZIndex,
 		calcWrapperPXY,
 		cssModalBase,
@@ -45,6 +46,9 @@ export const MuiImpl = (rawProps: ModalProps) => {
 	const onClose = (_: object, reason: MuiCloseReason) => {
 		if (reason === 'escapeKeyDown') props.onClose?.()
 		if (reason === 'backdropClick') !props.persistent && props.onClose?.()
+
+		// Material doesn't have onClosed event
+		wait(ANIM_TIME__HIDE).then(() => props.onClosed?.())
 	}
 
 	useEffect(() => {
@@ -58,7 +62,7 @@ export const MuiImpl = (rawProps: ModalProps) => {
 			className={props.className}
 			style={props.style}
 			sx={cssWrapper}
-			slotProps={{ backdrop: { onEntered: props.onOpen } }}
+			slotProps={{ backdrop: { onEntered: props.onOpened } }}
 			onClose={onClose}
 		>
 			<div tabIndex={-1} className={props.className} style={props.style} css={[cssModal]}>

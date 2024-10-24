@@ -1,4 +1,4 @@
-import { AiChatNavSearchModal } from '@app/biz-modules/ai-chat/nav-search-modal'
+import { AiChatSearchModal } from '@app/biz-modules/ai-chat/nav/search-modal'
 import { AiChatView, useAiChatLayout } from '@app/biz-modules/ai-chat/state'
 import { I18nModal } from '@app/core-modules/i18n-modal'
 import { SettingsMenu } from '@app/layouts/navbar/_settings-menu'
@@ -9,15 +9,20 @@ import { MobileNavMenu } from './navbar/mobile-nav-menu'
 import { MobileNavbar } from './navbar/mobile-navbar'
 
 interface Props extends ReactProps {
-	pageClassName?: string
+	blank?: boolean
 }
 
-export const AppLayout = ({ pageClassName, children }: Props) => {
+export const AppLayout = ({ blank, children }: Props) => {
 	const { isViewportMaxLG } = useUiViewport()
 	const { activeView, setActiveView } = useAiChatLayout()
 	const [showsI18nModal, setShowsI18nModal] = useState(false)
 	const [showsNavMenu, setShowsNavMenu] = useState(false)
 	const [showsSettingsMenu, setShowsSettingsMenu] = useState(false)
+
+	const contentClass = cx({
+		'flex flex-col px-xs-8 pb-sm-5 pt-xs-7 md:px-sm-5 lg:mx-auto lg:max-w-xxl-2 lg:pb-sm-9 lg:pt-sm-3': blank,
+		'flex h-full w-full': !blank,
+	})
 
 	const onToggleNavMenu = () => {
 		setShowsNavMenu(!showsNavMenu)
@@ -44,7 +49,7 @@ export const AppLayout = ({ pageClassName, children }: Props) => {
 			{isViewportMaxLG ? (
 				<MobileNavbar hasMenu={showsNavMenu} onToggleNavMenu={onToggleNavMenu} />
 			) : (
-				<DesktopNavbar onClickLanguage={() => setShowsI18nModal(true)} />
+				<DesktopNavbar unselected={blank} onClickLanguage={() => setShowsI18nModal(true)} />
 			)}
 
 			{/* MENU OVERLAY */}
@@ -66,16 +71,22 @@ export const AppLayout = ({ pageClassName, children }: Props) => {
 				{showsSettingsMenu ? (
 					<SettingsMenu onClickBack={onToggleSettings} onClickLanguage={() => setShowsI18nModal(true)} />
 				) : (
-					<MobileNavMenu onHideNavMenu={() => setShowsNavMenu(false)} onToggleSettings={onToggleSettings} />
+					<MobileNavMenu
+						unselected={blank}
+						onHideNavMenu={() => setShowsNavMenu(false)}
+						onToggleSettings={onToggleSettings}
+					/>
 				)}
 			</div>
 
 			{/* PAGE CONTENT */}
-			<div className={cx('h-full w-full flex-1', pageClassName)}>{children}</div>
+			<div className="h-full w-full flex-1 overflow-x-hidden">
+				<div className={contentClass}>{children}</div>
+			</div>
 
 			{/* MODALS */}
 			<I18nModal opened={showsI18nModal} onClose={() => setShowsI18nModal(false)} />
-			<AiChatNavSearchModal />
+			<AiChatSearchModal />
 		</div>
 	)
 }

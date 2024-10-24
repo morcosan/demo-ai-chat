@@ -23,8 +23,9 @@ export const story: StoryObj<typeof Modal> = {
 		className: '',
 		style: {},
 		// Events
-		onOpen: action('onOpen'),
+		onOpened: action('onOpened'),
 		onClose: action('onClose'),
+		onClosed: action('onClosed'),
 	},
 }
 story.storyName = 'Modal'
@@ -43,7 +44,7 @@ const meta: Meta<typeof Modal> = {
 			noFooter: 'boolean',
 		},
 		['slotTitle', 'slotButtons', 'children'],
-		['onOpen', 'onClose']
+		['onOpened', 'onClose', 'onClosed']
 	),
 
 	component: function Story(props: ModalProps) {
@@ -107,12 +108,16 @@ const meta: Meta<typeof Modal> = {
 		]
 		const EVENTS: DocsEventDef[] = [
 			{
-				name: 'onOpen',
+				name: 'onOpened',
 				details: `Event emitted when modal is opened (after the transition animation)`,
 			},
 			{
 				name: 'onClose',
 				details: `Event emitted when any close button is clicked or when ^Escape^ key is pressed`,
+			},
+			{
+				name: 'onClosed',
+				details: `Event emitted when modal is closed (after the transition animation)`,
 			},
 		]
 		const TYPES = `

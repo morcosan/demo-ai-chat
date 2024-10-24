@@ -64,8 +64,9 @@
 
 :host,
 :root {
-	--ds-color-bg-default: var(--ds-color-white);
-	--ds-color-bg-field: var(--ds-color-grey-0);
+	--ds-color-bg-default: var(--ds-color-grey-0);
+	--ds-color-bg-card: var(--ds-color-white);
+	--ds-color-bg-field: var(--ds-color-grey-1);
 	--ds-color-bg-preview: var(--ds-color-grey-1);
 	--ds-color-bg-scrollbar: var(--ds-color-black-glass-2);
 	--ds-color-bg-scrollbar-hover: var(--ds-color-black-glass-3);
@@ -114,6 +115,7 @@
 
 [data-color-theme='dark'] {
 	--ds-color-bg-default: var(--ds-color-grey-8);
+	--ds-color-bg-card: var(--ds-color-grey-7);
 	--ds-color-bg-field: var(--ds-color-grey-9);
 	--ds-color-bg-preview: var(--ds-color-black-glass-3);
 	--ds-color-bg-scrollbar: var(--ds-color-white-glass-2);

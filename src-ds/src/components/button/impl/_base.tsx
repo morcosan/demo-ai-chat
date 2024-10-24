@@ -176,6 +176,7 @@ export const useButtonBase = (rawProps: ButtonProps) => {
 		title: props.tooltip,
 		style: props.style,
 		className: props.className,
+		'aria-description': props.ariaDescription,
 	}
 
 	return {

@@ -39,7 +39,7 @@ export const useChatStore = (allChatsStore: AllChatsStore): ChatStore => {
 	const [chatLoading, setChatLoading] = useState<ListLoading>(false)
 	const [shouldRename, setShouldRename] = useState(false)
 
-	const canLoadChatMessages = !chatMessages.length || chatMessages.length < chatPagination.count
+	const canLoadChatMessages = !chatPagination.page || chatMessages.length < chatPagination.count
 
 	const loadActiveChat = async (chatId: number) => {
 		if (chatLoading || isNaN(chatId) || chatId === activeChat?.id) return
