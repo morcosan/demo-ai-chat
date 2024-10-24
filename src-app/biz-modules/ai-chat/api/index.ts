@@ -55,6 +55,17 @@ export const API = {
 			: { chats: [], count: 0 }
 	},
 
+	async deleteChats(chatIds: number[]): Promise<ChatListing> {
+		const query: ChatsApiQuery = { chatIds: (chatIds || []).join(',') }
+		const resp = await chatsAPI.delete<ChatsApiData>('/api/chats', query)
+
+		clearDataCache('/api/chats')
+
+		return resp.status === STATUS__SUCCESS && resp.data
+			? { chats: [], count: resp.data.count }
+			: { chats: [], count: 0 }
+	},
+
 	async getSubchats(chatId?: number, subchatIds?: number[], page?: number): Promise<SubchatListing> {
 		const query: SubchatsApiQuery = {
 			count: 20,

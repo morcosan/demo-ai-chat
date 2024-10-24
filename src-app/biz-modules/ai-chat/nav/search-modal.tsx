@@ -1,13 +1,13 @@
 import { Button, Modal, SearchSvg, TextField, TextFieldRef } from '@ds/release'
 import { debounce } from 'lodash'
 import { useCallback, useMemo, useRef, useState } from 'react'
-import { MIN_SEARCH_LENGTH } from './api'
-import { SearchResultItem } from './components/items/search-result-item'
-import { LoadingText } from './components/loading-text'
-import { StickyToolbar } from './components/sticky-toolbar'
-import { SearchResult, useAiChatSearch } from './state'
+import { MIN_SEARCH_LENGTH } from '../api'
+import { SearchResultItem } from '../components/items/search-result-item'
+import { LoadingText } from '../components/loading-text'
+import { StickyToolbar } from '../components/sticky-toolbar'
+import { SearchResult, useAiChatSearch } from '../state'
 
-export const AiChatNavSearchModal = () => {
+export const AiChatSearchModal = () => {
 	const {
 		showsSearch,
 		searchPagination,
@@ -66,7 +66,7 @@ export const AiChatNavSearchModal = () => {
 			width="lg"
 			slotTitle={slotTitle}
 			noFooter
-			onOpen={() => searchRef.current?.focus()}
+			onOpened={() => searchRef.current?.focus()}
 			onClose={() => setShowsSearch(false)}
 		>
 			{!searchKeyword ? (

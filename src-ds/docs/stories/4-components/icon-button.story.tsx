@@ -16,6 +16,7 @@ export const story: StoryObj<typeof IconButton> = {
 		disabled: false,
 		linkHref: '',
 		linkType: 'internal',
+		ariaDescription: 'Example description',
 		// Html
 		className: '',
 		style: {},
@@ -39,6 +40,7 @@ const meta: Meta<typeof IconButton> = {
 			disabled: 'boolean',
 			linkHref: 'text',
 			linkType: ['internal', 'external', 'inactive'],
+			ariaDescription: 'text',
 		},
 		[],
 		['onClick']
@@ -107,6 +109,11 @@ const meta: Meta<typeof IconButton> = {
 					^external^ creates an ^<a>^ link that opens in new tab
 					^inactive^ creates an ^<a>^ link without any behavior
 				`,
+			},
+			{
+				name: 'ariaDescription',
+				type: 'string',
+				details: `Text used by screen reader as description for the button`,
 			},
 		]
 		const EVENTS: DocsEventDef[] = [
