@@ -22,6 +22,7 @@ export const ConfigPage = () => {
 	const [chatsToDelete, setChatsToDelete] = useState<Chat[]>([])
 	const [chatIdsToRename, setChatIdsToRename] = useState<number[]>([])
 	const [showsDeleteModal, setShowsDeleteModal] = useState(false)
+	const [showsRebuildModal, setShowsRebuildModal] = useState(false)
 
 	const bulkChecked = selectedChats.length === allChats.length ? true : selectedChats.length === 0 ? false : null
 	const bulkTooltip = bulkChecked === true ? t('core.action.deselectAll') : t('core.action.selectAll')
@@ -95,7 +96,7 @@ export const ConfigPage = () => {
 
 	const slotChatsToDelete = useMemo(
 		() => (
-			<ul className="mb-xs-3 flex flex-col gap-xs-4">
+			<ul className="flex flex-col gap-xs-4">
 				{chatsToDelete.map((chat: Chat) => (
 					<ChatConfigItem key={chat.id} chat={chat} />
 				))}
@@ -106,12 +107,18 @@ export const ConfigPage = () => {
 
 	return (
 		<AppLayout blank>
-			<h1 className="mb-sm-0 flex items-center lg:mb-sm-3">
-				<span className="text-size-xl font-weight-lg lg:text-size-xxl">{t('aiChat.chats')}</span>
-				<span className="ml-xs-4 mt-xs-1 text-size-md font-weight-md text-color-text-subtle lg:text-size-lg">
-					({allChatsPagination.count})
-				</span>
-			</h1>
+			<div className="mb-sm-0 flex items-center lg:mb-sm-3">
+				<h1 className="flex items-center">
+					<span className="text-size-xl font-weight-lg lg:text-size-xxl">{t('aiChat.chats')}</span>
+					<span className="ml-xs-4 mt-xs-1 text-size-md font-weight-md text-color-text-subtle lg:text-size-lg">
+						({allChatsPagination.count})
+					</span>
+				</h1>
+
+				<Button variant="ghost-danger" size="sm" className="ml-auto" onClick={() => setShowsRebuildModal(true)}>
+					{t('aiChat.action.rebuildDatabase')}
+				</Button>
+			</div>
 
 			{allChatsLoading !== 'full' && allChats.length > 0 && (
 				<>
@@ -159,7 +166,7 @@ export const ConfigPage = () => {
 				</div>
 			)}
 
-			{/* MODAL */}
+			{/* DELETE MODAL */}
 			<Modal
 				opened={Boolean(chatsToDelete.length && showsDeleteModal)}
 				slotTitle={t('aiChat.action.confirmDeleteChats')}
@@ -171,11 +178,32 @@ export const ConfigPage = () => {
 				onClose={() => setShowsDeleteModal(false)}
 				onClosed={() => setChatsToDelete([])}
 			>
-				<div className={cx('mb-xs-8 flex items-center py-xs-3', 'rounded-sm text-color-danger')}>
+				<div className="mb-xs-8 flex items-center text-color-danger">
 					<WarningSvg className="mr-xs-4 w-xs-8" />
 					{t('aiChat.deleteChatsWarning')}
 				</div>
 				{slotChatsToDelete}
+			</Modal>
+
+			{/* REBUILD MODAL */}
+			<Modal
+				opened={showsRebuildModal}
+				slotTitle={t('aiChat.action.confirmRebuildDatabase')}
+				slotButtons={
+					<Button variant="solid-danger" onClick={onConfirmDelete}>
+						{t('aiChat.action.deleteAndRebuild')}
+					</Button>
+				}
+				onClose={() => setShowsRebuildModal(false)}
+			>
+				<div className="flex items-center text-color-danger">
+					<WarningSvg className="mr-xs-4 w-xs-8" />
+					{t('aiChat.rebuildDatabaseWarning')}
+				</div>
+				<div className="flex items-center">
+					<WarningSvg className="mr-xs-4 w-xs-8" />
+					{t('aiChat.rebuildDatabaseWarning2')}
+				</div>
 			</Modal>
 		</AppLayout>
 	)
