@@ -7,7 +7,7 @@ import { Checkbox } from '../../components/checkbox'
 import { ChatConfigItem } from '../../components/items/chat-config-item'
 import { LoadingText } from '../../components/loading-text'
 import { useAiChat } from '../../state'
-import { DatabaseReset } from './_database-reset'
+import { DbReset } from './_db-reset'
 
 export const ConfigPage = () => {
 	const {
@@ -110,7 +110,7 @@ export const ConfigPage = () => {
 			<div className="mb-sm-0 flex items-center lg:mb-sm-3">
 				<h1 className="flex items-center">
 					<span className="mr-xs-4 text-size-xl font-weight-lg lg:text-size-xxl">{t('aiChat.chats')}</span>
-					
+
 					{allChatsPagination.count > 0 && (
 						<span className="mt-xs-1 text-size-md font-weight-md text-color-text-subtle lg:text-size-lg">
 							({allChatsPagination.count})
@@ -118,7 +118,7 @@ export const ConfigPage = () => {
 					)}
 				</h1>
 
-				<DatabaseReset />
+				{(ENV__BUILD_MODE === 'local' || ENV__BUILD_MODE === 'dev') && <DbReset />}
 			</div>
 
 			{allChatsLoading !== 'full' && allChats.length > 0 && (

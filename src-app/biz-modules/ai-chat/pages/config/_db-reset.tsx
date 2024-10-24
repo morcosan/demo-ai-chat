@@ -3,7 +3,7 @@ import { useState } from 'react'
 import { API } from '../../api'
 import { LoadingText } from '../../components/loading-text'
 
-export const DatabaseReset = () => {
+export const DbReset = () => {
 	const [showsConfirm, setShowsConfirm] = useState(false)
 	const [showsLoading, setShowsLoading] = useState(false)
 
@@ -18,27 +18,27 @@ export const DatabaseReset = () => {
 		<>
 			{/* BUTTON */}
 			<Button variant="ghost-danger" size="sm" className="ml-auto" onClick={() => setShowsConfirm(true)}>
-				{t('aiChat.action.rebuildDatabase')}
+				Rebuild DB
 			</Button>
 
 			{/* MODAL */}
 			<Modal
 				opened={showsConfirm}
-				slotTitle={t('aiChat.action.confirmRebuildDatabase')}
+				slotTitle="Confirm rebuilding database"
 				slotButtons={
 					<Button variant="solid-danger" onClick={onConfirmRebuild}>
-						{t('aiChat.action.deleteAndRebuild')}
+						Delete & rebuild
 					</Button>
 				}
 				onClose={() => setShowsConfirm(false)}
 			>
 				<div className="flex items-center text-color-danger">
 					<WarningSvg className="mr-xs-4 w-xs-8" />
-					{t('aiChat.rebuildDatabaseWarning')}
+					All chats and messages will be permanently deleted
 				</div>
 				<div className="flex items-center">
 					<WarningSvg className="mr-xs-4 w-xs-8" />
-					{t('aiChat.rebuildDatabaseWarning2')}
+					New random chats and messages will be created
 				</div>
 			</Modal>
 
