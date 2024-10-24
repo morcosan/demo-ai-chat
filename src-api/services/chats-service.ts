@@ -235,4 +235,8 @@ export const chatsService = {
 			},
 		}
 	},
+
+	async postDatabase(): Promise<ApiResponse> {
+		return { status: STATUS__SUCCESS, data: null }
+	},
 }

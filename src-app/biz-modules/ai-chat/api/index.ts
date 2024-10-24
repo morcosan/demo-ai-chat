@@ -110,4 +110,10 @@ export const API = {
 			? { messages: resp.data.items.map(mapDtoToMessage), count: resp.data.count }
 			: { messages: [], count: 0 }
 	},
+
+	async rebuildDatabase(): Promise<boolean> {
+		const resp = await chatsAPI.post('/api/database', {})
+
+		return resp.status === STATUS__SUCCESS
+	},
 }

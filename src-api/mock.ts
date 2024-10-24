@@ -21,6 +21,7 @@ export const mockAPI = {
 
 		if (path === '/api/chats') resp = await chatsService.postChat(payload)
 		if (path === '/api/messages') resp = await chatsService.postMessage(payload)
+		if (path === '/api/database') resp = await chatsService.postDatabase()
 
 		resp = await applyNetwork(resp)
 		LOG_DEV('POST', path, payload, resp)

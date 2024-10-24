@@ -7,6 +7,7 @@ import { Checkbox } from '../../components/checkbox'
 import { ChatConfigItem } from '../../components/items/chat-config-item'
 import { LoadingText } from '../../components/loading-text'
 import { useAiChat } from '../../state'
+import { DatabaseReset } from './_database-reset'
 
 export const ConfigPage = () => {
 	const {
@@ -22,7 +23,6 @@ export const ConfigPage = () => {
 	const [chatsToDelete, setChatsToDelete] = useState<Chat[]>([])
 	const [chatIdsToRename, setChatIdsToRename] = useState<number[]>([])
 	const [showsDeleteModal, setShowsDeleteModal] = useState(false)
-	const [showsRebuildModal, setShowsRebuildModal] = useState(false)
 
 	const bulkChecked = selectedChats.length === allChats.length ? true : selectedChats.length === 0 ? false : null
 	const bulkTooltip = bulkChecked === true ? t('core.action.deselectAll') : t('core.action.selectAll')
@@ -115,9 +115,7 @@ export const ConfigPage = () => {
 					</span>
 				</h1>
 
-				<Button variant="ghost-danger" size="sm" className="ml-auto" onClick={() => setShowsRebuildModal(true)}>
-					{t('aiChat.action.rebuildDatabase')}
-				</Button>
+				<DatabaseReset />
 			</div>
 
 			{allChatsLoading !== 'full' && allChats.length > 0 && (
@@ -183,27 +181,6 @@ export const ConfigPage = () => {
 					{t('aiChat.deleteChatsWarning')}
 				</div>
 				{slotChatsToDelete}
-			</Modal>
-
-			{/* REBUILD MODAL */}
-			<Modal
-				opened={showsRebuildModal}
-				slotTitle={t('aiChat.action.confirmRebuildDatabase')}
-				slotButtons={
-					<Button variant="solid-danger" onClick={onConfirmDelete}>
-						{t('aiChat.action.deleteAndRebuild')}
-					</Button>
-				}
-				onClose={() => setShowsRebuildModal(false)}
-			>
-				<div className="flex items-center text-color-danger">
-					<WarningSvg className="mr-xs-4 w-xs-8" />
-					{t('aiChat.rebuildDatabaseWarning')}
-				</div>
-				<div className="flex items-center">
-					<WarningSvg className="mr-xs-4 w-xs-8" />
-					{t('aiChat.rebuildDatabaseWarning2')}
-				</div>
 			</Modal>
 		</AppLayout>
 	)
