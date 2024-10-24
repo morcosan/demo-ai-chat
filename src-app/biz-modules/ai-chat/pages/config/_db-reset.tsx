@@ -18,16 +18,16 @@ export const DbReset = () => {
 		<>
 			{/* BUTTON */}
 			<Button variant="ghost-danger" size="sm" className="ml-auto" onClick={() => setShowsConfirm(true)}>
-				Rebuild DB
+				Reset DB
 			</Button>
 
 			{/* MODAL */}
 			<Modal
 				opened={showsConfirm}
-				slotTitle="Confirm rebuilding database"
+				slotTitle="Confirm resetting database"
 				slotButtons={
 					<Button variant="solid-danger" onClick={onConfirmRebuild}>
-						Delete & rebuild
+						Reset and refresh
 					</Button>
 				}
 				onClose={() => setShowsConfirm(false)}
