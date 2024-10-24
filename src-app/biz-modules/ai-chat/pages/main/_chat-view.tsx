@@ -2,13 +2,13 @@ import { useUiTheme } from '@ds/release'
 import { debounce } from 'lodash'
 import { UIEvent, useEffect, useMemo } from 'react'
 import { useNavigate, useParams, useSearchParams } from 'react-router-dom'
-import { Message } from '../api'
-import { MessageItem } from '../components/items/message-item'
-import { LoadingText } from '../components/loading-text'
-import { NewMessageField } from '../components/new-message-field'
-import { StickyToolbar } from '../components/sticky-toolbar'
-import { useScrollable } from '../hooks/scrollable'
-import { useAiChat } from '../state'
+import { Message } from '../../api'
+import { MessageItem } from '../../components/items/message-item'
+import { LoadingText } from '../../components/loading-text'
+import { NewMessageField } from '../../components/new-message-field'
+import { StickyToolbar } from '../../components/sticky-toolbar'
+import { useScrollable } from '../../hooks/scrollable'
+import { useAiChat } from '../../state'
 
 export const ChatView = () => {
 	const {
@@ -68,9 +68,9 @@ export const ChatView = () => {
 
 	useEffect(() => {
 		// Navigate to new chat
-		if (!activeChat || !activeChat.id) return
-		if (activeChat.id === chatId) return
-		navigate(`/chat/${activeChat.id}`)
+		if ((isNaN(chatId) || !chatId) && activeChat?.id) {
+			navigate(`/chat/${activeChat.id}`)
+		}
 	}, [activeChat])
 
 	const slotMessages = useMemo(

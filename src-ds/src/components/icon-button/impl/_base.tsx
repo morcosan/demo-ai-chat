@@ -117,6 +117,7 @@ export const useIconButtonBase = (rawProps: IconButtonProps) => {
 		title: props.tooltip,
 		style: props.style,
 		className: props.className,
+		'aria-description': props.ariaDescription,
 	}
 
 	return {
