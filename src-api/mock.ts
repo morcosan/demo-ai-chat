@@ -43,6 +43,7 @@ export const mockAPI = {
 		let resp = RESP__NOT_FOUND
 
 		if (path === '/api/chats') resp = await chatsService.deleteChats(query)
+		if (path === '/api/database') resp = await chatsService.deleteDatabase()
 
 		resp = await applyNetwork(resp)
 		LOG_DEV('DELETE', path, query, resp)

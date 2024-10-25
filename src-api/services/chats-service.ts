@@ -1,5 +1,5 @@
 import { addMinutesToDate } from '@api/utilities/various'
-import { randomId, randomInt, randomLongText, randomText } from '@utils/release'
+import { randomInt, randomLongText, randomText } from '@utils/release'
 import {
 	ApiResponse,
 	ChatsApiData,
@@ -18,7 +18,16 @@ import {
 import { RESP__NOT_FOUND } from '../utilities/network'
 import { extractInt, extractIntArray, isGreaterThanZero } from '../utilities/parsers'
 import { isValidPagination } from '../utilities/validators'
-import { DB__CHATS, DB__MESSAGES, getChatSize } from './_db'
+import {
+	getDbChats,
+	getDbMessages,
+	getNextId,
+	getSizeForChat,
+	resetDbChats,
+	resetDbMessages,
+	setDbChats,
+	setDbMessages,
+} from './db'
 
 const DEFAULT_COUNT = 10
 const DEFAULT_PAGE = 1
@@ -28,25 +37,24 @@ export const chatsService = {
 		const page = extractInt(query.page, DEFAULT_PAGE, isGreaterThanZero)
 		const count = extractInt(query.count, DEFAULT_COUNT, isGreaterThanZero)
 		const chatIds = extractIntArray(query.chatIds, isGreaterThanZero)
-		const search = query.search?.toLowerCase()
+		const search = query.search?.trim().toLowerCase()
+		const dbChats = getDbChats()
 
 		if (chatIds.length) {
-			const chats = DB__CHATS.filter((chat: DbChat) => chatIds.includes(chat.id))
+			const chats = dbChats.filter((chat: DbChat) => chatIds.includes(chat.id))
 
 			return {
 				status: STATUS__SUCCESS,
 				data: {
 					count: chats.length,
-					items: chats.map((chat: DbChat) => ({ ...chat, size: getChatSize(chat) })),
+					items: chats.map((chat: DbChat) => ({ ...chat, size: getSizeForChat(chat) })),
 				},
 			}
 		} else {
-			const chats = search
-				? DB__CHATS.filter((chat: DbChat) => chat.title.toLowerCase().includes(search))
-				: DB__CHATS
+			const chats = search ? dbChats.filter((chat: DbChat) => chat.title.toLowerCase().includes(search)) : dbChats
 
-			if (!isValidPagination(page, count, DB__CHATS.length)) {
-				return { ...RESP__NOT_FOUND, error: `Page ${page} not found for ${DB__CHATS.length} chats` }
+			if (!isValidPagination(page, count, dbChats.length)) {
+				return { ...RESP__NOT_FOUND, error: `Page ${page} not found for ${dbChats.length} chats` }
 			}
 
 			const pageChats = chats.slice(count * (page - 1), count * page)
@@ -55,57 +63,64 @@ export const chatsService = {
 				status: STATUS__SUCCESS,
 				data: {
 					count: chats.length,
-					items: pageChats.map((chat: DbChat) => ({ ...chat, size: getChatSize(chat) })),
+					items: pageChats.map((chat: DbChat) => ({ ...chat, size: getSizeForChat(chat) })),
 				},
 			}
 		}
 	},
 
 	async postChat(payload: ChatsApiPayload): Promise<ApiResponse<ChatsApiData>> {
-		const { title } = payload
+		const title = payload.title
 
 		if (!title) return { ...RESP__NOT_FOUND, error: `Title is empty` }
 
 		const chat: DbChat = {
-			id: randomId(),
+			id: getNextId(),
 			title: title,
 			createdAt: new Date().toISOString(),
 		}
-		DB__CHATS.unshift(chat)
+		setDbChats([chat, ...getDbChats()])
 
 		return {
 			status: STATUS__SUCCESS,
-			data: { count: 1, items: [{ ...chat, size: getChatSize(chat) }] },
+			data: { count: 1, items: [{ ...chat, size: getSizeForChat(chat) }] },
 		}
 	},
 
 	async putChat(payload: ChatsApiPayload): Promise<ApiResponse<ChatsApiData>> {
-		const { chatId, title } = payload
+		const title = payload.title
+		const chatId = extractInt(payload.chatId, 0, isGreaterThanZero)
+		const dbChats = getDbChats()
 
-		const chat = DB__CHATS.find((chat: DbChat) => chat.id === chatId)
+		const chat = dbChats.find((chat: DbChat) => chat.id === chatId)
 		if (!chat) return { ...RESP__NOT_FOUND, error: `Chat ID ${chatId} not found` }
 
 		chat.title = title || randomText()
 
+		setDbChats(dbChats)
+
 		return {
 			status: STATUS__SUCCESS,
-			data: { count: 1, items: [{ ...chat, size: getChatSize(chat) }] },
+			data: { count: 1, items: [{ ...chat, size: getSizeForChat(chat) }] },
 		}
 	},
 
 	async deleteChats(query: ChatsApiQuery): Promise<ApiResponse<ChatsApiData>> {
 		const chatIds = extractIntArray(query.chatIds, isGreaterThanZero)
+		const dbChats = getDbChats()
 
 		chatIds.forEach((chatId: number) => {
-			const index = DB__CHATS.findIndex((chat: DbChat) => chat.id === chatId)
+			const index = dbChats.findIndex((chat: DbChat) => chat.id === chatId)
 			if (index > -1) {
-				DB__CHATS.splice(index, 1)
+				dbChats.splice(index, 1)
 			}
 		})
 
+		setDbChats(dbChats)
+
 		return {
 			status: STATUS__SUCCESS,
-			data: { count: DB__CHATS.length, items: [] },
+			data: { count: dbChats.length, items: [] },
 		}
 	},
 
@@ -114,17 +129,18 @@ export const chatsService = {
 		const count = extractInt(query.count, DEFAULT_COUNT, isGreaterThanZero)
 		const chatId = extractInt(query.chatId, 0, isGreaterThanZero)
 		const subchatIds = extractIntArray(query.subchatIds, isGreaterThanZero)
+		const dbMessages = getDbMessages()
 
 		const dtoFn = (message: DbMessage): SubchatDTO => ({
 			id: message.id,
 			chatId: message.chatId,
 			text: message.text,
-			size: (DB__MESSAGES.filter((other: DbMessage) => other.parentId === message.id).length || -1) + 1,
+			size: (dbMessages.filter((other: DbMessage) => other.parentId === message.id).length || -1) + 1,
 			createdAt: message.createdAt,
 		})
 
 		if (subchatIds.length) {
-			const items = DB__MESSAGES.filter((message: DbMessage) => subchatIds.includes(message.id)).map(dtoFn)
+			const items = dbMessages.filter((message: DbMessage) => subchatIds.includes(message.id)).map(dtoFn)
 
 			return {
 				status: STATUS__SUCCESS,
@@ -133,7 +149,7 @@ export const chatsService = {
 		} else {
 			if (!chatId) return { ...RESP__NOT_FOUND, error: `Chat ID ${query.chatId} not found` }
 
-			const db = DB__MESSAGES.filter((message: DbMessage) => message.chatId === chatId)
+			const db = dbMessages.filter((message: DbMessage) => message.chatId === chatId)
 			const dbSubchatIds = db
 				.filter((msg: DbMessage) => msg.parentId !== chatId)
 				.map((msg: DbMessage) => msg.parentId)
@@ -158,12 +174,13 @@ export const chatsService = {
 		const count = extractInt(query.count, DEFAULT_COUNT, isGreaterThanZero)
 		const chatId = extractInt(query.chatId, 0, isGreaterThanZero)
 		const subchatId = extractInt(query.subchatId, 0, isGreaterThanZero)
-		const search = query.search?.toLowerCase()
+		const search = query.search?.trim().toLowerCase()
+		const dbMessages = getDbMessages()
 		let allMessages
 		let pageMessages
 
 		if (search) {
-			allMessages = DB__MESSAGES.filter((message: DbMessage) => message.text.toLowerCase().includes(search))
+			allMessages = dbMessages.filter((message: DbMessage) => message.text.toLowerCase().includes(search))
 
 			if (!isValidPagination(page, count, allMessages.length)) {
 				return { ...RESP__NOT_FOUND, error: `Page ${page} not found for ${allMessages.length} messages` }
@@ -173,7 +190,7 @@ export const chatsService = {
 		} else {
 			if (!chatId) return { ...RESP__NOT_FOUND, error: `Chat ID ${query.chatId} not found` }
 
-			const db = DB__MESSAGES.filter((message: DbMessage) => message.chatId === chatId)
+			const db = dbMessages.filter((message: DbMessage) => message.chatId === chatId)
 			allMessages = subchatId
 				? db.filter((message: DbMessage) => message.id === subchatId || message.parentId === subchatId)
 				: db.filter((message: DbMessage) => message.parentId === chatId)
@@ -191,25 +208,28 @@ export const chatsService = {
 				count: allMessages.length,
 				items: pageMessages.map((message: DbMessage) => ({
 					...message,
-					subchatSize: (DB__MESSAGES.filter((other: DbMessage) => other.parentId === message.id).length || -1) + 1,
+					subchatSize: (dbMessages.filter((other: DbMessage) => other.parentId === message.id).length || -1) + 1,
 				})),
 			},
 		}
 	},
 
 	async postMessage(payload: MessagesApiPayload): Promise<ApiResponse<MessagesApiData>> {
-		const { chatId, subchatId, text } = payload
+		const text = payload.text
+		const chatId = extractInt(payload.chatId, 0, isGreaterThanZero)
+		const subchatId = extractInt(payload.subchatId, 0, isGreaterThanZero)
+		const dbMessages = getDbMessages()
 
 		if (!chatId) return { ...RESP__NOT_FOUND, error: `Chat ID ${chatId} not found` }
 		if (!text) return { ...RESP__NOT_FOUND, error: `Text is empty` }
 
 		if (subchatId) {
-			const exists = DB__MESSAGES.some((msg: DbMessage) => msg.chatId === chatId && msg.id === subchatId)
+			const exists = dbMessages.some((msg: DbMessage) => msg.chatId === chatId && msg.id === subchatId)
 			if (!exists) return { ...RESP__NOT_FOUND, error: `Subchat ID ${subchatId} not found` }
 		}
 
 		const userMessage: DbMessage = {
-			id: randomId(),
+			id: getNextId(),
 			chatId: chatId,
 			parentId: subchatId || chatId,
 			text: text,
@@ -217,7 +237,7 @@ export const chatsService = {
 			createdAt: new Date().toISOString(),
 		}
 		const agentMessage: DbMessage = {
-			id: randomId(),
+			id: getNextId(),
 			chatId: chatId,
 			parentId: subchatId || chatId,
 			text: `"${text}": ` + randomLongText(randomInt(1, 40)),
@@ -225,7 +245,7 @@ export const chatsService = {
 			createdAt: addMinutesToDate(userMessage.createdAt, 1).toISOString(),
 		}
 
-		DB__MESSAGES.push(userMessage, agentMessage)
+		setDbMessages([...dbMessages, userMessage, agentMessage])
 
 		return {
 			status: STATUS__SUCCESS,
@@ -234,5 +254,12 @@ export const chatsService = {
 				items: [userMessage, agentMessage].map((message: DbMessage) => ({ ...message, subchatSize: 0 })),
 			},
 		}
+	},
+
+	async deleteDatabase(): Promise<ApiResponse> {
+		resetDbChats()
+		resetDbMessages()
+
+		return { status: STATUS__SUCCESS, data: null }
 	},
 }
