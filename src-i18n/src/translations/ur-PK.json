@@ -2,12 +2,16 @@
 	"core": {
 		"action": {
 			"back": "واپس",
-			"backToHome": "ہوم پیج پر واپس جائیں",
+			"backToHome": "ہوم پر واپس جائیں",
 			"changeLanguage": "زبان تبدیل کریں",
 			"close": "بند کریں",
+			"delete": "حذف کریں",
+			"deselectAll": "سب کو نا منتخب کریں",
 			"openMenu": "مینو کھولیں",
+			"rename": "نام تبدیل کریں",
 			"search": "تلاش کریں",
 			"searchMore": "مزید نتائج دکھائیں",
+			"selectAll": "سب کو منتخب کریں",
 			"signOut": "سائن آؤٹ کریں"
 		},
 		"apiDocs": "API دستاویزات",
@@ -15,6 +19,7 @@
 		"custom": "حسب ضرورت",
 		"darkTheme": "ڈارک",
 		"default": "ڈیفالٹ",
+		"deleting": "حذف کیا جا رہا ہے...",
 		"designSystem": "ڈیزائن سسٹم",
 		"europe": "یورپ",
 		"githubRepo": "GitHub ریپوزٹری",
@@ -31,16 +36,22 @@
 	"aiChat": {
 		"action": {
 			"backToSubchats": "ذیلی چیٹس پر واپس جائیں",
+			"confirmDeleteChats": "چیٹس کی حذف کی تصدیق کریں",
+			"confirmRenameChat": "چیٹ کا نام تبدیل کرنے کی تصدیق کریں",
+			"deleteSelectedChats": "منتخب چیٹس کو حذف کریں",
+			"manageChats": "چیٹس کا انتظام کریں",
 			"openChat": "چیٹ کھولیں",
+			"openSubchat_zero": "ذیلی چیٹ بنائیں",
 			"openSubchat_one": "ذیلی چیٹ کھولیں ({count} پیغام)",
 			"openSubchat_other": "ذیلی چیٹ کھولیں ({count} پیغامات)",
-			"openSubchat_zero": "ذیلی چیٹ بنائیں",
+			"showMoreChats": "مزید چیٹس دکھائیں",
 			"showSubchats": "ذیلی چیٹس دکھائیں ({count})",
 			"startSearching_one": "کم از کم {count} حرف ٹائپ کریں",
 			"startSearching_other": "کم از کم {count} حروف ٹائپ کریں"
 		},
 		"chats": "چیٹس",
-		"inputPlaceholder": "ایک سوال پوچھیں...",
+		"deleteChatsWarning": "یہ چیٹس مستقل طور پر حذف ہو جائیں گی",
+		"inputPlaceholder": "سوال پوچھیں...",
 		"loadingChats": "چیٹس لوڈ ہو رہی ہیں...",
 		"loadingMessages": "پیغامات لوڈ ہو رہے ہیں...",
 		"loadingPreviousMessages": "پچھلے پیغامات لوڈ ہو رہے ہیں...",
@@ -48,12 +59,15 @@
 		"newChat": "نئی چیٹ",
 		"noChats": "کوئی چیٹ نہیں",
 		"noSubchats": "کوئی ذیلی چیٹ نہیں",
+		"renamePlaceholder": "خود بخود نیا نام بنائیں...",
 		"sendMessage": "پیغام بھیجیں",
 		"subchats": "ذیلی چیٹس",
-		"xMessages_one": "1 پیغام",
+		"xMessages_one": "{count} پیغام",
 		"xMessages_other": "{count} پیغامات",
-		"xSearchResults_zero": "کوئی تلاش کا نتیجہ نہیں",
-		"xSearchResults_one": "{count} تلاش کا نتیجہ",
-		"xSearchResults_other": "{count} تلاش کے نتائج"
+		"xSearchResults_zero": "کوئی نتیجہ نہیں",
+		"xSearchResults_one": "{count} نتیجہ",
+		"xSearchResults_other": "{count} نتائج",
+		"xSelectedMessages_one": "{count} / {total} پیغام منتخب",
+		"xSelectedMessages_other": "{count} / {total} پیغامات منتخب"
 	}
 }

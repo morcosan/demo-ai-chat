@@ -1,18 +1,19 @@
-import { AiChatSvg, Button, DotsSvg, IconButton, SearchSvg } from '@ds/release'
+import { AiChatSvg, Button, IconButton, SearchSvg, SettingsSvg } from '@ds/release'
 import { debounce } from 'lodash'
-import { UIEvent, useMemo } from 'react'
-import { Chat } from './api'
-import { ChatItem } from './components/items/chat-item'
-import { LoadingText } from './components/loading-text'
-import { useAiChat, useAiChatSearch } from './state'
+import { UIEvent, useEffect, useMemo } from 'react'
+import { Chat } from '../api'
+import { ChatItem } from '../components/items/chat-item'
+import { LoadingText } from '../components/loading-text'
+import { useAiChat, useAiChatSearch } from '../state'
 
 interface Props {
 	collapsed?: boolean
+	unselected?: boolean
 	onHideNavMenu?(): void
 }
 
-export const AiChatNavMenu = ({ collapsed, onHideNavMenu }: Props) => {
-	const { allChats, allChatsLoading, allChatsPagination, activeChat, loadMoreChats } = useAiChat()
+export const AiChatNavMenu = ({ collapsed, unselected, onHideNavMenu }: Props) => {
+	const { allChats, allChatsLoading, allChatsPagination, activeChat, loadMoreChats, resetActiveChat } = useAiChat()
 	const { setShowsSearch } = useAiChatSearch()
 
 	const onScrollChats = debounce((event: UIEvent) => {
@@ -22,6 +23,10 @@ export const AiChatNavMenu = ({ collapsed, onHideNavMenu }: Props) => {
 	}, 300)
 
 	const hasExtraChat = Boolean(activeChat && !allChats.some((chat: Chat) => chat.id === activeChat.id))
+
+	useEffect(() => {
+		unselected && activeChat && resetActiveChat()
+	}, [])
 
 	const slotChats = useMemo(
 		() => (
@@ -57,8 +62,14 @@ export const AiChatNavMenu = ({ collapsed, onHideNavMenu }: Props) => {
 					&nbsp;
 					{Boolean(allChatsPagination.count) && <span className="text-size-xs">({allChatsPagination.count})</span>}
 				</span>
-				<IconButton tooltip="Show options" size="sm" className={cx(collapsed && 'hidden')}>
-					<DotsSvg className="h-xs-8" />
+
+				<IconButton
+					tooltip={t('aiChat.action.manageChats')}
+					linkHref="/chats-config"
+					size="sm"
+					className={cx(collapsed && 'hidden')}
+				>
+					<SettingsSvg className="h-xs-6 text-color-text-subtle" />
 				</IconButton>
 			</div>
 
@@ -87,7 +98,7 @@ export const AiChatNavMenu = ({ collapsed, onHideNavMenu }: Props) => {
 						)}
 					</>
 				) : (
-					<div className="mt-xs-2 flex px-xs-4">{t('aiChat.noChats')}</div>
+					<div className="ml-button-px-item mt-xs-2 text-size-sm">{t('aiChat.noChats')}</div>
 				)}
 			</div>
 

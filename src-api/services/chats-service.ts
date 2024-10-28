@@ -93,6 +93,22 @@ export const chatsService = {
 		}
 	},
 
+	async deleteChats(query: ChatsApiQuery): Promise<ApiResponse<ChatsApiData>> {
+		const chatIds = extractIntArray(query.chatIds, isGreaterThanZero)
+
+		chatIds.forEach((chatId: number) => {
+			const index = DB__CHATS.findIndex((chat: DbChat) => chat.id === chatId)
+			if (index > -1) {
+				DB__CHATS.splice(index, 1)
+			}
+		})
+
+		return {
+			status: STATUS__SUCCESS,
+			data: { count: DB__CHATS.length, items: [] },
+		}
+	},
+
 	async getSubchats(query: SubchatsApiQuery): Promise<ApiResponse<SubchatsApiData>> {
 		const page = extractInt(query.page, DEFAULT_PAGE, isGreaterThanZero)
 		const count = extractInt(query.count, DEFAULT_COUNT, isGreaterThanZero)

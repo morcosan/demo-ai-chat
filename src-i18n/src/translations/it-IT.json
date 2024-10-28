@@ -5,9 +5,13 @@
 			"backToHome": "Torna alla home",
 			"changeLanguage": "Cambia lingua",
 			"close": "Chiudi",
+			"delete": "Elimina",
+			"deselectAll": "Deseleziona tutto",
 			"openMenu": "Apri menu",
+			"rename": "Rinomina",
 			"search": "Cerca",
-			"searchMore": "Mostra più risultati",
+			"searchMore": "Mostra altri risultati",
+			"selectAll": "Seleziona tutto",
 			"signOut": "Esci"
 		},
 		"apiDocs": "Documentazione API",
@@ -15,6 +19,7 @@
 		"custom": "Personalizzato",
 		"darkTheme": "Scuro",
 		"default": "Predefinito",
+		"deleting": "Eliminazione...",
 		"designSystem": "Sistema di design",
 		"europe": "Europa",
 		"githubRepo": "Repository GitHub",
@@ -31,15 +36,21 @@
 	"aiChat": {
 		"action": {
 			"backToSubchats": "Torna alle sottochat",
+			"confirmDeleteChats": "Conferma eliminazione chat",
+			"confirmRenameChat": "Conferma rinomina chat",
+			"deleteSelectedChats": "Elimina chat selezionate",
+			"manageChats": "Gestisci chat",
 			"openChat": "Apri chat",
+			"openSubchat_zero": "Crea sottochat",
 			"openSubchat_one": "Apri sottochat ({count} messaggio)",
 			"openSubchat_other": "Apri sottochat ({count} messaggi)",
-			"openSubchat_zero": "Crea sottochat",
+			"showMoreChats": "Mostra altre chat",
 			"showSubchats": "Mostra sottochat ({count})",
-			"startSearching_one": "Digita almeno {count} carattere",
-			"startSearching_other": "Digita almeno {count} caratteri"
+			"startSearching_one": "Inserisci almeno {count} carattere",
+			"startSearching_other": "Inserisci almeno {count} caratteri"
 		},
 		"chats": "Chat",
+		"deleteChatsWarning": "Queste chat verranno eliminate definitivamente",
 		"inputPlaceholder": "Fai una domanda...",
 		"loadingChats": "Caricamento chat...",
 		"loadingMessages": "Caricamento messaggi...",
@@ -48,12 +59,15 @@
 		"newChat": "Nuova chat",
 		"noChats": "Nessuna chat",
 		"noSubchats": "Nessuna sottochat",
+		"renamePlaceholder": "Genera automaticamente un nuovo nome...",
 		"sendMessage": "Invia messaggio",
 		"subchats": "Sottochat",
-		"xMessages_one": "1 messaggio",
+		"xMessages_one": "{count} messaggio",
 		"xMessages_other": "{count} messaggi",
-		"xSearchResults_zero": "Nessun risultato di ricerca",
-		"xSearchResults_one": "{count} risultato di ricerca",
-		"xSearchResults_other": "{count} risultati di ricerca"
+		"xSearchResults_zero": "Nessun risultato",
+		"xSearchResults_one": "{count} risultato",
+		"xSearchResults_other": "{count} risultati",
+		"xSelectedMessages_one": "{count} / {total} messaggio selezionato",
+		"xSelectedMessages_other": "{count} / {total} messaggi selezionati"
 	}
 }

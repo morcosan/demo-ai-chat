@@ -1,5 +1,6 @@
-import { IconButton, SendSvg, TextField, TextFieldRef, useUiViewport } from '@ds/release'
+import { IconButton, SendSvg, TextField, TextFieldRef } from '@ds/release'
 import { useCallback, useRef, useState } from 'react'
+import { useSubmittable } from '../hooks/submittable'
 
 interface Props {
 	listLoading: ListLoading
@@ -8,7 +9,6 @@ interface Props {
 }
 
 export const NewMessageField = ({ listLoading, postMessageFn, primary }: Props) => {
-	const { isViewportMaxLG } = useUiViewport()
 	const [inputValue, setInputValue] = useState<string>('')
 	const inputRef = useRef<TextFieldRef>(null)
 
@@ -18,17 +18,6 @@ export const NewMessageField = ({ listLoading, postMessageFn, primary }: Props) 
 
 	const onChange = (value: string) => setInputValue(value)
 
-	const onPressEnter = useCallback(
-		(event: ReactKeyboardEvent) => {
-			if (isViewportMaxLG) return // Disable submit when pressing Enter on mobile
-			if (event.shiftKey) return // Allow new lines only with Shift+Enter on desktop
-
-			event.preventDefault()
-			onSubmit()
-		},
-		[message, listLoading]
-	)
-
 	const onSubmit = useCallback(() => {
 		if (listLoading || !message) return
 
@@ -36,6 +25,8 @@ export const NewMessageField = ({ listLoading, postMessageFn, primary }: Props) 
 		setInputValue('')
 		inputRef.current?.focus()
 	}, [message, listLoading])
+
+	const onPressEnter = useSubmittable(onSubmit, [message, listLoading])
 
 	const onFocus = (event: ReactFocusEvent) => {
 		// On mobile, the field is covered by the floating keyboard

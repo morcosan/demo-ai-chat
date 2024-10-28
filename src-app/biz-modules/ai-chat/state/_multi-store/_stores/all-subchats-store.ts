@@ -26,7 +26,7 @@ export const useAllSubchatsStore = (chatStore: ChatStore): AllSubchatsStore => {
 	const [allSubchatsPagination, setAllSubchatsPagination] = useState({ page: 0, count: 0 } as Pagination)
 	const [allSubchatsLoading, setAllSubchatsLoading] = useState<ListLoading>(false)
 
-	const canLoadAllSubchats = !allSubchats.length || allSubchats.length < allSubchatsPagination.count
+	const canLoadAllSubchats = !allSubchatsPagination.page || allSubchats.length < allSubchatsPagination.count
 
 	const loadMoreSubchats = async () => {
 		if (allSubchatsLoading || !activeChat || !activeChat.id || !canLoadAllSubchats) return

@@ -1,6 +1,6 @@
 import { ArrowBackSvg, IconButton } from '@ds/release'
 import { Link, useLocation } from 'react-router-dom'
-import { ApiConsole } from './api-console'
+import { ApiConsole } from './_api-console'
 
 const ENDPOINTS = [
 	'/api/chats?page=1&count=5',

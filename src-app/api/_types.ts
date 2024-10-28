@@ -6,4 +6,5 @@ export interface DefaultAPI {
 	get<T>(path: string, query: ApiQuery): Promise<ApiResponse<T>>
 	post<T>(path: string, payload: ApiPayload): Promise<ApiResponse<T>>
 	put<T>(path: string, payload: ApiPayload): Promise<ApiResponse<T>>
+	delete<T>(path: string, query: ApiQuery): Promise<ApiResponse<T>>
 }

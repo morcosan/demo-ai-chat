@@ -33,7 +33,7 @@ export const SettingsMenu = ({ onClickBack, onClickLanguage }: Props) => {
 	const newTabIconClass = 'ml-auto mr-px min-w-xs-6 w-xs-6 text-color-text-subtle'
 
 	return (
-		<div className="flex w-full flex-col gap-xs-3 p-xs-4">
+		<div className="flex w-full flex-col gap-xs-3 bg-color-bg-card p-xs-4">
 			{/* BACK BUTTON */}
 			{Boolean(onClickBack) && (
 				<div className="mb-sm-0 mt-xs-3 flex items-center gap-xs-3">

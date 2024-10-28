@@ -18,6 +18,7 @@ export const story: StoryObj<typeof Button> = {
 		linkHref: '',
 		linkType: 'internal',
 		tooltip: 'Tooltip',
+		ariaDescription: 'Example description',
 		// Html
 		className: '',
 		style: {},
@@ -53,6 +54,7 @@ const meta: Meta<typeof Button> = {
 			linkHref: 'text',
 			linkType: ['internal', 'external', 'inactive'],
 			tooltip: 'text',
+			ariaDescription: 'text',
 		},
 		['children'],
 		['onClick']
@@ -121,6 +123,11 @@ const meta: Meta<typeof Button> = {
 				name: 'tooltip',
 				type: 'string',
 				details: `Text to be displayed as tooltip on hover / focus`,
+			},
+			{
+				name: 'ariaDescription',
+				type: 'string',
+				details: `Text used by screen reader as description for the button`,
 			},
 		]
 		const EVENTS: DocsEventDef[] = [

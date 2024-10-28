@@ -59,7 +59,7 @@ export const CustomImpl = (rawProps: ModalProps) => {
 		setZIndex(index)
 		wait(ANIM_TIME__SHOW).then(() => {
 			modalRef.current?.focus()
-			props.onOpen?.()
+			props.onOpened?.()
 		})
 
 		triggerRef.current = document.activeElement as HTMLElement | null
@@ -70,7 +70,10 @@ export const CustomImpl = (rawProps: ModalProps) => {
 
 		closeActiveIndex()
 		setModalIndex(0)
-		wait(ANIM_TIME__HIDE).then(() => setZIndex(0))
+		wait(ANIM_TIME__HIDE).then(() => {
+			setZIndex(0)
+			props.onClosed?.()
+		})
 
 		triggerRef.current?.focus()
 	}

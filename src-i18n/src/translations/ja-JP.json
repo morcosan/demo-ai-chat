@@ -2,12 +2,16 @@
 	"core": {
 		"action": {
 			"back": "戻る",
-			"backToHome": "ホームページに戻る",
+			"backToHome": "ホームに戻る",
 			"changeLanguage": "言語を変更",
 			"close": "閉じる",
+			"delete": "削除",
+			"deselectAll": "すべての選択を解除",
 			"openMenu": "メニューを開く",
+			"rename": "名前を変更",
 			"search": "検索",
-			"searchMore": "さらに結果を表示",
+			"searchMore": "さらに表示",
+			"selectAll": "すべて選択",
 			"signOut": "サインアウト"
 		},
 		"apiDocs": "APIドキュメント",
@@ -15,6 +19,7 @@
 		"custom": "カスタム",
 		"darkTheme": "ダーク",
 		"default": "デフォルト",
+		"deleting": "削除中...",
 		"designSystem": "デザインシステム",
 		"europe": "ヨーロッパ",
 		"githubRepo": "GitHubリポジトリ",
@@ -31,29 +36,33 @@
 	"aiChat": {
 		"action": {
 			"backToSubchats": "サブチャットに戻る",
+			"confirmDeleteChats": "チャットの削除を確認",
+			"confirmRenameChat": "チャット名の変更を確認",
+			"deleteSelectedChats": "選択したチャットを削除",
+			"manageChats": "チャットを管理",
 			"openChat": "チャットを開く",
-			"openSubchat_one": "サブチャットを開く ({count} メッセージ)",
-			"openSubchat_other": "サブチャットを開く ({count} メッセージ)",
 			"openSubchat_zero": "サブチャットを作成",
+			"openSubchat_other": "サブチャットを開く ({count}件のメッセージ)",
+			"showMoreChats": "さらにチャットを表示",
 			"showSubchats": "サブチャットを表示 ({count})",
-			"startSearching_one": "最低 {count} 文字を入力してください",
-			"startSearching_other": "最低 {count} 文字を入力してください"
+			"startSearching_other": "最低{count}文字を入力してください"
 		},
 		"chats": "チャット",
+		"deleteChatsWarning": "これらのチャットは完全に削除されます",
 		"inputPlaceholder": "質問を入力...",
 		"loadingChats": "チャットを読み込み中...",
 		"loadingMessages": "メッセージを読み込み中...",
 		"loadingPreviousMessages": "以前のメッセージを読み込み中...",
 		"loadingSubchats": "サブチャットを読み込み中...",
-		"newChat": "新しいチャット",
-		"noChats": "チャットがありません",
-		"noSubchats": "サブチャットがありません",
+		"newChat": "新規チャット",
+		"noChats": "チャットなし",
+		"noSubchats": "サブチャットなし",
+		"renamePlaceholder": "新しい名前を自動生成...",
 		"sendMessage": "メッセージを送信",
 		"subchats": "サブチャット",
-		"xMessages_one": "1 メッセージ",
-		"xMessages_other": "{count} メッセージ",
-		"xSearchResults_zero": "検索結果がありません",
-		"xSearchResults_one": "{count} 件の検索結果",
-		"xSearchResults_other": "{count} 件の検索結果"
+		"xMessages_other": "{count}件のメッセージ",
+		"xSearchResults_zero": "結果なし",
+		"xSearchResults_other": "{count}件の結果",
+		"xSelectedMessages_other": "{count} / {total}件のメッセージを選択"
 	}
 }

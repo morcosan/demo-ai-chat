@@ -38,7 +38,7 @@ export const useSubchatStore = (chatStore: ChatStore, allSubchatsStore: AllSubch
 	const [subchatPagination, setSubchatPagination] = useState({ page: 0, count: 0 } as Pagination)
 	const [subchatLoading, setSubchatLoading] = useState<ListLoading>(false)
 
-	const canLoadSubchatMessages = !subchatMessages.length || subchatMessages.length < subchatPagination.count
+	const canLoadSubchatMessages = !subchatPagination.page || subchatMessages.length < subchatPagination.count
 
 	const loadActiveSubchat = async (subchatId: number) => {
 		if (subchatLoading || !activeChat || isNaN(subchatId) || subchatId === activeSubchat?.id) return

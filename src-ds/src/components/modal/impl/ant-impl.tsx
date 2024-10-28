@@ -104,7 +104,7 @@ export const AntImpl = (rawProps: ModalProps) => {
 			className={props.className}
 			style={props.style}
 			css={cssModal}
-			afterOpenChange={(opened: boolean) => opened && props.onOpen?.()}
+			afterOpenChange={(opened: boolean) => (opened ? props.onOpened?.() : props.onClosed?.())}
 			onCancel={props.onClose}
 		>
 			{props.children}

@@ -24,6 +24,7 @@ export interface ButtonProps extends ReactProps {
 	linkHref?: string
 	linkType?: LinkType
 	tooltip?: string
+	ariaDescription?: string
 
 	onClick?(event: ReactMouseEvent): void
 }

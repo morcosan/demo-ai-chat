@@ -5,9 +5,13 @@
 			"backToHome": "Back to homepage",
 			"changeLanguage": "Change language",
 			"close": "Close",
+			"delete": "Delete",
+			"deselectAll": "Deselect all",
 			"openMenu": "Open menu",
+			"rename": "Rename",
 			"search": "Search",
 			"searchMore": "Show more results",
+			"selectAll": "Select all",
 			"signOut": "Sign out"
 		},
 		"apiDocs": "API Docs",
@@ -15,6 +19,7 @@
 		"custom": "Custom",
 		"darkTheme": "Dark",
 		"default": "Default",
+		"deleting": "Deleting...",
 		"designSystem": "Design System",
 		"europe": "Europe",
 		"githubRepo": "GitHub Repo",
@@ -31,14 +36,20 @@
 	"aiChat": {
 		"action": {
 			"backToSubchats": "Back to subchats",
+			"confirmDeleteChats": "Confirm deleting chats",
+			"confirmRenameChat": "Confirm renaming chat",
+			"deleteSelectedChats": "Delete selected chats",
+			"manageChats": "Manage chats",
 			"openChat": "Open chat",
 			"openSubchat_other": "Open subchat ({count} messages)",
 			"openSubchat_zero": "Create subchat",
+			"showMoreChats": "Show more chats",
 			"showSubchats": "Show subchats ({count})",
 			"startSearching_one": "Type at least {count} character",
 			"startSearching_other": "Type at least {count} characters"
 		},
 		"chats": "Chats",
+		"deleteChatsWarning": "These chats will be permanently deleted",
 		"inputPlaceholder": "Ask a question...",
 		"loadingChats": "Loading chats...",
 		"loadingMessages": "Loading messages...",
@@ -47,12 +58,15 @@
 		"newChat": "New chat",
 		"noChats": "No chats",
 		"noSubchats": "No subchats",
+		"renamePlaceholder": "Generate a new name automatically...",
 		"sendMessage": "Send message",
 		"subchats": "Subchats",
 		"xMessages_one": "1 message",
 		"xMessages_other": "{count} messages",
 		"xSearchResults_one": "{count} search result",
 		"xSearchResults_other": "{count} search results",
-		"xSearchResults_zero": "No search results"
+		"xSearchResults_zero": "No search results",
+		"xSelectedMessages_one": "1 / {total} message selected",
+		"xSelectedMessages_other": "{count} / {total} messages selected"
 	}
 }

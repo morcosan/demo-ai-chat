@@ -17,6 +17,7 @@ export interface IconButtonProps extends ReactProps {
 	disabled?: boolean
 	linkHref?: string
 	linkType?: LinkType
+	ariaDescription?: string
 
 	onClick?(event: ReactMouseEvent): void
 }
