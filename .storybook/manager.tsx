@@ -30,7 +30,7 @@ addons.add('custom', {
 		const setHtmlAttr = (theme?: ColorTheme) => theme && htmlElem.setAttribute(ATTR_KEY__COLOR_THEME, theme)
 
 		useEffect(() => {
-			const theme = localStorage.getItem(COOKIE_KEY.dsColorTheme) as ColorTheme | null | undefined
+			const theme = localStorage.getItem(COOKIE_KEY.DS_COLOR_THEME) as ColorTheme | null | undefined
 
 			if (theme && COLOR_THEMES.includes(theme)) {
 				setHtmlAttr(theme)

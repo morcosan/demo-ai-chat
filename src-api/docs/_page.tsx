@@ -1,38 +1,179 @@
-import { ArrowBackSvg, IconButton } from '@ds/release'
-import { Link, useLocation } from 'react-router-dom'
-import { ApiConsole } from './_api-console'
+import { mockAPI } from '@api/mock'
+import { ApiResponse } from '@api/types'
+import { AiChatSvg, ArrowBackSvg, Button, IconButton, TextField, useUiTheme } from '@ds/release'
+import hljs from 'highlight.js'
 
-const ENDPOINTS = [
-	'/api/chats?page=1&count=5',
-	'/api/subchats?page=1&count=5&chatId=1001',
-	'/api/messages?page=1&count=5&chatId=1001',
+import { useCallback, useEffect, useMemo, useState } from 'react'
+import { Link, useLocation, useSearchParams } from 'react-router-dom'
+
+type EndpointType = 'GET' | 'POST' | 'PUT' | 'DELETE'
+
+interface Endpoint {
+	type: EndpointType
+	path: string
+	params: string[]
+}
+
+const ENDPOINTS: Endpoint[] = [
+	{ type: 'GET', path: '/api/chats', params: ['chatIds', 'count', 'page', 'search'] },
+	{ type: 'GET', path: '/api/subchats', params: ['chatId', 'subchatIds', 'count', 'page'] },
+	{ type: 'GET', path: '/api/messages', params: ['chatId', 'subchatId', 'count', 'page', 'search'] },
+	{ type: 'POST', path: '/api/chats', params: ['title'] },
+	{ type: 'POST', path: '/api/messages', params: ['chatId', 'subchatId', 'text'] },
+	{ type: 'PUT', path: '/api/chats', params: ['chatId', 'title'] },
+	{ type: 'DELETE', path: '/api/chats', params: ['chatIds'] },
+	{ type: 'DELETE', path: '/api/database', params: [] },
 ]
 
+const QUERY_DEFAULTS = {
+	chatId: '1001',
+	chatIds: '1001,1002',
+	count: '10',
+	page: '1',
+}
+
+const TYPES: EndpointType[] = ['GET', 'POST', 'PUT', 'DELETE']
+
+const TYPE_COLOR = {
+	GET: 'text-color-success',
+	POST: 'text-color-primary',
+	PUT: 'text-color-secondary-text-default',
+	DELETE: 'text-color-danger',
+}
+
 const ApiDocsPage = () => {
+	const { isUiDark } = useUiTheme()
 	const location = useLocation()
+	const [searchParams] = useSearchParams()
+	const [endpoint, setEndpoint] = useState<Endpoint | null>(null)
+	const [query, setQuery] = useState<Record<string, string>>(QUERY_DEFAULTS)
+	const [resp, setResp] = useState<ApiResponse | null>(null)
+	const [fetching, setFetching] = useState(false)
+
+	const respHtml = useMemo(() => hljs.highlight(JSON.stringify(resp, null, 2), { language: 'json' }).value, [resp])
+
+	const onClickLogo = (event: ReactMouseEvent) => {
+		event.preventDefault()
+		window.location.assign('/')
+	}
+
+	const onSubmit = useCallback(async () => {
+		const path = location.pathname.replace('/docs', '')
+		let resp = null
+
+		setFetching(true)
+		if (endpoint?.type === 'GET') resp = await mockAPI.get(path, query)
+		if (endpoint?.type === 'POST') resp = await mockAPI.post(path, query)
+		if (endpoint?.type === 'PUT') resp = await mockAPI.put(path, query)
+		if (endpoint?.type === 'DELETE') resp = await mockAPI.delete(path, query)
+		setResp(resp)
+		setFetching(false)
+	}, [location, query, endpoint])
+
+	useEffect(() => {
+		const path = location.pathname.replace('/docs', '')
+		const type = searchParams.get('type')
+		setEndpoint(ENDPOINTS.find((endpoint: Endpoint) => endpoint.path === path && endpoint.type === type) || null)
+		setResp(null)
+		setQuery(QUERY_DEFAULTS)
+	}, [location])
+
+	useEffect(() => {
+		isUiDark ? import('highlight.js/styles/a11y-dark.css') : import('highlight.js/styles/a11y-light.css')
+	}, [])
 
 	return (
-		<div className="h-screen w-screen overflow-x-hidden p-sm-0 font-mono">
-			{location.pathname === '/docs/api' ? (
+		<div className="h-screen w-screen overflow-x-hidden px-xs-5 py-xs-9 pb-sm-9 md:px-sm-0 md:py-sm-3">
+			{endpoint ? (
 				<>
-					<h1 className="mb-sm-0 text-size-xxl font-weight-lg">API Docs</h1>
+					<h1 className="mb-sm-5 flex items-center font-mono text-size-xl">
+						<IconButton tooltip={t('core.action.back')} linkHref="/docs/api" className="mr-xs-3">
+							<ArrowBackSvg className="h-xs-7" />
+						</IconButton>
+						<span className="font-mono">
+							<span className={cx('font-weight-lg', TYPE_COLOR[endpoint.type])}>{endpoint.type}</span>
+							<span className="ml-xs-5">{endpoint.path}</span>
+						</span>
+					</h1>
 
-					{ENDPOINTS.map((endpoint: string) => (
-						<Link key={endpoint} to={`/docs${endpoint}`} className="mb-xs-6 block">
-							{endpoint}
-						</Link>
-					))}
+					<div className="mb-xs-9 px-button-px-item">
+						<span className="text-size-lg text-color-text-subtle">Params</span>
+
+						<ul className="mt-xs-9 flex flex-col gap-xs-5">
+							{endpoint.params.map((param: string) => (
+								<li key={param} className="flex items-center">
+									<label htmlFor={param} className="w-md-6 font-mono">
+										{param}
+									</label>
+									<TextField
+										id={param}
+										value={query[param] || ''}
+										className="flex-1"
+										onChange={(value: string) => setQuery({ ...query, [param]: value })}
+									/>
+								</li>
+							))}
+							{!endpoint.params.length && 'None'}
+						</ul>
+						<Button
+							variant="solid-primary"
+							size="sm"
+							loading={fetching}
+							className="mt-sm-0 block"
+							onClick={onSubmit}
+						>
+							Submit
+						</Button>
+					</div>
+
+					<div className="mt-sm-7 px-button-px-item">
+						<span className="text-size-lg text-color-text-subtle">Response</span>
+
+						<pre className="mt-xs-2 min-h-lg-0 overflow-auto bg-color-bg-preview p-xs-3">
+							{resp ? <div dangerouslySetInnerHTML={{ __html: respHtml }} /> : fetching ? 'Fetching...' : ''}
+						</pre>
+					</div>
 				</>
 			) : (
 				<>
-					<h1 className="mb-sm-0 flex items-center text-size-xxl font-weight-lg">
-						<IconButton tooltip={t('core.action.back')} linkHref="/docs/api" className="mr-xs-5">
-							<ArrowBackSvg className="h-xs-9" />
-						</IconButton>
-						API Docs
+					<h1 className="mb-sm-9 flex items-center px-button-px-item">
+						<Link to="/" className="flex w-fit" onClick={onClickLogo}>
+							<span className="flex items-center">
+								<AiChatSvg className="mr-xs-3 h-sm-1 w-sm-1 animate-pulse" />
+								<span className="text-size-xl font-weight-md">AI Chat</span>
+							</span>
+						</Link>
+
+						<span className="ml-xs-5 text-size-xl">/ API Docs</span>
 					</h1>
 
-					<ApiConsole />
+					<div className="flex flex-wrap gap-sm-9">
+						{TYPES.map((type: EndpointType) => (
+							<div key={type}>
+								<h2 className={cx('mb-xs-5 ml-button-px-item font-mono text-size-xl', TYPE_COLOR[type])}>
+									{type}
+								</h2>
+
+								<ul className="flex flex-col">
+									{ENDPOINTS.filter((ep: Endpoint) => ep.type === type).map((endpoint: Endpoint) => (
+										<li key={endpoint.path}>
+											<Button
+												linkHref={`/docs${endpoint.path}?type=${type}`}
+												variant="item-text-default"
+												size="lg"
+												className="block w-lg-6"
+											>
+												<span className="font-mono">
+													<span className={cx('font-weight-lg', TYPE_COLOR[type])}>{type}</span>
+													<span className="ml-xs-5">{endpoint.path}</span>
+												</span>
+											</Button>
+										</li>
+									))}
+								</ul>
+							</div>
+						))}
+					</div>
 				</>
 			)}
 		</div>

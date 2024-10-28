@@ -7,6 +7,7 @@ import { Checkbox } from '../../components/checkbox'
 import { ChatConfigItem } from '../../components/items/chat-config-item'
 import { LoadingText } from '../../components/loading-text'
 import { useAiChat } from '../../state'
+import { DbReset } from './_db-reset'
 
 export const ConfigPage = () => {
 	const {
@@ -95,7 +96,7 @@ export const ConfigPage = () => {
 
 	const slotChatsToDelete = useMemo(
 		() => (
-			<ul className="mb-xs-3 flex flex-col gap-xs-4">
+			<ul className="flex flex-col gap-xs-4">
 				{chatsToDelete.map((chat: Chat) => (
 					<ChatConfigItem key={chat.id} chat={chat} />
 				))}
@@ -106,12 +107,19 @@ export const ConfigPage = () => {
 
 	return (
 		<AppLayout blank>
-			<h1 className="mb-sm-0 flex items-center lg:mb-sm-3">
-				<span className="text-size-xl font-weight-lg lg:text-size-xxl">{t('aiChat.chats')}</span>
-				<span className="ml-xs-4 mt-xs-1 text-size-md font-weight-md text-color-text-subtle lg:text-size-lg">
-					({allChatsPagination.count})
-				</span>
-			</h1>
+			<div className="mb-sm-0 flex items-center lg:mb-sm-3">
+				<h1 className="flex items-center">
+					<span className="mr-xs-4 text-size-xl font-weight-lg lg:text-size-xxl">{t('aiChat.chats')}</span>
+
+					{allChatsPagination.count > 0 && (
+						<span className="mt-xs-1 text-size-md font-weight-md text-color-text-subtle lg:text-size-lg">
+							({allChatsPagination.count})
+						</span>
+					)}
+				</h1>
+
+				{(ENV__BUILD_MODE === 'local' || ENV__BUILD_MODE === 'dev') && <DbReset />}
+			</div>
 
 			{allChatsLoading !== 'full' && allChats.length > 0 && (
 				<>
@@ -159,7 +167,7 @@ export const ConfigPage = () => {
 				</div>
 			)}
 
-			{/* MODAL */}
+			{/* DELETE MODAL */}
 			<Modal
 				opened={Boolean(chatsToDelete.length && showsDeleteModal)}
 				slotTitle={t('aiChat.action.confirmDeleteChats')}
@@ -171,7 +179,7 @@ export const ConfigPage = () => {
 				onClose={() => setShowsDeleteModal(false)}
 				onClosed={() => setChatsToDelete([])}
 			>
-				<div className={cx('mb-xs-8 flex items-center py-xs-3', 'rounded-sm text-color-danger')}>
+				<div className="mb-xs-8 flex items-center text-color-danger">
 					<WarningSvg className="mr-xs-4 w-xs-8" />
 					{t('aiChat.deleteChatsWarning')}
 				</div>

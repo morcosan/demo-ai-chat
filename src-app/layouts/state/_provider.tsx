@@ -1,16 +1,17 @@
 import { useUiViewport } from '@ds/release'
+import { COOKIE_KEY } from '@utils/release'
 import { useEffect, useMemo, useState } from 'react'
-import { Context, COOKIE__PINNED_NAVBAR, Store } from './_context'
+import { Context, Store } from './_context'
 
 export const AppLayoutProvider = ({ children }: ReactProps) => {
 	const { isViewportMinXL } = useUiViewport()
 	const [isNavPinned, setIsNavPinned] = useState(false)
 
 	const loadPinConfig = () => {
-		const cookie = localStorage.getItem(COOKIE__PINNED_NAVBAR)
+		const cookie = localStorage.getItem(COOKIE_KEY.APP_PINNED_NAVBAR)
 		const isPinned = cookie === 'true' || (cookie !== 'false' && isViewportMinXL)
 
-		localStorage.setItem(COOKIE__PINNED_NAVBAR, isPinned ? 'true' : 'false')
+		localStorage.setItem(COOKIE_KEY.APP_PINNED_NAVBAR, isPinned ? 'true' : 'false')
 		setIsNavPinned(isPinned)
 	}
 
@@ -23,7 +24,7 @@ export const AppLayoutProvider = ({ children }: ReactProps) => {
 			isNavPinned,
 			setIsNavPinned: (value: boolean) => {
 				setIsNavPinned(value)
-				localStorage.setItem(COOKIE__PINNED_NAVBAR, value ? 'true' : 'false')
+				localStorage.setItem(COOKIE_KEY.APP_PINNED_NAVBAR, value ? 'true' : 'false')
 			},
 		}),
 		[isNavPinned]

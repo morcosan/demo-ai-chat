@@ -16,7 +16,7 @@ if (window.parent !== window) {
 	}
 }
 
-initI18n(COOKIE_KEY.dsLanguage)
+initI18n(COOKIE_KEY.DS_LANGUAGE)
 
 const preview: Preview = {
 	globalTypes: {
@@ -73,9 +73,9 @@ const preview: Preview = {
 				{ elem: I18nProvider },
 				{ elem: UiA11yProvider },
 				{ elem: DocsPlaygroundProvider, props: { playgroundStyle: globals.playgroundStyle } },
-				{ elem: UiThemeProvider, props: { cookieKey: COOKIE_KEY.dsColorTheme, colorTheme: globals.colorTheme } },
+				{ elem: UiThemeProvider, props: { cookieKey: COOKIE_KEY.DS_COLOR_THEME, colorTheme: globals.colorTheme } },
 				// Must be last, it forces re-rendering
-				{ elem: UiLibraryProvider, props: { cookieKey: COOKIE_KEY.dsUiLibrary, uiLibrary: globals.uiLibrary } },
+				{ elem: UiLibraryProvider, props: { cookieKey: COOKIE_KEY.DS_UI_LIBRARY, uiLibrary: globals.uiLibrary } },
 			]
 
 			return (

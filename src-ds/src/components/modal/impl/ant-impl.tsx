@@ -63,7 +63,6 @@ export const AntImpl = (rawProps: ModalProps) => {
 		},
 		'& .ant-modal-footer': {
 			...cssModalFooter,
-			margin: 0,
 		},
 		'& .ant-modal-close': {
 			...cssModalCloseX,

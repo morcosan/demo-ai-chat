@@ -90,6 +90,7 @@ export const useModalBase = (rawProps: ModalProps) => {
 		alignItems: 'center',
 		justifyContent: 'flex-end',
 		gap: $spacing['xs-3'],
+		marginTop: $spacing['xs-3'],
 	}
 
 	const cssModalCloseX: CSS = {

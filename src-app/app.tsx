@@ -31,11 +31,11 @@ const providers: Wrapper<Type>[] = [
 	{ elem: SettingsProvider },
 	{ elem: UiA11yProvider },
 	{ elem: UiViewportProvider },
-	{ elem: UiThemeProvider, props: { cookieKey: COOKIE_KEY.appColorTheme } },
-	{ elem: UiLibraryProvider, props: { cookieKey: COOKIE_KEY.appUiLibrary } }, // Must be last, it forces re-rendering
+	{ elem: UiThemeProvider, props: { cookieKey: COOKIE_KEY.APP_COLOR_THEME } },
+	{ elem: UiLibraryProvider, props: { cookieKey: COOKIE_KEY.APP_UI_LIBRARY } }, // Must be last, it forces re-rendering
 ]
 
-initI18n(COOKIE_KEY.appLanguage)
+initI18n(COOKIE_KEY.APP_LANGUAGE)
 
 const App = () => {
 	// Having t() on window requires updating the entire app
