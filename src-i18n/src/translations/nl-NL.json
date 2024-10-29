@@ -9,29 +9,39 @@
 			"deselectAll": "Alles deselecteren",
 			"openMenu": "Menu openen",
 			"rename": "Hernoemen",
+			"saveChanges": "Wijzigingen opslaan",
 			"search": "Zoeken",
 			"searchMore": "Meer resultaten tonen",
 			"selectAll": "Alles selecteren",
 			"signOut": "Uitloggen"
 		},
-		"apiDocs": "API documentatie",
-		"asia": "Azië",
-		"custom": "Aangepast",
-		"darkTheme": "Donker",
-		"default": "Standaard",
-		"deleting": "Verwijderen...",
-		"designSystem": "Design systeem",
-		"europe": "Europa",
-		"githubRepo": "GitHub repository",
-		"language": "Taal",
-		"lightTheme": "Licht",
-		"loading": "Laden...",
-		"quickSettings": "Snelle instellingen",
-		"searchPlaceholder": "Zoeken...",
-		"searching": "Zoeken...",
-		"settings": "Instellingen",
-		"uiLibrary": "UI bibliotheek:",
-		"uiTheme": "UI thema:"
+		"label": {
+			"apiDocs": "API documentatie",
+			"asia": "Azië",
+			"custom": "Aangepast",
+			"darkTheme": "Donker",
+			"default": "Standaard",
+			"designSystem": "Design systeem",
+			"errors": "Fouten",
+			"europe": "Europa",
+			"githubRepo": "GitHub repository",
+			"language": "Taal",
+			"lightTheme": "Licht",
+			"optionalField": "(Optioneel)",
+			"requiredField": "(Verplicht)",
+			"settings": "Instellingen",
+			"uiLibrary": "UI bibliotheek:",
+			"uiTheme": "UI thema:"
+		},
+		"placeholder": {
+			"search": "Zoeken..."
+		},
+		"state": {
+			"dataSaved": "Je gegevens zijn opgeslagen",
+			"deleting": "Verwijderen...",
+			"loading": "Laden...",
+			"searching": "Zoeken..."
+		}
 	},
 	"aiChat": {
 		"action": {
@@ -39,35 +49,77 @@
 			"confirmDeleteChats": "Bevestig verwijderen gesprekken",
 			"confirmRenameChat": "Bevestig hernoemen gesprek",
 			"deleteSelectedChats": "Geselecteerde gesprekken verwijderen",
-			"manageChats": "Gesprekken beheren",
-			"openChat": "Gesprek openen",
-			"openSubchat_zero": "Subgesprek aanmaken",
-			"openSubchat_one": "Subgesprek openen ({count} bericht)",
-			"openSubchat_other": "Subgesprek openen ({count} berichten)",
+			"manageAgents": "Beheer agenten",
+			"manageChats": "Beheer gesprekken",
+			"openChat": "Open gesprek",
+			"openSubchat_zero": "Maak subgesprek",
+			"openSubchat_one": "Open subgesprek ({count} bericht)",
+			"openSubchat_other": "Open subgesprek ({count} berichten)",
+			"sendMessage": "Verzend bericht",
 			"showMoreChats": "Meer gesprekken tonen",
-			"showSubchats": "Subgesprekken tonen ({count})",
+			"showSubchats": "Toon subgesprekken ({count})",
 			"startSearching_one": "Typ ten minste {count} teken",
 			"startSearching_other": "Typ ten minste {count} tekens"
 		},
-		"chats": "Gesprekken",
-		"deleteChatsWarning": "Deze gesprekken worden permanent verwijderd",
-		"inputPlaceholder": "Stel een vraag...",
-		"loadingChats": "Gesprekken laden...",
-		"loadingMessages": "Berichten laden...",
-		"loadingPreviousMessages": "Vorige berichten laden...",
-		"loadingSubchats": "Subgesprekken laden...",
-		"newChat": "Nieuw gesprek",
-		"noChats": "Geen gesprekken",
-		"noSubchats": "Geen subgesprekken",
-		"renamePlaceholder": "Automatisch nieuwe naam genereren...",
-		"sendMessage": "Bericht verzenden",
-		"subchats": "Subgesprekken",
-		"xMessages_one": "{count} bericht",
-		"xMessages_other": "{count} berichten",
-		"xSearchResults_zero": "Geen resultaten",
-		"xSearchResults_one": "{count} resultaat",
-		"xSearchResults_other": "{count} resultaten",
-		"xSelectedMessages_one": "{count} / {total} bericht geselecteerd",
-		"xSelectedMessages_other": "{count} / {total} berichten geselecteerd"
+		"label": {
+			"chats": "Gesprekken",
+			"agents": "Agenten",
+			"newChat": "Nieuw gesprek",
+			"noChats": "Geen gesprekken",
+			"noSubchats": "Geen subgesprekken",
+			"subchats": "Subgesprekken",
+			"xMessages_one": "{count} bericht",
+			"xMessages_other": "{count} berichten",
+			"xSearchResults_zero": "Geen zoekresultaten",
+			"xSearchResults_one": "{count} zoekresultaat",
+			"xSearchResults_other": "{count} zoekresultaten",
+			"xSelectedMessages_one": "{count} bericht geselecteerd",
+			"xSelectedMessages_other": "{count} berichten geselecteerd"
+		},
+		"placeholder": {
+			"newMessage": "Stel een vraag...",
+			"rename": "Automatisch nieuwe naam genereren..."
+		},
+		"state": {
+			"loadingChats": "Gesprekken laden...",
+			"loadingMessages": "Berichten laden...",
+			"loadingPreviousMessages": "Vorige berichten laden...",
+			"loadingSubchats": "Subgesprekken laden..."
+		},
+		"warning": {
+			"deletingChats": "Deze gesprekken worden permanent verwijderd"
+		}
+	},
+	"userAccount": {
+		"action": {
+			"manageAccount": "Beheer account",
+			"manageBilling": "Beheer facturering"
+		},
+		"error": {
+			"address": "Je moet een adres toevoegen",
+			"avatar": "Je moet een avatar toevoegen",
+			"city": "Je moet een stad toevoegen",
+			"country": "Je moet een land toevoegen",
+			"email": "Je moet een e-mailadres toevoegen",
+			"legalName": "Je moet een juridische naam toevoegen",
+			"name": "Je moet een naam toevoegen",
+			"postalCode": "Je moet een postcode toevoegen"
+		},
+		"label": {
+			"account": "Account",
+			"address": "Adres",
+			"avatar": "Avatar",
+			"billing": "Facturering",
+			"city": "Stad",
+			"country": "Land",
+			"email": "E-mailadres",
+			"legalName": "Juridische naam",
+			"name": "Naam",
+			"phone": "Telefoonnummer",
+			"postalCode": "Postcode",
+			"private": "Privé",
+			"public": "Openbaar",
+			"vatNumber": "BTW-nummer"
+		}
 	}
 }

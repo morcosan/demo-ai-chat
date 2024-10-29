@@ -1,7 +1,7 @@
 {
 	"core": {
 		"action": {
-			"back": "Kthehu",
+			"back": "Prapa",
 			"backToHome": "Kthehu në faqen kryesore",
 			"changeLanguage": "Ndrysho gjuhën",
 			"close": "Mbyll",
@@ -9,65 +9,117 @@
 			"deselectAll": "Çzgjidh të gjitha",
 			"openMenu": "Hap menynë",
 			"rename": "Riemërto",
+			"saveChanges": "Ruaj ndryshimet",
 			"search": "Kërko",
-			"searchMore": "Shfaq më shumë rezultate",
+			"searchMore": "Trego më shumë rezultate",
 			"selectAll": "Zgjidh të gjitha",
-			"signOut": "Dil"
+			"signOut": "Dilni"
 		},
-		"apiDocs": "Dokumentacioni API",
-		"asia": "Azi",
-		"custom": "Të personalizuar",
-		"darkTheme": "E errët",
-		"default": "Parazgjedhur",
-		"deleting": "Duke fshirë...",
-		"designSystem": "Sistemi i dizajnit",
-		"europe": "Evropë",
-		"githubRepo": "Depozita GitHub",
-		"language": "Gjuha",
-		"lightTheme": "E çelët",
-		"loading": "Duke ngarkuar...",
-		"quickSettings": "Cilësimet e shpejta",
-		"searchPlaceholder": "Kërko...",
-		"searching": "Duke kërkuar...",
-		"settings": "Cilësimet",
-		"uiLibrary": "Libraria UI:",
-		"uiTheme": "Tema UI:"
+		"label": {
+			"apiDocs": "Dokumentacioni API",
+			"asia": "Azi",
+			"custom": "Personalizuar",
+			"darkTheme": "E errët",
+			"default": "Parazgjedhur",
+			"designSystem": "Sistemi i dizajnit",
+			"errors": "Gabime",
+			"europe": "Evropë",
+			"githubRepo": "Depoja GitHub",
+			"language": "Gjuha",
+			"lightTheme": "E çelët",
+			"optionalField": "(Opsionale)",
+			"requiredField": "(E detyrueshme)",
+			"settings": "Cilësimet",
+			"uiLibrary": "Libraria UI:",
+			"uiTheme": "Tema UI:"
+		},
+		"placeholder": {
+			"search": "Kërko..."
+		},
+		"state": {
+			"dataSaved": "Të dhënat tuaja u ruajtën",
+			"deleting": "Duke fshirë...",
+			"loading": "Duke ngarkuar...",
+			"searching": "Duke kërkuar..."
+		}
 	},
 	"aiChat": {
 		"action": {
 			"backToSubchats": "Kthehu te nënbisedat",
 			"confirmDeleteChats": "Konfirmo fshirjen e bisedave",
-			"confirmRenameChat": "Konfirmo riemërtimin e bisedës",
+			"confirmRenameChat": "Konfirmo riemërimin e bisedës",
 			"deleteSelectedChats": "Fshi bisedat e zgjedhura",
+			"manageAgents": "Menaxho agjentët",
 			"manageChats": "Menaxho bisedat",
 			"openChat": "Hap bisedën",
 			"openSubchat_zero": "Krijo nënbisedë",
 			"openSubchat_one": "Hap nënbisedën ({count} mesazh)",
 			"openSubchat_other": "Hap nënbisedën ({count} mesazhe)",
-			"showMoreChats": "Shfaq më shumë biseda",
-			"showSubchats": "Shfaq nënbisedat ({count})",
-			"startSearching_one": "Shkruaj të paktën {count} karakter",
-			"startSearching_other": "Shkruaj të paktën {count} karaktere"
+			"sendMessage": "Dërgo mesazhin",
+			"showMoreChats": "Trego më shumë biseda",
+			"showSubchats": "Trego nënbisedat ({count})",
+			"startSearching_one": "Shkruani të paktën {count} karakter",
+			"startSearching_other": "Shkruani të paktën {count} karaktere"
 		},
-		"chats": "Bisedat",
-		"deleteChatsWarning": "Këto biseda do të fshihen përgjithmonë",
-		"inputPlaceholder": "Bëj një pyetje...",
-		"loadingChats": "Duke ngarkuar bisedat...",
-		"loadingMessages": "Duke ngarkuar mesazhet...",
-		"loadingPreviousMessages": "Duke ngarkuar mesazhet e mëparshme...",
-		"loadingSubchats": "Duke ngarkuar nënbisedat...",
-		"newChat": "Bisedë e re",
-		"noChats": "Nuk ka biseda",
-		"noSubchats": "Nuk ka nënbiseda",
-		"renamePlaceholder": "Gjenero automatikisht një emër të ri...",
-		"sendMessage": "Dërgo mesazhin",
-		"subchats": "Nënbisedat",
-		"xMessages_one": "{count} mesazh",
-		"xMessages_other": "{count} mesazhe",
-		"xSearchResults_zero": "Asnjë rezultat",
-		"xSearchResults_one": "{count} rezultat",
-		"xSearchResults_other": "{count} rezultate",
-		"xSelectedMessages_one": "{count} / {total} mesazh i zgjedhur",
-		"xSelectedMessages_other": "{count} / {total} mesazhe të zgjedhura"
+		"label": {
+			"chats": "Bisedat",
+			"agents": "Agjentët",
+			"newChat": "Bisedë e re",
+			"noChats": "Nuk ka biseda",
+			"noSubchats": "Nuk ka nënbiseda",
+			"subchats": "Nënbisedat",
+			"xMessages_one": "{count} mesazh",
+			"xMessages_other": "{count} mesazhe",
+			"xSearchResults_zero": "Asnjë rezultat",
+			"xSearchResults_one": "{count} rezultat",
+			"xSearchResults_other": "{count} rezultate",
+			"xSelectedMessages_one": "{count} mesazh i zgjedhur",
+			"xSelectedMessages_other": "{count} mesazhe të zgjedhura"
+		},
+		"placeholder": {
+			"newMessage": "Bëni një pyetje...",
+			"rename": "Gjenero automatikisht një emër të ri..."
+		},
+		"state": {
+			"loadingChats": "Duke ngarkuar bisedat...",
+			"loadingMessages": "Duke ngarkuar mesazhet...",
+			"loadingPreviousMessages": "Duke ngarkuar mesazhet e mëparshme...",
+			"loadingSubchats": "Duke ngarkuar nënbisedat..."
+		},
+		"warning": {
+			"deletingChats": "Këto biseda do të fshihen përgjithmonë"
+		}
+	},
+	"userAccount": {
+		"action": {
+			"manageAccount": "Menaxho llogarinë",
+			"manageBilling": "Menaxho faturimin"
+		},
+		"error": {
+			"address": "Duhet të shtoni adresën",
+			"avatar": "Duhet të shtoni një avatar",
+			"city": "Duhet të shtoni qytetin",
+			"country": "Duhet të shtoni shtetin",
+			"email": "Duhet të shtoni adresën e emailit",
+			"legalName": "Duhet të shtoni emrin ligjor",
+			"name": "Duhet të shtoni emrin",
+			"postalCode": "Duhet të shtoni kodin postar"
+		},
+		"label": {
+			"account": "Llogaria",
+			"address": "Adresa",
+			"avatar": "Avatari",
+			"billing": "Faturimi",
+			"city": "Qyteti",
+			"country": "Shteti",
+			"email": "Adresa e emailit",
+			"legalName": "Emri ligjor",
+			"name": "Emri",
+			"phone": "Numri i telefonit",
+			"postalCode": "Kodi postar",
+			"private": "Private",
+			"public": "Publike",
+			"vatNumber": "NIPT"
+		}
 	}
 }

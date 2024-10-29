@@ -9,60 +9,112 @@
 			"deselectAll": "전체 선택 해제",
 			"openMenu": "메뉴 열기",
 			"rename": "이름 변경",
+			"saveChanges": "변경 사항 저장",
 			"search": "검색",
 			"searchMore": "더 많은 결과 보기",
 			"selectAll": "전체 선택",
 			"signOut": "로그아웃"
 		},
-		"apiDocs": "API 문서",
-		"asia": "아시아",
-		"custom": "사용자 지정",
-		"darkTheme": "다크",
-		"default": "기본",
-		"deleting": "삭제 중...",
-		"designSystem": "디자인 시스템",
-		"europe": "유럽",
-		"githubRepo": "GitHub 저장소",
-		"language": "언어",
-		"lightTheme": "라이트",
-		"loading": "로딩 중...",
-		"quickSettings": "빠른 설정",
-		"searchPlaceholder": "검색...",
-		"searching": "검색 중...",
-		"settings": "설정",
-		"uiLibrary": "UI 라이브러리:",
-		"uiTheme": "UI 테마:"
+		"label": {
+			"apiDocs": "API 문서",
+			"asia": "아시아",
+			"custom": "사용자 정의",
+			"darkTheme": "다크",
+			"default": "기본값",
+			"designSystem": "디자인 시스템",
+			"errors": "오류",
+			"europe": "유럽",
+			"githubRepo": "GitHub 저장소",
+			"language": "언어",
+			"lightTheme": "라이트",
+			"optionalField": "(선택 사항)",
+			"requiredField": "(필수 사항)",
+			"settings": "설정",
+			"uiLibrary": "UI 라이브러리:",
+			"uiTheme": "UI 테마:"
+		},
+		"placeholder": {
+			"search": "검색..."
+		},
+		"state": {
+			"dataSaved": "데이터가 저장되었습니다",
+			"deleting": "삭제 중...",
+			"loading": "로딩 중...",
+			"searching": "검색 중..."
+		}
 	},
 	"aiChat": {
 		"action": {
-			"backToSubchats": "하위 채팅으로 돌아가기",
+			"backToSubchats": "서브챗으로 돌아가기",
 			"confirmDeleteChats": "채팅 삭제 확인",
 			"confirmRenameChat": "채팅 이름 변경 확인",
 			"deleteSelectedChats": "선택한 채팅 삭제",
+			"manageAgents": "에이전트 관리",
 			"manageChats": "채팅 관리",
 			"openChat": "채팅 열기",
-			"openSubchat_zero": "하위 채팅 만들기",
-			"openSubchat_other": "하위 채팅 열기 ({count}개의 메시지)",
+			"openSubchat_zero": "서브챗 만들기",
+			"openSubchat_other": "서브챗 열기 ({count}개의 메시지)",
+			"sendMessage": "메시지 보내기",
 			"showMoreChats": "더 많은 채팅 보기",
-			"showSubchats": "하위 채팅 보기 ({count})",
+			"showSubchats": "서브챗 보기 ({count})",
 			"startSearching_other": "최소 {count}자를 입력하세요"
 		},
-		"chats": "채팅",
-		"deleteChatsWarning": "이 채팅들은 영구적으로 삭제됩니다",
-		"inputPlaceholder": "질문하기...",
-		"loadingChats": "채팅 로딩 중...",
-		"loadingMessages": "메시지 로딩 중...",
-		"loadingPreviousMessages": "이전 메시지 로딩 중...",
-		"loadingSubchats": "하위 채팅 로딩 중...",
-		"newChat": "새 채팅",
-		"noChats": "채팅 없음",
-		"noSubchats": "하위 채팅 없음",
-		"renamePlaceholder": "새 이름 자동 생성...",
-		"sendMessage": "메시지 보내기",
-		"subchats": "하위 채팅",
-		"xMessages_other": "{count}개의 메시지",
-		"xSearchResults_zero": "검색 결과 없음",
-		"xSearchResults_other": "{count}개의 결과",
-		"xSelectedMessages_other": "{count} / {total}개의 메시지 선택됨"
+		"label": {
+			"chats": "채팅",
+			"agents": "에이전트",
+			"newChat": "새 채팅",
+			"noChats": "채팅 없음",
+			"noSubchats": "서브챗 없음",
+			"subchats": "서브챗",
+			"xMessages_other": "메시지 {count}개",
+			"xSearchResults_zero": "검색 결과 없음",
+			"xSearchResults_other": "검색 결과 {count}개",
+			"xSelectedMessages_other": "선택된 메시지 {count}개"
+		},
+		"placeholder": {
+			"newMessage": "질문하기...",
+			"rename": "새 이름 자동 생성..."
+		},
+		"state": {
+			"loadingChats": "채팅 로딩 중...",
+			"loadingMessages": "메시지 로딩 중...",
+			"loadingPreviousMessages": "이전 메시지 로딩 중...",
+			"loadingSubchats": "서브챗 로딩 중..."
+		},
+		"warning": {
+			"deletingChats": "이 채팅들은 영구적으로 삭제됩니다"
+		}
+	},
+	"userAccount": {
+		"action": {
+			"manageAccount": "계정 관리",
+			"manageBilling": "결제 관리"
+		},
+		"error": {
+			"address": "주소를 추가해야 합니다",
+			"avatar": "아바타를 추가해야 합니다",
+			"city": "도시를 추가해야 합니다",
+			"country": "국가를 추가해야 합니다",
+			"email": "이메일 주소를 추가해야 합니다",
+			"legalName": "법적 이름을 추가해야 합니다",
+			"name": "이름을 추가해야 합니다",
+			"postalCode": "우편번호를 추가해야 합니다"
+		},
+		"label": {
+			"account": "계정",
+			"address": "주소",
+			"avatar": "아바타",
+			"billing": "결제",
+			"city": "도시",
+			"country": "국가",
+			"email": "이메일 주소",
+			"legalName": "법적 이름",
+			"name": "이름",
+			"phone": "전화번호",
+			"postalCode": "우편번호",
+			"private": "비공개",
+			"public": "공개",
+			"vatNumber": "사업자등록번호"
+		}
 	}
 }

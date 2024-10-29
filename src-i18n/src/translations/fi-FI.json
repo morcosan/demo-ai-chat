@@ -9,29 +9,39 @@
 			"deselectAll": "Poista kaikki valinnat",
 			"openMenu": "Avaa valikko",
 			"rename": "Nimeä uudelleen",
+			"saveChanges": "Tallenna muutokset",
 			"search": "Hae",
 			"searchMore": "Näytä lisää tuloksia",
 			"selectAll": "Valitse kaikki",
 			"signOut": "Kirjaudu ulos"
 		},
-		"apiDocs": "API-dokumentaatio",
-		"asia": "Aasia",
-		"custom": "Mukautettu",
-		"darkTheme": "Tumma",
-		"default": "Oletus",
-		"deleting": "Poistetaan...",
-		"designSystem": "Suunnittelujärjestelmä",
-		"europe": "Eurooppa",
-		"githubRepo": "GitHub-repositorio",
-		"language": "Kieli",
-		"lightTheme": "Vaalea",
-		"loading": "Ladataan...",
-		"quickSettings": "Pika-asetukset",
-		"searchPlaceholder": "Hae...",
-		"searching": "Haetaan...",
-		"settings": "Asetukset",
-		"uiLibrary": "UI-kirjasto:",
-		"uiTheme": "UI-teema:"
+		"label": {
+			"apiDocs": "API-dokumentaatio",
+			"asia": "Aasia",
+			"custom": "Mukautettu",
+			"darkTheme": "Tumma",
+			"default": "Oletus",
+			"designSystem": "Suunnittelujärjestelmä",
+			"errors": "Virheet",
+			"europe": "Eurooppa",
+			"githubRepo": "GitHub-varasto",
+			"language": "Kieli",
+			"lightTheme": "Vaalea",
+			"optionalField": "(Valinnainen)",
+			"requiredField": "(Pakollinen)",
+			"settings": "Asetukset",
+			"uiLibrary": "UI-kirjasto:",
+			"uiTheme": "UI-teema:"
+		},
+		"placeholder": {
+			"search": "Hae..."
+		},
+		"state": {
+			"dataSaved": "Tietosi on tallennettu",
+			"deleting": "Poistetaan...",
+			"loading": "Ladataan...",
+			"searching": "Haetaan..."
+		}
 	},
 	"aiChat": {
 		"action": {
@@ -39,35 +49,77 @@
 			"confirmDeleteChats": "Vahvista keskustelujen poisto",
 			"confirmRenameChat": "Vahvista keskustelun uudelleennimeäminen",
 			"deleteSelectedChats": "Poista valitut keskustelut",
+			"manageAgents": "Hallitse agentteja",
 			"manageChats": "Hallitse keskusteluja",
 			"openChat": "Avaa keskustelu",
 			"openSubchat_zero": "Luo alikeskustelu",
 			"openSubchat_one": "Avaa alikeskustelu ({count} viesti)",
 			"openSubchat_other": "Avaa alikeskustelu ({count} viestiä)",
+			"sendMessage": "Lähetä viesti",
 			"showMoreChats": "Näytä lisää keskusteluja",
 			"showSubchats": "Näytä alikeskustelut ({count})",
 			"startSearching_one": "Kirjoita vähintään {count} merkki",
 			"startSearching_other": "Kirjoita vähintään {count} merkkiä"
 		},
-		"chats": "Keskustelut",
-		"deleteChatsWarning": "Nämä keskustelut poistetaan pysyvästi",
-		"inputPlaceholder": "Kysy kysymys...",
-		"loadingChats": "Ladataan keskusteluja...",
-		"loadingMessages": "Ladataan viestejä...",
-		"loadingPreviousMessages": "Ladataan aiempia viestejä...",
-		"loadingSubchats": "Ladataan alikeskusteluja...",
-		"newChat": "Uusi keskustelu",
-		"noChats": "Ei keskusteluja",
-		"noSubchats": "Ei alikeskusteluja",
-		"renamePlaceholder": "Luo uusi nimi automaattisesti...",
-		"sendMessage": "Lähetä viesti",
-		"subchats": "Alikeskustelut",
-		"xMessages_one": "{count} viesti",
-		"xMessages_other": "{count} viestiä",
-		"xSearchResults_zero": "Ei hakutuloksia",
-		"xSearchResults_one": "{count} hakutulos",
-		"xSearchResults_other": "{count} hakutulosta",
-		"xSelectedMessages_one": "{count} / {total} viesti valittu",
-		"xSelectedMessages_other": "{count} / {total} viestiä valittu"
+		"label": {
+			"chats": "Keskustelut",
+			"agents": "Agentit",
+			"newChat": "Uusi keskustelu",
+			"noChats": "Ei keskusteluja",
+			"noSubchats": "Ei alikeskusteluja",
+			"subchats": "Alikeskustelut",
+			"xMessages_one": "{count} viesti",
+			"xMessages_other": "{count} viestiä",
+			"xSearchResults_zero": "Ei hakutuloksia",
+			"xSearchResults_one": "{count} hakutulos",
+			"xSearchResults_other": "{count} hakutulosta",
+			"xSelectedMessages_one": "{count} viesti valittu",
+			"xSelectedMessages_other": "{count} viestiä valittu"
+		},
+		"placeholder": {
+			"newMessage": "Esitä kysymys...",
+			"rename": "Luo uusi nimi automaattisesti..."
+		},
+		"state": {
+			"loadingChats": "Ladataan keskusteluja...",
+			"loadingMessages": "Ladataan viestejä...",
+			"loadingPreviousMessages": "Ladataan aiempia viestejä...",
+			"loadingSubchats": "Ladataan alikeskusteluja..."
+		},
+		"warning": {
+			"deletingChats": "Nämä keskustelut poistetaan pysyvästi"
+		}
+	},
+	"userAccount": {
+		"action": {
+			"manageAccount": "Hallitse tiliä",
+			"manageBilling": "Hallitse laskutusta"
+		},
+		"error": {
+			"address": "Sinun täytyy lisätä osoite",
+			"avatar": "Sinun täytyy lisätä avatar",
+			"city": "Sinun täytyy lisätä kaupunki",
+			"country": "Sinun täytyy lisätä maa",
+			"email": "Sinun täytyy lisätä sähköpostiosoite",
+			"legalName": "Sinun täytyy lisätä virallinen nimi",
+			"name": "Sinun täytyy lisätä nimi",
+			"postalCode": "Sinun täytyy lisätä postinumero"
+		},
+		"label": {
+			"account": "Tili",
+			"address": "Osoite",
+			"avatar": "Avatar",
+			"billing": "Laskutus",
+			"city": "Kaupunki",
+			"country": "Maa",
+			"email": "Sähköpostiosoite",
+			"legalName": "Virallinen nimi",
+			"name": "Nimi",
+			"phone": "Puhelinnumero",
+			"postalCode": "Postinumero",
+			"private": "Yksityinen",
+			"public": "Julkinen",
+			"vatNumber": "ALV-numero"
+		}
 	}
 }

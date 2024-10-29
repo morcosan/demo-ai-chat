@@ -9,29 +9,39 @@
 			"deselectAll": "Tout désélectionner",
 			"openMenu": "Ouvrir le menu",
 			"rename": "Renommer",
+			"saveChanges": "Enregistrer les modifications",
 			"search": "Rechercher",
 			"searchMore": "Afficher plus de résultats",
 			"selectAll": "Tout sélectionner",
 			"signOut": "Se déconnecter"
 		},
-		"apiDocs": "Documentation API",
-		"asia": "Asie",
-		"custom": "Personnalisé",
-		"darkTheme": "Sombre",
-		"default": "Par défaut",
-		"deleting": "Suppression...",
-		"designSystem": "Système de design",
-		"europe": "Europe",
-		"githubRepo": "Dépôt GitHub",
-		"language": "Langue",
-		"lightTheme": "Clair",
-		"loading": "Chargement...",
-		"quickSettings": "Paramètres rapides",
-		"searchPlaceholder": "Rechercher...",
-		"searching": "Recherche en cours...",
-		"settings": "Paramètres",
-		"uiLibrary": "Bibliothèque UI :",
-		"uiTheme": "Thème UI :"
+		"label": {
+			"apiDocs": "Documentation API",
+			"asia": "Asie",
+			"custom": "Personnalisé",
+			"darkTheme": "Sombre",
+			"default": "Par défaut",
+			"designSystem": "Système de design",
+			"errors": "Erreurs",
+			"europe": "Europe",
+			"githubRepo": "Dépôt GitHub",
+			"language": "Langue",
+			"lightTheme": "Clair",
+			"optionalField": "(Facultatif)",
+			"requiredField": "(Obligatoire)",
+			"settings": "Paramètres",
+			"uiLibrary": "Bibliothèque UI :",
+			"uiTheme": "Thème UI :"
+		},
+		"placeholder": {
+			"search": "Rechercher..."
+		},
+		"state": {
+			"dataSaved": "Vos données ont été enregistrées",
+			"deleting": "Suppression...",
+			"loading": "Chargement...",
+			"searching": "Recherche..."
+		}
 	},
 	"aiChat": {
 		"action": {
@@ -39,35 +49,77 @@
 			"confirmDeleteChats": "Confirmer la suppression des conversations",
 			"confirmRenameChat": "Confirmer le renommage de la conversation",
 			"deleteSelectedChats": "Supprimer les conversations sélectionnées",
+			"manageAgents": "Gérer les agents",
 			"manageChats": "Gérer les conversations",
 			"openChat": "Ouvrir la conversation",
 			"openSubchat_zero": "Créer une sous-conversation",
 			"openSubchat_one": "Ouvrir la sous-conversation ({count} message)",
 			"openSubchat_other": "Ouvrir la sous-conversation ({count} messages)",
+			"sendMessage": "Envoyer le message",
 			"showMoreChats": "Afficher plus de conversations",
 			"showSubchats": "Afficher les sous-conversations ({count})",
-			"startSearching_one": "Tapez au moins {count} caractère",
-			"startSearching_other": "Tapez au moins {count} caractères"
+			"startSearching_one": "Saisissez au moins {count} caractère",
+			"startSearching_other": "Saisissez au moins {count} caractères"
 		},
-		"chats": "Conversations",
-		"deleteChatsWarning": "Ces conversations seront supprimées définitivement",
-		"inputPlaceholder": "Posez une question...",
-		"loadingChats": "Chargement des conversations...",
-		"loadingMessages": "Chargement des messages...",
-		"loadingPreviousMessages": "Chargement des messages précédents...",
-		"loadingSubchats": "Chargement des sous-conversations...",
-		"newChat": "Nouvelle conversation",
-		"noChats": "Aucune conversation",
-		"noSubchats": "Aucune sous-conversation",
-		"renamePlaceholder": "Générer automatiquement un nouveau nom...",
-		"sendMessage": "Envoyer le message",
-		"subchats": "Sous-conversations",
-		"xMessages_one": "{count} message",
-		"xMessages_other": "{count} messages",
-		"xSearchResults_zero": "Aucun résultat",
-		"xSearchResults_one": "{count} résultat",
-		"xSearchResults_other": "{count} résultats",
-		"xSelectedMessages_one": "{count} / {total} message sélectionné",
-		"xSelectedMessages_other": "{count} / {total} messages sélectionnés"
+		"label": {
+			"chats": "Conversations",
+			"agents": "Agents",
+			"newChat": "Nouvelle conversation",
+			"noChats": "Aucune conversation",
+			"noSubchats": "Aucune sous-conversation",
+			"subchats": "Sous-conversations",
+			"xMessages_one": "{count} message",
+			"xMessages_other": "{count} messages",
+			"xSearchResults_zero": "Aucun résultat",
+			"xSearchResults_one": "{count} résultat",
+			"xSearchResults_other": "{count} résultats",
+			"xSelectedMessages_one": "{count} message sélectionné",
+			"xSelectedMessages_other": "{count} messages sélectionnés"
+		},
+		"placeholder": {
+			"newMessage": "Posez une question...",
+			"rename": "Générer un nouveau nom automatiquement..."
+		},
+		"state": {
+			"loadingChats": "Chargement des conversations...",
+			"loadingMessages": "Chargement des messages...",
+			"loadingPreviousMessages": "Chargement des messages précédents...",
+			"loadingSubchats": "Chargement des sous-conversations..."
+		},
+		"warning": {
+			"deletingChats": "Ces conversations seront supprimées définitivement"
+		}
+	},
+	"userAccount": {
+		"action": {
+			"manageAccount": "Gérer le compte",
+			"manageBilling": "Gérer la facturation"
+		},
+		"error": {
+			"address": "Vous devez ajouter l'adresse",
+			"avatar": "Vous devez ajouter un avatar",
+			"city": "Vous devez ajouter la ville",
+			"country": "Vous devez ajouter le pays",
+			"email": "Vous devez ajouter l'adresse e-mail",
+			"legalName": "Vous devez ajouter la raison sociale",
+			"name": "Vous devez ajouter le nom",
+			"postalCode": "Vous devez ajouter le code postal"
+		},
+		"label": {
+			"account": "Compte",
+			"address": "Adresse",
+			"avatar": "Avatar",
+			"billing": "Facturation",
+			"city": "Ville",
+			"country": "Pays",
+			"email": "Adresse e-mail",
+			"legalName": "Raison sociale",
+			"name": "Nom",
+			"phone": "Numéro de téléphone",
+			"postalCode": "Code postal",
+			"private": "Privé",
+			"public": "Public",
+			"vatNumber": "Numéro de TVA"
+		}
 	}
 }

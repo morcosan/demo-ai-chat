@@ -9,60 +9,112 @@
 			"deselectAll": "Bỏ chọn tất cả",
 			"openMenu": "Mở menu",
 			"rename": "Đổi tên",
+			"saveChanges": "Lưu thay đổi",
 			"search": "Tìm kiếm",
 			"searchMore": "Hiển thị thêm kết quả",
 			"selectAll": "Chọn tất cả",
 			"signOut": "Đăng xuất"
 		},
-		"apiDocs": "Tài liệu API",
-		"asia": "Châu Á",
-		"custom": "Tùy chỉnh",
-		"darkTheme": "Tối",
-		"default": "Mặc định",
-		"deleting": "Đang xóa...",
-		"designSystem": "Hệ thống thiết kế",
-		"europe": "Châu Âu",
-		"githubRepo": "Kho GitHub",
-		"language": "Ngôn ngữ",
-		"lightTheme": "Sáng",
-		"loading": "Đang tải...",
-		"quickSettings": "Cài đặt nhanh",
-		"searchPlaceholder": "Tìm kiếm...",
-		"searching": "Đang tìm...",
-		"settings": "Cài đặt",
-		"uiLibrary": "Thư viện UI:",
-		"uiTheme": "Giao diện UI:"
+		"label": {
+			"apiDocs": "Tài liệu API",
+			"asia": "Châu Á",
+			"custom": "Tùy chỉnh",
+			"darkTheme": "Tối",
+			"default": "Mặc định",
+			"designSystem": "Hệ thống thiết kế",
+			"errors": "Lỗi",
+			"europe": "Châu Âu",
+			"githubRepo": "Kho lưu trữ GitHub",
+			"language": "Ngôn ngữ",
+			"lightTheme": "Sáng",
+			"optionalField": "(Tùy chọn)",
+			"requiredField": "(Bắt buộc)",
+			"settings": "Cài đặt",
+			"uiLibrary": "Thư viện UI:",
+			"uiTheme": "Giao diện UI:"
+		},
+		"placeholder": {
+			"search": "Tìm kiếm..."
+		},
+		"state": {
+			"dataSaved": "Dữ liệu của bạn đã được lưu",
+			"deleting": "Đang xóa...",
+			"loading": "Đang tải...",
+			"searching": "Đang tìm kiếm..."
+		}
 	},
 	"aiChat": {
 		"action": {
-			"backToSubchats": "Quay lại trò chuyện phụ",
-			"confirmDeleteChats": "Xác nhận xóa trò chuyện",
-			"confirmRenameChat": "Xác nhận đổi tên trò chuyện",
-			"deleteSelectedChats": "Xóa trò chuyện đã chọn",
+			"backToSubchats": "Quay lại cuộc trò chuyện phụ",
+			"confirmDeleteChats": "Xác nhận xóa cuộc trò chuyện",
+			"confirmRenameChat": "Xác nhận đổi tên cuộc trò chuyện",
+			"deleteSelectedChats": "Xóa cuộc trò chuyện đã chọn",
+			"manageAgents": "Quản lý tác nhân",
 			"manageChats": "Quản lý trò chuyện",
-			"openChat": "Mở trò chuyện",
-			"openSubchat_zero": "Tạo trò chuyện phụ",
-			"openSubchat_other": "Mở trò chuyện phụ ({count} tin nhắn)",
-			"showMoreChats": "Hiển thị thêm trò chuyện",
-			"showSubchats": "Hiển thị trò chuyện phụ ({count})",
+			"openChat": "Mở cuộc trò chuyện",
+			"openSubchat_zero": "Tạo cuộc trò chuyện phụ",
+			"openSubchat_other": "Mở cuộc trò chuyện phụ ({count} tin nhắn)",
+			"sendMessage": "Gửi tin nhắn",
+			"showMoreChats": "Hiển thị thêm cuộc trò chuyện",
+			"showSubchats": "Hiển thị cuộc trò chuyện phụ ({count})",
 			"startSearching_other": "Nhập ít nhất {count} ký tự"
 		},
-		"chats": "Trò chuyện",
-		"deleteChatsWarning": "Các trò chuyện này sẽ bị xóa vĩnh viễn",
-		"inputPlaceholder": "Đặt câu hỏi...",
-		"loadingChats": "Đang tải trò chuyện...",
-		"loadingMessages": "Đang tải tin nhắn...",
-		"loadingPreviousMessages": "Đang tải tin nhắn trước...",
-		"loadingSubchats": "Đang tải trò chuyện phụ...",
-		"newChat": "Trò chuyện mới",
-		"noChats": "Không có trò chuyện",
-		"noSubchats": "Không có trò chuyện phụ",
-		"renamePlaceholder": "Tự động tạo tên mới...",
-		"sendMessage": "Gửi tin nhắn",
-		"subchats": "Trò chuyện phụ",
-		"xMessages_other": "{count} tin nhắn",
-		"xSearchResults_zero": "Không có kết quả",
-		"xSearchResults_other": "{count} kết quả",
-		"xSelectedMessages_other": "Đã chọn {count} / {total} tin nhắn"
+		"label": {
+			"chats": "Trò chuyện",
+			"agents": "Tác nhân",
+			"newChat": "Cuộc trò chuyện mới",
+			"noChats": "Không có cuộc trò chuyện",
+			"noSubchats": "Không có cuộc trò chuyện phụ",
+			"subchats": "Cuộc trò chuyện phụ",
+			"xMessages_other": "{count} tin nhắn",
+			"xSearchResults_zero": "Không có kết quả",
+			"xSearchResults_other": "{count} kết quả",
+			"xSelectedMessages_other": "{count} tin nhắn được chọn"
+		},
+		"placeholder": {
+			"newMessage": "Đặt câu hỏi...",
+			"rename": "Tự động tạo tên mới..."
+		},
+		"state": {
+			"loadingChats": "Đang tải cuộc trò chuyện...",
+			"loadingMessages": "Đang tải tin nhắn...",
+			"loadingPreviousMessages": "Đang tải tin nhắn trước đó...",
+			"loadingSubchats": "Đang tải cuộc trò chuyện phụ..."
+		},
+		"warning": {
+			"deletingChats": "Những cuộc trò chuyện này sẽ bị xóa vĩnh viễn"
+		}
+	},
+	"userAccount": {
+		"action": {
+			"manageAccount": "Quản lý tài khoản",
+			"manageBilling": "Quản lý thanh toán"
+		},
+		"error": {
+			"address": "Bạn phải thêm địa chỉ",
+			"avatar": "Bạn phải thêm ảnh đại diện",
+			"city": "Bạn phải thêm thành phố",
+			"country": "Bạn phải thêm quốc gia",
+			"email": "Bạn phải thêm địa chỉ email",
+			"legalName": "Bạn phải thêm tên pháp lý",
+			"name": "Bạn phải thêm tên",
+			"postalCode": "Bạn phải thêm mã bưu chính"
+		},
+		"label": {
+			"account": "Tài khoản",
+			"address": "Địa chỉ",
+			"avatar": "Ảnh đại diện",
+			"billing": "Thanh toán",
+			"city": "Thành phố",
+			"country": "Quốc gia",
+			"email": "Địa chỉ email",
+			"legalName": "Tên pháp lý",
+			"name": "Tên",
+			"phone": "Số điện thoại",
+			"postalCode": "Mã bưu chính",
+			"private": "Riêng tư",
+			"public": "Công khai",
+			"vatNumber": "Mã số thuế"
+		}
 	}
 }

@@ -8,61 +8,113 @@
 			"delete": "Hapus",
 			"deselectAll": "Batalkan semua pilihan",
 			"openMenu": "Buka menu",
-			"rename": "Ganti nama",
+			"rename": "Ubah nama",
+			"saveChanges": "Simpan perubahan",
 			"search": "Cari",
-			"searchMore": "Tampilkan hasil lainnya",
+			"searchMore": "Tampilkan lebih banyak hasil",
 			"selectAll": "Pilih semua",
 			"signOut": "Keluar"
 		},
-		"apiDocs": "Dokumentasi API",
-		"asia": "Asia",
-		"custom": "Kustom",
-		"darkTheme": "Gelap",
-		"default": "Bawaan",
-		"deleting": "Menghapus...",
-		"designSystem": "Sistem desain",
-		"europe": "Eropa",
-		"githubRepo": "Repositori GitHub",
-		"language": "Bahasa",
-		"lightTheme": "Terang",
-		"loading": "Memuat...",
-		"quickSettings": "Pengaturan cepat",
-		"searchPlaceholder": "Cari...",
-		"searching": "Mencari...",
-		"settings": "Pengaturan",
-		"uiLibrary": "Pustaka UI:",
-		"uiTheme": "Tema UI:"
+		"label": {
+			"apiDocs": "Dokumentasi API",
+			"asia": "Asia",
+			"custom": "Kustom",
+			"darkTheme": "Gelap",
+			"default": "Default",
+			"designSystem": "Sistem desain",
+			"errors": "Kesalahan",
+			"europe": "Eropa",
+			"githubRepo": "Repositori GitHub",
+			"language": "Bahasa",
+			"lightTheme": "Terang",
+			"optionalField": "(Opsional)",
+			"requiredField": "(Wajib)",
+			"settings": "Pengaturan",
+			"uiLibrary": "Pustaka UI:",
+			"uiTheme": "Tema UI:"
+		},
+		"placeholder": {
+			"search": "Cari..."
+		},
+		"state": {
+			"dataSaved": "Data Anda telah disimpan",
+			"deleting": "Menghapus...",
+			"loading": "Memuat...",
+			"searching": "Mencari..."
+		}
 	},
 	"aiChat": {
 		"action": {
 			"backToSubchats": "Kembali ke subchat",
 			"confirmDeleteChats": "Konfirmasi hapus chat",
-			"confirmRenameChat": "Konfirmasi ganti nama chat",
-			"deleteSelectedChats": "Hapus chat terpilih",
+			"confirmRenameChat": "Konfirmasi ubah nama chat",
+			"deleteSelectedChats": "Hapus chat yang dipilih",
+			"manageAgents": "Kelola agen",
 			"manageChats": "Kelola chat",
 			"openChat": "Buka chat",
 			"openSubchat_zero": "Buat subchat",
 			"openSubchat_other": "Buka subchat ({count} pesan)",
-			"showMoreChats": "Tampilkan chat lainnya",
+			"sendMessage": "Kirim pesan",
+			"showMoreChats": "Tampilkan lebih banyak chat",
 			"showSubchats": "Tampilkan subchat ({count})",
 			"startSearching_other": "Ketik minimal {count} karakter"
 		},
-		"chats": "Chat",
-		"deleteChatsWarning": "Chat ini akan dihapus secara permanen",
-		"inputPlaceholder": "Ajukan pertanyaan...",
-		"loadingChats": "Memuat chat...",
-		"loadingMessages": "Memuat pesan...",
-		"loadingPreviousMessages": "Memuat pesan sebelumnya...",
-		"loadingSubchats": "Memuat subchat...",
-		"newChat": "Chat baru",
-		"noChats": "Tidak ada chat",
-		"noSubchats": "Tidak ada subchat",
-		"renamePlaceholder": "Buat nama baru secara otomatis...",
-		"sendMessage": "Kirim pesan",
-		"subchats": "Subchat",
-		"xMessages_other": "{count} pesan",
-		"xSearchResults_zero": "Tidak ada hasil",
-		"xSearchResults_other": "{count} hasil",
-		"xSelectedMessages_other": "{count} / {total} pesan dipilih"
+		"label": {
+			"chats": "Chat",
+			"agents": "Agen",
+			"newChat": "Chat baru",
+			"noChats": "Tidak ada chat",
+			"noSubchats": "Tidak ada subchat",
+			"subchats": "Subchat",
+			"xMessages_other": "{count} pesan",
+			"xSearchResults_zero": "Tidak ada hasil",
+			"xSearchResults_other": "{count} hasil",
+			"xSelectedMessages_other": "{count} pesan dipilih"
+		},
+		"placeholder": {
+			"newMessage": "Ajukan pertanyaan...",
+			"rename": "Buat nama baru secara otomatis..."
+		},
+		"state": {
+			"loadingChats": "Memuat chat...",
+			"loadingMessages": "Memuat pesan...",
+			"loadingPreviousMessages": "Memuat pesan sebelumnya...",
+			"loadingSubchats": "Memuat subchat..."
+		},
+		"warning": {
+			"deletingChats": "Chat ini akan dihapus secara permanen"
+		}
+	},
+	"userAccount": {
+		"action": {
+			"manageAccount": "Kelola akun",
+			"manageBilling": "Kelola penagihan"
+		},
+		"error": {
+			"address": "Anda harus menambahkan alamat",
+			"avatar": "Anda harus menambahkan avatar",
+			"city": "Anda harus menambahkan kota",
+			"country": "Anda harus menambahkan negara",
+			"email": "Anda harus menambahkan alamat email",
+			"legalName": "Anda harus menambahkan nama legal",
+			"name": "Anda harus menambahkan nama",
+			"postalCode": "Anda harus menambahkan kode pos"
+		},
+		"label": {
+			"account": "Akun",
+			"address": "Alamat",
+			"avatar": "Avatar",
+			"billing": "Penagihan",
+			"city": "Kota",
+			"country": "Negara",
+			"email": "Alamat email",
+			"legalName": "Nama legal",
+			"name": "Nama",
+			"phone": "Nomor telepon",
+			"postalCode": "Kode pos",
+			"private": "Pribadi",
+			"public": "Publik",
+			"vatNumber": "NPWP"
+		}
 	}
 }

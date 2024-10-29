@@ -9,60 +9,112 @@
 			"deselectAll": "すべての選択を解除",
 			"openMenu": "メニューを開く",
 			"rename": "名前を変更",
+			"saveChanges": "変更を保存",
 			"search": "検索",
-			"searchMore": "さらに表示",
+			"searchMore": "さらに結果を表示",
 			"selectAll": "すべて選択",
-			"signOut": "サインアウト"
+			"signOut": "ログアウト"
 		},
-		"apiDocs": "APIドキュメント",
-		"asia": "アジア",
-		"custom": "カスタム",
-		"darkTheme": "ダーク",
-		"default": "デフォルト",
-		"deleting": "削除中...",
-		"designSystem": "デザインシステム",
-		"europe": "ヨーロッパ",
-		"githubRepo": "GitHubリポジトリ",
-		"language": "言語",
-		"lightTheme": "ライト",
-		"loading": "読み込み中...",
-		"quickSettings": "クイック設定",
-		"searchPlaceholder": "検索...",
-		"searching": "検索中...",
-		"settings": "設定",
-		"uiLibrary": "UIライブラリ:",
-		"uiTheme": "UIテーマ:"
+		"label": {
+			"apiDocs": "APIドキュメント",
+			"asia": "アジア",
+			"custom": "カスタム",
+			"darkTheme": "ダーク",
+			"default": "デフォルト",
+			"designSystem": "デザインシステム",
+			"errors": "エラー",
+			"europe": "ヨーロッパ",
+			"githubRepo": "GitHubリポジトリ",
+			"language": "言語",
+			"lightTheme": "ライト",
+			"optionalField": "(任意)",
+			"requiredField": "(必須)",
+			"settings": "設定",
+			"uiLibrary": "UIライブラリ：",
+			"uiTheme": "UIテーマ："
+		},
+		"placeholder": {
+			"search": "検索..."
+		},
+		"state": {
+			"dataSaved": "データが保存されました",
+			"deleting": "削除中...",
+			"loading": "読み込み中...",
+			"searching": "検索中..."
+		}
 	},
 	"aiChat": {
 		"action": {
 			"backToSubchats": "サブチャットに戻る",
 			"confirmDeleteChats": "チャットの削除を確認",
-			"confirmRenameChat": "チャット名の変更を確認",
+			"confirmRenameChat": "チャットの名前変更を確認",
 			"deleteSelectedChats": "選択したチャットを削除",
+			"manageAgents": "エージェントを管理",
 			"manageChats": "チャットを管理",
 			"openChat": "チャットを開く",
 			"openSubchat_zero": "サブチャットを作成",
-			"openSubchat_other": "サブチャットを開く ({count}件のメッセージ)",
+			"openSubchat_other": "サブチャットを開く（{count}件のメッセージ）",
+			"sendMessage": "メッセージを送信",
 			"showMoreChats": "さらにチャットを表示",
-			"showSubchats": "サブチャットを表示 ({count})",
-			"startSearching_other": "最低{count}文字を入力してください"
+			"showSubchats": "サブチャットを表示（{count}）",
+			"startSearching_other": "少なくとも{count}文字を入力してください"
 		},
-		"chats": "チャット",
-		"deleteChatsWarning": "これらのチャットは完全に削除されます",
-		"inputPlaceholder": "質問を入力...",
-		"loadingChats": "チャットを読み込み中...",
-		"loadingMessages": "メッセージを読み込み中...",
-		"loadingPreviousMessages": "以前のメッセージを読み込み中...",
-		"loadingSubchats": "サブチャットを読み込み中...",
-		"newChat": "新規チャット",
-		"noChats": "チャットなし",
-		"noSubchats": "サブチャットなし",
-		"renamePlaceholder": "新しい名前を自動生成...",
-		"sendMessage": "メッセージを送信",
-		"subchats": "サブチャット",
-		"xMessages_other": "{count}件のメッセージ",
-		"xSearchResults_zero": "結果なし",
-		"xSearchResults_other": "{count}件の結果",
-		"xSelectedMessages_other": "{count} / {total}件のメッセージを選択"
+		"label": {
+			"chats": "チャット",
+			"agents": "エージェント",
+			"newChat": "新しいチャット",
+			"noChats": "チャットがありません",
+			"noSubchats": "サブチャットがありません",
+			"subchats": "サブチャット",
+			"xMessages_other": "{count}件のメッセージ",
+			"xSearchResults_zero": "検索結果なし",
+			"xSearchResults_other": "{count}件の検索結果",
+			"xSelectedMessages_other": "{count}件のメッセージを選択"
+		},
+		"placeholder": {
+			"newMessage": "質問を入力...",
+			"rename": "自動で新しい名前を生成..."
+		},
+		"state": {
+			"loadingChats": "チャットを読み込み中...",
+			"loadingMessages": "メッセージを読み込み中...",
+			"loadingPreviousMessages": "過去のメッセージを読み込み中...",
+			"loadingSubchats": "サブチャットを読み込み中..."
+		},
+		"warning": {
+			"deletingChats": "これらのチャットは完全に削除されます"
+		}
+	},
+	"userAccount": {
+		"action": {
+			"manageAccount": "アカウントを管理",
+			"manageBilling": "請求を管理"
+		},
+		"error": {
+			"address": "住所を追加する必要があります",
+			"avatar": "アバターを追加する必要があります",
+			"city": "市区町村を追加する必要があります",
+			"country": "国を追加する必要があります",
+			"email": "メールアドレスを追加する必要があります",
+			"legalName": "法人名を追加する必要があります",
+			"name": "名前を追加する必要があります",
+			"postalCode": "郵便番号を追加する必要があります"
+		},
+		"label": {
+			"account": "アカウント",
+			"address": "住所",
+			"avatar": "アバター",
+			"billing": "請求",
+			"city": "市区町村",
+			"country": "国",
+			"email": "メールアドレス",
+			"legalName": "法人名",
+			"name": "名前",
+			"phone": "電話番号",
+			"postalCode": "郵便番号",
+			"private": "非公開",
+			"public": "公開",
+			"vatNumber": "法人番号"
+		}
 	}
 }

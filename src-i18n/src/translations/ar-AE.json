@@ -9,29 +9,39 @@
 			"deselectAll": "إلغاء تحديد الكل",
 			"openMenu": "فتح القائمة",
 			"rename": "إعادة تسمية",
+			"saveChanges": "حفظ التغييرات",
 			"search": "بحث",
 			"searchMore": "عرض المزيد من النتائج",
 			"selectAll": "تحديد الكل",
 			"signOut": "تسجيل الخروج"
 		},
-		"apiDocs": "وثائق API",
-		"asia": "آسيا",
-		"custom": "مخصص",
-		"darkTheme": "داكن",
-		"default": "افتراضي",
-		"deleting": "جاري الحذف...",
-		"designSystem": "نظام التصميم",
-		"europe": "أوروبا",
-		"githubRepo": "مستودع GitHub",
-		"language": "اللغة",
-		"lightTheme": "فاتح",
-		"loading": "جاري التحميل...",
-		"quickSettings": "إعدادات سريعة",
-		"searchPlaceholder": "بحث...",
-		"searching": "جاري البحث...",
-		"settings": "الإعدادات",
-		"uiLibrary": "مكتبة واجهة المستخدم:",
-		"uiTheme": "سمة واجهة المستخدم:"
+		"label": {
+			"apiDocs": "وثائق API",
+			"asia": "آسيا",
+			"custom": "مخصص",
+			"darkTheme": "داكن",
+			"default": "افتراضي",
+			"designSystem": "نظام التصميم",
+			"errors": "أخطاء",
+			"europe": "أوروبا",
+			"githubRepo": "مستودع GitHub",
+			"language": "اللغة",
+			"lightTheme": "فاتح",
+			"optionalField": "(اختياري)",
+			"requiredField": "(مطلوب)",
+			"settings": "الإعدادات",
+			"uiLibrary": "مكتبة واجهة المستخدم:",
+			"uiTheme": "سمة واجهة المستخدم:"
+		},
+		"placeholder": {
+			"search": "بحث..."
+		},
+		"state": {
+			"dataSaved": "تم حفظ بياناتك",
+			"deleting": "جاري الحذف...",
+			"loading": "جاري التحميل...",
+			"searching": "جاري البحث..."
+		}
 	},
 	"aiChat": {
 		"action": {
@@ -39,6 +49,7 @@
 			"confirmDeleteChats": "تأكيد حذف المحادثات",
 			"confirmRenameChat": "تأكيد إعادة تسمية المحادثة",
 			"deleteSelectedChats": "حذف المحادثات المحددة",
+			"manageAgents": "إدارة الوكلاء",
 			"manageChats": "إدارة المحادثات",
 			"openChat": "فتح المحادثة",
 			"openSubchat_zero": "إنشاء محادثة فرعية",
@@ -46,6 +57,7 @@
 			"openSubchat_two": "فتح محادثة فرعية (رسالتان)",
 			"openSubchat_few": "فتح محادثة فرعية ({count} رسائل)",
 			"openSubchat_many": "فتح محادثة فرعية ({count} رسالة)",
+			"sendMessage": "إرسال رسالة",
 			"showMoreChats": "عرض المزيد من المحادثات",
 			"showSubchats": "عرض المحادثات الفرعية ({count})",
 			"startSearching_one": "اكتب حرفاً واحداً على الأقل",
@@ -53,33 +65,73 @@
 			"startSearching_few": "اكتب {count} أحرف على الأقل",
 			"startSearching_many": "اكتب {count} حرفاً على الأقل"
 		},
-		"chats": "المحادثات",
-		"deleteChatsWarning": "سيتم حذف هذه المحادثات نهائياً",
-		"inputPlaceholder": "اطرح سؤالاً...",
-		"loadingChats": "جاري تحميل المحادثات...",
-		"loadingMessages": "جاري تحميل الرسائل...",
-		"loadingPreviousMessages": "جاري تحميل الرسائل السابقة...",
-		"loadingSubchats": "جاري تحميل المحادثات الفرعية...",
-		"newChat": "محادثة جديدة",
-		"noChats": "لا توجد محادثات",
-		"noSubchats": "لا توجد محادثات فرعية",
-		"renamePlaceholder": "توليد اسم جديد تلقائياً...",
-		"sendMessage": "إرسال رسالة",
-		"subchats": "المحادثات الفرعية",
-		"xMessages_zero": "لا توجد رسائل",
-		"xMessages_one": "رسالة واحدة",
-		"xMessages_two": "رسالتان",
-		"xMessages_few": "{count} رسائل",
-		"xMessages_many": "{count} رسالة",
-		"xSearchResults_zero": "لا توجد نتائج بحث",
-		"xSearchResults_one": "نتيجة بحث واحدة",
-		"xSearchResults_two": "نتيجتا بحث",
-		"xSearchResults_few": "{count} نتائج بحث",
-		"xSearchResults_many": "{count} نتيجة بحث",
-		"xSelectedMessages_zero": "لم يتم تحديد أي رسائل",
-		"xSelectedMessages_one": "رسالة واحدة محددة من {total}",
-		"xSelectedMessages_two": "رسالتان محددتان من {total}",
-		"xSelectedMessages_few": "{count} رسائل محددة من {total}",
-		"xSelectedMessages_many": "{count} رسالة محددة من {total}"
+		"label": {
+			"chats": "المحادثات",
+			"agents": "الوكلاء",
+			"newChat": "محادثة جديدة",
+			"noChats": "لا توجد محادثات",
+			"noSubchats": "لا توجد محادثات فرعية",
+			"subchats": "المحادثات الفرعية",
+			"xMessages_zero": "لا توجد رسائل",
+			"xMessages_one": "رسالة واحدة",
+			"xMessages_two": "رسالتان",
+			"xMessages_few": "{count} رسائل",
+			"xMessages_many": "{count} رسالة",
+			"xSearchResults_zero": "لا توجد نتائج بحث",
+			"xSearchResults_one": "نتيجة بحث واحدة",
+			"xSearchResults_two": "نتيجتا بحث",
+			"xSearchResults_few": "{count} نتائج بحث",
+			"xSearchResults_many": "{count} نتيجة بحث",
+			"xSelectedMessages_zero": "لم يتم تحديد رسائل",
+			"xSelectedMessages_one": "تم تحديد رسالة واحدة",
+			"xSelectedMessages_two": "تم تحديد رسالتين",
+			"xSelectedMessages_few": "تم تحديد {count} رسائل",
+			"xSelectedMessages_many": "تم تحديد {count} رسالة"
+		},
+		"placeholder": {
+			"newMessage": "اطرح سؤالاً...",
+			"rename": "إنشاء اسم جديد تلقائياً..."
+		},
+		"state": {
+			"loadingChats": "جاري تحميل المحادثات...",
+			"loadingMessages": "جاري تحميل الرسائل...",
+			"loadingPreviousMessages": "جاري تحميل الرسائل السابقة...",
+			"loadingSubchats": "جاري تحميل المحادثات الفرعية..."
+		},
+		"warning": {
+			"deletingChats": "سيتم حذف هذه المحادثات نهائياً"
+		}
+	},
+	"userAccount": {
+		"action": {
+			"manageAccount": "إدارة الحساب",
+			"manageBilling": "إدارة الفواتير"
+		},
+		"error": {
+			"address": "يجب إضافة العنوان",
+			"avatar": "يجب إضافة الصورة الرمزية",
+			"city": "يجب إضافة المدينة",
+			"country": "يجب إضافة الدولة",
+			"email": "يجب إضافة عنوان البريد الإلكتروني",
+			"legalName": "يجب إضافة الاسم القانوني",
+			"name": "يجب إضافة الاسم",
+			"postalCode": "يجب إضافة الرمز البريدي"
+		},
+		"label": {
+			"account": "الحساب",
+			"address": "العنوان",
+			"avatar": "الصورة الرمزية",
+			"billing": "الفواتير",
+			"city": "المدينة",
+			"country": "الدولة",
+			"email": "عنوان البريد الإلكتروني",
+			"legalName": "الاسم القانوني",
+			"name": "الاسم",
+			"phone": "رقم الهاتف",
+			"postalCode": "الرمز البريدي",
+			"private": "خاص",
+			"public": "عام",
+			"vatNumber": "رقم ضريبة القيمة المضافة"
+		}
 	}
 }

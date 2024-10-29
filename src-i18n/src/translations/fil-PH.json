@@ -2,72 +2,124 @@
 	"core": {
 		"action": {
 			"back": "Bumalik",
-			"backToHome": "Bumalik sa homepage",
+			"backToHome": "Bumalik sa home",
 			"changeLanguage": "Palitan ang wika",
 			"close": "Isara",
 			"delete": "Burahin",
-			"deselectAll": "I-unselect lahat",
+			"deselectAll": "I-deselect lahat",
 			"openMenu": "Buksan ang menu",
 			"rename": "Palitan ang pangalan",
+			"saveChanges": "I-save ang mga pagbabago",
 			"search": "Maghanap",
-			"searchMore": "Ipakita ang higit pang resulta",
+			"searchMore": "Ipakita ang mas maraming resulta",
 			"selectAll": "Piliin lahat",
 			"signOut": "Mag-sign out"
 		},
-		"apiDocs": "API docs",
-		"asia": "Asya",
-		"custom": "Custom",
-		"darkTheme": "Madilim",
-		"default": "Default",
-		"deleting": "Binubura...",
-		"designSystem": "Design system",
-		"europe": "Europa",
-		"githubRepo": "GitHub repository",
-		"language": "Wika",
-		"lightTheme": "Maliwanag",
-		"loading": "Naglo-load...",
-		"quickSettings": "Mabilisang settings",
-		"searchPlaceholder": "Maghanap...",
-		"searching": "Naghahanap...",
-		"settings": "Mga Setting",
-		"uiLibrary": "UI library:",
-		"uiTheme": "UI theme:"
+		"label": {
+			"apiDocs": "API docs",
+			"asia": "Asya",
+			"custom": "Custom",
+			"darkTheme": "Madilim",
+			"default": "Default",
+			"designSystem": "Design system",
+			"errors": "Mga error",
+			"europe": "Europa",
+			"githubRepo": "GitHub repository",
+			"language": "Wika",
+			"lightTheme": "Maliwanag",
+			"optionalField": "(Opsyonal)",
+			"requiredField": "(Kinakailangan)",
+			"settings": "Mga setting",
+			"uiLibrary": "UI library:",
+			"uiTheme": "UI theme:"
+		},
+		"placeholder": {
+			"search": "Maghanap..."
+		},
+		"state": {
+			"dataSaved": "Na-save ang iyong data",
+			"deleting": "Binubura...",
+			"loading": "Naglo-load...",
+			"searching": "Naghahanap..."
+		}
 	},
 	"aiChat": {
 		"action": {
-			"backToSubchats": "Bumalik sa mga subchats",
+			"backToSubchats": "Bumalik sa mga subchat",
 			"confirmDeleteChats": "Kumpirmahin ang pagbura ng mga chat",
-			"confirmRenameChat": "Kumpirmahin ang pagpapalit ng pangalan ng chat",
+			"confirmRenameChat": "Kumpirmahin ang pagpalit ng pangalan ng chat",
 			"deleteSelectedChats": "Burahin ang mga napiling chat",
+			"manageAgents": "Pamahalaan ang mga agent",
 			"manageChats": "Pamahalaan ang mga chat",
 			"openChat": "Buksan ang chat",
 			"openSubchat_zero": "Gumawa ng subchat",
 			"openSubchat_one": "Buksan ang subchat ({count} mensahe)",
-			"openSubchat_other": "Buksan ang subchat ({count} na mensahe)",
-			"showMoreChats": "Ipakita ang higit pang chat",
+			"openSubchat_other": "Buksan ang subchat ({count} mensahe)",
+			"sendMessage": "Magpadala ng mensahe",
+			"showMoreChats": "Ipakita ang mas maraming chat",
 			"showSubchats": "Ipakita ang mga subchat ({count})",
-			"startSearching_one": "Mag-type ng hindi bababa sa {count} character",
-			"startSearching_other": "Mag-type ng hindi bababa sa {count} na character"
+			"startSearching_one": "Mag-type ng kahit {count} karakter",
+			"startSearching_other": "Mag-type ng kahit {count} karakter"
 		},
-		"chats": "Mga Chat",
-		"deleteChatsWarning": "Permanenteng mabubura ang mga chat na ito",
-		"inputPlaceholder": "Magtanong...",
-		"loadingChats": "Naglo-load ng mga chat...",
-		"loadingMessages": "Naglo-load ng mga mensahe...",
-		"loadingPreviousMessages": "Naglo-load ng mga nakaraang mensahe...",
-		"loadingSubchats": "Naglo-load ng mga subchat...",
-		"newChat": "Bagong chat",
-		"noChats": "Walang chat",
-		"noSubchats": "Walang subchat",
-		"renamePlaceholder": "Awtomatikong gumawa ng bagong pangalan...",
-		"sendMessage": "Ipadala ang mensahe",
-		"subchats": "Mga Subchat",
-		"xMessages_one": "{count} mensahe",
-		"xMessages_other": "{count} na mensahe",
-		"xSearchResults_zero": "Walang resulta",
-		"xSearchResults_one": "{count} resulta",
-		"xSearchResults_other": "{count} na resulta",
-		"xSelectedMessages_one": "{count} / {total} mensahe ang napili",
-		"xSelectedMessages_other": "{count} / {total} na mensahe ang napili"
+		"label": {
+			"chats": "Mga chat",
+			"agents": "Mga agent",
+			"newChat": "Bagong chat",
+			"noChats": "Walang chat",
+			"noSubchats": "Walang subchat",
+			"subchats": "Mga subchat",
+			"xMessages_one": "{count} mensahe",
+			"xMessages_other": "{count} mensahe",
+			"xSearchResults_zero": "Walang resulta",
+			"xSearchResults_one": "{count} resulta",
+			"xSearchResults_other": "{count} resulta",
+			"xSelectedMessages_one": "{count} napiling mensahe",
+			"xSelectedMessages_other": "{count} napiling mensahe"
+		},
+		"placeholder": {
+			"newMessage": "Magtanong...",
+			"rename": "Awtomatikong gumawa ng bagong pangalan..."
+		},
+		"state": {
+			"loadingChats": "Naglo-load ng mga chat...",
+			"loadingMessages": "Naglo-load ng mga mensahe...",
+			"loadingPreviousMessages": "Naglo-load ng mga nakaraang mensahe...",
+			"loadingSubchats": "Naglo-load ng mga subchat..."
+		},
+		"warning": {
+			"deletingChats": "Permanenteng mabubura ang mga chat na ito"
+		}
+	},
+	"userAccount": {
+		"action": {
+			"manageAccount": "Pamahalaan ang account",
+			"manageBilling": "Pamahalaan ang billing"
+		},
+		"error": {
+			"address": "Kailangan mong magdagdag ng address",
+			"avatar": "Kailangan mong magdagdag ng avatar",
+			"city": "Kailangan mong magdagdag ng lungsod",
+			"country": "Kailangan mong magdagdag ng bansa",
+			"email": "Kailangan mong magdagdag ng email address",
+			"legalName": "Kailangan mong magdagdag ng legal na pangalan",
+			"name": "Kailangan mong magdagdag ng pangalan",
+			"postalCode": "Kailangan mong magdagdag ng postal code"
+		},
+		"label": {
+			"account": "Account",
+			"address": "Address",
+			"avatar": "Avatar",
+			"billing": "Billing",
+			"city": "Lungsod",
+			"country": "Bansa",
+			"email": "Email address",
+			"legalName": "Legal na pangalan",
+			"name": "Pangalan",
+			"phone": "Numero ng telepono",
+			"postalCode": "Postal code",
+			"private": "Pribado",
+			"public": "Pampubliko",
+			"vatNumber": "TIN"
+		}
 	}
 }

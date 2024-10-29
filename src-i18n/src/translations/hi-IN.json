@@ -6,68 +6,120 @@
 			"changeLanguage": "भाषा बदलें",
 			"close": "बंद करें",
 			"delete": "हटाएं",
-			"deselectAll": "सभी अचयनित करें",
-			"openMenu": "मेनू खोलें",
+			"deselectAll": "सभी को अचयनित करें",
+			"openMenu": "मेन्यू खोलें",
 			"rename": "नाम बदलें",
+			"saveChanges": "परिवर्तन सहेजें",
 			"search": "खोजें",
 			"searchMore": "अधिक परिणाम दिखाएं",
 			"selectAll": "सभी चुनें",
 			"signOut": "साइन आउट करें"
 		},
-		"apiDocs": "API दस्तावेज़",
-		"asia": "एशिया",
-		"custom": "कस्टम",
-		"darkTheme": "डार्क",
-		"default": "डिफ़ॉल्ट",
-		"deleting": "हटाया जा रहा है...",
-		"designSystem": "डिज़ाइन सिस्टम",
-		"europe": "यूरोप",
-		"githubRepo": "GitHub रिपॉजिटरी",
-		"language": "भाषा",
-		"lightTheme": "लाइट",
-		"loading": "लोड हो रहा है...",
-		"quickSettings": "त्वरित सेटिंग्स",
-		"searchPlaceholder": "खोजें...",
-		"searching": "खोज रहे हैं...",
-		"settings": "सेटिंग्स",
-		"uiLibrary": "UI लाइब्रेरी:",
-		"uiTheme": "UI थीम:"
+		"label": {
+			"apiDocs": "API दस्तावेज़",
+			"asia": "एशिया",
+			"custom": "कस्टम",
+			"darkTheme": "डार्क",
+			"default": "डिफ़ॉल्ट",
+			"designSystem": "डिज़ाइन सिस्टम",
+			"errors": "त्रुटियां",
+			"europe": "यूरोप",
+			"githubRepo": "GitHub रिपॉजिटरी",
+			"language": "भाषा",
+			"lightTheme": "लाइट",
+			"optionalField": "(वैकल्पिक)",
+			"requiredField": "(आवश्यक)",
+			"settings": "सेटिंग्स",
+			"uiLibrary": "UI लाइब्रेरी:",
+			"uiTheme": "UI थीम:"
+		},
+		"placeholder": {
+			"search": "खोजें..."
+		},
+		"state": {
+			"dataSaved": "आपका डेटा सहेजा गया",
+			"deleting": "हटाया जा रहा है...",
+			"loading": "लोड हो रहा है...",
+			"searching": "खोजा जा रहा है..."
+		}
 	},
 	"aiChat": {
 		"action": {
-			"backToSubchats": "सब-चैट्स पर वापस जाएं",
-			"confirmDeleteChats": "चैट्स हटाने की पुष्टि करें",
+			"backToSubchats": "सब-चैट पर वापस जाएं",
+			"confirmDeleteChats": "चैट हटाने की पुष्टि करें",
 			"confirmRenameChat": "चैट का नाम बदलने की पुष्टि करें",
-			"deleteSelectedChats": "चयनित चैट्स हटाएं",
-			"manageChats": "चैट्स प्रबंधित करें",
+			"deleteSelectedChats": "चयनित चैट हटाएं",
+			"manageAgents": "एजेंट्स प्रबंधित करें",
+			"manageChats": "चैट प्रबंधित करें",
 			"openChat": "चैट खोलें",
 			"openSubchat_zero": "सब-चैट बनाएं",
 			"openSubchat_one": "सब-चैट खोलें ({count} संदेश)",
 			"openSubchat_other": "सब-चैट खोलें ({count} संदेश)",
-			"showMoreChats": "अधिक चैट्स दिखाएं",
-			"showSubchats": "सब-चैट्स दिखाएं ({count})",
-			"startSearching_one": "कम से कम {count} वर्ण टाइप करें",
-			"startSearching_other": "कम से कम {count} वर्ण टाइप करें"
+			"sendMessage": "संदेश भेजें",
+			"showMoreChats": "अधिक चैट दिखाएं",
+			"showSubchats": "सब-चैट दिखाएं ({count})",
+			"startSearching_one": "कम से कम {count} अक्षर टाइप करें",
+			"startSearching_other": "कम से कम {count} अक्षर टाइप करें"
 		},
-		"chats": "चैट्स",
-		"deleteChatsWarning": "ये चैट्स स्थायी रूप से हटा दी जाएंगी",
-		"inputPlaceholder": "प्रश्न पूछें...",
-		"loadingChats": "चैट्स लोड हो रही हैं...",
-		"loadingMessages": "संदेश लोड हो रहे हैं...",
-		"loadingPreviousMessages": "पिछले संदेश लोड हो रहे हैं...",
-		"loadingSubchats": "सब-चैट्स लोड हो रही हैं...",
-		"newChat": "नई चैट",
-		"noChats": "कोई चैट नहीं",
-		"noSubchats": "कोई सब-चैट नहीं",
-		"renamePlaceholder": "स्वचालित रूप से नया नाम बनाएं...",
-		"sendMessage": "संदेश भेजें",
-		"subchats": "सब-चैट्स",
-		"xMessages_one": "{count} संदेश",
-		"xMessages_other": "{count} संदेश",
-		"xSearchResults_zero": "कोई परिणाम नहीं",
-		"xSearchResults_one": "{count} परिणाम",
-		"xSearchResults_other": "{count} परिणाम",
-		"xSelectedMessages_one": "{count} / {total} संदेश चयनित",
-		"xSelectedMessages_other": "{count} / {total} संदेश चयनित"
+		"label": {
+			"chats": "चैट",
+			"agents": "एजेंट्स",
+			"newChat": "नई चैट",
+			"noChats": "कोई चैट नहीं",
+			"noSubchats": "कोई सब-चैट नहीं",
+			"subchats": "सब-चैट",
+			"xMessages_one": "{count} संदेश",
+			"xMessages_other": "{count} संदेश",
+			"xSearchResults_zero": "कोई परिणाम नहीं",
+			"xSearchResults_one": "{count} परिणाम",
+			"xSearchResults_other": "{count} परिणाम",
+			"xSelectedMessages_one": "{count} संदेश चयनित",
+			"xSelectedMessages_other": "{count} संदेश चयनित"
+		},
+		"placeholder": {
+			"newMessage": "प्रश्न पूछें...",
+			"rename": "स्वचालित रूप से नया नाम बनाएं..."
+		},
+		"state": {
+			"loadingChats": "चैट लोड हो रही हैं...",
+			"loadingMessages": "संदेश लोड हो रहे हैं...",
+			"loadingPreviousMessages": "पिछले संदेश लोड हो रहे हैं...",
+			"loadingSubchats": "सब-चैट लोड हो रही हैं..."
+		},
+		"warning": {
+			"deletingChats": "ये चैट स्थायी रूप से हटा दी जाएंगी"
+		}
+	},
+	"userAccount": {
+		"action": {
+			"manageAccount": "खाता प्रबंधित करें",
+			"manageBilling": "बिलिंग प्रबंधित करें"
+		},
+		"error": {
+			"address": "आपको पता जोड़ना होगा",
+			"avatar": "आपको अवतार जोड़ना होगा",
+			"city": "आपको शहर जोड़ना होगा",
+			"country": "आपको देश जोड़ना होगा",
+			"email": "आपको ईमेल पता जोड़ना होगा",
+			"legalName": "आपको कानूनी नाम जोड़ना होगा",
+			"name": "आपको नाम जोड़ना होगा",
+			"postalCode": "आपको पिन कोड जोड़ना होगा"
+		},
+		"label": {
+			"account": "खाता",
+			"address": "पता",
+			"avatar": "अवतार",
+			"billing": "बिलिंग",
+			"city": "शहर",
+			"country": "देश",
+			"email": "ईमेल पता",
+			"legalName": "कानूनी नाम",
+			"name": "नाम",
+			"phone": "फ़ोन नंबर",
+			"postalCode": "पिन कोड",
+			"private": "निजी",
+			"public": "सार्वजनिक",
+			"vatNumber": "जीएसटी नंबर"
+		}
 	}
 }

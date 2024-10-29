@@ -70,7 +70,7 @@ const AccountPage = () => {
 			{/* FIELDS */}
 			<form className="mt-sm-1">
 				<fieldset className="flex flex-col gap-y-sm-1">
-					<legend className={legendClass}>{t('userAccount.label.publicData')}</legend>
+					<legend className={legendClass}>{t('userAccount.label.public')}</legend>
 
 					<div className="flex flex-col-reverse items-center gap-sm-1 sm:flex-row">
 						<div className="flex w-full flex-col gap-y-sm-1 sm:flex-1">
@@ -95,7 +95,7 @@ const AccountPage = () => {
 				</fieldset>
 
 				<fieldset className="mt-md-2 flex flex-col gap-y-sm-1">
-					<legend className={legendClass}>{t('userAccount.label.privateData')}</legend>
+					<legend className={legendClass}>{t('userAccount.label.private')}</legend>
 
 					{privateFields.map((field: Field<keyof Account>) => (
 						<DataField

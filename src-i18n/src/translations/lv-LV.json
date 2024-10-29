@@ -2,36 +2,46 @@
 	"core": {
 		"action": {
 			"back": "Atpakaļ",
-			"backToHome": "Atpakaļ uz sākumu",
+			"backToHome": "Atpakaļ uz sākumlapu",
 			"changeLanguage": "Mainīt valodu",
 			"close": "Aizvērt",
 			"delete": "Dzēst",
 			"deselectAll": "Noņemt visas atzīmes",
 			"openMenu": "Atvērt izvēlni",
 			"rename": "Pārdēvēt",
+			"saveChanges": "Saglabāt izmaiņas",
 			"search": "Meklēt",
 			"searchMore": "Rādīt vairāk rezultātu",
-			"selectAll": "Atlasīt visu",
+			"selectAll": "Atzīmēt visu",
 			"signOut": "Iziet"
 		},
-		"apiDocs": "API dokumentācija",
-		"asia": "Āzija",
-		"custom": "Pielāgots",
-		"darkTheme": "Tumšs",
-		"default": "Noklusējums",
-		"deleting": "Dzēš...",
-		"designSystem": "Dizaina sistēma",
-		"europe": "Eiropa",
-		"githubRepo": "GitHub krātuve",
-		"language": "Valoda",
-		"lightTheme": "Gaišs",
-		"loading": "Ielādē...",
-		"quickSettings": "Ātrās iestatīšanas",
-		"searchPlaceholder": "Meklēt...",
-		"searching": "Meklē...",
-		"settings": "Iestatījumi",
-		"uiLibrary": "UI bibliotēka:",
-		"uiTheme": "UI tēma:"
+		"label": {
+			"apiDocs": "API dokumentācija",
+			"asia": "Āzija",
+			"custom": "Pielāgots",
+			"darkTheme": "Tumšs",
+			"default": "Noklusējuma",
+			"designSystem": "Dizaina sistēma",
+			"errors": "Kļūdas",
+			"europe": "Eiropa",
+			"githubRepo": "GitHub repozitorijs",
+			"language": "Valoda",
+			"lightTheme": "Gaišs",
+			"optionalField": "(Neobligāts)",
+			"requiredField": "(Obligāts)",
+			"settings": "Iestatījumi",
+			"uiLibrary": "UI bibliotēka:",
+			"uiTheme": "UI tēma:"
+		},
+		"placeholder": {
+			"search": "Meklēt..."
+		},
+		"state": {
+			"dataSaved": "Jūsu dati ir saglabāti",
+			"deleting": "Dzēš...",
+			"loading": "Ielādē...",
+			"searching": "Meklē..."
+		}
 	},
 	"aiChat": {
 		"action": {
@@ -39,36 +49,79 @@
 			"confirmDeleteChats": "Apstiprināt sarunu dzēšanu",
 			"confirmRenameChat": "Apstiprināt sarunas pārdēvēšanu",
 			"deleteSelectedChats": "Dzēst atlasītās sarunas",
+			"manageAgents": "Pārvaldīt aģentus",
 			"manageChats": "Pārvaldīt sarunas",
 			"openChat": "Atvērt sarunu",
 			"openSubchat_zero": "Izveidot apakšsarunu",
 			"openSubchat_one": "Atvērt apakšsarunu ({count} ziņa)",
 			"openSubchat_other": "Atvērt apakšsarunu ({count} ziņas)",
+			"sendMessage": "Sūtīt ziņu",
 			"showMoreChats": "Rādīt vairāk sarunu",
 			"showSubchats": "Rādīt apakšsarunas ({count})",
 			"startSearching_one": "Ievadiet vismaz {count} rakstzīmi",
 			"startSearching_other": "Ievadiet vismaz {count} rakstzīmes"
 		},
-		"chats": "Sarunas",
-		"deleteChatsWarning": "Šīs sarunas tiks neatgriezeniski dzēstas",
-		"inputPlaceholder": "Uzdodiet jautājumu...",
-		"loadingChats": "Ielādē sarunas...",
-		"loadingMessages": "Ielādē ziņas...",
-		"loadingPreviousMessages": "Ielādē iepriekšējās ziņas...",
-		"loadingSubchats": "Ielādē apakšsarunas...",
-		"newChat": "Jauna saruna",
-		"noChats": "Nav sarunu",
-		"noSubchats": "Nav apakšsarunu",
-		"renamePlaceholder": "Automātiski ģenerēt jaunu nosaukumu...",
-		"sendMessage": "Sūtīt ziņu",
-		"subchats": "Apakšsarunas",
-		"xMessages_zero": "Nav ziņu",
-		"xMessages_one": "{count} ziņa",
-		"xMessages_other": "{count} ziņas",
-		"xSearchResults_zero": "Nav rezultātu",
-		"xSearchResults_one": "{count} rezultāts",
-		"xSearchResults_other": "{count} rezultāti",
-		"xSelectedMessages_one": "{count} / {total} ziņa atlasīta",
-		"xSelectedMessages_other": "{count} / {total} ziņas atlasītas"
+		"label": {
+			"chats": "Sarunas",
+			"agents": "Aģenti",
+			"newChat": "Jauna saruna",
+			"noChats": "Nav sarunu",
+			"noSubchats": "Nav apakšsarunu",
+			"subchats": "Apakšsarunas",
+			"xMessages_zero": "Nav ziņu",
+			"xMessages_one": "{count} ziņa",
+			"xMessages_other": "{count} ziņas",
+			"xSearchResults_zero": "Nav rezultātu",
+			"xSearchResults_one": "{count} rezultāts",
+			"xSearchResults_other": "{count} rezultāti",
+			"xSelectedMessages_zero": "Nav atlasītu ziņu",
+			"xSelectedMessages_one": "{count} atlasīta ziņa",
+			"xSelectedMessages_other": "{count} atlasītas ziņas"
+		},
+		"placeholder": {
+			"newMessage": "Uzdodiet jautājumu...",
+			"rename": "Automātiski ģenerēt jaunu nosaukumu..."
+		},
+		"state": {
+			"loadingChats": "Ielādē sarunas...",
+			"loadingMessages": "Ielādē ziņas...",
+			"loadingPreviousMessages": "Ielādē iepriekšējās ziņas...",
+			"loadingSubchats": "Ielādē apakšsarunas..."
+		},
+		"warning": {
+			"deletingChats": "Šīs sarunas tiks neatgriezeniski dzēstas"
+		}
+	},
+	"userAccount": {
+		"action": {
+			"manageAccount": "Pārvaldīt kontu",
+			"manageBilling": "Pārvaldīt rēķinus"
+		},
+		"error": {
+			"address": "Jums jāpievieno adrese",
+			"avatar": "Jums jāpievieno avatars",
+			"city": "Jums jāpievieno pilsēta",
+			"country": "Jums jāpievieno valsts",
+			"email": "Jums jāpievieno e-pasta adrese",
+			"legalName": "Jums jāpievieno juridiskais nosaukums",
+			"name": "Jums jāpievieno vārds",
+			"postalCode": "Jums jāpievieno pasta indekss"
+		},
+		"label": {
+			"account": "Konts",
+			"address": "Adrese",
+			"avatar": "Avatars",
+			"billing": "Rēķini",
+			"city": "Pilsēta",
+			"country": "Valsts",
+			"email": "E-pasta adrese",
+			"legalName": "Juridiskais nosaukums",
+			"name": "Vārds",
+			"phone": "Tālruņa numurs",
+			"postalCode": "Pasta indekss",
+			"private": "Privāts",
+			"public": "Publisks",
+			"vatNumber": "PVN numurs"
+		}
 	}
 }

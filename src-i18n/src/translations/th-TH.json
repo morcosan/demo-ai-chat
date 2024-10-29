@@ -2,67 +2,119 @@
 	"core": {
 		"action": {
 			"back": "ย้อนกลับ",
-			"backToHome": "กลับสู่หน้าแรก",
+			"backToHome": "กลับไปยังหน้าแรก",
 			"changeLanguage": "เปลี่ยนภาษา",
 			"close": "ปิด",
 			"delete": "ลบ",
-			"deselectAll": "ยกเลิกเลือกทั้งหมด",
+			"deselectAll": "ยกเลิกการเลือกทั้งหมด",
 			"openMenu": "เปิดเมนู",
 			"rename": "เปลี่ยนชื่อ",
+			"saveChanges": "บันทึกการเปลี่ยนแปลง",
 			"search": "ค้นหา",
 			"searchMore": "แสดงผลลัพธ์เพิ่มเติม",
 			"selectAll": "เลือกทั้งหมด",
 			"signOut": "ออกจากระบบ"
 		},
-		"apiDocs": "เอกสาร API",
-		"asia": "เอเชีย",
-		"custom": "กำหนดเอง",
-		"darkTheme": "มืด",
-		"default": "ค่าเริ่มต้น",
-		"deleting": "กำลังลบ...",
-		"designSystem": "ระบบการออกแบบ",
-		"europe": "ยุโรป",
-		"githubRepo": "คลัง GitHub",
-		"language": "ภาษา",
-		"lightTheme": "สว่าง",
-		"loading": "กำลังโหลด...",
-		"quickSettings": "การตั้งค่าด่วน",
-		"searchPlaceholder": "ค้นหา...",
-		"searching": "กำลังค้นหา...",
-		"settings": "การตั้งค่า",
-		"uiLibrary": "ไลบรารี UI:",
-		"uiTheme": "ธีม UI:"
+		"label": {
+			"apiDocs": "เอกสาร API",
+			"asia": "เอเชีย",
+			"custom": "กำหนดเอง",
+			"darkTheme": "โทนมืด",
+			"default": "ค่าเริ่มต้น",
+			"designSystem": "ระบบการออกแบบ",
+			"errors": "ข้อผิดพลาด",
+			"europe": "ยุโรป",
+			"githubRepo": "ที่เก็บ GitHub",
+			"language": "ภาษา",
+			"lightTheme": "โทนสว่าง",
+			"optionalField": "(ไม่บังคับ)",
+			"requiredField": "(จำเป็น)",
+			"settings": "การตั้งค่า",
+			"uiLibrary": "ไลบรารี UI:",
+			"uiTheme": "ธีม UI:"
+		},
+		"placeholder": {
+			"search": "ค้นหา..."
+		},
+		"state": {
+			"dataSaved": "ข้อมูลของคุณถูกบันทึกแล้ว",
+			"deleting": "กำลังลบ...",
+			"loading": "กำลังโหลด...",
+			"searching": "กำลังค้นหา..."
+		}
 	},
 	"aiChat": {
 		"action": {
-			"backToSubchats": "กลับไปยังแชทย่อย",
-			"confirmDeleteChats": "ยืนยันการลบแชท",
-			"confirmRenameChat": "ยืนยันการเปลี่ยนชื่อแชท",
-			"deleteSelectedChats": "ลบแชทที่เลือก",
-			"manageChats": "จัดการแชท",
-			"openChat": "เปิดแชท",
-			"openSubchat_zero": "สร้างแชทย่อย",
-			"openSubchat_other": "เปิดแชทย่อย ({count} ข้อความ)",
-			"showMoreChats": "แสดงแชทเพิ่มเติม",
-			"showSubchats": "แสดงแชทย่อย ({count})",
+			"backToSubchats": "กลับไปยังการสนทนาย่อย",
+			"confirmDeleteChats": "ยืนยันการลบการสนทนา",
+			"confirmRenameChat": "ยืนยันการเปลี่ยนชื่อการสนทนา",
+			"deleteSelectedChats": "ลบการสนทนาที่เลือก",
+			"manageAgents": "จัดการตัวแทน",
+			"manageChats": "จัดการการสนทนา",
+			"openChat": "เปิดการสนทนา",
+			"openSubchat_zero": "สร้างการสนทนาย่อย",
+			"openSubchat_other": "เปิดการสนทนาย่อย ({count} ข้อความ)",
+			"sendMessage": "ส่งข้อความ",
+			"showMoreChats": "แสดงการสนทนาเพิ่มเติม",
+			"showSubchats": "แสดงการสนทนาย่อย ({count})",
 			"startSearching_other": "พิมพ์อย่างน้อย {count} ตัวอักษร"
 		},
-		"chats": "แชท",
-		"deleteChatsWarning": "แชทเหล่านี้จะถูกลบอย่างถาวร",
-		"inputPlaceholder": "ถามคำถาม...",
-		"loadingChats": "กำลังโหลดแชท...",
-		"loadingMessages": "กำลังโหลดข้อความ...",
-		"loadingPreviousMessages": "กำลังโหลดข้อความก่อนหน้า...",
-		"loadingSubchats": "กำลังโหลดแชทย่อย...",
-		"newChat": "แชทใหม่",
-		"noChats": "ไม่มีแชท",
-		"noSubchats": "ไม่มีแชทย่อย",
-		"renamePlaceholder": "สร้างชื่อใหม่อัตโนมัติ...",
-		"sendMessage": "ส่งข้อความ",
-		"subchats": "แชทย่อย",
-		"xMessages_other": "{count} ข้อความ",
-		"xSearchResults_zero": "ไม่มีผลลัพธ์",
-		"xSearchResults_other": "{count} ผลลัพธ์",
-		"xSelectedMessages_other": "เลือก {count} / {total} ข้อความ"
+		"label": {
+			"chats": "การสนทนา",
+			"agents": "ตัวแทน",
+			"newChat": "การสนทนาใหม่",
+			"noChats": "ไม่มีการสนทนา",
+			"noSubchats": "ไม่มีการสนทนาย่อย",
+			"subchats": "การสนทนาย่อย",
+			"xMessages_other": "{count} ข้อความ",
+			"xSearchResults_zero": "ไม่พบผลลัพธ์",
+			"xSearchResults_other": "{count} ผลลัพธ์",
+			"xSelectedMessages_other": "{count} ข้อความที่เลือก"
+		},
+		"placeholder": {
+			"newMessage": "ถามคำถาม...",
+			"rename": "สร้างชื่อใหม่อัตโนมัติ..."
+		},
+		"state": {
+			"loadingChats": "กำลังโหลดการสนทนา...",
+			"loadingMessages": "กำลังโหลดข้อความ...",
+			"loadingPreviousMessages": "กำลังโหลดข้อความก่อนหน้า...",
+			"loadingSubchats": "กำลังโหลดการสนทนาย่อย..."
+		},
+		"warning": {
+			"deletingChats": "การสนทนาเหล่านี้จะถูกลบอย่างถาวร"
+		}
+	},
+	"userAccount": {
+		"action": {
+			"manageAccount": "จัดการบัญชี",
+			"manageBilling": "จัดการการเรียกเก็บเงิน"
+		},
+		"error": {
+			"address": "คุณต้องเพิ่มที่อยู่",
+			"avatar": "คุณต้องเพิ่มอวตาร",
+			"city": "คุณต้องเพิ่มเมือง",
+			"country": "คุณต้องเพิ่มประเทศ",
+			"email": "คุณต้องเพิ่มที่อยู่อีเมล",
+			"legalName": "คุณต้องเพิ่มชื่อทางกฎหมาย",
+			"name": "คุณต้องเพิ่มชื่อ",
+			"postalCode": "คุณต้องเพิ่มรหัสไปรษณีย์"
+		},
+		"label": {
+			"account": "บัญชี",
+			"address": "ที่อยู่",
+			"avatar": "อวตาร",
+			"billing": "การเรียกเก็บเงิน",
+			"city": "เมือง",
+			"country": "ประเทศ",
+			"email": "ที่อยู่อีเมล",
+			"legalName": "ชื่อทางกฎหมาย",
+			"name": "ชื่อ",
+			"phone": "เบอร์โทรศัพท์",
+			"postalCode": "รหัสไปรษณีย์",
+			"private": "ส่วนตัว",
+			"public": "สาธารณะ",
+			"vatNumber": "เลขประจำตัวผู้เสียภาษี"
+		}
 	}
 }

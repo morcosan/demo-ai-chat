@@ -9,29 +9,39 @@
 			"deselectAll": "Deselectează tot",
 			"openMenu": "Deschide meniu",
 			"rename": "Redenumește",
+			"saveChanges": "Salvează modificările",
 			"search": "Caută",
 			"searchMore": "Arată mai multe rezultate",
 			"selectAll": "Selectează tot",
 			"signOut": "Deconectare"
 		},
-		"apiDocs": "Documentație API",
-		"asia": "Asia",
-		"custom": "Personalizat",
-		"darkTheme": "Întunecat",
-		"default": "Implicit",
-		"deleting": "Se șterge...",
-		"designSystem": "Sistem de design",
-		"europe": "Europa",
-		"githubRepo": "Depozit GitHub",
-		"language": "Limbă",
-		"lightTheme": "Luminos",
-		"loading": "Se încarcă...",
-		"quickSettings": "Setări rapide",
-		"searchPlaceholder": "Caută...",
-		"searching": "Se caută...",
-		"settings": "Setări",
-		"uiLibrary": "Bibliotecă UI:",
-		"uiTheme": "Temă UI:"
+		"label": {
+			"apiDocs": "Documentație API",
+			"asia": "Asia",
+			"custom": "Personalizat",
+			"darkTheme": "Întunecat",
+			"default": "Implicit",
+			"designSystem": "Sistem de design",
+			"errors": "Erori",
+			"europe": "Europa",
+			"githubRepo": "Depozit GitHub",
+			"language": "Limbă",
+			"lightTheme": "Luminos",
+			"optionalField": "(Opțional)",
+			"requiredField": "(Obligatoriu)",
+			"settings": "Setări",
+			"uiLibrary": "Bibliotecă UI:",
+			"uiTheme": "Temă UI:"
+		},
+		"placeholder": {
+			"search": "Caută..."
+		},
+		"state": {
+			"dataSaved": "Datele tale au fost salvate",
+			"deleting": "Se șterge...",
+			"loading": "Se încarcă...",
+			"searching": "Se caută..."
+		}
 	},
 	"aiChat": {
 		"action": {
@@ -39,40 +49,82 @@
 			"confirmDeleteChats": "Confirmă ștergerea conversațiilor",
 			"confirmRenameChat": "Confirmă redenumirea conversației",
 			"deleteSelectedChats": "Șterge conversațiile selectate",
+			"manageAgents": "Gestionează agenții",
 			"manageChats": "Gestionează conversațiile",
 			"openChat": "Deschide conversația",
 			"openSubchat_zero": "Creează subconversație",
 			"openSubchat_one": "Deschide subconversația ({count} mesaj)",
 			"openSubchat_few": "Deschide subconversația ({count} mesaje)",
 			"openSubchat_other": "Deschide subconversația ({count} de mesaje)",
+			"sendMessage": "Trimite mesaj",
 			"showMoreChats": "Arată mai multe conversații",
 			"showSubchats": "Arată subconversațiile ({count})",
-			"startSearching_one": "Tastează cel puțin {count} caracter",
-			"startSearching_few": "Tastează cel puțin {count} caractere",
-			"startSearching_other": "Tastează cel puțin {count} de caractere"
+			"startSearching_one": "Introdu cel puțin {count} caracter",
+			"startSearching_few": "Introdu cel puțin {count} caractere",
+			"startSearching_other": "Introdu cel puțin {count} de caractere"
 		},
-		"chats": "Conversații",
-		"deleteChatsWarning": "Aceste conversații vor fi șterse definitiv",
-		"inputPlaceholder": "Pune o întrebare...",
-		"loadingChats": "Se încarcă conversațiile...",
-		"loadingMessages": "Se încarcă mesajele...",
-		"loadingPreviousMessages": "Se încarcă mesajele anterioare...",
-		"loadingSubchats": "Se încarcă subconversațiile...",
-		"newChat": "Conversație nouă",
-		"noChats": "Nicio conversație",
-		"noSubchats": "Nicio subconversație",
-		"renamePlaceholder": "Generează automat un nume nou...",
-		"sendMessage": "Trimite mesaj",
-		"subchats": "Subconversații",
-		"xMessages_one": "{count} mesaj",
-		"xMessages_few": "{count} mesaje",
-		"xMessages_other": "{count} de mesaje",
-		"xSearchResults_zero": "Niciun rezultat",
-		"xSearchResults_one": "{count} rezultat",
-		"xSearchResults_few": "{count} rezultate",
-		"xSearchResults_other": "{count} de rezultate",
-		"xSelectedMessages_one": "{count} / {total} mesaj selectat",
-		"xSelectedMessages_few": "{count} / {total} mesaje selectate",
-		"xSelectedMessages_other": "{count} / {total} de mesaje selectate"
+		"label": {
+			"chats": "Conversații",
+			"agents": "Agenți",
+			"newChat": "Conversație nouă",
+			"noChats": "Nicio conversație",
+			"noSubchats": "Nicio subconversație",
+			"subchats": "Subconversații",
+			"xMessages_one": "{count} mesaj",
+			"xMessages_few": "{count} mesaje",
+			"xMessages_other": "{count} de mesaje",
+			"xSearchResults_zero": "Niciun rezultat",
+			"xSearchResults_one": "{count} rezultat",
+			"xSearchResults_few": "{count} rezultate",
+			"xSearchResults_other": "{count} de rezultate",
+			"xSelectedMessages_one": "{count} mesaj selectat",
+			"xSelectedMessages_few": "{count} mesaje selectate",
+			"xSelectedMessages_other": "{count} de mesaje selectate"
+		},
+		"placeholder": {
+			"newMessage": "Pune o întrebare...",
+			"rename": "Generează automat un nume nou..."
+		},
+		"state": {
+			"loadingChats": "Se încarcă conversațiile...",
+			"loadingMessages": "Se încarcă mesajele...",
+			"loadingPreviousMessages": "Se încarcă mesajele anterioare...",
+			"loadingSubchats": "Se încarcă subconversațiile..."
+		},
+		"warning": {
+			"deletingChats": "Aceste conversații vor fi șterse permanent"
+		}
+	},
+	"userAccount": {
+		"action": {
+			"manageAccount": "Gestionează contul",
+			"manageBilling": "Gestionează facturarea"
+		},
+		"error": {
+			"address": "Trebuie să adaugi adresa",
+			"avatar": "Trebuie să adaugi un avatar",
+			"city": "Trebuie să adaugi orașul",
+			"country": "Trebuie să adaugi țara",
+			"email": "Trebuie să adaugi adresa de email",
+			"legalName": "Trebuie să adaugi numele legal",
+			"name": "Trebuie să adaugi numele",
+			"postalCode": "Trebuie să adaugi codul poștal"
+		},
+		"label": {
+			"account": "Cont",
+			"address": "Adresă",
+			"avatar": "Avatar",
+			"billing": "Facturare",
+			"city": "Oraș",
+			"country": "Țară",
+			"email": "Adresă de email",
+			"legalName": "Nume legal",
+			"name": "Nume",
+			"phone": "Număr de telefon",
+			"postalCode": "Cod poștal",
+			"private": "Privat",
+			"public": "Public",
+			"vatNumber": "Cod fiscal"
+		}
 	}
 }

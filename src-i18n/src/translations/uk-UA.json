@@ -2,36 +2,46 @@
 	"core": {
 		"action": {
 			"back": "Назад",
-			"backToHome": "На головну",
+			"backToHome": "Повернутися на головну",
 			"changeLanguage": "Змінити мову",
 			"close": "Закрити",
 			"delete": "Видалити",
-			"deselectAll": "Зняти виділення",
+			"deselectAll": "Зняти всі виділення",
 			"openMenu": "Відкрити меню",
 			"rename": "Перейменувати",
+			"saveChanges": "Зберегти зміни",
 			"search": "Пошук",
 			"searchMore": "Показати більше результатів",
 			"selectAll": "Вибрати все",
 			"signOut": "Вийти"
 		},
-		"apiDocs": "API документація",
-		"asia": "Азія",
-		"custom": "Користувацький",
-		"darkTheme": "Темна",
-		"default": "За замовчуванням",
-		"deleting": "Видалення...",
-		"designSystem": "Система дизайну",
-		"europe": "Європа",
-		"githubRepo": "GitHub репозиторій",
-		"language": "Мова",
-		"lightTheme": "Світла",
-		"loading": "Завантаження...",
-		"quickSettings": "Швидкі налаштування",
-		"searchPlaceholder": "Пошук...",
-		"searching": "Пошук...",
-		"settings": "Налаштування",
-		"uiLibrary": "UI бібліотека:",
-		"uiTheme": "UI тема:"
+		"label": {
+			"apiDocs": "API документація",
+			"asia": "Азія",
+			"custom": "Користувацький",
+			"darkTheme": "Темна",
+			"default": "За замовчуванням",
+			"designSystem": "Система дизайну",
+			"errors": "Помилки",
+			"europe": "Європа",
+			"githubRepo": "GitHub репозиторій",
+			"language": "Мова",
+			"lightTheme": "Світла",
+			"optionalField": "(Необов'язково)",
+			"requiredField": "(Обов'язково)",
+			"settings": "Налаштування",
+			"uiLibrary": "UI бібліотека:",
+			"uiTheme": "UI тема:"
+		},
+		"placeholder": {
+			"search": "Пошук..."
+		},
+		"state": {
+			"dataSaved": "Ваші дані збережено",
+			"deleting": "Видалення...",
+			"loading": "Завантаження...",
+			"searching": "Пошук..."
+		}
 	},
 	"aiChat": {
 		"action": {
@@ -39,40 +49,82 @@
 			"confirmDeleteChats": "Підтвердити видалення чатів",
 			"confirmRenameChat": "Підтвердити перейменування чату",
 			"deleteSelectedChats": "Видалити вибрані чати",
-			"manageChats": "Керування чатами",
+			"manageAgents": "Керувати агентами",
+			"manageChats": "Керувати чатами",
 			"openChat": "Відкрити чат",
 			"openSubchat_zero": "Створити підчат",
-			"openSubchat_one": "Відкрити підчат (1 повідомлення)",
+			"openSubchat_one": "Відкрити підчат ({count} повідомлення)",
 			"openSubchat_few": "Відкрити підчат ({count} повідомлення)",
 			"openSubchat_many": "Відкрити підчат ({count} повідомлень)",
+			"sendMessage": "Надіслати повідомлення",
 			"showMoreChats": "Показати більше чатів",
 			"showSubchats": "Показати підчати ({count})",
-			"startSearching_one": "Введіть хоча б {count} символ",
-			"startSearching_few": "Введіть хоча б {count} символи",
-			"startSearching_many": "Введіть хоча б {count} символів"
+			"startSearching_one": "Введіть принаймні {count} символ",
+			"startSearching_few": "Введіть принаймні {count} символи",
+			"startSearching_many": "Введіть принаймні {count} символів"
 		},
-		"chats": "Чати",
-		"deleteChatsWarning": "Ці чати будуть остаточно видалені",
-		"inputPlaceholder": "Задайте питання...",
-		"loadingChats": "Завантаження чатів...",
-		"loadingMessages": "Завантаження повідомлень...",
-		"loadingPreviousMessages": "Завантаження попередніх повідомлень...",
-		"loadingSubchats": "Завантаження підчатів...",
-		"newChat": "Новий чат",
-		"noChats": "Немає чатів",
-		"noSubchats": "Немає підчатів",
-		"renamePlaceholder": "Згенерувати нову назву автоматично...",
-		"sendMessage": "Надіслати повідомлення",
-		"subchats": "Підчати",
-		"xMessages_one": "{count} повідомлення",
-		"xMessages_few": "{count} повідомлення",
-		"xMessages_many": "{count} повідомлень",
-		"xSearchResults_zero": "Немає результатів пошуку",
-		"xSearchResults_one": "{count} результат пошуку",
-		"xSearchResults_few": "{count} результати пошуку",
-		"xSearchResults_many": "{count} результатів пошуку",
-		"xSelectedMessages_one": "{count} / {total} повідомлення вибрано",
-		"xSelectedMessages_few": "{count} / {total} повідомлення вибрано",
-		"xSelectedMessages_many": "{count} / {total} повідомлень вибрано"
+		"label": {
+			"chats": "Чати",
+			"agents": "Агенти",
+			"newChat": "Новий чат",
+			"noChats": "Немає чатів",
+			"noSubchats": "Немає підчатів",
+			"subchats": "Підчати",
+			"xMessages_one": "{count} повідомлення",
+			"xMessages_few": "{count} повідомлення",
+			"xMessages_many": "{count} повідомлень",
+			"xSearchResults_zero": "Немає результатів",
+			"xSearchResults_one": "{count} результат",
+			"xSearchResults_few": "{count} результати",
+			"xSearchResults_many": "{count} результатів",
+			"xSelectedMessages_one": "{count} вибране повідомлення",
+			"xSelectedMessages_few": "{count} вибрані повідомлення",
+			"xSelectedMessages_many": "{count} вибраних повідомлень"
+		},
+		"placeholder": {
+			"newMessage": "Поставте запитання...",
+			"rename": "Автоматично згенерувати нову назву..."
+		},
+		"state": {
+			"loadingChats": "Завантаження чатів...",
+			"loadingMessages": "Завантаження повідомлень...",
+			"loadingPreviousMessages": "Завантаження попередніх повідомлень...",
+			"loadingSubchats": "Завантаження підчатів..."
+		},
+		"warning": {
+			"deletingChats": "Ці чати будуть видалені назавжди"
+		}
+	},
+	"userAccount": {
+		"action": {
+			"manageAccount": "Керувати обліковим записом",
+			"manageBilling": "Керувати оплатою"
+		},
+		"error": {
+			"address": "Ви повинні додати адресу",
+			"avatar": "Ви повинні додати аватар",
+			"city": "Ви повинні додати місто",
+			"country": "Ви повинні додати країну",
+			"email": "Ви повинні додати електронну адресу",
+			"legalName": "Ви повинні додати юридичну назву",
+			"name": "Ви повинні додати ім'я",
+			"postalCode": "Ви повинні додати поштовий індекс"
+		},
+		"label": {
+			"account": "Обліковий запис",
+			"address": "Адреса",
+			"avatar": "Аватар",
+			"billing": "Оплата",
+			"city": "Місто",
+			"country": "Країна",
+			"email": "Електронна адреса",
+			"legalName": "Юридична назва",
+			"name": "Ім'я",
+			"phone": "Номер телефону",
+			"postalCode": "Поштовий індекс",
+			"private": "Приватний",
+			"public": "Публічний",
+			"vatNumber": "ІПН"
+		}
 	}
 }

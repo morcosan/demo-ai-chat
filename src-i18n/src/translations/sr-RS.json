@@ -9,29 +9,39 @@
 			"deselectAll": "Поништи избор",
 			"openMenu": "Отвори мени",
 			"rename": "Преименуј",
-			"search": "Претражи",
+			"saveChanges": "Сачувај измене",
+			"search": "Претрага",
 			"searchMore": "Прикажи више резултата",
 			"selectAll": "Изабери све",
 			"signOut": "Одјави се"
 		},
-		"apiDocs": "API документација",
-		"asia": "Азија",
-		"custom": "Прилагођено",
-		"darkTheme": "Тамна",
-		"default": "Подразумевано",
-		"deleting": "Брисање...",
-		"designSystem": "Дизајн систем",
-		"europe": "Европа",
-		"githubRepo": "GitHub репозиторијум",
-		"language": "Језик",
-		"lightTheme": "Светла",
-		"loading": "Учитавање...",
-		"quickSettings": "Брзе поставке",
-		"searchPlaceholder": "Претражи...",
-		"searching": "Претраживање...",
-		"settings": "Поставке",
-		"uiLibrary": "UI библиотека:",
-		"uiTheme": "UI тема:"
+		"label": {
+			"apiDocs": "API документација",
+			"asia": "Азија",
+			"custom": "Прилагођено",
+			"darkTheme": "Тамна",
+			"default": "Подразумевано",
+			"designSystem": "Дизајн систем",
+			"errors": "Грешке",
+			"europe": "Европа",
+			"githubRepo": "GitHub репозиторијум",
+			"language": "Језик",
+			"lightTheme": "Светла",
+			"optionalField": "(Опционо)",
+			"requiredField": "(Обавезно)",
+			"settings": "Подешавања",
+			"uiLibrary": "UI библиотека:",
+			"uiTheme": "UI тема:"
+		},
+		"placeholder": {
+			"search": "Претрага..."
+		},
+		"state": {
+			"dataSaved": "Ваши подаци су сачувани",
+			"deleting": "Брисање...",
+			"loading": "Учитавање...",
+			"searching": "Претрага..."
+		}
 	},
 	"aiChat": {
 		"action": {
@@ -39,40 +49,82 @@
 			"confirmDeleteChats": "Потврди брисање разговора",
 			"confirmRenameChat": "Потврди преименовање разговора",
 			"deleteSelectedChats": "Обриши изабране разговоре",
+			"manageAgents": "Управљај агентима",
 			"manageChats": "Управљај разговорима",
 			"openChat": "Отвори разговор",
 			"openSubchat_zero": "Креирај подразговор",
 			"openSubchat_one": "Отвори подразговор ({count} порука)",
 			"openSubchat_few": "Отвори подразговор ({count} поруке)",
 			"openSubchat_other": "Отвори подразговор ({count} порука)",
+			"sendMessage": "Пошаљи поруку",
 			"showMoreChats": "Прикажи више разговора",
 			"showSubchats": "Прикажи подразговоре ({count})",
-			"startSearching_one": "Унеси бар {count} карактер",
-			"startSearching_few": "Унеси бар {count} карактера",
-			"startSearching_other": "Унеси бар {count} карактера"
+			"startSearching_one": "Унесите бар {count} карактер",
+			"startSearching_few": "Унесите бар {count} карактера",
+			"startSearching_other": "Унесите бар {count} карактера"
 		},
-		"chats": "Разговори",
-		"deleteChatsWarning": "Ови разговори ће бити трајно обрисани",
-		"inputPlaceholder": "Постави питање...",
-		"loadingChats": "Учитавање разговора...",
-		"loadingMessages": "Учитавање порука...",
-		"loadingPreviousMessages": "Учитавање претходних порука...",
-		"loadingSubchats": "Учитавање подразговора...",
-		"newChat": "Нови разговор",
-		"noChats": "Нема разговора",
-		"noSubchats": "Нема подразговора",
-		"renamePlaceholder": "Аутоматски генериши ново име...",
-		"sendMessage": "Пошаљи поруку",
-		"subchats": "Подразговори",
-		"xMessages_one": "{count} порука",
-		"xMessages_few": "{count} поруке",
-		"xMessages_other": "{count} порука",
-		"xSearchResults_zero": "Нема резултата",
-		"xSearchResults_one": "{count} резултат",
-		"xSearchResults_few": "{count} резултата",
-		"xSearchResults_other": "{count} резултата",
-		"xSelectedMessages_one": "{count} / {total} изабрана порука",
-		"xSelectedMessages_few": "{count} / {total} изабране поруке",
-		"xSelectedMessages_other": "{count} / {total} изабраних порука"
+		"label": {
+			"chats": "Разговори",
+			"agents": "Агенти",
+			"newChat": "Нови разговор",
+			"noChats": "Нема разговора",
+			"noSubchats": "Нема подразговора",
+			"subchats": "Подразговори",
+			"xMessages_one": "{count} порука",
+			"xMessages_few": "{count} поруке",
+			"xMessages_other": "{count} порука",
+			"xSearchResults_zero": "Нема резултата",
+			"xSearchResults_one": "{count} резултат",
+			"xSearchResults_few": "{count} резултата",
+			"xSearchResults_other": "{count} резултата",
+			"xSelectedMessages_one": "{count} изабрана порука",
+			"xSelectedMessages_few": "{count} изабране поруке",
+			"xSelectedMessages_other": "{count} изабраних порука"
+		},
+		"placeholder": {
+			"newMessage": "Поставите питање...",
+			"rename": "Аутоматски генериши ново име..."
+		},
+		"state": {
+			"loadingChats": "Учитавање разговора...",
+			"loadingMessages": "Учитавање порука...",
+			"loadingPreviousMessages": "Учитавање претходних порука...",
+			"loadingSubchats": "Учитавање подразговора..."
+		},
+		"warning": {
+			"deletingChats": "Ови разговори ће бити трајно обрисани"
+		}
+	},
+	"userAccount": {
+		"action": {
+			"manageAccount": "Управљај налогом",
+			"manageBilling": "Управљај наплатом"
+		},
+		"error": {
+			"address": "Морате додати адресу",
+			"avatar": "Морате додати аватар",
+			"city": "Морате додати град",
+			"country": "Морате додати државу",
+			"email": "Морате додати имејл адресу",
+			"legalName": "Морате додати правно име",
+			"name": "Морате додати име",
+			"postalCode": "Морате додати поштански број"
+		},
+		"label": {
+			"account": "Налог",
+			"address": "Адреса",
+			"avatar": "Аватар",
+			"billing": "Наплата",
+			"city": "Град",
+			"country": "Држава",
+			"email": "Имејл адреса",
+			"legalName": "Правно име",
+			"name": "Име",
+			"phone": "Број телефона",
+			"postalCode": "Поштански број",
+			"private": "Приватно",
+			"public": "Јавно",
+			"vatNumber": "ПИБ"
+		}
 	}
 }

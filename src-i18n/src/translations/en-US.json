@@ -117,8 +117,8 @@
 			"name": "Name",
 			"phone": "Phone number",
 			"postalCode": "Postal code",
-			"privateData": "Private",
-			"publicData": "Public",
+			"private": "Private",
+			"public": "Public",
 			"vatNumber": "VAT number"
 		}
 	}

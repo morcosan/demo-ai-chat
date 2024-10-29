@@ -6,32 +6,42 @@
 			"changeLanguage": "Dili değiştir",
 			"close": "Kapat",
 			"delete": "Sil",
-			"deselectAll": "Tümünün seçimini kaldır",
+			"deselectAll": "Tümünü kaldır",
 			"openMenu": "Menüyü aç",
 			"rename": "Yeniden adlandır",
+			"saveChanges": "Değişiklikleri kaydet",
 			"search": "Ara",
 			"searchMore": "Daha fazla sonuç göster",
 			"selectAll": "Tümünü seç",
 			"signOut": "Oturumu kapat"
 		},
-		"apiDocs": "API belgeleri",
-		"asia": "Asya",
-		"custom": "Özel",
-		"darkTheme": "Koyu",
-		"default": "Varsayılan",
-		"deleting": "Siliniyor...",
-		"designSystem": "Tasarım sistemi",
-		"europe": "Avrupa",
-		"githubRepo": "GitHub deposu",
-		"language": "Dil",
-		"lightTheme": "Açık",
-		"loading": "Yükleniyor...",
-		"quickSettings": "Hızlı ayarlar",
-		"searchPlaceholder": "Ara...",
-		"searching": "Aranıyor...",
-		"settings": "Ayarlar",
-		"uiLibrary": "UI kütüphanesi:",
-		"uiTheme": "UI teması:"
+		"label": {
+			"apiDocs": "API belgeleri",
+			"asia": "Asya",
+			"custom": "Özel",
+			"darkTheme": "Koyu",
+			"default": "Varsayılan",
+			"designSystem": "Tasarım sistemi",
+			"errors": "Hatalar",
+			"europe": "Avrupa",
+			"githubRepo": "GitHub deposu",
+			"language": "Dil",
+			"lightTheme": "Açık",
+			"optionalField": "(İsteğe bağlı)",
+			"requiredField": "(Gerekli)",
+			"settings": "Ayarlar",
+			"uiLibrary": "UI kütüphanesi:",
+			"uiTheme": "UI teması:"
+		},
+		"placeholder": {
+			"search": "Ara..."
+		},
+		"state": {
+			"dataSaved": "Verileriniz kaydedildi",
+			"deleting": "Siliniyor...",
+			"loading": "Yükleniyor...",
+			"searching": "Aranıyor..."
+		}
 	},
 	"aiChat": {
 		"action": {
@@ -39,35 +49,77 @@
 			"confirmDeleteChats": "Sohbetleri silmeyi onayla",
 			"confirmRenameChat": "Sohbeti yeniden adlandırmayı onayla",
 			"deleteSelectedChats": "Seçili sohbetleri sil",
+			"manageAgents": "Ajanları yönet",
 			"manageChats": "Sohbetleri yönet",
 			"openChat": "Sohbeti aç",
 			"openSubchat_zero": "Alt sohbet oluştur",
 			"openSubchat_one": "Alt sohbeti aç ({count} mesaj)",
 			"openSubchat_other": "Alt sohbeti aç ({count} mesaj)",
+			"sendMessage": "Mesaj gönder",
 			"showMoreChats": "Daha fazla sohbet göster",
 			"showSubchats": "Alt sohbetleri göster ({count})",
 			"startSearching_one": "En az {count} karakter yazın",
 			"startSearching_other": "En az {count} karakter yazın"
 		},
-		"chats": "Sohbetler",
-		"deleteChatsWarning": "Bu sohbetler kalıcı olarak silinecek",
-		"inputPlaceholder": "Bir soru sorun...",
-		"loadingChats": "Sohbetler yükleniyor...",
-		"loadingMessages": "Mesajlar yükleniyor...",
-		"loadingPreviousMessages": "Önceki mesajlar yükleniyor...",
-		"loadingSubchats": "Alt sohbetler yükleniyor...",
-		"newChat": "Yeni sohbet",
-		"noChats": "Sohbet yok",
-		"noSubchats": "Alt sohbet yok",
-		"renamePlaceholder": "Otomatik olarak yeni isim oluştur...",
-		"sendMessage": "Mesaj gönder",
-		"subchats": "Alt sohbetler",
-		"xMessages_one": "{count} mesaj",
-		"xMessages_other": "{count} mesaj",
-		"xSearchResults_zero": "Sonuç yok",
-		"xSearchResults_one": "{count} sonuç",
-		"xSearchResults_other": "{count} sonuç",
-		"xSelectedMessages_one": "{count} / {total} mesaj seçildi",
-		"xSelectedMessages_other": "{count} / {total} mesaj seçildi"
+		"label": {
+			"chats": "Sohbetler",
+			"agents": "Ajanlar",
+			"newChat": "Yeni sohbet",
+			"noChats": "Sohbet yok",
+			"noSubchats": "Alt sohbet yok",
+			"subchats": "Alt sohbetler",
+			"xMessages_one": "{count} mesaj",
+			"xMessages_other": "{count} mesaj",
+			"xSearchResults_zero": "Sonuç yok",
+			"xSearchResults_one": "{count} sonuç",
+			"xSearchResults_other": "{count} sonuç",
+			"xSelectedMessages_one": "{count} mesaj seçildi",
+			"xSelectedMessages_other": "{count} mesaj seçildi"
+		},
+		"placeholder": {
+			"newMessage": "Bir soru sorun...",
+			"rename": "Otomatik olarak yeni isim oluştur..."
+		},
+		"state": {
+			"loadingChats": "Sohbetler yükleniyor...",
+			"loadingMessages": "Mesajlar yükleniyor...",
+			"loadingPreviousMessages": "Önceki mesajlar yükleniyor...",
+			"loadingSubchats": "Alt sohbetler yükleniyor..."
+		},
+		"warning": {
+			"deletingChats": "Bu sohbetler kalıcı olarak silinecek"
+		}
+	},
+	"userAccount": {
+		"action": {
+			"manageAccount": "Hesabı yönet",
+			"manageBilling": "Faturalandırmayı yönet"
+		},
+		"error": {
+			"address": "Adres eklemelisiniz",
+			"avatar": "Avatar eklemelisiniz",
+			"city": "Şehir eklemelisiniz",
+			"country": "Ülke eklemelisiniz",
+			"email": "E-posta adresi eklemelisiniz",
+			"legalName": "Yasal isim eklemelisiniz",
+			"name": "İsim eklemelisiniz",
+			"postalCode": "Posta kodu eklemelisiniz"
+		},
+		"label": {
+			"account": "Hesap",
+			"address": "Adres",
+			"avatar": "Avatar",
+			"billing": "Faturalandırma",
+			"city": "Şehir",
+			"country": "Ülke",
+			"email": "E-posta adresi",
+			"legalName": "Yasal isim",
+			"name": "İsim",
+			"phone": "Telefon numarası",
+			"postalCode": "Posta kodu",
+			"private": "Özel",
+			"public": "Genel",
+			"vatNumber": "Vergi numarası"
+		}
 	}
 }
