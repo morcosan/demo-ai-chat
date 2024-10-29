@@ -15,6 +15,7 @@ export interface TextFieldProps extends ReactProps {
 	maxRows?: number
 	readonly?: boolean
 	disabled?: boolean
+	invalid?: boolean
 
 	slotLeft?: ReactNode
 	slotRight?: ReactNode

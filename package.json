@@ -37,7 +37,7 @@
 	},
 	"devDependencies": {
 		"@eslint/js": "^9.8.0",
-		"@faker-js/faker": "^8.4.1",
+		"@faker-js/faker": "^9.1.0",
 		"@storybook/addon-a11y": "^8.3.1",
 		"@storybook/addon-essentials": "^8.3.1",
 		"@storybook/addon-toolbars": "^8.3.1",

@@ -40,13 +40,13 @@ export const SettingsMenu = ({ onClickBack, onClickLanguage }: Props) => {
 					<IconButton tooltip={t('core.action.back')} onClick={onClickBack}>
 						<ArrowBackSvg className="h-xs-7" />
 					</IconButton>
-					<span className="pb-xs-0 text-size-lg">{t('core.quickSettings')}</span>
+					<span className="pb-xs-0 text-size-lg">{t('core.label.quickSettings')}</span>
 				</div>
 			)}
 
 			{/* UI LIBRARY */}
 			<div className="mb-xs-1 mt-xs-3 flex items-center justify-between px-button-px-item">
-				<span>{t('core.uiLibrary')}</span>
+				<span>{t('core.label.uiLibrary')}</span>
 
 				<select
 					className={cx(
@@ -56,7 +56,7 @@ export const SettingsMenu = ({ onClickBack, onClickLanguage }: Props) => {
 					value={uiLibrary}
 					onChange={(event: SelectEvent) => changeUiLibrary(event.target?.value as UiLibrary)}
 				>
-					<option value={'custom' as UiLibrary}>{t('core.custom')}</option>
+					<option value={'custom' as UiLibrary}>{t('core.label.custom')}</option>
 					<option value={'material' as UiLibrary}>Material UI</option>
 					<option value={'antdesign' as UiLibrary}>Ant Design</option>
 				</select>
@@ -64,7 +64,7 @@ export const SettingsMenu = ({ onClickBack, onClickLanguage }: Props) => {
 
 			{/* THEME */}
 			<div className="flex items-center justify-between px-button-px-item">
-				<span>{t('core.uiTheme')}</span>
+				<span>{t('core.label.uiTheme')}</span>
 
 				<div className="flex flex-col gap-xs-1">
 					<Button
@@ -72,14 +72,14 @@ export const SettingsMenu = ({ onClickBack, onClickLanguage }: Props) => {
 						size="xs"
 						onClick={() => changeColorTheme('light')}
 					>
-						☀️ {t('core.lightTheme')}&nbsp;
+						☀️ {t('core.label.lightTheme')}&nbsp;
 					</Button>
 					<Button
 						variant={isUiDark ? 'solid-primary' : 'text-default'}
 						size="xs"
 						onClick={() => changeColorTheme('dark')}
 					>
-						🌙 {t('core.darkTheme')}&nbsp;
+						🌙 {t('core.label.darkTheme')}&nbsp;
 					</Button>
 				</div>
 			</div>
@@ -88,20 +88,20 @@ export const SettingsMenu = ({ onClickBack, onClickLanguage }: Props) => {
 
 			<Button linkHref={`${ENV__ROOT_URL_PATH}/docs/api`} linkType="external" variant="item-text-default">
 				<InfoSvg className={actionIconClass} />
-				{t('core.apiDocs')}
+				{t('core.label.apiDocs')}
 				<NewTabSvg className={newTabIconClass} />
 			</Button>
 
 			<Button linkHref={storybookUrl} linkType="external" variant="item-text-default">
 				<StorybookSvg className={actionIconClass} />
-				{t('core.designSystem')}
+				{t('core.label.designSystem')}
 				<NewTabSvg className={newTabIconClass} />
 			</Button>
 
 			<Button linkHref="https://github.com/morcosan/demo-ai-chat" linkType="external" variant="item-text-default">
 				{Boolean(isUiLight) && <GithubBlackSvg className={actionIconClass} />}
 				{Boolean(isUiDark) && <GithubWhiteSvg className={actionIconClass} />}
-				{t('core.githubRepo')}
+				{t('core.label.githubRepo')}
 				<NewTabSvg className={newTabIconClass} />
 			</Button>
 
@@ -110,14 +110,14 @@ export const SettingsMenu = ({ onClickBack, onClickLanguage }: Props) => {
 			<Button variant="item-text-default" onClick={onClickLanguage}>
 				<ActiveFlagSvg className={cx(actionIconClass, 'h-unset')} style={{ fill: 'initial', stroke: 'initial' }} />
 				<span className="flex flex-1 items-center justify-between">
-					{t('core.language')}
+					{t('core.label.language')}
 					<span className="ml-xs-1 text-size-sm text-color-text-subtle">{activeLanguage.name}</span>
 				</span>
 			</Button>
 
 			<Button linkHref="/settings" variant="item-text-default">
 				<SettingsSvg className={actionIconClass} />
-				{t('core.settings')}
+				{t('core.label.settings')}
 			</Button>
 
 			<hr className={hrClass} />

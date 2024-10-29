@@ -63,6 +63,8 @@ export const useTextFieldBase = (rawProps: TextFieldProps, ref: Ref<TextFieldRef
 		? { '&:not(:has(textarea:focus))': { outline: 'none' } }
 		: { '&:not(:has(input:focus))': { outline: 'none' } }
 
+	const colorBorderDefault = props.readonly ? $color['border-subtle'] : $color['border-default']
+
 	const cssWrapper: CSS = {
 		...CSS_A11Y_OUTLINE_PROXY,
 		...cssA11yOutline,
@@ -84,12 +86,14 @@ export const useTextFieldBase = (rawProps: TextFieldProps, ref: Ref<TextFieldRef
 			content: `''`,
 			zIndex: -1,
 			borderWidth: '1px',
-			borderColor: props.readonly ? $color['border-subtle'] : $color['border-default'],
+			borderColor: props.invalid ? $color['danger'] : colorBorderDefault,
 			background: props.readonly ? 'transparent' : $color['bg-field'],
 			opacity: props.disabled ? 0.3 : 1,
 		},
 
-		'&:hover::before': isInteractive ? { borderColor: $color['border-hover'] } : {},
+		'&:hover::before': isInteractive
+			? { borderColor: props.invalid ? $color['danger'] : $color['border-hover'] }
+			: {},
 
 		'&:has(input:focus), &:has(textarea:focus)': isInteractive
 			? {
@@ -97,7 +101,7 @@ export const useTextFieldBase = (rawProps: TextFieldProps, ref: Ref<TextFieldRef
 					stroke: $color['text-default'],
 
 					'&::before, &:hover::before': {
-						borderColor: $color['border-active'],
+						borderColor: props.invalid ? $color['danger'] : $color['border-active'],
 					},
 				}
 			: {},

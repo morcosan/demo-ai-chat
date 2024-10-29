@@ -18,16 +18,7 @@ import {
 import { RESP__NOT_FOUND } from '../utilities/network'
 import { extractInt, extractIntArray, isGreaterThanZero } from '../utilities/parsers'
 import { isValidPagination } from '../utilities/validators'
-import {
-	getDbChats,
-	getDbMessages,
-	getNextId,
-	getSizeForChat,
-	resetDbChats,
-	resetDbMessages,
-	setDbChats,
-	setDbMessages,
-} from './db'
+import { getDbChats, getDbMessages, getNextId, getSizeForChat, setDbChats, setDbMessages } from './db'
 
 const DEFAULT_COUNT = 10
 const DEFAULT_PAGE = 1
@@ -87,7 +78,7 @@ export const chatsService = {
 		}
 	},
 
-	async putChat(payload: ChatsApiPayload): Promise<ApiResponse<ChatsApiData>> {
+	async patchChat(payload: ChatsApiPayload): Promise<ApiResponse<ChatsApiData>> {
 		const title = payload.title
 		const chatId = extractInt(payload.chatId, 0, isGreaterThanZero)
 		const dbChats = getDbChats()
@@ -254,12 +245,5 @@ export const chatsService = {
 				items: [userMessage, agentMessage].map((message: DbMessage) => ({ ...message, subchatSize: 0 })),
 			},
 		}
-	},
-
-	async deleteDatabase(): Promise<ApiResponse> {
-		resetDbChats()
-		resetDbMessages()
-
-		return { status: STATUS__SUCCESS, data: null }
 	},
 }

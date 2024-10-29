@@ -1,10 +1,10 @@
+import { LoadingText } from '@app/library/release'
 import { useUiTheme } from '@ds/release'
 import { debounce } from 'lodash'
 import { UIEvent, useEffect, useMemo } from 'react'
 import { useNavigate, useParams, useSearchParams } from 'react-router-dom'
 import { Message } from '../../api'
 import { MessageItem } from '../../components/items/message-item'
-import { LoadingText } from '../../components/loading-text'
 import { NewMessageField } from '../../components/new-message-field'
 import { StickyToolbar } from '../../components/sticky-toolbar'
 import { useScrollable } from '../../hooks/scrollable'
@@ -99,7 +99,7 @@ export const ChatView = () => {
 
 									{Boolean(chatPagination.count) && (
 										<div className="text-size-xs text-color-text-subtle" style={{ marginTop: calcH1Padding1 }}>
-											{t('aiChat.xMessages', { count: chatPagination.count })}
+											{t('aiChat.label.xMessages', { count: chatPagination.count })}
 										</div>
 									)}
 								</h1>
@@ -108,12 +108,12 @@ export const ChatView = () => {
 
 						{/* LISTING */}
 						{chatLoading === 'full' ? (
-							<LoadingText text={t('aiChat.loadingMessages')} className="absolute-overlay flex-center" />
+							<LoadingText text={t('aiChat.state.loadingMessages')} className="absolute-overlay flex-center" />
 						) : (
 							<div className="flex flex-col">
 								{/* LOAD MORE */}
 								<LoadingText
-									text={t('aiChat.loadingPreviousMessages')}
+									text={t('aiChat.state.loadingPreviousMessages')}
 									className="flex-center min-h-md-0 text-size-sm"
 									style={{ visibility: chatLoading === 'more' ? 'visible' : 'hidden' }}
 								/>

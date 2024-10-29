@@ -41,8 +41,8 @@ export const I18nProvider = ({ children }: ReactProps) => {
 			ActiveFlagSvg: FLAG_SVGS[i18n.language as Locale],
 			activeLanguage: LANGUAGES[i18n.language as Locale],
 			activeLocale: i18n.language as Locale,
-			isLoaded: isLocaleReady(i18n.language as Locale),
-			isUpdating,
+			isI18nLoaded: isLocaleReady(i18n.language as Locale),
+			isI18nUpdating: isUpdating,
 			changeLocale,
 		}),
 		[i18n.language, isUpdating]

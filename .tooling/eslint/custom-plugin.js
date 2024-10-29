@@ -10,6 +10,7 @@ export const customPlugin = {
 					const isDS = path.startsWith('@ds/') || path.includes('../src-ds/')
 					const isI18n = path.startsWith('@i18n/') || path.includes('../src-i18n/')
 					const isUtils = path.startsWith('@utils/') || path.includes('../src-utils/')
+					const isAppLib = path.startsWith('@app/library') || path.includes('../src-app/library/')
 
 					if (isDS) {
 						const isValid =
@@ -48,6 +49,18 @@ export const customPlugin = {
 								node,
 								message: "Utils imports must use '@utils/release'",
 								fix: (fixer) => fixer.replaceText(node.source, `'@utils/release'`),
+							})
+						}
+					}
+
+					if (isAppLib) {
+						const isValid = path.startsWith('@app/library/release')
+
+						if (!isValid) {
+							context.report({
+								node,
+								message: "App library imports must use '@app/library/release'",
+								fix: (fixer) => fixer.replaceText(node.source, `'@app/library/release'`),
 							})
 						}
 					}

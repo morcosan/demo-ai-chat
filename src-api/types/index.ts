@@ -16,6 +16,9 @@ export type ApiPayload = Record<string, unknown>
 /**
  * Payload
  */
+export interface AccountApiPayload extends ApiPayload, Partial<DbAccount> {}
+export interface BillingApiPayload extends ApiPayload, Partial<DbBilling> {}
+
 export interface ChatsApiQuery extends ApiQuery {
 	chatIds?: string
 	count?: string | number
@@ -58,6 +61,25 @@ export interface MessagesApiPayload extends ApiPayload {
 }
 
 /**
+ * Account API
+ */
+export interface DbAccount {
+	name: string
+	email: string
+	phone: string
+	avatar: string
+}
+
+export interface DbBilling {
+	name: string
+	address: string
+	city: string
+	country: string
+	postalCode: string
+	vatNumber: string
+}
+
+/**
  * Chat API
  */
 export interface DbChat {
@@ -80,6 +102,9 @@ export type MessageRole = 'user' | 'agent' | 'system'
 /**
  * DTOs
  */
+export type AccountDTO = DbAccount
+export type BillingDTO = DbBilling
+
 export interface ChatDTO extends DbChat {
 	size: number
 }

@@ -57,8 +57,8 @@ export const createCachedAPI = (api: DefaultAPI): DefaultAPI => ({
 		return api.post<T>(path, payload)
 	},
 
-	async put<T>(path: string, payload: ApiPayload): Promise<ApiResponse<T>> {
-		return api.put<T>(path, payload)
+	async patch<T>(path: string, payload: ApiPayload): Promise<ApiResponse<T>> {
+		return api.patch<T>(path, payload)
 	},
 
 	async delete<T>(path: string, query: ApiQuery): Promise<ApiResponse<T>> {

@@ -1,9 +1,9 @@
+import { LoadingText } from '@app/library/release'
 import { ArrowBackSvg, IconButton } from '@ds/release'
 import { debounce } from 'lodash'
 import { UIEvent, useEffect, useMemo } from 'react'
 import { Message } from '../../api'
 import { MessageItem } from '../../components/items/message-item'
-import { LoadingText } from '../../components/loading-text'
 import { NewMessageField } from '../../components/new-message-field'
 import { StickyToolbar } from '../../components/sticky-toolbar'
 import { useScrollable } from '../../hooks/scrollable'
@@ -62,18 +62,18 @@ export const SubchatView = () => {
 						</IconButton>
 
 						<div className="pb-px text-size-sm">
-							{Boolean(subchatPagination.count) && t('aiChat.xMessages', { count: subchatPagination.count })}
+							{Boolean(subchatPagination.count) && t('aiChat.label.xMessages', { count: subchatPagination.count })}
 						</div>
 					</div>
 				</StickyToolbar>
 
 				{subchatLoading === 'full' ? (
-					<LoadingText text={t('aiChat.loadingMessages')} className="flex-center h-full" />
+					<LoadingText text={t('aiChat.state.loadingMessages')} className="flex-center h-full" />
 				) : (
 					<>
 						{/* LOAD MORE */}
 						<LoadingText
-							text={t('aiChat.loadingPreviousMessages')}
+							text={t('aiChat.state.loadingPreviousMessages')}
 							className="flex-center min-h-sm-1 text-size-xs"
 							style={{ visibility: subchatLoading === 'more' ? 'visible' : 'hidden' }}
 						/>

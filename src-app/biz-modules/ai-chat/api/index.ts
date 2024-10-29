@@ -1,9 +1,9 @@
 import {
-	chatsAPI,
 	ChatsApiData,
 	ChatsApiPayload,
 	ChatsApiQuery,
 	clearDataCache,
+	mainAPI,
 	MessagesApiData,
 	MessagesApiPayload,
 	MessagesApiQuery,
@@ -26,7 +26,7 @@ export const API = {
 			page: page || 1,
 			search,
 		}
-		const resp = await chatsAPI.get<ChatsApiData>('/api/chats', query)
+		const resp = await mainAPI.get<ChatsApiData>('/api/chats', query)
 
 		return resp.status === STATUS__SUCCESS && resp.data
 			? { chats: resp.data.items.map(mapDtoToChat), count: resp.data.count }
@@ -35,7 +35,7 @@ export const API = {
 
 	async createChat(title: string): Promise<ChatListing> {
 		const payload: ChatsApiPayload = { title }
-		const resp = await chatsAPI.post<ChatsApiData>('/api/chats', payload)
+		const resp = await mainAPI.post<ChatsApiData>('/api/chats', payload)
 
 		clearDataCache('/api/chats')
 
@@ -46,7 +46,7 @@ export const API = {
 
 	async updateChat(chatId: number, title?: string): Promise<ChatListing> {
 		const payload: ChatsApiPayload = { chatId, title: title || '' }
-		const resp = await chatsAPI.put<ChatsApiData>('/api/chats', payload)
+		const resp = await mainAPI.patch<ChatsApiData>('/api/chats', payload)
 
 		clearDataCache('/api/chats')
 
@@ -57,7 +57,7 @@ export const API = {
 
 	async deleteChats(chatIds: number[]): Promise<ChatListing> {
 		const query: ChatsApiQuery = { chatIds: (chatIds || []).join(',') }
-		const resp = await chatsAPI.delete<ChatsApiData>('/api/chats', query)
+		const resp = await mainAPI.delete<ChatsApiData>('/api/chats', query)
 
 		clearDataCache('/api/chats')
 
@@ -73,7 +73,7 @@ export const API = {
 			subchatIds: (subchatIds || []).join(','),
 			chatId,
 		}
-		const resp = await chatsAPI.get<SubchatsApiData>('/api/subchats', query)
+		const resp = await mainAPI.get<SubchatsApiData>('/api/subchats', query)
 
 		return resp.status === STATUS__SUCCESS && resp.data
 			? { subchats: resp.data.items.map(mapDtoToSubchat), count: resp.data.count }
@@ -92,7 +92,7 @@ export const API = {
 			subchatId,
 			search,
 		}
-		const resp = await chatsAPI.get<MessagesApiData>('/api/messages', query)
+		const resp = await mainAPI.get<MessagesApiData>('/api/messages', query)
 
 		return resp.status === STATUS__SUCCESS && resp.data
 			? { messages: resp.data.items.map(mapDtoToMessage), count: resp.data.count }
@@ -101,7 +101,7 @@ export const API = {
 
 	async postMessage(chatId: number, subchatId?: number, text?: string): Promise<MessageListing> {
 		const payload: MessagesApiPayload = { chatId, subchatId, text }
-		const resp = await chatsAPI.post<MessagesApiData>('/api/messages', payload)
+		const resp = await mainAPI.post<MessagesApiData>('/api/messages', payload)
 
 		clearDataCache('/api/messages')
 		subchatId && clearDataCache('/api/subchats')
@@ -109,11 +109,5 @@ export const API = {
 		return resp.status === STATUS__SUCCESS && resp.data
 			? { messages: resp.data.items.map(mapDtoToMessage), count: resp.data.count }
 			: { messages: [], count: 0 }
-	},
-
-	async resetDatabase(): Promise<boolean> {
-		const resp = await chatsAPI.delete('/api/database', {})
-
-		return resp.status === STATUS__SUCCESS
 	},
 }

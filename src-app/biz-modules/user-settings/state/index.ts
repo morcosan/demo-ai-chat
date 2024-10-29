@@ -1,6 +1,6 @@
 import { useContext } from 'react'
-import { Context } from './_context'
-import { SettingsProvider } from './_provider'
+import { ACCOUNT_EMPTY, BILLING_EMPTY, Context } from './_context'
+import { UserAccountProvider } from './_provider'
 
-export const useSettings = () => useContext(Context)
-export { SettingsProvider }
+export const useUserAccount = () => useContext(Context)
+export { ACCOUNT_EMPTY, BILLING_EMPTY, UserAccountProvider }

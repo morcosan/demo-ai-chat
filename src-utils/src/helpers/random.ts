@@ -5,7 +5,7 @@ import { capitalize } from 'lodash'
 let _randomId = 1001
 export const randomId = () => _randomId++
 export const randomInt = (min: number, max: number) => faker.number.int({ min, max })
-export const randomFloat = (min: number, max: number) => faker.number.float({ min, max, precision: 0.01 })
+export const randomFloat = (min: number, max: number) => faker.number.float({ min, max, fractionDigits: 2 })
 
 // Boolean
 export const randomBool = () => faker.datatype.boolean()

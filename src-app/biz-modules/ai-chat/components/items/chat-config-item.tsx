@@ -1,9 +1,9 @@
+import { LoadingText } from '@app/library/release'
 import { CloseSvg, DeleteSvg, EditSvg, IconButton, SendSvg, TextField, TextFieldRef } from '@ds/release'
 import { useEffect, useRef, useState } from 'react'
 import { Chat } from '../../api'
 import { useSubmittable } from '../../hooks/submittable'
 import { Checkbox } from '../checkbox'
-import { LoadingText } from '../loading-text'
 
 interface Props extends ReactProps {
 	chat: Chat
@@ -56,7 +56,7 @@ export const ChatConfigItem = (props: Props) => {
 				<div className="flex flex-col leading-sm">
 					<div className="line-clamp-2">{chat.title}</div>
 					<div className="mt-xs-1 text-size-xs text-color-text-subtle">
-						{t('aiChat.xMessages', { count: chat.size })}
+						{t('aiChat.label.xMessages', { count: chat.size })}
 					</div>
 				</div>
 
@@ -65,7 +65,7 @@ export const ChatConfigItem = (props: Props) => {
 						ref={textFieldRef}
 						id={`${chat.id}-field`}
 						value={title}
-						placeholder={t('aiChat.renamePlaceholder')}
+						placeholder={t('aiChat.placeholder.rename')}
 						className="absolute-overlay"
 						slotRight={
 							<IconButton
@@ -89,7 +89,7 @@ export const ChatConfigItem = (props: Props) => {
 			{Boolean(interactive) &&
 				(chat.deleting || chat.loading ? (
 					<div className="flex-center pl-button-px-item">
-						<LoadingText text={chat.deleting ? t('core.deleting') : t('core.loading')} />
+						<LoadingText text={chat.deleting ? t('core.state.deleting') : t('core.state.loading')} />
 					</div>
 				) : (
 					<div className="flex-center -mr-button-px-item ml-auto pl-xs-2 pr-xs-3">

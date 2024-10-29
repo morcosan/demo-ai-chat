@@ -1,5 +1,5 @@
 import { AiChatProvider } from '@app/biz-modules/ai-chat/state'
-import { SettingsProvider } from '@app/biz-modules/user-settings/state'
+import { UserAccountProvider } from '@app/biz-modules/user-settings/state'
 import { LoadingScreen } from '@app/core-modules/loading-screen'
 import { AppLayoutProvider } from '@app/layouts/state/_provider'
 import { UiA11yProvider, UiLibraryProvider, UiThemeProvider, UiViewportProvider } from '@ds/release'
@@ -15,7 +15,7 @@ type Type =
 	| typeof AppLayoutProvider
 	| typeof I18nProvider
 	| typeof LoadingScreen
-	| typeof SettingsProvider
+	| typeof UserAccountProvider
 	| typeof StrictMode
 	| typeof UiA11yProvider
 	| typeof UiLibraryProvider
@@ -25,10 +25,10 @@ type Type =
 const providers: Wrapper<Type>[] = [
 	{ elem: StrictMode },
 	{ elem: I18nProvider },
-	{ elem: LoadingScreen },
 	{ elem: AppLayoutProvider },
 	{ elem: AiChatProvider },
-	{ elem: SettingsProvider },
+	{ elem: UserAccountProvider },
+	{ elem: LoadingScreen },
 	{ elem: UiA11yProvider },
 	{ elem: UiViewportProvider },
 	{ elem: UiThemeProvider, props: { cookieKey: COOKIE_KEY.APP_COLOR_THEME } },
