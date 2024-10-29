@@ -71,7 +71,7 @@ const ApiDocsPage = () => {
 
 	const onClickLogo = (event: ReactMouseEvent) => {
 		event.preventDefault()
-		window.location.assign('/')
+		window.location.assign(ENV__ROOT_URL_PATH + '/') // Forced refresh
 	}
 
 	const onSubmit = useCallback(async () => {
