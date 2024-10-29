@@ -154,7 +154,7 @@ const ApiDocsPage = () => {
 			) : (
 				<>
 					<h1 className="mb-sm-9 flex items-center px-button-px-item">
-						<Link to="/" className="flex w-fit" onClick={onClickLogo}>
+						<Link to={ENV__ROOT_URL_PATH + '/'} className="flex w-fit" onClick={onClickLogo}>
 							<span className="flex items-center">
 								<AiChatSvg className="mr-xs-3 h-sm-1 w-sm-1 animate-pulse" />
 								<span className="text-size-xl font-weight-md">AI Chat</span>
