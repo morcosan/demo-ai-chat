@@ -2,8 +2,8 @@ import { DbAgent, DbGPT } from '@api/types'
 import { COOKIE_KEY } from '@utils/release'
 
 const GPTs: DbGPT[] = [
-	{ id: 0, name: 'Lorem Ipsum GPT', avatar: '/avatars/lorem.svg', desc: '' },
-	{ id: 1, name: 'Rammus GPT', avatar: '/avatars/rammus.png', desc: '' },
+	{ id: 0, name: 'Lorem Ipsum GPT', avatar: ENV__ROOT_URL_PATH + '/avatars/lorem.svg', desc: '' },
+	{ id: 1, name: 'Rammus GPT', avatar: ENV__ROOT_URL_PATH + '/avatars/rammus.png', desc: '' },
 ]
 
 let _agents: DbAgent[]
