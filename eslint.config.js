@@ -86,8 +86,7 @@ export default tsESLint.config(
 			'@typescript-eslint/no-unused-expressions': 'off',
 			'@typescript-eslint/no-unused-vars': ['warn', { caughtErrors: 'none' }],
 
-			'custom/only-import-from-release': 'error',
-			'custom/no-ts-extension-for-ts-imports': 'error',
+			...customPlugin.configs,
 		},
 	}
 )
