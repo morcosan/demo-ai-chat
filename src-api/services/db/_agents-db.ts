@@ -1,7 +1,7 @@
-import { DbAgent, DbGpt } from '@api/types'
+import { DbAgent, DbGPT } from '@api/types'
 import { COOKIE_KEY } from '@utils/release'
 
-const GPTs: DbGpt[] = [
+const GPTs: DbGPT[] = [
 	{ id: 0, name: 'Lorem Ipsum GPT', desc: '' },
 	{ id: 1, name: 'Rammus GPT', desc: '' },
 ]

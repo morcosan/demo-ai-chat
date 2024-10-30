@@ -26,8 +26,8 @@ export const allChatsDefaults: AllChatsStore = {
 }
 
 export const useAllChatsStore = (): AllChatsStore => {
-	const [allChats, setAllChats] = useState([] as Chat[])
-	const [allChatsPagination, setAllChatsPagination] = useState({ page: 0, count: 0 } as Pagination)
+	const [allChats, setAllChats] = useState<Chat[]>([])
+	const [allChatsPagination, setAllChatsPagination] = useState<Pagination>({ page: 0, count: 0 })
 	const [allChatsLoading, setAllChatsLoading] = useState<ListLoading>(false)
 
 	const canLoadAllChats = !allChatsPagination.page || allChats.length < allChatsPagination.count

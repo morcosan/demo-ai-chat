@@ -1,6 +1,7 @@
-import { ChatDTO, MessageDTO, SubchatDTO } from '@api/types'
+import { AgentDTO, ChatDTO, GptDTO, MessageDTO, SubchatDTO } from '@api/types'
 
 export type Subchat = SubchatDTO
+export type GPT = GptDTO
 
 export interface Chat extends ChatDTO {
 	deleting?: boolean
@@ -8,6 +9,11 @@ export interface Chat extends ChatDTO {
 }
 
 export interface Message extends MessageDTO {
+	loading?: boolean
+}
+
+export interface Agent extends AgentDTO {
+	deleting?: boolean
 	loading?: boolean
 }
 

@@ -1,9 +1,9 @@
-import { DbAccount, DbAgent, DbBilling, DbChat, DbGpt, DbMessage } from './_db'
+import { DbAccount, DbAgent, DbBilling, DbChat, DbGPT, DbMessage } from './_db'
 
 export type AccountDTO = DbAccount
 export type BillingDTO = DbBilling
 export type AgentDTO = DbAgent
-export type GptDTO = DbGpt
+export type GptDTO = DbGPT
 
 export interface ChatDTO extends DbChat {
 	size: number

@@ -33,9 +33,9 @@ export const chatDefaults: ChatStore = {
 
 export const useChatStore = (allChatsStore: AllChatsStore): ChatStore => {
 	const { allChats, createNewChat, updateChat } = allChatsStore
-	const [activeChat, setActiveChat] = useState(null as Chat | null)
-	const [chatMessages, setChatMessages] = useState([] as Message[])
-	const [chatPagination, setChatPagination] = useState({ page: 0, count: 0 } as Pagination)
+	const [activeChat, setActiveChat] = useState<Chat | null>(null)
+	const [chatMessages, setChatMessages] = useState<Message[]>([])
+	const [chatPagination, setChatPagination] = useState<Pagination>({ page: 0, count: 0 })
 	const [chatLoading, setChatLoading] = useState<ListLoading>(false)
 	const [shouldRename, setShouldRename] = useState(false)
 

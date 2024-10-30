@@ -33,9 +33,9 @@ export const subchatDefaults: SubchatStore = {
 export const useSubchatStore = (chatStore: ChatStore, allSubchatsStore: AllSubchatsStore): SubchatStore => {
 	const { activeChat, chatMessages, updateMessage } = chatStore
 	const { allSubchats, resetAllSubchats, updateSubchat } = allSubchatsStore
-	const [activeSubchat, setActiveSubchat] = useState(null as Subchat | null)
-	const [subchatMessages, setSubchatMessages] = useState([] as Message[])
-	const [subchatPagination, setSubchatPagination] = useState({ page: 0, count: 0 } as Pagination)
+	const [activeSubchat, setActiveSubchat] = useState<Subchat | null>(null)
+	const [subchatMessages, setSubchatMessages] = useState<Message[]>([])
+	const [subchatPagination, setSubchatPagination] = useState<Pagination>({ page: 0, count: 0 })
 	const [subchatLoading, setSubchatLoading] = useState<ListLoading>(false)
 
 	const canLoadSubchatMessages = !subchatPagination.page || subchatMessages.length < subchatPagination.count
