@@ -12,6 +12,15 @@ export const AgentsProvider = ({ children }: ReactProps) => {
 
 	const canLoadAgents = !agentsPagination.page || agents.length < agentsPagination.count
 
+	const loadGPTs = async () => {
+		if (gptsLoading || gpts.length) return
+
+		setGptsLoading('full')
+		const listing = await API.getGPTs()
+		setGpts(listing.gpts)
+		setGptsLoading(false)
+	}
+
 	const loadMoreAgents = async (reload?: boolean, prevAgents: Agent[] = agents) => {
 		if (agentsLoading || !canLoadAgents) return
 
@@ -26,6 +35,7 @@ export const AgentsProvider = ({ children }: ReactProps) => {
 	}
 
 	useEffect(() => {
+		loadGPTs()
 		!agentsPagination.page && loadMoreAgents()
 	}, [])
 
