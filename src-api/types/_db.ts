@@ -30,3 +30,17 @@ export interface DbMessage {
 }
 
 export type MessageRole = 'user' | 'agent' | 'system'
+
+export interface DbGpt {
+	id: number
+	name: string
+	desc: string
+}
+
+export interface DbAgent {
+	id: number
+	gptId: number
+	name: string
+	desc: string
+	setup: string
+}

@@ -2,61 +2,9 @@ import { mockAPI } from '@api/mock'
 import { ApiResponse } from '@api/types'
 import { AiChatSvg, ArrowBackSvg, Button, IconButton, TextField, useUiTheme } from '@ds/release'
 import hljs from 'highlight.js'
-
 import { useCallback, useEffect, useMemo, useState } from 'react'
 import { Link, useLocation, useSearchParams } from 'react-router-dom'
-
-type EndpointType = 'GET' | 'POST' | 'PATCH' | 'DELETE'
-
-interface Endpoint {
-	type: EndpointType
-	path: string
-	params: string[]
-}
-
-const ENDPOINTS: Endpoint[] = [
-	{ type: 'GET', path: '/api/account', params: [] },
-	{ type: 'GET', path: '/api/billing', params: [] },
-	{ type: 'GET', path: '/api/chats', params: ['chatIds', 'count', 'page', 'search'] },
-	{ type: 'GET', path: '/api/subchats', params: ['chatId', 'subchatIds', 'count', 'page'] },
-	{ type: 'GET', path: '/api/messages', params: ['chatId', 'subchatId', 'count', 'page', 'search'] },
-	{ type: 'POST', path: '/api/chats', params: ['title'] },
-	{ type: 'POST', path: '/api/messages', params: ['chatId', 'subchatId', 'text'] },
-	{ type: 'PATCH', path: '/api/account', params: ['name', 'email', 'phone', 'avatar'] },
-	{
-		type: 'PATCH',
-		path: '/api/billing',
-		params: ['name', 'address', 'city', 'country', 'postalCode', 'vatNumber'],
-	},
-	{ type: 'PATCH', path: '/api/chats', params: ['chatId', 'title'] },
-	{ type: 'DELETE', path: '/api/chats', params: ['chatIds'] },
-	{ type: 'DELETE', path: '/api/database', params: [] },
-]
-
-const QUERY_DEFAULTS = {
-	chatId: '1001',
-	chatIds: '1001,1002',
-	count: '10',
-	page: '1',
-	name: 'John Doe',
-	email: 'john.doe@example.com',
-	phone: '+123456789',
-	avatar: 'https://www.wikipedia.org/portal/wikipedia.org/assets/img/Wikipedia-logo-v2.png',
-	address: 'Street ABC, number 123',
-	city: 'Paris',
-	country: 'France',
-	postalCode: '123456',
-	vatNumber: 'FR123',
-}
-
-const TYPES: EndpointType[] = ['GET', 'POST', 'PATCH', 'DELETE']
-
-const TYPE_COLOR = {
-	GET: 'text-color-success',
-	POST: 'text-color-primary',
-	PATCH: 'text-color-secondary-text-default',
-	DELETE: 'text-color-danger',
-}
+import { Endpoint, ENDPOINTS, EndpointType, QUERY_DEFAULTS, TYPE_COLOR, TYPES } from './_endpoints'
 
 const ApiDocsPage = () => {
 	const { isUiDark } = useUiTheme()

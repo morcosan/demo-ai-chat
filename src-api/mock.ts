@@ -1,7 +1,8 @@
-import { billingService } from '@api/services/billing-service'
 import { accountService } from './services/account-service'
+import { agentsService } from './services/agents-service'
+import { billingService } from './services/billing-service'
 import { chatsService } from './services/chats-service'
-import { resetDbAccount, resetDbBilling, resetDbChats, resetDbMessages } from './services/db'
+import { resetDbAccount, resetDbAgents, resetDbBilling, resetDbChats, resetDbMessages } from './services/db'
 import { ApiPayload, ApiQuery, ApiResponse, STATUS__SUCCESS } from './types'
 import { applyNetwork, RESP__NOT_FOUND } from './utilities/network'
 
@@ -14,6 +15,8 @@ export const mockAPI = {
 		if (path === '/api/chats') resp = await chatsService.getChats(query)
 		if (path === '/api/subchats') resp = await chatsService.getSubchats(query)
 		if (path === '/api/messages') resp = await chatsService.getMessages(query)
+		if (path === '/api/gpts') resp = await agentsService.getGPTs()
+		if (path === '/api/agents') resp = await agentsService.getAgents(query)
 
 		resp = await applyNetwork(resp)
 		LOG_DEV('GET', path, query, resp)
@@ -55,6 +58,7 @@ export const mockAPI = {
 			resetDbBilling()
 			resetDbChats()
 			resetDbMessages()
+			resetDbAgents()
 			resp = { status: STATUS__SUCCESS, data: null }
 		}
 

@@ -1,5 +1,5 @@
 import { DbAccount, DbBilling } from './_db'
-import { ChatDTO, MessageDTO, SubchatDTO } from './_dto'
+import { AgentDTO, ChatDTO, GptDTO, MessageDTO, SubchatDTO } from './_dto'
 
 export * from './_db'
 export * from './_dto'
@@ -42,6 +42,13 @@ export interface MessagesApiQuery extends ApiQuery {
 	search?: string
 }
 
+export interface AgentsApiQuery extends ApiQuery {
+	agentIds?: string
+	count?: string | number
+	page?: string | number
+	search?: string
+}
+
 /**
  * Response
  */
@@ -59,6 +66,16 @@ export interface SubchatsApiData {
 export interface MessagesApiData {
 	count: number
 	items: MessageDTO[]
+}
+
+export interface GptApiData {
+	count: number
+	items: GptDTO[]
+}
+
+export interface AgentsApiData {
+	count: number
+	items: AgentDTO[]
 }
 
 /**
