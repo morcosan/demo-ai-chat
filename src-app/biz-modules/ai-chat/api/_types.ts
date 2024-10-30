@@ -17,6 +17,14 @@ export interface Agent extends AgentDTO {
 	loading?: boolean
 }
 
+export interface GptListing {
+	gpts: GPT[]
+	count: number
+}
+export interface AgentListing {
+	agents: Agent[]
+	count: number
+}
 export interface ChatListing {
 	chats: Chat[]
 	count: number

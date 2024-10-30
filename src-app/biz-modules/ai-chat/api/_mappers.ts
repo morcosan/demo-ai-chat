@@ -1,5 +1,23 @@
-import { ChatDTO, MessageDTO, SubchatDTO } from '@api/types'
-import { Chat, Message, Subchat } from './_types'
+import { AgentDTO, ChatDTO, GptDTO, MessageDTO, SubchatDTO } from '@api/types'
+import { Agent, Chat, GPT, Message, Subchat } from './_types'
+
+export const mapDtoToGPT = (dto: GptDTO): GPT => {
+	return {
+		id: dto.id || 0,
+		name: dto.name || '',
+		desc: dto.desc || '',
+	}
+}
+
+export const mapDtoToAgent = (dto: AgentDTO): Agent => {
+	return {
+		id: dto.id || 0,
+		gptId: dto.gptId || 0,
+		name: dto.name || '',
+		desc: dto.desc || '',
+		setup: dto.setup || '',
+	}
+}
 
 export const mapDtoToChat = (dto: ChatDTO): Chat => {
 	return {

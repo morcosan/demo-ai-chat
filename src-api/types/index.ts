@@ -19,21 +19,24 @@ export type ApiPayload = Record<string, unknown>
 /**
  * Query
  */
-
+export interface AgentsApiQuery extends ApiQuery {
+	agentIds?: string
+	count?: string | number
+	page?: string | number
+	search?: string
+}
 export interface ChatsApiQuery extends ApiQuery {
 	chatIds?: string
 	count?: string | number
 	page?: string | number
 	search?: string
 }
-
 export interface SubchatsApiQuery extends ApiQuery {
 	chatId?: string | number
 	subchatIds?: string
 	count?: string | number
 	page?: string | number
 }
-
 export interface MessagesApiQuery extends ApiQuery {
 	chatId?: string | number
 	subchatId?: string | number
@@ -42,40 +45,28 @@ export interface MessagesApiQuery extends ApiQuery {
 	search?: string
 }
 
-export interface AgentsApiQuery extends ApiQuery {
-	agentIds?: string
-	count?: string | number
-	page?: string | number
-	search?: string
-}
-
 /**
  * Response
  */
-
-export interface ChatsApiData {
-	count: number
-	items: ChatDTO[]
-}
-
-export interface SubchatsApiData {
-	count: number
-	items: SubchatDTO[]
-}
-
-export interface MessagesApiData {
-	count: number
-	items: MessageDTO[]
-}
-
 export interface GptApiData {
 	count: number
 	items: GptDTO[]
 }
-
 export interface AgentsApiData {
 	count: number
 	items: AgentDTO[]
+}
+export interface ChatsApiData {
+	count: number
+	items: ChatDTO[]
+}
+export interface SubchatsApiData {
+	count: number
+	items: SubchatDTO[]
+}
+export interface MessagesApiData {
+	count: number
+	items: MessageDTO[]
 }
 
 /**
@@ -83,12 +74,10 @@ export interface AgentsApiData {
  */
 export interface AccountApiPayload extends ApiPayload, Partial<DbAccount> {}
 export interface BillingApiPayload extends ApiPayload, Partial<DbBilling> {}
-
 export interface ChatsApiPayload extends ApiPayload {
 	chatId?: number
 	title?: string
 }
-
 export interface MessagesApiPayload extends ApiPayload {
 	chatId?: number
 	subchatId?: number

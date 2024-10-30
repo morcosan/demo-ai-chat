@@ -12,11 +12,11 @@ export const mockAPI = {
 
 		if (path === '/api/account') resp = await accountService.getAccount()
 		if (path === '/api/billing') resp = await billingService.getBilling()
+		if (path === '/api/gpts') resp = await agentsService.getGPTs()
+		if (path === '/api/agents') resp = await agentsService.getAgents(query)
 		if (path === '/api/chats') resp = await chatsService.getChats(query)
 		if (path === '/api/subchats') resp = await chatsService.getSubchats(query)
 		if (path === '/api/messages') resp = await chatsService.getMessages(query)
-		if (path === '/api/gpts') resp = await agentsService.getGPTs()
-		if (path === '/api/agents') resp = await agentsService.getAgents(query)
 
 		resp = await applyNetwork(resp)
 		LOG_DEV('GET', path, query, resp)
