@@ -1,7 +1,7 @@
 import { DocsHeader } from '@ds/docs/components/docs-header'
 import { DocsPage } from '@ds/docs/components/docs-page'
 import '@ds/docs/setup'
-import { renderHtml } from '@ds/docs/utilities/docs.ts'
+import { renderHtml } from '@ds/docs/utilities/docs'
 import type { StoryObj } from '@storybook/react'
 
 export const story: StoryObj = {}

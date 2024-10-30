@@ -1,5 +1,5 @@
 import { DocsPage } from '@ds/docs/components/docs-page'
-import { createArgTypes } from '@ds/docs/setup.ts'
+import { createArgTypes } from '@ds/docs/setup'
 import { IconButton, IconButtonProps, IconButtonVariant, LogoutSvg } from '@ds/release'
 import { action } from '@storybook/addon-actions'
 import type { Meta, StoryObj } from '@storybook/react'

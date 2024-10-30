@@ -1,5 +1,5 @@
 import { DocsPage } from '@ds/docs/components/docs-page'
-import { createArgTypes } from '@ds/docs/setup.ts'
+import { createArgTypes } from '@ds/docs/setup'
 import {
 	IconButton,
 	IconButtonSize,
