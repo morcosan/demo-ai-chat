@@ -6,8 +6,8 @@ export interface Store {
 	ActiveFlagSvg: JsxFn
 	activeLanguage: Language
 	activeLocale: Locale
-	isLoaded: boolean
-	isUpdating: boolean
+	isI18nLoaded: boolean
+	isI18nUpdating: boolean
 	changeLocale(locale: Locale): Promise<void>
 }
 
@@ -15,7 +15,7 @@ export const Context = createContext<Store>({
 	ActiveFlagSvg: FLAG_SVGS[DEFAULT_LOCALE],
 	activeLanguage: LANGUAGES[DEFAULT_LOCALE],
 	activeLocale: DEFAULT_LOCALE,
-	isLoaded: false,
-	isUpdating: false,
+	isI18nLoaded: false,
+	isI18nUpdating: false,
 	changeLocale: async () => {},
 })

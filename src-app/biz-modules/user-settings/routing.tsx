@@ -3,6 +3,12 @@
 import { lazy } from 'react'
 import { Route } from 'react-router-dom'
 
-const Page = lazy(() => import('./pages/page'))
+const AccountPage = lazy(() => import('./pages/account-page'))
+const BillingPage = lazy(() => import('./pages/billing-page'))
 
-export const settingsRoutes = <Route path="/settings" element={<Page />} />
+export const userSettingsRoutes = (
+	<>
+		<Route path="/settings/account" element={<AccountPage />} />
+		<Route path="/settings/billing" element={<BillingPage />} />
+	</>
+)

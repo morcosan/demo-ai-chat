@@ -23,7 +23,7 @@ interface LanguageItem {
 }
 
 export const I18nModal = ({ opened, onClose }: Props) => {
-	const { isUpdating, activeLocale, changeLocale } = useI18n()
+	const { isI18nUpdating, activeLocale, changeLocale } = useI18n()
 	const [currentLocale, setCurrentLocale] = useState(activeLocale)
 
 	const items: LanguageItem[] = useMemo(
@@ -45,21 +45,21 @@ export const I18nModal = ({ opened, onClose }: Props) => {
 		() => [
 			{
 				key: 'default',
-				title: t('core.default'),
+				title: t('core.label.default'),
 				items: items.filter((item: LanguageItem) => item.region === 'default'),
 			},
 			{
 				key: 'europe',
-				title: t('core.europe'),
+				title: t('core.label.europe'),
 				items: items.filter((item: LanguageItem) => item.region === 'europe'),
 			},
 			{
 				key: 'asia',
-				title: t('core.asia'),
+				title: t('core.label.asia'),
 				items: items.filter((item: LanguageItem) => item.region === 'asia'),
 			},
 		],
-		[activeLocale, isUpdating]
+		[activeLocale, isI18nUpdating]
 	)
 
 	const onClickItem = (locale: Locale) => {
@@ -101,8 +101,8 @@ export const I18nModal = ({ opened, onClose }: Props) => {
 	}
 
 	useEffect(() => {
-		!isUpdating && setCurrentLocale(activeLocale)
-	}, [isUpdating, activeLocale])
+		!isI18nUpdating && setCurrentLocale(activeLocale)
+	}, [isI18nUpdating, activeLocale])
 
 	return (
 		<Modal opened={opened} width="lg" slotTitle={t('core.action.changeLanguage')} noFooter onClose={onClose}>

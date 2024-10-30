@@ -1,6 +1,6 @@
+import { LoadingText } from '@app/library/release'
 import { useEffect } from 'react'
 import { useNavigate, useSearchParams } from 'react-router-dom'
-import { LoadingText } from '../../components/loading-text'
 import { useAiChat } from '../../state'
 import { SubchatView } from './_subchat-view'
 import { SubchatsView } from './_subchats-view'
@@ -42,9 +42,9 @@ export const PagePanel = () => {
 	) : activeSubchat ? (
 		<SubchatView />
 	) : chatLoading === 'full' || allSubchatsLoading === 'full' ? (
-		<LoadingText text={t('aiChat.loadingSubchats')} className="flex-center h-full" />
+		<LoadingText text={t('aiChat.state.loadingSubchats')} className="flex-center h-full" />
 	) : !allSubchats.length && !subchatLoading ? (
-		<div className="flex-center h-full w-full text-color-text-subtle">{t('aiChat.noSubchats')}</div>
+		<div className="flex-center h-full w-full text-color-text-subtle">{t('aiChat.label.noSubchats')}</div>
 	) : (
 		<SubchatsView />
 	)

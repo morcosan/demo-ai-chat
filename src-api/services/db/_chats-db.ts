@@ -28,7 +28,7 @@ const setDbMessages = (value: DbMessage[]) => {
 	localStorage.setItem(COOKIE_KEY.DB_MESSAGES, JSON.stringify(value))
 }
 
-const initDatabase = () => {
+const initChatsDB = () => {
 	try {
 		const json = localStorage.getItem(COOKIE_KEY.DB_CHATS)
 		_dbChats = JSON.parse(json || '')
@@ -111,7 +111,7 @@ export {
 	getDbChats,
 	getDbMessages,
 	getNextId,
-	initDatabase,
+	initChatsDB,
 	resetDbChats,
 	resetDbMessages,
 	setDbChats,

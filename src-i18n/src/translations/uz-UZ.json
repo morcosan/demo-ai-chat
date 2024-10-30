@@ -6,68 +6,120 @@
 			"changeLanguage": "Tilni o'zgartirish",
 			"close": "Yopish",
 			"delete": "O'chirish",
-			"deselectAll": "Hammasini bekor qilish",
+			"deselectAll": "Tanlovni bekor qilish",
 			"openMenu": "Menyuni ochish",
 			"rename": "Qayta nomlash",
+			"saveChanges": "O'zgarishlarni saqlash",
 			"search": "Qidirish",
-			"searchMore": "Ko'proq natija ko'rsatish",
+			"searchMore": "Ko'proq natijalarni ko'rsatish",
 			"selectAll": "Hammasini tanlash",
 			"signOut": "Chiqish"
 		},
-		"apiDocs": "API hujjatlari",
-		"asia": "Osiyo",
-		"custom": "Maxsus",
-		"darkTheme": "Qorong'i",
-		"default": "Standart",
-		"deleting": "O'chirilmoqda...",
-		"designSystem": "Dizayn tizimi",
-		"europe": "Yevropa",
-		"githubRepo": "GitHub repozitoriyasi",
-		"language": "Til",
-		"lightTheme": "Yorug'",
-		"loading": "Yuklanmoqda...",
-		"quickSettings": "Tezkor sozlamalar",
-		"searchPlaceholder": "Qidirish...",
-		"searching": "Qidirilmoqda...",
-		"settings": "Sozlamalar",
-		"uiLibrary": "UI kutubxonasi:",
-		"uiTheme": "UI mavzusi:"
+		"label": {
+			"apiDocs": "API hujjatlari",
+			"asia": "Osiyo",
+			"custom": "Maxsus",
+			"darkTheme": "Qorong'i",
+			"default": "Standart",
+			"designSystem": "Dizayn tizimi",
+			"errors": "Xatolar",
+			"europe": "Yevropa",
+			"githubRepo": "GitHub ombori",
+			"language": "Til",
+			"lightTheme": "Yorug'",
+			"optionalField": "(Ixtiyoriy)",
+			"requiredField": "(Majburiy)",
+			"settings": "Sozlamalar",
+			"uiLibrary": "UI kutubxonasi:",
+			"uiTheme": "UI mavzusi:"
+		},
+		"placeholder": {
+			"search": "Qidirish..."
+		},
+		"state": {
+			"dataSaved": "Ma'lumotlaringiz saqlandi",
+			"deleting": "O'chirilmoqda...",
+			"loading": "Yuklanmoqda...",
+			"searching": "Qidirilmoqda..."
+		}
 	},
 	"aiChat": {
 		"action": {
-			"backToSubchats": "Quyi suhbatlarga qaytish",
+			"backToSubchats": "Ichki suhbatlarga qaytish",
 			"confirmDeleteChats": "Suhbatlarni o'chirishni tasdiqlash",
 			"confirmRenameChat": "Suhbatni qayta nomlashni tasdiqlash",
 			"deleteSelectedChats": "Tanlangan suhbatlarni o'chirish",
+			"manageAgents": "Agentlarni boshqarish",
 			"manageChats": "Suhbatlarni boshqarish",
 			"openChat": "Suhbatni ochish",
-			"openSubchat_zero": "Quyi suhbat yaratish",
-			"openSubchat_one": "Quyi suhbatni ochish ({count} xabar)",
-			"openSubchat_other": "Quyi suhbatni ochish ({count} xabar)",
-			"showMoreChats": "Ko'proq suhbat ko'rsatish",
-			"showSubchats": "Quyi suhbatlarni ko'rsatish ({count})",
-			"startSearching_one": "Kamida {count} ta belgi kiriting",
-			"startSearching_other": "Kamida {count} ta belgi kiriting"
+			"openSubchat_zero": "Ichki suhbat yaratish",
+			"openSubchat_one": "Ichki suhbatni ochish ({count} xabar)",
+			"openSubchat_other": "Ichki suhbatni ochish ({count} xabar)",
+			"sendMessage": "Xabar yuborish",
+			"showMoreChats": "Ko'proq suhbatlarni ko'rsatish",
+			"showSubchats": "Ichki suhbatlarni ko'rsatish ({count})",
+			"startSearching_one": "Kamida {count} belgi kiriting",
+			"startSearching_other": "Kamida {count} belgi kiriting"
 		},
-		"chats": "Suhbatlar",
-		"deleteChatsWarning": "Bu suhbatlar butunlay o'chiriladi",
-		"inputPlaceholder": "Savol bering...",
-		"loadingChats": "Suhbatlar yuklanmoqda...",
-		"loadingMessages": "Xabarlar yuklanmoqda...",
-		"loadingPreviousMessages": "Oldingi xabarlar yuklanmoqda...",
-		"loadingSubchats": "Quyi suhbatlar yuklanmoqda...",
-		"newChat": "Yangi suhbat",
-		"noChats": "Suhbatlar yo'q",
-		"noSubchats": "Quyi suhbatlar yo'q",
-		"renamePlaceholder": "Avtomatik yangi nom yaratish...",
-		"sendMessage": "Xabar yuborish",
-		"subchats": "Quyi suhbatlar",
-		"xMessages_one": "{count} xabar",
-		"xMessages_other": "{count} xabar",
-		"xSearchResults_zero": "Natija yo'q",
-		"xSearchResults_one": "{count} natija",
-		"xSearchResults_other": "{count} natija",
-		"xSelectedMessages_one": "{count} / {total} xabar tanlandi",
-		"xSelectedMessages_other": "{count} / {total} xabar tanlandi"
+		"label": {
+			"chats": "Suhbatlar",
+			"agents": "Agentlar",
+			"newChat": "Yangi suhbat",
+			"noChats": "Suhbatlar yo'q",
+			"noSubchats": "Ichki suhbatlar yo'q",
+			"subchats": "Ichki suhbatlar",
+			"xMessages_one": "{count} xabar",
+			"xMessages_other": "{count} xabar",
+			"xSearchResults_zero": "Natijalar yo'q",
+			"xSearchResults_one": "{count} natija",
+			"xSearchResults_other": "{count} natija",
+			"xSelectedMessages_one": "{count} xabar tanlandi",
+			"xSelectedMessages_other": "{count} xabar tanlandi"
+		},
+		"placeholder": {
+			"newMessage": "Savol bering...",
+			"rename": "Avtomatik yangi nom yaratish..."
+		},
+		"state": {
+			"loadingChats": "Suhbatlar yuklanmoqda...",
+			"loadingMessages": "Xabarlar yuklanmoqda...",
+			"loadingPreviousMessages": "Oldingi xabarlar yuklanmoqda...",
+			"loadingSubchats": "Ichki suhbatlar yuklanmoqda..."
+		},
+		"warning": {
+			"deletingChats": "Bu suhbatlar butunlay o'chiriladi"
+		}
+	},
+	"userAccount": {
+		"action": {
+			"manageAccount": "Hisobni boshqarish",
+			"manageBilling": "To'lovlarni boshqarish"
+		},
+		"error": {
+			"address": "Manzilni kiritishingiz kerak",
+			"avatar": "Avatar qo'shishingiz kerak",
+			"city": "Shaharni kiritishingiz kerak",
+			"country": "Mamlakatni kiritishingiz kerak",
+			"email": "Elektron pochta manzilini kiritishingiz kerak",
+			"legalName": "Yuridik nomni kiritishingiz kerak",
+			"name": "Ismni kiritishingiz kerak",
+			"postalCode": "Pochta indeksini kiritishingiz kerak"
+		},
+		"label": {
+			"account": "Hisob",
+			"address": "Manzil",
+			"avatar": "Avatar",
+			"billing": "To'lov",
+			"city": "Shahar",
+			"country": "Mamlakat",
+			"email": "Elektron pochta manzili",
+			"legalName": "Yuridik nom",
+			"name": "Ism",
+			"phone": "Telefon raqami",
+			"postalCode": "Pochta indeksi",
+			"private": "Shaxsiy",
+			"public": "Ommaviy",
+			"vatNumber": "STIR"
+		}
 	}
 }

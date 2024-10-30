@@ -41,11 +41,11 @@ export const NewMessageField = ({ listLoading, postMessageFn, primary }: Props) 
 			id={primary ? 'field-chat' : 'field-subchat'}
 			size={primary ? 'xl' : 'lg'}
 			value={inputValue}
-			placeholder={t('aiChat.inputPlaceholder')}
+			placeholder={t('aiChat.placeholder.newMessage')}
 			ariaLabel="New message"
 			slotRight={
 				<IconButton
-					tooltip={t('aiChat.sendMessage')}
+					tooltip={t('aiChat.action.sendMessage')}
 					variant={primary ? 'solid-primary' : 'solid-secondary'}
 					size={primary ? 'md' : 'sm'}
 					loading={isLoading}

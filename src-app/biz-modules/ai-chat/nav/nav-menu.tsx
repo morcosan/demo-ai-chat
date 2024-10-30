@@ -1,9 +1,9 @@
+import { LoadingText } from '@app/library/release'
 import { AiChatSvg, Button, IconButton, SearchSvg, SettingsSvg } from '@ds/release'
 import { debounce } from 'lodash'
 import { UIEvent, useEffect, useMemo } from 'react'
 import { Chat } from '../api'
 import { ChatItem } from '../components/items/chat-item'
-import { LoadingText } from '../components/loading-text'
 import { useAiChat, useAiChatSearch } from '../state'
 
 interface Props {
@@ -46,7 +46,7 @@ export const AiChatNavMenu = ({ collapsed, unselected, onHideNavMenu }: Props) =
 				<div className={cx(!collapsed && '-ml-xs-4 mr-xs-3')}>
 					<AiChatSvg className="h-xs-9 w-xs-9" />
 				</div>
-				<span className={cx(collapsed && 'hidden')}>{t('aiChat.newChat')}</span>
+				<span className={cx(collapsed && 'hidden')}>{t('aiChat.label.newChat')}</span>
 			</Button>
 
 			{/* SEARCH */}
@@ -58,14 +58,14 @@ export const AiChatNavMenu = ({ collapsed, unselected, onHideNavMenu }: Props) =
 			{/* HEADER */}
 			<div className="mt-xs-7 flex h-button-h-sm w-full items-center justify-between">
 				<span className="ml-button-px-item truncate text-size-sm text-color-text-subtle">
-					{t('aiChat.chats')}
+					{t('aiChat.label.chats')}
 					&nbsp;
 					{Boolean(allChatsPagination.count) && <span className="text-size-xs">({allChatsPagination.count})</span>}
 				</span>
 
 				<IconButton
 					tooltip={t('aiChat.action.manageChats')}
-					linkHref="/chats-config"
+					linkHref="/settings/chats"
 					size="sm"
 					className={cx(collapsed && 'hidden')}
 				>
@@ -81,7 +81,7 @@ export const AiChatNavMenu = ({ collapsed, unselected, onHideNavMenu }: Props) =
 			>
 				{allChatsLoading === 'full' ? (
 					<LoadingText
-						text={t('aiChat.loadingChats')}
+						text={t('aiChat.state.loadingChats')}
 						collapsed={collapsed}
 						className="min-h-sm-4 px-button-px-item text-size-sm"
 					/>
@@ -90,7 +90,7 @@ export const AiChatNavMenu = ({ collapsed, unselected, onHideNavMenu }: Props) =
 						{slotChats}
 						{allChats.length < allChatsPagination.count && (
 							<LoadingText
-								text={t('aiChat.loadingChats')}
+								text={t('aiChat.state.loadingChats')}
 								collapsed={collapsed}
 								className="line-clamp-1 min-h-sm-4 px-button-px-item text-size-sm"
 								style={{ visibility: allChatsLoading === 'more' ? 'visible' : 'hidden' }}
@@ -98,7 +98,7 @@ export const AiChatNavMenu = ({ collapsed, unselected, onHideNavMenu }: Props) =
 						)}
 					</>
 				) : (
-					<div className="ml-button-px-item mt-xs-2 text-size-sm">{t('aiChat.noChats')}</div>
+					<div className="ml-button-px-item mt-xs-2 text-size-sm">{t('aiChat.label.noChats')}</div>
 				)}
 			</div>
 

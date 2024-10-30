@@ -1,6 +1,10 @@
 import { DbChat, DbMessage } from '@api/types'
-import { getDbMessages, initDatabase } from './config'
+import { initAccountDB } from './_account-db'
+import { initBillingDB } from './_billing-db'
+import { getDbMessages, initChatsDB } from './_chats-db'
 
+export { getDbAccount, resetDbAccount, setDbAccount } from './_account-db'
+export { getDbBilling, resetDbBilling, setDbBilling } from './_billing-db'
 export {
 	getDbChats,
 	getDbMessages,
@@ -9,10 +13,12 @@ export {
 	resetDbMessages,
 	setDbChats,
 	setDbMessages,
-} from './config'
+} from './_chats-db'
 
 export const getSizeForChat = (chat: DbChat) => {
 	return getDbMessages().filter((message: DbMessage) => message.parentId === chat.id).length
 }
 
-initDatabase()
+initAccountDB()
+initBillingDB()
+initChatsDB()

@@ -6,7 +6,7 @@ import hljs from 'highlight.js'
 import { useCallback, useEffect, useMemo, useState } from 'react'
 import { Link, useLocation, useSearchParams } from 'react-router-dom'
 
-type EndpointType = 'GET' | 'POST' | 'PUT' | 'DELETE'
+type EndpointType = 'GET' | 'POST' | 'PATCH' | 'DELETE'
 
 interface Endpoint {
 	type: EndpointType
@@ -15,12 +15,20 @@ interface Endpoint {
 }
 
 const ENDPOINTS: Endpoint[] = [
+	{ type: 'GET', path: '/api/account', params: [] },
+	{ type: 'GET', path: '/api/billing', params: [] },
 	{ type: 'GET', path: '/api/chats', params: ['chatIds', 'count', 'page', 'search'] },
 	{ type: 'GET', path: '/api/subchats', params: ['chatId', 'subchatIds', 'count', 'page'] },
 	{ type: 'GET', path: '/api/messages', params: ['chatId', 'subchatId', 'count', 'page', 'search'] },
 	{ type: 'POST', path: '/api/chats', params: ['title'] },
 	{ type: 'POST', path: '/api/messages', params: ['chatId', 'subchatId', 'text'] },
-	{ type: 'PUT', path: '/api/chats', params: ['chatId', 'title'] },
+	{ type: 'PATCH', path: '/api/account', params: ['name', 'email', 'phone', 'avatar'] },
+	{
+		type: 'PATCH',
+		path: '/api/billing',
+		params: ['name', 'address', 'city', 'country', 'postalCode', 'vatNumber'],
+	},
+	{ type: 'PATCH', path: '/api/chats', params: ['chatId', 'title'] },
 	{ type: 'DELETE', path: '/api/chats', params: ['chatIds'] },
 	{ type: 'DELETE', path: '/api/database', params: [] },
 ]
@@ -30,14 +38,23 @@ const QUERY_DEFAULTS = {
 	chatIds: '1001,1002',
 	count: '10',
 	page: '1',
+	name: 'John Doe',
+	email: 'john.doe@example.com',
+	phone: '+123456789',
+	avatar: 'https://www.wikipedia.org/portal/wikipedia.org/assets/img/Wikipedia-logo-v2.png',
+	address: 'Street ABC, number 123',
+	city: 'Paris',
+	country: 'France',
+	postalCode: '123456',
+	vatNumber: 'FR123',
 }
 
-const TYPES: EndpointType[] = ['GET', 'POST', 'PUT', 'DELETE']
+const TYPES: EndpointType[] = ['GET', 'POST', 'PATCH', 'DELETE']
 
 const TYPE_COLOR = {
 	GET: 'text-color-success',
 	POST: 'text-color-primary',
-	PUT: 'text-color-secondary-text-default',
+	PATCH: 'text-color-secondary-text-default',
 	DELETE: 'text-color-danger',
 }
 
@@ -52,11 +69,6 @@ const ApiDocsPage = () => {
 
 	const respHtml = useMemo(() => hljs.highlight(JSON.stringify(resp, null, 2), { language: 'json' }).value, [resp])
 
-	const onClickLogo = (event: ReactMouseEvent) => {
-		event.preventDefault()
-		window.location.assign('/')
-	}
-
 	const onSubmit = useCallback(async () => {
 		const path = location.pathname.replace('/docs', '')
 		let resp = null
@@ -64,7 +76,7 @@ const ApiDocsPage = () => {
 		setFetching(true)
 		if (endpoint?.type === 'GET') resp = await mockAPI.get(path, query)
 		if (endpoint?.type === 'POST') resp = await mockAPI.post(path, query)
-		if (endpoint?.type === 'PUT') resp = await mockAPI.put(path, query)
+		if (endpoint?.type === 'PATCH') resp = await mockAPI.patch(path, query)
 		if (endpoint?.type === 'DELETE') resp = await mockAPI.delete(path, query)
 		setResp(resp)
 		setFetching(false)
@@ -137,7 +149,7 @@ const ApiDocsPage = () => {
 			) : (
 				<>
 					<h1 className="mb-sm-9 flex items-center px-button-px-item">
-						<Link to="/" className="flex w-fit" onClick={onClickLogo}>
+						<Link to="/" className="flex w-fit" reloadDocument>
 							<span className="flex items-center">
 								<AiChatSvg className="mr-xs-3 h-sm-1 w-sm-1 animate-pulse" />
 								<span className="text-size-xl font-weight-md">AI Chat</span>

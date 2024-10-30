@@ -9,65 +9,117 @@
 			"deselectAll": "Avmarkera alla",
 			"openMenu": "Öppna meny",
 			"rename": "Byt namn",
+			"saveChanges": "Spara ändringar",
 			"search": "Sök",
 			"searchMore": "Visa fler resultat",
 			"selectAll": "Markera alla",
 			"signOut": "Logga ut"
 		},
-		"apiDocs": "API-dokumentation",
-		"asia": "Asien",
-		"custom": "Anpassad",
-		"darkTheme": "Mörkt",
-		"default": "Standard",
-		"deleting": "Raderar...",
-		"designSystem": "Designsystem",
-		"europe": "Europa",
-		"githubRepo": "GitHub-repository",
-		"language": "Språk",
-		"lightTheme": "Ljust",
-		"loading": "Laddar...",
-		"quickSettings": "Snabbinställningar",
-		"searchPlaceholder": "Sök...",
-		"searching": "Söker...",
-		"settings": "Inställningar",
-		"uiLibrary": "UI-bibliotek:",
-		"uiTheme": "UI-tema:"
+		"label": {
+			"apiDocs": "API-dokumentation",
+			"asia": "Asien",
+			"custom": "Anpassad",
+			"darkTheme": "Mörkt",
+			"default": "Standard",
+			"designSystem": "Designsystem",
+			"errors": "Fel",
+			"europe": "Europa",
+			"githubRepo": "GitHub-repository",
+			"language": "Språk",
+			"lightTheme": "Ljust",
+			"optionalField": "(Valfritt)",
+			"requiredField": "(Obligatoriskt)",
+			"settings": "Inställningar",
+			"uiLibrary": "UI-bibliotek:",
+			"uiTheme": "UI-tema:"
+		},
+		"placeholder": {
+			"search": "Sök..."
+		},
+		"state": {
+			"dataSaved": "Dina data har sparats",
+			"deleting": "Raderar...",
+			"loading": "Laddar...",
+			"searching": "Söker..."
+		}
 	},
 	"aiChat": {
 		"action": {
-			"backToSubchats": "Tillbaka till underchatter",
-			"confirmDeleteChats": "Bekräfta radering av chattar",
-			"confirmRenameChat": "Bekräfta namnbyte på chatt",
-			"deleteSelectedChats": "Radera valda chattar",
-			"manageChats": "Hantera chattar",
-			"openChat": "Öppna chatt",
-			"openSubchat_zero": "Skapa underchatt",
-			"openSubchat_one": "Öppna underchatt ({count} meddelande)",
-			"openSubchat_other": "Öppna underchatt ({count} meddelanden)",
-			"showMoreChats": "Visa fler chattar",
-			"showSubchats": "Visa underchatter ({count})",
+			"backToSubchats": "Tillbaka till underkonversationer",
+			"confirmDeleteChats": "Bekräfta radering av konversationer",
+			"confirmRenameChat": "Bekräfta namnbyte av konversation",
+			"deleteSelectedChats": "Radera valda konversationer",
+			"manageAgents": "Hantera agenter",
+			"manageChats": "Hantera konversationer",
+			"openChat": "Öppna konversation",
+			"openSubchat_zero": "Skapa underkonversation",
+			"openSubchat_one": "Öppna underkonversation ({count} meddelande)",
+			"openSubchat_other": "Öppna underkonversation ({count} meddelanden)",
+			"sendMessage": "Skicka meddelande",
+			"showMoreChats": "Visa fler konversationer",
+			"showSubchats": "Visa underkonversationer ({count})",
 			"startSearching_one": "Skriv minst {count} tecken",
 			"startSearching_other": "Skriv minst {count} tecken"
 		},
-		"chats": "Chattar",
-		"deleteChatsWarning": "Dessa chattar kommer att raderas permanent",
-		"inputPlaceholder": "Ställ en fråga...",
-		"loadingChats": "Laddar chattar...",
-		"loadingMessages": "Laddar meddelanden...",
-		"loadingPreviousMessages": "Laddar tidigare meddelanden...",
-		"loadingSubchats": "Laddar underchatter...",
-		"newChat": "Ny chatt",
-		"noChats": "Inga chattar",
-		"noSubchats": "Inga underchatter",
-		"renamePlaceholder": "Generera nytt namn automatiskt...",
-		"sendMessage": "Skicka meddelande",
-		"subchats": "Underchatter",
-		"xMessages_one": "{count} meddelande",
-		"xMessages_other": "{count} meddelanden",
-		"xSearchResults_zero": "Inga resultat",
-		"xSearchResults_one": "{count} resultat",
-		"xSearchResults_other": "{count} resultat",
-		"xSelectedMessages_one": "{count} / {total} meddelande valt",
-		"xSelectedMessages_other": "{count} / {total} meddelanden valda"
+		"label": {
+			"chats": "Konversationer",
+			"agents": "Agenter",
+			"newChat": "Ny konversation",
+			"noChats": "Inga konversationer",
+			"noSubchats": "Inga underkonversationer",
+			"subchats": "Underkonversationer",
+			"xMessages_one": "{count} meddelande",
+			"xMessages_other": "{count} meddelanden",
+			"xSearchResults_zero": "Inga sökresultat",
+			"xSearchResults_one": "{count} sökresultat",
+			"xSearchResults_other": "{count} sökresultat",
+			"xSelectedMessages_one": "{count} valt meddelande",
+			"xSelectedMessages_other": "{count} valda meddelanden"
+		},
+		"placeholder": {
+			"newMessage": "Ställ en fråga...",
+			"rename": "Generera nytt namn automatiskt..."
+		},
+		"state": {
+			"loadingChats": "Laddar konversationer...",
+			"loadingMessages": "Laddar meddelanden...",
+			"loadingPreviousMessages": "Laddar tidigare meddelanden...",
+			"loadingSubchats": "Laddar underkonversationer..."
+		},
+		"warning": {
+			"deletingChats": "Dessa konversationer kommer att raderas permanent"
+		}
+	},
+	"userAccount": {
+		"action": {
+			"manageAccount": "Hantera konto",
+			"manageBilling": "Hantera fakturering"
+		},
+		"error": {
+			"address": "Du måste lägga till en adress",
+			"avatar": "Du måste lägga till en avatar",
+			"city": "Du måste lägga till en stad",
+			"country": "Du måste lägga till ett land",
+			"email": "Du måste lägga till en e-postadress",
+			"legalName": "Du måste lägga till ett juridiskt namn",
+			"name": "Du måste lägga till ett namn",
+			"postalCode": "Du måste lägga till ett postnummer"
+		},
+		"label": {
+			"account": "Konto",
+			"address": "Adress",
+			"avatar": "Avatar",
+			"billing": "Fakturering",
+			"city": "Stad",
+			"country": "Land",
+			"email": "E-postadress",
+			"legalName": "Juridiskt namn",
+			"name": "Namn",
+			"phone": "Telefonnummer",
+			"postalCode": "Postnummer",
+			"private": "Privat",
+			"public": "Offentlig",
+			"vatNumber": "Momsregistreringsnummer"
+		}
 	}
 }

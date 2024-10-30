@@ -1,4 +1,4 @@
-import { useSettings } from '@app/biz-modules/user-settings/state'
+import { useUserAccount } from '@app/biz-modules/user-settings/state'
 import { Button, ButtonHighlight } from '@ds/release'
 
 interface Props {
@@ -8,7 +8,7 @@ interface Props {
 }
 
 export const SettingsButton = ({ highlight, collapsed, onClick }: Props) => {
-	const { avatar, name } = useSettings()
+	const { account } = useUserAccount()
 
 	return (
 		<Button
@@ -18,11 +18,13 @@ export const SettingsButton = ({ highlight, collapsed, onClick }: Props) => {
 			highlight={highlight}
 			onClick={onClick}
 		>
-			<img src={avatar} alt="" className="h-sm-2 min-w-sm-2 rounded-full" />
+			<img src={account.avatar} alt="" className="h-sm-2 min-w-sm-2 rounded-full" />
 
-			<span className={cx('ml-button-px-item flex-col items-start leading-1', collapsed ? 'hidden' : 'flex')}>
-				<span className="line-clamp-1 py-xs-0">{name}</span>
-				<span className="text-size-xs text-color-text-subtle">{t('core.settings')}</span>
+			<span
+				className={cx('mb-xs-0 ml-button-px-item flex-col items-start leading-1', collapsed ? 'hidden' : 'flex')}
+			>
+				<span className="line-clamp-1 py-xs-0">{account.name}</span>
+				<span className="text-size-xs text-color-text-subtle">{t('core.label.settings')}</span>
 			</span>
 		</Button>
 	)

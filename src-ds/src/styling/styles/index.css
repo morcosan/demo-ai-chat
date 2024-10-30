@@ -3,16 +3,13 @@
 @import '../tokens';
 
 @import '_a11y.css';
+@import '_link.css';
 @import '_scrollbar.css';
 @import '_svg.css';
 
 :root {
 	background-color: var(--ds-color-bg-default);
 	color: var(--ds-color-text-default);
-}
-
-a {
-	color: var(--ds-color-primary);
 }
 
 hr {

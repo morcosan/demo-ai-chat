@@ -9,29 +9,39 @@
 			"deselectAll": "Барлығын алып тастау",
 			"openMenu": "Мәзірді ашу",
 			"rename": "Атын өзгерту",
+			"saveChanges": "Өзгерістерді сақтау",
 			"search": "Іздеу",
-			"searchMore": "Қосымша нәтижелерді көрсету",
+			"searchMore": "Көбірек нәтиже көрсету",
 			"selectAll": "Барлығын таңдау",
 			"signOut": "Шығу"
 		},
-		"apiDocs": "API құжаттамасы",
-		"asia": "Азия",
-		"custom": "Өзгертілген",
-		"darkTheme": "Күңгірт",
-		"default": "Әдепкі",
-		"deleting": "Жойылуда...",
-		"designSystem": "Дизайн жүйесі",
-		"europe": "Еуропа",
-		"githubRepo": "GitHub репозиторийі",
-		"language": "Тіл",
-		"lightTheme": "Жарық",
-		"loading": "Жүктелуде...",
-		"quickSettings": "Жылдам параметрлер",
-		"searchPlaceholder": "Іздеу...",
-		"searching": "Іздеу...",
-		"settings": "Параметрлер",
-		"uiLibrary": "UI кітапханасы:",
-		"uiTheme": "UI тақырыбы:"
+		"label": {
+			"apiDocs": "API құжаттамасы",
+			"asia": "Азия",
+			"custom": "Өзгертпелі",
+			"darkTheme": "Қараңғы",
+			"default": "Әдепкі",
+			"designSystem": "Дизайн жүйесі",
+			"errors": "Қателер",
+			"europe": "Еуропа",
+			"githubRepo": "GitHub репозиторийі",
+			"language": "Тіл",
+			"lightTheme": "Жарық",
+			"optionalField": "(Міндетті емес)",
+			"requiredField": "(Міндетті)",
+			"settings": "Параметрлер",
+			"uiLibrary": "UI кітапханасы:",
+			"uiTheme": "UI тақырыбы:"
+		},
+		"placeholder": {
+			"search": "Іздеу..."
+		},
+		"state": {
+			"dataSaved": "Деректеріңіз сақталды",
+			"deleting": "Жойылуда...",
+			"loading": "Жүктелуде...",
+			"searching": "Іздеу..."
+		}
 	},
 	"aiChat": {
 		"action": {
@@ -39,35 +49,77 @@
 			"confirmDeleteChats": "Чаттарды жоюды растау",
 			"confirmRenameChat": "Чат атын өзгертуді растау",
 			"deleteSelectedChats": "Таңдалған чаттарды жою",
+			"manageAgents": "Агенттерді басқару",
 			"manageChats": "Чаттарды басқару",
 			"openChat": "Чатты ашу",
-			"openSubchat_zero": "Қосалқы чат құру",
+			"openSubchat_zero": "Қосалқы чат жасау",
 			"openSubchat_one": "Қосалқы чатты ашу ({count} хабарлама)",
 			"openSubchat_other": "Қосалқы чатты ашу ({count} хабарлама)",
-			"showMoreChats": "Қосымша чаттарды көрсету",
+			"sendMessage": "Хабарлама жіберу",
+			"showMoreChats": "Көбірек чат көрсету",
 			"showSubchats": "Қосалқы чаттарды көрсету ({count})",
 			"startSearching_one": "Кем дегенде {count} таңба енгізіңіз",
 			"startSearching_other": "Кем дегенде {count} таңба енгізіңіз"
 		},
-		"chats": "Чаттар",
-		"deleteChatsWarning": "Бұл чаттар біржола жойылады",
-		"inputPlaceholder": "Сұрақ қойыңыз...",
-		"loadingChats": "Чаттар жүктелуде...",
-		"loadingMessages": "Хабарламалар жүктелуде...",
-		"loadingPreviousMessages": "Алдыңғы хабарламалар жүктелуде...",
-		"loadingSubchats": "Қосалқы чаттар жүктелуде...",
-		"newChat": "Жаңа чат",
-		"noChats": "Чаттар жоқ",
-		"noSubchats": "Қосалқы чаттар жоқ",
-		"renamePlaceholder": "Жаңа атауды автоматты түрде жасау...",
-		"sendMessage": "Хабарлама жіберу",
-		"subchats": "Қосалқы чаттар",
-		"xMessages_one": "{count} хабарлама",
-		"xMessages_other": "{count} хабарлама",
-		"xSearchResults_zero": "Нәтиже жоқ",
-		"xSearchResults_one": "{count} нәтиже",
-		"xSearchResults_other": "{count} нәтиже",
-		"xSelectedMessages_one": "{count} / {total} хабарлама таңдалды",
-		"xSelectedMessages_other": "{count} / {total} хабарлама таңдалды"
+		"label": {
+			"chats": "Чаттар",
+			"agents": "Агенттер",
+			"newChat": "Жаңа чат",
+			"noChats": "Чаттар жоқ",
+			"noSubchats": "Қосалқы чаттар жоқ",
+			"subchats": "Қосалқы чаттар",
+			"xMessages_one": "{count} хабарлама",
+			"xMessages_other": "{count} хабарлама",
+			"xSearchResults_zero": "Нәтиже жоқ",
+			"xSearchResults_one": "{count} нәтиже",
+			"xSearchResults_other": "{count} нәтиже",
+			"xSelectedMessages_one": "{count} хабарлама таңдалды",
+			"xSelectedMessages_other": "{count} хабарлама таңдалды"
+		},
+		"placeholder": {
+			"newMessage": "Сұрақ қойыңыз...",
+			"rename": "Автоматты түрде жаңа атау жасау..."
+		},
+		"state": {
+			"loadingChats": "Чаттар жүктелуде...",
+			"loadingMessages": "Хабарламалар жүктелуде...",
+			"loadingPreviousMessages": "Алдыңғы хабарламалар жүктелуде...",
+			"loadingSubchats": "Қосалқы чаттар жүктелуде..."
+		},
+		"warning": {
+			"deletingChats": "Бұл чаттар біржола жойылады"
+		}
+	},
+	"userAccount": {
+		"action": {
+			"manageAccount": "Есептік жазбаны басқару",
+			"manageBilling": "Төлемдерді басқару"
+		},
+		"error": {
+			"address": "Мекенжайды қосу керек",
+			"avatar": "Аватарды қосу керек",
+			"city": "Қаланы қосу керек",
+			"country": "Елді қосу керек",
+			"email": "Электрондық пошта мекенжайын қосу керек",
+			"legalName": "Заңды атауды қосу керек",
+			"name": "Атын қосу керек",
+			"postalCode": "Пошта индексін қосу керек"
+		},
+		"label": {
+			"account": "Есептік жазба",
+			"address": "Мекенжай",
+			"avatar": "Аватар",
+			"billing": "Төлемдер",
+			"city": "Қала",
+			"country": "Ел",
+			"email": "Электрондық пошта мекенжайы",
+			"legalName": "Заңды атау",
+			"name": "Аты",
+			"phone": "Телефон нөмірі",
+			"postalCode": "Пошта индексі",
+			"private": "Жеке",
+			"public": "Жалпыға қолжетімді",
+			"vatNumber": "БСН"
+		}
 	}
 }

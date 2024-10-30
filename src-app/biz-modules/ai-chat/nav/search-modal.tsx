@@ -1,9 +1,9 @@
+import { LoadingText } from '@app/library/release'
 import { Button, Modal, SearchSvg, TextField, TextFieldRef } from '@ds/release'
 import { debounce } from 'lodash'
 import { useCallback, useMemo, useRef, useState } from 'react'
 import { MIN_SEARCH_LENGTH } from '../api'
 import { SearchResultItem } from '../components/items/search-result-item'
-import { LoadingText } from '../components/loading-text'
 import { StickyToolbar } from '../components/sticky-toolbar'
 import { SearchResult, useAiChatSearch } from '../state'
 
@@ -37,7 +37,7 @@ export const AiChatSearchModal = () => {
 			ref={searchRef}
 			id="chat-search"
 			value={searchValue}
-			placeholder={t('core.searchPlaceholder')}
+			placeholder={t('core.placeholder.search')}
 			slotLeft={<SearchSvg className="ml-xs-4 mr-xs-1 mt-px h-full w-xs-5 min-w-xs-5" />}
 			className="w-full font-weight-sm"
 			onChange={onChangeSearch}
@@ -77,17 +77,19 @@ export const AiChatSearchModal = () => {
 			) : searchLoading === 'full' ? (
 				// FULL LOADING
 				<div className="flex-center h-lg-2">
-					<LoadingText text={t('core.searching')} />
+					<LoadingText text={t('core.state.searching')} />
 				</div>
 			) : !searchPagination.count || !searchResults.length ? (
 				// NO RESULTS
-				<div className="flex-center h-lg-2 text-color-text-subtle">{t('aiChat.xSearchResults', { count: 0 })}</div>
+				<div className="flex-center h-lg-2 text-color-text-subtle">
+					{t('aiChat.label.xSearchResults', { count: 0 })}
+				</div>
 			) : (
 				// RESULTS
 				<div className="flex min-h-lg-2 flex-col">
 					<StickyToolbar className="!-top-a11y-padding -mt-a11y-padding" stretched>
 						<div className="px-button-px-item pb-xs-5 text-size-sm text-color-text-subtle">
-							{t('aiChat.xSearchResults', { count: searchPagination.count })}
+							{t('aiChat.label.xSearchResults', { count: searchPagination.count })}
 						</div>
 					</StickyToolbar>
 
@@ -96,7 +98,7 @@ export const AiChatSearchModal = () => {
 					<div className="mx-auto mb-xs-5 mt-sm-0">
 						{searchLoading === 'more' ? (
 							<div className="flex-center h-button-h-md text-size-sm">
-								<LoadingText text={t('core.searching')} />
+								<LoadingText text={t('core.state.searching')} />
 							</div>
 						) : (
 							Boolean(canLoadSearchResults) && (

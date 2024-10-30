@@ -1,12 +1,16 @@
+import { useUserAccount } from '@app/biz-modules/user-settings/state'
 import { AiChatSvg } from '@ds/release'
 import { useI18n } from '@i18n/release'
 
 export const LoadingScreen = ({ children }: ReactProps) => {
-	const { isLoaded } = useI18n()
+	const { isI18nLoaded } = useI18n()
+	const { accountLoading } = useUserAccount()
+
+	const isReady = isI18nLoaded && accountLoading !== 'full'
 
 	const cssOverlay: CSS = {
-		animation: isLoaded ? 'fadeOut 1s forwards' : 'unset',
-		pointerEvents: isLoaded ? 'none' : 'unset',
+		animation: isReady ? 'fadeOut 1s forwards' : 'unset',
+		pointerEvents: isReady ? 'none' : 'unset',
 
 		'@keyframes fadeOut': {
 			from: { opacity: 1 },
@@ -17,7 +21,7 @@ export const LoadingScreen = ({ children }: ReactProps) => {
 	return (
 		<>
 			{/* CONTENT */}
-			<div className={cx(!isLoaded && 'hidden', 'h-full w-full')}>{children}</div>
+			<div className={cx(!isReady && 'hidden', 'h-full w-full')}>{children}</div>
 
 			{/* OVERLAY */}
 			<div className="fixed-overlay flex-center z-tooltip bg-color-bg-default" css={cssOverlay}>

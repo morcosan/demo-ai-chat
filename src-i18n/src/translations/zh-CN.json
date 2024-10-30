@@ -2,67 +2,119 @@
 	"core": {
 		"action": {
 			"back": "返回",
-			"backToHome": "返回首页",
+			"backToHome": "返回主页",
 			"changeLanguage": "更改语言",
 			"close": "关闭",
 			"delete": "删除",
 			"deselectAll": "取消全选",
 			"openMenu": "打开菜单",
 			"rename": "重命名",
+			"saveChanges": "保存更改",
 			"search": "搜索",
 			"searchMore": "显示更多结果",
 			"selectAll": "全选",
 			"signOut": "退出登录"
 		},
-		"apiDocs": "API 文档",
-		"asia": "亚洲",
-		"custom": "自定义",
-		"darkTheme": "深色",
-		"default": "默认",
-		"deleting": "正在删除...",
-		"designSystem": "设计系统",
-		"europe": "欧洲",
-		"githubRepo": "GitHub 仓库",
-		"language": "语言",
-		"lightTheme": "浅色",
-		"loading": "加载中...",
-		"quickSettings": "快捷设置",
-		"searchPlaceholder": "搜索...",
-		"searching": "搜索中...",
-		"settings": "设置",
-		"uiLibrary": "UI 库：",
-		"uiTheme": "UI 主题："
+		"label": {
+			"apiDocs": "API文档",
+			"asia": "亚洲",
+			"custom": "自定义",
+			"darkTheme": "深色",
+			"default": "默认",
+			"designSystem": "设计系统",
+			"errors": "错误",
+			"europe": "欧洲",
+			"githubRepo": "GitHub仓库",
+			"language": "语言",
+			"lightTheme": "浅色",
+			"optionalField": "(可选)",
+			"requiredField": "(必填)",
+			"settings": "设置",
+			"uiLibrary": "UI库：",
+			"uiTheme": "UI主题："
+		},
+		"placeholder": {
+			"search": "搜索..."
+		},
+		"state": {
+			"dataSaved": "您的数据已保存",
+			"deleting": "正在删除...",
+			"loading": "正在加载...",
+			"searching": "正在搜索..."
+		}
 	},
 	"aiChat": {
 		"action": {
-			"backToSubchats": "返回子会话",
-			"confirmDeleteChats": "确认删除会话",
-			"confirmRenameChat": "确认重命名会话",
-			"deleteSelectedChats": "删除已选会话",
-			"manageChats": "管理会话",
-			"openChat": "打开会话",
-			"openSubchat_zero": "创建子会话",
-			"openSubchat_other": "打开子会话（{count} 条消息）",
-			"showMoreChats": "显示更多会话",
-			"showSubchats": "显示子会话（{count}）",
-			"startSearching_other": "请输入至少 {count} 个字符"
+			"backToSubchats": "返回子对话",
+			"confirmDeleteChats": "确认删除对话",
+			"confirmRenameChat": "确认重命名对话",
+			"deleteSelectedChats": "删除选中的对话",
+			"manageAgents": "管理代理",
+			"manageChats": "管理对话",
+			"openChat": "打开对话",
+			"openSubchat_zero": "创建子对话",
+			"openSubchat_other": "打开子对话（{count}条消息）",
+			"sendMessage": "发送消息",
+			"showMoreChats": "显示更多对话",
+			"showSubchats": "显示子对话（{count}）",
+			"startSearching_other": "输入至少{count}个字符"
 		},
-		"chats": "会话",
-		"deleteChatsWarning": "这些会话将被永久删除",
-		"inputPlaceholder": "提出问题...",
-		"loadingChats": "正在加载会话...",
-		"loadingMessages": "正在加载消息...",
-		"loadingPreviousMessages": "正在加载之前的消息...",
-		"loadingSubchats": "正在加载子会话...",
-		"newChat": "新会话",
-		"noChats": "无会话",
-		"noSubchats": "无子会话",
-		"renamePlaceholder": "自动生成新名称...",
-		"sendMessage": "发送消息",
-		"subchats": "子会话",
-		"xMessages_other": "{count} 条消息",
-		"xSearchResults_zero": "无搜索结果",
-		"xSearchResults_other": "{count} 个结果",
-		"xSelectedMessages_other": "已选择 {count} / {total} 条消息"
+		"label": {
+			"chats": "对话",
+			"agents": "代理",
+			"newChat": "新对话",
+			"noChats": "无对话",
+			"noSubchats": "无子对话",
+			"subchats": "子对话",
+			"xMessages_other": "{count}条消息",
+			"xSearchResults_zero": "无搜索结果",
+			"xSearchResults_other": "{count}个搜索结果",
+			"xSelectedMessages_other": "已选择{count}条消息"
+		},
+		"placeholder": {
+			"newMessage": "提出问题...",
+			"rename": "自动生成新名称..."
+		},
+		"state": {
+			"loadingChats": "正在加载对话...",
+			"loadingMessages": "正在加载消息...",
+			"loadingPreviousMessages": "正在加载之前的消息...",
+			"loadingSubchats": "正在加载子对话..."
+		},
+		"warning": {
+			"deletingChats": "这些对话将被永久删除"
+		}
+	},
+	"userAccount": {
+		"action": {
+			"manageAccount": "管理账户",
+			"manageBilling": "管理账单"
+		},
+		"error": {
+			"address": "您必须添加地址",
+			"avatar": "您必须添加头像",
+			"city": "您必须添加城市",
+			"country": "您必须添加国家",
+			"email": "您必须添加电子邮件地址",
+			"legalName": "您必须添加法定名称",
+			"name": "您必须添加姓名",
+			"postalCode": "您必须添加邮政编码"
+		},
+		"label": {
+			"account": "账户",
+			"address": "地址",
+			"avatar": "头像",
+			"billing": "账单",
+			"city": "城市",
+			"country": "国家",
+			"email": "电子邮件地址",
+			"legalName": "法定名称",
+			"name": "姓名",
+			"phone": "电话号码",
+			"postalCode": "邮政编码",
+			"private": "私密",
+			"public": "公开",
+			"vatNumber": "税号"
+		}
 	}
 }

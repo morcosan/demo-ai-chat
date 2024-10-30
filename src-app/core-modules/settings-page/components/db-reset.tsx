@@ -1,7 +1,7 @@
+import { LoadingText } from '@app/library/release'
 import { Button, Modal, WarningSvg } from '@ds/release'
 import { useState } from 'react'
-import { API } from '../../api'
-import { LoadingText } from '../../components/loading-text'
+import { API } from '../api'
 
 export const DbReset = () => {
 	const [showsConfirm, setShowsConfirm] = useState(false)
@@ -34,18 +34,19 @@ export const DbReset = () => {
 			>
 				<div className="flex items-center text-color-danger">
 					<WarningSvg className="mr-xs-4 w-xs-8" />
-					All chats and messages will be permanently deleted
+					All data will be permanently deleted
 				</div>
 				<div className="flex items-center">
 					<WarningSvg className="mr-xs-4 w-xs-8" />
-					New random chats and messages will be created
+					New random data will be created
 				</div>
+				<div className="mt-xs-2 flex items-center">Data = account + chats + messages</div>
 			</Modal>
 
 			{/* LOADING OVERLAY */}
 			{Boolean(showsLoading) && (
 				<div className="fixed-overlay flex-center z-tooltip bg-color-black-glass-9">
-					<LoadingText text={t('core.loading')} className="text-size-xl text-color-white" />
+					<LoadingText text={t('core.state.loading')} className="text-size-xl text-color-white" />
 				</div>
 			)}
 		</>

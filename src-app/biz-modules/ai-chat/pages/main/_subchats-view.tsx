@@ -1,8 +1,8 @@
+import { LoadingText } from '@app/library/release'
 import { Button } from '@ds/release'
 import { debounce } from 'lodash'
 import { UIEvent } from 'react'
 import { Subchat } from '../../api'
-import { LoadingText } from '../../components/loading-text'
 import { StickyToolbar } from '../../components/sticky-toolbar'
 import { SubchatIcon } from '../../components/subchat-icon'
 import { useAiChat } from '../../state'
@@ -22,7 +22,7 @@ export const SubchatsView = () => {
 				{/* TOOLBAR */}
 				<StickyToolbar stretched permanent>
 					<div className="flex h-button-h-md items-center px-xs-6 text-size-sm leading-1">
-						{t('aiChat.subchats')} ({allSubchatsPagination.count})
+						{t('aiChat.label.subchats')} ({allSubchatsPagination.count})
 					</div>
 				</StickyToolbar>
 
@@ -40,7 +40,7 @@ export const SubchatsView = () => {
 				))}
 				{allSubchats.length < allSubchatsPagination.count && (
 					<LoadingText
-						text={t('aiChat.loadingSubchats')}
+						text={t('aiChat.state.loadingSubchats')}
 						className="min-h-sm-4 pl-sm-0 text-size-sm"
 						style={{ visibility: allSubchatsLoading === 'more' ? 'visible' : 'hidden' }}
 					/>

@@ -9,29 +9,39 @@
 			"deselectAll": "Počisti izbor",
 			"openMenu": "Odpri meni",
 			"rename": "Preimenuj",
+			"saveChanges": "Shrani spremembe",
 			"search": "Išči",
 			"searchMore": "Prikaži več rezultatov",
 			"selectAll": "Izberi vse",
 			"signOut": "Odjava"
 		},
-		"apiDocs": "API dokumentacija",
-		"asia": "Azija",
-		"custom": "Po meri",
-		"darkTheme": "Temna",
-		"default": "Privzeto",
-		"deleting": "Brisanje...",
-		"designSystem": "Oblikovalski sistem",
-		"europe": "Evropa",
-		"githubRepo": "GitHub repozitorij",
-		"language": "Jezik",
-		"lightTheme": "Svetla",
-		"loading": "Nalaganje...",
-		"quickSettings": "Hitre nastavitve",
-		"searchPlaceholder": "Išči...",
-		"searching": "Iskanje...",
-		"settings": "Nastavitve",
-		"uiLibrary": "UI knjižnica:",
-		"uiTheme": "UI tema:"
+		"label": {
+			"apiDocs": "API dokumentacija",
+			"asia": "Azija",
+			"custom": "Po meri",
+			"darkTheme": "Temna",
+			"default": "Privzeto",
+			"designSystem": "Oblikovalski sistem",
+			"errors": "Napake",
+			"europe": "Evropa",
+			"githubRepo": "GitHub repozitorij",
+			"language": "Jezik",
+			"lightTheme": "Svetla",
+			"optionalField": "(Neobvezno)",
+			"requiredField": "(Obvezno)",
+			"settings": "Nastavitve",
+			"uiLibrary": "UI knjižnica:",
+			"uiTheme": "UI tema:"
+		},
+		"placeholder": {
+			"search": "Išči..."
+		},
+		"state": {
+			"dataSaved": "Vaši podatki so shranjeni",
+			"deleting": "Brisanje...",
+			"loading": "Nalaganje...",
+			"searching": "Iskanje..."
+		}
 	},
 	"aiChat": {
 		"action": {
@@ -39,6 +49,7 @@
 			"confirmDeleteChats": "Potrdi brisanje pogovorov",
 			"confirmRenameChat": "Potrdi preimenovanje pogovora",
 			"deleteSelectedChats": "Izbriši izbrane pogovore",
+			"manageAgents": "Upravljaj agente",
 			"manageChats": "Upravljaj pogovore",
 			"openChat": "Odpri pogovor",
 			"openSubchat_zero": "Ustvari podpogovor",
@@ -46,6 +57,7 @@
 			"openSubchat_two": "Odpri podpogovor ({count} sporočili)",
 			"openSubchat_few": "Odpri podpogovor ({count} sporočila)",
 			"openSubchat_other": "Odpri podpogovor ({count} sporočil)",
+			"sendMessage": "Pošlji sporočilo",
 			"showMoreChats": "Prikaži več pogovorov",
 			"showSubchats": "Prikaži podpogovore ({count})",
 			"startSearching_one": "Vnesite vsaj {count} znak",
@@ -53,31 +65,71 @@
 			"startSearching_few": "Vnesite vsaj {count} znake",
 			"startSearching_other": "Vnesite vsaj {count} znakov"
 		},
-		"chats": "Pogovori",
-		"deleteChatsWarning": "Ti pogovori bodo trajno izbrisani",
-		"inputPlaceholder": "Postavite vprašanje...",
-		"loadingChats": "Nalaganje pogovorov...",
-		"loadingMessages": "Nalaganje sporočil...",
-		"loadingPreviousMessages": "Nalaganje prejšnjih sporočil...",
-		"loadingSubchats": "Nalaganje podpogovorov...",
-		"newChat": "Nov pogovor",
-		"noChats": "Ni pogovorov",
-		"noSubchats": "Ni podpogovorov",
-		"renamePlaceholder": "Samodejno ustvari novo ime...",
-		"sendMessage": "Pošlji sporočilo",
-		"subchats": "Podpogovori",
-		"xMessages_one": "{count} sporočilo",
-		"xMessages_two": "{count} sporočili",
-		"xMessages_few": "{count} sporočila",
-		"xMessages_other": "{count} sporočil",
-		"xSearchResults_zero": "Ni rezultatov",
-		"xSearchResults_one": "{count} rezultat",
-		"xSearchResults_two": "{count} rezultata",
-		"xSearchResults_few": "{count} rezultati",
-		"xSearchResults_other": "{count} rezultatov",
-		"xSelectedMessages_one": "{count} / {total} izbrano sporočilo",
-		"xSelectedMessages_two": "{count} / {total} izbrani sporočili",
-		"xSelectedMessages_few": "{count} / {total} izbrana sporočila",
-		"xSelectedMessages_other": "{count} / {total} izbranih sporočil"
+		"label": {
+			"chats": "Pogovori",
+			"agents": "Agenti",
+			"newChat": "Nov pogovor",
+			"noChats": "Ni pogovorov",
+			"noSubchats": "Ni podpogovorov",
+			"subchats": "Podpogovori",
+			"xMessages_one": "{count} sporočilo",
+			"xMessages_two": "{count} sporočili",
+			"xMessages_few": "{count} sporočila",
+			"xMessages_other": "{count} sporočil",
+			"xSearchResults_zero": "Ni rezultatov",
+			"xSearchResults_one": "{count} rezultat",
+			"xSearchResults_two": "{count} rezultata",
+			"xSearchResults_few": "{count} rezultati",
+			"xSearchResults_other": "{count} rezultatov",
+			"xSelectedMessages_one": "{count} izbrano sporočilo",
+			"xSelectedMessages_two": "{count} izbrani sporočili",
+			"xSelectedMessages_few": "{count} izbrana sporočila",
+			"xSelectedMessages_other": "{count} izbranih sporočil"
+		},
+		"placeholder": {
+			"newMessage": "Postavite vprašanje...",
+			"rename": "Samodejno ustvari novo ime..."
+		},
+		"state": {
+			"loadingChats": "Nalaganje pogovorov...",
+			"loadingMessages": "Nalaganje sporočil...",
+			"loadingPreviousMessages": "Nalaganje prejšnjih sporočil...",
+			"loadingSubchats": "Nalaganje podpogovorov..."
+		},
+		"warning": {
+			"deletingChats": "Ti pogovori bodo trajno izbrisani"
+		}
+	},
+	"userAccount": {
+		"action": {
+			"manageAccount": "Upravljaj račun",
+			"manageBilling": "Upravljaj zaračunavanje"
+		},
+		"error": {
+			"address": "Dodati morate naslov",
+			"avatar": "Dodati morate avatar",
+			"city": "Dodati morate mesto",
+			"country": "Dodati morate državo",
+			"email": "Dodati morate e-poštni naslov",
+			"legalName": "Dodati morate pravno ime",
+			"name": "Dodati morate ime",
+			"postalCode": "Dodati morate poštno številko"
+		},
+		"label": {
+			"account": "Račun",
+			"address": "Naslov",
+			"avatar": "Avatar",
+			"billing": "Zaračunavanje",
+			"city": "Mesto",
+			"country": "Država",
+			"email": "E-poštni naslov",
+			"legalName": "Pravno ime",
+			"name": "Ime",
+			"phone": "Telefonska številka",
+			"postalCode": "Poštna številka",
+			"private": "Zasebno",
+			"public": "Javno",
+			"vatNumber": "ID za DDV"
+		}
 	}
 }

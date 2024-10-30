@@ -6,32 +6,42 @@
 			"changeLanguage": "Nyelv váltása",
 			"close": "Bezárás",
 			"delete": "Törlés",
-			"deselectAll": "Kijelölés megszüntetése",
+			"deselectAll": "Összes kijelölés törlése",
 			"openMenu": "Menü megnyitása",
 			"rename": "Átnevezés",
+			"saveChanges": "Változtatások mentése",
 			"search": "Keresés",
 			"searchMore": "További találatok mutatása",
 			"selectAll": "Összes kijelölése",
 			"signOut": "Kijelentkezés"
 		},
-		"apiDocs": "API dokumentáció",
-		"asia": "Ázsia",
-		"custom": "Egyéni",
-		"darkTheme": "Sötét",
-		"default": "Alapértelmezett",
-		"deleting": "Törlés...",
-		"designSystem": "Design rendszer",
-		"europe": "Európa",
-		"githubRepo": "GitHub tároló",
-		"language": "Nyelv",
-		"lightTheme": "Világos",
-		"loading": "Betöltés...",
-		"quickSettings": "Gyors beállítások",
-		"searchPlaceholder": "Keresés...",
-		"searching": "Keresés...",
-		"settings": "Beállítások",
-		"uiLibrary": "UI könyvtár:",
-		"uiTheme": "UI téma:"
+		"label": {
+			"apiDocs": "API dokumentáció",
+			"asia": "Ázsia",
+			"custom": "Egyéni",
+			"darkTheme": "Sötét",
+			"default": "Alapértelmezett",
+			"designSystem": "Design rendszer",
+			"errors": "Hibák",
+			"europe": "Európa",
+			"githubRepo": "GitHub tárhely",
+			"language": "Nyelv",
+			"lightTheme": "Világos",
+			"optionalField": "(Opcionális)",
+			"requiredField": "(Kötelező)",
+			"settings": "Beállítások",
+			"uiLibrary": "UI könyvtár:",
+			"uiTheme": "UI téma:"
+		},
+		"placeholder": {
+			"search": "Keresés..."
+		},
+		"state": {
+			"dataSaved": "Az adatai mentésre kerültek",
+			"deleting": "Törlés...",
+			"loading": "Betöltés...",
+			"searching": "Keresés..."
+		}
 	},
 	"aiChat": {
 		"action": {
@@ -39,35 +49,77 @@
 			"confirmDeleteChats": "Beszélgetések törlésének megerősítése",
 			"confirmRenameChat": "Beszélgetés átnevezésének megerősítése",
 			"deleteSelectedChats": "Kijelölt beszélgetések törlése",
+			"manageAgents": "Ügynökök kezelése",
 			"manageChats": "Beszélgetések kezelése",
 			"openChat": "Beszélgetés megnyitása",
 			"openSubchat_zero": "Albeszélgetés létrehozása",
 			"openSubchat_one": "Albeszélgetés megnyitása ({count} üzenet)",
 			"openSubchat_other": "Albeszélgetés megnyitása ({count} üzenet)",
+			"sendMessage": "Üzenet küldése",
 			"showMoreChats": "További beszélgetések mutatása",
 			"showSubchats": "Albeszélgetések mutatása ({count})",
-			"startSearching_one": "Írj be legalább {count} karaktert",
-			"startSearching_other": "Írj be legalább {count} karaktert"
+			"startSearching_one": "Írjon be legalább {count} karaktert",
+			"startSearching_other": "Írjon be legalább {count} karaktert"
 		},
-		"chats": "Beszélgetések",
-		"deleteChatsWarning": "Ezek a beszélgetések véglegesen törlődnek",
-		"inputPlaceholder": "Tedd fel kérdésed...",
-		"loadingChats": "Beszélgetések betöltése...",
-		"loadingMessages": "Üzenetek betöltése...",
-		"loadingPreviousMessages": "Előző üzenetek betöltése...",
-		"loadingSubchats": "Albeszélgetések betöltése...",
-		"newChat": "Új beszélgetés",
-		"noChats": "Nincsenek beszélgetések",
-		"noSubchats": "Nincsenek albeszélgetések",
-		"renamePlaceholder": "Új név automatikus generálása...",
-		"sendMessage": "Üzenet küldése",
-		"subchats": "Albeszélgetések",
-		"xMessages_one": "{count} üzenet",
-		"xMessages_other": "{count} üzenet",
-		"xSearchResults_zero": "Nincs találat",
-		"xSearchResults_one": "{count} találat",
-		"xSearchResults_other": "{count} találat",
-		"xSelectedMessages_one": "{count} / {total} üzenet kiválasztva",
-		"xSelectedMessages_other": "{count} / {total} üzenet kiválasztva"
+		"label": {
+			"chats": "Beszélgetések",
+			"agents": "Ügynökök",
+			"newChat": "Új beszélgetés",
+			"noChats": "Nincsenek beszélgetések",
+			"noSubchats": "Nincsenek albeszélgetések",
+			"subchats": "Albeszélgetések",
+			"xMessages_one": "{count} üzenet",
+			"xMessages_other": "{count} üzenet",
+			"xSearchResults_zero": "Nincs találat",
+			"xSearchResults_one": "{count} találat",
+			"xSearchResults_other": "{count} találat",
+			"xSelectedMessages_one": "{count} kijelölt üzenet",
+			"xSelectedMessages_other": "{count} kijelölt üzenet"
+		},
+		"placeholder": {
+			"newMessage": "Tegyen fel egy kérdést...",
+			"rename": "Új név automatikus generálása..."
+		},
+		"state": {
+			"loadingChats": "Beszélgetések betöltése...",
+			"loadingMessages": "Üzenetek betöltése...",
+			"loadingPreviousMessages": "Korábbi üzenetek betöltése...",
+			"loadingSubchats": "Albeszélgetések betöltése..."
+		},
+		"warning": {
+			"deletingChats": "Ezek a beszélgetések véglegesen törlésre kerülnek"
+		}
+	},
+	"userAccount": {
+		"action": {
+			"manageAccount": "Fiók kezelése",
+			"manageBilling": "Számlázás kezelése"
+		},
+		"error": {
+			"address": "Meg kell adnia a címet",
+			"avatar": "Meg kell adnia egy avatart",
+			"city": "Meg kell adnia a várost",
+			"country": "Meg kell adnia az országot",
+			"email": "Meg kell adnia az e-mail címet",
+			"legalName": "Meg kell adnia a hivatalos nevet",
+			"name": "Meg kell adnia a nevet",
+			"postalCode": "Meg kell adnia az irányítószámot"
+		},
+		"label": {
+			"account": "Fiók",
+			"address": "Cím",
+			"avatar": "Avatar",
+			"billing": "Számlázás",
+			"city": "Város",
+			"country": "Ország",
+			"email": "E-mail cím",
+			"legalName": "Hivatalos név",
+			"name": "Név",
+			"phone": "Telefonszám",
+			"postalCode": "Irányítószám",
+			"private": "Privát",
+			"public": "Nyilvános",
+			"vatNumber": "Adószám"
+		}
 	}
 }

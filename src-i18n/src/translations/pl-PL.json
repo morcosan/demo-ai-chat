@@ -9,29 +9,39 @@
 			"deselectAll": "Odznacz wszystko",
 			"openMenu": "Otwórz menu",
 			"rename": "Zmień nazwę",
+			"saveChanges": "Zapisz zmiany",
 			"search": "Szukaj",
 			"searchMore": "Pokaż więcej wyników",
 			"selectAll": "Zaznacz wszystko",
-			"signOut": "Wyloguj się"
+			"signOut": "Wyloguj"
 		},
-		"apiDocs": "Dokumentacja API",
-		"asia": "Azja",
-		"custom": "Własne",
-		"darkTheme": "Ciemny",
-		"default": "Domyślne",
-		"deleting": "Usuwanie...",
-		"designSystem": "System projektowy",
-		"europe": "Europa",
-		"githubRepo": "Repozytorium GitHub",
-		"language": "Język",
-		"lightTheme": "Jasny",
-		"loading": "Ładowanie...",
-		"quickSettings": "Szybkie ustawienia",
-		"searchPlaceholder": "Szukaj...",
-		"searching": "Szukanie...",
-		"settings": "Ustawienia",
-		"uiLibrary": "Biblioteka UI:",
-		"uiTheme": "Motyw UI:"
+		"label": {
+			"apiDocs": "Dokumentacja API",
+			"asia": "Azja",
+			"custom": "Niestandardowy",
+			"darkTheme": "Ciemny",
+			"default": "Domyślny",
+			"designSystem": "System projektowy",
+			"errors": "Błędy",
+			"europe": "Europa",
+			"githubRepo": "Repozytorium GitHub",
+			"language": "Język",
+			"lightTheme": "Jasny",
+			"optionalField": "(Opcjonalne)",
+			"requiredField": "(Wymagane)",
+			"settings": "Ustawienia",
+			"uiLibrary": "Biblioteka UI:",
+			"uiTheme": "Motyw UI:"
+		},
+		"placeholder": {
+			"search": "Szukaj..."
+		},
+		"state": {
+			"dataSaved": "Twoje dane zostały zapisane",
+			"deleting": "Usuwanie...",
+			"loading": "Ładowanie...",
+			"searching": "Wyszukiwanie..."
+		}
 	},
 	"aiChat": {
 		"action": {
@@ -39,40 +49,82 @@
 			"confirmDeleteChats": "Potwierdź usunięcie rozmów",
 			"confirmRenameChat": "Potwierdź zmianę nazwy rozmowy",
 			"deleteSelectedChats": "Usuń wybrane rozmowy",
+			"manageAgents": "Zarządzaj agentami",
 			"manageChats": "Zarządzaj rozmowami",
 			"openChat": "Otwórz rozmowę",
 			"openSubchat_zero": "Utwórz podrozmowę",
 			"openSubchat_one": "Otwórz podrozmowę ({count} wiadomość)",
 			"openSubchat_few": "Otwórz podrozmowę ({count} wiadomości)",
 			"openSubchat_many": "Otwórz podrozmowę ({count} wiadomości)",
+			"sendMessage": "Wyślij wiadomość",
 			"showMoreChats": "Pokaż więcej rozmów",
 			"showSubchats": "Pokaż podrozmowy ({count})",
 			"startSearching_one": "Wpisz co najmniej {count} znak",
 			"startSearching_few": "Wpisz co najmniej {count} znaki",
 			"startSearching_many": "Wpisz co najmniej {count} znaków"
 		},
-		"chats": "Rozmowy",
-		"deleteChatsWarning": "Te rozmowy zostaną trwale usunięte",
-		"inputPlaceholder": "Zadaj pytanie...",
-		"loadingChats": "Ładowanie rozmów...",
-		"loadingMessages": "Ładowanie wiadomości...",
-		"loadingPreviousMessages": "Ładowanie poprzednich wiadomości...",
-		"loadingSubchats": "Ładowanie podrozmów...",
-		"newChat": "Nowa rozmowa",
-		"noChats": "Brak rozmów",
-		"noSubchats": "Brak podrozmów",
-		"renamePlaceholder": "Wygeneruj nową nazwę automatycznie...",
-		"sendMessage": "Wyślij wiadomość",
-		"subchats": "Podrozmowy",
-		"xMessages_one": "{count} wiadomość",
-		"xMessages_few": "{count} wiadomości",
-		"xMessages_many": "{count} wiadomości",
-		"xSearchResults_zero": "Brak wyników",
-		"xSearchResults_one": "{count} wynik",
-		"xSearchResults_few": "{count} wyniki",
-		"xSearchResults_many": "{count} wyników",
-		"xSelectedMessages_one": "{count} / {total} wybrana wiadomość",
-		"xSelectedMessages_few": "{count} / {total} wybrane wiadomości",
-		"xSelectedMessages_many": "{count} / {total} wybranych wiadomości"
+		"label": {
+			"chats": "Rozmowy",
+			"agents": "Agenci",
+			"newChat": "Nowa rozmowa",
+			"noChats": "Brak rozmów",
+			"noSubchats": "Brak podrozmów",
+			"subchats": "Podrozmowy",
+			"xMessages_one": "{count} wiadomość",
+			"xMessages_few": "{count} wiadomości",
+			"xMessages_many": "{count} wiadomości",
+			"xSearchResults_zero": "Brak wyników",
+			"xSearchResults_one": "{count} wynik",
+			"xSearchResults_few": "{count} wyniki",
+			"xSearchResults_many": "{count} wyników",
+			"xSelectedMessages_one": "{count} wybrana wiadomość",
+			"xSelectedMessages_few": "{count} wybrane wiadomości",
+			"xSelectedMessages_many": "{count} wybranych wiadomości"
+		},
+		"placeholder": {
+			"newMessage": "Zadaj pytanie...",
+			"rename": "Wygeneruj nową nazwę automatycznie..."
+		},
+		"state": {
+			"loadingChats": "Ładowanie rozmów...",
+			"loadingMessages": "Ładowanie wiadomości...",
+			"loadingPreviousMessages": "Ładowanie poprzednich wiadomości...",
+			"loadingSubchats": "Ładowanie podrozmów..."
+		},
+		"warning": {
+			"deletingChats": "Te rozmowy zostaną trwale usunięte"
+		}
+	},
+	"userAccount": {
+		"action": {
+			"manageAccount": "Zarządzaj kontem",
+			"manageBilling": "Zarządzaj płatnościami"
+		},
+		"error": {
+			"address": "Musisz dodać adres",
+			"avatar": "Musisz dodać avatar",
+			"city": "Musisz dodać miasto",
+			"country": "Musisz dodać kraj",
+			"email": "Musisz dodać adres e-mail",
+			"legalName": "Musisz dodać nazwę prawną",
+			"name": "Musisz dodać nazwę",
+			"postalCode": "Musisz dodać kod pocztowy"
+		},
+		"label": {
+			"account": "Konto",
+			"address": "Adres",
+			"avatar": "Avatar",
+			"billing": "Płatności",
+			"city": "Miasto",
+			"country": "Kraj",
+			"email": "Adres e-mail",
+			"legalName": "Nazwa prawna",
+			"name": "Nazwa",
+			"phone": "Numer telefonu",
+			"postalCode": "Kod pocztowy",
+			"private": "Prywatne",
+			"public": "Publiczne",
+			"vatNumber": "NIP"
+		}
 	}
 }

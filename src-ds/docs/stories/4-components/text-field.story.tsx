@@ -30,6 +30,7 @@ export const story: StoryObj<typeof TextField> = {
 		maxRows: 0,
 		readonly: false,
 		disabled: false,
+		invalid: false,
 		// Html
 		className: '',
 		style: {},
@@ -59,6 +60,7 @@ const meta: Meta<typeof TextField> = {
 			maxRows: 'number',
 			readonly: 'boolean',
 			disabled: 'boolean',
+			invalid: 'boolean',
 		},
 		['slotLeft', 'slotRight'],
 		['onChange', 'onSubmit', 'onFocus', 'onBlur']
@@ -150,6 +152,11 @@ const meta: Meta<typeof TextField> = {
 				type: 'boolean',
 				default: 'false',
 				details: `Flag for completely disable the field and its interaction`,
+			},
+			{
+				name: 'invalid',
+				type: 'boolean',
+				details: `Flag for displaying the error state`,
 			},
 		]
 

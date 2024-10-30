@@ -1,15 +1,14 @@
 import { AppLayout } from '@app/layouts/app-layout'
+import { LoadingText, PageHeader } from '@app/library/release'
 import { Button, Modal, WarningSvg } from '@ds/release'
 import { uniqBy } from 'lodash'
 import { useCallback, useMemo, useState } from 'react'
 import { Chat } from '../../api'
 import { Checkbox } from '../../components/checkbox'
 import { ChatConfigItem } from '../../components/items/chat-config-item'
-import { LoadingText } from '../../components/loading-text'
 import { useAiChat } from '../../state'
-import { DbReset } from './_db-reset'
 
-export const ConfigPage = () => {
+export const ChatsPage = () => {
 	const {
 		allChats,
 		allChatsLoading,
@@ -26,7 +25,7 @@ export const ConfigPage = () => {
 
 	const bulkChecked = selectedChats.length === allChats.length ? true : selectedChats.length === 0 ? false : null
 	const bulkTooltip = bulkChecked === true ? t('core.action.deselectAll') : t('core.action.selectAll')
-	const bulkText = t('aiChat.xSelectedMessages', { count: selectedChats.length, total: allChats.length })
+	const bulkText = t('aiChat.label.xSelectedMessages', { count: selectedChats.length })
 	const bulkTextClass = cx('ml-xs-2 text-size-sm leading-1', bulkChecked === false && 'text-color-text-subtle')
 
 	const onToggleBulk = useCallback(() => {
@@ -107,19 +106,19 @@ export const ConfigPage = () => {
 
 	return (
 		<AppLayout blank>
-			<div className="mb-sm-0 flex items-center lg:mb-sm-3">
-				<h1 className="flex items-center">
-					<span className="mr-xs-4 text-size-xl font-weight-lg lg:text-size-xxl">{t('aiChat.chats')}</span>
-
-					{allChatsPagination.count > 0 && (
-						<span className="mt-xs-1 text-size-md font-weight-md text-color-text-subtle lg:text-size-lg">
-							({allChatsPagination.count})
-						</span>
-					)}
-				</h1>
-
-				{(ENV__BUILD_MODE === 'local' || ENV__BUILD_MODE === 'dev') && <DbReset />}
-			</div>
+			<PageHeader
+				breadcrumb={{ href: '/settings', title: t('core.label.settings') }}
+				slotTitle={
+					<>
+						{t('aiChat.label.chats')}
+						{allChatsPagination.count > 0 && (
+							<span className="ml-xs-4 mt-xs-1 text-size-md font-weight-md text-color-text-subtle lg:text-size-lg">
+								({allChatsPagination.count})
+							</span>
+						)}
+					</>
+				}
+			/>
 
 			{allChatsLoading !== 'full' && allChats.length > 0 && (
 				<>
@@ -148,14 +147,14 @@ export const ConfigPage = () => {
 			)}
 
 			{!allChatsLoading && allChats.length === 0 && (
-				<div className="mt-xs-2 text-size-sm">{t('aiChat.noChats')}</div>
+				<div className="mt-xs-2 text-size-sm">{t('aiChat.label.noChats')}</div>
 			)}
 
 			{Boolean(allChatsLoading || canLoadAllChats) && (
 				<div className="mx-auto mt-sm-2">
 					{allChatsLoading ? (
 						<div className="flex-center h-button-h-md text-size-sm">
-							<LoadingText text={t('aiChat.loadingChats')} />
+							<LoadingText text={t('aiChat.state.loadingChats')} />
 						</div>
 					) : (
 						Boolean(canLoadAllChats) && (
@@ -181,7 +180,7 @@ export const ConfigPage = () => {
 			>
 				<div className="mb-xs-8 flex items-center text-color-danger">
 					<WarningSvg className="mr-xs-4 w-xs-8" />
-					{t('aiChat.deleteChatsWarning')}
+					{t('aiChat.warning.deletingChats')}
 				</div>
 				{slotChatsToDelete}
 			</Modal>
@@ -189,4 +188,4 @@ export const ConfigPage = () => {
 	)
 }
 
-export default ConfigPage
+export default ChatsPage

@@ -9,29 +9,39 @@
 			"deselectAll": "Fravælg alle",
 			"openMenu": "Åbn menu",
 			"rename": "Omdøb",
+			"saveChanges": "Gem ændringer",
 			"search": "Søg",
 			"searchMore": "Vis flere resultater",
 			"selectAll": "Vælg alle",
 			"signOut": "Log ud"
 		},
-		"apiDocs": "API dokumentation",
-		"asia": "Asien",
-		"custom": "Tilpasset",
-		"darkTheme": "Mørk",
-		"default": "Standard",
-		"deleting": "Sletter...",
-		"designSystem": "Designsystem",
-		"europe": "Europa",
-		"githubRepo": "GitHub repository",
-		"language": "Sprog",
-		"lightTheme": "Lys",
-		"loading": "Indlæser...",
-		"quickSettings": "Hurtige indstillinger",
-		"searchPlaceholder": "Søg...",
-		"searching": "Søger...",
-		"settings": "Indstillinger",
-		"uiLibrary": "UI bibliotek:",
-		"uiTheme": "UI tema:"
+		"label": {
+			"apiDocs": "API dokumentation",
+			"asia": "Asien",
+			"custom": "Tilpasset",
+			"darkTheme": "Mørk",
+			"default": "Standard",
+			"designSystem": "Designsystem",
+			"errors": "Fejl",
+			"europe": "Europa",
+			"githubRepo": "GitHub repository",
+			"language": "Sprog",
+			"lightTheme": "Lys",
+			"optionalField": "(Valgfri)",
+			"requiredField": "(Påkrævet)",
+			"settings": "Indstillinger",
+			"uiLibrary": "UI bibliotek:",
+			"uiTheme": "UI tema:"
+		},
+		"placeholder": {
+			"search": "Søg..."
+		},
+		"state": {
+			"dataSaved": "Dine data er gemt",
+			"deleting": "Sletter...",
+			"loading": "Indlæser...",
+			"searching": "Søger..."
+		}
 	},
 	"aiChat": {
 		"action": {
@@ -39,34 +49,77 @@
 			"confirmDeleteChats": "Bekræft sletning af chats",
 			"confirmRenameChat": "Bekræft omdøbning af chat",
 			"deleteSelectedChats": "Slet valgte chats",
+			"manageAgents": "Administrer agenter",
 			"manageChats": "Administrer chats",
 			"openChat": "Åbn chat",
-			"openSubchat_other": "Åbn underchat ({count} beskeder)",
 			"openSubchat_zero": "Opret underchat",
+			"openSubchat_one": "Åbn underchat ({count} besked)",
+			"openSubchat_other": "Åbn underchat ({count} beskeder)",
+			"sendMessage": "Send besked",
 			"showMoreChats": "Vis flere chats",
 			"showSubchats": "Vis underchats ({count})",
 			"startSearching_one": "Skriv mindst {count} tegn",
 			"startSearching_other": "Skriv mindst {count} tegn"
 		},
-		"chats": "Chats",
-		"deleteChatsWarning": "Disse chats vil blive slettet permanent",
-		"inputPlaceholder": "Stil et spørgsmål...",
-		"loadingChats": "Indlæser chats...",
-		"loadingMessages": "Indlæser beskeder...",
-		"loadingPreviousMessages": "Indlæser tidligere beskeder...",
-		"loadingSubchats": "Indlæser underchats...",
-		"newChat": "Ny chat",
-		"noChats": "Ingen chats",
-		"noSubchats": "Ingen underchats",
-		"renamePlaceholder": "Generer automatisk et nyt navn...",
-		"sendMessage": "Send besked",
-		"subchats": "Underchats",
-		"xMessages_one": "{count} besked",
-		"xMessages_other": "{count} beskeder",
-		"xSearchResults_zero": "Ingen søgeresultater",
-		"xSearchResults_one": "{count} søgeresultat",
-		"xSearchResults_other": "{count} søgeresultater",
-		"xSelectedMessages_one": "{count} / {total} besked valgt",
-		"xSelectedMessages_other": "{count} / {total} beskeder valgt"
+		"label": {
+			"chats": "Chats",
+			"agents": "Agenter",
+			"newChat": "Ny chat",
+			"noChats": "Ingen chats",
+			"noSubchats": "Ingen underchats",
+			"subchats": "Underchats",
+			"xMessages_one": "{count} besked",
+			"xMessages_other": "{count} beskeder",
+			"xSearchResults_zero": "Ingen søgeresultater",
+			"xSearchResults_one": "{count} søgeresultat",
+			"xSearchResults_other": "{count} søgeresultater",
+			"xSelectedMessages_one": "{count} valgt besked",
+			"xSelectedMessages_other": "{count} valgte beskeder"
+		},
+		"placeholder": {
+			"newMessage": "Stil et spørgsmål...",
+			"rename": "Generer et nyt navn automatisk..."
+		},
+		"state": {
+			"loadingChats": "Indlæser chats...",
+			"loadingMessages": "Indlæser beskeder...",
+			"loadingPreviousMessages": "Indlæser tidligere beskeder...",
+			"loadingSubchats": "Indlæser underchats..."
+		},
+		"warning": {
+			"deletingChats": "Disse chats vil blive slettet permanent"
+		}
+	},
+	"userAccount": {
+		"action": {
+			"manageAccount": "Administrer konto",
+			"manageBilling": "Administrer fakturering"
+		},
+		"error": {
+			"address": "Du skal tilføje adressen",
+			"avatar": "Du skal tilføje en avatar",
+			"city": "Du skal tilføje byen",
+			"country": "Du skal tilføje landet",
+			"email": "Du skal tilføje en e-mailadresse",
+			"legalName": "Du skal tilføje det juridiske navn",
+			"name": "Du skal tilføje et navn",
+			"postalCode": "Du skal tilføje et postnummer"
+		},
+		"label": {
+			"account": "Konto",
+			"address": "Adresse",
+			"avatar": "Avatar",
+			"billing": "Fakturering",
+			"city": "By",
+			"country": "Land",
+			"email": "E-mailadresse",
+			"legalName": "Juridisk navn",
+			"name": "Navn",
+			"phone": "Telefonnummer",
+			"postalCode": "Postnummer",
+			"private": "Privat",
+			"public": "Offentlig",
+			"vatNumber": "CVR-nummer"
+		}
 	}
 }

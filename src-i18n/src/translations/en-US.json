@@ -9,29 +9,40 @@
 			"deselectAll": "Deselect all",
 			"openMenu": "Open menu",
 			"rename": "Rename",
+			"saveChanges": "Save changes",
 			"search": "Search",
 			"searchMore": "Show more results",
 			"selectAll": "Select all",
 			"signOut": "Sign out"
 		},
-		"apiDocs": "API Docs",
-		"asia": "Asia",
-		"custom": "Custom",
-		"darkTheme": "Dark",
-		"default": "Default",
-		"deleting": "Deleting...",
-		"designSystem": "Design System",
-		"europe": "Europe",
-		"githubRepo": "GitHub Repo",
-		"language": "Language",
-		"lightTheme": "Light",
-		"loading": "Loading...",
-		"quickSettings": "Quick settings",
-		"searchPlaceholder": "Search...",
-		"searching": "Searching...",
-		"settings": "Settings",
-		"uiLibrary": "UI Library:",
-		"uiTheme": "UI Theme:"
+		"label": {
+			"apiDocs": "API Docs",
+			"asia": "Asia",
+			"custom": "Custom",
+			"darkTheme": "Dark",
+			"default": "Default",
+			"designSystem": "Design System",
+			"errors": "Errors",
+			"europe": "Europe",
+			"githubRepo": "GitHub Repo",
+			"language": "Language",
+			"lightTheme": "Light",
+			"optionalField": "(Optional)",
+			"quickSettings": "Quick settings",
+			"requiredField": "(Required)",
+			"settings": "Settings",
+			"uiLibrary": "UI Library:",
+			"uiTheme": "UI Theme:"
+		},
+		"placeholder": {
+			"search": "Search..."
+		},
+		"state": {
+			"dataSaved": "Your data is saved",
+			"deleting": "Deleting...",
+			"loading": "Loading...",
+			"searching": "Searching..."
+		}
 	},
 	"aiChat": {
 		"action": {
@@ -39,34 +50,76 @@
 			"confirmDeleteChats": "Confirm deleting chats",
 			"confirmRenameChat": "Confirm renaming chat",
 			"deleteSelectedChats": "Delete selected chats",
+			"manageAgents": "Manage agents",
 			"manageChats": "Manage chats",
 			"openChat": "Open chat",
 			"openSubchat_other": "Open subchat ({count} messages)",
 			"openSubchat_zero": "Create subchat",
+			"sendMessage": "Send message",
 			"showMoreChats": "Show more chats",
 			"showSubchats": "Show subchats ({count})",
 			"startSearching_one": "Type at least {count} character",
 			"startSearching_other": "Type at least {count} characters"
 		},
-		"chats": "Chats",
-		"deleteChatsWarning": "These chats will be permanently deleted",
-		"inputPlaceholder": "Ask a question...",
-		"loadingChats": "Loading chats...",
-		"loadingMessages": "Loading messages...",
-		"loadingPreviousMessages": "Loading previous messages...",
-		"loadingSubchats": "Loading subchats...",
-		"newChat": "New chat",
-		"noChats": "No chats",
-		"noSubchats": "No subchats",
-		"renamePlaceholder": "Generate a new name automatically...",
-		"sendMessage": "Send message",
-		"subchats": "Subchats",
-		"xMessages_one": "1 message",
-		"xMessages_other": "{count} messages",
-		"xSearchResults_one": "{count} search result",
-		"xSearchResults_other": "{count} search results",
-		"xSearchResults_zero": "No search results",
-		"xSelectedMessages_one": "1 / {total} message selected",
-		"xSelectedMessages_other": "{count} / {total} messages selected"
+		"label": {
+			"chats": "Chats",
+			"agents": "Agents",
+			"newChat": "New chat",
+			"noChats": "No chats",
+			"noSubchats": "No subchats",
+			"subchats": "Subchats",
+			"xMessages_one": "1 message",
+			"xMessages_other": "{count} messages",
+			"xSearchResults_one": "{count} search result",
+			"xSearchResults_other": "{count} search results",
+			"xSearchResults_zero": "No search results",
+			"xSelectedMessages_one": "1 message selected",
+			"xSelectedMessages_other": "{count} messages selected"
+		},
+		"placeholder": {
+			"newMessage": "Ask a question...",
+			"rename": "Generate a new name automatically..."
+		},
+		"state": {
+			"loadingChats": "Loading chats...",
+			"loadingMessages": "Loading messages...",
+			"loadingPreviousMessages": "Loading previous messages...",
+			"loadingSubchats": "Loading subchats..."
+		},
+		"warning": {
+			"deletingChats": "These chats will be permanently deleted"
+		}
+	},
+	"userAccount": {
+		"action": {
+			"manageAccount": "Manage account",
+			"manageBilling": "Manage billing"
+		},
+		"error": {
+			"address": "You must add the address",
+			"avatar": "You must add your avatar",
+			"city": "You must add the city",
+			"country": "You must add the country",
+			"email": "You must add your email address",
+			"legalName": "You must add the legal name",
+			"name": "You must add your name",
+			"postalCode": "You must add the postal code"
+		},
+		"label": {
+			"account": "Account",
+			"address": "Address",
+			"avatar": "Avatar",
+			"billing": "Billing",
+			"city": "City",
+			"country": "Country",
+			"email": "Email address",
+			"legalName": "Legal name",
+			"name": "Name",
+			"phone": "Phone number",
+			"postalCode": "Postal code",
+			"private": "Private",
+			"public": "Public",
+			"vatNumber": "VAT number"
+		}
 	}
 }

@@ -1,4 +1,4 @@
-import { useSettings } from '@app/biz-modules/user-settings/state'
+import { useUserAccount } from '@app/biz-modules/user-settings/state'
 import { AiChatSvg, Button, SplitSvg } from '@ds/release'
 import { useI18n } from '@i18n/release'
 import { DateFormat, formatDate } from '@utils/release'
@@ -13,7 +13,7 @@ interface Props {
 
 export const SearchResultItem = ({ result, keyword, onClick }: Props) => {
 	const { activeLocale } = useI18n()
-	const { avatar, name } = useSettings()
+	const { account } = useUserAccount()
 
 	const chatId = result.message ? result.message.chatId : result.chat?.id
 	const isSubchat = result.message && result.message.parentId !== result.message.chatId
@@ -43,14 +43,14 @@ export const SearchResultItem = ({ result, keyword, onClick }: Props) => {
 
 					{/* MESSAGE COUNT */}
 					<span className="ml-xs-3 hidden text-size-xs text-color-text-subtle sm:block">
-						{t('aiChat.xMessages', { count: size })}
+						{t('aiChat.label.xMessages', { count: size })}
 					</span>
 				</span>
 			</Button>
 
 			{/* MESSAGE COUNT - MOBILE */}
 			<div className="mb-xs-2 px-button-px-item text-size-xs text-color-text-subtle sm:hidden">
-				{t('aiChat.xMessages', { count: size })}
+				{t('aiChat.label.xMessages', { count: size })}
 			</div>
 
 			{/* AGENT + DATE */}
@@ -61,9 +61,9 @@ export const SearchResultItem = ({ result, keyword, onClick }: Props) => {
 						{role === 'agent' ? (
 							<AiChatSvg className="mt-px h-xs-6 w-xs-6 rounded-full" />
 						) : (
-							<img src={avatar} alt="" className="h-xs-6 w-xs-6 rounded-full" />
+							<img src={account.avatar} alt="" className="h-xs-6 w-xs-6 rounded-full" />
 						)}
-						<span>{role === 'agent' ? 'Lorem Ipsum GPT' : name} -</span>
+						<span>{role === 'agent' ? 'Lorem Ipsum GPT' : account.name} -</span>
 					</>
 				)}
 

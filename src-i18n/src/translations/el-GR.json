@@ -2,72 +2,124 @@
 	"core": {
 		"action": {
 			"back": "Πίσω",
-			"backToHome": "Επιστροφή στην αρχική",
+			"backToHome": "Πίσω στην αρχική σελίδα",
 			"changeLanguage": "Αλλαγή γλώσσας",
 			"close": "Κλείσιμο",
 			"delete": "Διαγραφή",
 			"deselectAll": "Αποεπιλογή όλων",
 			"openMenu": "Άνοιγμα μενού",
 			"rename": "Μετονομασία",
+			"saveChanges": "Αποθήκευση αλλαγών",
 			"search": "Αναζήτηση",
 			"searchMore": "Εμφάνιση περισσότερων αποτελεσμάτων",
 			"selectAll": "Επιλογή όλων",
 			"signOut": "Αποσύνδεση"
 		},
-		"apiDocs": "Τεκμηρίωση API",
-		"asia": "Ασία",
-		"custom": "Προσαρμοσμένο",
-		"darkTheme": "Σκούρο",
-		"default": "Προεπιλογή",
-		"deleting": "Διαγραφή...",
-		"designSystem": "Σύστημα σχεδίασης",
-		"europe": "Ευρώπη",
-		"githubRepo": "Αποθετήριο GitHub",
-		"language": "Γλώσσα",
-		"lightTheme": "Φωτεινό",
-		"loading": "Φόρτωση...",
-		"quickSettings": "Γρήγορες ρυθμίσεις",
-		"searchPlaceholder": "Αναζήτηση...",
-		"searching": "Αναζήτηση...",
-		"settings": "Ρυθμίσεις",
-		"uiLibrary": "Βιβλιοθήκη UI:",
-		"uiTheme": "Θέμα UI:"
+		"label": {
+			"apiDocs": "Τεκμηρίωση API",
+			"asia": "Ασία",
+			"custom": "Προσαρμοσμένο",
+			"darkTheme": "Σκούρο",
+			"default": "Προεπιλογή",
+			"designSystem": "Σύστημα σχεδίασης",
+			"errors": "Σφάλματα",
+			"europe": "Ευρώπη",
+			"githubRepo": "GitHub αποθετήριο",
+			"language": "Γλώσσα",
+			"lightTheme": "Φωτεινό",
+			"optionalField": "(Προαιρετικό)",
+			"requiredField": "(Υποχρεωτικό)",
+			"settings": "Ρυθμίσεις",
+			"uiLibrary": "Βιβλιοθήκη UI:",
+			"uiTheme": "Θέμα UI:"
+		},
+		"placeholder": {
+			"search": "Αναζήτηση..."
+		},
+		"state": {
+			"dataSaved": "Τα δεδομένα σας αποθηκεύτηκαν",
+			"deleting": "Διαγραφή...",
+			"loading": "Φόρτωση...",
+			"searching": "Αναζήτηση..."
+		}
 	},
 	"aiChat": {
 		"action": {
-			"backToSubchats": "Επιστροφή στις υποσυνομιλίες",
+			"backToSubchats": "Πίσω στις υποσυνομιλίες",
 			"confirmDeleteChats": "Επιβεβαίωση διαγραφής συνομιλιών",
 			"confirmRenameChat": "Επιβεβαίωση μετονομασίας συνομιλίας",
 			"deleteSelectedChats": "Διαγραφή επιλεγμένων συνομιλιών",
+			"manageAgents": "Διαχείριση πρακτόρων",
 			"manageChats": "Διαχείριση συνομιλιών",
 			"openChat": "Άνοιγμα συνομιλίας",
 			"openSubchat_zero": "Δημιουργία υποσυνομιλίας",
 			"openSubchat_one": "Άνοιγμα υποσυνομιλίας ({count} μήνυμα)",
 			"openSubchat_other": "Άνοιγμα υποσυνομιλίας ({count} μηνύματα)",
+			"sendMessage": "Αποστολή μηνύματος",
 			"showMoreChats": "Εμφάνιση περισσότερων συνομιλιών",
 			"showSubchats": "Εμφάνιση υποσυνομιλιών ({count})",
 			"startSearching_one": "Πληκτρολογήστε τουλάχιστον {count} χαρακτήρα",
 			"startSearching_other": "Πληκτρολογήστε τουλάχιστον {count} χαρακτήρες"
 		},
-		"chats": "Συνομιλίες",
-		"deleteChatsWarning": "Αυτές οι συνομιλίες θα διαγραφούν μόνιμα",
-		"inputPlaceholder": "Κάντε μια ερώτηση...",
-		"loadingChats": "Φόρτωση συνομιλιών...",
-		"loadingMessages": "Φόρτωση μηνυμάτων...",
-		"loadingPreviousMessages": "Φόρτωση προηγούμενων μηνυμάτων...",
-		"loadingSubchats": "Φόρτωση υποσυνομιλιών...",
-		"newChat": "Νέα συνομιλία",
-		"noChats": "Δεν υπάρχουν συνομιλίες",
-		"noSubchats": "Δεν υπάρχουν υποσυνομιλίες",
-		"renamePlaceholder": "Αυτόματη δημιουργία νέου ονόματος...",
-		"sendMessage": "Αποστολή μηνύματος",
-		"subchats": "Υποσυνομιλίες",
-		"xMessages_one": "{count} μήνυμα",
-		"xMessages_other": "{count} μηνύματα",
-		"xSearchResults_zero": "Κανένα αποτέλεσμα",
-		"xSearchResults_one": "{count} αποτέλεσμα",
-		"xSearchResults_other": "{count} αποτελέσματα",
-		"xSelectedMessages_one": "{count} / {total} επιλεγμένο μήνυμα",
-		"xSelectedMessages_other": "{count} / {total} επιλεγμένα μηνύματα"
+		"label": {
+			"chats": "Συνομιλίες",
+			"agents": "Πράκτορες",
+			"newChat": "Νέα συνομιλία",
+			"noChats": "Δεν υπάρχουν συνομιλίες",
+			"noSubchats": "Δεν υπάρχουν υποσυνομιλίες",
+			"subchats": "Υποσυνομιλίες",
+			"xMessages_one": "{count} μήνυμα",
+			"xMessages_other": "{count} μηνύματα",
+			"xSearchResults_zero": "Κανένα αποτέλεσμα αναζήτησης",
+			"xSearchResults_one": "{count} αποτέλεσμα αναζήτησης",
+			"xSearchResults_other": "{count} αποτελέσματα αναζήτησης",
+			"xSelectedMessages_one": "{count} επιλεγμένο μήνυμα",
+			"xSelectedMessages_other": "{count} επιλεγμένα μηνύματα"
+		},
+		"placeholder": {
+			"newMessage": "Κάντε μια ερώτηση...",
+			"rename": "Αυτόματη δημιουργία νέου ονόματος..."
+		},
+		"state": {
+			"loadingChats": "Φόρτωση συνομιλιών...",
+			"loadingMessages": "Φόρτωση μηνυμάτων...",
+			"loadingPreviousMessages": "Φόρτωση προηγούμενων μηνυμάτων...",
+			"loadingSubchats": "Φόρτωση υποσυνομιλιών..."
+		},
+		"warning": {
+			"deletingChats": "Αυτές οι συνομιλίες θα διαγραφούν μόνιμα"
+		}
+	},
+	"userAccount": {
+		"action": {
+			"manageAccount": "Διαχείριση λογαριασμού",
+			"manageBilling": "Διαχείριση χρεώσεων"
+		},
+		"error": {
+			"address": "Πρέπει να προσθέσετε διεύθυνση",
+			"avatar": "Πρέπει να προσθέσετε avatar",
+			"city": "Πρέπει να προσθέσετε πόλη",
+			"country": "Πρέπει να προσθέσετε χώρα",
+			"email": "Πρέπει να προσθέσετε διεύθυνση email",
+			"legalName": "Πρέπει να προσθέσετε νομική επωνυμία",
+			"name": "Πρέπει να προσθέσετε όνομα",
+			"postalCode": "Πρέπει να προσθέσετε ταχυδρομικό κώδικα"
+		},
+		"label": {
+			"account": "Λογαριασμός",
+			"address": "Διεύθυνση",
+			"avatar": "Avatar",
+			"billing": "Χρεώσεις",
+			"city": "Πόλη",
+			"country": "Χώρα",
+			"email": "Διεύθυνση email",
+			"legalName": "Νομική επωνυμία",
+			"name": "Όνομα",
+			"phone": "Αριθμός τηλεφώνου",
+			"postalCode": "Ταχυδρομικός κώδικας",
+			"private": "Ιδιωτικό",
+			"public": "Δημόσιο",
+			"vatNumber": "ΑΦΜ"
+		}
 	}
 }

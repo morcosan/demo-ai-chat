@@ -6,32 +6,42 @@
 			"changeLanguage": "ენის შეცვლა",
 			"close": "დახურვა",
 			"delete": "წაშლა",
-			"deselectAll": "ყველას მონიშვნის მოხსნა",
+			"deselectAll": "ყველას მონიშვნის გაუქმება",
 			"openMenu": "მენიუს გახსნა",
 			"rename": "სახელის შეცვლა",
+			"saveChanges": "ცვლილებების შენახვა",
 			"search": "ძიება",
 			"searchMore": "მეტი შედეგის ჩვენება",
 			"selectAll": "ყველას მონიშვნა",
-			"signOut": "გამოსვლა"
+			"signOut": "გასვლა"
 		},
-		"apiDocs": "API დოკუმენტაცია",
-		"asia": "აზია",
-		"custom": "მორგებული",
-		"darkTheme": "მუქი",
-		"default": "ნაგულისხმევი",
-		"deleting": "იშლება...",
-		"designSystem": "დიზაინის სისტემა",
-		"europe": "ევროპა",
-		"githubRepo": "GitHub რეპოზიტორია",
-		"language": "ენა",
-		"lightTheme": "ნათელი",
-		"loading": "იტვირთება...",
-		"quickSettings": "სწრაფი პარამეტრები",
-		"searchPlaceholder": "ძიება...",
-		"searching": "ძიება...",
-		"settings": "პარამეტრები",
-		"uiLibrary": "UI ბიბლიოთეკა:",
-		"uiTheme": "UI თემა:"
+		"label": {
+			"apiDocs": "API დოკუმენტაცია",
+			"asia": "აზია",
+			"custom": "მორგებული",
+			"darkTheme": "მუქი",
+			"default": "ნაგულისხმევი",
+			"designSystem": "დიზაინის სისტემა",
+			"errors": "შეცდომები",
+			"europe": "ევროპა",
+			"githubRepo": "GitHub რეპოზიტორია",
+			"language": "ენა",
+			"lightTheme": "ღია",
+			"optionalField": "(არასავალდებულო)",
+			"requiredField": "(სავალდებულო)",
+			"settings": "პარამეტრები",
+			"uiLibrary": "UI ბიბლიოთეკა:",
+			"uiTheme": "UI თემა:"
+		},
+		"placeholder": {
+			"search": "ძიება..."
+		},
+		"state": {
+			"dataSaved": "თქვენი მონაცემები შენახულია",
+			"deleting": "იშლება...",
+			"loading": "იტვირთება...",
+			"searching": "მიმდინარეობს ძიება..."
+		}
 	},
 	"aiChat": {
 		"action": {
@@ -39,35 +49,77 @@
 			"confirmDeleteChats": "ჩატების წაშლის დადასტურება",
 			"confirmRenameChat": "ჩატის სახელის შეცვლის დადასტურება",
 			"deleteSelectedChats": "არჩეული ჩატების წაშლა",
+			"manageAgents": "აგენტების მართვა",
 			"manageChats": "ჩატების მართვა",
 			"openChat": "ჩატის გახსნა",
 			"openSubchat_zero": "ქვეჩატის შექმნა",
 			"openSubchat_one": "ქვეჩატის გახსნა ({count} შეტყობინება)",
 			"openSubchat_other": "ქვეჩატის გახსნა ({count} შეტყობინება)",
+			"sendMessage": "შეტყობინების გაგზავნა",
 			"showMoreChats": "მეტი ჩატის ჩვენება",
 			"showSubchats": "ქვეჩატების ჩვენება ({count})",
 			"startSearching_one": "შეიყვანეთ მინიმუმ {count} სიმბოლო",
 			"startSearching_other": "შეიყვანეთ მინიმუმ {count} სიმბოლო"
 		},
-		"chats": "ჩატები",
-		"deleteChatsWarning": "ეს ჩატები სამუდამოდ წაიშლება",
-		"inputPlaceholder": "დასვით კითხვა...",
-		"loadingChats": "ჩატების ჩატვირთვა...",
-		"loadingMessages": "შეტყობინებების ჩატვირთვა...",
-		"loadingPreviousMessages": "წინა შეტყობინებების ჩატვირთვა...",
-		"loadingSubchats": "ქვეჩატების ჩატვირთვა...",
-		"newChat": "ახალი ჩატი",
-		"noChats": "ჩატები არ არის",
-		"noSubchats": "ქვეჩატები არ არის",
-		"renamePlaceholder": "ახალი სახელის ავტომატურად გენერირება...",
-		"sendMessage": "შეტყობინების გაგზავნა",
-		"subchats": "ქვეჩატები",
-		"xMessages_one": "{count} შეტყობინება",
-		"xMessages_other": "{count} შეტყობინება",
-		"xSearchResults_zero": "შედეგები არ არის",
-		"xSearchResults_one": "{count} შედეგი",
-		"xSearchResults_other": "{count} შედეგი",
-		"xSelectedMessages_one": "{count} / {total} შეტყობინება არჩეული",
-		"xSelectedMessages_other": "{count} / {total} შეტყობინება არჩეული"
+		"label": {
+			"chats": "ჩატები",
+			"agents": "აგენტები",
+			"newChat": "ახალი ჩატი",
+			"noChats": "ჩატები არ არის",
+			"noSubchats": "ქვეჩატები არ არის",
+			"subchats": "ქვეჩატები",
+			"xMessages_one": "{count} შეტყობინება",
+			"xMessages_other": "{count} შეტყობინება",
+			"xSearchResults_zero": "შედეგები არ არის",
+			"xSearchResults_one": "{count} შედეგი",
+			"xSearchResults_other": "{count} შედეგი",
+			"xSelectedMessages_one": "{count} შეტყობინება არჩეულია",
+			"xSelectedMessages_other": "{count} შეტყობინება არჩეულია"
+		},
+		"placeholder": {
+			"newMessage": "დასვით კითხვა...",
+			"rename": "ახალი სახელის ავტომატურად გენერირება..."
+		},
+		"state": {
+			"loadingChats": "ჩატები იტვირთება...",
+			"loadingMessages": "შეტყობინებები იტვირთება...",
+			"loadingPreviousMessages": "წინა შეტყობინებები იტვირთება...",
+			"loadingSubchats": "ქვეჩატები იტვირთება..."
+		},
+		"warning": {
+			"deletingChats": "ეს ჩატები სამუდამოდ წაიშლება"
+		}
+	},
+	"userAccount": {
+		"action": {
+			"manageAccount": "ანგარიშის მართვა",
+			"manageBilling": "გადახდების მართვა"
+		},
+		"error": {
+			"address": "უნდა დაამატოთ მისამართი",
+			"avatar": "უნდა დაამატოთ ავატარი",
+			"city": "უნდა დაამატოთ ქალაქი",
+			"country": "უნდა დაამატოთ ქვეყანა",
+			"email": "უნდა დაამატოთ ელფოსტის მისამართი",
+			"legalName": "უნდა დაამატოთ იურიდიული სახელი",
+			"name": "უნდა დაამატოთ სახელი",
+			"postalCode": "უნდა დაამატოთ საფოსტო კოდი"
+		},
+		"label": {
+			"account": "ანგარიში",
+			"address": "მისამართი",
+			"avatar": "ავატარი",
+			"billing": "გადახდები",
+			"city": "ქალაქი",
+			"country": "ქვეყანა",
+			"email": "ელფოსტის მისამართი",
+			"legalName": "იურიდიული სახელი",
+			"name": "სახელი",
+			"phone": "ტელეფონის ნომერი",
+			"postalCode": "საფოსტო კოდი",
+			"private": "პირადი",
+			"public": "საჯარო",
+			"vatNumber": "საგადასახადო კოდი"
+		}
 	}
 }
