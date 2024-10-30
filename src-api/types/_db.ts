@@ -34,6 +34,7 @@ export type MessageRole = 'user' | 'agent' | 'system'
 export interface DbGPT {
 	id: number
 	name: string
+	avatar: string
 	desc: string
 }
 
@@ -41,6 +42,7 @@ export interface DbAgent {
 	id: number
 	gptId: number
 	name: string
+	avatar: string
 	desc: string
 	setup: string
 }

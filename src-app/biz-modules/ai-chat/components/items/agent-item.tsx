@@ -17,6 +17,7 @@ export const AgentItem = ({ agent, onHideNavMenu }: Props) => {
 				className="block focus:z-1"
 				onClick={onHideNavMenu}
 			>
+				<img src={agent.avatar} alt="" className="mr-xs-4 h-sm-1 w-sm-1 rounded-full" />
 				<span className="truncate">{agent.name}</span>
 			</Button>
 		</li>

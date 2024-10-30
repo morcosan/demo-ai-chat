@@ -2,8 +2,8 @@ import { DbAgent, DbGPT } from '@api/types'
 import { COOKIE_KEY } from '@utils/release'
 
 const GPTs: DbGPT[] = [
-	{ id: 0, name: 'Lorem Ipsum GPT', desc: '' },
-	{ id: 1, name: 'Rammus GPT', desc: '' },
+	{ id: 0, name: 'Lorem Ipsum GPT', avatar: '/avatars/lorem.svg', desc: '' },
+	{ id: 1, name: 'Rammus GPT', avatar: '/avatars/rammus.png', desc: '' },
 ]
 
 let _agents: DbAgent[]
@@ -25,10 +25,16 @@ const initAgentsDB = () => {
 }
 
 const resetDbAgents = () => {
-	setDbAgents([
-		{ id: 0, gptId: 0, name: 'Lorem Ipsum GPT', desc: '', setup: '' },
-		{ id: 1, gptId: 1, name: 'Rammus GPT', desc: '', setup: '' },
-	])
+	setDbAgents(
+		GPTs.map((gpt: DbGPT) => ({
+			id: gpt.id,
+			gptId: gpt.id,
+			name: gpt.name,
+			avatar: gpt.avatar,
+			desc: '',
+			setup: '',
+		}))
+	)
 }
 
 export { getDbAgents, GPTs, initAgentsDB, resetDbAgents, setDbAgents }

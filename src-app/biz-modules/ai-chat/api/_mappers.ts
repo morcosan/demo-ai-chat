@@ -5,6 +5,7 @@ export const mapDtoToGPT = (dto: GptDTO): GPT => {
 	return {
 		id: dto.id || 0,
 		name: dto.name || '',
+		avatar: dto.avatar || '',
 		desc: dto.desc || '',
 	}
 }
@@ -14,6 +15,7 @@ export const mapDtoToAgent = (dto: AgentDTO): Agent => {
 		id: dto.id || 0,
 		gptId: dto.gptId || 0,
 		name: dto.name || '',
+		avatar: dto.avatar || '',
 		desc: dto.desc || '',
 		setup: dto.setup || '',
 	}
