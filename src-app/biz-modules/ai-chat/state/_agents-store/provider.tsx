@@ -47,6 +47,7 @@ export const AgentsProvider = ({ children }: ReactProps) => {
 			agentsPagination,
 			agentsLoading,
 			canLoadAgents,
+			loadMoreAgents,
 		}),
 		[gpts, gptsLoading, agents, agentsPagination, agentsLoading]
 	)

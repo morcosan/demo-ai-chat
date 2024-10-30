@@ -26,8 +26,8 @@ const initAgentsDB = () => {
 
 const resetDbAgents = () => {
 	setDbAgents([
-		{ id: 0, gptId: 0, name: 'Lorem Ipsum AI', desc: '', setup: '' },
-		{ id: 1, gptId: 1, name: 'Rammus AI', desc: '', setup: '' },
+		{ id: 0, gptId: 0, name: 'Lorem Ipsum GPT', desc: '', setup: '' },
+		{ id: 1, gptId: 1, name: 'Rammus GPT', desc: '', setup: '' },
 	])
 }
 

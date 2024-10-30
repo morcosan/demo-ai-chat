@@ -8,6 +8,7 @@ export interface Store {
 	agentsPagination: Pagination
 	agentsLoading: ListLoading
 	canLoadAgents: boolean
+	loadMoreAgents(): void
 }
 
 export const AgentsContext = createContext<Store>({
@@ -17,4 +18,5 @@ export const AgentsContext = createContext<Store>({
 	agentsPagination: { page: 0, count: 0 },
 	agentsLoading: false,
 	canLoadAgents: false,
+	loadMoreAgents: () => {},
 })

@@ -1,8 +1,7 @@
 import { AgentItem } from '@app/biz-modules/ai-chat/components/items/agent-item'
-import { LoadingText } from '@app/library/release'
-import { AiChatSvg, Button, IconButton, SearchSvg, SettingsSvg } from '@ds/release'
-import { debounce } from 'lodash'
-import { UIEvent, useEffect, useMemo } from 'react'
+import { NavListing } from '@app/biz-modules/ai-chat/components/nav-listing'
+import { AiChatSvg, Button, SearchSvg, useUiTheme } from '@ds/release'
+import { useEffect, useMemo } from 'react'
 import { Agent, Chat } from '../api'
 import { ChatItem } from '../components/items/chat-item'
 import { useAiChat, useAiChatAgents, useAiChatSearch } from '../state'
@@ -14,21 +13,10 @@ interface Props {
 }
 
 export const AiChatNavMenu = ({ collapsed, unselected, onHideNavMenu }: Props) => {
+	const { $spacing } = useUiTheme()
 	const { allChats, allChatsLoading, allChatsPagination, activeChat, loadMoreChats, resetActiveChat } = useAiChat()
-	const { agents, agentsPagination, agentsLoading } = useAiChatAgents()
+	const { agents, agentsPagination, agentsLoading, loadMoreAgents } = useAiChatAgents()
 	const { setShowsSearch } = useAiChatSearch()
-
-	const onScrollChats = debounce((event: UIEvent) => {
-		const container = event.target as HTMLElement
-		const isScrollEnd = container.offsetHeight + container.scrollTop >= container.scrollHeight
-		isScrollEnd && loadMoreChats()
-	}, 300)
-
-	const onScrollAgents = debounce((event: UIEvent) => {
-		const container = event.target as HTMLElement
-		const isScrollEnd = container.offsetHeight + container.scrollTop >= container.scrollHeight
-		isScrollEnd && loadMoreChats()
-	}, 300)
 
 	const hasExtraChat = Boolean(activeChat && !allChats.some((chat: Chat) => chat.id === activeChat.id))
 
@@ -74,99 +62,41 @@ export const AiChatNavMenu = ({ collapsed, unselected, onHideNavMenu }: Props) =
 				{!collapsed && <span className="ml-xs-3">{t('core.action.search')}</span>}
 			</Button>
 
-			{/* AGENTS TITLE */}
-			<div className="mt-xs-7 flex h-button-h-sm w-full items-center justify-between">
-				<span className="ml-button-px-item truncate text-size-sm text-color-text-subtle">
-					{t('aiChat.label.agents')}
-					&nbsp;
-					{Boolean(agentsPagination.count) && <span className="text-size-xs">({agentsPagination.count})</span>}
-				</span>
-
-				<IconButton
-					tooltip={t('aiChat.action.manageAgents')}
-					linkHref="/settings/agents"
-					size="sm"
-					className={cx(collapsed && 'hidden')}
-				>
-					<SettingsSvg className="h-xs-6 text-color-text-subtle" />
-				</IconButton>
-			</div>
-
-			{/* AGENTS LISTING */}
-			<div
-				className="-mx-a11y-scrollbar flex flex-1 flex-col overflow-y-scroll p-a11y-padding !pl-a11y-scrollbar"
-				style={{ width: 'calc(100% + 2 * var(--ds-spacing-a11y-scrollbar))' }}
-				onScroll={onScrollAgents}
+			{/* AGENTS */}
+			<NavListing
+				length={agents.length}
+				loading={agentsLoading}
+				pagination={agentsPagination}
+				headerText={t('aiChat.label.agents')}
+				settingsHref="/settings/agents"
+				settingsText={t('aiChat.action.manageAgents')}
+				loadingText={t('aiChat.state.loadingAgents')}
+				emptyText=""
+				headerClass="mt-xs-9"
+				listingStyle={{ maxHeight: `calc(3 * ${$spacing['button-h-md']} + ${$spacing['a11y-padding']})` }}
+				collapsed={collapsed}
+				onScrollEnd={loadMoreAgents}
 			>
-				{agentsLoading === 'full' ? (
-					<LoadingText
-						text={t('aiChat.state.loadingAgents')}
-						collapsed={collapsed}
-						className="min-h-sm-4 px-button-px-item text-size-sm"
-					/>
-				) : agents.length ? (
-					<>
-						{slotAgents}
-						{agents.length < agentsPagination.count && (
-							<LoadingText
-								text={t('aiChat.state.loadingAgents')}
-								collapsed={collapsed}
-								className="line-clamp-1 min-h-sm-4 px-button-px-item text-size-sm"
-								style={{ visibility: agentsLoading === 'more' ? 'visible' : 'hidden' }}
-							/>
-						)}
-					</>
-				) : (
-					<div className="ml-button-px-item mt-xs-2 text-size-sm">{t('aiChat.label.noAgents')}</div>
-				)}
-			</div>
+				{slotAgents}
+			</NavListing>
 
-			{/* CHATS TITLE */}
-			<div className="mt-xs-7 flex h-button-h-sm w-full items-center justify-between">
-				<span className="ml-button-px-item truncate text-size-sm text-color-text-subtle">
-					{t('aiChat.label.chats')}
-					&nbsp;
-					{Boolean(allChatsPagination.count) && <span className="text-size-xs">({allChatsPagination.count})</span>}
-				</span>
-
-				<IconButton
-					tooltip={t('aiChat.action.manageChats')}
-					linkHref="/settings/chats"
-					size="sm"
-					className={cx(collapsed && 'hidden')}
-				>
-					<SettingsSvg className="h-xs-6 text-color-text-subtle" />
-				</IconButton>
-			</div>
-
-			{/* CHATS LISTING */}
-			<div
-				className="-mx-a11y-scrollbar flex flex-1 flex-col overflow-y-scroll p-a11y-padding !pl-a11y-scrollbar"
-				style={{ width: 'calc(100% + 2 * var(--ds-spacing-a11y-scrollbar))' }}
-				onScroll={onScrollChats}
+			{/* CHATS */}
+			<NavListing
+				length={allChats.length}
+				loading={allChatsLoading}
+				pagination={allChatsPagination}
+				headerText={t('aiChat.label.chats')}
+				settingsHref="/settings/chats"
+				settingsText={t('aiChat.action.manageChats')}
+				loadingText={t('aiChat.state.loadingChats')}
+				emptyText={t('aiChat.label.noChats')}
+				headerClass="mt-xs-6"
+				listingClass="flex-1"
+				collapsed={collapsed}
+				onScrollEnd={loadMoreChats}
 			>
-				{allChatsLoading === 'full' ? (
-					<LoadingText
-						text={t('aiChat.state.loadingChats')}
-						collapsed={collapsed}
-						className="min-h-sm-4 px-button-px-item text-size-sm"
-					/>
-				) : allChats.length ? (
-					<>
-						{slotChats}
-						{allChats.length < allChatsPagination.count && (
-							<LoadingText
-								text={t('aiChat.state.loadingChats')}
-								collapsed={collapsed}
-								className="line-clamp-1 min-h-sm-4 px-button-px-item text-size-sm"
-								style={{ visibility: allChatsLoading === 'more' ? 'visible' : 'hidden' }}
-							/>
-						)}
-					</>
-				) : (
-					<div className="ml-button-px-item mt-xs-2 text-size-sm">{t('aiChat.label.noChats')}</div>
-				)}
-			</div>
+				{slotChats}
+			</NavListing>
 
 			{/* EXTRA ACTIVE CHAT */}
 			{Boolean(hasExtraChat) && (
