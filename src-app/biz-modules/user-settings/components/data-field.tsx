@@ -18,8 +18,8 @@ export interface Field<T> {
 export const DataField = <T,>({ field, value, error, disabled, onChange }: Props<T>) => {
 	return (
 		<div className="flex flex-wrap gap-x-xs-9">
-			<div className="flex h-fit min-w-lg-0 items-center pb-xs-2 pl-xs-0 sm:min-h-field-h-md sm:p-0">
-				<label htmlFor={`field-${field.key}`}>
+			<div className="flex h-fit items-center pb-xs-2 pl-xs-0 sm:min-h-field-h-md sm:w-lg-0 sm:p-0">
+				<label htmlFor={`field-${field.key}`} style={{ wordBreak: 'break-word' }}>
 					{field.label}
 					{field.optional ? (
 						<span className="ml-xs-2 text-size-xs lowercase text-color-text-subtle sm:ml-0 sm:block">

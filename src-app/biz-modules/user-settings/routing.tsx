@@ -6,7 +6,7 @@ import { Route } from 'react-router-dom'
 const AccountPage = lazy(() => import('./pages/account-page'))
 const BillingPage = lazy(() => import('./pages/billing-page'))
 
-export const userAccountRoutes = (
+export const userSettingsRoutes = (
 	<>
 		<Route path="/settings/account" element={<AccountPage />} />
 		<Route path="/settings/billing" element={<BillingPage />} />

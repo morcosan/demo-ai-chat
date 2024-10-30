@@ -2,6 +2,7 @@ import { AppLayout } from '@app/layouts/app-layout'
 import { ErrorSummary, PageHeader, SuccessNotice } from '@app/library/release'
 import { Button } from '@ds/release'
 import { useCallback, useEffect, useState } from 'react'
+import { useTranslation } from 'react-i18next'
 import { Billing } from '../api'
 import { DataField, Field } from '../components/data-field'
 import { BILLING_EMPTY, useUserAccount } from '../state'
@@ -9,6 +10,7 @@ import { BILLING_EMPTY, useUserAccount } from '../state'
 type BillingRecord = Partial<Record<keyof Billing, string>>
 
 const AccountPage = () => {
+	useTranslation()
 	const { billing, billingLoading, updateBilling } = useUserAccount()
 	const [payload, setPayload] = useState<Billing>(BILLING_EMPTY)
 	const [feedback, setFeedback] = useState<BillingRecord>(BILLING_EMPTY)

@@ -69,11 +69,6 @@ const ApiDocsPage = () => {
 
 	const respHtml = useMemo(() => hljs.highlight(JSON.stringify(resp, null, 2), { language: 'json' }).value, [resp])
 
-	const onClickLogo = (event: ReactMouseEvent) => {
-		event.preventDefault()
-		window.location.assign('/')
-	}
-
 	const onSubmit = useCallback(async () => {
 		const path = location.pathname.replace('/docs', '')
 		let resp = null
@@ -154,7 +149,7 @@ const ApiDocsPage = () => {
 			) : (
 				<>
 					<h1 className="mb-sm-9 flex items-center px-button-px-item">
-						<Link to="/" className="flex w-fit" onClick={onClickLogo}>
+						<Link to="/" className="flex w-fit" reloadDocument>
 							<span className="flex items-center">
 								<AiChatSvg className="mr-xs-3 h-sm-1 w-sm-1 animate-pulse" />
 								<span className="text-size-xl font-weight-md">AI Chat</span>

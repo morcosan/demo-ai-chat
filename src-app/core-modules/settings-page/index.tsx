@@ -3,6 +3,7 @@ import { AppLayout } from '@app/layouts/app-layout'
 import { PageHeader } from '@app/library/release'
 import { Button, ChatsSvg, MoneySvg, RobotSvg, UserSvg } from '@ds/release'
 import { ReactNode } from 'react'
+import { useTranslation } from 'react-i18next'
 
 interface Subsection {
 	href: string
@@ -11,6 +12,8 @@ interface Subsection {
 }
 
 const SettingsPage = () => {
+	useTranslation()
+	
 	const subsections: Subsection[] = [
 		{
 			href: '/settings/agents',
@@ -48,10 +51,10 @@ const SettingsPage = () => {
 							linkHref={subsection.href}
 							variant="item-text-default"
 							size="lg"
-							className="-ml-button-px-item block w-lg-7 text-size-lg text-color-primary"
+							className="-ml-button-px-item block w-fit text-size-lg text-color-primary"
 						>
 							{subsection.icon}
-							<span className="ml-xs-5 pb-xs-0">{subsection.title}</span>
+							<span className="ml-xs-5 mr-xs-2 pb-xs-0">{subsection.title}</span>
 						</Button>
 					</li>
 				))}

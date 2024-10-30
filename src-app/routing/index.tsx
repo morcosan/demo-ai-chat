@@ -1,6 +1,6 @@
 import { apiDocsRoutes } from '@api/docs/routing'
 import { aiChatRoutes } from '@app/biz-modules/ai-chat/routing'
-import { userAccountRoutes } from '@app/biz-modules/user-settings/routing'
+import { userSettingsRoutes } from '@app/biz-modules/user-settings/routing'
 import { lazy } from 'react'
 import { createBrowserRouter, Route, RouterProvider, Routes } from 'react-router-dom'
 
@@ -13,7 +13,7 @@ const Root = () => {
 		<Routes>
 			{aiChatRoutes}
 			{apiDocsRoutes}
-			{userAccountRoutes}
+			{userSettingsRoutes}
 			<Route path="/logout" element={<LogoutPage />} />
 			<Route path="/settings" element={<SettingsPage />} />
 			<Route path="/*" element={<NotFoundPage />} />

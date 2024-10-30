@@ -3,12 +3,14 @@ import { AppLayout } from '@app/layouts/app-layout'
 import { ErrorSummary, PageHeader, SuccessNotice } from '@app/library/release'
 import { Button } from '@ds/release'
 import { useCallback, useEffect, useState } from 'react'
+import { useTranslation } from 'react-i18next'
 import { DataField, Field } from '../components/data-field'
 import { ACCOUNT_EMPTY, useUserAccount } from '../state'
 
 type AccountRecord = Partial<Record<keyof Account, string>>
 
 const AccountPage = () => {
+	useTranslation()
 	const { account, accountLoading, updateAccount } = useUserAccount()
 	const [payload, setPayload] = useState<Account>(ACCOUNT_EMPTY)
 	const [feedback, setFeedback] = useState<AccountRecord>(ACCOUNT_EMPTY)
