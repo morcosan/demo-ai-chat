@@ -1,5 +1,5 @@
-import { Agent, GPT } from '@app/biz-modules/ai-chat/api'
-import { EditSvg, IconButton, useUiTheme } from '@ds/release'
+import { EditSvg, IconButton } from '@ds/release'
+import { Agent, GPT, GPT_ID__LOREM_IPSUM, GPT_ID__RAMMUS } from '../../api'
 
 interface Props extends ReactProps {
 	agent: Agent
@@ -8,11 +8,14 @@ interface Props extends ReactProps {
 }
 
 export const AgentConfigItem = ({ agent, gpt, onClickEdit }: Props) => {
-	const { $lineHeight, $fontSize } = useUiTheme()
-
 	const isGhost = agent.loading || agent.deleting
 
-	const description = agent.desc
+	const description = (() => {
+		if (agent.desc) return agent.desc
+		if (gpt.id === GPT_ID__LOREM_IPSUM) return t('aiChat.description.loremIpsumGPT')
+		if (gpt.id === GPT_ID__RAMMUS) return t('aiChat.description.rammusGPT')
+		return ''
+	})()
 
 	return (
 		<li

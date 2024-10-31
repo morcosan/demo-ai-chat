@@ -63,6 +63,10 @@
 			"startSearching_one": "Type at least {count} character",
 			"startSearching_other": "Type at least {count} characters"
 		},
+		"description": {
+			"loremIpsumGPT": "Most intelligent model",
+			"rammusGPT": "Great for psychological support"
+		},
 		"label": {
 			"chats": "Chats",
 			"agents": "Agents",

@@ -1,4 +1,4 @@
-import { DbAgent, DbGPT } from '@api/types'
+import { DbAgent, DbGPT, GPT_ID__LOREM_IPSUM, GPT_ID__RAMMUS } from '@api/types'
 import {
 	COOKIE_KEY,
 	randomArray,
@@ -10,8 +10,18 @@ import {
 } from '@utils/release'
 
 const GPTs: DbGPT[] = [
-	{ id: 0, name: 'Lorem Ipsum GPT', avatar: ENV__ROOT_URL_PATH + '/avatars/lorem.svg', desc: '' },
-	{ id: 1, name: 'Rammus GPT', avatar: ENV__ROOT_URL_PATH + '/avatars/rammus.png', desc: '' },
+	{
+		id: GPT_ID__LOREM_IPSUM,
+		name: 'Lorem Ipsum GPT',
+		avatar: ENV__ROOT_URL_PATH + '/avatars/lorem.svg',
+		desc: '',
+	},
+	{
+		id: GPT_ID__RAMMUS,
+		name: 'Rammus GPT',
+		avatar: ENV__ROOT_URL_PATH + '/avatars/rammus.png',
+		desc: '',
+	},
 ]
 
 let _agents: DbAgent[]

@@ -16,6 +16,7 @@ import {
 import { mapDtoToAgent, mapDtoToChat, mapDtoToGPT, mapDtoToMessage, mapDtoToSubchat } from './_mappers'
 import { AgentListing, ChatListing, GptListing, MessageListing, SubchatListing } from './_types'
 
+export * from './_gpt'
 export * from './_types'
 
 export const MIN_SEARCH_LENGTH = 3

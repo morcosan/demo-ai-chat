@@ -3,6 +3,7 @@ import { AgentDTO, ChatDTO, GptDTO, MessageDTO, SubchatDTO } from './_dto'
 
 export * from './_db'
 export * from './_dto'
+export * from './_gpt'
 export * from './_status'
 
 /**
