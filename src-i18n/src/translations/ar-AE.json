@@ -102,7 +102,7 @@
 			"deletingChats": "سيتم حذف هذه المحادثات نهائياً"
 		}
 	},
-	"userAccount": {
+	"userSettings": {
 		"action": {
 			"manageAccount": "إدارة الحساب",
 			"manageBilling": "إدارة الفواتير"

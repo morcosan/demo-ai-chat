@@ -90,7 +90,7 @@
 			"deletingChats": "Ces conversations seront supprimées définitivement"
 		}
 	},
-	"userAccount": {
+	"userSettings": {
 		"action": {
 			"manageAccount": "Gérer le compte",
 			"manageBilling": "Gérer la facturation"

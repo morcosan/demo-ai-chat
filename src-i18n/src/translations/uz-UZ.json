@@ -90,7 +90,7 @@
 			"deletingChats": "Bu suhbatlar butunlay o'chiriladi"
 		}
 	},
-	"userAccount": {
+	"userSettings": {
 		"action": {
 			"manageAccount": "Hisobni boshqarish",
 			"manageBilling": "To'lovlarni boshqarish"

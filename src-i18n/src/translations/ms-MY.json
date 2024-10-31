@@ -85,7 +85,7 @@
 			"deletingChats": "Perbualan ini akan dipadamkan secara kekal"
 		}
 	},
-	"userAccount": {
+	"userSettings": {
 		"action": {
 			"manageAccount": "Urus akaun",
 			"manageBilling": "Urus pengebilan"

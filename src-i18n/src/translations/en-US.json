@@ -50,6 +50,7 @@
 			"confirmDeleteChats": "Confirm deleting chats",
 			"confirmRenameChat": "Confirm renaming chat",
 			"deleteSelectedChats": "Delete selected chats",
+			"editAgent": "Edit agent",
 			"manageAgents": "Manage agents",
 			"manageChats": "Manage chats",
 			"openChat": "Open chat",
@@ -92,7 +93,7 @@
 			"deletingChats": "These chats will be permanently deleted"
 		}
 	},
-	"userAccount": {
+	"userSettings": {
 		"action": {
 			"manageAccount": "Manage account",
 			"manageBilling": "Manage billing"

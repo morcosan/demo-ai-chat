@@ -19,13 +19,13 @@ const AccountPage = () => {
 	const legendClass = cx('mb-sm-3 text-size-lg text-color-text-subtle')
 
 	const publicFields: Field<keyof Account>[] = [
-		{ key: 'name', label: t('userAccount.label.name') },
-		{ key: 'avatar', label: t('userAccount.label.avatar') },
+		{ key: 'name', label: t('userSettings.label.name') },
+		{ key: 'avatar', label: t('userSettings.label.avatar') },
 	]
 
 	const privateFields: Field<keyof Account>[] = [
-		{ key: 'email', label: t('userAccount.label.email') },
-		{ key: 'phone', label: t('userAccount.label.phone'), optional: true },
+		{ key: 'email', label: t('userSettings.label.email') },
+		{ key: 'phone', label: t('userSettings.label.phone'), optional: true },
 	]
 
 	const canSave =
@@ -38,9 +38,9 @@ const AccountPage = () => {
 
 	const onSubmit = useCallback(async () => {
 		const validation = {
-			name: !payload.name.trim() ? t('userAccount.error.name') : '',
-			avatar: !payload.avatar.trim() ? t('userAccount.error.avatar') : '',
-			email: !payload.email.trim() ? t('userAccount.error.email') : '',
+			name: !payload.name.trim() ? t('userSettings.error.name') : '',
+			avatar: !payload.avatar.trim() ? t('userSettings.error.avatar') : '',
+			email: !payload.email.trim() ? t('userSettings.error.email') : '',
 		}
 		setFeedback(validation)
 
@@ -63,7 +63,7 @@ const AccountPage = () => {
 		<AppLayout blank>
 			<PageHeader
 				breadcrumb={{ href: '/settings', title: t('core.label.settings') }}
-				slotTitle={t('userAccount.label.account')}
+				slotTitle={t('userSettings.label.account')}
 			/>
 
 			{/* ERRORS */}
@@ -72,7 +72,7 @@ const AccountPage = () => {
 			{/* FIELDS */}
 			<form className="mt-sm-1">
 				<fieldset className="flex flex-col gap-y-sm-1">
-					<legend className={legendClass}>{t('userAccount.label.public')}</legend>
+					<legend className={legendClass}>{t('userSettings.label.public')}</legend>
 
 					<div className="flex flex-col-reverse items-center gap-sm-1 sm:flex-row">
 						<div className="flex w-full flex-col gap-y-sm-1 sm:flex-1">
@@ -97,7 +97,7 @@ const AccountPage = () => {
 				</fieldset>
 
 				<fieldset className="mt-md-2 flex flex-col gap-y-sm-1">
-					<legend className={legendClass}>{t('userAccount.label.private')}</legend>
+					<legend className={legendClass}>{t('userSettings.label.private')}</legend>
 
 					{privateFields.map((field: Field<keyof Account>) => (
 						<DataField

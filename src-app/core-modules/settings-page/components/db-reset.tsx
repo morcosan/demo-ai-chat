@@ -40,7 +40,7 @@ export const DbReset = () => {
 					<WarningSvg className="mr-xs-4 w-xs-8" />
 					New random data will be created
 				</div>
-				<div className="mt-xs-2 flex items-center">Data = account + chats + messages</div>
+				<div className="mt-xs-2 flex items-center">Data = account + agent + chats + messages</div>
 			</Modal>
 
 			{/* LOADING OVERLAY */}

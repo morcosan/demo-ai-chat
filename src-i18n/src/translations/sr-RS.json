@@ -95,7 +95,7 @@
 			"deletingChats": "Ови разговори ће бити трајно обрисани"
 		}
 	},
-	"userAccount": {
+	"userSettings": {
 		"action": {
 			"manageAccount": "Управљај налогом",
 			"manageBilling": "Управљај наплатом"

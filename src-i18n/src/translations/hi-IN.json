@@ -90,7 +90,7 @@
 			"deletingChats": "ये चैट स्थायी रूप से हटा दी जाएंगी"
 		}
 	},
-	"userAccount": {
+	"userSettings": {
 		"action": {
 			"manageAccount": "खाता प्रबंधित करें",
 			"manageBilling": "बिलिंग प्रबंधित करें"

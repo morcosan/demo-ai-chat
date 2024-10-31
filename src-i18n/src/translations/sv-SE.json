@@ -90,7 +90,7 @@
 			"deletingChats": "Dessa konversationer kommer att raderas permanent"
 		}
 	},
-	"userAccount": {
+	"userSettings": {
 		"action": {
 			"manageAccount": "Hantera konto",
 			"manageBilling": "Hantera fakturering"

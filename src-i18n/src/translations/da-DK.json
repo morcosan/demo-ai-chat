@@ -90,7 +90,7 @@
 			"deletingChats": "Disse chats vil blive slettet permanent"
 		}
 	},
-	"userAccount": {
+	"userSettings": {
 		"action": {
 			"manageAccount": "Administrer konto",
 			"manageBilling": "Administrer fakturering"

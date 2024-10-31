@@ -90,7 +90,7 @@
 			"deletingChats": "Бұл чаттар біржола жойылады"
 		}
 	},
-	"userAccount": {
+	"userSettings": {
 		"action": {
 			"manageAccount": "Есептік жазбаны басқару",
 			"manageBilling": "Төлемдерді басқару"

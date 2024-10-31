@@ -90,7 +90,7 @@
 			"deletingChats": "Тези чатове ще бъдат изтрити завинаги"
 		}
 	},
-	"userAccount": {
+	"userSettings": {
 		"action": {
 			"manageAccount": "Управление на профила",
 			"manageBilling": "Управление на плащанията"

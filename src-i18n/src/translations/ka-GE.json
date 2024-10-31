@@ -90,7 +90,7 @@
 			"deletingChats": "ეს ჩატები სამუდამოდ წაიშლება"
 		}
 	},
-	"userAccount": {
+	"userSettings": {
 		"action": {
 			"manageAccount": "ანგარიშის მართვა",
 			"manageBilling": "გადახდების მართვა"

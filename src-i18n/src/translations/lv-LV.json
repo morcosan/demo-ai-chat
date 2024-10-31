@@ -92,7 +92,7 @@
 			"deletingChats": "Šīs sarunas tiks neatgriezeniski dzēstas"
 		}
 	},
-	"userAccount": {
+	"userSettings": {
 		"action": {
 			"manageAccount": "Pārvaldīt kontu",
 			"manageBilling": "Pārvaldīt rēķinus"

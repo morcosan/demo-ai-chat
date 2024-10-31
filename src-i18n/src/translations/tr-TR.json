@@ -90,7 +90,7 @@
 			"deletingChats": "Bu sohbetler kalıcı olarak silinecek"
 		}
 	},
-	"userAccount": {
+	"userSettings": {
 		"action": {
 			"manageAccount": "Hesabı yönet",
 			"manageBilling": "Faturalandırmayı yönet"

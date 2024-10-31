@@ -100,7 +100,7 @@
 			"deletingChats": "Ti pogovori bodo trajno izbrisani"
 		}
 	},
-	"userAccount": {
+	"userSettings": {
 		"action": {
 			"manageAccount": "Upravljaj račun",
 			"manageBilling": "Upravljaj zaračunavanje"

@@ -17,12 +17,12 @@ const AccountPage = () => {
 	const [successful, setSuccessful] = useState(false)
 
 	const fields: Field<keyof Billing>[] = [
-		{ key: 'name', label: t('userAccount.label.legalName') },
-		{ key: 'address', label: t('userAccount.label.address'), props: { minRows: 2, maxRows: 4, multiline: true } },
-		{ key: 'city', label: t('userAccount.label.city') },
-		{ key: 'country', label: t('userAccount.label.country') },
-		{ key: 'postalCode', label: t('userAccount.label.postalCode') },
-		{ key: 'vatNumber', label: t('userAccount.label.vatNumber'), optional: true },
+		{ key: 'name', label: t('userSettings.label.legalName') },
+		{ key: 'address', label: t('userSettings.label.address'), props: { minRows: 2, maxRows: 4, multiline: true } },
+		{ key: 'city', label: t('userSettings.label.city') },
+		{ key: 'country', label: t('userSettings.label.country') },
+		{ key: 'postalCode', label: t('userSettings.label.postalCode') },
+		{ key: 'vatNumber', label: t('userSettings.label.vatNumber'), optional: true },
 	]
 
 	const canSave =
@@ -37,11 +37,11 @@ const AccountPage = () => {
 
 	const onSubmit = useCallback(async () => {
 		const validation = {
-			name: !payload.name.trim() ? t('userAccount.error.legalName') : '',
-			address: !payload.address.trim() ? t('userAccount.error.address') : '',
-			city: !payload.city.trim() ? t('userAccount.error.city') : '',
-			country: !payload.country.trim() ? t('userAccount.error.country') : '',
-			postalCode: !payload.postalCode.trim() ? t('userAccount.error.postalCode') : '',
+			name: !payload.name.trim() ? t('userSettings.error.legalName') : '',
+			address: !payload.address.trim() ? t('userSettings.error.address') : '',
+			city: !payload.city.trim() ? t('userSettings.error.city') : '',
+			country: !payload.country.trim() ? t('userSettings.error.country') : '',
+			postalCode: !payload.postalCode.trim() ? t('userSettings.error.postalCode') : '',
 		}
 		setFeedback(validation)
 
@@ -64,7 +64,7 @@ const AccountPage = () => {
 		<AppLayout blank>
 			<PageHeader
 				breadcrumb={{ href: '/settings', title: t('core.label.settings') }}
-				slotTitle={t('userAccount.label.billing')}
+				slotTitle={t('userSettings.label.billing')}
 			/>
 
 			{/* ERRORS */}

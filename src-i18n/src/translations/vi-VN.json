@@ -85,7 +85,7 @@
 			"deletingChats": "Những cuộc trò chuyện này sẽ bị xóa vĩnh viễn"
 		}
 	},
-	"userAccount": {
+	"userSettings": {
 		"action": {
 			"manageAccount": "Quản lý tài khoản",
 			"manageBilling": "Quản lý thanh toán"

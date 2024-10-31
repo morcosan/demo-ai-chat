@@ -85,7 +85,7 @@
 			"deletingChats": "การสนทนาเหล่านี้จะถูกลบอย่างถาวร"
 		}
 	},
-	"userAccount": {
+	"userSettings": {
 		"action": {
 			"manageAccount": "จัดการบัญชี",
 			"manageBilling": "จัดการการเรียกเก็บเงิน"

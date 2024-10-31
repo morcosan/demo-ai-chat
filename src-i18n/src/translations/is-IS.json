@@ -90,7 +90,7 @@
 			"deletingChats": "Þessum spjöllum verður eytt varanlega"
 		}
 	},
-	"userAccount": {
+	"userSettings": {
 		"action": {
 			"manageAccount": "Stjórna reikningi",
 			"manageBilling": "Stjórna reikningum"

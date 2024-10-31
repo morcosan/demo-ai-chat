@@ -90,7 +90,7 @@
 			"deletingChats": "Nämä keskustelut poistetaan pysyvästi"
 		}
 	},
-	"userAccount": {
+	"userSettings": {
 		"action": {
 			"manageAccount": "Hallitse tiliä",
 			"manageBilling": "Hallitse laskutusta"

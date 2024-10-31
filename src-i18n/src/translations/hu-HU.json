@@ -90,7 +90,7 @@
 			"deletingChats": "Ezek a beszélgetések véglegesen törlésre kerülnek"
 		}
 	},
-	"userAccount": {
+	"userSettings": {
 		"action": {
 			"manageAccount": "Fiók kezelése",
 			"manageBilling": "Számlázás kezelése"
