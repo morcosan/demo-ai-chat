@@ -7,11 +7,14 @@ export const DbReset = () => {
 	const [showsConfirm, setShowsConfirm] = useState(false)
 	const [showsLoading, setShowsLoading] = useState(false)
 
-	const onConfirmRebuild = async () => {
+	const onConfirmRebuild = () => {
 		setShowsLoading(true)
 
-		const success = await API.resetDatabase()
-		success && location.reload()
+		// Page reload blocks react rendering
+		wait(100).then(async () => {
+			const success = await API.resetDatabase()
+			success && location.reload()
+		})
 	}
 
 	return (

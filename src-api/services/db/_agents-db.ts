@@ -37,7 +37,7 @@ const resetDbAgents = () => {
 		...GPTs.map((gpt: DbGPT, index: number) => ({
 			id: index,
 			gptId: gpt.id,
-			name: gpt.name,
+			name: gpt.name.replace('GPT', 'AI'),
 			avatar: gpt.avatar,
 			desc: '',
 			setup: '',
@@ -45,7 +45,7 @@ const resetDbAgents = () => {
 		...randomArray(0, 50).map((_, index: number) => ({
 			id: index + GPTs.length,
 			gptId: randomFromArray(GPTs),
-			name: randomText(randomInt(1, 30)) + ' GPT',
+			name: randomText(randomInt(1, 30)) + ' AI',
 			avatar: randomImageHD(),
 			desc: randomLongText(randomInt(0, 5)),
 			setup: randomLongText(randomInt(0, 10)),
