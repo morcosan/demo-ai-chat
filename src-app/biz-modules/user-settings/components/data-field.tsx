@@ -21,11 +21,9 @@ export const DataField = <T,>({ field, value, error, disabled, onChange }: Props
 
 	return (
 		<div className="flex flex-wrap gap-x-xs-9">
-			<div className="flex h-fit items-center pb-xs-2 pl-xs-0 sm:min-h-field-h-md sm:w-lg-0 sm:p-0">
-				<FieldLabel fieldId={`field-${field.key}`} optional={field.optional} multiline={isViewportMinSM}>
-					{field.label}
-				</FieldLabel>
-			</div>
+			<FieldLabel fieldId={`field-${field.key}`} optional={field.optional} multiline={isViewportMinSM}>
+				{field.label}
+			</FieldLabel>
 
 			<div className="w-full sm:w-fit sm:flex-1">
 				<TextField
