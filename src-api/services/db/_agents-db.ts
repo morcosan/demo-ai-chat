@@ -1,5 +1,5 @@
 import { DbAgent, DbGPT } from '@api/types'
-import { COOKIE_KEY } from '@utils/release'
+import { COOKIE_KEY, randomArray, randomFromArray, randomImageHD, randomText } from '@utils/release'
 
 const GPTs: DbGPT[] = [
 	{ id: 0, name: 'Lorem Ipsum GPT', avatar: ENV__ROOT_URL_PATH + '/avatars/lorem.svg', desc: '' },
@@ -25,16 +25,24 @@ const initAgentsDB = () => {
 }
 
 const resetDbAgents = () => {
-	setDbAgents(
-		GPTs.map((gpt: DbGPT) => ({
-			id: gpt.id,
+	setDbAgents([
+		...GPTs.map((gpt: DbGPT, index: number) => ({
+			id: index,
 			gptId: gpt.id,
 			name: gpt.name,
 			avatar: gpt.avatar,
 			desc: '',
 			setup: '',
-		}))
-	)
+		})),
+		...randomArray(0, 50).map((_, index: number) => ({
+			id: index + GPTs.length,
+			gptId: randomFromArray(GPTs),
+			name: randomText(10),
+			avatar: randomImageHD(),
+			desc: '',
+			setup: '',
+		})),
+	])
 }
 
 export { getDbAgents, GPTs, initAgentsDB, resetDbAgents, setDbAgents }

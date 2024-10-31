@@ -14,6 +14,7 @@ export const randomFalse = () => randomInt(1, 5) === 1 // 80% chance to be false
 
 // Array
 export const randomArray = (min: number, max?: number) => Array.from(Array(randomInt(min, max || min)))
+export const randomFromArray = (array: any[]) => array[randomInt(0, array.length - 1)]
 
 // String
 export const randomText = (words: number = 5) => capitalize(faker.lorem.words(words))

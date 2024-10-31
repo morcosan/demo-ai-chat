@@ -10,7 +10,7 @@ export const AgentItem = ({ agent, onHideNavMenu }: Props) => {
 	return (
 		<li>
 			<Button
-				linkHref={`/chat/${agent.id}`}
+				linkHref={`/chat?agent=${agent.id}`}
 				variant="item-text-default"
 				highlight="default"
 				tooltip={agent.name}
