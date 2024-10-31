@@ -1,14 +1,13 @@
-import { Agent } from '@app/biz-modules/ai-chat/api'
-import { EditSvg } from '@ds/release'
-import { IconButton } from '@ds/src/components/icon-button'
-import { useUiTheme } from '@ds/src/systems/ui-theme'
+import { Agent, GPT } from '@app/biz-modules/ai-chat/api'
+import { EditSvg, IconButton, useUiTheme } from '@ds/release'
 
 interface Props extends ReactProps {
 	agent: Agent
+	gpt: GPT
 	onClickEdit?(): void
 }
 
-export const AgentConfigItem = ({ agent, onClickEdit }: Props) => {
+export const AgentConfigItem = ({ agent, gpt, onClickEdit }: Props) => {
 	const { $lineHeight, $fontSize } = useUiTheme()
 
 	const isGhost = agent.loading || agent.deleting
@@ -24,18 +23,35 @@ export const AgentConfigItem = ({ agent, onClickEdit }: Props) => {
 				isGhost && 'before:opacity-30'
 			)}
 		>
-			<img src={agent.avatar} alt="" className="h-sm-8 w-sm-8 rounded-full" />
+			{/* AVATAR */}
+			<img src={agent.avatar} alt="" className="h-sm-7 w-sm-7 rounded-full" />
 
-			<div className="flex flex-1 flex-col gap-xs-2">
-				<div className="line-clamp-1 leading-1">{agent.name}</div>
+			{/* BODY */}
+			<div className="flex flex-1 flex-wrap items-center gap-x-xs-9 gap-y-xs-2">
+				{/* TITLE */}
+				<div className="w-full leading-sm lg:flex-1">
+					{/* AGENT */}
+					<div className="mb-xs-3 line-clamp-1 font-weight-md">{agent.name}</div>
+
+					{/* GPT */}
+					<div className="flex items-center gap-xs-2">
+						<img src={gpt.avatar} alt="" className="h-[1rem] w-[1rem] rounded-full" />
+						<div className="line-clamp-1 flex-1 text-size-xs text-color-text-subtle">{gpt.name}</div>
+					</div>
+				</div>
+
+				{/* DESCRIPTION */}
 				<div
-					className={cx('line-clamp-2 text-size-xs text-color-text-subtle', !description && 'hidden')}
-					style={{ maxHeight: `calc(2 * ${$lineHeight['md']} * ${$fontSize['xs']})` }}
+					className={cx(
+						'line-clamp-3 w-full text-size-xs text-color-text-subtle lg:w-lg-9',
+						!description && 'hidden'
+					)}
 				>
 					{description}
 				</div>
 			</div>
 
+			{/* ACTIONS */}
 			<IconButton tooltip={t('aiChat.action.editAgent')} className="-mr-xs-2" onClick={onClickEdit}>
 				<EditSvg className="w-xs-6" />
 			</IconButton>

@@ -57,6 +57,7 @@
 			"openSubchat_other": "Open subchat ({count} messages)",
 			"openSubchat_zero": "Create subchat",
 			"sendMessage": "Send message",
+			"showMoreAgents": "Show more agents",
 			"showMoreChats": "Show more chats",
 			"showSubchats": "Show subchats ({count})",
 			"startSearching_one": "Type at least {count} character",
