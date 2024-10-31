@@ -1,4 +1,5 @@
-import { TextField, TextFieldProps, WarningSvg } from '@ds/release'
+import { FieldError, FieldLabel } from '@app/library/release'
+import { TextField, TextFieldProps, useUiViewport } from '@ds/release'
 
 interface Props<T> extends ReactProps {
 	field: Field<T>
@@ -16,21 +17,14 @@ export interface Field<T> {
 }
 
 export const DataField = <T,>({ field, value, error, disabled, onChange }: Props<T>) => {
+	const { isViewportMinSM } = useUiViewport()
+
 	return (
 		<div className="flex flex-wrap gap-x-xs-9">
 			<div className="flex h-fit items-center pb-xs-2 pl-xs-0 sm:min-h-field-h-md sm:w-lg-0 sm:p-0">
-				<label htmlFor={`field-${field.key}`} style={{ wordBreak: 'break-word' }}>
+				<FieldLabel fieldId={`field-${field.key}`} optional={field.optional} multiline={isViewportMinSM}>
 					{field.label}
-					{field.optional ? (
-						<span className="ml-xs-2 text-size-xs lowercase text-color-text-subtle sm:ml-0 sm:block">
-							{t('core.label.optionalField')}
-						</span>
-					) : (
-						<span className="ml-xs-3 text-color-danger" aria-label={t('core.label.requiredField')}>
-							*
-						</span>
-					)}
-				</label>
+				</FieldLabel>
 			</div>
 
 			<div className="w-full sm:w-fit sm:flex-1">
@@ -44,13 +38,7 @@ export const DataField = <T,>({ field, value, error, disabled, onChange }: Props
 					{...(field.props || {})}
 					onChange={onChange}
 				/>
-
-				{Boolean(error) && (
-					<div className="flex items-center text-size-sm leading-1 text-color-danger">
-						<WarningSvg className="mr-xs-2 w-xs-6" />
-						{error}
-					</div>
-				)}
+				<FieldError error={error} />
 			</div>
 		</div>
 	)
