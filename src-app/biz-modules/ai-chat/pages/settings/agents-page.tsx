@@ -1,22 +1,34 @@
+import { AgentEditModal } from '@app/biz-modules/ai-chat/components/agent-edit-modal'
 import { AppLayout } from '@app/layouts/app-layout'
 import { LoadingText, PageHeader } from '@app/library/release'
 import { Button } from '@ds/release'
-import { useMemo } from 'react'
+import { useMemo, useState } from 'react'
 import { Agent, GPT } from '../../api'
 import { AgentConfigItem } from '../../components/items/agent-config-item'
 import { useAiChatAgents } from '../../state'
 
 const AgentsPage = () => {
 	const { gpts, agents, agentsPagination, agentsLoading, canLoadAgents, loadMoreAgents } = useAiChatAgents()
+	const [agentToEdit, setAgentToEdit] = useState<Agent | null>(null)
+	const [showsEdit, setShowsEdit] = useState(false)
 
 	const getGPT = (agent: Agent) => gpts.find((gpt: GPT) => gpt.id === agent.gptId)
+
+	const onClickEdit = (agent: Agent) => {
+		setAgentToEdit(agent)
+		setShowsEdit(true)
+	}
+
+	const onSubmitEdit = () => {}
 
 	const slotAgents = useMemo(
 		() => (
 			<ul className="mt-xs-5 flex flex-col gap-xs-4">
 				{agents.map((agent: Agent) => {
 					const gpt = getGPT(agent)
-					return gpt ? <AgentConfigItem key={agent.id} agent={agent} gpt={gpt} /> : null
+					if (!gpt) return null
+
+					return <AgentConfigItem key={agent.id} agent={agent} gpt={gpt} onClickEdit={() => onClickEdit(agent)} />
 				})}
 			</ul>
 		),
@@ -56,6 +68,15 @@ const AgentsPage = () => {
 					)}
 				</div>
 			)}
+
+			{/* EDIT MODAL */}
+			<AgentEditModal
+				agent={agentToEdit}
+				opened={showsEdit}
+				onClose={() => setShowsEdit(false)}
+				onClosed={() => setAgentToEdit(null)}
+				onSubmit={onSubmitEdit}
+			/>
 		</AppLayout>
 	)
 }

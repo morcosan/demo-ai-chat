@@ -4,7 +4,7 @@ import { Agent, GPT, GPT_ID__LOREM_IPSUM, GPT_ID__RAMMUS } from '../../api'
 interface Props extends ReactProps {
 	agent: Agent
 	gpt: GPT
-	onClickEdit?(): void
+	onClickEdit(): void
 }
 
 export const AgentConfigItem = ({ agent, gpt, onClickEdit }: Props) => {
