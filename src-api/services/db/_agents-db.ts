@@ -1,4 +1,4 @@
-import { DbAgent, DbGPT, GPT_ID__LOREM_IPSUM, GPT_ID__RAMMUS } from '@api/types'
+import { DbAgent, DbGPT, GPT_ID__LOREM_IPSUM, GPT_ID__RAMMUS, UI_TAG__GPT_DESCRIPTION } from '@api/types'
 import {
 	COOKIE_KEY,
 	randomArray,
@@ -49,7 +49,7 @@ const resetDbAgents = () => {
 			gptId: gpt.id,
 			name: gpt.name.replace('GPT', 'AI'),
 			avatar: gpt.avatar,
-			desc: '',
+			desc: UI_TAG__GPT_DESCRIPTION,
 			setup: '',
 		})),
 		...randomArray(0, 50).map((_, index: number) => ({

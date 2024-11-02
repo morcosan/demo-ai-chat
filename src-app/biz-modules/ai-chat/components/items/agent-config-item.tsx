@@ -1,5 +1,5 @@
 import { EditSvg, IconButton } from '@ds/release'
-import { Agent, GPT, GPT_ID__LOREM_IPSUM, GPT_ID__RAMMUS } from '../../api'
+import { Agent, GPT, GPT_ID__LOREM_IPSUM, GPT_ID__RAMMUS, UI_TAG__GPT_DESCRIPTION } from '../../api'
 
 interface Props extends ReactProps {
 	agent: Agent
@@ -11,10 +11,11 @@ export const AgentConfigItem = ({ agent, gpt, onClickEdit }: Props) => {
 	const isGhost = agent.loading || agent.deleting
 
 	const description = (() => {
-		if (agent.desc) return agent.desc
-		if (gpt.id === GPT_ID__LOREM_IPSUM) return t('aiChat.description.loremIpsumGPT')
-		if (gpt.id === GPT_ID__RAMMUS) return t('aiChat.description.rammusGPT')
-		return ''
+		if (agent.desc === UI_TAG__GPT_DESCRIPTION) {
+			if (gpt.id === GPT_ID__LOREM_IPSUM) return t('aiChat.description.loremIpsumGPT')
+			if (gpt.id === GPT_ID__RAMMUS) return t('aiChat.description.rammusGPT')
+		}
+		return agent.desc
 	})()
 
 	return (
