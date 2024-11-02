@@ -1,5 +1,6 @@
 import {
 	AgentsApiData,
+	AgentsApiPayload,
 	ChatsApiData,
 	ChatsApiPayload,
 	ChatsApiQuery,
@@ -17,6 +18,7 @@ import { mapDtoToAgent, mapDtoToChat, mapDtoToGPT, mapDtoToMessage, mapDtoToSubc
 import { AgentListing, ChatListing, GptListing, MessageListing, SubchatListing } from './_types'
 
 export { UI_TAG__GPT_DESCRIPTION } from '@api/types'
+export type { AgentsApiPayload } from '@app/api'
 export * from './_gpt'
 export * from './_types'
 
@@ -39,6 +41,16 @@ export const API = {
 			search,
 		}
 		const resp = await mainAPI.get<AgentsApiData>('/api/agents', query)
+
+		return resp.status === STATUS__SUCCESS && resp.data
+			? { agents: resp.data.items.map(mapDtoToAgent), count: resp.data.count }
+			: { agents: [], count: 0 }
+	},
+
+	async updateAgent(payload: AgentsApiPayload): Promise<AgentListing> {
+		const resp = await mainAPI.patch<AgentsApiData>('/api/agents', payload)
+
+		clearDataCache('/api/agents')
 
 		return resp.status === STATUS__SUCCESS && resp.data
 			? { agents: resp.data.items.map(mapDtoToAgent), count: resp.data.count }

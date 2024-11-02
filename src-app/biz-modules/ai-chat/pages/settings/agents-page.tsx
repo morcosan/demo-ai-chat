@@ -19,8 +19,6 @@ const AgentsPage = () => {
 		setShowsEdit(true)
 	}
 
-	const onSubmitEdit = () => {}
-
 	const slotAgents = useMemo(
 		() => (
 			<ul className="mt-xs-5 flex flex-col gap-xs-4">
@@ -75,7 +73,6 @@ const AgentsPage = () => {
 				opened={showsEdit}
 				onClose={() => setShowsEdit(false)}
 				onClosed={() => setAgentToEdit(null)}
-				onSubmit={onSubmitEdit}
 			/>
 		</AppLayout>
 	)

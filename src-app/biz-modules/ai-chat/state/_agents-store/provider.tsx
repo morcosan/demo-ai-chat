@@ -1,6 +1,6 @@
 import { uniqBy } from 'lodash'
 import { useEffect, useMemo, useState } from 'react'
-import { Agent, API, GPT } from '../../api'
+import { Agent, AgentsApiPayload, API, GPT } from '../../api'
 import { AgentsContext, Store } from './context'
 
 export const AgentsProvider = ({ children }: ReactProps) => {
@@ -34,6 +34,28 @@ export const AgentsProvider = ({ children }: ReactProps) => {
 		setAgentsLoading(false)
 	}
 
+	const updateAgent = async (payload: AgentsApiPayload): Promise<Agent | null> => {
+		const index = agents.findIndex((agent: Agent) => agent.id === payload.agentId)
+		if (index > -1) {
+			agents[index].loading = true
+		}
+		setAgents([...agents])
+
+		const listing = await API.updateAgent(payload)
+
+		const newAgent = listing.agents[0]
+		if (newAgent) {
+			const index = agents.findIndex((agent: Agent) => agent.id === payload.agentId)
+			if (index > -1) {
+				agents[index] = newAgent
+				setAgents([...agents])
+				return newAgent
+			}
+		}
+
+		return null
+	}
+
 	useEffect(() => {
 		loadGPTs()
 		!agentsPagination.page && loadMoreAgents()
@@ -48,6 +70,7 @@ export const AgentsProvider = ({ children }: ReactProps) => {
 			agentsLoading,
 			canLoadAgents,
 			loadMoreAgents,
+			updateAgent,
 		}),
 		[gpts, gptsLoading, agents, agentsPagination, agentsLoading]
 	)

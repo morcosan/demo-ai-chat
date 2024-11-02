@@ -1,5 +1,5 @@
 import { createContext } from 'react'
-import { Agent, GPT } from '../../api'
+import { Agent, AgentsApiPayload, GPT } from '../../api'
 
 export interface Store {
 	gpts: GPT[]
@@ -9,6 +9,7 @@ export interface Store {
 	agentsLoading: ListLoading
 	canLoadAgents: boolean
 	loadMoreAgents(): void
+	updateAgent(payload: AgentsApiPayload): Promise<Agent | null>
 }
 
 export const AgentsContext = createContext<Store>({
@@ -19,4 +20,5 @@ export const AgentsContext = createContext<Store>({
 	agentsLoading: false,
 	canLoadAgents: false,
 	loadMoreAgents: () => {},
+	updateAgent: async () => null,
 })

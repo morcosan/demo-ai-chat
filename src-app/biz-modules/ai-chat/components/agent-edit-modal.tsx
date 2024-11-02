@@ -1,5 +1,5 @@
 import { useAiChatAgents } from '@app/biz-modules/ai-chat/state'
-import { FieldError, FieldLabel } from '@app/library/release'
+import { ErrorSummary, FieldError, FieldLabel } from '@app/library/release'
 import { Button, Modal, TextField } from '@ds/release'
 import { useEffect, useState } from 'react'
 import { Agent, GPT } from '../api'
@@ -9,20 +9,42 @@ interface Props {
 	opened: boolean
 	onClose(): void
 	onClosed(): void
-	onSubmit(): void
 }
 
 const AGENT_EMPTY: Agent = { id: 0, gptId: 0, name: '', avatar: '', desc: '', setup: '' }
 
-export const AgentEditModal = ({ agent, opened, onClose, onClosed, onSubmit }: Props) => {
-	const { gpts } = useAiChatAgents()
-	const [payload, setPayload] = useState<FormPayload<Agent>>(agent || AGENT_EMPTY)
+export const AgentEditModal = ({ agent, opened, onClose, onClosed }: Props) => {
+	const { gpts, updateAgent } = useAiChatAgents()
+	const [payload, setPayload] = useState<Agent>(agent || AGENT_EMPTY)
 	const [feedback, setFeedback] = useState<FormPayload<Agent>>(AGENT_EMPTY)
 
 	const gpt = gpts.find((gpt: GPT) => gpt.id === agent?.gptId)
 
+	const hasErrors = (errors: object) => Object.values(errors).some((value: string) => value)
+
+	const onSubmit = async () => {
+		const validation = {
+			name: !payload.name.trim() ? t('aiChat.error.agentName') : '',
+			avatar: !payload.avatar.trim() ? t('aiChat.error.agentAvatar') : '',
+		}
+		setFeedback(validation)
+
+		if (!hasErrors(validation)) {
+			const success = await updateAgent({
+				agentId: payload.id,
+				gptId: payload.gptId,
+				name: payload.name,
+				avatar: payload.avatar,
+				desc: payload.desc,
+				setup: payload.setup,
+			})
+			success && onClose()
+		}
+	}
+
 	useEffect(() => {
 		agent && setPayload(agent)
+		setFeedback(AGENT_EMPTY)
 	}, [agent])
 
 	return agent && gpt ? (
@@ -31,13 +53,16 @@ export const AgentEditModal = ({ agent, opened, onClose, onClosed, onSubmit }: P
 			width="lg"
 			slotTitle={t('aiChat.action.editAgent')}
 			slotButtons={
-				<Button variant="solid-primary" onClick={onSubmit}>
+				<Button variant="solid-primary" loading={agent.loading} onClick={onSubmit}>
 					{t('core.action.saveChanges')}
 				</Button>
 			}
 			onClose={onClose}
 			onClosed={onClosed}
 		>
+			{/* ERRORS */}
+			{hasErrors(feedback) && <ErrorSummary errors={feedback} />}
+
 			<div className="flex flex-wrap gap-x-sm-4 gap-y-sm-3">
 				{/* LEFT */}
 				<div className="flex min-w-xl-0 flex-1 flex-col gap-sm-3">
@@ -57,7 +82,7 @@ export const AgentEditModal = ({ agent, opened, onClose, onClosed, onSubmit }: P
 						</div>
 
 						<div className="ml-xs-6 mt-xs-6">
-							<img src={payload.avatar} alt="" className="h-sm-8 w-sm-8 rounded-full bg-color-bg-field" />
+							<img src={payload.avatar} alt="" className="h-sm-8 w-sm-8 rounded-full" />
 						</div>
 					</div>
 

@@ -75,6 +75,14 @@ export interface MessagesApiData {
  */
 export interface AccountApiPayload extends ApiPayload, Partial<DbAccount> {}
 export interface BillingApiPayload extends ApiPayload, Partial<DbBilling> {}
+export interface AgentsApiPayload extends ApiPayload {
+	agentId?: number
+	gptId?: number
+	name?: string
+	avatar?: string
+	desc?: string
+	setup?: string
+}
 export interface ChatsApiPayload extends ApiPayload {
 	chatId?: number
 	title?: string
