@@ -153,12 +153,9 @@ export const AgentEditModal = ({ agent, opened, onClose, onClosed }: Props) => {
 							options={gpts}
 							keyLabel="name"
 							keyValue="id"
-							ariaDescription={feedback.name ? `${t('core.label.errors')}: ${feedback.name}` : ''}
 							disabled={agent.loading}
-							invalid={Boolean(feedback.name)}
-							onChange={(name: string) => setPayload({ ...payload, name })}
+							onChange={(gptId: number) => setPayload({ ...payload, gptId })}
 						/>
-						<FieldError error={feedback.name} />
 					</div>
 
 					{/* SETUP */}

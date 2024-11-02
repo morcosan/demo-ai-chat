@@ -18,6 +18,9 @@
 		"description": {
 			"noChanges": "There are no changes"
 		},
+		"error": {
+			"nothingFound": "Nothing found for \"{search}\""
+		},
 		"label": {
 			"apiDocs": "API Docs",
 			"asia": "Asia",

@@ -1,6 +1,6 @@
 import { CheckSvg, ChevronDownSvg, TextFieldSize, useUiTheme } from '@ds/release'
-import { CSS_A11Y_OUTLINE_PROXY, useDefaults } from '@utils/release'
-import { useState } from 'react'
+import { CSS__ABSOLUTE_OVERLAY, CSS_A11Y_OUTLINE_PROXY, Keyboard, useDefaults } from '@utils/release'
+import { useCallback, useRef, useState } from 'react'
 
 interface Props extends ReactProps {
 	id: string
@@ -15,7 +15,7 @@ interface Props extends ReactProps {
 	disabled?: boolean
 	readonly?: boolean
 	invalid?: boolean
-	onChange?(value: unknown, event: ReactChangeEvent): void
+	onChange?(value: unknown): void
 }
 
 export const SelectField = (rawProps: Props) => {
@@ -27,6 +27,8 @@ export const SelectField = (rawProps: Props) => {
 	const { $color, $fontSize, $radius, $spacing, $shadow, $zIndex } = useUiTheme()
 	const [isOpened, setIsOpened] = useState(false)
 	const [search, setSearch] = useState('')
+	const [optionIndex, setOptionIndex] = useState(-1)
+	const inputRef = useRef<HTMLInputElement>(null)
 
 	const isInteractive = !props.readonly && !props.disabled
 	const keyLabel = props.keyLabel as string
@@ -79,7 +81,13 @@ export const SelectField = (rawProps: Props) => {
 
 	const colorBorderDefault = props.readonly ? $color['border-subtle'] : $color['border-default']
 
-	const cssA11yOutline = { '&:not(:has(input:focus))': { outline: 'none' } }
+	const cssA11yOutline: CSS = { '&:not(:has(input:focus))': { outline: 'none' } }
+
+	const cssFieldFocus: CSS = {
+		fill: $color['text-default'],
+		stroke: $color['text-default'],
+		borderColor: props.invalid ? $color['danger'] : $color['border-active'],
+	}
 
 	const cssFieldBase: CSS = {
 		...CSS_A11Y_OUTLINE_PROXY,
@@ -95,13 +103,7 @@ export const SelectField = (rawProps: Props) => {
 
 		'&:hover': isInteractive ? { borderColor: props.invalid ? $color['danger'] : $color['border-hover'] } : {},
 
-		'&:has(input:focus)': isInteractive
-			? {
-					fill: $color['text-default'],
-					stroke: $color['text-default'],
-					borderColor: props.invalid ? $color['danger'] : $color['border-active'],
-				}
-			: {},
+		'&:has(input:focus)': isInteractive ? cssFieldFocus : {},
 	}
 
 	const cssInput: CSS = {
@@ -151,7 +153,7 @@ export const SelectField = (rawProps: Props) => {
 		left: 0,
 		right: 0,
 		display: isOpened ? 'block' : 'none',
-		padding: calcPadding,
+		padding: `${$spacing['xs-2']} ${calcPadding}`,
 		backgroundColor: $color['bg-card'],
 		border: `1px solid ${$color['border-shadow']}`,
 		borderRadius: $radius['sm'],
@@ -159,29 +161,73 @@ export const SelectField = (rawProps: Props) => {
 		zIndex: $zIndex['popup'],
 	}
 	const cssOption: CSS = {
+		position: 'relative',
 		display: 'flex',
 		alignItems: 'center',
 		minHeight: $spacing['button-h-md'],
-		padding: `0 ${calcPaddingTextX}`,
+		padding: `${$spacing['xs-1']} ${calcPaddingTextX}`,
+		borderRadius: $radius['sm'],
+		cursor: 'pointer',
+		overflow: 'hidden',
+
+		'&:hover::before, &[data-hovered=true]::before': {
+			...CSS__ABSOLUTE_OVERLAY,
+			content: '""',
+			backgroundColor: $color['hover-1'],
+			zIndex: 1,
+		},
+
+		'&[aria-selected=true]': {
+			backgroundColor: $color['secondary-bg'],
+			color: $color['secondary-text-default'],
+		},
 	}
 	const cssWrapper: CSS = {
 		position: 'relative',
 	}
 
-	const onOpenMenu = () => {
+	const openMenu = () => {
 		setIsOpened(true)
 		setSearch('')
+		setOptionIndex(-1)
 	}
-	const onCloseMenu = () => setIsOpened(false)
 
-	const onChangeInput = (event: ReactChangeEvent<HTMLInputElement>) => {
-		setSearch(event.target.value)
+	const closeMenu = () => wait(100).then(() => setIsOpened(false)) // Delay is required to allow onClick
+
+	const onSelectOption = (option: any) => {
+		props.onChange?.(option[keyValue])
+		inputRef.current?.focus()
+		closeMenu()
 	}
+
+	const onChangeInput = (event: ReactChangeEvent<HTMLInputElement>) => setSearch(event.target.value)
+
+	const onKeyDown = useCallback(
+		(event: ReactKeyboardEvent) => {
+			const updateFn = (value: number) => (value + options.length) % options.length
+			const isArrowDown = event.key === Keyboard.ARROW_DOWN
+			const isArrowUp = event.key === Keyboard.ARROW_UP
+			const isSubmit = event.key === Keyboard.ENTER || event.key === Keyboard.SPACE
+
+			if (isOpened) {
+				if (isArrowDown) setOptionIndex((value: number) => updateFn(value + 1))
+				if (isArrowUp) setOptionIndex((value: number) => updateFn(value - 1))
+				if (isSubmit && options[optionIndex] !== undefined) {
+					onSelectOption(options[optionIndex])
+					event.preventDefault()
+				}
+			} else {
+				openMenu()
+			}
+		},
+		[options, optionIndex, isOpened]
+	)
 
 	return (
 		<div css={cssWrapper}>
-			<div css={[cssFieldBase, cssHeight, cssRadius]}>
+			<div css={[cssFieldBase, cssHeight, cssRadius, isOpened && cssFieldFocus]}>
 				<input
+					ref={inputRef}
 					id={props.id}
 					type="text"
 					role="combobox"
@@ -194,9 +240,11 @@ export const SelectField = (rawProps: Props) => {
 					aria-autocomplete="list"
 					aria-haspopup="listbox"
 					css={cssInput}
-					onFocus={onOpenMenu}
-					onBlur={onCloseMenu}
+					onFocus={openMenu}
+					onBlur={closeMenu}
 					onChange={onChangeInput}
+					onKeyDown={onKeyDown}
+					onClick={() => !isOpened && openMenu()}
 				/>
 
 				<div css={cssArrow}>
@@ -205,18 +253,22 @@ export const SelectField = (rawProps: Props) => {
 			</div>
 
 			<ul role="listbox" css={cssOptionList}>
-				{options.map((option: any) => (
+				{options.map((option: any, index: number) => (
 					<li
 						key={option[keyValue]}
 						role="option"
 						aria-selected={option[keyValue] === props.value}
+						data-hovered={index === optionIndex}
 						css={cssOption}
+						onClick={() => onSelectOption(option)}
 					>
-						{option[keyLabel]}
+						<span className="flex-1">{option[keyLabel]}</span>
 
-						{option[keyValue] === props.value && <CheckSvg className="ml-auto h-xs-6" />}
+						{option[keyValue] === props.value && <CheckSvg className="h-xs-6" />}
 					</li>
 				))}
+
+				{!options.length && <li css={cssOption}>{t('core.error.nothingFound', { search: search })}</li>}
 			</ul>
 		</div>
 	)
