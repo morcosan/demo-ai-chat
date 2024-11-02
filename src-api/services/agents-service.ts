@@ -1,8 +1,16 @@
-import { AgentsApiData, AgentsApiQuery, ApiResponse, DbAgent, GptApiData, STATUS__SUCCESS } from '../types'
-import { RESP__NOT_FOUND } from '../utilities/network'
+import {
+	AgentsApiData,
+	AgentsApiPayload,
+	AgentsApiQuery,
+	ApiResponse,
+	DbAgent,
+	GptApiData,
+	STATUS__SUCCESS,
+} from '../types'
+import { RESP__INVALID_DATA, RESP__NOT_FOUND } from '../utilities/network'
 import { extractInt, extractIntArray, isGreaterThanZero } from '../utilities/parsers'
 import { isValidPagination } from '../utilities/validators'
-import { getDbAgents, GPTs } from './db'
+import { getDbAgents, GPTs, setDbAgents } from './db'
 
 const DEFAULT_COUNT = 10
 const DEFAULT_PAGE = 1
@@ -46,5 +54,28 @@ export const agentsService = {
 				},
 			}
 		}
+	},
+
+	async patchAgent(payload: AgentsApiPayload): Promise<ApiResponse<AgentsApiData>> {
+		const { avatar, name, desc, setup } = payload
+
+		if (!name || !avatar) return { ...RESP__INVALID_DATA, error: `Name and avatar cannot be empty` }
+
+		const agentId = extractInt(payload.agentId, 0, isGreaterThanZero)
+		const gptId = extractInt(payload.gptId, 0, isGreaterThanZero)
+		const dbAgents = getDbAgents()
+
+		const agent = dbAgents.find((agent: DbAgent) => agent.id === agentId)
+		if (!agent) return { ...RESP__NOT_FOUND, error: `Agent ID ${agentId} not found` }
+
+		agent.gptId = gptId
+		agent.name = name
+		agent.avatar = avatar
+		agent.desc = desc || ''
+		agent.setup = setup || ''
+
+		setDbAgents(dbAgents)
+
+		return { status: STATUS__SUCCESS, data: { count: 1, items: [agent] } }
 	},
 }

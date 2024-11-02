@@ -41,6 +41,7 @@ export const mockAPI = {
 
 		if (path === '/api/account') resp = await accountService.patchAccount(payload)
 		if (path === '/api/billing') resp = await billingService.patchBilling(payload)
+		if (path === '/api/agents') resp = await agentsService.patchAgent(payload)
 		if (path === '/api/chats') resp = await chatsService.patchChat(payload)
 
 		resp = await applyNetwork(resp)

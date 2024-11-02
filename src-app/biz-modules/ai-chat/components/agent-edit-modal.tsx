@@ -33,10 +33,10 @@ export const AgentEditModal = ({ agent, opened, onClose, onClosed }: Props) => {
 			const success = await updateAgent({
 				agentId: payload.id,
 				gptId: payload.gptId,
-				name: payload.name,
-				avatar: payload.avatar,
-				desc: payload.desc,
-				setup: payload.setup,
+				name: payload.name.trim(),
+				avatar: payload.avatar.trim(),
+				desc: payload.desc.trim(),
+				setup: payload.setup.trim(),
 			})
 			success && onClose()
 		}
@@ -61,7 +61,7 @@ export const AgentEditModal = ({ agent, opened, onClose, onClosed }: Props) => {
 			onClosed={onClosed}
 		>
 			{/* ERRORS */}
-			{hasErrors(feedback) && <ErrorSummary errors={feedback} />}
+			{hasErrors(feedback) && <ErrorSummary errors={feedback} className="mb-sm-1" />}
 
 			<div className="flex flex-wrap gap-x-sm-4 gap-y-sm-3">
 				{/* LEFT */}
