@@ -7,13 +7,11 @@ import { useTranslation } from 'react-i18next'
 import { DataField, Field } from '../components/data-field'
 import { ACCOUNT_EMPTY, useUserAccount } from '../state'
 
-type AccountRecord = Partial<Record<keyof Account, string>>
-
 const AccountPage = () => {
 	useTranslation()
 	const { account, accountLoading, updateAccount } = useUserAccount()
 	const [payload, setPayload] = useState<Account>(ACCOUNT_EMPTY)
-	const [feedback, setFeedback] = useState<AccountRecord>(ACCOUNT_EMPTY)
+	const [feedback, setFeedback] = useState<FormPayload<Account>>(ACCOUNT_EMPTY)
 	const [successful, setSuccessful] = useState(false)
 
 	const legendClass = cx('mb-sm-3 text-size-lg text-color-text-subtle')

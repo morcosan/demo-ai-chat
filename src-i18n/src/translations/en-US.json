@@ -67,9 +67,18 @@
 			"loremIpsumGPT": "🤯 Most intelligent model",
 			"rammusGPT": "👍 Best psychological support"
 		},
+		"error": {
+			"agentName": "You must add a name for the agent",
+			"agentAvatar": "You must add an avatar for the agent"
+		},
 		"label": {
-			"chats": "Chats",
+			"agentAvatar": "Agent's avatar",
+			"agentDescription": "Agent's description",
+			"agentGptModel": "Agent's GPT model",
+			"agentName": "Agent's name",
 			"agents": "Agents",
+			"chats": "Chats",
+			"customInstructions": "Custom instructions",
 			"newChat": "New chat",
 			"noChats": "No chats",
 			"noSubchats": "No subchats",

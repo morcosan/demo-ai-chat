@@ -7,13 +7,11 @@ import { Billing } from '../api'
 import { DataField, Field } from '../components/data-field'
 import { BILLING_EMPTY, useUserAccount } from '../state'
 
-type BillingRecord = Partial<Record<keyof Billing, string>>
-
 const AccountPage = () => {
 	useTranslation()
 	const { billing, billingLoading, updateBilling } = useUserAccount()
 	const [payload, setPayload] = useState<Billing>(BILLING_EMPTY)
-	const [feedback, setFeedback] = useState<BillingRecord>(BILLING_EMPTY)
+	const [feedback, setFeedback] = useState<FormPayload<Billing>>(BILLING_EMPTY)
 	const [successful, setSuccessful] = useState(false)
 
 	const fields: Field<keyof Billing>[] = [
