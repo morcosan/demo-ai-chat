@@ -1,5 +1,5 @@
 import { useAiChatAgents } from '@app/biz-modules/ai-chat/state'
-import { ErrorSummary, FieldError, FieldLabel } from '@app/library/release'
+import { ErrorSummary, FieldError, FieldLabel, SelectField } from '@app/library/release'
 import { Button, Modal, TextField } from '@ds/release'
 import { useEffect, useState } from 'react'
 import { Agent, GPT } from '../api'
@@ -143,9 +143,12 @@ export const AgentEditModal = ({ agent, opened, onClose, onClosed }: Props) => {
 					{/* GPT */}
 					<div className="flex flex-col">
 						<FieldLabel fieldId="field-gpt">{t('aiChat.label.agentGptModel')}</FieldLabel>
-						<TextField
+						<SelectField
 							id="field-gpt"
-							value={payload.name}
+							value={payload.gptId}
+							options={gpts}
+							keyLabel="name"
+							keyValue="id"
 							ariaDescription={feedback.name ? `${t('core.label.errors')}: ${feedback.name}` : ''}
 							disabled={agent.loading}
 							invalid={Boolean(feedback.name)}
