@@ -23,7 +23,7 @@ const AccountPage = () => {
 		{ key: 'vatNumber', label: t('userSettings.label.vatNumber'), optional: true },
 	]
 
-	const canSave =
+	const hasChanges =
 		billing.name !== payload.name.trim() ||
 		billing.address !== payload.address.trim() ||
 		billing.city !== payload.city.trim() ||
@@ -34,6 +34,14 @@ const AccountPage = () => {
 	const hasErrors = (errors: object) => Object.values(errors).some((value: string) => value)
 
 	const onSubmit = useCallback(async () => {
+		// Fake success
+		if (!hasChanges) {
+			setFeedback(BILLING_EMPTY)
+			setSuccessful(true)
+			wait(3000).then(() => setSuccessful(false))
+			return
+		}
+
 		const validation = {
 			name: !payload.name.trim() ? t('userSettings.error.legalName') : '',
 			address: !payload.address.trim() ? t('userSettings.error.address') : '',
@@ -85,7 +93,6 @@ const AccountPage = () => {
 			{/* SAVING */}
 			<div className="mt-sm-9">
 				<Button
-					disabled={!canSave}
 					loading={Boolean(billingLoading)}
 					variant="solid-primary"
 					className="w-full sm:w-fit"

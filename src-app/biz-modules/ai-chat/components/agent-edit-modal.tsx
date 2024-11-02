@@ -20,9 +20,22 @@ export const AgentEditModal = ({ agent, opened, onClose, onClosed }: Props) => {
 
 	const gpt = gpts.find((gpt: GPT) => gpt.id === agent?.gptId)
 
+	const hasChanges =
+		!agent ||
+		agent.name !== payload.name.trim() ||
+		agent.avatar !== payload.avatar.trim() ||
+		agent.desc !== payload.desc.trim() ||
+		agent.setup !== payload.setup.trim()
+
 	const hasErrors = (errors: object) => Object.values(errors).some((value: string) => value)
 
 	const onSubmit = async () => {
+		// Fake success
+		if (!hasChanges) {
+			onClose()
+			return
+		}
+
 		const validation = {
 			name: !payload.name.trim() ? t('aiChat.error.agentName') : '',
 			avatar: !payload.avatar.trim() ? t('aiChat.error.agentAvatar') : '',
@@ -53,7 +66,12 @@ export const AgentEditModal = ({ agent, opened, onClose, onClosed }: Props) => {
 			width="lg"
 			slotTitle={t('aiChat.action.editAgent')}
 			slotButtons={
-				<Button variant="solid-primary" loading={agent.loading} onClick={onSubmit}>
+				<Button
+					variant="solid-primary"
+					loading={agent.loading}
+					tooltip={hasChanges ? '' : t('core.description.noChanges')}
+					onClick={onSubmit}
+				>
 					{t('core.action.saveChanges')}
 				</Button>
 			}

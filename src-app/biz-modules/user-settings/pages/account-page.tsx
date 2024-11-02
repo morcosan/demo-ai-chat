@@ -26,7 +26,7 @@ const AccountPage = () => {
 		{ key: 'phone', label: t('userSettings.label.phone'), optional: true },
 	]
 
-	const canSave =
+	const hasChanges =
 		account.name !== payload.name.trim() ||
 		account.avatar !== payload.avatar.trim() ||
 		account.email !== payload.email.trim() ||
@@ -35,6 +35,14 @@ const AccountPage = () => {
 	const hasErrors = (errors: object) => Object.values(errors).some((value: string) => value)
 
 	const onSubmit = useCallback(async () => {
+		// Fake success
+		if (!hasChanges) {
+			setFeedback(ACCOUNT_EMPTY)
+			setSuccessful(true)
+			wait(3000).then(() => setSuccessful(false))
+			return
+		}
+
 		const validation = {
 			name: !payload.name.trim() ? t('userSettings.error.name') : '',
 			avatar: !payload.avatar.trim() ? t('userSettings.error.avatar') : '',
@@ -113,7 +121,6 @@ const AccountPage = () => {
 			{/* SAVING */}
 			<div className="mt-md-2">
 				<Button
-					disabled={!canSave}
 					loading={Boolean(accountLoading)}
 					variant="solid-primary"
 					className="w-full sm:w-fit"

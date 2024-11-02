@@ -15,6 +15,9 @@
 			"selectAll": "Select all",
 			"signOut": "Sign out"
 		},
+		"description": {
+			"noChanges": "There are no changes"
+		},
 		"label": {
 			"apiDocs": "API Docs",
 			"asia": "Asia",
