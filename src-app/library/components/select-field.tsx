@@ -1,4 +1,4 @@
-import { ChevronDownSvg, TextFieldSize, useUiTheme } from '@ds/release'
+import { CheckSvg, ChevronDownSvg, TextFieldSize, useUiTheme } from '@ds/release'
 import { CSS_A11Y_OUTLINE_PROXY, useDefaults } from '@utils/release'
 import { useState } from 'react'
 
@@ -24,13 +24,19 @@ export const SelectField = (rawProps: Props) => {
 		keyValue: 'value',
 		size: 'md',
 	})
-	const { $color, $fontSize, $radius, $spacing } = useUiTheme()
+	const { $color, $fontSize, $radius, $spacing, $shadow, $zIndex } = useUiTheme()
 	const [isOpened, setIsOpened] = useState(false)
 	const [search, setSearch] = useState('')
 
-	const keyword = search.trim().toLowerCase()
-
 	const isInteractive = !props.readonly && !props.disabled
+	const keyLabel = props.keyLabel as string
+	const keyValue = props.keyValue as string
+	const keyword = search.trim().toLowerCase()
+	const selection = (() => {
+		const option = props.options.find((option: any) => option[keyValue] === props.value) as any
+		return option ? option[keyLabel] : ''
+	})()
+	const options = props.options.filter((option: any) => option[keyLabel].toLowerCase().includes(keyword))
 
 	const calcPadding: string = (() => {
 		if (props.size === 'sm') return `calc((${$spacing['field-h-sm']} - ${$spacing['button-h-xs']}) / 2)`
@@ -108,7 +114,7 @@ export const SelectField = (rawProps: Props) => {
 		maxHeight: `calc(100% + 2 * ${calcPadding})`,
 		marginTop: `calc(-1 * ${calcPadding})`,
 		marginBottom: `calc(-1 * ${calcPadding})`,
-		padding: `${calcPaddingTextY} ${calcPaddingTextX}`,
+		padding: `${calcPaddingTextY} calc(${calcPaddingTextX} + ${calcPadding})`,
 		paddingRight: calcHeight,
 		background: 'transparent',
 		color: $color['text-default'],
@@ -136,20 +142,50 @@ export const SelectField = (rawProps: Props) => {
 		height: calcHeight,
 		transform: isOpened ? 'rotate(180deg)' : 'rotate(0deg)',
 		transition: 'transform 0.3s ease',
+		pointerEvents: 'none',
 	}
+
+	const cssOptionList: CSS = {
+		position: 'absolute',
+		top: `calc(${calcHeight} + 1px)`,
+		left: 0,
+		right: 0,
+		display: isOpened ? 'block' : 'none',
+		padding: calcPadding,
+		backgroundColor: $color['bg-card'],
+		border: `1px solid ${$color['border-shadow']}`,
+		borderRadius: $radius['sm'],
+		boxShadow: $shadow['md'],
+		zIndex: $zIndex['popup'],
+	}
+	const cssOption: CSS = {
+		display: 'flex',
+		alignItems: 'center',
+		minHeight: $spacing['button-h-md'],
+		padding: `0 ${calcPaddingTextX}`,
+	}
+	const cssWrapper: CSS = {
+		position: 'relative',
+	}
+
+	const onOpenMenu = () => {
+		setIsOpened(true)
+		setSearch('')
+	}
+	const onCloseMenu = () => setIsOpened(false)
 
 	const onChangeInput = (event: ReactChangeEvent<HTMLInputElement>) => {
 		setSearch(event.target.value)
 	}
 
 	return (
-		<div>
+		<div css={cssWrapper}>
 			<div css={[cssFieldBase, cssHeight, cssRadius]}>
 				<input
 					id={props.id}
 					type="text"
 					role="combobox"
-					value={search}
+					value={isOpened ? search : selection}
 					placeholder={props.placeholder}
 					aria-label={props.ariaLabel}
 					aria-description={props.ariaDescription}
@@ -158,8 +194,8 @@ export const SelectField = (rawProps: Props) => {
 					aria-autocomplete="list"
 					aria-haspopup="listbox"
 					css={cssInput}
-					onFocus={() => setIsOpened(true)}
-					onBlur={() => setIsOpened(false)}
+					onFocus={onOpenMenu}
+					onBlur={onCloseMenu}
 					onChange={onChangeInput}
 				/>
 
@@ -168,8 +204,19 @@ export const SelectField = (rawProps: Props) => {
 				</div>
 			</div>
 
-			<ul role="listbox" className={cx(isOpened ? 'fixed' : 'hidden')}>
-				{search}
+			<ul role="listbox" css={cssOptionList}>
+				{options.map((option: any) => (
+					<li
+						key={option[keyValue]}
+						role="option"
+						aria-selected={option[keyValue] === props.value}
+						css={cssOption}
+					>
+						{option[keyLabel]}
+
+						{option[keyValue] === props.value && <CheckSvg className="ml-auto h-xs-6" />}
+					</li>
+				))}
 			</ul>
 		</div>
 	)
