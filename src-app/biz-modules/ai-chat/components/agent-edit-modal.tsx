@@ -82,13 +82,14 @@ export const AgentEditModal = ({ agent, opened, onClose, onClosed }: Props) => {
 			{/* ERRORS */}
 			{hasErrors(feedback) && <ErrorSummary errors={feedback} className="mb-sm-1" />}
 
-			<div className="flex flex-wrap gap-x-sm-4 gap-y-sm-3">
+			{/* BODY */}
+			<div className="flex flex-col gap-y-sm-3 lg:flex-row">
 				{/* LEFT */}
 				<div className="flex min-w-xl-0 flex-1 flex-col gap-sm-3">
 					{/* AVATAR */}
 					<div className="flex">
 						<div className="flex flex-1 flex-col">
-							<FieldLabel fieldId="field-avatar">{t('aiChat.label.agentAvatar')}</FieldLabel>
+							<FieldLabel fieldId="field-avatar">{t('core.label.avatar')}</FieldLabel>
 							<TextField
 								id="field-avatar"
 								value={payload.avatar}
@@ -107,7 +108,7 @@ export const AgentEditModal = ({ agent, opened, onClose, onClosed }: Props) => {
 
 					{/* NAME */}
 					<div className="flex flex-col">
-						<FieldLabel fieldId="field-name">{t('aiChat.label.agentName')}</FieldLabel>
+						<FieldLabel fieldId="field-name">{t('core.label.name')}</FieldLabel>
 						<TextField
 							id="field-name"
 							value={payload.name}
@@ -122,7 +123,7 @@ export const AgentEditModal = ({ agent, opened, onClose, onClosed }: Props) => {
 					{/* DESCRIPTION */}
 					<div className="flex flex-col">
 						<FieldLabel fieldId="field-desc" optional>
-							{t('aiChat.label.agentDescription')}
+							{t('core.label.description')}
 						</FieldLabel>
 						<TextField
 							id="field-desc"
@@ -138,11 +139,14 @@ export const AgentEditModal = ({ agent, opened, onClose, onClosed }: Props) => {
 					</div>
 				</div>
 
+				{/* DELIMITER */}
+				<div className="mx-sm-1 hidden w-px self-stretch bg-color-border-subtle lg:block" />
+
 				{/* RIGHT */}
 				<div className="flex min-w-xl-0 flex-1 flex-col gap-sm-2">
 					{/* GPT */}
 					<div className="flex flex-col">
-						<FieldLabel fieldId="field-gpt">{t('aiChat.label.agentGptModel')}</FieldLabel>
+						<FieldLabel fieldId="field-gpt">{t('aiChat.label.gptModel')}</FieldLabel>
 						<SelectField
 							id="field-gpt"
 							value={payload.gptId}

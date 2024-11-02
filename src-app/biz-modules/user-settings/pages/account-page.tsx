@@ -17,8 +17,8 @@ const AccountPage = () => {
 	const legendClass = cx('mb-sm-3 text-size-lg text-color-text-subtle')
 
 	const publicFields: Field<keyof Account>[] = [
-		{ key: 'name', label: t('userSettings.label.name') },
-		{ key: 'avatar', label: t('userSettings.label.avatar') },
+		{ key: 'name', label: t('core.label.name') },
+		{ key: 'avatar', label: t('core.label.avatar') },
 	]
 
 	const privateFields: Field<keyof Account>[] = [
