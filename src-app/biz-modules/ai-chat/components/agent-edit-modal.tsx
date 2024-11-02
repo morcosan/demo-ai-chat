@@ -1,8 +1,9 @@
-import { useAiChatAgents } from '@app/biz-modules/ai-chat/state'
-import { ErrorSummary, FieldError, FieldLabel, SelectField } from '@app/library/release'
+import { ErrorSummary, FieldError, FieldLabel, SelectField, SelectOptionProps } from '@app/library/release'
 import { Button, Modal, TextField } from '@ds/release'
 import { useEffect, useState } from 'react'
 import { Agent, GPT } from '../api'
+import { GptItem } from '../components/items/gpt-item'
+import { useAiChatAgents } from '../state'
 
 interface Props {
 	agent: Agent | null
@@ -13,6 +14,9 @@ interface Props {
 
 const AGENT_EMPTY: Agent = { id: 0, gptId: 0, name: '', avatar: '', desc: '', setup: '' }
 
+const GptSelect = (props: SelectOptionProps) => <GptItem gpt={props.option as GPT} />
+const GptOption = (props: SelectOptionProps) => <GptItem gpt={props.option as GPT} selected={props.selected} />
+
 export const AgentEditModal = ({ agent, opened, onClose, onClosed }: Props) => {
 	const { gpts, updateAgent } = useAiChatAgents()
 	const [payload, setPayload] = useState<Agent>(agent || AGENT_EMPTY)
@@ -22,6 +26,7 @@ export const AgentEditModal = ({ agent, opened, onClose, onClosed }: Props) => {
 
 	const hasChanges =
 		!agent ||
+		agent.gptId !== payload.gptId ||
 		agent.name !== payload.name.trim() ||
 		agent.avatar !== payload.avatar.trim() ||
 		agent.desc !== payload.desc.trim() ||
@@ -154,6 +159,7 @@ export const AgentEditModal = ({ agent, opened, onClose, onClosed }: Props) => {
 							keyLabel="name"
 							keyValue="id"
 							disabled={agent.loading}
+							compOption={GptOption}
 							onChange={(gptId: number) => setPayload({ ...payload, gptId })}
 						/>
 					</div>

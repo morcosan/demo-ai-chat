@@ -15,7 +15,14 @@ interface Props extends ReactProps {
 	disabled?: boolean
 	readonly?: boolean
 	invalid?: boolean
+	compSelect?: JsxFn<SelectOptionProps>
+	compOption?: JsxFn<SelectOptionProps>
 	onChange?(value: unknown): void
+}
+
+export interface SelectOptionProps {
+	option: unknown
+	selected?: boolean
 }
 
 export const SelectField = (rawProps: Props) => {
@@ -147,13 +154,15 @@ export const SelectField = (rawProps: Props) => {
 		pointerEvents: 'none',
 	}
 
+	const calcExtraPadding = $spacing['xs-1']
+
 	const cssOptionList: CSS = {
 		position: 'absolute',
 		top: `calc(${calcHeight} + 1px)`,
-		left: 0,
-		right: 0,
+		left: `calc(-1 * ${calcExtraPadding})`,
+		right: `calc(-1 * ${calcExtraPadding})`,
 		display: isOpened ? 'block' : 'none',
-		padding: `${$spacing['xs-2']} ${calcPadding}`,
+		padding: `${$spacing['xs-3']} calc(${calcExtraPadding} / 2 + ${calcPadding})`,
 		backgroundColor: $color['bg-card'],
 		border: `1px solid ${$color['border-shadow']}`,
 		borderRadius: $radius['sm'],
@@ -165,7 +174,7 @@ export const SelectField = (rawProps: Props) => {
 		display: 'flex',
 		alignItems: 'center',
 		minHeight: $spacing['button-h-md'],
-		padding: `${$spacing['xs-1']} ${calcPaddingTextX}`,
+		padding: `${$spacing['xs-1']} calc(${calcExtraPadding} / 2 + ${calcPaddingTextX})`,
 		borderRadius: $radius['sm'],
 		cursor: 'pointer',
 		overflow: 'hidden',
@@ -197,7 +206,7 @@ export const SelectField = (rawProps: Props) => {
 	const onSelectOption = (option: any) => {
 		props.onChange?.(option[keyValue])
 		inputRef.current?.focus()
-		closeMenu()
+		setIsOpened(false)
 	}
 
 	const onChangeInput = (event: ReactChangeEvent<HTMLInputElement>) => setSearch(event.target.value)
@@ -262,7 +271,13 @@ export const SelectField = (rawProps: Props) => {
 						css={cssOption}
 						onClick={() => onSelectOption(option)}
 					>
-						<span className="flex-1">{option[keyLabel]}</span>
+						<div className="flex-1">
+							{props.compOption ? (
+								<props.compOption option={option} selected={option[keyValue] === props.value} />
+							) : (
+								option[keyLabel]
+							)}
+						</div>
 
 						{option[keyValue] === props.value && <CheckSvg className="h-xs-6" />}
 					</li>

@@ -73,8 +73,8 @@
 			"startSearching_other": "Type at least {count} characters"
 		},
 		"description": {
-			"loremIpsumGPT": "🤯 Most intelligent model",
-			"rammusGPT": "👍 Best psychological support"
+			"loremIpsumGPT": "Most intelligent model",
+			"rammusGPT": "Best psychological support"
 		},
 		"error": {
 			"agentName": "You must add a name for the agent",
