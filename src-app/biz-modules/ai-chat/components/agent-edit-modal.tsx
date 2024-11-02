@@ -64,6 +64,7 @@ export const AgentEditModal = ({ agent, opened, onClose, onClosed }: Props) => {
 		<Modal
 			opened={opened}
 			width="lg"
+			persistent={hasChanges}
 			slotTitle={t('aiChat.action.editAgent')}
 			slotButtons={
 				<Button

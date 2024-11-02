@@ -10,7 +10,7 @@ export const useModalBase = (rawProps: ModalProps) => {
 		width: 'md',
 		height: 'fit',
 	})
-	const { $blur, $color, $fontSize, $fontWeight, $spacing, $radius, $shadow, $zIndex } = useUiTheme()
+	const { $blur, $color, $fontSize, $fontWeight, $spacing, $radius, $shadow, $zIndex, isUiLight } = useUiTheme()
 	const [zIndex, setZIndex] = useState(0)
 
 	const ANIM_TIME__SHOW = 300 // ms
@@ -51,10 +51,12 @@ export const useModalBase = (rawProps: ModalProps) => {
 		boxShadow: $shadow['lg'],
 	}
 
+	const colorOverlay = isUiLight ? $color['black-glass-6'] : $color['black-glass-7']
+
 	const cssOverlayBase: CSS = {
 		...CSS__FIXED_OVERLAY,
 		zIndex: -1,
-		backgroundColor: props.persistent ? $color['hover-4'] : $color['hover-2'],
+		backgroundColor: props.persistent ? colorOverlay : $color['hover-2'],
 		backdropFilter: props.persistent ? `blur(${$blur['default']})` : `blur(${$blur['subtle']})`,
 	}
 
