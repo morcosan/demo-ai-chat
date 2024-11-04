@@ -5,17 +5,18 @@ import { Button } from '@ds/release'
 import { useMemo, useState } from 'react'
 import { Agent, GPT } from '../../api'
 import { AgentConfigItem } from '../../components/items/agent-config-item'
-import { useAiChatAgents } from '../../state'
+import { AGENT_EMPTY, useAiChatAgents } from '../../state'
 
 const AgentsPage = () => {
-	const { gpts, agents, agentsPagination, agentsLoading, canLoadAgents, loadMoreAgents } = useAiChatAgents()
+	const { gpts, gptsLoading, agents, agentsPagination, agentsLoading, canLoadAgents, loadMoreAgents } =
+		useAiChatAgents()
 	const [agentToEdit, setAgentToEdit] = useState<Agent | null>(null)
 	const [showsEdit, setShowsEdit] = useState(false)
 
 	const getGPT = (agent: Agent) => gpts.find((gpt: GPT) => gpt.id === agent.gptId)
 
-	const onClickEdit = (agent: Agent) => {
-		setAgentToEdit(agent)
+	const onClickEdit = (agent?: Agent) => {
+		setAgentToEdit(agent || AGENT_EMPTY)
 		setShowsEdit(true)
 	}
 
@@ -54,7 +55,13 @@ const AgentsPage = () => {
 				<>
 					{/* TOOLBAR */}
 					<div className="mb-xs-3 flex items-center border-b border-color-border-subtle pb-xs-5 sm:-mt-xs-9">
-						<Button variant="solid-primary" size="sm" className="ml-auto">
+						<Button
+							loading={Boolean(gptsLoading)}
+							variant="solid-primary"
+							size="sm"
+							className="ml-auto"
+							onClick={() => onClickEdit()}
+						>
 							{t('aiChat.label.newAgent')}
 						</Button>
 					</div>

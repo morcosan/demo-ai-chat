@@ -13,7 +13,7 @@ const GPTs: DbGPT[] = [
 	{
 		id: GPT_ID__LOREM_IPSUM,
 		name: 'Lorem Ipsum GPT',
-		avatar: ENV__ROOT_URL_PATH + '/avatars/lorem.svg',
+		avatar: ENV__ROOT_URL_PATH + '/avatars/default.svg',
 		desc: '',
 	},
 	{

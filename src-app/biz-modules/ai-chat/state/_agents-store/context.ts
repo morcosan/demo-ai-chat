@@ -12,6 +12,8 @@ export interface Store {
 	updateAgent(payload: AgentsApiPayload): Promise<Agent | null>
 }
 
+export const AGENT_EMPTY: Agent = { id: 0, gptId: 0, name: '', avatar: '', desc: '', setup: '' }
+
 export const AgentsContext = createContext<Store>({
 	gpts: [],
 	gptsLoading: false,

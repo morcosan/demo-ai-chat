@@ -2,7 +2,7 @@ import { ErrorSummary, FieldError, FieldLabel, SelectField, SelectOptionProps } 
 import { Button, Modal, TextField } from '@ds/release'
 import { useEffect, useState } from 'react'
 import { Agent, GPT } from '../api'
-import { useAiChatAgents } from '../state'
+import { AGENT_EMPTY, useAiChatAgents } from '../state'
 import { OptionItem } from './items/option-item'
 
 interface Props {
@@ -12,17 +12,14 @@ interface Props {
 	onClosed(): void
 }
 
-const AGENT_EMPTY: Agent = { id: 0, gptId: 0, name: '', avatar: '', desc: '', setup: '' }
-
 const GptValue = (props: SelectOptionProps) => <OptionItem gpt={props.option as GPT} compact />
 const GptOption = (props: SelectOptionProps) => <OptionItem gpt={props.option as GPT} selected={props.selected} />
 
-export const AgentEditModal = ({ agent, opened, onClose, onClosed }: Props) => {
+export const AgentEditModal = (props: Props) => {
 	const { gpts, updateAgent } = useAiChatAgents()
-	const [payload, setPayload] = useState<Agent>(agent || AGENT_EMPTY)
+	const [agent, setAgent] = useState<Agent>(props.agent || AGENT_EMPTY)
+	const [payload, setPayload] = useState<Agent>(props.agent || AGENT_EMPTY)
 	const [feedback, setFeedback] = useState<FormPayload<Agent>>(AGENT_EMPTY)
-
-	const gpt = gpts.find((gpt: GPT) => gpt.id === agent?.gptId)
 
 	const hasChanges =
 		!agent ||
@@ -37,7 +34,7 @@ export const AgentEditModal = ({ agent, opened, onClose, onClosed }: Props) => {
 	const onSubmit = async () => {
 		// Fake success
 		if (!hasChanges) {
-			onClose()
+			props.onClose()
 			return
 		}
 
@@ -56,21 +53,30 @@ export const AgentEditModal = ({ agent, opened, onClose, onClosed }: Props) => {
 				desc: payload.desc.trim(),
 				setup: payload.setup.trim(),
 			})
-			success && onClose()
+			success && props.onClose()
 		}
 	}
 
 	useEffect(() => {
-		agent && setPayload(agent)
-		setFeedback(AGENT_EMPTY)
-	}, [agent])
+		if (props.agent) {
+			const agent = {
+				...props.agent,
+				gptId: props.agent.gptId || gpts[0].id,
+				avatar: props.agent.id ? props.agent.avatar : gpts[0].avatar,
+			}
+			setAgent(agent)
+			setPayload(agent)
+		}
 
-	return agent && gpt ? (
+		setFeedback(AGENT_EMPTY)
+	}, [props.agent])
+
+	return agent ? (
 		<Modal
-			opened={opened}
+			opened={props.opened}
 			width="lg"
 			persistent={hasChanges}
-			slotTitle={t('aiChat.action.editAgent')}
+			slotTitle={agent.id ? t('aiChat.action.editAgent') : t('aiChat.label.newAgent')}
 			slotButtons={
 				<Button
 					variant="solid-primary"
@@ -78,11 +84,11 @@ export const AgentEditModal = ({ agent, opened, onClose, onClosed }: Props) => {
 					tooltip={hasChanges ? '' : t('core.description.noChanges')}
 					onClick={onSubmit}
 				>
-					{t('core.action.saveChanges')}
+					{agent.id ? t('core.action.saveChanges') : t('aiChat.action.createAgent')}
 				</Button>
 			}
-			onClose={onClose}
-			onClosed={onClosed}
+			onClose={props.onClose}
+			onClosed={props.onClosed}
 		>
 			{/* ERRORS */}
 			{hasErrors(feedback) && <ErrorSummary errors={feedback} className="mb-sm-1" />}
@@ -91,6 +97,20 @@ export const AgentEditModal = ({ agent, opened, onClose, onClosed }: Props) => {
 			<div className="flex flex-col gap-y-sm-3 lg:flex-row">
 				{/* LEFT */}
 				<div className="flex min-w-xl-0 flex-1 flex-col gap-sm-3">
+					{/* NAME */}
+					<div className="flex flex-col">
+						<FieldLabel fieldId="field-name">{t('core.label.name')}</FieldLabel>
+						<TextField
+							id="field-name"
+							value={payload.name}
+							ariaDescription={feedback.name ? `${t('core.label.errors')}: ${feedback.name}` : ''}
+							disabled={agent.loading}
+							invalid={Boolean(feedback.name)}
+							onChange={(name: string) => setPayload({ ...payload, name })}
+						/>
+						<FieldError error={feedback.name} />
+					</div>
+
 					{/* AVATAR */}
 					<div className="flex">
 						<div className="flex flex-1 flex-col">
@@ -109,20 +129,6 @@ export const AgentEditModal = ({ agent, opened, onClose, onClosed }: Props) => {
 						<div className="ml-xs-6 mt-xs-6">
 							<img src={payload.avatar} alt="" className="h-sm-8 w-sm-8 rounded-full" />
 						</div>
-					</div>
-
-					{/* NAME */}
-					<div className="flex flex-col">
-						<FieldLabel fieldId="field-name">{t('core.label.name')}</FieldLabel>
-						<TextField
-							id="field-name"
-							value={payload.name}
-							ariaDescription={feedback.name ? `${t('core.label.errors')}: ${feedback.name}` : ''}
-							disabled={agent.loading}
-							invalid={Boolean(feedback.name)}
-							onChange={(name: string) => setPayload({ ...payload, name })}
-						/>
-						<FieldError error={feedback.name} />
 					</div>
 
 					{/* DESCRIPTION */}
