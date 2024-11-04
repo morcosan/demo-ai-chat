@@ -33,7 +33,7 @@ export const AgentEditModal = (props: Props) => {
 
 	const onSubmit = async () => {
 		// Fake success
-		if (!hasChanges) {
+		if (!hasChanges && agent.id) {
 			props.onClose()
 			return
 		}
