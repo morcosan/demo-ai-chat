@@ -27,6 +27,7 @@ export const mockAPI = {
 	async post<T>(path: string, payload: ApiPayload): Promise<ApiResponse<T>> {
 		let resp = RESP__NOT_FOUND
 
+		if (path === '/api/agents') resp = await agentsService.postAgent(payload)
 		if (path === '/api/chats') resp = await chatsService.postChat(payload)
 		if (path === '/api/messages') resp = await chatsService.postMessage(payload)
 

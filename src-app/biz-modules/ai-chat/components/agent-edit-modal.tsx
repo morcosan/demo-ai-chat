@@ -15,26 +15,25 @@ interface Props {
 const GptValue = (props: SelectOptionProps) => <OptionItem gpt={props.option as GPT} compact />
 const GptOption = (props: SelectOptionProps) => <OptionItem gpt={props.option as GPT} selected={props.selected} />
 
-export const AgentEditModal = (props: Props) => {
+export const AgentEditModal = ({ agent, opened, onClose, onClosed }: Props) => {
 	const { gpts, updateAgent } = useAiChatAgents()
-	const [agent, setAgent] = useState<Agent>(props.agent || AGENT_EMPTY)
-	const [payload, setPayload] = useState<Agent>(props.agent || AGENT_EMPTY)
+	const [initial, setInitial] = useState<Agent>(agent || AGENT_EMPTY)
+	const [payload, setPayload] = useState<Agent>(agent || AGENT_EMPTY)
 	const [feedback, setFeedback] = useState<FormPayload<Agent>>(AGENT_EMPTY)
 
 	const hasChanges =
-		!agent ||
-		agent.gptId !== payload.gptId ||
-		agent.name !== payload.name.trim() ||
-		agent.avatar !== payload.avatar.trim() ||
-		agent.desc !== payload.desc.trim() ||
-		agent.setup !== payload.setup.trim()
+		initial.gptId !== payload.gptId ||
+		initial.name !== payload.name.trim() ||
+		initial.avatar !== payload.avatar.trim() ||
+		initial.desc !== payload.desc.trim() ||
+		initial.setup !== payload.setup.trim()
 
 	const hasErrors = (errors: object) => Object.values(errors).some((value: string) => value)
 
 	const onSubmit = async () => {
 		// Fake success
-		if (!hasChanges && agent.id) {
-			props.onClose()
+		if (!hasChanges && agent?.id) {
+			onClose()
 			return
 		}
 
@@ -53,27 +52,27 @@ export const AgentEditModal = (props: Props) => {
 				desc: payload.desc.trim(),
 				setup: payload.setup.trim(),
 			})
-			success && props.onClose()
+			success && onClose()
 		}
 	}
 
 	useEffect(() => {
-		if (props.agent) {
-			const agent = {
-				...props.agent,
-				gptId: props.agent.gptId || gpts[0].id,
-				avatar: props.agent.id ? props.agent.avatar : gpts[0].avatar,
+		if (agent) {
+			const initial = {
+				...agent,
+				gptId: agent.gptId || gpts[0].id,
+				avatar: agent.id ? agent.avatar : gpts[0].avatar,
 			}
-			setAgent(agent)
-			setPayload(agent)
+			setInitial(initial)
+			setPayload(initial)
 		}
 
 		setFeedback(AGENT_EMPTY)
-	}, [props.agent])
+	}, [agent])
 
 	return agent ? (
 		<Modal
-			opened={props.opened}
+			opened={opened}
 			width="lg"
 			persistent={hasChanges}
 			slotTitle={agent.id ? t('aiChat.action.editAgent') : t('aiChat.label.newAgent')}
@@ -87,8 +86,8 @@ export const AgentEditModal = (props: Props) => {
 					{agent.id ? t('core.action.saveChanges') : t('aiChat.action.createAgent')}
 				</Button>
 			}
-			onClose={props.onClose}
-			onClosed={props.onClosed}
+			onClose={onClose}
+			onClosed={onClosed}
 		>
 			{/* ERRORS */}
 			{hasErrors(feedback) && <ErrorSummary errors={feedback} className="mb-sm-1" />}

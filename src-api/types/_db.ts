@@ -45,4 +45,6 @@ export interface DbAgent {
 	avatar: string
 	desc: string
 	setup: string
+	createdAt: string
+	updatedAt: string | null
 }

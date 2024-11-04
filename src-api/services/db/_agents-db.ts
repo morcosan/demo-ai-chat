@@ -6,6 +6,7 @@ import {
 	randomImageHD,
 	randomInt,
 	randomLongText,
+	randomRecentDate,
 	randomText,
 } from '@utils/release'
 
@@ -51,6 +52,8 @@ const resetDbAgents = () => {
 			avatar: gpt.avatar,
 			desc: UI_TAG__GPT_DESCRIPTION,
 			setup: '',
+			createdAt: randomRecentDate(),
+			updatedAt: null,
 		})),
 		...randomArray(0, 50).map((_, index: number) => ({
 			id: index + GPTs.length,
@@ -59,6 +62,8 @@ const resetDbAgents = () => {
 			avatar: randomImageHD(),
 			desc: randomLongText(randomInt(0, 5)),
 			setup: randomLongText(randomInt(0, 10)),
+			createdAt: randomRecentDate(),
+			updatedAt: null,
 		})),
 	])
 }
