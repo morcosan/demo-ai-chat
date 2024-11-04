@@ -153,7 +153,9 @@ export const SelectField = (rawProps: Props) => {
 
 	const cssValueOption: CSS = {
 		...CSS__ABSOLUTE_OVERLAY,
-		padding: `${calcPaddingTextY} calc(${calcPaddingTextX} + ${calcPadding})`,
+		display: 'flex',
+		alignItems: 'center',
+		padding: `0 calc(${calcPaddingTextX} + ${calcPadding})`,
 		paddingRight: calcHeight,
 		opacity: isOpened ? 0 : 1,
 		pointerEvents: 'none',

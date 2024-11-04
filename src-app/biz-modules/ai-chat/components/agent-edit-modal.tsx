@@ -2,8 +2,8 @@ import { ErrorSummary, FieldError, FieldLabel, SelectField, SelectOptionProps } 
 import { Button, Modal, TextField } from '@ds/release'
 import { useEffect, useState } from 'react'
 import { Agent, GPT } from '../api'
-import { GptItem } from '../components/items/gpt-item'
 import { useAiChatAgents } from '../state'
+import { OptionItem } from './items/option-item'
 
 interface Props {
 	agent: Agent | null
@@ -14,8 +14,8 @@ interface Props {
 
 const AGENT_EMPTY: Agent = { id: 0, gptId: 0, name: '', avatar: '', desc: '', setup: '' }
 
-const GptSelect = (props: SelectOptionProps) => <GptItem gpt={props.option as GPT} />
-const GptOption = (props: SelectOptionProps) => <GptItem gpt={props.option as GPT} selected={props.selected} />
+const GptValue = (props: SelectOptionProps) => <OptionItem gpt={props.option as GPT} compact />
+const GptOption = (props: SelectOptionProps) => <OptionItem gpt={props.option as GPT} selected={props.selected} />
 
 export const AgentEditModal = ({ agent, opened, onClose, onClosed }: Props) => {
 	const { gpts, updateAgent } = useAiChatAgents()
@@ -159,6 +159,7 @@ export const AgentEditModal = ({ agent, opened, onClose, onClosed }: Props) => {
 							keyLabel="name"
 							keyValue="id"
 							disabled={agent.loading}
+							compValue={GptValue}
 							compOption={GptOption}
 							onChange={(gptId: number) => setPayload({ ...payload, gptId })}
 						/>
