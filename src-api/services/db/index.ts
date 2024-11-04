@@ -5,14 +5,14 @@ import { initBillingDB } from './_billing-db'
 import { getDbMessages, initChatsDB } from './_chats-db'
 
 export { getDbAccount, resetDbAccount, setDbAccount } from './_account-db'
-export { getDbAgents, GPTs, resetDbAgents, setDbAgents } from './_agents-db'
+export { getDbAgents, GPTs, randomAgentId, resetAgentsDB, setDbAgents } from './_agents-db'
 export { getDbBilling, resetDbBilling, setDbBilling } from './_billing-db'
 export {
 	getDbChats,
 	getDbMessages,
-	getNextId,
-	resetDbChats,
-	resetDbMessages,
+	randomChatId,
+	randomMessageId,
+	resetChatsDB,
 	setDbChats,
 	setDbMessages,
 } from './_chats-db'

@@ -10,7 +10,7 @@ import {
 import { RESP__INVALID_DATA, RESP__NOT_FOUND } from '../utilities/network'
 import { extractInt, extractIntArray, isGreaterThanZero } from '../utilities/parsers'
 import { isValidPagination } from '../utilities/validators'
-import { getDbAgents, getNextId, GPTs, setDbAgents } from './db'
+import { getDbAgents, GPTs, randomAgentId, resetAgentsDB, setDbAgents } from './db'
 
 const DEFAULT_COUNT = 10
 const DEFAULT_PAGE = 1
@@ -63,7 +63,7 @@ export const agentsService = {
 		if (!name || !avatar || !gptId) return { ...RESP__INVALID_DATA, error: `Name, avatar and GPT cannot be empty` }
 
 		const agent: DbAgent = {
-			id: getNextId(),
+			id: randomAgentId(),
 			gptId: gptId,
 			name: name,
 			avatar: avatar,
@@ -101,5 +101,9 @@ export const agentsService = {
 		setDbAgents(dbAgents)
 
 		return { status: STATUS__SUCCESS, data: { count: 1, items: [agent] } }
+	},
+
+	resetDB() {
+		resetAgentsDB()
 	},
 }

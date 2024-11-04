@@ -1,5 +1,5 @@
 import { ApiResponse, BillingApiPayload, BillingDTO, STATUS__SUCCESS } from '@api/types'
-import { getDbBilling, setDbBilling } from './db'
+import { getDbBilling, resetDbBilling, setDbBilling } from './db'
 
 export const billingService = {
 	async getBilling(): Promise<ApiResponse<BillingDTO>> {
@@ -19,5 +19,9 @@ export const billingService = {
 		})
 
 		return { status: STATUS__SUCCESS, data: getDbBilling() }
+	},
+
+	resetDB() {
+		resetDbBilling()
 	},
 }

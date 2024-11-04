@@ -2,7 +2,7 @@ import { AgentEditModal } from '@app/biz-modules/ai-chat/components/agent-edit-m
 import { AppLayout } from '@app/layouts/app-layout'
 import { LoadingText, PageHeader } from '@app/library/release'
 import { Button } from '@ds/release'
-import { useMemo, useState } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 import { Agent, GPT } from '../../api'
 import { AgentConfigItem } from '../../components/items/agent-config-item'
 import { EMPTY_AGENT, useAiChatAgents } from '../../state'
@@ -19,6 +19,13 @@ const AgentsPage = () => {
 		setAgentToEdit(agent || EMPTY_AGENT)
 		setShowsEdit(true)
 	}
+
+	useEffect(() => {
+		// Update object when creating new agent
+		if (agentToEdit && !agentToEdit.id) {
+			setAgentToEdit(agents.find((agent: Agent) => agent.id === agentToEdit.id) || null)
+		}
+	}, [agents])
 
 	const slotAgents = useMemo(
 		() => (

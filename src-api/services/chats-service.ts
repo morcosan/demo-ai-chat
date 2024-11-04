@@ -18,7 +18,16 @@ import {
 import { RESP__NOT_FOUND } from '../utilities/network'
 import { extractInt, extractIntArray, isGreaterThanZero } from '../utilities/parsers'
 import { isValidPagination } from '../utilities/validators'
-import { getDbChats, getDbMessages, getNextId, getSizeForChat, setDbChats, setDbMessages } from './db'
+import {
+	getDbChats,
+	getDbMessages,
+	getSizeForChat,
+	randomChatId,
+	randomMessageId,
+	resetChatsDB,
+	setDbChats,
+	setDbMessages,
+} from './db'
 
 const DEFAULT_COUNT = 10
 const DEFAULT_PAGE = 1
@@ -66,7 +75,7 @@ export const chatsService = {
 		if (!title) return { ...RESP__NOT_FOUND, error: `Title is empty` }
 
 		const chat: DbChat = {
-			id: getNextId(),
+			id: randomChatId(),
 			title: title,
 			createdAt: new Date().toISOString(),
 		}
@@ -220,7 +229,7 @@ export const chatsService = {
 		}
 
 		const userMessage: DbMessage = {
-			id: getNextId(),
+			id: randomMessageId(),
 			chatId: chatId,
 			parentId: subchatId || chatId,
 			text: text,
@@ -228,7 +237,7 @@ export const chatsService = {
 			createdAt: new Date().toISOString(),
 		}
 		const agentMessage: DbMessage = {
-			id: getNextId(),
+			id: randomMessageId(),
 			chatId: chatId,
 			parentId: subchatId || chatId,
 			text: `"${text}": ` + randomLongText(randomInt(1, 40)),
@@ -245,5 +254,9 @@ export const chatsService = {
 				items: [userMessage, agentMessage].map((message: DbMessage) => ({ ...message, subchatSize: 0 })),
 			},
 		}
+	},
+
+	resetDB() {
+		resetChatsDB()
 	},
 }

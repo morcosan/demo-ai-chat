@@ -1,5 +1,5 @@
 import { AccountApiPayload, AccountDTO, ApiResponse, STATUS__SUCCESS } from '@api/types'
-import { getDbAccount, setDbAccount } from './db'
+import { getDbAccount, resetDbAccount, setDbAccount } from './db'
 
 export const accountService = {
 	async getAccount(): Promise<ApiResponse<AccountDTO>> {
@@ -17,5 +17,9 @@ export const accountService = {
 		})
 
 		return { status: STATUS__SUCCESS, data: getDbAccount() }
+	},
+
+	resetDB() {
+		resetDbAccount()
 	},
 }

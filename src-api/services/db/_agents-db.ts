@@ -28,7 +28,8 @@ const GPTs: DbGPT[] = [
 let _dbAgents: DbAgent[]
 let _nextId = 1001
 
-const getNextId = () => _nextId++
+const randomAgentId = () => _nextId++
+
 const getDbAgents = () => _dbAgents
 
 const setDbAgents = (value: DbAgent[]) => {
@@ -42,14 +43,14 @@ const initAgentsDB = () => {
 		_dbAgents = JSON.parse(json || '')
 		_dbAgents.forEach((agent: DbAgent) => agent.id > _nextId && (_nextId = agent.id + 1))
 	} catch (_) {
-		resetDbAgents()
+		createDbAgents()
 	}
 }
 
-const resetDbAgents = () => {
+const createDbAgents = () => {
 	setDbAgents([
 		...GPTs.map((gpt: DbGPT) => ({
-			id: getNextId(),
+			id: randomAgentId(),
 			gptId: gpt.id,
 			name: gpt.name.replace('GPT', 'AI'),
 			avatar: gpt.avatar,
@@ -59,7 +60,7 @@ const resetDbAgents = () => {
 			updatedAt: null,
 		})),
 		...randomArray(0, 50).map(() => ({
-			id: getNextId(),
+			id: randomAgentId(),
 			gptId: randomFromArray(GPTs).id,
 			name: randomText(randomInt(1, 20)) + ' AI',
 			avatar: randomImageHD(),
@@ -71,4 +72,9 @@ const resetDbAgents = () => {
 	])
 }
 
-export { getDbAgents, GPTs, initAgentsDB, resetDbAgents, setDbAgents }
+const resetAgentsDB = () => {
+	_nextId = 1001 // Reset id
+	createDbAgents()
+}
+
+export { getDbAgents, GPTs, initAgentsDB, randomAgentId, resetAgentsDB, setDbAgents }

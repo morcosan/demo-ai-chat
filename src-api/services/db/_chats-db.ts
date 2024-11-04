@@ -14,7 +14,9 @@ let _dbChats: DbChat[]
 let _dbMessages: DbMessage[]
 let _nextId = 1001
 
-const getNextId = () => _nextId++
+const randomChatId = () => _nextId++
+const randomMessageId = () => _nextId++
+
 const getDbChats = () => _dbChats
 const getDbMessages = () => _dbMessages
 
@@ -33,7 +35,7 @@ const initChatsDB = () => {
 		_dbChats = JSON.parse(json || '')
 		_dbChats.forEach((chat: DbChat) => chat.id > _nextId && (_nextId = chat.id + 1))
 	} catch (_) {
-		resetDbChats()
+		createDbChats()
 	}
 
 	try {
@@ -41,21 +43,21 @@ const initChatsDB = () => {
 		_dbMessages = JSON.parse(json || '')
 		_dbMessages.forEach((message: DbMessage) => message.id > _nextId && (_nextId = message.id + 1))
 	} catch (_) {
-		resetDbMessages()
+		createDbMessages()
 	}
 }
 
-const resetDbChats = () => {
+const createDbChats = () => {
 	const date = new Date(randomRecentDate())
 	const chats = randomArray(3, 100).map((_, index: number) => ({
-		id: getNextId(),
+		id: randomMessageId(),
 		title: randomText(10),
 		createdAt: addMinutesToDate(date, index * -1000).toISOString(),
 	}))
 	setDbChats(chats)
 }
 
-const resetDbMessages = () => {
+const createDbMessages = () => {
 	const messages: DbMessage[] = []
 	const chats = [..._dbChats].reverse()
 
@@ -65,7 +67,7 @@ const resetDbMessages = () => {
 
 		randomArray(1, isBig ? 70 : 10).forEach((_, index: number) => {
 			const userMessage: DbMessage = {
-				id: getNextId(),
+				id: randomMessageId(),
 				chatId: chat.id,
 				parentId: chat.id,
 				text: randomLongText(randomInt(1, 3)),
@@ -73,7 +75,7 @@ const resetDbMessages = () => {
 				createdAt: addMinutesToDate(date, index * 2 * 5).toISOString(),
 			}
 			const agentMessage: DbMessage = {
-				id: getNextId(),
+				id: randomMessageId(),
 				chatId: chat.id,
 				parentId: chat.id,
 				text: randomLongText(randomInt(5, 20)),
@@ -91,12 +93,12 @@ const resetDbMessages = () => {
 	setDbMessages(messages)
 }
 
-export const addSubchats = (message: DbMessage, messages: DbMessage[]) => {
+const addSubchats = (message: DbMessage, messages: DbMessage[]) => {
 	const roles: MessageRole[] = message.role === 'user' ? ['agent', 'user'] : ['user', 'agent']
 
 	randomArray(1, 30).forEach((_, index: number) => {
 		messages.push({
-			id: getNextId(),
+			id: randomMessageId(),
 			chatId: message.chatId,
 			parentId: message.id,
 			text: randomLongText(randomInt(1, 3)),
@@ -106,13 +108,19 @@ export const addSubchats = (message: DbMessage, messages: DbMessage[]) => {
 	})
 }
 
+const resetChatsDB = () => {
+	_nextId = 1001 // Reset id
+	createDbChats()
+	createDbMessages()
+}
+
 export {
 	getDbChats,
 	getDbMessages,
-	getNextId,
 	initChatsDB,
-	resetDbChats,
-	resetDbMessages,
+	randomChatId,
+	randomMessageId,
+	resetChatsDB,
 	setDbChats,
 	setDbMessages,
 }

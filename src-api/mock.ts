@@ -2,7 +2,6 @@ import { accountService } from './services/account-service'
 import { agentsService } from './services/agents-service'
 import { billingService } from './services/billing-service'
 import { chatsService } from './services/chats-service'
-import { resetDbAccount, resetDbAgents, resetDbBilling, resetDbChats, resetDbMessages } from './services/db'
 import { ApiPayload, ApiQuery, ApiResponse, STATUS__SUCCESS } from './types'
 import { applyNetwork, RESP__NOT_FOUND } from './utilities/network'
 
@@ -56,11 +55,10 @@ export const mockAPI = {
 
 		if (path === '/api/chats') resp = await chatsService.deleteChats(query)
 		if (path === '/api/database') {
-			resetDbAccount()
-			resetDbBilling()
-			resetDbChats()
-			resetDbMessages()
-			resetDbAgents()
+			accountService.resetDB()
+			billingService.resetDB()
+			chatsService.resetDB()
+			agentsService.resetDB()
 			resp = { status: STATUS__SUCCESS, data: null }
 		}
 
