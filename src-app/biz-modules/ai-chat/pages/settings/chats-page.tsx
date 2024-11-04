@@ -120,8 +120,10 @@ export const ChatsPage = () => {
 				}
 			/>
 
+			{/* LISTING */}
 			{allChatsLoading !== 'full' && allChats.length > 0 && (
 				<>
+					{/* TOOLBAR */}
 					<div className="mb-xs-7 flex items-center border-b border-color-border-subtle px-xs-2 pb-xs-2">
 						<Checkbox
 							checked={bulkChecked}
@@ -142,14 +144,17 @@ export const ChatsPage = () => {
 							{t('core.action.delete')}
 						</Button>
 					</div>
+
 					{slotChats}
 				</>
 			)}
 
+			{/* EMPTY STATE */}
 			{!allChatsLoading && allChats.length === 0 && (
 				<div className="mt-xs-2 text-size-sm">{t('aiChat.label.noChats')}</div>
 			)}
 
+			{/* LOADING */}
 			{Boolean(allChatsLoading || canLoadAllChats) && (
 				<div className="mx-auto mt-sm-2">
 					{allChatsLoading ? (

@@ -85,6 +85,7 @@
 			"chats": "Chats",
 			"customInstructions": "Custom instructions",
 			"gptModel": "GPT model",
+			"newAgent": "New agent",
 			"newChat": "New chat",
 			"noChats": "No chats",
 			"noSubchats": "No subchats",

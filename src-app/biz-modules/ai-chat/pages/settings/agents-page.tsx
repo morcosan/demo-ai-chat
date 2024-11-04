@@ -49,8 +49,21 @@ const AgentsPage = () => {
 				}
 			/>
 
-			{agentsLoading !== 'full' && agents.length > 0 && slotAgents}
+			{/* LISTING */}
+			{agentsLoading !== 'full' && agents.length > 0 && (
+				<>
+					{/* TOOLBAR */}
+					<div className="mb-xs-3 flex items-center border-b border-color-border-subtle pb-xs-5 sm:-mt-xs-9">
+						<Button variant="solid-primary" size="sm" className="ml-auto">
+							{t('aiChat.label.newAgent')}
+						</Button>
+					</div>
 
+					{slotAgents}
+				</>
+			)}
+
+			{/* LOADING */}
 			{Boolean(agentsLoading || canLoadAgents) && (
 				<div className="mx-auto mt-sm-2">
 					{agentsLoading ? (
