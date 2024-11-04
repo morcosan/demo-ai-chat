@@ -15,7 +15,7 @@ interface Props extends ReactProps {
 	disabled?: boolean
 	readonly?: boolean
 	invalid?: boolean
-	compSelect?: JsxFn<SelectOptionProps>
+	compValue?: JsxFn<SelectOptionProps>
 	compOption?: JsxFn<SelectOptionProps>
 	onChange?(value: unknown): void
 }
@@ -41,10 +41,7 @@ export const SelectField = (rawProps: Props) => {
 	const keyLabel = props.keyLabel as string
 	const keyValue = props.keyValue as string
 	const keyword = search.trim().toLowerCase()
-	const selection = (() => {
-		const option = props.options.find((option: any) => option[keyValue] === props.value) as any
-		return option ? option[keyLabel] : ''
-	})()
+	const valueOption = (props.options.find((option: any) => option[keyValue] === props.value) as any) || null
 	const options = props.options.filter((option: any) => option[keyLabel].toLowerCase().includes(keyword))
 
 	const calcPadding: string = (() => {
@@ -128,7 +125,7 @@ export const SelectField = (rawProps: Props) => {
 		background: 'transparent',
 		color: $color['text-default'],
 		fontSize: props.size === 'sm' ? $fontSize['sm'] : $fontSize['md'],
-		opacity: props.disabled ? 0.3 : 1,
+		opacity: isOpened ? (props.disabled ? 0.3 : 1) : 0,
 		resize: 'none',
 
 		'&:focus-visible': {
@@ -151,6 +148,14 @@ export const SelectField = (rawProps: Props) => {
 		height: calcHeight,
 		transform: isOpened ? 'rotate(180deg)' : 'rotate(0deg)',
 		transition: 'transform 0.3s ease',
+		pointerEvents: 'none',
+	}
+
+	const cssValueOption: CSS = {
+		...CSS__ABSOLUTE_OVERLAY,
+		padding: `${calcPaddingTextY} calc(${calcPaddingTextX} + ${calcPadding})`,
+		paddingRight: calcHeight,
+		opacity: isOpened ? 0 : 1,
 		pointerEvents: 'none',
 	}
 
@@ -179,7 +184,7 @@ export const SelectField = (rawProps: Props) => {
 		cursor: 'pointer',
 		overflow: 'hidden',
 
-		'&:hover::before, &[data-hovered=true]::before': {
+		'&:hover::before, &[data-current=true]::before': {
 			...CSS__ABSOLUTE_OVERLAY,
 			content: '""',
 			backgroundColor: $color['hover-1'],
@@ -201,7 +206,7 @@ export const SelectField = (rawProps: Props) => {
 		setOptionIndex(-1)
 	}
 
-	const closeMenu = () => wait(100).then(() => setIsOpened(false)) // Delay is required to allow onClick
+	const onBlurInput = () => wait(100).then(() => setIsOpened(false)) // Delay is required to allow onClick
 
 	const onSelectOption = (option: any) => {
 		props.onChange?.(option[keyValue])
@@ -213,14 +218,16 @@ export const SelectField = (rawProps: Props) => {
 
 	const onKeyDown = useCallback(
 		(event: ReactKeyboardEvent) => {
-			const updateFn = (value: number) => (value + options.length) % options.length
+			const arrowFn = (diff: number) => {
+				setOptionIndex((value: number) => (value + diff + options.length) % options.length)
+			}
 			const isArrowDown = event.key === Keyboard.ARROW_DOWN
 			const isArrowUp = event.key === Keyboard.ARROW_UP
 			const isSubmit = event.key === Keyboard.ENTER || event.key === Keyboard.SPACE
 
 			if (isOpened) {
-				if (isArrowDown) setOptionIndex((value: number) => updateFn(value + 1))
-				if (isArrowUp) setOptionIndex((value: number) => updateFn(value - 1))
+				if (isArrowDown) arrowFn(1)
+				if (isArrowUp) arrowFn(-1)
 				if (isSubmit && options[optionIndex] !== undefined) {
 					onSelectOption(options[optionIndex])
 					event.preventDefault()
@@ -240,34 +247,46 @@ export const SelectField = (rawProps: Props) => {
 					id={props.id}
 					type="text"
 					role="combobox"
-					value={isOpened ? search : selection}
+					value={search}
 					placeholder={props.placeholder}
 					aria-label={props.ariaLabel}
-					aria-description={props.ariaDescription}
+					aria-describedby={`${props.id}-value`}
 					aria-expanded={isOpened}
-					aria-controls="combobox-listbox"
+					aria-controls={`${props.id}-listbox`}
 					aria-autocomplete="list"
 					aria-haspopup="listbox"
 					css={cssInput}
 					onFocus={openMenu}
-					onBlur={closeMenu}
+					onBlur={onBlurInput}
 					onChange={onChangeInput}
 					onKeyDown={onKeyDown}
 					onClick={() => !isOpened && openMenu()}
 				/>
+
+				<div id={`${props.id}-value`} css={cssValueOption}>
+					<span className="sr-only">{t('aiChat.label.selectedValue')}</span>
+
+					{props.compValue && valueOption ? (
+						<props.compValue option={valueOption} selected />
+					) : (
+						valueOption?.[keyLabel] || ''
+					)}
+
+					<span className="sr-only">{props.ariaDescription}</span>
+				</div>
 
 				<div css={cssArrow}>
 					<ChevronDownSvg className="h-xs-5" />
 				</div>
 			</div>
 
-			<ul role="listbox" css={cssOptionList}>
+			<ul id={`${props.id}-listbox`} role="listbox" css={cssOptionList}>
 				{options.map((option: any, index: number) => (
 					<li
 						key={option[keyValue]}
 						role="option"
 						aria-selected={option[keyValue] === props.value}
-						data-hovered={index === optionIndex}
+						data-current={index === optionIndex}
 						css={cssOption}
 						onClick={() => onSelectOption(option)}
 					>

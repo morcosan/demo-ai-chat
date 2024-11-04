@@ -88,6 +88,7 @@
 			"newChat": "New chat",
 			"noChats": "No chats",
 			"noSubchats": "No subchats",
+			"selectedValue": "Selected value:",
 			"subchats": "Subchats",
 			"xMessages_one": "1 message",
 			"xMessages_other": "{count} messages",
