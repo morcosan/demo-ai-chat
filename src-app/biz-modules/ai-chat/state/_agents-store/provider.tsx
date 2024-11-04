@@ -38,7 +38,7 @@ export const AgentsProvider = ({ children }: ReactProps) => {
 		if (agentsLoading) return null
 
 		setAgentsLoading('update')
-		setAgents([EMPTY_AGENT, ...agents])
+		setAgents([{ ...EMPTY_AGENT, loading: true }, ...agents])
 
 		const listing = await API.createAgent(payload)
 

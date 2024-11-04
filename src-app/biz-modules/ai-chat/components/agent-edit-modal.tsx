@@ -16,10 +16,12 @@ const GptValue = (props: SelectOptionProps) => <OptionItem gpt={props.option as 
 const GptOption = (props: SelectOptionProps) => <OptionItem gpt={props.option as GPT} selected={props.selected} />
 
 export const AgentEditModal = ({ agent, opened, onClose, onClosed }: Props) => {
-	const { gpts, updateAgent } = useAiChatAgents()
+	const { gpts, createNewAgent, updateAgent } = useAiChatAgents()
 	const [initial, setInitial] = useState<Agent>(agent || EMPTY_AGENT)
 	const [payload, setPayload] = useState<Agent>(agent || EMPTY_AGENT)
 	const [feedback, setFeedback] = useState<FormPayload<Agent>>(EMPTY_AGENT)
+
+	const isEditing = Boolean(agent?.id)
 
 	const hasChanges =
 		initial.gptId !== payload.gptId ||
@@ -32,7 +34,7 @@ export const AgentEditModal = ({ agent, opened, onClose, onClosed }: Props) => {
 
 	const onSubmit = async () => {
 		// Fake success
-		if (!hasChanges && agent?.id) {
+		if (!hasChanges && isEditing) {
 			onClose()
 			return
 		}
@@ -44,7 +46,8 @@ export const AgentEditModal = ({ agent, opened, onClose, onClosed }: Props) => {
 		setFeedback(validation)
 
 		if (!hasErrors(validation)) {
-			const success = await updateAgent({
+			const apiFn = isEditing ? updateAgent : createNewAgent
+			const success = await apiFn({
 				agentId: payload.id,
 				gptId: payload.gptId,
 				name: payload.name.trim(),
@@ -61,7 +64,7 @@ export const AgentEditModal = ({ agent, opened, onClose, onClosed }: Props) => {
 			const initial = {
 				...agent,
 				gptId: agent.gptId || gpts[0].id,
-				avatar: agent.id ? agent.avatar : gpts[0].avatar,
+				avatar: isEditing ? agent.avatar : gpts[0].avatar,
 			}
 			setInitial(initial)
 			setPayload(initial)
@@ -75,7 +78,7 @@ export const AgentEditModal = ({ agent, opened, onClose, onClosed }: Props) => {
 			opened={opened}
 			width="lg"
 			persistent={hasChanges}
-			slotTitle={agent.id ? t('aiChat.action.editAgent') : t('aiChat.label.newAgent')}
+			slotTitle={isEditing ? t('aiChat.action.editAgent') : t('aiChat.label.newAgent')}
 			slotButtons={
 				<Button
 					variant="solid-primary"
@@ -83,7 +86,7 @@ export const AgentEditModal = ({ agent, opened, onClose, onClosed }: Props) => {
 					tooltip={hasChanges ? '' : t('core.description.noChanges')}
 					onClick={onSubmit}
 				>
-					{agent.id ? t('core.action.saveChanges') : t('aiChat.action.createAgent')}
+					{isEditing ? t('core.action.saveChanges') : t('aiChat.action.createAgent')}
 				</Button>
 			}
 			onClose={onClose}

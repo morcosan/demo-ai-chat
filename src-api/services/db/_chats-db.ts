@@ -2,7 +2,6 @@ import {
 	COOKIE_KEY,
 	randomArray,
 	randomFalse,
-	randomId,
 	randomInt,
 	randomLongText,
 	randomRecentDate,
@@ -49,7 +48,7 @@ const initChatsDB = () => {
 const resetDbChats = () => {
 	const date = new Date(randomRecentDate())
 	const chats = randomArray(3, 100).map((_, index: number) => ({
-		id: randomId(),
+		id: getNextId(),
 		title: randomText(10),
 		createdAt: addMinutesToDate(date, index * -1000).toISOString(),
 	}))
@@ -66,7 +65,7 @@ const resetDbMessages = () => {
 
 		randomArray(1, isBig ? 70 : 10).forEach((_, index: number) => {
 			const userMessage: DbMessage = {
-				id: randomId(),
+				id: getNextId(),
 				chatId: chat.id,
 				parentId: chat.id,
 				text: randomLongText(randomInt(1, 3)),
@@ -74,7 +73,7 @@ const resetDbMessages = () => {
 				createdAt: addMinutesToDate(date, index * 2 * 5).toISOString(),
 			}
 			const agentMessage: DbMessage = {
-				id: randomId(),
+				id: getNextId(),
 				chatId: chat.id,
 				parentId: chat.id,
 				text: randomLongText(randomInt(5, 20)),
@@ -97,7 +96,7 @@ export const addSubchats = (message: DbMessage, messages: DbMessage[]) => {
 
 	randomArray(1, 30).forEach((_, index: number) => {
 		messages.push({
-			id: randomId(),
+			id: getNextId(),
 			chatId: message.chatId,
 			parentId: message.id,
 			text: randomLongText(randomInt(1, 3)),

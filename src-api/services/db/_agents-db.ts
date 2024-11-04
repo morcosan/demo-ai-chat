@@ -25,19 +25,22 @@ const GPTs: DbGPT[] = [
 	},
 ]
 
-let _agents: DbAgent[]
+let _dbAgents: DbAgent[]
+let _nextId = 1001
 
-const getDbAgents = () => _agents
+const getNextId = () => _nextId++
+const getDbAgents = () => _dbAgents
 
 const setDbAgents = (value: DbAgent[]) => {
-	_agents = value
+	_dbAgents = value
 	localStorage.setItem(COOKIE_KEY.DB_AGENTS, JSON.stringify(value))
 }
 
 const initAgentsDB = () => {
 	try {
 		const json = localStorage.getItem(COOKIE_KEY.DB_AGENTS)
-		_agents = JSON.parse(json || '')
+		_dbAgents = JSON.parse(json || '')
+		_dbAgents.forEach((agent: DbAgent) => agent.id > _nextId && (_nextId = agent.id + 1))
 	} catch (_) {
 		resetDbAgents()
 	}
@@ -45,8 +48,8 @@ const initAgentsDB = () => {
 
 const resetDbAgents = () => {
 	setDbAgents([
-		...GPTs.map((gpt: DbGPT, index: number) => ({
-			id: index,
+		...GPTs.map((gpt: DbGPT) => ({
+			id: getNextId(),
 			gptId: gpt.id,
 			name: gpt.name.replace('GPT', 'AI'),
 			avatar: gpt.avatar,
@@ -55,8 +58,8 @@ const resetDbAgents = () => {
 			createdAt: randomRecentDate(),
 			updatedAt: null,
 		})),
-		...randomArray(0, 50).map((_, index: number) => ({
-			id: index + GPTs.length,
+		...randomArray(0, 50).map(() => ({
+			id: getNextId(),
 			gptId: randomFromArray(GPTs).id,
 			name: randomText(randomInt(1, 20)) + ' AI',
 			avatar: randomImageHD(),
