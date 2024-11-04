@@ -2,7 +2,7 @@ import { ErrorSummary, FieldError, FieldLabel, SelectField, SelectOptionProps } 
 import { Button, Modal, TextField } from '@ds/release'
 import { useEffect, useState } from 'react'
 import { Agent, GPT } from '../api'
-import { AGENT_EMPTY, useAiChatAgents } from '../state'
+import { EMPTY_AGENT, useAiChatAgents } from '../state'
 import { OptionItem } from './items/option-item'
 
 interface Props {
@@ -17,9 +17,9 @@ const GptOption = (props: SelectOptionProps) => <OptionItem gpt={props.option as
 
 export const AgentEditModal = ({ agent, opened, onClose, onClosed }: Props) => {
 	const { gpts, updateAgent } = useAiChatAgents()
-	const [initial, setInitial] = useState<Agent>(agent || AGENT_EMPTY)
-	const [payload, setPayload] = useState<Agent>(agent || AGENT_EMPTY)
-	const [feedback, setFeedback] = useState<FormPayload<Agent>>(AGENT_EMPTY)
+	const [initial, setInitial] = useState<Agent>(agent || EMPTY_AGENT)
+	const [payload, setPayload] = useState<Agent>(agent || EMPTY_AGENT)
+	const [feedback, setFeedback] = useState<FormPayload<Agent>>(EMPTY_AGENT)
 
 	const hasChanges =
 		initial.gptId !== payload.gptId ||
@@ -67,7 +67,7 @@ export const AgentEditModal = ({ agent, opened, onClose, onClosed }: Props) => {
 			setPayload(initial)
 		}
 
-		setFeedback(AGENT_EMPTY)
+		setFeedback(EMPTY_AGENT)
 	}, [agent])
 
 	return agent ? (

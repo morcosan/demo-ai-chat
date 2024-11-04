@@ -9,18 +9,8 @@ export interface Store {
 	agentsLoading: ListLoading
 	canLoadAgents: boolean
 	loadMoreAgents(): void
+	createNewAgent(payload: AgentsApiPayload): Promise<Agent | null>
 	updateAgent(payload: AgentsApiPayload): Promise<Agent | null>
-}
-
-export const AGENT_EMPTY: Agent = {
-	id: 0,
-	gptId: 0,
-	name: '',
-	avatar: '',
-	desc: '',
-	setup: '',
-	createdAt: '',
-	updatedAt: '',
 }
 
 export const AgentsContext = createContext<Store>({
@@ -31,5 +21,17 @@ export const AgentsContext = createContext<Store>({
 	agentsLoading: false,
 	canLoadAgents: false,
 	loadMoreAgents: () => {},
+	createNewAgent: async () => null,
 	updateAgent: async () => null,
 })
+
+export const EMPTY_AGENT: Agent = {
+	id: 0,
+	gptId: 0,
+	name: '',
+	avatar: '',
+	desc: '',
+	setup: '',
+	createdAt: '',
+	updatedAt: '',
+}

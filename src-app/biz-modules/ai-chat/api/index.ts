@@ -47,6 +47,16 @@ export const API = {
 			: { agents: [], count: 0 }
 	},
 
+	async createAgent(payload: AgentsApiPayload): Promise<AgentListing> {
+		const resp = await mainAPI.post<AgentsApiData>('/api/agents', payload)
+
+		clearDataCache('/api/agents')
+
+		return resp.status === STATUS__SUCCESS && resp.data
+			? { agents: resp.data.items.map(mapDtoToAgent), count: resp.data.count }
+			: { agents: [], count: 0 }
+	},
+
 	async updateAgent(payload: AgentsApiPayload): Promise<AgentListing> {
 		const resp = await mainAPI.patch<AgentsApiData>('/api/agents', payload)
 

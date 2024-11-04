@@ -1,7 +1,7 @@
 import { uniqBy } from 'lodash'
 import { useEffect, useState } from 'react'
 import { API, Chat } from '../../../api'
-import { GHOST_CHAT } from './_utils'
+import { getNewChat } from './_utils'
 
 export interface AllChatsStore {
 	allChats: Chat[]
@@ -48,10 +48,12 @@ export const useAllChatsStore = (): AllChatsStore => {
 	const createNewChat = async (): Promise<Chat | null> => {
 		if (allChatsLoading) return null
 
-		setAllChatsLoading('update')
-		setAllChats([GHOST_CHAT, ...allChats])
+		const newChat = getNewChat()
 
-		const listing = await API.createChat(GHOST_CHAT.title)
+		setAllChatsLoading('update')
+		setAllChats([newChat, ...allChats])
+
+		const listing = await API.createChat(newChat.title)
 
 		setAllChats([...listing.chats, ...allChats])
 		setAllChatsPagination({ ...allChatsPagination, count: allChatsPagination.count + 1 })

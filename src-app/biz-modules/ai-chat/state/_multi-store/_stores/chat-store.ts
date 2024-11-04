@@ -2,7 +2,7 @@ import { API } from '@app/biz-modules/ai-chat/api'
 import { uniqBy } from 'lodash'
 import { useEffect, useState } from 'react'
 import { Chat, Message } from '../../../api'
-import { GHOST_CHAT, newGhostMessage } from './_utils'
+import { getNewChat, getNewMessage } from './_utils'
 import { AllChatsStore } from './all-chats-store'
 
 export interface ChatStore {
@@ -80,15 +80,15 @@ export const useChatStore = (allChatsStore: AllChatsStore): ChatStore => {
 
 		let chat = activeChat
 		if (!chat) {
-			chat = GHOST_CHAT
-			setActiveChat(GHOST_CHAT)
+			chat = getNewChat()
+			setActiveChat(chat)
 		}
 
 		setChatLoading('update')
 		setChatMessages([
 			...chatMessages,
-			newGhostMessage(chat.id, 0, 'user', text),
-			newGhostMessage(chat.id, 0, 'agent', ''),
+			getNewMessage(chat.id, 0, 'user', text),
+			getNewMessage(chat.id, 0, 'agent', ''),
 		])
 		setChatPagination({ ...chatPagination, count: chatPagination.count + 1 })
 

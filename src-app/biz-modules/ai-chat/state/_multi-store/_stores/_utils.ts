@@ -1,14 +1,14 @@
 import { MessageRole } from '@api/types'
-import { Message } from '../../../api'
+import { Chat, Message } from '../../../api'
 
-export const GHOST_CHAT = {
+export const getNewChat = (): Chat => ({
 	id: 0,
-	title: 'New chat',
+	title: t('aiChat.label.newChat'),
 	createdAt: new Date().toISOString(),
 	size: 0,
-}
+})
 
-export const newGhostMessage = (chatId: number, subchatId: number, role: MessageRole, text: string): Message => ({
+export const getNewMessage = (chatId: number, subchatId: number, role: MessageRole, text: string): Message => ({
 	id: role === 'user' ? -1 : -2,
 	chatId: chatId,
 	parentId: subchatId || chatId,

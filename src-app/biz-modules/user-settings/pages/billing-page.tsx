@@ -5,13 +5,13 @@ import { useCallback, useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { Billing } from '../api'
 import { DataField, Field } from '../components/data-field'
-import { BILLING_EMPTY, useUserAccount } from '../state'
+import { EMPTY_BILLING, useUserAccount } from '../state'
 
 const AccountPage = () => {
 	useTranslation()
 	const { billing, billingLoading, updateBilling } = useUserAccount()
-	const [payload, setPayload] = useState<Billing>(BILLING_EMPTY)
-	const [feedback, setFeedback] = useState<FormPayload<Billing>>(BILLING_EMPTY)
+	const [payload, setPayload] = useState<Billing>(EMPTY_BILLING)
+	const [feedback, setFeedback] = useState<FormPayload<Billing>>(EMPTY_BILLING)
 	const [successful, setSuccessful] = useState(false)
 
 	const fields: Field<keyof Billing>[] = [
@@ -36,7 +36,7 @@ const AccountPage = () => {
 	const onSubmit = useCallback(async () => {
 		// Fake success
 		if (!hasChanges) {
-			setFeedback(BILLING_EMPTY)
+			setFeedback(EMPTY_BILLING)
 			setSuccessful(true)
 			wait(3000).then(() => setSuccessful(false))
 			return
@@ -56,7 +56,7 @@ const AccountPage = () => {
 
 			await updateBilling(payload)
 
-			setFeedback(BILLING_EMPTY)
+			setFeedback(EMPTY_BILLING)
 			setSuccessful(true)
 			wait(3000).then(() => setSuccessful(false))
 		}

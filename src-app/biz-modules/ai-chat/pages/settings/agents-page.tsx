@@ -5,7 +5,7 @@ import { Button } from '@ds/release'
 import { useMemo, useState } from 'react'
 import { Agent, GPT } from '../../api'
 import { AgentConfigItem } from '../../components/items/agent-config-item'
-import { AGENT_EMPTY, useAiChatAgents } from '../../state'
+import { EMPTY_AGENT, useAiChatAgents } from '../../state'
 
 const AgentsPage = () => {
 	const { gpts, gptsLoading, agents, agentsPagination, agentsLoading, canLoadAgents, loadMoreAgents } =
@@ -16,7 +16,7 @@ const AgentsPage = () => {
 	const getGPT = (agent: Agent) => gpts.find((gpt: GPT) => gpt.id === agent.gptId)
 
 	const onClickEdit = (agent?: Agent) => {
-		setAgentToEdit(agent || AGENT_EMPTY)
+		setAgentToEdit(agent || EMPTY_AGENT)
 		setShowsEdit(true)
 	}
 

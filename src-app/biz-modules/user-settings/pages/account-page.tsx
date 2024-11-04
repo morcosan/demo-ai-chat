@@ -5,13 +5,13 @@ import { Button } from '@ds/release'
 import { useCallback, useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { DataField, Field } from '../components/data-field'
-import { ACCOUNT_EMPTY, useUserAccount } from '../state'
+import { EMPTY_ACCOUNT, useUserAccount } from '../state'
 
 const AccountPage = () => {
 	useTranslation()
 	const { account, accountLoading, updateAccount } = useUserAccount()
-	const [payload, setPayload] = useState<Account>(ACCOUNT_EMPTY)
-	const [feedback, setFeedback] = useState<FormPayload<Account>>(ACCOUNT_EMPTY)
+	const [payload, setPayload] = useState<Account>(EMPTY_ACCOUNT)
+	const [feedback, setFeedback] = useState<FormPayload<Account>>(EMPTY_ACCOUNT)
 	const [successful, setSuccessful] = useState(false)
 
 	const legendClass = cx('mb-sm-3 text-size-lg text-color-text-subtle')
@@ -37,7 +37,7 @@ const AccountPage = () => {
 	const onSubmit = useCallback(async () => {
 		// Fake success
 		if (!hasChanges) {
-			setFeedback(ACCOUNT_EMPTY)
+			setFeedback(EMPTY_ACCOUNT)
 			setSuccessful(true)
 			wait(3000).then(() => setSuccessful(false))
 			return
@@ -55,7 +55,7 @@ const AccountPage = () => {
 
 			await updateAccount(payload)
 
-			setFeedback(ACCOUNT_EMPTY)
+			setFeedback(EMPTY_ACCOUNT)
 			setSuccessful(true)
 			wait(3000).then(() => setSuccessful(false))
 		}
