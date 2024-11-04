@@ -219,10 +219,11 @@ export const SelectField = (rawProps: Props) => {
 	const onKeyDown = useCallback(
 		(event: ReactKeyboardEvent) => {
 			const arrowFn = (diff: number) => {
-				setOptionIndex((value: number) => (value + diff + options.length) % options.length)
+				setOptionIndex((value: number) => ((value > -1 ? value : 0) + diff + options.length) % options.length)
 			}
 			const isArrowDown = event.key === Keyboard.ARROW_DOWN
 			const isArrowUp = event.key === Keyboard.ARROW_UP
+			const isTab = event.key === Keyboard.TAB
 			const isSubmit = event.key === Keyboard.ENTER || event.key === Keyboard.SPACE
 
 			if (isOpened) {
@@ -233,7 +234,7 @@ export const SelectField = (rawProps: Props) => {
 					event.preventDefault()
 				}
 			} else {
-				openMenu()
+				!isTab && openMenu()
 			}
 		},
 		[options, optionIndex, isOpened]
@@ -252,9 +253,9 @@ export const SelectField = (rawProps: Props) => {
 					aria-label={props.ariaLabel}
 					aria-describedby={`${props.id}-value`}
 					aria-expanded={isOpened}
-					aria-controls={`${props.id}-listbox`}
 					aria-autocomplete="list"
 					aria-haspopup="listbox"
+					aria-activedescendant={optionIndex > -1 ? `${props.id}-option-${optionIndex}` : ''}
 					css={cssInput}
 					onFocus={openMenu}
 					onBlur={onBlurInput}
@@ -280,10 +281,11 @@ export const SelectField = (rawProps: Props) => {
 				</div>
 			</div>
 
-			<ul id={`${props.id}-listbox`} role="listbox" css={cssOptionList}>
+			<ul role="listbox" css={cssOptionList}>
 				{options.map((option: any, index: number) => (
 					<li
 						key={option[keyValue]}
+						id={`${props.id}-option-${index}`}
 						role="option"
 						aria-selected={option[keyValue] === props.value}
 						data-current={index === optionIndex}
