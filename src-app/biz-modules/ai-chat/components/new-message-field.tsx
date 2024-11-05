@@ -1,6 +1,8 @@
+import { SelectField } from '@app/library/release'
 import { IconButton, SendSvg, TextField, TextFieldRef } from '@ds/release'
-import { useCallback, useRef, useState } from 'react'
+import { useCallback, useEffect, useRef, useState } from 'react'
 import { useSubmittable } from '../hooks/submittable'
+import { useAiChatAgents } from '../state'
 
 interface Props {
 	listLoading: ListLoading
@@ -9,7 +11,9 @@ interface Props {
 }
 
 export const NewMessageField = ({ listLoading, postMessageFn, primary }: Props) => {
+	const { agents, agentsLoading } = useAiChatAgents()
 	const [inputValue, setInputValue] = useState<string>('')
+	const [agentId, setAgentId] = useState(0)
 	const inputRef = useRef<TextFieldRef>(null)
 
 	const message = inputValue.trim()
@@ -35,34 +39,58 @@ export const NewMessageField = ({ listLoading, postMessageFn, primary }: Props) 
 		wait(500).then(() => target.scrollIntoView({ behavior: 'smooth', block: 'center' }))
 	}
 
+	useEffect(() => {
+		if (!agentId && agents.length) {
+			setAgentId(agents[0].id)
+		}
+	}, [agentsLoading])
+
 	return (
-		<TextField
-			ref={inputRef}
-			id={primary ? 'field-chat' : 'field-subchat'}
-			size={primary ? 'xl' : 'lg'}
-			value={inputValue}
-			placeholder={t('aiChat.placeholder.newMessage')}
-			ariaLabel="New message"
-			slotRight={
-				<IconButton
-					tooltip={t('aiChat.action.sendMessage')}
-					variant={primary ? 'solid-primary' : 'solid-secondary'}
-					size={primary ? 'md' : 'sm'}
-					loading={isLoading}
-					disabled={isDisabled || (!isLoading && !message)}
-					onClick={onSubmit}
-				>
-					<SendSvg className={primary ? 'h-xs-9' : 'h-xs-7'} />
-				</IconButton>
-			}
-			maxLength={1000}
-			maxRows={10}
-			disabled={isDisabled}
-			className="w-full"
-			multiline
-			onChange={onChange}
-			onSubmit={onPressEnter}
-			onFocus={onFocus}
-		/>
+		<div>
+			{/* TOOLBAR */}
+			<div className="mb-xs-2">
+				<SelectField
+					id={primary ? 'agent-chat' : 'agent-subchat'}
+					value={agentId}
+					options={agents}
+					keyValue="id"
+					keyLabel="name"
+					size="sm"
+					popupPos="top"
+					seamless
+					onChange={(id: number) => setAgentId(id)}
+				/>
+			</div>
+
+			{/* TEXT FIELD */}
+			<TextField
+				ref={inputRef}
+				id={primary ? 'new-message-chat' : 'new-message-subchat'}
+				size={primary ? 'xl' : 'lg'}
+				value={inputValue}
+				placeholder={t('aiChat.placeholder.newMessage')}
+				ariaLabel="New message"
+				slotRight={
+					<IconButton
+						tooltip={t('aiChat.action.sendMessage')}
+						variant={primary ? 'solid-primary' : 'solid-secondary'}
+						size={primary ? 'md' : 'sm'}
+						loading={isLoading}
+						disabled={isDisabled || (!isLoading && !message)}
+						onClick={onSubmit}
+					>
+						<SendSvg className={primary ? 'h-xs-9' : 'h-xs-7'} />
+					</IconButton>
+				}
+				maxLength={1000}
+				maxRows={10}
+				disabled={isDisabled}
+				className="w-full"
+				multiline
+				onChange={onChange}
+				onSubmit={onPressEnter}
+				onFocus={onFocus}
+			/>
+		</div>
 	)
 }

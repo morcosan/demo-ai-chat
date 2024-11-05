@@ -15,6 +15,8 @@ interface Props extends ReactProps {
 	disabled?: boolean
 	readonly?: boolean
 	invalid?: boolean
+	popupPos?: 'top' | 'bottom'
+	seamless?: boolean
 	compValue?: JsxFn<SelectOptionProps>
 	compOption?: JsxFn<SelectOptionProps>
 	onChange?(value: unknown): void
@@ -30,6 +32,7 @@ export const SelectField = (rawProps: Props) => {
 		keyLabel: 'label',
 		keyValue: 'value',
 		size: 'md',
+		popupPos: 'bottom',
 	})
 	const { $color, $fontSize, $radius, $spacing, $shadow, $zIndex } = useUiTheme()
 	const [isOpened, setIsOpened] = useState(false)
@@ -83,7 +86,13 @@ export const SelectField = (rawProps: Props) => {
 		return {}
 	})()
 
-	const colorBorderDefault = props.readonly ? $color['border-subtle'] : $color['border-default']
+	const colorBorder = props.seamless
+		? 'transparent'
+		: props.invalid
+			? $color['danger']
+			: props.readonly
+				? $color['border-subtle']
+				: $color['border-default']
 
 	const cssA11yOutline: CSS = { '&:not(:has(input:focus))': { outline: 'none' } }
 
@@ -98,8 +107,8 @@ export const SelectField = (rawProps: Props) => {
 		...cssA11yOutline,
 		position: 'relative',
 		borderWidth: '1px',
-		borderColor: props.invalid ? $color['danger'] : colorBorderDefault,
-		background: props.readonly ? 'transparent' : $color['bg-field'],
+		borderColor: colorBorder,
+		background: props.readonly || props.seamless ? 'transparent' : $color['bg-field'],
 		opacity: props.disabled ? 0.3 : 1,
 		color: $color['text-default'],
 		fill: $color['text-placeholder'],
@@ -111,15 +120,10 @@ export const SelectField = (rawProps: Props) => {
 	}
 
 	const cssInput: CSS = {
+		...CSS__ABSOLUTE_OVERLAY,
 		...cssRadius,
 
 		'--ds-spacing-scrollbar-w': $spacing['xs-1'],
-		width: '100%',
-		height: '100%',
-		minHeight: `calc(100% + 2 * ${calcPadding})`,
-		maxHeight: `calc(100% + 2 * ${calcPadding})`,
-		marginTop: `calc(-1 * ${calcPadding})`,
-		marginBottom: `calc(-1 * ${calcPadding})`,
 		padding: `${calcPaddingTextY} calc(${calcPaddingTextX} + ${calcPadding})`,
 		paddingRight: calcHeight,
 		background: 'transparent',
@@ -148,13 +152,14 @@ export const SelectField = (rawProps: Props) => {
 		height: calcHeight,
 		transform: isOpened ? 'rotate(180deg)' : 'rotate(0deg)',
 		transition: 'transform 0.3s ease',
+		color: props.seamless ? $color['text-subtle'] : undefined,
 		pointerEvents: 'none',
 	}
 
 	const cssValueOption: CSS = {
-		...CSS__ABSOLUTE_OVERLAY,
 		display: 'flex',
 		alignItems: 'center',
+		height: '100%',
 		padding: `0 calc(${calcPaddingTextX} + ${calcPadding})`,
 		paddingRight: calcHeight,
 		opacity: isOpened ? 0 : 1,
@@ -165,11 +170,14 @@ export const SelectField = (rawProps: Props) => {
 
 	const cssOptionList: CSS = {
 		position: 'absolute',
-		top: `calc(${calcHeight} + 1px)`,
+		top: props.popupPos === 'bottom' ? `calc(${calcHeight} + 1px)` : undefined,
+		bottom: props.popupPos === 'top' ? `calc(${calcHeight} + 1px)` : undefined,
 		left: `calc(-1 * ${calcExtraPadding})`,
 		right: `calc(-1 * ${calcExtraPadding})`,
 		display: isOpened ? 'block' : 'none',
 		padding: `${$spacing['xs-3']} calc(${calcExtraPadding} / 2 + ${calcPadding})`,
+		maxHeight: $spacing['xl-0'],
+		overflowY: 'auto',
 		backgroundColor: $color['bg-card'],
 		border: `1px solid ${$color['border-shadow']}`,
 		borderRadius: $radius['sm'],
@@ -200,6 +208,8 @@ export const SelectField = (rawProps: Props) => {
 	}
 	const cssWrapper: CSS = {
 		position: 'relative',
+		width: props.seamless ? (isOpened ? $spacing['lg-5'] : 'fit-content') : undefined,
+		maxWidth: props.seamless ? $spacing['lg-5'] : undefined,
 	}
 
 	const openMenu = () => {
@@ -243,7 +253,7 @@ export const SelectField = (rawProps: Props) => {
 	)
 
 	return (
-		<div css={cssWrapper}>
+		<div className={props.className} css={cssWrapper} style={props.style}>
 			<div css={[cssFieldBase, cssHeight, cssRadius, isOpened && cssFieldFocus]}>
 				<input
 					ref={inputRef}
@@ -272,7 +282,7 @@ export const SelectField = (rawProps: Props) => {
 					{props.compValue && valueOption ? (
 						<props.compValue option={valueOption} selected />
 					) : (
-						valueOption?.[keyLabel] || ''
+						<span className="line-clamp-1">{valueOption?.[keyLabel]}</span>
 					)}
 
 					<span className="sr-only">{props.ariaDescription}</span>
