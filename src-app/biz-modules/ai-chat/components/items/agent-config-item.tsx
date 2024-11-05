@@ -1,19 +1,22 @@
-import { useAiChatAgents } from '@app/biz-modules/ai-chat/state'
+import { LoadingText } from '@app/library/release'
 import { EditSvg, IconButton } from '@ds/release'
 import { Agent, GPT, GPT_ID__LOREM_IPSUM, GPT_ID__RAMMUS, UI_TAG__GPT_DESCRIPTION } from '../../api'
+import { useAiChatAgents } from '../../state'
 
 interface Props extends ReactProps {
 	agent: Agent
-	onClickEdit?(): void
+	onEdit?(): void
 }
 
-export const AgentConfigItem = ({ agent, onClickEdit }: Props) => {
+export const AgentConfigItem = (props: Props) => {
+	const { agent, onEdit } = props
 	const { gpts } = useAiChatAgents()
 
 	const gpt = gpts.find((gpt: GPT) => gpt.id === agent.gptId)
 	if (!gpt) return null
 
 	const isGhost = agent.loading || agent.deleting
+	const isInteractive = Boolean(onEdit)
 
 	const description = (() => {
 		if (agent.desc === UI_TAG__GPT_DESCRIPTION) {
@@ -24,47 +27,65 @@ export const AgentConfigItem = ({ agent, onClickEdit }: Props) => {
 	})()
 
 	return (
-		<li
-			className={cx(
-				'relative flex items-center gap-xs-7 px-xs-7 py-xs-6',
-				'before:absolute-overlay before:z-[-1] before:bg-color-bg-card',
-				'before:rounded-md before:border before:border-color-border-shadow before:shadow-xs',
-				isGhost && 'before:opacity-30'
-			)}
-		>
-			{/* AVATAR */}
-			<img src={agent.avatar} alt="" className="h-sm-7 w-sm-7 rounded-full" />
+		<li className="relative">
+			<div
+				className={cx(
+					'flex items-center gap-xs-7 px-xs-7 py-xs-5',
+					'rounded-md border border-color-border-shadow bg-color-bg-card shadow-xs',
+					isGhost && 'opacity-30'
+				)}
+			>
+				{/* AVATAR */}
+				<img src={agent.avatar} alt="" className="h-sm-7 w-sm-7 rounded-full" />
 
-			{/* BODY */}
-			<div className="flex flex-1 flex-wrap items-center gap-x-xs-9 gap-y-xs-2">
-				{/* TITLE */}
-				<div className="w-full leading-sm lg:flex-1">
-					{/* AGENT */}
-					<div className="mb-xs-3 line-clamp-1 font-weight-md">{agent.name}</div>
+				{/* BODY */}
+				<div className="flex flex-1 flex-wrap items-center gap-x-xs-9 gap-y-xs-2">
+					{/* TITLE */}
+					<div className="w-full leading-sm lg:flex-1">
+						{/* AGENT */}
+						<div title={agent.name} className="mb-xs-3 line-clamp-1 font-weight-md">
+							{agent.name}
+						</div>
 
-					{/* GPT */}
-					<div className="flex items-center gap-xs-2">
-						<img src={gpt.avatar} alt="" className="h-[1rem] w-[1rem] rounded-full" />
-						<div className="line-clamp-1 flex-1 text-size-xs text-color-text-subtle">{gpt.name}</div>
+						{/* GPT */}
+						<div className="flex items-center gap-xs-2">
+							<img src={gpt.avatar} alt="" className="h-[1rem] w-[1rem] rounded-full" />
+							<div className="line-clamp-1 flex-1 text-size-xs text-color-text-subtle">{gpt.name}</div>
+						</div>
+					</div>
+
+					{/* DESCRIPTION */}
+					<div
+						title={description}
+						className={cx(
+							'line-clamp-3 w-full text-size-xs text-color-text-subtle lg:w-lg-9',
+							!description && 'hidden'
+						)}
+					>
+						{description}
 					</div>
 				</div>
 
-				{/* DESCRIPTION */}
-				<div
-					className={cx(
-						'line-clamp-3 w-full text-size-xs text-color-text-subtle lg:w-lg-9',
-						!description && 'hidden'
-					)}
-				>
-					{description}
-				</div>
+				{/* ACTIONS */}
+				{Boolean(isInteractive) && (
+					<div className="-mr-xs-2 h-button-h-md min-w-button-h-md">
+						{Boolean(!agent.deleting && !agent.loading) && (
+							<IconButton tooltip={t('aiChat.action.editAgent')} onClick={onEdit}>
+								<EditSvg className="w-xs-6" />
+							</IconButton>
+						)}
+					</div>
+				)}
 			</div>
 
-			{/* ACTIONS */}
-			{Boolean(onClickEdit) && (
-				<IconButton tooltip={t('aiChat.action.editAgent')} className="-mr-xs-2" onClick={onClickEdit}>
-					<EditSvg className="w-xs-6" />
-				</IconButton>
+			{/* LOADING */}
+			{Boolean(agent.deleting || agent.loading) && (
+				<div className="absolute-center rounded-md bg-color-bg-card px-xs-5 py-xs-2 shadow-xs">
+					<LoadingText
+						text={agent.deleting ? t('core.state.deleting') : t('core.state.loading')}
+						className="text-size-sm"
+					/>
+				</div>
 			)}
 		</li>
 	)

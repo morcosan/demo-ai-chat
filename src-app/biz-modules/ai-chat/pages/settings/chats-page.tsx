@@ -81,7 +81,6 @@ export const ChatsPage = () => {
 						chat={chat}
 						selected={selectedChats.some((other: Chat) => other.id === chat.id)}
 						renaming={chatIdsToRename.includes(chat.id)}
-						interactive
 						onDelete={() => onClickDeleteChat(chat)}
 						onRename={() => onToggleRename(chat.id, chatIdsToRename)}
 						onToggle={(selected: boolean) => onToggleChat(chat, selected)}

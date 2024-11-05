@@ -46,7 +46,7 @@ const AgentsPage = () => {
 		() => (
 			<ul className="mt-xs-5 flex flex-col gap-xs-4">
 				{agents.map((agent: Agent) => (
-					<AgentConfigItem key={agent.id} agent={agent} onClickEdit={() => onClickEdit(agent)} />
+					<AgentConfigItem key={agent.id} agent={agent} onEdit={() => onClickEdit(agent)} />
 				))}
 			</ul>
 		),
@@ -131,7 +131,11 @@ const AgentsPage = () => {
 					{t('aiChat.warning.deletingAgent')}
 				</div>
 
-				{Boolean(agentToEdit) && <AgentConfigItem agent={agentToEdit!} />}
+				{Boolean(agentToEdit) && (
+					<ul>
+						<AgentConfigItem agent={agentToEdit!} />
+					</ul>
+				)}
 			</Modal>
 		</AppLayout>
 	)
