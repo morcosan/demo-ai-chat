@@ -81,15 +81,21 @@ export const AgentsProvider = ({ children }: ReactProps) => {
 		setAgents([...agents])
 
 		const listing = await API.deleteAgents([agentId])
+		const success = listing.count === agentsPagination.count - 1
 
-		const newAgents = agents.filter((agent: Agent) => agent.id !== agentId)
+		if (success) {
+			const newAgents = agents.filter((agent: Agent) => agent.id !== agentId)
 
-		setAgents(newAgents)
-		setAgentsPagination({ page: agentsPagination.page, count: listing.count })
+			setAgents(newAgents)
+			setAgentsPagination({ page: agentsPagination.page, count: listing.count })
 
-		if (agentsPagination.page === 1) {
-			// Reload first page to avoid breaking load-on-scroll
-			loadMoreAgents(true, newAgents)
+			if (agentsPagination.page === 1) {
+				// Reload first page to avoid breaking load-on-scroll
+				loadMoreAgents(true, newAgents)
+			}
+		} else {
+			agents[index].deleting = false
+			setAgents([...agents])
 		}
 	}
 

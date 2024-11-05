@@ -86,24 +86,29 @@ export const useAllChatsStore = (): AllChatsStore => {
 	}
 
 	const deleteChats = async (chatIds: number[]): Promise<void> => {
-		chatIds.forEach((chatId: number) => {
-			const index = allChats.findIndex((chat: Chat) => chat.id === chatId)
-			if (index > -1) {
-				allChats[index].deleting = true
-			}
-		})
+		const indexes = chatIds
+			.map((chatId: number) => allChats.findIndex((chat: Chat) => chat.id === chatId))
+			.filter((index: number) => index > -1)
+
+		indexes.forEach((index: number) => (allChats[index].deleting = true))
 		setAllChats([...allChats])
 
 		const listing = await API.deleteChats(chatIds)
+		const success = listing.count === allChatsPagination.count - chatIds.length
 
-		const newChats = allChats.filter((chat: Chat) => !chatIds.includes(chat.id))
+		if (success) {
+			const newChats = allChats.filter((chat: Chat) => !chatIds.includes(chat.id))
 
-		setAllChats(newChats)
-		setAllChatsPagination({ page: allChatsPagination.page, count: listing.count })
+			setAllChats(newChats)
+			setAllChatsPagination({ page: allChatsPagination.page, count: listing.count })
 
-		if (allChatsPagination.page === 1) {
-			// Reload first page to avoid breaking load-on-scroll
-			loadMoreChats(true, newChats)
+			if (allChatsPagination.page === 1) {
+				// Reload first page to avoid breaking load-on-scroll
+				loadMoreChats(true, newChats)
+			}
+		} else {
+			indexes.forEach((index: number) => (allChats[index].deleting = false))
+			setAllChats([...allChats])
 		}
 	}
 
