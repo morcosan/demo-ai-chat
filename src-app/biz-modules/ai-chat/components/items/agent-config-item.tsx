@@ -20,8 +20,8 @@ export const AgentConfigItem = (props: Props) => {
 
 	const description = (() => {
 		if (agent.desc === UI_TAG__GPT_DESCRIPTION) {
-			if (gpt.id === GPT_ID__LOREM_IPSUM) return t('aiChat.description.loremIpsumGPT')
-			if (gpt.id === GPT_ID__RAMMUS) return t('aiChat.description.rammusGPT')
+			if (agent.gptId === GPT_ID__LOREM_IPSUM) return t('aiChat.description.loremIpsumGPT')
+			if (agent.gptId === GPT_ID__RAMMUS) return t('aiChat.description.rammusGPT')
 		}
 		return agent.desc
 	})()

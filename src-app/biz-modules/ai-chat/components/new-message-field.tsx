@@ -1,6 +1,8 @@
-import { SelectField } from '@app/library/release'
+import { SelectField, SelectOptionProps } from '@app/library/release'
 import { IconButton, SendSvg, TextField, TextFieldRef } from '@ds/release'
 import { useCallback, useEffect, useRef, useState } from 'react'
+import { Agent } from '../api'
+import { OptionItem } from '../components/items/option-item'
 import { useSubmittable } from '../hooks/submittable'
 import { useAiChatAgents } from '../state'
 
@@ -9,6 +11,11 @@ interface Props {
 	postMessageFn: Function
 	primary?: boolean
 }
+
+const AgentValue = (props: SelectOptionProps) => <OptionItem agent={props.option as Agent} compact subtle />
+const AgentOption = (props: SelectOptionProps) => (
+	<OptionItem agent={props.option as Agent} selected={props.selected} />
+)
 
 export const NewMessageField = ({ listLoading, postMessageFn, primary }: Props) => {
 	const { agents, agentsLoading } = useAiChatAgents()
@@ -57,7 +64,10 @@ export const NewMessageField = ({ listLoading, postMessageFn, primary }: Props) 
 					keyLabel="name"
 					size="sm"
 					popupPos="top"
-					minimal
+					compValue={AgentValue}
+					compOption={AgentOption}
+					className={primary ? 'max-w-lg-7' : 'max-w-lg-5'}
+					subtle
 					onChange={(id: number) => setAgentId(id)}
 				/>
 			</div>

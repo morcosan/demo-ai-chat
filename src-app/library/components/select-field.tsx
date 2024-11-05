@@ -16,7 +16,7 @@ interface Props extends ReactProps {
 	readonly?: boolean
 	invalid?: boolean
 	popupPos?: 'top' | 'bottom'
-	minimal?: boolean
+	subtle?: boolean
 	compValue?: JsxFn<SelectOptionProps>
 	compOption?: JsxFn<SelectOptionProps>
 	onChange?(value: unknown): void
@@ -86,7 +86,7 @@ export const SelectField = (rawProps: Props) => {
 		return {}
 	})()
 
-	const colorBorder = props.minimal
+	const colorBorder = props.subtle
 		? 'transparent'
 		: props.invalid
 			? $color['danger']
@@ -108,7 +108,7 @@ export const SelectField = (rawProps: Props) => {
 		position: 'relative',
 		borderWidth: '1px',
 		borderColor: colorBorder,
-		background: props.readonly || props.minimal ? 'transparent' : $color['bg-field'],
+		background: props.readonly || props.subtle ? 'transparent' : $color['bg-field'],
 		opacity: props.disabled ? 0.3 : 1,
 		color: $color['text-default'],
 		fill: $color['text-placeholder'],
@@ -152,7 +152,7 @@ export const SelectField = (rawProps: Props) => {
 		height: calcHeight,
 		transform: isOpened ? 'rotate(180deg)' : 'rotate(0deg)',
 		transition: 'transform 0.3s ease',
-		color: props.minimal ? $color['text-subtle'] : undefined,
+		color: props.subtle ? $color['text-subtle'] : undefined,
 		pointerEvents: 'none',
 	}
 
@@ -208,8 +208,7 @@ export const SelectField = (rawProps: Props) => {
 	}
 	const cssWrapper: CSS = {
 		position: 'relative',
-		width: props.minimal ? (isOpened ? '' : 'fit-content') : undefined,
-		maxWidth: props.minimal ? $spacing['lg-5'] : undefined,
+		width: props.subtle ? (isOpened ? '' : 'fit-content') : undefined,
 	}
 
 	const openMenu = () => {
