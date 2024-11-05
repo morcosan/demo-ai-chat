@@ -16,7 +16,8 @@ interface Props {
 const GptValue = (props: SelectOptionProps) => <OptionItem gpt={props.option as GPT} compact />
 const GptOption = (props: SelectOptionProps) => <OptionItem gpt={props.option as GPT} selected={props.selected} />
 
-export const AgentEditModal = ({ agent, opened, onClose, onClosed, onDelete }: Props) => {
+export const AgentEditModal = (props: Props) => {
+	const { agent, opened, onClose, onClosed, onDelete } = props
 	const { gpts, agents, createNewAgent, updateAgent } = useAiChatAgents()
 	const [initial, setInitial] = useState<Agent>(agent || EMPTY_AGENT)
 	const [payload, setPayload] = useState<Agent>(agent || EMPTY_AGENT)
@@ -64,7 +65,7 @@ export const AgentEditModal = ({ agent, opened, onClose, onClosed, onDelete }: P
 	}
 
 	useEffect(() => {
-		if (agent) {
+		if (agent && gpts.length) {
 			const initial = {
 				...agent,
 				gptId: agent.gptId || gpts[0].id,
@@ -75,14 +76,14 @@ export const AgentEditModal = ({ agent, opened, onClose, onClosed, onDelete }: P
 		}
 
 		setFeedback(EMPTY_AGENT)
-	}, [agent])
+	}, [agent, gpts])
 
 	return agent ? (
 		<Modal
 			opened={opened}
 			width="lg"
 			persistent={hasChanges || agent.updating}
-			slotTitle={isEditing ? t('aiChat.action.editAgent') : t('aiChat.label.newAgent')}
+			slotTitle={isEditing ? t('aiChat.action.configureAgent') : t('aiChat.label.newAgent')}
 			slotAction={
 				<Button
 					variant="solid-primary"

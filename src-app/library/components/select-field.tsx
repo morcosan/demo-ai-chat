@@ -208,7 +208,9 @@ export const SelectField = (rawProps: Props) => {
 	}
 	const cssWrapper: CSS = {
 		position: 'relative',
-		width: props.subtle ? (isOpened ? '' : 'fit-content') : undefined,
+		display: 'inline-block',
+		width: props.subtle ? (isOpened ? '100%' : 'fit-content') : undefined,
+		verticalAlign: 'middle',
 	}
 
 	const openMenu = () => {

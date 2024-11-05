@@ -1,5 +1,6 @@
 export { default as ArrowBackSvg } from './icons/arrow-back.svg'
 export { default as ArrowNextSvg } from './icons/arrow-next.svg'
+export { default as BuildSvg } from './icons/build.svg'
 export { default as ChatSvg } from './icons/chat.svg'
 export { default as ChatsSvg } from './icons/chats.svg'
 export { default as CheckSvg } from './icons/check.svg'

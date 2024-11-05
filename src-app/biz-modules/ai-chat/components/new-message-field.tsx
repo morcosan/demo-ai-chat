@@ -1,10 +1,11 @@
 import { SelectField, SelectOptionProps } from '@app/library/release'
-import { IconButton, SendSvg, TextField, TextFieldRef } from '@ds/release'
+import { BuildSvg, IconButton, SendSvg, TextField, TextFieldRef } from '@ds/release'
 import { useCallback, useEffect, useRef, useState } from 'react'
 import { Agent } from '../api'
+import { AgentEditModal } from '../components/agent-edit-modal'
 import { OptionItem } from '../components/items/option-item'
 import { useSubmittable } from '../hooks/submittable'
-import { useAiChatAgents } from '../state'
+import { EMPTY_AGENT, useAiChatAgents } from '../state'
 
 interface Props {
 	listLoading: ListLoading
@@ -21,11 +22,14 @@ export const NewMessageField = ({ listLoading, postMessageFn, primary }: Props) 
 	const { agents, agentsLoading } = useAiChatAgents()
 	const [inputValue, setInputValue] = useState<string>('')
 	const [agentId, setAgentId] = useState(0)
+	const [showsAgentModal, setShowsAgentModal] = useState(false)
 	const inputRef = useRef<TextFieldRef>(null)
 
 	const message = inputValue.trim()
 	const isLoading = listLoading === 'update'
 	const isDisabled = listLoading === 'full' || listLoading === 'more'
+
+	const agentToEdit = agents.find((agent: Agent) => agent.id === agentId) || EMPTY_AGENT
 
 	const onChange = (value: string) => setInputValue(value)
 
@@ -55,7 +59,7 @@ export const NewMessageField = ({ listLoading, postMessageFn, primary }: Props) 
 	return (
 		<div>
 			{/* TOOLBAR */}
-			<div className="mb-xs-2">
+			<div className="mb-xs-1">
 				<SelectField
 					id={primary ? 'agent-chat' : 'agent-subchat'}
 					value={agentId}
@@ -70,7 +74,25 @@ export const NewMessageField = ({ listLoading, postMessageFn, primary }: Props) 
 					subtle
 					onChange={(id: number) => setAgentId(id)}
 				/>
+
+				<IconButton
+					tooltip={t('aiChat.action.configureAgent')}
+					size="sm"
+					className="-ml-xs-1 text-color-text-subtle"
+					onClick={() => setShowsAgentModal(true)}
+				>
+					<BuildSvg className="w-xs-5" />
+				</IconButton>
 			</div>
+
+			{/* AGENT MODAL */}
+			<AgentEditModal
+				agent={agentToEdit}
+				opened={showsAgentModal}
+				onClose={() => setShowsAgentModal(false)}
+				onClosed={() => {}}
+				onDelete={() => {}}
+			/>
 
 			{/* TEXT FIELD */}
 			<TextField

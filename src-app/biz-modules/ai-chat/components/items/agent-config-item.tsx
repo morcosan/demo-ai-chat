@@ -1,5 +1,5 @@
 import { LoadingText } from '@app/library/release'
-import { EditSvg, IconButton } from '@ds/release'
+import { BuildSvg, IconButton } from '@ds/release'
 import { Agent, GPT, GPT_ID__LOREM_IPSUM, GPT_ID__RAMMUS, UI_TAG__GPT_DESCRIPTION } from '../../api'
 import { useAiChatAgents } from '../../state'
 
@@ -70,8 +70,8 @@ export const AgentConfigItem = (props: Props) => {
 				{Boolean(isInteractive) && (
 					<div className="-mr-xs-2 h-button-h-md min-w-button-h-md">
 						{Boolean(!agent.deleting && !agent.updating) && (
-							<IconButton tooltip={t('aiChat.action.editAgent')} onClick={onEdit}>
-								<EditSvg className="w-xs-6" />
+							<IconButton tooltip={t('aiChat.action.configureAgent')} onClick={onEdit}>
+								<BuildSvg className="w-xs-7" />
 							</IconButton>
 						)}
 					</div>
