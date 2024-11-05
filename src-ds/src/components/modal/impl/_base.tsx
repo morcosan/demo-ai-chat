@@ -91,7 +91,7 @@ export const useModalBase = (rawProps: ModalProps) => {
 		display: props.noFooter ? 'none' : 'flex',
 		alignItems: 'center',
 		flexWrap: 'wrap',
-		marginTop: $spacing['xs-4'],
+		marginTop: $spacing['xs-5'],
 	}
 
 	const cssModalCloseX: CSS = {
