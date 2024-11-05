@@ -20,7 +20,7 @@ export const ChatConfigItem = (props: Props) => {
 	const [title, setTitle] = useState(chat.title)
 	const textFieldRef = useRef<TextFieldRef>(null)
 
-	const isGhost = chat.loading || chat.deleting
+	const isGhost = chat.updating || chat.deleting
 	const isDifferent = title.trim() !== chat.title
 	const isInteractive = Boolean(onToggle || onRename || onDelete || onSubmitRename)
 
@@ -44,7 +44,7 @@ export const ChatConfigItem = (props: Props) => {
 			>
 				{/* CHECKBOX */}
 				{Boolean(isInteractive) && (
-					<div className={cx('-ml-button-px-item px-xs-2', (chat.deleting || chat.loading) && 'invisible')}>
+					<div className={cx('-ml-button-px-item px-xs-2', (chat.deleting || chat.updating) && 'invisible')}>
 						<Checkbox
 							checked={selected}
 							ariaDescription={chat.title}
@@ -90,7 +90,7 @@ export const ChatConfigItem = (props: Props) => {
 				</div>
 
 				{/* ACTIONS */}
-				{Boolean(isInteractive && !chat.deleting && !chat.loading) && (
+				{Boolean(isInteractive && !chat.deleting && !chat.updating) && (
 					<div className="flex-center -mr-button-px-item ml-auto pl-xs-2 pr-xs-3">
 						<IconButton
 							tooltip={renaming ? t('core.action.close') : t('core.action.rename')}
@@ -116,10 +116,10 @@ export const ChatConfigItem = (props: Props) => {
 			</div>
 
 			{/* LOADING */}
-			{Boolean(chat.deleting || chat.loading) && (
+			{Boolean(chat.deleting || chat.updating) && (
 				<div className="absolute-center rounded-md bg-color-bg-card px-xs-5 py-xs-2 shadow-xs">
 					<LoadingText
-						text={chat.deleting ? t('core.state.deleting') : t('core.state.loading')}
+						text={chat.deleting ? t('core.state.deleting') : t('core.state.updating')}
 						className="text-size-sm"
 					/>
 				</div>

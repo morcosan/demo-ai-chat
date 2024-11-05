@@ -5,7 +5,7 @@ export type GPT = GptDTO
 
 export interface Chat extends ChatDTO {
 	deleting?: boolean
-	loading?: boolean
+	updating?: boolean
 }
 
 export interface Message extends MessageDTO {
@@ -14,7 +14,7 @@ export interface Message extends MessageDTO {
 
 export interface Agent extends AgentDTO {
 	deleting?: boolean
-	loading?: boolean
+	updating?: boolean
 }
 
 export interface GptListing {

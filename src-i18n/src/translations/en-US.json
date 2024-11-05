@@ -50,7 +50,8 @@
 			"dataSaved": "Your data is saved",
 			"deleting": "Deleting...",
 			"loading": "Loading...",
-			"searching": "Searching..."
+			"searching": "Searching...",
+			"updating": "Updating..."
 		}
 	},
 	"aiChat": {

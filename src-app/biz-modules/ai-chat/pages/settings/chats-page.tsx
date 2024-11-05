@@ -32,7 +32,7 @@ export const ChatsPage = () => {
 		if (bulkChecked === true) {
 			setSelectedChats([])
 		} else {
-			setSelectedChats(allChats.filter((chat: Chat) => !chat.loading && !chat.deleting))
+			setSelectedChats(allChats.filter((chat: Chat) => !chat.updating && !chat.deleting))
 		}
 	}, [bulkChecked, allChats])
 

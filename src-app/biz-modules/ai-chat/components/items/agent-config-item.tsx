@@ -15,7 +15,7 @@ export const AgentConfigItem = (props: Props) => {
 	const gpt = gpts.find((gpt: GPT) => gpt.id === agent.gptId)
 	if (!gpt) return null
 
-	const isGhost = agent.loading || agent.deleting
+	const isGhost = agent.updating || agent.deleting
 	const isInteractive = Boolean(onEdit)
 
 	const description = (() => {
@@ -69,7 +69,7 @@ export const AgentConfigItem = (props: Props) => {
 				{/* ACTIONS */}
 				{Boolean(isInteractive) && (
 					<div className="-mr-xs-2 h-button-h-md min-w-button-h-md">
-						{Boolean(!agent.deleting && !agent.loading) && (
+						{Boolean(!agent.deleting && !agent.updating) && (
 							<IconButton tooltip={t('aiChat.action.editAgent')} onClick={onEdit}>
 								<EditSvg className="w-xs-6" />
 							</IconButton>
@@ -79,10 +79,10 @@ export const AgentConfigItem = (props: Props) => {
 			</div>
 
 			{/* LOADING */}
-			{Boolean(agent.deleting || agent.loading) && (
+			{Boolean(agent.deleting || agent.updating) && (
 				<div className="absolute-center rounded-md bg-color-bg-card px-xs-5 py-xs-2 shadow-xs">
 					<LoadingText
-						text={agent.deleting ? t('core.state.deleting') : t('core.state.loading')}
+						text={agent.deleting ? t('core.state.deleting') : t('core.state.updating')}
 						className="text-size-sm"
 					/>
 				</div>

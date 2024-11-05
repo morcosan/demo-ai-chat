@@ -85,7 +85,7 @@ export const AgentEditModal = ({ agent, opened, onClose, onClosed, onDelete }: P
 			slotAction={
 				<Button
 					variant="solid-primary"
-					loading={agent.loading}
+					loading={agent.updating}
 					tooltip={hasChanges ? '' : t('core.description.noChanges')}
 					onClick={onSubmit}
 				>
@@ -94,7 +94,7 @@ export const AgentEditModal = ({ agent, opened, onClose, onClosed, onDelete }: P
 			}
 			slotExtra={
 				isEditing ? (
-					<Button variant="text-danger" loading={agent.loading} onClick={onDelete}>
+					<Button variant="text-danger" loading={agent.updating} onClick={onDelete}>
 						{t('aiChat.action.deleteAgent')}
 					</Button>
 				) : null
@@ -116,7 +116,7 @@ export const AgentEditModal = ({ agent, opened, onClose, onClosed, onDelete }: P
 							id="field-name"
 							value={payload.name}
 							ariaDescription={feedback.name ? `${t('core.label.errors')}: ${feedback.name}` : ''}
-							disabled={agent.loading}
+							disabled={agent.updating}
 							invalid={Boolean(feedback.name)}
 							onChange={(name: string) => setPayload({ ...payload, name })}
 						/>
@@ -131,7 +131,7 @@ export const AgentEditModal = ({ agent, opened, onClose, onClosed, onDelete }: P
 								id="field-avatar"
 								value={payload.avatar}
 								ariaDescription={feedback.avatar ? `${t('core.label.errors')}: ${feedback.avatar}` : ''}
-								disabled={agent.loading}
+								disabled={agent.updating}
 								invalid={Boolean(feedback.avatar)}
 								onChange={(avatar: string) => setPayload({ ...payload, avatar })}
 							/>
@@ -152,7 +152,7 @@ export const AgentEditModal = ({ agent, opened, onClose, onClosed, onDelete }: P
 							id="field-desc"
 							value={payload.desc}
 							ariaDescription={feedback.desc ? `${t('core.label.errors')}: ${feedback.desc}` : ''}
-							disabled={agent.loading}
+							disabled={agent.updating}
 							invalid={Boolean(feedback.desc)}
 							minRows={3}
 							multiline
@@ -176,7 +176,7 @@ export const AgentEditModal = ({ agent, opened, onClose, onClosed, onDelete }: P
 							options={gpts}
 							keyLabel="name"
 							keyValue="id"
-							disabled={agent.loading}
+							disabled={agent.updating}
 							compValue={GptValue}
 							compOption={GptOption}
 							onChange={(gptId: number) => setPayload({ ...payload, gptId })}
@@ -192,7 +192,7 @@ export const AgentEditModal = ({ agent, opened, onClose, onClosed, onDelete }: P
 							id="field-setup"
 							value={payload.setup}
 							ariaDescription={feedback.setup ? `${t('core.label.errors')}: ${feedback.setup}` : ''}
-							disabled={agent.loading}
+							disabled={agent.updating}
 							invalid={Boolean(feedback.setup)}
 							className="flex-1"
 							multiline

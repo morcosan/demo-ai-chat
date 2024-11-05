@@ -54,7 +54,7 @@ export const AgentsProvider = ({ children }: ReactProps) => {
 	const updateAgent = async (payload: AgentsApiPayload): Promise<Agent | null> => {
 		const index = agents.findIndex((agent: Agent) => agent.id === payload.agentId)
 		if (index > -1) {
-			agents[index].loading = true
+			agents[index].updating = true
 		}
 		setAgents([...agents])
 

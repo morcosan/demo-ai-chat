@@ -66,7 +66,7 @@ export const useAllChatsStore = (): AllChatsStore => {
 		const index = allChats.findIndex((chat: Chat) => chat.id === chatId)
 		if (index > -1) {
 			allChats[index].title = title || '...'
-			allChats[index].loading = true
+			allChats[index].updating = true
 		}
 		setAllChats([...allChats])
 
