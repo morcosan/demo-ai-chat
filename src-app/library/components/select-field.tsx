@@ -16,7 +16,7 @@ interface Props extends ReactProps {
 	readonly?: boolean
 	invalid?: boolean
 	popupPos?: 'top' | 'bottom'
-	seamless?: boolean
+	minimal?: boolean
 	compValue?: JsxFn<SelectOptionProps>
 	compOption?: JsxFn<SelectOptionProps>
 	onChange?(value: unknown): void
@@ -86,7 +86,7 @@ export const SelectField = (rawProps: Props) => {
 		return {}
 	})()
 
-	const colorBorder = props.seamless
+	const colorBorder = props.minimal
 		? 'transparent'
 		: props.invalid
 			? $color['danger']
@@ -108,7 +108,7 @@ export const SelectField = (rawProps: Props) => {
 		position: 'relative',
 		borderWidth: '1px',
 		borderColor: colorBorder,
-		background: props.readonly || props.seamless ? 'transparent' : $color['bg-field'],
+		background: props.readonly || props.minimal ? 'transparent' : $color['bg-field'],
 		opacity: props.disabled ? 0.3 : 1,
 		color: $color['text-default'],
 		fill: $color['text-placeholder'],
@@ -152,7 +152,7 @@ export const SelectField = (rawProps: Props) => {
 		height: calcHeight,
 		transform: isOpened ? 'rotate(180deg)' : 'rotate(0deg)',
 		transition: 'transform 0.3s ease',
-		color: props.seamless ? $color['text-subtle'] : undefined,
+		color: props.minimal ? $color['text-subtle'] : undefined,
 		pointerEvents: 'none',
 	}
 
@@ -208,8 +208,8 @@ export const SelectField = (rawProps: Props) => {
 	}
 	const cssWrapper: CSS = {
 		position: 'relative',
-		width: props.seamless ? (isOpened ? $spacing['lg-5'] : 'fit-content') : undefined,
-		maxWidth: props.seamless ? $spacing['lg-5'] : undefined,
+		width: props.minimal ? (isOpened ? '' : 'fit-content') : undefined,
+		maxWidth: props.minimal ? $spacing['lg-5'] : undefined,
 	}
 
 	const openMenu = () => {
@@ -253,7 +253,7 @@ export const SelectField = (rawProps: Props) => {
 	)
 
 	return (
-		<div className={props.className} css={cssWrapper} style={props.style}>
+		<div className={props.className} style={props.style} css={cssWrapper}>
 			<div css={[cssFieldBase, cssHeight, cssRadius, isOpened && cssFieldFocus]}>
 				<input
 					ref={inputRef}

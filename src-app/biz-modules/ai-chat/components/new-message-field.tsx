@@ -57,7 +57,7 @@ export const NewMessageField = ({ listLoading, postMessageFn, primary }: Props) 
 					keyLabel="name"
 					size="sm"
 					popupPos="top"
-					seamless
+					minimal
 					onChange={(id: number) => setAgentId(id)}
 				/>
 			</div>
