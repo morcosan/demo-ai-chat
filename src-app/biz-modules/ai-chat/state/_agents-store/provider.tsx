@@ -37,7 +37,7 @@ export const AgentsProvider = ({ children }: ReactProps) => {
 	const createNewAgent = async (payload: AgentsApiPayload): Promise<Agent | null> => {
 		if (agentsLoading) return null
 
-		const newAgent = { ...EMPTY_AGENT, ...payload, loading: true }
+		const newAgent: Agent = { ...EMPTY_AGENT, ...payload, updating: true }
 
 		setAgentsLoading('update')
 		setAgents([newAgent, ...agents])

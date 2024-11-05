@@ -17,12 +17,13 @@ const GptValue = (props: SelectOptionProps) => <OptionItem gpt={props.option as 
 const GptOption = (props: SelectOptionProps) => <OptionItem gpt={props.option as GPT} selected={props.selected} />
 
 export const AgentEditModal = ({ agent, opened, onClose, onClosed, onDelete }: Props) => {
-	const { gpts, createNewAgent, updateAgent } = useAiChatAgents()
+	const { gpts, agents, createNewAgent, updateAgent } = useAiChatAgents()
 	const [initial, setInitial] = useState<Agent>(agent || EMPTY_AGENT)
 	const [payload, setPayload] = useState<Agent>(agent || EMPTY_AGENT)
 	const [feedback, setFeedback] = useState<FormPayload<Agent>>(EMPTY_AGENT)
 
 	const isEditing = Boolean(agent?.id)
+	const canDelete = isEditing && agents.filter((agent: Agent) => agent.id && !agent.deleting).length > 1
 
 	const sectionClass = cx('flex flex-1 flex-col gap-sm-2')
 
@@ -80,7 +81,7 @@ export const AgentEditModal = ({ agent, opened, onClose, onClosed, onDelete }: P
 		<Modal
 			opened={opened}
 			width="lg"
-			persistent={hasChanges}
+			persistent={hasChanges || agent.updating}
 			slotTitle={isEditing ? t('aiChat.action.editAgent') : t('aiChat.label.newAgent')}
 			slotAction={
 				<Button
@@ -93,7 +94,7 @@ export const AgentEditModal = ({ agent, opened, onClose, onClosed, onDelete }: P
 				</Button>
 			}
 			slotExtra={
-				isEditing ? (
+				canDelete ? (
 					<Button variant="text-danger" loading={agent.updating} onClick={onDelete}>
 						{t('aiChat.action.deleteAgent')}
 					</Button>
