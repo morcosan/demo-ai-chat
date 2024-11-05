@@ -53,6 +53,7 @@ export const mockAPI = {
 	async delete<T>(path: string, query: ApiQuery): Promise<ApiResponse<T>> {
 		let resp = RESP__NOT_FOUND
 
+		if (path === '/api/agents') resp = await agentsService.deleteAgents(query)
 		if (path === '/api/chats') resp = await chatsService.deleteChats(query)
 		if (path === '/api/database') {
 			accountService.resetDB()

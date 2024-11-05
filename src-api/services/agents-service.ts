@@ -103,6 +103,25 @@ export const agentsService = {
 		return { status: STATUS__SUCCESS, data: { count: 1, items: [agent] } }
 	},
 
+	async deleteAgents(query: AgentsApiQuery): Promise<ApiResponse<AgentsApiData>> {
+		const agentIds = extractIntArray(query.agentIds, isGreaterThanZero)
+		const dbAgents = getDbAgents()
+
+		agentIds.forEach((agentId: number) => {
+			const index = dbAgents.findIndex((agent: DbAgent) => agent.id === agentId)
+			if (index > -1) {
+				dbAgents.splice(index, 1)
+			}
+		})
+
+		setDbAgents(dbAgents)
+
+		return {
+			status: STATUS__SUCCESS,
+			data: { count: dbAgents.length, items: [] },
+		}
+	},
+
 	resetDB() {
 		resetAgentsDB()
 	},

@@ -8,8 +8,16 @@ import { AgentConfigItem } from '../../components/items/agent-config-item'
 import { EMPTY_AGENT, useAiChatAgents } from '../../state'
 
 const AgentsPage = () => {
-	const { gpts, gptsLoading, agents, agentsPagination, agentsLoading, canLoadAgents, loadMoreAgents } =
-		useAiChatAgents()
+	const {
+		agents,
+		agentsLoading,
+		agentsPagination,
+		canLoadAgents,
+		gpts,
+		gptsLoading,
+		deleteAgent,
+		loadMoreAgents,
+	} = useAiChatAgents()
 	const [agentToEdit, setAgentToEdit] = useState<Agent | null>(null)
 	const [showsEditModal, setShowsEditModal] = useState(false)
 	const [showsDeleteModal, setShowsDeleteModal] = useState(false)
@@ -20,6 +28,9 @@ const AgentsPage = () => {
 	}
 
 	const onConfirmDelete = () => {
+		if (!agentToEdit) return
+
+		deleteAgent(agentToEdit.id)
 		setShowsDeleteModal(false)
 		setShowsEditModal(false)
 	}

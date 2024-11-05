@@ -1,6 +1,7 @@
 import {
 	AgentsApiData,
 	AgentsApiPayload,
+	AgentsApiQuery,
 	ChatsApiData,
 	ChatsApiPayload,
 	ChatsApiQuery,
@@ -64,6 +65,17 @@ export const API = {
 
 		return resp.status === STATUS__SUCCESS && resp.data
 			? { agents: resp.data.items.map(mapDtoToAgent), count: resp.data.count }
+			: { agents: [], count: 0 }
+	},
+
+	async deleteAgents(agentIds: number[]): Promise<AgentListing> {
+		const query: AgentsApiQuery = { agentIds: (agentIds || []).join(',') }
+		const resp = await mainAPI.delete<AgentsApiData>('/api/agents', query)
+
+		clearDataCache('/api/agents')
+
+		return resp.status === STATUS__SUCCESS && resp.data
+			? { agents: [], count: resp.data.count }
 			: { agents: [], count: 0 }
 	},
 

@@ -73,6 +73,26 @@ export const AgentsProvider = ({ children }: ReactProps) => {
 		return null
 	}
 
+	const deleteAgent = async (agentId: number): Promise<void> => {
+		const index = agents.findIndex((agent: Agent) => agent.id === agentId)
+		if (index > -1) {
+			agents[index].deleting = true
+		}
+		setAgents([...agents])
+
+		const listing = await API.deleteAgents([agentId])
+
+		const newAgents = agents.filter((agent: Agent) => agent.id !== agentId)
+
+		setAgents(newAgents)
+		setAgentsPagination({ page: agentsPagination.page, count: listing.count })
+
+		if (agentsPagination.page === 1) {
+			// Reload first page to avoid breaking load-on-scroll
+			loadMoreAgents(true, newAgents)
+		}
+	}
+
 	useEffect(() => {
 		loadGPTs()
 		!agentsPagination.page && loadMoreAgents()
@@ -87,6 +107,7 @@ export const AgentsProvider = ({ children }: ReactProps) => {
 			gpts,
 			gptsLoading,
 			createNewAgent,
+			deleteAgent,
 			loadMoreAgents,
 			updateAgent,
 		}),

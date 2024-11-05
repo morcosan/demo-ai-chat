@@ -2,26 +2,28 @@ import { createContext } from 'react'
 import { Agent, AgentsApiPayload, GPT } from '../../api'
 
 export interface Store {
+	agents: Agent[]
+	agentsLoading: ListLoading
+	agentsPagination: Pagination
+	canLoadAgents: boolean
 	gpts: GPT[]
 	gptsLoading: ListLoading
-	agents: Agent[]
-	agentsPagination: Pagination
-	agentsLoading: ListLoading
-	canLoadAgents: boolean
-	loadMoreAgents(): void
 	createNewAgent(payload: AgentsApiPayload): Promise<Agent | null>
+	deleteAgent(agentId: number): Promise<void>
+	loadMoreAgents(): void
 	updateAgent(payload: AgentsApiPayload): Promise<Agent | null>
 }
 
 export const AgentsContext = createContext<Store>({
+	agents: [],
+	agentsLoading: false,
+	agentsPagination: { page: 0, count: 0 },
+	canLoadAgents: false,
 	gpts: [],
 	gptsLoading: false,
-	agents: [],
-	agentsPagination: { page: 0, count: 0 },
-	agentsLoading: false,
-	canLoadAgents: false,
-	loadMoreAgents: () => {},
 	createNewAgent: async () => null,
+	deleteAgent: async () => {},
+	loadMoreAgents: () => {},
 	updateAgent: async () => null,
 })
 
