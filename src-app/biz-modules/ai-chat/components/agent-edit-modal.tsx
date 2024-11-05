@@ -10,18 +10,21 @@ interface Props {
 	opened: boolean
 	onClose(): void
 	onClosed(): void
+	onDelete(): void
 }
 
 const GptValue = (props: SelectOptionProps) => <OptionItem gpt={props.option as GPT} compact />
 const GptOption = (props: SelectOptionProps) => <OptionItem gpt={props.option as GPT} selected={props.selected} />
 
-export const AgentEditModal = ({ agent, opened, onClose, onClosed }: Props) => {
+export const AgentEditModal = ({ agent, opened, onClose, onClosed, onDelete }: Props) => {
 	const { gpts, createNewAgent, updateAgent } = useAiChatAgents()
 	const [initial, setInitial] = useState<Agent>(agent || EMPTY_AGENT)
 	const [payload, setPayload] = useState<Agent>(agent || EMPTY_AGENT)
 	const [feedback, setFeedback] = useState<FormPayload<Agent>>(EMPTY_AGENT)
 
 	const isEditing = Boolean(agent?.id)
+
+	const sectionClass = cx('flex flex-1 flex-col gap-sm-2')
 
 	const hasChanges =
 		initial.gptId !== payload.gptId ||
@@ -89,6 +92,13 @@ export const AgentEditModal = ({ agent, opened, onClose, onClosed }: Props) => {
 					{isEditing ? t('core.action.saveChanges') : t('aiChat.action.createAgent')}
 				</Button>
 			}
+			slotExtra={
+				isEditing ? (
+					<Button variant="text-danger" loading={agent.loading} onClick={onDelete}>
+						{t('aiChat.action.deleteAgent')}
+					</Button>
+				) : null
+			}
 			onClose={onClose}
 			onClosed={onClosed}
 		>
@@ -98,7 +108,7 @@ export const AgentEditModal = ({ agent, opened, onClose, onClosed }: Props) => {
 			{/* BODY */}
 			<div className="flex flex-col gap-y-sm-3 lg:flex-row">
 				{/* LEFT */}
-				<div className="flex min-w-xl-0 flex-1 flex-col gap-sm-3">
+				<div className={sectionClass}>
 					{/* NAME */}
 					<div className="flex flex-col">
 						<FieldLabel fieldId="field-name">{t('core.label.name')}</FieldLabel>
@@ -156,7 +166,7 @@ export const AgentEditModal = ({ agent, opened, onClose, onClosed }: Props) => {
 				<div className="mx-sm-1 hidden w-px self-stretch bg-color-border-subtle lg:block" />
 
 				{/* RIGHT */}
-				<div className="flex min-w-xl-0 flex-1 flex-col gap-sm-2">
+				<div className={sectionClass}>
 					{/* GPT */}
 					<div className="flex flex-col">
 						<FieldLabel fieldId="field-gpt">{t('aiChat.label.gptModel')}</FieldLabel>

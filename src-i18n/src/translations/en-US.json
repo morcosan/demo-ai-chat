@@ -56,9 +56,11 @@
 	"aiChat": {
 		"action": {
 			"backToSubchats": "Back to subchats",
+			"confirmDeleteAgent": "Confirm deleting agent",
 			"confirmDeleteChats": "Confirm deleting chats",
 			"confirmRenameChat": "Confirm renaming chat",
 			"createAgent": "Create agent",
+			"deleteAgent": "Delete agent",
 			"deleteSelectedChats": "Delete selected chats",
 			"editAgent": "Edit agent",
 			"manageAgents": "Manage agents",
@@ -113,6 +115,7 @@
 			"loadingSubchats": "Loading subchats..."
 		},
 		"warning": {
+			"deletingAgent": "This agent will be permanently deleted",
 			"deletingChats": "These chats will be permanently deleted"
 		}
 	},

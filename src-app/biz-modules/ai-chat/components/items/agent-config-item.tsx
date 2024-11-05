@@ -1,13 +1,18 @@
+import { useAiChatAgents } from '@app/biz-modules/ai-chat/state'
 import { EditSvg, IconButton } from '@ds/release'
 import { Agent, GPT, GPT_ID__LOREM_IPSUM, GPT_ID__RAMMUS, UI_TAG__GPT_DESCRIPTION } from '../../api'
 
 interface Props extends ReactProps {
 	agent: Agent
-	gpt: GPT
-	onClickEdit(): void
+	onClickEdit?(): void
 }
 
-export const AgentConfigItem = ({ agent, gpt, onClickEdit }: Props) => {
+export const AgentConfigItem = ({ agent, onClickEdit }: Props) => {
+	const { gpts } = useAiChatAgents()
+
+	const gpt = gpts.find((gpt: GPT) => gpt.id === agent.gptId)
+	if (!gpt) return null
+
 	const isGhost = agent.loading || agent.deleting
 
 	const description = (() => {
@@ -56,9 +61,11 @@ export const AgentConfigItem = ({ agent, gpt, onClickEdit }: Props) => {
 			</div>
 
 			{/* ACTIONS */}
-			<IconButton tooltip={t('aiChat.action.editAgent')} className="-mr-xs-2" onClick={onClickEdit}>
-				<EditSvg className="w-xs-6" />
-			</IconButton>
+			{Boolean(onClickEdit) && (
+				<IconButton tooltip={t('aiChat.action.editAgent')} className="-mr-xs-2" onClick={onClickEdit}>
+					<EditSvg className="w-xs-6" />
+				</IconButton>
+			)}
 		</li>
 	)
 }

@@ -1,9 +1,9 @@
 import { AgentEditModal } from '@app/biz-modules/ai-chat/components/agent-edit-modal'
 import { AppLayout } from '@app/layouts/app-layout'
 import { LoadingText, PageHeader } from '@app/library/release'
-import { Button } from '@ds/release'
+import { Button, Modal, WarningSvg } from '@ds/release'
 import { useEffect, useMemo, useState } from 'react'
-import { Agent, GPT } from '../../api'
+import { Agent } from '../../api'
 import { AgentConfigItem } from '../../components/items/agent-config-item'
 import { EMPTY_AGENT, useAiChatAgents } from '../../state'
 
@@ -11,13 +11,17 @@ const AgentsPage = () => {
 	const { gpts, gptsLoading, agents, agentsPagination, agentsLoading, canLoadAgents, loadMoreAgents } =
 		useAiChatAgents()
 	const [agentToEdit, setAgentToEdit] = useState<Agent | null>(null)
-	const [showsEdit, setShowsEdit] = useState(false)
-
-	const getGPT = (agent: Agent) => gpts.find((gpt: GPT) => gpt.id === agent.gptId)
+	const [showsEditModal, setShowsEditModal] = useState(false)
+	const [showsDeleteModal, setShowsDeleteModal] = useState(false)
 
 	const onClickEdit = (agent?: Agent) => {
 		setAgentToEdit(agent || EMPTY_AGENT)
-		setShowsEdit(true)
+		setShowsEditModal(true)
+	}
+
+	const onConfirmDelete = () => {
+		setShowsDeleteModal(false)
+		setShowsEditModal(false)
 	}
 
 	useEffect(() => {
@@ -30,12 +34,9 @@ const AgentsPage = () => {
 	const slotAgents = useMemo(
 		() => (
 			<ul className="mt-xs-5 flex flex-col gap-xs-4">
-				{agents.map((agent: Agent) => {
-					const gpt = getGPT(agent)
-					if (!gpt) return null
-
-					return <AgentConfigItem key={agent.id} agent={agent} gpt={gpt} onClickEdit={() => onClickEdit(agent)} />
-				})}
+				{agents.map((agent: Agent) => (
+					<AgentConfigItem key={agent.id} agent={agent} onClickEdit={() => onClickEdit(agent)} />
+				))}
 			</ul>
 		),
 		[agents, gpts]
@@ -97,10 +98,30 @@ const AgentsPage = () => {
 			{/* EDIT MODAL */}
 			<AgentEditModal
 				agent={agentToEdit}
-				opened={showsEdit}
-				onClose={() => setShowsEdit(false)}
+				opened={showsEditModal}
+				onClose={() => setShowsEditModal(false)}
 				onClosed={() => setAgentToEdit(null)}
+				onDelete={() => setShowsDeleteModal(true)}
 			/>
+
+			{/* DELETE MODAL */}
+			<Modal
+				opened={Boolean(agentToEdit && showsDeleteModal)}
+				slotTitle={t('aiChat.action.confirmDeleteAgent')}
+				slotAction={
+					<Button variant="solid-danger" onClick={onConfirmDelete}>
+						{t('core.action.delete')}
+					</Button>
+				}
+				onClose={() => setShowsDeleteModal(false)}
+			>
+				<div className="mb-xs-8 flex items-center text-color-danger">
+					<WarningSvg className="mr-xs-4 w-xs-8" />
+					{t('aiChat.warning.deletingAgent')}
+				</div>
+
+				{Boolean(agentToEdit) && <AgentConfigItem agent={agentToEdit!} />}
+			</Modal>
 		</AppLayout>
 	)
 }
