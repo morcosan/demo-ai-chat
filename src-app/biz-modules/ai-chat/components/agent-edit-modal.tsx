@@ -64,7 +64,7 @@ export const AgentEditModal = ({ agent, opened, onClose, onClosed }: Props) => {
 			const initial = {
 				...agent,
 				gptId: agent.gptId || gpts[0].id,
-				avatar: isEditing ? agent.avatar : gpts[0].avatar,
+				avatar: agent.avatar || gpts[0].avatar,
 			}
 			setInitial(initial)
 			setPayload(initial)
