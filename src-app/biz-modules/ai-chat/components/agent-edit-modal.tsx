@@ -1,5 +1,5 @@
 import { ErrorSummary, FieldError, FieldLabel, SelectField, SelectOptionProps } from '@app/library/release'
-import { Button, Modal, TextField } from '@ds/release'
+import { Button, DeleteSvg, Modal, TextField } from '@ds/release'
 import { useEffect, useState } from 'react'
 import { Agent, GPT } from '../api'
 import { EMPTY_AGENT, useAiChatAgents } from '../state'
@@ -96,7 +96,7 @@ export const AgentEditModal = ({ agent, opened, onClose, onClosed, onDelete }: P
 			slotExtra={
 				canDelete ? (
 					<Button variant="text-danger" loading={agent.updating} onClick={onDelete}>
-						{t('aiChat.action.deleteAgent')}
+						<DeleteSvg className="mr-xs-4 w-xs-5" /> {t('aiChat.action.deleteAgent')}
 					</Button>
 				) : null
 			}

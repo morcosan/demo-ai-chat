@@ -91,8 +91,7 @@ export const useModalBase = (rawProps: ModalProps) => {
 		display: props.noFooter ? 'none' : 'flex',
 		alignItems: 'center',
 		flexWrap: 'wrap',
-		gap: $spacing['xs-3'],
-		marginTop: $spacing['xs-3'],
+		marginTop: $spacing['xs-4'],
 	}
 
 	const cssModalCloseX: CSS = {
@@ -116,7 +115,7 @@ export const useModalBase = (rawProps: ModalProps) => {
 		<>
 			{props.slotExtra}
 
-			<div className="ml-auto flex items-center gap-xs-3">
+			<div className="ml-auto flex items-center gap-xs-9">
 				{!props.noClose && (
 					<Button variant="text-default" onClick={props.onClose}>
 						{t('core.action.close')}
