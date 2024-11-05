@@ -79,7 +79,7 @@ export const AgentEditModal = ({ agent, opened, onClose, onClosed }: Props) => {
 			width="lg"
 			persistent={hasChanges}
 			slotTitle={isEditing ? t('aiChat.action.editAgent') : t('aiChat.label.newAgent')}
-			slotButtons={
+			slotAction={
 				<Button
 					variant="solid-primary"
 					loading={agent.loading}

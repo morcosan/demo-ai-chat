@@ -90,7 +90,7 @@ export const useModalBase = (rawProps: ModalProps) => {
 	const cssModalFooter: CSS = {
 		display: props.noFooter ? 'none' : 'flex',
 		alignItems: 'center',
-		justifyContent: 'flex-end',
+		flexWrap: 'wrap',
 		gap: $spacing['xs-3'],
 		marginTop: $spacing['xs-3'],
 	}
@@ -114,12 +114,16 @@ export const useModalBase = (rawProps: ModalProps) => {
 
 	const slotFooter = (
 		<>
-			{!props.noClose && (
-				<Button variant="text-default" onClick={props.onClose}>
-					{t('core.action.close')}
-				</Button>
-			)}
-			{props.slotButtons}
+			{props.slotExtra}
+
+			<div className="ml-auto flex items-center gap-xs-3">
+				{!props.noClose && (
+					<Button variant="text-default" onClick={props.onClose}>
+						{t('core.action.close')}
+					</Button>
+				)}
+				{props.slotAction}
+			</div>
 		</>
 	)
 

@@ -28,7 +28,7 @@ export const DbReset = () => {
 			<Modal
 				opened={showsConfirm}
 				slotTitle="Confirm resetting database"
-				slotButtons={
+				slotAction={
 					<Button variant="solid-danger" onClick={onConfirmRebuild}>
 						Reset and refresh
 					</Button>

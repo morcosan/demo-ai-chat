@@ -175,7 +175,7 @@ export const ChatsPage = () => {
 			<Modal
 				opened={Boolean(chatsToDelete.length && showsDeleteModal)}
 				slotTitle={t('aiChat.action.confirmDeleteChats')}
-				slotButtons={
+				slotAction={
 					<Button variant="solid-danger" onClick={onConfirmDelete}>
 						{t('core.action.delete')}
 					</Button>
