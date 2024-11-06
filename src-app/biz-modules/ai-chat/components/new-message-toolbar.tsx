@@ -1,4 +1,4 @@
-import { SelectField, SelectOptionProps } from '@app/library/release'
+import { LoadingText, SelectField, SelectOptionProps } from '@app/library/release'
 import { BuildSvg, IconButton } from '@ds/release'
 import { debounce, uniqBy } from 'lodash'
 import { useEffect, useState } from 'react'
@@ -26,7 +26,11 @@ export const NewMessageToolbar = ({ primary, children }: Props) => {
 
 	const agentToEdit = agents.find((agent: Agent) => agent.id === agentId) || EMPTY_AGENT
 
+	const canLoadMoreAgents = !agentPagination.page || agents.length < agentPagination.count
+
 	const fetchMoreAgents = async () => {
+		if (agentLoading || !canLoadMoreAgents) return
+
 		setAgentLoading(agentPagination.page ? 'more' : 'full')
 
 		const listing = await API.getAgents([], agentPagination.page + 1, search)
@@ -66,8 +70,7 @@ export const NewMessageToolbar = ({ primary, children }: Props) => {
 					id={primary ? 'agent-chat' : 'agent-subchat'}
 					value={agentId}
 					options={agents}
-					loading={agentLoading === 'full'}
-					loadingMore={agentLoading === 'more'}
+					loading={Boolean(agentLoading)}
 					keyValue="id"
 					keyLabel="name"
 					size="sm"
@@ -75,9 +78,19 @@ export const NewMessageToolbar = ({ primary, children }: Props) => {
 					compValue={AgentValue}
 					compOption={AgentOption}
 					className={primary ? 'max-w-lg-7' : 'max-w-lg-5'}
+					slotLoadingMore={
+						Boolean(canLoadMoreAgents) && (
+							<LoadingText
+								text={t('aiChat.state.loadingAgents')}
+								className="relative -top-xs-2 ml-xs-3 min-h-sm-4 px-button-px-item text-size-sm"
+								style={{ visibility: agentLoading === 'more' ? 'visible' : 'hidden' }}
+							/>
+						)
+					}
 					subtle
 					onChange={(id: number) => setAgentId(id)}
 					onSearch={onSearchAgent}
+					onScrollEnd={fetchMoreAgents}
 				/>
 
 				<IconButton

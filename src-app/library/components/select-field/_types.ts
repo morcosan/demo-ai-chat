@@ -1,4 +1,5 @@
 import { TextFieldSize } from '@ds/release'
+import { ReactNode } from 'react'
 
 export interface SelectFieldProps extends ReactProps {
 	id: string
@@ -10,15 +11,15 @@ export interface SelectFieldProps extends ReactProps {
 	placeholder?: string
 	ariaLabel?: string
 	ariaDescription?: string
-	loading?: boolean
-	loadingMore?: boolean
 	disabled?: boolean
 	readonly?: boolean
 	invalid?: boolean
+	loading?: boolean
 	popupPos?: 'top' | 'bottom'
 	subtle?: boolean
 	compValue?: JsxFn<SelectOptionProps>
 	compOption?: JsxFn<SelectOptionProps>
+	slotLoadingMore?: ReactNode
 	onChange?(value: unknown): void
 	onSearch?(search: string): void
 	onScrollEnd?(): void

@@ -1,6 +1,7 @@
 import { CheckSvg, ChevronDownSvg } from '@ds/release'
 import { Keyboard } from '@utils/release'
-import { useCallback, useMemo, useRef, useState } from 'react'
+import { debounce } from 'lodash'
+import { UIEvent, useCallback, useMemo, useRef, useState } from 'react'
 import { useSelectFieldBase } from './_base'
 import { SelectFieldProps } from './_types'
 
@@ -71,6 +72,12 @@ export const CustomImpl = (rawProps: SelectFieldProps) => {
 		[options, currentIndex, isFocused]
 	)
 
+	const onScrollOptions = debounce((event: UIEvent) => {
+		const container = event.target as HTMLElement
+		const isScrollEnd = container.offsetHeight + container.scrollTop >= container.scrollHeight
+		isScrollEnd && props.onScrollEnd?.()
+	}, 300)
+
 	const slotOptions = useMemo(
 		() => (
 			<ul role="listbox" css={cssOptionList}>
@@ -99,7 +106,7 @@ export const CustomImpl = (rawProps: SelectFieldProps) => {
 				{!options.length && <li css={cssOption}>{t('core.error.nothingFound', { search: search })}</li>}
 			</ul>
 		),
-		[options, props.loadingMore]
+		[options]
 	)
 
 	return (
@@ -143,7 +150,7 @@ export const CustomImpl = (rawProps: SelectFieldProps) => {
 
 				{/* ARROW */}
 				<div css={cssArrow}>
-					{props.loading || props.loadingMore || !options.length ? (
+					{props.loading || !options.length ? (
 						<span className="animate-spin text-size-sm">⌛</span>
 					) : (
 						<ChevronDownSvg className="h-xs-5" />
@@ -152,7 +159,10 @@ export const CustomImpl = (rawProps: SelectFieldProps) => {
 			</div>
 
 			{/* POPUP */}
-			<div css={cssPopup}>{slotOptions}</div>
+			<div css={cssPopup} onScroll={onScrollOptions}>
+				{slotOptions}
+				{props.slotLoadingMore}
+			</div>
 		</div>
 	)
 }
