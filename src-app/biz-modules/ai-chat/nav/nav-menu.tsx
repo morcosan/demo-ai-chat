@@ -1,7 +1,8 @@
 import { AgentItem } from '@app/biz-modules/ai-chat/components/items/agent-item'
 import { NavListing } from '@app/biz-modules/ai-chat/components/nav-listing'
 import { AiChatSvg, Button, SearchSvg, useUiTheme } from '@ds/release'
-import { useEffect, useMemo } from 'react'
+import { useEffect, useMemo, useState } from 'react'
+import { useSearchParams } from 'react-router-dom'
 import { Agent, Chat } from '../api'
 import { ChatItem } from '../components/items/chat-item'
 import { useAiChat, useAiChatAgents, useAiChatSearch } from '../state'
@@ -17,6 +18,8 @@ export const AiChatNavMenu = ({ collapsed, unselected, onHideNavMenu }: Props) =
 	const { allChats, allChatsLoading, allChatsPagination, activeChat, loadMoreChats, resetActiveChat } = useAiChat()
 	const { agents, agentsPagination, agentsLoading, loadMoreAgents } = useAiChatAgents()
 	const { setShowsSearch } = useAiChatSearch()
+	const [activeAgentId, setActiveAgentId] = useState(0)
+	const [searchParams, setSearchParams] = useSearchParams()
 
 	const hasExtraChat = Boolean(activeChat && !allChats.some((chat: Chat) => chat.id === activeChat.id))
 
@@ -24,22 +27,48 @@ export const AiChatNavMenu = ({ collapsed, unselected, onHideNavMenu }: Props) =
 		unselected && activeChat && resetActiveChat()
 	}, [])
 
+	useEffect(() => {
+		const id = parseInt(searchParams.get('agent') as string)
+		if (id && !isNaN(id)) {
+			setActiveAgentId(id)
+		} else {
+			setActiveAgentId(0)
+		}
+	}, [searchParams])
+
+	useEffect(() => {
+		if (activeChat) {
+			searchParams.delete('agent')
+			setSearchParams(searchParams)
+		}
+	}, [activeChat])
+
 	const slotAgents = useMemo(
 		() => (
 			<ul>
 				{agents.map((agent: Agent) => (
-					<AgentItem key={agent.id} agent={agent} onHideNavMenu={onHideNavMenu} />
+					<AgentItem
+						key={agent.id}
+						agent={agent}
+						selected={activeAgentId === agent.id}
+						onHideNavMenu={onHideNavMenu}
+					/>
 				))}
 			</ul>
 		),
-		[agents]
+		[agents, activeAgentId]
 	)
 
 	const slotChats = useMemo(
 		() => (
 			<ul>
 				{allChats.map((chat: Chat) => (
-					<ChatItem key={chat.id} chat={chat} activeChat={activeChat} onHideNavMenu={onHideNavMenu} />
+					<ChatItem
+						key={chat.id}
+						chat={chat}
+						selected={activeChat?.id === chat.id}
+						onHideNavMenu={onHideNavMenu}
+					/>
 				))}
 			</ul>
 		),

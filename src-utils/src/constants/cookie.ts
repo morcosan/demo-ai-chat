@@ -1,4 +1,6 @@
 export const COOKIE_KEY = {
+	APP_AGENT_FOR_CHAT: 'app-agent-for-chat',
+	APP_AGENT_FOR_SUBCHAT: 'app-agent-for-subchat',
 	APP_COLOR_THEME: 'app-color-theme',
 	APP_LANGUAGE: 'app-lang',
 	APP_PINNED_NAVBAR: 'app-pinned-navbar',

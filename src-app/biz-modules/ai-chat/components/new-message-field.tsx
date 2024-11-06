@@ -5,10 +5,10 @@ import { useSubmittable } from '../hooks/submittable'
 interface Props {
 	listLoading: ListLoading
 	postMessageFn: Function
-	primary?: boolean
+	isChatView?: boolean
 }
 
-export const NewMessageField = ({ listLoading, postMessageFn, primary }: Props) => {
+export const NewMessageField = ({ listLoading, postMessageFn, isChatView }: Props) => {
 	const [inputValue, setInputValue] = useState<string>('')
 	const inputRef = useRef<TextFieldRef>(null)
 
@@ -38,21 +38,21 @@ export const NewMessageField = ({ listLoading, postMessageFn, primary }: Props) 
 	return (
 		<TextField
 			ref={inputRef}
-			id={primary ? 'field-chat' : 'field-subchat'}
-			size={primary ? 'xl' : 'lg'}
+			id={isChatView ? 'field-chat' : 'field-subchat'}
+			size={isChatView ? 'xl' : 'lg'}
 			value={inputValue}
 			placeholder={t('aiChat.placeholder.newMessage')}
 			ariaLabel="New message"
 			slotRight={
 				<IconButton
 					tooltip={t('aiChat.action.sendMessage')}
-					variant={primary ? 'solid-primary' : 'solid-secondary'}
-					size={primary ? 'md' : 'sm'}
+					variant={isChatView ? 'solid-primary' : 'solid-secondary'}
+					size={isChatView ? 'md' : 'sm'}
 					loading={isLoading}
 					disabled={isDisabled || (!isLoading && !message)}
 					onClick={onSubmit}
 				>
-					<SendSvg className={primary ? 'h-xs-9' : 'h-xs-7'} />
+					<SendSvg className={isChatView ? 'h-xs-9' : 'h-xs-7'} />
 				</IconButton>
 			}
 			maxLength={1000}

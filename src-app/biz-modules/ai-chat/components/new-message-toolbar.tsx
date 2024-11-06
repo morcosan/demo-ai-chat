@@ -1,7 +1,9 @@
 import { SelectField, SelectOptionProps } from '@app/library/release'
 import { BuildSvg, IconButton } from '@ds/release'
+import { COOKIE_KEY } from '@utils/release'
 import { uniqBy } from 'lodash'
 import { useEffect, useState } from 'react'
+import { useSearchParams } from 'react-router-dom'
 import { Agent, API } from '../api'
 import { AgentEditModal } from '../components/agent-edit-modal'
 import { OptionItem } from '../components/items/option-item'
@@ -9,7 +11,8 @@ import { EMPTY_AGENT, useAiChatAgents } from '../state'
 import { parseGptDescription } from '../utils'
 
 interface Props extends ReactProps {
-	primary?: boolean
+	isChatView?: boolean
+	isNewChat?: boolean
 }
 
 const AgentValue = (props: SelectOptionProps) => <OptionItem agent={props.option as Agent} compact subtle />
@@ -17,16 +20,17 @@ const AgentOption = (props: SelectOptionProps) => (
 	<OptionItem agent={props.option as Agent} selected={props.selected} />
 )
 
-export const NewMessageToolbar = ({ primary, children }: Props) => {
+export const NewMessageToolbar = ({ isChatView, isNewChat, children }: Props) => {
 	const { refreshAgent } = useAiChatAgents()
-	const [agentId, setAgentId] = useState(0)
+	const [currAgentId, setCurrAgentId] = useState(0)
 	const [agents, setAgents] = useState<Agent[]>([])
 	const [agentPagination, setAgentPagination] = useState<Pagination>({ page: 0, count: 0 })
 	const [agentLoading, setAgentLoading] = useState<ListLoading>(false)
 	const [search, setSearch] = useState('')
 	const [showsAgentModal, setShowsAgentModal] = useState(false)
+	const [searchParams, setSearchParams] = useSearchParams()
 
-	const agentToEdit = agents.find((agent: Agent) => agent.id === agentId) || EMPTY_AGENT
+	const agentToEdit = agents.find((agent: Agent) => agent.id === currAgentId) || EMPTY_AGENT
 
 	const canLoadMoreAgents = !agentPagination.page || agents.length < agentPagination.count
 
@@ -38,22 +42,29 @@ export const NewMessageToolbar = ({ primary, children }: Props) => {
 		return !keyword || name.includes(keyword) || desc.includes(keyword)
 	}
 
-	const fetchMoreAgents = async () => {
+	const fetchMoreAgents = async (agentId: number = currAgentId) => {
 		if (agentLoading || !canLoadMoreAgents) return
 
 		setAgentLoading(agentPagination.page ? 'more' : 'full')
 
 		const listing = await API.getAgents([], agentPagination.page + 1, search)
 		let newAgents = uniqBy([...agents, ...listing.agents], (agent: Agent) => agent.id)
+		let hasAgentId = Boolean(agentId)
 
-		if (agentId) {
-			const hasAgentId = newAgents.some((agent: Agent) => agent.id === agentId)
-			if (!hasAgentId) {
+		if (hasAgentId) {
+			const includesAgentId = newAgents.some((agent: Agent) => agent.id === agentId)
+			if (!includesAgentId) {
 				const extraListing = await API.getAgents([agentId])
-				newAgents = [...newAgents, ...extraListing.agents]
+				if (extraListing.count) {
+					newAgents = [...newAgents, ...extraListing.agents]
+				} else {
+					hasAgentId = false
+				}
 			}
-		} else {
-			listing.agents.length && setAgentId(listing.agents[0].id)
+		}
+
+		if (!hasAgentId) {
+			listing.agents.length && setCurrAgentId(listing.agents[0].id)
 		}
 
 		setAgents(newAgents)
@@ -92,17 +103,48 @@ export const NewMessageToolbar = ({ primary, children }: Props) => {
 		}
 	}
 
+	const loadAgentId = () => {
+		const id = parseInt(searchParams.get('agent') as string)
+
+		if (id && !isNaN(id)) {
+			setCurrAgentId(id)
+			return id
+		}
+
+		return 0
+	}
+
 	useEffect(() => {
-		!agentPagination.page && fetchMoreAgents()
+		if (!agentPagination.page) {
+			fetchMoreAgents(loadAgentId())
+		}
 	}, [agentPagination])
+
+	useEffect(() => {
+		loadAgentId()
+	}, [searchParams])
+
+	useEffect(() => {
+		// Update cookie
+		const cookieKey = isChatView ? COOKIE_KEY.APP_AGENT_FOR_CHAT : COOKIE_KEY.APP_AGENT_FOR_SUBCHAT
+		localStorage.setItem(cookieKey, String(currAgentId))
+
+		// Update URL
+		if (isNewChat) {
+			searchParams.set('agent', String(currAgentId))
+		} else {
+			searchParams.delete('agent')
+		}
+		setSearchParams(searchParams)
+	}, [currAgentId])
 
 	return (
 		<div>
 			{/* TOOLBAR */}
 			<div className="mb-xs-1">
 				<SelectField
-					id={primary ? 'agent-chat' : 'agent-subchat'}
-					value={agentId}
+					id={isChatView ? 'agent-chat' : 'agent-subchat'}
+					value={currAgentId}
 					options={agents}
 					filterFn={agentFilterFn}
 					loading={agentLoading === 'full'}
@@ -115,9 +157,9 @@ export const NewMessageToolbar = ({ primary, children }: Props) => {
 					popupPos="top"
 					compValue={AgentValue}
 					compOption={AgentOption}
-					className={primary ? 'max-w-lg-7' : 'max-w-lg-5'}
+					className={isChatView ? 'max-w-lg-7' : 'max-w-lg-5'}
 					subtle
-					onChange={(id: number) => setAgentId(id)}
+					onChange={(id: number) => setCurrAgentId(id)}
 					onSearch={onSearchAgent}
 					onScrollEnd={fetchMoreAgents}
 				/>
