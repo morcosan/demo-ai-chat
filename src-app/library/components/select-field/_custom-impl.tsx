@@ -17,32 +17,32 @@ export const CustomImpl = (rawProps: SelectFieldProps) => {
 		cssRadius,
 		cssValueOption,
 		cssWrapper,
-		isOpened,
+		isFocused,
 		props,
-		setIsOpened,
+		setIsFocused,
 	} = useSelectFieldBase(rawProps)
 	const [search, setSearch] = useState('')
-	const [optionIndex, setOptionIndex] = useState(-1)
+	const [currentIndex, setCurrentIndex] = useState(-1)
 	const inputRef = useRef<HTMLInputElement>(null)
 
+	const keyword = search.trim().toLowerCase()
 	const keyLabel = props.keyLabel as string
 	const keyValue = props.keyValue as string
-	const keyword = search.trim().toLowerCase()
-	const valueOption = (props.options.find((option: any) => option[keyValue] === props.value) as any) || null
 	const options = props.options.filter((option: any) => option[keyLabel].toLowerCase().includes(keyword))
+	const valueOption = (props.options.find((option: any) => option[keyValue] === props.value) as any) || null
 
 	const openMenu = () => {
-		setIsOpened(true)
+		setIsFocused(true)
 		setSearch('')
-		setOptionIndex(-1)
+		setCurrentIndex(-1)
 	}
 
-	const onBlurInput = () => wait(100).then(() => setIsOpened(false)) // Delay is required to allow onClick
+	const onBlurInput = () => wait(100).then(() => setIsFocused(false)) // Delay is required to allow onClick
 
 	const onSelectOption = (option: any) => {
 		props.onChange?.(option[keyValue])
 		inputRef.current?.focus()
-		setIsOpened(false)
+		setIsFocused(false)
 	}
 
 	const onChangeInput = (event: ReactChangeEvent<HTMLInputElement>) => setSearch(event.target.value)
@@ -50,25 +50,25 @@ export const CustomImpl = (rawProps: SelectFieldProps) => {
 	const onKeyDown = useCallback(
 		(event: ReactKeyboardEvent) => {
 			const arrowFn = (diff: number) => {
-				setOptionIndex((value: number) => ((value > -1 ? value : 0) + diff + options.length) % options.length)
+				setCurrentIndex((value: number) => ((value > -1 ? value : 0) + diff + options.length) % options.length)
 			}
 			const isArrowDown = event.key === Keyboard.ARROW_DOWN
 			const isArrowUp = event.key === Keyboard.ARROW_UP
 			const isTab = event.key === Keyboard.TAB
 			const isSubmit = event.key === Keyboard.ENTER || event.key === Keyboard.SPACE
 
-			if (isOpened) {
+			if (isFocused) {
 				if (isArrowDown) arrowFn(1)
 				if (isArrowUp) arrowFn(-1)
-				if (isSubmit && options[optionIndex] !== undefined) {
-					onSelectOption(options[optionIndex])
+				if (isSubmit && options[currentIndex] !== undefined) {
+					onSelectOption(options[currentIndex])
 					event.preventDefault()
 				}
 			} else {
 				!isTab && openMenu()
 			}
 		},
-		[options, optionIndex, isOpened]
+		[options, currentIndex, isFocused]
 	)
 
 	const slotOptions = useMemo(
@@ -80,7 +80,7 @@ export const CustomImpl = (rawProps: SelectFieldProps) => {
 						id={`${props.id}-option-${index}`}
 						role="option"
 						aria-selected={option[keyValue] === props.value}
-						data-current={index === optionIndex}
+						data-current={index === currentIndex}
 						css={cssOption}
 						onClick={() => onSelectOption(option)}
 					>
@@ -99,33 +99,36 @@ export const CustomImpl = (rawProps: SelectFieldProps) => {
 				{!options.length && <li css={cssOption}>{t('core.error.nothingFound', { search: search })}</li>}
 			</ul>
 		),
-		[options]
+		[options, props.loadingMore]
 	)
 
 	return (
 		<div className={props.className} style={props.style} css={cssWrapper}>
-			<div css={[cssFieldBase, cssHeight, cssRadius, isOpened && cssFieldFocus]}>
+			<div css={[cssFieldBase, cssHeight, cssRadius, isFocused && cssFieldFocus]}>
+				{/* SEARCH */}
 				<input
 					ref={inputRef}
 					id={props.id}
 					type="text"
 					role="combobox"
+					disabled={props.loading}
 					value={search}
 					placeholder={props.placeholder}
 					aria-label={props.ariaLabel}
 					aria-describedby={`${props.id}-value`}
-					aria-expanded={isOpened}
+					aria-expanded={isFocused}
 					aria-autocomplete="list"
 					aria-haspopup="listbox"
-					aria-activedescendant={optionIndex > -1 ? `${props.id}-option-${optionIndex}` : ''}
+					aria-activedescendant={currentIndex > -1 ? `${props.id}-option-${currentIndex}` : ''}
 					css={cssInput}
 					onFocus={openMenu}
 					onBlur={onBlurInput}
 					onChange={onChangeInput}
 					onKeyDown={onKeyDown}
-					onClick={() => !isOpened && openMenu()}
+					onClick={() => !isFocused && openMenu()}
 				/>
 
+				{/* VALUE */}
 				<div id={`${props.id}-value`} css={cssValueOption}>
 					<span className="sr-only">{t('aiChat.label.selectedValue')}</span>
 
@@ -138,8 +141,13 @@ export const CustomImpl = (rawProps: SelectFieldProps) => {
 					<span className="sr-only">{props.ariaDescription}</span>
 				</div>
 
+				{/* ARROW */}
 				<div css={cssArrow}>
-					<ChevronDownSvg className="h-xs-5" />
+					{props.loading || props.loadingMore || !options.length ? (
+						<span className="animate-spin text-size-sm">⌛</span>
+					) : (
+						<ChevronDownSvg className="h-xs-5" />
+					)}
 				</div>
 			</div>
 

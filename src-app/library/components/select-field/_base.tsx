@@ -11,9 +11,9 @@ export const useSelectFieldBase = (rawProps: SelectFieldProps) => {
 		popupPos: 'bottom',
 	})
 	const { $color, $fontSize, $radius, $spacing, $shadow, $zIndex } = useUiTheme()
-	const [isOpened, setIsOpened] = useState(false)
+	const [isFocused, setIsFocused] = useState(false)
 
-	const isInteractive = !props.readonly && !props.disabled
+	const isInteractive = !props.readonly && !props.disabled && !props.loading
 
 	const calcPadding: string = (() => {
 		if (props.size === 'sm') return `calc((${$spacing['field-h-sm']} - ${$spacing['button-h-xs']}) / 2)`
@@ -73,7 +73,6 @@ export const useSelectFieldBase = (rawProps: SelectFieldProps) => {
 	const cssFieldBase: CSS = {
 		...CSS_A11Y_OUTLINE_PROXY,
 		...cssA11yOutline,
-		position: 'relative',
 		borderWidth: '1px',
 		borderColor: colorBorder,
 		background: props.readonly || props.subtle ? 'transparent' : $color['bg-field'],
@@ -97,7 +96,7 @@ export const useSelectFieldBase = (rawProps: SelectFieldProps) => {
 		background: 'transparent',
 		color: $color['text-default'],
 		fontSize: props.size === 'sm' ? $fontSize['sm'] : $fontSize['md'],
-		opacity: isOpened ? (props.disabled ? 0.3 : 1) : 0,
+		opacity: isFocused ? (props.disabled ? 0.3 : 1) : 0,
 		resize: 'none',
 
 		'&:focus-visible': {
@@ -118,7 +117,7 @@ export const useSelectFieldBase = (rawProps: SelectFieldProps) => {
 		justifyContent: 'center',
 		width: calcHeight,
 		height: calcHeight,
-		transform: isOpened ? 'rotate(180deg)' : 'rotate(0deg)',
+		transform: isFocused ? 'rotate(180deg)' : 'rotate(0deg)',
 		transition: 'transform 0.3s ease',
 		color: props.subtle ? $color['text-subtle'] : undefined,
 		pointerEvents: 'none',
@@ -130,7 +129,7 @@ export const useSelectFieldBase = (rawProps: SelectFieldProps) => {
 		height: '100%',
 		padding: `0 calc(${calcPaddingTextX} + ${calcPadding})`,
 		paddingRight: calcHeight,
-		opacity: isOpened ? 0 : 1,
+		opacity: isFocused ? 0 : 1,
 		pointerEvents: 'none',
 	}
 
@@ -142,7 +141,7 @@ export const useSelectFieldBase = (rawProps: SelectFieldProps) => {
 		bottom: props.popupPos === 'top' ? `calc(${calcHeight} + 1px)` : undefined,
 		left: `calc(-1 * ${calcExtraPadding})`,
 		right: `calc(-1 * ${calcExtraPadding})`,
-		display: isOpened ? 'block' : 'none',
+		display: isFocused ? 'block' : 'none',
 		maxHeight: $spacing['xl-0'],
 		overflowY: 'auto',
 		backgroundColor: $color['bg-card'],
@@ -181,7 +180,7 @@ export const useSelectFieldBase = (rawProps: SelectFieldProps) => {
 	const cssWrapper: CSS = {
 		position: 'relative',
 		display: 'inline-block',
-		width: props.subtle ? (isOpened ? '100%' : 'fit-content') : undefined,
+		width: props.subtle ? (isFocused ? '100%' : 'fit-content') : undefined,
 		verticalAlign: 'middle',
 	}
 
@@ -197,9 +196,9 @@ export const useSelectFieldBase = (rawProps: SelectFieldProps) => {
 		cssRadius,
 		cssValueOption,
 		cssWrapper,
+		isFocused,
 		isInteractive,
-		isOpened,
 		props,
-		setIsOpened,
+		setIsFocused,
 	}
 }
