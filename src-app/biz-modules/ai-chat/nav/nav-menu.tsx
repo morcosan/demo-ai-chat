@@ -73,7 +73,7 @@ export const AiChatNavMenu = ({ collapsed, unselected, onHideNavMenu }: Props) =
 				loadingText={t('aiChat.state.loadingAgents')}
 				emptyText=""
 				headerClass="mt-xs-9"
-				listingStyle={{ maxHeight: `calc(3 * ${$spacing['button-h-md']} + ${$spacing['a11y-padding']})` }}
+				listingStyle={{ maxHeight: `calc(4 * ${$spacing['button-h-md']} + ${$spacing['a11y-padding']})` }}
 				collapsed={collapsed}
 				onScrollEnd={loadMoreAgents}
 			>
