@@ -6,6 +6,7 @@ import { Agent, API } from '../api'
 import { AgentEditModal } from '../components/agent-edit-modal'
 import { OptionItem } from '../components/items/option-item'
 import { EMPTY_AGENT } from '../state'
+import { parseGptDescription } from '../utils'
 
 interface Props extends ReactProps {
 	primary?: boolean
@@ -28,12 +29,22 @@ export const NewMessageToolbar = ({ primary, children }: Props) => {
 
 	const canLoadMoreAgents = !agentPagination.page || agents.length < agentPagination.count
 
+	const keyword = search.trim().toLowerCase()
+
+	const agentFilterFn = (option: object, keyword: string) => {
+		const agent = option as Agent
+		const name = agent.name.toLowerCase()
+		const desc = parseGptDescription(agent.gptId, agent.desc).toLowerCase()
+
+		return !keyword || name.includes(keyword) || desc.includes(keyword)
+	}
+
 	const fetchMoreAgents = async () => {
 		if (agentLoading || !canLoadMoreAgents) return
 
 		setAgentLoading(agentPagination.page ? 'more' : 'full')
 
-		const listing = await API.getAgents([], agentPagination.page + 1, search)
+		const listing = await API.getAgents([], agentPagination.page + 1, keyword)
 		let newAgents = uniqBy([...agents, ...listing.agents], (agent: Agent) => agent.id)
 
 		if (agentId) {
@@ -55,7 +66,12 @@ export const NewMessageToolbar = ({ primary, children }: Props) => {
 
 	const onSearchAgent = (search: string) => {
 		setSearch(search)
-		callFetchAgents()
+
+		if (canLoadMoreAgents) {
+			callFetchAgents()
+		} else {
+			// Filter locally
+		}
 	}
 
 	useEffect(() => {
@@ -70,6 +86,7 @@ export const NewMessageToolbar = ({ primary, children }: Props) => {
 					id={primary ? 'agent-chat' : 'agent-subchat'}
 					value={agentId}
 					options={agents}
+					filterFn={agentFilterFn}
 					loading={Boolean(agentLoading)}
 					keyValue="id"
 					keyLabel="name"

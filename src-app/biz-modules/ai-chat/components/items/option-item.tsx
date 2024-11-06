@@ -1,4 +1,5 @@
-import { Agent, GPT, GPT_ID__LOREM_IPSUM, GPT_ID__RAMMUS, UI_TAG__GPT_DESCRIPTION } from '../../api'
+import { Agent, GPT, GPT_ID__LOREM_IPSUM, GPT_ID__RAMMUS } from '../../api'
+import { parseGptDescription } from '../../utils'
 
 interface Props {
 	gpt?: GPT
@@ -13,13 +14,7 @@ export const OptionItem = ({ gpt, agent, selected, compact, subtle }: Props) => 
 	const name = gpt?.name || agent?.name || ''
 
 	const desc = (() => {
-		if (agent?.desc) {
-			if (agent.desc === UI_TAG__GPT_DESCRIPTION) {
-				if (agent.gptId === GPT_ID__LOREM_IPSUM) return t('aiChat.description.loremIpsumGPT')
-				if (agent.gptId === GPT_ID__RAMMUS) return t('aiChat.description.rammusGPT')
-			}
-			return agent.desc
-		}
+		if (agent?.desc) return parseGptDescription(agent.gptId, agent.desc)
 		if (gpt?.id === GPT_ID__LOREM_IPSUM) return t('aiChat.description.loremIpsumGPT')
 		if (gpt?.id === GPT_ID__RAMMUS) return t('aiChat.description.rammusGPT')
 		return ''

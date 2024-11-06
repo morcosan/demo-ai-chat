@@ -7,6 +7,7 @@ export interface SelectFieldProps extends ReactProps {
 	options: object[]
 	keyLabel?: string
 	keyValue?: string
+	filterFn?: SelectFilterFn
 	size?: TextFieldSize
 	placeholder?: string
 	ariaLabel?: string
@@ -29,3 +30,5 @@ export interface SelectOptionProps {
 	option: unknown
 	selected?: boolean
 }
+
+export type SelectFilterFn = (option: object, keyword: string) => boolean

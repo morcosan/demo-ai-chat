@@ -29,7 +29,9 @@ export const CustomImpl = (rawProps: SelectFieldProps) => {
 	const keyword = search.trim().toLowerCase()
 	const keyLabel = props.keyLabel as string
 	const keyValue = props.keyValue as string
-	const options = props.options.filter((option: any) => option[keyLabel].toLowerCase().includes(keyword))
+	const options = props.options.filter((option: any) => {
+		return !keyword || props.filterFn?.(option, keyword) || option[keyLabel].toLowerCase().includes(keyword)
+	})
 	const valueOption = (props.options.find((option: any) => option[keyValue] === props.value) as any) || null
 
 	const openMenu = () => {
@@ -46,7 +48,10 @@ export const CustomImpl = (rawProps: SelectFieldProps) => {
 		setIsFocused(false)
 	}
 
-	const onChangeInput = (event: ReactChangeEvent<HTMLInputElement>) => setSearch(event.target.value)
+	const onChangeInput = (event: ReactChangeEvent<HTMLInputElement>) => {
+		setSearch(event.target.value)
+		props.onSearch?.(event.target.value)
+	}
 
 	const onKeyDown = useCallback(
 		(event: ReactKeyboardEvent) => {

@@ -1,7 +1,8 @@
 import { LoadingText } from '@app/library/release'
 import { BuildSvg, IconButton } from '@ds/release'
-import { Agent, GPT, GPT_ID__LOREM_IPSUM, GPT_ID__RAMMUS, UI_TAG__GPT_DESCRIPTION } from '../../api'
+import { Agent, GPT } from '../../api'
 import { useAiChatAgents } from '../../state'
+import { parseGptDescription } from '../../utils'
 
 interface Props extends ReactProps {
 	agent: Agent
@@ -17,14 +18,7 @@ export const AgentConfigItem = (props: Props) => {
 
 	const isGhost = agent.updating || agent.deleting
 	const isInteractive = Boolean(onEdit)
-
-	const description = (() => {
-		if (agent.desc === UI_TAG__GPT_DESCRIPTION) {
-			if (agent.gptId === GPT_ID__LOREM_IPSUM) return t('aiChat.description.loremIpsumGPT')
-			if (agent.gptId === GPT_ID__RAMMUS) return t('aiChat.description.rammusGPT')
-		}
-		return agent.desc
-	})()
+	const description = parseGptDescription(agent.gptId, agent.desc)
 
 	return (
 		<li className="relative">
