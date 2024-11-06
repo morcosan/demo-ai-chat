@@ -30,6 +30,8 @@ export const NewMessageToolbar = ({ isChatView, isNewChat, children }: Props) =>
 	const [showsAgentModal, setShowsAgentModal] = useState(false)
 	const [searchParams, setSearchParams] = useSearchParams()
 
+	const agentCookieKey = isChatView ? COOKIE_KEY.APP_AGENT_FOR_CHAT : COOKIE_KEY.APP_AGENT_FOR_SUBCHAT
+
 	const agentToEdit = agents.find((agent: Agent) => agent.id === currAgentId) || EMPTY_AGENT
 
 	const canLoadMoreAgents = !agentPagination.page || agents.length < agentPagination.count
@@ -48,6 +50,7 @@ export const NewMessageToolbar = ({ isChatView, isNewChat, children }: Props) =>
 		setAgentLoading(agentPagination.page ? 'more' : 'full')
 
 		const listing = await API.getAgents([], agentPagination.page + 1, search)
+
 		let newAgents = uniqBy([...agents, ...listing.agents], (agent: Agent) => agent.id)
 		let hasAgentId = Boolean(agentId)
 
@@ -64,13 +67,15 @@ export const NewMessageToolbar = ({ isChatView, isNewChat, children }: Props) =>
 		}
 
 		if (!hasAgentId) {
-			listing.agents.length && setCurrAgentId(listing.agents[0].id)
+			setCurrAgentId(listing.agents[0]?.id || 0)
 		}
 
 		setAgents(newAgents)
 		setAgentPagination({ page: agentPagination.page + 1, count: listing.count })
 		setAgentLoading(false)
 	}
+
+	const onChangeAgent = (id: number) => setCurrAgentId(id)
 
 	const onSearchAgent = (value: string) => {
 		setSearch(value)
@@ -104,20 +109,17 @@ export const NewMessageToolbar = ({ isChatView, isNewChat, children }: Props) =>
 	}
 
 	const loadAgentId = () => {
-		const id = parseInt(searchParams.get('agent') as string)
+		let id
+		if (!id || isNaN(id)) id = parseInt(searchParams.get('agent') as string)
+		if (!id || isNaN(id)) id = parseInt(localStorage.getItem(agentCookieKey) as string)
+		if (!id || isNaN(id)) return 0
 
-		if (id && !isNaN(id)) {
-			setCurrAgentId(id)
-			return id
-		}
-
-		return 0
+		setCurrAgentId(id)
+		return id
 	}
 
 	useEffect(() => {
-		if (!agentPagination.page) {
-			fetchMoreAgents(loadAgentId())
-		}
+		!agentPagination.page && fetchMoreAgents(loadAgentId())
 	}, [agentPagination])
 
 	useEffect(() => {
@@ -125,17 +127,13 @@ export const NewMessageToolbar = ({ isChatView, isNewChat, children }: Props) =>
 	}, [searchParams])
 
 	useEffect(() => {
-		// Update cookie
-		const cookieKey = isChatView ? COOKIE_KEY.APP_AGENT_FOR_CHAT : COOKIE_KEY.APP_AGENT_FOR_SUBCHAT
-		localStorage.setItem(cookieKey, String(currAgentId))
+		if (!currAgentId) return
 
 		// Update URL
-		if (isNewChat) {
-			searchParams.set('agent', String(currAgentId))
-		} else {
-			searchParams.delete('agent')
-		}
+		isNewChat ? searchParams.set('agent', String(currAgentId)) : searchParams.delete('agent')
 		setSearchParams(searchParams)
+		// Update cookie
+		localStorage.setItem(agentCookieKey, String(currAgentId))
 	}, [currAgentId])
 
 	return (
@@ -159,7 +157,7 @@ export const NewMessageToolbar = ({ isChatView, isNewChat, children }: Props) =>
 					compOption={AgentOption}
 					className={isChatView ? 'max-w-lg-7' : 'max-w-lg-5'}
 					subtle
-					onChange={(id: number) => setCurrAgentId(id)}
+					onChange={onChangeAgent}
 					onSearch={onSearchAgent}
 					onScrollEnd={fetchMoreAgents}
 				/>
