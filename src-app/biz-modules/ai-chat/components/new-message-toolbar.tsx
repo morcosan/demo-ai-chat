@@ -1,6 +1,6 @@
-import { LoadingText, SelectField, SelectOptionProps } from '@app/library/release'
+import { SelectField, SelectOptionProps } from '@app/library/release'
 import { BuildSvg, IconButton } from '@ds/release'
-import { debounce, uniqBy } from 'lodash'
+import { uniqBy } from 'lodash'
 import { useEffect, useState } from 'react'
 import { Agent, API } from '../api'
 import { AgentEditModal } from '../components/agent-edit-modal'
@@ -29,8 +29,6 @@ export const NewMessageToolbar = ({ primary, children }: Props) => {
 
 	const canLoadMoreAgents = !agentPagination.page || agents.length < agentPagination.count
 
-	const keyword = search.trim().toLowerCase()
-
 	const agentFilterFn = (option: object, keyword: string) => {
 		const agent = option as Agent
 		const name = agent.name.toLowerCase()
@@ -44,7 +42,7 @@ export const NewMessageToolbar = ({ primary, children }: Props) => {
 
 		setAgentLoading(agentPagination.page ? 'more' : 'full')
 
-		const listing = await API.getAgents([], agentPagination.page + 1, keyword)
+		const listing = await API.getAgents([], agentPagination.page + 1, search)
 		let newAgents = uniqBy([...agents, ...listing.agents], (agent: Agent) => agent.id)
 
 		if (agentId) {
@@ -62,21 +60,15 @@ export const NewMessageToolbar = ({ primary, children }: Props) => {
 		setAgentLoading(false)
 	}
 
-	const callFetchAgents = debounce(fetchMoreAgents, 300)
-
-	const onSearchAgent = (search: string) => {
-		setSearch(search)
-
-		if (canLoadMoreAgents) {
-			callFetchAgents()
-		} else {
-			// Filter locally
-		}
+	const onSearchAgent = (value: string) => {
+		setSearch(value)
+		setAgents([])
+		setAgentPagination({ page: 0, count: 0 })
 	}
 
 	useEffect(() => {
-		fetchMoreAgents()
-	}, [])
+		!agentPagination.page && fetchMoreAgents()
+	}, [agentPagination])
 
 	return (
 		<div>
@@ -87,7 +79,10 @@ export const NewMessageToolbar = ({ primary, children }: Props) => {
 					value={agentId}
 					options={agents}
 					filterFn={agentFilterFn}
-					loading={Boolean(agentLoading)}
+					loading={agentLoading === 'full'}
+					loadingMore={agentLoading === 'more'}
+					canLoadMore={canLoadMoreAgents}
+					loadingText={t('aiChat.state.loadingAgents')}
 					keyValue="id"
 					keyLabel="name"
 					size="sm"
@@ -95,15 +90,6 @@ export const NewMessageToolbar = ({ primary, children }: Props) => {
 					compValue={AgentValue}
 					compOption={AgentOption}
 					className={primary ? 'max-w-lg-7' : 'max-w-lg-5'}
-					slotLoadingMore={
-						Boolean(canLoadMoreAgents) && (
-							<LoadingText
-								text={t('aiChat.state.loadingAgents')}
-								className="relative -top-xs-2 ml-xs-3 min-h-sm-4 px-button-px-item text-size-sm"
-								style={{ visibility: agentLoading === 'more' ? 'visible' : 'hidden' }}
-							/>
-						)
-					}
 					subtle
 					onChange={(id: number) => setAgentId(id)}
 					onSearch={onSearchAgent}
@@ -114,7 +100,7 @@ export const NewMessageToolbar = ({ primary, children }: Props) => {
 					tooltip={t('aiChat.action.configureAgent')}
 					loading={agentLoading === 'full'}
 					size="sm"
-					className="-ml-xs-1 text-color-text-subtle"
+					className="-ml-xs-0 text-color-text-subtle"
 					onClick={() => setShowsAgentModal(true)}
 				>
 					<BuildSvg className="w-xs-5" />

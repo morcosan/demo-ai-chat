@@ -6,6 +6,7 @@ import {
 	DbAgent,
 	GptApiData,
 	STATUS__SUCCESS,
+	UI_TAG__GPT_DESCRIPTION,
 } from '../types'
 import { RESP__INVALID_DATA, RESP__NOT_FOUND } from '../utilities/network'
 import { extractInt, extractIntArray, isGreaterThanZero } from '../utilities/parsers'
@@ -39,7 +40,13 @@ export const agentsService = {
 			}
 		} else {
 			const agents = search
-				? dbAgents.filter((agent: DbAgent) => agent.name.toLowerCase().includes(search))
+				? dbAgents.filter((agent: DbAgent) => {
+						return (
+							agent.name.toLowerCase().includes(search) ||
+							agent.desc.toLowerCase().includes(search) ||
+							agent.desc === UI_TAG__GPT_DESCRIPTION
+						)
+					})
 				: dbAgents
 
 			if (!isValidPagination(page, count, dbAgents.length)) {

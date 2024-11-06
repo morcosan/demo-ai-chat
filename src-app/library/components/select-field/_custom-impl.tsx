@@ -1,3 +1,4 @@
+import { LoadingText } from '@app/library/release'
 import { CheckSvg, ChevronDownSvg } from '@ds/release'
 import { Keyboard } from '@utils/release'
 import { debounce } from 'lodash'
@@ -22,11 +23,10 @@ export const CustomImpl = (rawProps: SelectFieldProps) => {
 		props,
 		setIsFocused,
 	} = useSelectFieldBase(rawProps)
-	const [search, setSearch] = useState('')
+	const [keyword, setKeyword] = useState('')
 	const [currentIndex, setCurrentIndex] = useState(-1)
 	const inputRef = useRef<HTMLInputElement>(null)
 
-	const keyword = search.trim().toLowerCase()
 	const keyLabel = props.keyLabel as string
 	const keyValue = props.keyValue as string
 	const options = props.options.filter((option: any) => {
@@ -36,8 +36,9 @@ export const CustomImpl = (rawProps: SelectFieldProps) => {
 
 	const openMenu = () => {
 		setIsFocused(true)
-		setSearch('')
 		setCurrentIndex(-1)
+		setKeyword('')
+		inputRef.current && (inputRef.current.value = '')
 	}
 
 	const onBlurInput = () => {
@@ -50,9 +51,14 @@ export const CustomImpl = (rawProps: SelectFieldProps) => {
 		setIsFocused(false)
 	}
 
+	const execSearch = debounce((value: string) => {
+		const keyword = value.trim().toLowerCase()
+		setKeyword(keyword)
+		props.onSearch?.(keyword)
+	}, 300)
+
 	const onChangeInput = (event: ReactChangeEvent<HTMLInputElement>) => {
-		setSearch(event.target.value)
-		props.onSearch?.(event.target.value)
+		execSearch(event.target.value)
 	}
 
 	const onKeyDown = useCallback(
@@ -87,7 +93,7 @@ export const CustomImpl = (rawProps: SelectFieldProps) => {
 
 	const slotOptions = useMemo(
 		() => (
-			<ul role="listbox" css={cssOptionList}>
+			<ul role="listbox" css={cssOptionList} className={cx(!options.length && 'hidden')}>
 				{options.map((option: any, index: number) => (
 					<li
 						key={option[keyValue]}
@@ -98,6 +104,7 @@ export const CustomImpl = (rawProps: SelectFieldProps) => {
 						css={cssOption}
 						onClick={() => onSelectOption(option)}
 					>
+						{index}
 						<div className="flex-1">
 							{props.compOption ? (
 								<props.compOption option={option} selected={option[keyValue] === props.value} />
@@ -109,8 +116,6 @@ export const CustomImpl = (rawProps: SelectFieldProps) => {
 						{option[keyValue] === props.value && <CheckSvg className="h-xs-6" />}
 					</li>
 				))}
-
-				{!options.length && <li css={cssOption}>{t('core.error.nothingFound', { search: search })}</li>}
 			</ul>
 		),
 		[options]
@@ -125,7 +130,6 @@ export const CustomImpl = (rawProps: SelectFieldProps) => {
 					id={props.id}
 					type="text"
 					role="combobox"
-					value={search}
 					placeholder={props.placeholder}
 					aria-label={props.ariaLabel}
 					aria-describedby={`${props.id}-value`}
@@ -156,7 +160,7 @@ export const CustomImpl = (rawProps: SelectFieldProps) => {
 
 				{/* ARROW */}
 				<div css={cssArrow}>
-					{props.loading || !options.length ? (
+					{props.loading || props.loadingMore ? (
 						<span className="animate-spin text-size-sm">⌛</span>
 					) : (
 						<ChevronDownSvg className="h-xs-5" />
@@ -166,8 +170,30 @@ export const CustomImpl = (rawProps: SelectFieldProps) => {
 
 			{/* POPUP */}
 			<div css={cssPopup} onScroll={onScrollOptions}>
-				{slotOptions}
-				{props.slotLoadingMore}
+				{props.loading ? (
+					<LoadingText
+						text={props.loadingText || t('core.state.loading')}
+						className="ml-xs-3 min-h-button-h-lg px-button-px-item text-size-sm"
+					/>
+				) : (
+					<>
+						{slotOptions}
+
+						{Boolean(props.canLoadMore) && (
+							<LoadingText
+								text={props.loadingText || t('core.state.loading')}
+								className="relative -top-xs-2 ml-xs-3 min-h-button-h-md px-button-px-item text-size-sm"
+								style={{ visibility: props.loadingMore ? 'visible' : 'hidden' }}
+							/>
+						)}
+
+						{!options.length && (
+							<div className="flex min-h-button-h-lg items-center px-button-px-item text-size-sm">
+								{t('core.error.nothingFound', { search: keyword })}
+							</div>
+						)}
+					</>
+				)}
 			</div>
 		</div>
 	)
