@@ -15,10 +15,8 @@
 			"selectAll": "Select all",
 			"signOut": "Sign out"
 		},
-		"description": {
-			"noChanges": "There are no changes"
-		},
 		"error": {
+			"noChanges": "There are no changes",
 			"nothingFound": "Nothing found for \"{search}\""
 		},
 		"label": {
@@ -81,8 +79,9 @@
 			"rammusGPT": "Best psychological support"
 		},
 		"error": {
+			"agentAvatar": "You must add an avatar for the agent",
 			"agentName": "You must add a name for the agent",
-			"agentAvatar": "You must add an avatar for the agent"
+			"emptyMessage": "Your message is empty"
 		},
 		"label": {
 			"agents": "Agents",

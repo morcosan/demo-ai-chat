@@ -81,7 +81,7 @@ export const AgentEditModal = (props: Props) => {
 				<Button
 					variant="solid-primary"
 					loading={props.agent.updating}
-					tooltip={hasChanges ? '' : t('core.description.noChanges')}
+					tooltip={hasChanges ? '' : t('core.error.noChanges')}
 					onClick={onSubmit}
 				>
 					{isEditing ? t('core.action.saveChanges') : t('aiChat.action.createAgent')}

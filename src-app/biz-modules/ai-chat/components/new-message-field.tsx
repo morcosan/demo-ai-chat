@@ -19,6 +19,7 @@ export const NewMessageField = ({ listLoading, postMessageFn, isChatView }: Prop
 	const onChange = (value: string) => setInputValue(value)
 
 	const onSubmit = useCallback(() => {
+		if (isDisabled) return
 		if (listLoading || !message) return
 
 		postMessageFn(message)
@@ -45,11 +46,10 @@ export const NewMessageField = ({ listLoading, postMessageFn, isChatView }: Prop
 			ariaLabel="New message"
 			slotRight={
 				<IconButton
-					tooltip={t('aiChat.action.sendMessage')}
+					tooltip={isDisabled || !message ? t('aiChat.error.emptyMessage') : t('aiChat.action.sendMessage')}
 					variant={isChatView ? 'solid-primary' : 'solid-secondary'}
 					size={isChatView ? 'md' : 'sm'}
 					loading={isLoading}
-					disabled={isDisabled || (!isLoading && !message)}
 					onClick={onSubmit}
 				>
 					<SendSvg className={isChatView ? 'h-xs-9' : 'h-xs-7'} />
