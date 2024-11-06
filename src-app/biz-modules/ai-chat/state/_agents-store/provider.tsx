@@ -96,6 +96,14 @@ export const AgentsProvider = ({ children }: ReactProps) => {
 		}
 	}
 
+	const refreshAgent = (agent: Agent) => {
+		const index = agents.findIndex((other: Agent) => other.id === agent.id)
+		if (index === -1) return
+
+		agents[index] = agent
+		setAgents([...agents])
+	}
+
 	useEffect(() => {
 		loadGPTs()
 		!agentsPagination.page && loadMoreAgents()
@@ -112,6 +120,7 @@ export const AgentsProvider = ({ children }: ReactProps) => {
 			createNewAgent,
 			deleteAgent,
 			loadMoreAgents,
+			refreshAgent,
 			updateAgent,
 		}),
 		[gpts, gptsLoading, agents, agentsPagination, agentsLoading]

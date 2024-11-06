@@ -5,7 +5,7 @@ import { useEffect, useState } from 'react'
 import { Agent, API } from '../api'
 import { AgentEditModal } from '../components/agent-edit-modal'
 import { OptionItem } from '../components/items/option-item'
-import { EMPTY_AGENT } from '../state'
+import { EMPTY_AGENT, useAiChatAgents } from '../state'
 import { parseGptDescription } from '../utils'
 
 interface Props extends ReactProps {
@@ -18,6 +18,7 @@ const AgentOption = (props: SelectOptionProps) => (
 )
 
 export const NewMessageToolbar = ({ primary, children }: Props) => {
+	const { refreshAgent } = useAiChatAgents()
 	const [agentId, setAgentId] = useState(0)
 	const [agents, setAgents] = useState<Agent[]>([])
 	const [agentPagination, setAgentPagination] = useState<Pagination>({ page: 0, count: 0 })
@@ -87,6 +88,7 @@ export const NewMessageToolbar = ({ primary, children }: Props) => {
 			agents[index] = newAgent
 			setAgents([...agents])
 			setShowsAgentModal(false)
+			refreshAgent(newAgent)
 		}
 	}
 
