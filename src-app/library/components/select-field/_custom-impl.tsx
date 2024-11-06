@@ -40,7 +40,9 @@ export const CustomImpl = (rawProps: SelectFieldProps) => {
 		setCurrentIndex(-1)
 	}
 
-	const onBlurInput = () => wait(100).then(() => setIsFocused(false)) // Delay is required to allow onClick
+	const onBlurInput = () => {
+		wait(100).then(() => setIsFocused(false)) // Delay is required to allow onClick
+	}
 
 	const onSelectOption = (option: any) => {
 		props.onChange?.(option[keyValue])
@@ -123,7 +125,6 @@ export const CustomImpl = (rawProps: SelectFieldProps) => {
 					id={props.id}
 					type="text"
 					role="combobox"
-					disabled={props.loading}
 					value={search}
 					placeholder={props.placeholder}
 					aria-label={props.ariaLabel}

@@ -137,8 +137,8 @@ export const useSelectFieldBase = (rawProps: SelectFieldProps) => {
 
 	const cssPopup: CSS = {
 		position: 'absolute',
-		top: props.popupPos === 'bottom' ? `calc(${calcHeight} + 1px)` : undefined,
-		bottom: props.popupPos === 'top' ? `calc(${calcHeight} + 1px)` : undefined,
+		top: props.popupPos === 'bottom' ? `calc(${calcHeight} + 2px)` : undefined,
+		bottom: props.popupPos === 'top' ? `calc(${calcHeight} + 2px)` : undefined,
 		left: `calc(-1 * ${calcExtraPadding})`,
 		right: `calc(-1 * ${calcExtraPadding})`,
 		display: isFocused ? 'block' : 'none',
