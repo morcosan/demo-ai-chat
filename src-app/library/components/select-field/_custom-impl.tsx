@@ -104,7 +104,6 @@ export const CustomImpl = (rawProps: SelectFieldProps) => {
 						css={cssOption}
 						onClick={() => onSelectOption(option)}
 					>
-						{index}
 						<div className="flex-1">
 							{props.compOption ? (
 								<props.compOption option={option} selected={option[keyValue] === props.value} />
