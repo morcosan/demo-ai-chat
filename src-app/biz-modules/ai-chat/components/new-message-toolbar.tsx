@@ -66,6 +66,30 @@ export const NewMessageToolbar = ({ primary, children }: Props) => {
 		setAgentPagination({ page: 0, count: 0 })
 	}
 
+	const onSubmitAgent = async (payload: Agent) => {
+		const index = agents.findIndex((agent: Agent) => agent.id === payload.id)
+		if (index === -1) return
+
+		agents[index].updating = true
+		setAgents([...agents])
+
+		const listing = await API.updateAgent({
+			agentId: payload.id,
+			gptId: payload.gptId,
+			name: payload.name.trim(),
+			avatar: payload.avatar.trim(),
+			desc: payload.desc.trim(),
+			setup: payload.setup.trim(),
+		})
+
+		const newAgent = listing.agents[0]
+		if (newAgent) {
+			agents[index] = newAgent
+			setAgents([...agents])
+			setShowsAgentModal(false)
+		}
+	}
+
 	useEffect(() => {
 		!agentPagination.page && fetchMoreAgents()
 	}, [agentPagination])
@@ -100,7 +124,7 @@ export const NewMessageToolbar = ({ primary, children }: Props) => {
 					tooltip={t('aiChat.action.configureAgent')}
 					loading={agentLoading === 'full'}
 					size="sm"
-					className="-ml-xs-0 text-color-text-subtle"
+					className="text-color-text-subtle"
 					onClick={() => setShowsAgentModal(true)}
 				>
 					<BuildSvg className="w-xs-5" />
@@ -108,7 +132,12 @@ export const NewMessageToolbar = ({ primary, children }: Props) => {
 			</div>
 
 			{/* AGENT MODAL */}
-			<AgentEditModal agent={agentToEdit} opened={showsAgentModal} onClose={() => setShowsAgentModal(false)} />
+			<AgentEditModal
+				agent={agentToEdit}
+				opened={showsAgentModal}
+				onSubmit={onSubmitAgent}
+				onClose={() => setShowsAgentModal(false)}
+			/>
 
 			{/* TEXT FIELD */}
 			{children}

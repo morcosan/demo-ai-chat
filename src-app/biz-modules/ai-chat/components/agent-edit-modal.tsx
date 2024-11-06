@@ -8,6 +8,7 @@ import { OptionItem } from './items/option-item'
 interface Props {
 	agent: Agent | null
 	opened: boolean
+	onSubmit(payload: Agent): Promise<void>
 	onClose(): void
 	onClosed?(): void
 	onDelete?(): void
@@ -17,15 +18,14 @@ const GptValue = (props: SelectOptionProps) => <OptionItem gpt={props.option as 
 const GptOption = (props: SelectOptionProps) => <OptionItem gpt={props.option as GPT} selected={props.selected} />
 
 export const AgentEditModal = (props: Props) => {
-	const { agent, opened, onClose, onClosed, onDelete } = props
-	const { gpts, agents, createNewAgent, updateAgent } = useAiChatAgents()
-	const [initial, setInitial] = useState<Agent>(agent || EMPTY_AGENT)
-	const [payload, setPayload] = useState<Agent>(agent || EMPTY_AGENT)
+	const { gpts, agents } = useAiChatAgents()
+	const [initial, setInitial] = useState<Agent>(props.agent || EMPTY_AGENT)
+	const [payload, setPayload] = useState<Agent>(props.agent || EMPTY_AGENT)
 	const [feedback, setFeedback] = useState<FormPayload<Agent>>(EMPTY_AGENT)
 
-	const isEditing = Boolean(agent?.id)
+	const isEditing = Boolean(props.agent?.id)
 	const canDelete = Boolean(
-		onDelete && isEditing && agents.filter((agent: Agent) => agent.id && !agent.deleting).length > 1
+		props.onDelete && isEditing && agents.filter((agent: Agent) => agent.id && !agent.deleting).length > 1
 	)
 
 	const sectionClass = cx('flex flex-1 flex-col gap-sm-2')
@@ -42,7 +42,7 @@ export const AgentEditModal = (props: Props) => {
 	const onSubmit = async () => {
 		// Fake success
 		if (!hasChanges && isEditing) {
-			onClose()
+			props.onClose()
 			return
 		}
 
@@ -53,43 +53,34 @@ export const AgentEditModal = (props: Props) => {
 		setFeedback(validation)
 
 		if (!hasErrors(validation)) {
-			const apiFn = isEditing ? updateAgent : createNewAgent
-			const success = await apiFn({
-				agentId: payload.id,
-				gptId: payload.gptId,
-				name: payload.name.trim(),
-				avatar: payload.avatar.trim(),
-				desc: payload.desc.trim(),
-				setup: payload.setup.trim(),
-			})
-			success && onClose()
+			props.onSubmit(payload)
 		}
 	}
 
 	useEffect(() => {
-		if (agent && gpts.length) {
+		if (props.agent && gpts.length) {
 			const initial = {
-				...agent,
-				gptId: agent.gptId || gpts[0].id,
-				avatar: agent.avatar || gpts[0].avatar,
+				...props.agent,
+				gptId: props.agent.gptId || gpts[0].id,
+				avatar: props.agent.avatar || gpts[0].avatar,
 			}
 			setInitial(initial)
 			setPayload(initial)
 		}
 
 		setFeedback(EMPTY_AGENT)
-	}, [agent, gpts])
+	}, [props.agent, gpts])
 
-	return agent ? (
+	return props.agent ? (
 		<Modal
-			opened={opened}
+			opened={props.opened}
 			width="lg"
-			persistent={hasChanges || agent.updating}
+			persistent={hasChanges || props.agent.updating}
 			slotTitle={isEditing ? t('aiChat.action.configureAgent') : t('aiChat.label.newAgent')}
 			slotAction={
 				<Button
 					variant="solid-primary"
-					loading={agent.updating}
+					loading={props.agent.updating}
 					tooltip={hasChanges ? '' : t('core.description.noChanges')}
 					onClick={onSubmit}
 				>
@@ -98,13 +89,13 @@ export const AgentEditModal = (props: Props) => {
 			}
 			slotExtra={
 				canDelete ? (
-					<Button variant="text-danger" loading={agent.updating} onClick={onDelete}>
+					<Button variant="text-danger" loading={props.agent.updating} onClick={props.onDelete}>
 						<DeleteSvg className="mr-xs-4 w-xs-5" /> {t('aiChat.action.deleteAgent')}
 					</Button>
 				) : null
 			}
-			onClose={onClose}
-			onClosed={onClosed}
+			onClose={props.onClose}
+			onClosed={props.onClosed}
 		>
 			{/* ERRORS */}
 			{hasErrors(feedback) && <ErrorSummary errors={feedback} className="mb-sm-1" />}
@@ -120,7 +111,7 @@ export const AgentEditModal = (props: Props) => {
 							id="field-name"
 							value={payload.name}
 							ariaDescription={feedback.name ? `${t('core.label.errors')}: ${feedback.name}` : ''}
-							disabled={agent.updating}
+							disabled={props.agent.updating}
 							invalid={Boolean(feedback.name)}
 							onChange={(name: string) => setPayload({ ...payload, name })}
 						/>
@@ -135,7 +126,7 @@ export const AgentEditModal = (props: Props) => {
 								id="field-avatar"
 								value={payload.avatar}
 								ariaDescription={feedback.avatar ? `${t('core.label.errors')}: ${feedback.avatar}` : ''}
-								disabled={agent.updating}
+								disabled={props.agent.updating}
 								invalid={Boolean(feedback.avatar)}
 								onChange={(avatar: string) => setPayload({ ...payload, avatar })}
 							/>
@@ -156,7 +147,7 @@ export const AgentEditModal = (props: Props) => {
 							id="field-desc"
 							value={payload.desc}
 							ariaDescription={feedback.desc ? `${t('core.label.errors')}: ${feedback.desc}` : ''}
-							disabled={agent.updating}
+							disabled={props.agent.updating}
 							invalid={Boolean(feedback.desc)}
 							minRows={3}
 							multiline
@@ -180,7 +171,7 @@ export const AgentEditModal = (props: Props) => {
 							options={gpts}
 							keyLabel="name"
 							keyValue="id"
-							disabled={agent.updating}
+							disabled={props.agent.updating}
 							compValue={GptValue}
 							compOption={GptOption}
 							onChange={(gptId: number) => setPayload({ ...payload, gptId })}
@@ -196,7 +187,7 @@ export const AgentEditModal = (props: Props) => {
 							id="field-setup"
 							value={payload.setup}
 							ariaDescription={feedback.setup ? `${t('core.label.errors')}: ${feedback.setup}` : ''}
-							disabled={agent.updating}
+							disabled={props.agent.updating}
 							invalid={Boolean(feedback.setup)}
 							className="flex-1"
 							multiline

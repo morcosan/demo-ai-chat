@@ -15,16 +15,31 @@ const AgentsPage = () => {
 		canLoadAgents,
 		gpts,
 		gptsLoading,
+		createNewAgent,
 		deleteAgent,
 		loadMoreAgents,
+		updateAgent,
 	} = useAiChatAgents()
 	const [agentToEdit, setAgentToEdit] = useState<Agent | null>(null)
 	const [showsEditModal, setShowsEditModal] = useState(false)
 	const [showsDeleteModal, setShowsDeleteModal] = useState(false)
 
-	const onClickEdit = (agent?: Agent) => {
+	const onEditAgent = (agent?: Agent) => {
 		setAgentToEdit(agent || EMPTY_AGENT)
 		setShowsEditModal(true)
+	}
+
+	const onSubmitAgent = async (payload: Agent) => {
+		const apiFn = payload.id ? updateAgent : createNewAgent
+		const success = await apiFn({
+			agentId: payload.id,
+			gptId: payload.gptId,
+			name: payload.name.trim(),
+			avatar: payload.avatar.trim(),
+			desc: payload.desc.trim(),
+			setup: payload.setup.trim(),
+		})
+		success && setShowsEditModal(false)
 	}
 
 	const onConfirmDelete = () => {
@@ -46,7 +61,7 @@ const AgentsPage = () => {
 		() => (
 			<ul className="mt-xs-5 flex flex-col gap-xs-4">
 				{agents.map((agent: Agent) => (
-					<AgentConfigItem key={agent.id} agent={agent} onEdit={() => onClickEdit(agent)} />
+					<AgentConfigItem key={agent.id} agent={agent} onEdit={() => onEditAgent(agent)} />
 				))}
 			</ul>
 		),
@@ -79,7 +94,7 @@ const AgentsPage = () => {
 							variant="solid-primary"
 							size="sm"
 							className="ml-auto"
-							onClick={() => onClickEdit()}
+							onClick={() => onEditAgent()}
 						>
 							{t('aiChat.label.newAgent')}
 						</Button>
@@ -110,6 +125,7 @@ const AgentsPage = () => {
 			<AgentEditModal
 				agent={agentToEdit}
 				opened={showsEditModal}
+				onSubmit={onSubmitAgent}
 				onClose={() => setShowsEditModal(false)}
 				onClosed={() => setAgentToEdit(null)}
 				onDelete={() => setShowsDeleteModal(true)}

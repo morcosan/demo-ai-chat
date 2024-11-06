@@ -53,21 +53,18 @@ export const AgentsProvider = ({ children }: ReactProps) => {
 
 	const updateAgent = async (payload: AgentsApiPayload): Promise<Agent | null> => {
 		const index = agents.findIndex((agent: Agent) => agent.id === payload.agentId)
-		if (index > -1) {
-			agents[index].updating = true
-		}
+		if (index === -1) return null
+
+		agents[index].updating = true
 		setAgents([...agents])
 
 		const listing = await API.updateAgent(payload)
 
 		const newAgent = listing.agents[0]
 		if (newAgent) {
-			const index = agents.findIndex((agent: Agent) => agent.id === payload.agentId)
-			if (index > -1) {
-				agents[index] = newAgent
-				setAgents([...agents])
-				return newAgent
-			}
+			agents[index] = newAgent
+			setAgents([...agents])
+			return newAgent
 		}
 
 		return null
@@ -75,9 +72,9 @@ export const AgentsProvider = ({ children }: ReactProps) => {
 
 	const deleteAgent = async (agentId: number): Promise<void> => {
 		const index = agents.findIndex((agent: Agent) => agent.id === agentId)
-		if (index > -1) {
-			agents[index].deleting = true
-		}
+		if (index === -1) return
+
+		agents[index].deleting = true
 		setAgents([...agents])
 
 		const listing = await API.deleteAgents([agentId])
