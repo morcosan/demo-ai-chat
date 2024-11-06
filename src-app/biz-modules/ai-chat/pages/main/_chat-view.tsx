@@ -6,6 +6,7 @@ import { useNavigate, useParams, useSearchParams } from 'react-router-dom'
 import { Message } from '../../api'
 import { MessageItem } from '../../components/items/message-item'
 import { NewMessageField } from '../../components/new-message-field'
+import { NewMessageToolbar } from '../../components/new-message-toolbar'
 import { StickyToolbar } from '../../components/sticky-toolbar'
 import { useScrollable } from '../../hooks/scrollable'
 import { useAiChat } from '../../state'
@@ -131,11 +132,13 @@ export const ChatView = () => {
 
 			{/* NEW MESSAGE FIELD */}
 			<div className={cx('px-xs-7 pb-xs-5 lg:px-md-0', widthClass)}>
-				<NewMessageField
-					listLoading={allChatsLoading ? 'update' : chatLoading}
-					postMessageFn={postChatMessage}
-					primary
-				/>
+				<NewMessageToolbar primary>
+					<NewMessageField
+						listLoading={allChatsLoading ? 'update' : chatLoading}
+						postMessageFn={postChatMessage}
+						primary
+					/>
+				</NewMessageToolbar>
 			</div>
 		</div>
 	)

@@ -9,8 +9,8 @@ interface Props {
 	agent: Agent | null
 	opened: boolean
 	onClose(): void
-	onClosed(): void
-	onDelete(): void
+	onClosed?(): void
+	onDelete?(): void
 }
 
 const GptValue = (props: SelectOptionProps) => <OptionItem gpt={props.option as GPT} compact />
@@ -24,7 +24,9 @@ export const AgentEditModal = (props: Props) => {
 	const [feedback, setFeedback] = useState<FormPayload<Agent>>(EMPTY_AGENT)
 
 	const isEditing = Boolean(agent?.id)
-	const canDelete = isEditing && agents.filter((agent: Agent) => agent.id && !agent.deleting).length > 1
+	const canDelete = Boolean(
+		onDelete && isEditing && agents.filter((agent: Agent) => agent.id && !agent.deleting).length > 1
+	)
 
 	const sectionClass = cx('flex flex-1 flex-col gap-sm-2')
 

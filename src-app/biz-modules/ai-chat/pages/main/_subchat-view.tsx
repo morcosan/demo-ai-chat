@@ -5,6 +5,7 @@ import { UIEvent, useEffect, useMemo } from 'react'
 import { Message } from '../../api'
 import { MessageItem } from '../../components/items/message-item'
 import { NewMessageField } from '../../components/new-message-field'
+import { NewMessageToolbar } from '../../components/new-message-toolbar'
 import { StickyToolbar } from '../../components/sticky-toolbar'
 import { useScrollable } from '../../hooks/scrollable'
 import { useAiChat } from '../../state'
@@ -85,7 +86,9 @@ export const SubchatView = () => {
 
 			{/* NEW MESSAGE FIELD */}
 			<div className="mx-a11y-scrollbar mb-xs-5 mt-xs-5">
-				<NewMessageField listLoading={subchatLoading} postMessageFn={postSubchatMessage} />
+				<NewMessageToolbar>
+					<NewMessageField listLoading={subchatLoading} postMessageFn={postSubchatMessage} />
+				</NewMessageToolbar>
 			</div>
 		</div>
 	)
