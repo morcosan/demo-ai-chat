@@ -50,14 +50,26 @@ const initAgentsDB = () => {
 }
 
 const createDbAgents = () => {
+	const departments = ['Design', 'Frontend', 'Backend', 'Marketing', 'Business']
+
 	setDbAgents([
 		...GPTs.map((gpt: DbGPT) => ({
 			id: createAgentId(),
 			gptId: gpt.id,
-			name: gpt.name.replace('GPT', 'AI'),
+			name: gpt.name,
 			avatar: gpt.avatar,
 			desc: UI_TAG__GPT_DESCRIPTION,
 			setup: '',
+			createdAt: randomRecentDate(),
+			updatedAt: null,
+		})),
+		...departments.map((department: string) => ({
+			id: createAgentId(),
+			gptId: randomFromArray(GPTs).id,
+			name: `AI ${department} Expert`,
+			avatar: randomImageHD(),
+			desc: `Expert in ${department}`,
+			setup: `You are an expert in ${department}`,
 			createdAt: randomRecentDate(),
 			updatedAt: null,
 		})),
