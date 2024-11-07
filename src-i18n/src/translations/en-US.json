@@ -76,7 +76,7 @@
 		},
 		"description": {
 			"loremIpsumGPT": "Most intelligent model",
-			"rammusGPT": "Best psychological support"
+			"rammusGPT": "Best emotional support"
 		},
 		"error": {
 			"agentAvatar": "You must add an avatar for the agent",
