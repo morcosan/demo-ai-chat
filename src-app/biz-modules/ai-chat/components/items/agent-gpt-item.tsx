@@ -12,6 +12,8 @@ interface Props extends ReactProps {
 export const AgentGptItem = (props: Props) => {
 	const { gpt, agent, selected, compact, subtle, className } = props
 
+	const loading = !gpt && !agent
+
 	const avatar = gpt?.avatar || agent?.avatar || ''
 	const name = gpt?.name || agent?.name || ''
 

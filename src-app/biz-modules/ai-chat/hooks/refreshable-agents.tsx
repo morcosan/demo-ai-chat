@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { Dispatch, SetStateAction, useEffect, useState } from 'react'
 import { Agent } from '../api'
 import { aiChatEmitter, EVENT__REFRESH_AGENT } from '../utils/events'
 
@@ -21,5 +21,5 @@ export const useRefreshableAgents = () => {
 		}
 	}, [agents])
 
-	return [agents, setAgents] as [Agent[], Function]
+	return [agents, setAgents] as [Agent[], Dispatch<SetStateAction<Agent[]>>]
 }

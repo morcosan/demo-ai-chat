@@ -8,6 +8,7 @@ export const AgentsProvider = ({ children }: ReactProps) => {
 	const [gpts, setGpts] = useState<GPT[]>([])
 	const [gptsLoading, setGptsLoading] = useState<ListLoading>(false)
 	const [agents, setAgents] = useRefreshableAgents()
+	const [usedAgents, setUsedAgents] = useRefreshableAgents()
 	const [agentsPagination, setAgentsPagination] = useState<Pagination>({ page: 0, count: 0 })
 	const [agentsLoading, setAgentsLoading] = useState<ListLoading>(false)
 	const [chatAgentId, setChatAgentId] = useState(0)
@@ -34,6 +35,15 @@ export const AgentsProvider = ({ children }: ReactProps) => {
 		setAgents(uniqBy([...prevAgents, ...listing.agents], (agent: Agent) => agent.id))
 		setAgentsPagination({ page, count: listing.count })
 		setAgentsLoading(false)
+	}
+
+	const loadUsedAgents = async (ids: number[]) => {
+		const allIds = [...agents, ...usedAgents].map((agent: Agent) => agent.id)
+		const missingIds = ids.filter((id: number) => !allIds.includes(id))
+
+		const listing = await API.getAgents(missingIds)
+
+		setUsedAgents(uniqBy([...usedAgents, ...listing.agents], (agent: Agent) => agent.id))
 	}
 
 	const createNewAgent = async (payload: AgentsApiPayload): Promise<Agent | null> => {
@@ -112,13 +122,15 @@ export const AgentsProvider = ({ children }: ReactProps) => {
 			chatAgentId,
 			gpts,
 			gptsLoading,
+			usedAgents,
 			createNewAgent,
 			deleteAgent,
 			loadMoreAgents,
+			loadUsedAgents,
 			setChatAgentId,
 			updateAgent,
 		}),
-		[gpts, gptsLoading, agents, agentsPagination, agentsLoading, chatAgentId]
+		[gpts, gptsLoading, agents, usedAgents, agentsPagination, agentsLoading, chatAgentId]
 	)
 
 	return <AgentsContext.Provider value={store}>{children}</AgentsContext.Provider>

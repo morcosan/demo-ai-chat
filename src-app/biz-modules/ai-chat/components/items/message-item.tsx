@@ -1,3 +1,4 @@
+import { AgentGptItem } from '@app/biz-modules/ai-chat/components/items/agent-gpt-item'
 import { AiChatSvg, useUiTheme } from '@ds/release'
 import { Message } from '../../api'
 import { SubchatButton } from '../subchat-button'
@@ -8,7 +9,8 @@ interface Props {
 	isSubchat?: boolean
 }
 
-export const MessageItem = ({ message, subchatId, isSubchat }: Props) => {
+export const MessageItem = (props: Props) => {
+	const { message, subchatId, isSubchat } = props
 	const { $lineHeight } = useUiTheme()
 
 	const wrapperClass = cx({
@@ -43,6 +45,8 @@ export const MessageItem = ({ message, subchatId, isSubchat }: Props) => {
 				</div>
 			) : (
 				<div className="w-full px-xs-5 py-xs-1">
+					<AgentGptItem className={isSubchat ? 'mb-xs-2' : 'mb-xs-4'} compact subtle />
+
 					<div className={cx('flex items-center gap-xs-1', isSubchat ? 'mb-xs-2' : 'mb-xs-4')}>
 						<div className="flex-center h-sm-0 w-sm-0 rounded-full">
 							<AiChatSvg className="h-xs-8" />
