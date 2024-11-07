@@ -1,17 +1,16 @@
-import { AgentGptItem } from '@app/biz-modules/ai-chat/components/items/agent-gpt-item'
-import { AiChatSvg, useUiTheme } from '@ds/release'
-import { Message } from '../../api'
+import { Agent, Message } from '../../api'
 import { SubchatButton } from '../subchat-button'
+import { AgentGptItem } from './agent-gpt-item'
 
 interface Props {
 	message: Message
+	agent?: Agent
 	subchatId?: number
 	isSubchat?: boolean
 }
 
 export const MessageItem = (props: Props) => {
-	const { message, subchatId, isSubchat } = props
-	const { $lineHeight } = useUiTheme()
+	const { message, agent, subchatId, isSubchat } = props
 
 	const wrapperClass = cx({
 		'group relative flex flex-col items-end': true,
@@ -29,7 +28,6 @@ export const MessageItem = (props: Props) => {
 	})
 
 	const skeletonClass = 'rounded-sm bg-color-text-placeholder'
-	const skeletonStyle = { height: `calc(${$lineHeight['md']} * 1em)` }
 
 	return (
 		<li className={wrapperClass}>
@@ -45,21 +43,14 @@ export const MessageItem = (props: Props) => {
 				</div>
 			) : (
 				<div className="w-full px-xs-5 py-xs-1">
-					<AgentGptItem className={isSubchat ? 'mb-xs-2' : 'mb-xs-4'} compact subtle />
-
-					<div className={cx('flex items-center gap-xs-1', isSubchat ? 'mb-xs-2' : 'mb-xs-4')}>
-						<div className="flex-center h-sm-0 w-sm-0 rounded-full">
-							<AiChatSvg className="h-xs-8" />
-						</div>
-						<span className="mb-xs-0 text-size-sm text-color-text-subtle">Lorem Ipsum GPT</span>
-					</div>
+					<AgentGptItem agent={agent} className={isSubchat ? 'mb-xs-2' : 'mb-xs-4'} compact subtle />
 
 					{message.loading ? (
 						<div className="flex animate-pulse flex-col gap-xs-2">
-							<div className={skeletonClass} style={skeletonStyle} />
-							<div className={skeletonClass} style={skeletonStyle} />
-							<div className={skeletonClass} style={skeletonStyle} />
-							<div className={skeletonClass} style={{ ...skeletonStyle, width: '60%' }} />
+							<div className={skeletonClass}>&nbsp;</div>
+							<div className={skeletonClass}>&nbsp;</div>
+							<div className={skeletonClass}>&nbsp;</div>
+							<div className={cx(skeletonClass, 'w-[60%]')}>&nbsp;</div>
 						</div>
 					) : (
 						message.text

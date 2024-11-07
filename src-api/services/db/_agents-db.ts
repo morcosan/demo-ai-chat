@@ -8,6 +8,7 @@ import {
 	randomLongText,
 	randomRecentDate,
 	randomText,
+	randomTrue,
 } from '@utils/release'
 
 const GPTs: DbGPT[] = [
@@ -62,7 +63,7 @@ const createDbAgents = () => {
 		...randomArray(0, 50).map(() => ({
 			id: createAgentId(),
 			gptId: randomFromArray(GPTs).id,
-			name: randomText(randomInt(1, 20)) + ' AI',
+			name: randomText(randomInt(1, randomTrue() ? 4 : 20)) + ' AI',
 			avatar: randomImageHD(),
 			desc: randomLongText(randomInt(0, 5)),
 			setup: randomLongText(randomInt(0, 10)),

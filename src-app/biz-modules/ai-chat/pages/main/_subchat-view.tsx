@@ -2,12 +2,12 @@ import { LoadingText } from '@app/library/release'
 import { ArrowBackSvg, IconButton } from '@ds/release'
 import { debounce } from 'lodash'
 import { UIEvent, useEffect, useMemo } from 'react'
-import { Message } from '../../api'
+import { Agent, Message } from '../../api'
 import { MessageItem } from '../../components/items/message-item'
 import { NewMessageToolbar } from '../../components/new-message-toolbar'
 import { StickyToolbar } from '../../components/sticky-toolbar'
 import { useScrollable } from '../../hooks/scrollable'
-import { useAiChat } from '../../state'
+import { useAiChat, useAiChatAgents } from '../../state'
 
 export const SubchatView = () => {
 	const {
@@ -19,6 +19,7 @@ export const SubchatView = () => {
 		loadMoreSubchatMessages,
 		postSubchatMessage,
 	} = useAiChat()
+	const { agents } = useAiChatAgents()
 	const { containerRef, saveScrollPos, scrollToPos } = useScrollable()
 
 	const onScroll = debounce((event: UIEvent) => {
@@ -40,11 +41,16 @@ export const SubchatView = () => {
 		() => (
 			<ul>
 				{subchatMessages.map((message: Message) => (
-					<MessageItem key={message.id} message={message} isSubchat />
+					<MessageItem
+						key={message.id}
+						message={message}
+						agent={agents.find((agent: Agent) => agent.id === message.agentId)}
+						isSubchat
+					/>
 				))}
 			</ul>
 		),
-		[subchatMessages]
+		[subchatMessages, agents]
 	)
 
 	return (

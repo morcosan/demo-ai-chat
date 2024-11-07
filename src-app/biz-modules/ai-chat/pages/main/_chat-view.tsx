@@ -3,12 +3,12 @@ import { useUiTheme } from '@ds/release'
 import { debounce } from 'lodash'
 import { UIEvent, useEffect, useMemo } from 'react'
 import { useNavigate, useParams, useSearchParams } from 'react-router-dom'
-import { Message } from '../../api'
+import { Agent, Message } from '../../api'
 import { MessageItem } from '../../components/items/message-item'
 import { NewMessageToolbar } from '../../components/new-message-toolbar'
 import { StickyToolbar } from '../../components/sticky-toolbar'
 import { useScrollable } from '../../hooks/scrollable'
-import { useAiChat } from '../../state'
+import { useAiChat, useAiChatAgents } from '../../state'
 
 export const ChatView = () => {
 	const {
@@ -23,6 +23,7 @@ export const ChatView = () => {
 		postChatMessage,
 		resetActiveChat,
 	} = useAiChat()
+	const { agents } = useAiChatAgents()
 	const { containerRef, saveScrollPos, scrollToPos } = useScrollable()
 	const { $lineHeight, $fontSize, $spacing } = useUiTheme()
 	const { chatId: chatIdStr } = useParams()
@@ -77,11 +78,16 @@ export const ChatView = () => {
 		() => (
 			<ul>
 				{chatMessages.map((message: Message) => (
-					<MessageItem key={message.id} message={message} subchatId={subchatId} />
+					<MessageItem
+						key={message.id}
+						message={message}
+						agent={agents.find((agent: Agent) => agent.id === message.agentId)}
+						subchatId={subchatId}
+					/>
 				))}
 			</ul>
 		),
-		[chatMessages, subchatId]
+		[chatMessages, subchatId, agents]
 	)
 
 	return (

@@ -24,29 +24,35 @@ export const AgentGptItem = (props: Props) => {
 		return ''
 	})()
 
+	const avatarClass = cx(
+		'rounded-full',
+		subtle ? 'mr-xs-3 h-xs-8 w-xs-8' : compact ? 'mr-xs-4 h-sm-0 w-sm-0' : 'mr-xs-5 h-sm-2 w-sm-2'
+	)
+
+	const nameClass = cx(
+		'line-clamp-1 min-w-fit break-all leading-sm',
+		compact ? (subtle ? '' : 'mr-xs-4') : 'mb-xs-0',
+		subtle && 'text-size-sm text-color-text-subtle'
+	)
+
 	return (
 		<span className={cx('flex items-center', !compact && 'py-xs-1', className)}>
-			<img
-				src={avatar}
-				alt=""
-				className={cx(
-					'rounded-full',
-					subtle ? 'mr-xs-3 h-xs-8 w-xs-8' : compact ? 'mr-xs-4 h-sm-0 w-sm-0' : 'mr-xs-5 h-sm-2 w-sm-2'
-				)}
-			/>
+			{loading ? (
+				<span className={cx(avatarClass, 'animate-pulse bg-color-text-placeholder')} />
+			) : (
+				<img src={avatar} alt="" className={avatarClass} />
+			)}
 
 			<span className={cx('flex', compact ? 'items-center' : 'flex-col')}>
-				<span
-					className={cx(
-						'line-clamp-1 min-w-fit break-all leading-sm',
-						compact ? (subtle ? '' : 'mr-xs-4') : 'mb-xs-0',
-						subtle && 'text-size-sm text-color-text-subtle'
-					)}
-				>
-					{name}
-				</span>
+				{loading ? (
+					<span className={cx(nameClass, 'min-w-lg-0 animate-pulse rounded-xs bg-color-text-placeholder')}>
+						&nbsp;
+					</span>
+				) : (
+					<span className={nameClass}>{name}</span>
+				)}
 
-				{!subtle && (
+				{!subtle && !loading && (
 					<span
 						className={cx(
 							'line-clamp-1 break-all text-size-xs',
