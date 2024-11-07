@@ -159,8 +159,8 @@ export const API = {
 			: { messages: [], count: 0 }
 	},
 
-	async postMessage(chatId: number, subchatId?: number, text?: string): Promise<MessageListing> {
-		const payload: MessagesApiPayload = { chatId, subchatId, text }
+	async postMessage(chatId: number, text: string, agentId: number, subchatId?: number): Promise<MessageListing> {
+		const payload: MessagesApiPayload = { chatId, subchatId, text, agentId }
 		const resp = await mainAPI.post<MessagesApiData>('/api/messages', payload)
 
 		clearDataCache('/api/messages')

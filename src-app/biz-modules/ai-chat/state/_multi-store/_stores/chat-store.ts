@@ -1,7 +1,6 @@
-import { API } from '@app/biz-modules/ai-chat/api'
 import { uniqBy } from 'lodash'
 import { useEffect, useState } from 'react'
-import { Chat, Message } from '../../../api'
+import { API, Chat, Message } from '../../../api'
 import { getNewChat, getNewMessage } from './_utils'
 import { AllChatsStore } from './all-chats-store'
 
@@ -13,7 +12,7 @@ export interface ChatStore {
 	canLoadChatMessages: boolean
 	loadActiveChat(chatId: number): Promise<boolean | undefined>
 	loadMoreChatMessages(): void
-	postChatMessage(text: string): void
+	postChatMessage(text: string, agentId: number): void
 	resetActiveChat(): void
 	updateMessage(message: Message): void
 }
@@ -75,7 +74,7 @@ export const useChatStore = (allChatsStore: AllChatsStore): ChatStore => {
 		setChatLoading(false)
 	}
 
-	const postChatMessage = async (text: string) => {
+	const postChatMessage = async (text: string, agentId: number) => {
 		if (chatLoading) return
 
 		let chat = activeChat
@@ -98,7 +97,7 @@ export const useChatStore = (allChatsStore: AllChatsStore): ChatStore => {
 			if (!chat) return
 		}
 
-		const listing = await API.postMessage(chat.id, 0, text)
+		const listing = await API.postMessage(chat.id, text, agentId)
 
 		setChatMessages([...chatMessages, ...listing.messages])
 		setChatPagination({ ...chatPagination, count: chatPagination.count + listing.count })

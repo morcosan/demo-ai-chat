@@ -91,4 +91,5 @@ export interface MessagesApiPayload extends ApiPayload {
 	chatId?: number
 	subchatId?: number
 	text?: string
+	agentId?: number
 }

@@ -4,7 +4,6 @@ import { debounce } from 'lodash'
 import { UIEvent, useEffect, useMemo } from 'react'
 import { Message } from '../../api'
 import { MessageItem } from '../../components/items/message-item'
-import { NewMessageField } from '../../components/new-message-field'
 import { NewMessageToolbar } from '../../components/new-message-toolbar'
 import { StickyToolbar } from '../../components/sticky-toolbar'
 import { useScrollable } from '../../hooks/scrollable'
@@ -86,9 +85,7 @@ export const SubchatView = () => {
 
 			{/* NEW MESSAGE FIELD */}
 			<div className="mx-a11y-scrollbar mb-xs-5 mt-xs-5">
-				<NewMessageToolbar>
-					<NewMessageField listLoading={subchatLoading} postMessageFn={postSubchatMessage} />
-				</NewMessageToolbar>
+				<NewMessageToolbar listLoading={subchatLoading} onPostMessage={postSubchatMessage} />
 			</div>
 		</div>
 	)

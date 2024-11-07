@@ -4,15 +4,18 @@ import { COOKIE_KEY } from '@utils/release'
 import { uniqBy } from 'lodash'
 import { useEffect, useState } from 'react'
 import { Agent, API } from '../api'
-import { AgentEditModal } from '../components/agent-edit-modal'
-import { OptionItem } from '../components/items/option-item'
 import { useRefreshableAgents } from '../hooks/refreshable-agents'
 import { EMPTY_AGENT, useAiChatAgents } from '../state'
 import { parseGptDescription } from '../utils'
 import { aiChatEmitter, EVENT__REFRESH_AGENT } from '../utils/events'
+import { AgentEditModal } from './agent-edit-modal'
+import { OptionItem } from './items/option-item'
+import { NewMessageField } from './new-message-field'
 
 interface Props extends ReactProps {
+	listLoading: ListLoading
 	isChatView?: boolean
+	onPostMessage(text: string, agentId: number): void
 }
 
 const AgentValue = (props: SelectOptionProps) => <OptionItem agent={props.option as Agent} compact subtle />
@@ -20,7 +23,8 @@ const AgentOption = (props: SelectOptionProps) => (
 	<OptionItem agent={props.option as Agent} selected={props.selected} />
 )
 
-export const NewMessageToolbar = ({ isChatView, children }: Props) => {
+export const NewMessageToolbar = (props: Props) => {
+	const { listLoading, isChatView, onPostMessage } = props
 	const { chatAgentId, setChatAgentId } = useAiChatAgents()
 	const [currAgentId, setCurrAgentId] = useState(0)
 	const [agents, setAgents] = useRefreshableAgents()
@@ -177,7 +181,12 @@ export const NewMessageToolbar = ({ isChatView, children }: Props) => {
 			/>
 
 			{/* TEXT FIELD */}
-			{children}
+			<NewMessageField
+				agentId={currAgentId}
+				listLoading={listLoading}
+				isChatView={isChatView}
+				onPostMessage={onPostMessage}
+			/>
 		</div>
 	)
 }

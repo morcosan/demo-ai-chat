@@ -3,12 +3,14 @@ import { useCallback, useRef, useState } from 'react'
 import { useSubmittable } from '../hooks/submittable'
 
 interface Props {
+	agentId: number
 	listLoading: ListLoading
-	postMessageFn: Function
 	isChatView?: boolean
+	onPostMessage(text: string, agentId: number): void
 }
 
-export const NewMessageField = ({ listLoading, postMessageFn, isChatView }: Props) => {
+export const NewMessageField = (props: Props) => {
+	const { agentId, listLoading, isChatView, onPostMessage } = props
 	const [inputValue, setInputValue] = useState<string>('')
 	const inputRef = useRef<TextFieldRef>(null)
 
@@ -22,7 +24,7 @@ export const NewMessageField = ({ listLoading, postMessageFn, isChatView }: Prop
 		if (isDisabled) return
 		if (listLoading || !message) return
 
-		postMessageFn(message)
+		onPostMessage(message, agentId)
 		setInputValue('')
 		inputRef.current?.focus()
 	}, [message, listLoading])

@@ -218,7 +218,10 @@ export const chatsService = {
 		const text = payload.text
 		const chatId = extractInt(payload.chatId, 0, isGreaterThanZero)
 		const subchatId = extractInt(payload.subchatId, 0, isGreaterThanZero)
+		const agentId = extractInt(payload.agentId, 0, isGreaterThanZero)
 		const dbMessages = getDbMessages()
+
+		log('API', agentId)
 
 		if (!chatId) return { ...RESP__NOT_FOUND, error: `Chat ID ${chatId} not found` }
 		if (!text) return { ...RESP__NOT_FOUND, error: `Text is empty` }

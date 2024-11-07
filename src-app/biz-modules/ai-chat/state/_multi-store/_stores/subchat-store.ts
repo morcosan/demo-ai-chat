@@ -14,7 +14,7 @@ export interface SubchatStore {
 	canLoadSubchatMessages: boolean
 	loadActiveSubchat(chatId: number): Promise<boolean | undefined>
 	loadMoreSubchatMessages(): void
-	postSubchatMessage(text: string): void
+	postSubchatMessage(text: string, agentId: number): void
 	resetActiveSubchat(): void
 }
 
@@ -102,7 +102,7 @@ export const useSubchatStore = (chatStore: ChatStore, allSubchatsStore: AllSubch
 		setSubchatLoading(false)
 	}
 
-	const postSubchatMessage = async (text: string) => {
+	const postSubchatMessage = async (text: string, agentId: number) => {
 		if (subchatLoading || !activeChat || !activeSubchat) return
 
 		setSubchatLoading('update')
@@ -114,7 +114,7 @@ export const useSubchatStore = (chatStore: ChatStore, allSubchatsStore: AllSubch
 		setSubchatPagination({ ...subchatPagination, count: subchatPagination.count + 1 })
 		updateChatAndSubchats(subchatPagination.count + 1)
 
-		const listing = await API.postMessage(activeChat.id, activeSubchat.id, text)
+		const listing = await API.postMessage(activeChat.id, text, agentId, activeSubchat.id)
 
 		setSubchatMessages([...subchatMessages, ...listing.messages])
 		setSubchatPagination({ ...subchatPagination, count: subchatPagination.count + listing.count })
