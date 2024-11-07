@@ -76,6 +76,7 @@ export const AgentEditModal = (props: Props) => {
 			opened={props.opened}
 			width="lg"
 			persistent={hasChanges || props.agent.updating}
+			noClose={props.agent.updating}
 			slotTitle={isEditing ? t('aiChat.action.configureAgent') : t('aiChat.label.newAgent')}
 			slotAction={
 				<Button
@@ -88,7 +89,7 @@ export const AgentEditModal = (props: Props) => {
 				</Button>
 			}
 			slotExtra={
-				canDelete ? (
+				canDelete && !props.agent.updating ? (
 					<Button variant="text-danger" loading={props.agent.updating} onClick={props.onDelete}>
 						<DeleteSvg className="mr-xs-4 w-xs-5" /> {t('aiChat.action.deleteAgent')}
 					</Button>
