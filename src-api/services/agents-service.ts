@@ -9,7 +9,7 @@ import {
 	UI_TAG__GPT_DESCRIPTION,
 } from '../types'
 import { RESP__INVALID_DATA, RESP__NOT_FOUND } from '../utilities/network'
-import { extractInt, extractIntArray, isGreaterThanZero } from '../utilities/parsers'
+import { extractBool, extractInt, extractIntArray, isGreaterThanZero } from '../utilities/parsers'
 import { isValidPagination } from '../utilities/validators'
 import { createAgentId, getDbAgents, GPTs, resetAgentsDB, setDbAgents } from './db'
 
@@ -28,8 +28,9 @@ export const agentsService = {
 		const page = extractInt(query.page, DEFAULT_PAGE, isGreaterThanZero)
 		const count = extractInt(query.count, DEFAULT_COUNT, isGreaterThanZero)
 		const agentIds = extractIntArray(query.agentIds, isGreaterThanZero)
+		const recoverable = extractBool(query.recoverable)
 		const search = query.search?.trim().toLowerCase()
-		const dbAgents = getDbAgents()
+		const dbAgents = getDbAgents(recoverable)
 
 		if (agentIds.length) {
 			const agents = dbAgents.filter((agent: DbAgent) => agentIds.includes(agent.id))

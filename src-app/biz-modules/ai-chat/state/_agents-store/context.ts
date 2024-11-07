@@ -3,6 +3,7 @@ import { Agent, AgentsApiPayload, GPT } from '../../api'
 
 export interface Store {
 	allAgents: Agent[]
+	allAgentsForChat: Agent[]
 	allAgentsLoading: ListLoading
 	allAgentsPagination: Pagination
 	allGPTs: GPT[]
@@ -11,14 +12,15 @@ export interface Store {
 	chatViewAgentId: number
 	createNewAgent(payload: AgentsApiPayload): Promise<Agent | null>
 	deleteAgent(agentId: number): Promise<void>
+	loadMissingAgents(ids: number[]): void
 	loadMoreAgents(): void
-	loadUsedAgents(ids: number[]): void
 	setChatViewAgentId(id: number): void
 	updateAgent(payload: AgentsApiPayload): Promise<Agent | null>
 }
 
 export const AgentsContext = createContext<Store>({
 	allAgents: [],
+	allAgentsForChat: [],
 	allAgentsLoading: false,
 	allAgentsPagination: { page: 0, count: 0 },
 	allGPTs: [],
@@ -27,8 +29,8 @@ export const AgentsContext = createContext<Store>({
 	chatViewAgentId: 0,
 	createNewAgent: async () => null,
 	deleteAgent: async () => {},
+	loadMissingAgents: () => {},
 	loadMoreAgents: () => {},
-	loadUsedAgents: () => {},
 	setChatViewAgentId: () => {},
 	updateAgent: async () => null,
 })

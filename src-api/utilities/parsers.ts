@@ -7,6 +7,10 @@ export const extractInt = (text: string | number = '', fallback: number = 0, che
 	return checkFn ? (checkFn(result) ? result : fallback) : result
 }
 
+export const extractBool = (text: string | number | boolean = ''): boolean => {
+	return text === 'true' || text === '1' || text === 1
+}
+
 export const extractIntArray = (text: string = '', checkFn?: IntCheckFn): number[] => {
 	return text
 		.split(',')

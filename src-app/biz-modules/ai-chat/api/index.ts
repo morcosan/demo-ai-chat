@@ -25,6 +25,8 @@ export * from './_types'
 
 export const MIN_SEARCH_LENGTH = 3
 
+type GetAgentsArgs = [agentIds?: number[], page?: number, search?: string, recoverable?: boolean]
+
 export const API = {
 	async getGPTs(): Promise<GptListing> {
 		const resp = await mainAPI.get<GptApiData>('/api/gpts', {})
@@ -34,12 +36,14 @@ export const API = {
 			: { gpts: [], count: 0 }
 	},
 
-	async getAgents(agentIds?: number[], page?: number, search?: string): Promise<AgentListing> {
-		const query: ChatsApiQuery = {
+	async getAgents(...args: GetAgentsArgs): Promise<AgentListing> {
+		const [agentIds, page, search, recoverable] = args
+		const query: AgentsApiQuery = {
 			agentIds: (agentIds || []).join(','),
 			count: 20,
 			page: page || 1,
 			search,
+			recoverable,
 		}
 		const resp = await mainAPI.get<AgentsApiData>('/api/agents', query)
 

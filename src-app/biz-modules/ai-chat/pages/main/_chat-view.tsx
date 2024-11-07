@@ -23,7 +23,7 @@ export const ChatView = () => {
 		postChatMessage,
 		resetActiveChat,
 	} = useAiChat()
-	const { allAgents } = useAiChatAgents()
+	const { allAgentsForChat, loadMissingAgents } = useAiChatAgents()
 	const { containerRef, saveScrollPos, scrollToPos } = useScrollable()
 	const { $lineHeight, $fontSize, $spacing } = useUiTheme()
 	const { chatId: chatIdStr } = useParams()
@@ -74,6 +74,10 @@ export const ChatView = () => {
 		}
 	}, [activeChat])
 
+	useEffect(() => {
+		loadMissingAgents([...new Set(chatMessages.map((message) => message.agentId))])
+	}, [chatMessages])
+
 	const slotMessages = useMemo(
 		() => (
 			<ul>
@@ -81,13 +85,13 @@ export const ChatView = () => {
 					<MessageItem
 						key={message.id}
 						message={message}
-						agent={allAgents.find((agent: Agent) => agent.id === message.agentId)}
+						agent={allAgentsForChat.find((agent: Agent) => agent.id === message.agentId)}
 						subchatId={subchatId}
 					/>
 				))}
 			</ul>
 		),
-		[chatMessages, subchatId, allAgents]
+		[chatMessages, subchatId, allAgentsForChat]
 	)
 
 	return (

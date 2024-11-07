@@ -19,7 +19,7 @@ export const SubchatView = () => {
 		loadMoreSubchatMessages,
 		postSubchatMessage,
 	} = useAiChat()
-	const { allAgents } = useAiChatAgents()
+	const { allAgentsForChat, loadMissingAgents } = useAiChatAgents()
 	const { containerRef, saveScrollPos, scrollToPos } = useScrollable()
 
 	const onScroll = debounce((event: UIEvent) => {
@@ -37,6 +37,10 @@ export const SubchatView = () => {
 		scrollToPos()
 	}, [subchatPagination])
 
+	useEffect(() => {
+		loadMissingAgents([...new Set(subchatMessages.map((message) => message.agentId))])
+	}, [subchatMessages])
+
 	const slotMessages = useMemo(
 		() => (
 			<ul>
@@ -44,13 +48,13 @@ export const SubchatView = () => {
 					<MessageItem
 						key={message.id}
 						message={message}
-						agent={allAgents.find((agent: Agent) => agent.id === message.agentId)}
+						agent={allAgentsForChat.find((agent: Agent) => agent.id === message.agentId)}
 						isSubchat
 					/>
 				))}
 			</ul>
 		),
-		[subchatMessages, allAgents]
+		[subchatMessages, allAgentsForChat]
 	)
 
 	return (

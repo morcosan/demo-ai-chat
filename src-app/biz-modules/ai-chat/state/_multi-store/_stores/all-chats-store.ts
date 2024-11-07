@@ -32,7 +32,7 @@ export const useAllChatsStore = (): AllChatsStore => {
 
 	const canLoadAllChats = !allChatsPagination.page || allChats.length < allChatsPagination.count
 
-	const loadMoreChats = async (reload?: boolean, prevChats: Chat[] = allChats) => {
+	const loadMoreChats = async (reload?: boolean) => {
 		if (allChatsLoading || !canLoadAllChats) return
 
 		setAllChatsLoading(allChatsPagination.page === 0 ? 'full' : 'more')
@@ -40,7 +40,7 @@ export const useAllChatsStore = (): AllChatsStore => {
 		const page = allChatsPagination.page + (reload ? 0 : 1)
 		const listing = await API.getChats([], page)
 
-		setAllChats(uniqBy([...prevChats, ...listing.chats], (chat: Chat) => chat.id))
+		setAllChats((chats: Chat[]) => uniqBy([...chats, ...listing.chats], (chat: Chat) => chat.id))
 		setAllChatsPagination({ page, count: listing.count })
 		setAllChatsLoading(false)
 	}
@@ -103,8 +103,7 @@ export const useAllChatsStore = (): AllChatsStore => {
 			setAllChatsPagination({ page: allChatsPagination.page, count: listing.count })
 
 			if (allChatsPagination.page === 1) {
-				// Reload first page to avoid breaking load-on-scroll
-				loadMoreChats(true, newChats)
+				loadMoreChats(true) // Reload first page to avoid breaking load-on-scroll
 			}
 		} else {
 			indexes.forEach((index: number) => (allChats[index].deleting = false))

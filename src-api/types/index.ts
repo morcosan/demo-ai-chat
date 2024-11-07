@@ -14,7 +14,7 @@ export interface ApiResponse<T = any> {
 	data: T | null
 	error?: string
 }
-export type ApiQuery = Record<string, string | number | undefined>
+export type ApiQuery = Record<string, string | number | boolean | undefined>
 export type ApiPayload = Record<string, unknown>
 
 /**
@@ -25,6 +25,7 @@ export interface AgentsApiQuery extends ApiQuery {
 	count?: string | number
 	page?: string | number
 	search?: string
+	recoverable?: string | boolean
 }
 export interface ChatsApiQuery extends ApiQuery {
 	chatIds?: string

@@ -4,8 +4,11 @@ import { Agent, AgentsApiPayload, API, GPT } from '../../api'
 import { useRefreshableAgents } from '../../hooks/refreshable-agents'
 import { AgentsContext, EMPTY_AGENT, Store } from './context'
 
+const agentIdFn = (agent: Agent) => agent.id
+
 export const AgentsProvider = ({ children }: ReactProps) => {
 	const [allAgents, setAllAgents] = useRefreshableAgents()
+	const [allAgentsForChat, setAllAgentsForChat] = useRefreshableAgents()
 	const [allAgentsLoading, setAllAgentsLoading] = useState<ListLoading>(false)
 	const [allAgentsPagination, setAllAgentsPagination] = useState<Pagination>({ page: 0, count: 0 })
 	const [allGPTs, setAllGPTs] = useState<GPT[]>([])
@@ -23,7 +26,7 @@ export const AgentsProvider = ({ children }: ReactProps) => {
 		setAllGPTsLoading(false)
 	}
 
-	const loadMoreAgents = async (reload?: boolean, prevAgents: Agent[] = allAgents) => {
+	const loadMoreAgents = async (reload?: boolean) => {
 		if (allAgentsLoading || !canLoadAgents) return
 
 		setAllAgentsLoading(allAgentsPagination.page === 0 ? 'full' : 'more')
@@ -31,18 +34,19 @@ export const AgentsProvider = ({ children }: ReactProps) => {
 		const page = allAgentsPagination.page + (reload ? 0 : 1)
 		const listing = await API.getAgents([], page)
 
-		setAllAgents(uniqBy([...prevAgents, ...listing.agents], (agent: Agent) => agent.id))
+		setAllAgents((agents: Agent[]) => uniqBy([...agents, ...listing.agents], agentIdFn))
+		setAllAgentsForChat((agents: Agent[]) => uniqBy([...agents, ...listing.agents], agentIdFn))
 		setAllAgentsPagination({ page, count: listing.count })
 		setAllAgentsLoading(false)
 	}
 
-	const loadUsedAgents = async (ids: number[]) => {
-		// const allIds = [...allAgents, ...usedAgents].map((agent: Agent) => agent.id)
-		// const missingIds = ids.filter((id: number) => !allIds.includes(id))
-		//
-		// const listing = await API.getAgents(missingIds)
-		//
-		// setUsedAgents(uniqBy([...usedAgents, ...listing.agents], (agent: Agent) => agent.id))
+	const loadMissingAgents = async (ids: number[]) => {
+		const currentIds = allAgentsForChat.map(agentIdFn)
+		const missingIds = ids.filter((id: number) => !currentIds.includes(id))
+
+		const listing = await API.getAgents(missingIds, 0, '', true)
+
+		setAllAgentsForChat((agents: Agent[]) => uniqBy([...agents, ...listing.agents], agentIdFn))
 	}
 
 	const createNewAgent = async (payload: AgentsApiPayload): Promise<Agent | null> => {
@@ -98,8 +102,7 @@ export const AgentsProvider = ({ children }: ReactProps) => {
 			setAllAgentsPagination({ page: allAgentsPagination.page, count: listing.count })
 
 			if (allAgentsPagination.page === 1) {
-				// Reload first page to avoid breaking load-on-scroll
-				loadMoreAgents(true, newAgents)
+				loadMoreAgents(true) // Reload first page to avoid breaking load-on-scroll
 			}
 		} else {
 			allAgents[index].deleting = false
@@ -115,6 +118,7 @@ export const AgentsProvider = ({ children }: ReactProps) => {
 	const store: Store = useMemo(
 		() => ({
 			allAgents,
+			allAgentsForChat,
 			allAgentsLoading,
 			allAgentsPagination,
 			allGPTs,
@@ -123,12 +127,12 @@ export const AgentsProvider = ({ children }: ReactProps) => {
 			chatViewAgentId,
 			createNewAgent,
 			deleteAgent,
+			loadMissingAgents,
 			loadMoreAgents,
-			loadUsedAgents,
 			setChatViewAgentId,
 			updateAgent,
 		}),
-		[allAgents, allAgentsLoading, allAgentsPagination, allGPTs, allGPTsLoading, chatViewAgentId]
+		[allAgents, allAgentsForChat, allAgentsLoading, allAgentsPagination, allGPTs, allGPTsLoading, chatViewAgentId]
 	)
 
 	return <AgentsContext.Provider value={store}>{children}</AgentsContext.Provider>
