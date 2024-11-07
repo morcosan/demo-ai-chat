@@ -6,8 +6,10 @@ import { useEffect, useState } from 'react'
 import { Agent, API } from '../api'
 import { AgentEditModal } from '../components/agent-edit-modal'
 import { OptionItem } from '../components/items/option-item'
+import { useRefreshableAgents } from '../hooks/refreshable-agents'
 import { EMPTY_AGENT, useAiChatAgents } from '../state'
 import { parseGptDescription } from '../utils'
+import { aiChatEmitter, EVENT__REFRESH_AGENT } from '../utils/events'
 
 interface Props extends ReactProps {
 	isChatView?: boolean
@@ -19,9 +21,9 @@ const AgentOption = (props: SelectOptionProps) => (
 )
 
 export const NewMessageToolbar = ({ isChatView, children }: Props) => {
-	const { chatAgentId, setChatAgentId, refreshAgent } = useAiChatAgents()
+	const { chatAgentId, setChatAgentId } = useAiChatAgents()
 	const [currAgentId, setCurrAgentId] = useState(0)
-	const [agents, setAgents] = useState<Agent[]>([])
+	const [agents, setAgents] = useRefreshableAgents()
 	const [agentPagination, setAgentPagination] = useState<Pagination>({ page: 0, count: 0 })
 	const [agentLoading, setAgentLoading] = useState<ListLoading>(false)
 	const [search, setSearch] = useState('')
@@ -101,7 +103,7 @@ export const NewMessageToolbar = ({ isChatView, children }: Props) => {
 			agents[index] = newAgent
 			setAgents([...agents])
 			setShowsAgentModal(false)
-			refreshAgent(newAgent)
+			aiChatEmitter.emit(EVENT__REFRESH_AGENT, newAgent)
 		}
 	}
 

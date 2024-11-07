@@ -69,7 +69,7 @@ export const AgentEditModal = (props: Props) => {
 		}
 
 		setFeedback(EMPTY_AGENT)
-	}, [props.agent, gpts])
+	}, [props.agent, props.opened, gpts])
 
 	return props.agent ? (
 		<Modal

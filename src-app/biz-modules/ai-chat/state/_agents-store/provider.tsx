@@ -1,12 +1,13 @@
 import { uniqBy } from 'lodash'
 import { useEffect, useMemo, useState } from 'react'
 import { Agent, AgentsApiPayload, API, GPT } from '../../api'
+import { useRefreshableAgents } from '../../hooks/refreshable-agents'
 import { AgentsContext, EMPTY_AGENT, Store } from './context'
 
 export const AgentsProvider = ({ children }: ReactProps) => {
 	const [gpts, setGpts] = useState<GPT[]>([])
 	const [gptsLoading, setGptsLoading] = useState<ListLoading>(false)
-	const [agents, setAgents] = useState<Agent[]>([])
+	const [agents, setAgents] = useRefreshableAgents()
 	const [agentsPagination, setAgentsPagination] = useState<Pagination>({ page: 0, count: 0 })
 	const [agentsLoading, setAgentsLoading] = useState<ListLoading>(false)
 	const [chatAgentId, setChatAgentId] = useState(0)
@@ -97,14 +98,6 @@ export const AgentsProvider = ({ children }: ReactProps) => {
 		}
 	}
 
-	const refreshAgent = (agent: Agent) => {
-		const index = agents.findIndex((other: Agent) => other.id === agent.id)
-		if (index === -1) return
-
-		agents[index] = agent
-		setAgents([...agents])
-	}
-
 	useEffect(() => {
 		loadGPTs()
 		!agentsPagination.page && loadMoreAgents()
@@ -122,7 +115,6 @@ export const AgentsProvider = ({ children }: ReactProps) => {
 			createNewAgent,
 			deleteAgent,
 			loadMoreAgents,
-			refreshAgent,
 			setChatAgentId,
 			updateAgent,
 		}),

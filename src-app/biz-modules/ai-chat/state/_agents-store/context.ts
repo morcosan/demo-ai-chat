@@ -12,7 +12,6 @@ export interface Store {
 	createNewAgent(payload: AgentsApiPayload): Promise<Agent | null>
 	deleteAgent(agentId: number): Promise<void>
 	loadMoreAgents(): void
-	refreshAgent(agent: Agent): void
 	setChatAgentId(id: number): void
 	updateAgent(payload: AgentsApiPayload): Promise<Agent | null>
 }
@@ -28,7 +27,6 @@ export const AgentsContext = createContext<Store>({
 	createNewAgent: async () => null,
 	deleteAgent: async () => {},
 	loadMoreAgents: () => {},
-	refreshAgent: () => {},
 	setChatAgentId: () => {},
 	updateAgent: async () => null,
 })
