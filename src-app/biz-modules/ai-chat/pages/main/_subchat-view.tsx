@@ -90,7 +90,7 @@ export const SubchatView = () => {
 			</div>
 
 			{/* NEW MESSAGE FIELD */}
-			<div className="mx-a11y-scrollbar mb-xs-5 mt-xs-5">
+			<div className="mx-a11y-scrollbar mb-xs-5 mt-xs-1">
 				<NewMessageToolbar listLoading={subchatLoading} onPostMessage={postSubchatMessage} />
 			</div>
 		</div>

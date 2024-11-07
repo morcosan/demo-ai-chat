@@ -91,7 +91,7 @@ export const ChatView = () => {
 	)
 
 	return (
-		<div className="relative flex h-full flex-1 flex-col gap-xs-5 py-xs-1">
+		<div className="relative flex h-full flex-1 flex-col py-xs-1">
 			{activeChat || chatId ? (
 				<div ref={containerRef} className="flex-1 overflow-y-auto pb-sm-5" onScroll={onScroll}>
 					<div className={cx(widthClass, chatLoading === 'full' && 'h-full', 'flex flex-col pt-sm-0')}>
@@ -136,7 +136,7 @@ export const ChatView = () => {
 			)}
 
 			{/* NEW MESSAGE FIELD */}
-			<div className={cx('px-xs-7 pb-xs-5 lg:px-md-0', widthClass)}>
+			<div className={cx('mt-xs-1 px-xs-7 pb-xs-5 lg:px-md-0', widthClass)}>
 				<NewMessageToolbar
 					listLoading={allChatsLoading ? 'update' : chatLoading}
 					isChatView
