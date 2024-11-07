@@ -58,8 +58,8 @@ export const mockAPI = {
 		if (path === '/api/database') {
 			accountService.resetDB()
 			billingService.resetDB()
-			chatsService.resetDB()
 			agentsService.resetDB()
+			chatsService.resetDB() // Must come after agents
 			resp = { status: STATUS__SUCCESS, data: null }
 		}
 

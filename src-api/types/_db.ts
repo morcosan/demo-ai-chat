@@ -24,6 +24,7 @@ export interface DbMessage {
 	id: number
 	chatId: number
 	parentId: number
+	agentId: number
 	text: string
 	role: MessageRole
 	createdAt: string

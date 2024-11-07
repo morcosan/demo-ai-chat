@@ -9,13 +9,14 @@ import {
 } from '@utils/release'
 import { DbChat, DbMessage, MessageRole } from '../../types'
 import { addMinutesToDate } from '../../utilities/various'
+import { randomFromAgentIds } from './_agents-db'
 
 let _dbChats: DbChat[]
 let _dbMessages: DbMessage[]
 let _nextId = 1001
 
-const randomChatId = () => _nextId++
-const randomMessageId = () => _nextId++
+const createChatId = () => _nextId++
+const createMessageId = () => _nextId++
 
 const getDbChats = () => _dbChats
 const getDbMessages = () => _dbMessages
@@ -50,7 +51,7 @@ const initChatsDB = () => {
 const createDbChats = () => {
 	const date = new Date(randomRecentDate())
 	const chats = randomArray(3, 100).map((_, index: number) => ({
-		id: randomMessageId(),
+		id: createMessageId(),
 		title: randomText(10),
 		createdAt: addMinutesToDate(date, index * -1000).toISOString(),
 	}))
@@ -66,18 +67,22 @@ const createDbMessages = () => {
 		const isBig = chatIndex >= chats.length - 5
 
 		randomArray(1, isBig ? 70 : 10).forEach((_, index: number) => {
+			const agentId = randomFromAgentIds()
+
 			const userMessage: DbMessage = {
-				id: randomMessageId(),
+				id: createMessageId(),
 				chatId: chat.id,
 				parentId: chat.id,
+				agentId: 0,
 				text: randomLongText(randomInt(1, 3)),
 				role: 'user',
 				createdAt: addMinutesToDate(date, index * 2 * 5).toISOString(),
 			}
 			const agentMessage: DbMessage = {
-				id: randomMessageId(),
+				id: createMessageId(),
 				chatId: chat.id,
 				parentId: chat.id,
+				agentId: agentId,
 				text: randomLongText(randomInt(5, 20)),
 				role: 'agent',
 				createdAt: addMinutesToDate(date, (index * 2 + 1) * 5).toISOString(),
@@ -97,12 +102,16 @@ const addSubchats = (message: DbMessage, messages: DbMessage[]) => {
 	const roles: MessageRole[] = message.role === 'user' ? ['agent', 'user'] : ['user', 'agent']
 
 	randomArray(1, 30).forEach((_, index: number) => {
+		const role = roles[index % 2]
+		const agentId = role === 'agent' ? randomFromAgentIds() : 0
+
 		messages.push({
-			id: randomMessageId(),
+			id: createMessageId(),
 			chatId: message.chatId,
 			parentId: message.id,
+			agentId: agentId,
 			text: randomLongText(randomInt(1, 3)),
-			role: roles[index % 2],
+			role: role,
 			createdAt: addMinutesToDate(message.createdAt, (index + 1) * 10).toISOString(),
 		})
 	})
@@ -115,11 +124,11 @@ const resetChatsDB = () => {
 }
 
 export {
+	createChatId,
+	createMessageId,
 	getDbChats,
 	getDbMessages,
 	initChatsDB,
-	randomChatId,
-	randomMessageId,
 	resetChatsDB,
 	setDbChats,
 	setDbMessages,

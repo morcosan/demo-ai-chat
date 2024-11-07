@@ -5,13 +5,13 @@ import { initBillingDB } from './_billing-db'
 import { getDbMessages, initChatsDB } from './_chats-db'
 
 export { getDbAccount, resetDbAccount, setDbAccount } from './_account-db'
-export { getDbAgents, GPTs, randomAgentId, resetAgentsDB, setDbAgents } from './_agents-db'
+export { createAgentId, getDbAgents, GPTs, randomFromAgentIds, resetAgentsDB, setDbAgents } from './_agents-db'
 export { getDbBilling, resetDbBilling, setDbBilling } from './_billing-db'
 export {
+	createChatId,
+	createMessageId,
 	getDbChats,
 	getDbMessages,
-	randomChatId,
-	randomMessageId,
 	resetChatsDB,
 	setDbChats,
 	setDbMessages,
@@ -22,6 +22,6 @@ export const getSizeForChat = (chat: DbChat) => {
 }
 
 initAccountDB()
-initAgentsDB()
 initBillingDB()
-initChatsDB()
+initAgentsDB()
+initChatsDB() // Must come after agents

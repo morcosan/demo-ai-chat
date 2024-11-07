@@ -108,8 +108,8 @@ export const useSubchatStore = (chatStore: ChatStore, allSubchatsStore: AllSubch
 		setSubchatLoading('update')
 		setSubchatMessages([
 			...subchatMessages,
-			getNewMessage(activeChat.id, activeSubchat.id, 'user', text),
-			getNewMessage(activeChat.id, activeSubchat.id, 'agent', ''),
+			getNewMessage(activeChat.id, activeSubchat.id, 'user', text, agentId),
+			getNewMessage(activeChat.id, activeSubchat.id, 'agent', '', agentId),
 		])
 		setSubchatPagination({ ...subchatPagination, count: subchatPagination.count + 1 })
 		updateChatAndSubchats(subchatPagination.count + 1)

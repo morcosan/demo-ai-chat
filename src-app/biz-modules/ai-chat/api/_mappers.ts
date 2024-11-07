@@ -48,6 +48,7 @@ export const mapDtoToMessage = (dto: MessageDTO): Message => {
 		chatId: dto.chatId || 0,
 		subchatSize: dto.subchatSize || 0,
 		parentId: dto.parentId || 0,
+		agentId: dto.agentId || 0,
 		text: dto.text || '',
 		role: dto.role || '',
 		createdAt: dto.createdAt || '',

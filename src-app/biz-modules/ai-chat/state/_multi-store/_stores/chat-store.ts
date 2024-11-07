@@ -86,8 +86,8 @@ export const useChatStore = (allChatsStore: AllChatsStore): ChatStore => {
 		setChatLoading('update')
 		setChatMessages([
 			...chatMessages,
-			getNewMessage(chat.id, 0, 'user', text),
-			getNewMessage(chat.id, 0, 'agent', ''),
+			getNewMessage(chat.id, 0, 'user', text, agentId),
+			getNewMessage(chat.id, 0, 'agent', '', agentId),
 		])
 		setChatPagination({ ...chatPagination, count: chatPagination.count + 1 })
 

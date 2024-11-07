@@ -19,11 +19,11 @@ import { RESP__NOT_FOUND } from '../utilities/network'
 import { extractInt, extractIntArray, isGreaterThanZero } from '../utilities/parsers'
 import { isValidPagination } from '../utilities/validators'
 import {
+	createChatId,
+	createMessageId,
 	getDbChats,
 	getDbMessages,
 	getSizeForChat,
-	randomChatId,
-	randomMessageId,
 	resetChatsDB,
 	setDbChats,
 	setDbMessages,
@@ -75,7 +75,7 @@ export const chatsService = {
 		if (!title) return { ...RESP__NOT_FOUND, error: `Title is empty` }
 
 		const chat: DbChat = {
-			id: randomChatId(),
+			id: createChatId(),
 			title: title,
 			createdAt: new Date().toISOString(),
 		}
@@ -221,8 +221,6 @@ export const chatsService = {
 		const agentId = extractInt(payload.agentId, 0, isGreaterThanZero)
 		const dbMessages = getDbMessages()
 
-		log('API', agentId)
-
 		if (!chatId) return { ...RESP__NOT_FOUND, error: `Chat ID ${chatId} not found` }
 		if (!text) return { ...RESP__NOT_FOUND, error: `Text is empty` }
 
@@ -232,17 +230,19 @@ export const chatsService = {
 		}
 
 		const userMessage: DbMessage = {
-			id: randomMessageId(),
+			id: createMessageId(),
 			chatId: chatId,
 			parentId: subchatId || chatId,
+			agentId: agentId,
 			text: text,
 			role: 'user',
 			createdAt: new Date().toISOString(),
 		}
 		const agentMessage: DbMessage = {
-			id: randomMessageId(),
+			id: createMessageId(),
 			chatId: chatId,
 			parentId: subchatId || chatId,
+			agentId: agentId,
 			text: `"${text}": ` + randomLongText(randomInt(1, 40)),
 			role: 'agent',
 			createdAt: addMinutesToDate(userMessage.createdAt, 1).toISOString(),

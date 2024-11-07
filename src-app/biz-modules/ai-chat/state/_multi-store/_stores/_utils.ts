@@ -8,10 +8,17 @@ export const getNewChat = (): Chat => ({
 	size: 0,
 })
 
-export const getNewMessage = (chatId: number, subchatId: number, role: MessageRole, text: string): Message => ({
+export const getNewMessage = (
+	chatId: number,
+	subchatId: number,
+	role: MessageRole,
+	text: string,
+	agentId: number
+): Message => ({
 	id: role === 'user' ? -1 : -2,
 	chatId: chatId,
 	parentId: subchatId || chatId,
+	agentId: agentId,
 	text: (role === 'user' && text) || '',
 	role: role,
 	createdAt: new Date().toISOString(),
