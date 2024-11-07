@@ -1,8 +1,8 @@
 import { AgentItem } from '@app/biz-modules/ai-chat/components/items/agent-item'
 import { NavListing } from '@app/biz-modules/ai-chat/components/nav-listing'
 import { AiChatSvg, Button, SearchSvg, useUiTheme } from '@ds/release'
-import { useEffect, useMemo, useState } from 'react'
-import { useSearchParams } from 'react-router-dom'
+import { useEffect, useMemo } from 'react'
+import { useLocation } from 'react-router-dom'
 import { Agent, Chat } from '../api'
 import { ChatItem } from '../components/items/chat-item'
 import { useAiChat, useAiChatAgents, useAiChatSearch } from '../state'
@@ -13,35 +13,20 @@ interface Props {
 	onHideNavMenu?(): void
 }
 
-export const AiChatNavMenu = ({ collapsed, unselected, onHideNavMenu }: Props) => {
+export const AiChatNavMenu = (props: Props) => {
+	const { collapsed, unselected, onHideNavMenu } = props
 	const { $spacing } = useUiTheme()
 	const { allChats, allChatsLoading, allChatsPagination, activeChat, loadMoreChats, resetActiveChat } = useAiChat()
-	const { agents, agentsPagination, agentsLoading, loadMoreAgents } = useAiChatAgents()
+	const { agents, agentsPagination, agentsLoading, chatAgentId, loadMoreAgents, setChatAgentId } =
+		useAiChatAgents()
 	const { setShowsSearch } = useAiChatSearch()
-	const [activeAgentId, setActiveAgentId] = useState(0)
-	const [searchParams, setSearchParams] = useSearchParams()
+	const location = useLocation()
 
 	const hasExtraChat = Boolean(activeChat && !allChats.some((chat: Chat) => chat.id === activeChat.id))
 
 	useEffect(() => {
 		unselected && activeChat && resetActiveChat()
 	}, [])
-
-	useEffect(() => {
-		const id = parseInt(searchParams.get('agent') as string)
-		if (id && !isNaN(id)) {
-			setActiveAgentId(id)
-		} else {
-			setActiveAgentId(0)
-		}
-	}, [searchParams])
-
-	useEffect(() => {
-		if (activeChat) {
-			searchParams.delete('agent')
-			setSearchParams(searchParams)
-		}
-	}, [activeChat])
 
 	const slotAgents = useMemo(
 		() => (
@@ -50,13 +35,16 @@ export const AiChatNavMenu = ({ collapsed, unselected, onHideNavMenu }: Props) =
 					<AgentItem
 						key={agent.id}
 						agent={agent}
-						selected={activeAgentId === agent.id}
-						onHideNavMenu={onHideNavMenu}
+						selected={chatAgentId === agent.id && location.pathname === '/chat'}
+						onClick={() => {
+							setChatAgentId(agent.id)
+							onHideNavMenu?.()
+						}}
 					/>
 				))}
 			</ul>
 		),
-		[agents, activeAgentId]
+		[agents, chatAgentId, location]
 	)
 
 	const slotChats = useMemo(

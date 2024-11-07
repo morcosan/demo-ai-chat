@@ -132,7 +132,7 @@ export const ChatView = () => {
 
 			{/* NEW MESSAGE FIELD */}
 			<div className={cx('px-xs-7 pb-xs-5 lg:px-md-0', widthClass)}>
-				<NewMessageToolbar isNewChat={!activeChat} isChatView>
+				<NewMessageToolbar isChatView>
 					<NewMessageField
 						listLoading={allChatsLoading ? 'update' : chatLoading}
 						postMessageFn={postChatMessage}

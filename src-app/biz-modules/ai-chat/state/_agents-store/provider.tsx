@@ -9,6 +9,7 @@ export const AgentsProvider = ({ children }: ReactProps) => {
 	const [agents, setAgents] = useState<Agent[]>([])
 	const [agentsPagination, setAgentsPagination] = useState<Pagination>({ page: 0, count: 0 })
 	const [agentsLoading, setAgentsLoading] = useState<ListLoading>(false)
+	const [chatAgentId, setChatAgentId] = useState(0)
 
 	const canLoadAgents = !agentsPagination.page || agents.length < agentsPagination.count
 
@@ -115,15 +116,17 @@ export const AgentsProvider = ({ children }: ReactProps) => {
 			agentsLoading,
 			agentsPagination,
 			canLoadAgents,
+			chatAgentId,
 			gpts,
 			gptsLoading,
 			createNewAgent,
 			deleteAgent,
 			loadMoreAgents,
 			refreshAgent,
+			setChatAgentId,
 			updateAgent,
 		}),
-		[gpts, gptsLoading, agents, agentsPagination, agentsLoading]
+		[gpts, gptsLoading, agents, agentsPagination, agentsLoading, chatAgentId]
 	)
 
 	return <AgentsContext.Provider value={store}>{children}</AgentsContext.Provider>

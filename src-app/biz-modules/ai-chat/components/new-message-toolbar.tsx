@@ -3,7 +3,6 @@ import { BuildSvg, IconButton } from '@ds/release'
 import { COOKIE_KEY } from '@utils/release'
 import { uniqBy } from 'lodash'
 import { useEffect, useState } from 'react'
-import { useSearchParams } from 'react-router-dom'
 import { Agent, API } from '../api'
 import { AgentEditModal } from '../components/agent-edit-modal'
 import { OptionItem } from '../components/items/option-item'
@@ -12,7 +11,6 @@ import { parseGptDescription } from '../utils'
 
 interface Props extends ReactProps {
 	isChatView?: boolean
-	isNewChat?: boolean
 }
 
 const AgentValue = (props: SelectOptionProps) => <OptionItem agent={props.option as Agent} compact subtle />
@@ -20,15 +18,14 @@ const AgentOption = (props: SelectOptionProps) => (
 	<OptionItem agent={props.option as Agent} selected={props.selected} />
 )
 
-export const NewMessageToolbar = ({ isChatView, isNewChat, children }: Props) => {
-	const { refreshAgent } = useAiChatAgents()
+export const NewMessageToolbar = ({ isChatView, children }: Props) => {
+	const { chatAgentId, setChatAgentId, refreshAgent } = useAiChatAgents()
 	const [currAgentId, setCurrAgentId] = useState(0)
 	const [agents, setAgents] = useState<Agent[]>([])
 	const [agentPagination, setAgentPagination] = useState<Pagination>({ page: 0, count: 0 })
 	const [agentLoading, setAgentLoading] = useState<ListLoading>(false)
 	const [search, setSearch] = useState('')
 	const [showsAgentModal, setShowsAgentModal] = useState(false)
-	const [searchParams, setSearchParams] = useSearchParams()
 
 	const agentCookieKey = isChatView ? COOKIE_KEY.APP_AGENT_FOR_CHAT : COOKIE_KEY.APP_AGENT_FOR_SUBCHAT
 
@@ -109,8 +106,8 @@ export const NewMessageToolbar = ({ isChatView, isNewChat, children }: Props) =>
 	}
 
 	const loadAgentId = () => {
-		let id
-		if (!id || isNaN(id)) id = parseInt(searchParams.get('agent') as string)
+		let id = 0
+		if (!id || isNaN(id)) id = isChatView ? chatAgentId : id
 		if (!id || isNaN(id)) id = parseInt(localStorage.getItem(agentCookieKey) as string)
 		if (!id || isNaN(id)) return 0
 
@@ -119,22 +116,19 @@ export const NewMessageToolbar = ({ isChatView, isNewChat, children }: Props) =>
 	}
 
 	useEffect(() => {
-		!agentPagination.page && fetchMoreAgents(loadAgentId())
-	}, [agentPagination])
-
-	useEffect(() => {
-		loadAgentId()
-	}, [searchParams])
+		isChatView && setCurrAgentId(chatAgentId)
+	}, [chatAgentId])
 
 	useEffect(() => {
 		if (!currAgentId) return
 
-		// Update URL
-		isNewChat ? searchParams.set('agent', String(currAgentId)) : searchParams.delete('agent')
-		setSearchParams(searchParams)
-		// Update cookie
 		localStorage.setItem(agentCookieKey, String(currAgentId))
+		isChatView && setChatAgentId(currAgentId)
 	}, [currAgentId])
+
+	useEffect(() => {
+		!agentPagination.page && fetchMoreAgents(loadAgentId())
+	}, [agentPagination])
 
 	return (
 		<div>
@@ -161,7 +155,6 @@ export const NewMessageToolbar = ({ isChatView, isNewChat, children }: Props) =>
 					onSearch={onSearchAgent}
 					onScrollEnd={fetchMoreAgents}
 				/>
-
 				<IconButton
 					tooltip={t('aiChat.action.configureAgent')}
 					loading={agentLoading === 'full'}
