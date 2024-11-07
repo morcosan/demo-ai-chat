@@ -17,7 +17,7 @@ export const AiChatNavMenu = (props: Props) => {
 	const { collapsed, unselected, onHideNavMenu } = props
 	const { $spacing } = useUiTheme()
 	const { allChats, allChatsLoading, allChatsPagination, activeChat, loadMoreChats, resetActiveChat } = useAiChat()
-	const { agents, agentsPagination, agentsLoading, chatAgentId, loadMoreAgents, setChatAgentId } =
+	const { allAgents, allAgentsPagination, allAgentsLoading, chatViewAgentId, loadMoreAgents, setChatViewAgentId } =
 		useAiChatAgents()
 	const { setShowsSearch } = useAiChatSearch()
 	const location = useLocation()
@@ -31,20 +31,20 @@ export const AiChatNavMenu = (props: Props) => {
 	const slotAgents = useMemo(
 		() => (
 			<ul>
-				{agents.map((agent: Agent) => (
+				{allAgents.map((agent: Agent) => (
 					<AgentItem
 						key={agent.id}
 						agent={agent}
-						selected={chatAgentId === agent.id && location.pathname === '/chat'}
+						selected={chatViewAgentId === agent.id && location.pathname === '/chat'}
 						onClick={() => {
-							setChatAgentId(agent.id)
+							setChatViewAgentId(agent.id)
 							onHideNavMenu?.()
 						}}
 					/>
 				))}
 			</ul>
 		),
-		[agents, chatAgentId, location]
+		[allAgents, chatViewAgentId, location]
 	)
 
 	const slotChats = useMemo(
@@ -81,9 +81,9 @@ export const AiChatNavMenu = (props: Props) => {
 
 			{/* AGENTS */}
 			<NavListing
-				length={agents.length}
-				loading={agentsLoading}
-				pagination={agentsPagination}
+				length={allAgents.length}
+				loading={allAgentsLoading}
+				pagination={allAgentsPagination}
 				headerText={t('aiChat.label.agents')}
 				settingsHref="/settings/agents"
 				settingsText={t('aiChat.action.manageAgents')}

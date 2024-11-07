@@ -9,12 +9,12 @@ import { EMPTY_AGENT, useAiChatAgents } from '../../state'
 
 const AgentsPage = () => {
 	const {
-		agents,
-		agentsLoading,
-		agentsPagination,
+		allAgents,
+		allAgentsLoading,
+		allAgentsPagination,
 		canLoadAgents,
-		gpts,
-		gptsLoading,
+		allGPTs,
+		allGPTsLoading,
 		createNewAgent,
 		deleteAgent,
 		loadMoreAgents,
@@ -53,19 +53,19 @@ const AgentsPage = () => {
 	useEffect(() => {
 		// Update object when creating new agent
 		if (agentToEdit && !agentToEdit.id) {
-			setAgentToEdit(agents.find((agent: Agent) => agent.id === agentToEdit.id) || null)
+			setAgentToEdit(allAgents.find((agent: Agent) => agent.id === agentToEdit.id) || null)
 		}
-	}, [agents])
+	}, [allAgents])
 
 	const slotAgents = useMemo(
 		() => (
 			<ul className="mt-xs-5 flex flex-col gap-xs-4">
-				{agents.map((agent: Agent) => (
+				{allAgents.map((agent: Agent) => (
 					<AgentConfigItem key={agent.id} agent={agent} onEdit={() => onEditAgent(agent)} />
 				))}
 			</ul>
 		),
-		[agents, gpts]
+		[allAgents, allGPTs]
 	)
 
 	return (
@@ -75,9 +75,9 @@ const AgentsPage = () => {
 				slotTitle={
 					<>
 						{t('aiChat.label.agents')}
-						{agentsPagination.count > 0 && (
+						{allAgentsPagination.count > 0 && (
 							<span className="ml-xs-4 mt-xs-1 text-size-md font-weight-md text-color-text-subtle lg:text-size-lg">
-								({agentsPagination.count})
+								({allAgentsPagination.count})
 							</span>
 						)}
 					</>
@@ -85,12 +85,12 @@ const AgentsPage = () => {
 			/>
 
 			{/* LISTING */}
-			{agentsLoading !== 'full' && agents.length > 0 && (
+			{allAgentsLoading !== 'full' && allAgents.length > 0 && (
 				<>
 					{/* TOOLBAR */}
 					<div className="mb-xs-3 flex items-center border-b border-color-border-subtle pb-xs-5 sm:-mt-xs-9">
 						<Button
-							loading={Boolean(gptsLoading)}
+							loading={Boolean(allGPTsLoading)}
 							variant="solid-primary"
 							size="sm"
 							className="ml-auto"
@@ -105,9 +105,9 @@ const AgentsPage = () => {
 			)}
 
 			{/* LOADING */}
-			{Boolean(agentsLoading || canLoadAgents) && (
+			{Boolean(allAgentsLoading || canLoadAgents) && (
 				<div className="mx-auto mt-sm-2">
-					{agentsLoading ? (
+					{allAgentsLoading ? (
 						<div className="flex-center h-button-h-md text-size-sm">
 							<LoadingText text={t('aiChat.state.loadingAgents')} />
 						</div>

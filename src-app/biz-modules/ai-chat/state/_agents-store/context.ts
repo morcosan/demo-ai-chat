@@ -2,34 +2,34 @@ import { createContext } from 'react'
 import { Agent, AgentsApiPayload, GPT } from '../../api'
 
 export interface Store {
-	agents: Agent[]
-	agentsLoading: ListLoading
-	agentsPagination: Pagination
+	allAgents: Agent[]
+	allAgentsLoading: ListLoading
+	allAgentsPagination: Pagination
+	allGPTs: GPT[]
+	allGPTsLoading: ListLoading
 	canLoadAgents: boolean
-	chatAgentId: number
-	gpts: GPT[]
-	gptsLoading: ListLoading
+	chatViewAgentId: number
 	createNewAgent(payload: AgentsApiPayload): Promise<Agent | null>
 	deleteAgent(agentId: number): Promise<void>
 	loadMoreAgents(): void
 	loadUsedAgents(ids: number[]): void
-	setChatAgentId(id: number): void
+	setChatViewAgentId(id: number): void
 	updateAgent(payload: AgentsApiPayload): Promise<Agent | null>
 }
 
 export const AgentsContext = createContext<Store>({
-	agents: [],
-	agentsLoading: false,
-	agentsPagination: { page: 0, count: 0 },
+	allAgents: [],
+	allAgentsLoading: false,
+	allAgentsPagination: { page: 0, count: 0 },
+	allGPTs: [],
+	allGPTsLoading: false,
 	canLoadAgents: false,
-	chatAgentId: 0,
-	gpts: [],
-	gptsLoading: false,
+	chatViewAgentId: 0,
 	createNewAgent: async () => null,
 	deleteAgent: async () => {},
 	loadMoreAgents: () => {},
 	loadUsedAgents: () => {},
-	setChatAgentId: () => {},
+	setChatViewAgentId: () => {},
 	updateAgent: async () => null,
 })
 

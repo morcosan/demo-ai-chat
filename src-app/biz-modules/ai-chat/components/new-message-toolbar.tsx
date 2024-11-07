@@ -25,7 +25,7 @@ const AgentOption = (props: SelectOptionProps) => (
 
 export const NewMessageToolbar = (props: Props) => {
 	const { listLoading, isChatView, onPostMessage } = props
-	const { chatAgentId, setChatAgentId } = useAiChatAgents()
+	const { chatViewAgentId, setChatViewAgentId } = useAiChatAgents()
 	const [currAgentId, setCurrAgentId] = useState(0)
 	const [agents, setAgents] = useRefreshableAgents()
 	const [agentPagination, setAgentPagination] = useState<Pagination>({ page: 0, count: 0 })
@@ -113,7 +113,7 @@ export const NewMessageToolbar = (props: Props) => {
 
 	const loadAgentId = () => {
 		let id = 0
-		if (!id || isNaN(id)) id = isChatView ? chatAgentId : id
+		if (!id || isNaN(id)) id = isChatView ? chatViewAgentId : id
 		if (!id || isNaN(id)) id = parseInt(localStorage.getItem(agentCookieKey) as string)
 		if (!id || isNaN(id)) return 0
 
@@ -122,14 +122,15 @@ export const NewMessageToolbar = (props: Props) => {
 	}
 
 	useEffect(() => {
-		isChatView && setCurrAgentId(chatAgentId)
-	}, [chatAgentId])
+		isChatView && setCurrAgentId(chatViewAgentId)
+	}, [chatViewAgentId])
 
 	useEffect(() => {
 		if (!currAgentId) return
 
 		localStorage.setItem(agentCookieKey, String(currAgentId))
-		isChatView && setChatAgentId(currAgentId)
+
+		isChatView && setChatViewAgentId(currAgentId)
 	}, [currAgentId])
 
 	useEffect(() => {

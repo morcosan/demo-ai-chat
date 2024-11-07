@@ -11,9 +11,9 @@ interface Props extends ReactProps {
 
 export const AgentConfigItem = (props: Props) => {
 	const { agent, onEdit } = props
-	const { gpts } = useAiChatAgents()
+	const { allGPTs } = useAiChatAgents()
 
-	const gpt = gpts.find((gpt: GPT) => gpt.id === agent.gptId)
+	const gpt = allGPTs.find((gpt: GPT) => gpt.id === agent.gptId)
 	if (!gpt) return null
 
 	const isGhost = agent.updating || agent.deleting

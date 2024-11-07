@@ -5,77 +5,76 @@ import { useRefreshableAgents } from '../../hooks/refreshable-agents'
 import { AgentsContext, EMPTY_AGENT, Store } from './context'
 
 export const AgentsProvider = ({ children }: ReactProps) => {
-	const [gpts, setGpts] = useState<GPT[]>([])
-	const [gptsLoading, setGptsLoading] = useState<ListLoading>(false)
-	const [agents, setAgents] = useRefreshableAgents()
-	const [usedAgents, setUsedAgents] = useRefreshableAgents()
-	const [agentsPagination, setAgentsPagination] = useState<Pagination>({ page: 0, count: 0 })
-	const [agentsLoading, setAgentsLoading] = useState<ListLoading>(false)
-	const [chatAgentId, setChatAgentId] = useState(0)
+	const [allAgents, setAllAgents] = useRefreshableAgents()
+	const [allAgentsLoading, setAllAgentsLoading] = useState<ListLoading>(false)
+	const [allAgentsPagination, setAllAgentsPagination] = useState<Pagination>({ page: 0, count: 0 })
+	const [allGPTs, setAllGPTs] = useState<GPT[]>([])
+	const [allGPTsLoading, setAllGPTsLoading] = useState<ListLoading>(false)
+	const [chatViewAgentId, setChatViewAgentId] = useState(0)
 
-	const canLoadAgents = !agentsPagination.page || agents.length < agentsPagination.count
+	const canLoadAgents = !allAgentsPagination.page || allAgents.length < allAgentsPagination.count
 
 	const loadGPTs = async () => {
-		if (gptsLoading || gpts.length) return
+		if (allGPTsLoading || allGPTs.length) return
 
-		setGptsLoading('full')
+		setAllGPTsLoading('full')
 		const listing = await API.getGPTs()
-		setGpts(listing.gpts)
-		setGptsLoading(false)
+		setAllGPTs(listing.gpts)
+		setAllGPTsLoading(false)
 	}
 
-	const loadMoreAgents = async (reload?: boolean, prevAgents: Agent[] = agents) => {
-		if (agentsLoading || !canLoadAgents) return
+	const loadMoreAgents = async (reload?: boolean, prevAgents: Agent[] = allAgents) => {
+		if (allAgentsLoading || !canLoadAgents) return
 
-		setAgentsLoading(agentsPagination.page === 0 ? 'full' : 'more')
+		setAllAgentsLoading(allAgentsPagination.page === 0 ? 'full' : 'more')
 
-		const page = agentsPagination.page + (reload ? 0 : 1)
+		const page = allAgentsPagination.page + (reload ? 0 : 1)
 		const listing = await API.getAgents([], page)
 
-		setAgents(uniqBy([...prevAgents, ...listing.agents], (agent: Agent) => agent.id))
-		setAgentsPagination({ page, count: listing.count })
-		setAgentsLoading(false)
+		setAllAgents(uniqBy([...prevAgents, ...listing.agents], (agent: Agent) => agent.id))
+		setAllAgentsPagination({ page, count: listing.count })
+		setAllAgentsLoading(false)
 	}
 
 	const loadUsedAgents = async (ids: number[]) => {
-		const allIds = [...agents, ...usedAgents].map((agent: Agent) => agent.id)
-		const missingIds = ids.filter((id: number) => !allIds.includes(id))
-
-		const listing = await API.getAgents(missingIds)
-
-		setUsedAgents(uniqBy([...usedAgents, ...listing.agents], (agent: Agent) => agent.id))
+		// const allIds = [...allAgents, ...usedAgents].map((agent: Agent) => agent.id)
+		// const missingIds = ids.filter((id: number) => !allIds.includes(id))
+		//
+		// const listing = await API.getAgents(missingIds)
+		//
+		// setUsedAgents(uniqBy([...usedAgents, ...listing.agents], (agent: Agent) => agent.id))
 	}
 
 	const createNewAgent = async (payload: AgentsApiPayload): Promise<Agent | null> => {
-		if (agentsLoading) return null
+		if (allAgentsLoading) return null
 
 		const newAgent: Agent = { ...EMPTY_AGENT, ...payload, updating: true }
 
-		setAgentsLoading('update')
-		setAgents([newAgent, ...agents])
+		setAllAgentsLoading('update')
+		setAllAgents([newAgent, ...allAgents])
 
 		const listing = await API.createAgent(payload)
 
-		setAgents([...listing.agents, ...agents])
-		setAgentsPagination({ ...agentsPagination, count: agentsPagination.count + 1 })
-		setAgentsLoading(false)
+		setAllAgents([...listing.agents, ...allAgents])
+		setAllAgentsPagination({ ...allAgentsPagination, count: allAgentsPagination.count + 1 })
+		setAllAgentsLoading(false)
 
 		return listing.agents[0] || null
 	}
 
 	const updateAgent = async (payload: AgentsApiPayload): Promise<Agent | null> => {
-		const index = agents.findIndex((agent: Agent) => agent.id === payload.agentId)
+		const index = allAgents.findIndex((agent: Agent) => agent.id === payload.agentId)
 		if (index === -1) return null
 
-		agents[index].updating = true
-		setAgents([...agents])
+		allAgents[index].updating = true
+		setAllAgents([...allAgents])
 
 		const listing = await API.updateAgent(payload)
 
 		const newAgent = listing.agents[0]
 		if (newAgent) {
-			agents[index] = newAgent
-			setAgents([...agents])
+			allAgents[index] = newAgent
+			setAllAgents([...allAgents])
 			return newAgent
 		}
 
@@ -83,54 +82,53 @@ export const AgentsProvider = ({ children }: ReactProps) => {
 	}
 
 	const deleteAgent = async (agentId: number): Promise<void> => {
-		const index = agents.findIndex((agent: Agent) => agent.id === agentId)
+		const index = allAgents.findIndex((agent: Agent) => agent.id === agentId)
 		if (index === -1) return
 
-		agents[index].deleting = true
-		setAgents([...agents])
+		allAgents[index].deleting = true
+		setAllAgents([...allAgents])
 
 		const listing = await API.deleteAgents([agentId])
-		const success = listing.count === agentsPagination.count - 1
+		const success = listing.count === allAgentsPagination.count - 1
 
 		if (success) {
-			const newAgents = agents.filter((agent: Agent) => agent.id !== agentId)
+			const newAgents = allAgents.filter((agent: Agent) => agent.id !== agentId)
 
-			setAgents(newAgents)
-			setAgentsPagination({ page: agentsPagination.page, count: listing.count })
+			setAllAgents(newAgents)
+			setAllAgentsPagination({ page: allAgentsPagination.page, count: listing.count })
 
-			if (agentsPagination.page === 1) {
+			if (allAgentsPagination.page === 1) {
 				// Reload first page to avoid breaking load-on-scroll
 				loadMoreAgents(true, newAgents)
 			}
 		} else {
-			agents[index].deleting = false
-			setAgents([...agents])
+			allAgents[index].deleting = false
+			setAllAgents([...allAgents])
 		}
 	}
 
 	useEffect(() => {
 		loadGPTs()
-		!agentsPagination.page && loadMoreAgents()
+		!allAgentsPagination.page && loadMoreAgents()
 	}, [])
 
 	const store: Store = useMemo(
 		() => ({
-			agents,
-			agentsLoading,
-			agentsPagination,
+			allAgents,
+			allAgentsLoading,
+			allAgentsPagination,
+			allGPTs,
+			allGPTsLoading,
 			canLoadAgents,
-			chatAgentId,
-			gpts,
-			gptsLoading,
-			usedAgents,
+			chatViewAgentId,
 			createNewAgent,
 			deleteAgent,
 			loadMoreAgents,
 			loadUsedAgents,
-			setChatAgentId,
+			setChatViewAgentId,
 			updateAgent,
 		}),
-		[gpts, gptsLoading, agents, usedAgents, agentsPagination, agentsLoading, chatAgentId]
+		[allAgents, allAgentsLoading, allAgentsPagination, allGPTs, allGPTsLoading, chatViewAgentId]
 	)
 
 	return <AgentsContext.Provider value={store}>{children}</AgentsContext.Provider>

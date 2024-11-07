@@ -20,14 +20,14 @@ const GptOption = (props: SelectOptionProps) => (
 )
 
 export const AgentEditModal = (props: Props) => {
-	const { gpts, agents } = useAiChatAgents()
+	const { allGPTs, allAgents } = useAiChatAgents()
 	const [initial, setInitial] = useState<Agent>(props.agent || EMPTY_AGENT)
 	const [payload, setPayload] = useState<Agent>(props.agent || EMPTY_AGENT)
 	const [feedback, setFeedback] = useState<FormPayload<Agent>>(EMPTY_AGENT)
 
 	const isEditing = Boolean(props.agent?.id)
 	const canDelete = Boolean(
-		props.onDelete && isEditing && agents.filter((agent: Agent) => agent.id && !agent.deleting).length > 1
+		props.onDelete && isEditing && allAgents.filter((agent: Agent) => agent.id && !agent.deleting).length > 1
 	)
 
 	const sectionClass = cx('flex flex-1 flex-col gap-sm-2')
@@ -60,18 +60,18 @@ export const AgentEditModal = (props: Props) => {
 	}
 
 	useEffect(() => {
-		if (props.agent && gpts.length) {
+		if (props.agent && allGPTs.length) {
 			const initial = {
 				...props.agent,
-				gptId: props.agent.gptId || gpts[0].id,
-				avatar: props.agent.avatar || gpts[0].avatar,
+				gptId: props.agent.gptId || allGPTs[0].id,
+				avatar: props.agent.avatar || allGPTs[0].avatar,
 			}
 			setInitial(initial)
 			setPayload(initial)
 		}
 
 		setFeedback(EMPTY_AGENT)
-	}, [props.agent, props.opened, gpts])
+	}, [props.agent, props.opened, allGPTs])
 
 	return props.agent ? (
 		<Modal
@@ -171,7 +171,7 @@ export const AgentEditModal = (props: Props) => {
 						<SelectField
 							id="field-gpt"
 							value={payload.gptId}
-							options={gpts}
+							options={allGPTs}
 							keyLabel="name"
 							keyValue="id"
 							disabled={props.agent.updating}

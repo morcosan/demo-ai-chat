@@ -19,7 +19,7 @@ export const SubchatView = () => {
 		loadMoreSubchatMessages,
 		postSubchatMessage,
 	} = useAiChat()
-	const { agents } = useAiChatAgents()
+	const { allAgents } = useAiChatAgents()
 	const { containerRef, saveScrollPos, scrollToPos } = useScrollable()
 
 	const onScroll = debounce((event: UIEvent) => {
@@ -44,13 +44,13 @@ export const SubchatView = () => {
 					<MessageItem
 						key={message.id}
 						message={message}
-						agent={agents.find((agent: Agent) => agent.id === message.agentId)}
+						agent={allAgents.find((agent: Agent) => agent.id === message.agentId)}
 						isSubchat
 					/>
 				))}
 			</ul>
 		),
-		[subchatMessages, agents]
+		[subchatMessages, allAgents]
 	)
 
 	return (
