@@ -1,7 +1,7 @@
 import { Agent, GPT, GPT_ID__LOREM_IPSUM, GPT_ID__RAMMUS } from '../../api'
 import { parseGptDescription } from '../../utils'
 
-interface Props {
+interface Props extends ReactProps {
 	gpt?: GPT
 	agent?: Agent
 	selected?: boolean
@@ -9,7 +9,9 @@ interface Props {
 	subtle?: boolean
 }
 
-export const OptionItem = ({ gpt, agent, selected, compact, subtle }: Props) => {
+export const AgentGptItem = (props: Props) => {
+	const { gpt, agent, selected, compact, subtle, className } = props
+
 	const avatar = gpt?.avatar || agent?.avatar || ''
 	const name = gpt?.name || agent?.name || ''
 
@@ -21,7 +23,7 @@ export const OptionItem = ({ gpt, agent, selected, compact, subtle }: Props) => 
 	})()
 
 	return (
-		<span className={cx('flex items-center', !compact && 'py-xs-1')}>
+		<span className={cx('flex items-center', !compact && 'py-xs-1', className)}>
 			<img
 				src={avatar}
 				alt=""

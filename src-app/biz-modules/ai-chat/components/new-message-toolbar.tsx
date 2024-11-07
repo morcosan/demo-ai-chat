@@ -9,7 +9,7 @@ import { EMPTY_AGENT, useAiChatAgents } from '../state'
 import { parseGptDescription } from '../utils'
 import { aiChatEmitter, EVENT__REFRESH_AGENT } from '../utils/events'
 import { AgentEditModal } from './agent-edit-modal'
-import { OptionItem } from './items/option-item'
+import { AgentGptItem } from './items/agent-gpt-item'
 import { NewMessageField } from './new-message-field'
 
 interface Props extends ReactProps {
@@ -18,9 +18,9 @@ interface Props extends ReactProps {
 	onPostMessage(text: string, agentId: number): void
 }
 
-const AgentValue = (props: SelectOptionProps) => <OptionItem agent={props.option as Agent} compact subtle />
+const AgentValue = (props: SelectOptionProps) => <AgentGptItem agent={props.option as Agent} compact subtle />
 const AgentOption = (props: SelectOptionProps) => (
-	<OptionItem agent={props.option as Agent} selected={props.selected} />
+	<AgentGptItem agent={props.option as Agent} selected={props.selected} />
 )
 
 export const NewMessageToolbar = (props: Props) => {

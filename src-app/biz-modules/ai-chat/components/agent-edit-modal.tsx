@@ -3,7 +3,7 @@ import { Button, DeleteSvg, Modal, TextField } from '@ds/release'
 import { useEffect, useState } from 'react'
 import { Agent, GPT } from '../api'
 import { EMPTY_AGENT, useAiChatAgents } from '../state'
-import { OptionItem } from './items/option-item'
+import { AgentGptItem } from './items/agent-gpt-item'
 
 interface Props {
 	agent: Agent | null
@@ -14,8 +14,10 @@ interface Props {
 	onDelete?(): void
 }
 
-const GptValue = (props: SelectOptionProps) => <OptionItem gpt={props.option as GPT} compact />
-const GptOption = (props: SelectOptionProps) => <OptionItem gpt={props.option as GPT} selected={props.selected} />
+const GptValue = (props: SelectOptionProps) => <AgentGptItem gpt={props.option as GPT} compact />
+const GptOption = (props: SelectOptionProps) => (
+	<AgentGptItem gpt={props.option as GPT} selected={props.selected} />
+)
 
 export const AgentEditModal = (props: Props) => {
 	const { gpts, agents } = useAiChatAgents()
