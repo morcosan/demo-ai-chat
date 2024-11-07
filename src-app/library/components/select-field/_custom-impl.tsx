@@ -37,8 +37,6 @@ export const CustomImpl = (rawProps: SelectFieldProps) => {
 	const openMenu = () => {
 		setIsFocused(true)
 		setCurrentIndex(-1)
-		setKeyword('')
-		inputRef.current && (inputRef.current.value = '')
 	}
 
 	const onBlurInput = () => {
