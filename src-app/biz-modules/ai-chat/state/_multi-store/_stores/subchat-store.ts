@@ -2,7 +2,7 @@ import { API } from '@app/biz-modules/ai-chat/api'
 import { uniqBy } from 'lodash'
 import { useEffect, useState } from 'react'
 import { Message, MessageListing, Subchat } from '../../../api'
-import { getNewMessage } from './_utils'
+import { createGhostMessage } from './_utils'
 import { AllSubchatsStore } from './all-subchats-store'
 import { ChatStore } from './chat-store'
 
@@ -108,8 +108,8 @@ export const useSubchatStore = (chatStore: ChatStore, allSubchatsStore: AllSubch
 		setSubchatLoading('update')
 		setSubchatMessages([
 			...subchatMessages,
-			getNewMessage(activeChat.id, activeSubchat.id, 'user', text, agentId),
-			getNewMessage(activeChat.id, activeSubchat.id, 'agent', '', agentId),
+			createGhostMessage(activeChat.id, activeSubchat.id, 'user', text, agentId),
+			createGhostMessage(activeChat.id, activeSubchat.id, 'agent', '', agentId),
 		])
 		setSubchatPagination({ ...subchatPagination, count: subchatPagination.count + 1 })
 		updateChatAndSubchats(subchatPagination.count + 1)
