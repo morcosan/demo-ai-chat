@@ -50,7 +50,7 @@ const initAgentsDB = () => {
 	try {
 		const json = localStorage.getItem(COOKIE_KEY.DB_AGENTS)
 		_dbActiveAgents = JSON.parse(json || '')
-		_dbActiveAgents.forEach((agent: DbAgent) => agent.id > _nextId && (_nextId = agent.id + 1))
+		_dbActiveAgents.forEach((agent: DbAgent) => agent.id >= _nextId && (_nextId = agent.id + 1))
 	} catch (_) {
 		createDbAgents()
 	}
@@ -58,7 +58,7 @@ const initAgentsDB = () => {
 	try {
 		const json = localStorage.getItem(COOKIE_KEY.DB_AGENTS_DELETED)
 		_dbDeletedAgents = JSON.parse(json || '')
-		_dbDeletedAgents.forEach((agent: DbAgent) => agent.id > _nextId && (_nextId = agent.id + 1))
+		_dbDeletedAgents.forEach((agent: DbAgent) => agent.id >= _nextId && (_nextId = agent.id + 1))
 	} catch (_) {
 		_dbDeletedAgents = []
 	}
@@ -103,7 +103,7 @@ const createDbAgents = () => {
 
 const resetAgentsDB = () => {
 	_nextId = 1001 // Reset id
-	_dbDeletedAgents = []
+	setDbDeletedAgents([])
 	createDbAgents()
 }
 

@@ -34,7 +34,7 @@ const initChatsDB = () => {
 	try {
 		const json = localStorage.getItem(COOKIE_KEY.DB_CHATS)
 		_dbChats = JSON.parse(json || '')
-		_dbChats.forEach((chat: DbChat) => chat.id > _nextId && (_nextId = chat.id + 1))
+		_dbChats.forEach((chat: DbChat) => chat.id >= _nextId && (_nextId = chat.id + 1))
 	} catch (_) {
 		createDbChats()
 	}
@@ -42,7 +42,7 @@ const initChatsDB = () => {
 	try {
 		const json = localStorage.getItem(COOKIE_KEY.DB_MESSAGES)
 		_dbMessages = JSON.parse(json || '')
-		_dbMessages.forEach((message: DbMessage) => message.id > _nextId && (_nextId = message.id + 1))
+		_dbMessages.forEach((message: DbMessage) => message.id >= _nextId && (_nextId = message.id + 1))
 	} catch (_) {
 		createDbMessages()
 	}
@@ -123,6 +123,14 @@ const addSubchats = async (message: DbMessage, messages: DbMessage[]) => {
 	}
 }
 
+const getSizeForChat = (chat: DbChat) => {
+	return getDbMessages().filter((message: DbMessage) => message.parentId === chat.id).length
+}
+
+const hasMessagesByAgent = (agentId: number) => {
+	return _dbMessages.some((message: DbMessage) => message.agentId === agentId)
+}
+
 const resetChatsDB = async () => {
 	_nextId = 1001 // Reset id
 	createDbChats()
@@ -134,6 +142,8 @@ export {
 	createMessageId,
 	getDbChats,
 	getDbMessages,
+	getSizeForChat,
+	hasMessagesByAgent,
 	initChatsDB,
 	resetChatsDB,
 	setDbChats,

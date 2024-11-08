@@ -16,6 +16,7 @@ import {
 	getDbActiveAgents,
 	getDbDeletedAgents,
 	GPTs,
+	hasMessagesByAgent,
 	resetAgentsDB,
 	setDbActiveAgents,
 	setDbDeletedAgents,
@@ -39,8 +40,6 @@ export const agentsService = {
 		const search = query.search?.trim().toLowerCase()
 		const everywhere = extractBool(query.everywhere)
 		const dbAgents = everywhere ? [...getDbActiveAgents(), ...getDbDeletedAgents()] : getDbActiveAgents()
-
-		log(agentIds, everywhere, query)
 
 		if (agentIds.length) {
 			const agents = dbAgents.filter((agent: DbAgent) => agentIds.includes(agent.id))
@@ -128,9 +127,14 @@ export const agentsService = {
 
 		agentIds.forEach((agentId: number) => {
 			const index = dbActiveAgents.findIndex((agent: DbAgent) => agent.id === agentId)
-			if (index > -1) {
-				dbDeletedAgents.push(dbActiveAgents[index])
+			const agent = dbActiveAgents[index]
+
+			if (agent) {
 				dbActiveAgents.splice(index, 1)
+
+				if (hasMessagesByAgent(agent.id)) {
+					dbDeletedAgents.push(agent)
+				}
 			}
 		})
 

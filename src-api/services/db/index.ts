@@ -1,8 +1,7 @@
-import { DbChat, DbMessage } from '@api/types'
 import { initAccountDB } from './_account-db'
 import { initAgentsDB } from './_agents-db'
 import { initBillingDB } from './_billing-db'
-import { getDbMessages, initChatsDB } from './_chats-db'
+import { initChatsDB } from './_chats-db'
 
 export { getDbAccount, resetDbAccount, setDbAccount } from './_account-db'
 export {
@@ -25,11 +24,9 @@ export {
 	resetChatsDB,
 	setDbChats,
 	setDbMessages,
+	getSizeForChat,
+	hasMessagesByAgent,
 } from './_chats-db'
-
-export const getSizeForChat = (chat: DbChat) => {
-	return getDbMessages().filter((message: DbMessage) => message.parentId === chat.id).length
-}
 
 initAccountDB()
 initBillingDB()
