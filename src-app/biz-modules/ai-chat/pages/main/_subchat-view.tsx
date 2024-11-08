@@ -38,7 +38,7 @@ export const SubchatView = () => {
 	}, [subchatPagination])
 
 	useEffect(() => {
-		loadMissingAgents([...new Set(subchatMessages.map((message) => message.agentId))])
+		loadMissingAgents([...new Set(subchatMessages.map((message: Message) => message.agentId))])
 	}, [subchatMessages])
 
 	const slotMessages = useMemo(

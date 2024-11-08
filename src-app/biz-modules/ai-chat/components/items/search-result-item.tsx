@@ -1,17 +1,21 @@
 import { useUserAccount } from '@app/biz-modules/user-settings/state'
-import { AiChatSvg, Button, SplitSvg } from '@ds/release'
+import { Button, SplitSvg } from '@ds/release'
 import { useI18n } from '@i18n/release'
 import { DateFormat, formatDate } from '@utils/release'
+import { Agent } from '../../api'
 import { SearchResult } from '../../state'
 import { HighlightedText } from '../highlighted-text'
+import { AgentGptItem } from './agent-gpt-item'
 
 interface Props {
 	result: SearchResult
 	keyword: string
+	agent?: Agent
 	onClick(): void
 }
 
-export const SearchResultItem = ({ result, keyword, onClick }: Props) => {
+export const SearchResultItem = (props: Props) => {
+	const { result, keyword, agent, onClick } = props
 	const { activeLocale } = useI18n()
 	const { account } = useUserAccount()
 
@@ -54,20 +58,20 @@ export const SearchResultItem = ({ result, keyword, onClick }: Props) => {
 			</div>
 
 			{/* AGENT + DATE */}
-			<div className="flex items-center gap-xs-2 px-button-px-item text-size-xs text-color-text-subtle">
+			<div className="flex items-center px-button-px-item text-size-xs text-color-text-subtle">
 				{/* AGENT */}
-				{Boolean(role) && (
-					<>
-						{role === 'agent' ? (
-							<AiChatSvg className="mt-px h-xs-6 w-xs-6 rounded-full" />
-						) : (
-							<img src={account.avatar} alt="" className="h-xs-6 w-xs-6 rounded-full" />
-						)}
-						<span>{role === 'agent' ? 'Lorem Ipsum GPT' : account.name} -</span>
-					</>
-				)}
+				{Boolean(role) &&
+					(role === 'agent' ? (
+						<AgentGptItem agent={agent} compact subtle />
+					) : (
+						<>
+							<img src={account.avatar} alt="" className="mr-xs-2 h-xs-6 w-xs-6 rounded-full" />
+							<span>{account.name}</span>
+						</>
+					))}
 
 				{/* DATE */}
+				<span className="mx-xs-3">-</span>
 				<span>{formatDate(createdAt, DateFormat.DD_MM_YY_TT, activeLocale)}</span>
 			</div>
 

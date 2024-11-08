@@ -75,7 +75,7 @@ export const ChatView = () => {
 	}, [activeChat])
 
 	useEffect(() => {
-		loadMissingAgents([...new Set(chatMessages.map((message) => message.agentId))])
+		loadMissingAgents([...new Set(chatMessages.map((message: Message) => message.agentId))])
 	}, [chatMessages])
 
 	const slotMessages = useMemo(
