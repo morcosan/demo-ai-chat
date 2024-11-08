@@ -130,7 +130,7 @@ export const agentsService = {
 		}
 	},
 
-	resetDB() {
+	async resetDB() {
 		resetAgentsDB()
 	},
 }

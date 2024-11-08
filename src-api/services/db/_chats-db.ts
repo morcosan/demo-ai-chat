@@ -9,7 +9,7 @@ import {
 } from '@utils/release'
 import { DbChat, DbMessage, MessageRole } from '../../types'
 import { addMinutesToDate } from '../../utilities/various'
-import { randomFromAgentIds } from './_agents-db'
+import { getGptAPI, randomFromAgentIds } from './_agents-db'
 
 let _dbChats: DbChat[]
 let _dbMessages: DbMessage[]
@@ -58,16 +58,19 @@ const createDbChats = () => {
 	setDbChats(chats)
 }
 
-const createDbMessages = () => {
+const createDbMessages = async () => {
 	const messages: DbMessage[] = []
 	const chats = [..._dbChats].reverse()
 
-	chats.forEach((chat: DbChat, chatIndex: number) => {
+	for (let chatIndex = 0; chatIndex < chats.length; chatIndex++) {
+		const chat = chats[chatIndex]
 		const date = new Date(randomRecentDate())
 		const isBig = chatIndex >= chats.length - 5
+		const total = randomInt(1, isBig ? 70 : 10)
 
-		randomArray(1, isBig ? 70 : 10).forEach((_, index: number) => {
+		for (let index = 0; index < total; index++) {
 			const agentId = randomFromAgentIds()
+			const response = await getGptAPI(agentId)!.getResponse([])
 
 			const userMessage: DbMessage = {
 				id: createMessageId(),
@@ -83,44 +86,47 @@ const createDbMessages = () => {
 				chatId: chat.id,
 				parentId: chat.id,
 				agentId: agentId,
-				text: randomLongText(randomInt(5, 20)),
+				text: response,
 				role: 'agent',
 				createdAt: addMinutesToDate(date, (index * 2 + 1) * 5).toISOString(),
 			}
 
 			messages.push(userMessage, agentMessage)
 
-			isBig && randomFalse() && addSubchats(userMessage, messages)
-			isBig && randomFalse() && addSubchats(agentMessage, messages)
-		})
-	})
+			isBig && randomFalse() && (await addSubchats(userMessage, messages))
+			isBig && randomFalse() && (await addSubchats(agentMessage, messages))
+		}
+	}
 
 	setDbMessages(messages)
 }
 
-const addSubchats = (message: DbMessage, messages: DbMessage[]) => {
+const addSubchats = async (message: DbMessage, messages: DbMessage[]) => {
 	const roles: MessageRole[] = message.role === 'user' ? ['agent', 'user'] : ['user', 'agent']
+	const total = randomInt(1, 30)
 
-	randomArray(1, 30).forEach((_, index: number) => {
+	for (let index = 0; index < total; index++) {
 		const role = roles[index % 2]
+		const userResponse = randomLongText(randomInt(1, 3))
 		const agentId = role === 'agent' ? randomFromAgentIds() : 0
+		const response = role === 'agent' ? await getGptAPI(agentId)!.getResponse([]) : userResponse
 
 		messages.push({
 			id: createMessageId(),
 			chatId: message.chatId,
 			parentId: message.id,
 			agentId: agentId,
-			text: randomLongText(randomInt(1, 3)),
+			text: response,
 			role: role,
 			createdAt: addMinutesToDate(message.createdAt, (index + 1) * 10).toISOString(),
 		})
-	})
+	}
 }
 
-const resetChatsDB = () => {
+const resetChatsDB = async () => {
 	_nextId = 1001 // Reset id
 	createDbChats()
-	createDbMessages()
+	await createDbMessages()
 }
 
 export {

@@ -21,7 +21,7 @@ export const billingService = {
 		return { status: STATUS__SUCCESS, data: getDbBilling() }
 	},
 
-	resetDB() {
+	async resetDB() {
 		resetDbBilling()
 	},
 }

@@ -19,7 +19,7 @@ export const accountService = {
 		return { status: STATUS__SUCCESS, data: getDbAccount() }
 	},
 
-	resetDB() {
+	async resetDB() {
 		resetDbAccount()
 	},
 }

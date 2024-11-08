@@ -56,10 +56,10 @@ export const mockAPI = {
 		if (path === '/api/agents') resp = await agentsService.deleteAgents(query)
 		if (path === '/api/chats') resp = await chatsService.deleteChats(query)
 		if (path === '/api/database') {
-			accountService.resetDB()
-			billingService.resetDB()
-			agentsService.resetDB()
-			chatsService.resetDB() // Must come after agents
+			await accountService.resetDB()
+			await billingService.resetDB()
+			await agentsService.resetDB()
+			await chatsService.resetDB() // Must come after agents
 			resp = { status: STATUS__SUCCESS, data: null }
 		}
 

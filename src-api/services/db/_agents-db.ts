@@ -1,4 +1,4 @@
-import { DbAgent, DbGPT, GPT_ID__LOREM_IPSUM, GPT_ID__RAMMUS, UI_TAG__GPT_DESCRIPTION } from '@api/types'
+import { DbAgent, DbGPT, GPT_ID__LOREM_IPSUM, GPT_ID__RAMMUS, GptAPI, UI_TAG__GPT_DESCRIPTION } from '@api/types'
 import {
 	COOKIE_KEY,
 	randomArray,
@@ -10,6 +10,8 @@ import {
 	randomText,
 	randomTrue,
 } from '@utils/release'
+import { LoremIpsum } from '../gpt/lorem-ipsum'
+import { Rammus } from '../gpt/rammus'
 
 const GPTs: DbGPT[] = [
 	{
@@ -93,4 +95,21 @@ const resetAgentsDB = () => {
 
 const randomFromAgentIds = () => randomFromArray(_dbAgents).id
 
-export { createAgentId, getDbAgents, GPTs, initAgentsDB, randomFromAgentIds, resetAgentsDB, setDbAgents }
+const getGptAPI = (agentId: number): GptAPI | null => {
+	const agent = _dbAgents.find((agent: DbAgent) => agent.id === agentId)
+	if (!agent) return null
+	if (agent.gptId === GPT_ID__LOREM_IPSUM) return LoremIpsum
+	if (agent.gptId === GPT_ID__RAMMUS) return Rammus
+	return null
+}
+
+export {
+	createAgentId,
+	getDbAgents,
+	getGptAPI,
+	GPTs,
+	initAgentsDB,
+	randomFromAgentIds,
+	resetAgentsDB,
+	setDbAgents,
+}

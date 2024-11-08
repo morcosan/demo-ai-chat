@@ -1,5 +1,5 @@
 import { addMinutesToDate } from '@api/utilities/various'
-import { randomInt, randomLongText, randomText } from '@utils/release'
+import { randomText } from '@utils/release'
 import {
 	ApiResponse,
 	ChatsApiData,
@@ -23,6 +23,7 @@ import {
 	createMessageId,
 	getDbChats,
 	getDbMessages,
+	getGptAPI,
 	getSizeForChat,
 	resetChatsDB,
 	setDbChats,
@@ -220,14 +221,18 @@ export const chatsService = {
 		const subchatId = extractInt(payload.subchatId, 0, isGreaterThanZero)
 		const agentId = extractInt(payload.agentId, 0, isGreaterThanZero)
 		const dbMessages = getDbMessages()
+		const gptAPI = getGptAPI(agentId)
 
 		if (!chatId) return { ...RESP__NOT_FOUND, error: `Chat ID ${chatId} not found` }
+		if (!gptAPI) return { ...RESP__NOT_FOUND, error: `Agent ID ${agentId} not found` }
 		if (!text) return { ...RESP__NOT_FOUND, error: `Text is empty` }
 
 		if (subchatId) {
 			const exists = dbMessages.some((msg: DbMessage) => msg.chatId === chatId && msg.id === subchatId)
 			if (!exists) return { ...RESP__NOT_FOUND, error: `Subchat ID ${subchatId} not found` }
 		}
+
+		const agentResponse = await gptAPI.getResponse([])
 
 		const userMessage: DbMessage = {
 			id: createMessageId(),
@@ -243,7 +248,7 @@ export const chatsService = {
 			chatId: chatId,
 			parentId: subchatId || chatId,
 			agentId: agentId,
-			text: `"${text}": ` + randomLongText(randomInt(1, 40)),
+			text: agentResponse,
 			role: 'agent',
 			createdAt: addMinutesToDate(userMessage.createdAt, 1).toISOString(),
 		}
@@ -259,7 +264,7 @@ export const chatsService = {
 		}
 	},
 
-	resetDB() {
-		resetChatsDB()
+	async resetDB() {
+		await resetChatsDB()
 	},
 }
