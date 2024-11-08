@@ -2,7 +2,7 @@
 	"core": {
 		"action": {
 			"back": "Quay lại",
-			"backToHome": "Về trang chủ",
+			"backToHome": "Quay về trang chủ",
 			"changeLanguage": "Đổi ngôn ngữ",
 			"close": "Đóng",
 			"delete": "Xóa",
@@ -11,23 +11,31 @@
 			"rename": "Đổi tên",
 			"saveChanges": "Lưu thay đổi",
 			"search": "Tìm kiếm",
-			"searchMore": "Hiển thị thêm kết quả",
+			"searchMore": "Hiện thêm kết quả",
 			"selectAll": "Chọn tất cả",
 			"signOut": "Đăng xuất"
+		},
+		"error": {
+			"noChanges": "Không có thay đổi",
+			"nothingFound": "Không tìm thấy kết quả cho \"{search}\""
 		},
 		"label": {
 			"apiDocs": "Tài liệu API",
 			"asia": "Châu Á",
+			"avatar": "Ảnh đại diện",
 			"custom": "Tùy chỉnh",
 			"darkTheme": "Tối",
 			"default": "Mặc định",
+			"description": "Mô tả",
 			"designSystem": "Hệ thống thiết kế",
 			"errors": "Lỗi",
 			"europe": "Châu Âu",
-			"githubRepo": "Kho lưu trữ GitHub",
+			"githubRepo": "Kho GitHub",
 			"language": "Ngôn ngữ",
 			"lightTheme": "Sáng",
+			"name": "Tên",
 			"optionalField": "(Tùy chọn)",
+			"quickSettings": "Cài đặt nhanh",
 			"requiredField": "(Bắt buộc)",
 			"settings": "Cài đặt",
 			"uiLibrary": "Thư viện UI:",
@@ -40,35 +48,56 @@
 			"dataSaved": "Dữ liệu của bạn đã được lưu",
 			"deleting": "Đang xóa...",
 			"loading": "Đang tải...",
-			"searching": "Đang tìm kiếm..."
+			"searching": "Đang tìm kiếm...",
+			"updating": "Đang cập nhật..."
 		}
 	},
 	"aiChat": {
 		"action": {
 			"backToSubchats": "Quay lại cuộc trò chuyện phụ",
+			"configureAgent": "Cấu hình tác nhân",
+			"confirmDeleteAgent": "Xác nhận xóa tác nhân",
 			"confirmDeleteChats": "Xác nhận xóa cuộc trò chuyện",
 			"confirmRenameChat": "Xác nhận đổi tên cuộc trò chuyện",
+			"createAgent": "Tạo tác nhân",
+			"deleteAgent": "Xóa tác nhân",
 			"deleteSelectedChats": "Xóa cuộc trò chuyện đã chọn",
 			"manageAgents": "Quản lý tác nhân",
-			"manageChats": "Quản lý trò chuyện",
+			"manageChats": "Quản lý cuộc trò chuyện",
 			"openChat": "Mở cuộc trò chuyện",
 			"openSubchat_zero": "Tạo cuộc trò chuyện phụ",
 			"openSubchat_other": "Mở cuộc trò chuyện phụ ({count} tin nhắn)",
 			"sendMessage": "Gửi tin nhắn",
-			"showMoreChats": "Hiển thị thêm cuộc trò chuyện",
-			"showSubchats": "Hiển thị cuộc trò chuyện phụ ({count})",
+			"showMoreAgents": "Hiện thêm tác nhân",
+			"showMoreChats": "Hiện thêm cuộc trò chuyện",
+			"showSubchats": "Hiện cuộc trò chuyện phụ ({count})",
 			"startSearching_other": "Nhập ít nhất {count} ký tự"
 		},
+		"description": {
+			"loremIpsumGPT": "Mô hình thông minh nhất",
+			"rammusGPT": "Hỗ trợ cảm xúc tốt nhất"
+		},
+		"error": {
+			"agentAvatar": "Bạn phải thêm ảnh đại diện cho tác nhân",
+			"agentName": "Bạn phải thêm tên cho tác nhân",
+			"emptyMessage": "Tin nhắn của bạn trống"
+		},
 		"label": {
-			"chats": "Trò chuyện",
 			"agents": "Tác nhân",
+			"chats": "Cuộc trò chuyện",
+			"customInstructions": "Hướng dẫn tùy chỉnh",
+			"gptModel": "Mô hình GPT",
+			"newAgent": "Tác nhân mới",
 			"newChat": "Cuộc trò chuyện mới",
 			"noChats": "Không có cuộc trò chuyện",
 			"noSubchats": "Không có cuộc trò chuyện phụ",
+			"selectedValue": "Giá trị đã chọn:",
 			"subchats": "Cuộc trò chuyện phụ",
+			"xMessages_zero": "Không có tin nhắn",
 			"xMessages_other": "{count} tin nhắn",
-			"xSearchResults_zero": "Không có kết quả",
-			"xSearchResults_other": "{count} kết quả",
+			"xSearchResults_zero": "Không có kết quả tìm kiếm",
+			"xSearchResults_other": "{count} kết quả tìm kiếm",
+			"xSelectedMessages_zero": "Không có tin nhắn được chọn",
 			"xSelectedMessages_other": "{count} tin nhắn được chọn"
 		},
 		"placeholder": {
@@ -76,13 +105,17 @@
 			"rename": "Tự động tạo tên mới..."
 		},
 		"state": {
+			"loadingAgents": "Đang tải tác nhân...",
 			"loadingChats": "Đang tải cuộc trò chuyện...",
+			"loadingGPTs": "Đang tải GPT...",
 			"loadingMessages": "Đang tải tin nhắn...",
-			"loadingPreviousMessages": "Đang tải tin nhắn trước đó...",
-			"loadingSubchats": "Đang tải cuộc trò chuyện phụ..."
+			"loadingPreviousMessages": "Đang tải tin nhắn trước...",
+			"loadingSubchats": "Đang tải cuộc trò chuyện phụ...",
+			"renamingChat": "Đang đổi tên cuộc trò chuyện..."
 		},
 		"warning": {
-			"deletingChats": "Những cuộc trò chuyện này sẽ bị xóa vĩnh viễn"
+			"deletingAgent": "Tác nhân này sẽ bị xóa vĩnh viễn",
+			"deletingChats": "Các cuộc trò chuyện này sẽ bị xóa vĩnh viễn"
 		}
 	},
 	"userSettings": {
@@ -103,13 +136,11 @@
 		"label": {
 			"account": "Tài khoản",
 			"address": "Địa chỉ",
-			"avatar": "Ảnh đại diện",
 			"billing": "Thanh toán",
 			"city": "Thành phố",
 			"country": "Quốc gia",
 			"email": "Địa chỉ email",
 			"legalName": "Tên pháp lý",
-			"name": "Tên",
 			"phone": "Số điện thoại",
 			"postalCode": "Mã bưu chính",
 			"private": "Riêng tư",

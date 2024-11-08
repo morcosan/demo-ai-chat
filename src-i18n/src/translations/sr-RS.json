@@ -2,52 +2,65 @@
 	"core": {
 		"action": {
 			"back": "Назад",
-			"backToHome": "Назад на почетну",
+			"backToHome": "Назад на почетну страну",
 			"changeLanguage": "Промени језик",
 			"close": "Затвори",
 			"delete": "Обриши",
-			"deselectAll": "Поништи избор",
+			"deselectAll": "Поништи све изборе",
 			"openMenu": "Отвори мени",
 			"rename": "Преименуј",
 			"saveChanges": "Сачувај измене",
-			"search": "Претрага",
+			"search": "Претражи",
 			"searchMore": "Прикажи више резултата",
 			"selectAll": "Изабери све",
 			"signOut": "Одјави се"
 		},
+		"error": {
+			"noChanges": "Нема измена",
+			"nothingFound": "Ништа није пронађено за \"{search}\""
+		},
 		"label": {
 			"apiDocs": "API документација",
 			"asia": "Азија",
+			"avatar": "Аватар",
 			"custom": "Прилагођено",
 			"darkTheme": "Тамна",
 			"default": "Подразумевано",
+			"description": "Опис",
 			"designSystem": "Дизајн систем",
 			"errors": "Грешке",
 			"europe": "Европа",
 			"githubRepo": "GitHub репозиторијум",
 			"language": "Језик",
 			"lightTheme": "Светла",
+			"name": "Име",
 			"optionalField": "(Опционо)",
+			"quickSettings": "Брзе поставке",
 			"requiredField": "(Обавезно)",
 			"settings": "Подешавања",
 			"uiLibrary": "UI библиотека:",
 			"uiTheme": "UI тема:"
 		},
 		"placeholder": {
-			"search": "Претрага..."
+			"search": "Претражи..."
 		},
 		"state": {
 			"dataSaved": "Ваши подаци су сачувани",
 			"deleting": "Брисање...",
 			"loading": "Учитавање...",
-			"searching": "Претрага..."
+			"searching": "Претраживање...",
+			"updating": "Ажурирање..."
 		}
 	},
 	"aiChat": {
 		"action": {
 			"backToSubchats": "Назад на подразговоре",
+			"configureAgent": "Конфигуриши агента",
+			"confirmDeleteAgent": "Потврди брисање агента",
 			"confirmDeleteChats": "Потврди брисање разговора",
 			"confirmRenameChat": "Потврди преименовање разговора",
+			"createAgent": "Креирај агента",
+			"deleteAgent": "Обриши агента",
 			"deleteSelectedChats": "Обриши изабране разговоре",
 			"manageAgents": "Управљај агентима",
 			"manageChats": "Управљај разговорима",
@@ -57,26 +70,42 @@
 			"openSubchat_few": "Отвори подразговор ({count} поруке)",
 			"openSubchat_other": "Отвори подразговор ({count} порука)",
 			"sendMessage": "Пошаљи поруку",
+			"showMoreAgents": "Прикажи више агената",
 			"showMoreChats": "Прикажи више разговора",
 			"showSubchats": "Прикажи подразговоре ({count})",
-			"startSearching_one": "Унесите бар {count} карактер",
-			"startSearching_few": "Унесите бар {count} карактера",
-			"startSearching_other": "Унесите бар {count} карактера"
+			"startSearching_one": "Укуцајте бар {count} карактер",
+			"startSearching_few": "Укуцајте бар {count} карактера",
+			"startSearching_other": "Укуцајте бар {count} карактера"
+		},
+		"description": {
+			"loremIpsumGPT": "Најинтелигентнији модел",
+			"rammusGPT": "Најбоља емоционална подршка"
+		},
+		"error": {
+			"agentAvatar": "Морате додати аватар за агента",
+			"agentName": "Морате додати име за агента",
+			"emptyMessage": "Ваша порука је празна"
 		},
 		"label": {
-			"chats": "Разговори",
 			"agents": "Агенти",
+			"chats": "Разговори",
+			"customInstructions": "Прилагођена упутства",
+			"gptModel": "GPT модел",
+			"newAgent": "Нови агент",
 			"newChat": "Нови разговор",
 			"noChats": "Нема разговора",
 			"noSubchats": "Нема подразговора",
+			"selectedValue": "Изабрана вредност:",
 			"subchats": "Подразговори",
+			"xMessages_zero": "Нема порука",
 			"xMessages_one": "{count} порука",
 			"xMessages_few": "{count} поруке",
 			"xMessages_other": "{count} порука",
-			"xSearchResults_zero": "Нема резултата",
-			"xSearchResults_one": "{count} резултат",
-			"xSearchResults_few": "{count} резултата",
-			"xSearchResults_other": "{count} резултата",
+			"xSearchResults_zero": "Нема резултата претраге",
+			"xSearchResults_one": "{count} резултат претраге",
+			"xSearchResults_few": "{count} резултата претраге",
+			"xSearchResults_other": "{count} резултата претраге",
+			"xSelectedMessages_zero": "Нема изабраних порука",
 			"xSelectedMessages_one": "{count} изабрана порука",
 			"xSelectedMessages_few": "{count} изабране поруке",
 			"xSelectedMessages_other": "{count} изабраних порука"
@@ -86,12 +115,16 @@
 			"rename": "Аутоматски генериши ново име..."
 		},
 		"state": {
+			"loadingAgents": "Учитавање агената...",
 			"loadingChats": "Учитавање разговора...",
+			"loadingGPTs": "Учитавање GPT-а...",
 			"loadingMessages": "Учитавање порука...",
 			"loadingPreviousMessages": "Учитавање претходних порука...",
-			"loadingSubchats": "Учитавање подразговора..."
+			"loadingSubchats": "Учитавање подразговора...",
+			"renamingChat": "Преименовање разговора..."
 		},
 		"warning": {
+			"deletingAgent": "Овај агент ће бити трајно обрисан",
 			"deletingChats": "Ови разговори ће бити трајно обрисани"
 		}
 	},
@@ -102,24 +135,22 @@
 		},
 		"error": {
 			"address": "Морате додати адресу",
-			"avatar": "Морате додати аватар",
+			"avatar": "Морате додати ваш аватар",
 			"city": "Морате додати град",
-			"country": "Морате додати државу",
+			"country": "Морате додати земљу",
 			"email": "Морате додати имејл адресу",
 			"legalName": "Морате додати правно име",
-			"name": "Морате додати име",
+			"name": "Морате додати ваше име",
 			"postalCode": "Морате додати поштански број"
 		},
 		"label": {
 			"account": "Налог",
 			"address": "Адреса",
-			"avatar": "Аватар",
 			"billing": "Наплата",
 			"city": "Град",
-			"country": "Држава",
+			"country": "Земља",
 			"email": "Имејл адреса",
 			"legalName": "Правно име",
-			"name": "Име",
 			"phone": "Број телефона",
 			"postalCode": "Поштански број",
 			"private": "Приватно",

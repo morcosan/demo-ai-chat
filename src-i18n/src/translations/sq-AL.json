@@ -1,33 +1,41 @@
 {
 	"core": {
 		"action": {
-			"back": "Prapa",
+			"back": "Kthehu",
 			"backToHome": "Kthehu në faqen kryesore",
 			"changeLanguage": "Ndrysho gjuhën",
 			"close": "Mbyll",
 			"delete": "Fshi",
 			"deselectAll": "Çzgjidh të gjitha",
 			"openMenu": "Hap menynë",
-			"rename": "Riemërto",
+			"rename": "Riemëro",
 			"saveChanges": "Ruaj ndryshimet",
 			"search": "Kërko",
-			"searchMore": "Trego më shumë rezultate",
+			"searchMore": "Shfaq më shumë rezultate",
 			"selectAll": "Zgjidh të gjitha",
-			"signOut": "Dilni"
+			"signOut": "Dil"
+		},
+		"error": {
+			"noChanges": "Nuk ka ndryshime",
+			"nothingFound": "Nuk u gjet asgjë për \"{search}\""
 		},
 		"label": {
-			"apiDocs": "Dokumentacioni API",
+			"apiDocs": "Dokumentacioni i API",
 			"asia": "Azi",
+			"avatar": "Avatari",
 			"custom": "Personalizuar",
 			"darkTheme": "E errët",
-			"default": "Parazgjedhur",
-			"designSystem": "Sistemi i dizajnit",
-			"errors": "Gabime",
+			"default": "E parazgjedhur",
+			"description": "Përshkrimi",
+			"designSystem": "Sistemi i Dizajnit",
+			"errors": "Gabimet",
 			"europe": "Evropë",
 			"githubRepo": "Depoja GitHub",
 			"language": "Gjuha",
-			"lightTheme": "E çelët",
+			"lightTheme": "E ndritshme",
+			"name": "Emri",
 			"optionalField": "(Opsionale)",
+			"quickSettings": "Cilësime të shpejta",
 			"requiredField": "(E detyrueshme)",
 			"settings": "Cilësimet",
 			"uiLibrary": "Libraria UI:",
@@ -40,53 +48,78 @@
 			"dataSaved": "Të dhënat tuaja u ruajtën",
 			"deleting": "Duke fshirë...",
 			"loading": "Duke ngarkuar...",
-			"searching": "Duke kërkuar..."
+			"searching": "Duke kërkuar...",
+			"updating": "Duke përditësuar..."
 		}
 	},
 	"aiChat": {
 		"action": {
-			"backToSubchats": "Kthehu te nënbisedat",
+			"backToSubchats": "Kthehu te nën-bisedat",
+			"configureAgent": "Konfiguro agjentin",
+			"confirmDeleteAgent": "Konfirmo fshirjen e agjentit",
 			"confirmDeleteChats": "Konfirmo fshirjen e bisedave",
 			"confirmRenameChat": "Konfirmo riemërimin e bisedës",
+			"createAgent": "Krijo agjent",
+			"deleteAgent": "Fshi agjentin",
 			"deleteSelectedChats": "Fshi bisedat e zgjedhura",
 			"manageAgents": "Menaxho agjentët",
 			"manageChats": "Menaxho bisedat",
 			"openChat": "Hap bisedën",
-			"openSubchat_zero": "Krijo nënbisedë",
-			"openSubchat_one": "Hap nënbisedën ({count} mesazh)",
-			"openSubchat_other": "Hap nënbisedën ({count} mesazhe)",
-			"sendMessage": "Dërgo mesazhin",
-			"showMoreChats": "Trego më shumë biseda",
-			"showSubchats": "Trego nënbisedat ({count})",
-			"startSearching_one": "Shkruani të paktën {count} karakter",
-			"startSearching_other": "Shkruani të paktën {count} karaktere"
+			"openSubchat_zero": "Krijo nën-bisedë",
+			"openSubchat_one": "Hap nën-bisedën ({count} mesazh)",
+			"openSubchat_other": "Hap nën-bisedën ({count} mesazhe)",
+			"sendMessage": "Dërgo mesazh",
+			"showMoreAgents": "Shfaq më shumë agjentë",
+			"showMoreChats": "Shfaq më shumë biseda",
+			"showSubchats": "Shfaq nën-bisedat ({count})",
+			"startSearching_one": "Shkruaj të paktën {count} karakter",
+			"startSearching_other": "Shkruaj të paktën {count} karaktere"
+		},
+		"description": {
+			"loremIpsumGPT": "Modeli më inteligjent",
+			"rammusGPT": "Mbështetja më e mirë emocionale"
+		},
+		"error": {
+			"agentAvatar": "Duhet të shtoni një avatar për agjentin",
+			"agentName": "Duhet të shtoni një emër për agjentin",
+			"emptyMessage": "Mesazhi juaj është bosh"
 		},
 		"label": {
-			"chats": "Bisedat",
 			"agents": "Agjentët",
+			"chats": "Bisedat",
+			"customInstructions": "Udhëzime të personalizuara",
+			"gptModel": "Modeli GPT",
+			"newAgent": "Agjent i ri",
 			"newChat": "Bisedë e re",
 			"noChats": "Nuk ka biseda",
-			"noSubchats": "Nuk ka nënbiseda",
-			"subchats": "Nënbisedat",
+			"noSubchats": "Nuk ka nën-biseda",
+			"selectedValue": "Vlera e zgjedhur:",
+			"subchats": "Nën-bisedat",
+			"xMessages_zero": "Asnjë mesazh",
 			"xMessages_one": "{count} mesazh",
 			"xMessages_other": "{count} mesazhe",
-			"xSearchResults_zero": "Asnjë rezultat",
-			"xSearchResults_one": "{count} rezultat",
-			"xSearchResults_other": "{count} rezultate",
+			"xSearchResults_zero": "Asnjë rezultat kërkimi",
+			"xSearchResults_one": "{count} rezultat kërkimi",
+			"xSearchResults_other": "{count} rezultate kërkimi",
+			"xSelectedMessages_zero": "Asnjë mesazh i zgjedhur",
 			"xSelectedMessages_one": "{count} mesazh i zgjedhur",
 			"xSelectedMessages_other": "{count} mesazhe të zgjedhura"
 		},
 		"placeholder": {
-			"newMessage": "Bëni një pyetje...",
+			"newMessage": "Bëj një pyetje...",
 			"rename": "Gjenero automatikisht një emër të ri..."
 		},
 		"state": {
+			"loadingAgents": "Duke ngarkuar agjentët...",
 			"loadingChats": "Duke ngarkuar bisedat...",
+			"loadingGPTs": "Duke ngarkuar GPT-të...",
 			"loadingMessages": "Duke ngarkuar mesazhet...",
 			"loadingPreviousMessages": "Duke ngarkuar mesazhet e mëparshme...",
-			"loadingSubchats": "Duke ngarkuar nënbisedat..."
+			"loadingSubchats": "Duke ngarkuar nën-bisedat...",
+			"renamingChat": "Duke riemëruar bisedën..."
 		},
 		"warning": {
+			"deletingAgent": "Ky agjent do të fshihet përgjithmonë",
 			"deletingChats": "Këto biseda do të fshihen përgjithmonë"
 		}
 	},
@@ -97,24 +130,22 @@
 		},
 		"error": {
 			"address": "Duhet të shtoni adresën",
-			"avatar": "Duhet të shtoni një avatar",
+			"avatar": "Duhet të shtoni avatarin tuaj",
 			"city": "Duhet të shtoni qytetin",
 			"country": "Duhet të shtoni shtetin",
-			"email": "Duhet të shtoni adresën e emailit",
+			"email": "Duhet të shtoni adresën email",
 			"legalName": "Duhet të shtoni emrin ligjor",
-			"name": "Duhet të shtoni emrin",
+			"name": "Duhet të shtoni emrin tuaj",
 			"postalCode": "Duhet të shtoni kodin postar"
 		},
 		"label": {
 			"account": "Llogaria",
 			"address": "Adresa",
-			"avatar": "Avatari",
 			"billing": "Faturimi",
 			"city": "Qyteti",
 			"country": "Shteti",
-			"email": "Adresa e emailit",
+			"email": "Adresa email",
 			"legalName": "Emri ligjor",
-			"name": "Emri",
 			"phone": "Numri i telefonit",
 			"postalCode": "Kodi postar",
 			"private": "Private",

@@ -1,8 +1,8 @@
 {
 	"core": {
 		"action": {
-			"back": "ย้อนกลับ",
-			"backToHome": "กลับไปยังหน้าแรก",
+			"back": "กลับ",
+			"backToHome": "กลับไปหน้าหลัก",
 			"changeLanguage": "เปลี่ยนภาษา",
 			"close": "ปิด",
 			"delete": "ลบ",
@@ -15,19 +15,27 @@
 			"selectAll": "เลือกทั้งหมด",
 			"signOut": "ออกจากระบบ"
 		},
+		"error": {
+			"noChanges": "ไม่มีการเปลี่ยนแปลง",
+			"nothingFound": "ไม่พบผลลัพธ์สำหรับ \"{search}\""
+		},
 		"label": {
 			"apiDocs": "เอกสาร API",
 			"asia": "เอเชีย",
+			"avatar": "รูปโปรไฟล์",
 			"custom": "กำหนดเอง",
-			"darkTheme": "โทนมืด",
+			"darkTheme": "โหมดมืด",
 			"default": "ค่าเริ่มต้น",
+			"description": "คำอธิบาย",
 			"designSystem": "ระบบการออกแบบ",
 			"errors": "ข้อผิดพลาด",
 			"europe": "ยุโรป",
-			"githubRepo": "ที่เก็บ GitHub",
+			"githubRepo": "GitHub Repository",
 			"language": "ภาษา",
-			"lightTheme": "โทนสว่าง",
+			"lightTheme": "โหมดสว่าง",
+			"name": "ชื่อ",
 			"optionalField": "(ไม่บังคับ)",
+			"quickSettings": "การตั้งค่าด่วน",
 			"requiredField": "(จำเป็น)",
 			"settings": "การตั้งค่า",
 			"uiLibrary": "ไลบรารี UI:",
@@ -37,38 +45,59 @@
 			"search": "ค้นหา..."
 		},
 		"state": {
-			"dataSaved": "ข้อมูลของคุณถูกบันทึกแล้ว",
+			"dataSaved": "บันทึกข้อมูลของคุณแล้ว",
 			"deleting": "กำลังลบ...",
 			"loading": "กำลังโหลด...",
-			"searching": "กำลังค้นหา..."
+			"searching": "กำลังค้นหา...",
+			"updating": "กำลังอัพเดท..."
 		}
 	},
 	"aiChat": {
 		"action": {
 			"backToSubchats": "กลับไปยังการสนทนาย่อย",
+			"configureAgent": "ตั้งค่าเอเจนต์",
+			"confirmDeleteAgent": "ยืนยันการลบเอเจนต์",
 			"confirmDeleteChats": "ยืนยันการลบการสนทนา",
 			"confirmRenameChat": "ยืนยันการเปลี่ยนชื่อการสนทนา",
+			"createAgent": "สร้างเอเจนต์",
+			"deleteAgent": "ลบเอเจนต์",
 			"deleteSelectedChats": "ลบการสนทนาที่เลือก",
-			"manageAgents": "จัดการตัวแทน",
+			"manageAgents": "จัดการเอเจนต์",
 			"manageChats": "จัดการการสนทนา",
 			"openChat": "เปิดการสนทนา",
 			"openSubchat_zero": "สร้างการสนทนาย่อย",
 			"openSubchat_other": "เปิดการสนทนาย่อย ({count} ข้อความ)",
 			"sendMessage": "ส่งข้อความ",
+			"showMoreAgents": "แสดงเอเจนต์เพิ่มเติม",
 			"showMoreChats": "แสดงการสนทนาเพิ่มเติม",
 			"showSubchats": "แสดงการสนทนาย่อย ({count})",
 			"startSearching_other": "พิมพ์อย่างน้อย {count} ตัวอักษร"
 		},
+		"description": {
+			"loremIpsumGPT": "โมเดลที่ฉลาดที่สุด",
+			"rammusGPT": "การสนับสนุนทางอารมณ์ที่ดีที่สุด"
+		},
+		"error": {
+			"agentAvatar": "คุณต้องเพิ่มรูปโปรไฟล์สำหรับเอเจนต์",
+			"agentName": "คุณต้องเพิ่มชื่อสำหรับเอเจนต์",
+			"emptyMessage": "ข้อความของคุณว่างเปล่า"
+		},
 		"label": {
+			"agents": "เอเจนต์",
 			"chats": "การสนทนา",
-			"agents": "ตัวแทน",
+			"customInstructions": "คำแนะนำที่กำหนดเอง",
+			"gptModel": "โมเดล GPT",
+			"newAgent": "เอเจนต์ใหม่",
 			"newChat": "การสนทนาใหม่",
 			"noChats": "ไม่มีการสนทนา",
 			"noSubchats": "ไม่มีการสนทนาย่อย",
+			"selectedValue": "ค่าที่เลือก:",
 			"subchats": "การสนทนาย่อย",
+			"xMessages_zero": "ไม่มีข้อความ",
 			"xMessages_other": "{count} ข้อความ",
-			"xSearchResults_zero": "ไม่พบผลลัพธ์",
-			"xSearchResults_other": "{count} ผลลัพธ์",
+			"xSearchResults_zero": "ไม่มีผลการค้นหา",
+			"xSearchResults_other": "{count} ผลการค้นหา",
+			"xSelectedMessages_zero": "ไม่มีข้อความที่เลือก",
 			"xSelectedMessages_other": "{count} ข้อความที่เลือก"
 		},
 		"placeholder": {
@@ -76,12 +105,16 @@
 			"rename": "สร้างชื่อใหม่อัตโนมัติ..."
 		},
 		"state": {
+			"loadingAgents": "กำลังโหลดเอเจนต์...",
 			"loadingChats": "กำลังโหลดการสนทนา...",
+			"loadingGPTs": "กำลังโหลด GPTs...",
 			"loadingMessages": "กำลังโหลดข้อความ...",
 			"loadingPreviousMessages": "กำลังโหลดข้อความก่อนหน้า...",
-			"loadingSubchats": "กำลังโหลดการสนทนาย่อย..."
+			"loadingSubchats": "กำลังโหลดการสนทนาย่อย...",
+			"renamingChat": "กำลังเปลี่ยนชื่อการสนทนา..."
 		},
 		"warning": {
+			"deletingAgent": "เอเจนต์นี้จะถูกลบอย่างถาวร",
 			"deletingChats": "การสนทนาเหล่านี้จะถูกลบอย่างถาวร"
 		}
 	},
@@ -92,24 +125,22 @@
 		},
 		"error": {
 			"address": "คุณต้องเพิ่มที่อยู่",
-			"avatar": "คุณต้องเพิ่มอวตาร",
+			"avatar": "คุณต้องเพิ่มรูปโปรไฟล์ของคุณ",
 			"city": "คุณต้องเพิ่มเมือง",
 			"country": "คุณต้องเพิ่มประเทศ",
 			"email": "คุณต้องเพิ่มที่อยู่อีเมล",
 			"legalName": "คุณต้องเพิ่มชื่อทางกฎหมาย",
-			"name": "คุณต้องเพิ่มชื่อ",
+			"name": "คุณต้องเพิ่มชื่อของคุณ",
 			"postalCode": "คุณต้องเพิ่มรหัสไปรษณีย์"
 		},
 		"label": {
 			"account": "บัญชี",
 			"address": "ที่อยู่",
-			"avatar": "อวตาร",
 			"billing": "การเรียกเก็บเงิน",
 			"city": "เมือง",
 			"country": "ประเทศ",
 			"email": "ที่อยู่อีเมล",
 			"legalName": "ชื่อทางกฎหมาย",
-			"name": "ชื่อ",
 			"phone": "เบอร์โทรศัพท์",
 			"postalCode": "รหัสไปรษณีย์",
 			"private": "ส่วนตัว",

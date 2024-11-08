@@ -15,19 +15,27 @@
 			"selectAll": "Selectează tot",
 			"signOut": "Deconectare"
 		},
+		"error": {
+			"noChanges": "Nu există modificări",
+			"nothingFound": "Nu s-a găsit nimic pentru \"{search}\""
+		},
 		"label": {
 			"apiDocs": "Documentație API",
 			"asia": "Asia",
+			"avatar": "Avatar",
 			"custom": "Personalizat",
 			"darkTheme": "Întunecat",
 			"default": "Implicit",
-			"designSystem": "Sistem de design",
+			"description": "Descriere",
+			"designSystem": "Sistem de Design",
 			"errors": "Erori",
 			"europe": "Europa",
-			"githubRepo": "Depozit GitHub",
+			"githubRepo": "Repository GitHub",
 			"language": "Limbă",
 			"lightTheme": "Luminos",
+			"name": "Nume",
 			"optionalField": "(Opțional)",
+			"quickSettings": "Setări rapide",
 			"requiredField": "(Obligatoriu)",
 			"settings": "Setări",
 			"uiLibrary": "Bibliotecă UI:",
@@ -40,43 +48,64 @@
 			"dataSaved": "Datele tale au fost salvate",
 			"deleting": "Se șterge...",
 			"loading": "Se încarcă...",
-			"searching": "Se caută..."
+			"searching": "Se caută...",
+			"updating": "Se actualizează..."
 		}
 	},
 	"aiChat": {
 		"action": {
-			"backToSubchats": "Înapoi la subconversații",
+			"backToSubchats": "Înapoi la sub-conversații",
+			"configureAgent": "Configurează agent",
+			"confirmDeleteAgent": "Confirmă ștergerea agentului",
 			"confirmDeleteChats": "Confirmă ștergerea conversațiilor",
 			"confirmRenameChat": "Confirmă redenumirea conversației",
+			"createAgent": "Creează agent",
+			"deleteAgent": "Șterge agent",
 			"deleteSelectedChats": "Șterge conversațiile selectate",
-			"manageAgents": "Gestionează agenții",
-			"manageChats": "Gestionează conversațiile",
-			"openChat": "Deschide conversația",
-			"openSubchat_zero": "Creează subconversație",
-			"openSubchat_one": "Deschide subconversația ({count} mesaj)",
-			"openSubchat_few": "Deschide subconversația ({count} mesaje)",
-			"openSubchat_other": "Deschide subconversația ({count} de mesaje)",
+			"manageAgents": "Gestionează agenți",
+			"manageChats": "Gestionează conversații",
+			"openChat": "Deschide conversație",
+			"openSubchat_zero": "Creează sub-conversație",
+			"openSubchat_one": "Deschide sub-conversație ({count} mesaj)",
+			"openSubchat_few": "Deschide sub-conversație ({count} mesaje)",
+			"openSubchat_other": "Deschide sub-conversație ({count} de mesaje)",
 			"sendMessage": "Trimite mesaj",
+			"showMoreAgents": "Arată mai mulți agenți",
 			"showMoreChats": "Arată mai multe conversații",
-			"showSubchats": "Arată subconversațiile ({count})",
-			"startSearching_one": "Introdu cel puțin {count} caracter",
-			"startSearching_few": "Introdu cel puțin {count} caractere",
-			"startSearching_other": "Introdu cel puțin {count} de caractere"
+			"showSubchats": "Arată sub-conversații ({count})",
+			"startSearching_one": "Introduceți cel puțin {count} caracter",
+			"startSearching_few": "Introduceți cel puțin {count} caractere",
+			"startSearching_other": "Introduceți cel puțin {count} de caractere"
+		},
+		"description": {
+			"loremIpsumGPT": "Cel mai inteligent model",
+			"rammusGPT": "Cel mai bun suport emoțional"
+		},
+		"error": {
+			"agentAvatar": "Trebuie să adăugați un avatar pentru agent",
+			"agentName": "Trebuie să adăugați un nume pentru agent",
+			"emptyMessage": "Mesajul tău este gol"
 		},
 		"label": {
-			"chats": "Conversații",
 			"agents": "Agenți",
+			"chats": "Conversații",
+			"customInstructions": "Instrucțiuni personalizate",
+			"gptModel": "Model GPT",
+			"newAgent": "Agent nou",
 			"newChat": "Conversație nouă",
-			"noChats": "Nicio conversație",
-			"noSubchats": "Nicio subconversație",
-			"subchats": "Subconversații",
+			"noChats": "Nu există conversații",
+			"noSubchats": "Nu există sub-conversații",
+			"selectedValue": "Valoare selectată:",
+			"subchats": "Sub-conversații",
+			"xMessages_zero": "Niciun mesaj",
 			"xMessages_one": "{count} mesaj",
 			"xMessages_few": "{count} mesaje",
 			"xMessages_other": "{count} de mesaje",
-			"xSearchResults_zero": "Niciun rezultat",
-			"xSearchResults_one": "{count} rezultat",
-			"xSearchResults_few": "{count} rezultate",
-			"xSearchResults_other": "{count} de rezultate",
+			"xSearchResults_zero": "Niciun rezultat al căutării",
+			"xSearchResults_one": "{count} rezultat al căutării",
+			"xSearchResults_few": "{count} rezultate ale căutării",
+			"xSearchResults_other": "{count} de rezultate ale căutării",
+			"xSelectedMessages_zero": "Niciun mesaj selectat",
 			"xSelectedMessages_one": "{count} mesaj selectat",
 			"xSelectedMessages_few": "{count} mesaje selectate",
 			"xSelectedMessages_other": "{count} de mesaje selectate"
@@ -86,40 +115,42 @@
 			"rename": "Generează automat un nume nou..."
 		},
 		"state": {
-			"loadingChats": "Se încarcă conversațiile...",
-			"loadingMessages": "Se încarcă mesajele...",
+			"loadingAgents": "Se încarcă agenți...",
+			"loadingChats": "Se încarcă conversații...",
+			"loadingGPTs": "Se încarcă GPT-uri...",
+			"loadingMessages": "Se încarcă mesaje...",
 			"loadingPreviousMessages": "Se încarcă mesajele anterioare...",
-			"loadingSubchats": "Se încarcă subconversațiile..."
+			"loadingSubchats": "Se încarcă sub-conversații...",
+			"renamingChat": "Se redenumește conversația..."
 		},
 		"warning": {
+			"deletingAgent": "Acest agent va fi șters permanent",
 			"deletingChats": "Aceste conversații vor fi șterse permanent"
 		}
 	},
 	"userSettings": {
 		"action": {
-			"manageAccount": "Gestionează contul",
-			"manageBilling": "Gestionează facturarea"
+			"manageAccount": "Gestionează cont",
+			"manageBilling": "Gestionează facturare"
 		},
 		"error": {
-			"address": "Trebuie să adaugi adresa",
-			"avatar": "Trebuie să adaugi un avatar",
-			"city": "Trebuie să adaugi orașul",
-			"country": "Trebuie să adaugi țara",
-			"email": "Trebuie să adaugi adresa de email",
-			"legalName": "Trebuie să adaugi numele legal",
-			"name": "Trebuie să adaugi numele",
-			"postalCode": "Trebuie să adaugi codul poștal"
+			"address": "Trebuie să adăugați adresa",
+			"avatar": "Trebuie să adăugați avatarul",
+			"city": "Trebuie să adăugați orașul",
+			"country": "Trebuie să adăugați țara",
+			"email": "Trebuie să adăugați adresa de email",
+			"legalName": "Trebuie să adăugați numele legal",
+			"name": "Trebuie să adăugați numele",
+			"postalCode": "Trebuie să adăugați codul poștal"
 		},
 		"label": {
 			"account": "Cont",
 			"address": "Adresă",
-			"avatar": "Avatar",
 			"billing": "Facturare",
 			"city": "Oraș",
 			"country": "Țară",
-			"email": "Adresă de email",
+			"email": "Adresă email",
 			"legalName": "Nume legal",
-			"name": "Nume",
 			"phone": "Număr de telefon",
 			"postalCode": "Cod poștal",
 			"private": "Privat",

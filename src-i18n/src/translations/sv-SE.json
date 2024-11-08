@@ -15,19 +15,27 @@
 			"selectAll": "Markera alla",
 			"signOut": "Logga ut"
 		},
+		"error": {
+			"noChanges": "Inga ändringar",
+			"nothingFound": "Inget hittades för \"{search}\""
+		},
 		"label": {
 			"apiDocs": "API-dokumentation",
 			"asia": "Asien",
+			"avatar": "Avatar",
 			"custom": "Anpassad",
 			"darkTheme": "Mörkt",
 			"default": "Standard",
+			"description": "Beskrivning",
 			"designSystem": "Designsystem",
 			"errors": "Fel",
 			"europe": "Europa",
 			"githubRepo": "GitHub-repository",
 			"language": "Språk",
 			"lightTheme": "Ljust",
+			"name": "Namn",
 			"optionalField": "(Valfritt)",
+			"quickSettings": "Snabbinställningar",
 			"requiredField": "(Obligatoriskt)",
 			"settings": "Inställningar",
 			"uiLibrary": "UI-bibliotek:",
@@ -37,42 +45,63 @@
 			"search": "Sök..."
 		},
 		"state": {
-			"dataSaved": "Dina data har sparats",
+			"dataSaved": "Din data har sparats",
 			"deleting": "Raderar...",
 			"loading": "Laddar...",
-			"searching": "Söker..."
+			"searching": "Söker...",
+			"updating": "Uppdaterar..."
 		}
 	},
 	"aiChat": {
 		"action": {
-			"backToSubchats": "Tillbaka till underkonversationer",
-			"confirmDeleteChats": "Bekräfta radering av konversationer",
-			"confirmRenameChat": "Bekräfta namnbyte av konversation",
-			"deleteSelectedChats": "Radera valda konversationer",
+			"backToSubchats": "Tillbaka till underchatt",
+			"configureAgent": "Konfigurera agent",
+			"confirmDeleteAgent": "Bekräfta radering av agent",
+			"confirmDeleteChats": "Bekräfta radering av chattar",
+			"confirmRenameChat": "Bekräfta namnbyte av chatt",
+			"createAgent": "Skapa agent",
+			"deleteAgent": "Radera agent",
+			"deleteSelectedChats": "Radera valda chattar",
 			"manageAgents": "Hantera agenter",
-			"manageChats": "Hantera konversationer",
-			"openChat": "Öppna konversation",
-			"openSubchat_zero": "Skapa underkonversation",
-			"openSubchat_one": "Öppna underkonversation ({count} meddelande)",
-			"openSubchat_other": "Öppna underkonversation ({count} meddelanden)",
+			"manageChats": "Hantera chattar",
+			"openChat": "Öppna chatt",
+			"openSubchat_zero": "Skapa underchatt",
+			"openSubchat_one": "Öppna underchatt ({count} meddelande)",
+			"openSubchat_other": "Öppna underchatt ({count} meddelanden)",
 			"sendMessage": "Skicka meddelande",
-			"showMoreChats": "Visa fler konversationer",
-			"showSubchats": "Visa underkonversationer ({count})",
+			"showMoreAgents": "Visa fler agenter",
+			"showMoreChats": "Visa fler chattar",
+			"showSubchats": "Visa underchattar ({count})",
 			"startSearching_one": "Skriv minst {count} tecken",
 			"startSearching_other": "Skriv minst {count} tecken"
 		},
+		"description": {
+			"loremIpsumGPT": "Mest intelligenta modellen",
+			"rammusGPT": "Bästa emotionella stödet"
+		},
+		"error": {
+			"agentAvatar": "Du måste lägga till en avatar för agenten",
+			"agentName": "Du måste lägga till ett namn för agenten",
+			"emptyMessage": "Ditt meddelande är tomt"
+		},
 		"label": {
-			"chats": "Konversationer",
 			"agents": "Agenter",
-			"newChat": "Ny konversation",
-			"noChats": "Inga konversationer",
-			"noSubchats": "Inga underkonversationer",
-			"subchats": "Underkonversationer",
+			"chats": "Chattar",
+			"customInstructions": "Anpassade instruktioner",
+			"gptModel": "GPT-modell",
+			"newAgent": "Ny agent",
+			"newChat": "Ny chatt",
+			"noChats": "Inga chattar",
+			"noSubchats": "Inga underchattar",
+			"selectedValue": "Valt värde:",
+			"subchats": "Underchattar",
+			"xMessages_zero": "Inga meddelanden",
 			"xMessages_one": "{count} meddelande",
 			"xMessages_other": "{count} meddelanden",
 			"xSearchResults_zero": "Inga sökresultat",
 			"xSearchResults_one": "{count} sökresultat",
 			"xSearchResults_other": "{count} sökresultat",
+			"xSelectedMessages_zero": "Inga valda meddelanden",
 			"xSelectedMessages_one": "{count} valt meddelande",
 			"xSelectedMessages_other": "{count} valda meddelanden"
 		},
@@ -81,13 +110,17 @@
 			"rename": "Generera nytt namn automatiskt..."
 		},
 		"state": {
-			"loadingChats": "Laddar konversationer...",
+			"loadingAgents": "Laddar agenter...",
+			"loadingChats": "Laddar chattar...",
+			"loadingGPTs": "Laddar GPTs...",
 			"loadingMessages": "Laddar meddelanden...",
 			"loadingPreviousMessages": "Laddar tidigare meddelanden...",
-			"loadingSubchats": "Laddar underkonversationer..."
+			"loadingSubchats": "Laddar underchattar...",
+			"renamingChat": "Byter namn på chatt..."
 		},
 		"warning": {
-			"deletingChats": "Dessa konversationer kommer att raderas permanent"
+			"deletingAgent": "Denna agent kommer att raderas permanent",
+			"deletingChats": "Dessa chattar kommer att raderas permanent"
 		}
 	},
 	"userSettings": {
@@ -96,30 +129,28 @@
 			"manageBilling": "Hantera fakturering"
 		},
 		"error": {
-			"address": "Du måste lägga till en adress",
-			"avatar": "Du måste lägga till en avatar",
-			"city": "Du måste lägga till en stad",
-			"country": "Du måste lägga till ett land",
-			"email": "Du måste lägga till en e-postadress",
-			"legalName": "Du måste lägga till ett juridiskt namn",
-			"name": "Du måste lägga till ett namn",
-			"postalCode": "Du måste lägga till ett postnummer"
+			"address": "Du måste lägga till adressen",
+			"avatar": "Du måste lägga till din avatar",
+			"city": "Du måste lägga till staden",
+			"country": "Du måste lägga till landet",
+			"email": "Du måste lägga till e-postadressen",
+			"legalName": "Du måste lägga till juridiskt namn",
+			"name": "Du måste lägga till ditt namn",
+			"postalCode": "Du måste lägga till postnumret"
 		},
 		"label": {
 			"account": "Konto",
 			"address": "Adress",
-			"avatar": "Avatar",
 			"billing": "Fakturering",
 			"city": "Stad",
 			"country": "Land",
 			"email": "E-postadress",
 			"legalName": "Juridiskt namn",
-			"name": "Namn",
 			"phone": "Telefonnummer",
 			"postalCode": "Postnummer",
 			"private": "Privat",
 			"public": "Offentlig",
-			"vatNumber": "Momsregistreringsnummer"
+			"vatNumber": "Organisationsnummer"
 		}
 	}
 }

@@ -6,32 +6,40 @@
 			"changeLanguage": "言語を変更",
 			"close": "閉じる",
 			"delete": "削除",
-			"deselectAll": "すべての選択を解除",
+			"deselectAll": "すべて選択解除",
 			"openMenu": "メニューを開く",
 			"rename": "名前を変更",
 			"saveChanges": "変更を保存",
 			"search": "検索",
-			"searchMore": "さらに結果を表示",
+			"searchMore": "さらに表示",
 			"selectAll": "すべて選択",
-			"signOut": "ログアウト"
+			"signOut": "サインアウト"
+		},
+		"error": {
+			"noChanges": "変更はありません",
+			"nothingFound": "\"{search}\"の検索結果はありません"
 		},
 		"label": {
 			"apiDocs": "APIドキュメント",
 			"asia": "アジア",
+			"avatar": "アバター",
 			"custom": "カスタム",
 			"darkTheme": "ダーク",
 			"default": "デフォルト",
+			"description": "説明",
 			"designSystem": "デザインシステム",
 			"errors": "エラー",
 			"europe": "ヨーロッパ",
 			"githubRepo": "GitHubリポジトリ",
 			"language": "言語",
 			"lightTheme": "ライト",
+			"name": "名前",
 			"optionalField": "(任意)",
+			"quickSettings": "クイック設定",
 			"requiredField": "(必須)",
 			"settings": "設定",
-			"uiLibrary": "UIライブラリ：",
-			"uiTheme": "UIテーマ："
+			"uiLibrary": "UIライブラリ:",
+			"uiTheme": "UIテーマ:"
 		},
 		"placeholder": {
 			"search": "検索..."
@@ -40,48 +48,73 @@
 			"dataSaved": "データが保存されました",
 			"deleting": "削除中...",
 			"loading": "読み込み中...",
-			"searching": "検索中..."
+			"searching": "検索中...",
+			"updating": "更新中..."
 		}
 	},
 	"aiChat": {
 		"action": {
 			"backToSubchats": "サブチャットに戻る",
+			"configureAgent": "エージェントを設定",
+			"confirmDeleteAgent": "エージェントの削除を確認",
 			"confirmDeleteChats": "チャットの削除を確認",
-			"confirmRenameChat": "チャットの名前変更を確認",
+			"confirmRenameChat": "チャット名の変更を確認",
+			"createAgent": "エージェントを作成",
+			"deleteAgent": "エージェントを削除",
 			"deleteSelectedChats": "選択したチャットを削除",
 			"manageAgents": "エージェントを管理",
 			"manageChats": "チャットを管理",
 			"openChat": "チャットを開く",
 			"openSubchat_zero": "サブチャットを作成",
-			"openSubchat_other": "サブチャットを開く（{count}件のメッセージ）",
+			"openSubchat_other": "サブチャットを開く ({count}件のメッセージ)",
 			"sendMessage": "メッセージを送信",
-			"showMoreChats": "さらにチャットを表示",
-			"showSubchats": "サブチャットを表示（{count}）",
-			"startSearching_other": "少なくとも{count}文字を入力してください"
+			"showMoreAgents": "エージェントをさらに表示",
+			"showMoreChats": "チャットをさらに表示",
+			"showSubchats": "サブチャットを表示 ({count})",
+			"startSearching_other": "最低{count}文字入力してください"
+		},
+		"description": {
+			"loremIpsumGPT": "最も賢いモデル",
+			"rammusGPT": "最高の感情的サポート"
+		},
+		"error": {
+			"agentAvatar": "エージェントのアバターを追加する必要があります",
+			"agentName": "エージェントの名前を追加する必要があります",
+			"emptyMessage": "メッセージが空です"
 		},
 		"label": {
-			"chats": "チャット",
 			"agents": "エージェント",
-			"newChat": "新しいチャット",
-			"noChats": "チャットがありません",
-			"noSubchats": "サブチャットがありません",
+			"chats": "チャット",
+			"customInstructions": "カスタム指示",
+			"gptModel": "GPTモデル",
+			"newAgent": "新規エージェント",
+			"newChat": "新規チャット",
+			"noChats": "チャットはありません",
+			"noSubchats": "サブチャットはありません",
+			"selectedValue": "選択された値:",
 			"subchats": "サブチャット",
+			"xMessages_zero": "メッセージなし",
 			"xMessages_other": "{count}件のメッセージ",
 			"xSearchResults_zero": "検索結果なし",
 			"xSearchResults_other": "{count}件の検索結果",
+			"xSelectedMessages_zero": "選択されたメッセージなし",
 			"xSelectedMessages_other": "{count}件のメッセージを選択"
 		},
 		"placeholder": {
 			"newMessage": "質問を入力...",
-			"rename": "自動で新しい名前を生成..."
+			"rename": "新しい名前を自動生成..."
 		},
 		"state": {
+			"loadingAgents": "エージェントを読み込み中...",
 			"loadingChats": "チャットを読み込み中...",
+			"loadingGPTs": "GPTを読み込み中...",
 			"loadingMessages": "メッセージを読み込み中...",
 			"loadingPreviousMessages": "過去のメッセージを読み込み中...",
-			"loadingSubchats": "サブチャットを読み込み中..."
+			"loadingSubchats": "サブチャットを読み込み中...",
+			"renamingChat": "チャット名を変更中..."
 		},
 		"warning": {
+			"deletingAgent": "このエージェントは完全に削除されます",
 			"deletingChats": "これらのチャットは完全に削除されます"
 		}
 	},
@@ -103,18 +136,16 @@
 		"label": {
 			"account": "アカウント",
 			"address": "住所",
-			"avatar": "アバター",
 			"billing": "請求",
 			"city": "市区町村",
 			"country": "国",
 			"email": "メールアドレス",
 			"legalName": "法人名",
-			"name": "名前",
 			"phone": "電話番号",
 			"postalCode": "郵便番号",
-			"private": "非公開",
-			"public": "公開",
-			"vatNumber": "法人番号"
+			"private": "プライベート",
+			"public": "パブリック",
+			"vatNumber": "登録番号"
 		}
 	}
 }

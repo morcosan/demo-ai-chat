@@ -2,7 +2,7 @@
 	"core": {
 		"action": {
 			"back": "返回",
-			"backToHome": "返回主页",
+			"backToHome": "返回首页",
 			"changeLanguage": "更改语言",
 			"close": "关闭",
 			"delete": "删除",
@@ -15,19 +15,27 @@
 			"selectAll": "全选",
 			"signOut": "退出登录"
 		},
+		"error": {
+			"noChanges": "没有更改",
+			"nothingFound": "未找到与\"{search}\"相关的内容"
+		},
 		"label": {
 			"apiDocs": "API文档",
 			"asia": "亚洲",
+			"avatar": "头像",
 			"custom": "自定义",
 			"darkTheme": "深色",
 			"default": "默认",
+			"description": "描述",
 			"designSystem": "设计系统",
 			"errors": "错误",
 			"europe": "欧洲",
 			"githubRepo": "GitHub仓库",
 			"language": "语言",
 			"lightTheme": "浅色",
+			"name": "名称",
 			"optionalField": "(可选)",
+			"quickSettings": "快速设置",
 			"requiredField": "(必填)",
 			"settings": "设置",
 			"uiLibrary": "UI库：",
@@ -40,35 +48,56 @@
 			"dataSaved": "您的数据已保存",
 			"deleting": "正在删除...",
 			"loading": "正在加载...",
-			"searching": "正在搜索..."
+			"searching": "正在搜索...",
+			"updating": "正在更新..."
 		}
 	},
 	"aiChat": {
 		"action": {
 			"backToSubchats": "返回子对话",
+			"configureAgent": "配置代理",
+			"confirmDeleteAgent": "确认删除代理",
 			"confirmDeleteChats": "确认删除对话",
 			"confirmRenameChat": "确认重命名对话",
-			"deleteSelectedChats": "删除选中的对话",
+			"createAgent": "创建代理",
+			"deleteAgent": "删除代理",
+			"deleteSelectedChats": "删除选定的对话",
 			"manageAgents": "管理代理",
 			"manageChats": "管理对话",
 			"openChat": "打开对话",
 			"openSubchat_zero": "创建子对话",
-			"openSubchat_other": "打开子对话（{count}条消息）",
+			"openSubchat_other": "打开子对话({count}条消息)",
 			"sendMessage": "发送消息",
+			"showMoreAgents": "显示更多代理",
 			"showMoreChats": "显示更多对话",
-			"showSubchats": "显示子对话（{count}）",
-			"startSearching_other": "输入至少{count}个字符"
+			"showSubchats": "显示子对话({count})",
+			"startSearching_other": "请至少输入{count}个字符"
+		},
+		"description": {
+			"loremIpsumGPT": "最智能的模型",
+			"rammusGPT": "最佳情感支持"
+		},
+		"error": {
+			"agentAvatar": "您必须为代理添加头像",
+			"agentName": "您必须为代理添加名称",
+			"emptyMessage": "您的消息为空"
 		},
 		"label": {
-			"chats": "对话",
 			"agents": "代理",
+			"chats": "对话",
+			"customInstructions": "自定义指令",
+			"gptModel": "GPT模型",
+			"newAgent": "新代理",
 			"newChat": "新对话",
 			"noChats": "无对话",
 			"noSubchats": "无子对话",
+			"selectedValue": "选定的值：",
 			"subchats": "子对话",
+			"xMessages_zero": "无消息",
 			"xMessages_other": "{count}条消息",
 			"xSearchResults_zero": "无搜索结果",
 			"xSearchResults_other": "{count}个搜索结果",
+			"xSelectedMessages_zero": "未选择消息",
 			"xSelectedMessages_other": "已选择{count}条消息"
 		},
 		"placeholder": {
@@ -76,12 +105,16 @@
 			"rename": "自动生成新名称..."
 		},
 		"state": {
+			"loadingAgents": "正在加载代理...",
 			"loadingChats": "正在加载对话...",
+			"loadingGPTs": "正在加载GPT...",
 			"loadingMessages": "正在加载消息...",
 			"loadingPreviousMessages": "正在加载之前的消息...",
-			"loadingSubchats": "正在加载子对话..."
+			"loadingSubchats": "正在加载子对话...",
+			"renamingChat": "正在重命名对话..."
 		},
 		"warning": {
+			"deletingAgent": "此代理将被永久删除",
 			"deletingChats": "这些对话将被永久删除"
 		}
 	},
@@ -103,13 +136,11 @@
 		"label": {
 			"account": "账户",
 			"address": "地址",
-			"avatar": "头像",
 			"billing": "账单",
 			"city": "城市",
 			"country": "国家",
 			"email": "电子邮件地址",
 			"legalName": "法定名称",
-			"name": "姓名",
 			"phone": "电话号码",
 			"postalCode": "邮政编码",
 			"private": "私密",

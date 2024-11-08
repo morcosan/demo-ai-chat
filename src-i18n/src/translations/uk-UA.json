@@ -6,7 +6,7 @@
 			"changeLanguage": "Змінити мову",
 			"close": "Закрити",
 			"delete": "Видалити",
-			"deselectAll": "Зняти всі виділення",
+			"deselectAll": "Скасувати вибір всіх",
 			"openMenu": "Відкрити меню",
 			"rename": "Перейменувати",
 			"saveChanges": "Зберегти зміни",
@@ -15,19 +15,27 @@
 			"selectAll": "Вибрати все",
 			"signOut": "Вийти"
 		},
+		"error": {
+			"noChanges": "Немає змін",
+			"nothingFound": "Нічого не знайдено для \"{search}\""
+		},
 		"label": {
 			"apiDocs": "API документація",
 			"asia": "Азія",
+			"avatar": "Аватар",
 			"custom": "Користувацький",
 			"darkTheme": "Темна",
 			"default": "За замовчуванням",
+			"description": "Опис",
 			"designSystem": "Система дизайну",
 			"errors": "Помилки",
 			"europe": "Європа",
 			"githubRepo": "GitHub репозиторій",
 			"language": "Мова",
 			"lightTheme": "Світла",
+			"name": "Ім'я",
 			"optionalField": "(Необов'язково)",
+			"quickSettings": "Швидкі налаштування",
 			"requiredField": "(Обов'язково)",
 			"settings": "Налаштування",
 			"uiLibrary": "UI бібліотека:",
@@ -40,14 +48,19 @@
 			"dataSaved": "Ваші дані збережено",
 			"deleting": "Видалення...",
 			"loading": "Завантаження...",
-			"searching": "Пошук..."
+			"searching": "Пошук...",
+			"updating": "Оновлення..."
 		}
 	},
 	"aiChat": {
 		"action": {
-			"backToSubchats": "Назад до підчатів",
+			"backToSubchats": "Повернутися до підчатів",
+			"configureAgent": "Налаштувати агента",
+			"confirmDeleteAgent": "Підтвердити видалення агента",
 			"confirmDeleteChats": "Підтвердити видалення чатів",
 			"confirmRenameChat": "Підтвердити перейменування чату",
+			"createAgent": "Створити агента",
+			"deleteAgent": "Видалити агента",
 			"deleteSelectedChats": "Видалити вибрані чати",
 			"manageAgents": "Керувати агентами",
 			"manageChats": "Керувати чатами",
@@ -56,70 +69,93 @@
 			"openSubchat_one": "Відкрити підчат ({count} повідомлення)",
 			"openSubchat_few": "Відкрити підчат ({count} повідомлення)",
 			"openSubchat_many": "Відкрити підчат ({count} повідомлень)",
+			"openSubchat_other": "Відкрити підчат ({count} повідомлень)",
 			"sendMessage": "Надіслати повідомлення",
+			"showMoreAgents": "Показати більше агентів",
 			"showMoreChats": "Показати більше чатів",
 			"showSubchats": "Показати підчати ({count})",
 			"startSearching_one": "Введіть принаймні {count} символ",
 			"startSearching_few": "Введіть принаймні {count} символи",
-			"startSearching_many": "Введіть принаймні {count} символів"
+			"startSearching_many": "Введіть принаймні {count} символів",
+			"startSearching_other": "Введіть принаймні {count} символів"
+		},
+		"description": {
+			"loremIpsumGPT": "Найрозумніша модель",
+			"rammusGPT": "Найкраща емоційна підтримка"
+		},
+		"error": {
+			"agentAvatar": "Ви повинні додати аватар для агента",
+			"agentName": "Ви повинні додати ім'я для агента",
+			"emptyMessage": "Ваше повідомлення порожнє"
 		},
 		"label": {
-			"chats": "Чати",
 			"agents": "Агенти",
+			"chats": "Чати",
+			"customInstructions": "Користувацькі інструкції",
+			"gptModel": "GPT модель",
+			"newAgent": "Новий агент",
 			"newChat": "Новий чат",
 			"noChats": "Немає чатів",
 			"noSubchats": "Немає підчатів",
+			"selectedValue": "Вибране значення:",
 			"subchats": "Підчати",
+			"xMessages_zero": "Немає повідомлень",
 			"xMessages_one": "{count} повідомлення",
 			"xMessages_few": "{count} повідомлення",
 			"xMessages_many": "{count} повідомлень",
-			"xSearchResults_zero": "Немає результатів",
-			"xSearchResults_one": "{count} результат",
-			"xSearchResults_few": "{count} результати",
-			"xSearchResults_many": "{count} результатів",
+			"xMessages_other": "{count} повідомлень",
+			"xSearchResults_zero": "Немає результатів пошуку",
+			"xSearchResults_one": "{count} результат пошуку",
+			"xSearchResults_few": "{count} результати пошуку",
+			"xSearchResults_many": "{count} результатів пошуку",
+			"xSearchResults_other": "{count} результатів пошуку",
+			"xSelectedMessages_zero": "Немає вибраних повідомлень",
 			"xSelectedMessages_one": "{count} вибране повідомлення",
 			"xSelectedMessages_few": "{count} вибрані повідомлення",
-			"xSelectedMessages_many": "{count} вибраних повідомлень"
+			"xSelectedMessages_many": "{count} вибраних повідомлень",
+			"xSelectedMessages_other": "{count} вибраних повідомлень"
 		},
 		"placeholder": {
-			"newMessage": "Поставте запитання...",
-			"rename": "Автоматично згенерувати нову назву..."
+			"newMessage": "Задайте питання...",
+			"rename": "Автоматично згенерувати нове ім'я..."
 		},
 		"state": {
+			"loadingAgents": "Завантаження агентів...",
 			"loadingChats": "Завантаження чатів...",
+			"loadingGPTs": "Завантаження GPT...",
 			"loadingMessages": "Завантаження повідомлень...",
 			"loadingPreviousMessages": "Завантаження попередніх повідомлень...",
-			"loadingSubchats": "Завантаження підчатів..."
+			"loadingSubchats": "Завантаження підчатів...",
+			"renamingChat": "Перейменування чату..."
 		},
 		"warning": {
+			"deletingAgent": "Цей агент буде видалений назавжди",
 			"deletingChats": "Ці чати будуть видалені назавжди"
 		}
 	},
 	"userSettings": {
 		"action": {
 			"manageAccount": "Керувати обліковим записом",
-			"manageBilling": "Керувати оплатою"
+			"manageBilling": "Керувати рахунками"
 		},
 		"error": {
 			"address": "Ви повинні додати адресу",
-			"avatar": "Ви повинні додати аватар",
+			"avatar": "Ви повинні додати свій аватар",
 			"city": "Ви повинні додати місто",
 			"country": "Ви повинні додати країну",
-			"email": "Ви повинні додати електронну адресу",
-			"legalName": "Ви повинні додати юридичну назву",
-			"name": "Ви повинні додати ім'я",
+			"email": "Ви повинні додати email адресу",
+			"legalName": "Ви повинні додати юридичне ім'я",
+			"name": "Ви повинні додати своє ім'я",
 			"postalCode": "Ви повинні додати поштовий індекс"
 		},
 		"label": {
 			"account": "Обліковий запис",
 			"address": "Адреса",
-			"avatar": "Аватар",
-			"billing": "Оплата",
+			"billing": "Рахунки",
 			"city": "Місто",
 			"country": "Країна",
-			"email": "Електронна адреса",
-			"legalName": "Юридична назва",
-			"name": "Ім'я",
+			"email": "Email адреса",
+			"legalName": "Юридичне ім'я",
 			"phone": "Номер телефону",
 			"postalCode": "Поштовий індекс",
 			"private": "Приватний",

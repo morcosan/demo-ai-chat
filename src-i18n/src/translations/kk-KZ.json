@@ -6,7 +6,7 @@
 			"changeLanguage": "Тілді өзгерту",
 			"close": "Жабу",
 			"delete": "Жою",
-			"deselectAll": "Барлығын алып тастау",
+			"deselectAll": "Барлығын таңдаудан алу",
 			"openMenu": "Мәзірді ашу",
 			"rename": "Атын өзгерту",
 			"saveChanges": "Өзгерістерді сақтау",
@@ -15,19 +15,27 @@
 			"selectAll": "Барлығын таңдау",
 			"signOut": "Шығу"
 		},
+		"error": {
+			"noChanges": "Өзгерістер жоқ",
+			"nothingFound": "\"{search}\" бойынша ештеңе табылмады"
+		},
 		"label": {
 			"apiDocs": "API құжаттамасы",
 			"asia": "Азия",
-			"custom": "Өзгертпелі",
+			"avatar": "Аватар",
+			"custom": "Өзгертілген",
 			"darkTheme": "Қараңғы",
 			"default": "Әдепкі",
+			"description": "Сипаттама",
 			"designSystem": "Дизайн жүйесі",
 			"errors": "Қателер",
 			"europe": "Еуропа",
 			"githubRepo": "GitHub репозиторийі",
 			"language": "Тіл",
 			"lightTheme": "Жарық",
+			"name": "Аты",
 			"optionalField": "(Міндетті емес)",
+			"quickSettings": "Жылдам параметрлер",
 			"requiredField": "(Міндетті)",
 			"settings": "Параметрлер",
 			"uiLibrary": "UI кітапханасы:",
@@ -40,54 +48,79 @@
 			"dataSaved": "Деректеріңіз сақталды",
 			"deleting": "Жойылуда...",
 			"loading": "Жүктелуде...",
-			"searching": "Іздеу..."
+			"searching": "Іздеуде...",
+			"updating": "Жаңартылуда..."
 		}
 	},
 	"aiChat": {
 		"action": {
-			"backToSubchats": "Қосалқы чаттарға оралу",
+			"backToSubchats": "Ішкі чаттарға оралу",
+			"configureAgent": "Агентті конфигурациялау",
+			"confirmDeleteAgent": "Агентті жоюды растау",
 			"confirmDeleteChats": "Чаттарды жоюды растау",
-			"confirmRenameChat": "Чат атын өзгертуді растау",
+			"confirmRenameChat": "Чаттың атын өзгертуді растау",
+			"createAgent": "Агент жасау",
+			"deleteAgent": "Агентті жою",
 			"deleteSelectedChats": "Таңдалған чаттарды жою",
 			"manageAgents": "Агенттерді басқару",
 			"manageChats": "Чаттарды басқару",
 			"openChat": "Чатты ашу",
-			"openSubchat_zero": "Қосалқы чат жасау",
-			"openSubchat_one": "Қосалқы чатты ашу ({count} хабарлама)",
-			"openSubchat_other": "Қосалқы чатты ашу ({count} хабарлама)",
+			"openSubchat_zero": "Ішкі чат жасау",
+			"openSubchat_one": "Ішкі чатты ашу ({count} хабарлама)",
+			"openSubchat_other": "Ішкі чатты ашу ({count} хабарлама)",
 			"sendMessage": "Хабарлама жіберу",
+			"showMoreAgents": "Көбірек агент көрсету",
 			"showMoreChats": "Көбірек чат көрсету",
-			"showSubchats": "Қосалқы чаттарды көрсету ({count})",
-			"startSearching_one": "Кем дегенде {count} таңба енгізіңіз",
-			"startSearching_other": "Кем дегенде {count} таңба енгізіңіз"
+			"showSubchats": "Ішкі чаттарды көрсету ({count})",
+			"startSearching_one": "Кемінде {count} таңба енгізіңіз",
+			"startSearching_other": "Кемінде {count} таңба енгізіңіз"
+		},
+		"description": {
+			"loremIpsumGPT": "Ең ақылды модель",
+			"rammusGPT": "Үздік эмоционалды қолдау"
+		},
+		"error": {
+			"agentAvatar": "Агент үшін аватар қосуыңыз керек",
+			"agentName": "Агент үшін ат қосуыңыз керек",
+			"emptyMessage": "Хабарламаңыз бос"
 		},
 		"label": {
-			"chats": "Чаттар",
 			"agents": "Агенттер",
+			"chats": "Чаттар",
+			"customInstructions": "Өзгертілген нұсқаулар",
+			"gptModel": "GPT моделі",
+			"newAgent": "Жаңа агент",
 			"newChat": "Жаңа чат",
 			"noChats": "Чаттар жоқ",
-			"noSubchats": "Қосалқы чаттар жоқ",
-			"subchats": "Қосалқы чаттар",
+			"noSubchats": "Ішкі чаттар жоқ",
+			"selectedValue": "Таңдалған мән:",
+			"subchats": "Ішкі чаттар",
+			"xMessages_zero": "Хабарлама жоқ",
 			"xMessages_one": "{count} хабарлама",
 			"xMessages_other": "{count} хабарлама",
-			"xSearchResults_zero": "Нәтиже жоқ",
-			"xSearchResults_one": "{count} нәтиже",
-			"xSearchResults_other": "{count} нәтиже",
+			"xSearchResults_zero": "Іздеу нәтижелері жоқ",
+			"xSearchResults_one": "{count} іздеу нәтижесі",
+			"xSearchResults_other": "{count} іздеу нәтижесі",
+			"xSelectedMessages_zero": "Таңдалған хабарлама жоқ",
 			"xSelectedMessages_one": "{count} хабарлама таңдалды",
 			"xSelectedMessages_other": "{count} хабарлама таңдалды"
 		},
 		"placeholder": {
 			"newMessage": "Сұрақ қойыңыз...",
-			"rename": "Автоматты түрде жаңа атау жасау..."
+			"rename": "Жаңа атты автоматты түрде жасау..."
 		},
 		"state": {
+			"loadingAgents": "Агенттер жүктелуде...",
 			"loadingChats": "Чаттар жүктелуде...",
+			"loadingGPTs": "GPT-лер жүктелуде...",
 			"loadingMessages": "Хабарламалар жүктелуде...",
 			"loadingPreviousMessages": "Алдыңғы хабарламалар жүктелуде...",
-			"loadingSubchats": "Қосалқы чаттар жүктелуде..."
+			"loadingSubchats": "Ішкі чаттар жүктелуде...",
+			"renamingChat": "Чаттың аты өзгертілуде..."
 		},
 		"warning": {
-			"deletingChats": "Бұл чаттар біржола жойылады"
+			"deletingAgent": "Бұл агент толығымен жойылады",
+			"deletingChats": "Бұл чаттар толығымен жойылады"
 		}
 	},
 	"userSettings": {
@@ -96,25 +129,23 @@
 			"manageBilling": "Төлемдерді басқару"
 		},
 		"error": {
-			"address": "Мекенжайды қосу керек",
-			"avatar": "Аватарды қосу керек",
-			"city": "Қаланы қосу керек",
-			"country": "Елді қосу керек",
-			"email": "Электрондық пошта мекенжайын қосу керек",
-			"legalName": "Заңды атауды қосу керек",
-			"name": "Атын қосу керек",
-			"postalCode": "Пошта индексін қосу керек"
+			"address": "Мекенжайды қосуыңыз керек",
+			"avatar": "Аватарыңызды қосуыңыз керек",
+			"city": "Қаланы қосуыңыз керек",
+			"country": "Елді қосуыңыз керек",
+			"email": "Электрондық пошта мекенжайын қосуыңыз керек",
+			"legalName": "Заңды атауды қосуыңыз керек",
+			"name": "Атыңызды қосуыңыз керек",
+			"postalCode": "Пошта индексін қосуыңыз керек"
 		},
 		"label": {
 			"account": "Есептік жазба",
 			"address": "Мекенжай",
-			"avatar": "Аватар",
 			"billing": "Төлемдер",
 			"city": "Қала",
 			"country": "Ел",
 			"email": "Электрондық пошта мекенжайы",
 			"legalName": "Заңды атау",
-			"name": "Аты",
 			"phone": "Телефон нөмірі",
 			"postalCode": "Пошта индексі",
 			"private": "Жеке",

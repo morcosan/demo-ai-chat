@@ -15,23 +15,31 @@
 			"selectAll": "Vælg alle",
 			"signOut": "Log ud"
 		},
+		"error": {
+			"noChanges": "Der er ingen ændringer",
+			"nothingFound": "Intet fundet for \"{search}\""
+		},
 		"label": {
-			"apiDocs": "API dokumentation",
+			"apiDocs": "API Dokumentation",
 			"asia": "Asien",
+			"avatar": "Avatar",
 			"custom": "Tilpasset",
 			"darkTheme": "Mørk",
 			"default": "Standard",
+			"description": "Beskrivelse",
 			"designSystem": "Designsystem",
 			"errors": "Fejl",
 			"europe": "Europa",
-			"githubRepo": "GitHub repository",
+			"githubRepo": "GitHub Repository",
 			"language": "Sprog",
 			"lightTheme": "Lys",
+			"name": "Navn",
 			"optionalField": "(Valgfri)",
+			"quickSettings": "Hurtige indstillinger",
 			"requiredField": "(Påkrævet)",
 			"settings": "Indstillinger",
-			"uiLibrary": "UI bibliotek:",
-			"uiTheme": "UI tema:"
+			"uiLibrary": "UI Bibliotek:",
+			"uiTheme": "UI Tema:"
 		},
 		"placeholder": {
 			"search": "Søg..."
@@ -40,54 +48,76 @@
 			"dataSaved": "Dine data er gemt",
 			"deleting": "Sletter...",
 			"loading": "Indlæser...",
-			"searching": "Søger..."
+			"searching": "Søger...",
+			"updating": "Opdaterer..."
 		}
 	},
 	"aiChat": {
 		"action": {
 			"backToSubchats": "Tilbage til underchats",
+			"configureAgent": "Konfigurer agent",
+			"confirmDeleteAgent": "Bekræft sletning af agent",
 			"confirmDeleteChats": "Bekræft sletning af chats",
 			"confirmRenameChat": "Bekræft omdøbning af chat",
+			"createAgent": "Opret agent",
+			"deleteAgent": "Slet agent",
 			"deleteSelectedChats": "Slet valgte chats",
 			"manageAgents": "Administrer agenter",
 			"manageChats": "Administrer chats",
 			"openChat": "Åbn chat",
-			"openSubchat_zero": "Opret underchat",
-			"openSubchat_one": "Åbn underchat ({count} besked)",
 			"openSubchat_other": "Åbn underchat ({count} beskeder)",
+			"openSubchat_zero": "Opret underchat",
 			"sendMessage": "Send besked",
+			"showMoreAgents": "Vis flere agenter",
 			"showMoreChats": "Vis flere chats",
 			"showSubchats": "Vis underchats ({count})",
 			"startSearching_one": "Skriv mindst {count} tegn",
 			"startSearching_other": "Skriv mindst {count} tegn"
 		},
+		"description": {
+			"loremIpsumGPT": "Den mest intelligente model",
+			"rammusGPT": "Bedste følelsesmæssige støtte"
+		},
+		"error": {
+			"agentAvatar": "Du skal tilføje en avatar til agenten",
+			"agentName": "Du skal tilføje et navn til agenten",
+			"emptyMessage": "Din besked er tom"
+		},
 		"label": {
-			"chats": "Chats",
 			"agents": "Agenter",
+			"chats": "Chats",
+			"customInstructions": "Tilpassede instruktioner",
+			"gptModel": "GPT model",
+			"newAgent": "Ny agent",
 			"newChat": "Ny chat",
 			"noChats": "Ingen chats",
 			"noSubchats": "Ingen underchats",
+			"selectedValue": "Valgt værdi:",
 			"subchats": "Underchats",
-			"xMessages_one": "{count} besked",
+			"xMessages_one": "1 besked",
 			"xMessages_other": "{count} beskeder",
-			"xSearchResults_zero": "Ingen søgeresultater",
 			"xSearchResults_one": "{count} søgeresultat",
 			"xSearchResults_other": "{count} søgeresultater",
-			"xSelectedMessages_one": "{count} valgt besked",
-			"xSelectedMessages_other": "{count} valgte beskeder"
+			"xSearchResults_zero": "Ingen søgeresultater",
+			"xSelectedMessages_one": "1 besked valgt",
+			"xSelectedMessages_other": "{count} beskeder valgt"
 		},
 		"placeholder": {
 			"newMessage": "Stil et spørgsmål...",
-			"rename": "Generer et nyt navn automatisk..."
+			"rename": "Generer nyt navn automatisk..."
 		},
 		"state": {
+			"loadingAgents": "Indlæser agenter...",
 			"loadingChats": "Indlæser chats...",
+			"loadingGPTs": "Indlæser GPT'er...",
 			"loadingMessages": "Indlæser beskeder...",
 			"loadingPreviousMessages": "Indlæser tidligere beskeder...",
-			"loadingSubchats": "Indlæser underchats..."
+			"loadingSubchats": "Indlæser underchats...",
+			"renamingChat": "Omdøber chat..."
 		},
 		"warning": {
-			"deletingChats": "Disse chats vil blive slettet permanent"
+			"deletingAgent": "Denne agent vil blive permanent slettet",
+			"deletingChats": "Disse chats vil blive permanent slettet"
 		}
 	},
 	"userSettings": {
@@ -97,24 +127,22 @@
 		},
 		"error": {
 			"address": "Du skal tilføje adressen",
-			"avatar": "Du skal tilføje en avatar",
+			"avatar": "Du skal tilføje din avatar",
 			"city": "Du skal tilføje byen",
 			"country": "Du skal tilføje landet",
-			"email": "Du skal tilføje en e-mailadresse",
+			"email": "Du skal tilføje din e-mailadresse",
 			"legalName": "Du skal tilføje det juridiske navn",
-			"name": "Du skal tilføje et navn",
-			"postalCode": "Du skal tilføje et postnummer"
+			"name": "Du skal tilføje dit navn",
+			"postalCode": "Du skal tilføje postnummeret"
 		},
 		"label": {
 			"account": "Konto",
 			"address": "Adresse",
-			"avatar": "Avatar",
 			"billing": "Fakturering",
 			"city": "By",
 			"country": "Land",
 			"email": "E-mailadresse",
 			"legalName": "Juridisk navn",
-			"name": "Navn",
 			"phone": "Telefonnummer",
 			"postalCode": "Postnummer",
 			"private": "Privat",

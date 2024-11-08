@@ -15,19 +15,27 @@
 			"selectAll": "Alle auswählen",
 			"signOut": "Abmelden"
 		},
+		"error": {
+			"noChanges": "Keine Änderungen",
+			"nothingFound": "Nichts gefunden für \"{search}\""
+		},
 		"label": {
 			"apiDocs": "API-Dokumentation",
 			"asia": "Asien",
+			"avatar": "Avatar",
 			"custom": "Benutzerdefiniert",
 			"darkTheme": "Dunkel",
 			"default": "Standard",
+			"description": "Beschreibung",
 			"designSystem": "Design-System",
 			"errors": "Fehler",
 			"europe": "Europa",
-			"githubRepo": "GitHub-Repository",
+			"githubRepo": "GitHub Repository",
 			"language": "Sprache",
 			"lightTheme": "Hell",
+			"name": "Name",
 			"optionalField": "(Optional)",
+			"quickSettings": "Schnelleinstellungen",
 			"requiredField": "(Erforderlich)",
 			"settings": "Einstellungen",
 			"uiLibrary": "UI-Bibliothek:",
@@ -40,53 +48,75 @@
 			"dataSaved": "Ihre Daten wurden gespeichert",
 			"deleting": "Wird gelöscht...",
 			"loading": "Wird geladen...",
-			"searching": "Suche läuft..."
+			"searching": "Suche läuft...",
+			"updating": "Wird aktualisiert..."
 		}
 	},
 	"aiChat": {
 		"action": {
 			"backToSubchats": "Zurück zu Unterchats",
-			"confirmDeleteChats": "Chats löschen bestätigen",
-			"confirmRenameChat": "Chat umbenennen bestätigen",
+			"configureAgent": "Agent konfigurieren",
+			"confirmDeleteAgent": "Agent-Löschung bestätigen",
+			"confirmDeleteChats": "Chat-Löschung bestätigen",
+			"confirmRenameChat": "Chat-Umbenennung bestätigen",
+			"createAgent": "Agent erstellen",
+			"deleteAgent": "Agent löschen",
 			"deleteSelectedChats": "Ausgewählte Chats löschen",
 			"manageAgents": "Agenten verwalten",
 			"manageChats": "Chats verwalten",
 			"openChat": "Chat öffnen",
-			"openSubchat_zero": "Unterchat erstellen",
-			"openSubchat_one": "Unterchat öffnen ({count} Nachricht)",
 			"openSubchat_other": "Unterchat öffnen ({count} Nachrichten)",
+			"openSubchat_zero": "Unterchat erstellen",
 			"sendMessage": "Nachricht senden",
+			"showMoreAgents": "Weitere Agenten anzeigen",
 			"showMoreChats": "Weitere Chats anzeigen",
 			"showSubchats": "Unterchats anzeigen ({count})",
 			"startSearching_one": "Mindestens {count} Zeichen eingeben",
 			"startSearching_other": "Mindestens {count} Zeichen eingeben"
 		},
+		"description": {
+			"loremIpsumGPT": "Intelligentestes Modell",
+			"rammusGPT": "Beste emotionale Unterstützung"
+		},
+		"error": {
+			"agentAvatar": "Sie müssen einen Avatar für den Agenten hinzufügen",
+			"agentName": "Sie müssen einen Namen für den Agenten hinzufügen",
+			"emptyMessage": "Ihre Nachricht ist leer"
+		},
 		"label": {
-			"chats": "Chats",
 			"agents": "Agenten",
+			"chats": "Chats",
+			"customInstructions": "Benutzerdefinierte Anweisungen",
+			"gptModel": "GPT-Modell",
+			"newAgent": "Neuer Agent",
 			"newChat": "Neuer Chat",
 			"noChats": "Keine Chats",
 			"noSubchats": "Keine Unterchats",
+			"selectedValue": "Ausgewählter Wert:",
 			"subchats": "Unterchats",
 			"xMessages_one": "{count} Nachricht",
 			"xMessages_other": "{count} Nachrichten",
-			"xSearchResults_zero": "Keine Suchergebnisse",
 			"xSearchResults_one": "{count} Suchergebnis",
 			"xSearchResults_other": "{count} Suchergebnisse",
-			"xSelectedMessages_one": "{count} Nachricht ausgewählt",
-			"xSelectedMessages_other": "{count} Nachrichten ausgewählt"
+			"xSearchResults_zero": "Keine Suchergebnisse",
+			"xSelectedMessages_one": "{count} ausgewählte Nachricht",
+			"xSelectedMessages_other": "{count} ausgewählte Nachrichten"
 		},
 		"placeholder": {
 			"newMessage": "Stellen Sie eine Frage...",
-			"rename": "Automatisch einen neuen Namen generieren..."
+			"rename": "Automatisch neuen Namen generieren..."
 		},
 		"state": {
+			"loadingAgents": "Agenten werden geladen...",
 			"loadingChats": "Chats werden geladen...",
+			"loadingGPTs": "GPTs werden geladen...",
 			"loadingMessages": "Nachrichten werden geladen...",
 			"loadingPreviousMessages": "Vorherige Nachrichten werden geladen...",
-			"loadingSubchats": "Unterchats werden geladen..."
+			"loadingSubchats": "Unterchats werden geladen...",
+			"renamingChat": "Chat wird umbenannt..."
 		},
 		"warning": {
+			"deletingAgent": "Dieser Agent wird dauerhaft gelöscht",
 			"deletingChats": "Diese Chats werden dauerhaft gelöscht"
 		}
 	},
@@ -108,13 +138,11 @@
 		"label": {
 			"account": "Konto",
 			"address": "Adresse",
-			"avatar": "Avatar",
 			"billing": "Abrechnung",
 			"city": "Stadt",
 			"country": "Land",
 			"email": "E-Mail-Adresse",
 			"legalName": "Rechtlicher Name",
-			"name": "Name",
 			"phone": "Telefonnummer",
 			"postalCode": "Postleitzahl",
 			"private": "Privat",

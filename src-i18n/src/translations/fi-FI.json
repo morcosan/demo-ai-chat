@@ -15,19 +15,27 @@
 			"selectAll": "Valitse kaikki",
 			"signOut": "Kirjaudu ulos"
 		},
+		"error": {
+			"noChanges": "Ei muutoksia",
+			"nothingFound": "Ei tuloksia haulle \"{search}\""
+		},
 		"label": {
 			"apiDocs": "API-dokumentaatio",
 			"asia": "Aasia",
+			"avatar": "Avatar",
 			"custom": "Mukautettu",
 			"darkTheme": "Tumma",
 			"default": "Oletus",
+			"description": "Kuvaus",
 			"designSystem": "Suunnittelujärjestelmä",
 			"errors": "Virheet",
 			"europe": "Eurooppa",
-			"githubRepo": "GitHub-varasto",
+			"githubRepo": "GitHub-repositorio",
 			"language": "Kieli",
 			"lightTheme": "Vaalea",
+			"name": "Nimi",
 			"optionalField": "(Valinnainen)",
+			"quickSettings": "Pika-asetukset",
 			"requiredField": "(Pakollinen)",
 			"settings": "Asetukset",
 			"uiLibrary": "UI-kirjasto:",
@@ -40,14 +48,19 @@
 			"dataSaved": "Tietosi on tallennettu",
 			"deleting": "Poistetaan...",
 			"loading": "Ladataan...",
-			"searching": "Haetaan..."
+			"searching": "Haetaan...",
+			"updating": "Päivitetään..."
 		}
 	},
 	"aiChat": {
 		"action": {
 			"backToSubchats": "Takaisin alikeskusteluihin",
+			"configureAgent": "Määritä agentti",
+			"confirmDeleteAgent": "Vahvista agentin poisto",
 			"confirmDeleteChats": "Vahvista keskustelujen poisto",
 			"confirmRenameChat": "Vahvista keskustelun uudelleennimeäminen",
+			"createAgent": "Luo agentti",
+			"deleteAgent": "Poista agentti",
 			"deleteSelectedChats": "Poista valitut keskustelut",
 			"manageAgents": "Hallitse agentteja",
 			"manageChats": "Hallitse keskusteluja",
@@ -56,37 +69,57 @@
 			"openSubchat_one": "Avaa alikeskustelu ({count} viesti)",
 			"openSubchat_other": "Avaa alikeskustelu ({count} viestiä)",
 			"sendMessage": "Lähetä viesti",
+			"showMoreAgents": "Näytä lisää agentteja",
 			"showMoreChats": "Näytä lisää keskusteluja",
 			"showSubchats": "Näytä alikeskustelut ({count})",
 			"startSearching_one": "Kirjoita vähintään {count} merkki",
 			"startSearching_other": "Kirjoita vähintään {count} merkkiä"
 		},
+		"description": {
+			"loremIpsumGPT": "Älykkäin malli",
+			"rammusGPT": "Paras emotionaalinen tuki"
+		},
+		"error": {
+			"agentAvatar": "Sinun täytyy lisätä avatar agentille",
+			"agentName": "Sinun täytyy lisätä nimi agentille",
+			"emptyMessage": "Viestisi on tyhjä"
+		},
 		"label": {
-			"chats": "Keskustelut",
 			"agents": "Agentit",
+			"chats": "Keskustelut",
+			"customInstructions": "Mukautetut ohjeet",
+			"gptModel": "GPT-malli",
+			"newAgent": "Uusi agentti",
 			"newChat": "Uusi keskustelu",
 			"noChats": "Ei keskusteluja",
 			"noSubchats": "Ei alikeskusteluja",
+			"selectedValue": "Valittu arvo:",
 			"subchats": "Alikeskustelut",
+			"xMessages_zero": "0 viestiä",
 			"xMessages_one": "{count} viesti",
 			"xMessages_other": "{count} viestiä",
 			"xSearchResults_zero": "Ei hakutuloksia",
 			"xSearchResults_one": "{count} hakutulos",
 			"xSearchResults_other": "{count} hakutulosta",
-			"xSelectedMessages_one": "{count} viesti valittu",
-			"xSelectedMessages_other": "{count} viestiä valittu"
+			"xSelectedMessages_zero": "0 valittua viestiä",
+			"xSelectedMessages_one": "{count} valittu viesti",
+			"xSelectedMessages_other": "{count} valittua viestiä"
 		},
 		"placeholder": {
 			"newMessage": "Esitä kysymys...",
 			"rename": "Luo uusi nimi automaattisesti..."
 		},
 		"state": {
+			"loadingAgents": "Ladataan agentteja...",
 			"loadingChats": "Ladataan keskusteluja...",
+			"loadingGPTs": "Ladataan GPT:itä...",
 			"loadingMessages": "Ladataan viestejä...",
 			"loadingPreviousMessages": "Ladataan aiempia viestejä...",
-			"loadingSubchats": "Ladataan alikeskusteluja..."
+			"loadingSubchats": "Ladataan alikeskusteluja...",
+			"renamingChat": "Nimetään keskustelua uudelleen..."
 		},
 		"warning": {
+			"deletingAgent": "Tämä agentti poistetaan pysyvästi",
 			"deletingChats": "Nämä keskustelut poistetaan pysyvästi"
 		}
 	},
@@ -108,18 +141,16 @@
 		"label": {
 			"account": "Tili",
 			"address": "Osoite",
-			"avatar": "Avatar",
 			"billing": "Laskutus",
 			"city": "Kaupunki",
 			"country": "Maa",
 			"email": "Sähköpostiosoite",
 			"legalName": "Virallinen nimi",
-			"name": "Nimi",
 			"phone": "Puhelinnumero",
 			"postalCode": "Postinumero",
 			"private": "Yksityinen",
 			"public": "Julkinen",
-			"vatNumber": "ALV-numero"
+			"vatNumber": "Y-tunnus"
 		}
 	}
 }

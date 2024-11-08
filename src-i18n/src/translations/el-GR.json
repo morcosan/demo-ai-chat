@@ -2,7 +2,7 @@
 	"core": {
 		"action": {
 			"back": "Πίσω",
-			"backToHome": "Πίσω στην αρχική σελίδα",
+			"backToHome": "Επιστροφή στην αρχική σελίδα",
 			"changeLanguage": "Αλλαγή γλώσσας",
 			"close": "Κλείσιμο",
 			"delete": "Διαγραφή",
@@ -15,20 +15,28 @@
 			"selectAll": "Επιλογή όλων",
 			"signOut": "Αποσύνδεση"
 		},
+		"error": {
+			"noChanges": "Δεν υπάρχουν αλλαγές",
+			"nothingFound": "Δεν βρέθηκε τίποτα για \"{search}\""
+		},
 		"label": {
 			"apiDocs": "Τεκμηρίωση API",
 			"asia": "Ασία",
+			"avatar": "Εικόνα προφίλ",
 			"custom": "Προσαρμοσμένο",
-			"darkTheme": "Σκούρο",
+			"darkTheme": "Σκοτεινό",
 			"default": "Προεπιλογή",
-			"designSystem": "Σύστημα σχεδίασης",
+			"description": "Περιγραφή",
+			"designSystem": "Σύστημα Σχεδιασμού",
 			"errors": "Σφάλματα",
 			"europe": "Ευρώπη",
-			"githubRepo": "GitHub αποθετήριο",
+			"githubRepo": "GitHub Repository",
 			"language": "Γλώσσα",
 			"lightTheme": "Φωτεινό",
+			"name": "Όνομα",
 			"optionalField": "(Προαιρετικό)",
-			"requiredField": "(Υποχρεωτικό)",
+			"quickSettings": "Γρήγορες ρυθμίσεις",
+			"requiredField": "(Απαιτείται)",
 			"settings": "Ρυθμίσεις",
 			"uiLibrary": "Βιβλιοθήκη UI:",
 			"uiTheme": "Θέμα UI:"
@@ -40,40 +48,71 @@
 			"dataSaved": "Τα δεδομένα σας αποθηκεύτηκαν",
 			"deleting": "Διαγραφή...",
 			"loading": "Φόρτωση...",
-			"searching": "Αναζήτηση..."
+			"searching": "Αναζήτηση...",
+			"updating": "Ενημέρωση..."
 		}
 	},
 	"aiChat": {
 		"action": {
-			"backToSubchats": "Πίσω στις υποσυνομιλίες",
+			"backToSubchats": "Επιστροφή στις υποσυνομιλίες",
+			"configureAgent": "Διαμόρφωση πράκτορα",
+			"confirmDeleteAgent": "Επιβεβαίωση διαγραφής πράκτορα",
 			"confirmDeleteChats": "Επιβεβαίωση διαγραφής συνομιλιών",
 			"confirmRenameChat": "Επιβεβαίωση μετονομασίας συνομιλίας",
+			"createAgent": "Δημιουργία πράκτορα",
+			"deleteAgent": "Διαγραφή πράκτορα",
 			"deleteSelectedChats": "Διαγραφή επιλεγμένων συνομιλιών",
 			"manageAgents": "Διαχείριση πρακτόρων",
 			"manageChats": "Διαχείριση συνομιλιών",
 			"openChat": "Άνοιγμα συνομιλίας",
 			"openSubchat_zero": "Δημιουργία υποσυνομιλίας",
 			"openSubchat_one": "Άνοιγμα υποσυνομιλίας ({count} μήνυμα)",
+			"openSubchat_few": "Άνοιγμα υποσυνομιλίας ({count} μηνύματα)",
+			"openSubchat_many": "Άνοιγμα υποσυνομιλίας ({count} μηνύματα)",
 			"openSubchat_other": "Άνοιγμα υποσυνομιλίας ({count} μηνύματα)",
 			"sendMessage": "Αποστολή μηνύματος",
+			"showMoreAgents": "Εμφάνιση περισσότερων πρακτόρων",
 			"showMoreChats": "Εμφάνιση περισσότερων συνομιλιών",
 			"showSubchats": "Εμφάνιση υποσυνομιλιών ({count})",
 			"startSearching_one": "Πληκτρολογήστε τουλάχιστον {count} χαρακτήρα",
+			"startSearching_few": "Πληκτρολογήστε τουλάχιστον {count} χαρακτήρες",
+			"startSearching_many": "Πληκτρολογήστε τουλάχιστον {count} χαρακτήρες",
 			"startSearching_other": "Πληκτρολογήστε τουλάχιστον {count} χαρακτήρες"
 		},
+		"description": {
+			"loremIpsumGPT": "Το πιο έξυπνο μοντέλο",
+			"rammusGPT": "Καλύτερη συναισθηματική υποστήριξη"
+		},
+		"error": {
+			"agentAvatar": "Πρέπει να προσθέσετε μια εικόνα προφίλ για τον πράκτορα",
+			"agentName": "Πρέπει να προσθέσετε ένα όνομα για τον πράκτορα",
+			"emptyMessage": "Το μήνυμά σας είναι κενό"
+		},
 		"label": {
-			"chats": "Συνομιλίες",
 			"agents": "Πράκτορες",
+			"chats": "Συνομιλίες",
+			"customInstructions": "Προσαρμοσμένες οδηγίες",
+			"gptModel": "Μοντέλο GPT",
+			"newAgent": "Νέος πράκτορας",
 			"newChat": "Νέα συνομιλία",
 			"noChats": "Δεν υπάρχουν συνομιλίες",
 			"noSubchats": "Δεν υπάρχουν υποσυνομιλίες",
+			"selectedValue": "Επιλεγμένη τιμή:",
 			"subchats": "Υποσυνομιλίες",
+			"xMessages_zero": "Κανένα μήνυμα",
 			"xMessages_one": "{count} μήνυμα",
+			"xMessages_few": "{count} μηνύματα",
+			"xMessages_many": "{count} μηνύματα",
 			"xMessages_other": "{count} μηνύματα",
 			"xSearchResults_zero": "Κανένα αποτέλεσμα αναζήτησης",
 			"xSearchResults_one": "{count} αποτέλεσμα αναζήτησης",
+			"xSearchResults_few": "{count} αποτελέσματα αναζήτησης",
+			"xSearchResults_many": "{count} αποτελέσματα αναζήτησης",
 			"xSearchResults_other": "{count} αποτελέσματα αναζήτησης",
+			"xSelectedMessages_zero": "Κανένα επιλεγμένο μήνυμα",
 			"xSelectedMessages_one": "{count} επιλεγμένο μήνυμα",
+			"xSelectedMessages_few": "{count} επιλεγμένα μηνύματα",
+			"xSelectedMessages_many": "{count} επιλεγμένα μηνύματα",
 			"xSelectedMessages_other": "{count} επιλεγμένα μηνύματα"
 		},
 		"placeholder": {
@@ -81,12 +120,16 @@
 			"rename": "Αυτόματη δημιουργία νέου ονόματος..."
 		},
 		"state": {
+			"loadingAgents": "Φόρτωση πρακτόρων...",
 			"loadingChats": "Φόρτωση συνομιλιών...",
+			"loadingGPTs": "Φόρτωση GPTs...",
 			"loadingMessages": "Φόρτωση μηνυμάτων...",
 			"loadingPreviousMessages": "Φόρτωση προηγούμενων μηνυμάτων...",
-			"loadingSubchats": "Φόρτωση υποσυνομιλιών..."
+			"loadingSubchats": "Φόρτωση υποσυνομιλιών...",
+			"renamingChat": "Μετονομασία συνομιλίας..."
 		},
 		"warning": {
+			"deletingAgent": "Αυτός ο πράκτορας θα διαγραφεί μόνιμα",
 			"deletingChats": "Αυτές οι συνομιλίες θα διαγραφούν μόνιμα"
 		}
 	},
@@ -96,25 +139,23 @@
 			"manageBilling": "Διαχείριση χρεώσεων"
 		},
 		"error": {
-			"address": "Πρέπει να προσθέσετε διεύθυνση",
-			"avatar": "Πρέπει να προσθέσετε avatar",
-			"city": "Πρέπει να προσθέσετε πόλη",
-			"country": "Πρέπει να προσθέσετε χώρα",
-			"email": "Πρέπει να προσθέσετε διεύθυνση email",
-			"legalName": "Πρέπει να προσθέσετε νομική επωνυμία",
-			"name": "Πρέπει να προσθέσετε όνομα",
-			"postalCode": "Πρέπει να προσθέσετε ταχυδρομικό κώδικα"
+			"address": "Πρέπει να προσθέσετε τη διεύθυνση",
+			"avatar": "Πρέπει να προσθέσετε την εικόνα προφίλ σας",
+			"city": "Πρέπει να προσθέσετε την πόλη",
+			"country": "Πρέπει να προσθέσετε τη χώρα",
+			"email": "Πρέπει να προσθέσετε τη διεύθυνση email",
+			"legalName": "Πρέπει να προσθέσετε το νόμιμο όνομα",
+			"name": "Πρέπει να προσθέσετε το όνομά σας",
+			"postalCode": "Πρέπει να προσθέσετε τον ταχυδρομικό κώδικα"
 		},
 		"label": {
 			"account": "Λογαριασμός",
 			"address": "Διεύθυνση",
-			"avatar": "Avatar",
 			"billing": "Χρεώσεις",
 			"city": "Πόλη",
 			"country": "Χώρα",
 			"email": "Διεύθυνση email",
-			"legalName": "Νομική επωνυμία",
-			"name": "Όνομα",
+			"legalName": "Νόμιμο όνομα",
 			"phone": "Αριθμός τηλεφώνου",
 			"postalCode": "Ταχυδρομικός κώδικας",
 			"private": "Ιδιωτικό",

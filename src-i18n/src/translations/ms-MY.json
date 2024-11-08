@@ -11,26 +11,34 @@
 			"rename": "Namakan semula",
 			"saveChanges": "Simpan perubahan",
 			"search": "Cari",
-			"searchMore": "Tunjuk lebih banyak hasil",
+			"searchMore": "Tunjukkan lebih banyak keputusan",
 			"selectAll": "Pilih semua",
 			"signOut": "Log keluar"
+		},
+		"error": {
+			"noChanges": "Tiada perubahan",
+			"nothingFound": "Tiada hasil carian untuk \"{search}\""
 		},
 		"label": {
 			"apiDocs": "Dokumentasi API",
 			"asia": "Asia",
+			"avatar": "Avatar",
 			"custom": "Tersuai",
 			"darkTheme": "Gelap",
 			"default": "Lalai",
-			"designSystem": "Sistem reka bentuk",
+			"description": "Keterangan",
+			"designSystem": "Sistem Reka Bentuk",
 			"errors": "Ralat",
 			"europe": "Eropah",
-			"githubRepo": "Repositori GitHub",
+			"githubRepo": "Repo GitHub",
 			"language": "Bahasa",
 			"lightTheme": "Cerah",
+			"name": "Nama",
 			"optionalField": "(Pilihan)",
+			"quickSettings": "Tetapan pantas",
 			"requiredField": "(Diperlukan)",
 			"settings": "Tetapan",
-			"uiLibrary": "Pustaka UI:",
+			"uiLibrary": "Perpustakaan UI:",
 			"uiTheme": "Tema UI:"
 		},
 		"placeholder": {
@@ -40,48 +48,73 @@
 			"dataSaved": "Data anda telah disimpan",
 			"deleting": "Memadam...",
 			"loading": "Memuatkan...",
-			"searching": "Mencari..."
+			"searching": "Mencari...",
+			"updating": "Mengemas kini..."
 		}
 	},
 	"aiChat": {
 		"action": {
-			"backToSubchats": "Kembali ke subchat",
+			"backToSubchats": "Kembali ke sub-perbualan",
+			"configureAgent": "Konfigurasi ejen",
+			"confirmDeleteAgent": "Sahkan pemadaman ejen",
 			"confirmDeleteChats": "Sahkan pemadaman perbualan",
 			"confirmRenameChat": "Sahkan penamaan semula perbualan",
-			"deleteSelectedChats": "Padam perbualan yang dipilih",
+			"createAgent": "Cipta ejen",
+			"deleteAgent": "Padam ejen",
+			"deleteSelectedChats": "Padam perbualan terpilih",
 			"manageAgents": "Urus ejen",
 			"manageChats": "Urus perbualan",
 			"openChat": "Buka perbualan",
-			"openSubchat_zero": "Cipta subchat",
-			"openSubchat_other": "Buka subchat ({count} mesej)",
+			"openSubchat_zero": "Cipta sub-perbualan",
+			"openSubchat_other": "Buka sub-perbualan ({count} mesej)",
 			"sendMessage": "Hantar mesej",
-			"showMoreChats": "Tunjuk lebih banyak perbualan",
-			"showSubchats": "Tunjuk subchat ({count})",
+			"showMoreAgents": "Tunjukkan lebih banyak ejen",
+			"showMoreChats": "Tunjukkan lebih banyak perbualan",
+			"showSubchats": "Tunjukkan sub-perbualan ({count})",
 			"startSearching_other": "Taip sekurang-kurangnya {count} aksara"
 		},
+		"description": {
+			"loremIpsumGPT": "Model paling pintar",
+			"rammusGPT": "Sokongan emosi terbaik"
+		},
+		"error": {
+			"agentAvatar": "Anda perlu menambah avatar untuk ejen",
+			"agentName": "Anda perlu menambah nama untuk ejen",
+			"emptyMessage": "Mesej anda kosong"
+		},
 		"label": {
-			"chats": "Perbualan",
 			"agents": "Ejen",
+			"chats": "Perbualan",
+			"customInstructions": "Arahan tersuai",
+			"gptModel": "Model GPT",
+			"newAgent": "Ejen baharu",
 			"newChat": "Perbualan baharu",
 			"noChats": "Tiada perbualan",
-			"noSubchats": "Tiada subchat",
-			"subchats": "Subchat",
+			"noSubchats": "Tiada sub-perbualan",
+			"selectedValue": "Nilai terpilih:",
+			"subchats": "Sub-perbualan",
+			"xMessages_zero": "Tiada mesej",
 			"xMessages_other": "{count} mesej",
 			"xSearchResults_zero": "Tiada hasil carian",
 			"xSearchResults_other": "{count} hasil carian",
+			"xSelectedMessages_zero": "Tiada mesej dipilih",
 			"xSelectedMessages_other": "{count} mesej dipilih"
 		},
 		"placeholder": {
-			"newMessage": "Tanya soalan...",
+			"newMessage": "Ajukan soalan...",
 			"rename": "Jana nama baharu secara automatik..."
 		},
 		"state": {
+			"loadingAgents": "Memuatkan ejen...",
 			"loadingChats": "Memuatkan perbualan...",
+			"loadingGPTs": "Memuatkan GPT...",
 			"loadingMessages": "Memuatkan mesej...",
-			"loadingPreviousMessages": "Memuatkan mesej terdahulu...",
-			"loadingSubchats": "Memuatkan subchat..."
+			"loadingPreviousMessages": "Memuatkan mesej sebelumnya...",
+			"loadingSubchats": "Memuatkan sub-perbualan...",
+			"renamingChat": "Menamakan semula perbualan..."
 		},
 		"warning": {
+			"deletingAgent": "Ejen ini akan dipadamkan secara kekal",
 			"deletingChats": "Perbualan ini akan dipadamkan secara kekal"
 		}
 	},
@@ -92,24 +125,22 @@
 		},
 		"error": {
 			"address": "Anda perlu menambah alamat",
-			"avatar": "Anda perlu menambah avatar",
+			"avatar": "Anda perlu menambah avatar anda",
 			"city": "Anda perlu menambah bandar",
 			"country": "Anda perlu menambah negara",
 			"email": "Anda perlu menambah alamat e-mel",
 			"legalName": "Anda perlu menambah nama sah",
-			"name": "Anda perlu menambah nama",
+			"name": "Anda perlu menambah nama anda",
 			"postalCode": "Anda perlu menambah poskod"
 		},
 		"label": {
 			"account": "Akaun",
 			"address": "Alamat",
-			"avatar": "Avatar",
 			"billing": "Pengebilan",
 			"city": "Bandar",
 			"country": "Negara",
 			"email": "Alamat e-mel",
 			"legalName": "Nama sah",
-			"name": "Nama",
 			"phone": "Nombor telefon",
 			"postalCode": "Poskod",
 			"private": "Peribadi",

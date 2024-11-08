@@ -1,8 +1,8 @@
 {
 	"core": {
 		"action": {
-			"back": "Wstecz",
-			"backToHome": "Powrót do strony głównej",
+			"back": "Wróć",
+			"backToHome": "Wróć do strony głównej",
 			"changeLanguage": "Zmień język",
 			"close": "Zamknij",
 			"delete": "Usuń",
@@ -13,21 +13,29 @@
 			"search": "Szukaj",
 			"searchMore": "Pokaż więcej wyników",
 			"selectAll": "Zaznacz wszystko",
-			"signOut": "Wyloguj"
+			"signOut": "Wyloguj się"
+		},
+		"error": {
+			"noChanges": "Brak zmian",
+			"nothingFound": "Nic nie znaleziono dla \"{search}\""
 		},
 		"label": {
 			"apiDocs": "Dokumentacja API",
 			"asia": "Azja",
-			"custom": "Niestandardowy",
+			"avatar": "Awatar",
+			"custom": "Niestandardowe",
 			"darkTheme": "Ciemny",
-			"default": "Domyślny",
+			"default": "Domyślne",
+			"description": "Opis",
 			"designSystem": "System projektowy",
 			"errors": "Błędy",
 			"europe": "Europa",
 			"githubRepo": "Repozytorium GitHub",
 			"language": "Język",
 			"lightTheme": "Jasny",
+			"name": "Nazwa",
 			"optionalField": "(Opcjonalne)",
+			"quickSettings": "Szybkie ustawienia",
 			"requiredField": "(Wymagane)",
 			"settings": "Ustawienia",
 			"uiLibrary": "Biblioteka UI:",
@@ -40,59 +48,89 @@
 			"dataSaved": "Twoje dane zostały zapisane",
 			"deleting": "Usuwanie...",
 			"loading": "Ładowanie...",
-			"searching": "Wyszukiwanie..."
+			"searching": "Wyszukiwanie...",
+			"updating": "Aktualizowanie..."
 		}
 	},
 	"aiChat": {
 		"action": {
-			"backToSubchats": "Powrót do podrozmów",
-			"confirmDeleteChats": "Potwierdź usunięcie rozmów",
-			"confirmRenameChat": "Potwierdź zmianę nazwy rozmowy",
-			"deleteSelectedChats": "Usuń wybrane rozmowy",
+			"backToSubchats": "Wróć do podczatów",
+			"configureAgent": "Konfiguruj agenta",
+			"confirmDeleteAgent": "Potwierdź usunięcie agenta",
+			"confirmDeleteChats": "Potwierdź usunięcie czatów",
+			"confirmRenameChat": "Potwierdź zmianę nazwy czatu",
+			"createAgent": "Utwórz agenta",
+			"deleteAgent": "Usuń agenta",
+			"deleteSelectedChats": "Usuń wybrane czaty",
 			"manageAgents": "Zarządzaj agentami",
-			"manageChats": "Zarządzaj rozmowami",
-			"openChat": "Otwórz rozmowę",
-			"openSubchat_zero": "Utwórz podrozmowę",
-			"openSubchat_one": "Otwórz podrozmowę ({count} wiadomość)",
-			"openSubchat_few": "Otwórz podrozmowę ({count} wiadomości)",
-			"openSubchat_many": "Otwórz podrozmowę ({count} wiadomości)",
+			"manageChats": "Zarządzaj czatami",
+			"openChat": "Otwórz czat",
+			"openSubchat_zero": "Utwórz podczat",
+			"openSubchat_one": "Otwórz podczat ({count} wiadomość)",
+			"openSubchat_few": "Otwórz podczat ({count} wiadomości)",
+			"openSubchat_many": "Otwórz podczat ({count} wiadomości)",
+			"openSubchat_other": "Otwórz podczat ({count} wiadomości)",
 			"sendMessage": "Wyślij wiadomość",
-			"showMoreChats": "Pokaż więcej rozmów",
-			"showSubchats": "Pokaż podrozmowy ({count})",
+			"showMoreAgents": "Pokaż więcej agentów",
+			"showMoreChats": "Pokaż więcej czatów",
+			"showSubchats": "Pokaż podczaty ({count})",
 			"startSearching_one": "Wpisz co najmniej {count} znak",
 			"startSearching_few": "Wpisz co najmniej {count} znaki",
-			"startSearching_many": "Wpisz co najmniej {count} znaków"
+			"startSearching_many": "Wpisz co najmniej {count} znaków",
+			"startSearching_other": "Wpisz co najmniej {count} znaków"
+		},
+		"description": {
+			"loremIpsumGPT": "Najinteligentniejszy model",
+			"rammusGPT": "Najlepsze wsparcie emocjonalne"
+		},
+		"error": {
+			"agentAvatar": "Musisz dodać awatar dla agenta",
+			"agentName": "Musisz dodać nazwę dla agenta",
+			"emptyMessage": "Twoja wiadomość jest pusta"
 		},
 		"label": {
-			"chats": "Rozmowy",
 			"agents": "Agenci",
-			"newChat": "Nowa rozmowa",
-			"noChats": "Brak rozmów",
-			"noSubchats": "Brak podrozmów",
-			"subchats": "Podrozmowy",
+			"chats": "Czaty",
+			"customInstructions": "Niestandardowe instrukcje",
+			"gptModel": "Model GPT",
+			"newAgent": "Nowy agent",
+			"newChat": "Nowy czat",
+			"noChats": "Brak czatów",
+			"noSubchats": "Brak podczatów",
+			"selectedValue": "Wybrana wartość:",
+			"subchats": "Podczaty",
+			"xMessages_zero": "Brak wiadomości",
 			"xMessages_one": "{count} wiadomość",
 			"xMessages_few": "{count} wiadomości",
 			"xMessages_many": "{count} wiadomości",
-			"xSearchResults_zero": "Brak wyników",
-			"xSearchResults_one": "{count} wynik",
-			"xSearchResults_few": "{count} wyniki",
-			"xSearchResults_many": "{count} wyników",
-			"xSelectedMessages_one": "{count} wybrana wiadomość",
-			"xSelectedMessages_few": "{count} wybrane wiadomości",
-			"xSelectedMessages_many": "{count} wybranych wiadomości"
+			"xMessages_other": "{count} wiadomości",
+			"xSearchResults_zero": "Brak wyników wyszukiwania",
+			"xSearchResults_one": "{count} wynik wyszukiwania",
+			"xSearchResults_few": "{count} wyniki wyszukiwania",
+			"xSearchResults_many": "{count} wyników wyszukiwania",
+			"xSearchResults_other": "{count} wyników wyszukiwania",
+			"xSelectedMessages_zero": "Nie wybrano wiadomości",
+			"xSelectedMessages_one": "Wybrano {count} wiadomość",
+			"xSelectedMessages_few": "Wybrano {count} wiadomości",
+			"xSelectedMessages_many": "Wybrano {count} wiadomości",
+			"xSelectedMessages_other": "Wybrano {count} wiadomości"
 		},
 		"placeholder": {
 			"newMessage": "Zadaj pytanie...",
-			"rename": "Wygeneruj nową nazwę automatycznie..."
+			"rename": "Automatycznie wygeneruj nową nazwę..."
 		},
 		"state": {
-			"loadingChats": "Ładowanie rozmów...",
+			"loadingAgents": "Ładowanie agentów...",
+			"loadingChats": "Ładowanie czatów...",
+			"loadingGPTs": "Ładowanie GPT...",
 			"loadingMessages": "Ładowanie wiadomości...",
 			"loadingPreviousMessages": "Ładowanie poprzednich wiadomości...",
-			"loadingSubchats": "Ładowanie podrozmów..."
+			"loadingSubchats": "Ładowanie podczatów...",
+			"renamingChat": "Zmienianie nazwy czatu..."
 		},
 		"warning": {
-			"deletingChats": "Te rozmowy zostaną trwale usunięte"
+			"deletingAgent": "Ten agent zostanie trwale usunięty",
+			"deletingChats": "Te czaty zostaną trwale usunięte"
 		}
 	},
 	"userSettings": {
@@ -102,24 +140,22 @@
 		},
 		"error": {
 			"address": "Musisz dodać adres",
-			"avatar": "Musisz dodać avatar",
+			"avatar": "Musisz dodać swój awatar",
 			"city": "Musisz dodać miasto",
 			"country": "Musisz dodać kraj",
 			"email": "Musisz dodać adres e-mail",
 			"legalName": "Musisz dodać nazwę prawną",
-			"name": "Musisz dodać nazwę",
+			"name": "Musisz dodać swoją nazwę",
 			"postalCode": "Musisz dodać kod pocztowy"
 		},
 		"label": {
 			"account": "Konto",
 			"address": "Adres",
-			"avatar": "Avatar",
 			"billing": "Płatności",
 			"city": "Miasto",
 			"country": "Kraj",
 			"email": "Adres e-mail",
 			"legalName": "Nazwa prawna",
-			"name": "Nazwa",
 			"phone": "Numer telefonu",
 			"postalCode": "Kod pocztowy",
 			"private": "Prywatne",
