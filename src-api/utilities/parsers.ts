@@ -8,7 +8,7 @@ export const extractInt = (text: string | number = '', fallback: number = 0, che
 }
 
 export const extractBool = (text: string | number | boolean = ''): boolean => {
-	return text === 'true' || text === '1' || text === 1
+	return text === true || text === 'true' || text === '1' || text === 1
 }
 
 export const extractIntArray = (text: string = '', checkFn?: IntCheckFn): number[] => {

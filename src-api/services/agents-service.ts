@@ -11,7 +11,15 @@ import {
 import { RESP__INVALID_DATA, RESP__NOT_FOUND } from '../utilities/network'
 import { extractBool, extractInt, extractIntArray, isGreaterThanZero } from '../utilities/parsers'
 import { isValidPagination } from '../utilities/validators'
-import { createAgentId, getDbAgents, GPTs, resetAgentsDB, setDbAgents } from './db'
+import {
+	createAgentId,
+	getDbActiveAgents,
+	getDbDeletedAgents,
+	GPTs,
+	resetAgentsDB,
+	setDbActiveAgents,
+	setDbDeletedAgents,
+} from './db'
 
 const DEFAULT_COUNT = 10
 const DEFAULT_PAGE = 1
@@ -28,9 +36,11 @@ export const agentsService = {
 		const page = extractInt(query.page, DEFAULT_PAGE, isGreaterThanZero)
 		const count = extractInt(query.count, DEFAULT_COUNT, isGreaterThanZero)
 		const agentIds = extractIntArray(query.agentIds, isGreaterThanZero)
-		const everywhere = extractBool(query.everywhere)
 		const search = query.search?.trim().toLowerCase()
-		const dbAgents = getDbAgents(everywhere)
+		const everywhere = extractBool(query.everywhere)
+		const dbAgents = everywhere ? [...getDbActiveAgents(), ...getDbDeletedAgents()] : getDbActiveAgents()
+
+		log(agentIds, everywhere, query)
 
 		if (agentIds.length) {
 			const agents = dbAgents.filter((agent: DbAgent) => agentIds.includes(agent.id))
@@ -80,7 +90,7 @@ export const agentsService = {
 			createdAt: new Date().toISOString(),
 			updatedAt: null,
 		}
-		setDbAgents([agent, ...getDbAgents()])
+		setDbActiveAgents([agent, ...getDbActiveAgents()])
 
 		return {
 			status: STATUS__SUCCESS,
@@ -92,7 +102,7 @@ export const agentsService = {
 		const { avatar, name, desc, setup } = payload
 		const agentId = extractInt(payload.agentId, 0, isGreaterThanZero)
 		const gptId = extractInt(payload.gptId, 0, isGreaterThanZero)
-		const dbAgents = getDbAgents()
+		const dbAgents = getDbActiveAgents()
 
 		if (!name || !avatar || !gptId) return { ...RESP__INVALID_DATA, error: `Name, avatar and GPT cannot be empty` }
 
@@ -106,27 +116,30 @@ export const agentsService = {
 		agent.setup = setup || ''
 		agent.updatedAt = new Date().toISOString()
 
-		setDbAgents(dbAgents)
+		setDbActiveAgents(dbAgents)
 
 		return { status: STATUS__SUCCESS, data: { count: 1, items: [agent] } }
 	},
 
 	async deleteAgents(query: AgentsApiQuery): Promise<ApiResponse<AgentsApiData>> {
 		const agentIds = extractIntArray(query.agentIds, isGreaterThanZero)
-		const dbAgents = getDbAgents()
+		const dbActiveAgents = getDbActiveAgents()
+		const dbDeletedAgents = getDbDeletedAgents()
 
 		agentIds.forEach((agentId: number) => {
-			const index = dbAgents.findIndex((agent: DbAgent) => agent.id === agentId)
+			const index = dbActiveAgents.findIndex((agent: DbAgent) => agent.id === agentId)
 			if (index > -1) {
-				dbAgents.splice(index, 1)
+				dbDeletedAgents.push(dbActiveAgents[index])
+				dbActiveAgents.splice(index, 1)
 			}
 		})
 
-		setDbAgents(dbAgents)
+		setDbActiveAgents(dbActiveAgents)
+		setDbDeletedAgents(dbDeletedAgents)
 
 		return {
 			status: STATUS__SUCCESS,
-			data: { count: dbAgents.length, items: [] },
+			data: { count: dbActiveAgents.length, items: [] },
 		}
 	},
 

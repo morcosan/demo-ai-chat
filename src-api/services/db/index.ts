@@ -7,11 +7,13 @@ import { getDbMessages, initChatsDB } from './_chats-db'
 export { getDbAccount, resetDbAccount, setDbAccount } from './_account-db'
 export {
 	createAgentId,
-	getDbAgents,
+	getDbActiveAgents,
 	GPTs,
 	randomFromAgentIds,
 	resetAgentsDB,
-	setDbAgents,
+	setDbActiveAgents,
+	getDbDeletedAgents,
+	setDbDeletedAgents,
 	getGptAPI,
 } from './_agents-db'
 export { getDbBilling, resetDbBilling, setDbBilling } from './_billing-db'

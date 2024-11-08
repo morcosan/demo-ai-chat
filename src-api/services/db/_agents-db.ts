@@ -28,33 +28,46 @@ const GPTs: DbGPT[] = [
 	},
 ]
 
-let _dbAgents: DbAgent[]
-let _dbAgentsDeleted: DbAgent[]
+let _dbActiveAgents: DbAgent[]
+let _dbDeletedAgents: DbAgent[]
 let _nextId = 1001
 
 const createAgentId = () => _nextId++
+const getDbActiveAgents = () => _dbActiveAgents
+const getDbDeletedAgents = () => _dbDeletedAgents
 
-const getDbAgents = (everywhere?: boolean) => (everywhere ? [..._dbAgents, ..._dbAgentsDeleted] : _dbAgents)
-
-const setDbAgents = (value: DbAgent[]) => {
-	_dbAgents = value
+const setDbActiveAgents = (value: DbAgent[]) => {
+	_dbActiveAgents = value
 	localStorage.setItem(COOKIE_KEY.DB_AGENTS, JSON.stringify(value))
+}
+
+const setDbDeletedAgents = (value: DbAgent[]) => {
+	_dbDeletedAgents = value
+	localStorage.setItem(COOKIE_KEY.DB_AGENTS_DELETED, JSON.stringify(value))
 }
 
 const initAgentsDB = () => {
 	try {
 		const json = localStorage.getItem(COOKIE_KEY.DB_AGENTS)
-		_dbAgents = JSON.parse(json || '')
-		_dbAgents.forEach((agent: DbAgent) => agent.id > _nextId && (_nextId = agent.id + 1))
+		_dbActiveAgents = JSON.parse(json || '')
+		_dbActiveAgents.forEach((agent: DbAgent) => agent.id > _nextId && (_nextId = agent.id + 1))
 	} catch (_) {
 		createDbAgents()
+	}
+
+	try {
+		const json = localStorage.getItem(COOKIE_KEY.DB_AGENTS_DELETED)
+		_dbDeletedAgents = JSON.parse(json || '')
+		_dbDeletedAgents.forEach((agent: DbAgent) => agent.id > _nextId && (_nextId = agent.id + 1))
+	} catch (_) {
+		_dbDeletedAgents = []
 	}
 }
 
 const createDbAgents = () => {
 	const departments = ['Design', 'Frontend', 'Backend', 'Marketing', 'Business']
 
-	setDbAgents([
+	setDbActiveAgents([
 		...GPTs.map((gpt: DbGPT) => ({
 			id: createAgentId(),
 			gptId: gpt.id,
@@ -90,13 +103,14 @@ const createDbAgents = () => {
 
 const resetAgentsDB = () => {
 	_nextId = 1001 // Reset id
+	_dbDeletedAgents = []
 	createDbAgents()
 }
 
-const randomFromAgentIds = () => randomFromArray(_dbAgents).id
+const randomFromAgentIds = () => randomFromArray(_dbActiveAgents).id
 
 const getGptAPI = (agentId: number): GptAPI | null => {
-	const agent = _dbAgents.find((agent: DbAgent) => agent.id === agentId)
+	const agent = _dbActiveAgents.find((agent: DbAgent) => agent.id === agentId)
 	if (!agent) return null
 	if (agent.gptId === GPT_ID__LOREM_IPSUM) return LoremIpsum
 	if (agent.gptId === GPT_ID__RAMMUS) return Rammus
@@ -105,11 +119,13 @@ const getGptAPI = (agentId: number): GptAPI | null => {
 
 export {
 	createAgentId,
-	getDbAgents,
+	getDbActiveAgents,
+	getDbDeletedAgents,
 	getGptAPI,
 	GPTs,
 	initAgentsDB,
 	randomFromAgentIds,
 	resetAgentsDB,
-	setDbAgents,
+	setDbActiveAgents,
+	setDbDeletedAgents,
 }

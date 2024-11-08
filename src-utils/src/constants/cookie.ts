@@ -7,6 +7,7 @@ export const COOKIE_KEY = {
 	APP_UI_LIBRARY: 'app-ui-library',
 	DB_ACCOUNT: 'db-account',
 	DB_AGENTS: 'db-agents',
+	DB_AGENTS_DELETED: 'db-agents-deleted',
 	DB_BILLING: 'db-billing',
 	DB_CHATS: 'db-chats',
 	DB_MESSAGES: 'db-messages',
