@@ -5,7 +5,7 @@ window.cx = clsx
 window.wait = (time: number) => new Promise((resolve) => setTimeout(resolve, time))
 
 window.LOG = (...args: unknown[]) => {
-	const format: unknown[] = ['%c', 'color: lightblue']
+	const format: unknown[] = ['%c', 'color: lightgreen']
 
 	for (const arg of args) {
 		if (typeof arg === 'string') {

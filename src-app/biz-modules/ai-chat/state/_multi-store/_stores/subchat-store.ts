@@ -2,7 +2,7 @@ import { API } from '@app/biz-modules/ai-chat/api'
 import { uniqBy } from 'lodash'
 import { useEffect, useState } from 'react'
 import { Message, MessageListing, Subchat } from '../../../api'
-import { newGhostMessage } from './_utils'
+import { createGhostMessage } from './_utils'
 import { AllSubchatsStore } from './all-subchats-store'
 import { ChatStore } from './chat-store'
 
@@ -14,7 +14,7 @@ export interface SubchatStore {
 	canLoadSubchatMessages: boolean
 	loadActiveSubchat(chatId: number): Promise<boolean | undefined>
 	loadMoreSubchatMessages(): void
-	postSubchatMessage(text: string): void
+	postSubchatMessage(text: string, agentId: number): void
 	resetActiveSubchat(): void
 }
 
@@ -33,9 +33,9 @@ export const subchatDefaults: SubchatStore = {
 export const useSubchatStore = (chatStore: ChatStore, allSubchatsStore: AllSubchatsStore): SubchatStore => {
 	const { activeChat, chatMessages, updateMessage } = chatStore
 	const { allSubchats, resetAllSubchats, updateSubchat } = allSubchatsStore
-	const [activeSubchat, setActiveSubchat] = useState(null as Subchat | null)
-	const [subchatMessages, setSubchatMessages] = useState([] as Message[])
-	const [subchatPagination, setSubchatPagination] = useState({ page: 0, count: 0 } as Pagination)
+	const [activeSubchat, setActiveSubchat] = useState<Subchat | null>(null)
+	const [subchatMessages, setSubchatMessages] = useState<Message[]>([])
+	const [subchatPagination, setSubchatPagination] = useState<Pagination>({ page: 0, count: 0 })
 	const [subchatLoading, setSubchatLoading] = useState<ListLoading>(false)
 
 	const canLoadSubchatMessages = !subchatPagination.page || subchatMessages.length < subchatPagination.count
@@ -102,19 +102,19 @@ export const useSubchatStore = (chatStore: ChatStore, allSubchatsStore: AllSubch
 		setSubchatLoading(false)
 	}
 
-	const postSubchatMessage = async (text: string) => {
+	const postSubchatMessage = async (text: string, agentId: number) => {
 		if (subchatLoading || !activeChat || !activeSubchat) return
 
 		setSubchatLoading('update')
 		setSubchatMessages([
 			...subchatMessages,
-			newGhostMessage(activeChat.id, activeSubchat.id, 'user', text),
-			newGhostMessage(activeChat.id, activeSubchat.id, 'agent', ''),
+			createGhostMessage(activeChat.id, activeSubchat.id, 'user', text, agentId),
+			createGhostMessage(activeChat.id, activeSubchat.id, 'agent', '', agentId),
 		])
 		setSubchatPagination({ ...subchatPagination, count: subchatPagination.count + 1 })
 		updateChatAndSubchats(subchatPagination.count + 1)
 
-		const listing = await API.postMessage(activeChat.id, activeSubchat.id, text)
+		const listing = await API.postMessage(activeChat.id, text, agentId, activeSubchat.id)
 
 		setSubchatMessages([...subchatMessages, ...listing.messages])
 		setSubchatPagination({ ...subchatPagination, count: subchatPagination.count + listing.count })

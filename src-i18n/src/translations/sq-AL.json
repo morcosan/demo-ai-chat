@@ -90,7 +90,7 @@
 			"deletingChats": "Këto biseda do të fshihen përgjithmonë"
 		}
 	},
-	"userAccount": {
+	"userSettings": {
 		"action": {
 			"manageAccount": "Menaxho llogarinë",
 			"manageBilling": "Menaxho faturimin"

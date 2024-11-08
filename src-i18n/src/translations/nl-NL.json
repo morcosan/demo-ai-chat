@@ -90,7 +90,7 @@
 			"deletingChats": "Deze gesprekken worden permanent verwijderd"
 		}
 	},
-	"userAccount": {
+	"userSettings": {
 		"action": {
 			"manageAccount": "Beheer account",
 			"manageBilling": "Beheer facturering"

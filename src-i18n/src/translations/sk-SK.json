@@ -95,7 +95,7 @@
 			"deletingChats": "Tieto konverzácie budú natrvalo odstránené"
 		}
 	},
-	"userAccount": {
+	"userSettings": {
 		"action": {
 			"manageAccount": "Spravovať účet",
 			"manageBilling": "Spravovať fakturáciu"

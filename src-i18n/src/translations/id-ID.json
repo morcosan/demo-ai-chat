@@ -85,7 +85,7 @@
 			"deletingChats": "Chat ini akan dihapus secara permanen"
 		}
 	},
-	"userAccount": {
+	"userSettings": {
 		"action": {
 			"manageAccount": "Kelola akun",
 			"manageBilling": "Kelola penagihan"

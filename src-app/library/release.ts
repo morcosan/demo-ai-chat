@@ -1,4 +1,7 @@
 export * from './components/error-summary'
+export * from './components/field-error'
+export * from './components/field-label'
 export * from './components/loading-text'
 export * from './components/page-header'
+export * from './components/select-field'
 export * from './components/success-notice'

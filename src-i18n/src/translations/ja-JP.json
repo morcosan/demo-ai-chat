@@ -85,7 +85,7 @@
 			"deletingChats": "これらのチャットは完全に削除されます"
 		}
 	},
-	"userAccount": {
+	"userSettings": {
 		"action": {
 			"manageAccount": "アカウントを管理",
 			"manageBilling": "請求を管理"

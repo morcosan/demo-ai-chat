@@ -90,7 +90,7 @@
 			"deletingChats": "Need vestlused kustutatakse jäädavalt"
 		}
 	},
-	"userAccount": {
+	"userSettings": {
 		"action": {
 			"manageAccount": "Halda kontot",
 			"manageBilling": "Halda arveldust"

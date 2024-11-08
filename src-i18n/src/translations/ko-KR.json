@@ -85,7 +85,7 @@
 			"deletingChats": "이 채팅들은 영구적으로 삭제됩니다"
 		}
 	},
-	"userAccount": {
+	"userSettings": {
 		"action": {
 			"manageAccount": "계정 관리",
 			"manageBilling": "결제 관리"

@@ -5,30 +5,28 @@ import { Button } from '@ds/release'
 import { useCallback, useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { DataField, Field } from '../components/data-field'
-import { ACCOUNT_EMPTY, useUserAccount } from '../state'
-
-type AccountRecord = Partial<Record<keyof Account, string>>
+import { EMPTY_ACCOUNT, useUserAccount } from '../state'
 
 const AccountPage = () => {
 	useTranslation()
 	const { account, accountLoading, updateAccount } = useUserAccount()
-	const [payload, setPayload] = useState<Account>(ACCOUNT_EMPTY)
-	const [feedback, setFeedback] = useState<AccountRecord>(ACCOUNT_EMPTY)
+	const [payload, setPayload] = useState<Account>(EMPTY_ACCOUNT)
+	const [feedback, setFeedback] = useState<FormPayload<Account>>(EMPTY_ACCOUNT)
 	const [successful, setSuccessful] = useState(false)
 
 	const legendClass = cx('mb-sm-3 text-size-lg text-color-text-subtle')
 
 	const publicFields: Field<keyof Account>[] = [
-		{ key: 'name', label: t('userAccount.label.name') },
-		{ key: 'avatar', label: t('userAccount.label.avatar') },
+		{ key: 'name', label: t('core.label.name') },
+		{ key: 'avatar', label: t('core.label.avatar') },
 	]
 
 	const privateFields: Field<keyof Account>[] = [
-		{ key: 'email', label: t('userAccount.label.email') },
-		{ key: 'phone', label: t('userAccount.label.phone'), optional: true },
+		{ key: 'email', label: t('userSettings.label.email') },
+		{ key: 'phone', label: t('userSettings.label.phone'), optional: true },
 	]
 
-	const canSave =
+	const hasChanges =
 		account.name !== payload.name.trim() ||
 		account.avatar !== payload.avatar.trim() ||
 		account.email !== payload.email.trim() ||
@@ -37,10 +35,18 @@ const AccountPage = () => {
 	const hasErrors = (errors: object) => Object.values(errors).some((value: string) => value)
 
 	const onSubmit = useCallback(async () => {
+		// Fake success
+		if (!hasChanges) {
+			setFeedback(EMPTY_ACCOUNT)
+			setSuccessful(true)
+			wait(3000).then(() => setSuccessful(false))
+			return
+		}
+
 		const validation = {
-			name: !payload.name.trim() ? t('userAccount.error.name') : '',
-			avatar: !payload.avatar.trim() ? t('userAccount.error.avatar') : '',
-			email: !payload.email.trim() ? t('userAccount.error.email') : '',
+			name: !payload.name.trim() ? t('userSettings.error.name') : '',
+			avatar: !payload.avatar.trim() ? t('userSettings.error.avatar') : '',
+			email: !payload.email.trim() ? t('userSettings.error.email') : '',
 		}
 		setFeedback(validation)
 
@@ -49,7 +55,7 @@ const AccountPage = () => {
 
 			await updateAccount(payload)
 
-			setFeedback(ACCOUNT_EMPTY)
+			setFeedback(EMPTY_ACCOUNT)
 			setSuccessful(true)
 			wait(3000).then(() => setSuccessful(false))
 		}
@@ -63,7 +69,7 @@ const AccountPage = () => {
 		<AppLayout blank>
 			<PageHeader
 				breadcrumb={{ href: '/settings', title: t('core.label.settings') }}
-				slotTitle={t('userAccount.label.account')}
+				slotTitle={t('userSettings.label.account')}
 			/>
 
 			{/* ERRORS */}
@@ -72,7 +78,7 @@ const AccountPage = () => {
 			{/* FIELDS */}
 			<form className="mt-sm-1">
 				<fieldset className="flex flex-col gap-y-sm-1">
-					<legend className={legendClass}>{t('userAccount.label.public')}</legend>
+					<legend className={legendClass}>{t('userSettings.label.public')}</legend>
 
 					<div className="flex flex-col-reverse items-center gap-sm-1 sm:flex-row">
 						<div className="flex w-full flex-col gap-y-sm-1 sm:flex-1">
@@ -97,7 +103,7 @@ const AccountPage = () => {
 				</fieldset>
 
 				<fieldset className="mt-md-2 flex flex-col gap-y-sm-1">
-					<legend className={legendClass}>{t('userAccount.label.private')}</legend>
+					<legend className={legendClass}>{t('userSettings.label.private')}</legend>
 
 					{privateFields.map((field: Field<keyof Account>) => (
 						<DataField
@@ -115,7 +121,6 @@ const AccountPage = () => {
 			{/* SAVING */}
 			<div className="mt-md-2">
 				<Button
-					disabled={!canSave}
 					loading={Boolean(accountLoading)}
 					variant="solid-primary"
 					className="w-full sm:w-fit"

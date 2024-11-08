@@ -1,11 +1,11 @@
 import { LoadingText } from '@app/library/release'
 import { Button, Modal, SearchSvg, TextField, TextFieldRef } from '@ds/release'
 import { debounce } from 'lodash'
-import { useCallback, useMemo, useRef, useState } from 'react'
-import { MIN_SEARCH_LENGTH } from '../api'
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
+import { Agent, MIN_SEARCH_LENGTH } from '../api'
 import { SearchResultItem } from '../components/items/search-result-item'
 import { StickyToolbar } from '../components/sticky-toolbar'
-import { SearchResult, useAiChatSearch } from '../state'
+import { SearchResult, useAiChatAgents, useAiChatSearch } from '../state'
 
 export const AiChatSearchModal = () => {
 	const {
@@ -19,6 +19,7 @@ export const AiChatSearchModal = () => {
 		searchByKeyword,
 		setShowsSearch,
 	} = useAiChatSearch()
+	const { allAgentsForChat, loadMissingAgents } = useAiChatAgents()
 	const [searchValue, setSearchValue] = useState('')
 	const searchRef = useRef<TextFieldRef>(null)
 
@@ -44,6 +45,16 @@ export const AiChatSearchModal = () => {
 		/>
 	)
 
+	useEffect(() => {
+		loadMissingAgents([
+			...new Set(
+				searchResults
+					.filter((result: SearchResult) => result.message)
+					.map((result: SearchResult) => result.message!.agentId)
+			),
+		])
+	}, [searchResults])
+
 	const slotResults = useMemo(
 		() => (
 			<ul className="mt-xs-3 flex flex-col pb-button-px-item">
@@ -52,12 +63,13 @@ export const AiChatSearchModal = () => {
 						key={result.message?.id || result.chat?.id}
 						result={result}
 						keyword={searchKeyword}
+						agent={allAgentsForChat.find((agent: Agent) => agent.id === result.message?.agentId)}
 						onClick={() => setShowsSearch(false)}
 					/>
 				))}
 			</ul>
 		),
-		[searchResults, searchKeyword]
+		[searchResults, searchKeyword, allAgentsForChat]
 	)
 
 	return (

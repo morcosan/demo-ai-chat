@@ -2,12 +2,12 @@ import { LoadingText } from '@app/library/release'
 import { ArrowBackSvg, IconButton } from '@ds/release'
 import { debounce } from 'lodash'
 import { UIEvent, useEffect, useMemo } from 'react'
-import { Message } from '../../api'
+import { Agent, Message } from '../../api'
 import { MessageItem } from '../../components/items/message-item'
-import { NewMessageField } from '../../components/new-message-field'
+import { NewMessageToolbar } from '../../components/new-message-toolbar'
 import { StickyToolbar } from '../../components/sticky-toolbar'
 import { useScrollable } from '../../hooks/scrollable'
-import { useAiChat } from '../../state'
+import { useAiChat, useAiChatAgents } from '../../state'
 
 export const SubchatView = () => {
 	const {
@@ -19,6 +19,7 @@ export const SubchatView = () => {
 		loadMoreSubchatMessages,
 		postSubchatMessage,
 	} = useAiChat()
+	const { allAgentsForChat, loadMissingAgents } = useAiChatAgents()
 	const { containerRef, saveScrollPos, scrollToPos } = useScrollable()
 
 	const onScroll = debounce((event: UIEvent) => {
@@ -36,15 +37,24 @@ export const SubchatView = () => {
 		scrollToPos()
 	}, [subchatPagination])
 
+	useEffect(() => {
+		loadMissingAgents([...new Set(subchatMessages.map((message: Message) => message.agentId))])
+	}, [subchatMessages])
+
 	const slotMessages = useMemo(
 		() => (
 			<ul>
 				{subchatMessages.map((message: Message) => (
-					<MessageItem key={message.id} message={message} isSubchat />
+					<MessageItem
+						key={message.id}
+						message={message}
+						agent={allAgentsForChat.find((agent: Agent) => agent.id === message.agentId)}
+						isSubchat
+					/>
 				))}
 			</ul>
 		),
-		[subchatMessages]
+		[subchatMessages, allAgentsForChat]
 	)
 
 	return (
@@ -84,8 +94,8 @@ export const SubchatView = () => {
 			</div>
 
 			{/* NEW MESSAGE FIELD */}
-			<div className="mx-a11y-scrollbar mb-xs-5 mt-xs-5">
-				<NewMessageField listLoading={subchatLoading} postMessageFn={postSubchatMessage} />
+			<div className="mx-a11y-scrollbar mb-xs-5 mt-xs-1">
+				<NewMessageToolbar listLoading={subchatLoading} onPostMessage={postSubchatMessage} />
 			</div>
 		</div>
 	)

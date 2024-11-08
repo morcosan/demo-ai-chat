@@ -3,12 +3,12 @@ import { useUiTheme } from '@ds/release'
 import { debounce } from 'lodash'
 import { UIEvent, useEffect, useMemo } from 'react'
 import { useNavigate, useParams, useSearchParams } from 'react-router-dom'
-import { Message } from '../../api'
+import { Agent, Message } from '../../api'
 import { MessageItem } from '../../components/items/message-item'
-import { NewMessageField } from '../../components/new-message-field'
+import { NewMessageToolbar } from '../../components/new-message-toolbar'
 import { StickyToolbar } from '../../components/sticky-toolbar'
 import { useScrollable } from '../../hooks/scrollable'
-import { useAiChat } from '../../state'
+import { useAiChat, useAiChatAgents } from '../../state'
 
 export const ChatView = () => {
 	const {
@@ -23,6 +23,7 @@ export const ChatView = () => {
 		postChatMessage,
 		resetActiveChat,
 	} = useAiChat()
+	const { allAgentsForChat, loadMissingAgents } = useAiChatAgents()
 	const { containerRef, saveScrollPos, scrollToPos } = useScrollable()
 	const { $lineHeight, $fontSize, $spacing } = useUiTheme()
 	const { chatId: chatIdStr } = useParams()
@@ -73,19 +74,28 @@ export const ChatView = () => {
 		}
 	}, [activeChat])
 
+	useEffect(() => {
+		loadMissingAgents([...new Set(chatMessages.map((message: Message) => message.agentId))])
+	}, [chatMessages])
+
 	const slotMessages = useMemo(
 		() => (
 			<ul>
 				{chatMessages.map((message: Message) => (
-					<MessageItem key={message.id} message={message} subchatId={subchatId} />
+					<MessageItem
+						key={message.id}
+						message={message}
+						agent={allAgentsForChat.find((agent: Agent) => agent.id === message.agentId)}
+						subchatId={subchatId}
+					/>
 				))}
 			</ul>
 		),
-		[chatMessages, subchatId]
+		[chatMessages, subchatId, allAgentsForChat]
 	)
 
 	return (
-		<div className="relative flex h-full flex-1 flex-col gap-xs-5 py-xs-1">
+		<div className="relative flex h-full flex-1 flex-col py-xs-1">
 			{activeChat || chatId ? (
 				<div ref={containerRef} className="flex-1 overflow-y-auto pb-sm-5" onScroll={onScroll}>
 					<div className={cx(widthClass, chatLoading === 'full' && 'h-full', 'flex flex-col pt-sm-0')}>
@@ -130,11 +140,11 @@ export const ChatView = () => {
 			)}
 
 			{/* NEW MESSAGE FIELD */}
-			<div className={cx('px-xs-7 pb-xs-5 lg:px-md-0', widthClass)}>
-				<NewMessageField
+			<div className={cx('mt-xs-1 px-xs-7 pb-xs-5 lg:px-md-0', widthClass)}>
+				<NewMessageToolbar
 					listLoading={allChatsLoading ? 'update' : chatLoading}
-					postMessageFn={postChatMessage}
-					primary
+					isChatView
+					onPostMessage={postChatMessage}
 				/>
 			</div>
 		</div>

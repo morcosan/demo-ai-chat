@@ -90,7 +90,7 @@
 			"deletingChats": "Permanenteng mabubura ang mga chat na ito"
 		}
 	},
-	"userAccount": {
+	"userSettings": {
 		"action": {
 			"manageAccount": "Pamahalaan ang account",
 			"manageBilling": "Pamahalaan ang billing"

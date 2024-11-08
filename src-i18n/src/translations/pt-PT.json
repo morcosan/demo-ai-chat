@@ -90,7 +90,7 @@
 			"deletingChats": "Estes chats serão eliminados permanentemente"
 		}
 	},
-	"userAccount": {
+	"userSettings": {
 		"action": {
 			"manageAccount": "Gerir conta",
 			"manageBilling": "Gerir faturação"

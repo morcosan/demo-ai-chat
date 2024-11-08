@@ -95,7 +95,7 @@
 			"deletingChats": "Ці чати будуть видалені назавжди"
 		}
 	},
-	"userAccount": {
+	"userSettings": {
 		"action": {
 			"manageAccount": "Керувати обліковим записом",
 			"manageBilling": "Керувати оплатою"

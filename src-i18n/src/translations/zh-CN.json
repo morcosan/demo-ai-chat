@@ -85,7 +85,7 @@
 			"deletingChats": "这些对话将被永久删除"
 		}
 	},
-	"userAccount": {
+	"userSettings": {
 		"action": {
 			"manageAccount": "管理账户",
 			"manageBilling": "管理账单"

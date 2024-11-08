@@ -32,7 +32,7 @@ export const ChatsPage = () => {
 		if (bulkChecked === true) {
 			setSelectedChats([])
 		} else {
-			setSelectedChats(allChats.filter((chat: Chat) => !chat.loading && !chat.deleting))
+			setSelectedChats(allChats.filter((chat: Chat) => !chat.updating && !chat.deleting))
 		}
 	}, [bulkChecked, allChats])
 
@@ -81,7 +81,6 @@ export const ChatsPage = () => {
 						chat={chat}
 						selected={selectedChats.some((other: Chat) => other.id === chat.id)}
 						renaming={chatIdsToRename.includes(chat.id)}
-						interactive
 						onDelete={() => onClickDeleteChat(chat)}
 						onRename={() => onToggleRename(chat.id, chatIdsToRename)}
 						onToggle={(selected: boolean) => onToggleChat(chat, selected)}
@@ -120,8 +119,10 @@ export const ChatsPage = () => {
 				}
 			/>
 
+			{/* LISTING */}
 			{allChatsLoading !== 'full' && allChats.length > 0 && (
 				<>
+					{/* TOOLBAR */}
 					<div className="mb-xs-7 flex items-center border-b border-color-border-subtle px-xs-2 pb-xs-2">
 						<Checkbox
 							checked={bulkChecked}
@@ -142,14 +143,17 @@ export const ChatsPage = () => {
 							{t('core.action.delete')}
 						</Button>
 					</div>
+
 					{slotChats}
 				</>
 			)}
 
+			{/* EMPTY STATE */}
 			{!allChatsLoading && allChats.length === 0 && (
 				<div className="mt-xs-2 text-size-sm">{t('aiChat.label.noChats')}</div>
 			)}
 
+			{/* LOADING */}
 			{Boolean(allChatsLoading || canLoadAllChats) && (
 				<div className="mx-auto mt-sm-2">
 					{allChatsLoading ? (
@@ -170,7 +174,7 @@ export const ChatsPage = () => {
 			<Modal
 				opened={Boolean(chatsToDelete.length && showsDeleteModal)}
 				slotTitle={t('aiChat.action.confirmDeleteChats')}
-				slotButtons={
+				slotAction={
 					<Button variant="solid-danger" onClick={onConfirmDelete}>
 						{t('core.action.delete')}
 					</Button>

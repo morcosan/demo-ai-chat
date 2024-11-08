@@ -90,7 +90,7 @@
 			"deletingChats": "Αυτές οι συνομιλίες θα διαγραφούν μόνιμα"
 		}
 	},
-	"userAccount": {
+	"userSettings": {
 		"action": {
 			"manageAccount": "Διαχείριση λογαριασμού",
 			"manageBilling": "Διαχείριση χρεώσεων"

@@ -95,7 +95,7 @@
 			"deletingChats": "Tyto chaty budou trvale smazány"
 		}
 	},
-	"userAccount": {
+	"userSettings": {
 		"action": {
 			"manageAccount": "Spravovat účet",
 			"manageBilling": "Spravovat fakturaci"

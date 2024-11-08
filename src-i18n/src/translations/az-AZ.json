@@ -90,7 +90,7 @@
 			"deletingChats": "Bu söhbətlər həmişəlik silinəcək"
 		}
 	},
-	"userAccount": {
+	"userSettings": {
 		"action": {
 			"manageAccount": "Hesabı idarə et",
 			"manageBilling": "Ödənişləri idarə et"

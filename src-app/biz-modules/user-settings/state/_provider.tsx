@@ -1,10 +1,10 @@
 import { useEffect, useMemo, useState } from 'react'
 import { Account, API, Billing } from '../api'
-import { ACCOUNT_EMPTY, BILLING_EMPTY, Context, Store } from './_context'
+import { Context, EMPTY_ACCOUNT, EMPTY_BILLING, Store } from './_context'
 
 export const UserAccountProvider = ({ children }: ReactProps) => {
-	const [account, setAccount] = useState<Account>(ACCOUNT_EMPTY)
-	const [billing, setBilling] = useState<Billing>(BILLING_EMPTY)
+	const [account, setAccount] = useState<Account>(EMPTY_ACCOUNT)
+	const [billing, setBilling] = useState<Billing>(EMPTY_BILLING)
 	const [accountLoading, setAccountLoading] = useState<ListLoading>('full')
 	const [billingLoading, setBillingLoading] = useState<ListLoading>('full')
 

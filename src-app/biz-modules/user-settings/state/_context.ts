@@ -10,13 +10,13 @@ export interface Store {
 	updateBilling(data: Billing): Promise<boolean>
 }
 
-export const ACCOUNT_EMPTY: Account = {
+export const EMPTY_ACCOUNT: Account = {
 	name: '',
 	email: '',
 	phone: '',
 	avatar: '',
 }
-export const BILLING_EMPTY: Billing = {
+export const EMPTY_BILLING: Billing = {
 	name: '',
 	address: '',
 	city: '',
@@ -26,9 +26,9 @@ export const BILLING_EMPTY: Billing = {
 }
 
 export const Context = createContext<Store>({
-	account: ACCOUNT_EMPTY,
+	account: EMPTY_ACCOUNT,
 	accountLoading: 'full',
-	billing: BILLING_EMPTY,
+	billing: EMPTY_BILLING,
 	billingLoading: 'full',
 	updateAccount: async () => false,
 	updateBilling: async () => false,

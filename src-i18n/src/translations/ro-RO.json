@@ -95,7 +95,7 @@
 			"deletingChats": "Aceste conversații vor fi șterse permanent"
 		}
 	},
-	"userAccount": {
+	"userSettings": {
 		"action": {
 			"manageAccount": "Gestionează contul",
 			"manageBilling": "Gestionează facturarea"

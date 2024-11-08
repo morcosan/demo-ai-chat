@@ -95,7 +95,7 @@
 			"deletingChats": "Te rozmowy zostaną trwale usunięte"
 		}
 	},
-	"userAccount": {
+	"userSettings": {
 		"action": {
 			"manageAccount": "Zarządzaj kontem",
 			"manageBilling": "Zarządzaj płatnościami"

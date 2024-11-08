@@ -90,7 +90,7 @@
 			"deletingChats": "یہ چیٹس مستقل طور پر حذف ہو جائیں گی"
 		}
 	},
-	"userAccount": {
+	"userSettings": {
 		"action": {
 			"manageAccount": "اکاؤنٹ کا انتظام کریں",
 			"manageBilling": "بلنگ کا انتظام کریں"

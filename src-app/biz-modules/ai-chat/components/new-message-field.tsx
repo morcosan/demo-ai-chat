@@ -3,12 +3,14 @@ import { useCallback, useRef, useState } from 'react'
 import { useSubmittable } from '../hooks/submittable'
 
 interface Props {
+	agentId: number
 	listLoading: ListLoading
-	postMessageFn: Function
-	primary?: boolean
+	isChatView?: boolean
+	onPostMessage(text: string, agentId: number): void
 }
 
-export const NewMessageField = ({ listLoading, postMessageFn, primary }: Props) => {
+export const NewMessageField = (props: Props) => {
+	const { agentId, listLoading, isChatView, onPostMessage } = props
 	const [inputValue, setInputValue] = useState<string>('')
 	const inputRef = useRef<TextFieldRef>(null)
 
@@ -19,9 +21,10 @@ export const NewMessageField = ({ listLoading, postMessageFn, primary }: Props) 
 	const onChange = (value: string) => setInputValue(value)
 
 	const onSubmit = useCallback(() => {
+		if (isDisabled) return
 		if (listLoading || !message) return
 
-		postMessageFn(message)
+		onPostMessage(message, agentId)
 		setInputValue('')
 		inputRef.current?.focus()
 	}, [message, listLoading])
@@ -38,21 +41,20 @@ export const NewMessageField = ({ listLoading, postMessageFn, primary }: Props) 
 	return (
 		<TextField
 			ref={inputRef}
-			id={primary ? 'field-chat' : 'field-subchat'}
-			size={primary ? 'xl' : 'lg'}
+			id={isChatView ? 'field-chat' : 'field-subchat'}
+			size={isChatView ? 'xl' : 'lg'}
 			value={inputValue}
 			placeholder={t('aiChat.placeholder.newMessage')}
 			ariaLabel="New message"
 			slotRight={
 				<IconButton
-					tooltip={t('aiChat.action.sendMessage')}
-					variant={primary ? 'solid-primary' : 'solid-secondary'}
-					size={primary ? 'md' : 'sm'}
+					tooltip={isDisabled || !message ? t('aiChat.error.emptyMessage') : t('aiChat.action.sendMessage')}
+					variant={isChatView ? 'solid-primary' : 'solid-secondary'}
+					size={isChatView ? 'md' : 'sm'}
 					loading={isLoading}
-					disabled={isDisabled || (!isLoading && !message)}
 					onClick={onSubmit}
 				>
-					<SendSvg className={primary ? 'h-xs-9' : 'h-xs-7'} />
+					<SendSvg className={isChatView ? 'h-xs-9' : 'h-xs-7'} />
 				</IconButton>
 			}
 			maxLength={1000}
