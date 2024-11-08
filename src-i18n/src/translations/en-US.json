@@ -112,7 +112,8 @@
 			"loadingGPTs": "Loading GPTs...",
 			"loadingMessages": "Loading messages...",
 			"loadingPreviousMessages": "Loading previous messages...",
-			"loadingSubchats": "Loading subchats..."
+			"loadingSubchats": "Loading subchats...",
+			"renamingChat": "Renaming chat..."
 		},
 		"warning": {
 			"deletingAgent": "This agent will be permanently deleted",

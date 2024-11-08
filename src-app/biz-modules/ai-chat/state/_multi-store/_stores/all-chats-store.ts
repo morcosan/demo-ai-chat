@@ -65,7 +65,7 @@ export const useAllChatsStore = (): AllChatsStore => {
 	const updateChat = async (chatId: number, title?: string): Promise<Chat | null> => {
 		const index = allChats.findIndex((chat: Chat) => chat.id === chatId)
 		if (index > -1) {
-			allChats[index].title = title || '...'
+			allChats[index].title = title || t('aiChat.state.renamingChat')
 			allChats[index].updating = true
 		}
 		setAllChats([...allChats])
