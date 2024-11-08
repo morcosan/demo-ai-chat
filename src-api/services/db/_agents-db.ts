@@ -27,12 +27,12 @@ const GPTs: DbGPT[] = [
 ]
 
 let _dbAgents: DbAgent[]
-let _dbTrashAgents: DbAgent[]
+let _dbAgentsDeleted: DbAgent[]
 let _nextId = 1001
 
 const createAgentId = () => _nextId++
 
-const getDbAgents = (recoverable?: boolean) => (recoverable ? [..._dbAgents, ..._dbTrashAgents] : _dbAgents)
+const getDbAgents = (everywhere?: boolean) => (everywhere ? [..._dbAgents, ..._dbAgentsDeleted] : _dbAgents)
 
 const setDbAgents = (value: DbAgent[]) => {
 	_dbAgents = value

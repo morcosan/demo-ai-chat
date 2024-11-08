@@ -43,7 +43,7 @@ export const API = {
 			count: 20,
 			page: page || 1,
 			search,
-			recoverable,
+			everywhere: recoverable,
 		}
 		const resp = await mainAPI.get<AgentsApiData>('/api/agents', query)
 

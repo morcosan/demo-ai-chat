@@ -28,9 +28,9 @@ export const agentsService = {
 		const page = extractInt(query.page, DEFAULT_PAGE, isGreaterThanZero)
 		const count = extractInt(query.count, DEFAULT_COUNT, isGreaterThanZero)
 		const agentIds = extractIntArray(query.agentIds, isGreaterThanZero)
-		const recoverable = extractBool(query.recoverable)
+		const everywhere = extractBool(query.everywhere)
 		const search = query.search?.trim().toLowerCase()
-		const dbAgents = getDbAgents(recoverable)
+		const dbAgents = getDbAgents(everywhere)
 
 		if (agentIds.length) {
 			const agents = dbAgents.filter((agent: DbAgent) => agentIds.includes(agent.id))

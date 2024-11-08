@@ -25,7 +25,7 @@ export interface AgentsApiQuery extends ApiQuery {
 	count?: string | number
 	page?: string | number
 	search?: string
-	recoverable?: string | boolean
+	everywhere?: string | boolean
 }
 export interface ChatsApiQuery extends ApiQuery {
 	chatIds?: string

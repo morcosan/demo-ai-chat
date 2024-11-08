@@ -110,8 +110,16 @@ const ApiDocsPage = () => {
 					<div className="flex flex-wrap gap-sm-9">
 						{TYPES.map((type: EndpointType) => (
 							<div key={type}>
-								<h2 className={cx('mb-xs-5 ml-button-px-item font-mono text-size-xl', TYPE_COLOR[type])}>
+								<h2
+									className={cx(
+										'mb-xs-5 ml-button-px-item flex items-end font-mono text-size-xl',
+										TYPE_COLOR[type]
+									)}
+								>
 									{type}
+									<span className="ml-xs-3 pb-xs-1 text-size-md text-color-text-subtle">
+										({ENDPOINTS.filter((ep: Endpoint) => ep.type === type).length})
+									</span>
 								</h2>
 
 								<ul className="flex flex-col">

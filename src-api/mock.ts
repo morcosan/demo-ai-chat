@@ -10,12 +10,12 @@ export const mockAPI = {
 		let resp = RESP__NOT_FOUND
 
 		if (path === '/api/account') resp = await accountService.getAccount()
-		if (path === '/api/billing') resp = await billingService.getBilling()
-		if (path === '/api/gpts') resp = await agentsService.getGPTs()
 		if (path === '/api/agents') resp = await agentsService.getAgents(query)
+		if (path === '/api/billing') resp = await billingService.getBilling()
 		if (path === '/api/chats') resp = await chatsService.getChats(query)
-		if (path === '/api/subchats') resp = await chatsService.getSubchats(query)
+		if (path === '/api/gpts') resp = await agentsService.getGPTs()
 		if (path === '/api/messages') resp = await chatsService.getMessages(query)
+		if (path === '/api/subchats') resp = await chatsService.getSubchats(query)
 
 		resp = await applyNetwork(resp)
 		LOG_DEV('GET', path, query, resp)
@@ -40,8 +40,8 @@ export const mockAPI = {
 		let resp = RESP__NOT_FOUND
 
 		if (path === '/api/account') resp = await accountService.patchAccount(payload)
-		if (path === '/api/billing') resp = await billingService.patchBilling(payload)
 		if (path === '/api/agents') resp = await agentsService.patchAgent(payload)
+		if (path === '/api/billing') resp = await billingService.patchBilling(payload)
 		if (path === '/api/chats') resp = await chatsService.patchChat(payload)
 
 		resp = await applyNetwork(resp)
