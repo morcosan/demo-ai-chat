@@ -24,6 +24,7 @@ export const CustomImpl = (rawProps: SelectFieldProps) => {
 		setIsFocused,
 	} = useSelectFieldBase(rawProps)
 	const [keyword, setKeyword] = useState('')
+	const [hasKeyboard, setHasKeyboard] = useState(false)
 	const [currentIndex, setCurrentIndex] = useState(-1)
 	const inputRef = useRef<HTMLInputElement>(null)
 
@@ -34,12 +35,18 @@ export const CustomImpl = (rawProps: SelectFieldProps) => {
 	})
 	const valueOption = (props.options.find((option: any) => option[keyValue] === props.value) as any) || null
 
-	const openMenu = () => {
+	const openOptionsMenu = () => {
 		setIsFocused(true)
 		setCurrentIndex(-1)
 	}
 
+	const onFocusInput = () => {
+		setHasKeyboard(true)
+		openOptionsMenu()
+	}
+
 	const onBlurInput = () => {
+		setHasKeyboard(false) // Disable mobile keyboard initially, for better UX
 		wait(100).then(() => setIsFocused(false)) // Delay is required to allow onClick
 	}
 
@@ -77,7 +84,7 @@ export const CustomImpl = (rawProps: SelectFieldProps) => {
 					event.preventDefault()
 				}
 			} else {
-				!isTab && openMenu()
+				!isTab && openOptionsMenu()
 			}
 		},
 		[options, currentIndex, isFocused]
@@ -127,6 +134,7 @@ export const CustomImpl = (rawProps: SelectFieldProps) => {
 					id={props.id}
 					type="text"
 					role="combobox"
+					readOnly={!hasKeyboard}
 					placeholder={props.placeholder}
 					aria-label={props.ariaLabel}
 					aria-describedby={`${props.id}-value`}
@@ -135,11 +143,11 @@ export const CustomImpl = (rawProps: SelectFieldProps) => {
 					aria-haspopup="listbox"
 					aria-activedescendant={currentIndex > -1 ? `${props.id}-option-${currentIndex}` : ''}
 					css={cssInput}
-					onFocus={openMenu}
+					onFocus={onFocusInput}
 					onBlur={onBlurInput}
 					onChange={onChangeInput}
 					onKeyDown={onKeyDown}
-					onClick={() => !isFocused && openMenu()}
+					onClick={() => !isFocused && openOptionsMenu()}
 				/>
 
 				{/* VALUE */}
