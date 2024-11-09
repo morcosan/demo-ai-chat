@@ -27,9 +27,9 @@ export const NewMessageField = (props: Props) => {
 		onPostMessage(message, agentId)
 		setInputValue('')
 		inputRef.current?.focus()
-	}, [message, listLoading])
+	}, [message, agentId, listLoading])
 
-	const onPressEnter = useSubmittable(onSubmit, [message, listLoading])
+	const onPressEnter = useSubmittable(onSubmit, [message, agentId, listLoading])
 
 	const onFocus = (event: ReactFocusEvent) => {
 		// On mobile, the field is covered by the floating keyboard
