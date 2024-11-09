@@ -54,6 +54,7 @@ export const CustomImpl = (rawProps: SelectFieldProps) => {
 		props.onChange?.(option[keyValue])
 		inputRef.current?.focus()
 		setIsFocused(false)
+		setHasKeyboard(false)
 	}
 
 	const execSearch = debounce((value: string) => {
