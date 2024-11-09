@@ -1,7 +1,7 @@
 import { LoadingText } from '@app/library/release'
 import { CheckSvg, ChevronDownSvg } from '@ds/release'
 import { Keyboard } from '@utils/release'
-import { debounce } from 'lodash'
+import { clamp, debounce } from 'lodash'
 import { UIEvent, useCallback, useMemo, useRef, useState } from 'react'
 import { useSelectFieldBase } from './_base'
 import { SelectFieldProps } from './_types'
@@ -19,13 +19,14 @@ export const CustomImpl = (rawProps: SelectFieldProps) => {
 		cssRadius,
 		cssValueOption,
 		cssWrapper,
-		isFocused,
+		isOpened,
 		props,
-		setIsFocused,
+		setIsOpened,
 	} = useSelectFieldBase(rawProps)
 	const [keyword, setKeyword] = useState('')
 	const [hasKeyboard, setHasKeyboard] = useState(false)
 	const [currentIndex, setCurrentIndex] = useState(-1)
+	const popoverRef = useRef<HTMLDivElement>(null)
 	const inputRef = useRef<HTMLInputElement>(null)
 
 	const keyLabel = props.keyLabel as string
@@ -36,7 +37,7 @@ export const CustomImpl = (rawProps: SelectFieldProps) => {
 	const valueOption = (props.options.find((option: any) => option[keyValue] === props.value) as any) || null
 
 	const openOptionsMenu = () => {
-		setIsFocused(true)
+		setIsOpened(true)
 		setCurrentIndex(-1)
 	}
 
@@ -47,20 +48,29 @@ export const CustomImpl = (rawProps: SelectFieldProps) => {
 
 	const onBlurInput = () => {
 		setHasKeyboard(false)
-		wait(100).then(() => setIsFocused(false)) // Delay is required to allow onClick
+		wait(100).then(() => setIsOpened(false)) // Delay is required to allow onClick event from option items
 	}
 
 	const onSelectOption = (option: any) => {
 		props.onChange?.(option[keyValue])
+
+		// Refocus input field
 		inputRef.current?.focus()
-		setIsFocused(false)
-		setHasKeyboard(false)
+
+		// Wait for onFocus event
+		wait(200).then(() => {
+			setHasKeyboard(false)
+			setIsOpened(false)
+		})
 	}
 
 	const execSearch = debounce((value: string) => {
-		const keyword = value.trim().toLowerCase()
-		setKeyword(keyword)
-		props.onSearch?.(keyword)
+		const newKeyword = value.trim().toLowerCase()
+
+		if (keyword !== newKeyword) {
+			setKeyword(newKeyword)
+			props.onSearch?.(newKeyword)
+		}
 	}, 300)
 
 	const onChangeInput = (event: ReactChangeEvent<HTMLInputElement>) => {
@@ -70,14 +80,19 @@ export const CustomImpl = (rawProps: SelectFieldProps) => {
 	const onKeyDown = useCallback(
 		(event: ReactKeyboardEvent) => {
 			const arrowFn = (diff: number) => {
-				setCurrentIndex((value: number) => ((value > -1 ? value : 0) + diff + options.length) % options.length)
+				setCurrentIndex((index: number) => clamp(index + diff, 0, options.length - 1))
+
+				if (currentIndex + 1 === options.length - 1) {
+					props.onScrollEnd?.() // Load more options
+					popoverRef.current?.scrollTo({ top: popoverRef.current.scrollHeight })
+				}
 			}
 			const isArrowDown = event.key === Keyboard.ARROW_DOWN
 			const isArrowUp = event.key === Keyboard.ARROW_UP
 			const isTab = event.key === Keyboard.TAB
 			const isSubmit = event.key === Keyboard.ENTER || event.key === Keyboard.SPACE
 
-			if (isFocused) {
+			if (isOpened) {
 				if (isArrowDown) arrowFn(1)
 				if (isArrowUp) arrowFn(-1)
 				if (isSubmit && options[currentIndex] !== undefined) {
@@ -85,10 +100,12 @@ export const CustomImpl = (rawProps: SelectFieldProps) => {
 					event.preventDefault()
 				}
 			} else {
-				!isTab && openOptionsMenu()
+				if (!isTab) {
+					openOptionsMenu()
+				}
 			}
 		},
-		[options, currentIndex, isFocused]
+		[options, currentIndex, isOpened]
 	)
 
 	const onScrollOptions = debounce((event: UIEvent) => {
@@ -102,6 +119,7 @@ export const CustomImpl = (rawProps: SelectFieldProps) => {
 			<ul role="listbox" css={cssOptionList} className={cx(!options.length && 'hidden')}>
 				{options.map((option: any, index: number) => (
 					<li
+						ref={(el) => index === currentIndex && el?.scrollIntoView({ block: 'nearest' })}
 						key={option[keyValue]}
 						id={`${props.id}-option-${index}`}
 						role="option"
@@ -128,18 +146,18 @@ export const CustomImpl = (rawProps: SelectFieldProps) => {
 
 	return (
 		<div className={props.className} style={props.style} css={cssWrapper}>
-			<div css={[cssFieldBase, cssHeight, cssRadius, isFocused && cssFieldFocus]}>
+			<div css={[cssFieldBase, cssHeight, cssRadius, isOpened && cssFieldFocus]}>
 				{/* SEARCH */}
 				<input
 					ref={inputRef}
 					id={props.id}
 					type="text"
 					role="combobox"
-					readOnly={!hasKeyboard}
+					inputMode={hasKeyboard ? 'text' : 'none'}
 					placeholder={props.placeholder}
 					aria-label={props.ariaLabel}
 					aria-describedby={`${props.id}-value`}
-					aria-expanded={isFocused}
+					aria-expanded={isOpened}
 					aria-autocomplete="list"
 					aria-haspopup="listbox"
 					aria-activedescendant={currentIndex > -1 ? `${props.id}-option-${currentIndex}` : ''}
@@ -148,7 +166,7 @@ export const CustomImpl = (rawProps: SelectFieldProps) => {
 					onBlur={onBlurInput}
 					onChange={onChangeInput}
 					onKeyDown={onKeyDown}
-					onClick={() => !isFocused && openOptionsMenu()}
+					onClick={() => !isOpened && openOptionsMenu()}
 				/>
 
 				{/* VALUE */}
@@ -174,8 +192,8 @@ export const CustomImpl = (rawProps: SelectFieldProps) => {
 				</div>
 			</div>
 
-			{/* POPUP */}
-			<div css={cssPopup} onScroll={onScrollOptions}>
+			{/* POPOVER */}
+			<div ref={popoverRef} css={cssPopup} onScroll={onScrollOptions}>
 				{props.loading ? (
 					<LoadingText
 						text={props.loadingText || t('core.state.loading')}
