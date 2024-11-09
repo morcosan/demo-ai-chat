@@ -82,6 +82,9 @@ export const CustomImpl = (rawProps: SelectFieldProps) => {
 			const arrowFn = (diff: number) => {
 				setCurrentIndex((index: number) => clamp(index + diff, 0, options.length - 1))
 
+				if (currentIndex - 1 === 0) {
+					popoverRef.current?.scrollTo({ top: 0 })
+				}
 				if (currentIndex + 1 === options.length - 1) {
 					props.onScrollEnd?.() // Load more options
 					popoverRef.current?.scrollTo({ top: popoverRef.current.scrollHeight })
