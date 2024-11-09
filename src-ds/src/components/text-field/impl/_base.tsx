@@ -108,12 +108,12 @@ export const useTextFieldBase = (rawProps: TextFieldProps, ref: Ref<TextFieldRef
 	}
 
 	const cssInput: CSS = {
-		...cssMinHeight,
 		...cssRadius,
 
 		'--ds-spacing-scrollbar-w': $spacing['xs-1'],
 		width: '100%',
 		height: '100%',
+		minHeight: `calc(100% + 2 * ${calcPadding})`,
 		maxHeight: `calc(100% + 2 * ${calcPadding})`,
 		marginTop: `calc(-1 * ${calcPadding})`,
 		marginBottom: `calc(-1 * ${calcPadding})`,

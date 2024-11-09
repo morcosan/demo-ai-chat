@@ -12,7 +12,8 @@ export interface ModalProps extends ReactProps {
 	noFooter?: boolean
 
 	slotTitle: ReactNode
-	slotButtons?: ReactNode
+	slotAction?: ReactNode
+	slotExtra?: ReactNode
 
 	onOpened?(): void
 	onClose?(): void

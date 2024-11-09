@@ -15,19 +15,27 @@
 			"selectAll": "Selecionar tudo",
 			"signOut": "Terminar sessão"
 		},
+		"error": {
+			"noChanges": "Sem alterações",
+			"nothingFound": "Nada encontrado para \"{search}\""
+		},
 		"label": {
-			"apiDocs": "Documentação API",
+			"apiDocs": "Documentação da API",
 			"asia": "Ásia",
+			"avatar": "Avatar",
 			"custom": "Personalizado",
 			"darkTheme": "Escuro",
 			"default": "Predefinido",
-			"designSystem": "Sistema de design",
+			"description": "Descrição",
+			"designSystem": "Sistema de Design",
 			"errors": "Erros",
 			"europe": "Europa",
 			"githubRepo": "Repositório GitHub",
 			"language": "Idioma",
 			"lightTheme": "Claro",
+			"name": "Nome",
 			"optionalField": "(Opcional)",
+			"quickSettings": "Definições rápidas",
 			"requiredField": "(Obrigatório)",
 			"settings": "Definições",
 			"uiLibrary": "Biblioteca UI:",
@@ -40,39 +48,60 @@
 			"dataSaved": "Os seus dados foram guardados",
 			"deleting": "A eliminar...",
 			"loading": "A carregar...",
-			"searching": "A pesquisar..."
+			"searching": "A pesquisar...",
+			"updating": "A atualizar..."
 		}
 	},
 	"aiChat": {
 		"action": {
-			"backToSubchats": "Voltar aos subchats",
-			"confirmDeleteChats": "Confirmar eliminação de chats",
-			"confirmRenameChat": "Confirmar renomeação de chat",
+			"backToSubchats": "Voltar aos sub-chats",
+			"configureAgent": "Configurar agente",
+			"confirmDeleteAgent": "Confirmar eliminação do agente",
+			"confirmDeleteChats": "Confirmar eliminação dos chats",
+			"confirmRenameChat": "Confirmar renomeação do chat",
+			"createAgent": "Criar agente",
+			"deleteAgent": "Eliminar agente",
 			"deleteSelectedChats": "Eliminar chats selecionados",
 			"manageAgents": "Gerir agentes",
 			"manageChats": "Gerir chats",
 			"openChat": "Abrir chat",
-			"openSubchat_zero": "Criar subchat",
-			"openSubchat_one": "Abrir subchat ({count} mensagem)",
-			"openSubchat_other": "Abrir subchat ({count} mensagens)",
+			"openSubchat_zero": "Criar sub-chat",
+			"openSubchat_one": "Abrir sub-chat ({count} mensagem)",
+			"openSubchat_other": "Abrir sub-chat ({count} mensagens)",
 			"sendMessage": "Enviar mensagem",
+			"showMoreAgents": "Mostrar mais agentes",
 			"showMoreChats": "Mostrar mais chats",
-			"showSubchats": "Mostrar subchats ({count})",
-			"startSearching_one": "Digite pelo menos {count} carácter",
+			"showSubchats": "Mostrar sub-chats ({count})",
+			"startSearching_one": "Digite pelo menos {count} caractere",
 			"startSearching_other": "Digite pelo menos {count} caracteres"
 		},
+		"description": {
+			"loremIpsumGPT": "O modelo mais inteligente",
+			"rammusGPT": "O melhor suporte emocional"
+		},
+		"error": {
+			"agentAvatar": "Deve adicionar um avatar para o agente",
+			"agentName": "Deve adicionar um nome para o agente",
+			"emptyMessage": "A sua mensagem está vazia"
+		},
 		"label": {
-			"chats": "Chats",
 			"agents": "Agentes",
+			"chats": "Chats",
+			"customInstructions": "Instruções personalizadas",
+			"gptModel": "Modelo GPT",
+			"newAgent": "Novo agente",
 			"newChat": "Novo chat",
 			"noChats": "Sem chats",
-			"noSubchats": "Sem subchats",
-			"subchats": "Subchats",
+			"noSubchats": "Sem sub-chats",
+			"selectedValue": "Valor selecionado:",
+			"subchats": "Sub-chats",
+			"xMessages_zero": "Sem mensagens",
 			"xMessages_one": "{count} mensagem",
 			"xMessages_other": "{count} mensagens",
-			"xSearchResults_zero": "Nenhum resultado",
-			"xSearchResults_one": "{count} resultado",
-			"xSearchResults_other": "{count} resultados",
+			"xSearchResults_zero": "Sem resultados de pesquisa",
+			"xSearchResults_one": "{count} resultado de pesquisa",
+			"xSearchResults_other": "{count} resultados de pesquisa",
+			"xSelectedMessages_zero": "Sem mensagens selecionadas",
 			"xSelectedMessages_one": "{count} mensagem selecionada",
 			"xSelectedMessages_other": "{count} mensagens selecionadas"
 		},
@@ -81,45 +110,47 @@
 			"rename": "Gerar novo nome automaticamente..."
 		},
 		"state": {
+			"loadingAgents": "A carregar agentes...",
 			"loadingChats": "A carregar chats...",
+			"loadingGPTs": "A carregar GPTs...",
 			"loadingMessages": "A carregar mensagens...",
 			"loadingPreviousMessages": "A carregar mensagens anteriores...",
-			"loadingSubchats": "A carregar subchats..."
+			"loadingSubchats": "A carregar sub-chats...",
+			"renamingChat": "A renomear chat..."
 		},
 		"warning": {
+			"deletingAgent": "Este agente será eliminado permanentemente",
 			"deletingChats": "Estes chats serão eliminados permanentemente"
 		}
 	},
-	"userAccount": {
+	"userSettings": {
 		"action": {
 			"manageAccount": "Gerir conta",
 			"manageBilling": "Gerir faturação"
 		},
 		"error": {
 			"address": "Deve adicionar a morada",
-			"avatar": "Deve adicionar um avatar",
+			"avatar": "Deve adicionar o seu avatar",
 			"city": "Deve adicionar a cidade",
 			"country": "Deve adicionar o país",
-			"email": "Deve adicionar o endereço de email",
+			"email": "Deve adicionar o seu endereço de email",
 			"legalName": "Deve adicionar o nome legal",
-			"name": "Deve adicionar o nome",
+			"name": "Deve adicionar o seu nome",
 			"postalCode": "Deve adicionar o código postal"
 		},
 		"label": {
 			"account": "Conta",
 			"address": "Morada",
-			"avatar": "Avatar",
 			"billing": "Faturação",
 			"city": "Cidade",
 			"country": "País",
 			"email": "Endereço de email",
 			"legalName": "Nome legal",
-			"name": "Nome",
 			"phone": "Número de telefone",
 			"postalCode": "Código postal",
 			"private": "Privado",
 			"public": "Público",
-			"vatNumber": "Número de contribuinte"
+			"vatNumber": "NIF"
 		}
 	}
 }

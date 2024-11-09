@@ -1,9 +1,13 @@
 export const COOKIE_KEY = {
+	APP_AGENT_FOR_CHAT: 'app-agent-for-chat',
+	APP_AGENT_FOR_SUBCHAT: 'app-agent-for-subchat',
 	APP_COLOR_THEME: 'app-color-theme',
 	APP_LANGUAGE: 'app-lang',
 	APP_PINNED_NAVBAR: 'app-pinned-navbar',
 	APP_UI_LIBRARY: 'app-ui-library',
 	DB_ACCOUNT: 'db-account',
+	DB_AGENTS: 'db-agents',
+	DB_AGENTS_DELETED: 'db-agents-deleted',
 	DB_BILLING: 'db-billing',
 	DB_CHATS: 'db-chats',
 	DB_MESSAGES: 'db-messages',

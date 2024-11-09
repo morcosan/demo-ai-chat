@@ -15,64 +15,93 @@
 			"selectAll": "Alles selecteren",
 			"signOut": "Uitloggen"
 		},
+		"error": {
+			"noChanges": "Geen wijzigingen",
+			"nothingFound": "Niets gevonden voor \"{search}\""
+		},
 		"label": {
-			"apiDocs": "API documentatie",
+			"apiDocs": "API-documentatie",
 			"asia": "Azië",
+			"avatar": "Avatar",
 			"custom": "Aangepast",
 			"darkTheme": "Donker",
 			"default": "Standaard",
-			"designSystem": "Design systeem",
+			"description": "Beschrijving",
+			"designSystem": "Design System",
 			"errors": "Fouten",
 			"europe": "Europa",
-			"githubRepo": "GitHub repository",
+			"githubRepo": "GitHub Repository",
 			"language": "Taal",
 			"lightTheme": "Licht",
+			"name": "Naam",
 			"optionalField": "(Optioneel)",
+			"quickSettings": "Snelle instellingen",
 			"requiredField": "(Verplicht)",
 			"settings": "Instellingen",
-			"uiLibrary": "UI bibliotheek:",
-			"uiTheme": "UI thema:"
+			"uiLibrary": "UI Bibliotheek:",
+			"uiTheme": "UI Thema:"
 		},
 		"placeholder": {
 			"search": "Zoeken..."
 		},
 		"state": {
 			"dataSaved": "Je gegevens zijn opgeslagen",
-			"deleting": "Verwijderen...",
-			"loading": "Laden...",
-			"searching": "Zoeken..."
+			"deleting": "Bezig met verwijderen...",
+			"loading": "Bezig met laden...",
+			"searching": "Bezig met zoeken...",
+			"updating": "Bezig met bijwerken..."
 		}
 	},
 	"aiChat": {
 		"action": {
 			"backToSubchats": "Terug naar subgesprekken",
-			"confirmDeleteChats": "Bevestig verwijderen gesprekken",
-			"confirmRenameChat": "Bevestig hernoemen gesprek",
+			"configureAgent": "Agent configureren",
+			"confirmDeleteAgent": "Verwijderen agent bevestigen",
+			"confirmDeleteChats": "Verwijderen gesprekken bevestigen",
+			"confirmRenameChat": "Hernoemen gesprek bevestigen",
+			"createAgent": "Agent aanmaken",
+			"deleteAgent": "Agent verwijderen",
 			"deleteSelectedChats": "Geselecteerde gesprekken verwijderen",
-			"manageAgents": "Beheer agenten",
-			"manageChats": "Beheer gesprekken",
-			"openChat": "Open gesprek",
-			"openSubchat_zero": "Maak subgesprek",
-			"openSubchat_one": "Open subgesprek ({count} bericht)",
-			"openSubchat_other": "Open subgesprek ({count} berichten)",
-			"sendMessage": "Verzend bericht",
+			"manageAgents": "Agents beheren",
+			"manageChats": "Gesprekken beheren",
+			"openChat": "Gesprek openen",
+			"openSubchat_zero": "Subgesprek aanmaken",
+			"openSubchat_one": "Subgesprek openen ({count} bericht)",
+			"openSubchat_other": "Subgesprek openen ({count} berichten)",
+			"sendMessage": "Bericht verzenden",
+			"showMoreAgents": "Meer agents tonen",
 			"showMoreChats": "Meer gesprekken tonen",
-			"showSubchats": "Toon subgesprekken ({count})",
-			"startSearching_one": "Typ ten minste {count} teken",
-			"startSearching_other": "Typ ten minste {count} tekens"
+			"showSubchats": "Subgesprekken tonen ({count})",
+			"startSearching_one": "Voer minimaal {count} teken in",
+			"startSearching_other": "Voer minimaal {count} tekens in"
+		},
+		"description": {
+			"loremIpsumGPT": "Het meest intelligente model",
+			"rammusGPT": "Beste emotionele ondersteuning"
+		},
+		"error": {
+			"agentAvatar": "Je moet een avatar toevoegen voor de agent",
+			"agentName": "Je moet een naam toevoegen voor de agent",
+			"emptyMessage": "Je bericht is leeg"
 		},
 		"label": {
+			"agents": "Agents",
 			"chats": "Gesprekken",
-			"agents": "Agenten",
+			"customInstructions": "Aangepaste instructies",
+			"gptModel": "GPT-model",
+			"newAgent": "Nieuwe agent",
 			"newChat": "Nieuw gesprek",
 			"noChats": "Geen gesprekken",
 			"noSubchats": "Geen subgesprekken",
+			"selectedValue": "Geselecteerde waarde:",
 			"subchats": "Subgesprekken",
+			"xMessages_zero": "Geen berichten",
 			"xMessages_one": "{count} bericht",
 			"xMessages_other": "{count} berichten",
 			"xSearchResults_zero": "Geen zoekresultaten",
 			"xSearchResults_one": "{count} zoekresultaat",
 			"xSearchResults_other": "{count} zoekresultaten",
+			"xSelectedMessages_zero": "Geen berichten geselecteerd",
 			"xSelectedMessages_one": "{count} bericht geselecteerd",
 			"xSelectedMessages_other": "{count} berichten geselecteerd"
 		},
@@ -81,40 +110,42 @@
 			"rename": "Automatisch nieuwe naam genereren..."
 		},
 		"state": {
+			"loadingAgents": "Agents laden...",
 			"loadingChats": "Gesprekken laden...",
+			"loadingGPTs": "GPT's laden...",
 			"loadingMessages": "Berichten laden...",
 			"loadingPreviousMessages": "Vorige berichten laden...",
-			"loadingSubchats": "Subgesprekken laden..."
+			"loadingSubchats": "Subgesprekken laden...",
+			"renamingChat": "Gesprek hernoemen..."
 		},
 		"warning": {
+			"deletingAgent": "Deze agent wordt permanent verwijderd",
 			"deletingChats": "Deze gesprekken worden permanent verwijderd"
 		}
 	},
-	"userAccount": {
+	"userSettings": {
 		"action": {
-			"manageAccount": "Beheer account",
-			"manageBilling": "Beheer facturering"
+			"manageAccount": "Account beheren",
+			"manageBilling": "Facturering beheren"
 		},
 		"error": {
 			"address": "Je moet een adres toevoegen",
-			"avatar": "Je moet een avatar toevoegen",
+			"avatar": "Je moet je avatar toevoegen",
 			"city": "Je moet een stad toevoegen",
 			"country": "Je moet een land toevoegen",
-			"email": "Je moet een e-mailadres toevoegen",
-			"legalName": "Je moet een juridische naam toevoegen",
-			"name": "Je moet een naam toevoegen",
+			"email": "Je moet je e-mailadres toevoegen",
+			"legalName": "Je moet de juridische naam toevoegen",
+			"name": "Je moet je naam toevoegen",
 			"postalCode": "Je moet een postcode toevoegen"
 		},
 		"label": {
 			"account": "Account",
 			"address": "Adres",
-			"avatar": "Avatar",
 			"billing": "Facturering",
 			"city": "Stad",
 			"country": "Land",
 			"email": "E-mailadres",
 			"legalName": "Juridische naam",
-			"name": "Naam",
 			"phone": "Telefoonnummer",
 			"postalCode": "Postcode",
 			"private": "Privé",

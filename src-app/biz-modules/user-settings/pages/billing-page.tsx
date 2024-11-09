@@ -5,27 +5,25 @@ import { useCallback, useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { Billing } from '../api'
 import { DataField, Field } from '../components/data-field'
-import { BILLING_EMPTY, useUserAccount } from '../state'
-
-type BillingRecord = Partial<Record<keyof Billing, string>>
+import { EMPTY_BILLING, useUserAccount } from '../state'
 
 const AccountPage = () => {
 	useTranslation()
 	const { billing, billingLoading, updateBilling } = useUserAccount()
-	const [payload, setPayload] = useState<Billing>(BILLING_EMPTY)
-	const [feedback, setFeedback] = useState<BillingRecord>(BILLING_EMPTY)
+	const [payload, setPayload] = useState<Billing>(EMPTY_BILLING)
+	const [feedback, setFeedback] = useState<FormPayload<Billing>>(EMPTY_BILLING)
 	const [successful, setSuccessful] = useState(false)
 
 	const fields: Field<keyof Billing>[] = [
-		{ key: 'name', label: t('userAccount.label.legalName') },
-		{ key: 'address', label: t('userAccount.label.address'), props: { minRows: 2, maxRows: 4, multiline: true } },
-		{ key: 'city', label: t('userAccount.label.city') },
-		{ key: 'country', label: t('userAccount.label.country') },
-		{ key: 'postalCode', label: t('userAccount.label.postalCode') },
-		{ key: 'vatNumber', label: t('userAccount.label.vatNumber'), optional: true },
+		{ key: 'name', label: t('userSettings.label.legalName') },
+		{ key: 'address', label: t('userSettings.label.address'), props: { minRows: 2, maxRows: 4, multiline: true } },
+		{ key: 'city', label: t('userSettings.label.city') },
+		{ key: 'country', label: t('userSettings.label.country') },
+		{ key: 'postalCode', label: t('userSettings.label.postalCode') },
+		{ key: 'vatNumber', label: t('userSettings.label.vatNumber'), optional: true },
 	]
 
-	const canSave =
+	const hasChanges =
 		billing.name !== payload.name.trim() ||
 		billing.address !== payload.address.trim() ||
 		billing.city !== payload.city.trim() ||
@@ -36,12 +34,20 @@ const AccountPage = () => {
 	const hasErrors = (errors: object) => Object.values(errors).some((value: string) => value)
 
 	const onSubmit = useCallback(async () => {
+		// Fake success
+		if (!hasChanges) {
+			setFeedback(EMPTY_BILLING)
+			setSuccessful(true)
+			wait(3000).then(() => setSuccessful(false))
+			return
+		}
+
 		const validation = {
-			name: !payload.name.trim() ? t('userAccount.error.legalName') : '',
-			address: !payload.address.trim() ? t('userAccount.error.address') : '',
-			city: !payload.city.trim() ? t('userAccount.error.city') : '',
-			country: !payload.country.trim() ? t('userAccount.error.country') : '',
-			postalCode: !payload.postalCode.trim() ? t('userAccount.error.postalCode') : '',
+			name: !payload.name.trim() ? t('userSettings.error.legalName') : '',
+			address: !payload.address.trim() ? t('userSettings.error.address') : '',
+			city: !payload.city.trim() ? t('userSettings.error.city') : '',
+			country: !payload.country.trim() ? t('userSettings.error.country') : '',
+			postalCode: !payload.postalCode.trim() ? t('userSettings.error.postalCode') : '',
 		}
 		setFeedback(validation)
 
@@ -50,7 +56,7 @@ const AccountPage = () => {
 
 			await updateBilling(payload)
 
-			setFeedback(BILLING_EMPTY)
+			setFeedback(EMPTY_BILLING)
 			setSuccessful(true)
 			wait(3000).then(() => setSuccessful(false))
 		}
@@ -64,7 +70,7 @@ const AccountPage = () => {
 		<AppLayout blank>
 			<PageHeader
 				breadcrumb={{ href: '/settings', title: t('core.label.settings') }}
-				slotTitle={t('userAccount.label.billing')}
+				slotTitle={t('userSettings.label.billing')}
 			/>
 
 			{/* ERRORS */}
@@ -87,7 +93,6 @@ const AccountPage = () => {
 			{/* SAVING */}
 			<div className="mt-sm-9">
 				<Button
-					disabled={!canSave}
 					loading={Boolean(billingLoading)}
 					variant="solid-primary"
 					className="w-full sm:w-fit"

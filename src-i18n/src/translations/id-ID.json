@@ -11,23 +11,31 @@
 			"rename": "Ubah nama",
 			"saveChanges": "Simpan perubahan",
 			"search": "Cari",
-			"searchMore": "Tampilkan lebih banyak hasil",
+			"searchMore": "Tampilkan hasil lebih banyak",
 			"selectAll": "Pilih semua",
 			"signOut": "Keluar"
+		},
+		"error": {
+			"noChanges": "Tidak ada perubahan",
+			"nothingFound": "Tidak ditemukan untuk \"{search}\""
 		},
 		"label": {
 			"apiDocs": "Dokumentasi API",
 			"asia": "Asia",
+			"avatar": "Avatar",
 			"custom": "Kustom",
 			"darkTheme": "Gelap",
-			"default": "Default",
-			"designSystem": "Sistem desain",
+			"default": "Bawaan",
+			"description": "Deskripsi",
+			"designSystem": "Sistem Desain",
 			"errors": "Kesalahan",
 			"europe": "Eropa",
 			"githubRepo": "Repositori GitHub",
 			"language": "Bahasa",
 			"lightTheme": "Terang",
+			"name": "Nama",
 			"optionalField": "(Opsional)",
+			"quickSettings": "Pengaturan cepat",
 			"requiredField": "(Wajib)",
 			"settings": "Pengaturan",
 			"uiLibrary": "Pustaka UI:",
@@ -40,76 +48,97 @@
 			"dataSaved": "Data Anda telah disimpan",
 			"deleting": "Menghapus...",
 			"loading": "Memuat...",
-			"searching": "Mencari..."
+			"searching": "Mencari...",
+			"updating": "Memperbarui..."
 		}
 	},
 	"aiChat": {
 		"action": {
-			"backToSubchats": "Kembali ke subchat",
-			"confirmDeleteChats": "Konfirmasi hapus chat",
-			"confirmRenameChat": "Konfirmasi ubah nama chat",
-			"deleteSelectedChats": "Hapus chat yang dipilih",
+			"backToSubchats": "Kembali ke sub-obrolan",
+			"configureAgent": "Konfigurasi agen",
+			"confirmDeleteAgent": "Konfirmasi hapus agen",
+			"confirmDeleteChats": "Konfirmasi hapus obrolan",
+			"confirmRenameChat": "Konfirmasi ubah nama obrolan",
+			"createAgent": "Buat agen",
+			"deleteAgent": "Hapus agen",
+			"deleteSelectedChats": "Hapus obrolan terpilih",
 			"manageAgents": "Kelola agen",
-			"manageChats": "Kelola chat",
-			"openChat": "Buka chat",
-			"openSubchat_zero": "Buat subchat",
-			"openSubchat_other": "Buka subchat ({count} pesan)",
+			"manageChats": "Kelola obrolan",
+			"openChat": "Buka obrolan",
+			"openSubchat_zero": "Buat sub-obrolan",
+			"openSubchat_other": "Buka sub-obrolan ({count} pesan)",
 			"sendMessage": "Kirim pesan",
-			"showMoreChats": "Tampilkan lebih banyak chat",
-			"showSubchats": "Tampilkan subchat ({count})",
+			"showMoreAgents": "Tampilkan lebih banyak agen",
+			"showMoreChats": "Tampilkan lebih banyak obrolan",
+			"showSubchats": "Tampilkan sub-obrolan ({count})",
 			"startSearching_other": "Ketik minimal {count} karakter"
 		},
+		"description": {
+			"loremIpsumGPT": "Model paling cerdas",
+			"rammusGPT": "Dukungan emosional terbaik"
+		},
+		"error": {
+			"agentAvatar": "Anda harus menambahkan avatar untuk agen",
+			"agentName": "Anda harus menambahkan nama untuk agen",
+			"emptyMessage": "Pesan Anda kosong"
+		},
 		"label": {
-			"chats": "Chat",
 			"agents": "Agen",
-			"newChat": "Chat baru",
-			"noChats": "Tidak ada chat",
-			"noSubchats": "Tidak ada subchat",
-			"subchats": "Subchat",
+			"chats": "Obrolan",
+			"customInstructions": "Instruksi kustom",
+			"gptModel": "Model GPT",
+			"newAgent": "Agen baru",
+			"newChat": "Obrolan baru",
+			"noChats": "Tidak ada obrolan",
+			"noSubchats": "Tidak ada sub-obrolan",
+			"selectedValue": "Nilai terpilih:",
+			"subchats": "Sub-obrolan",
 			"xMessages_other": "{count} pesan",
-			"xSearchResults_zero": "Tidak ada hasil",
-			"xSearchResults_other": "{count} hasil",
-			"xSelectedMessages_other": "{count} pesan dipilih"
+			"xSearchResults_zero": "Tidak ada hasil pencarian",
+			"xSearchResults_other": "{count} hasil pencarian",
+			"xSelectedMessages_other": "{count} pesan terpilih"
 		},
 		"placeholder": {
 			"newMessage": "Ajukan pertanyaan...",
 			"rename": "Buat nama baru secara otomatis..."
 		},
 		"state": {
-			"loadingChats": "Memuat chat...",
+			"loadingAgents": "Memuat agen...",
+			"loadingChats": "Memuat obrolan...",
+			"loadingGPTs": "Memuat GPT...",
 			"loadingMessages": "Memuat pesan...",
 			"loadingPreviousMessages": "Memuat pesan sebelumnya...",
-			"loadingSubchats": "Memuat subchat..."
+			"loadingSubchats": "Memuat sub-obrolan...",
+			"renamingChat": "Mengubah nama obrolan..."
 		},
 		"warning": {
-			"deletingChats": "Chat ini akan dihapus secara permanen"
+			"deletingAgent": "Agen ini akan dihapus secara permanen",
+			"deletingChats": "Obrolan ini akan dihapus secara permanen"
 		}
 	},
-	"userAccount": {
+	"userSettings": {
 		"action": {
 			"manageAccount": "Kelola akun",
 			"manageBilling": "Kelola penagihan"
 		},
 		"error": {
 			"address": "Anda harus menambahkan alamat",
-			"avatar": "Anda harus menambahkan avatar",
+			"avatar": "Anda harus menambahkan avatar Anda",
 			"city": "Anda harus menambahkan kota",
 			"country": "Anda harus menambahkan negara",
 			"email": "Anda harus menambahkan alamat email",
 			"legalName": "Anda harus menambahkan nama legal",
-			"name": "Anda harus menambahkan nama",
+			"name": "Anda harus menambahkan nama Anda",
 			"postalCode": "Anda harus menambahkan kode pos"
 		},
 		"label": {
 			"account": "Akun",
 			"address": "Alamat",
-			"avatar": "Avatar",
 			"billing": "Penagihan",
 			"city": "Kota",
 			"country": "Negara",
 			"email": "Alamat email",
 			"legalName": "Nama legal",
-			"name": "Nama",
 			"phone": "Nomor telepon",
 			"postalCode": "Kode pos",
 			"private": "Pribadi",

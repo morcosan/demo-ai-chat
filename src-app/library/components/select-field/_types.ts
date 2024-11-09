@@ -1,0 +1,35 @@
+import { TextFieldSize } from '@ds/release'
+
+export interface SelectFieldProps extends ReactProps {
+	id: string
+	value: unknown
+	options: object[]
+	keyLabel?: string
+	keyValue?: string
+	filterFn?: SelectFilterFn
+	size?: TextFieldSize
+	placeholder?: string
+	ariaLabel?: string
+	ariaDescription?: string
+	disabled?: boolean
+	readonly?: boolean
+	invalid?: boolean
+	loading?: boolean
+	loadingMore?: boolean
+	canLoadMore?: boolean
+	loadingText?: string
+	popupPos?: 'top' | 'bottom'
+	subtle?: boolean
+	compValue?: JsxFn<SelectOptionProps>
+	compOption?: JsxFn<SelectOptionProps>
+	onChange?(value: unknown): void
+	onSearch?(search: string): void
+	onScrollEnd?(): void
+}
+
+export interface SelectOptionProps {
+	option: unknown
+	selected?: boolean
+}
+
+export type SelectFilterFn = (option: object, keyword: string) => boolean

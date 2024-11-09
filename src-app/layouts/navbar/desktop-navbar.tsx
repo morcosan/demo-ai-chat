@@ -101,7 +101,7 @@ export const DesktopNavbar = ({ unselected, onClickLanguage }: Props) => {
 				onMouseLeave={onMouseLeaveNavbar}
 			>
 				{/* LOGO */}
-				<AppLogo collapsed={isNavCollapsed} className="mb-xs-9" />
+				<AppLogo collapsed={isNavCollapsed} className="mb-xs-5" />
 
 				{/* PIN */}
 				<IconButton

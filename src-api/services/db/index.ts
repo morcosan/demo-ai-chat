@@ -1,24 +1,34 @@
-import { DbChat, DbMessage } from '@api/types'
 import { initAccountDB } from './_account-db'
+import { initAgentsDB } from './_agents-db'
 import { initBillingDB } from './_billing-db'
-import { getDbMessages, initChatsDB } from './_chats-db'
+import { initChatsDB } from './_chats-db'
 
 export { getDbAccount, resetDbAccount, setDbAccount } from './_account-db'
+export {
+	createAgentId,
+	getDbActiveAgents,
+	GPTs,
+	randomFromAgentIds,
+	resetAgentsDB,
+	setDbActiveAgents,
+	getDbDeletedAgents,
+	setDbDeletedAgents,
+	getGptAPI,
+} from './_agents-db'
 export { getDbBilling, resetDbBilling, setDbBilling } from './_billing-db'
 export {
+	createChatId,
+	createMessageId,
 	getDbChats,
 	getDbMessages,
-	getNextId,
-	resetDbChats,
-	resetDbMessages,
+	resetChatsDB,
 	setDbChats,
 	setDbMessages,
+	getSizeForChat,
+	hasMessagesByAgent,
 } from './_chats-db'
-
-export const getSizeForChat = (chat: DbChat) => {
-	return getDbMessages().filter((message: DbMessage) => message.parentId === chat.id).length
-}
 
 initAccountDB()
 initBillingDB()
-initChatsDB()
+initAgentsDB()
+initChatsDB() // Must come after agents

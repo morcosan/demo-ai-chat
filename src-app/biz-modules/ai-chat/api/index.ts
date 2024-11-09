@@ -1,8 +1,12 @@
 import {
+	AgentsApiData,
+	AgentsApiPayload,
+	AgentsApiQuery,
 	ChatsApiData,
 	ChatsApiPayload,
 	ChatsApiQuery,
 	clearDataCache,
+	GptApiData,
 	mainAPI,
 	MessagesApiData,
 	MessagesApiPayload,
@@ -11,14 +15,74 @@ import {
 	SubchatsApiData,
 	SubchatsApiQuery,
 } from '@app/api'
-import { mapDtoToChat, mapDtoToMessage, mapDtoToSubchat } from './_mappers'
-import { ChatListing, MessageListing, SubchatListing } from './_types'
+import { mapDtoToAgent, mapDtoToChat, mapDtoToGPT, mapDtoToMessage, mapDtoToSubchat } from './_mappers'
+import { AgentListing, ChatListing, GptListing, MessageListing, SubchatListing } from './_types'
 
+export { UI_TAG__GPT_DESCRIPTION } from '@api/types'
+export type { AgentsApiPayload } from '@app/api'
+export * from './_gpt'
 export * from './_types'
 
 export const MIN_SEARCH_LENGTH = 3
 
+type GetAgentsArgs = [agentIds?: number[], page?: number, search?: string, everywhere?: boolean]
+
 export const API = {
+	async getGPTs(): Promise<GptListing> {
+		const resp = await mainAPI.get<GptApiData>('/api/gpts', {})
+
+		return resp.status === STATUS__SUCCESS && resp.data
+			? { gpts: resp.data.items.map(mapDtoToGPT), count: resp.data.count }
+			: { gpts: [], count: 0 }
+	},
+
+	async getAgents(...args: GetAgentsArgs): Promise<AgentListing> {
+		const [agentIds, page, search, everywhere] = args
+		const query: AgentsApiQuery = {
+			agentIds: (agentIds || []).join(','),
+			count: 20,
+			page: page || 1,
+			search,
+			everywhere,
+		}
+		const resp = await mainAPI.get<AgentsApiData>('/api/agents', query)
+
+		return resp.status === STATUS__SUCCESS && resp.data
+			? { agents: resp.data.items.map(mapDtoToAgent), count: resp.data.count }
+			: { agents: [], count: 0 }
+	},
+
+	async createAgent(payload: AgentsApiPayload): Promise<AgentListing> {
+		const resp = await mainAPI.post<AgentsApiData>('/api/agents', payload)
+
+		clearDataCache('/api/agents')
+
+		return resp.status === STATUS__SUCCESS && resp.data
+			? { agents: resp.data.items.map(mapDtoToAgent), count: resp.data.count }
+			: { agents: [], count: 0 }
+	},
+
+	async updateAgent(payload: AgentsApiPayload): Promise<AgentListing> {
+		const resp = await mainAPI.patch<AgentsApiData>('/api/agents', payload)
+
+		clearDataCache('/api/agents')
+
+		return resp.status === STATUS__SUCCESS && resp.data
+			? { agents: resp.data.items.map(mapDtoToAgent), count: resp.data.count }
+			: { agents: [], count: 0 }
+	},
+
+	async deleteAgents(agentIds: number[]): Promise<AgentListing> {
+		const query: AgentsApiQuery = { agentIds: (agentIds || []).join(',') }
+		const resp = await mainAPI.delete<AgentsApiData>('/api/agents', query)
+
+		clearDataCache('/api/agents')
+
+		return resp.status === STATUS__SUCCESS && resp.data
+			? { agents: [], count: resp.data.count }
+			: { agents: [], count: 0 }
+	},
+
 	async getChats(chatIds?: number[], page?: number, search?: string): Promise<ChatListing> {
 		const query: ChatsApiQuery = {
 			chatIds: (chatIds || []).join(','),
@@ -99,8 +163,8 @@ export const API = {
 			: { messages: [], count: 0 }
 	},
 
-	async postMessage(chatId: number, subchatId?: number, text?: string): Promise<MessageListing> {
-		const payload: MessagesApiPayload = { chatId, subchatId, text }
+	async postMessage(chatId: number, text: string, agentId: number, subchatId?: number): Promise<MessageListing> {
+		const payload: MessagesApiPayload = { chatId, subchatId, text, agentId }
 		const resp = await mainAPI.post<MessagesApiData>('/api/messages', payload)
 
 		clearDataCache('/api/messages')

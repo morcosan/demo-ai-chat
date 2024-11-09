@@ -6,28 +6,36 @@
 			"changeLanguage": "Tilni o'zgartirish",
 			"close": "Yopish",
 			"delete": "O'chirish",
-			"deselectAll": "Tanlovni bekor qilish",
+			"deselectAll": "Barchasini bekor qilish",
 			"openMenu": "Menyuni ochish",
-			"rename": "Qayta nomlash",
+			"rename": "Nomini o'zgartirish",
 			"saveChanges": "O'zgarishlarni saqlash",
 			"search": "Qidirish",
 			"searchMore": "Ko'proq natijalarni ko'rsatish",
-			"selectAll": "Hammasini tanlash",
+			"selectAll": "Barchasini tanlash",
 			"signOut": "Chiqish"
+		},
+		"error": {
+			"noChanges": "O'zgarishlar yo'q",
+			"nothingFound": "\"{search}\" uchun hech narsa topilmadi"
 		},
 		"label": {
 			"apiDocs": "API hujjatlari",
 			"asia": "Osiyo",
+			"avatar": "Avatar",
 			"custom": "Maxsus",
 			"darkTheme": "Qorong'i",
 			"default": "Standart",
+			"description": "Tavsif",
 			"designSystem": "Dizayn tizimi",
 			"errors": "Xatolar",
 			"europe": "Yevropa",
-			"githubRepo": "GitHub ombori",
+			"githubRepo": "GitHub repozitoriyasi",
 			"language": "Til",
 			"lightTheme": "Yorug'",
+			"name": "Ism",
 			"optionalField": "(Ixtiyoriy)",
+			"quickSettings": "Tezkor sozlamalar",
 			"requiredField": "(Majburiy)",
 			"settings": "Sozlamalar",
 			"uiLibrary": "UI kutubxonasi:",
@@ -40,67 +48,92 @@
 			"dataSaved": "Ma'lumotlaringiz saqlandi",
 			"deleting": "O'chirilmoqda...",
 			"loading": "Yuklanmoqda...",
-			"searching": "Qidirilmoqda..."
+			"searching": "Qidirilmoqda...",
+			"updating": "Yangilanmoqda..."
 		}
 	},
 	"aiChat": {
 		"action": {
-			"backToSubchats": "Ichki suhbatlarga qaytish",
+			"backToSubchats": "Kichik suhbatlarga qaytish",
+			"configureAgent": "Agentni sozlash",
+			"confirmDeleteAgent": "Agentni o'chirishni tasdiqlash",
 			"confirmDeleteChats": "Suhbatlarni o'chirishni tasdiqlash",
-			"confirmRenameChat": "Suhbatni qayta nomlashni tasdiqlash",
+			"confirmRenameChat": "Suhbat nomini o'zgartirishni tasdiqlash",
+			"createAgent": "Agent yaratish",
+			"deleteAgent": "Agentni o'chirish",
 			"deleteSelectedChats": "Tanlangan suhbatlarni o'chirish",
 			"manageAgents": "Agentlarni boshqarish",
 			"manageChats": "Suhbatlarni boshqarish",
 			"openChat": "Suhbatni ochish",
-			"openSubchat_zero": "Ichki suhbat yaratish",
-			"openSubchat_one": "Ichki suhbatni ochish ({count} xabar)",
-			"openSubchat_other": "Ichki suhbatni ochish ({count} xabar)",
+			"openSubchat_zero": "Kichik suhbat yaratish",
+			"openSubchat_one": "Kichik suhbatni ochish ({count} xabar)",
+			"openSubchat_other": "Kichik suhbatni ochish ({count} xabar)",
 			"sendMessage": "Xabar yuborish",
+			"showMoreAgents": "Ko'proq agentlarni ko'rsatish",
 			"showMoreChats": "Ko'proq suhbatlarni ko'rsatish",
-			"showSubchats": "Ichki suhbatlarni ko'rsatish ({count})",
+			"showSubchats": "Kichik suhbatlarni ko'rsatish ({count})",
 			"startSearching_one": "Kamida {count} belgi kiriting",
 			"startSearching_other": "Kamida {count} belgi kiriting"
 		},
+		"description": {
+			"loremIpsumGPT": "Eng aqlli model",
+			"rammusGPT": "Eng yaxshi emotsional yordam"
+		},
+		"error": {
+			"agentAvatar": "Agent uchun avatar qo'shishingiz kerak",
+			"agentName": "Agent uchun ism qo'shishingiz kerak",
+			"emptyMessage": "Xabaringiz bo'sh"
+		},
 		"label": {
-			"chats": "Suhbatlar",
 			"agents": "Agentlar",
+			"chats": "Suhbatlar",
+			"customInstructions": "Maxsus ko'rsatmalar",
+			"gptModel": "GPT modeli",
+			"newAgent": "Yangi agent",
 			"newChat": "Yangi suhbat",
 			"noChats": "Suhbatlar yo'q",
-			"noSubchats": "Ichki suhbatlar yo'q",
-			"subchats": "Ichki suhbatlar",
+			"noSubchats": "Kichik suhbatlar yo'q",
+			"selectedValue": "Tanlangan qiymat:",
+			"subchats": "Kichik suhbatlar",
+			"xMessages_zero": "Xabarlar yo'q",
 			"xMessages_one": "{count} xabar",
 			"xMessages_other": "{count} xabar",
-			"xSearchResults_zero": "Natijalar yo'q",
-			"xSearchResults_one": "{count} natija",
-			"xSearchResults_other": "{count} natija",
-			"xSelectedMessages_one": "{count} xabar tanlandi",
-			"xSelectedMessages_other": "{count} xabar tanlandi"
+			"xSearchResults_zero": "Qidiruv natijalari yo'q",
+			"xSearchResults_one": "{count} qidiruv natijasi",
+			"xSearchResults_other": "{count} qidiruv natijasi",
+			"xSelectedMessages_zero": "Tanlangan xabarlar yo'q",
+			"xSelectedMessages_one": "{count} tanlangan xabar",
+			"xSelectedMessages_other": "{count} tanlangan xabar"
 		},
 		"placeholder": {
 			"newMessage": "Savol bering...",
 			"rename": "Avtomatik yangi nom yaratish..."
 		},
 		"state": {
+			"loadingAgents": "Agentlar yuklanmoqda...",
 			"loadingChats": "Suhbatlar yuklanmoqda...",
+			"loadingGPTs": "GPTlar yuklanmoqda...",
 			"loadingMessages": "Xabarlar yuklanmoqda...",
 			"loadingPreviousMessages": "Oldingi xabarlar yuklanmoqda...",
-			"loadingSubchats": "Ichki suhbatlar yuklanmoqda..."
+			"loadingSubchats": "Kichik suhbatlar yuklanmoqda...",
+			"renamingChat": "Suhbat nomi o'zgartirilmoqda..."
 		},
 		"warning": {
+			"deletingAgent": "Bu agent butunlay o'chiriladi",
 			"deletingChats": "Bu suhbatlar butunlay o'chiriladi"
 		}
 	},
-	"userAccount": {
+	"userSettings": {
 		"action": {
 			"manageAccount": "Hisobni boshqarish",
 			"manageBilling": "To'lovlarni boshqarish"
 		},
 		"error": {
 			"address": "Manzilni kiritishingiz kerak",
-			"avatar": "Avatar qo'shishingiz kerak",
+			"avatar": "Avatarni kiritishingiz kerak",
 			"city": "Shaharni kiritishingiz kerak",
 			"country": "Mamlakatni kiritishingiz kerak",
-			"email": "Elektron pochta manzilini kiritishingiz kerak",
+			"email": "Email manzilni kiritishingiz kerak",
 			"legalName": "Yuridik nomni kiritishingiz kerak",
 			"name": "Ismni kiritishingiz kerak",
 			"postalCode": "Pochta indeksini kiritishingiz kerak"
@@ -108,13 +141,11 @@
 		"label": {
 			"account": "Hisob",
 			"address": "Manzil",
-			"avatar": "Avatar",
-			"billing": "To'lov",
+			"billing": "To'lovlar",
 			"city": "Shahar",
 			"country": "Mamlakat",
-			"email": "Elektron pochta manzili",
+			"email": "Email manzil",
 			"legalName": "Yuridik nom",
-			"name": "Ism",
 			"phone": "Telefon raqami",
 			"postalCode": "Pochta indeksi",
 			"private": "Shaxsiy",

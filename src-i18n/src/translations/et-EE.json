@@ -15,19 +15,27 @@
 			"selectAll": "Vali kõik",
 			"signOut": "Logi välja"
 		},
+		"error": {
+			"noChanges": "Muudatusi pole",
+			"nothingFound": "Otsingule \"{search}\" ei leitud midagi"
+		},
 		"label": {
 			"apiDocs": "API dokumentatsioon",
 			"asia": "Aasia",
+			"avatar": "Avatar",
 			"custom": "Kohandatud",
 			"darkTheme": "Tume",
 			"default": "Vaikimisi",
-			"designSystem": "Kujundussüsteem",
+			"description": "Kirjeldus",
+			"designSystem": "Disainisüsteem",
 			"errors": "Vead",
 			"europe": "Euroopa",
-			"githubRepo": "GitHubi hoidla",
+			"githubRepo": "GitHub repositoorium",
 			"language": "Keel",
 			"lightTheme": "Hele",
+			"name": "Nimi",
 			"optionalField": "(Valikuline)",
+			"quickSettings": "Kiirseaded",
 			"requiredField": "(Kohustuslik)",
 			"settings": "Seaded",
 			"uiLibrary": "UI teek:",
@@ -40,14 +48,19 @@
 			"dataSaved": "Sinu andmed on salvestatud",
 			"deleting": "Kustutamine...",
 			"loading": "Laadimine...",
-			"searching": "Otsimine..."
+			"searching": "Otsimine...",
+			"updating": "Uuendamine..."
 		}
 	},
 	"aiChat": {
 		"action": {
 			"backToSubchats": "Tagasi alamvestlustesse",
+			"configureAgent": "Seadista agent",
+			"confirmDeleteAgent": "Kinnita agendi kustutamine",
 			"confirmDeleteChats": "Kinnita vestluste kustutamine",
 			"confirmRenameChat": "Kinnita vestluse ümbernimetamine",
+			"createAgent": "Loo agent",
+			"deleteAgent": "Kustuta agent",
 			"deleteSelectedChats": "Kustuta valitud vestlused",
 			"manageAgents": "Halda agente",
 			"manageChats": "Halda vestlusi",
@@ -56,70 +69,88 @@
 			"openSubchat_one": "Ava alamvestlus ({count} sõnum)",
 			"openSubchat_other": "Ava alamvestlus ({count} sõnumit)",
 			"sendMessage": "Saada sõnum",
+			"showMoreAgents": "Näita rohkem agente",
 			"showMoreChats": "Näita rohkem vestlusi",
 			"showSubchats": "Näita alamvestlusi ({count})",
 			"startSearching_one": "Sisesta vähemalt {count} märk",
 			"startSearching_other": "Sisesta vähemalt {count} märki"
 		},
+		"description": {
+			"loremIpsumGPT": "Kõige intelligentsem mudel",
+			"rammusGPT": "Parim emotsionaalne tugi"
+		},
+		"error": {
+			"agentAvatar": "Pead lisama agendile avatari",
+			"agentName": "Pead lisama agendile nime",
+			"emptyMessage": "Sinu sõnum on tühi"
+		},
 		"label": {
-			"chats": "Vestlused",
 			"agents": "Agendid",
+			"chats": "Vestlused",
+			"customInstructions": "Kohandatud juhised",
+			"gptModel": "GPT mudel",
+			"newAgent": "Uus agent",
 			"newChat": "Uus vestlus",
 			"noChats": "Vestlusi pole",
 			"noSubchats": "Alamvestlusi pole",
+			"selectedValue": "Valitud väärtus:",
 			"subchats": "Alamvestlused",
+			"xMessages_zero": "0 sõnumit",
 			"xMessages_one": "{count} sõnum",
 			"xMessages_other": "{count} sõnumit",
 			"xSearchResults_zero": "Otsingutulemusi pole",
 			"xSearchResults_one": "{count} otsingutulemus",
 			"xSearchResults_other": "{count} otsingutulemust",
-			"xSelectedMessages_one": "{count} sõnum valitud",
-			"xSelectedMessages_other": "{count} sõnumit valitud"
+			"xSelectedMessages_zero": "0 valitud sõnumit",
+			"xSelectedMessages_one": "{count} valitud sõnum",
+			"xSelectedMessages_other": "{count} valitud sõnumit"
 		},
 		"placeholder": {
 			"newMessage": "Esita küsimus...",
-			"rename": "Loo automaatselt uus nimi..."
+			"rename": "Genereeri automaatselt uus nimi..."
 		},
 		"state": {
+			"loadingAgents": "Agentide laadimine...",
 			"loadingChats": "Vestluste laadimine...",
+			"loadingGPTs": "GPT-de laadimine...",
 			"loadingMessages": "Sõnumite laadimine...",
 			"loadingPreviousMessages": "Eelmiste sõnumite laadimine...",
-			"loadingSubchats": "Alamvestluste laadimine..."
+			"loadingSubchats": "Alamvestluste laadimine...",
+			"renamingChat": "Vestluse ümbernimetamine..."
 		},
 		"warning": {
+			"deletingAgent": "See agent kustutatakse jäädavalt",
 			"deletingChats": "Need vestlused kustutatakse jäädavalt"
 		}
 	},
-	"userAccount": {
+	"userSettings": {
 		"action": {
 			"manageAccount": "Halda kontot",
 			"manageBilling": "Halda arveldust"
 		},
 		"error": {
-			"address": "Sa pead lisama aadressi",
-			"avatar": "Sa pead lisama avatari",
-			"city": "Sa pead lisama linna",
-			"country": "Sa pead lisama riigi",
-			"email": "Sa pead lisama e-posti aadressi",
-			"legalName": "Sa pead lisama juriidilise nime",
-			"name": "Sa pead lisama nime",
-			"postalCode": "Sa pead lisama postiindeksi"
+			"address": "Pead lisama aadressi",
+			"avatar": "Pead lisama oma avatari",
+			"city": "Pead lisama linna",
+			"country": "Pead lisama riigi",
+			"email": "Pead lisama oma e-posti aadressi",
+			"legalName": "Pead lisama juriidilise nime",
+			"name": "Pead lisama oma nime",
+			"postalCode": "Pead lisama postiindeksi"
 		},
 		"label": {
 			"account": "Konto",
 			"address": "Aadress",
-			"avatar": "Avatar",
 			"billing": "Arveldus",
 			"city": "Linn",
 			"country": "Riik",
 			"email": "E-posti aadress",
 			"legalName": "Juriidiline nimi",
-			"name": "Nimi",
 			"phone": "Telefoninumber",
 			"postalCode": "Postiindeks",
 			"private": "Privaatne",
 			"public": "Avalik",
-			"vatNumber": "KMKR number"
+			"vatNumber": "Käibemaksukohustuslase number"
 		}
 	}
 }

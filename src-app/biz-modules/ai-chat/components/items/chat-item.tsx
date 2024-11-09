@@ -3,17 +3,19 @@ import { Chat } from '../../api'
 
 interface Props {
 	chat: Chat
-	activeChat: Chat | null
+	selected?: boolean
 	onHideNavMenu?(): void
 }
 
-export const ChatItem = ({ chat, activeChat, onHideNavMenu }: Props) => {
+export const ChatItem = (props: Props) => {
+	const { chat, selected, onHideNavMenu } = props
+
 	return (
 		<li>
 			<Button
 				linkHref={`/chat/${chat.id}`}
-				variant={activeChat?.id === chat.id ? 'item-solid-secondary' : 'item-text-default'}
-				highlight={activeChat?.id === chat.id ? 'selected' : 'default'}
+				variant={selected ? 'item-solid-secondary' : 'item-text-default'}
+				highlight={selected ? 'selected' : 'default'}
 				tooltip={chat.title}
 				className="block focus:z-1"
 				onClick={onHideNavMenu}
