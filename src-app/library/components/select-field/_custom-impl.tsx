@@ -36,32 +36,44 @@ export const CustomImpl = (rawProps: SelectFieldProps) => {
 	})
 	const valueOption = (props.options.find((option: any) => option[keyValue] === props.value) as any) || null
 
+	const DELAY = 100
+
 	const openOptionsMenu = () => {
 		setIsOpened(true)
 		setCurrentIndex(-1)
 	}
 
+	const showKeyboard = () => {
+		wait(DELAY).then(() => setHasKeyboard(true)) // Prevent mobile keyboard from opening at start, for better UX
+	}
+
 	const onFocusInput = () => {
 		openOptionsMenu()
-		wait(100).then(() => setHasKeyboard(true)) // Prevent mobile keyboard from opening at start, for better UX
+		showKeyboard()
 	}
 
 	const onBlurInput = () => {
 		setHasKeyboard(false)
-		wait(100).then(() => setIsOpened(false)) // Delay is required to allow onClick event from option items
+		wait(DELAY).then(() => setIsOpened(false)) // Delay is required to allow onClick event from option items
+	}
+
+	const onClickInput = () => {
+		showKeyboard()
+		!isOpened && openOptionsMenu()
+
+		// Wait for floating keyboard to appear
+		wait(500).then(() => inputRef.current?.scrollIntoView({ behavior: 'smooth', block: 'center' }))
 	}
 
 	const onSelectOption = (option: any) => {
 		props.onChange?.(option[keyValue])
 
-		// Refocus input field
+		// Refocus input field and hide popover
 		inputRef.current?.focus()
+		setIsOpened(false)
 
 		// Wait for onFocus event
-		wait(200).then(() => {
-			setHasKeyboard(false)
-			setIsOpened(false)
-		})
+		wait(DELAY * 2).then(() => setHasKeyboard(false))
 	}
 
 	const execSearch = debounce((value: string) => {
@@ -169,7 +181,7 @@ export const CustomImpl = (rawProps: SelectFieldProps) => {
 					onBlur={onBlurInput}
 					onChange={onChangeInput}
 					onKeyDown={onKeyDown}
-					onClick={() => !isOpened && openOptionsMenu()}
+					onClick={onClickInput}
 				/>
 
 				{/* VALUE */}
