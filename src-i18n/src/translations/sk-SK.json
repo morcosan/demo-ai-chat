@@ -2,11 +2,11 @@
 	"core": {
 		"action": {
 			"back": "Späť",
-			"backToHome": "Späť na úvodnú stránku",
+			"backToHome": "Späť na domovskú stránku",
 			"changeLanguage": "Zmeniť jazyk",
 			"close": "Zavrieť",
-			"delete": "Odstrániť",
-			"deselectAll": "Zrušiť všetky výbery",
+			"delete": "Vymazať",
+			"deselectAll": "Zrušiť výber všetkého",
 			"openMenu": "Otvoriť menu",
 			"rename": "Premenovať",
 			"saveChanges": "Uložiť zmeny",
@@ -15,19 +15,27 @@
 			"selectAll": "Vybrať všetko",
 			"signOut": "Odhlásiť sa"
 		},
+		"error": {
+			"noChanges": "Žiadne zmeny",
+			"nothingFound": "Nič sa nenašlo pre \"{search}\""
+		},
 		"label": {
 			"apiDocs": "API dokumentácia",
 			"asia": "Ázia",
+			"avatar": "Avatar",
 			"custom": "Vlastné",
 			"darkTheme": "Tmavý",
 			"default": "Predvolené",
+			"description": "Popis",
 			"designSystem": "Dizajnový systém",
 			"errors": "Chyby",
 			"europe": "Európa",
 			"githubRepo": "GitHub repozitár",
 			"language": "Jazyk",
 			"lightTheme": "Svetlý",
+			"name": "Meno",
 			"optionalField": "(Voliteľné)",
+			"quickSettings": "Rýchle nastavenia",
 			"requiredField": "(Povinné)",
 			"settings": "Nastavenia",
 			"uiLibrary": "UI knižnica:",
@@ -37,89 +45,117 @@
 			"search": "Hľadať..."
 		},
 		"state": {
-			"dataSaved": "Vaše údaje boli uložené",
-			"deleting": "Odstraňuje sa...",
-			"loading": "Načítava sa...",
-			"searching": "Vyhľadáva sa..."
+			"dataSaved": "Vaše dáta boli uložené",
+			"deleting": "Mazanie...",
+			"loading": "Načítavanie...",
+			"searching": "Vyhľadávanie...",
+			"updating": "Aktualizácia..."
 		}
 	},
 	"aiChat": {
 		"action": {
-			"backToSubchats": "Späť na podkonverzácie",
-			"confirmDeleteChats": "Potvrdiť odstránenie konverzácií",
-			"confirmRenameChat": "Potvrdiť premenovanie konverzácie",
-			"deleteSelectedChats": "Odstrániť vybrané konverzácie",
+			"backToSubchats": "Späť na podchaty",
+			"configureAgent": "Konfigurovať agenta",
+			"confirmDeleteAgent": "Potvrdiť vymazanie agenta",
+			"confirmDeleteChats": "Potvrdiť vymazanie chatov",
+			"confirmRenameChat": "Potvrdiť premenovanie chatu",
+			"createAgent": "Vytvoriť agenta",
+			"deleteAgent": "Vymazať agenta",
+			"deleteSelectedChats": "Vymazať vybrané chaty",
 			"manageAgents": "Spravovať agentov",
-			"manageChats": "Spravovať konverzácie",
-			"openChat": "Otvoriť konverzáciu",
-			"openSubchat_zero": "Vytvoriť podkonverzáciu",
-			"openSubchat_one": "Otvoriť podkonverzáciu ({count} správa)",
-			"openSubchat_few": "Otvoriť podkonverzáciu ({count} správy)",
-			"openSubchat_many": "Otvoriť podkonverzáciu ({count} správ)",
-			"sendMessage": "Odoslať správu",
-			"showMoreChats": "Zobraziť viac konverzácií",
-			"showSubchats": "Zobraziť podkonverzácie ({count})",
+			"manageChats": "Spravovať chaty",
+			"openChat": "Otvoriť chat",
+			"openSubchat_zero": "Vytvoriť podchat",
+			"openSubchat_one": "Otvoriť podchat ({count} správa)",
+			"openSubchat_few": "Otvoriť podchat ({count} správy)",
+			"openSubchat_many": "Otvoriť podchat ({count} správ)",
+			"openSubchat_other": "Otvoriť podchat ({count} správ)",
+			"sendMessage": "Poslať správu",
+			"showMoreAgents": "Zobraziť viac agentov",
+			"showMoreChats": "Zobraziť viac chatov",
+			"showSubchats": "Zobraziť podchaty ({count})",
 			"startSearching_one": "Zadajte aspoň {count} znak",
 			"startSearching_few": "Zadajte aspoň {count} znaky",
-			"startSearching_many": "Zadajte aspoň {count} znakov"
+			"startSearching_many": "Zadajte aspoň {count} znakov",
+			"startSearching_other": "Zadajte aspoň {count} znakov"
+		},
+		"description": {
+			"loremIpsumGPT": "Najinteligentnejší model",
+			"rammusGPT": "Najlepšia emocionálna podpora"
+		},
+		"error": {
+			"agentAvatar": "Musíte pridať avatar pre agenta",
+			"agentName": "Musíte pridať meno pre agenta",
+			"emptyMessage": "Vaša správa je prázdna"
 		},
 		"label": {
-			"chats": "Konverzácie",
 			"agents": "Agenti",
-			"newChat": "Nová konverzácia",
-			"noChats": "Žiadne konverzácie",
-			"noSubchats": "Žiadne podkonverzácie",
-			"subchats": "Podkonverzácie",
+			"chats": "Chaty",
+			"customInstructions": "Vlastné inštrukcie",
+			"gptModel": "GPT model",
+			"newAgent": "Nový agent",
+			"newChat": "Nový chat",
+			"noChats": "Žiadne chaty",
+			"noSubchats": "Žiadne podchaty",
+			"selectedValue": "Vybraná hodnota:",
+			"subchats": "Podchaty",
+			"xMessages_zero": "Žiadne správy",
 			"xMessages_one": "{count} správa",
 			"xMessages_few": "{count} správy",
 			"xMessages_many": "{count} správ",
-			"xSearchResults_zero": "Žiadne výsledky",
-			"xSearchResults_one": "{count} výsledok",
-			"xSearchResults_few": "{count} výsledky",
-			"xSearchResults_many": "{count} výsledkov",
+			"xMessages_other": "{count} správ",
+			"xSearchResults_zero": "Žiadne výsledky vyhľadávania",
+			"xSearchResults_one": "{count} výsledok vyhľadávania",
+			"xSearchResults_few": "{count} výsledky vyhľadávania",
+			"xSearchResults_many": "{count} výsledkov vyhľadávania",
+			"xSearchResults_other": "{count} výsledkov vyhľadávania",
+			"xSelectedMessages_zero": "Žiadne vybrané správy",
 			"xSelectedMessages_one": "{count} vybraná správa",
 			"xSelectedMessages_few": "{count} vybrané správy",
-			"xSelectedMessages_many": "{count} vybraných správ"
+			"xSelectedMessages_many": "{count} vybraných správ",
+			"xSelectedMessages_other": "{count} vybraných správ"
 		},
 		"placeholder": {
 			"newMessage": "Položte otázku...",
-			"rename": "Automaticky vygenerovať nový názov..."
+			"rename": "Automaticky vygenerovať nové meno..."
 		},
 		"state": {
-			"loadingChats": "Načítavajú sa konverzácie...",
-			"loadingMessages": "Načítavajú sa správy...",
-			"loadingPreviousMessages": "Načítavajú sa predchádzajúce správy...",
-			"loadingSubchats": "Načítavajú sa podkonverzácie..."
+			"loadingAgents": "Načítavanie agentov...",
+			"loadingChats": "Načítavanie chatov...",
+			"loadingGPTs": "Načítavanie GPT...",
+			"loadingMessages": "Načítavanie správ...",
+			"loadingPreviousMessages": "Načítavanie predchádzajúcich správ...",
+			"loadingSubchats": "Načítavanie podchatov...",
+			"renamingChat": "Premenovanie chatu..."
 		},
 		"warning": {
-			"deletingChats": "Tieto konverzácie budú natrvalo odstránené"
+			"deletingAgent": "Tento agent bude trvalo vymazaný",
+			"deletingChats": "Tieto chaty budú trvalo vymazané"
 		}
 	},
-	"userAccount": {
+	"userSettings": {
 		"action": {
 			"manageAccount": "Spravovať účet",
 			"manageBilling": "Spravovať fakturáciu"
 		},
 		"error": {
 			"address": "Musíte pridať adresu",
-			"avatar": "Musíte pridať avatar",
+			"avatar": "Musíte pridať svoj avatar",
 			"city": "Musíte pridať mesto",
 			"country": "Musíte pridať krajinu",
 			"email": "Musíte pridať emailovú adresu",
-			"legalName": "Musíte pridať právny názov",
-			"name": "Musíte pridať meno",
+			"legalName": "Musíte pridať právne meno",
+			"name": "Musíte pridať svoje meno",
 			"postalCode": "Musíte pridať PSČ"
 		},
 		"label": {
 			"account": "Účet",
 			"address": "Adresa",
-			"avatar": "Avatar",
 			"billing": "Fakturácia",
 			"city": "Mesto",
 			"country": "Krajina",
 			"email": "Emailová adresa",
-			"legalName": "Právny názov",
-			"name": "Meno",
+			"legalName": "Právne meno",
 			"phone": "Telefónne číslo",
 			"postalCode": "PSČ",
 			"private": "Súkromné",

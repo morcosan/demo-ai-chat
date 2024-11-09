@@ -1,8 +1,7 @@
-import { API } from '@app/biz-modules/ai-chat/api'
 import { uniqBy } from 'lodash'
 import { useEffect, useState } from 'react'
-import { Chat, Message } from '../../../api'
-import { GHOST_CHAT, newGhostMessage } from './_utils'
+import { API, Chat, Message } from '../../../api'
+import { createGhostChat, createGhostMessage } from './_utils'
 import { AllChatsStore } from './all-chats-store'
 
 export interface ChatStore {
@@ -13,7 +12,7 @@ export interface ChatStore {
 	canLoadChatMessages: boolean
 	loadActiveChat(chatId: number): Promise<boolean | undefined>
 	loadMoreChatMessages(): void
-	postChatMessage(text: string): void
+	postChatMessage(text: string, agentId: number): void
 	resetActiveChat(): void
 	updateMessage(message: Message): void
 }
@@ -33,9 +32,9 @@ export const chatDefaults: ChatStore = {
 
 export const useChatStore = (allChatsStore: AllChatsStore): ChatStore => {
 	const { allChats, createNewChat, updateChat } = allChatsStore
-	const [activeChat, setActiveChat] = useState(null as Chat | null)
-	const [chatMessages, setChatMessages] = useState([] as Message[])
-	const [chatPagination, setChatPagination] = useState({ page: 0, count: 0 } as Pagination)
+	const [activeChat, setActiveChat] = useState<Chat | null>(null)
+	const [chatMessages, setChatMessages] = useState<Message[]>([])
+	const [chatPagination, setChatPagination] = useState<Pagination>({ page: 0, count: 0 })
 	const [chatLoading, setChatLoading] = useState<ListLoading>(false)
 	const [shouldRename, setShouldRename] = useState(false)
 
@@ -75,22 +74,24 @@ export const useChatStore = (allChatsStore: AllChatsStore): ChatStore => {
 		setChatLoading(false)
 	}
 
-	const postChatMessage = async (text: string) => {
+	const postChatMessage = async (text: string, agentId: number) => {
 		if (chatLoading) return
 
 		let chat = activeChat
 		if (!chat) {
-			chat = GHOST_CHAT
-			setActiveChat(GHOST_CHAT)
+			chat = createGhostChat()
+			setActiveChat(chat)
 		}
+
+		const page = activeChat ? chatPagination.page : 1
 
 		setChatLoading('update')
 		setChatMessages([
 			...chatMessages,
-			newGhostMessage(chat.id, 0, 'user', text),
-			newGhostMessage(chat.id, 0, 'agent', ''),
+			createGhostMessage(chat.id, 0, 'user', text, agentId),
+			createGhostMessage(chat.id, 0, 'agent', '', agentId),
 		])
-		setChatPagination({ ...chatPagination, count: chatPagination.count + 1 })
+		setChatPagination({ page, count: chatPagination.count + 1 })
 
 		if (!activeChat) {
 			chat = await createNewChat()
@@ -98,10 +99,10 @@ export const useChatStore = (allChatsStore: AllChatsStore): ChatStore => {
 			if (!chat) return
 		}
 
-		const listing = await API.postMessage(chat.id, 0, text)
+		const listing = await API.postMessage(chat.id, text, agentId)
 
 		setChatMessages([...chatMessages, ...listing.messages])
-		setChatPagination({ ...chatPagination, count: chatPagination.count + listing.count })
+		setChatPagination({ page, count: chatPagination.count + listing.count })
 		setChatLoading(false)
 
 		if (!activeChat) {

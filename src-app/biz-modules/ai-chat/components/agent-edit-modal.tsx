@@ -1,0 +1,205 @@
+import { ErrorSummary, FieldError, FieldLabel, SelectField, SelectOptionProps } from '@app/library/release'
+import { Button, DeleteSvg, Modal, TextField } from '@ds/release'
+import { useEffect, useState } from 'react'
+import { Agent, GPT } from '../api'
+import { EMPTY_AGENT, useAiChatAgents } from '../state'
+import { AgentGptItem } from './items/agent-gpt-item'
+
+interface Props {
+	agent: Agent | null
+	opened: boolean
+	onSubmit(payload: Agent): Promise<void>
+	onClose(): void
+	onClosed?(): void
+	onDelete?(): void
+}
+
+const GptValue = (props: SelectOptionProps) => <AgentGptItem gpt={props.option as GPT} compact />
+const GptOption = (props: SelectOptionProps) => (
+	<AgentGptItem gpt={props.option as GPT} selected={props.selected} />
+)
+
+export const AgentEditModal = (props: Props) => {
+	const { allGPTs, allAgents } = useAiChatAgents()
+	const [initial, setInitial] = useState<Agent>(props.agent || EMPTY_AGENT)
+	const [payload, setPayload] = useState<Agent>(props.agent || EMPTY_AGENT)
+	const [feedback, setFeedback] = useState<FormPayload<Agent>>(EMPTY_AGENT)
+
+	const isEditing = Boolean(props.agent?.id)
+	const canDelete = Boolean(
+		props.onDelete && isEditing && allAgents.filter((agent: Agent) => agent.id && !agent.deleting).length > 1
+	)
+
+	const sectionClass = cx('flex flex-1 flex-col gap-sm-2')
+
+	const hasChanges =
+		initial.gptId !== payload.gptId ||
+		initial.name !== payload.name.trim() ||
+		initial.avatar !== payload.avatar.trim() ||
+		initial.desc !== payload.desc.trim() ||
+		initial.setup !== payload.setup.trim()
+
+	const hasErrors = (errors: object) => Object.values(errors).some((value: string) => value)
+
+	const onSubmit = async () => {
+		// Fake success
+		if (!hasChanges && isEditing) {
+			props.onClose()
+			return
+		}
+
+		const validation = {
+			name: !payload.name.trim() ? t('aiChat.error.agentName') : '',
+			avatar: !payload.avatar.trim() ? t('aiChat.error.agentAvatar') : '',
+		}
+		setFeedback(validation)
+
+		if (!hasErrors(validation)) {
+			props.onSubmit(payload)
+		}
+	}
+
+	useEffect(() => {
+		if (props.agent && allGPTs.length) {
+			const initial = {
+				...props.agent,
+				gptId: props.agent.gptId || allGPTs[0].id,
+				avatar: props.agent.avatar || allGPTs[0].avatar,
+			}
+			setInitial(initial)
+			setPayload(initial)
+		}
+
+		setFeedback(EMPTY_AGENT)
+	}, [props.agent, props.opened, allGPTs])
+
+	return props.agent ? (
+		<Modal
+			opened={props.opened}
+			width="lg"
+			persistent={hasChanges || props.agent.updating}
+			noClose={props.agent.updating}
+			slotTitle={isEditing ? t('aiChat.action.configureAgent') : t('aiChat.label.newAgent')}
+			slotAction={
+				<Button
+					variant="solid-primary"
+					loading={props.agent.updating}
+					tooltip={hasChanges ? '' : t('core.error.noChanges')}
+					onClick={onSubmit}
+				>
+					{isEditing ? t('core.action.saveChanges') : t('aiChat.action.createAgent')}
+				</Button>
+			}
+			slotExtra={
+				canDelete && !props.agent.updating ? (
+					<Button variant="text-danger" loading={props.agent.updating} onClick={props.onDelete}>
+						<DeleteSvg className="mr-xs-4 w-xs-5" /> {t('aiChat.action.deleteAgent')}
+					</Button>
+				) : null
+			}
+			onClose={props.onClose}
+			onClosed={props.onClosed}
+		>
+			{/* ERRORS */}
+			{hasErrors(feedback) && <ErrorSummary errors={feedback} className="mb-sm-1" />}
+
+			{/* BODY */}
+			<div className="flex flex-col gap-y-sm-3 lg:flex-row">
+				{/* LEFT */}
+				<div className={sectionClass}>
+					{/* NAME */}
+					<div className="flex flex-col">
+						<FieldLabel fieldId="field-name">{t('core.label.name')}</FieldLabel>
+						<TextField
+							id="field-name"
+							value={payload.name}
+							ariaDescription={feedback.name ? `${t('core.label.errors')}: ${feedback.name}` : ''}
+							disabled={props.agent.updating}
+							invalid={Boolean(feedback.name)}
+							onChange={(name: string) => setPayload({ ...payload, name })}
+						/>
+						<FieldError error={feedback.name} />
+					</div>
+
+					{/* AVATAR */}
+					<div className="flex">
+						<div className="flex flex-1 flex-col">
+							<FieldLabel fieldId="field-avatar">{t('core.label.avatar')}</FieldLabel>
+							<TextField
+								id="field-avatar"
+								value={payload.avatar}
+								ariaDescription={feedback.avatar ? `${t('core.label.errors')}: ${feedback.avatar}` : ''}
+								disabled={props.agent.updating}
+								invalid={Boolean(feedback.avatar)}
+								onChange={(avatar: string) => setPayload({ ...payload, avatar })}
+							/>
+							<FieldError error={feedback.avatar} />
+						</div>
+
+						<div className="ml-xs-6 mt-xs-6">
+							<img src={payload.avatar} alt="" className="h-sm-8 w-sm-8 rounded-full" />
+						</div>
+					</div>
+
+					{/* DESCRIPTION */}
+					<div className="flex flex-col">
+						<FieldLabel fieldId="field-desc" optional>
+							{t('core.label.description')}
+						</FieldLabel>
+						<TextField
+							id="field-desc"
+							value={payload.desc}
+							ariaDescription={feedback.desc ? `${t('core.label.errors')}: ${feedback.desc}` : ''}
+							disabled={props.agent.updating}
+							invalid={Boolean(feedback.desc)}
+							minRows={3}
+							multiline
+							onChange={(desc: string) => setPayload({ ...payload, desc })}
+						/>
+						<FieldError error={feedback.desc} />
+					</div>
+				</div>
+
+				{/* DELIMITER */}
+				<div className="mx-sm-1 hidden w-px self-stretch bg-color-border-subtle lg:block" />
+
+				{/* RIGHT */}
+				<div className={sectionClass}>
+					{/* GPT */}
+					<div className="flex flex-col">
+						<FieldLabel fieldId="field-gpt">{t('aiChat.label.gptModel')}</FieldLabel>
+						<SelectField
+							id="field-gpt"
+							value={payload.gptId}
+							options={allGPTs}
+							keyLabel="name"
+							keyValue="id"
+							disabled={props.agent.updating}
+							compValue={GptValue}
+							compOption={GptOption}
+							onChange={(gptId: number) => setPayload({ ...payload, gptId })}
+						/>
+					</div>
+
+					{/* SETUP */}
+					<div className="flex flex-1 flex-col">
+						<FieldLabel fieldId="field-setup" optional>
+							{t('aiChat.label.customInstructions')}
+						</FieldLabel>
+						<TextField
+							id="field-setup"
+							value={payload.setup}
+							ariaDescription={feedback.setup ? `${t('core.label.errors')}: ${feedback.setup}` : ''}
+							disabled={props.agent.updating}
+							invalid={Boolean(feedback.setup)}
+							className="flex-1"
+							multiline
+							onChange={(setup: string) => setPayload({ ...payload, setup })}
+						/>
+						<FieldError error={feedback.setup} />
+					</div>
+				</div>
+			</div>
+		</Modal>
+	) : null
+}

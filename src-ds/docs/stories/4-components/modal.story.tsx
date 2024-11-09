@@ -10,7 +10,8 @@ export const story: StoryObj<typeof Modal> = {
 	args: {
 		// Slots
 		slotTitle: 'Modal title',
-		slotButtons: '<button class="p-xs-3 bg-color-primary text-color-text-inverse rounded-md">Submit</button>',
+		slotAction: '<button class="p-xs-3 bg-color-primary text-color-text-inverse rounded-md">Submit</button>',
+		slotExtra: 'Extra content',
 		children: randomLongText(20),
 		// Props
 		opened: false,
@@ -43,7 +44,7 @@ const meta: Meta<typeof Modal> = {
 			noClose: 'boolean',
 			noFooter: 'boolean',
 		},
-		['slotTitle', 'slotButtons', 'children'],
+		['slotTitle', 'slotAction', 'slotExtra', 'children'],
 		['onOpened', 'onClose', 'onClosed']
 	),
 
@@ -55,8 +56,12 @@ const meta: Meta<typeof Modal> = {
 				required: true,
 			},
 			{
-				name: 'slotButtons',
-				details: `Content to be rendered as buttons in footer (excluding close button)`,
+				name: 'slotAction',
+				details: `Content to be rendered in footer, on the bottom-right corner, as action button`,
+			},
+			{
+				name: 'slotExtra',
+				details: `Content to be rendered in footer, on the bottom-left corner`,
 			},
 			{
 				name: 'children',
@@ -176,7 +181,7 @@ const meta: Meta<typeof Modal> = {
 				<Modal
 					{...props}
 					opened={opened}
-					slotButtons={<div dangerouslySetInnerHTML={{ __html: String(props.slotButtons) }} />}
+					slotAction={<div dangerouslySetInnerHTML={{ __html: String(props.slotAction) }} />}
 					onClose={() => {
 						setOpened(false)
 						props.onClose?.()

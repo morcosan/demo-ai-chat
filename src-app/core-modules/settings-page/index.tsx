@@ -13,7 +13,7 @@ interface Subsection {
 
 const SettingsPage = () => {
 	useTranslation()
-	
+
 	const subsections: Subsection[] = [
 		{
 			href: '/settings/agents',
@@ -27,12 +27,12 @@ const SettingsPage = () => {
 		},
 		{
 			href: '/settings/account',
-			title: t('userAccount.action.manageAccount'),
+			title: t('userSettings.action.manageAccount'),
 			icon: <UserSvg className="h-xs-8 w-sm-1" />,
 		},
 		{
 			href: '/settings/billing',
-			title: t('userAccount.action.manageBilling'),
+			title: t('userSettings.action.manageBilling'),
 			icon: <MoneySvg className="h-xs-8 w-sm-1" />,
 		},
 	]

@@ -1,7 +1,7 @@
 import { uniqBy } from 'lodash'
 import { useEffect, useState } from 'react'
 import { API, Chat } from '../../../api'
-import { GHOST_CHAT } from './_utils'
+import { createGhostChat } from './_utils'
 
 export interface AllChatsStore {
 	allChats: Chat[]
@@ -26,13 +26,13 @@ export const allChatsDefaults: AllChatsStore = {
 }
 
 export const useAllChatsStore = (): AllChatsStore => {
-	const [allChats, setAllChats] = useState([] as Chat[])
-	const [allChatsPagination, setAllChatsPagination] = useState({ page: 0, count: 0 } as Pagination)
+	const [allChats, setAllChats] = useState<Chat[]>([])
+	const [allChatsPagination, setAllChatsPagination] = useState<Pagination>({ page: 0, count: 0 })
 	const [allChatsLoading, setAllChatsLoading] = useState<ListLoading>(false)
 
 	const canLoadAllChats = !allChatsPagination.page || allChats.length < allChatsPagination.count
 
-	const loadMoreChats = async (reload?: boolean, prevChats: Chat[] = allChats) => {
+	const loadMoreChats = async (reload?: boolean) => {
 		if (allChatsLoading || !canLoadAllChats) return
 
 		setAllChatsLoading(allChatsPagination.page === 0 ? 'full' : 'more')
@@ -40,7 +40,7 @@ export const useAllChatsStore = (): AllChatsStore => {
 		const page = allChatsPagination.page + (reload ? 0 : 1)
 		const listing = await API.getChats([], page)
 
-		setAllChats(uniqBy([...prevChats, ...listing.chats], (chat: Chat) => chat.id))
+		setAllChats((chats: Chat[]) => uniqBy([...chats, ...listing.chats], (chat: Chat) => chat.id))
 		setAllChatsPagination({ page, count: listing.count })
 		setAllChatsLoading(false)
 	}
@@ -48,10 +48,12 @@ export const useAllChatsStore = (): AllChatsStore => {
 	const createNewChat = async (): Promise<Chat | null> => {
 		if (allChatsLoading) return null
 
-		setAllChatsLoading('update')
-		setAllChats([GHOST_CHAT, ...allChats])
+		const newChat = createGhostChat()
 
-		const listing = await API.createChat(GHOST_CHAT.title)
+		setAllChatsLoading('update')
+		setAllChats([newChat, ...allChats])
+
+		const listing = await API.createChat(newChat.title)
 
 		setAllChats([...listing.chats, ...allChats])
 		setAllChatsPagination({ ...allChatsPagination, count: allChatsPagination.count + 1 })
@@ -63,8 +65,8 @@ export const useAllChatsStore = (): AllChatsStore => {
 	const updateChat = async (chatId: number, title?: string): Promise<Chat | null> => {
 		const index = allChats.findIndex((chat: Chat) => chat.id === chatId)
 		if (index > -1) {
-			allChats[index].title = title || '...'
-			allChats[index].loading = true
+			allChats[index].title = title || t('aiChat.state.renamingChat')
+			allChats[index].updating = true
 		}
 		setAllChats([...allChats])
 
@@ -84,24 +86,28 @@ export const useAllChatsStore = (): AllChatsStore => {
 	}
 
 	const deleteChats = async (chatIds: number[]): Promise<void> => {
-		chatIds.forEach((chatId: number) => {
-			const index = allChats.findIndex((chat: Chat) => chat.id === chatId)
-			if (index > -1) {
-				allChats[index].deleting = true
-			}
-		})
+		const indexes = chatIds
+			.map((chatId: number) => allChats.findIndex((chat: Chat) => chat.id === chatId))
+			.filter((index: number) => index > -1)
+
+		indexes.forEach((index: number) => (allChats[index].deleting = true))
 		setAllChats([...allChats])
 
 		const listing = await API.deleteChats(chatIds)
+		const success = listing.count === allChatsPagination.count - chatIds.length
 
-		const newChats = allChats.filter((chat: Chat) => !chatIds.includes(chat.id))
+		if (success) {
+			const newChats = allChats.filter((chat: Chat) => !chatIds.includes(chat.id))
 
-		setAllChats(newChats)
-		setAllChatsPagination({ page: allChatsPagination.page, count: listing.count })
+			setAllChats(newChats)
+			setAllChatsPagination({ page: allChatsPagination.page, count: listing.count })
 
-		if (allChatsPagination.page === 1) {
-			// Reload first page to avoid breaking load-on-scroll
-			loadMoreChats(true, newChats)
+			if (allChatsPagination.page === 1) {
+				loadMoreChats(true) // Reload first page to avoid breaking load-on-scroll
+			}
+		} else {
+			indexes.forEach((index: number) => (allChats[index].deleting = false))
+			setAllChats([...allChats])
 		}
 	}
 

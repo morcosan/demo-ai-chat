@@ -15,18 +15,25 @@
 			"selectAll": "Select all",
 			"signOut": "Sign out"
 		},
+		"error": {
+			"noChanges": "There are no changes",
+			"nothingFound": "Nothing found for \"{search}\""
+		},
 		"label": {
 			"apiDocs": "API Docs",
 			"asia": "Asia",
+			"avatar": "Avatar",
 			"custom": "Custom",
 			"darkTheme": "Dark",
 			"default": "Default",
+			"description": "Description",
 			"designSystem": "Design System",
 			"errors": "Errors",
 			"europe": "Europe",
 			"githubRepo": "GitHub Repo",
 			"language": "Language",
 			"lightTheme": "Light",
+			"name": "Name",
 			"optionalField": "(Optional)",
 			"quickSettings": "Quick settings",
 			"requiredField": "(Required)",
@@ -41,14 +48,19 @@
 			"dataSaved": "Your data is saved",
 			"deleting": "Deleting...",
 			"loading": "Loading...",
-			"searching": "Searching..."
+			"searching": "Searching...",
+			"updating": "Updating..."
 		}
 	},
 	"aiChat": {
 		"action": {
 			"backToSubchats": "Back to subchats",
+			"configureAgent": "Configure agent",
+			"confirmDeleteAgent": "Confirm deleting agent",
 			"confirmDeleteChats": "Confirm deleting chats",
 			"confirmRenameChat": "Confirm renaming chat",
+			"createAgent": "Create agent",
+			"deleteAgent": "Delete agent",
 			"deleteSelectedChats": "Delete selected chats",
 			"manageAgents": "Manage agents",
 			"manageChats": "Manage chats",
@@ -56,17 +68,31 @@
 			"openSubchat_other": "Open subchat ({count} messages)",
 			"openSubchat_zero": "Create subchat",
 			"sendMessage": "Send message",
+			"showMoreAgents": "Show more agents",
 			"showMoreChats": "Show more chats",
 			"showSubchats": "Show subchats ({count})",
 			"startSearching_one": "Type at least {count} character",
 			"startSearching_other": "Type at least {count} characters"
 		},
+		"description": {
+			"loremIpsumGPT": "Most intelligent model",
+			"rammusGPT": "Best emotional support"
+		},
+		"error": {
+			"agentAvatar": "You must add an avatar for the agent",
+			"agentName": "You must add a name for the agent",
+			"emptyMessage": "Your message is empty"
+		},
 		"label": {
-			"chats": "Chats",
 			"agents": "Agents",
+			"chats": "Chats",
+			"customInstructions": "Custom instructions",
+			"gptModel": "GPT model",
+			"newAgent": "New agent",
 			"newChat": "New chat",
 			"noChats": "No chats",
 			"noSubchats": "No subchats",
+			"selectedValue": "Selected value:",
 			"subchats": "Subchats",
 			"xMessages_one": "1 message",
 			"xMessages_other": "{count} messages",
@@ -81,16 +107,20 @@
 			"rename": "Generate a new name automatically..."
 		},
 		"state": {
+			"loadingAgents": "Loading agents...",
 			"loadingChats": "Loading chats...",
+			"loadingGPTs": "Loading GPTs...",
 			"loadingMessages": "Loading messages...",
 			"loadingPreviousMessages": "Loading previous messages...",
-			"loadingSubchats": "Loading subchats..."
+			"loadingSubchats": "Loading subchats...",
+			"renamingChat": "Renaming chat..."
 		},
 		"warning": {
+			"deletingAgent": "This agent will be permanently deleted",
 			"deletingChats": "These chats will be permanently deleted"
 		}
 	},
-	"userAccount": {
+	"userSettings": {
 		"action": {
 			"manageAccount": "Manage account",
 			"manageBilling": "Manage billing"
@@ -108,13 +138,11 @@
 		"label": {
 			"account": "Account",
 			"address": "Address",
-			"avatar": "Avatar",
 			"billing": "Billing",
 			"city": "City",
 			"country": "Country",
 			"email": "Email address",
 			"legalName": "Legal name",
-			"name": "Name",
 			"phone": "Phone number",
 			"postalCode": "Postal code",
 			"private": "Private",

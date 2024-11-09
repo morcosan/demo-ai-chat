@@ -6,120 +6,161 @@
 			"changeLanguage": "ენის შეცვლა",
 			"close": "დახურვა",
 			"delete": "წაშლა",
-			"deselectAll": "ყველას მონიშვნის გაუქმება",
+			"deselectAll": "ყველას მონიშვნის მოხსნა",
 			"openMenu": "მენიუს გახსნა",
 			"rename": "სახელის შეცვლა",
 			"saveChanges": "ცვლილებების შენახვა",
-			"search": "ძიება",
+			"search": "ძებნა",
 			"searchMore": "მეტი შედეგის ჩვენება",
 			"selectAll": "ყველას მონიშვნა",
 			"signOut": "გასვლა"
 		},
+		"error": {
+			"noChanges": "ცვლილებები არ არის",
+			"nothingFound": "\"{search}\"-ისთვის არაფერი მოიძებნა"
+		},
 		"label": {
 			"apiDocs": "API დოკუმენტაცია",
 			"asia": "აზია",
+			"avatar": "ავატარი",
 			"custom": "მორგებული",
 			"darkTheme": "მუქი",
 			"default": "ნაგულისხმევი",
-			"designSystem": "დიზაინის სისტემა",
+			"description": "აღწერა",
+			"designSystem": "დიზაინ სისტემა",
 			"errors": "შეცდომები",
 			"europe": "ევროპა",
 			"githubRepo": "GitHub რეპოზიტორია",
 			"language": "ენა",
-			"lightTheme": "ღია",
+			"lightTheme": "ნათელი",
+			"name": "სახელი",
 			"optionalField": "(არასავალდებულო)",
+			"quickSettings": "სწრაფი პარამეტრები",
 			"requiredField": "(სავალდებულო)",
 			"settings": "პარამეტრები",
 			"uiLibrary": "UI ბიბლიოთეკა:",
 			"uiTheme": "UI თემა:"
 		},
 		"placeholder": {
-			"search": "ძიება..."
+			"search": "ძებნა..."
 		},
 		"state": {
 			"dataSaved": "თქვენი მონაცემები შენახულია",
 			"deleting": "იშლება...",
 			"loading": "იტვირთება...",
-			"searching": "მიმდინარეობს ძიება..."
+			"searching": "ძებნა...",
+			"updating": "ახლდება..."
 		}
 	},
 	"aiChat": {
 		"action": {
-			"backToSubchats": "ქვეჩატებზე დაბრუნება",
+			"backToSubchats": "ქვე-ჩატებში დაბრუნება",
+			"configureAgent": "აგენტის კონფიგურაცია",
+			"confirmDeleteAgent": "აგენტის წაშლის დადასტურება",
 			"confirmDeleteChats": "ჩატების წაშლის დადასტურება",
 			"confirmRenameChat": "ჩატის სახელის შეცვლის დადასტურება",
+			"createAgent": "აგენტის შექმნა",
+			"deleteAgent": "აგენტის წაშლა",
 			"deleteSelectedChats": "არჩეული ჩატების წაშლა",
 			"manageAgents": "აგენტების მართვა",
 			"manageChats": "ჩატების მართვა",
 			"openChat": "ჩატის გახსნა",
-			"openSubchat_zero": "ქვეჩატის შექმნა",
-			"openSubchat_one": "ქვეჩატის გახსნა ({count} შეტყობინება)",
-			"openSubchat_other": "ქვეჩატის გახსნა ({count} შეტყობინება)",
+			"openSubchat_zero": "ქვე-ჩატის შექმნა",
+			"openSubchat_one": "ქვე-ჩატის გახსნა ({count} შეტყობინება)",
+			"openSubchat_few": "ქვე-ჩატის გახსნა ({count} შეტყობინება)",
+			"openSubchat_many": "ქვე-ჩატის გახსნა ({count} შეტყობინება)",
+			"openSubchat_other": "ქვე-ჩატის გახსნა ({count} შეტყობინება)",
 			"sendMessage": "შეტყობინების გაგზავნა",
+			"showMoreAgents": "მეტი აგენტის ჩვენება",
 			"showMoreChats": "მეტი ჩატის ჩვენება",
-			"showSubchats": "ქვეჩატების ჩვენება ({count})",
+			"showSubchats": "ქვე-ჩატების ჩვენება ({count})",
 			"startSearching_one": "შეიყვანეთ მინიმუმ {count} სიმბოლო",
+			"startSearching_few": "შეიყვანეთ მინიმუმ {count} სიმბოლო",
+			"startSearching_many": "შეიყვანეთ მინიმუმ {count} სიმბოლო",
 			"startSearching_other": "შეიყვანეთ მინიმუმ {count} სიმბოლო"
 		},
+		"description": {
+			"loremIpsumGPT": "ყველაზე ჭკვიანი მოდელი",
+			"rammusGPT": "საუკეთესო ემოციური მხარდაჭერა"
+		},
+		"error": {
+			"agentAvatar": "თქვენ უნდა დაამატოთ აგენტის ავატარი",
+			"agentName": "თქვენ უნდა დაამატოთ აგენტის სახელი",
+			"emptyMessage": "თქვენი შეტყობინება ცარიელია"
+		},
 		"label": {
-			"chats": "ჩატები",
 			"agents": "აგენტები",
+			"chats": "ჩატები",
+			"customInstructions": "მორგებული ინსტრუქციები",
+			"gptModel": "GPT მოდელი",
+			"newAgent": "ახალი აგენტი",
 			"newChat": "ახალი ჩატი",
 			"noChats": "ჩატები არ არის",
-			"noSubchats": "ქვეჩატები არ არის",
-			"subchats": "ქვეჩატები",
+			"noSubchats": "ქვე-ჩატები არ არის",
+			"selectedValue": "არჩეული მნიშვნელობა:",
+			"subchats": "ქვე-ჩატები",
+			"xMessages_zero": "შეტყობინებები არ არის",
 			"xMessages_one": "{count} შეტყობინება",
+			"xMessages_few": "{count} შეტყობინება",
+			"xMessages_many": "{count} შეტყობინება",
 			"xMessages_other": "{count} შეტყობინება",
-			"xSearchResults_zero": "შედეგები არ არის",
-			"xSearchResults_one": "{count} შედეგი",
-			"xSearchResults_other": "{count} შედეგი",
-			"xSelectedMessages_one": "{count} შეტყობინება არჩეულია",
-			"xSelectedMessages_other": "{count} შეტყობინება არჩეულია"
+			"xSearchResults_zero": "ძებნის შედეგები არ არის",
+			"xSearchResults_one": "{count} ძებნის შედეგი",
+			"xSearchResults_few": "{count} ძებნის შედეგი",
+			"xSearchResults_many": "{count} ძებნის შედეგი",
+			"xSearchResults_other": "{count} ძებნის შედეგი",
+			"xSelectedMessages_zero": "შეტყობინებები არ არის არჩეული",
+			"xSelectedMessages_one": "{count} შეტყობინება არჩეული",
+			"xSelectedMessages_few": "{count} შეტყობინება არჩეული",
+			"xSelectedMessages_many": "{count} შეტყობინება არჩეული",
+			"xSelectedMessages_other": "{count} შეტყობინება არჩეული"
 		},
 		"placeholder": {
-			"newMessage": "დასვით კითხვა...",
-			"rename": "ახალი სახელის ავტომატურად გენერირება..."
+			"newMessage": "დასვით შეკითხვა...",
+			"rename": "ახალი სახელის ავტომატურად გენერაცია..."
 		},
 		"state": {
+			"loadingAgents": "აგენტები იტვირთება...",
 			"loadingChats": "ჩატები იტვირთება...",
+			"loadingGPTs": "GPT-ები იტვირთება...",
 			"loadingMessages": "შეტყობინებები იტვირთება...",
 			"loadingPreviousMessages": "წინა შეტყობინებები იტვირთება...",
-			"loadingSubchats": "ქვეჩატები იტვირთება..."
+			"loadingSubchats": "ქვე-ჩატები იტვირთება...",
+			"renamingChat": "ჩატის სახელი იცვლება..."
 		},
 		"warning": {
+			"deletingAgent": "ეს აგენტი სამუდამოდ წაიშლება",
 			"deletingChats": "ეს ჩატები სამუდამოდ წაიშლება"
 		}
 	},
-	"userAccount": {
+	"userSettings": {
 		"action": {
 			"manageAccount": "ანგარიშის მართვა",
 			"manageBilling": "გადახდების მართვა"
 		},
 		"error": {
-			"address": "უნდა დაამატოთ მისამართი",
-			"avatar": "უნდა დაამატოთ ავატარი",
-			"city": "უნდა დაამატოთ ქალაქი",
-			"country": "უნდა დაამატოთ ქვეყანა",
-			"email": "უნდა დაამატოთ ელფოსტის მისამართი",
-			"legalName": "უნდა დაამატოთ იურიდიული სახელი",
-			"name": "უნდა დაამატოთ სახელი",
-			"postalCode": "უნდა დაამატოთ საფოსტო კოდი"
+			"address": "თქვენ უნდა დაამატოთ მისამართი",
+			"avatar": "თქვენ უნდა დაამატოთ თქვენი ავატარი",
+			"city": "თქვენ უნდა დაამატოთ ქალაქი",
+			"country": "თქვენ უნდა დაამატოთ ქვეყანა",
+			"email": "თქვენ უნდა დაამატოთ თქვენი ელ-ფოსტის მისამართი",
+			"legalName": "თქვენ უნდა დაამატოთ იურიდიული სახელი",
+			"name": "თქვენ უნდა დაამატოთ თქვენი სახელი",
+			"postalCode": "თქვენ უნდა დაამატოთ საფოსტო კოდი"
 		},
 		"label": {
 			"account": "ანგარიში",
 			"address": "მისამართი",
-			"avatar": "ავატარი",
 			"billing": "გადახდები",
 			"city": "ქალაქი",
 			"country": "ქვეყანა",
-			"email": "ელფოსტის მისამართი",
+			"email": "ელ-ფოსტის მისამართი",
 			"legalName": "იურიდიული სახელი",
-			"name": "სახელი",
 			"phone": "ტელეფონის ნომერი",
 			"postalCode": "საფოსტო კოდი",
 			"private": "პირადი",
 			"public": "საჯარო",
-			"vatNumber": "საგადასახადო კოდი"
+			"vatNumber": "საიდენტიფიკაციო კოდი"
 		}
 	}
 }

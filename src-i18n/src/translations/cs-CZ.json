@@ -2,7 +2,7 @@
 	"core": {
 		"action": {
 			"back": "Zpět",
-			"backToHome": "Zpět na úvodní stránku",
+			"backToHome": "Zpět na domovskou stránku",
 			"changeLanguage": "Změnit jazyk",
 			"close": "Zavřít",
 			"delete": "Smazat",
@@ -15,68 +15,93 @@
 			"selectAll": "Vybrat vše",
 			"signOut": "Odhlásit se"
 		},
+		"error": {
+			"noChanges": "Žádné změny",
+			"nothingFound": "Pro \"{search}\" nic nenalezeno"
+		},
 		"label": {
-			"apiDocs": "API dokumentace",
+			"apiDocs": "API Dokumentace",
 			"asia": "Asie",
+			"avatar": "Avatar",
 			"custom": "Vlastní",
 			"darkTheme": "Tmavý",
 			"default": "Výchozí",
-			"designSystem": "Designový systém",
+			"description": "Popis",
+			"designSystem": "Design Systém",
 			"errors": "Chyby",
 			"europe": "Evropa",
-			"githubRepo": "GitHub repozitář",
+			"githubRepo": "GitHub Repozitář",
 			"language": "Jazyk",
 			"lightTheme": "Světlý",
+			"name": "Jméno",
 			"optionalField": "(Volitelné)",
+			"quickSettings": "Rychlé nastavení",
 			"requiredField": "(Povinné)",
 			"settings": "Nastavení",
-			"uiLibrary": "UI knihovna:",
-			"uiTheme": "UI motiv:"
+			"uiLibrary": "UI Knihovna:",
+			"uiTheme": "UI Téma:"
 		},
 		"placeholder": {
 			"search": "Hledat..."
 		},
 		"state": {
-			"dataSaved": "Vaše data byla uložena",
+			"dataSaved": "Data byla uložena",
 			"deleting": "Mazání...",
 			"loading": "Načítání...",
-			"searching": "Vyhledávání..."
+			"searching": "Vyhledávání...",
+			"updating": "Aktualizace..."
 		}
 	},
 	"aiChat": {
 		"action": {
 			"backToSubchats": "Zpět na podchaty",
+			"configureAgent": "Konfigurovat agenta",
+			"confirmDeleteAgent": "Potvrdit smazání agenta",
 			"confirmDeleteChats": "Potvrdit smazání chatů",
 			"confirmRenameChat": "Potvrdit přejmenování chatu",
+			"createAgent": "Vytvořit agenta",
+			"deleteAgent": "Smazat agenta",
 			"deleteSelectedChats": "Smazat vybrané chaty",
 			"manageAgents": "Spravovat agenty",
 			"manageChats": "Spravovat chaty",
 			"openChat": "Otevřít chat",
+			"openSubchat_other": "Otevřít podchat ({count} zpráv)",
 			"openSubchat_zero": "Vytvořit podchat",
-			"openSubchat_one": "Otevřít podchat ({count} zpráva)",
-			"openSubchat_few": "Otevřít podchat ({count} zprávy)",
-			"openSubchat_many": "Otevřít podchat ({count} zpráv)",
 			"sendMessage": "Odeslat zprávu",
+			"showMoreAgents": "Zobrazit více agentů",
 			"showMoreChats": "Zobrazit více chatů",
 			"showSubchats": "Zobrazit podchaty ({count})",
 			"startSearching_one": "Zadejte alespoň {count} znak",
 			"startSearching_few": "Zadejte alespoň {count} znaky",
 			"startSearching_many": "Zadejte alespoň {count} znaků"
 		},
+		"description": {
+			"loremIpsumGPT": "Nejinteligentnější model",
+			"rammusGPT": "Nejlepší emocionální podpora"
+		},
+		"error": {
+			"agentAvatar": "Musíte přidat avatar agenta",
+			"agentName": "Musíte přidat jméno agenta",
+			"emptyMessage": "Vaše zpráva je prázdná"
+		},
 		"label": {
-			"chats": "Chaty",
 			"agents": "Agenti",
+			"chats": "Chaty",
+			"customInstructions": "Vlastní instrukce",
+			"gptModel": "GPT model",
+			"newAgent": "Nový agent",
 			"newChat": "Nový chat",
 			"noChats": "Žádné chaty",
 			"noSubchats": "Žádné podchaty",
+			"selectedValue": "Vybraná hodnota:",
 			"subchats": "Podchaty",
 			"xMessages_one": "{count} zpráva",
 			"xMessages_few": "{count} zprávy",
 			"xMessages_many": "{count} zpráv",
-			"xSearchResults_zero": "Žádné výsledky vyhledávání",
 			"xSearchResults_one": "{count} výsledek vyhledávání",
 			"xSearchResults_few": "{count} výsledky vyhledávání",
 			"xSearchResults_many": "{count} výsledků vyhledávání",
+			"xSearchResults_zero": "Žádné výsledky vyhledávání",
 			"xSelectedMessages_one": "{count} vybraná zpráva",
 			"xSelectedMessages_few": "{count} vybrané zprávy",
 			"xSelectedMessages_many": "{count} vybraných zpráv"
@@ -86,16 +111,20 @@
 			"rename": "Automaticky vygenerovat nový název..."
 		},
 		"state": {
+			"loadingAgents": "Načítání agentů...",
 			"loadingChats": "Načítání chatů...",
+			"loadingGPTs": "Načítání GPT modelů...",
 			"loadingMessages": "Načítání zpráv...",
 			"loadingPreviousMessages": "Načítání předchozích zpráv...",
-			"loadingSubchats": "Načítání podchatů..."
+			"loadingSubchats": "Načítání podchatů...",
+			"renamingChat": "Přejmenování chatu..."
 		},
 		"warning": {
+			"deletingAgent": "Tento agent bude trvale smazán",
 			"deletingChats": "Tyto chaty budou trvale smazány"
 		}
 	},
-	"userAccount": {
+	"userSettings": {
 		"action": {
 			"manageAccount": "Spravovat účet",
 			"manageBilling": "Spravovat fakturaci"
@@ -106,20 +135,18 @@
 			"city": "Musíte přidat město",
 			"country": "Musíte přidat zemi",
 			"email": "Musíte přidat emailovou adresu",
-			"legalName": "Musíte přidat právní název",
+			"legalName": "Musíte přidat právní jméno",
 			"name": "Musíte přidat jméno",
 			"postalCode": "Musíte přidat PSČ"
 		},
 		"label": {
 			"account": "Účet",
 			"address": "Adresa",
-			"avatar": "Avatar",
 			"billing": "Fakturace",
 			"city": "Město",
 			"country": "Země",
 			"email": "Emailová adresa",
-			"legalName": "Právní název",
-			"name": "Jméno",
+			"legalName": "Právní jméno",
 			"phone": "Telefonní číslo",
 			"postalCode": "PSČ",
 			"private": "Soukromé",

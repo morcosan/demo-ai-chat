@@ -44,6 +44,7 @@ export const useIconButtonBase = (rawProps: IconButtonProps) => {
 		position: 'relative',
 		zIndex: 0,
 		border: '0 solid transparent',
+		verticalAlign: 'middle',
 
 		'&::before': {
 			...CSS__ABSOLUTE_OVERLAY,

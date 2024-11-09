@@ -12,22 +12,30 @@
 			"saveChanges": "Saglabāt izmaiņas",
 			"search": "Meklēt",
 			"searchMore": "Rādīt vairāk rezultātu",
-			"selectAll": "Atzīmēt visu",
+			"selectAll": "Atlasīt visu",
 			"signOut": "Iziet"
+		},
+		"error": {
+			"noChanges": "Nav izmaiņu",
+			"nothingFound": "Nekas nav atrasts \"{search}\""
 		},
 		"label": {
 			"apiDocs": "API dokumentācija",
 			"asia": "Āzija",
+			"avatar": "Attēls",
 			"custom": "Pielāgots",
 			"darkTheme": "Tumšs",
-			"default": "Noklusējuma",
+			"default": "Noklusējums",
+			"description": "Apraksts",
 			"designSystem": "Dizaina sistēma",
 			"errors": "Kļūdas",
 			"europe": "Eiropa",
 			"githubRepo": "GitHub repozitorijs",
 			"language": "Valoda",
 			"lightTheme": "Gaišs",
+			"name": "Vārds",
 			"optionalField": "(Neobligāts)",
+			"quickSettings": "Ātrās iestatnes",
 			"requiredField": "(Obligāts)",
 			"settings": "Iestatījumi",
 			"uiLibrary": "UI bibliotēka:",
@@ -40,83 +48,104 @@
 			"dataSaved": "Jūsu dati ir saglabāti",
 			"deleting": "Dzēš...",
 			"loading": "Ielādē...",
-			"searching": "Meklē..."
+			"searching": "Meklē...",
+			"updating": "Atjaunina..."
 		}
 	},
 	"aiChat": {
 		"action": {
-			"backToSubchats": "Atpakaļ uz apakšsarunām",
-			"confirmDeleteChats": "Apstiprināt sarunu dzēšanu",
-			"confirmRenameChat": "Apstiprināt sarunas pārdēvēšanu",
-			"deleteSelectedChats": "Dzēst atlasītās sarunas",
+			"backToSubchats": "Atpakaļ uz apakščatiem",
+			"configureAgent": "Konfigurēt aģentu",
+			"confirmDeleteAgent": "Apstiprināt aģenta dzēšanu",
+			"confirmDeleteChats": "Apstiprināt čatu dzēšanu",
+			"confirmRenameChat": "Apstiprināt čata pārdēvēšanu",
+			"createAgent": "Izveidot aģentu",
+			"deleteAgent": "Dzēst aģentu",
+			"deleteSelectedChats": "Dzēst atlasītos čatus",
 			"manageAgents": "Pārvaldīt aģentus",
-			"manageChats": "Pārvaldīt sarunas",
-			"openChat": "Atvērt sarunu",
-			"openSubchat_zero": "Izveidot apakšsarunu",
-			"openSubchat_one": "Atvērt apakšsarunu ({count} ziņa)",
-			"openSubchat_other": "Atvērt apakšsarunu ({count} ziņas)",
+			"manageChats": "Pārvaldīt čatus",
+			"openChat": "Atvērt čatu",
+			"openSubchat_zero": "Izveidot apakščatu",
+			"openSubchat_one": "Atvērt apakščatu ({count} ziņa)",
+			"openSubchat_other": "Atvērt apakščatu ({count} ziņas)",
 			"sendMessage": "Sūtīt ziņu",
-			"showMoreChats": "Rādīt vairāk sarunu",
-			"showSubchats": "Rādīt apakšsarunas ({count})",
+			"showMoreAgents": "Rādīt vairāk aģentu",
+			"showMoreChats": "Rādīt vairāk čatu",
+			"showSubchats": "Rādīt apakščatus ({count})",
 			"startSearching_one": "Ievadiet vismaz {count} rakstzīmi",
 			"startSearching_other": "Ievadiet vismaz {count} rakstzīmes"
 		},
+		"description": {
+			"loremIpsumGPT": "Visintelektuālākais modelis",
+			"rammusGPT": "Labākais emocionālais atbalsts"
+		},
+		"error": {
+			"agentAvatar": "Jums jāpievieno attēls aģentam",
+			"agentName": "Jums jāpievieno vārds aģentam",
+			"emptyMessage": "Jūsu ziņa ir tukša"
+		},
 		"label": {
-			"chats": "Sarunas",
 			"agents": "Aģenti",
-			"newChat": "Jauna saruna",
-			"noChats": "Nav sarunu",
-			"noSubchats": "Nav apakšsarunu",
-			"subchats": "Apakšsarunas",
+			"chats": "Čati",
+			"customInstructions": "Pielāgotas instrukcijas",
+			"gptModel": "GPT modelis",
+			"newAgent": "Jauns aģents",
+			"newChat": "Jauns čats",
+			"noChats": "Nav čatu",
+			"noSubchats": "Nav apakščatu",
+			"selectedValue": "Atlasītā vērtība:",
+			"subchats": "Apakščati",
 			"xMessages_zero": "Nav ziņu",
 			"xMessages_one": "{count} ziņa",
 			"xMessages_other": "{count} ziņas",
-			"xSearchResults_zero": "Nav rezultātu",
-			"xSearchResults_one": "{count} rezultāts",
-			"xSearchResults_other": "{count} rezultāti",
+			"xSearchResults_zero": "Nav meklēšanas rezultātu",
+			"xSearchResults_one": "{count} meklēšanas rezultāts",
+			"xSearchResults_other": "{count} meklēšanas rezultāti",
 			"xSelectedMessages_zero": "Nav atlasītu ziņu",
-			"xSelectedMessages_one": "{count} atlasīta ziņa",
-			"xSelectedMessages_other": "{count} atlasītas ziņas"
+			"xSelectedMessages_one": "{count} ziņa atlasīta",
+			"xSelectedMessages_other": "{count} ziņas atlasītas"
 		},
 		"placeholder": {
 			"newMessage": "Uzdodiet jautājumu...",
 			"rename": "Automātiski ģenerēt jaunu nosaukumu..."
 		},
 		"state": {
-			"loadingChats": "Ielādē sarunas...",
+			"loadingAgents": "Ielādē aģentus...",
+			"loadingChats": "Ielādē čatus...",
+			"loadingGPTs": "Ielādē GPT...",
 			"loadingMessages": "Ielādē ziņas...",
 			"loadingPreviousMessages": "Ielādē iepriekšējās ziņas...",
-			"loadingSubchats": "Ielādē apakšsarunas..."
+			"loadingSubchats": "Ielādē apakščatus...",
+			"renamingChat": "Pārdēvē čatu..."
 		},
 		"warning": {
-			"deletingChats": "Šīs sarunas tiks neatgriezeniski dzēstas"
+			"deletingAgent": "Šis aģents tiks neatgriezeniski dzēsts",
+			"deletingChats": "Šie čati tiks neatgriezeniski dzēsti"
 		}
 	},
-	"userAccount": {
+	"userSettings": {
 		"action": {
 			"manageAccount": "Pārvaldīt kontu",
 			"manageBilling": "Pārvaldīt rēķinus"
 		},
 		"error": {
 			"address": "Jums jāpievieno adrese",
-			"avatar": "Jums jāpievieno avatars",
+			"avatar": "Jums jāpievieno jūsu attēls",
 			"city": "Jums jāpievieno pilsēta",
 			"country": "Jums jāpievieno valsts",
 			"email": "Jums jāpievieno e-pasta adrese",
 			"legalName": "Jums jāpievieno juridiskais nosaukums",
-			"name": "Jums jāpievieno vārds",
+			"name": "Jums jāpievieno jūsu vārds",
 			"postalCode": "Jums jāpievieno pasta indekss"
 		},
 		"label": {
 			"account": "Konts",
 			"address": "Adrese",
-			"avatar": "Avatars",
 			"billing": "Rēķini",
 			"city": "Pilsēta",
 			"country": "Valsts",
 			"email": "E-pasta adrese",
 			"legalName": "Juridiskais nosaukums",
-			"name": "Vārds",
 			"phone": "Tālruņa numurs",
 			"postalCode": "Pasta indekss",
 			"private": "Privāts",

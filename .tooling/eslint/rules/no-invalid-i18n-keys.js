@@ -1,4 +1,7 @@
-import { readFileSync } from 'fs'
+import { createRequire } from 'module'
+
+const require = createRequire(import.meta.url)
+const enJson = require('../../../src-i18n/src/translations/en-US.json')
 
 const flattenObject = (obj, prefix = '') => {
 	return Object.entries(obj).reduce(
@@ -11,7 +14,6 @@ const flattenObject = (obj, prefix = '') => {
 		{}
 	)
 }
-const enJson = JSON.parse(readFileSync(process.cwd() + '/src-i18n/src/translations/en-US.json', 'utf8'))
 const validKeys = flattenObject(enJson)
 
 export const noInvalidI18nKeys = {

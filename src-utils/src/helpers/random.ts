@@ -14,10 +14,11 @@ export const randomFalse = () => randomInt(1, 5) === 1 // 80% chance to be false
 
 // Array
 export const randomArray = (min: number, max?: number) => Array.from(Array(randomInt(min, max || min)))
+export const randomFromArray = <T = any>(array: T[]) => array[randomInt(0, array.length - 1)]
 
 // String
 export const randomText = (words: number = 5) => capitalize(faker.lorem.words(words))
-export const randomLongText = (sentences: number = 5) => capitalize(faker.lorem.sentences(sentences))
+export const randomLongText = (sentences: number = 5) => faker.lorem.sentences(sentences)
 
 // Date
 export const randomRecentDate = () => faker.date.recent().toISOString()

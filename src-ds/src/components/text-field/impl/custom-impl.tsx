@@ -36,7 +36,8 @@ export const CustomImpl = (rawProps: TextFieldProps, ref: Ref<TextFieldRef>) => 
 				const lineHeight = parseFloat(style.lineHeight)
 				const paddingY = parseFloat(style.paddingTop) + parseFloat(style.paddingBottom)
 				const maxHeight = lineHeight * maxRows + paddingY
-				height = Math.min(height, maxHeight)
+				const minHeight = lineHeight + paddingY
+				height = Math.min(Math.max(height, minHeight), maxHeight)
 			}
 
 			// Set real height
