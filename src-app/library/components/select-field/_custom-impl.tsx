@@ -41,12 +41,12 @@ export const CustomImpl = (rawProps: SelectFieldProps) => {
 	}
 
 	const onFocusInput = () => {
-		setHasKeyboard(true)
 		openOptionsMenu()
+		wait(100).then(() => setHasKeyboard(true)) // Prevent mobile keyboard from opening at start, for better UX
 	}
 
 	const onBlurInput = () => {
-		setHasKeyboard(false) // Disable mobile keyboard initially, for better UX
+		setHasKeyboard(false)
 		wait(100).then(() => setIsFocused(false)) // Delay is required to allow onClick
 	}
 
