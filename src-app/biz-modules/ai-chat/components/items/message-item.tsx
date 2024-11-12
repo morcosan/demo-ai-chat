@@ -12,14 +12,11 @@ interface Props {
 export const MessageItem = (props: Props) => {
 	const { message, agent, subchatId, isSubchat } = props
 
-	const wrapperClass = cx({
-		'group relative ml-scrollbar-w flex flex-col items-end': true,
-		'px-xs-5 lg:px-md-0': !isSubchat,
-		'mb-xs-9': isSubchat && message.role === 'user',
-		'mb-sm-2': isSubchat && message.role === 'agent',
-		'lg:mb-xs-9': !isSubchat && message.role === 'user',
-		'mb-sm-4': !isSubchat && message.role === 'agent',
-	})
+	const wrapperClass = cx(
+		'group relative ml-scrollbar-w flex flex-col items-end',
+		'mb-sm-0 lg:mb-sm-2',
+		!isSubchat && 'px-xs-5 lg:px-md-0'
+	)
 	const userItemClass = cx(
 		isSubchat
 			? 'max-w-[80%] bg-color-secondary-bg'
