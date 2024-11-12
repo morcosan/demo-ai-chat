@@ -38,6 +38,8 @@ export const TOKENS__COLOR = {
 	'blue-3': { $value: '#2563eb', $css: '--ds-color-blue-3' },
 	'blue-4': { $value: '#1e40af', $css: '--ds-color-blue-4' },
 
+	'black-nglass-1': { $value: 'rgba(0, 0, 0, 0.02)', $css: '--ds-color-black-nglass-1' },
+
 	'black-glass-1': { $value: 'rgba(0, 0, 0, 0.08)', $css: '--ds-color-black-glass-1' },
 	'black-glass-2': { $value: 'rgba(0, 0, 0, 0.16)', $css: '--ds-color-black-glass-2' },
 	'black-glass-3': { $value: 'rgba(0, 0, 0, 0.24)', $css: '--ds-color-black-glass-3' },
@@ -61,7 +63,7 @@ export const TOKENS__COLOR = {
 	'bg-page': { $ref: { light: 'grey-0', dark: 'grey-8' }, $css: '--ds-color-bg-page' },
 	'bg-card': { $ref: { light: 'white', dark: 'grey-7' }, $css: '--ds-color-bg-card' },
 	'bg-popup': { $ref: { light: 'white', dark: 'grey-7' }, $css: '--ds-color-bg-popup' },
-	'bg-field': { $ref: { light: 'grey-1', dark: 'grey-9' }, $css: '--ds-color-bg-field' },
+	'bg-field': { $ref: { light: 'black-nglass-1', dark: 'black-nglass-1' }, $css: '--ds-color-bg-field' },
 	'bg-preview': { $ref: { light: 'black-glass-1', dark: 'black-glass-3' }, $css: '--ds-color-bg-preview' },
 	'bg-scrollbar': { $ref: { light: 'black-glass-2', dark: 'white-glass-2' }, $css: '--ds-color-bg-scrollbar' },
 	'bg-scrollbar-hover': {

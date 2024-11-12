@@ -144,7 +144,7 @@ export const useSelectFieldBase = (rawProps: SelectFieldProps) => {
 		display: isOpened ? 'block' : 'none',
 		maxHeight: $spacing['xl-0'],
 		overflowY: 'auto',
-		backgroundColor: $color['bg-card'],
+		backgroundColor: $color['bg-popup'],
 		border: `1px solid ${$color['border-shadow']}`,
 		borderRadius: $radius['sm'],
 		boxShadow: $shadow['md'],

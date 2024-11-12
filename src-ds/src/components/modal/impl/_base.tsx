@@ -65,7 +65,7 @@ export const useModalBase = (rawProps: ModalProps) => {
 		flexDirection: 'column',
 		gap: $spacing['sm-0'],
 		padding: `${calcContentPY} ${calcContentPX}`,
-		backgroundColor: $color['bg-page'],
+		backgroundColor: $color['bg-card'],
 		color: $color['text-default'],
 	}
 

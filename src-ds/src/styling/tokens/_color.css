@@ -16,27 +16,27 @@
 	--ds-color-grey-8: #27272a;
 	--ds-color-grey-9: #202024;
 
-	/* https://noeldelgado.github.io/shadowlord/#8a8391 with %6.9 */
-	--ds-color-ngrey-1: #fbfbfb;
-	--ds-color-ngrey-2: #f3f2f4;
-	--ds-color-ngrey-3: #e9e7ea;
-	--ds-color-ngrey-4: #dedce0;
-	--ds-color-ngrey-5: #d4d1d6;
-	--ds-color-ngrey-6: #c9c6cc;
-	--ds-color-ngrey-7: #bfbbc3;
-	--ds-color-ngrey-8: #b4b0b9;
-	--ds-color-ngrey-9: #aaa4af;
-	--ds-color-ngrey-10: #9f99a5;
-	--ds-color-ngrey-11: #958e9b;
-	--ds-color-ngrey-12: #8a8391;
-	--ds-color-ngrey-13: #7e7784;
-	--ds-color-ngrey-14: #716b77;
-	--ds-color-ngrey-15: #65606a;
-	--ds-color-ngrey-16: #58545d;
-	--ds-color-ngrey-17: #4c4850;
-	--ds-color-ngrey-18: #3f3c43;
-	--ds-color-ngrey-19: #333036;
-	--ds-color-ngrey-20: #272529;
+	/* https://noeldelgado.github.io/shadowlord/#8a8391 with % 5.7 */
+	--ds-color-ngrey-1: #fbfbfc;
+	--ds-color-ngrey-2: #f5f4f5;
+	--ds-color-ngrey-3: #fff;
+	--ds-color-ngrey-4: #fff;
+	--ds-color-ngrey-5: #fff;
+	--ds-color-ngrey-6: #fff;
+	--ds-color-ngrey-7: #fff;
+	--ds-color-ngrey-8: #fff;
+	--ds-color-ngrey-9: #fff;
+	--ds-color-ngrey-10: #fff;
+	--ds-color-ngrey-11: #fff;
+	--ds-color-ngrey-12: #fff;
+	--ds-color-ngrey-13: #fff;
+	--ds-color-ngrey-14: #fff;
+	--ds-color-ngrey-15: #fff;
+	--ds-color-ngrey-16: #fff;
+	--ds-color-ngrey-17: #fff;
+	--ds-color-ngrey-18: #fff;
+	--ds-color-ngrey-19: #fff;
+	--ds-color-ngrey-20: #fff;
 
 	--ds-color-purple-1: #f3e8ff;
 	--ds-color-purple-2: #c084fc;
@@ -62,6 +62,16 @@
 	--ds-color-blue-2: #60a5fa;
 	--ds-color-blue-3: #2563eb;
 	--ds-color-blue-4: #1e40af;
+
+	--ds-color-black-nglass-1: rgba(0, 0, 0, 0.02);
+	--ds-color-black-nglass-2: rgba(0, 0, 0, 0.04);
+	--ds-color-black-nglass-3: rgba(0, 0, 0, 0.08);
+	--ds-color-black-nglass-4: rgba(0, 0, 0, 0.16);
+	--ds-color-black-nglass-5: rgba(0, 0, 0, 0.24);
+	--ds-color-black-nglass-6: rgba(0, 0, 0, 0.32);
+	--ds-color-black-nglass-7: rgba(0, 0, 0, 0.4);
+	--ds-color-black-nglass-8: rgba(0, 0, 0, 0.48);
+	--ds-color-black-nglass-9: rgba(0, 0, 0, 0.56);
 
 	--ds-color-black-glass-1: rgba(0, 0, 0, 0.08);
 	--ds-color-black-glass-2: rgba(0, 0, 0, 0.16);
@@ -89,7 +99,7 @@
 	--ds-color-bg-page: var(--ds-color-ngrey-2);
 	--ds-color-bg-card: var(--ds-color-ngrey-1);
 	--ds-color-bg-popup: var(--ds-color-white);
-	--ds-color-bg-field: var(--ds-color-grey-1);
+	--ds-color-bg-field: var(--ds-color-black-nglass-1);
 	--ds-color-bg-preview: var(--ds-color-grey-1);
 	--ds-color-bg-scrollbar: var(--ds-color-black-glass-2);
 	--ds-color-bg-scrollbar-hover: var(--ds-color-black-glass-3);
@@ -140,7 +150,7 @@
 	--ds-color-bg-page: var(--ds-color-grey-8);
 	--ds-color-bg-card: var(--ds-color-grey-7);
 	--ds-color-bg-popup: var(--ds-color-white);
-	--ds-color-bg-field: var(--ds-color-grey-9);
+	--ds-color-bg-field: var(--ds-color-black-nglass-1);
 	--ds-color-bg-preview: var(--ds-color-black-glass-3);
 	--ds-color-bg-scrollbar: var(--ds-color-white-glass-2);
 	--ds-color-bg-scrollbar-hover: var(--ds-color-white-glass-3);
