@@ -99,8 +99,8 @@
 	--ds-color-border-shadow: var(--ds-color-ngrey-3);
 
 	--ds-color-text-default: var(--ds-color-black);
-	--ds-color-text-subtle: var(--ds-color-grey-5);
-	--ds-color-text-placeholder: var(--ds-color-grey-4);
+	--ds-color-text-subtle: var(--ds-color-ngrey-13);
+	--ds-color-text-placeholder: var(--ds-color-ngrey-11);
 	--ds-color-text-inverse: var(--ds-color-white);
 	--ds-color-text-preview: var(--ds-color-blue-4);
 
@@ -148,8 +148,8 @@
 	--ds-color-border-shadow: var(--ds-color-ngrey-20);
 
 	--ds-color-text-default: var(--ds-color-white);
-	--ds-color-text-subtle: var(--ds-color-grey-4);
-	--ds-color-text-placeholder: var(--ds-color-grey-5);
+	--ds-color-text-subtle: var(--ds-color-ngrey-8);
+	--ds-color-text-placeholder: var(--ds-color-ngrey-11);
 	--ds-color-text-inverse: var(--ds-color-black);
 	--ds-color-text-preview: var(--ds-color-blue-1);
 
