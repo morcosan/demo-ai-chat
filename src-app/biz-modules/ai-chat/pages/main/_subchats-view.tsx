@@ -1,5 +1,5 @@
 import { LoadingText } from '@app/library/release'
-import { Button } from '@ds/release'
+import { Button, useUiViewport } from '@ds/release'
 import { debounce } from 'lodash'
 import { UIEvent } from 'react'
 import { Subchat } from '../../api'
@@ -8,6 +8,7 @@ import { SubchatIcon } from '../../components/subchat-icon'
 import { useAiChat } from '../../state'
 
 export const SubchatsView = () => {
+	const { isViewportMaxLG } = useUiViewport()
 	const { allSubchats, allSubchatsLoading, allSubchatsPagination, loadMoreSubchats } = useAiChat()
 
 	const onScroll = debounce((event: UIEvent) => {
@@ -20,7 +21,7 @@ export const SubchatsView = () => {
 		<div className="h-full py-xs-1">
 			<div className="h-full overflow-y-scroll pb-xs-9 pl-scrollbar-w pr-a11y-padding" onScroll={onScroll}>
 				{/* TOOLBAR */}
-				<StickyToolbar stretched permanent>
+				<StickyToolbar elevated={isViewportMaxLG} stretched permanent>
 					<div className="flex h-button-h-md items-center px-xs-6 text-size-sm leading-1">
 						{t('aiChat.label.subchats')} ({allSubchatsPagination.count})
 					</div>

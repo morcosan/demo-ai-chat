@@ -3,7 +3,7 @@
 :host,
 :root {
 	--ds-color-white: #fff;
-	--ds-color-black: #1a191c;
+	--ds-color-black: #141315;
 
 	--ds-color-grey-0: #fafafa;
 	--ds-color-grey-1: #f4f4f5;
@@ -18,7 +18,7 @@
 
 	/* https://noeldelgado.github.io/shadowlord/#8a8391 with % 5.7 */
 	--ds-color-ngrey-1: #fbfbfc;
-	--ds-color-ngrey-2: #f5f4f5;
+	--ds-color-ngrey-2: #f5f4f5; /* Light bg */
 	--ds-color-ngrey-3: #fff;
 	--ds-color-ngrey-4: #fff;
 	--ds-color-ngrey-5: #fff;
@@ -32,11 +32,11 @@
 	--ds-color-ngrey-13: #fff;
 	--ds-color-ngrey-14: #fff;
 	--ds-color-ngrey-15: #fff;
-	--ds-color-ngrey-16: #fff;
-	--ds-color-ngrey-17: #fff;
-	--ds-color-ngrey-18: #fff;
-	--ds-color-ngrey-19: #fff;
-	--ds-color-ngrey-20: #fff;
+	--ds-color-ngrey-16: #434047;
+	--ds-color-ngrey-17: #3b383e;
+	--ds-color-ngrey-18: #333136;
+	--ds-color-ngrey-19: #2c292e; /* Dark bg */
+	--ds-color-ngrey-20: #242226;
 
 	--ds-color-purple-1: #f3e8ff;
 	--ds-color-purple-2: #c084fc;
@@ -94,6 +94,12 @@
 	--ds-color-bg-scrollbar: var(--ds-color-black-glass-4);
 	--ds-color-bg-scrollbar-hover: var(--ds-color-black-glass-5);
 
+	--ds-color-border-active: var(--ds-color-grey-6);
+	--ds-color-border-hover: var(--ds-color-grey-4);
+	--ds-color-border-default: var(--ds-color-grey-3);
+	--ds-color-border-subtle: var(--ds-color-grey-2);
+	--ds-color-border-shadow: var(--ds-color-grey-1);
+
 	--ds-color-text-default: var(--ds-color-black);
 	--ds-color-text-subtle: var(--ds-color-grey-5);
 	--ds-color-text-placeholder: var(--ds-color-grey-4);
@@ -128,22 +134,22 @@
 	--ds-color-hover-pressed: var(--ds-color-hover-2);
 
 	--ds-color-modal-overlay: var(--ds-color-black-glass-8);
-
-	--ds-color-border-active: var(--ds-color-grey-6);
-	--ds-color-border-hover: var(--ds-color-grey-4);
-	--ds-color-border-default: var(--ds-color-grey-3);
-	--ds-color-border-subtle: var(--ds-color-grey-2);
-	--ds-color-border-shadow: var(--ds-color-grey-1);
 }
 
 [data-color-theme='dark'] {
-	--ds-color-bg-page: var(--ds-color-grey-8);
-	--ds-color-bg-card: var(--ds-color-grey-7);
-	--ds-color-bg-popup: var(--ds-color-white);
-	--ds-color-bg-field: var(--ds-color-black-glass-1);
+	--ds-color-bg-page: var(--ds-color-ngrey-19);
+	--ds-color-bg-card: var(--ds-color-ngrey-18);
+	--ds-color-bg-popup: var(--ds-color-ngrey-17);
+	--ds-color-bg-field: var(--ds-color-black-glass-3);
 	--ds-color-bg-preview: var(--ds-color-black-glass-5);
 	--ds-color-bg-scrollbar: var(--ds-color-white-glass-4);
 	--ds-color-bg-scrollbar-hover: var(--ds-color-white-glass-5);
+
+	--ds-color-border-active: var(--ds-color-grey-4);
+	--ds-color-border-hover: var(--ds-color-grey-5);
+	--ds-color-border-default: var(--ds-color-grey-6);
+	--ds-color-border-subtle: var(--ds-color-grey-7);
+	--ds-color-border-shadow: var(--ds-color-ngrey-20);
 
 	--ds-color-text-default: var(--ds-color-white);
 	--ds-color-text-subtle: var(--ds-color-grey-4);
@@ -177,10 +183,4 @@
 	--ds-color-hover-4: var(--ds-color-black-glass-7);
 	--ds-color-hover-default: var(--ds-color-hover-2);
 	--ds-color-hover-pressed: var(--ds-color-hover-4);
-
-	--ds-color-border-active: var(--ds-color-grey-4);
-	--ds-color-border-hover: var(--ds-color-grey-5);
-	--ds-color-border-default: var(--ds-color-grey-6);
-	--ds-color-border-subtle: var(--ds-color-grey-7);
-	--ds-color-border-shadow: var(--ds-color-grey-9);
 }
