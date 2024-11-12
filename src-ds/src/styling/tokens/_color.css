@@ -90,7 +90,7 @@
 	--ds-color-bg-card: var(--ds-color-ngrey-1);
 	--ds-color-bg-popup: var(--ds-color-white);
 	--ds-color-bg-field: var(--ds-color-black-glass-1);
-	--ds-color-bg-preview: var(--ds-color-grey-1);
+	--ds-color-bg-preview: var(--ds-color-black-glass-2);
 
 	--ds-color-border-active: var(--ds-color-ngrey-16);
 	--ds-color-border-hover: var(--ds-color-ngrey-10);

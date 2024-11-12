@@ -99,11 +99,11 @@ pre.docs {
 }
 
 .docs-bg {
-	--color: #eee;
+	--color: var(--ds-color-black-glass-2);
 }
 
 [data-color-theme='dark'] {
 	.docs-bg {
-		--color: #333;
+		--color: var(--ds-color-white-glass-2);
 	}
 }
