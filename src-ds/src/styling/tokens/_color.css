@@ -5,17 +5,6 @@
 	--ds-color-white: #fff;
 	--ds-color-black: #141315;
 
-	--ds-color-grey-0: #fafafa;
-	--ds-color-grey-1: #f4f4f5;
-	--ds-color-grey-2: #e4e4e7;
-	--ds-color-grey-3: #d4d4d8;
-	--ds-color-grey-4: #a1a1aa;
-	--ds-color-grey-5: #71717a;
-	--ds-color-grey-6: #52525b;
-	--ds-color-grey-7: #3f3f46;
-	--ds-color-grey-8: #27272a;
-	--ds-color-grey-9: #202024;
-
 	/* https://noeldelgado.github.io/shadowlord/#8a8391 with % 5.7 */
 	--ds-color-ngrey-1: #fbfbfc;
 	--ds-color-ngrey-2: #f5f4f5; /* Light bg */

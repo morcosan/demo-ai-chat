@@ -23,17 +23,6 @@ export const TOKENS__COLOR = {
 	'ngrey-19': { $value: '#2c292e', $css: '--ds-color-ngrey-19' },
 	'ngrey-20': { $value: '#242226', $css: '--ds-color-ngrey-20' },
 
-	'grey-0': { $value: '#fafafa', $css: '--ds-color-grey-0' },
-	'grey-1': { $value: '#f4f4f5', $css: '--ds-color-grey-1' },
-	'grey-2': { $value: '#e4e4e7', $css: '--ds-color-grey-2' },
-	'grey-3': { $value: '#d4d4d8', $css: '--ds-color-grey-3' },
-	'grey-4': { $value: '#a1a1aa', $css: '--ds-color-grey-4' },
-	'grey-5': { $value: '#71717a', $css: '--ds-color-grey-5' },
-	'grey-6': { $value: '#52525b', $css: '--ds-color-grey-6' },
-	'grey-7': { $value: '#3f3f46', $css: '--ds-color-grey-7' },
-	'grey-8': { $value: '#27272a', $css: '--ds-color-grey-8' },
-	'grey-9': { $value: '#202024', $css: '--ds-color-grey-9' },
-
 	'purple-1': { $value: '#f3e8ff', $css: '--ds-color-purple-1' },
 	'purple-2': { $value: '#c084fc', $css: '--ds-color-purple-2' },
 	'purple-3': { $value: '#9333ea', $css: '--ds-color-purple-3' },
