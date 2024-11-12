@@ -44,11 +44,11 @@ export const MessageItem = (props: Props) => {
 				</div>
 			) : (
 				<div className="w-full py-xs-1">
-					<AgentGptItem agent={agent} className="mx-xs-2" compact subtle />
+					<AgentGptItem agent={agent} className="mx-xs-2 mb-xs-4" compact subtle />
 
 					<div
 						className={cx(
-							'mt-xs-3 rounded-md bg-color-bg-card px-xs-6 py-xs-3 shadow-xs',
+							'rounded-md bg-color-bg-card px-xs-6 py-xs-3 shadow-xs',
 							message.loading ? 'w-full' : 'w-fit'
 						)}
 					>
