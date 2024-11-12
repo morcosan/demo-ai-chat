@@ -6,26 +6,26 @@
 	--ds-color-black: #141315;
 
 	/* https://noeldelgado.github.io/shadowlord/#8a8391 with % 5.7 */
-	--ds-color-ngrey-1: #fbfbfc;
-	--ds-color-ngrey-2: #f5f4f5; /* Light bg */
-	--ds-color-ngrey-3: #eeedef;
-	--ds-color-ngrey-4: #e7e6e9;
-	--ds-color-ngrey-5: #dad8dc;
-	--ds-color-ngrey-6: #cdcad0;
-	--ds-color-ngrey-7: #bfbcc3;
-	--ds-color-ngrey-8: #b2adb7;
-	--ds-color-ngrey-9: #a59faa;
-	--ds-color-ngrey-10: #97919e;
-	--ds-color-ngrey-11: #8a8391;
-	--ds-color-ngrey-12: #7a7480;
-	--ds-color-ngrey-13: #6b6570;
-	--ds-color-ngrey-14: #5b565f;
-	--ds-color-ngrey-15: #4b474f;
-	--ds-color-ngrey-16: #434047;
-	--ds-color-ngrey-17: #3b383e;
-	--ds-color-ngrey-18: #333136;
-	--ds-color-ngrey-19: #2c292e; /* Dark bg */
-	--ds-color-ngrey-20: #242226;
+	--ds-color-grey-1: #fbfbfc;
+	--ds-color-grey-2: #f5f4f5; /* Light bg */
+	--ds-color-grey-3: #eeedef;
+	--ds-color-grey-4: #e7e6e9;
+	--ds-color-grey-5: #dad8dc;
+	--ds-color-grey-6: #cdcad0;
+	--ds-color-grey-7: #bfbcc3;
+	--ds-color-grey-8: #b2adb7;
+	--ds-color-grey-9: #a59faa;
+	--ds-color-grey-10: #97919e;
+	--ds-color-grey-11: #8a8391;
+	--ds-color-grey-12: #7a7480;
+	--ds-color-grey-13: #6b6570;
+	--ds-color-grey-14: #5b565f;
+	--ds-color-grey-15: #4b474f;
+	--ds-color-grey-16: #434047;
+	--ds-color-grey-17: #3b383e;
+	--ds-color-grey-18: #333136;
+	--ds-color-grey-19: #2c292e; /* Dark bg */
+	--ds-color-grey-20: #242226;
 
 	--ds-color-purple-1: #f3e8ff;
 	--ds-color-purple-2: #c084fc;
@@ -75,21 +75,21 @@
 
 :host,
 :root {
-	--ds-color-bg-page: var(--ds-color-ngrey-2);
-	--ds-color-bg-card: var(--ds-color-ngrey-1);
+	--ds-color-bg-page: var(--ds-color-grey-2);
+	--ds-color-bg-card: var(--ds-color-grey-1);
 	--ds-color-bg-popup: var(--ds-color-white);
 	--ds-color-bg-field: var(--ds-color-black-glass-1);
 	--ds-color-bg-preview: var(--ds-color-black-glass-2);
 
-	--ds-color-border-active: var(--ds-color-ngrey-16);
-	--ds-color-border-hover: var(--ds-color-ngrey-10);
-	--ds-color-border-default: var(--ds-color-ngrey-7);
+	--ds-color-border-active: var(--ds-color-grey-16);
+	--ds-color-border-hover: var(--ds-color-grey-10);
+	--ds-color-border-default: var(--ds-color-grey-7);
 	--ds-color-border-subtle: var(--ds-color-black-glass-3);
-	--ds-color-border-shadow: var(--ds-color-ngrey-3);
+	--ds-color-border-shadow: var(--ds-color-grey-3);
 
 	--ds-color-text-default: var(--ds-color-black);
-	--ds-color-text-subtle: var(--ds-color-ngrey-13);
-	--ds-color-text-placeholder: var(--ds-color-ngrey-11);
+	--ds-color-text-subtle: var(--ds-color-grey-13);
+	--ds-color-text-placeholder: var(--ds-color-grey-11);
 	--ds-color-text-inverse: var(--ds-color-white);
 	--ds-color-text-preview: var(--ds-color-blue-4);
 
@@ -124,21 +124,21 @@
 }
 
 [data-color-theme='dark'] {
-	--ds-color-bg-page: var(--ds-color-ngrey-19);
-	--ds-color-bg-card: var(--ds-color-ngrey-18);
-	--ds-color-bg-popup: var(--ds-color-ngrey-17);
+	--ds-color-bg-page: var(--ds-color-grey-19);
+	--ds-color-bg-card: var(--ds-color-grey-18);
+	--ds-color-bg-popup: var(--ds-color-grey-17);
 	--ds-color-bg-field: var(--ds-color-black-glass-4);
 	--ds-color-bg-preview: var(--ds-color-black-glass-5);
 
-	--ds-color-border-active: var(--ds-color-ngrey-6);
-	--ds-color-border-hover: var(--ds-color-ngrey-12);
-	--ds-color-border-default: var(--ds-color-ngrey-14);
+	--ds-color-border-active: var(--ds-color-grey-6);
+	--ds-color-border-hover: var(--ds-color-grey-12);
+	--ds-color-border-default: var(--ds-color-grey-14);
 	--ds-color-border-subtle: var(--ds-color-white-glass-4);
-	--ds-color-border-shadow: var(--ds-color-ngrey-20);
+	--ds-color-border-shadow: var(--ds-color-grey-20);
 
 	--ds-color-text-default: var(--ds-color-white);
-	--ds-color-text-subtle: var(--ds-color-ngrey-8);
-	--ds-color-text-placeholder: var(--ds-color-ngrey-11);
+	--ds-color-text-subtle: var(--ds-color-grey-8);
+	--ds-color-text-placeholder: var(--ds-color-grey-11);
 	--ds-color-text-inverse: var(--ds-color-black);
 	--ds-color-text-preview: var(--ds-color-blue-1);
 
