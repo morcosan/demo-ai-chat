@@ -8,8 +8,8 @@ export const TOKENS__SHADOW = {
 	},
 	xs: {
 		$value: {
-			light: '0 1px 2px 0 rgb(0 0 0 / 0.1)',
-			dark: '0 1px 2px 0 rgb(0 0 0 / 0.2)',
+			light: '0 1px 2px 0 rgb(0 0 0 / 0.15)',
+			dark: '0 1px 2px 0 rgb(0 0 0 / 0.4)',
 		},
 		$css: '--ds-shadow-xs',
 	},

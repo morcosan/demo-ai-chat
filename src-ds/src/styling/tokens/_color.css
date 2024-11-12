@@ -34,7 +34,7 @@
 	--ds-color-npurple-5: #9d49ec;
 	--ds-color-npurple-6: #9333ea;
 	--ds-color-npurple-7: #6b21a8;
-	--ds-color-npurple-8: #581c87;
+	--ds-color-npurple-8: #4c1874;
 
 	--ds-color-purple-1: #f3e8ff;
 	--ds-color-purple-2: #c084fc;
@@ -161,12 +161,12 @@
 	--ds-color-text-inverse: var(--ds-color-black);
 	--ds-color-text-preview: var(--ds-color-blue-1);
 
-	--ds-color-primary-alert-bg: var(--ds-color-npurple-6);
-	--ds-color-primary-alert-text: var(--ds-color-white);
+	--ds-color-primary-alert-bg: var(--ds-color-npurple-2);
+	--ds-color-primary-alert-text: var(--ds-color-npurple-8);
 	--ds-color-primary-button-bg: var(--ds-color-npurple-5);
 	--ds-color-primary-button-text: var(--ds-color-white);
-	--ds-color-primary-card-bg: var(--ds-color-npurple-1);
-	--ds-color-primary-card-text: var(--ds-color-npurple-7);
+	--ds-color-primary-card-bg: var(--ds-color-npurple-8);
+	--ds-color-primary-card-text: var(--ds-color-white);
 	--ds-color-primary-page-text: var(--ds-color-npurple-3);
 
 	--ds-color-primary: var(--ds-color-purple-2);
