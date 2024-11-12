@@ -3,7 +3,7 @@
 :host,
 :root {
 	--ds-color-white: #fff;
-	--ds-color-black: #141315;
+	--ds-color-black: #1c1a1d;
 
 	/* https://noeldelgado.github.io/shadowlord/#8a8391 with % 5.7 */
 	--ds-color-grey-1: #fbfbfc;

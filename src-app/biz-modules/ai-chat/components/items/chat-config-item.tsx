@@ -69,7 +69,7 @@ export const ChatConfigItem = (props: Props) => {
 							id={`${chat.id}-field`}
 							value={title}
 							placeholder={t('aiChat.placeholder.rename')}
-							className="absolute-overlay"
+							className="absolute-overlay bg-color-bg-card"
 							slotRight={
 								<IconButton
 									tooltip={t('aiChat.action.confirmRenameChat')}

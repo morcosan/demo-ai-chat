@@ -1,6 +1,6 @@
 export const TOKENS__COLOR = {
 	white: { $value: '#fff', $css: '--ds-color-white' },
-	black: { $value: '#141315', $css: '--ds-color-black' },
+	black: { $value: '#1c1a1d', $css: '--ds-color-black' },
 
 	'grey-1': { $value: '#fbfbfc', $css: '--ds-color-grey-1' },
 	'grey-2': { $value: '#f5f4f5', $css: '--ds-color-grey-2' },
