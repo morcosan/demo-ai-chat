@@ -13,7 +13,7 @@ export const MobileNavbar = ({ hasMenu, onToggleNavMenu }: Props) => {
 			className="fixed left-0 top-0 z-navbar w-full border-t border-color-border-shadow shadow-sm"
 			style={{ minHeight: 'var(--app-spacing-navbar-h)', height: 'var(--app-spacing-navbar-h)' }}
 		>
-			<div className="flex h-full items-center px-xs-2" style={{ background: 'var(--app-color-bg-navbar)' }}>
+			<div className="flex h-full items-center bg-color-bg-card px-xs-2">
 				{/* MENU */}
 				<IconButton tooltip={t('core.action.openMenu')} pressed={hasMenu} onClick={onToggleNavMenu}>
 					<MenuSvg className="h-xs-9" />

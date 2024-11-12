@@ -17,7 +17,7 @@ button {
 
 div:has(> #preview-loader),
 #storybook-preview-iframe {
-	background-color: var(--ds-color-bg-default) !important;
+	background-color: var(--ds-color-bg-page) !important;
 }
 
 a[href='#storybook-preview-wrapper']:focus {

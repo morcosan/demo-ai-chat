@@ -50,7 +50,7 @@
 		right: 0 !important;
 		bottom: 1px !important;
 		margin: 0 !important;
-		background-color: var(--ds-color-bg-default) !important;
+		background-color: var(--ds-color-bg-page) !important;
 		padding-left: 0 var(--ds-spacing-xs-2) !important;
 
 		& button {
@@ -73,7 +73,7 @@
 
 #storybook-panel-root {
 	& > div {
-		background-color: var(--ds-color-bg-default) !important;
+		background-color: var(--ds-color-bg-page) !important;
 	}
 
 	& table.docblock-argstable {
@@ -116,7 +116,7 @@
 			& td {
 				cursor: default !important;
 				border: none !important;
-				background-color: var(--ds-color-bg-default) !important;
+				background-color: var(--ds-color-bg-page) !important;
 				padding-top: var(--ds-spacing-sm-3) !important;
 				padding-bottom: var(--ds-spacing-xs-3) !important;
 			}
@@ -165,7 +165,7 @@
 		& tr:not([title]) {
 			& td {
 				border-color: var(--ds-color-border-subtle) !important;
-				background-color: var(--ds-color-bg-default) !important;
+				background-color: var(--ds-color-bg-page) !important;
 				padding-top: var(--ds-spacing-xs-4) !important;
 				padding-bottom: var(--ds-spacing-xs-4) !important;
 				color: var(--ds-color-text-default) !important;

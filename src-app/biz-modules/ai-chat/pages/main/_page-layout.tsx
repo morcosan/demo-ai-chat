@@ -47,11 +47,11 @@ export const PageLayout = ({ slotChatView, slotSubchatView }: Props) => {
 				<div
 					className={cx(
 						'fixed bottom-0 left-0 right-0 z-popup ml-button-h-md',
-						'border-l border-t border-color-border-shadow shadow-lg',
+						'border-l border-t border-color-border-shadow bg-color-bg-card shadow-lg',
 						'transition-transform duration-300 ease-out',
 						isSubchatView ? 'translate-x-0' : 'translate-x-full'
 					)}
-					style={{ top: 'var(--app-spacing-navbar-h)', background: 'var(--app-color-bg-navbar)' }}
+					style={{ top: 'var(--app-spacing-navbar-h)' }}
 				>
 					{slotSubchatView}
 				</div>

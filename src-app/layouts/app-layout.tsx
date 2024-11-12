@@ -52,21 +52,21 @@ export const AppLayout = ({ blank, children }: Props) => {
 				<DesktopNavbar unselected={blank} onClickLanguage={() => setShowsI18nModal(true)} />
 			)}
 
-			{/* MENU OVERLAY */}
+			{/* MOBILE MENU OVERLAY */}
 			<div
 				className={cx('absolute-overlay z-modal backdrop-blur-subtle', !showsNavMenu && 'hidden')}
 				style={{ top: 'var(--app-spacing-navbar-h)' }}
 				onClick={() => setShowsNavMenu(false)}
 			/>
-			{/* MENU CONTENT */}
+			{/* MOBILE MENU CONTENT */}
 			<div
 				className={cx(
 					'fixed bottom-0 left-0 right-0 z-modal mr-button-h-md',
-					'border-r border-t border-color-border-shadow shadow-lg',
+					'border-r border-t border-color-border-shadow bg-color-bg-card shadow-lg',
 					'transition-transform duration-300 ease-out',
 					showsNavMenu ? 'translate-x-0' : '-translate-x-full'
 				)}
-				style={{ top: 'var(--app-spacing-navbar-h)', background: 'var(--app-color-bg-navbar)' }}
+				style={{ top: 'var(--app-spacing-navbar-h)' }}
 			>
 				{showsSettingsMenu ? (
 					<SettingsMenu onClickBack={onToggleSettings} onClickLanguage={() => setShowsI18nModal(true)} />

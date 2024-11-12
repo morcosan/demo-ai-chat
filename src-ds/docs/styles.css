@@ -82,7 +82,7 @@ pre.docs {
 	background-image: linear-gradient(var(--color) 1px, transparent 1px),
 		linear-gradient(90deg, var(--color) 1px, transparent 1px);
 	background-size: 8px 8px;
-	background-color: var(--ds-color-bg-default);
+	background-color: var(--ds-color-bg-page);
 }
 
 .docs-bg.docs-bg-tiles {
@@ -92,10 +92,10 @@ pre.docs {
 		0 0,
 		8px 8px;
 	background-size: 16px 16px;
-	background-color: var(--ds-color-bg-default);
+	background-color: var(--ds-color-bg-page);
 }
 .docs-bg.docs-bg-blank {
-	background-color: var(--ds-color-bg-default);
+	background-color: var(--ds-color-bg-page);
 }
 
 .docs-bg {

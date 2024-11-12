@@ -1,7 +1,7 @@
 [data-test-id='sb-preview-toolbar'] {
 	z-index: var(--ds-z-index-sticky) !important;
 	box-shadow: var(--ds-shadow-sm) !important;
-	background-color: var(--ds-color-bg-default) !important;
+	background-color: var(--ds-color-bg-page) !important;
 
 	/* Delimiter */
 	& > div > div > span {

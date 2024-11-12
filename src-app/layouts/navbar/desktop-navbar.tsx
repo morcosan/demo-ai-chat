@@ -25,7 +25,7 @@ export const DesktopNavbar = ({ unselected, onClickLanguage }: Props) => {
 	const settingsMenuClass = cx(
 		isSettingsOpened ? 'block' : 'hidden',
 		'absolute bottom-0 right-0 z-popup translate-x-full shadow-lg',
-		'w-lg-7 rounded-md border border-color-border-shadow bg-color-bg-default'
+		'w-lg-7 rounded-md border border-color-border-shadow bg-color-bg-page'
 	)
 
 	const expandedClass = 'w-lg-7 min-w-lg-7'
@@ -34,7 +34,7 @@ export const DesktopNavbar = ({ unselected, onClickLanguage }: Props) => {
 		`absolute left-0 top-0 z-navbar h-full`,
 		isNavCollapsed ? collapsedClass : expandedClass,
 		'flex flex-col px-a11y-scrollbar py-scrollbar-w',
-		'border-r border-color-border-shadow shadow-lg'
+		'border-r border-color-border-shadow bg-color-bg-card shadow-lg'
 	)
 
 	const pinClass = cx(
@@ -94,12 +94,7 @@ export const DesktopNavbar = ({ unselected, onClickLanguage }: Props) => {
 			<div className={isNavCollapsed || isNavPinned ? 'hidden' : 'fixed-overlay z-navbar backdrop-blur-subtle'} />
 
 			{/* NAVBAR */}
-			<nav
-				ref={navbarRef}
-				className={navbarClass}
-				style={{ background: 'var(--app-color-bg-navbar)' }}
-				onMouseLeave={onMouseLeaveNavbar}
-			>
+			<nav ref={navbarRef} className={navbarClass} onMouseLeave={onMouseLeaveNavbar}>
 				{/* LOGO */}
 				<AppLogo collapsed={isNavCollapsed} className="mb-xs-5" />
 

@@ -10,7 +10,7 @@ export const DocsPlayground = ({ children, className }: ReactProps) => {
 
 	const bgClass = 'flex-center relative min-h-lg-9 flex-col rounded-md border border-color-border-default '
 	const focusClass = cx(
-		'absolute right-0 w-md-3 bg-color-bg-default py-xs-0',
+		'absolute right-0 w-md-3 bg-color-bg-page py-xs-0',
 		'text-center text-size-xs text-color-text-subtle'
 	)
 

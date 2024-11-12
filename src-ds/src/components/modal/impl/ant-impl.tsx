@@ -42,7 +42,7 @@ export const AntImpl = (rawProps: ModalProps) => {
 		},
 		'& .ant-modal-header': {
 			margin: 0,
-			backgroundColor: $color['bg-default'],
+			backgroundColor: $color['bg-page'],
 		},
 		'& .ant-modal-title': {
 			...cssModalTitle,
