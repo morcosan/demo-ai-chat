@@ -27,6 +27,15 @@
 	--ds-color-grey-19: #2c292e; /* Dark bg */
 	--ds-color-grey-20: #242226;
 
+	--ds-color-npurple-1: #e9d5ff;
+	--ds-color-npurple-2: #d8b4fe;
+	--ds-color-npurple-3: #c389fc;
+	--ds-color-npurple-4: #a85eee;
+	--ds-color-npurple-5: #9d49ec;
+	--ds-color-npurple-6: #9333ea;
+	--ds-color-npurple-7: #6b21a8;
+	--ds-color-npurple-8: #581c87;
+
 	--ds-color-purple-1: #f3e8ff;
 	--ds-color-purple-2: #c084fc;
 	--ds-color-purple-3: #9333ea;
@@ -80,6 +89,7 @@
 	--ds-color-bg-popup: var(--ds-color-white);
 	--ds-color-bg-field: var(--ds-color-black-glass-1);
 	--ds-color-bg-preview: var(--ds-color-black-glass-2);
+	--ds-color-bg-skeleton: var(--ds-color-black-glass-3);
 
 	--ds-color-border-active: var(--ds-color-grey-16);
 	--ds-color-border-hover: var(--ds-color-grey-10);
@@ -92,6 +102,14 @@
 	--ds-color-text-placeholder: var(--ds-color-grey-11);
 	--ds-color-text-inverse: var(--ds-color-white);
 	--ds-color-text-preview: var(--ds-color-blue-4);
+
+	--ds-color-primary-alert-bg: var(--ds-color-npurple-7);
+	--ds-color-primary-alert-text: var(--ds-color-white);
+	--ds-color-primary-button-bg: var(--ds-color-npurple-6);
+	--ds-color-primary-button-text: var(--ds-color-white);
+	--ds-color-primary-card-bg: var(--ds-color-npurple-1);
+	--ds-color-primary-card-text: var(--ds-color-npurple-8);
+	--ds-color-primary-page-text: var(--ds-color-npurple-6);
 
 	--ds-color-primary: var(--ds-color-purple-3);
 	--ds-color-primary-bg: var(--ds-color-purple-1);
@@ -129,6 +147,7 @@
 	--ds-color-bg-popup: var(--ds-color-grey-17);
 	--ds-color-bg-field: var(--ds-color-black-glass-4);
 	--ds-color-bg-preview: var(--ds-color-black-glass-5);
+	--ds-color-bg-skeleton: var(--ds-color-white-glass-3);
 
 	--ds-color-border-active: var(--ds-color-grey-6);
 	--ds-color-border-hover: var(--ds-color-grey-12);
@@ -141,6 +160,14 @@
 	--ds-color-text-placeholder: var(--ds-color-grey-11);
 	--ds-color-text-inverse: var(--ds-color-black);
 	--ds-color-text-preview: var(--ds-color-blue-1);
+
+	--ds-color-primary-alert-bg: var(--ds-color-npurple-6);
+	--ds-color-primary-alert-text: var(--ds-color-white);
+	--ds-color-primary-button-bg: var(--ds-color-npurple-5);
+	--ds-color-primary-button-text: var(--ds-color-white);
+	--ds-color-primary-card-bg: var(--ds-color-npurple-1);
+	--ds-color-primary-card-text: var(--ds-color-npurple-7);
+	--ds-color-primary-page-text: var(--ds-color-npurple-3);
 
 	--ds-color-primary: var(--ds-color-purple-2);
 	--ds-color-primary-bg: var(--ds-color-purple-4);

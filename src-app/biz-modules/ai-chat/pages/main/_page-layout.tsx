@@ -38,20 +38,20 @@ export const PageLayout = ({ slotChatView, slotSubchatView }: Props) => {
 
 			{/* MOBILE OVERLAY */}
 			<div
-				className={cx('absolute-overlay z-popup backdrop-blur-subtle', !isSubchatView && 'hidden')}
-				style={{ top: 'var(--app-spacing-navbar-h)' }}
+				className={cx('absolute-overlay backdrop-blur-subtle', !isSubchatView && 'hidden')}
+				style={{ top: 'var(--app-spacing-navbar-h)', zIndex: 'calc(var(--ds-z-index-navbar) - 1)' }}
 				onClick={() => setActiveView(AiChatView.MOBILE_CHAT)}
 			/>
 			{/* MOBILE CONTENT */}
 			{activeView !== AiChatView.DESKTOP && (
 				<div
 					className={cx(
-						'fixed bottom-0 left-0 right-0 z-popup ml-button-h-md',
-						'border-l border-t border-color-border-shadow bg-color-bg-card shadow-lg',
+						'fixed bottom-0 left-0 right-0 ml-button-h-md',
+						'border-l border-t border-color-border-shadow bg-color-bg-page shadow-lg',
 						'transition-transform duration-300 ease-out',
 						isSubchatView ? 'translate-x-0' : 'translate-x-full'
 					)}
-					style={{ top: 'var(--app-spacing-navbar-h)' }}
+					style={{ top: 'var(--app-spacing-navbar-h)', zIndex: 'calc(var(--ds-z-index-navbar) - 1)' }}
 				>
 					{slotSubchatView}
 				</div>

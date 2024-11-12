@@ -54,19 +54,19 @@ export const AppLayout = ({ blank, children }: Props) => {
 
 			{/* MOBILE MENU OVERLAY */}
 			<div
-				className={cx('absolute-overlay z-modal backdrop-blur-subtle', !showsNavMenu && 'hidden')}
-				style={{ top: 'var(--app-spacing-navbar-h)' }}
+				className={cx('absolute-overlay backdrop-blur-subtle', !showsNavMenu && 'hidden')}
+				style={{ top: 'var(--app-spacing-navbar-h)', zIndex: 'calc(var(--ds-z-index-navbar) - 1)' }}
 				onClick={() => setShowsNavMenu(false)}
 			/>
 			{/* MOBILE MENU CONTENT */}
 			<div
 				className={cx(
-					'fixed bottom-0 left-0 right-0 z-modal mr-button-h-md',
+					'fixed bottom-0 left-0 right-0 mr-button-h-md',
 					'border-r border-t border-color-border-shadow bg-color-bg-card shadow-lg',
 					'transition-transform duration-300 ease-out',
 					showsNavMenu ? 'translate-x-0' : '-translate-x-full'
 				)}
-				style={{ top: 'var(--app-spacing-navbar-h)' }}
+				style={{ top: 'var(--app-spacing-navbar-h)', zIndex: 'calc(var(--ds-z-index-navbar) - 1)' }}
 			>
 				{showsSettingsMenu ? (
 					<SettingsMenu onClickBack={onToggleSettings} onClickLanguage={() => setShowsI18nModal(true)} />

@@ -73,6 +73,7 @@ export const TOKENS__COLOR = {
 	'bg-popup': { $ref: { light: 'white', dark: 'grey-17' }, $css: '--ds-color-bg-popup' },
 	'bg-field': { $ref: { light: 'black-glass-1', dark: 'black-glass-4' }, $css: '--ds-color-bg-field' },
 	'bg-preview': { $ref: { light: 'black-glass-2', dark: 'black-glass-5' }, $css: '--ds-color-bg-preview' },
+	'bg-skeleton': { $ref: { light: 'black-glass-2', dark: 'white-glass-5' }, $css: '--ds-color-bg-skeleton' },
 
 	'border-active': { $ref: { light: 'grey-16', dark: 'grey-6' }, $css: '--ds-color-border-active' },
 	'border-hover': { $ref: { light: 'grey-10', dark: 'grey-12' }, $css: '--ds-color-border-hover' },
@@ -85,6 +86,14 @@ export const TOKENS__COLOR = {
 	'text-placeholder': { $ref: { light: 'grey-11', dark: 'grey-11' }, $css: '--ds-color-text-placeholder' },
 	'text-inverse': { $ref: { light: 'white', dark: 'black' }, $css: '--ds-color-text-inverse' },
 	'text-preview': { $ref: { light: 'blue-4', dark: 'blue-1' }, $css: '--ds-color-text-preview' },
+
+	'primary-alert-bg': { $ref: { light: 'purple-1', dark: 'purple-4' }, $css: '--ds-color-primary-alert-bg' },
+	'primary-alert-text': { $ref: { light: 'purple-1', dark: 'purple-4' }, $css: '--ds-color-primary-alert-text' },
+	'primary-button-bg': { $ref: { light: 'purple-1', dark: 'purple-4' }, $css: '--ds-color-primary-button-bg' },
+	'primary-button-text': { $ref: { light: 'purple-1', dark: 'purple-4' }, $css: '--ds-color-primary-button-text' },
+	'primary-card-bg': { $ref: { light: 'purple-1', dark: 'purple-4' }, $css: '--ds-color-primary-card-bg' },
+	'primary-card-text': { $ref: { light: 'purple-1', dark: 'purple-4' }, $css: '--ds-color-primary-card-text' },
+	'primary-page-text': { $ref: { light: 'purple-1', dark: 'purple-4' }, $css: '--ds-color-primary-page-text' },
 
 	primary: { $ref: { light: 'purple-3', dark: 'purple-2' }, $css: '--ds-color-primary' },
 	'primary-bg': { $ref: { light: 'purple-1', dark: 'purple-4' }, $css: '--ds-color-primary-bg' },

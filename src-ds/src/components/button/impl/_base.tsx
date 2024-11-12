@@ -68,14 +68,14 @@ export const useButtonBase = (rawProps: ButtonProps) => {
 
 	const cssTextColor: CSS = (() => {
 		if (isVGhost) {
-			if (isVPrimary) return cssTextColorFn($color['primary'])
+			if (isVPrimary) return cssTextColorFn($color['primary-page-text'])
 			if (isVSecondary) return cssTextColorFn($color['secondary-text-default'])
 			if (isVDanger) return cssTextColorFn($color['danger'])
 		}
 		if (isVSecondary && isUiLight) return cssTextColorFn($color['secondary-text-default'])
 		if (isVSecondary && !isUiLight) return cssTextColorFn($color['secondary-text-inverse'])
-		if (isVPrimary && isUiLight) return cssTextColorFn($color['text-inverse'])
-		if (isVPrimary && !isUiLight) return cssTextColorFn($color['primary-text-inverse'])
+		if (isVPrimary && isUiLight) return cssTextColorFn($color['primary-button-text'])
+		if (isVPrimary && !isUiLight) return cssTextColorFn($color['primary-button-text'])
 		if (isVDanger && isVSolid && isUiLight) return cssTextColorFn($color['text-inverse'])
 		if (isVDanger && isVSolid && !isUiLight) return cssTextColorFn($color['danger-text-inverse'])
 		if (isVDanger && !isVSolid) return cssTextColorFn($color['danger'])
@@ -84,7 +84,7 @@ export const useButtonBase = (rawProps: ButtonProps) => {
 	})()
 
 	const cssBgColor: CSS = (() => {
-		if (isVPrimary && !isVGhost) return cssBgColorFn($color['primary'])
+		if (isVPrimary && !isVGhost) return cssBgColorFn($color['primary-button-bg'])
 		if (isVSecondary && !isVGhost) return cssBgColorFn($color['secondary'])
 		if (isVDanger && isVSolid) return cssBgColorFn($color['danger'])
 		return {}
@@ -92,12 +92,12 @@ export const useButtonBase = (rawProps: ButtonProps) => {
 
 	const cssBorder: CSS = (() => {
 		if (isVGhost) {
-			if (isVPrimary) return cssBorderFn($color['primary'])
+			if (isVPrimary) return cssBorderFn($color['primary-page-text'])
 			if (isVSecondary) return cssBorderFn($color['secondary-text-default'])
 			if (isVDanger) return cssBorderFn($color['danger'])
 		}
 		if (isVSolid) {
-			if (isVPrimary) return cssBorderFn($color['primary'])
+			if (isVPrimary) return cssBorderFn($color['primary-button-bg'])
 			if (isVSecondary) return cssBorderFn($color['secondary'])
 			if (isVDanger) return cssBorderFn($color['danger'])
 		}
