@@ -63,35 +63,25 @@
 	--ds-color-blue-3: #2563eb;
 	--ds-color-blue-4: #1e40af;
 
-	--ds-color-black-nglass-1: rgba(0, 0, 0, 0.02);
-	--ds-color-black-nglass-2: rgba(0, 0, 0, 0.04);
-	--ds-color-black-nglass-3: rgba(0, 0, 0, 0.08);
-	--ds-color-black-nglass-4: rgba(0, 0, 0, 0.16);
-	--ds-color-black-nglass-5: rgba(0, 0, 0, 0.24);
-	--ds-color-black-nglass-6: rgba(0, 0, 0, 0.32);
-	--ds-color-black-nglass-7: rgba(0, 0, 0, 0.4);
-	--ds-color-black-nglass-8: rgba(0, 0, 0, 0.48);
-	--ds-color-black-nglass-9: rgba(0, 0, 0, 0.56);
+	--ds-color-black-glass-1: rgba(0, 0, 0, 0.02);
+	--ds-color-black-glass-2: rgba(0, 0, 0, 0.04);
+	--ds-color-black-glass-3: rgba(0, 0, 0, 0.08);
+	--ds-color-black-glass-4: rgba(0, 0, 0, 0.16);
+	--ds-color-black-glass-5: rgba(0, 0, 0, 0.24);
+	--ds-color-black-glass-6: rgba(0, 0, 0, 0.32);
+	--ds-color-black-glass-7: rgba(0, 0, 0, 0.4);
+	--ds-color-black-glass-8: rgba(0, 0, 0, 0.48);
+	--ds-color-black-glass-9: rgba(0, 0, 0, 0.56);
 
-	--ds-color-black-glass-1: rgba(0, 0, 0, 0.08);
-	--ds-color-black-glass-2: rgba(0, 0, 0, 0.16);
-	--ds-color-black-glass-3: rgba(0, 0, 0, 0.24);
-	--ds-color-black-glass-4: rgba(0, 0, 0, 0.32);
-	--ds-color-black-glass-5: rgba(0, 0, 0, 0.4);
-	--ds-color-black-glass-6: rgba(0, 0, 0, 0.48);
-	--ds-color-black-glass-7: rgba(0, 0, 0, 0.56);
-	--ds-color-black-glass-8: rgba(0, 0, 0, 0.64);
-	--ds-color-black-glass-9: rgba(0, 0, 0, 0.72);
-
-	--ds-color-white-glass-1: rgba(255, 255, 255, 0.08);
-	--ds-color-white-glass-2: rgba(255, 255, 255, 0.16);
-	--ds-color-white-glass-3: rgba(255, 255, 255, 0.24);
-	--ds-color-white-glass-4: rgba(255, 255, 255, 0.32);
-	--ds-color-white-glass-5: rgba(255, 255, 255, 0.4);
-	--ds-color-white-glass-6: rgba(255, 255, 255, 0.4);
-	--ds-color-white-glass-7: rgba(255, 255, 255, 0.56);
-	--ds-color-white-glass-8: rgba(255, 255, 255, 0.64);
-	--ds-color-white-glass-9: rgba(255, 255, 255, 0.72);
+	--ds-color-white-glass-1: rgba(255, 255, 255, 0.02);
+	--ds-color-white-glass-2: rgba(255, 255, 255, 0.04);
+	--ds-color-white-glass-3: rgba(255, 255, 255, 0.08);
+	--ds-color-white-glass-4: rgba(255, 255, 255, 0.16);
+	--ds-color-white-glass-5: rgba(255, 255, 255, 0.24);
+	--ds-color-white-glass-6: rgba(255, 255, 255, 0.32);
+	--ds-color-white-glass-7: rgba(255, 255, 255, 0.4);
+	--ds-color-white-glass-8: rgba(255, 255, 255, 0.48);
+	--ds-color-white-glass-9: rgba(255, 255, 255, 0.56);
 }
 
 :host,
@@ -99,10 +89,10 @@
 	--ds-color-bg-page: var(--ds-color-ngrey-2);
 	--ds-color-bg-card: var(--ds-color-ngrey-1);
 	--ds-color-bg-popup: var(--ds-color-white);
-	--ds-color-bg-field: var(--ds-color-black-nglass-1);
+	--ds-color-bg-field: var(--ds-color-black-glass-1);
 	--ds-color-bg-preview: var(--ds-color-grey-1);
-	--ds-color-bg-scrollbar: var(--ds-color-black-glass-2);
-	--ds-color-bg-scrollbar-hover: var(--ds-color-black-glass-3);
+	--ds-color-bg-scrollbar: var(--ds-color-black-glass-4);
+	--ds-color-bg-scrollbar-hover: var(--ds-color-black-glass-5);
 
 	--ds-color-text-default: var(--ds-color-black);
 	--ds-color-text-subtle: var(--ds-color-grey-5);
@@ -130,14 +120,14 @@
 	--ds-color-danger-text-default: var(--ds-color-red-4);
 	--ds-color-danger-text-inverse: var(--ds-color-red-1);
 
-	--ds-color-hover-1: var(--ds-color-black-glass-1);
-	--ds-color-hover-2: var(--ds-color-black-glass-2);
-	--ds-color-hover-3: var(--ds-color-black-glass-3);
-	--ds-color-hover-4: var(--ds-color-black-glass-4);
+	--ds-color-hover-1: var(--ds-color-black-glass-3);
+	--ds-color-hover-2: var(--ds-color-black-glass-4);
+	--ds-color-hover-3: var(--ds-color-black-glass-5);
+	--ds-color-hover-4: var(--ds-color-black-glass-6);
 	--ds-color-hover-default: var(--ds-color-hover-1);
 	--ds-color-hover-pressed: var(--ds-color-hover-2);
 
-	--ds-color-modal-overlay: var(--ds-color-black-glass-6);
+	--ds-color-modal-overlay: var(--ds-color-black-glass-8);
 
 	--ds-color-border-active: var(--ds-color-grey-6);
 	--ds-color-border-hover: var(--ds-color-grey-4);
@@ -150,10 +140,10 @@
 	--ds-color-bg-page: var(--ds-color-grey-8);
 	--ds-color-bg-card: var(--ds-color-grey-7);
 	--ds-color-bg-popup: var(--ds-color-white);
-	--ds-color-bg-field: var(--ds-color-black-nglass-1);
-	--ds-color-bg-preview: var(--ds-color-black-glass-3);
-	--ds-color-bg-scrollbar: var(--ds-color-white-glass-2);
-	--ds-color-bg-scrollbar-hover: var(--ds-color-white-glass-3);
+	--ds-color-bg-field: var(--ds-color-black-glass-1);
+	--ds-color-bg-preview: var(--ds-color-black-glass-5);
+	--ds-color-bg-scrollbar: var(--ds-color-white-glass-4);
+	--ds-color-bg-scrollbar-hover: var(--ds-color-white-glass-5);
 
 	--ds-color-text-default: var(--ds-color-white);
 	--ds-color-text-subtle: var(--ds-color-grey-4);
@@ -181,10 +171,10 @@
 	--ds-color-danger-text-default: var(--ds-color-red-1);
 	--ds-color-danger-text-inverse: var(--ds-color-red-4);
 
-	--ds-color-hover-1: var(--ds-color-black-glass-2);
-	--ds-color-hover-2: var(--ds-color-black-glass-3);
-	--ds-color-hover-3: var(--ds-color-black-glass-4);
-	--ds-color-hover-4: var(--ds-color-black-glass-5);
+	--ds-color-hover-1: var(--ds-color-black-glass-4);
+	--ds-color-hover-2: var(--ds-color-black-glass-5);
+	--ds-color-hover-3: var(--ds-color-black-glass-6);
+	--ds-color-hover-4: var(--ds-color-black-glass-7);
 	--ds-color-hover-default: var(--ds-color-hover-2);
 	--ds-color-hover-pressed: var(--ds-color-hover-4);
 

@@ -42,7 +42,7 @@ export const AntImpl = (rawProps: IconButtonProps) => {
 
 		'&:disabled, &.ant-btn-disabled': {
 			color: $color['text-default'],
-			background: isVSolid ? (isUiLight ? $color['black-glass-3'] : $color['white-glass-3']) : 'unset',
+			background: isVSolid ? (isUiLight ? $color['black-glass-5'] : $color['white-glass-5']) : 'unset',
 			opacity: '0.4',
 		},
 	}

@@ -51,7 +51,7 @@ export const useModalBase = (rawProps: ModalProps) => {
 		boxShadow: $shadow['lg'],
 	}
 
-	const colorOverlay = isUiLight ? $color['black-glass-6'] : $color['black-glass-7']
+	const colorOverlay = isUiLight ? $color['black-glass-8'] : $color['black-glass-9']
 
 	const cssOverlayBase: CSS = {
 		...CSS__FIXED_OVERLAY,
