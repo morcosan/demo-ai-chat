@@ -4,7 +4,7 @@ const fixHeader = () => {
 	linkElem.className = '!flex flex-wrap !flex-none w-fit p-xs-5 rounded-md'
 	linkElem.innerHTML = `
 		<img src="./favicon.svg" alt="" class="-mr-xs-2 h-sm-5 w-sm-5 animate-pulse">
-		<span class="leading-1 font-weight-md text-color-purple-2 text-size-md">${linkElem.textContent}</span>
+		<span class="leading-1 font-weight-md text-color-purple-3 text-size-md">${linkElem.textContent}</span>
 	`
 }
 

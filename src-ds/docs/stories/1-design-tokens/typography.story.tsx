@@ -98,7 +98,7 @@ export default {
 						{Object.entries(TOKENS__LINE_HEIGHT).map(([name, token]) => (
 							<tr key={name}>
 								<td style={{ lineHeight: `var(${token.$css})` }}>
-									<pre className="border border-color-purple-2">{name}</pre>
+									<pre className="border border-color-primary-page-text">{name}</pre>
 								</td>
 								<td>
 									<code>{token.$value}</code>
