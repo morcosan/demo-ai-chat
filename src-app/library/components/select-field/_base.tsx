@@ -10,7 +10,7 @@ export const useSelectFieldBase = (rawProps: SelectFieldProps) => {
 		size: 'md',
 		popupPos: 'bottom',
 	})
-	const { $color, $fontSize, $radius, $spacing, $shadow, $zIndex } = useUiTheme()
+	const { $color, $fontSize, $fontWeight, $radius, $spacing, $shadow, $zIndex } = useUiTheme()
 	const [isOpened, setIsOpened] = useState(false)
 
 	const isInteractive = !props.readonly && !props.disabled && !props.loading
@@ -175,6 +175,7 @@ export const useSelectFieldBase = (rawProps: SelectFieldProps) => {
 		'&[aria-selected=true]': {
 			backgroundColor: $color['secondary-button-bg'],
 			color: $color['secondary-button-text'],
+			fontWeight: $fontWeight['md'],
 		},
 	}
 	const cssWrapper: CSS = {
