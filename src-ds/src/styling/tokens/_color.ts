@@ -33,9 +33,13 @@ export const TOKENS__COLOR = {
 	'purple-8': { $value: '#4c1874' },
 
 	'yellow-1': { $value: '#fef9c3' },
-	'yellow-2': { $value: '#fef08a' },
-	'yellow-3': { $value: '#fde047' },
-	'yellow-4': { $value: '#815a2c' },
+	'yellow-2': { $value: '#fef6b6' },
+	'yellow-3': { $value: '#fde56c' },
+	'yellow-4': { $value: '#facc15' },
+	'yellow-5': { $value: '#ca8a04' },
+	'yellow-6': { $value: '#a36b04' },
+	'yellow-7': { $value: '#a16107' },
+	'yellow-8': { $value: '#905606' },
 
 	'green-1': { $value: '#dcfce7' },
 	'green-2': { $value: '#86efac' },
