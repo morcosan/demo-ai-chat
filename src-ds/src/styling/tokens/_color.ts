@@ -87,24 +87,11 @@ export const TOKENS__COLOR = {
 	'text-inverse': { $ref: { light: 'white', dark: 'black' }, $css: '--ds-color-text-inverse' },
 	'text-preview': { $ref: { light: 'blue-4', dark: 'blue-1' }, $css: '--ds-color-text-preview' },
 
-	'primary-alert-bg': { $ref: { light: 'purple-1', dark: 'purple-4' }, $css: '--ds-color-primary-alert-bg' },
-	'primary-alert-text': { $ref: { light: 'purple-1', dark: 'purple-4' }, $css: '--ds-color-primary-alert-text' },
 	'primary-button-bg': { $ref: { light: 'purple-1', dark: 'purple-4' }, $css: '--ds-color-primary-button-bg' },
 	'primary-button-text': { $ref: { light: 'purple-1', dark: 'purple-4' }, $css: '--ds-color-primary-button-text' },
 	'primary-card-bg': { $ref: { light: 'purple-1', dark: 'purple-4' }, $css: '--ds-color-primary-card-bg' },
 	'primary-card-text': { $ref: { light: 'purple-1', dark: 'purple-4' }, $css: '--ds-color-primary-card-text' },
 	'primary-page-text': { $ref: { light: 'purple-1', dark: 'purple-4' }, $css: '--ds-color-primary-page-text' },
-
-	primary: { $ref: { light: 'purple-3', dark: 'purple-2' }, $css: '--ds-color-primary' },
-	'primary-bg': { $ref: { light: 'purple-1', dark: 'purple-4' }, $css: '--ds-color-primary-bg' },
-	'primary-text-default': {
-		$ref: { light: 'purple-4', dark: 'purple-1' },
-		$css: '--ds-color-primary-text-default',
-	},
-	'primary-text-inverse': {
-		$ref: { light: 'purple-1', dark: 'purple-4' },
-		$css: '--ds-color-primary-text-inverse',
-	},
 
 	secondary: { $ref: { light: 'yellow-3', dark: 'yellow-2' }, $css: '--ds-color-secondary' },
 	'secondary-bg': { $ref: { light: 'yellow-1', dark: 'yellow-4' }, $css: '--ds-color-secondary-bg' },

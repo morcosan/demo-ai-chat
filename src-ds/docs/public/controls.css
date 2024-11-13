@@ -16,11 +16,11 @@
 
 			&:active,
 			&.tabbutton-active {
-				border-bottom-color: var(--ds-color-primary) !important;
-				color: var(--ds-color-primary) !important;
+				border-bottom-color: var(--ds-color-primary-page-text) !important;
+				color: var(--ds-color-primary-page-text) !important;
 
 				& div:nth-child(2) {
-					color: var(--ds-color-primary) !important;
+					color: var(--ds-color-primary-page-text) !important;
 				}
 			}
 
@@ -217,7 +217,7 @@
 				height: var(--ds-spacing-xs-5) !important;
 
 				&:checked {
-					border-color: var(--ds-color-primary) !important;
+					border-color: var(--ds-color-primary-page-text) !important;
 				}
 			}
 
@@ -227,7 +227,7 @@
 				left: 50% !important;
 				transform: translate(-50%, -50%) !important;
 				border-radius: var(--ds-radius-full) !important;
-				background-color: var(--ds-color-primary) !important;
+				background-color: var(--ds-color-primary-page-text) !important;
 				width: var(--ds-spacing-xs-2) !important;
 				height: var(--ds-spacing-xs-2) !important;
 				content: '' !important;
@@ -258,7 +258,7 @@
 
 			& input:not(:checked) + span,
 			& input:checked + span + span {
-				background-color: var(--ds-color-primary) !important;
+				background-color: var(--ds-color-primary-page-text) !important;
 				color: var(--ds-color-text-inverse) !important;
 				font-weight: var(--ds-font-weight-md) !important;
 			}
@@ -322,8 +322,8 @@
 
 		& button[type='submit'],
 		& button[type='submit']:hover {
-			background-color: var(--ds-color-primary) !important;
-			color: var(--ds-color-primary-text-inverse) !important;
+			background-color: var(--ds-color-primary-button-bg) !important;
+			color: var(--ds-color-primary-button-text) !important;
 		}
 	}
 
@@ -338,7 +338,7 @@
 	& > div {
 		box-shadow: var(--ds-shadow-lg) !important;
 		border: none !important;
-		background-color: var(--ds-color-primary-bg) !important;
+		background-color: var(--ds-color-primary-card-bg) !important;
 		color: var(--ds-color-text-subtle) !important;
 
 		& button {
@@ -449,7 +449,7 @@
 		}
 
 		& a {
-			color: var(--ds-color-primary) !important;
+			color: var(--ds-color-primary-page-text) !important;
 		}
 
 		& div[role='button'] {

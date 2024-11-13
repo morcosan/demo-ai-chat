@@ -74,8 +74,7 @@ export const useButtonBase = (rawProps: ButtonProps) => {
 		}
 		if (isVSecondary && isUiLight) return cssTextColorFn($color['secondary-text-default'])
 		if (isVSecondary && !isUiLight) return cssTextColorFn($color['secondary-text-inverse'])
-		if (isVPrimary && isUiLight) return cssTextColorFn($color['primary-button-text'])
-		if (isVPrimary && !isUiLight) return cssTextColorFn($color['primary-button-text'])
+		if (isVPrimary) return cssTextColorFn($color['primary-button-text'])
 		if (isVDanger && isVSolid && isUiLight) return cssTextColorFn($color['text-inverse'])
 		if (isVDanger && isVSolid && !isUiLight) return cssTextColorFn($color['danger-text-inverse'])
 		if (isVDanger && !isVSolid) return cssTextColorFn($color['danger'])

@@ -61,8 +61,7 @@ export const useIconButtonBase = (rawProps: IconButtonProps) => {
 	const cssTextColor: CSS = (() => {
 		if (isVSecondary && isUiLight) return cssTextColorFn($color['secondary-text-default'])
 		if (isVSecondary && !isUiLight) return cssTextColorFn($color['secondary-text-inverse'])
-		if (isVPrimary && isUiLight) return cssTextColorFn($color['text-inverse'])
-		if (isVPrimary && !isUiLight) return cssTextColorFn($color['primary-text-inverse'])
+		if (isVPrimary) return cssTextColorFn($color['primary-button-text'])
 		if (isVDanger && isVSolid && isUiLight) return cssTextColorFn($color['text-inverse'])
 		if (isVDanger && isVSolid && !isUiLight) return cssTextColorFn($color['danger-text-inverse'])
 		if (isVDanger && !isVSolid) return cssTextColorFn($color['danger'])
@@ -71,7 +70,7 @@ export const useIconButtonBase = (rawProps: IconButtonProps) => {
 	})()
 
 	const cssBgColor: CSS = (() => {
-		if (isVPrimary) return cssBgColorFn($color['primary'])
+		if (isVPrimary) return cssBgColorFn($color['primary-button-bg'])
 		if (isVSecondary) return cssBgColorFn($color['secondary'])
 		if (isVDanger && isVSolid) return cssBgColorFn($color['danger'])
 		return {}

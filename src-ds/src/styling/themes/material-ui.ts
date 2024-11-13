@@ -18,7 +18,7 @@ const createThemeConfig = (theme: ColorTheme): Theme => {
 	return createTheme({
 		palette: {
 			mode: theme,
-			primary: createMuiColor(getTokenValue_COLOR('primary', theme)),
+			primary: createMuiColor(getTokenValue_COLOR('primary-page-text', theme)),
 			secondary: createMuiColor(getTokenValue_COLOR('secondary', theme)),
 			success: createMuiColor(getTokenValue_COLOR('success', theme)),
 			error: createMuiColor(getTokenValue_COLOR('danger', theme)),

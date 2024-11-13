@@ -12,7 +12,7 @@ export default {
 	title: 'Design tokens / Radius',
 
 	component: () => {
-		const previewClass = 'h-sm-4 border-2 bg-color-bg-preview border-b-0 border-r-0 border-color-primary'
+		const previewClass = 'h-sm-4 border-2 bg-color-bg-preview border-b-0 border-r-0 border-color-primary-page-text'
 
 		return (
 			<DocsPage title="Radius tokens">

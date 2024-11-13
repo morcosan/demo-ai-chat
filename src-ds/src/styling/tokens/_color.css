@@ -103,18 +103,11 @@
 	--ds-color-text-inverse: var(--ds-color-white);
 	--ds-color-text-preview: var(--ds-color-blue-4);
 
-	--ds-color-primary-alert-bg: var(--ds-color-npurple-7);
-	--ds-color-primary-alert-text: var(--ds-color-white);
 	--ds-color-primary-button-bg: var(--ds-color-npurple-6);
 	--ds-color-primary-button-text: var(--ds-color-white);
 	--ds-color-primary-card-bg: var(--ds-color-npurple-1);
 	--ds-color-primary-card-text: var(--ds-color-npurple-8);
 	--ds-color-primary-page-text: var(--ds-color-npurple-6);
-
-	--ds-color-primary: var(--ds-color-purple-3);
-	--ds-color-primary-bg: var(--ds-color-purple-1);
-	--ds-color-primary-text-default: var(--ds-color-purple-4);
-	--ds-color-primary-text-inverse: var(--ds-color-purple-1);
 
 	--ds-color-secondary: var(--ds-color-yellow-3);
 	--ds-color-secondary-bg: var(--ds-color-yellow-1);
@@ -161,18 +154,11 @@
 	--ds-color-text-inverse: var(--ds-color-black);
 	--ds-color-text-preview: var(--ds-color-blue-1);
 
-	--ds-color-primary-alert-bg: var(--ds-color-npurple-2);
-	--ds-color-primary-alert-text: var(--ds-color-npurple-8);
 	--ds-color-primary-button-bg: var(--ds-color-npurple-5);
 	--ds-color-primary-button-text: var(--ds-color-white);
 	--ds-color-primary-card-bg: var(--ds-color-npurple-8);
 	--ds-color-primary-card-text: var(--ds-color-white);
 	--ds-color-primary-page-text: var(--ds-color-npurple-3);
-
-	--ds-color-primary: var(--ds-color-purple-2);
-	--ds-color-primary-bg: var(--ds-color-purple-4);
-	--ds-color-primary-text-default: var(--ds-color-purple-1);
-	--ds-color-primary-text-inverse: var(--ds-color-purple-4);
 
 	--ds-color-secondary: var(--ds-color-yellow-2);
 	--ds-color-secondary-bg: var(--ds-color-yellow-4);

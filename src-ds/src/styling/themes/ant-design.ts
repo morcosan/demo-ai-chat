@@ -4,7 +4,7 @@ import { getTokenValue_COLOR } from '../tokens'
 const createThemeConfig = (theme: ColorTheme): ThemeConfig => ({
 	hashed: false,
 	token: {
-		colorPrimary: getTokenValue_COLOR('primary', theme),
+		colorPrimary: getTokenValue_COLOR('primary-page-text', theme),
 	},
 })
 

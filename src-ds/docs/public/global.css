@@ -21,7 +21,7 @@ div:has(> #preview-loader),
 }
 
 a[href='#storybook-preview-wrapper']:focus {
-	background-color: var(--ds-color-primary) !important;
+	background-color: var(--ds-color-primary-page-text) !important;
 	padding: var(--ds-spacing-xs-1) var(--ds-spacing-xs-3) !important;
 	color: var(--color) !important;
 	font-size: var(--ds-font-size-xs) !important;
