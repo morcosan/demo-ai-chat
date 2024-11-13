@@ -41,7 +41,7 @@ export const useButtonBase = (rawProps: ButtonProps) => {
 	const cssSizeFn = (height: string) => ({ height, minHeight: height })
 	const cssPaddingFn = (padding: string) => ({ paddingLeft: padding, paddingRight: padding })
 	const cssFontFn = (fontSize: string) => ({ fontSize, fontWeight: $fontWeight['md'] })
-	const cssRadiusFn = (borderRadius: string) => ({ borderRadius, '&::before': { borderRadius } })
+	const cssRadiusFn = (borderRadius: string) => ({ borderRadius, '&::before, &::after': { borderRadius } })
 	const cssPressedFn = (color: string) => ({ '&::before': { backgroundColor: color + ' !important' } })
 	const cssHoverFn = (backgroundColor: string) => ({
 		'&:hover::before': { backgroundColor },
@@ -59,6 +59,15 @@ export const useButtonBase = (rawProps: ButtonProps) => {
 			content: `''`,
 			zIndex: -1,
 		},
+
+		'&::after': isVSolid
+			? {
+					...CSS__ABSOLUTE_OVERLAY,
+					content: `''`,
+					zIndex: -1,
+					border: `1px solid ${$color['black-glass-3']}`,
+				}
+			: {},
 	}
 
 	const cssDisabled: CSS = {

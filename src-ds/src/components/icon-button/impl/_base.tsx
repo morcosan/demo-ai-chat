@@ -33,7 +33,7 @@ export const useIconButtonBase = (rawProps: IconButtonProps) => {
 	const cssTextColorFn = (color: string) => ({ color, fill: 'currentColor', stroke: 'currentColor' })
 	const cssBgColorFn = (backgroundColor: string) => ({ backgroundColor })
 	const cssSizeFn = (size: string) => ({ height: size, minHeight: size, width: size, minWidth: size })
-	const cssRadiusFn = (borderRadius: string) => ({ borderRadius, '&::before': { borderRadius } })
+	const cssRadiusFn = (borderRadius: string) => ({ borderRadius, '&::before, &::after': { borderRadius } })
 	const cssPressedFn = (color: string) => ({ '&::before': { backgroundColor: color + ' !important' } })
 	const cssHoverFn = (backgroundColor: string) => ({
 		'&:hover::before': { backgroundColor },
@@ -51,6 +51,15 @@ export const useIconButtonBase = (rawProps: IconButtonProps) => {
 			content: `''`,
 			zIndex: -1,
 		},
+
+		'&::after': isVSolid
+			? {
+					...CSS__ABSOLUTE_OVERLAY,
+					content: `''`,
+					zIndex: -1,
+					border: `1px solid ${$color['black-glass-3']}`,
+				}
+			: {},
 	}
 
 	const cssDisabled: CSS = {
