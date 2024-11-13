@@ -55,7 +55,7 @@ export default {
 									<DocsTokenCoding
 										tsVar={`$color['${name}']`}
 										twVars={[`bg-color-${name}`, `text-color-${name}`, `border-color-${name}`]}
-										cssVar={token.$css}
+										cssVar={`--ds-color-${name}`}
 										delay={DELAY}
 									/>
 								</td>
@@ -74,7 +74,7 @@ export default {
 						</tr>
 					</thead>
 					<tbody>
-						{primitiveTokens.map(([name, token]) => (
+						{primitiveTokens.map(([name]) => (
 							<tr key={name}>
 								<td>
 									<pre>{name}</pre>
@@ -86,7 +86,7 @@ export default {
 									<DocsTokenCoding
 										tsVar={`$color['${name}']`}
 										twVars={[`bg-color-${name}`, `text-color-${name}`, `border-color-${name}`]}
-										cssVar={token.$css}
+										cssVar={`--ds-color-${name}`}
 										delay={DELAY}
 									/>
 								</td>

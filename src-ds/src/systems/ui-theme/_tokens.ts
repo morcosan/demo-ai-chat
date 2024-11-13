@@ -25,27 +25,27 @@ export interface ThemeTokens {
 	$zIndex: Record<keyof typeof TOKENS__Z_INDEX, string>
 }
 
-const mapTokens = (tokenGroup: DesignTokenGroup, theme: ColorTheme) => {
+const mapTokens = (tokenGroup: DesignTokenGroup, ccPrefix: string, theme: ColorTheme) => {
 	return Object.fromEntries(
-		Object.entries<DesignToken>(tokenGroup).map(([tokenName, token]) => [
+		Object.keys(tokenGroup).map((tokenName: string) => [
 			tokenName,
-			ENV__USE_CSS_VARS ? `var(${token.$css})` : String(getTokenValue(tokenGroup, tokenName, theme)),
+			ENV__USE_CSS_VARS ? `var(${ccPrefix}${tokenName})` : String(getTokenValue(tokenGroup, tokenName, theme)),
 		])
 	) as Record<string, string>
 }
 
 const createTokens = (theme: ColorTheme): ThemeTokens => {
 	return {
-		$blur: mapTokens(TOKENS__BLUR, theme),
-		$breakpoint: mapTokens(TOKENS__BREAKPOINT, theme),
-		$color: mapTokens(TOKENS__COLOR, theme),
-		$fontSize: mapTokens(TOKENS__FONT_SIZE, theme),
-		$fontWeight: mapTokens(TOKENS__FONT_WEIGHT, theme),
-		$lineHeight: mapTokens(TOKENS__LINE_HEIGHT, theme),
-		$radius: mapTokens(TOKENS__RADIUS, theme),
-		$shadow: mapTokens(TOKENS__SHADOW, theme),
-		$spacing: mapTokens(TOKENS__SPACING, theme),
-		$zIndex: mapTokens(TOKENS__Z_INDEX, theme),
+		$blur: mapTokens(TOKENS__BLUR, '--ds-blur-', theme),
+		$breakpoint: mapTokens(TOKENS__BREAKPOINT, '--ds-breakpoint-', theme),
+		$color: mapTokens(TOKENS__COLOR, '--ds-color-', theme),
+		$fontSize: mapTokens(TOKENS__FONT_SIZE, '--ds-font-size-', theme),
+		$fontWeight: mapTokens(TOKENS__FONT_WEIGHT, '--ds-font-weight-', theme),
+		$lineHeight: mapTokens(TOKENS__LINE_HEIGHT, '--ds-line-height-', theme),
+		$radius: mapTokens(TOKENS__RADIUS, '--ds-radius-', theme),
+		$shadow: mapTokens(TOKENS__SHADOW, '--ds-shadow-', theme),
+		$spacing: mapTokens(TOKENS__SPACING, '--ds-spacing-', theme),
+		$zIndex: mapTokens(TOKENS__Z_INDEX, '--ds-z-index-', theme),
 	}
 }
 

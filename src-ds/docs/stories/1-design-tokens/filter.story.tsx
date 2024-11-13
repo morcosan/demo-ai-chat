@@ -44,7 +44,7 @@ export default {
 									<code>{getTokenValue_BLUR(token.$ref as BlurKey)}</code>
 								</td>
 								<td>
-									<div className="flex gap-xs-4 text-size-lg" style={{ filter: `blur(var(${token.$css}))` }}>
+									<div className="flex gap-xs-4 text-size-lg" style={{ filter: `blur(var(--ds-blur-${name}))` }}>
 										<SettingsSvg className="w-xs-7" />
 										Blur example
 									</div>
@@ -55,7 +55,7 @@ export default {
 										tsSize="w-lg-1"
 										twVars={[`blur-${name}`]}
 										twSize="w-lg-0"
-										cssVar={token.$css}
+										cssVar={`--ds-blur-${name}`}
 										cssSize="w-lg-4"
 									/>
 								</td>
@@ -84,7 +84,7 @@ export default {
 									<code>{token.$value}</code>
 								</td>
 								<td>
-									<div className="flex gap-xs-4 text-size-lg" style={{ filter: `blur(var(${token.$css}))` }}>
+									<div className="flex gap-xs-4 text-size-lg" style={{ filter: `blur(var(--ds-blur-${name}))` }}>
 										<SettingsSvg className="w-xs-7" />
 										Blur example
 									</div>
@@ -95,7 +95,7 @@ export default {
 										tsSize="w-lg-1"
 										twVars={[`blur-${name}`]}
 										twSize="w-lg-0"
-										cssVar={token.$css}
+										cssVar={`--ds-blur-${name}`}
 										cssSize="w-lg-4"
 									/>
 								</td>

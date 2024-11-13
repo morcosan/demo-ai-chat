@@ -28,7 +28,7 @@ export default {
 					<tbody>
 						{Object.entries(TOKENS__FONT_SIZE).map(([name, token]) => (
 							<tr key={name}>
-								<td style={{ fontSize: `var(${token.$css})` }}>
+								<td style={{ fontSize: `var(--ds-text-size-${name})` }}>
 									<pre>{name}</pre>
 								</td>
 								<td>
@@ -43,7 +43,7 @@ export default {
 										tsSize="w-lg-2"
 										twVars={[`text-size-${name}`]}
 										twSize="w-lg-1"
-										cssVar={token.$css}
+										cssVar={`--ds-font-size-${name}`}
 										cssSize="w-lg-4"
 									/>
 								</td>
@@ -64,7 +64,7 @@ export default {
 					<tbody>
 						{Object.entries(TOKENS__FONT_WEIGHT).map(([name, token]) => (
 							<tr key={name}>
-								<td style={{ fontWeight: `var(${token.$css})` }}>
+								<td style={{ fontWeight: `var(--ds-font-weight-${name})` }}>
 									<pre>{name}</pre>
 								</td>
 								<td>
@@ -76,7 +76,7 @@ export default {
 										tsSize="w-lg-2"
 										twVars={[`font-weight-${name}`]}
 										twSize="w-lg-1"
-										cssVar={token.$css}
+										cssVar={`--ds-font-weight-${name}`}
 										cssSize="w-lg-4"
 									/>
 								</td>
@@ -97,7 +97,7 @@ export default {
 					<tbody>
 						{Object.entries(TOKENS__LINE_HEIGHT).map(([name, token]) => (
 							<tr key={name}>
-								<td style={{ lineHeight: `var(${token.$css})` }}>
+								<td style={{ lineHeight: `var(--ds-line-height-${name})` }}>
 									<pre className="border border-color-primary-page-text">{name}</pre>
 								</td>
 								<td>
@@ -109,7 +109,7 @@ export default {
 										tsSize="w-lg-2"
 										twVars={[`leading-${name}`]}
 										twSize="w-lg-1"
-										cssVar={token.$css}
+										cssVar={`--ds-line-height-${name}`}
 										cssSize="w-lg-4"
 									/>
 								</td>

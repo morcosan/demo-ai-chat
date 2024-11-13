@@ -54,7 +54,7 @@ export default {
 										tsVar={`$shadow['${name}']`}
 										tsSize="w-lg-1"
 										twVars={[`shadow-${name}`]}
-										cssVar={token.$css}
+										cssVar={`--ds-shadow-${name}`}
 										cssSize="w-lg-2"
 									/>
 								</td>
@@ -90,7 +90,7 @@ export default {
 										tsVar={`$zIndex['${name}']`}
 										tsSize="w-lg-1"
 										twVars={[`z-${name}`]}
-										cssVar={token.$css}
+										cssVar={`--ds-z-index-${name}`}
 										cssSize="w-lg-2"
 									/>
 								</td>
@@ -123,7 +123,7 @@ export default {
 										tsSize="w-lg-1"
 										twVars={[`z-${name.replace('z-index-', '')}`]}
 										twSize="w-md-5"
-										cssVar={token.$css}
+										cssVar={`--ds-z-index-${name}`}
 										cssSize="w-lg-3"
 									/>
 								</td>

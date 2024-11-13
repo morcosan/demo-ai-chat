@@ -11,11 +11,15 @@ import {
 	TOKENS__Z_INDEX,
 } from '../tokens'
 
-const createTokens = (tokens: DesignTokenGroup, twPrefix: string, direct?: boolean): Record<string, string> => {
+type CreateTokensArgs = [tokens: DesignTokenGroup, twPrefix: string, cssPrefix: string, direct?: boolean]
+
+const createTokens = (...args: CreateTokensArgs): Record<string, string> => {
+	const [tokens, twPrefix, cssPrefix, direct] = args
+
 	return Object.fromEntries(
-		Object.entries<DesignToken>(tokens).map(([key, token]) => [
-			twPrefix + key,
-			direct ? (token.$value as string) : `var(${token.$css})`,
+		Object.entries<DesignToken>(tokens).map(([tokenName, token]) => [
+			twPrefix + tokenName,
+			direct ? (token.$value as string) : `var(${cssPrefix}${tokenName})`,
 		])
 	)
 }
@@ -24,16 +28,16 @@ const createTokens = (tokens: DesignTokenGroup, twPrefix: string, direct?: boole
 // Tailwind doesn't support multiple theme configs, it requires `dark:` prefix for each class
 // https://tailwindcss.com/docs/dark-mode
 export const TAILWIND_THEME = {
-	backdropBlur: createTokens(TOKENS__BLUR, ''),
-	borderRadius: createTokens(TOKENS__RADIUS, ''),
-	boxShadow: createTokens(TOKENS__SHADOW, ''),
-	colors: createTokens(TOKENS__COLOR, 'color-'),
-	fontSize: createTokens(TOKENS__FONT_SIZE, 'size-'),
-	fontWeight: createTokens(TOKENS__FONT_WEIGHT, 'weight-'),
-	lineHeight: createTokens(TOKENS__LINE_HEIGHT, ''),
-	screens: createTokens(TOKENS__BREAKPOINT, '', true),
-	spacing: createTokens(TOKENS__SPACING, ''),
-	zIndex: createTokens(TOKENS__Z_INDEX, ''),
+	backdropBlur: createTokens(TOKENS__BLUR, '', '--ds-blur-'),
+	borderRadius: createTokens(TOKENS__RADIUS, '', '--ds-radius-'),
+	boxShadow: createTokens(TOKENS__SHADOW, '', '--ds-shadow-'),
+	colors: createTokens(TOKENS__COLOR, 'color-', '--ds-color-'),
+	fontSize: createTokens(TOKENS__FONT_SIZE, 'size-', '--ds-font-size-'),
+	fontWeight: createTokens(TOKENS__FONT_WEIGHT, 'weight-', '--ds-font-weight-'),
+	lineHeight: createTokens(TOKENS__LINE_HEIGHT, '', '--ds-line-height-'),
+	screens: createTokens(TOKENS__BREAKPOINT, '', '--ds-breakpoint-', true),
+	spacing: createTokens(TOKENS__SPACING, '', '--ds-spacing-'),
+	zIndex: createTokens(TOKENS__Z_INDEX, '', '--ds-z-index-'),
 
 	extend: {
 		borderRadius: { none: 0 },

@@ -50,7 +50,7 @@ export default {
 											tsSize="w-lg-2"
 											twVars={[`w-${name}`, `h-${name}`, `m-${name}`, `p-${name}`]}
 											twSize="w-md-4"
-											cssVar={token.$css}
+											cssVar={`--ds-spacing-${name}`}
 											cssSize="w-lg-6"
 										/>
 									</td>
@@ -60,7 +60,7 @@ export default {
 									<td colSpan={4} className="relative !py-0">
 										<div
 											className="absolute bottom-0 left-0 h-xs-1 bg-color-text-subtle"
-											style={{ width: `var(${token.$css})` }}
+											style={{ width: `var(--ds-spacing-${name})` }}
 										/>
 									</td>
 								</tr>
@@ -94,7 +94,7 @@ export default {
 											tsSize="w-lg-2"
 											twVars={[`w-${name}`, `h-${name}`, `m-${name}`, `p-${name}`]}
 											twSize="w-md-4"
-											cssVar={token.$css}
+											cssVar={`--ds-spacing-${name}`}
 											cssSize="w-lg-6"
 										/>
 									</td>
@@ -104,7 +104,7 @@ export default {
 									<td colSpan={4} className="relative !py-0">
 										<div
 											className="absolute bottom-0 left-0 h-xs-1 bg-color-text-subtle"
-											style={{ width: `var(${token.$css})` }}
+											style={{ width: `var(--ds-spacing-${name})` }}
 										/>
 									</td>
 								</tr>

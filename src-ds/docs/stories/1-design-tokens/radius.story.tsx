@@ -36,8 +36,14 @@ export default {
 								</td>
 								<td>
 									<div className="flex items-center gap-xs-9">
-										<div className={cx('w-sm-4', previewClass)} style={{ borderRadius: `var(${token.$css})` }} />
-										<div className={cx('w-sm-9', previewClass)} style={{ borderRadius: `var(${token.$css})` }} />
+										<div
+											className={cx('w-sm-4', previewClass)}
+											style={{ borderRadius: `var(--ds-radius-${name})` }}
+										/>
+										<div
+											className={cx('w-sm-9', previewClass)}
+											style={{ borderRadius: `var(--ds-radius-${name})` }}
+										/>
 									</div>
 								</td>
 								<td>
@@ -45,7 +51,7 @@ export default {
 										tsVar={`$radius['${name}']`}
 										tsSize="w-lg-1"
 										twVars={[`rounded-${name}`]}
-										cssVar={token.$css}
+										cssVar={`--ds-radius-${name}`}
 										cssSize="w-lg-3"
 									/>
 								</td>

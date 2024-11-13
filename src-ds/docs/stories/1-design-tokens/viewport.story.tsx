@@ -61,7 +61,7 @@ export default {
 										tsSize="w-lg-2"
 										twVars={[`${name}:___`]}
 										twSize="w-md-4"
-										cssVar={token.$css}
+										cssVar={`--ds-breakpoint-${name}`}
 										cssSize="w-lg-5"
 									/>
 								</td>

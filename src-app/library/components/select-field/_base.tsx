@@ -173,8 +173,8 @@ export const useSelectFieldBase = (rawProps: SelectFieldProps) => {
 		},
 
 		'&[aria-selected=true]': {
-			backgroundColor: $color['secondary-bg'],
-			color: $color['secondary-text-default'],
+			backgroundColor: $color['secondary-button-bg'],
+			color: $color['secondary-button-text'],
 		},
 	}
 	const cssWrapper: CSS = {
