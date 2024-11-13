@@ -51,12 +51,10 @@ export const useModalBase = (rawProps: ModalProps) => {
 		boxShadow: $shadow['lg'],
 	}
 
-	const colorOverlay = isUiLight ? $color['black-glass-8'] : $color['black-glass-9']
-
 	const cssOverlayBase: CSS = {
 		...CSS__FIXED_OVERLAY,
 		zIndex: -1,
-		backgroundColor: props.persistent ? colorOverlay : $color['hover-2'],
+		backgroundColor: props.persistent ? $color['modal-overlay-strong'] : $color['modal-overlay-subtle'],
 		backdropFilter: props.persistent ? `blur(${$blur['default']})` : `blur(${$blur['subtle']})`,
 	}
 

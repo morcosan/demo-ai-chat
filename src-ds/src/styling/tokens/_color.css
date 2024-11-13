@@ -101,14 +101,21 @@
 	--ds-color-text-inverse: var(--ds-color-white);
 	--ds-color-text-coding: var(--ds-color-purple-7);
 
+	--ds-color-hover-default: var(--ds-color-black-glass-2);
+	--ds-color-hover-pressed: var(--ds-color-black-glass-3);
+
 	--ds-color-primary-button-bg: var(--ds-color-purple-6);
 	--ds-color-primary-button-text: var(--ds-color-white);
+	--ds-color-primary-hover-default: var(--ds-color-black-glass-4);
+	--ds-color-primary-hover-pressed: var(--ds-color-black-glass-6);
 	--ds-color-primary-card-bg: var(--ds-color-purple-1);
 	--ds-color-primary-card-text: var(--ds-color-purple-8);
 	--ds-color-primary-page-text: var(--ds-color-purple-6);
 
 	--ds-color-secondary-button-bg: var(--ds-color-yellow-2);
 	--ds-color-secondary-button-text: var(--ds-color-yellow-7);
+	--ds-color-secondary-hover-default: var(--ds-color-black-glass-3);
+	--ds-color-secondary-hover-pressed: var(--ds-color-black-glass-4);
 	--ds-color-secondary-card-bg: var(--ds-color-yellow-1);
 	--ds-color-secondary-card-text: var(--ds-color-yellow-7);
 	--ds-color-secondary-page-text: var(--ds-color-yellow-6);
@@ -123,14 +130,8 @@
 	--ds-color-danger-text-default: var(--ds-color-red-4);
 	--ds-color-danger-text-inverse: var(--ds-color-red-1);
 
-	--ds-color-hover-1: var(--ds-color-black-glass-3);
-	--ds-color-hover-2: var(--ds-color-black-glass-4);
-	--ds-color-hover-3: var(--ds-color-black-glass-5);
-	--ds-color-hover-4: var(--ds-color-black-glass-6);
-	--ds-color-hover-default: var(--ds-color-hover-1);
-	--ds-color-hover-pressed: var(--ds-color-hover-2);
-
-	--ds-color-modal-overlay: var(--ds-color-black-glass-8);
+	--ds-color-modal-overlay-subtle: var(--ds-color-black-glass-4);
+	--ds-color-modal-overlay-strong: var(--ds-color-black-glass-8);
 }
 
 [data-color-theme='dark'] {
@@ -153,11 +154,24 @@
 	--ds-color-text-inverse: var(--ds-color-black);
 	--ds-color-text-coding: var(--ds-color-purple-2);
 
+	--ds-color-hover-default: var(--ds-color-black-glass-4);
+	--ds-color-hover-pressed: var(--ds-color-black-glass-5);
+
 	--ds-color-primary-button-bg: var(--ds-color-purple-5);
 	--ds-color-primary-button-text: var(--ds-color-white);
+	--ds-color-primary-hover-default: var(--ds-color-black-glass-4);
+	--ds-color-primary-hover-pressed: var(--ds-color-black-glass-6);
 	--ds-color-primary-card-bg: var(--ds-color-purple-8);
 	--ds-color-primary-card-text: var(--ds-color-white);
 	--ds-color-primary-page-text: var(--ds-color-purple-3);
+
+	--ds-color-secondary-button-bg: var(--ds-color-yellow-2);
+	--ds-color-secondary-button-text: var(--ds-color-yellow-7);
+	--ds-color-secondary-hover-default: var(--ds-color-black-glass-3);
+	--ds-color-secondary-hover-pressed: var(--ds-color-black-glass-4);
+	--ds-color-secondary-card-bg: var(--ds-color-yellow-1);
+	--ds-color-secondary-card-text: var(--ds-color-yellow-7);
+	--ds-color-secondary-page-text: var(--ds-color-yellow-6);
 
 	--ds-color-success: var(--ds-color-green-2);
 	--ds-color-success-bg: var(--ds-color-green-4);
@@ -169,10 +183,6 @@
 	--ds-color-danger-text-default: var(--ds-color-red-1);
 	--ds-color-danger-text-inverse: var(--ds-color-red-4);
 
-	--ds-color-hover-1: var(--ds-color-black-glass-4);
-	--ds-color-hover-2: var(--ds-color-black-glass-5);
-	--ds-color-hover-3: var(--ds-color-black-glass-6);
-	--ds-color-hover-4: var(--ds-color-black-glass-7);
-	--ds-color-hover-default: var(--ds-color-hover-2);
-	--ds-color-hover-pressed: var(--ds-color-hover-4);
+	--ds-color-modal-overlay-subtle: var(--ds-color-black-glass-5);
+	--ds-color-modal-overlay-strong: var(--ds-color-black-glass-9);
 }

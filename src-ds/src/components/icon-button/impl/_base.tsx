@@ -81,8 +81,8 @@ export const useIconButtonBase = (rawProps: IconButtonProps) => {
 			return isVText
 				? cssHoverFn($color['hover-default'])
 				: isVSecondary
-					? cssHoverFn($color['hover-1'])
-					: cssHoverFn(isUiLight ? $color['hover-2'] : $color['hover-1'])
+					? cssHoverFn($color['secondary-hover-default'])
+					: cssHoverFn($color['primary-hover-default'])
 		}
 		return {}
 	})()
@@ -93,8 +93,8 @@ export const useIconButtonBase = (rawProps: IconButtonProps) => {
 			return isVText
 				? cssPressedFn($color['hover-pressed'])
 				: isVSecondary
-					? cssPressedFn($color['hover-2'])
-					: cssPressedFn(isUiLight ? $color['hover-4'] : $color['hover-2'])
+					? cssPressedFn($color['secondary-hover-pressed'])
+					: cssPressedFn($color['primary-hover-pressed'])
 		}
 		return {}
 	})()

@@ -86,14 +86,21 @@ export const TOKENS__COLOR = {
 	'text-inverse': { $ref: { light: 'white', dark: 'black' } },
 	'text-coding': { $ref: { light: 'blue-4', dark: 'blue-1' } },
 
+	'hover-default': { $ref: { light: 'hover-1', dark: 'hover-2' } },
+	'hover-pressed': { $ref: { light: 'hover-2', dark: 'hover-4' } },
+
 	'primary-button-bg': { $ref: { light: 'purple-1', dark: 'purple-4' } },
 	'primary-button-text': { $ref: { light: 'purple-1', dark: 'purple-4' } },
+	'primary-hover-default': { $ref: { light: 'purple-1', dark: 'purple-4' } },
+	'primary-hover-pressed': { $ref: { light: 'purple-1', dark: 'purple-4' } },
 	'primary-card-bg': { $ref: { light: 'purple-1', dark: 'purple-4' } },
 	'primary-card-text': { $ref: { light: 'purple-1', dark: 'purple-4' } },
 	'primary-page-text': { $ref: { light: 'purple-1', dark: 'purple-4' } },
 
 	'secondary-button-bg': { $ref: { light: 'purple-1', dark: 'purple-4' } },
 	'secondary-button-text': { $ref: { light: 'purple-1', dark: 'purple-4' } },
+	'secondary-hover-default': { $ref: { light: 'purple-1', dark: 'purple-4' } },
+	'secondary-hover-pressed': { $ref: { light: 'purple-1', dark: 'purple-4' } },
 	'secondary-card-bg': { $ref: { light: 'purple-1', dark: 'purple-4' } },
 	'secondary-card-text': { $ref: { light: 'purple-1', dark: 'purple-4' } },
 	'secondary-page-text': { $ref: { light: 'purple-1', dark: 'purple-4' } },
@@ -108,12 +115,6 @@ export const TOKENS__COLOR = {
 	'danger-text-default': { $ref: { light: 'red-4', dark: 'red-1' } },
 	'danger-text-inverse': { $ref: { light: 'red-1', dark: 'red-4' } },
 
-	'hover-1': { $ref: { light: 'black-glass-3', dark: 'black-glass-4' } },
-	'hover-2': { $ref: { light: 'black-glass-4', dark: 'black-glass-5' } },
-	'hover-3': { $ref: { light: 'black-glass-5', dark: 'black-glass-6' } },
-	'hover-4': { $ref: { light: 'black-glass-6', dark: 'black-glass-7' } },
-	'hover-default': { $ref: { light: 'hover-1', dark: 'hover-2' } },
-	'hover-pressed': { $ref: { light: 'hover-2', dark: 'hover-4' } },
-
-	'modal-overlay': { $ref: { light: 'black-glass-8', dark: 'black-glass-8' } },
+	'modal-overlay-subtle': { $ref: { light: 'black-glass-4', dark: 'black-glass-5' } },
+	'modal-overlay-strong': { $ref: { light: 'black-glass-8', dark: 'black-glass-9' } },
 } as const satisfies DesignTokenGroup<string>
