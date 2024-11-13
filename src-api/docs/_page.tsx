@@ -89,7 +89,7 @@ const ApiDocsPage = () => {
 					<div className="mt-sm-7 px-button-px-item">
 						<span className="text-size-lg text-color-text-subtle">Response</span>
 
-						<pre className="mt-xs-2 min-h-lg-0 overflow-auto bg-color-bg-preview p-xs-3">
+						<pre className="bg-color-bg-coding mt-xs-2 min-h-lg-0 overflow-auto p-xs-3">
 							{resp ? <div dangerouslySetInnerHTML={{ __html: respHtml }} /> : fetching ? 'Fetching...' : ''}
 						</pre>
 					</div>

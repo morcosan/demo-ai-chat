@@ -43,11 +43,6 @@ export const TOKENS__COLOR = {
 	'red-3': { $value: '#dc2626', $css: '--ds-color-red-3' },
 	'red-4': { $value: '#5e1717', $css: '--ds-color-red-4' },
 
-	'blue-1': { $value: '#dbeafe', $css: '--ds-color-blue-1' },
-	'blue-2': { $value: '#60a5fa', $css: '--ds-color-blue-2' },
-	'blue-3': { $value: '#2563eb', $css: '--ds-color-blue-3' },
-	'blue-4': { $value: '#1e40af', $css: '--ds-color-blue-4' },
-
 	'black-glass-1': { $value: 'rgba(10, 0, 15, 0.02)', $css: '--ds-color-black-glass-1' },
 	'black-glass-2': { $value: 'rgba(10, 0, 15, 0.08)', $css: '--ds-color-black-glass-2' },
 	'black-glass-3': { $value: 'rgba(10, 0, 15, 0.08)', $css: '--ds-color-black-glass-3' },
@@ -72,7 +67,7 @@ export const TOKENS__COLOR = {
 	'bg-card': { $ref: { light: 'grey-1', dark: 'grey-18' }, $css: '--ds-color-bg-card' },
 	'bg-popup': { $ref: { light: 'white', dark: 'grey-17' }, $css: '--ds-color-bg-popup' },
 	'bg-field': { $ref: { light: 'black-glass-1', dark: 'black-glass-4' }, $css: '--ds-color-bg-field' },
-	'bg-preview': { $ref: { light: 'black-glass-2', dark: 'black-glass-5' }, $css: '--ds-color-bg-preview' },
+	'bg-coding': { $ref: { light: 'black-glass-2', dark: 'black-glass-5' }, $css: '--ds-color-bg-coding' },
 	'bg-skeleton': { $ref: { light: 'black-glass-2', dark: 'white-glass-5' }, $css: '--ds-color-bg-skeleton' },
 
 	'border-active': { $ref: { light: 'grey-16', dark: 'grey-6' }, $css: '--ds-color-border-active' },
@@ -85,7 +80,7 @@ export const TOKENS__COLOR = {
 	'text-subtle': { $ref: { light: 'grey-13', dark: 'grey-8' }, $css: '--ds-color-text-subtle' },
 	'text-placeholder': { $ref: { light: 'grey-11', dark: 'grey-11' }, $css: '--ds-color-text-placeholder' },
 	'text-inverse': { $ref: { light: 'white', dark: 'black' }, $css: '--ds-color-text-inverse' },
-	'text-preview': { $ref: { light: 'blue-4', dark: 'blue-1' }, $css: '--ds-color-text-preview' },
+	'text-coding': { $ref: { light: 'blue-4', dark: 'blue-1' }, $css: '--ds-color-text-coding' },
 
 	'primary-button-bg': { $ref: { light: 'purple-1', dark: 'purple-4' }, $css: '--ds-color-primary-button-bg' },
 	'primary-button-text': { $ref: { light: 'purple-1', dark: 'purple-4' }, $css: '--ds-color-primary-button-text' },

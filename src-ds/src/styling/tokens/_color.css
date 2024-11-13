@@ -56,11 +56,6 @@
 	--ds-color-red-3: #dc2626;
 	--ds-color-red-4: #5e1717;
 
-	--ds-color-blue-1: #dbeafe;
-	--ds-color-blue-2: #60a5fa;
-	--ds-color-blue-3: #2563eb;
-	--ds-color-blue-4: #1e40af;
-
 	--ds-color-black-glass-1: rgba(10, 0, 15, 0.02);
 	--ds-color-black-glass-2: rgba(10, 0, 15, 0.04);
 	--ds-color-black-glass-3: rgba(10, 0, 15, 0.08);
@@ -88,7 +83,7 @@
 	--ds-color-bg-card: var(--ds-color-grey-1);
 	--ds-color-bg-popup: var(--ds-color-white);
 	--ds-color-bg-field: var(--ds-color-black-glass-1);
-	--ds-color-bg-preview: var(--ds-color-black-glass-2);
+	--ds-color-bg-coding: var(--ds-color-black-glass-2);
 	--ds-color-bg-skeleton: var(--ds-color-black-glass-3);
 
 	--ds-color-border-active: var(--ds-color-grey-16);
@@ -101,7 +96,7 @@
 	--ds-color-text-subtle: var(--ds-color-grey-13);
 	--ds-color-text-placeholder: var(--ds-color-grey-11);
 	--ds-color-text-inverse: var(--ds-color-white);
-	--ds-color-text-preview: var(--ds-color-blue-4);
+	--ds-color-text-coding: var(--ds-color-npurple-7);
 
 	--ds-color-primary-button-bg: var(--ds-color-npurple-6);
 	--ds-color-primary-button-text: var(--ds-color-white);
@@ -139,7 +134,7 @@
 	--ds-color-bg-card: var(--ds-color-grey-18);
 	--ds-color-bg-popup: var(--ds-color-grey-17);
 	--ds-color-bg-field: var(--ds-color-black-glass-4);
-	--ds-color-bg-preview: var(--ds-color-black-glass-5);
+	--ds-color-bg-coding: var(--ds-color-black-glass-5);
 	--ds-color-bg-skeleton: var(--ds-color-white-glass-3);
 
 	--ds-color-border-active: var(--ds-color-grey-6);
@@ -152,7 +147,7 @@
 	--ds-color-text-subtle: var(--ds-color-grey-8);
 	--ds-color-text-placeholder: var(--ds-color-grey-11);
 	--ds-color-text-inverse: var(--ds-color-black);
-	--ds-color-text-preview: var(--ds-color-blue-1);
+	--ds-color-text-coding: var(--ds-color-npurple-2);
 
 	--ds-color-primary-button-bg: var(--ds-color-npurple-5);
 	--ds-color-primary-button-text: var(--ds-color-white);

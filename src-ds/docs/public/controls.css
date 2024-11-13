@@ -381,7 +381,7 @@
 	}
 
 	& li > div span {
-		color: var(--ds-color-text-preview) !important;
+		color: var(--ds-color-text-coding) !important;
 		font-size: var(--ds-font-size-sm) !important;
 		font-family: var(--monospace), monospace !important;
 	}
