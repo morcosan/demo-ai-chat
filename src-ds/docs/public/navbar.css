@@ -155,7 +155,9 @@ label[for='storybook-explorer-searchfield'] + div {
 			}
 
 			& mark {
-				color: var(--ds-color-yellow-3) !important;
+				background-color: var(--ds-color-yellow-2) !important;
+				padding: 0 1px !important;
+				color: var(--ds-color-yellow-7) !important;
 			}
 		}
 	}
@@ -233,8 +235,8 @@ label[for='storybook-explorer-searchfield'] + div {
 	}
 
 	&[data-selected='true'] {
-		background-color: var(--ds-color-yellow-3) !important;
-		color: var(--ds-color-yellow-4) !important;
+		background-color: var(--ds-color-yellow-2) !important;
+		color: var(--ds-color-yellow-7) !important;
 		font-weight: var(--ds-font-weight-md) !important;
 	}
 }
