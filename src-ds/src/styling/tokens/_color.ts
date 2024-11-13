@@ -98,11 +98,6 @@ export const TOKENS__COLOR = {
 	'secondary-card-text': { $ref: { light: 'purple-1', dark: 'purple-4' } },
 	'secondary-page-text': { $ref: { light: 'purple-1', dark: 'purple-4' } },
 
-	secondary: { $ref: { light: 'yellow-3', dark: 'yellow-2' } },
-	'secondary-bg': { $ref: { light: 'yellow-1', dark: 'yellow-4' } },
-	'secondary-text-default': { $ref: { light: 'yellow-4', dark: 'yellow-1' } },
-	'secondary-text-inverse': { $ref: { light: 'yellow-1', dark: 'yellow-4' } },
-
 	success: { $ref: { light: 'green-3', dark: 'green-2' } },
 	'success-bg': { $ref: { light: 'green-1', dark: 'green-4' } },
 	'success-text-default': { $ref: { light: 'green-4', dark: 'green-1' } },

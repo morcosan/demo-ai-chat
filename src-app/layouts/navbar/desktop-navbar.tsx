@@ -39,7 +39,7 @@ export const DesktopNavbar = ({ unselected, onClickLanguage }: Props) => {
 
 	const pinClass = cx(
 		'h-xs-6',
-		isNavPinned ? 'text-color-secondary-text-default' : 'rotate-45 text-color-text-subtle'
+		isNavPinned ? 'text-color-secondary-page-text' : 'rotate-45 text-color-text-subtle'
 	)
 
 	const onClickLanguageItem = () => {

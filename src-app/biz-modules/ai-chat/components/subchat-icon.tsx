@@ -9,7 +9,7 @@ export const SubchatIcon = ({ count, className }: Props) => {
 
 	const iconClass = cx(
 		'flex items-center',
-		isPlus ? 'text-color-text-placeholder' : 'text-color-secondary-text-default',
+		isPlus ? 'text-color-text-placeholder' : 'text-color-secondary-page-text',
 		className
 	)
 

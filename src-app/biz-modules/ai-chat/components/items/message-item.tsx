@@ -19,7 +19,7 @@ export const MessageItem = (props: Props) => {
 	)
 	const userItemClass = cx(
 		isSubchat
-			? 'max-w-[80%] bg-color-secondary-card-bg'
+			? 'max-w-[80%] bg-color-secondary-card-bg text-color-secondary-card-text'
 			: 'max-w-[70%] bg-color-primary-card-bg text-color-primary-card-text'
 	)
 	const subchatClass = cx({

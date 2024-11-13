@@ -11,7 +11,7 @@ export const HighlightedText = ({ text, keyword, className }: Props) => {
 		<span className={className}>
 			{parts.map((part, j) =>
 				part.toLowerCase() === lcKeyword ? (
-					<span key={j} className="bg-color-yellow-2 px-px text-color-yellow-4">
+					<span key={j} className="bg-color-secondary-button-bg px-px text-color-secondary-button-text">
 						{part}
 					</span>
 				) : (

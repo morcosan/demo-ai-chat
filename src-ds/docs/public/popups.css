@@ -20,10 +20,10 @@
 		}
 
 		&.JS_SELECTED {
-			background-color: var(--ds-color-secondary-bg) !important;
+			background-color: var(--ds-color-secondary-button-bg) !important;
 
 			& span {
-				color: var(--ds-color-secondary-text-default) !important;
+				color: var(--ds-color-secondary-button-text) !important;
 				font-weight: var(--ds-font-weight-md) !important;
 			}
 		}
