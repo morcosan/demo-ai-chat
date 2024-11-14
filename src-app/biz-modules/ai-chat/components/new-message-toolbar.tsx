@@ -146,13 +146,14 @@ export const NewMessageToolbar = (props: Props) => {
 					variant={isChatView ? 'primary' : 'secondary'}
 					value={currAgentId}
 					options={agents}
+					keyValue="id"
+					keyLabel="name"
 					filterFn={agentFilterFn}
 					loading={agentLoading === 'full'}
 					loadingMore={agentLoading === 'more'}
 					canLoadMore={canLoadMoreAgents}
 					loadingText={t('aiChat.state.loadingAgents')}
-					keyValue="id"
-					keyLabel="name"
+					ariaLabel={t('aiChat.label.selectedAgent')}
 					size="sm"
 					popupPos="top"
 					compValue={AgentValue}

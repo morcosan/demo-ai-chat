@@ -47,6 +47,7 @@ export const NewMessageField = (props: Props) => {
 			size={isChatView ? 'xl' : 'lg'}
 			value={inputValue}
 			placeholder={t('aiChat.placeholder.newMessage', { name: agent.name })}
+			ariaLabel={t('aiChat.label.newMessage')}
 			slotRight={
 				<IconButton
 					tooltip={isDisabled || !message ? t('aiChat.error.emptyMessage') : t('aiChat.action.sendMessage')}

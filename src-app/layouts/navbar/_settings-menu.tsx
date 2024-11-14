@@ -46,9 +46,10 @@ export const SettingsMenu = ({ onClickBack, onClickLanguage }: Props) => {
 
 			{/* UI LIBRARY */}
 			<div className="mb-xs-1 mt-xs-3 flex items-center justify-between px-button-px-item">
-				<span>{t('core.label.uiLibrary')}</span>
+				<span id="ui-library">{t('core.label.uiLibrary')}</span>
 
 				<select
+					aria-labelledby="ui-library"
 					className={cx(
 						'h-button-h-sm border border-color-border-default px-xs-2',
 						'rounded-sm bg-color-bg-page text-size-xs'
@@ -64,9 +65,9 @@ export const SettingsMenu = ({ onClickBack, onClickLanguage }: Props) => {
 
 			{/* THEME */}
 			<div className="flex items-center justify-between px-button-px-item">
-				<span>{t('core.label.uiTheme')}</span>
+				<span id="ui-theme">{t('core.label.uiTheme')}</span>
 
-				<div className="flex flex-col gap-xs-1">
+				<div role="group" aria-labelledby="ui-theme" className="flex flex-col gap-xs-1">
 					<Button
 						variant={isUiLight ? 'solid-primary' : 'text-default'}
 						size="xs"
