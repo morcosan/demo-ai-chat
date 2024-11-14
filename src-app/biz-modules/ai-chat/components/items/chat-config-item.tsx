@@ -47,6 +47,7 @@ export const ChatConfigItem = (props: Props) => {
 					<div className={cx('-ml-button-px-item px-xs-2', (chat.deleting || chat.updating) && 'invisible')}>
 						<Checkbox
 							checked={selected}
+							tooltip={selected ? t('aiChat.action.deselectChat') : t('aiChat.action.selectChat')}
 							ariaDescription={chat.title}
 							onChange={(selected: boolean) => onToggle?.(selected)}
 						/>
@@ -70,6 +71,7 @@ export const ChatConfigItem = (props: Props) => {
 							variant="primary"
 							value={title}
 							placeholder={t('aiChat.placeholder.rename')}
+							ariaLabel={t('aiChat.label.chatTitle')}
 							className="absolute-overlay bg-color-bg-card"
 							slotRight={
 								<IconButton

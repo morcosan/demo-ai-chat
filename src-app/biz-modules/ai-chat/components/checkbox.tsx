@@ -73,7 +73,8 @@ export const Checkbox = (props: Props) => {
 				ref={inputRef}
 				type="checkbox"
 				checked={isChecked}
-				aria-description={props.tooltip ? `${props.tooltip}, ${props.ariaDescription}` : props.ariaDescription}
+				aria-label={props.tooltip}
+				aria-description={props.ariaDescription}
 				css={cssInput}
 				onChange={onChange}
 			/>

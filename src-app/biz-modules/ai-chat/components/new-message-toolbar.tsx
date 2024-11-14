@@ -177,6 +177,7 @@ export const NewMessageToolbar = (props: Props) => {
 
 			{/* AGENT MODAL */}
 			<AgentEditModal
+				id={isChatView ? 'agent-modal-chat' : 'agent-modal-subchat'}
 				agent={currAgent}
 				opened={showsAgentModal}
 				onSubmit={onSubmitAgent}

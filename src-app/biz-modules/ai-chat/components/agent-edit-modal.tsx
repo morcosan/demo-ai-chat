@@ -6,6 +6,7 @@ import { EMPTY_AGENT, useAiChatAgents } from '../state'
 import { AgentGptItem } from './items/agent-gpt-item'
 
 interface Props {
+	id: string
 	agent: Agent | null
 	opened: boolean
 	onSubmit(payload: Agent): Promise<void>
@@ -109,9 +110,9 @@ export const AgentEditModal = (props: Props) => {
 				<div className={sectionClass}>
 					{/* NAME */}
 					<div className="flex flex-col">
-						<FieldLabel fieldId="field-name">{t('core.label.name')}</FieldLabel>
+						<FieldLabel fieldId={`${props.id}-field-name`}>{t('core.label.name')}</FieldLabel>
 						<TextField
-							id="field-name"
+							id={`${props.id}-field-name`}
 							variant="primary"
 							value={payload.name}
 							ariaDescription={feedback.name ? `${t('core.label.errors')}: ${feedback.name}` : ''}
@@ -125,9 +126,9 @@ export const AgentEditModal = (props: Props) => {
 					{/* AVATAR */}
 					<div className="flex">
 						<div className="flex flex-1 flex-col">
-							<FieldLabel fieldId="field-avatar">{t('core.label.avatar')}</FieldLabel>
+							<FieldLabel fieldId={`${props.id}-field-avatar`}>{t('core.label.avatar')}</FieldLabel>
 							<TextField
-								id="field-avatar"
+								id={`${props.id}-field-avatar`}
 								variant="primary"
 								value={payload.avatar}
 								ariaDescription={feedback.avatar ? `${t('core.label.errors')}: ${feedback.avatar}` : ''}
@@ -145,11 +146,11 @@ export const AgentEditModal = (props: Props) => {
 
 					{/* DESCRIPTION */}
 					<div className="flex flex-col">
-						<FieldLabel fieldId="field-desc" optional>
+						<FieldLabel fieldId={`${props.id}-field-desc`} optional>
 							{t('core.label.description')}
 						</FieldLabel>
 						<TextField
-							id="field-desc"
+							id={`${props.id}-field-desc`}
 							variant="primary"
 							value={payload.desc}
 							ariaDescription={feedback.desc ? `${t('core.label.errors')}: ${feedback.desc}` : ''}
@@ -170,9 +171,9 @@ export const AgentEditModal = (props: Props) => {
 				<div className={sectionClass}>
 					{/* GPT */}
 					<div className="flex flex-col">
-						<FieldLabel fieldId="field-gpt">{t('aiChat.label.gptModel')}</FieldLabel>
+						<FieldLabel fieldId={`${props.id}-field-gpt`}>{t('aiChat.label.gptModel')}</FieldLabel>
 						<SelectField
-							id="field-gpt"
+							id={`${props.id}-field-gpt`}
 							variant="primary"
 							value={payload.gptId}
 							options={allGPTs}
@@ -187,11 +188,11 @@ export const AgentEditModal = (props: Props) => {
 
 					{/* SETUP */}
 					<div className="flex flex-1 flex-col">
-						<FieldLabel fieldId="field-setup" optional>
+						<FieldLabel fieldId={`${props.id}-field-setup`} optional>
 							{t('aiChat.label.customInstructions')}
 						</FieldLabel>
 						<TextField
-							id="field-setup"
+							id={`${props.id}-field-setup`}
 							variant="primary"
 							value={payload.setup}
 							ariaDescription={feedback.setup ? `${t('core.label.errors')}: ${feedback.setup}` : ''}
