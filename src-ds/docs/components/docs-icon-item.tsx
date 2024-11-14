@@ -23,8 +23,8 @@ export const DocIconItem = ({ icon }: Props) => {
 	)
 
 	const copiedClass = cx(
-		'flex-center absolute-overlay bg-color-success-bg',
-		'text-size-sm font-weight-md text-color-success-text-default'
+		'flex-center absolute-overlay bg-color-success-card-bg',
+		'text-size-sm font-weight-md text-color-success-card-text'
 	)
 
 	const onClick = (event: ReactMouseEvent) => {

@@ -21,7 +21,7 @@ const createThemeConfig = (theme: ColorTheme): Theme => {
 			primary: createMuiColor(getTokenValue_COLOR('primary-page-text', theme)),
 			secondary: createMuiColor(getTokenValue_COLOR('secondary-page-text', theme)),
 			error: createMuiColor(getTokenValue_COLOR('danger-page-text', theme)),
-			success: createMuiColor(getTokenValue_COLOR('success', theme)),
+			success: createMuiColor(getTokenValue_COLOR('success-page-text', theme)),
 		},
 		typography: {
 			fontFamily: 'inherit',

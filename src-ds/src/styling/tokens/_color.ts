@@ -121,10 +121,13 @@ export const TOKENS__COLOR = {
 	'danger-card-text': { $ref: { light: 'purple-1', dark: 'purple-4' } },
 	'danger-page-text': { $ref: { light: 'purple-1', dark: 'purple-4' } },
 
-	success: { $ref: { light: 'green-3', dark: 'green-2' } },
-	'success-bg': { $ref: { light: 'green-1', dark: 'green-4' } },
-	'success-text-default': { $ref: { light: 'green-4', dark: 'green-1' } },
-	'success-text-inverse': { $ref: { light: 'green-1', dark: 'green-4' } },
+	'success-button-bg': { $ref: { light: 'purple-1', dark: 'purple-4' } },
+	'success-button-text': { $ref: { light: 'purple-1', dark: 'purple-4' } },
+	'success-hover-default': { $ref: { light: 'purple-1', dark: 'purple-4' } },
+	'success-hover-pressed': { $ref: { light: 'purple-1', dark: 'purple-4' } },
+	'success-card-bg': { $ref: { light: 'purple-1', dark: 'purple-4' } },
+	'success-card-text': { $ref: { light: 'purple-1', dark: 'purple-4' } },
+	'success-page-text': { $ref: { light: 'purple-1', dark: 'purple-4' } },
 
 	'modal-overlay-subtle': { $ref: { light: 'black-glass-4', dark: 'black-glass-5' } },
 	'modal-overlay-strong': { $ref: { light: 'black-glass-8', dark: 'black-glass-9' } },

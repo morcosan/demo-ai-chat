@@ -89,7 +89,7 @@ const ApiDocsPage = () => {
 					<div className="mt-sm-7 px-button-px-item">
 						<span className="text-size-lg text-color-text-subtle">Response</span>
 
-						<pre className="bg-color-bg-coding mt-xs-2 min-h-lg-0 overflow-auto p-xs-3">
+						<pre className="mt-xs-2 min-h-lg-0 overflow-auto bg-color-bg-coding p-xs-3">
 							{resp ? <div dangerouslySetInnerHTML={{ __html: respHtml }} /> : fetching ? 'Fetching...' : ''}
 						</pre>
 					</div>
@@ -117,7 +117,7 @@ const ApiDocsPage = () => {
 									)}
 								>
 									{type}
-									<span className="ml-xs-3 pb-xs-1 text-size-md text-color-text-subtle">
+									<span className="ml-xs-3 pb-xs-2 text-size-xs text-color-text-subtle">
 										({ENDPOINTS.filter((ep: Endpoint) => ep.type === type).length})
 									</span>
 								</h2>
