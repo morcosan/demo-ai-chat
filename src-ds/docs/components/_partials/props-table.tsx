@@ -8,7 +8,7 @@ interface Props {
 export const PropsTable = ({ propDefs }: Props) => {
 	const getNameFlag = (required?: boolean) => {
 		return required ? (
-			<span title="Required" className="cursor-default px-xs-3 font-weight-xl text-color-danger">
+			<span title="Required" className="cursor-default px-xs-3 font-weight-xl text-color-danger-page-text">
 				*
 			</span>
 		) : (

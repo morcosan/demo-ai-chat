@@ -35,7 +35,7 @@ export const DbReset = () => {
 				}
 				onClose={() => setShowsConfirm(false)}
 			>
-				<div className="flex items-center text-color-danger">
+				<div className="flex items-center text-color-danger-page-text">
 					<WarningSvg className="mr-xs-4 w-xs-8" />
 					All data will be permanently deleted
 				</div>

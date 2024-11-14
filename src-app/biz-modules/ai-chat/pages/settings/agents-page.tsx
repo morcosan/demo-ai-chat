@@ -142,7 +142,7 @@ const AgentsPage = () => {
 				}
 				onClose={() => setShowsDeleteModal(false)}
 			>
-				<div className="mb-xs-8 flex items-center text-color-danger">
+				<div className="mb-xs-8 flex items-center text-color-danger-page-text">
 					<WarningSvg className="mr-xs-4 w-xs-8" />
 					{t('aiChat.warning.deletingAgent')}
 				</div>

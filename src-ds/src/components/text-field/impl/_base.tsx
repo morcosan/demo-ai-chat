@@ -86,13 +86,13 @@ export const useTextFieldBase = (rawProps: TextFieldProps, ref: Ref<TextFieldRef
 			content: `''`,
 			zIndex: -1,
 			borderWidth: '1px',
-			borderColor: props.invalid ? $color['danger'] : colorBorderDefault,
+			borderColor: props.invalid ? $color['danger-page-text'] : colorBorderDefault,
 			background: props.readonly ? 'transparent' : $color['bg-field'],
 			opacity: props.disabled ? 0.3 : 1,
 		},
 
 		'&:hover::before': isInteractive
-			? { borderColor: props.invalid ? $color['danger'] : $color['border-hover'] }
+			? { borderColor: props.invalid ? $color['danger-page-text'] : $color['border-hover'] }
 			: {},
 
 		'&:has(input:focus), &:has(textarea:focus)': isInteractive
@@ -101,7 +101,7 @@ export const useTextFieldBase = (rawProps: TextFieldProps, ref: Ref<TextFieldRef
 					stroke: $color['text-default'],
 
 					'&::before, &:hover::before': {
-						borderColor: props.invalid ? $color['danger'] : $color['border-active'],
+						borderColor: props.invalid ? $color['danger-page-text'] : $color['border-active'],
 					},
 				}
 			: {},

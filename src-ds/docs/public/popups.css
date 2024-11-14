@@ -46,7 +46,7 @@
 			margin-bottom: var(--ds-spacing-xs-3) !important;
 
 			span {
-				color: var(--ds-color-danger) !important;
+				color: var(--ds-color-danger-page-text) !important;
 				font-weight: var(--ds-font-weight-md) !important;
 			}
 		}

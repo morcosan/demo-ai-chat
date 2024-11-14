@@ -23,7 +23,7 @@ export const useButtonBase = (rawProps: ButtonProps) => {
 		highlight: 'default',
 		linkType: 'internal',
 	})
-	const { $color, $fontSize, $fontWeight, $lineHeight, $spacing, $radius, isUiLight } = useUiTheme()
+	const { $color, $fontSize, $fontWeight, $lineHeight, $spacing, $radius } = useUiTheme()
 	const { bindings, isDisabled, isPressed } = useClickable(props)
 
 	const isVDanger = VARIANTS_DANGER.includes(props.variant)
@@ -79,21 +79,24 @@ export const useButtonBase = (rawProps: ButtonProps) => {
 		if (isVGhost) {
 			if (isVPrimary) return cssTextColorFn($color['primary-page-text'])
 			if (isVSecondary) return cssTextColorFn($color['secondary-page-text'])
-			if (isVDanger) return cssTextColorFn($color['danger'])
+			if (isVDanger) return cssTextColorFn($color['danger-page-text'])
 		}
-		if (isVPrimary) return cssTextColorFn($color['primary-button-text'])
-		if (isVSecondary) return cssTextColorFn($color['secondary-button-text'])
-		if (isVDanger && isVSolid && isUiLight) return cssTextColorFn($color['text-inverse'])
-		if (isVDanger && isVSolid && !isUiLight) return cssTextColorFn($color['danger-text-inverse'])
-		if (isVDanger && !isVSolid) return cssTextColorFn($color['danger'])
+		if (isVSolid) {
+			if (isVPrimary) return cssTextColorFn($color['primary-button-text'])
+			if (isVSecondary) return cssTextColorFn($color['secondary-button-text'])
+			if (isVDanger) return cssTextColorFn($color['danger-button-text'])
+		}
+		if (isVDanger) return cssTextColorFn($color['danger-page-text'])
 		if (isVDefault) return cssTextColorFn($color['text-default'])
 		return {}
 	})()
 
 	const cssBgColor: CSS = (() => {
-		if (isVPrimary && !isVGhost) return cssBgColorFn($color['primary-button-bg'])
-		if (isVSecondary && !isVGhost) return cssBgColorFn($color['secondary-button-bg'])
-		if (isVDanger && isVSolid) return cssBgColorFn($color['danger'])
+		if (isVSolid) {
+			if (isVPrimary) return cssBgColorFn($color['primary-button-bg'])
+			if (isVSecondary) return cssBgColorFn($color['secondary-button-bg'])
+			if (isVDanger) return cssBgColorFn($color['danger-button-bg'])
+		}
 		return {}
 	})()
 
@@ -101,12 +104,12 @@ export const useButtonBase = (rawProps: ButtonProps) => {
 		if (isVGhost) {
 			if (isVPrimary) return cssBorderFn($color['primary-page-text'])
 			if (isVSecondary) return cssBorderFn($color['secondary-page-text'])
-			if (isVDanger) return cssBorderFn($color['danger'])
+			if (isVDanger) return cssBorderFn($color['danger-page-text'])
 		}
 		if (isVSolid) {
 			if (isVPrimary) return cssBorderFn($color['primary-button-bg'])
 			if (isVSecondary) return cssBorderFn($color['secondary-button-bg'])
-			if (isVDanger) return cssBorderFn($color['danger'])
+			if (isVDanger) return cssBorderFn($color['danger-button-bg'])
 		}
 		return cssBorderFn('transparent')
 	})()
@@ -114,11 +117,10 @@ export const useButtonBase = (rawProps: ButtonProps) => {
 	const cssHover: CSS = (() => {
 		if (isDisabled) return {}
 		if (props.highlight === 'default') {
-			return isVText || isVGhost
-				? cssHoverFn($color['hover-default'])
-				: isVSecondary
-					? cssHoverFn($color['secondary-hover-default'])
-					: cssHoverFn($color['primary-hover-default'])
+			if (isVText || isVGhost) return cssHoverFn($color['hover-default'])
+			if (isVPrimary) return cssHoverFn($color['primary-hover-default'])
+			if (isVSecondary) return cssHoverFn($color['secondary-hover-default'])
+			if (isVDanger) return cssHoverFn($color['danger-hover-default'])
 		}
 		return {}
 	})()
@@ -126,11 +128,10 @@ export const useButtonBase = (rawProps: ButtonProps) => {
 	const cssPressed: CSS = (() => {
 		if (isDisabled || props.highlight === 'selected') return {}
 		if (isPressed || props.highlight === 'pressed') {
-			return isVText || isVGhost
-				? cssPressedFn($color['hover-pressed'])
-				: isVSecondary
-					? cssPressedFn($color['secondary-hover-pressed'])
-					: cssPressedFn($color['primary-hover-pressed'])
+			if (isVText || isVGhost) return cssPressedFn($color['hover-pressed'])
+			if (isVPrimary) return cssPressedFn($color['primary-hover-pressed'])
+			if (isVSecondary) return cssPressedFn($color['secondary-hover-pressed'])
+			if (isVDanger) return cssPressedFn($color['danger-hover-pressed'])
 		}
 		return {}
 	})()

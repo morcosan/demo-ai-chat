@@ -57,7 +57,7 @@ export const useSelectFieldBase = (rawProps: SelectFieldProps) => {
 	const colorBorder = props.subtle
 		? 'transparent'
 		: props.invalid
-			? $color['danger']
+			? $color['danger-page-text']
 			: props.readonly
 				? $color['border-subtle']
 				: $color['border-default']
@@ -67,7 +67,7 @@ export const useSelectFieldBase = (rawProps: SelectFieldProps) => {
 	const cssFieldFocus: CSS = {
 		fill: $color['text-default'],
 		stroke: $color['text-default'],
-		borderColor: props.invalid ? $color['danger'] : $color['border-active'],
+		borderColor: props.invalid ? $color['danger-page-text'] : $color['border-active'],
 	}
 
 	const cssFieldBase: CSS = {
@@ -81,7 +81,9 @@ export const useSelectFieldBase = (rawProps: SelectFieldProps) => {
 		fill: $color['text-placeholder'],
 		stroke: $color['text-placeholder'],
 
-		'&:hover': isInteractive ? { borderColor: props.invalid ? $color['danger'] : $color['border-hover'] } : {},
+		'&:hover': isInteractive
+			? { borderColor: props.invalid ? $color['danger-page-text'] : $color['border-hover'] }
+			: {},
 
 		'&:has(input:focus)': isInteractive ? cssFieldFocus : {},
 	}

@@ -16,11 +16,12 @@ export const AntImpl = (rawProps: IconButtonProps) => {
 		const cssFn = (color: string, backgroundColor: string) => ({
 			'&:not(:disabled):not(.ant-btn-disabled):hover': { color, backgroundColor },
 		})
-		if (isVPrimary) return cssFn($color['primary-button-text'], $color['primary-button-bg'])
-		if (isVSecondary) return cssFn($color['secondary-button-text'], $color['secondary-button-bg'])
-		if (isVDanger && isVSolid && isUiLight) return cssFn($color['text-inverse'], $color['danger'])
-		if (isVDanger && isVSolid && !isUiLight) return cssFn($color['danger-text-inverse'], $color['danger'])
-		if (isVDanger) return cssFn($color['danger'], 'transparent')
+		if (isVSolid) {
+			if (isVPrimary) return cssFn($color['primary-button-text'], $color['primary-button-bg'])
+			if (isVSecondary) return cssFn($color['secondary-button-text'], $color['secondary-button-bg'])
+			if (isVDanger) return cssFn($color['danger-button-text'], $color['danger-button-bg'])
+		}
+		if (isVDanger) return cssFn($color['danger-page-text'], 'transparent')
 		if (isVDefault) return cssFn($color['text-default'], 'transparent')
 		return {}
 	})()

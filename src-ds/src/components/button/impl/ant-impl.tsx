@@ -19,7 +19,6 @@ export const AntImpl = (rawProps: ButtonProps) => {
 		isVPrimary,
 		isVSecondary,
 		isVSolid,
-		isVText,
 		props,
 	} = useButtonBase(rawProps)
 
@@ -31,13 +30,14 @@ export const AntImpl = (rawProps: ButtonProps) => {
 		if (isVGhost) {
 			if (isVPrimary) return cssFn($color['primary-page-text'], 'transparent')
 			if (isVSecondary) return cssFn($color['secondary-page-text'], 'transparent')
-			if (isVDanger) return cssFn($color['danger'], 'transparent')
+			if (isVDanger) return cssFn($color['danger-page-text'], 'transparent')
 		}
-		if (isVPrimary) return cssFn($color['primary-button-text'], $color['primary-button-bg'])
-		if (isVSecondary) return cssFn($color['secondary-button-text'], $color['secondary-button-bg'])
-		if (isVDanger && isVSolid && isUiLight) return cssFn($color['text-inverse'], $color['danger'])
-		if (isVDanger && isVSolid && !isUiLight) return cssFn($color['danger-text-inverse'], $color['danger'])
-		if (isVDanger && isVText) return cssFn($color['danger'], 'transparent')
+		if (isVSolid) {
+			if (isVPrimary) return cssFn($color['primary-button-text'], $color['primary-button-bg'])
+			if (isVSecondary) return cssFn($color['secondary-button-text'], $color['secondary-button-bg'])
+			if (isVDanger) return cssFn($color['danger-button-text'], $color['danger-button-bg'])
+		}
+		if (isVDanger) return cssFn($color['danger-page-text'], 'transparent')
 		if (isVDefault) return cssFn($color['text-default'], 'transparent')
 		return {}
 	})()

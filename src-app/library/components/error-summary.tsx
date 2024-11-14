@@ -25,10 +25,10 @@ export const ErrorSummary = ({ errors, className }: Props) => {
 				ref={listingRef}
 				tabIndex={-1}
 				aria-label={t('core.label.errors')}
-				className="rounded-lg bg-color-danger-bg px-button-px-item py-xs-3"
+				className="rounded-lg bg-color-danger-button-bg px-button-px-item py-xs-3 text-color-danger-button-text"
 			>
 				{validErrors.map((error: string, index: number) => (
-					<li key={error + index} className="flex items-center text-color-danger-text-default">
+					<li key={error + index} className="flex items-center">
 						<WarningSvg className="mr-xs-3 w-xs-7" />
 						{error}
 					</li>

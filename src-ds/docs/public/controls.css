@@ -408,10 +408,10 @@
 		position: relative !important;
 		border: none !important;
 		border-radius: var(--ds-radius-md) !important;
-		background-color: var(--ds-color-danger) !important;
+		background-color: var(--ds-color-danger-button-bg) !important;
 		padding: var(--ds-spacing-xs-2) var(--ds-spacing-xs-5) !important;
 		height: unset !important;
-		color: var(--ds-color-danger-text-inverse) !important;
+		color: var(--ds-color-danger-button-text) !important;
 		font-size: var(--ds-font-size-sm) !important;
 		line-height: 1 !important;
 
