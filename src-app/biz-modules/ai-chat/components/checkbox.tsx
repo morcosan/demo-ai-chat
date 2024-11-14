@@ -45,7 +45,7 @@ export const Checkbox = (props: Props) => {
 			backgroundColor: $color['hover-default'],
 
 			'& > span': {
-				borderColor: isChecked || isPartial ? $color['primary-button-bg'] : $color['border-active'],
+				borderColor: isChecked || isPartial ? $color['primary-button-bg'] : $color['primary-page-text'],
 			},
 		},
 	}

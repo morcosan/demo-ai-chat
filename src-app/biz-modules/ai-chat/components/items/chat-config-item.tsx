@@ -67,13 +67,13 @@ export const ChatConfigItem = (props: Props) => {
 						<TextField
 							ref={textFieldRef}
 							id={`${chat.id}-field`}
+							variant="primary"
 							value={title}
 							placeholder={t('aiChat.placeholder.rename')}
 							className="absolute-overlay bg-color-bg-card"
 							slotRight={
 								<IconButton
-									tooltip={t('aiChat.action.confirmRenameChat')}
-									disabled={!isDifferent}
+									tooltip={isDifferent ? t('aiChat.action.confirmRenameChat') : t('core.error.noChanges')}
 									variant="solid-primary"
 									size="xs"
 									className="mr-xs-2 self-center"

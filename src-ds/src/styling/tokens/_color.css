@@ -93,8 +93,8 @@
 	--ds-color-bg-coding: var(--ds-color-black-glass-2);
 	--ds-color-bg-skeleton: var(--ds-color-black-glass-3);
 
-	--ds-color-border-active: var(--ds-color-grey-16);
-	--ds-color-border-hover: var(--ds-color-grey-10);
+	--ds-color-border-active: var(--ds-color-grey-12);
+	--ds-color-border-hover: var(--ds-color-grey-11);
 	--ds-color-border-default: var(--ds-color-grey-7);
 	--ds-color-border-subtle: var(--ds-color-black-glass-3);
 	--ds-color-border-shadow: var(--ds-color-grey-3);
@@ -152,7 +152,7 @@
 	--ds-color-bg-coding: var(--ds-color-black-glass-5);
 	--ds-color-bg-skeleton: var(--ds-color-white-glass-3);
 
-	--ds-color-border-active: var(--ds-color-grey-6);
+	--ds-color-border-active: var(--ds-color-grey-8);
 	--ds-color-border-hover: var(--ds-color-grey-12);
 	--ds-color-border-default: var(--ds-color-grey-14);
 	--ds-color-border-subtle: var(--ds-color-white-glass-4);

@@ -112,6 +112,7 @@ export const AgentEditModal = (props: Props) => {
 						<FieldLabel fieldId="field-name">{t('core.label.name')}</FieldLabel>
 						<TextField
 							id="field-name"
+							variant="primary"
 							value={payload.name}
 							ariaDescription={feedback.name ? `${t('core.label.errors')}: ${feedback.name}` : ''}
 							disabled={props.agent.updating}
@@ -127,6 +128,7 @@ export const AgentEditModal = (props: Props) => {
 							<FieldLabel fieldId="field-avatar">{t('core.label.avatar')}</FieldLabel>
 							<TextField
 								id="field-avatar"
+								variant="primary"
 								value={payload.avatar}
 								ariaDescription={feedback.avatar ? `${t('core.label.errors')}: ${feedback.avatar}` : ''}
 								disabled={props.agent.updating}
@@ -148,6 +150,7 @@ export const AgentEditModal = (props: Props) => {
 						</FieldLabel>
 						<TextField
 							id="field-desc"
+							variant="primary"
 							value={payload.desc}
 							ariaDescription={feedback.desc ? `${t('core.label.errors')}: ${feedback.desc}` : ''}
 							disabled={props.agent.updating}
@@ -170,6 +173,7 @@ export const AgentEditModal = (props: Props) => {
 						<FieldLabel fieldId="field-gpt">{t('aiChat.label.gptModel')}</FieldLabel>
 						<SelectField
 							id="field-gpt"
+							variant="primary"
 							value={payload.gptId}
 							options={allGPTs}
 							keyLabel="name"
@@ -188,6 +192,7 @@ export const AgentEditModal = (props: Props) => {
 						</FieldLabel>
 						<TextField
 							id="field-setup"
+							variant="primary"
 							value={payload.setup}
 							ariaDescription={feedback.setup ? `${t('core.label.errors')}: ${feedback.setup}` : ''}
 							disabled={props.agent.updating}

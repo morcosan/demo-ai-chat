@@ -6,6 +6,7 @@ export type InputElement = HTMLInputElement & HTMLTextAreaElement
 
 export const useTextFieldBase = (rawProps: TextFieldProps, ref: Ref<TextFieldRef>) => {
 	const props = useDefaults(rawProps, {
+		variant: 'default',
 		size: 'md',
 	})
 	const { $fontSize, $color, $spacing, $radius } = useUiTheme()
@@ -65,6 +66,14 @@ export const useTextFieldBase = (rawProps: TextFieldProps, ref: Ref<TextFieldRef
 
 	const colorBorderDefault = props.readonly ? $color['border-subtle'] : $color['border-default']
 
+	const colorBorderActive = (() => {
+		if (props.invalid) return $color['danger-page-text']
+		if (props.variant === 'default') return $color['border-active']
+		if (props.variant === 'primary') return $color['primary-page-text']
+		if (props.variant === 'secondary') return $color['secondary-page-text']
+		return ''
+	})()
+
 	const cssWrapper: CSS = {
 		...CSS_A11Y_OUTLINE_PROXY,
 		...cssA11yOutline,
@@ -101,7 +110,8 @@ export const useTextFieldBase = (rawProps: TextFieldProps, ref: Ref<TextFieldRef
 					stroke: $color['text-default'],
 
 					'&::before, &:hover::before': {
-						borderColor: props.invalid ? $color['danger-page-text'] : $color['border-active'],
+						borderWidth: '2px',
+						borderColor: colorBorderActive,
 					},
 				}
 			: {},

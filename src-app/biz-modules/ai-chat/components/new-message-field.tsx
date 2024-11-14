@@ -43,10 +43,10 @@ export const NewMessageField = (props: Props) => {
 		<TextField
 			ref={inputRef}
 			id={isChatView ? 'field-chat' : 'field-subchat'}
+			variant={isChatView ? 'primary' : 'secondary'}
 			size={isChatView ? 'xl' : 'lg'}
 			value={inputValue}
 			placeholder={t('aiChat.placeholder.newMessage', { name: agent.name })}
-			ariaLabel="New message"
 			slotRight={
 				<IconButton
 					tooltip={isDisabled || !message ? t('aiChat.error.emptyMessage') : t('aiChat.action.sendMessage')}

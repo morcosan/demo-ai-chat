@@ -27,11 +27,11 @@
 		}
 
 		&.JS_SELECTED {
-			background-color: var(--ds-color-yellow-2) !important;
-			color: var(--ds-color-yellow-7) !important;
+			background-color: var(--ds-color-secondary-button-bg) !important;
+			color: var(--ds-color-secondary-button-text) !important;
 
 			& svg path {
-				fill: var(--ds-color-yellow-2) !important;
+				fill: var(--ds-color-secondary-button-text) !important;
 			}
 		}
 

@@ -7,6 +7,7 @@ export const useSelectFieldBase = (rawProps: SelectFieldProps) => {
 	const props = useDefaults(rawProps, {
 		keyLabel: 'label',
 		keyValue: 'value',
+		variant: 'default',
 		size: 'md',
 		popupPos: 'bottom',
 	})
@@ -64,10 +65,19 @@ export const useSelectFieldBase = (rawProps: SelectFieldProps) => {
 
 	const cssA11yOutline: CSS = { '&:not(:has(input:focus))': { outline: 'none' } }
 
+	const colorBorderActive = (() => {
+		if (props.invalid) return $color['danger-page-text']
+		if (props.variant === 'default') return $color['border-active']
+		if (props.variant === 'primary') return $color['primary-page-text']
+		if (props.variant === 'secondary') return $color['secondary-page-text']
+		return ''
+	})()
+
 	const cssFieldFocus: CSS = {
 		fill: $color['text-default'],
 		stroke: $color['text-default'],
-		borderColor: props.invalid ? $color['danger-page-text'] : $color['border-active'],
+		borderWidth: '2px',
+		borderColor: colorBorderActive,
 	}
 
 	const cssFieldBase: CSS = {

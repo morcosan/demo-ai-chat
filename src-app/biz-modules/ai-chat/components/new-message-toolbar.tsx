@@ -143,6 +143,7 @@ export const NewMessageToolbar = (props: Props) => {
 			<div className="mb-xs-1">
 				<SelectField
 					id={isChatView ? 'agent-chat' : 'agent-subchat'}
+					variant={isChatView ? 'primary' : 'secondary'}
 					value={currAgentId}
 					options={agents}
 					filterFn={agentFilterFn}
