@@ -10,7 +10,7 @@ export const AntImpl = (rawProps: TextFieldProps, ref: Ref<TextFieldRef>) => {
 
 	const cssAntWrapper: CSS = {
 		...cssWrapper,
-		background: 'transparent',
+		background: 'transparent !important',
 		border: 'none',
 
 		'&::before': {
