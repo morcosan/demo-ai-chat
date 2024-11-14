@@ -28,8 +28,6 @@ export const MessageItem = (props: Props) => {
 		'w-md-0': !isSubchat,
 	})
 
-	const skeletonClass = 'rounded-sm bg-color-bg-skeleton'
-
 	return (
 		<li className={wrapperClass}>
 			{message.role === 'user' ? (
@@ -46,23 +44,13 @@ export const MessageItem = (props: Props) => {
 				<div className="w-full py-xs-1">
 					<AgentGptItem agent={agent} className="mx-xs-2 mb-xs-4" compact subtle />
 
-					<div
-						className={cx(
-							'rounded-md bg-color-bg-card px-xs-6 py-xs-3 shadow-xs',
-							message.loading ? 'w-full' : 'w-fit'
-						)}
-					>
-						{message.loading ? (
-							<div className="flex animate-pulse flex-col gap-xs-2">
-								<div className={skeletonClass}>&nbsp;</div>
-								<div className={skeletonClass}>&nbsp;</div>
-								<div className={skeletonClass}>&nbsp;</div>
-								<div className={cx(skeletonClass, 'w-[60%]')}>&nbsp;</div>
-							</div>
-						) : (
-							message.text
-						)}
-					</div>
+					{message.loading ? (
+						<div className="w-fit animate-pulse rounded-md bg-color-bg-skeleton px-button-px-item py-xs-2 text-size-sm">
+							{t('aiChat.state.thinking')}
+						</div>
+					) : (
+						<div className="w-fit rounded-md bg-color-bg-card px-xs-6 py-xs-3 shadow-xs">{message.text}</div>
+					)}
 				</div>
 			)}
 
