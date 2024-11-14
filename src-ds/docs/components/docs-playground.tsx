@@ -1,14 +1,12 @@
-import { useDocsPlayground } from '@ds/docs/components/docs-playground-provider'
 import { useUiA11y } from '@ds/release'
 import { useRef } from 'react'
+import { DocsPlaygroundBase } from './docs-playground-base'
 
 export const DocsPlayground = ({ children, className }: ReactProps) => {
 	const { forceA11yMode } = useUiA11y()
-	const { playgroundBgClass } = useDocsPlayground()
 	const input1Ref = useRef<HTMLInputElement>(null)
 	const input2Ref = useRef<HTMLInputElement>(null)
 
-	const bgClass = 'flex-center relative min-h-lg-9 flex-col rounded-md border border-color-border-default '
 	const focusClass = cx(
 		'absolute right-0 w-md-3 bg-color-bg-page py-xs-0',
 		'text-center text-size-xs text-color-text-subtle'
@@ -23,7 +21,7 @@ export const DocsPlayground = ({ children, className }: ReactProps) => {
 	}
 
 	return (
-		<div className={cx(bgClass, playgroundBgClass, className)}>
+		<DocsPlaygroundBase className={cx('flex-center relative min-h-lg-9 flex-col', className)}>
 			<label htmlFor="kf-1" className="sr-only">
 				Keyboard focus 1
 			</label>
@@ -48,6 +46,6 @@ export const DocsPlayground = ({ children, className }: ReactProps) => {
 				onFocus={onFocusInput}
 			/>
 			<div tabIndex={0} className="opacity-0" onFocus={() => input1Ref.current?.focus()} />
-		</div>
+		</DocsPlaygroundBase>
 	)
 }
