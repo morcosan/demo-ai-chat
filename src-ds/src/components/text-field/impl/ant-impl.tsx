@@ -30,6 +30,7 @@ export const AntImpl = (rawProps: TextFieldProps, ref: Ref<TextFieldRef>) => {
 		'& > .ant-input': {
 			...cssInput,
 			border: 'none',
+			minHeight: `${cssInput.minHeight} !important`,
 			padding: `${cssInput.padding} !important`,
 			fontSize: `${cssInput.fontSize} !important`,
 			fontFamily: 'inherit',
