@@ -50,19 +50,14 @@
 	--ds-color-green-3: #16a34a;
 	--ds-color-green-4: #166534;
 
-	--ds-color-red-1: #fee2e2;
-	--ds-color-red-2: #fecaca;
-	--ds-color-red-3: #fca5a5;
+	--ds-color-red-1: #fecaca;
+	--ds-color-red-2: #fca5a5;
+	--ds-color-red-3: #fc7a7a;
 	--ds-color-red-4: #f87171;
-	--ds-color-red-5: #ef4444;
+	--ds-color-red-5: #de3434;
 	--ds-color-red-6: #d92323;
 	--ds-color-red-7: #b91c1c;
 	--ds-color-red-8: #7f1d1d;
-
-	/*--ds-color-red-1: #fee2e2;*/
-	/*--ds-color-red-2: #f87171;*/
-	/*--ds-color-red-3: #dc2626;*/
-	/*--ds-color-red-4: #5e1717;*/
 
 	--ds-color-black-glass-1: rgba(10, 0, 15, 0.02);
 	--ds-color-black-glass-2: rgba(10, 0, 15, 0.04);
@@ -129,7 +124,7 @@
 	--ds-color-danger-button-text: var(--ds-color-white);
 	--ds-color-danger-hover-default: var(--ds-color-black-glass-4);
 	--ds-color-danger-hover-pressed: var(--ds-color-black-glass-6);
-	--ds-color-danger-card-bg: var(--ds-color-red-2);
+	--ds-color-danger-card-bg: var(--ds-color-red-1);
 	--ds-color-danger-card-text: var(--ds-color-red-8);
 	--ds-color-danger-page-text: var(--ds-color-red-6);
 
@@ -181,13 +176,13 @@
 	--ds-color-secondary-card-text: var(--ds-color-white);
 	--ds-color-secondary-page-text: var(--ds-color-yellow-2);
 
-	--ds-color-danger-button-bg: var(--ds-color-red-6);
+	--ds-color-danger-button-bg: var(--ds-color-red-5);
 	--ds-color-danger-button-text: var(--ds-color-white);
 	--ds-color-danger-hover-default: var(--ds-color-black-glass-4);
 	--ds-color-danger-hover-pressed: var(--ds-color-black-glass-6);
-	--ds-color-danger-card-bg: var(--ds-color-red-2);
-	--ds-color-danger-card-text: var(--ds-color-red-8);
-	--ds-color-danger-page-text: var(--ds-color-red-6);
+	--ds-color-danger-card-bg: var(--ds-color-red-8);
+	--ds-color-danger-card-text: var(--ds-color-white);
+	--ds-color-danger-page-text: var(--ds-color-red-3);
 
 	--ds-color-success: var(--ds-color-green-2);
 	--ds-color-success-bg: var(--ds-color-green-4);
