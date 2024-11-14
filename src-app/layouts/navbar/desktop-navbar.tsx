@@ -94,7 +94,12 @@ export const DesktopNavbar = ({ unselected, onClickLanguage }: Props) => {
 			<div className={isNavCollapsed || isNavPinned ? 'hidden' : 'fixed-overlay z-navbar backdrop-blur-subtle'} />
 
 			{/* NAVBAR */}
-			<nav ref={navbarRef} className={navbarClass} onMouseLeave={onMouseLeaveNavbar}>
+			<nav
+				ref={navbarRef}
+				aria-label={t('core.label.navigationMenu')}
+				className={navbarClass}
+				onMouseLeave={onMouseLeaveNavbar}
+			>
 				{/* LOGO */}
 				<AppLogo collapsed={isNavCollapsed} className="mb-xs-5" />
 

@@ -34,6 +34,8 @@
 			"language": "Language",
 			"lightTheme": "Light",
 			"name": "Name",
+			"navigationBar": "Navigation bar",
+			"navigationMenu": "Navigation menu",
 			"optionalField": "(Optional)",
 			"quickSettings": "Quick settings",
 			"requiredField": "(Required)",

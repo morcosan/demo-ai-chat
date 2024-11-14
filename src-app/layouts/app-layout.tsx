@@ -47,46 +47,50 @@ export const AppLayout = ({ blank, children }: Props) => {
 			style={{ paddingTop: isViewportMaxLG ? 'var(--app-spacing-navbar-h)' : 0 }}
 		>
 			{isViewportMaxLG ? (
-				<MobileNavbar hasMenu={showsNavMenu} onToggleNavMenu={onToggleNavMenu} />
+				<>
+					{/* NAVBAR */}
+					<MobileNavbar hasMenu={showsNavMenu} onToggleNavMenu={onToggleNavMenu} />
+
+					{/* MENU OVERLAY */}
+					<div
+						className={cx('absolute-overlay backdrop-blur-subtle', !showsNavMenu && 'hidden')}
+						style={{ top: 'var(--app-spacing-navbar-h)', zIndex: 'calc(var(--ds-z-index-navbar) - 1)' }}
+						onClick={() => setShowsNavMenu(false)}
+					/>
+					{/* MENU CONTENT */}
+					<nav
+						aria-label={t('core.label.navigationMenu')}
+						className={cx(
+							'fixed bottom-0 left-0 right-0 mr-button-h-md',
+							'border-r border-t border-color-border-shadow bg-color-bg-card shadow-lg',
+							'transition-transform duration-300 ease-out',
+							showsNavMenu ? 'translate-x-0' : '-translate-x-full'
+						)}
+						style={{ top: 'var(--app-spacing-navbar-h)', zIndex: 'calc(var(--ds-z-index-navbar) - 1)' }}
+					>
+						{showsSettingsMenu ? (
+							<SettingsMenu onClickBack={onToggleSettings} onClickLanguage={() => setShowsI18nModal(true)} />
+						) : (
+							<MobileNavMenu
+								unselected={blank}
+								onHideNavMenu={() => setShowsNavMenu(false)}
+								onToggleSettings={onToggleSettings}
+							/>
+						)}
+					</nav>
+				</>
 			) : (
 				<DesktopNavbar unselected={blank} onClickLanguage={() => setShowsI18nModal(true)} />
 			)}
 
-			{/* MOBILE MENU OVERLAY */}
-			<div
-				className={cx('absolute-overlay backdrop-blur-subtle', !showsNavMenu && 'hidden')}
-				style={{ top: 'var(--app-spacing-navbar-h)', zIndex: 'calc(var(--ds-z-index-navbar) - 1)' }}
-				onClick={() => setShowsNavMenu(false)}
-			/>
-			{/* MOBILE MENU CONTENT */}
-			<div
-				className={cx(
-					'fixed bottom-0 left-0 right-0 mr-button-h-md',
-					'border-r border-t border-color-border-shadow bg-color-bg-card shadow-lg',
-					'transition-transform duration-300 ease-out',
-					showsNavMenu ? 'translate-x-0' : '-translate-x-full'
-				)}
-				style={{ top: 'var(--app-spacing-navbar-h)', zIndex: 'calc(var(--ds-z-index-navbar) - 1)' }}
-			>
-				{showsSettingsMenu ? (
-					<SettingsMenu onClickBack={onToggleSettings} onClickLanguage={() => setShowsI18nModal(true)} />
-				) : (
-					<MobileNavMenu
-						unselected={blank}
-						onHideNavMenu={() => setShowsNavMenu(false)}
-						onToggleSettings={onToggleSettings}
-					/>
-				)}
-			</div>
-
 			{/* PAGE CONTENT */}
-			<div className="h-full w-full flex-1 overflow-x-hidden">
+			<main className="h-full w-full flex-1 overflow-x-hidden">
 				<div className={contentClass}>{children}</div>
-			</div>
 
-			{/* MODALS */}
-			<I18nModal opened={showsI18nModal} onClose={() => setShowsI18nModal(false)} />
-			<AiChatSearchModal />
+				{/* MODALS */}
+				<I18nModal opened={showsI18nModal} onClose={() => setShowsI18nModal(false)} />
+				<AiChatSearchModal />
+			</main>
 		</div>
 	)
 }
