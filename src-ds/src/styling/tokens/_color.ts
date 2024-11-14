@@ -51,9 +51,13 @@ export const TOKENS__COLOR = {
 	'red-8': { $value: '#7f1d1d' },
 
 	'green-1': { $value: '#dcfce7' },
-	'green-2': { $value: '#86efac' },
-	'green-3': { $value: '#16a34a' },
-	'green-4': { $value: '#166534' },
+	'green-2': { $value: '#bbf7d0' },
+	'green-3': { $value: '#4ade80' },
+	'green-4': { $value: '#22c55e' },
+	'green-5': { $value: '#16a34a' },
+	'green-6': { $value: '#15873f' },
+	'green-7': { $value: '#13803b' },
+	'green-8': { $value: '#14532d' },
 
 	'black-glass-1': { $value: 'rgba(10, 0, 15, 0.02)' },
 	'black-glass-2': { $value: 'rgba(10, 0, 15, 0.08)' },
