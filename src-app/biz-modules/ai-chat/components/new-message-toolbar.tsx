@@ -35,7 +35,7 @@ export const NewMessageToolbar = (props: Props) => {
 
 	const agentCookieKey = isChatView ? COOKIE_KEY.APP_AGENT_FOR_CHAT : COOKIE_KEY.APP_AGENT_FOR_SUBCHAT
 
-	const agentToEdit = agents.find((agent: Agent) => agent.id === currAgentId) || EMPTY_AGENT
+	const currAgent = agents.find((agent: Agent) => agent.id === currAgentId) || EMPTY_AGENT
 
 	const canLoadMoreAgents = !agentPagination.page || agents.length < agentPagination.count
 
@@ -175,7 +175,7 @@ export const NewMessageToolbar = (props: Props) => {
 
 			{/* AGENT MODAL */}
 			<AgentEditModal
-				agent={agentToEdit}
+				agent={currAgent}
 				opened={showsAgentModal}
 				onSubmit={onSubmitAgent}
 				onClose={() => setShowsAgentModal(false)}
@@ -183,7 +183,7 @@ export const NewMessageToolbar = (props: Props) => {
 
 			{/* TEXT FIELD */}
 			<NewMessageField
-				agentId={currAgentId}
+				agent={currAgent}
 				listLoading={listLoading}
 				isChatView={isChatView}
 				onPostMessage={onPostMessage}

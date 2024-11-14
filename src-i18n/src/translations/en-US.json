@@ -103,7 +103,7 @@
 			"xSelectedMessages_other": "{count} messages selected"
 		},
 		"placeholder": {
-			"newMessage": "Ask a question...",
+			"newMessage": "Talk to {name}...",
 			"rename": "Generate a new name automatically..."
 		},
 		"state": {
@@ -113,7 +113,8 @@
 			"loadingMessages": "Loading messages...",
 			"loadingPreviousMessages": "Loading previous messages...",
 			"loadingSubchats": "Loading subchats...",
-			"renamingChat": "Renaming chat..."
+			"renamingChat": "Renaming chat...",
+			"thinking": "Thinking..."
 		},
 		"warning": {
 			"deletingAgent": "This agent will be permanently deleted",
