@@ -2,7 +2,7 @@
 	"core": {
 		"action": {
 			"back": "Indietro",
-			"backToHome": "Torna alla home",
+			"backToHome": "Torna alla homepage",
 			"changeLanguage": "Cambia lingua",
 			"close": "Chiudi",
 			"delete": "Elimina",
@@ -11,13 +11,13 @@
 			"rename": "Rinomina",
 			"saveChanges": "Salva modifiche",
 			"search": "Cerca",
-			"searchMore": "Mostra altri risultati",
+			"searchMore": "Mostra più risultati",
 			"selectAll": "Seleziona tutto",
-			"signOut": "Esci"
+			"signOut": "Disconnetti"
 		},
 		"error": {
 			"noChanges": "Nessuna modifica",
-			"nothingFound": "Nessun risultato per \"{search}\""
+			"nothingFound": "Nessun risultato trovato per \"{search}\""
 		},
 		"label": {
 			"apiDocs": "Documentazione API",
@@ -27,19 +27,21 @@
 			"darkTheme": "Scuro",
 			"default": "Predefinito",
 			"description": "Descrizione",
-			"designSystem": "Sistema di Design",
+			"designSystem": "Sistema di design",
 			"errors": "Errori",
 			"europe": "Europa",
 			"githubRepo": "Repository GitHub",
 			"language": "Lingua",
 			"lightTheme": "Chiaro",
 			"name": "Nome",
+			"navigationBar": "Barra di navigazione",
+			"navigationMenu": "Menu di navigazione",
 			"optionalField": "(Opzionale)",
 			"quickSettings": "Impostazioni rapide",
 			"requiredField": "(Obbligatorio)",
 			"settings": "Impostazioni",
-			"uiLibrary": "Libreria UI:",
-			"uiTheme": "Tema UI:"
+			"uiLibrary": "Libreria UI",
+			"uiTheme": "Tema UI"
 		},
 		"placeholder": {
 			"search": "Cerca..."
@@ -54,7 +56,7 @@
 	},
 	"aiChat": {
 		"action": {
-			"backToSubchats": "Torna alle sotto-chat",
+			"backToSubchats": "Torna ai sottochat",
 			"configureAgent": "Configura agente",
 			"confirmDeleteAgent": "Conferma eliminazione agente",
 			"confirmDeleteChats": "Conferma eliminazione chat",
@@ -62,22 +64,24 @@
 			"createAgent": "Crea agente",
 			"deleteAgent": "Elimina agente",
 			"deleteSelectedChats": "Elimina chat selezionate",
+			"deselectChat": "Deseleziona chat",
 			"manageAgents": "Gestisci agenti",
 			"manageChats": "Gestisci chat",
 			"openChat": "Apri chat",
-			"openSubchat_zero": "Crea sotto-chat",
-			"openSubchat_one": "Apri sotto-chat ({count} messaggio)",
-			"openSubchat_other": "Apri sotto-chat ({count} messaggi)",
+			"openSubchat_other": "Apri sottochat ({count} messaggi)",
+			"openSubchat_zero": "Crea sottochat",
+			"searchChats": "Cerca chat",
+			"selectChat": "Seleziona chat",
 			"sendMessage": "Invia messaggio",
-			"showMoreAgents": "Mostra altri agenti",
-			"showMoreChats": "Mostra altre chat",
-			"showSubchats": "Mostra sotto-chat ({count})",
-			"startSearching_one": "Inserisci almeno {count} carattere",
-			"startSearching_other": "Inserisci almeno {count} caratteri"
+			"showMoreAgents": "Mostra più agenti",
+			"showMoreChats": "Mostra più chat",
+			"showSubchats": "Mostra sottochat ({count})",
+			"startSearching_one": "Digita almeno {count} carattere",
+			"startSearching_other": "Digita almeno {count} caratteri"
 		},
 		"description": {
-			"loremIpsumGPT": "Il modello più intelligente",
-			"rammusGPT": "Il miglior supporto emotivo"
+			"loremIpsumGPT": "Modello più intelligente",
+			"rammusGPT": "Miglior supporto emotivo"
 		},
 		"error": {
 			"agentAvatar": "Devi aggiungere un avatar per l'agente",
@@ -86,37 +90,39 @@
 		},
 		"label": {
 			"agents": "Agenti",
+			"chatTitle": "Titolo chat",
 			"chats": "Chat",
 			"customInstructions": "Istruzioni personalizzate",
 			"gptModel": "Modello GPT",
 			"newAgent": "Nuovo agente",
 			"newChat": "Nuova chat",
+			"newMessage": "Nuovo messaggio",
 			"noChats": "Nessuna chat",
-			"noSubchats": "Nessuna sotto-chat",
-			"selectedValue": "Valore selezionato:",
-			"subchats": "Sotto-chat",
-			"xMessages_zero": "Nessun messaggio",
-			"xMessages_one": "{count} messaggio",
+			"noSubchats": "Nessun sottochat",
+			"selectedAgent": "Agente selezionato",
+			"selectedValue": "Valore selezionato",
+			"subchats": "Sottochat",
+			"xMessages_one": "1 messaggio",
 			"xMessages_other": "{count} messaggi",
-			"xSearchResults_zero": "Nessun risultato",
-			"xSearchResults_one": "{count} risultato",
-			"xSearchResults_other": "{count} risultati",
-			"xSelectedMessages_zero": "Nessun messaggio selezionato",
-			"xSelectedMessages_one": "{count} messaggio selezionato",
+			"xSearchResults_one": "{count} risultato di ricerca",
+			"xSearchResults_other": "{count} risultati di ricerca",
+			"xSearchResults_zero": "Nessun risultato di ricerca",
+			"xSelectedMessages_one": "1 messaggio selezionato",
 			"xSelectedMessages_other": "{count} messaggi selezionati"
 		},
 		"placeholder": {
-			"newMessage": "Fai una domanda...",
+			"newMessage": "Parla con {name}...",
 			"rename": "Genera automaticamente un nuovo nome..."
 		},
 		"state": {
 			"loadingAgents": "Caricamento agenti...",
 			"loadingChats": "Caricamento chat...",
-			"loadingGPTs": "Caricamento GPT...",
+			"loadingGPTs": "Caricamento modelli GPT...",
 			"loadingMessages": "Caricamento messaggi...",
 			"loadingPreviousMessages": "Caricamento messaggi precedenti...",
-			"loadingSubchats": "Caricamento sotto-chat...",
-			"renamingChat": "Rinomina chat in corso..."
+			"loadingSubchats": "Caricamento sottochat...",
+			"renamingChat": "Rinominando chat...",
+			"thinking": "In elaborazione..."
 		},
 		"warning": {
 			"deletingAgent": "Questo agente verrà eliminato definitivamente",
@@ -134,7 +140,7 @@
 			"city": "Devi aggiungere la città",
 			"country": "Devi aggiungere il paese",
 			"email": "Devi aggiungere il tuo indirizzo email",
-			"legalName": "Devi aggiungere la ragione sociale",
+			"legalName": "Devi aggiungere il nome legale",
 			"name": "Devi aggiungere il tuo nome",
 			"postalCode": "Devi aggiungere il codice postale"
 		},
@@ -145,12 +151,12 @@
 			"city": "Città",
 			"country": "Paese",
 			"email": "Indirizzo email",
-			"legalName": "Ragione sociale",
+			"legalName": "Nome legale",
 			"phone": "Numero di telefono",
 			"postalCode": "Codice postale",
 			"private": "Privato",
 			"public": "Pubblico",
-			"vatNumber": "Partita IVA"
+			"vatNumber": "Numero di partita IVA"
 		}
 	}
 }

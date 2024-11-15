@@ -34,12 +34,14 @@
 			"language": "Language",
 			"lightTheme": "Light",
 			"name": "Name",
+			"navigationBar": "Navigation bar",
+			"navigationMenu": "Navigation menu",
 			"optionalField": "(Optional)",
 			"quickSettings": "Quick settings",
 			"requiredField": "(Required)",
 			"settings": "Settings",
-			"uiLibrary": "UI Library:",
-			"uiTheme": "UI Theme:"
+			"uiLibrary": "UI Library",
+			"uiTheme": "UI Theme"
 		},
 		"placeholder": {
 			"search": "Search..."
@@ -62,11 +64,14 @@
 			"createAgent": "Create agent",
 			"deleteAgent": "Delete agent",
 			"deleteSelectedChats": "Delete selected chats",
+			"deselectChat": "Deselect chat",
 			"manageAgents": "Manage agents",
 			"manageChats": "Manage chats",
 			"openChat": "Open chat",
 			"openSubchat_other": "Open subchat ({count} messages)",
 			"openSubchat_zero": "Create subchat",
+			"searchChats": "Search chats",
+			"selectChat": "Select chat",
 			"sendMessage": "Send message",
 			"showMoreAgents": "Show more agents",
 			"showMoreChats": "Show more chats",
@@ -85,14 +90,17 @@
 		},
 		"label": {
 			"agents": "Agents",
+			"chatTitle": "Chat title",
 			"chats": "Chats",
 			"customInstructions": "Custom instructions",
 			"gptModel": "GPT model",
 			"newAgent": "New agent",
 			"newChat": "New chat",
+			"newMessage": "New message",
 			"noChats": "No chats",
 			"noSubchats": "No subchats",
-			"selectedValue": "Selected value:",
+			"selectedAgent": "Selected agent",
+			"selectedValue": "Selected value",
 			"subchats": "Subchats",
 			"xMessages_one": "1 message",
 			"xMessages_other": "{count} messages",
@@ -103,7 +111,7 @@
 			"xSelectedMessages_other": "{count} messages selected"
 		},
 		"placeholder": {
-			"newMessage": "Ask a question...",
+			"newMessage": "Talk to {name}...",
 			"rename": "Generate a new name automatically..."
 		},
 		"state": {
@@ -113,7 +121,8 @@
 			"loadingMessages": "Loading messages...",
 			"loadingPreviousMessages": "Loading previous messages...",
 			"loadingSubchats": "Loading subchats...",
-			"renamingChat": "Renaming chat..."
+			"renamingChat": "Renaming chat...",
+			"thinking": "Thinking..."
 		},
 		"warning": {
 			"deletingAgent": "This agent will be permanently deleted",

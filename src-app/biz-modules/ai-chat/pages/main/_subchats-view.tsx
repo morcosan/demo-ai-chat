@@ -35,7 +35,7 @@ export const SubchatsView = () => {
 						className="block"
 					>
 						<SubchatIcon count={subchat.size} className="mr-xs-4 min-w-sm-3" />
-						<span className="line-clamp-1 pb-xs-0">{subchat.text}</span>
+						<span className="line-clamp-1">{subchat.text}</span>
 					</Button>
 				))}
 				{allSubchats.length < allSubchatsPagination.count && (

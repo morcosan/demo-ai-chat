@@ -2,7 +2,7 @@ import { AgentItem } from '@app/biz-modules/ai-chat/components/items/agent-item'
 import { NavListing } from '@app/biz-modules/ai-chat/components/nav-listing'
 import { AiChatSvg, Button, SearchSvg, useUiTheme } from '@ds/release'
 import { useEffect, useMemo } from 'react'
-import { useLocation } from 'react-router-dom'
+import { useLocation, useSearchParams } from 'react-router-dom'
 import { Agent, Chat } from '../api'
 import { ChatItem } from '../components/items/chat-item'
 import { useAiChat, useAiChatAgents, useAiChatSearch } from '../state'
@@ -20,6 +20,7 @@ export const AiChatNavMenu = (props: Props) => {
 	const { allAgents, allAgentsPagination, allAgentsLoading, chatViewAgentId, loadMoreAgents, setChatViewAgentId } =
 		useAiChatAgents()
 	const { setShowsSearch } = useAiChatSearch()
+	const [searchParams] = useSearchParams()
 	const location = useLocation()
 
 	const hasExtraChat = Boolean(activeChat && !allChats.some((chat: Chat) => chat.id === activeChat.id))
@@ -27,6 +28,13 @@ export const AiChatNavMenu = (props: Props) => {
 	useEffect(() => {
 		unselected && activeChat && resetActiveChat()
 	}, [])
+
+	useEffect(() => {
+		const agentId = parseInt(searchParams.get('agent') || '')
+		const isValid = !isNaN(agentId) && allAgents.some((agent: Agent) => agent.id === agentId)
+
+		isValid && setChatViewAgentId(agentId)
+	}, [location])
 
 	const slotAgents = useMemo(
 		() => (

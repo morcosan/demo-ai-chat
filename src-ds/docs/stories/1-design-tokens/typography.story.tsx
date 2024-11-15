@@ -2,7 +2,7 @@ import { DocsHeader } from '@ds/docs/components/docs-header'
 import { DocsPage } from '@ds/docs/components/docs-page'
 import { DocsTokenCoding } from '@ds/docs/components/docs-token-coding'
 import '@ds/docs/setup'
-import { TOKENS__FONT_SIZE, TOKENS__FONT_WEIGHT, TOKENS__LINE_HEIGHT } from '@ds/release'
+import { CssPrefix, TOKENS__FONT_SIZE, TOKENS__FONT_WEIGHT, TOKENS__LINE_HEIGHT } from '@ds/release'
 import type { StoryObj } from '@storybook/react'
 
 export const story: StoryObj = {}
@@ -28,7 +28,7 @@ export default {
 					<tbody>
 						{Object.entries(TOKENS__FONT_SIZE).map(([name, token]) => (
 							<tr key={name}>
-								<td style={{ fontSize: `var(${token.$css})` }}>
+								<td style={{ fontSize: `var(${CssPrefix.FONT_SIZE}${name})` }}>
 									<pre>{name}</pre>
 								</td>
 								<td>
@@ -43,7 +43,7 @@ export default {
 										tsSize="w-lg-2"
 										twVars={[`text-size-${name}`]}
 										twSize="w-lg-1"
-										cssVar={token.$css}
+										cssVar={`${CssPrefix.FONT_SIZE}${name}`}
 										cssSize="w-lg-4"
 									/>
 								</td>
@@ -64,7 +64,7 @@ export default {
 					<tbody>
 						{Object.entries(TOKENS__FONT_WEIGHT).map(([name, token]) => (
 							<tr key={name}>
-								<td style={{ fontWeight: `var(${token.$css})` }}>
+								<td style={{ fontWeight: `var(${CssPrefix.FONT_WEIGHT}${name})` }}>
 									<pre>{name}</pre>
 								</td>
 								<td>
@@ -76,7 +76,7 @@ export default {
 										tsSize="w-lg-2"
 										twVars={[`font-weight-${name}`]}
 										twSize="w-lg-1"
-										cssVar={token.$css}
+										cssVar={`${CssPrefix.FONT_WEIGHT}${name}`}
 										cssSize="w-lg-4"
 									/>
 								</td>
@@ -97,8 +97,8 @@ export default {
 					<tbody>
 						{Object.entries(TOKENS__LINE_HEIGHT).map(([name, token]) => (
 							<tr key={name}>
-								<td style={{ lineHeight: `var(${token.$css})` }}>
-									<pre className="border border-color-purple-2">{name}</pre>
+								<td style={{ lineHeight: `var(${CssPrefix.LINE_HEIGHT}${name})` }}>
+									<pre className="border-color-primary-page-text border">{name}</pre>
 								</td>
 								<td>
 									<code>{token.$value}</code>
@@ -109,7 +109,7 @@ export default {
 										tsSize="w-lg-2"
 										twVars={[`leading-${name}`]}
 										twSize="w-lg-1"
-										cssVar={token.$css}
+										cssVar={`${CssPrefix.LINE_HEIGHT}${name}`}
 										cssSize="w-lg-4"
 									/>
 								</td>

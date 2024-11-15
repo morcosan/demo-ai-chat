@@ -11,35 +11,37 @@
 			"rename": "Μετονομασία",
 			"saveChanges": "Αποθήκευση αλλαγών",
 			"search": "Αναζήτηση",
-			"searchMore": "Εμφάνιση περισσότερων αποτελεσμάτων",
+			"searchMore": "Περισσότερα αποτελέσματα",
 			"selectAll": "Επιλογή όλων",
 			"signOut": "Αποσύνδεση"
 		},
 		"error": {
 			"noChanges": "Δεν υπάρχουν αλλαγές",
-			"nothingFound": "Δεν βρέθηκε τίποτα για \"{search}\""
+			"nothingFound": "Δεν βρέθηκε κάτι για \"{search}\""
 		},
 		"label": {
-			"apiDocs": "Τεκμηρίωση API",
+			"apiDocs": "Έγγραφα API",
 			"asia": "Ασία",
-			"avatar": "Εικόνα προφίλ",
+			"avatar": "Άβαταρ",
 			"custom": "Προσαρμοσμένο",
 			"darkTheme": "Σκοτεινό",
 			"default": "Προεπιλογή",
 			"description": "Περιγραφή",
-			"designSystem": "Σύστημα Σχεδιασμού",
+			"designSystem": "Σύστημα σχεδίασης",
 			"errors": "Σφάλματα",
 			"europe": "Ευρώπη",
-			"githubRepo": "GitHub Repository",
+			"githubRepo": "Αποθετήριο GitHub",
 			"language": "Γλώσσα",
 			"lightTheme": "Φωτεινό",
 			"name": "Όνομα",
+			"navigationBar": "Γραμμή πλοήγησης",
+			"navigationMenu": "Μενού πλοήγησης",
 			"optionalField": "(Προαιρετικό)",
 			"quickSettings": "Γρήγορες ρυθμίσεις",
-			"requiredField": "(Απαιτείται)",
+			"requiredField": "(Υποχρεωτικό)",
 			"settings": "Ρυθμίσεις",
-			"uiLibrary": "Βιβλιοθήκη UI:",
-			"uiTheme": "Θέμα UI:"
+			"uiLibrary": "Βιβλιοθήκη UI",
+			"uiTheme": "Θέμα UI"
 		},
 		"placeholder": {
 			"search": "Αναζήτηση..."
@@ -54,29 +56,27 @@
 	},
 	"aiChat": {
 		"action": {
-			"backToSubchats": "Επιστροφή στις υποσυνομιλίες",
-			"configureAgent": "Διαμόρφωση πράκτορα",
-			"confirmDeleteAgent": "Επιβεβαίωση διαγραφής πράκτορα",
-			"confirmDeleteChats": "Επιβεβαίωση διαγραφής συνομιλιών",
+			"backToSubchats": "Πίσω στις υποσυζητήσεις",
+			"configureAgent": "Διαμόρφωση αντιπροσώπου",
+			"confirmDeleteAgent": "Επιβεβαίωση διαγραφής αντιπροσώπου",
+			"confirmDeleteChats": "Επιβεβαίωση διαγραφής συζητήσεων",
 			"confirmRenameChat": "Επιβεβαίωση μετονομασίας συνομιλίας",
-			"createAgent": "Δημιουργία πράκτορα",
-			"deleteAgent": "Διαγραφή πράκτορα",
-			"deleteSelectedChats": "Διαγραφή επιλεγμένων συνομιλιών",
-			"manageAgents": "Διαχείριση πρακτόρων",
-			"manageChats": "Διαχείριση συνομιλιών",
+			"createAgent": "Δημιουργία αντιπροσώπου",
+			"deleteAgent": "Διαγραφή αντιπροσώπου",
+			"deleteSelectedChats": "Διαγραφή επιλεγμένων συζητήσεων",
+			"deselectChat": "Αποεπιλογή συνομιλίας",
+			"manageAgents": "Διαχείριση αντιπροσώπων",
+			"manageChats": "Διαχείριση συζητήσεων",
 			"openChat": "Άνοιγμα συνομιλίας",
-			"openSubchat_zero": "Δημιουργία υποσυνομιλίας",
-			"openSubchat_one": "Άνοιγμα υποσυνομιλίας ({count} μήνυμα)",
-			"openSubchat_few": "Άνοιγμα υποσυνομιλίας ({count} μηνύματα)",
-			"openSubchat_many": "Άνοιγμα υποσυνομιλίας ({count} μηνύματα)",
-			"openSubchat_other": "Άνοιγμα υποσυνομιλίας ({count} μηνύματα)",
+			"openSubchat_other": "Άνοιγμα υποσυζήτησης ({count} μηνύματα)",
+			"openSubchat_zero": "Δημιουργία υποσυζήτησης",
+			"searchChats": "Αναζήτηση συζητήσεων",
+			"selectChat": "Επιλογή συνομιλίας",
 			"sendMessage": "Αποστολή μηνύματος",
-			"showMoreAgents": "Εμφάνιση περισσότερων πρακτόρων",
-			"showMoreChats": "Εμφάνιση περισσότερων συνομιλιών",
-			"showSubchats": "Εμφάνιση υποσυνομιλιών ({count})",
+			"showMoreAgents": "Περισσότεροι αντιπρόσωποι",
+			"showMoreChats": "Περισσότερες συνομιλίες",
+			"showSubchats": "Εμφάνιση υποσυζητήσεων ({count})",
 			"startSearching_one": "Πληκτρολογήστε τουλάχιστον {count} χαρακτήρα",
-			"startSearching_few": "Πληκτρολογήστε τουλάχιστον {count} χαρακτήρες",
-			"startSearching_many": "Πληκτρολογήστε τουλάχιστον {count} χαρακτήρες",
 			"startSearching_other": "Πληκτρολογήστε τουλάχιστον {count} χαρακτήρες"
 		},
 		"description": {
@@ -84,83 +84,79 @@
 			"rammusGPT": "Καλύτερη συναισθηματική υποστήριξη"
 		},
 		"error": {
-			"agentAvatar": "Πρέπει να προσθέσετε μια εικόνα προφίλ για τον πράκτορα",
-			"agentName": "Πρέπει να προσθέσετε ένα όνομα για τον πράκτορα",
+			"agentAvatar": "Πρέπει να προσθέσετε άβαταρ για τον αντιπρόσωπο",
+			"agentName": "Πρέπει να προσθέσετε όνομα για τον αντιπρόσωπο",
 			"emptyMessage": "Το μήνυμά σας είναι κενό"
 		},
 		"label": {
-			"agents": "Πράκτορες",
-			"chats": "Συνομιλίες",
+			"agents": "Αντιπρόσωποι",
+			"chatTitle": "Τίτλος συνομιλίας",
+			"chats": "Συζητήσεις",
 			"customInstructions": "Προσαρμοσμένες οδηγίες",
 			"gptModel": "Μοντέλο GPT",
-			"newAgent": "Νέος πράκτορας",
+			"newAgent": "Νέος αντιπρόσωπος",
 			"newChat": "Νέα συνομιλία",
-			"noChats": "Δεν υπάρχουν συνομιλίες",
-			"noSubchats": "Δεν υπάρχουν υποσυνομιλίες",
-			"selectedValue": "Επιλεγμένη τιμή:",
-			"subchats": "Υποσυνομιλίες",
-			"xMessages_zero": "Κανένα μήνυμα",
-			"xMessages_one": "{count} μήνυμα",
-			"xMessages_few": "{count} μηνύματα",
-			"xMessages_many": "{count} μηνύματα",
+			"newMessage": "Νέο μήνυμα",
+			"noChats": "Χωρίς συζητήσεις",
+			"noSubchats": "Χωρίς υποσυζητήσεις",
+			"selectedAgent": "Επιλεγμένος αντιπρόσωπος",
+			"selectedValue": "Επιλεγμένη τιμή",
+			"subchats": "Υποσυζητήσεις",
+			"xMessages_one": "1 μήνυμα",
 			"xMessages_other": "{count} μηνύματα",
-			"xSearchResults_zero": "Κανένα αποτέλεσμα αναζήτησης",
 			"xSearchResults_one": "{count} αποτέλεσμα αναζήτησης",
-			"xSearchResults_few": "{count} αποτελέσματα αναζήτησης",
-			"xSearchResults_many": "{count} αποτελέσματα αναζήτησης",
 			"xSearchResults_other": "{count} αποτελέσματα αναζήτησης",
-			"xSelectedMessages_zero": "Κανένα επιλεγμένο μήνυμα",
-			"xSelectedMessages_one": "{count} επιλεγμένο μήνυμα",
-			"xSelectedMessages_few": "{count} επιλεγμένα μηνύματα",
-			"xSelectedMessages_many": "{count} επιλεγμένα μηνύματα",
+			"xSearchResults_zero": "Χωρίς αποτελέσματα αναζήτησης",
+			"xSelectedMessages_one": "1 επιλεγμένο μήνυμα",
 			"xSelectedMessages_other": "{count} επιλεγμένα μηνύματα"
 		},
 		"placeholder": {
-			"newMessage": "Κάντε μια ερώτηση...",
+			"newMessage": "Μιλήστε στον {name}...",
 			"rename": "Αυτόματη δημιουργία νέου ονόματος..."
 		},
 		"state": {
-			"loadingAgents": "Φόρτωση πρακτόρων...",
-			"loadingChats": "Φόρτωση συνομιλιών...",
-			"loadingGPTs": "Φόρτωση GPTs...",
+			"loadingAgents": "Φόρτωση αντιπροσώπων...",
+			"loadingChats": "Φόρτωση συζητήσεων...",
+			"loadingGPTs": "Φόρτωση μοντέλων GPT...",
 			"loadingMessages": "Φόρτωση μηνυμάτων...",
 			"loadingPreviousMessages": "Φόρτωση προηγούμενων μηνυμάτων...",
-			"loadingSubchats": "Φόρτωση υποσυνομιλιών...",
-			"renamingChat": "Μετονομασία συνομιλίας..."
+			"loadingSubchats": "Φόρτωση υποσυζητήσεων...",
+			"renamingChat": "Μετονομασία συνομιλίας...",
+			"thinking": "Σκέψη..."
 		},
 		"warning": {
-			"deletingAgent": "Αυτός ο πράκτορας θα διαγραφεί μόνιμα",
-			"deletingChats": "Αυτές οι συνομιλίες θα διαγραφούν μόνιμα"
+			"deletingAgent": "Αυτός ο αντιπρόσωπος θα διαγραφεί οριστικά",
+			"deletingChats": "Αυτές οι συνομιλίες θα διαγραφούν οριστικά"
 		}
 	},
 	"userSettings": {
 		"action": {
 			"manageAccount": "Διαχείριση λογαριασμού",
-			"manageBilling": "Διαχείριση χρεώσεων"
+			"manageBilling": "Διαχείριση χρέωσης"
 		},
 		"error": {
 			"address": "Πρέπει να προσθέσετε τη διεύθυνση",
-			"avatar": "Πρέπει να προσθέσετε την εικόνα προφίλ σας",
+			"avatar": "Πρέπει να προσθέσετε το άβαταρ σας",
 			"city": "Πρέπει να προσθέσετε την πόλη",
 			"country": "Πρέπει να προσθέσετε τη χώρα",
-			"email": "Πρέπει να προσθέσετε τη διεύθυνση email",
-			"legalName": "Πρέπει να προσθέσετε το νόμιμο όνομα",
+			"email": "Πρέπει να προσθέσετε τη διεύθυνση email σας",
+			"legalName": "Πρέπει να προσθέσετε το νομικό όνομα",
 			"name": "Πρέπει να προσθέσετε το όνομά σας",
 			"postalCode": "Πρέπει να προσθέσετε τον ταχυδρομικό κώδικα"
 		},
 		"label": {
 			"account": "Λογαριασμός",
 			"address": "Διεύθυνση",
-			"billing": "Χρεώσεις",
+			"billing": "Χρέωση",
 			"city": "Πόλη",
 			"country": "Χώρα",
 			"email": "Διεύθυνση email",
-			"legalName": "Νόμιμο όνομα",
+			"legalName": "Νομικό όνομα",
 			"phone": "Αριθμός τηλεφώνου",
 			"postalCode": "Ταχυδρομικός κώδικας",
 			"private": "Ιδιωτικό",
 			"public": "Δημόσιο",
-			"vatNumber": "ΑΦΜ"
+			"vatNumber": "Αριθμός ΦΠΑ"
 		}
 	}
 }

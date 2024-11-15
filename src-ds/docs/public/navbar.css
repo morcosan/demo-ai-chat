@@ -6,7 +6,7 @@
 	& .sidebar-container {
 		z-index: calc(var(--ds-z-index-sticky) + 1) !important;
 		box-shadow: var(--ds-shadow-lg) !important;
-		background: var(--ds-color-grey-7) !important;
+		background: var(--ds-color-grey-18) !important;
 		color: var(--ds-color-white) !important;
 		font-weight: var(--ds-font-weight-sm) !important;
 		font-size: var(--ds-font-size-md) !important;
@@ -20,7 +20,7 @@
 		display: block !important;
 		padding-right: var(--ds-spacing-sm-0) !important;
 		content: 'Powered by Storybook' !important;
-		color: var(--ds-color-grey-4) !important;
+		color: var(--ds-color-grey-8) !important;
 		font-size: var(--ds-font-size-xs) !important;
 		text-align: center !important;
 	}
@@ -39,10 +39,10 @@
 		background-color: transparent !important;
 
 		&:hover {
-			background-color: var(--ds-color-black-glass-2) !important;
+			background-color: var(--ds-color-hover-button-default) !important;
 		}
 		&:active {
-			background-color: var(--ds-color-black-glass-4) !important;
+			background-color: var(--ds-color-hover-button-pressed) !important;
 		}
 	}
 }
@@ -67,9 +67,9 @@ label[for='storybook-explorer-searchfield'] + div {
 
 	& input {
 		box-shadow: none !important;
-		border: 1px solid var(--ds-color-grey-6) !important;
+		border: 1px solid var(--ds-color-grey-14) !important;
 		border-radius: var(--ds-radius-sm) !important;
-		background-color: var(--ds-color-black-glass-2) !important;
+		background-color: var(--ds-color-hover-button-default) !important;
 		padding: var(--ds-spacing-xs-3) var(--padding) !important;
 		height: unset !important;
 		color: var(--ds-color-white) !important;
@@ -77,13 +77,12 @@ label[for='storybook-explorer-searchfield'] + div {
 		line-height: var(--ds-line-height-1) !important;
 
 		&::placeholder {
-			color: var(--ds-color-grey-4) !important;
+			color: var(--ds-color-grey-11) !important;
 			line-height: var(--ds-line-height-1) !important;
 		}
 
 		&:focus {
-			border-color: var(--ds-color-grey-5) !important;
-			background-color: var(--ds-color-black-glass-3) !important;
+			border-color: var(--ds-color-grey-6) !important;
 		}
 
 		& + div {
@@ -95,7 +94,7 @@ label[for='storybook-explorer-searchfield'] + div {
 			height: calc(100% - 2px) !important;
 
 			&:hover {
-				background-color: var(--ds-color-black-glass-2) !important;
+				background-color: var(--ds-color-hover-button-default) !important;
 			}
 		}
 	}
@@ -112,17 +111,17 @@ label[for='storybook-explorer-searchfield'] + div {
 #storybook-explorer-menu {
 	& .search-result-recentlyOpened {
 		padding-left: var(--ds-spacing-xs-5) !important;
-		color: var(--ds-color-grey-3) !important;
+		color: var(--ds-color-grey-8) !important;
 		font-weight: var(--ds-font-weight-sm) !important;
 		font-size: var(--ds-font-size-xs) !important;
 		text-transform: none !important;
 
 		& button {
 			&:hover {
-				background-color: var(--ds-color-black-glass-2) !important;
+				background-color: var(--ds-color-hover-button-default) !important;
 			}
 			&:active {
-				background-color: var(--ds-color-black-glass-4) !important;
+				background-color: var(--ds-color-hover-button-pressed) !important;
 			}
 		}
 	}
@@ -135,10 +134,10 @@ label[for='storybook-explorer-searchfield'] + div {
 		padding: var(--ds-spacing-xs-3) var(--ds-spacing-xs-5) !important;
 
 		&:hover {
-			background-color: var(--ds-color-black-glass-2) !important;
+			background-color: var(--ds-color-hover-button-default) !important;
 		}
 		&:active {
-			background-color: var(--ds-color-black-glass-4) !important;
+			background-color: var(--ds-color-hover-button-pressed) !important;
 		}
 
 		& > div:first-child {
@@ -150,12 +149,14 @@ label[for='storybook-explorer-searchfield'] + div {
 				font-size: var(--ds-font-size-md) !important;
 			}
 			& div:last-child {
-				color: var(--ds-color-grey-4) !important;
+				color: var(--ds-color-grey-11) !important;
 				font-size: var(--ds-font-size-xs) !important;
 			}
 
 			& mark {
-				color: var(--ds-color-yellow-3) !important;
+				background-color: var(--ds-color-yellow-2) !important;
+				padding: 0 1px !important;
+				color: var(--ds-color-yellow-7) !important;
 			}
 		}
 	}
@@ -177,7 +178,7 @@ label[for='storybook-explorer-searchfield'] + div {
 	--arrow-gap: 8px;
 	margin-top: var(--ds-spacing-sm-7) !important;
 	background-color: transparent !important;
-	color: var(--ds-color-grey-3) !important;
+	color: var(--ds-color-grey-8) !important;
 	font-weight: var(--ds-font-weight-sm) !important;
 	font-size: var(--ds-font-size-sm) !important;
 	text-transform: none !important;
@@ -188,7 +189,7 @@ label[for='storybook-explorer-searchfield'] + div {
 		&:hover,
 		&:focus {
 			outline: revert !important;
-			background-color: var(--ds-color-black-glass-2) !important;
+			background-color: var(--ds-color-hover-button-default) !important;
 		}
 
 		& div:first-child {
@@ -224,17 +225,17 @@ label[for='storybook-explorer-searchfield'] + div {
 	}
 
 	&:hover {
-		background-color: var(--ds-color-black-glass-2) !important;
+		background-color: var(--ds-color-hover-button-default) !important;
 	}
 
 	&:active,
 	&[data-selected='true'] {
-		background-color: var(--ds-color-black-glass-4) !important;
+		background-color: var(--ds-color-hover-button-pressed) !important;
 	}
 
 	&[data-selected='true'] {
-		background-color: var(--ds-color-yellow-3) !important;
-		color: var(--ds-color-yellow-4) !important;
+		background-color: var(--ds-color-yellow-2) !important;
+		color: var(--ds-color-yellow-7) !important;
 		font-weight: var(--ds-font-weight-md) !important;
 	}
 }

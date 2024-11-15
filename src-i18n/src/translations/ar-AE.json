@@ -2,7 +2,7 @@
 	"core": {
 		"action": {
 			"back": "رجوع",
-			"backToHome": "العودة إلى الصفحة الرئيسية",
+			"backToHome": "الرجوع إلى الصفحة الرئيسية",
 			"changeLanguage": "تغيير اللغة",
 			"close": "إغلاق",
 			"delete": "حذف",
@@ -17,7 +17,7 @@
 		},
 		"error": {
 			"noChanges": "لا توجد تغييرات",
-			"nothingFound": "لم يتم العثور على نتائج لـ \"{search}\""
+			"nothingFound": "لم يتم العثور على شيء لـ \"{search}\""
 		},
 		"label": {
 			"apiDocs": "وثائق API",
@@ -28,56 +28,56 @@
 			"default": "افتراضي",
 			"description": "الوصف",
 			"designSystem": "نظام التصميم",
-			"errors": "أخطاء",
+			"errors": "الأخطاء",
 			"europe": "أوروبا",
 			"githubRepo": "مستودع GitHub",
 			"language": "اللغة",
 			"lightTheme": "فاتح",
 			"name": "الاسم",
+			"navigationBar": "شريط التنقل",
+			"navigationMenu": "قائمة التنقل",
 			"optionalField": "(اختياري)",
-			"quickSettings": "إعدادات سريعة",
-			"requiredField": "(مطلوب)",
+			"quickSettings": "الإعدادات السريعة",
+			"requiredField": "(إجباري)",
 			"settings": "الإعدادات",
-			"uiLibrary": "مكتبة واجهة المستخدم:",
-			"uiTheme": "سمة واجهة المستخدم:"
+			"uiLibrary": "مكتبة الواجهة",
+			"uiTheme": "سمة الواجهة"
 		},
 		"placeholder": {
-			"search": "بحث..."
+			"search": "ابحث..."
 		},
 		"state": {
 			"dataSaved": "تم حفظ بياناتك",
-			"deleting": "جاري الحذف...",
-			"loading": "جاري التحميل...",
-			"searching": "جاري البحث...",
-			"updating": "جاري التحديث..."
+			"deleting": "جار الحذف...",
+			"loading": "جار التحميل...",
+			"searching": "جار البحث...",
+			"updating": "جار التحديث..."
 		}
 	},
 	"aiChat": {
 		"action": {
-			"backToSubchats": "العودة إلى المحادثات الفرعية",
+			"backToSubchats": "الرجوع إلى الدردشات الفرعية",
 			"configureAgent": "تكوين الوكيل",
 			"confirmDeleteAgent": "تأكيد حذف الوكيل",
-			"confirmDeleteChats": "تأكيد حذف المحادثات",
-			"confirmRenameChat": "تأكيد إعادة تسمية المحادثة",
+			"confirmDeleteChats": "تأكيد حذف الدردشات",
+			"confirmRenameChat": "تأكيد إعادة تسمية الدردشة",
 			"createAgent": "إنشاء وكيل",
 			"deleteAgent": "حذف الوكيل",
-			"deleteSelectedChats": "حذف المحادثات المحددة",
+			"deleteSelectedChats": "حذف الدردشات المحددة",
+			"deselectChat": "إلغاء تحديد الدردشة",
 			"manageAgents": "إدارة الوكلاء",
-			"manageChats": "إدارة المحادثات",
-			"openChat": "فتح المحادثة",
-			"openSubchat_zero": "إنشاء محادثة فرعية",
-			"openSubchat_one": "فتح محادثة فرعية (رسالة واحدة)",
-			"openSubchat_two": "فتح محادثة فرعية (رسالتان)",
-			"openSubchat_few": "فتح محادثة فرعية ({count} رسائل)",
-			"openSubchat_many": "فتح محادثة فرعية ({count} رسالة)",
+			"manageChats": "إدارة الدردشات",
+			"openChat": "فتح الدردشة",
+			"openSubchat_other": "فتح الدردشة الفرعية ({count} رسائل)",
+			"openSubchat_zero": "إنشاء دردشة فرعية",
+			"searchChats": "بحث في الدردشات",
+			"selectChat": "تحديد الدردشة",
 			"sendMessage": "إرسال رسالة",
 			"showMoreAgents": "عرض المزيد من الوكلاء",
-			"showMoreChats": "عرض المزيد من المحادثات",
-			"showSubchats": "عرض المحادثات الفرعية ({count})",
-			"startSearching_one": "اكتب حرفًا واحدًا على الأقل",
-			"startSearching_two": "اكتب حرفين على الأقل",
-			"startSearching_few": "اكتب {count} أحرف على الأقل",
-			"startSearching_many": "اكتب {count} حرفًا على الأقل"
+			"showMoreChats": "عرض المزيد من الدردشات",
+			"showSubchats": "عرض الدردشات الفرعية ({count})",
+			"startSearching_one": "اكتب {count} حرفًا على الأقل",
+			"startSearching_other": "اكتب {count} أحرف على الأقل"
 		},
 		"description": {
 			"loremIpsumGPT": "النموذج الأكثر ذكاءً",
@@ -90,47 +90,43 @@
 		},
 		"label": {
 			"agents": "الوكلاء",
-			"chats": "المحادثات",
+			"chatTitle": "عنوان الدردشة",
+			"chats": "الدردشات",
 			"customInstructions": "تعليمات مخصصة",
 			"gptModel": "نموذج GPT",
 			"newAgent": "وكيل جديد",
-			"newChat": "محادثة جديدة",
-			"noChats": "لا توجد محادثات",
-			"noSubchats": "لا توجد محادثات فرعية",
-			"selectedValue": "القيمة المحددة:",
-			"subchats": "المحادثات الفرعية",
-			"xMessages_zero": "لا توجد رسائل",
-			"xMessages_one": "رسالة واحدة",
-			"xMessages_two": "رسالتان",
-			"xMessages_few": "{count} رسائل",
-			"xMessages_many": "{count} رسالة",
-			"xSearchResults_zero": "لا توجد نتائج بحث",
+			"newChat": "دردشة جديدة",
+			"newMessage": "رسالة جديدة",
+			"noChats": "لا توجد دردشات",
+			"noSubchats": "لا توجد دردشات فرعية",
+			"selectedAgent": "الوكيل المحدد",
+			"selectedValue": "القيمة المحددة",
+			"subchats": "الدردشات الفرعية",
+			"xMessages_one": "1 رسالة",
+			"xMessages_other": "{count} رسائل",
 			"xSearchResults_one": "نتيجة بحث واحدة",
-			"xSearchResults_two": "نتيجتا بحث",
-			"xSearchResults_few": "{count} نتائج بحث",
-			"xSearchResults_many": "{count} نتيجة بحث",
-			"xSelectedMessages_zero": "لا توجد رسائل محددة",
-			"xSelectedMessages_one": "رسالة واحدة محددة",
-			"xSelectedMessages_two": "رسالتان محددتان",
-			"xSelectedMessages_few": "{count} رسائل محددة",
-			"xSelectedMessages_many": "{count} رسالة محددة"
+			"xSearchResults_other": "{count} نتائج بحث",
+			"xSearchResults_zero": "لا توجد نتائج بحث",
+			"xSelectedMessages_one": "تم تحديد 1 رسالة",
+			"xSelectedMessages_other": "تم تحديد {count} رسائل"
 		},
 		"placeholder": {
-			"newMessage": "اطرح سؤالاً...",
-			"rename": "توليد اسم جديد تلقائياً..."
+			"newMessage": "تحدث إلى {name}...",
+			"rename": "توليد اسم جديد تلقائيًا..."
 		},
 		"state": {
-			"loadingAgents": "جاري تحميل الوكلاء...",
-			"loadingChats": "جاري تحميل المحادثات...",
-			"loadingGPTs": "جاري تحميل نماذج GPT...",
-			"loadingMessages": "جاري تحميل الرسائل...",
-			"loadingPreviousMessages": "جاري تحميل الرسائل السابقة...",
-			"loadingSubchats": "جاري تحميل المحادثات الفرعية...",
-			"renamingChat": "جاري إعادة تسمية المحادثة..."
+			"loadingAgents": "جار تحميل الوكلاء...",
+			"loadingChats": "جار تحميل الدردشات...",
+			"loadingGPTs": "جار تحميل نماذج GPT...",
+			"loadingMessages": "جار تحميل الرسائل...",
+			"loadingPreviousMessages": "جار تحميل الرسائل السابقة...",
+			"loadingSubchats": "جار تحميل الدردشات الفرعية...",
+			"renamingChat": "جار إعادة تسمية الدردشة...",
+			"thinking": "يفكر..."
 		},
 		"warning": {
-			"deletingAgent": "سيتم حذف هذا الوكيل نهائياً",
-			"deletingChats": "سيتم حذف هذه المحادثات نهائياً"
+			"deletingAgent": "سيتم حذف هذا الوكيل بشكل دائم",
+			"deletingChats": "سيتم حذف هذه الدردشات بشكل دائم"
 		}
 	},
 	"userSettings": {
@@ -140,12 +136,12 @@
 		},
 		"error": {
 			"address": "يجب إضافة العنوان",
-			"avatar": "يجب إضافة صورتك الرمزية",
+			"avatar": "يجب إضافة الصورة الرمزية",
 			"city": "يجب إضافة المدينة",
 			"country": "يجب إضافة البلد",
-			"email": "يجب إضافة عنوان بريدك الإلكتروني",
+			"email": "يجب إضافة عنوان البريد الإلكتروني",
 			"legalName": "يجب إضافة الاسم القانوني",
-			"name": "يجب إضافة اسمك",
+			"name": "يجب إضافة الاسم",
 			"postalCode": "يجب إضافة الرمز البريدي"
 		},
 		"label": {
@@ -154,13 +150,13 @@
 			"billing": "الفواتير",
 			"city": "المدينة",
 			"country": "البلد",
-			"email": "عنوان البريد الإلكتروني",
+			"email": "البريد الإلكتروني",
 			"legalName": "الاسم القانوني",
 			"phone": "رقم الهاتف",
 			"postalCode": "الرمز البريدي",
 			"private": "خاص",
 			"public": "عام",
-			"vatNumber": "رقم ضريبة القيمة المضافة"
+			"vatNumber": "رقم الضريبة"
 		}
 	}
 }

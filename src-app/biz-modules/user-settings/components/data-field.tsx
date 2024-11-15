@@ -28,6 +28,7 @@ export const DataField = <T,>({ field, value, error, disabled, onChange }: Props
 			<div className="w-full sm:w-fit sm:flex-1">
 				<TextField
 					id={`field-${field.key}`}
+					variant="primary"
 					className="w-full"
 					value={value}
 					ariaDescription={error ? `${t('core.label.errors')}: ${error}` : ''}

@@ -35,7 +35,7 @@ export const NewMessageToolbar = (props: Props) => {
 
 	const agentCookieKey = isChatView ? COOKIE_KEY.APP_AGENT_FOR_CHAT : COOKIE_KEY.APP_AGENT_FOR_SUBCHAT
 
-	const agentToEdit = agents.find((agent: Agent) => agent.id === currAgentId) || EMPTY_AGENT
+	const currAgent = agents.find((agent: Agent) => agent.id === currAgentId) || EMPTY_AGENT
 
 	const canLoadMoreAgents = !agentPagination.page || agents.length < agentPagination.count
 
@@ -143,15 +143,17 @@ export const NewMessageToolbar = (props: Props) => {
 			<div className="mb-xs-1">
 				<SelectField
 					id={isChatView ? 'agent-chat' : 'agent-subchat'}
+					variant={isChatView ? 'primary' : 'secondary'}
 					value={currAgentId}
 					options={agents}
+					keyValue="id"
+					keyLabel="name"
 					filterFn={agentFilterFn}
 					loading={agentLoading === 'full'}
 					loadingMore={agentLoading === 'more'}
 					canLoadMore={canLoadMoreAgents}
 					loadingText={t('aiChat.state.loadingAgents')}
-					keyValue="id"
-					keyLabel="name"
+					ariaLabel={t('aiChat.label.selectedAgent')}
 					size="sm"
 					popupPos="top"
 					compValue={AgentValue}
@@ -175,7 +177,8 @@ export const NewMessageToolbar = (props: Props) => {
 
 			{/* AGENT MODAL */}
 			<AgentEditModal
-				agent={agentToEdit}
+				id={isChatView ? 'agent-modal-chat' : 'agent-modal-subchat'}
+				agent={currAgent}
 				opened={showsAgentModal}
 				onSubmit={onSubmitAgent}
 				onClose={() => setShowsAgentModal(false)}
@@ -183,7 +186,7 @@ export const NewMessageToolbar = (props: Props) => {
 
 			{/* TEXT FIELD */}
 			<NewMessageField
-				agentId={currAgentId}
+				agent={currAgent}
 				listLoading={listLoading}
 				isChatView={isChatView}
 				onPostMessage={onPostMessage}

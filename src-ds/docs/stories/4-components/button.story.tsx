@@ -171,7 +171,7 @@ const meta: Meta<typeof Button> = {
 		]
 		const EXAMPLES = useMemo(
 			() => (
-				<div className="flex flex-wrap items-center gap-xs-7 p-sm-0">
+				<div className="flex flex-wrap items-center gap-xs-7 p-xs-9">
 					{variants.map((variant) => (
 						<div key={variant} className="flex w-full flex-wrap items-center gap-xs-7">
 							<Button variant={variant} className="w-lg-4">

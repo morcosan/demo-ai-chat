@@ -15,7 +15,7 @@ export const FieldLabel = ({ fieldId, optional, multiline, children }: Props) =>
 				<span>
 					{children}
 					{!optional && (
-						<span className="ml-xs-3 text-color-danger" aria-label={t('core.label.requiredField')}>
+						<span className="ml-xs-3 text-color-danger-page-text" aria-label={t('core.label.requiredField')}>
 							*
 						</span>
 					)}

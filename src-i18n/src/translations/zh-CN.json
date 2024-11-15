@@ -17,7 +17,7 @@
 		},
 		"error": {
 			"noChanges": "没有更改",
-			"nothingFound": "未找到与\"{search}\"相关的内容"
+			"nothingFound": "未找到 \"{search}\" 的相关结果"
 		},
 		"label": {
 			"apiDocs": "API文档",
@@ -34,18 +34,19 @@
 			"language": "语言",
 			"lightTheme": "浅色",
 			"name": "名称",
+			"navigationBar": "导航栏",
+			"navigationMenu": "导航菜单",
 			"optionalField": "(可选)",
-			"quickSettings": "快速设置",
 			"requiredField": "(必填)",
 			"settings": "设置",
-			"uiLibrary": "UI库：",
-			"uiTheme": "UI主题："
+			"uiLibrary": "UI库",
+			"uiTheme": "UI主题"
 		},
 		"placeholder": {
 			"search": "搜索..."
 		},
 		"state": {
-			"dataSaved": "您的数据已保存",
+			"dataSaved": "数据已保存",
 			"deleting": "正在删除...",
 			"loading": "正在加载...",
 			"searching": "正在搜索...",
@@ -54,68 +55,73 @@
 	},
 	"aiChat": {
 		"action": {
-			"backToSubchats": "返回子对话",
-			"configureAgent": "配置代理",
-			"confirmDeleteAgent": "确认删除代理",
-			"confirmDeleteChats": "确认删除对话",
-			"confirmRenameChat": "确认重命名对话",
-			"createAgent": "创建代理",
-			"deleteAgent": "删除代理",
-			"deleteSelectedChats": "删除选定的对话",
-			"manageAgents": "管理代理",
-			"manageChats": "管理对话",
-			"openChat": "打开对话",
-			"openSubchat_zero": "创建子对话",
-			"openSubchat_other": "打开子对话({count}条消息)",
+			"backToSubchats": "返回子会话",
+			"configureAgent": "配置助手",
+			"confirmDeleteAgent": "确认删除助手",
+			"confirmDeleteChats": "确认删除会话",
+			"confirmRenameChat": "确认重命名会话",
+			"createAgent": "创建助手",
+			"deleteAgent": "删除助手",
+			"deleteSelectedChats": "删除所选会话",
+			"deselectChat": "取消选择会话",
+			"manageAgents": "管理助手",
+			"manageChats": "管理会话",
+			"openChat": "打开会话",
+			"openSubchat_other": "打开子会话 ({count} 条消息)",
+			"openSubchat_zero": "创建子会话",
+			"searchChats": "搜索会话",
+			"selectChat": "选择会话",
 			"sendMessage": "发送消息",
-			"showMoreAgents": "显示更多代理",
-			"showMoreChats": "显示更多对话",
-			"showSubchats": "显示子对话({count})",
-			"startSearching_other": "请至少输入{count}个字符"
+			"showMoreAgents": "显示更多助手",
+			"showMoreChats": "显示更多会话",
+			"showSubchats": "显示子会话 ({count})",
+			"startSearching_other": "请输入至少 {count} 个字符"
 		},
 		"description": {
 			"loremIpsumGPT": "最智能的模型",
 			"rammusGPT": "最佳情感支持"
 		},
 		"error": {
-			"agentAvatar": "您必须为代理添加头像",
-			"agentName": "您必须为代理添加名称",
+			"agentAvatar": "您必须为助手添加头像",
+			"agentName": "您必须为助手添加名称",
 			"emptyMessage": "您的消息为空"
 		},
 		"label": {
-			"agents": "代理",
-			"chats": "对话",
+			"agents": "助手",
+			"chatTitle": "会话标题",
+			"chats": "会话",
 			"customInstructions": "自定义指令",
 			"gptModel": "GPT模型",
-			"newAgent": "新代理",
-			"newChat": "新对话",
-			"noChats": "无对话",
-			"noSubchats": "无子对话",
-			"selectedValue": "选定的值：",
-			"subchats": "子对话",
-			"xMessages_zero": "无消息",
-			"xMessages_other": "{count}条消息",
-			"xSearchResults_zero": "无搜索结果",
-			"xSearchResults_other": "{count}个搜索结果",
-			"xSelectedMessages_zero": "未选择消息",
-			"xSelectedMessages_other": "已选择{count}条消息"
+			"newAgent": "新建助手",
+			"newChat": "新建会话",
+			"newMessage": "新消息",
+			"noChats": "没有会话",
+			"noSubchats": "没有子会话",
+			"selectedAgent": "已选择的助手",
+			"selectedValue": "已选择的值",
+			"subchats": "子会话",
+			"xMessages_other": "{count} 条消息",
+			"xSearchResults_other": "{count} 个搜索结果",
+			"xSearchResults_zero": "没有搜索结果",
+			"xSelectedMessages_other": "已选择 {count} 条消息"
 		},
 		"placeholder": {
-			"newMessage": "提出问题...",
+			"newMessage": "与 {name} 对话...",
 			"rename": "自动生成新名称..."
 		},
 		"state": {
-			"loadingAgents": "正在加载代理...",
-			"loadingChats": "正在加载对话...",
-			"loadingGPTs": "正在加载GPT...",
+			"loadingAgents": "正在加载助手...",
+			"loadingChats": "正在加载会话...",
+			"loadingGPTs": "正在加载 GPT...",
 			"loadingMessages": "正在加载消息...",
 			"loadingPreviousMessages": "正在加载之前的消息...",
-			"loadingSubchats": "正在加载子对话...",
-			"renamingChat": "正在重命名对话..."
+			"loadingSubchats": "正在加载子会话...",
+			"renamingChat": "正在重命名会话...",
+			"thinking": "思考中..."
 		},
 		"warning": {
-			"deletingAgent": "此代理将被永久删除",
-			"deletingChats": "这些对话将被永久删除"
+			"deletingAgent": "此助手将被永久删除",
+			"deletingChats": "这些会话将被永久删除"
 		}
 	},
 	"userSettings": {
@@ -128,7 +134,7 @@
 			"avatar": "您必须添加头像",
 			"city": "您必须添加城市",
 			"country": "您必须添加国家",
-			"email": "您必须添加电子邮件地址",
+			"email": "您必须添加电子邮箱",
 			"legalName": "您必须添加法定名称",
 			"name": "您必须添加姓名",
 			"postalCode": "您必须添加邮政编码"
@@ -139,7 +145,7 @@
 			"billing": "账单",
 			"city": "城市",
 			"country": "国家",
-			"email": "电子邮件地址",
+			"email": "电子邮箱",
 			"legalName": "法定名称",
 			"phone": "电话号码",
 			"postalCode": "邮政编码",

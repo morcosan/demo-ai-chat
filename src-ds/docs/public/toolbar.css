@@ -1,7 +1,7 @@
 [data-test-id='sb-preview-toolbar'] {
 	z-index: var(--ds-z-index-sticky) !important;
 	box-shadow: var(--ds-shadow-sm) !important;
-	background-color: var(--ds-color-bg-default) !important;
+	background-color: var(--ds-color-bg-page) !important;
 
 	/* Delimiter */
 	& > div > div > span {
@@ -19,19 +19,19 @@
 
 		&.JS_TRIGGER:focus,
 		&:hover {
-			background-color: var(--ds-color-hover-default) !important;
+			background-color: var(--ds-color-hover-text-default) !important;
 		}
 
 		&:active {
-			background-color: var(--ds-color-hover-pressed) !important;
+			background-color: var(--ds-color-hover-text-pressed) !important;
 		}
 
 		&.JS_SELECTED {
-			background-color: var(--ds-color-yellow-3) !important;
-			color: var(--ds-color-yellow-4) !important;
+			background-color: var(--ds-color-secondary-button-bg) !important;
+			color: var(--ds-color-secondary-button-text) !important;
 
 			& svg path {
-				fill: var(--ds-color-yellow-4) !important;
+				fill: var(--ds-color-secondary-button-text) !important;
 			}
 		}
 

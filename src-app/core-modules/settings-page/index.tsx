@@ -51,7 +51,7 @@ const SettingsPage = () => {
 							linkHref={subsection.href}
 							variant="item-text-default"
 							size="lg"
-							className="-ml-button-px-item block w-fit text-size-lg text-color-primary"
+							className="-ml-button-px-item block w-fit text-size-lg text-color-primary-page-text"
 						>
 							{subsection.icon}
 							<span className="ml-xs-5 mr-xs-2 pb-xs-0">{subsection.title}</span>

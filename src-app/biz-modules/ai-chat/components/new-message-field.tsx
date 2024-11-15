@@ -1,16 +1,17 @@
 import { IconButton, SendSvg, TextField, TextFieldRef } from '@ds/release'
 import { useCallback, useRef, useState } from 'react'
+import { Agent } from '../api'
 import { useSubmittable } from '../hooks/submittable'
 
 interface Props {
-	agentId: number
+	agent: Agent
 	listLoading: ListLoading
 	isChatView?: boolean
 	onPostMessage(text: string, agentId: number): void
 }
 
 export const NewMessageField = (props: Props) => {
-	const { agentId, listLoading, isChatView, onPostMessage } = props
+	const { agent, listLoading, isChatView, onPostMessage } = props
 	const [inputValue, setInputValue] = useState<string>('')
 	const inputRef = useRef<TextFieldRef>(null)
 
@@ -24,12 +25,12 @@ export const NewMessageField = (props: Props) => {
 		if (isDisabled) return
 		if (listLoading || !message) return
 
-		onPostMessage(message, agentId)
+		onPostMessage(message, agent.id)
 		setInputValue('')
 		inputRef.current?.focus()
-	}, [message, agentId, listLoading])
+	}, [message, agent.id, listLoading])
 
-	const onPressEnter = useSubmittable(onSubmit, [message, agentId, listLoading])
+	const onPressEnter = useSubmittable(onSubmit, [message, agent.id, listLoading])
 
 	const onFocus = (event: ReactFocusEvent) => {
 		// On mobile, the field is covered by the floating keyboard
@@ -42,10 +43,11 @@ export const NewMessageField = (props: Props) => {
 		<TextField
 			ref={inputRef}
 			id={isChatView ? 'field-chat' : 'field-subchat'}
+			variant={isChatView ? 'primary' : 'secondary'}
 			size={isChatView ? 'xl' : 'lg'}
 			value={inputValue}
-			placeholder={t('aiChat.placeholder.newMessage')}
-			ariaLabel="New message"
+			placeholder={t('aiChat.placeholder.newMessage', { name: agent.name })}
+			ariaLabel={t('aiChat.label.newMessage')}
 			slotRight={
 				<IconButton
 					tooltip={isDisabled || !message ? t('aiChat.error.emptyMessage') : t('aiChat.action.sendMessage')}

@@ -1,9 +1,11 @@
 import { ReactNode } from 'react'
 
+export type TextFieldVariant = 'default' | 'primary' | 'secondary'
 export type TextFieldSize = 'sm' | 'md' | 'lg' | 'xl'
 
 export interface TextFieldProps extends ReactProps {
 	id: string
+	variant?: TextFieldVariant
 	size?: TextFieldSize
 	value?: string
 	placeholder?: string
