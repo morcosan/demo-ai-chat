@@ -123,6 +123,7 @@ const AgentsPage = () => {
 
 			{/* EDIT MODAL */}
 			<AgentEditModal
+				id="agent-modal"
 				agent={agentToEdit}
 				opened={showsEditModal}
 				onSubmit={onSubmitAgent}
@@ -142,7 +143,7 @@ const AgentsPage = () => {
 				}
 				onClose={() => setShowsDeleteModal(false)}
 			>
-				<div className="mb-xs-8 flex items-center text-color-danger">
+				<div className="mb-xs-8 flex items-center text-color-danger-page-text">
 					<WarningSvg className="mr-xs-4 w-xs-8" />
 					{t('aiChat.warning.deletingAgent')}
 				</div>

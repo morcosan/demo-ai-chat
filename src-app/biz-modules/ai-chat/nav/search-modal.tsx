@@ -39,6 +39,7 @@ export const AiChatSearchModal = () => {
 			id="chat-search"
 			value={searchValue}
 			placeholder={t('core.placeholder.search')}
+			ariaLabel={t('aiChat.action.searchChats')}
 			slotLeft={<SearchSvg className="ml-xs-4 mr-xs-1 mt-px h-full w-xs-5 min-w-xs-5" />}
 			className="w-full font-weight-sm"
 			onChange={onChangeSearch}

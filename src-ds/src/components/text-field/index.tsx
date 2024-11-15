@@ -6,7 +6,7 @@ import { AntImpl } from './impl/ant-impl'
 import { CustomImpl } from './impl/custom-impl'
 import { MuiImpl } from './impl/mui-impl'
 
-export type { TextFieldProps, TextFieldRef, TextFieldSize } from './_types'
+export type { TextFieldProps, TextFieldRef, TextFieldSize, TextFieldVariant } from './_types'
 
 const CustomImp = withRef('CustomImpl', CustomImpl)
 const MuiImp = withRef('MuiImpl', MuiImpl)

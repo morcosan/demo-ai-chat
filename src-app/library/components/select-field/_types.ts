@@ -1,4 +1,4 @@
-import { TextFieldSize } from '@ds/release'
+import { TextFieldSize, TextFieldVariant } from '@ds/release'
 
 export interface SelectFieldProps extends ReactProps {
 	id: string
@@ -7,6 +7,7 @@ export interface SelectFieldProps extends ReactProps {
 	keyLabel?: string
 	keyValue?: string
 	filterFn?: SelectFilterFn
+	variant?: TextFieldVariant
 	size?: TextFieldSize
 	placeholder?: string
 	ariaLabel?: string

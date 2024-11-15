@@ -1,14 +1,14 @@
-import { EventsTable } from '@ds/docs/components/_partials/events-table'
-import { MethodsTable } from '@ds/docs/components/_partials/methods-table'
-import { PropsTable } from '@ds/docs/components/_partials/props-table'
-import { SlotsTable } from '@ds/docs/components/_partials/slots-table'
-import { useDocsPlayground } from '@ds/docs/components/docs-playground-provider'
 import { IconButton, MaximizeSvg, MinimizeSvg } from '@ds/release'
 import { ReactNode, useCallback, useEffect, useRef, useState } from 'react'
 import { renderHtml } from '../utilities/docs'
 import { toggleControls } from '../utilities/storybook'
+import { EventsTable } from './_partials/events-table'
+import { MethodsTable } from './_partials/methods-table'
+import { PropsTable } from './_partials/props-table'
+import { SlotsTable } from './_partials/slots-table'
 import { DocsHeader } from './docs-header'
 import { DocsPlayground } from './docs-playground'
+import { DocsPlaygroundBase } from './docs-playground-base'
 
 interface ComponentSlots {
 	PROPS?: DocsPropDef[]
@@ -26,7 +26,6 @@ interface Props extends ReactProps {
 }
 
 export const DocsPage = ({ title, type, slots, children }: Props) => {
-	const { playgroundBgClass } = useDocsPlayground()
 	const [playExpanded, setPlayExpanded] = useState(false)
 	const playWrapperRef = useRef<HTMLDivElement>(null)
 
@@ -67,9 +66,7 @@ export const DocsPage = ({ title, type, slots, children }: Props) => {
 						{Boolean(slots?.EXAMPLES) && (
 							<>
 								<DocsHeader>Examples</DocsHeader>
-								<div className={cx('rounded-md border border-color-border-default', playgroundBgClass)}>
-									{slots?.EXAMPLES}
-								</div>
+								<DocsPlaygroundBase>{slots?.EXAMPLES}</DocsPlaygroundBase>
 							</>
 						)}
 						{Boolean(slots?.SLOTS) && <SlotsTable slotDefs={slots?.SLOTS || []} />}

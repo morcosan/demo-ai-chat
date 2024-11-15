@@ -2,25 +2,25 @@
 	"core": {
 		"action": {
 			"back": "戻る",
-			"backToHome": "ホームに戻る",
+			"backToHome": "ホームページに戻る",
 			"changeLanguage": "言語を変更",
 			"close": "閉じる",
 			"delete": "削除",
-			"deselectAll": "すべて選択解除",
+			"deselectAll": "すべての選択を解除",
 			"openMenu": "メニューを開く",
 			"rename": "名前を変更",
 			"saveChanges": "変更を保存",
 			"search": "検索",
-			"searchMore": "さらに表示",
+			"searchMore": "さらに結果を表示",
 			"selectAll": "すべて選択",
 			"signOut": "サインアウト"
 		},
 		"error": {
 			"noChanges": "変更はありません",
-			"nothingFound": "\"{search}\"の検索結果はありません"
+			"nothingFound": "「{search}」の検索結果が見つかりません"
 		},
 		"label": {
-			"apiDocs": "APIドキュメント",
+			"apiDocs": "API ドキュメント",
 			"asia": "アジア",
 			"avatar": "アバター",
 			"custom": "カスタム",
@@ -30,16 +30,18 @@
 			"designSystem": "デザインシステム",
 			"errors": "エラー",
 			"europe": "ヨーロッパ",
-			"githubRepo": "GitHubリポジトリ",
+			"githubRepo": "GitHub リポジトリ",
 			"language": "言語",
 			"lightTheme": "ライト",
 			"name": "名前",
-			"optionalField": "(任意)",
+			"navigationBar": "ナビゲーションバー",
+			"navigationMenu": "ナビゲーションメニュー",
+			"optionalField": "（任意）",
 			"quickSettings": "クイック設定",
-			"requiredField": "(必須)",
+			"requiredField": "（必須）",
 			"settings": "設定",
-			"uiLibrary": "UIライブラリ:",
-			"uiTheme": "UIテーマ:"
+			"uiLibrary": "UI ライブラリ",
+			"uiTheme": "UI テーマ"
 		},
 		"placeholder": {
 			"search": "検索..."
@@ -55,27 +57,31 @@
 	"aiChat": {
 		"action": {
 			"backToSubchats": "サブチャットに戻る",
-			"configureAgent": "エージェントを設定",
+			"configureAgent": "エージェントを構成",
 			"confirmDeleteAgent": "エージェントの削除を確認",
 			"confirmDeleteChats": "チャットの削除を確認",
-			"confirmRenameChat": "チャット名の変更を確認",
+			"confirmRenameChat": "チャットの名前変更を確認",
 			"createAgent": "エージェントを作成",
 			"deleteAgent": "エージェントを削除",
 			"deleteSelectedChats": "選択したチャットを削除",
+			"deselectChat": "チャットの選択を解除",
 			"manageAgents": "エージェントを管理",
 			"manageChats": "チャットを管理",
 			"openChat": "チャットを開く",
+			"openSubchat_other": "サブチャットを開く（{count}件のメッセージ）",
 			"openSubchat_zero": "サブチャットを作成",
-			"openSubchat_other": "サブチャットを開く ({count}件のメッセージ)",
+			"searchChats": "チャットを検索",
+			"selectChat": "チャットを選択",
 			"sendMessage": "メッセージを送信",
-			"showMoreAgents": "エージェントをさらに表示",
-			"showMoreChats": "チャットをさらに表示",
-			"showSubchats": "サブチャットを表示 ({count})",
-			"startSearching_other": "最低{count}文字入力してください"
+			"showMoreAgents": "さらにエージェントを表示",
+			"showMoreChats": "さらにチャットを表示",
+			"showSubchats": "サブチャットを表示（{count}）",
+			"startSearching_one": "{count}文字以上入力してください",
+			"startSearching_other": "{count}文字以上入力してください"
 		},
 		"description": {
-			"loremIpsumGPT": "最も賢いモデル",
-			"rammusGPT": "最高の感情的サポート"
+			"loremIpsumGPT": "最も知的なモデル",
+			"rammusGPT": "最高の感情サポート"
 		},
 		"error": {
 			"agentAvatar": "エージェントのアバターを追加する必要があります",
@@ -84,38 +90,43 @@
 		},
 		"label": {
 			"agents": "エージェント",
+			"chatTitle": "チャットのタイトル",
 			"chats": "チャット",
 			"customInstructions": "カスタム指示",
-			"gptModel": "GPTモデル",
-			"newAgent": "新規エージェント",
-			"newChat": "新規チャット",
-			"noChats": "チャットはありません",
-			"noSubchats": "サブチャットはありません",
-			"selectedValue": "選択された値:",
+			"gptModel": "GPT モデル",
+			"newAgent": "新しいエージェント",
+			"newChat": "新しいチャット",
+			"newMessage": "新しいメッセージ",
+			"noChats": "チャットがありません",
+			"noSubchats": "サブチャットがありません",
+			"selectedAgent": "選択されたエージェント",
+			"selectedValue": "選択された値",
 			"subchats": "サブチャット",
-			"xMessages_zero": "メッセージなし",
+			"xMessages_one": "1件のメッセージ",
 			"xMessages_other": "{count}件のメッセージ",
-			"xSearchResults_zero": "検索結果なし",
+			"xSearchResults_one": "{count}件の検索結果",
 			"xSearchResults_other": "{count}件の検索結果",
-			"xSelectedMessages_zero": "選択されたメッセージなし",
-			"xSelectedMessages_other": "{count}件のメッセージを選択"
+			"xSearchResults_zero": "検索結果がありません",
+			"xSelectedMessages_one": "1件のメッセージが選択されました",
+			"xSelectedMessages_other": "{count}件のメッセージが選択されました"
 		},
 		"placeholder": {
-			"newMessage": "質問を入力...",
-			"rename": "新しい名前を自動生成..."
+			"newMessage": "{name}に話しかける...",
+			"rename": "自動的に新しい名前を生成..."
 		},
 		"state": {
-			"loadingAgents": "エージェントを読み込み中...",
-			"loadingChats": "チャットを読み込み中...",
-			"loadingGPTs": "GPTを読み込み中...",
-			"loadingMessages": "メッセージを読み込み中...",
-			"loadingPreviousMessages": "過去のメッセージを読み込み中...",
-			"loadingSubchats": "サブチャットを読み込み中...",
-			"renamingChat": "チャット名を変更中..."
+			"loadingAgents": "エージェントを読み込んでいます...",
+			"loadingChats": "チャットを読み込んでいます...",
+			"loadingGPTs": "GPTモデルを読み込んでいます...",
+			"loadingMessages": "メッセージを読み込んでいます...",
+			"loadingPreviousMessages": "過去のメッセージを読み込んでいます...",
+			"loadingSubchats": "サブチャットを読み込んでいます...",
+			"renamingChat": "チャットの名前を変更しています...",
+			"thinking": "考え中..."
 		},
 		"warning": {
-			"deletingAgent": "このエージェントは完全に削除されます",
-			"deletingChats": "これらのチャットは完全に削除されます"
+			"deletingAgent": "このエージェントは永久に削除されます",
+			"deletingChats": "これらのチャットは永久に削除されます"
 		}
 	},
 	"userSettings": {
@@ -126,10 +137,10 @@
 		"error": {
 			"address": "住所を追加する必要があります",
 			"avatar": "アバターを追加する必要があります",
-			"city": "市区町村を追加する必要があります",
+			"city": "都市を追加する必要があります",
 			"country": "国を追加する必要があります",
 			"email": "メールアドレスを追加する必要があります",
-			"legalName": "法人名を追加する必要があります",
+			"legalName": "正式な名前を追加する必要があります",
 			"name": "名前を追加する必要があります",
 			"postalCode": "郵便番号を追加する必要があります"
 		},
@@ -137,15 +148,15 @@
 			"account": "アカウント",
 			"address": "住所",
 			"billing": "請求",
-			"city": "市区町村",
+			"city": "都市",
 			"country": "国",
 			"email": "メールアドレス",
-			"legalName": "法人名",
+			"legalName": "正式な名前",
 			"phone": "電話番号",
 			"postalCode": "郵便番号",
 			"private": "プライベート",
 			"public": "パブリック",
-			"vatNumber": "登録番号"
+			"vatNumber": "VAT 番号"
 		}
 	}
 }

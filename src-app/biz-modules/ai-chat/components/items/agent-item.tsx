@@ -13,7 +13,7 @@ export const AgentItem = (props: Props) => {
 	return (
 		<li>
 			<Button
-				linkHref="/chat"
+				linkHref={`/chat?agent=${agent.id}`}
 				variant={selected ? 'item-solid-secondary' : 'item-text-default'}
 				highlight={selected ? 'selected' : 'default'}
 				tooltip={agent.name}

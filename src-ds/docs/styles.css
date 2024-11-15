@@ -61,10 +61,10 @@ ol.docs {
 .docs code,
 code.docs {
 	border-radius: var(--ds-radius-xs);
-	background-color: var(--ds-color-bg-preview);
+	background-color: var(--ds-color-bg-coding);
 	padding: 3px 6px;
 	width: fit-content;
-	color: var(--ds-color-text-preview);
+	color: var(--ds-color-text-coding);
 	font-size: var(--ds-font-size-sm);
 	white-space: nowrap;
 }
@@ -82,7 +82,7 @@ pre.docs {
 	background-image: linear-gradient(var(--color) 1px, transparent 1px),
 		linear-gradient(90deg, var(--color) 1px, transparent 1px);
 	background-size: 8px 8px;
-	background-color: var(--ds-color-bg-default);
+	background-color: var(--ds-color-bg-page);
 }
 
 .docs-bg.docs-bg-tiles {
@@ -92,18 +92,18 @@ pre.docs {
 		0 0,
 		8px 8px;
 	background-size: 16px 16px;
-	background-color: var(--ds-color-bg-default);
+	background-color: var(--ds-color-bg-page);
 }
 .docs-bg.docs-bg-blank {
-	background-color: var(--ds-color-bg-default);
+	background-color: var(--ds-color-bg-page);
 }
 
 .docs-bg {
-	--color: #eee;
+	--color: var(--ds-color-black-glass-2);
 }
 
 [data-color-theme='dark'] {
 	.docs-bg {
-		--color: #333;
+		--color: var(--ds-color-white-glass-2);
 	}
 }

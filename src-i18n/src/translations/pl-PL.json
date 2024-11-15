@@ -1,23 +1,23 @@
 {
 	"core": {
 		"action": {
-			"back": "Wróć",
-			"backToHome": "Wróć do strony głównej",
+			"back": "Wstecz",
+			"backToHome": "Powrót na stronę główną",
 			"changeLanguage": "Zmień język",
 			"close": "Zamknij",
 			"delete": "Usuń",
-			"deselectAll": "Odznacz wszystko",
+			"deselectAll": "Odznacz wszystkie",
 			"openMenu": "Otwórz menu",
 			"rename": "Zmień nazwę",
 			"saveChanges": "Zapisz zmiany",
 			"search": "Szukaj",
 			"searchMore": "Pokaż więcej wyników",
-			"selectAll": "Zaznacz wszystko",
+			"selectAll": "Zaznacz wszystkie",
 			"signOut": "Wyloguj się"
 		},
 		"error": {
 			"noChanges": "Brak zmian",
-			"nothingFound": "Nic nie znaleziono dla \"{search}\""
+			"nothingFound": "Nie znaleziono wyników dla \"{search}\""
 		},
 		"label": {
 			"apiDocs": "Dokumentacja API",
@@ -25,21 +25,23 @@
 			"avatar": "Awatar",
 			"custom": "Niestandardowe",
 			"darkTheme": "Ciemny",
-			"default": "Domyślne",
+			"default": "Domyślny",
 			"description": "Opis",
-			"designSystem": "System projektowy",
+			"designSystem": "System projektowania",
 			"errors": "Błędy",
 			"europe": "Europa",
 			"githubRepo": "Repozytorium GitHub",
 			"language": "Język",
 			"lightTheme": "Jasny",
 			"name": "Nazwa",
+			"navigationBar": "Pasek nawigacyjny",
+			"navigationMenu": "Menu nawigacyjne",
 			"optionalField": "(Opcjonalne)",
 			"quickSettings": "Szybkie ustawienia",
 			"requiredField": "(Wymagane)",
 			"settings": "Ustawienia",
-			"uiLibrary": "Biblioteka UI:",
-			"uiTheme": "Motyw UI:"
+			"uiLibrary": "Biblioteka UI",
+			"uiTheme": "Motyw UI"
 		},
 		"placeholder": {
 			"search": "Szukaj..."
@@ -49,84 +51,78 @@
 			"deleting": "Usuwanie...",
 			"loading": "Ładowanie...",
 			"searching": "Wyszukiwanie...",
-			"updating": "Aktualizowanie..."
+			"updating": "Aktualizacja..."
 		}
 	},
 	"aiChat": {
 		"action": {
-			"backToSubchats": "Wróć do podczatów",
-			"configureAgent": "Konfiguruj agenta",
+			"backToSubchats": "Powrót do subczatów",
+			"configureAgent": "Skonfiguruj agenta",
 			"confirmDeleteAgent": "Potwierdź usunięcie agenta",
 			"confirmDeleteChats": "Potwierdź usunięcie czatów",
 			"confirmRenameChat": "Potwierdź zmianę nazwy czatu",
 			"createAgent": "Utwórz agenta",
 			"deleteAgent": "Usuń agenta",
 			"deleteSelectedChats": "Usuń wybrane czaty",
+			"deselectChat": "Odznacz czat",
 			"manageAgents": "Zarządzaj agentami",
 			"manageChats": "Zarządzaj czatami",
 			"openChat": "Otwórz czat",
-			"openSubchat_zero": "Utwórz podczat",
-			"openSubchat_one": "Otwórz podczat ({count} wiadomość)",
-			"openSubchat_few": "Otwórz podczat ({count} wiadomości)",
-			"openSubchat_many": "Otwórz podczat ({count} wiadomości)",
-			"openSubchat_other": "Otwórz podczat ({count} wiadomości)",
+			"openSubchat_other": "Otwórz subczat ({count} wiadomości)",
+			"openSubchat_zero": "Utwórz subczat",
+			"searchChats": "Szukaj w czatach",
+			"selectChat": "Wybierz czat",
 			"sendMessage": "Wyślij wiadomość",
 			"showMoreAgents": "Pokaż więcej agentów",
 			"showMoreChats": "Pokaż więcej czatów",
-			"showSubchats": "Pokaż podczaty ({count})",
+			"showSubchats": "Pokaż subczaty ({count})",
 			"startSearching_one": "Wpisz co najmniej {count} znak",
-			"startSearching_few": "Wpisz co najmniej {count} znaki",
-			"startSearching_many": "Wpisz co najmniej {count} znaków",
-			"startSearching_other": "Wpisz co najmniej {count} znaków"
+			"startSearching_other": "Wpisz co najmniej {count} znaki"
 		},
 		"description": {
 			"loremIpsumGPT": "Najinteligentniejszy model",
 			"rammusGPT": "Najlepsze wsparcie emocjonalne"
 		},
 		"error": {
-			"agentAvatar": "Musisz dodać awatar dla agenta",
-			"agentName": "Musisz dodać nazwę dla agenta",
+			"agentAvatar": "Musisz dodać awatar agenta",
+			"agentName": "Musisz dodać nazwę agenta",
 			"emptyMessage": "Twoja wiadomość jest pusta"
 		},
 		"label": {
 			"agents": "Agenci",
+			"chatTitle": "Tytuł czatu",
 			"chats": "Czaty",
 			"customInstructions": "Niestandardowe instrukcje",
 			"gptModel": "Model GPT",
 			"newAgent": "Nowy agent",
 			"newChat": "Nowy czat",
+			"newMessage": "Nowa wiadomość",
 			"noChats": "Brak czatów",
-			"noSubchats": "Brak podczatów",
-			"selectedValue": "Wybrana wartość:",
-			"subchats": "Podczaty",
-			"xMessages_zero": "Brak wiadomości",
-			"xMessages_one": "{count} wiadomość",
-			"xMessages_few": "{count} wiadomości",
-			"xMessages_many": "{count} wiadomości",
+			"noSubchats": "Brak subczatów",
+			"selectedAgent": "Wybrany agent",
+			"selectedValue": "Wybrana wartość",
+			"subchats": "Subczaty",
+			"xMessages_one": "1 wiadomość",
 			"xMessages_other": "{count} wiadomości",
-			"xSearchResults_zero": "Brak wyników wyszukiwania",
 			"xSearchResults_one": "{count} wynik wyszukiwania",
-			"xSearchResults_few": "{count} wyniki wyszukiwania",
-			"xSearchResults_many": "{count} wyników wyszukiwania",
-			"xSearchResults_other": "{count} wyników wyszukiwania",
-			"xSelectedMessages_zero": "Nie wybrano wiadomości",
-			"xSelectedMessages_one": "Wybrano {count} wiadomość",
-			"xSelectedMessages_few": "Wybrano {count} wiadomości",
-			"xSelectedMessages_many": "Wybrano {count} wiadomości",
-			"xSelectedMessages_other": "Wybrano {count} wiadomości"
+			"xSearchResults_other": "{count} wyniki wyszukiwania",
+			"xSearchResults_zero": "Brak wyników wyszukiwania",
+			"xSelectedMessages_one": "1 wiadomość wybrana",
+			"xSelectedMessages_other": "{count} wiadomości wybrane"
 		},
 		"placeholder": {
-			"newMessage": "Zadaj pytanie...",
-			"rename": "Automatycznie wygeneruj nową nazwę..."
+			"newMessage": "Porozmawiaj z {name}...",
+			"rename": "Wygeneruj nową nazwę automatycznie..."
 		},
 		"state": {
 			"loadingAgents": "Ładowanie agentów...",
 			"loadingChats": "Ładowanie czatów...",
-			"loadingGPTs": "Ładowanie GPT...",
+			"loadingGPTs": "Ładowanie modeli GPT...",
 			"loadingMessages": "Ładowanie wiadomości...",
 			"loadingPreviousMessages": "Ładowanie poprzednich wiadomości...",
-			"loadingSubchats": "Ładowanie podczatów...",
-			"renamingChat": "Zmienianie nazwy czatu..."
+			"loadingSubchats": "Ładowanie subczatów...",
+			"renamingChat": "Zmiana nazwy czatu...",
+			"thinking": "Myślenie..."
 		},
 		"warning": {
 			"deletingAgent": "Ten agent zostanie trwale usunięty",
@@ -136,22 +132,22 @@
 	"userSettings": {
 		"action": {
 			"manageAccount": "Zarządzaj kontem",
-			"manageBilling": "Zarządzaj płatnościami"
+			"manageBilling": "Zarządzaj rozliczeniami"
 		},
 		"error": {
 			"address": "Musisz dodać adres",
 			"avatar": "Musisz dodać swój awatar",
 			"city": "Musisz dodać miasto",
 			"country": "Musisz dodać kraj",
-			"email": "Musisz dodać adres e-mail",
+			"email": "Musisz dodać swój adres e-mail",
 			"legalName": "Musisz dodać nazwę prawną",
-			"name": "Musisz dodać swoją nazwę",
+			"name": "Musisz dodać swoje imię",
 			"postalCode": "Musisz dodać kod pocztowy"
 		},
 		"label": {
 			"account": "Konto",
 			"address": "Adres",
-			"billing": "Płatności",
+			"billing": "Rozliczenia",
 			"city": "Miasto",
 			"country": "Kraj",
 			"email": "Adres e-mail",
@@ -160,7 +156,7 @@
 			"postalCode": "Kod pocztowy",
 			"private": "Prywatne",
 			"public": "Publiczne",
-			"vatNumber": "NIP"
+			"vatNumber": "Numer VAT"
 		}
 	}
 }

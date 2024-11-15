@@ -90,7 +90,7 @@ export const I18nModal = ({ opened, onClose }: Props) => {
 					)}
 
 					<span className={cx('flex flex-col leading-1', isSelected ? 'font-weight-md' : 'font-weight-sm')}>
-						<span className={cx(!isSelected && 'text-color-text-default')}>{item.name}</span>
+						<span className={cx(!isSelected && 'text-color-text-default', 'mb-xs-0')}>{item.name}</span>
 						<span className={cx(!isSelected && 'text-color-text-subtle', 'text-size-xs')}>{item.nameEn}</span>
 					</span>
 

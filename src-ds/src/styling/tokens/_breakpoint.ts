@@ -1,8 +1,8 @@
 export const TOKENS__BREAKPOINT = {
-	xs: { $value: '420px', $css: '--ds-breakpoint-xs' },
-	sm: { $value: '640px', $css: '--ds-breakpoint-sm' },
-	md: { $value: '768px', $css: '--ds-breakpoint-md' },
-	lg: { $value: '1024px', $css: '--ds-breakpoint-lg' },
-	xl: { $value: '1440px', $css: '--ds-breakpoint-xl' },
-	xxl: { $value: '1920px', $css: '--ds-breakpoint-xxl' },
+	xs: { $value: '420px' },
+	sm: { $value: '640px' },
+	md: { $value: '768px' },
+	lg: { $value: '1024px' },
+	xl: { $value: '1440px' },
+	xxl: { $value: '1920px' },
 } as const satisfies DesignTokenGroup<string>

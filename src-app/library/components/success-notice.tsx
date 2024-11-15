@@ -13,7 +13,11 @@ export const SuccessNotice = ({ text, className }: Props) => {
 	}, [text])
 
 	return (
-		<div ref={wrapperRef} role="alert" className={cx('flex items-center px-xs-1 text-color-success', className)}>
+		<div
+			ref={wrapperRef}
+			role="alert"
+			className={cx('flex items-center px-xs-1 text-color-success-page-text', className)}
+		>
 			<CheckSvg className="mr-xs-4 w-xs-5" />
 			{text}
 		</div>

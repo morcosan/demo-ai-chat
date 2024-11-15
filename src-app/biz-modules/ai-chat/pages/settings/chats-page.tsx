@@ -182,7 +182,7 @@ export const ChatsPage = () => {
 				onClose={() => setShowsDeleteModal(false)}
 				onClosed={() => setChatsToDelete([])}
 			>
-				<div className="mb-xs-8 flex items-center text-color-danger">
+				<div className="mb-xs-8 flex items-center text-color-danger-page-text">
 					<WarningSvg className="mr-xs-4 w-xs-8" />
 					{t('aiChat.warning.deletingChats')}
 				</div>

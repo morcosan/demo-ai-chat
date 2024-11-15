@@ -6,7 +6,7 @@
 			"changeLanguage": "Changer de langue",
 			"close": "Fermer",
 			"delete": "Supprimer",
-			"deselectAll": "Tout désélectionner",
+			"deselectAll": "Désélectionner tout",
 			"openMenu": "Ouvrir le menu",
 			"rename": "Renommer",
 			"saveChanges": "Enregistrer les modifications",
@@ -16,8 +16,8 @@
 			"signOut": "Se déconnecter"
 		},
 		"error": {
-			"noChanges": "Aucune modification",
-			"nothingFound": "Aucun résultat pour \"{search}\""
+			"noChanges": "Il n'y a aucun changement",
+			"nothingFound": "Aucun résultat trouvé pour \"{search}\""
 		},
 		"label": {
 			"apiDocs": "Documentation API",
@@ -30,16 +30,18 @@
 			"designSystem": "Système de design",
 			"errors": "Erreurs",
 			"europe": "Europe",
-			"githubRepo": "Dépôt GitHub",
+			"githubRepo": "Repo GitHub",
 			"language": "Langue",
 			"lightTheme": "Clair",
 			"name": "Nom",
-			"optionalField": "(Facultatif)",
+			"navigationBar": "Barre de navigation",
+			"navigationMenu": "Menu de navigation",
+			"optionalField": "(Optionnel)",
 			"quickSettings": "Paramètres rapides",
 			"requiredField": "(Obligatoire)",
 			"settings": "Paramètres",
-			"uiLibrary": "Bibliothèque UI :",
-			"uiTheme": "Thème UI :"
+			"uiLibrary": "Bibliothèque UI",
+			"uiTheme": "Thème UI"
 		},
 		"placeholder": {
 			"search": "Rechercher..."
@@ -54,30 +56,32 @@
 	},
 	"aiChat": {
 		"action": {
-			"backToSubchats": "Retour aux sous-conversations",
+			"backToSubchats": "Retour aux sous-discussions",
 			"configureAgent": "Configurer l'agent",
 			"confirmDeleteAgent": "Confirmer la suppression de l'agent",
-			"confirmDeleteChats": "Confirmer la suppression des conversations",
-			"confirmRenameChat": "Confirmer le renommage de la conversation",
+			"confirmDeleteChats": "Confirmer la suppression des discussions",
+			"confirmRenameChat": "Confirmer le renommage de la discussion",
 			"createAgent": "Créer un agent",
 			"deleteAgent": "Supprimer l'agent",
-			"deleteSelectedChats": "Supprimer les conversations sélectionnées",
+			"deleteSelectedChats": "Supprimer les discussions sélectionnées",
+			"deselectChat": "Désélectionner la discussion",
 			"manageAgents": "Gérer les agents",
-			"manageChats": "Gérer les conversations",
-			"openChat": "Ouvrir la conversation",
-			"openSubchat_zero": "Créer une sous-conversation",
-			"openSubchat_one": "Ouvrir la sous-conversation ({count} message)",
-			"openSubchat_other": "Ouvrir la sous-conversation ({count} messages)",
+			"manageChats": "Gérer les discussions",
+			"openChat": "Ouvrir la discussion",
+			"openSubchat_other": "Ouvrir la sous-discussion ({count} messages)",
+			"openSubchat_zero": "Créer une sous-discussion",
+			"searchChats": "Rechercher des discussions",
+			"selectChat": "Sélectionner la discussion",
 			"sendMessage": "Envoyer le message",
 			"showMoreAgents": "Afficher plus d'agents",
-			"showMoreChats": "Afficher plus de conversations",
-			"showSubchats": "Afficher les sous-conversations ({count})",
-			"startSearching_one": "Saisissez au moins {count} caractère",
-			"startSearching_other": "Saisissez au moins {count} caractères"
+			"showMoreChats": "Afficher plus de discussions",
+			"showSubchats": "Afficher les sous-discussions ({count})",
+			"startSearching_one": "Tapez au moins {count} caractère",
+			"startSearching_other": "Tapez au moins {count} caractères"
 		},
 		"description": {
-			"loremIpsumGPT": "Le modèle le plus intelligent",
-			"rammusGPT": "Le meilleur soutien émotionnel"
+			"loremIpsumGPT": "Modèle le plus intelligent",
+			"rammusGPT": "Meilleur soutien émotionnel"
 		},
 		"error": {
 			"agentAvatar": "Vous devez ajouter un avatar pour l'agent",
@@ -86,41 +90,43 @@
 		},
 		"label": {
 			"agents": "Agents",
-			"chats": "Conversations",
+			"chatTitle": "Titre de la discussion",
+			"chats": "Discussions",
 			"customInstructions": "Instructions personnalisées",
 			"gptModel": "Modèle GPT",
 			"newAgent": "Nouvel agent",
-			"newChat": "Nouvelle conversation",
-			"noChats": "Aucune conversation",
-			"noSubchats": "Aucune sous-conversation",
-			"selectedValue": "Valeur sélectionnée :",
-			"subchats": "Sous-conversations",
-			"xMessages_zero": "Aucun message",
-			"xMessages_one": "{count} message",
+			"newChat": "Nouvelle discussion",
+			"newMessage": "Nouveau message",
+			"noChats": "Aucune discussion",
+			"noSubchats": "Aucune sous-discussion",
+			"selectedAgent": "Agent sélectionné",
+			"selectedValue": "Valeur sélectionnée",
+			"subchats": "Sous-discussions",
+			"xMessages_one": "1 message",
 			"xMessages_other": "{count} messages",
-			"xSearchResults_zero": "Aucun résultat",
-			"xSearchResults_one": "{count} résultat",
-			"xSearchResults_other": "{count} résultats",
-			"xSelectedMessages_zero": "Aucun message sélectionné",
-			"xSelectedMessages_one": "{count} message sélectionné",
+			"xSearchResults_one": "{count} résultat de recherche",
+			"xSearchResults_other": "{count} résultats de recherche",
+			"xSearchResults_zero": "Aucun résultat de recherche",
+			"xSelectedMessages_one": "1 message sélectionné",
 			"xSelectedMessages_other": "{count} messages sélectionnés"
 		},
 		"placeholder": {
-			"newMessage": "Posez une question...",
+			"newMessage": "Parlez à {name}...",
 			"rename": "Générer automatiquement un nouveau nom..."
 		},
 		"state": {
 			"loadingAgents": "Chargement des agents...",
-			"loadingChats": "Chargement des conversations...",
-			"loadingGPTs": "Chargement des GPTs...",
+			"loadingChats": "Chargement des discussions...",
+			"loadingGPTs": "Chargement des modèles GPT...",
 			"loadingMessages": "Chargement des messages...",
 			"loadingPreviousMessages": "Chargement des messages précédents...",
-			"loadingSubchats": "Chargement des sous-conversations...",
-			"renamingChat": "Renommage de la conversation..."
+			"loadingSubchats": "Chargement des sous-discussions...",
+			"renamingChat": "Renommage de la discussion...",
+			"thinking": "En réflexion..."
 		},
 		"warning": {
-			"deletingAgent": "Cet agent sera définitivement supprimé",
-			"deletingChats": "Ces conversations seront définitivement supprimées"
+			"deletingAgent": "Cet agent sera supprimé définitivement",
+			"deletingChats": "Ces discussions seront supprimées définitivement"
 		}
 	},
 	"userSettings": {

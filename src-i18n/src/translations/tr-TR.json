@@ -6,7 +6,7 @@
 			"changeLanguage": "Dili değiştir",
 			"close": "Kapat",
 			"delete": "Sil",
-			"deselectAll": "Tüm seçimleri kaldır",
+			"deselectAll": "Tümünü kaldır",
 			"openMenu": "Menüyü aç",
 			"rename": "Yeniden adlandır",
 			"saveChanges": "Değişiklikleri kaydet",
@@ -33,13 +33,14 @@
 			"githubRepo": "GitHub Deposu",
 			"language": "Dil",
 			"lightTheme": "Açık",
-			"name": "İsim",
+			"name": "Ad",
+			"navigationBar": "Gezinme çubuğu",
+			"navigationMenu": "Gezinme menüsü",
 			"optionalField": "(İsteğe bağlı)",
-			"quickSettings": "Hızlı ayarlar",
 			"requiredField": "(Zorunlu)",
 			"settings": "Ayarlar",
-			"uiLibrary": "UI Kütüphanesi:",
-			"uiTheme": "UI Teması:"
+			"uiLibrary": "UI Kütüphanesi",
+			"uiTheme": "UI Teması"
 		},
 		"placeholder": {
 			"search": "Ara..."
@@ -57,17 +58,19 @@
 			"backToSubchats": "Alt sohbetlere dön",
 			"configureAgent": "Ajanı yapılandır",
 			"confirmDeleteAgent": "Ajan silmeyi onayla",
-			"confirmDeleteChats": "Sohbet silmeyi onayla",
+			"confirmDeleteChats": "Sohbetleri silmeyi onayla",
 			"confirmRenameChat": "Sohbet yeniden adlandırmayı onayla",
 			"createAgent": "Ajan oluştur",
 			"deleteAgent": "Ajanı sil",
 			"deleteSelectedChats": "Seçili sohbetleri sil",
+			"deselectChat": "Sohbet seçimini kaldır",
 			"manageAgents": "Ajanları yönet",
 			"manageChats": "Sohbetleri yönet",
 			"openChat": "Sohbeti aç",
-			"openSubchat_zero": "Alt sohbet oluştur",
-			"openSubchat_one": "Alt sohbeti aç ({count} mesaj)",
 			"openSubchat_other": "Alt sohbeti aç ({count} mesaj)",
+			"openSubchat_zero": "Alt sohbet oluştur",
+			"searchChats": "Sohbetlerde ara",
+			"selectChat": "Sohbet seç",
 			"sendMessage": "Mesaj gönder",
 			"showMoreAgents": "Daha fazla ajan göster",
 			"showMoreChats": "Daha fazla sohbet göster",
@@ -76,7 +79,7 @@
 			"startSearching_other": "En az {count} karakter yazın"
 		},
 		"description": {
-			"loremIpsumGPT": "En zeki model",
+			"loremIpsumGPT": "En akıllı model",
 			"rammusGPT": "En iyi duygusal destek"
 		},
 		"error": {
@@ -86,28 +89,29 @@
 		},
 		"label": {
 			"agents": "Ajanlar",
+			"chatTitle": "Sohbet başlığı",
 			"chats": "Sohbetler",
 			"customInstructions": "Özel talimatlar",
 			"gptModel": "GPT modeli",
 			"newAgent": "Yeni ajan",
 			"newChat": "Yeni sohbet",
+			"newMessage": "Yeni mesaj",
 			"noChats": "Sohbet yok",
 			"noSubchats": "Alt sohbet yok",
-			"selectedValue": "Seçilen değer:",
+			"selectedAgent": "Seçili ajan",
+			"selectedValue": "Seçili değer",
 			"subchats": "Alt sohbetler",
-			"xMessages_zero": "Mesaj yok",
 			"xMessages_one": "{count} mesaj",
 			"xMessages_other": "{count} mesaj",
-			"xSearchResults_zero": "Arama sonucu yok",
 			"xSearchResults_one": "{count} arama sonucu",
 			"xSearchResults_other": "{count} arama sonucu",
-			"xSelectedMessages_zero": "Seçili mesaj yok",
-			"xSelectedMessages_one": "{count} mesaj seçili",
-			"xSelectedMessages_other": "{count} mesaj seçili"
+			"xSearchResults_zero": "Arama sonucu yok",
+			"xSelectedMessages_one": "{count} mesaj seçildi",
+			"xSelectedMessages_other": "{count} mesaj seçildi"
 		},
 		"placeholder": {
-			"newMessage": "Bir soru sorun...",
-			"rename": "Otomatik olarak yeni isim oluştur..."
+			"newMessage": "{name} ile konuş...",
+			"rename": "Otomatik olarak yeni bir isim oluştur..."
 		},
 		"state": {
 			"loadingAgents": "Ajanlar yükleniyor...",
@@ -116,7 +120,8 @@
 			"loadingMessages": "Mesajlar yükleniyor...",
 			"loadingPreviousMessages": "Önceki mesajlar yükleniyor...",
 			"loadingSubchats": "Alt sohbetler yükleniyor...",
-			"renamingChat": "Sohbet yeniden adlandırılıyor..."
+			"renamingChat": "Sohbet yeniden adlandırılıyor...",
+			"thinking": "Düşünüyor..."
 		},
 		"warning": {
 			"deletingAgent": "Bu ajan kalıcı olarak silinecek",
@@ -134,8 +139,8 @@
 			"city": "Şehir eklemelisiniz",
 			"country": "Ülke eklemelisiniz",
 			"email": "E-posta adresi eklemelisiniz",
-			"legalName": "Yasal isim eklemelisiniz",
-			"name": "İsim eklemelisiniz",
+			"legalName": "Yasal ad eklemelisiniz",
+			"name": "Adınızı eklemelisiniz",
 			"postalCode": "Posta kodu eklemelisiniz"
 		},
 		"label": {
@@ -145,12 +150,12 @@
 			"city": "Şehir",
 			"country": "Ülke",
 			"email": "E-posta adresi",
-			"legalName": "Yasal isim",
+			"legalName": "Yasal ad",
 			"phone": "Telefon numarası",
 			"postalCode": "Posta kodu",
 			"private": "Özel",
 			"public": "Herkese açık",
-			"vatNumber": "Vergi numarası"
+			"vatNumber": "VKN"
 		}
 	}
 }

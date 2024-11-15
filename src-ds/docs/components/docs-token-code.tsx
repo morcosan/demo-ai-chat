@@ -20,13 +20,13 @@ export const DocsTokenCode = ({ iconSvg, value, size, loading }: Props) => {
 		'hover:py-xs-1 focus:py-xs-1',
 		'hover:z-popup focus:z-popup',
 		'hover:shadow-md focus:shadow-md',
-		'hover:bg-color-bg-default focus:bg-color-bg-default',
+		'hover:bg-color-bg-page focus:bg-color-bg-page',
 		'hover:scale-[1.1] focus:scale-[1.1]'
 	)
 
 	const copiedClass = cx(
-		'flex-center absolute-overlay bg-color-success-bg',
-		'text-size-sm font-weight-md text-color-success-text-default'
+		'flex-center absolute-overlay bg-color-success-card-bg',
+		'text-size-sm font-weight-md text-color-success-card-text'
 	)
 
 	const onClick = (event: ReactMouseEvent) => {
@@ -45,7 +45,7 @@ export const DocsTokenCode = ({ iconSvg, value, size, loading }: Props) => {
 	) : (
 		<div className={cx('relative h-sm-4', size || 'w-md-8')}>
 			<button type="button" className={buttonClass} onClick={onClick}>
-				<code className="pointer-events-none flex !w-full items-center gap-xs-2 !bg-color-bg-default">
+				<code className="pointer-events-none flex !w-full items-center gap-xs-2 !bg-color-bg-page">
 					<span className="ml-px mt-px block h-xs-6">{iconSvg}</span>
 					<span className="line-clamp-1">{value}</span>
 				</code>

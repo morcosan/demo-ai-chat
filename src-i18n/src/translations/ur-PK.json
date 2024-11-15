@@ -2,18 +2,18 @@
 	"core": {
 		"action": {
 			"back": "واپس",
-			"backToHome": "ہوم پیج پر واپس جائیں",
+			"backToHome": "ہوم پیج پر واپس",
 			"changeLanguage": "زبان تبدیل کریں",
 			"close": "بند کریں",
 			"delete": "حذف کریں",
-			"deselectAll": "سب کو نا منتخب کریں",
+			"deselectAll": "سب کو غیر منتخب کریں",
 			"openMenu": "مینو کھولیں",
 			"rename": "نام تبدیل کریں",
 			"saveChanges": "تبدیلیاں محفوظ کریں",
 			"search": "تلاش کریں",
 			"searchMore": "مزید نتائج دکھائیں",
 			"selectAll": "سب کو منتخب کریں",
-			"signOut": "لاگ آؤٹ کریں"
+			"signOut": "لاگ آؤٹ"
 		},
 		"error": {
 			"noChanges": "کوئی تبدیلی نہیں",
@@ -34,12 +34,13 @@
 			"language": "زبان",
 			"lightTheme": "لائٹ",
 			"name": "نام",
+			"navigationBar": "نیویگیشن بار",
+			"navigationMenu": "نیویگیشن مینو",
 			"optionalField": "(اختیاری)",
-			"quickSettings": "فوری ترتیبات",
 			"requiredField": "(ضروری)",
 			"settings": "ترتیبات",
-			"uiLibrary": "UI لائبریری:",
-			"uiTheme": "UI تھیم:"
+			"uiLibrary": "UI لائبریری",
+			"uiTheme": "UI تھیم"
 		},
 		"placeholder": {
 			"search": "تلاش کریں..."
@@ -54,30 +55,33 @@
 	},
 	"aiChat": {
 		"action": {
-			"backToSubchats": "ذیلی چیٹس پر واپس جائیں",
+			"backToSubchats": "ذیلی چیٹس پر واپس",
 			"configureAgent": "ایجنٹ کی ترتیب کریں",
-			"confirmDeleteAgent": "ایجنٹ کی حذف شدگی کی تصدیق کریں",
-			"confirmDeleteChats": "چیٹس کی حذف شدگی کی تصدیق کریں",
-			"confirmRenameChat": "چیٹ کے نام کی تبدیلی کی تصدیق کریں",
+			"confirmDeleteAgent": "ایجنٹ کو حذف کرنے کی تصدیق کریں",
+			"confirmDeleteChats": "چیٹس کو حذف کرنے کی تصدیق کریں",
+			"confirmRenameChat": "چیٹ کا نام تبدیل کرنے کی تصدیق کریں",
 			"createAgent": "ایجنٹ بنائیں",
 			"deleteAgent": "ایجنٹ حذف کریں",
-			"deleteSelectedChats": "منتخب شدہ چیٹس حذف کریں",
+			"deleteSelectedChats": "منتخب کردہ چیٹس حذف کریں",
+			"deselectChat": "چیٹ غیر منتخب کریں",
 			"manageAgents": "ایجنٹس کا انتظام کریں",
 			"manageChats": "چیٹس کا انتظام کریں",
 			"openChat": "چیٹ کھولیں",
-			"openSubchat_zero": "ذیلی چیٹ بنائیں",
 			"openSubchat_one": "ذیلی چیٹ کھولیں ({count} پیغام)",
 			"openSubchat_other": "ذیلی چیٹ کھولیں ({count} پیغامات)",
+			"openSubchat_zero": "ذیلی چیٹ بنائیں",
+			"searchChats": "چیٹس تلاش کریں",
+			"selectChat": "چیٹ منتخب کریں",
 			"sendMessage": "پیغام بھیجیں",
 			"showMoreAgents": "مزید ایجنٹس دکھائیں",
 			"showMoreChats": "مزید چیٹس دکھائیں",
 			"showSubchats": "ذیلی چیٹس دکھائیں ({count})",
-			"startSearching_one": "کم از کم {count} حرف ٹائپ کریں",
-			"startSearching_other": "کم از کم {count} حروف ٹائپ کریں"
+			"startSearching_one": "کم از کم {count} حرف لکھیں",
+			"startSearching_other": "کم از کم {count} حروف لکھیں"
 		},
 		"description": {
 			"loremIpsumGPT": "سب سے ذہین ماڈل",
-			"rammusGPT": "بہترین جذباتی مدد"
+			"rammusGPT": "بہترین جذباتی سپورٹ"
 		},
 		"error": {
 			"agentAvatar": "آپ کو ایجنٹ کے لیے تصویر شامل کرنی ہوگی",
@@ -86,28 +90,29 @@
 		},
 		"label": {
 			"agents": "ایجنٹس",
+			"chatTitle": "چیٹ کا عنوان",
 			"chats": "چیٹس",
 			"customInstructions": "حسب ضرورت ہدایات",
 			"gptModel": "GPT ماڈل",
 			"newAgent": "نیا ایجنٹ",
 			"newChat": "نئی چیٹ",
+			"newMessage": "نیا پیغام",
 			"noChats": "کوئی چیٹ نہیں",
 			"noSubchats": "کوئی ذیلی چیٹ نہیں",
-			"selectedValue": "منتخب شدہ قیمت:",
+			"selectedAgent": "منتخب کردہ ایجنٹ",
+			"selectedValue": "منتخب کردہ قیمت",
 			"subchats": "ذیلی چیٹس",
-			"xMessages_zero": "کوئی پیغام نہیں",
 			"xMessages_one": "{count} پیغام",
 			"xMessages_other": "{count} پیغامات",
-			"xSearchResults_zero": "کوئی تلاش کا نتیجہ نہیں",
 			"xSearchResults_one": "{count} تلاش کا نتیجہ",
 			"xSearchResults_other": "{count} تلاش کے نتائج",
-			"xSelectedMessages_zero": "کوئی منتخب شدہ پیغام نہیں",
-			"xSelectedMessages_one": "{count} منتخب شدہ پیغام",
-			"xSelectedMessages_other": "{count} منتخب شدہ پیغامات"
+			"xSearchResults_zero": "تلاش کا کوئی نتیجہ نہیں",
+			"xSelectedMessages_one": "{count} پیغام منتخب",
+			"xSelectedMessages_other": "{count} پیغامات منتخب"
 		},
 		"placeholder": {
-			"newMessage": "سوال پوچھیں...",
-			"rename": "خود کار طریقے سے نیا نام بنائیں..."
+			"newMessage": "{name} سے بات کریں...",
+			"rename": "خود بخود نیا نام بنائیں..."
 		},
 		"state": {
 			"loadingAgents": "ایجنٹس لوڈ ہو رہے ہیں...",
@@ -116,7 +121,8 @@
 			"loadingMessages": "پیغامات لوڈ ہو رہے ہیں...",
 			"loadingPreviousMessages": "پچھلے پیغامات لوڈ ہو رہے ہیں...",
 			"loadingSubchats": "ذیلی چیٹس لوڈ ہو رہی ہیں...",
-			"renamingChat": "چیٹ کا نام تبدیل کیا جا رہا ہے..."
+			"renamingChat": "چیٹ کا نام تبدیل ہو رہا ہے...",
+			"thinking": "سوچ رہا ہے..."
 		},
 		"warning": {
 			"deletingAgent": "یہ ایجنٹ مستقل طور پر حذف ہو جائے گا",
@@ -133,7 +139,7 @@
 			"avatar": "آپ کو اپنی تصویر شامل کرنی ہوگی",
 			"city": "آپ کو شہر شامل کرنا ہوگا",
 			"country": "آپ کو ملک شامل کرنا ہوگا",
-			"email": "آپ کو ای میل ایڈریس شامل کرنا ہوگا",
+			"email": "آپ کو اپنا ای میل ایڈریس شامل کرنا ہوگا",
 			"legalName": "آپ کو قانونی نام شامل کرنا ہوگا",
 			"name": "آپ کو اپنا نام شامل کرنا ہوگا",
 			"postalCode": "آپ کو پوسٹل کوڈ شامل کرنا ہوگا"

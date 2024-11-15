@@ -2,27 +2,27 @@
 	"core": {
 		"action": {
 			"back": "Til baka",
-			"backToHome": "Aftur á forsíðu",
-			"changeLanguage": "Skipta um tungumál",
+			"backToHome": "Til baka á heimasíðu",
+			"changeLanguage": "Breyta tungumáli",
 			"close": "Loka",
 			"delete": "Eyða",
-			"deselectAll": "Afvelja allt",
+			"deselectAll": "Hætta við val á öllu",
 			"openMenu": "Opna valmynd",
 			"rename": "Endurnefna",
 			"saveChanges": "Vista breytingar",
 			"search": "Leita",
 			"searchMore": "Sýna fleiri niðurstöður",
 			"selectAll": "Velja allt",
-			"signOut": "Útskrá"
+			"signOut": "Skrá út"
 		},
 		"error": {
 			"noChanges": "Engar breytingar",
 			"nothingFound": "Ekkert fannst fyrir \"{search}\""
 		},
 		"label": {
-			"apiDocs": "API skjölun",
+			"apiDocs": "API skjöl",
 			"asia": "Asía",
-			"avatar": "Prófílmynd",
+			"avatar": "Avatar",
 			"custom": "Sérsniðið",
 			"darkTheme": "Dökkt",
 			"default": "Sjálfgefið",
@@ -34,18 +34,20 @@
 			"language": "Tungumál",
 			"lightTheme": "Ljóst",
 			"name": "Nafn",
+			"navigationBar": "Leiðsögustika",
+			"navigationMenu": "Leiðsöguvalmynd",
 			"optionalField": "(Valfrjálst)",
-			"quickSettings": "Flýtistillingar",
-			"requiredField": "(Skylda)",
+			"quickSettings": "Fljótstillingar",
+			"requiredField": "(Nauðsynlegt)",
 			"settings": "Stillingar",
-			"uiLibrary": "UI safn:",
-			"uiTheme": "UI þema:"
+			"uiLibrary": "UI safn",
+			"uiTheme": "UI þema"
 		},
 		"placeholder": {
 			"search": "Leita..."
 		},
 		"state": {
-			"dataSaved": "Gögnin þín hafa verið vistuð",
+			"dataSaved": "Gögnin þín eru vistuð",
 			"deleting": "Eyði...",
 			"loading": "Hleð...",
 			"searching": "Leita...",
@@ -55,102 +57,106 @@
 	"aiChat": {
 		"action": {
 			"backToSubchats": "Til baka í undirspjall",
-			"configureAgent": "Stilla gervimann",
-			"confirmDeleteAgent": "Staðfesta eyðingu gervimanns",
+			"configureAgent": "Stilla umboðsmann",
+			"confirmDeleteAgent": "Staðfesta eyðingu umboðsmanns",
 			"confirmDeleteChats": "Staðfesta eyðingu spjalla",
 			"confirmRenameChat": "Staðfesta endurnefningu spjalls",
-			"createAgent": "Búa til gervimann",
-			"deleteAgent": "Eyða gervimanni",
+			"createAgent": "Búa til umboðsmann",
+			"deleteAgent": "Eyða umboðsmanni",
 			"deleteSelectedChats": "Eyða völdum spjöllum",
-			"manageAgents": "Stjórna gervimönnum",
+			"deselectChat": "Hætta við val spjalls",
+			"manageAgents": "Stjórna umboðsmönnum",
 			"manageChats": "Stjórna spjöllum",
 			"openChat": "Opna spjall",
-			"openSubchat_zero": "Búa til undirspjall",
-			"openSubchat_one": "Opna undirspjall ({count} skilaboð)",
 			"openSubchat_other": "Opna undirspjall ({count} skilaboð)",
+			"openSubchat_zero": "Búa til undirspjall",
+			"searchChats": "Leita í spjöllum",
+			"selectChat": "Velja spjall",
 			"sendMessage": "Senda skilaboð",
-			"showMoreAgents": "Sýna fleiri gervimenn",
+			"showMoreAgents": "Sýna fleiri umboðsmenn",
 			"showMoreChats": "Sýna fleiri spjöll",
 			"showSubchats": "Sýna undirspjöll ({count})",
 			"startSearching_one": "Sláðu inn að minnsta kosti {count} staf",
 			"startSearching_other": "Sláðu inn að minnsta kosti {count} stafi"
 		},
 		"description": {
-			"loremIpsumGPT": "Greindasta líkanið",
-			"rammusGPT": "Besti tilfinningalegur stuðningurinn"
+			"loremIpsumGPT": "Greindasta módelið",
+			"rammusGPT": "Besti tilfinningalegi stuðningurinn"
 		},
 		"error": {
-			"agentAvatar": "Þú verður að bæta við prófílmynd fyrir gervimanninn",
-			"agentName": "Þú verður að bæta við nafni fyrir gervimanninn",
+			"agentAvatar": "Þú verður að bæta við avatar fyrir umboðsmann",
+			"agentName": "Þú verður að bæta við nafni fyrir umboðsmann",
 			"emptyMessage": "Skilaboðin þín eru tóm"
 		},
 		"label": {
-			"agents": "Gervimenn",
+			"agents": "Umboðsmenn",
+			"chatTitle": "Titill spjalls",
 			"chats": "Spjöll",
 			"customInstructions": "Sérsniðnar leiðbeiningar",
-			"gptModel": "GPT líkan",
-			"newAgent": "Nýr gervimaður",
+			"gptModel": "GPT módelið",
+			"newAgent": "Nýr umboðsmaður",
 			"newChat": "Nýtt spjall",
+			"newMessage": "Ný skilaboð",
 			"noChats": "Engin spjöll",
 			"noSubchats": "Engin undirspjöll",
-			"selectedValue": "Valið gildi:",
+			"selectedAgent": "Valinn umboðsmaður",
+			"selectedValue": "Valið gildi",
 			"subchats": "Undirspjöll",
-			"xMessages_zero": "Engin skilaboð",
-			"xMessages_one": "{count} skilaboð",
+			"xMessages_one": "1 skilaboð",
 			"xMessages_other": "{count} skilaboð",
-			"xSearchResults_zero": "Engar leitarniðurstöður",
 			"xSearchResults_one": "{count} leitarniðurstaða",
 			"xSearchResults_other": "{count} leitarniðurstöður",
-			"xSelectedMessages_zero": "Engin skilaboð valin",
-			"xSelectedMessages_one": "{count} skilaboð valið",
+			"xSearchResults_zero": "Engar leitarniðurstöður",
+			"xSelectedMessages_one": "1 skilaboð valin",
 			"xSelectedMessages_other": "{count} skilaboð valin"
 		},
 		"placeholder": {
-			"newMessage": "Spyrðu spurningar...",
+			"newMessage": "Talaðu við {name}...",
 			"rename": "Búa til nýtt nafn sjálfkrafa..."
 		},
 		"state": {
-			"loadingAgents": "Hleð gervimönnum...",
+			"loadingAgents": "Hleð umboðsmönnum...",
 			"loadingChats": "Hleð spjöllum...",
-			"loadingGPTs": "Hleð GPT...",
+			"loadingGPTs": "Hleð GPT-módölum...",
 			"loadingMessages": "Hleð skilaboðum...",
 			"loadingPreviousMessages": "Hleð fyrri skilaboðum...",
 			"loadingSubchats": "Hleð undirspjöllum...",
-			"renamingChat": "Endurnefni spjall..."
+			"renamingChat": "Endurnefni spjall...",
+			"thinking": "Hugsa..."
 		},
 		"warning": {
-			"deletingAgent": "Þessum gervimanni verður eytt varanlega",
-			"deletingChats": "Þessum spjöllum verður eytt varanlega"
+			"deletingAgent": "Þessi umboðsmaður verður varanlega eytt",
+			"deletingChats": "Þessi spjöll verða varanlega eytt"
 		}
 	},
 	"userSettings": {
 		"action": {
 			"manageAccount": "Stjórna reikningi",
-			"manageBilling": "Stjórna reikningum"
+			"manageBilling": "Stjórna greiðslum"
 		},
 		"error": {
 			"address": "Þú verður að bæta við heimilisfangi",
-			"avatar": "Þú verður að bæta við prófílmynd",
+			"avatar": "Þú verður að bæta við avatar þínum",
 			"city": "Þú verður að bæta við borg",
 			"country": "Þú verður að bæta við landi",
-			"email": "Þú verður að bæta við netfangi",
-			"legalName": "Þú verður að bæta við lögheiti",
-			"name": "Þú verður að bæta við nafni",
+			"email": "Þú verður að bæta við netfanginu þínu",
+			"legalName": "Þú verður að bæta við löglegu nafni",
+			"name": "Þú verður að bæta við nafni þínu",
 			"postalCode": "Þú verður að bæta við póstnúmeri"
 		},
 		"label": {
 			"account": "Reikningur",
 			"address": "Heimilisfang",
-			"billing": "Reikningar",
+			"billing": "Greiðslur",
 			"city": "Borg",
 			"country": "Land",
 			"email": "Netfang",
-			"legalName": "Lögheiti",
+			"legalName": "Löglegt nafn",
 			"phone": "Símanúmer",
 			"postalCode": "Póstnúmer",
-			"private": "Einkaaðgangur",
-			"public": "Opinn aðgangur",
-			"vatNumber": "VSK númer"
+			"private": "Einka",
+			"public": "Opinber",
+			"vatNumber": "VSK-númer"
 		}
 	}
 }

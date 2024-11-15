@@ -1,3 +1,13 @@
+:host,
+:root {
+	--scrollbar-color-default: var(--ds-color-black-glass-4);
+	--scrollbar-color-hover: var(--ds-color-black-glass-5);
+}
+[data-color-theme='dark'] {
+	--scrollbar-color-default: var(--ds-color-white-glass-4);
+	--scrollbar-color-hover: var(--ds-color-white-glass-5);
+}
+
 /* Chromium */
 ::-webkit-scrollbar {
 	width: var(--ds-spacing-scrollbar-w);
@@ -8,14 +18,15 @@
 }
 ::-webkit-scrollbar-thumb {
 	border-radius: var(--ds-radius-sm);
-	background: var(--ds-color-bg-scrollbar);
+	background: var(--scrollbar-color-default);
 }
 ::-webkit-scrollbar-thumb:hover {
-	background: var(--ds-color-bg-scrollbar-hover);
+	background: var(--scrollbar-color-hover);
 }
 ::-webkit-scrollbar-corner {
 	background: transparent;
 }
+
 
 /* Firefox */
 /**

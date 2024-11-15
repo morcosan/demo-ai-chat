@@ -35,7 +35,7 @@ export const DbReset = () => {
 				}
 				onClose={() => setShowsConfirm(false)}
 			>
-				<div className="flex items-center text-color-danger">
+				<div className="flex items-center text-color-danger-page-text">
 					<WarningSvg className="mr-xs-4 w-xs-8" />
 					All data will be permanently deleted
 				</div>
@@ -48,7 +48,7 @@ export const DbReset = () => {
 
 			{/* LOADING OVERLAY */}
 			{Boolean(showsLoading) && (
-				<div className="fixed-overlay flex-center z-tooltip bg-color-black-glass-9">
+				<div className="fixed-overlay flex-center z-tooltip bg-color-modal-overlay-strong">
 					<LoadingText text={t('core.state.loading')} className="text-size-xl text-color-white" />
 				</div>
 			)}

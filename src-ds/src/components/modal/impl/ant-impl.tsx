@@ -42,7 +42,7 @@ export const AntImpl = (rawProps: ModalProps) => {
 		},
 		'& .ant-modal-header': {
 			margin: 0,
-			backgroundColor: $color['bg-default'],
+			backgroundColor: $color['bg-page'],
 		},
 		'& .ant-modal-title': {
 			...cssModalTitle,
@@ -72,11 +72,11 @@ export const AntImpl = (rawProps: ModalProps) => {
 			fill: 'currentColor',
 
 			'&:hover, &:focus': {
-				backgroundColor: $color['hover-default'],
+				backgroundColor: $color['hover-text-default'],
 				color: $color['text-subtle'],
 			},
 			'&:active': {
-				backgroundColor: $color['hover-pressed'],
+				backgroundColor: $color['hover-text-pressed'],
 			},
 			'&:focus-visible': {
 				outline: 'revert',

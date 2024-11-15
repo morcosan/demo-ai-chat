@@ -6,7 +6,7 @@
 			"changeLanguage": "Vaihda kieltä",
 			"close": "Sulje",
 			"delete": "Poista",
-			"deselectAll": "Poista kaikki valinnat",
+			"deselectAll": "Poista kaikkien valinta",
 			"openMenu": "Avaa valikko",
 			"rename": "Nimeä uudelleen",
 			"saveChanges": "Tallenna muutokset",
@@ -17,7 +17,7 @@
 		},
 		"error": {
 			"noChanges": "Ei muutoksia",
-			"nothingFound": "Ei tuloksia haulle \"{search}\""
+			"nothingFound": "Ei löytynyt mitään hakusanalla \"{search}\""
 		},
 		"label": {
 			"apiDocs": "API-dokumentaatio",
@@ -27,19 +27,21 @@
 			"darkTheme": "Tumma",
 			"default": "Oletus",
 			"description": "Kuvaus",
-			"designSystem": "Suunnittelujärjestelmä",
+			"designSystem": "Design-järjestelmä",
 			"errors": "Virheet",
 			"europe": "Eurooppa",
-			"githubRepo": "GitHub-repositorio",
+			"githubRepo": "GitHub-repo",
 			"language": "Kieli",
 			"lightTheme": "Vaalea",
 			"name": "Nimi",
+			"navigationBar": "Navigointipalkki",
+			"navigationMenu": "Navigointivalikko",
 			"optionalField": "(Valinnainen)",
-			"quickSettings": "Pika-asetukset",
+			"quickSettings": "Pikavalinnat",
 			"requiredField": "(Pakollinen)",
 			"settings": "Asetukset",
-			"uiLibrary": "UI-kirjasto:",
-			"uiTheme": "UI-teema:"
+			"uiLibrary": "UI-kirjasto",
+			"uiTheme": "UI-teema"
 		},
 		"placeholder": {
 			"search": "Hae..."
@@ -54,59 +56,62 @@
 	},
 	"aiChat": {
 		"action": {
-			"backToSubchats": "Takaisin alikeskusteluihin",
+			"backToSubchats": "Takaisin alakeskusteluihin",
 			"configureAgent": "Määritä agentti",
-			"confirmDeleteAgent": "Vahvista agentin poisto",
-			"confirmDeleteChats": "Vahvista keskustelujen poisto",
+			"confirmDeleteAgent": "Vahvista agentin poistaminen",
+			"confirmDeleteChats": "Vahvista keskustelujen poistaminen",
 			"confirmRenameChat": "Vahvista keskustelun uudelleennimeäminen",
 			"createAgent": "Luo agentti",
 			"deleteAgent": "Poista agentti",
 			"deleteSelectedChats": "Poista valitut keskustelut",
+			"deselectChat": "Poista keskustelun valinta",
 			"manageAgents": "Hallitse agentteja",
 			"manageChats": "Hallitse keskusteluja",
 			"openChat": "Avaa keskustelu",
-			"openSubchat_zero": "Luo alikeskustelu",
-			"openSubchat_one": "Avaa alikeskustelu ({count} viesti)",
-			"openSubchat_other": "Avaa alikeskustelu ({count} viestiä)",
+			"openSubchat_other": "Avaa alakeskustelu ({count} viestiä)",
+			"openSubchat_zero": "Luo alakeskustelu",
+			"searchChats": "Hae keskusteluja",
+			"selectChat": "Valitse keskustelu",
 			"sendMessage": "Lähetä viesti",
 			"showMoreAgents": "Näytä lisää agentteja",
 			"showMoreChats": "Näytä lisää keskusteluja",
-			"showSubchats": "Näytä alikeskustelut ({count})",
+			"showSubchats": "Näytä alakeskustelut ({count})",
 			"startSearching_one": "Kirjoita vähintään {count} merkki",
 			"startSearching_other": "Kirjoita vähintään {count} merkkiä"
 		},
 		"description": {
 			"loremIpsumGPT": "Älykkäin malli",
-			"rammusGPT": "Paras emotionaalinen tuki"
+			"rammusGPT": "Paras tunnepohjainen tuki"
 		},
 		"error": {
-			"agentAvatar": "Sinun täytyy lisätä avatar agentille",
-			"agentName": "Sinun täytyy lisätä nimi agentille",
+			"agentAvatar": "Sinun on lisättävä agentin avatar",
+			"agentName": "Sinun on lisättävä agentin nimi",
 			"emptyMessage": "Viestisi on tyhjä"
 		},
 		"label": {
 			"agents": "Agentit",
+			"chatTitle": "Keskustelun otsikko",
 			"chats": "Keskustelut",
 			"customInstructions": "Mukautetut ohjeet",
 			"gptModel": "GPT-malli",
 			"newAgent": "Uusi agentti",
 			"newChat": "Uusi keskustelu",
+			"newMessage": "Uusi viesti",
 			"noChats": "Ei keskusteluja",
-			"noSubchats": "Ei alikeskusteluja",
-			"selectedValue": "Valittu arvo:",
-			"subchats": "Alikeskustelut",
-			"xMessages_zero": "0 viestiä",
-			"xMessages_one": "{count} viesti",
+			"noSubchats": "Ei alakeskusteluja",
+			"selectedAgent": "Valittu agentti",
+			"selectedValue": "Valittu arvo",
+			"subchats": "Alakeskustelut",
+			"xMessages_one": "1 viesti",
 			"xMessages_other": "{count} viestiä",
-			"xSearchResults_zero": "Ei hakutuloksia",
 			"xSearchResults_one": "{count} hakutulos",
 			"xSearchResults_other": "{count} hakutulosta",
-			"xSelectedMessages_zero": "0 valittua viestiä",
-			"xSelectedMessages_one": "{count} valittu viesti",
-			"xSelectedMessages_other": "{count} valittua viestiä"
+			"xSearchResults_zero": "Ei hakutuloksia",
+			"xSelectedMessages_one": "1 viesti valittu",
+			"xSelectedMessages_other": "{count} viestiä valittu"
 		},
 		"placeholder": {
-			"newMessage": "Esitä kysymys...",
+			"newMessage": "Puhu {name}... kanssa",
 			"rename": "Luo uusi nimi automaattisesti..."
 		},
 		"state": {
@@ -114,9 +119,10 @@
 			"loadingChats": "Ladataan keskusteluja...",
 			"loadingGPTs": "Ladataan GPT:itä...",
 			"loadingMessages": "Ladataan viestejä...",
-			"loadingPreviousMessages": "Ladataan aiempia viestejä...",
-			"loadingSubchats": "Ladataan alikeskusteluja...",
-			"renamingChat": "Nimetään keskustelua uudelleen..."
+			"loadingPreviousMessages": "Ladataan edellisiä viestejä...",
+			"loadingSubchats": "Ladataan alakeskusteluja...",
+			"renamingChat": "Uudelleennimetään keskustelua...",
+			"thinking": "Ajatellaan..."
 		},
 		"warning": {
 			"deletingAgent": "Tämä agentti poistetaan pysyvästi",
@@ -129,14 +135,14 @@
 			"manageBilling": "Hallitse laskutusta"
 		},
 		"error": {
-			"address": "Sinun täytyy lisätä osoite",
-			"avatar": "Sinun täytyy lisätä avatar",
-			"city": "Sinun täytyy lisätä kaupunki",
-			"country": "Sinun täytyy lisätä maa",
-			"email": "Sinun täytyy lisätä sähköpostiosoite",
-			"legalName": "Sinun täytyy lisätä virallinen nimi",
-			"name": "Sinun täytyy lisätä nimi",
-			"postalCode": "Sinun täytyy lisätä postinumero"
+			"address": "Sinun on lisättävä osoite",
+			"avatar": "Sinun on lisättävä avatar",
+			"city": "Sinun on lisättävä kaupunki",
+			"country": "Sinun on lisättävä maa",
+			"email": "Sinun on lisättävä sähköpostiosoite",
+			"legalName": "Sinun on lisättävä virallinen nimi",
+			"name": "Sinun on lisättävä nimi",
+			"postalCode": "Sinun on lisättävä postinumero"
 		},
 		"label": {
 			"account": "Tili",
@@ -150,7 +156,7 @@
 			"postalCode": "Postinumero",
 			"private": "Yksityinen",
 			"public": "Julkinen",
-			"vatNumber": "Y-tunnus"
+			"vatNumber": "ALV-numero"
 		}
 	}
 }
