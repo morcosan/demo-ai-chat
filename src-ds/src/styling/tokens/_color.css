@@ -154,7 +154,7 @@
 	--ds-color-bg-popup: var(--ds-color-grey-17);
 	--ds-color-bg-field: var(--ds-color-black-glass-4);
 	--ds-color-bg-coding: var(--ds-color-black-glass-5);
-	--ds-color-bg-skeleton: var(--ds-color-white-glass-3);
+	--ds-color-bg-skeleton: var(--ds-color-white-glass-5);
 
 	--ds-color-border-active: var(--ds-color-grey-8);
 	--ds-color-border-hover: var(--ds-color-grey-12);
@@ -200,7 +200,7 @@
 	--ds-color-success-button-bg: var(--ds-color-green-6);
 	--ds-color-success-button-text: var(--ds-color-white);
 	--ds-color-success-hover-default: var(--ds-color-hover-button-default);
-	--ds-color-success-hover-pressed: var(--ds-color-black-glass-6);
+	--ds-color-success-hover-pressed: var(--ds-color-hover-button-pressed);
 	--ds-color-success-card-bg: var(--ds-color-green-8);
 	--ds-color-success-card-text: var(--ds-color-white);
 	--ds-color-success-page-text: var(--ds-color-green-3);
