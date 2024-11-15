@@ -6,8 +6,8 @@
 			"changeLanguage": "Změnit jazyk",
 			"close": "Zavřít",
 			"delete": "Smazat",
-			"deselectAll": "Zrušit výběr všech",
-			"openMenu": "Otevřít menu",
+			"deselectAll": "Zrušit výběr všeho",
+			"openMenu": "Otevřít nabídku",
 			"rename": "Přejmenovat",
 			"saveChanges": "Uložit změny",
 			"search": "Hledat",
@@ -17,7 +17,7 @@
 		},
 		"error": {
 			"noChanges": "Žádné změny",
-			"nothingFound": "Pro \"{search}\" nic nenalezeno"
+			"nothingFound": "Nic nebylo nalezeno pro \"{search}\""
 		},
 		"label": {
 			"apiDocs": "API Dokumentace",
@@ -27,25 +27,27 @@
 			"darkTheme": "Tmavý",
 			"default": "Výchozí",
 			"description": "Popis",
-			"designSystem": "Design Systém",
+			"designSystem": "Designový systém",
 			"errors": "Chyby",
 			"europe": "Evropa",
 			"githubRepo": "GitHub Repozitář",
 			"language": "Jazyk",
 			"lightTheme": "Světlý",
-			"name": "Jméno",
+			"name": "Název",
+			"navigationBar": "Navigační lišta",
+			"navigationMenu": "Navigační nabídka",
 			"optionalField": "(Volitelné)",
-			"quickSettings": "Rychlé nastavení",
+			"quickSettings": "Rychlá nastavení",
 			"requiredField": "(Povinné)",
 			"settings": "Nastavení",
-			"uiLibrary": "UI Knihovna:",
-			"uiTheme": "UI Téma:"
+			"uiLibrary": "UI Knihovna",
+			"uiTheme": "UI Téma"
 		},
 		"placeholder": {
 			"search": "Hledat..."
 		},
 		"state": {
-			"dataSaved": "Data byla uložena",
+			"dataSaved": "Vaše data byla uložena",
 			"deleting": "Mazání...",
 			"loading": "Načítání...",
 			"searching": "Vyhledávání...",
@@ -55,69 +57,72 @@
 	"aiChat": {
 		"action": {
 			"backToSubchats": "Zpět na podchaty",
-			"configureAgent": "Konfigurovat agenta",
+			"configureAgent": "Nastavit agenta",
 			"confirmDeleteAgent": "Potvrdit smazání agenta",
 			"confirmDeleteChats": "Potvrdit smazání chatů",
 			"confirmRenameChat": "Potvrdit přejmenování chatu",
 			"createAgent": "Vytvořit agenta",
 			"deleteAgent": "Smazat agenta",
 			"deleteSelectedChats": "Smazat vybrané chaty",
+			"deselectChat": "Zrušit výběr chatu",
 			"manageAgents": "Spravovat agenty",
 			"manageChats": "Spravovat chaty",
 			"openChat": "Otevřít chat",
 			"openSubchat_other": "Otevřít podchat ({count} zpráv)",
 			"openSubchat_zero": "Vytvořit podchat",
+			"searchChats": "Vyhledat v chatech",
+			"selectChat": "Vybrat chat",
 			"sendMessage": "Odeslat zprávu",
 			"showMoreAgents": "Zobrazit více agentů",
 			"showMoreChats": "Zobrazit více chatů",
 			"showSubchats": "Zobrazit podchaty ({count})",
-			"startSearching_one": "Zadejte alespoň {count} znak",
-			"startSearching_few": "Zadejte alespoň {count} znaky",
-			"startSearching_many": "Zadejte alespoň {count} znaků"
+			"startSearching_one": "Napište alespoň {count} znak",
+			"startSearching_other": "Napište alespoň {count} znaky"
 		},
 		"description": {
 			"loremIpsumGPT": "Nejinteligentnější model",
 			"rammusGPT": "Nejlepší emocionální podpora"
 		},
 		"error": {
-			"agentAvatar": "Musíte přidat avatar agenta",
-			"agentName": "Musíte přidat jméno agenta",
+			"agentAvatar": "Musíte přidat avatar pro agenta",
+			"agentName": "Musíte přidat jméno pro agenta",
 			"emptyMessage": "Vaše zpráva je prázdná"
 		},
 		"label": {
 			"agents": "Agenti",
+			"chatTitle": "Název chatu",
 			"chats": "Chaty",
-			"customInstructions": "Vlastní instrukce",
-			"gptModel": "GPT model",
+			"customInstructions": "Vlastní pokyny",
+			"gptModel": "Model GPT",
 			"newAgent": "Nový agent",
 			"newChat": "Nový chat",
+			"newMessage": "Nová zpráva",
 			"noChats": "Žádné chaty",
 			"noSubchats": "Žádné podchaty",
-			"selectedValue": "Vybraná hodnota:",
+			"selectedAgent": "Vybraný agent",
+			"selectedValue": "Vybraná hodnota",
 			"subchats": "Podchaty",
-			"xMessages_one": "{count} zpráva",
-			"xMessages_few": "{count} zprávy",
-			"xMessages_many": "{count} zpráv",
-			"xSearchResults_one": "{count} výsledek vyhledávání",
-			"xSearchResults_few": "{count} výsledky vyhledávání",
-			"xSearchResults_many": "{count} výsledků vyhledávání",
-			"xSearchResults_zero": "Žádné výsledky vyhledávání",
-			"xSelectedMessages_one": "{count} vybraná zpráva",
-			"xSelectedMessages_few": "{count} vybrané zprávy",
-			"xSelectedMessages_many": "{count} vybraných zpráv"
+			"xMessages_one": "1 zpráva",
+			"xMessages_other": "{count} zpráv",
+			"xSearchResults_one": "{count} výsledek hledání",
+			"xSearchResults_other": "{count} výsledky hledání",
+			"xSearchResults_zero": "Žádné výsledky hledání",
+			"xSelectedMessages_one": "1 vybraná zpráva",
+			"xSelectedMessages_other": "{count} vybrané zprávy"
 		},
 		"placeholder": {
-			"newMessage": "Položte otázku...",
-			"rename": "Automaticky vygenerovat nový název..."
+			"newMessage": "Mluvte s {name}...",
+			"rename": "Automaticky generovat nový název..."
 		},
 		"state": {
 			"loadingAgents": "Načítání agentů...",
 			"loadingChats": "Načítání chatů...",
-			"loadingGPTs": "Načítání GPT modelů...",
+			"loadingGPTs": "Načítání modelů GPT...",
 			"loadingMessages": "Načítání zpráv...",
 			"loadingPreviousMessages": "Načítání předchozích zpráv...",
 			"loadingSubchats": "Načítání podchatů...",
-			"renamingChat": "Přejmenování chatu..."
+			"renamingChat": "Přejmenování chatu...",
+			"thinking": "Přemýšlí..."
 		},
 		"warning": {
 			"deletingAgent": "Tento agent bude trvale smazán",
@@ -134,10 +139,10 @@
 			"avatar": "Musíte přidat avatar",
 			"city": "Musíte přidat město",
 			"country": "Musíte přidat zemi",
-			"email": "Musíte přidat emailovou adresu",
+			"email": "Musíte přidat e-mailovou adresu",
 			"legalName": "Musíte přidat právní jméno",
 			"name": "Musíte přidat jméno",
-			"postalCode": "Musíte přidat PSČ"
+			"postalCode": "Musíte přidat poštovní kód"
 		},
 		"label": {
 			"account": "Účet",
@@ -145,12 +150,12 @@
 			"billing": "Fakturace",
 			"city": "Město",
 			"country": "Země",
-			"email": "Emailová adresa",
+			"email": "E-mailová adresa",
 			"legalName": "Právní jméno",
 			"phone": "Telefonní číslo",
-			"postalCode": "PSČ",
-			"private": "Soukromé",
-			"public": "Veřejné",
+			"postalCode": "Poštovní kód",
+			"private": "Soukromý",
+			"public": "Veřejný",
 			"vatNumber": "DIČ"
 		}
 	}

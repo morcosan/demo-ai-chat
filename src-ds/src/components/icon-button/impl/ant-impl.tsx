@@ -16,13 +16,12 @@ export const AntImpl = (rawProps: IconButtonProps) => {
 		const cssFn = (color: string, backgroundColor: string) => ({
 			'&:not(:disabled):not(.ant-btn-disabled):hover': { color, backgroundColor },
 		})
-		if (isVPrimary && isUiLight) return cssFn($color['text-inverse'], $color['primary'])
-		if (isVPrimary && !isUiLight) return cssFn($color['primary-text-inverse'], $color['primary'])
-		if (isVSecondary && isUiLight) return cssFn($color['secondary-text-default'], $color['secondary'])
-		if (isVSecondary && !isUiLight) return cssFn($color['secondary-text-inverse'], $color['secondary'])
-		if (isVDanger && isVSolid && isUiLight) return cssFn($color['text-inverse'], $color['danger'])
-		if (isVDanger && isVSolid && !isUiLight) return cssFn($color['danger-text-inverse'], $color['danger'])
-		if (isVDanger) return cssFn($color['danger'], 'transparent')
+		if (isVSolid) {
+			if (isVPrimary) return cssFn($color['primary-button-text'], $color['primary-button-bg'])
+			if (isVSecondary) return cssFn($color['secondary-button-text'], $color['secondary-button-bg'])
+			if (isVDanger) return cssFn($color['danger-button-text'], $color['danger-button-bg'])
+		}
+		if (isVDanger) return cssFn($color['danger-page-text'], 'transparent')
 		if (isVDefault) return cssFn($color['text-default'], 'transparent')
 		return {}
 	})()
@@ -42,7 +41,7 @@ export const AntImpl = (rawProps: IconButtonProps) => {
 
 		'&:disabled, &.ant-btn-disabled': {
 			color: $color['text-default'],
-			background: isVSolid ? (isUiLight ? $color['black-glass-3'] : $color['white-glass-3']) : 'unset',
+			background: isVSolid ? (isUiLight ? $color['black-glass-5'] : $color['white-glass-5']) : 'unset',
 			opacity: '0.4',
 		},
 	}

@@ -24,7 +24,7 @@ export const LoadingScreen = ({ children }: ReactProps) => {
 			<div className={cx(!isReady && 'hidden', 'h-full w-full')}>{children}</div>
 
 			{/* OVERLAY */}
-			<div className="fixed-overlay flex-center z-tooltip bg-color-bg-default" css={cssOverlay}>
+			<div className="fixed-overlay flex-center z-tooltip bg-color-bg-page" css={cssOverlay}>
 				<AiChatSvg className="h-1/4 w-1/3 animate-pulse" aria-label="Loading..." />
 			</div>
 		</>

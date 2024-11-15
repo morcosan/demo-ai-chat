@@ -6,17 +6,17 @@
 			"changeLanguage": "Dili dəyiş",
 			"close": "Bağla",
 			"delete": "Sil",
-			"deselectAll": "Hamısının seçimini ləğv et",
+			"deselectAll": "Hamısını seçməyi ləğv et",
 			"openMenu": "Menyunu aç",
 			"rename": "Adını dəyiş",
-			"saveChanges": "Dəyişiklikləri yadda saxla",
+			"saveChanges": "Dəyişiklikləri saxla",
 			"search": "Axtar",
 			"searchMore": "Daha çox nəticə göstər",
-			"selectAll": "Hamısını seç", 
+			"selectAll": "Hamısını seç",
 			"signOut": "Çıxış"
 		},
 		"error": {
-			"noChanges": "Heç bir dəyişiklik yoxdur",
+			"noChanges": "Dəyişikliklər yoxdur",
 			"nothingFound": "\"{search}\" üçün heç nə tapılmadı"
 		},
 		"label": {
@@ -32,20 +32,22 @@
 			"europe": "Avropa",
 			"githubRepo": "GitHub Repo",
 			"language": "Dil",
-			"lightTheme": "İşıqlı",
+			"lightTheme": "İşıq",
 			"name": "Ad",
+			"navigationBar": "Naviqasiya paneli",
+			"navigationMenu": "Naviqasiya menyusu",
 			"optionalField": "(İstəyə bağlı)",
-			"quickSettings": "Sürətli parametrlər",
-			"requiredField": "(Tələb olunur)",
+			"quickSettings": "Tez parametrlər",
+			"requiredField": "(Məcburi)",
 			"settings": "Parametrlər",
-			"uiLibrary": "UI Kitabxanası:",
-			"uiTheme": "UI Mövzusu:"
+			"uiLibrary": "UI Kitabxanası",
+			"uiTheme": "UI Mövzusu"
 		},
 		"placeholder": {
 			"search": "Axtar..."
 		},
 		"state": {
-			"dataSaved": "Məlumatlarınız yadda saxlanıldı",
+			"dataSaved": "Məlumatınız saxlanıldı",
 			"deleting": "Silinir...",
 			"loading": "Yüklənir...",
 			"searching": "Axtarılır...",
@@ -54,25 +56,28 @@
 	},
 	"aiChat": {
 		"action": {
-			"backToSubchats": "Alt söhbətlərə qayıt",
-			"configureAgent": "Agenti konfiqurasiya et",
-			"confirmDeleteAgent": "Agentin silinməsini təsdiq et",
-			"confirmDeleteChats": "Söhbətlərin silinməsini təsdiq et",
-			"confirmRenameChat": "Söhbətin adının dəyişdirilməsini təsdiq et",
+			"backToSubchats": "Alt çatlara qayıt",
+			"configureAgent": "Agent qur",
+			"confirmDeleteAgent": "Agentin silinməsini təsdiq edin",
+			"confirmDeleteChats": "Çatların silinməsini təsdiq edin",
+			"confirmRenameChat": "Çatın adının dəyişdirilməsini təsdiq edin",
 			"createAgent": "Agent yarat",
 			"deleteAgent": "Agenti sil",
-			"deleteSelectedChats": "Seçilmiş söhbətləri sil",
+			"deleteSelectedChats": "Seçilmiş çatları sil",
+			"deselectChat": "Çatı seçməyi ləğv et",
 			"manageAgents": "Agentləri idarə et",
-			"manageChats": "Söhbətləri idarə et",
-			"openChat": "Söhbəti aç",
-			"openSubchat_other": "Alt söhbəti aç ({count} mesaj)",
-			"openSubchat_zero": "Alt söhbət yarat",
+			"manageChats": "Çatları idarə et",
+			"openChat": "Çatı aç",
+			"openSubchat_other": "Alt çatı aç ({count} mesajlar)",
+			"openSubchat_zero": "Alt çat yarat",
+			"searchChats": "Çatları axtar",
+			"selectChat": "Çatı seç",
 			"sendMessage": "Mesaj göndər",
 			"showMoreAgents": "Daha çox agent göstər",
-			"showMoreChats": "Daha çox söhbət göstər",
-			"showSubchats": "Alt söhbətləri göstər ({count})",
-			"startSearching_one": "Ən azı {count} simvol daxil edin",
-			"startSearching_other": "Ən azı {count} simvol daxil edin"
+			"showMoreChats": "Daha çox çat göstər",
+			"showSubchats": "Alt çatları göstər ({count})",
+			"startSearching_one": "Ən azı {count} simvol yazın",
+			"startSearching_other": "Ən azı {count} simvol yazın"
 		},
 		"description": {
 			"loremIpsumGPT": "Ən ağıllı model",
@@ -85,39 +90,43 @@
 		},
 		"label": {
 			"agents": "Agentlər",
-			"chats": "Söhbətlər",
+			"chatTitle": "Çat başlığı",
+			"chats": "Çatlar",
 			"customInstructions": "Xüsusi təlimatlar",
 			"gptModel": "GPT modeli",
 			"newAgent": "Yeni agent",
-			"newChat": "Yeni söhbət", 
-			"noChats": "Söhbət yoxdur",
-			"noSubchats": "Alt söhbət yoxdur",
-			"selectedValue": "Seçilmiş dəyər:",
-			"subchats": "Alt söhbətlər",
+			"newChat": "Yeni çat",
+			"newMessage": "Yeni mesaj",
+			"noChats": "Çatlar yoxdur",
+			"noSubchats": "Alt çatlar yoxdur",
+			"selectedAgent": "Seçilmiş agent",
+			"selectedValue": "Seçilmiş dəyər",
+			"subchats": "Alt çatlar",
 			"xMessages_one": "1 mesaj",
-			"xMessages_other": "{count} mesaj",
+			"xMessages_other": "{count} mesajlar",
 			"xSearchResults_one": "{count} axtarış nəticəsi",
-			"xSearchResults_other": "{count} axtarış nəticəsi",
+			"xSearchResults_other": "{count} axtarış nəticələri",
 			"xSearchResults_zero": "Axtarış nəticəsi yoxdur",
-			"xSelectedMessages_one": "1 mesaj seçilib",
-			"xSelectedMessages_other": "{count} mesaj seçilib"
+			"xSelectedMessages_one": "1 mesaj seçildi",
+			"xSelectedMessages_other": "{count} mesajlar seçildi"
 		},
 		"placeholder": {
-			"newMessage": "Sual ver...",
-			"rename": "Avtomatik yeni ad yarat..."
+			"newMessage": "{name} ilə danış...",
+			"rename": "Avtomatik yeni ad yaradın..."
 		},
 		"state": {
 			"loadingAgents": "Agentlər yüklənir...",
-			"loadingChats": "Söhbətlər yüklənir...",
-			"loadingGPTs": "GPT-lər yüklənir...",
+			"loadingChats": "Çatlar yüklənir...",
+			"loadingGPTs": "GPT modelləri yüklənir...",
 			"loadingMessages": "Mesajlar yüklənir...",
 			"loadingPreviousMessages": "Əvvəlki mesajlar yüklənir...",
-			"loadingSubchats": "Alt söhbətlər yüklənir...",
-			"renamingChat": "Söhbətin adı dəyişdirilir..."
+			"loadingSubchats": "Alt çatlar yüklənir...",
+			"renamingChat": "Çatın adı dəyişdirilir...",
+			"thinking": "Düşünür..."
 		},
 		"warning": {
-			"deletingAgent": "Bu agent birdəfəlik silinəcək",
-			"deletingChats": "Bu söhbətlər birdəfəlik silinəcək"
+			"deletingAgent": "Bu agent daimi olaraq silinəcək",
+			"deletingChats": "Bu çatlar daimi olaraq silinəcək"
 		}
 	},
 	"userSettings": {
@@ -127,13 +136,13 @@
 		},
 		"error": {
 			"address": "Ünvan əlavə etməlisiniz",
-			"avatar": "Avatarınızı əlavə etməlisiniz",
+			"avatar": "Avatar əlavə etməlisiniz",
 			"city": "Şəhər əlavə etməlisiniz",
 			"country": "Ölkə əlavə etməlisiniz",
-			"email": "E-poçt ünvanınızı əlavə etməlisiniz",
+			"email": "E-poçt ünvanı əlavə etməlisiniz",
 			"legalName": "Hüquqi adı əlavə etməlisiniz",
-			"name": "Adınızı əlavə etməlisiniz",
-			"postalCode": "Poçt indeksi əlavə etməlisiniz"
+			"name": "Ad əlavə etməlisiniz",
+			"postalCode": "Poçt kodu əlavə etməlisiniz"
 		},
 		"label": {
 			"account": "Hesab",
@@ -144,10 +153,10 @@
 			"email": "E-poçt ünvanı",
 			"legalName": "Hüquqi ad",
 			"phone": "Telefon nömrəsi",
-			"postalCode": "Poçt indeksi",
+			"postalCode": "Poçt kodu",
 			"private": "Şəxsi",
 			"public": "İctimai",
-			"vatNumber": "ƏDV nömrəsi"
+			"vatNumber": "VÖEN"
 		}
 	}
 }

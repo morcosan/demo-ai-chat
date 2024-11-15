@@ -8,10 +8,10 @@
 			"delete": "O'chirish",
 			"deselectAll": "Barchasini bekor qilish",
 			"openMenu": "Menyuni ochish",
-			"rename": "Nomini o'zgartirish",
+			"rename": "Qayta nomlash",
 			"saveChanges": "O'zgarishlarni saqlash",
 			"search": "Qidirish",
-			"searchMore": "Ko'proq natijalarni ko'rsatish",
+			"searchMore": "Ko'proq natija ko'rsatish",
 			"selectAll": "Barchasini tanlash",
 			"signOut": "Chiqish"
 		},
@@ -34,12 +34,13 @@
 			"language": "Til",
 			"lightTheme": "Yorug'",
 			"name": "Ism",
+			"navigationBar": "Navigatsiya paneli",
+			"navigationMenu": "Navigatsiya menyusi",
 			"optionalField": "(Ixtiyoriy)",
-			"quickSettings": "Tezkor sozlamalar",
 			"requiredField": "(Majburiy)",
 			"settings": "Sozlamalar",
-			"uiLibrary": "UI kutubxonasi:",
-			"uiTheme": "UI mavzusi:"
+			"uiLibrary": "UI kutubxonasi",
+			"uiTheme": "UI mavzusi"
 		},
 		"placeholder": {
 			"search": "Qidirish..."
@@ -54,30 +55,33 @@
 	},
 	"aiChat": {
 		"action": {
-			"backToSubchats": "Kichik suhbatlarga qaytish",
+			"backToSubchats": "Kichik chatlarga qaytish",
 			"configureAgent": "Agentni sozlash",
 			"confirmDeleteAgent": "Agentni o'chirishni tasdiqlash",
-			"confirmDeleteChats": "Suhbatlarni o'chirishni tasdiqlash",
-			"confirmRenameChat": "Suhbat nomini o'zgartirishni tasdiqlash",
+			"confirmDeleteChats": "Chatlarni o'chirishni tasdiqlash",
+			"confirmRenameChat": "Chatni qayta nomlashni tasdiqlash",
 			"createAgent": "Agent yaratish",
 			"deleteAgent": "Agentni o'chirish",
-			"deleteSelectedChats": "Tanlangan suhbatlarni o'chirish",
+			"deleteSelectedChats": "Tanlangan chatlarni o'chirish",
+			"deselectChat": "Chatni bekor qilish",
 			"manageAgents": "Agentlarni boshqarish",
-			"manageChats": "Suhbatlarni boshqarish",
-			"openChat": "Suhbatni ochish",
-			"openSubchat_zero": "Kichik suhbat yaratish",
-			"openSubchat_one": "Kichik suhbatni ochish ({count} xabar)",
-			"openSubchat_other": "Kichik suhbatni ochish ({count} xabar)",
+			"manageChats": "Chatlarni boshqarish",
+			"openChat": "Chatni ochish",
+			"openSubchat_one": "Kichik chatni ochish ({count} xabar)",
+			"openSubchat_other": "Kichik chatni ochish ({count} xabar)",
+			"openSubchat_zero": "Kichik chat yaratish",
+			"searchChats": "Chatlarni qidirish",
+			"selectChat": "Chatni tanlash",
 			"sendMessage": "Xabar yuborish",
 			"showMoreAgents": "Ko'proq agentlarni ko'rsatish",
-			"showMoreChats": "Ko'proq suhbatlarni ko'rsatish",
-			"showSubchats": "Kichik suhbatlarni ko'rsatish ({count})",
+			"showMoreChats": "Ko'proq chatlarni ko'rsatish",
+			"showSubchats": "Kichik chatlarni ko'rsatish ({count})",
 			"startSearching_one": "Kamida {count} belgi kiriting",
 			"startSearching_other": "Kamida {count} belgi kiriting"
 		},
 		"description": {
 			"loremIpsumGPT": "Eng aqlli model",
-			"rammusGPT": "Eng yaxshi emotsional yordam"
+			"rammusGPT": "Eng yaxshi emotsional qo'llab-quvvatlash"
 		},
 		"error": {
 			"agentAvatar": "Agent uchun avatar qo'shishingiz kerak",
@@ -86,65 +90,67 @@
 		},
 		"label": {
 			"agents": "Agentlar",
-			"chats": "Suhbatlar",
+			"chatTitle": "Chat sarlavhasi",
+			"chats": "Chatlar",
 			"customInstructions": "Maxsus ko'rsatmalar",
 			"gptModel": "GPT modeli",
 			"newAgent": "Yangi agent",
-			"newChat": "Yangi suhbat",
-			"noChats": "Suhbatlar yo'q",
-			"noSubchats": "Kichik suhbatlar yo'q",
-			"selectedValue": "Tanlangan qiymat:",
-			"subchats": "Kichik suhbatlar",
-			"xMessages_zero": "Xabarlar yo'q",
+			"newChat": "Yangi chat",
+			"newMessage": "Yangi xabar",
+			"noChats": "Chatlar yo'q",
+			"noSubchats": "Kichik chatlar yo'q",
+			"selectedAgent": "Tanlangan agent",
+			"selectedValue": "Tanlangan qiymat",
+			"subchats": "Kichik chatlar",
 			"xMessages_one": "{count} xabar",
 			"xMessages_other": "{count} xabar",
-			"xSearchResults_zero": "Qidiruv natijalari yo'q",
 			"xSearchResults_one": "{count} qidiruv natijasi",
 			"xSearchResults_other": "{count} qidiruv natijasi",
-			"xSelectedMessages_zero": "Tanlangan xabarlar yo'q",
+			"xSearchResults_zero": "Qidiruv natijalari yo'q",
 			"xSelectedMessages_one": "{count} tanlangan xabar",
 			"xSelectedMessages_other": "{count} tanlangan xabar"
 		},
 		"placeholder": {
-			"newMessage": "Savol bering...",
+			"newMessage": "{name} bilan suhbatlashish...",
 			"rename": "Avtomatik yangi nom yaratish..."
 		},
 		"state": {
 			"loadingAgents": "Agentlar yuklanmoqda...",
-			"loadingChats": "Suhbatlar yuklanmoqda...",
+			"loadingChats": "Chatlar yuklanmoqda...",
 			"loadingGPTs": "GPTlar yuklanmoqda...",
 			"loadingMessages": "Xabarlar yuklanmoqda...",
 			"loadingPreviousMessages": "Oldingi xabarlar yuklanmoqda...",
-			"loadingSubchats": "Kichik suhbatlar yuklanmoqda...",
-			"renamingChat": "Suhbat nomi o'zgartirilmoqda..."
+			"loadingSubchats": "Kichik chatlar yuklanmoqda...",
+			"renamingChat": "Chat qayta nomlanmoqda...",
+			"thinking": "O'ylanmoqda..."
 		},
 		"warning": {
 			"deletingAgent": "Bu agent butunlay o'chiriladi",
-			"deletingChats": "Bu suhbatlar butunlay o'chiriladi"
+			"deletingChats": "Bu chatlar butunlay o'chiriladi"
 		}
 	},
 	"userSettings": {
 		"action": {
 			"manageAccount": "Hisobni boshqarish",
-			"manageBilling": "To'lovlarni boshqarish"
+			"manageBilling": "Hisob-kitobni boshqarish"
 		},
 		"error": {
-			"address": "Manzilni kiritishingiz kerak",
-			"avatar": "Avatarni kiritishingiz kerak",
-			"city": "Shaharni kiritishingiz kerak",
-			"country": "Mamlakatni kiritishingiz kerak",
-			"email": "Email manzilni kiritishingiz kerak",
-			"legalName": "Yuridik nomni kiritishingiz kerak",
-			"name": "Ismni kiritishingiz kerak",
-			"postalCode": "Pochta indeksini kiritishingiz kerak"
+			"address": "Manzilni qo'shishingiz kerak",
+			"avatar": "Avataringizni qo'shishingiz kerak",
+			"city": "Shaharni qo'shishingiz kerak",
+			"country": "Mamlakatni qo'shishingiz kerak",
+			"email": "Elektron pochtangizni qo'shishingiz kerak",
+			"legalName": "Yuridik nomni qo'shishingiz kerak",
+			"name": "Ismingizni qo'shishingiz kerak",
+			"postalCode": "Pochta indeksini qo'shishingiz kerak"
 		},
 		"label": {
 			"account": "Hisob",
 			"address": "Manzil",
-			"billing": "To'lovlar",
+			"billing": "Hisob-kitob",
 			"city": "Shahar",
 			"country": "Mamlakat",
-			"email": "Email manzil",
+			"email": "Elektron pochta",
 			"legalName": "Yuridik nom",
 			"phone": "Telefon raqami",
 			"postalCode": "Pochta indeksi",

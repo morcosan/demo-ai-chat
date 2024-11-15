@@ -35,16 +35,17 @@ export const Checkbox = (props: Props) => {
 			height: '18px',
 			borderWidth: '2px',
 			borderStyle: 'solid',
-			borderColor: isChecked || isPartial ? $color['primary'] : $color['border-hover'],
-			backgroundColor: isChecked || isPartial ? $color['primary'] : 'transparent',
+			borderColor: isChecked || isPartial ? $color['primary-button-bg'] : $color['border-hover'],
+			backgroundColor: isChecked || isPartial ? $color['primary-button-bg'] : 'transparent',
 			borderRadius: $radius['xs'],
+			color: $color['primary-button-text'],
 		},
 
 		'&:hover, &:has(input:focus)': {
-			backgroundColor: $color['hover-default'],
+			backgroundColor: $color['hover-text-default'],
 
 			'& > span': {
-				borderColor: isChecked || isPartial ? $color['primary'] : $color['border-active'],
+				borderColor: isChecked || isPartial ? $color['primary-button-bg'] : $color['primary-page-text'],
 			},
 		},
 	}
@@ -72,14 +73,15 @@ export const Checkbox = (props: Props) => {
 				ref={inputRef}
 				type="checkbox"
 				checked={isChecked}
-				aria-description={props.tooltip ? `${props.tooltip}, ${props.ariaDescription}` : props.ariaDescription}
+				aria-label={props.tooltip}
+				aria-description={props.ariaDescription}
 				css={cssInput}
 				onChange={onChange}
 			/>
 
 			<span>
-				<CheckSvg className="h-xs-5 text-color-text-inverse" style={{ display: isChecked ? 'block' : 'none' }} />
-				<MinusSvg className="h-xs-5 text-color-text-inverse" style={{ display: isPartial ? 'block' : 'none' }} />
+				<CheckSvg className="h-xs-5" style={{ display: isChecked ? 'block' : 'none' }} />
+				<MinusSvg className="h-xs-5" style={{ display: isPartial ? 'block' : 'none' }} />
 			</span>
 		</span>
 	)

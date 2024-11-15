@@ -186,7 +186,7 @@ export const CustomImpl = (rawProps: SelectFieldProps) => {
 
 				{/* VALUE */}
 				<div id={`${props.id}-value`} css={cssValueOption}>
-					<span className="sr-only">{t('aiChat.label.selectedValue')}</span>
+					<span className="sr-only">{t('aiChat.label.selectedValue')}:</span>
 
 					{props.compValue && valueOption ? (
 						<props.compValue option={valueOption} selected />

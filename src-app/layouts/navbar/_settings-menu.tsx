@@ -33,10 +33,7 @@ export const SettingsMenu = ({ onClickBack, onClickLanguage }: Props) => {
 	const newTabIconClass = 'ml-auto mr-px min-w-xs-6 w-xs-6 text-color-text-subtle'
 
 	return (
-		<div
-			className="flex h-full w-full flex-col gap-xs-3 p-xs-4"
-			style={{ backgroundColor: 'var(--app-color-bg-navbar)' }}
-		>
+		<div className="flex h-full w-full flex-col gap-xs-3 p-xs-4">
 			{/* BACK BUTTON */}
 			{Boolean(onClickBack) && (
 				<div className="mb-sm-0 mt-xs-3 flex items-center gap-xs-3">
@@ -49,12 +46,13 @@ export const SettingsMenu = ({ onClickBack, onClickLanguage }: Props) => {
 
 			{/* UI LIBRARY */}
 			<div className="mb-xs-1 mt-xs-3 flex items-center justify-between px-button-px-item">
-				<span>{t('core.label.uiLibrary')}</span>
+				<span id="ui-library">{t('core.label.uiLibrary')}</span>
 
 				<select
+					aria-labelledby="ui-library"
 					className={cx(
 						'h-button-h-sm border border-color-border-default px-xs-2',
-						'rounded-sm bg-color-bg-default text-size-xs'
+						'rounded-sm bg-color-bg-page text-size-xs'
 					)}
 					value={uiLibrary}
 					onChange={(event: SelectEvent) => changeUiLibrary(event.target?.value as UiLibrary)}
@@ -67,9 +65,9 @@ export const SettingsMenu = ({ onClickBack, onClickLanguage }: Props) => {
 
 			{/* THEME */}
 			<div className="flex items-center justify-between px-button-px-item">
-				<span>{t('core.label.uiTheme')}</span>
+				<span id="ui-theme">{t('core.label.uiTheme')}</span>
 
-				<div className="flex flex-col gap-xs-1">
+				<div role="group" aria-labelledby="ui-theme" className="flex flex-col gap-xs-1">
 					<Button
 						variant={isUiLight ? 'solid-primary' : 'text-default'}
 						size="xs"

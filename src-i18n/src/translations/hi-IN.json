@@ -2,11 +2,11 @@
 	"core": {
 		"action": {
 			"back": "वापस",
-			"backToHome": "होमपेज पर वापस जाएं",
+			"backToHome": "होमपेज पर वापस",
 			"changeLanguage": "भाषा बदलें",
 			"close": "बंद करें",
 			"delete": "हटाएं",
-			"deselectAll": "सभी को अचयनित करें",
+			"deselectAll": "सभी को असूचीबद्ध करें",
 			"openMenu": "मेनू खोलें",
 			"rename": "नाम बदलें",
 			"saveChanges": "परिवर्तन सहेजें",
@@ -16,14 +16,14 @@
 			"signOut": "साइन आउट करें"
 		},
 		"error": {
-			"noChanges": "कोई परिवर्तन नहीं",
+			"noChanges": "कोई परिवर्तन नहीं हैं",
 			"nothingFound": "\"{search}\" के लिए कुछ नहीं मिला"
 		},
 		"label": {
-			"apiDocs": "API डॉक्स",
+			"apiDocs": "API दस्तावेज़",
 			"asia": "एशिया",
 			"avatar": "अवतार",
-			"custom": "कस्टम",
+			"custom": "अनुकूलित",
 			"darkTheme": "डार्क",
 			"default": "डिफ़ॉल्ट",
 			"description": "विवरण",
@@ -34,12 +34,14 @@
 			"language": "भाषा",
 			"lightTheme": "लाइट",
 			"name": "नाम",
+			"navigationBar": "नेविगेशन बार",
+			"navigationMenu": "नेविगेशन मेनू",
 			"optionalField": "(वैकल्पिक)",
 			"quickSettings": "त्वरित सेटिंग्स",
 			"requiredField": "(आवश्यक)",
 			"settings": "सेटिंग्स",
-			"uiLibrary": "UI लाइब्रेरी:",
-			"uiTheme": "UI थीम:"
+			"uiLibrary": "UI लाइब्रेरी",
+			"uiTheme": "UI थीम"
 		},
 		"placeholder": {
 			"search": "खोजें..."
@@ -49,12 +51,12 @@
 			"deleting": "हटाया जा रहा है...",
 			"loading": "लोड हो रहा है...",
 			"searching": "खोजा जा रहा है...",
-			"updating": "अपडेट हो रहा है..."
+			"updating": "अपडेट किया जा रहा है..."
 		}
 	},
 	"aiChat": {
 		"action": {
-			"backToSubchats": "सब-चैट्स पर वापस जाएं",
+			"backToSubchats": "उप-चैट्स पर वापस जाएं",
 			"configureAgent": "एजेंट कॉन्फ़िगर करें",
 			"confirmDeleteAgent": "एजेंट हटाने की पुष्टि करें",
 			"confirmDeleteChats": "चैट्स हटाने की पुष्टि करें",
@@ -62,16 +64,18 @@
 			"createAgent": "एजेंट बनाएं",
 			"deleteAgent": "एजेंट हटाएं",
 			"deleteSelectedChats": "चयनित चैट्स हटाएं",
+			"deselectChat": "चैट को असूचीबद्ध करें",
 			"manageAgents": "एजेंट्स प्रबंधित करें",
 			"manageChats": "चैट्स प्रबंधित करें",
 			"openChat": "चैट खोलें",
-			"openSubchat_zero": "सब-चैट बनाएं",
-			"openSubchat_one": "सब-चैट खोलें ({count} संदेश)",
-			"openSubchat_other": "सब-चैट खोलें ({count} संदेश)",
+			"openSubchat_other": "उप-चैट खोलें ({count} संदेश)",
+			"openSubchat_zero": "उप-चैट बनाएं",
+			"searchChats": "चैट्स खोजें",
+			"selectChat": "चैट चुनें",
 			"sendMessage": "संदेश भेजें",
-			"showMoreAgents": "अधिक एजेंट दिखाएं",
+			"showMoreAgents": "अधिक एजेंट्स दिखाएं",
 			"showMoreChats": "अधिक चैट्स दिखाएं",
-			"showSubchats": "सब-चैट्स दिखाएं ({count})",
+			"showSubchats": "उप-चैट्स दिखाएं ({count})",
 			"startSearching_one": "कम से कम {count} अक्षर टाइप करें",
 			"startSearching_other": "कम से कम {count} अक्षर टाइप करें"
 		},
@@ -80,43 +84,45 @@
 			"rammusGPT": "सर्वश्रेष्ठ भावनात्मक समर्थन"
 		},
 		"error": {
-			"agentAvatar": "आपको एजेंट के लिए एक अवतार जोड़ना होगा",
-			"agentName": "आपको एजेंट के लिए एक नाम जोड़ना होगा",
+			"agentAvatar": "एजेंट के लिए अवतार जोड़ना आवश्यक है",
+			"agentName": "एजेंट के लिए नाम जोड़ना आवश्यक है",
 			"emptyMessage": "आपका संदेश खाली है"
 		},
 		"label": {
 			"agents": "एजेंट्स",
+			"chatTitle": "चैट शीर्षक",
 			"chats": "चैट्स",
-			"customInstructions": "कस्टम निर्देश",
+			"customInstructions": "अनुकूलित निर्देश",
 			"gptModel": "GPT मॉडल",
 			"newAgent": "नया एजेंट",
 			"newChat": "नई चैट",
-			"noChats": "कोई चैट नहीं",
-			"noSubchats": "कोई सब-चैट नहीं",
-			"selectedValue": "चयनित मान:",
-			"subchats": "सब-चैट्स",
-			"xMessages_zero": "कोई संदेश नहीं",
-			"xMessages_one": "{count} संदेश",
+			"newMessage": "नया संदेश",
+			"noChats": "कोई चैट्स नहीं",
+			"noSubchats": "कोई उप-चैट्स नहीं",
+			"selectedAgent": "चयनित एजेंट",
+			"selectedValue": "चयनित मान",
+			"subchats": "उप-चैट्स",
+			"xMessages_one": "1 संदेश",
 			"xMessages_other": "{count} संदेश",
-			"xSearchResults_zero": "कोई खोज परिणाम नहीं",
 			"xSearchResults_one": "{count} खोज परिणाम",
 			"xSearchResults_other": "{count} खोज परिणाम",
-			"xSelectedMessages_zero": "कोई संदेश चयनित नहीं",
-			"xSelectedMessages_one": "{count} संदेश चयनित",
+			"xSearchResults_zero": "कोई खोज परिणाम नहीं",
+			"xSelectedMessages_one": "1 संदेश चयनित",
 			"xSelectedMessages_other": "{count} संदेश चयनित"
 		},
 		"placeholder": {
-			"newMessage": "एक प्रश्न पूछें...",
-			"rename": "स्वचालित रूप से नया नाम बनाएं..."
+			"newMessage": "{name} से बात करें...",
+			"rename": "स्वचालित रूप से नया नाम उत्पन्न करें..."
 		},
 		"state": {
 			"loadingAgents": "एजेंट्स लोड हो रहे हैं...",
-			"loadingChats": "चैट्स लोड हो रही हैं...",
+			"loadingChats": "चैट्स लोड हो रहे हैं...",
 			"loadingGPTs": "GPTs लोड हो रहे हैं...",
 			"loadingMessages": "संदेश लोड हो रहे हैं...",
 			"loadingPreviousMessages": "पिछले संदेश लोड हो रहे हैं...",
-			"loadingSubchats": "सब-चैट्स लोड हो रही हैं...",
-			"renamingChat": "चैट का नाम बदला जा रहा है..."
+			"loadingSubchats": "उप-चैट्स लोड हो रहे हैं...",
+			"renamingChat": "चैट का नाम बदल रहा है...",
+			"thinking": "सोच रहा है..."
 		},
 		"warning": {
 			"deletingAgent": "यह एजेंट स्थायी रूप से हटा दिया जाएगा",
@@ -129,14 +135,14 @@
 			"manageBilling": "बिलिंग प्रबंधित करें"
 		},
 		"error": {
-			"address": "आपको पता जोड़ना होगा",
-			"avatar": "आपको अपना अवतार जोड़ना होगा",
-			"city": "आपको शहर जोड़ना होगा",
-			"country": "आपको देश जोड़ना होगा",
-			"email": "आपको अपना ईमेल पता जोड़ना होगा",
-			"legalName": "आपको कानूनी नाम जोड़ना होगा",
-			"name": "आपको अपना नाम जोड़ना होगा",
-			"postalCode": "आपको पिन कोड जोड़ना होगा"
+			"address": "पता जोड़ना आवश्यक है",
+			"avatar": "आपका अवतार जोड़ना आवश्यक है",
+			"city": "शहर जोड़ना आवश्यक है",
+			"country": "देश जोड़ना आवश्यक है",
+			"email": "आपका ईमेल पता जोड़ना आवश्यक है",
+			"legalName": "कानूनी नाम जोड़ना आवश्यक है",
+			"name": "आपका नाम जोड़ना आवश्यक है",
+			"postalCode": "पोस्टल कोड जोड़ना आवश्यक है"
 		},
 		"label": {
 			"account": "खाता",
@@ -146,11 +152,11 @@
 			"country": "देश",
 			"email": "ईमेल पता",
 			"legalName": "कानूनी नाम",
-			"phone": "फ़ोन नंबर",
-			"postalCode": "पिन कोड",
+			"phone": "फोन नंबर",
+			"postalCode": "पोस्टल कोड",
 			"private": "निजी",
 			"public": "सार्वजनिक",
-			"vatNumber": "GSTIN"
+			"vatNumber": "VAT नंबर"
 		}
 	}
 }

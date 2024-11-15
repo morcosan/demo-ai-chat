@@ -1,23 +1,23 @@
 {
 	"core": {
 		"action": {
-			"back": "ត្រឡប់",
-			"backToHome": "ត្រឡប់ទៅទំព័រដើម",
-			"changeLanguage": "ប្តូរភាសា",
+			"back": "ត្រលប់",
+			"backToHome": "ត្រលប់ទៅទំព័រដើម",
+			"changeLanguage": "ផ្លាស់ប្តូរភាសា",
 			"close": "បិទ",
 			"delete": "លុប",
-			"deselectAll": "ដោះជ្រើសទាំងអស់",
+			"deselectAll": "លុបជម្រើសទាំងអស់",
 			"openMenu": "បើកម៉ឺនុយ",
 			"rename": "ប្តូរឈ្មោះ",
 			"saveChanges": "រក្សាទុកការផ្លាស់ប្តូរ",
 			"search": "ស្វែងរក",
 			"searchMore": "បង្ហាញលទ្ធផលបន្ថែម",
-			"selectAll": "ជ្រើសទាំងអស់",
+			"selectAll": "ជ្រើសរើសទាំងអស់",
 			"signOut": "ចាកចេញ"
 		},
 		"error": {
 			"noChanges": "គ្មានការផ្លាស់ប្តូរ",
-			"nothingFound": "រកមិនឃើញអ្វីសម្រាប់ \"{search}\""
+			"nothingFound": "មិនមានអ្វីរកឃើញសម្រាប់ \"{search}\""
 		},
 		"label": {
 			"apiDocs": "ឯកសារ API",
@@ -34,12 +34,14 @@
 			"language": "ភាសា",
 			"lightTheme": "ភ្លឺ",
 			"name": "ឈ្មោះ",
-			"optionalField": "(ជម្រើស)",
-			"quickSettings": "ការកំណត់រហ័ស",
-			"requiredField": "(តម្រូវ)",
+			"navigationBar": "របារនាវիգាស្យុង",
+			"navigationMenu": "ម៉ឺនុយនាវិការ",
+			"optionalField": "(ស្រេចចិត្ត)",
+			"quickSettings": "ការកំណត់លឿន",
+			"requiredField": "(តម្រូវឱ្យមាន)",
 			"settings": "ការកំណត់",
-			"uiLibrary": "បណ្ណាល័យ UI:",
-			"uiTheme": "រូបរាង UI:"
+			"uiLibrary": "បណ្ណាល័យ UI",
+			"uiTheme": "ស្បែក UI"
 		},
 		"placeholder": {
 			"search": "ស្វែងរក..."
@@ -49,103 +51,112 @@
 			"deleting": "កំពុងលុប...",
 			"loading": "កំពុងផ្ទុក...",
 			"searching": "កំពុងស្វែងរក...",
-			"updating": "កំពុងធ្វើបច្ចុប្បន្នភាព..."
+			"updating": "កំពុងអាប់ដេត..."
 		}
 	},
 	"aiChat": {
 		"action": {
-			"backToSubchats": "ត្រឡប់ទៅជជែកបន្ត",
-			"configureAgent": "កំណត់រចនាសម្ព័ន្ធភ្នាក់ងារ",
-			"confirmDeleteAgent": "បញ្ជាក់ការលុបភ្នាក់ងារ",
-			"confirmDeleteChats": "បញ្ជាក់ការលុបការជជែក",
-			"confirmRenameChat": "បញ្ជាក់ការប្តូរឈ្មោះការជជែក",
-			"createAgent": "បង្កើតភ្នាក់ងារ",
-			"deleteAgent": "លុបភ្នាក់ងារ",
-			"deleteSelectedChats": "លុបការជជែកដែលបានជ្រើស",
-			"manageAgents": "គ្រប់គ្រងភ្នាក់ងារ",
-			"manageChats": "គ្រប់គ្រងការជជែក",
-			"openChat": "បើកការជជែក",
-			"openSubchat_zero": "បង្កើតការជជែកបន្ត",
-			"openSubchat_other": "បើកការជជែកបន្ត ({count} សារ)",
+			"backToSubchats": "ត្រលប់ទៅសាបឆាត",
+			"configureAgent": "កំណត់អ្នកតំណាង",
+			"confirmDeleteAgent": "បញ្ជាក់ការលុបអ្នកតំណាង",
+			"confirmDeleteChats": "បញ្ជាក់ការលុបការឆាត",
+			"confirmRenameChat": "បញ្ជាក់ការប្តូរឈ្មោះការឆាត",
+			"createAgent": "បង្កើតអ្នកតំណាង",
+			"deleteAgent": "លុបអ្នកតំណាង",
+			"deleteSelectedChats": "លុបការឆាតដែលបានជ្រើសរើស",
+			"deselectChat": "លុបជម្រើសការឆាត",
+			"manageAgents": "គ្រប់គ្រងអ្នកតំណាង",
+			"manageChats": "គ្រប់គ្រងការឆាត",
+			"openChat": "បើកការឆាត",
+			"openSubchat_other": "បើកសាបឆាត ({count} សាររួម)",
+			"openSubchat_zero": "បង្កើតសាបឆាត",
+			"searchChats": "ស្វែងរកការឆាត",
+			"selectChat": "ជ្រើសរើសការឆាត",
 			"sendMessage": "ផ្ញើសារ",
-			"showMoreAgents": "បង្ហាញភ្នាក់ងារបន្ថែម",
-			"showMoreChats": "បង្ហាញការជជែកបន្ថែម",
-			"showSubchats": "បង្ហាញការជជែកបន្ត ({count})",
-			"startSearching_other": "វាយបញ្ចូលយ៉ាងហោចណាស់ {count} តួអក្សរ"
+			"showMoreAgents": "បង្ហាញអ្នកតំណាងបន្ថែម",
+			"showMoreChats": "បង្ហាញការឆាតបន្ថែម",
+			"showSubchats": "បង្ហាញសាបឆាត ({count})",
+			"startSearching_one": "វាយយ៉ាងតិច {count} តួអក្សរ",
+			"startSearching_other": "វាយយ៉ាងតិច {count} តួអក្សរ"
 		},
 		"description": {
-			"loremIpsumGPT": "ម៉ូដែលឆ្លាតបំផុត",
-			"rammusGPT": "ការគាំទ្រផ្នែកអារម្មណ៍ល្អបំផុត"
+			"loremIpsumGPT": "ម៉ូដែលឆ្លាតជាងគេ",
+			"rammusGPT": "គាំទ្រសេចក្ដីរំភើបល្អបំផុត"
 		},
 		"error": {
-			"agentAvatar": "អ្នកត្រូវបន្ថែមរូបតំណាងសម្រាប់ភ្នាក់ងារ",
-			"agentName": "អ្នកត្រូវបន្ថែមឈ្មោះសម្រាប់ភ្នាក់ងារ",
+			"agentAvatar": "អ្នកត្រូវតែបន្ថែមរូបតំណាងសម្រាប់អ្នកតំណាង",
+			"agentName": "អ្នកត្រូវតែបន្ថែមឈ្មោះសម្រាប់អ្នកតំណាង",
 			"emptyMessage": "សាររបស់អ្នកទទេ"
 		},
 		"label": {
-			"agents": "ភ្នាក់ងារ",
-			"chats": "ការជជែក",
+			"agents": "អ្នកតំណាង",
+			"chatTitle": "ចំណងជើងនៃការឆាត",
+			"chats": "ការឆាត",
 			"customInstructions": "ការណែនាំផ្ទាល់ខ្លួន",
 			"gptModel": "ម៉ូដែល GPT",
-			"newAgent": "ភ្នាក់ងារថ្មី",
-			"newChat": "ការជជែកថ្មី",
-			"noChats": "គ្មានការជជែក",
-			"noSubchats": "គ្មានការជជែកបន្ត",
-			"selectedValue": "តម្លៃដែលបានជ្រើស:",
-			"subchats": "ការជជែកបន្ត",
-			"xMessages_zero": "គ្មានសារ",
+			"newAgent": "អ្នកតំណាងថ្មី",
+			"newChat": "ការឆាតថ្មី",
+			"newMessage": "សារថ្មី",
+			"noChats": "មិនមានការឆាត",
+			"noSubchats": "មិនមានសាបឆាត",
+			"selectedAgent": "អ្នកតំណាងដែលបានជ្រើស",
+			"selectedValue": "តម្លៃដែលបានជ្រើស",
+			"subchats": "សាបឆាត",
+			"xMessages_one": "1 សារ",
 			"xMessages_other": "{count} សារ",
-			"xSearchResults_zero": "គ្មានលទ្ធផលស្វែងរក",
+			"xSearchResults_one": "{count} លទ្ធផលស្វែងរក",
 			"xSearchResults_other": "{count} លទ្ធផលស្វែងរក",
-			"xSelectedMessages_zero": "គ្មានសារដែលបានជ្រើស",
-			"xSelectedMessages_other": "{count} សារដែលបានជ្រើស"
+			"xSearchResults_zero": "គ្មានលទ្ធផលស្វែងរក",
+			"xSelectedMessages_one": "បានជ្រើសរើស 1 សារ",
+			"xSelectedMessages_other": "បានជ្រើសរើស {count} សារ"
 		},
 		"placeholder": {
-			"newMessage": "សួរសំណួរ...",
+			"newMessage": "និយាយជាមួយ {name}...",
 			"rename": "បង្កើតឈ្មោះថ្មីដោយស្វ័យប្រវត្តិ..."
 		},
 		"state": {
-			"loadingAgents": "កំពុងផ្ទុកភ្នាក់ងារ...",
-			"loadingChats": "កំពុងផ្ទុកការជជែក...",
-			"loadingGPTs": "កំពុងផ្ទុក GPTs...",
+			"loadingAgents": "កំពុងផ្ទុកអ្នកតំណាង...",
+			"loadingChats": "កំពុងផ្ទុកការឆាត...",
+			"loadingGPTs": "កំពុងផ្ទុកម៉ូដែល GPT...",
 			"loadingMessages": "កំពុងផ្ទុកសារ...",
-			"loadingPreviousMessages": "កំពុងផ្ទុកសារមុន...",
-			"loadingSubchats": "កំពុងផ្ទុកការជជែកបន្ត...",
-			"renamingChat": "កំពុងប្តូរឈ្មោះការជជែក..."
+			"loadingPreviousMessages": "កំពុងផ្ទុកសារក្រោយ...",
+			"loadingSubchats": "កំពុងផ្ទុកសាបឆាត...",
+			"renamingChat": "កំពុងប្តូរឈ្មោះការឆាត...",
+			"thinking": "គិត..."
 		},
 		"warning": {
-			"deletingAgent": "ភ្នាក់ងារនេះនឹងត្រូវបានលុបជាអចិន្ត្រៃយ៍",
-			"deletingChats": "ការជជែកទាំងនេះនឹងត្រូវបានលុបជាអចិន្ត្រៃយ៍"
+			"deletingAgent": "អ្នកតំណាងនេះនឹងត្រូវបានលុបជាអចិន្ត្រៃយ៍",
+			"deletingChats": "ការឆាតទាំងនេះនឹងត្រូវបានលុបជាអចិន្ត្រៃយ៍"
 		}
 	},
 	"userSettings": {
 		"action": {
 			"manageAccount": "គ្រប់គ្រងគណនី",
-			"manageBilling": "គ្រប់គ្រងការទូទាត់"
+			"manageBilling": "គ្រប់គ្រងការគិតប្រាក់"
 		},
 		"error": {
-			"address": "អ្នកត្រូវបន្ថែមអាសយដ្ឋាន",
-			"avatar": "អ្នកត្រូវបន្ថែមរូបតំណាងរបស់អ្នក",
-			"city": "អ្នកត្រូវបន្ថែមទីក្រុង",
-			"country": "អ្នកត្រូវបន្ថែមប្រទេស",
-			"email": "អ្នកត្រូវបន្ថែមអាសយដ្ឋានអ៊ីមែល",
-			"legalName": "អ្នកត្រូវបន្ថែមឈ្មោះផ្លូវច្បាប់",
-			"name": "អ្នកត្រូវបន្ថែមឈ្មោះរបស់អ្នក",
-			"postalCode": "អ្នកត្រូវបន្ថែមលេខកូដប្រៃសណីយ៍"
+			"address": "អ្នកត្រូវតែបន្ថែមអាសយដ្ឋាន",
+			"avatar": "អ្នកត្រូវតែបន្ថែមរូបតំណាងរបស់អ្នក",
+			"city": "អ្នកត្រូវតែបន្ថែមទីក្រុង",
+			"country": "អ្នកត្រូវតែបន្ថែមប្រទេស",
+			"email": "អ្នកត្រូវតែបន្ថែមអាសយដ្ឋានអ៊ីមែលរបស់អ្នក",
+			"legalName": "អ្នកត្រូវតែបន្ថែមឈ្មោះផ្លូវការរបស់អ្នក",
+			"name": "អ្នកត្រូវតែបន្ថែមឈ្មោះរបស់អ្នក",
+			"postalCode": "អ្នកត្រូវតែបន្ថែមកូដប្រៃសណីយ"
 		},
 		"label": {
 			"account": "គណនី",
 			"address": "អាសយដ្ឋាន",
-			"billing": "ការទូទាត់",
+			"billing": "ការគិតប្រាក់",
 			"city": "ទីក្រុង",
 			"country": "ប្រទេស",
 			"email": "អាសយដ្ឋានអ៊ីមែល",
-			"legalName": "ឈ្មោះផ្លូវច្បាប់",
+			"legalName": "ឈ្មោះផ្លូវការ",
 			"phone": "លេខទូរស័ព្ទ",
-			"postalCode": "លេខកូដប្រៃសណីយ៍",
+			"postalCode": "កូដប្រៃសណីយ",
 			"private": "ឯកជន",
 			"public": "សាធារណៈ",
-			"vatNumber": "លេខអត្តសញ្ញាណប័ណ្ណពន្ធ"
+			"vatNumber": "លេខអាករលើតម្លៃបន្ថែម"
 		}
 	}
 }

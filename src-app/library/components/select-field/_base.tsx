@@ -7,10 +7,11 @@ export const useSelectFieldBase = (rawProps: SelectFieldProps) => {
 	const props = useDefaults(rawProps, {
 		keyLabel: 'label',
 		keyValue: 'value',
+		variant: 'default',
 		size: 'md',
 		popupPos: 'bottom',
 	})
-	const { $color, $fontSize, $radius, $spacing, $shadow, $zIndex } = useUiTheme()
+	const { $color, $fontSize, $fontWeight, $radius, $spacing, $shadow, $zIndex } = useUiTheme()
 	const [isOpened, setIsOpened] = useState(false)
 
 	const isInteractive = !props.readonly && !props.disabled && !props.loading
@@ -57,17 +58,26 @@ export const useSelectFieldBase = (rawProps: SelectFieldProps) => {
 	const colorBorder = props.subtle
 		? 'transparent'
 		: props.invalid
-			? $color['danger']
+			? $color['danger-page-text']
 			: props.readonly
 				? $color['border-subtle']
 				: $color['border-default']
 
 	const cssA11yOutline: CSS = { '&:not(:has(input:focus))': { outline: 'none' } }
 
+	const colorBorderActive = (() => {
+		if (props.invalid) return $color['danger-page-text']
+		if (props.variant === 'default') return $color['border-active']
+		if (props.variant === 'primary') return $color['primary-page-text']
+		if (props.variant === 'secondary') return $color['secondary-page-text']
+		return ''
+	})()
+
 	const cssFieldFocus: CSS = {
 		fill: $color['text-default'],
 		stroke: $color['text-default'],
-		borderColor: props.invalid ? $color['danger'] : $color['border-active'],
+		borderWidth: '2px',
+		borderColor: colorBorderActive,
 	}
 
 	const cssFieldBase: CSS = {
@@ -81,7 +91,9 @@ export const useSelectFieldBase = (rawProps: SelectFieldProps) => {
 		fill: $color['text-placeholder'],
 		stroke: $color['text-placeholder'],
 
-		'&:hover': isInteractive ? { borderColor: props.invalid ? $color['danger'] : $color['border-hover'] } : {},
+		'&:hover': isInteractive
+			? { borderColor: props.invalid ? $color['danger-page-text'] : $color['border-hover'] }
+			: {},
 
 		'&:has(input:focus)': isInteractive ? cssFieldFocus : {},
 	}
@@ -144,7 +156,7 @@ export const useSelectFieldBase = (rawProps: SelectFieldProps) => {
 		display: isOpened ? 'block' : 'none',
 		maxHeight: $spacing['xl-0'],
 		overflowY: 'auto',
-		backgroundColor: $color['bg-card'],
+		backgroundColor: $color['bg-popup'],
 		border: `1px solid ${$color['border-shadow']}`,
 		borderRadius: $radius['sm'],
 		boxShadow: $shadow['md'],
@@ -168,13 +180,14 @@ export const useSelectFieldBase = (rawProps: SelectFieldProps) => {
 		'&:hover::before, &[data-current=true]::before': {
 			...CSS__ABSOLUTE_OVERLAY,
 			content: '""',
-			backgroundColor: $color['hover-1'],
+			backgroundColor: $color['hover-text-default'],
 			zIndex: 1,
 		},
 
 		'&[aria-selected=true]': {
-			backgroundColor: $color['secondary-bg'],
-			color: $color['secondary-text-default'],
+			backgroundColor: $color['secondary-button-bg'],
+			color: $color['secondary-button-text'],
+			fontWeight: $fontWeight['md'],
 		},
 	}
 	const cssWrapper: CSS = {

@@ -5,14 +5,12 @@ declare global {
 		| {
 				readonly $value: V
 				readonly $ref?: undefined
-				readonly $css: string
 				readonly $type?: DesignTokenType
 				readonly $description?: string
 		  }
 		| {
 				readonly $value?: undefined
 				readonly $ref: string | DesignTokenThemeValue<string>
-				readonly $css: string
 				readonly $type?: DesignTokenType
 				readonly $description?: string
 		  }

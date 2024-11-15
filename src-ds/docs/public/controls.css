@@ -16,11 +16,11 @@
 
 			&:active,
 			&.tabbutton-active {
-				border-bottom-color: var(--ds-color-primary) !important;
-				color: var(--ds-color-primary) !important;
+				border-bottom-color: var(--ds-color-primary-page-text) !important;
+				color: var(--ds-color-primary-page-text) !important;
 
 				& div:nth-child(2) {
-					color: var(--ds-color-primary) !important;
+					color: var(--ds-color-primary-page-text) !important;
 				}
 			}
 
@@ -50,7 +50,7 @@
 		right: 0 !important;
 		bottom: 1px !important;
 		margin: 0 !important;
-		background-color: var(--ds-color-bg-default) !important;
+		background-color: var(--ds-color-bg-page) !important;
 		padding-left: 0 var(--ds-spacing-xs-2) !important;
 
 		& button {
@@ -58,10 +58,10 @@
 			height: unset !important;
 
 			&:hover {
-				background-color: var(--ds-color-hover-default) !important;
+				background-color: var(--ds-color-hover-text-default) !important;
 			}
 			&:active {
-				background-color: var(--ds-color-hover-pressed) !important;
+				background-color: var(--ds-color-hover-text-pressed) !important;
 			}
 
 			& svg path {
@@ -73,7 +73,7 @@
 
 #storybook-panel-root {
 	& > div {
-		background-color: var(--ds-color-bg-default) !important;
+		background-color: var(--ds-color-bg-page) !important;
 	}
 
 	& table.docblock-argstable {
@@ -103,10 +103,10 @@
 				}
 
 				&:hover {
-					background-color: var(--ds-color-hover-default) !important;
+					background-color: var(--ds-color-hover-text-default) !important;
 				}
 				&:active {
-					background-color: var(--ds-color-hover-pressed) !important;
+					background-color: var(--ds-color-hover-text-pressed) !important;
 				}
 			}
 		}
@@ -116,7 +116,7 @@
 			& td {
 				cursor: default !important;
 				border: none !important;
-				background-color: var(--ds-color-bg-default) !important;
+				background-color: var(--ds-color-bg-page) !important;
 				padding-top: var(--ds-spacing-sm-3) !important;
 				padding-bottom: var(--ds-spacing-xs-3) !important;
 			}
@@ -131,10 +131,10 @@
 				height: var(--ds-spacing-sm-3) !important;
 
 				&:hover {
-					background-color: var(--ds-color-hover-default) !important;
+					background-color: var(--ds-color-hover-text-default) !important;
 				}
 				&:active {
-					background-color: var(--ds-color-hover-pressed) !important;
+					background-color: var(--ds-color-hover-text-pressed) !important;
 				}
 			}
 			& td:last-child button {
@@ -165,7 +165,7 @@
 		& tr:not([title]) {
 			& td {
 				border-color: var(--ds-color-border-subtle) !important;
-				background-color: var(--ds-color-bg-default) !important;
+				background-color: var(--ds-color-bg-page) !important;
 				padding-top: var(--ds-spacing-xs-4) !important;
 				padding-bottom: var(--ds-spacing-xs-4) !important;
 				color: var(--ds-color-text-default) !important;
@@ -187,10 +187,10 @@
 				color: var(--ds-color-text-default) !important;
 
 				&:hover {
-					background-color: var(--ds-color-hover-default) !important;
+					background-color: var(--ds-color-hover-text-default) !important;
 				}
 				&:active {
-					background-color: var(--ds-color-hover-pressed) !important;
+					background-color: var(--ds-color-hover-text-pressed) !important;
 				}
 			}
 		}
@@ -217,7 +217,7 @@
 				height: var(--ds-spacing-xs-5) !important;
 
 				&:checked {
-					border-color: var(--ds-color-primary) !important;
+					border-color: var(--ds-color-primary-page-text) !important;
 				}
 			}
 
@@ -227,7 +227,7 @@
 				left: 50% !important;
 				transform: translate(-50%, -50%) !important;
 				border-radius: var(--ds-radius-full) !important;
-				background-color: var(--ds-color-primary) !important;
+				background-color: var(--ds-color-primary-page-text) !important;
 				width: var(--ds-spacing-xs-2) !important;
 				height: var(--ds-spacing-xs-2) !important;
 				content: '' !important;
@@ -258,7 +258,7 @@
 
 			& input:not(:checked) + span,
 			& input:checked + span + span {
-				background-color: var(--ds-color-primary) !important;
+				background-color: var(--ds-color-primary-page-text) !important;
 				color: var(--ds-color-text-inverse) !important;
 				font-weight: var(--ds-font-weight-md) !important;
 			}
@@ -290,7 +290,7 @@
 		& .rejt-collapsed::before,
 		& .rejt-not-collapsed::before {
 			opacity: 1 !important;
-			background: var(--ds-color-hover-default) !important;
+			background: var(--ds-color-hover-text-default) !important;
 		}
 	}
 
@@ -322,8 +322,8 @@
 
 		& button[type='submit'],
 		& button[type='submit']:hover {
-			background-color: var(--ds-color-primary) !important;
-			color: var(--ds-color-primary-text-inverse) !important;
+			background-color: var(--ds-color-primary-button-bg) !important;
+			color: var(--ds-color-primary-button-text) !important;
 		}
 	}
 
@@ -338,15 +338,15 @@
 	& > div {
 		box-shadow: var(--ds-shadow-lg) !important;
 		border: none !important;
-		background-color: var(--ds-color-primary-bg) !important;
+		background-color: var(--ds-color-primary-card-bg) !important;
 		color: var(--ds-color-text-subtle) !important;
 
 		& button {
 			&:hover {
-				background-color: var(--ds-color-hover-default) !important;
+				background-color: var(--ds-color-hover-text-default) !important;
 			}
 			&:active {
-				background-color: var(--ds-color-hover-pressed) !important;
+				background-color: var(--ds-color-hover-text-pressed) !important;
 			}
 
 			& span,
@@ -369,19 +369,19 @@
 	padding: var(--ds-spacing-xs-2) var(--ds-spacing-xs-2) !important;
 
 	&:hover {
-		background-color: var(--ds-color-hover-default) !important;
+		background-color: var(--ds-color-hover-text-default) !important;
 	}
 
 	& li li {
 		padding: 1px var(--ds-spacing-xs-0) !important;
 
 		&:hover {
-			background-color: var(--ds-color-hover-default) !important;
+			background-color: var(--ds-color-hover-text-default) !important;
 		}
 	}
 
 	& li > div span {
-		color: var(--ds-color-text-preview) !important;
+		color: var(--ds-color-text-coding) !important;
 		font-size: var(--ds-font-size-sm) !important;
 		font-family: var(--monospace), monospace !important;
 	}
@@ -408,10 +408,10 @@
 		position: relative !important;
 		border: none !important;
 		border-radius: var(--ds-radius-md) !important;
-		background-color: var(--ds-color-danger) !important;
+		background-color: var(--ds-color-danger-button-bg) !important;
 		padding: var(--ds-spacing-xs-2) var(--ds-spacing-xs-5) !important;
 		height: unset !important;
-		color: var(--ds-color-danger-text-inverse) !important;
+		color: var(--ds-color-danger-button-text) !important;
 		font-size: var(--ds-font-size-sm) !important;
 		line-height: 1 !important;
 
@@ -425,10 +425,10 @@
 		}
 
 		&:hover::after {
-			background-color: var(--ds-color-hover-default) !important;
+			background-color: var(--ds-color-hover-text-default) !important;
 		}
 		&:active::after {
-			background-color: var(--ds-color-hover-pressed) !important;
+			background-color: var(--ds-color-hover-text-pressed) !important;
 		}
 	}
 }
@@ -449,7 +449,7 @@
 		}
 
 		& a {
-			color: var(--ds-color-primary) !important;
+			color: var(--ds-color-primary-page-text) !important;
 		}
 
 		& div[role='button'] {

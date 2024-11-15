@@ -32,10 +32,11 @@ export const MuiImpl = (rawProps: TextFieldProps, ref: Ref<TextFieldRef>) => {
 
 	const cssMuiInput: CSS = {
 		'& .MuiInputBase-input': {
-			boxSizing: 'border-box',
-			lineHeight: $lineHeight['md'],
 			...cssInput,
 			...cssInputHeight,
+			boxSizing: 'border-box',
+			lineHeight: $lineHeight['md'],
+			minHeight: calcHeight,
 		},
 	}
 
