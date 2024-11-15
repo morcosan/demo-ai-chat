@@ -123,6 +123,7 @@ const AgentsPage = () => {
 
 			{/* EDIT MODAL */}
 			<AgentEditModal
+				id="agent-modal"
 				agent={agentToEdit}
 				opened={showsEditModal}
 				onSubmit={onSubmitAgent}
