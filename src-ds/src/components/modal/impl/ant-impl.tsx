@@ -72,11 +72,11 @@ export const AntImpl = (rawProps: ModalProps) => {
 			fill: 'currentColor',
 
 			'&:hover, &:focus': {
-				backgroundColor: $color['hover-default'],
+				backgroundColor: $color['hover-text-default'],
 				color: $color['text-subtle'],
 			},
 			'&:active': {
-				backgroundColor: $color['hover-pressed'],
+				backgroundColor: $color['hover-text-pressed'],
 			},
 			'&:focus-visible': {
 				outline: 'revert',

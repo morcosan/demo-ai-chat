@@ -58,10 +58,10 @@
 			height: unset !important;
 
 			&:hover {
-				background-color: var(--ds-color-hover-default) !important;
+				background-color: var(--ds-color-hover-text-default) !important;
 			}
 			&:active {
-				background-color: var(--ds-color-hover-pressed) !important;
+				background-color: var(--ds-color-hover-text-pressed) !important;
 			}
 
 			& svg path {
@@ -103,10 +103,10 @@
 				}
 
 				&:hover {
-					background-color: var(--ds-color-hover-default) !important;
+					background-color: var(--ds-color-hover-text-default) !important;
 				}
 				&:active {
-					background-color: var(--ds-color-hover-pressed) !important;
+					background-color: var(--ds-color-hover-text-pressed) !important;
 				}
 			}
 		}
@@ -131,10 +131,10 @@
 				height: var(--ds-spacing-sm-3) !important;
 
 				&:hover {
-					background-color: var(--ds-color-hover-default) !important;
+					background-color: var(--ds-color-hover-text-default) !important;
 				}
 				&:active {
-					background-color: var(--ds-color-hover-pressed) !important;
+					background-color: var(--ds-color-hover-text-pressed) !important;
 				}
 			}
 			& td:last-child button {
@@ -187,10 +187,10 @@
 				color: var(--ds-color-text-default) !important;
 
 				&:hover {
-					background-color: var(--ds-color-hover-default) !important;
+					background-color: var(--ds-color-hover-text-default) !important;
 				}
 				&:active {
-					background-color: var(--ds-color-hover-pressed) !important;
+					background-color: var(--ds-color-hover-text-pressed) !important;
 				}
 			}
 		}
@@ -290,7 +290,7 @@
 		& .rejt-collapsed::before,
 		& .rejt-not-collapsed::before {
 			opacity: 1 !important;
-			background: var(--ds-color-hover-default) !important;
+			background: var(--ds-color-hover-text-default) !important;
 		}
 	}
 
@@ -343,10 +343,10 @@
 
 		& button {
 			&:hover {
-				background-color: var(--ds-color-hover-default) !important;
+				background-color: var(--ds-color-hover-text-default) !important;
 			}
 			&:active {
-				background-color: var(--ds-color-hover-pressed) !important;
+				background-color: var(--ds-color-hover-text-pressed) !important;
 			}
 
 			& span,
@@ -369,14 +369,14 @@
 	padding: var(--ds-spacing-xs-2) var(--ds-spacing-xs-2) !important;
 
 	&:hover {
-		background-color: var(--ds-color-hover-default) !important;
+		background-color: var(--ds-color-hover-text-default) !important;
 	}
 
 	& li li {
 		padding: 1px var(--ds-spacing-xs-0) !important;
 
 		&:hover {
-			background-color: var(--ds-color-hover-default) !important;
+			background-color: var(--ds-color-hover-text-default) !important;
 		}
 	}
 
@@ -425,10 +425,10 @@
 		}
 
 		&:hover::after {
-			background-color: var(--ds-color-hover-default) !important;
+			background-color: var(--ds-color-hover-text-default) !important;
 		}
 		&:active::after {
-			background-color: var(--ds-color-hover-pressed) !important;
+			background-color: var(--ds-color-hover-text-pressed) !important;
 		}
 	}
 }

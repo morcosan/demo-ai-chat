@@ -19,11 +19,11 @@
 
 		&.JS_TRIGGER:focus,
 		&:hover {
-			background-color: var(--ds-color-hover-default) !important;
+			background-color: var(--ds-color-hover-text-default) !important;
 		}
 
 		&:active {
-			background-color: var(--ds-color-hover-pressed) !important;
+			background-color: var(--ds-color-hover-text-pressed) !important;
 		}
 
 		&.JS_SELECTED {

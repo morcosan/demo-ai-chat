@@ -180,7 +180,7 @@ export const useSelectFieldBase = (rawProps: SelectFieldProps) => {
 		'&:hover::before, &[data-current=true]::before': {
 			...CSS__ABSOLUTE_OVERLAY,
 			content: '""',
-			backgroundColor: $color['hover-default'],
+			backgroundColor: $color['hover-text-default'],
 			zIndex: 1,
 		},
 

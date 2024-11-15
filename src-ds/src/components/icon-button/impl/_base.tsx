@@ -90,7 +90,7 @@ export const useIconButtonBase = (rawProps: IconButtonProps) => {
 	const cssHover: CSS = (() => {
 		if (isDisabled) return {}
 		if (!props.pressed) {
-			if (isVText) return cssHoverFn($color['hover-default'])
+			if (isVText) return cssHoverFn($color['hover-text-default'])
 			if (isVPrimary) return cssHoverFn($color['primary-hover-default'])
 			if (isVSecondary) return cssHoverFn($color['secondary-hover-default'])
 			if (isVDanger) return cssHoverFn($color['danger-hover-default'])
@@ -101,7 +101,7 @@ export const useIconButtonBase = (rawProps: IconButtonProps) => {
 	const cssPressed: CSS = (() => {
 		if (isDisabled) return {}
 		if (isPressed || props.pressed) {
-			if (isVText) return cssPressedFn($color['hover-pressed'])
+			if (isVText) return cssPressedFn($color['hover-text-pressed'])
 			if (isVPrimary) return cssPressedFn($color['primary-hover-pressed'])
 			if (isVSecondary) return cssPressedFn($color['secondary-hover-pressed'])
 			if (isVDanger) return cssPressedFn($color['danger-hover-pressed'])

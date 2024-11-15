@@ -42,7 +42,7 @@ export const Checkbox = (props: Props) => {
 		},
 
 		'&:hover, &:has(input:focus)': {
-			backgroundColor: $color['hover-default'],
+			backgroundColor: $color['hover-text-default'],
 
 			'& > span': {
 				borderColor: isChecked || isPartial ? $color['primary-button-bg'] : $color['primary-page-text'],

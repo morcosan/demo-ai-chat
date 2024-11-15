@@ -16,7 +16,7 @@
 
 		&:hover,
 		&:focus {
-			background-color: var(--ds-color-hover-default) !important;
+			background-color: var(--ds-color-hover-text-default) !important;
 		}
 
 		&.JS_SELECTED {

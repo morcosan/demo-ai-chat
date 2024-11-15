@@ -100,8 +100,10 @@ export const TOKENS__COLOR = {
 	'text-inverse': { $ref: { light: 'white', dark: 'black' } },
 	'text-coding': { $ref: { light: 'blue-4', dark: 'blue-1' } },
 
-	'hover-default': { $ref: { light: 'hover-1', dark: 'hover-2' } },
-	'hover-pressed': { $ref: { light: 'hover-2', dark: 'hover-4' } },
+	'hover-text-default': { $ref: { light: 'hover-1', dark: 'hover-2' } },
+	'hover-text-pressed': { $ref: { light: 'hover-2', dark: 'hover-4' } },
+	'hover-button-default': { $ref: { light: 'hover-1', dark: 'hover-2' } },
+	'hover-button-pressed': { $ref: { light: 'hover-2', dark: 'hover-4' } },
 
 	'primary-button-bg': { $ref: { light: 'purple-1', dark: 'purple-4' } },
 	'primary-button-text': { $ref: { light: 'purple-1', dark: 'purple-4' } },
