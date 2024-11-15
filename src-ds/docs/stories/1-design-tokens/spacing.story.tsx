@@ -2,7 +2,7 @@ import { DocsHeader } from '@ds/docs/components/docs-header'
 import { DocsPage } from '@ds/docs/components/docs-page'
 import { DocsTokenCoding } from '@ds/docs/components/docs-token-coding'
 import '@ds/docs/setup'
-import { getTokenValue_SPACING, TOKENS__SPACING } from '@ds/release'
+import { CssPrefix, getTokenValue_SPACING, TOKENS__SPACING } from '@ds/release'
 import type { StoryObj } from '@storybook/react'
 import { Fragment } from 'react'
 
@@ -50,7 +50,7 @@ export default {
 											tsSize="w-lg-2"
 											twVars={[`w-${name}`, `h-${name}`, `m-${name}`, `p-${name}`]}
 											twSize="w-md-4"
-											cssVar={`--ds-spacing-${name}`}
+											cssVar={`${CssPrefix.SPACING}${name}`}
 											cssSize="w-lg-6"
 										/>
 									</td>
@@ -59,8 +59,8 @@ export default {
 								<tr className="!border-t-0">
 									<td colSpan={4} className="relative !py-0">
 										<div
-											className="absolute bottom-0 left-0 h-xs-1 bg-color-text-subtle"
-											style={{ width: `var(--ds-spacing-${name})` }}
+											className="h-xs-1 bg-color-text-subtle absolute bottom-0 left-0"
+											style={{ width: `var(${CssPrefix.SPACING}${name})` }}
 										/>
 									</td>
 								</tr>
@@ -94,7 +94,7 @@ export default {
 											tsSize="w-lg-2"
 											twVars={[`w-${name}`, `h-${name}`, `m-${name}`, `p-${name}`]}
 											twSize="w-md-4"
-											cssVar={`--ds-spacing-${name}`}
+											cssVar={`${CssPrefix.SPACING}${name}`}
 											cssSize="w-lg-6"
 										/>
 									</td>
@@ -103,8 +103,8 @@ export default {
 								<tr className="!border-t-0">
 									<td colSpan={4} className="relative !py-0">
 										<div
-											className="absolute bottom-0 left-0 h-xs-1 bg-color-text-subtle"
-											style={{ width: `var(--ds-spacing-${name})` }}
+											className="h-xs-1 bg-color-text-subtle absolute bottom-0 left-0"
+											style={{ width: `var(${CssPrefix.SPACING}${name})` }}
 										/>
 									</td>
 								</tr>

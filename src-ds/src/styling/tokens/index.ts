@@ -69,7 +69,21 @@ const getTokenValue_SHADOW = (k: Shadow, cs?: CS) => gV<Shadow, ThemeValue<strin
 const getTokenValue_SPACING = (k: Spacing, cs?: CS) => gV<Spacing, string>(TOKENS__SPACING, k, cs)
 const getTokenValue_Z_INDEX = (k: ZIndex, cs?: CS) => gV<ZIndex, number>(TOKENS__Z_INDEX, k, cs)
 
+enum CssPrefix {
+	BLUR = '--ds-blur-',
+	BREAKPOINT = '--ds-breakpoint-',
+	COLOR = '--ds-color-',
+	FONT_SIZE = '--ds-font-size-',
+	FONT_WEIGHT = '--ds-font-weight-',
+	LINE_HEIGHT = '--ds-line-height-',
+	RADIUS = '--ds-radius-',
+	SHADOW = '--ds-shadow-',
+	SPACING = '--ds-spacing-',
+	Z_INDEX = '--ds-z-index-',
+}
+
 export {
+	CssPrefix,
 	getTokenValue,
 	getTokenValue_BLUR,
 	getTokenValue_BREAKPOINT,

@@ -1,4 +1,5 @@
 import {
+	CssPrefix,
 	getTokenValue,
 	TOKENS__BLUR,
 	TOKENS__BREAKPOINT,
@@ -36,16 +37,16 @@ const mapTokens = (tokenGroup: DesignTokenGroup, ccPrefix: string, theme: ColorT
 
 const createTokens = (theme: ColorTheme): ThemeTokens => {
 	return {
-		$blur: mapTokens(TOKENS__BLUR, '--ds-blur-', theme),
-		$breakpoint: mapTokens(TOKENS__BREAKPOINT, '--ds-breakpoint-', theme),
-		$color: mapTokens(TOKENS__COLOR, '--ds-color-', theme),
-		$fontSize: mapTokens(TOKENS__FONT_SIZE, '--ds-font-size-', theme),
-		$fontWeight: mapTokens(TOKENS__FONT_WEIGHT, '--ds-font-weight-', theme),
-		$lineHeight: mapTokens(TOKENS__LINE_HEIGHT, '--ds-line-height-', theme),
-		$radius: mapTokens(TOKENS__RADIUS, '--ds-radius-', theme),
-		$shadow: mapTokens(TOKENS__SHADOW, '--ds-shadow-', theme),
-		$spacing: mapTokens(TOKENS__SPACING, '--ds-spacing-', theme),
-		$zIndex: mapTokens(TOKENS__Z_INDEX, '--ds-z-index-', theme),
+		$blur: mapTokens(TOKENS__BLUR, CssPrefix.BLUR, theme),
+		$breakpoint: mapTokens(TOKENS__BREAKPOINT, CssPrefix.BREAKPOINT, theme),
+		$color: mapTokens(TOKENS__COLOR, CssPrefix.COLOR, theme),
+		$fontSize: mapTokens(TOKENS__FONT_SIZE, CssPrefix.FONT_SIZE, theme),
+		$fontWeight: mapTokens(TOKENS__FONT_WEIGHT, CssPrefix.FONT_WEIGHT, theme),
+		$lineHeight: mapTokens(TOKENS__LINE_HEIGHT, CssPrefix.LINE_HEIGHT, theme),
+		$radius: mapTokens(TOKENS__RADIUS, CssPrefix.RADIUS, theme),
+		$shadow: mapTokens(TOKENS__SHADOW, CssPrefix.SHADOW, theme),
+		$spacing: mapTokens(TOKENS__SPACING, CssPrefix.SPACING, theme),
+		$zIndex: mapTokens(TOKENS__Z_INDEX, CssPrefix.Z_INDEX, theme),
 	}
 }
 

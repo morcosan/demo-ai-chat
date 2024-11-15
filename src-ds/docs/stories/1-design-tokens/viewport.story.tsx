@@ -2,7 +2,15 @@ import { DocsHeader } from '@ds/docs/components/docs-header'
 import { DocsPage } from '@ds/docs/components/docs-page'
 import { DocsTokenCoding } from '@ds/docs/components/docs-token-coding'
 import '@ds/docs/setup'
-import { DesktopSvg, LaptopSvg, PhoneSvg, TabletSvg, TOKENS__BREAKPOINT, WidescreenSvg } from '@ds/release'
+import {
+	CssPrefix,
+	DesktopSvg,
+	LaptopSvg,
+	PhoneSvg,
+	TabletSvg,
+	TOKENS__BREAKPOINT,
+	WidescreenSvg,
+} from '@ds/release'
 import type { StoryObj } from '@storybook/react'
 import { ReactNode } from 'react'
 
@@ -43,10 +51,10 @@ export default {
 						{Object.entries(TOKENS__BREAKPOINT).map(([name, token]) => (
 							<tr key={name}>
 								<td>
-									<div className="flex items-center gap-xs-4 text-color-text-subtle">
+									<div className="gap-xs-4 text-color-text-subtle flex items-center">
 										<div className="flex-center w-sm-5">{breakpointMap[name].icon}</div>
 
-										<div className="flex flex-col whitespace-nowrap leading-1">
+										<div className="leading-1 flex flex-col whitespace-nowrap">
 											<pre>{name}</pre>
 											<div className="text-size-xs text-color-text-subtle">{breakpointMap[name].title}</div>
 										</div>
@@ -61,7 +69,7 @@ export default {
 										tsSize="w-lg-2"
 										twVars={[`${name}:___`]}
 										twSize="w-md-4"
-										cssVar={`--ds-breakpoint-${name}`}
+										cssVar={`${CssPrefix.BREAKPOINT}${name}`}
 										cssSize="w-lg-5"
 									/>
 								</td>

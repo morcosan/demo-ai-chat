@@ -5,7 +5,7 @@ import { DocsPlaygroundBase } from '@ds/docs/components/docs-playground-base'
 import { DocsTokenCoding } from '@ds/docs/components/docs-token-coding'
 import { DocsTokenThemeGrid } from '@ds/docs/components/docs-token-theme-grid'
 import '@ds/docs/setup'
-import { getTokenValue_COLOR, TOKENS__COLOR } from '@ds/release'
+import { CssPrefix, getTokenValue_COLOR, TOKENS__COLOR } from '@ds/release'
 import type { StoryObj } from '@storybook/react'
 
 export const story: StoryObj = {}
@@ -36,8 +36,8 @@ export default {
 					{colors.map((color) => (
 						<div
 							key={color}
-							className="flex h-md-0 min-w-fit flex-1 items-start justify-start whitespace-nowrap text-size-xs"
-							style={{ background: `var(--ds-color-${color})` }}
+							className="h-md-0 text-size-xs flex min-w-fit flex-1 items-start justify-start whitespace-nowrap"
+							style={{ background: `var(${CssPrefix.COLOR}${color})` }}
 						>
 							<div className="rounded-xs bg-color-white-glass-7 px-xs-1 pb-xs-0 text-color-black">{color}</div>
 						</div>
@@ -49,7 +49,7 @@ export default {
 		return (
 			<DocsPage title="Color tokens">
 				<DocsHeader>Color palette</DocsHeader>
-				<DocsPlaygroundBase className="flex flex-col gap-xs-6 p-xs-9">
+				<DocsPlaygroundBase className="gap-xs-6 p-xs-9 flex flex-col">
 					{colorSlotFn(purples)}
 					{colorSlotFn(yellows)}
 					{colorSlotFn(reds)}
@@ -91,7 +91,7 @@ export default {
 									<DocsTokenCoding
 										tsVar={`$color['${name}']`}
 										twVars={[`bg-color-${name}`, `text-color-${name}`, `border-color-${name}`]}
-										cssVar={`--ds-color-${name}`}
+										cssVar={`${CssPrefix.COLOR}${name}`}
 										delay={DELAY}
 									/>
 								</td>
@@ -122,7 +122,7 @@ export default {
 									<DocsTokenCoding
 										tsVar={`$color['${name}']`}
 										twVars={[`bg-color-${name}`, `text-color-${name}`, `border-color-${name}`]}
-										cssVar={`--ds-color-${name}`}
+										cssVar={`${CssPrefix.COLOR}${name}`}
 										delay={DELAY}
 									/>
 								</td>

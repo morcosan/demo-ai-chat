@@ -1,4 +1,5 @@
 import {
+	CssPrefix,
 	TOKENS__BLUR,
 	TOKENS__BREAKPOINT,
 	TOKENS__COLOR,
@@ -11,10 +12,10 @@ import {
 	TOKENS__Z_INDEX,
 } from '../tokens'
 
-type CreateTokensArgs = [tokens: DesignTokenGroup, twPrefix: string, cssPrefix: string, direct?: boolean]
+type CreateTokensArgs = [tokens: DesignTokenGroup, cssPrefix: string, twPrefix: string, direct?: boolean]
 
 const createTokens = (...args: CreateTokensArgs): Record<string, string> => {
-	const [tokens, twPrefix, cssPrefix, direct] = args
+	const [tokens, cssPrefix, twPrefix, direct] = args
 
 	return Object.fromEntries(
 		Object.entries<DesignToken>(tokens).map(([tokenName, token]) => [
@@ -28,16 +29,16 @@ const createTokens = (...args: CreateTokensArgs): Record<string, string> => {
 // Tailwind doesn't support multiple theme configs, it requires `dark:` prefix for each class
 // https://tailwindcss.com/docs/dark-mode
 export const TAILWIND_THEME = {
-	backdropBlur: createTokens(TOKENS__BLUR, '', '--ds-blur-'),
-	borderRadius: createTokens(TOKENS__RADIUS, '', '--ds-radius-'),
-	boxShadow: createTokens(TOKENS__SHADOW, '', '--ds-shadow-'),
-	colors: createTokens(TOKENS__COLOR, 'color-', '--ds-color-'),
-	fontSize: createTokens(TOKENS__FONT_SIZE, 'size-', '--ds-font-size-'),
-	fontWeight: createTokens(TOKENS__FONT_WEIGHT, 'weight-', '--ds-font-weight-'),
-	lineHeight: createTokens(TOKENS__LINE_HEIGHT, '', '--ds-line-height-'),
-	screens: createTokens(TOKENS__BREAKPOINT, '', '--ds-breakpoint-', true),
-	spacing: createTokens(TOKENS__SPACING, '', '--ds-spacing-'),
-	zIndex: createTokens(TOKENS__Z_INDEX, '', '--ds-z-index-'),
+	backdropBlur: createTokens(TOKENS__BLUR, CssPrefix.BLUR, ''),
+	borderRadius: createTokens(TOKENS__RADIUS, CssPrefix.RADIUS, ''),
+	boxShadow: createTokens(TOKENS__SHADOW, CssPrefix.SHADOW, ''),
+	colors: createTokens(TOKENS__COLOR, CssPrefix.COLOR, 'color-'),
+	fontSize: createTokens(TOKENS__FONT_SIZE, CssPrefix.FONT_SIZE, 'size-'),
+	fontWeight: createTokens(TOKENS__FONT_WEIGHT, CssPrefix.FONT_WEIGHT, 'weight-'),
+	lineHeight: createTokens(TOKENS__LINE_HEIGHT, CssPrefix.LINE_HEIGHT, ''),
+	screens: createTokens(TOKENS__BREAKPOINT, CssPrefix.BREAKPOINT, '', true),
+	spacing: createTokens(TOKENS__SPACING, CssPrefix.SPACING, ''),
+	zIndex: createTokens(TOKENS__Z_INDEX, CssPrefix.Z_INDEX, ''),
 
 	extend: {
 		borderRadius: { none: 0 },

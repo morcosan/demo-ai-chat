@@ -1,7 +1,7 @@
 import { DocsPage } from '@ds/docs/components/docs-page'
 import { DocsTokenCoding } from '@ds/docs/components/docs-token-coding'
 import '@ds/docs/setup'
-import { TOKENS__RADIUS } from '@ds/release'
+import { CssPrefix, TOKENS__RADIUS } from '@ds/release'
 import type { StoryObj } from '@storybook/react'
 
 export const story: StoryObj = {}
@@ -35,14 +35,14 @@ export default {
 									<code>{token.$value}</code>
 								</td>
 								<td>
-									<div className="flex items-center gap-xs-9">
+									<div className="gap-xs-9 flex items-center">
 										<div
 											className={cx('w-sm-4', previewClass)}
-											style={{ borderRadius: `var(--ds-radius-${name})` }}
+											style={{ borderRadius: `var(${CssPrefix.RADIUS}${name})` }}
 										/>
 										<div
 											className={cx('w-sm-9', previewClass)}
-											style={{ borderRadius: `var(--ds-radius-${name})` }}
+											style={{ borderRadius: `var(${CssPrefix.RADIUS}${name})` }}
 										/>
 									</div>
 								</td>
@@ -51,7 +51,7 @@ export default {
 										tsVar={`$radius['${name}']`}
 										tsSize="w-lg-1"
 										twVars={[`rounded-${name}`]}
-										cssVar={`--ds-radius-${name}`}
+										cssVar={`${CssPrefix.RADIUS}${name}`}
 										cssSize="w-lg-3"
 									/>
 								</td>

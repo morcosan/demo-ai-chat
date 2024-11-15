@@ -3,7 +3,7 @@ import { DocsPage } from '@ds/docs/components/docs-page'
 import { DocsTokenCoding } from '@ds/docs/components/docs-token-coding'
 import { DocsTokenThemeGrid } from '@ds/docs/components/docs-token-theme-grid'
 import '@ds/docs/setup'
-import { getTokenValue_Z_INDEX, TOKENS__SHADOW, TOKENS__Z_INDEX } from '@ds/release'
+import { CssPrefix, getTokenValue_Z_INDEX, TOKENS__SHADOW, TOKENS__Z_INDEX } from '@ds/release'
 import type { StoryObj } from '@storybook/react'
 
 export const story: StoryObj = {}
@@ -44,7 +44,7 @@ export default {
 									/>
 								</td>
 								<td>
-									<div className="flex items-center gap-xs-7">
+									<div className="gap-xs-7 flex items-center">
 										<div className="h-sm-8 w-sm-8" style={{ boxShadow: String(token.$value.light) }} />
 										<div className="h-sm-8 w-sm-8" style={{ boxShadow: String(token.$value.dark) }} />
 									</div>
@@ -54,7 +54,7 @@ export default {
 										tsVar={`$shadow['${name}']`}
 										tsSize="w-lg-1"
 										twVars={[`shadow-${name}`]}
-										cssVar={`--ds-shadow-${name}`}
+										cssVar={`${CssPrefix.SHADOW}${name}`}
 										cssSize="w-lg-2"
 									/>
 								</td>
@@ -90,7 +90,7 @@ export default {
 										tsVar={`$zIndex['${name}']`}
 										tsSize="w-lg-1"
 										twVars={[`z-${name}`]}
-										cssVar={`--ds-z-index-${name}`}
+										cssVar={`${CssPrefix.Z_INDEX}${name}`}
 										cssSize="w-lg-2"
 									/>
 								</td>
@@ -123,7 +123,7 @@ export default {
 										tsSize="w-lg-1"
 										twVars={[`z-${name.replace('z-index-', '')}`]}
 										twSize="w-md-5"
-										cssVar={`--ds-z-index-${name}`}
+										cssVar={`${CssPrefix.Z_INDEX}${name}`}
 										cssSize="w-lg-3"
 									/>
 								</td>

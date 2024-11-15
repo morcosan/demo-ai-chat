@@ -2,7 +2,7 @@ import { DocsHeader } from '@ds/docs/components/docs-header'
 import { DocsPage } from '@ds/docs/components/docs-page'
 import { DocsTokenCoding } from '@ds/docs/components/docs-token-coding'
 import '@ds/docs/setup'
-import { getTokenValue_BLUR, SettingsSvg, TOKENS__BLUR } from '@ds/release'
+import { CssPrefix, getTokenValue_BLUR, SettingsSvg, TOKENS__BLUR } from '@ds/release'
 import type { StoryObj } from '@storybook/react'
 
 export const story: StoryObj = {}
@@ -44,7 +44,10 @@ export default {
 									<code>{getTokenValue_BLUR(token.$ref as BlurKey)}</code>
 								</td>
 								<td>
-									<div className="flex gap-xs-4 text-size-lg" style={{ filter: `blur(var(--ds-blur-${name}))` }}>
+									<div
+										className="gap-xs-4 text-size-lg flex"
+										style={{ filter: `blur(var(${CssPrefix.BLUR}${name}))` }}
+									>
 										<SettingsSvg className="w-xs-7" />
 										Blur example
 									</div>
@@ -55,7 +58,7 @@ export default {
 										tsSize="w-lg-1"
 										twVars={[`blur-${name}`]}
 										twSize="w-lg-0"
-										cssVar={`--ds-blur-${name}`}
+										cssVar={`${CssPrefix.BLUR}${name}`}
 										cssSize="w-lg-4"
 									/>
 								</td>
@@ -84,7 +87,10 @@ export default {
 									<code>{token.$value}</code>
 								</td>
 								<td>
-									<div className="flex gap-xs-4 text-size-lg" style={{ filter: `blur(var(--ds-blur-${name}))` }}>
+									<div
+										className="gap-xs-4 text-size-lg flex"
+										style={{ filter: `blur(var(${CssPrefix.BLUR}${name}))` }}
+									>
 										<SettingsSvg className="w-xs-7" />
 										Blur example
 									</div>
@@ -95,7 +101,7 @@ export default {
 										tsSize="w-lg-1"
 										twVars={[`blur-${name}`]}
 										twSize="w-lg-0"
-										cssVar={`--ds-blur-${name}`}
+										cssVar={`${CssPrefix.BLUR}${name}`}
 										cssSize="w-lg-4"
 									/>
 								</td>
