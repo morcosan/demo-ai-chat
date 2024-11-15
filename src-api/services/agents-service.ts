@@ -15,7 +15,7 @@ import {
 	createAgentId,
 	getDbActiveAgents,
 	getDbDeletedAgents,
-	GPTs,
+	getGPTs,
 	hasMessagesByAgent,
 	resetAgentsDB,
 	setDbActiveAgents,
@@ -29,7 +29,7 @@ export const agentsService = {
 	async getGPTs(): Promise<ApiResponse<GptApiData>> {
 		return {
 			status: STATUS__SUCCESS,
-			data: { count: GPTs.length, items: GPTs },
+			data: { count: getGPTs().length, items: getGPTs() },
 		}
 	},
 

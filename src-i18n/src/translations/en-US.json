@@ -80,6 +80,7 @@
 			"startSearching_other": "Type at least {count} characters"
 		},
 		"description": {
+			"geminiNano": "Available only in Chrome browser",
 			"loremIpsumGPT": "Most intelligent model",
 			"rammusGPT": "Best emotional support"
 		},

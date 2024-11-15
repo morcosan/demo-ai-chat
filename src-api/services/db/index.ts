@@ -7,13 +7,13 @@ export { getDbAccount, resetDbAccount, setDbAccount } from './_account-db'
 export {
 	createAgentId,
 	getDbActiveAgents,
-	GPTs,
+	getGPTs,
 	randomFromAgentIds,
 	resetAgentsDB,
 	setDbActiveAgents,
 	getDbDeletedAgents,
 	setDbDeletedAgents,
-	getGptAPI,
+	getGptUnit,
 } from './_agents-db'
 export { getDbBilling, resetDbBilling, setDbBilling } from './_billing-db'
 export {
