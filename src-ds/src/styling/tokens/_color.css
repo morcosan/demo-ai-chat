@@ -63,25 +63,27 @@
 	--ds-color-green-7: #13803b;
 	--ds-color-green-8: #14532d;
 
-	--ds-color-black-glass-1: rgba(10, 0, 15, 0.02);
-	--ds-color-black-glass-2: rgba(10, 0, 15, 0.04);
-	--ds-color-black-glass-3: rgba(10, 0, 15, 0.08);
-	--ds-color-black-glass-4: rgba(10, 0, 15, 0.16);
-	--ds-color-black-glass-5: rgba(10, 0, 15, 0.24);
-	--ds-color-black-glass-6: rgba(10, 0, 15, 0.32);
-	--ds-color-black-glass-7: rgba(10, 0, 15, 0.4);
-	--ds-color-black-glass-8: rgba(10, 0, 15, 0.48);
-	--ds-color-black-glass-9: rgba(10, 0, 15, 0.56);
+	--ds-color-black-glass-1: rgba(10, 0, 15, 0.03);
+	--ds-color-black-glass-2: rgba(10, 0, 15, 0.06);
+	--ds-color-black-glass-3: rgba(10, 0, 15, 0.09);
+	--ds-color-black-glass-4: rgba(10, 0, 15, 0.12);
+	--ds-color-black-glass-5: rgba(10, 0, 15, 0.16);
+	--ds-color-black-glass-6: rgba(10, 0, 15, 0.24);
+	--ds-color-black-glass-7: rgba(10, 0, 15, 0.32);
+	--ds-color-black-glass-8: rgba(10, 0, 15, 0.4);
+	--ds-color-black-glass-9: rgba(10, 0, 15, 0.48);
+	--ds-color-black-glass-10: rgba(10, 0, 15, 0.56);
 
-	--ds-color-white-glass-1: rgba(250, 245, 255, 0.02);
-	--ds-color-white-glass-2: rgba(250, 245, 255, 0.04);
-	--ds-color-white-glass-3: rgba(250, 245, 255, 0.08);
-	--ds-color-white-glass-4: rgba(250, 245, 255, 0.16);
-	--ds-color-white-glass-5: rgba(250, 245, 255, 0.24);
-	--ds-color-white-glass-6: rgba(250, 245, 255, 0.32);
-	--ds-color-white-glass-7: rgba(250, 245, 255, 0.4);
-	--ds-color-white-glass-8: rgba(250, 245, 255, 0.48);
-	--ds-color-white-glass-9: rgba(250, 245, 255, 0.56);
+	--ds-color-white-glass-1: rgba(250, 245, 255, 0.03);
+	--ds-color-white-glass-2: rgba(250, 245, 255, 0.06);
+	--ds-color-white-glass-3: rgba(250, 245, 255, 0.09);
+	--ds-color-white-glass-4: rgba(250, 245, 255, 0.12);
+	--ds-color-white-glass-5: rgba(250, 245, 255, 0.16);
+	--ds-color-white-glass-6: rgba(250, 245, 255, 0.24);
+	--ds-color-white-glass-7: rgba(250, 245, 255, 0.32);
+	--ds-color-white-glass-8: rgba(250, 245, 255, 0.4);
+	--ds-color-white-glass-9: rgba(250, 245, 255, 0.48);
+	--ds-color-white-glass-10: rgba(250, 245, 255, 0.56);
 }
 
 :host,
@@ -140,8 +142,8 @@
 	--ds-color-success-card-text: var(--ds-color-green-8);
 	--ds-color-success-page-text: var(--ds-color-green-7);
 
-	--ds-color-modal-overlay-subtle: var(--ds-color-black-glass-4);
-	--ds-color-modal-overlay-strong: var(--ds-color-black-glass-8);
+	--ds-color-modal-overlay-subtle: var(--ds-color-black-glass-5);
+	--ds-color-modal-overlay-strong: var(--ds-color-black-glass-9);
 }
 
 [data-color-theme='dark'] {
@@ -199,6 +201,6 @@
 	--ds-color-success-card-text: var(--ds-color-white);
 	--ds-color-success-page-text: var(--ds-color-green-3);
 
-	--ds-color-modal-overlay-subtle: var(--ds-color-black-glass-5);
-	--ds-color-modal-overlay-strong: var(--ds-color-black-glass-9);
+	--ds-color-modal-overlay-subtle: var(--ds-color-black-glass-6);
+	--ds-color-modal-overlay-strong: var(--ds-color-black-glass-10);
 }

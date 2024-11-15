@@ -48,7 +48,7 @@ export const DbReset = () => {
 
 			{/* LOADING OVERLAY */}
 			{Boolean(showsLoading) && (
-				<div className="fixed-overlay flex-center z-tooltip bg-color-black-glass-9">
+				<div className="fixed-overlay flex-center z-tooltip bg-color-modal-overlay-strong">
 					<LoadingText text={t('core.state.loading')} className="text-size-xl text-color-white" />
 				</div>
 			)}

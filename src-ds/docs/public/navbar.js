@@ -14,8 +14,8 @@ const addEnvToHeader = () => {
 	const spanElem = document.querySelector('.sidebar-header a:not([href="#storybook-preview-wrapper"]) > span')
 	spanElem.innerHTML += `
 		<span class="flex gap-xs-1 justify-end mt-xs-3 text-color-grey-8 text-size-xs font-weight-sm">
-			<span class="px-xs-3 py-xs-0 bg-color-black-glass-5 rounded-sm">${window.parent.__ENV__.BUILD_MODE}</span>
-			<span class="px-xs-3 py-xs-0 bg-color-black-glass-5 rounded-sm">${window.parent.__ENV__.DS_VERSION}</span>
+			<span class="px-xs-3 py-xs-0 bg-color-black-glass-6 rounded-sm">${window.parent.__ENV__.BUILD_MODE}</span>
+			<span class="px-xs-3 py-xs-0 bg-color-black-glass-6 rounded-sm">${window.parent.__ENV__.DS_VERSION}</span>
 		</div>
 	`
 }
