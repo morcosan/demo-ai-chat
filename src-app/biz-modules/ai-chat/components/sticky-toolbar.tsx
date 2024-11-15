@@ -10,7 +10,7 @@ export const StickyToolbar = ({ permanent, stretched, children, className, style
 
 	const stickyClass = cx('sticky top-0 z-sticky', stretched && '-mx-a11y-padding', className)
 	const slotClass = cx(
-		'bg-color-bg-default',
+		'bg-color-bg-page',
 		stretched && 'px-a11y-padding',
 		(permanent || isSticky) && 'border-b border-color-border-shadow shadow-below-sm'
 	)

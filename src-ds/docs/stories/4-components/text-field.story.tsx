@@ -20,6 +20,7 @@ export const story: StoryObj<typeof TextField> = {
 		slotRight: '',
 		// Props
 		id: 'example-id',
+		variant: 'default',
 		size: 'md',
 		placeholder: 'Type some text',
 		ariaLabel: 'Example label',
@@ -50,6 +51,7 @@ const meta: Meta<typeof TextField> = {
 	argTypes: createArgTypes<typeof TextField>(
 		{
 			id: 'text',
+			variant: ['default', 'primary', 'secondary'],
 			size: ['sm', 'md', 'lg', 'xl'],
 			placeholder: 'text',
 			ariaLabel: 'text',
@@ -83,6 +85,12 @@ const meta: Meta<typeof TextField> = {
 				type: 'string',
 				details: `Unique HTML id attribute for the ^<input>^ or ^<textarea>^ element`,
 				required: true,
+			},
+			{
+				name: 'variant',
+				type: 'TextFieldVariant',
+				default: `'default'`,
+				details: `Property that determines active border color when the field is focused`,
 			},
 			{
 				name: 'size',
@@ -195,6 +203,7 @@ const meta: Meta<typeof TextField> = {
 		]
 
 		const TYPES = `
+			type TextFieldVariant = 'default' | 'primary' | 'secondary'
 			type TextFieldSize = 'sm' | 'md' | 'lg' | 'xl'
 			
 			interface TextFieldRef {
@@ -298,6 +307,30 @@ const meta: Meta<typeof TextField> = {
 							className="flex-1"
 							multiline
 							disabled
+						/>
+					</div>
+
+					<div className="flex w-full flex-wrap items-center gap-xs-7">
+						<TextField
+							id="variant-default"
+							variant="default"
+							placeholder="Variant - default"
+							slotRight={getSlot('sm', 'text-default')}
+							className="flex-1"
+						/>
+						<TextField
+							id="variant-primary"
+							variant="primary"
+							placeholder="Variant - primary"
+							slotRight={getSlot('sm', 'solid-primary')}
+							className="flex-1"
+						/>
+						<TextField
+							id="variant-secondary"
+							variant="secondary"
+							placeholder="Variant - secondary"
+							slotRight={getSlot('sm', 'solid-secondary')}
+							className="flex-1"
 						/>
 					</div>
 				</div>

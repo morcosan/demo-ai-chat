@@ -40,7 +40,7 @@ export const SearchResultItem = (props: Props) => {
 			>
 				<span className="flex w-full items-center gap-xs-2">
 					{/* SUBCHAT ICON */}
-					{Boolean(isSubchat) && <SplitSvg className="h-xs-9 min-w-xs-9 text-color-secondary-text-default" />}
+					{Boolean(isSubchat) && <SplitSvg className="h-xs-9 min-w-xs-9 text-color-secondary-page-text" />}
 
 					{/* CHAT TITLE */}
 					<HighlightedText text={title} keyword={keyword} className="flex-1 truncate" />

@@ -3,12 +3,12 @@
 		"action": {
 			"back": "Kembali",
 			"backToHome": "Kembali ke beranda",
-			"changeLanguage": "Ubah bahasa",
+			"changeLanguage": "Ganti bahasa",
 			"close": "Tutup",
 			"delete": "Hapus",
-			"deselectAll": "Batalkan semua pilihan",
+			"deselectAll": "Batalkan pilihan semua",
 			"openMenu": "Buka menu",
-			"rename": "Ubah nama",
+			"rename": "Ganti nama",
 			"saveChanges": "Simpan perubahan",
 			"search": "Cari",
 			"searchMore": "Tampilkan hasil lebih banyak",
@@ -17,7 +17,7 @@
 		},
 		"error": {
 			"noChanges": "Tidak ada perubahan",
-			"nothingFound": "Tidak ditemukan untuk \"{search}\""
+			"nothingFound": "Tidak ditemukan hasil untuk \"{search}\""
 		},
 		"label": {
 			"apiDocs": "Dokumentasi API",
@@ -25,7 +25,7 @@
 			"avatar": "Avatar",
 			"custom": "Kustom",
 			"darkTheme": "Gelap",
-			"default": "Bawaan",
+			"default": "Default",
 			"description": "Deskripsi",
 			"designSystem": "Sistem Desain",
 			"errors": "Kesalahan",
@@ -34,12 +34,14 @@
 			"language": "Bahasa",
 			"lightTheme": "Terang",
 			"name": "Nama",
+			"navigationBar": "Bilah Navigasi",
+			"navigationMenu": "Menu Navigasi",
 			"optionalField": "(Opsional)",
-			"quickSettings": "Pengaturan cepat",
+			"quickSettings": "Pengaturan Cepat",
 			"requiredField": "(Wajib)",
 			"settings": "Pengaturan",
-			"uiLibrary": "Pustaka UI:",
-			"uiTheme": "Tema UI:"
+			"uiLibrary": "Perpustakaan UI",
+			"uiTheme": "Tema UI"
 		},
 		"placeholder": {
 			"search": "Cari..."
@@ -54,24 +56,28 @@
 	},
 	"aiChat": {
 		"action": {
-			"backToSubchats": "Kembali ke sub-obrolan",
+			"backToSubchats": "Kembali ke subchat",
 			"configureAgent": "Konfigurasi agen",
-			"confirmDeleteAgent": "Konfirmasi hapus agen",
-			"confirmDeleteChats": "Konfirmasi hapus obrolan",
-			"confirmRenameChat": "Konfirmasi ubah nama obrolan",
+			"confirmDeleteAgent": "Konfirmasi penghapusan agen",
+			"confirmDeleteChats": "Konfirmasi penghapusan obrolan",
+			"confirmRenameChat": "Konfirmasi penggantian nama obrolan",
 			"createAgent": "Buat agen",
 			"deleteAgent": "Hapus agen",
 			"deleteSelectedChats": "Hapus obrolan terpilih",
+			"deselectChat": "Batalkan pilihan obrolan",
 			"manageAgents": "Kelola agen",
 			"manageChats": "Kelola obrolan",
 			"openChat": "Buka obrolan",
-			"openSubchat_zero": "Buat sub-obrolan",
-			"openSubchat_other": "Buka sub-obrolan ({count} pesan)",
+			"openSubchat_other": "Buka subchat ({count} pesan)",
+			"openSubchat_zero": "Buat subchat",
+			"searchChats": "Cari obrolan",
+			"selectChat": "Pilih obrolan",
 			"sendMessage": "Kirim pesan",
 			"showMoreAgents": "Tampilkan lebih banyak agen",
 			"showMoreChats": "Tampilkan lebih banyak obrolan",
-			"showSubchats": "Tampilkan sub-obrolan ({count})",
-			"startSearching_other": "Ketik minimal {count} karakter"
+			"showSubchats": "Tampilkan subchat ({count})",
+			"startSearching_one": "Ketik setidaknya {count} karakter",
+			"startSearching_other": "Ketik setidaknya {count} karakter"
 		},
 		"description": {
 			"loremIpsumGPT": "Model paling cerdas",
@@ -84,22 +90,28 @@
 		},
 		"label": {
 			"agents": "Agen",
+			"chatTitle": "Judul obrolan",
 			"chats": "Obrolan",
 			"customInstructions": "Instruksi kustom",
 			"gptModel": "Model GPT",
 			"newAgent": "Agen baru",
 			"newChat": "Obrolan baru",
+			"newMessage": "Pesan baru",
 			"noChats": "Tidak ada obrolan",
-			"noSubchats": "Tidak ada sub-obrolan",
-			"selectedValue": "Nilai terpilih:",
-			"subchats": "Sub-obrolan",
+			"noSubchats": "Tidak ada subchat",
+			"selectedAgent": "Agen terpilih",
+			"selectedValue": "Nilai terpilih",
+			"subchats": "Subchat",
+			"xMessages_one": "1 pesan",
 			"xMessages_other": "{count} pesan",
-			"xSearchResults_zero": "Tidak ada hasil pencarian",
+			"xSearchResults_one": "{count} hasil pencarian",
 			"xSearchResults_other": "{count} hasil pencarian",
-			"xSelectedMessages_other": "{count} pesan terpilih"
+			"xSearchResults_zero": "Tidak ada hasil pencarian",
+			"xSelectedMessages_one": "1 pesan dipilih",
+			"xSelectedMessages_other": "{count} pesan dipilih"
 		},
 		"placeholder": {
-			"newMessage": "Ajukan pertanyaan...",
+			"newMessage": "Bicara dengan {name}...",
 			"rename": "Buat nama baru secara otomatis..."
 		},
 		"state": {
@@ -108,8 +120,9 @@
 			"loadingGPTs": "Memuat GPT...",
 			"loadingMessages": "Memuat pesan...",
 			"loadingPreviousMessages": "Memuat pesan sebelumnya...",
-			"loadingSubchats": "Memuat sub-obrolan...",
-			"renamingChat": "Mengubah nama obrolan..."
+			"loadingSubchats": "Memuat subchat...",
+			"renamingChat": "Mengganti nama obrolan...",
+			"thinking": "Berpikir..."
 		},
 		"warning": {
 			"deletingAgent": "Agen ini akan dihapus secara permanen",
@@ -126,8 +139,8 @@
 			"avatar": "Anda harus menambahkan avatar Anda",
 			"city": "Anda harus menambahkan kota",
 			"country": "Anda harus menambahkan negara",
-			"email": "Anda harus menambahkan alamat email",
-			"legalName": "Anda harus menambahkan nama legal",
+			"email": "Anda harus menambahkan alamat email Anda",
+			"legalName": "Anda harus menambahkan nama resmi",
 			"name": "Anda harus menambahkan nama Anda",
 			"postalCode": "Anda harus menambahkan kode pos"
 		},
@@ -138,12 +151,12 @@
 			"city": "Kota",
 			"country": "Negara",
 			"email": "Alamat email",
-			"legalName": "Nama legal",
+			"legalName": "Nama resmi",
 			"phone": "Nomor telepon",
 			"postalCode": "Kode pos",
 			"private": "Pribadi",
 			"public": "Publik",
-			"vatNumber": "NPWP"
+			"vatNumber": "Nomor NPWP"
 		}
 	}
 }

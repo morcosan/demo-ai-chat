@@ -11,7 +11,7 @@
 			"rename": "Đổi tên",
 			"saveChanges": "Lưu thay đổi",
 			"search": "Tìm kiếm",
-			"searchMore": "Hiện thêm kết quả",
+			"searchMore": "Hiển thị thêm kết quả",
 			"selectAll": "Chọn tất cả",
 			"signOut": "Đăng xuất"
 		},
@@ -34,12 +34,13 @@
 			"language": "Ngôn ngữ",
 			"lightTheme": "Sáng",
 			"name": "Tên",
-			"optionalField": "(Tùy chọn)",
-			"quickSettings": "Cài đặt nhanh",
+			"navigationBar": "Thanh điều hướng",
+			"navigationMenu": "Menu điều hướng",
+			"optionalField": "(Không bắt buộc)",
 			"requiredField": "(Bắt buộc)",
 			"settings": "Cài đặt",
-			"uiLibrary": "Thư viện UI:",
-			"uiTheme": "Giao diện UI:"
+			"uiLibrary": "Thư viện UI",
+			"uiTheme": "Giao diện UI"
 		},
 		"placeholder": {
 			"search": "Tìm kiếm..."
@@ -62,15 +63,18 @@
 			"createAgent": "Tạo tác nhân",
 			"deleteAgent": "Xóa tác nhân",
 			"deleteSelectedChats": "Xóa cuộc trò chuyện đã chọn",
+			"deselectChat": "Bỏ chọn cuộc trò chuyện",
 			"manageAgents": "Quản lý tác nhân",
 			"manageChats": "Quản lý cuộc trò chuyện",
 			"openChat": "Mở cuộc trò chuyện",
-			"openSubchat_zero": "Tạo cuộc trò chuyện phụ",
 			"openSubchat_other": "Mở cuộc trò chuyện phụ ({count} tin nhắn)",
+			"openSubchat_zero": "Tạo cuộc trò chuyện phụ",
+			"searchChats": "Tìm kiếm cuộc trò chuyện",
+			"selectChat": "Chọn cuộc trò chuyện",
 			"sendMessage": "Gửi tin nhắn",
-			"showMoreAgents": "Hiện thêm tác nhân",
-			"showMoreChats": "Hiện thêm cuộc trò chuyện",
-			"showSubchats": "Hiện cuộc trò chuyện phụ ({count})",
+			"showMoreAgents": "Hiển thị thêm tác nhân",
+			"showMoreChats": "Hiển thị thêm cuộc trò chuyện",
+			"showSubchats": "Hiển thị cuộc trò chuyện phụ ({count})",
 			"startSearching_other": "Nhập ít nhất {count} ký tự"
 		},
 		"description": {
@@ -84,24 +88,25 @@
 		},
 		"label": {
 			"agents": "Tác nhân",
+			"chatTitle": "Tiêu đề cuộc trò chuyện",
 			"chats": "Cuộc trò chuyện",
 			"customInstructions": "Hướng dẫn tùy chỉnh",
 			"gptModel": "Mô hình GPT",
 			"newAgent": "Tác nhân mới",
 			"newChat": "Cuộc trò chuyện mới",
+			"newMessage": "Tin nhắn mới",
 			"noChats": "Không có cuộc trò chuyện",
 			"noSubchats": "Không có cuộc trò chuyện phụ",
-			"selectedValue": "Giá trị đã chọn:",
+			"selectedAgent": "Tác nhân đã chọn",
+			"selectedValue": "Giá trị đã chọn",
 			"subchats": "Cuộc trò chuyện phụ",
-			"xMessages_zero": "Không có tin nhắn",
 			"xMessages_other": "{count} tin nhắn",
-			"xSearchResults_zero": "Không có kết quả tìm kiếm",
 			"xSearchResults_other": "{count} kết quả tìm kiếm",
-			"xSelectedMessages_zero": "Không có tin nhắn được chọn",
-			"xSelectedMessages_other": "{count} tin nhắn được chọn"
+			"xSearchResults_zero": "Không có kết quả tìm kiếm",
+			"xSelectedMessages_other": "{count} tin nhắn đã chọn"
 		},
 		"placeholder": {
-			"newMessage": "Đặt câu hỏi...",
+			"newMessage": "Trò chuyện với {name}...",
 			"rename": "Tự động tạo tên mới..."
 		},
 		"state": {
@@ -111,7 +116,8 @@
 			"loadingMessages": "Đang tải tin nhắn...",
 			"loadingPreviousMessages": "Đang tải tin nhắn trước...",
 			"loadingSubchats": "Đang tải cuộc trò chuyện phụ...",
-			"renamingChat": "Đang đổi tên cuộc trò chuyện..."
+			"renamingChat": "Đang đổi tên cuộc trò chuyện...",
+			"thinking": "Đang suy nghĩ..."
 		},
 		"warning": {
 			"deletingAgent": "Tác nhân này sẽ bị xóa vĩnh viễn",
@@ -145,7 +151,7 @@
 			"postalCode": "Mã bưu chính",
 			"private": "Riêng tư",
 			"public": "Công khai",
-			"vatNumber": "Mã số thuế"
+			"vatNumber": "MST"
 		}
 	}
 }

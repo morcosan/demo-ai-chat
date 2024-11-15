@@ -38,8 +38,8 @@
 			"quickSettings": "Setări rapide",
 			"requiredField": "(Obligatoriu)",
 			"settings": "Setări",
-			"uiLibrary": "Bibliotecă UI:",
-			"uiTheme": "Temă UI:"
+			"uiLibrary": "Bibliotecă UI",
+			"uiTheme": "Temă UI"
 		},
 		"placeholder": {
 			"search": "Caută..."
@@ -95,7 +95,7 @@
 			"newChat": "Conversație nouă",
 			"noChats": "Nu există conversații",
 			"noSubchats": "Nu există sub-conversații",
-			"selectedValue": "Valoare selectată:",
+			"selectedValue": "Valoare selectată",
 			"subchats": "Sub-conversații",
 			"xMessages_zero": "Niciun mesaj",
 			"xMessages_one": "{count} mesaj",

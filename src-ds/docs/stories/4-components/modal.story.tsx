@@ -10,7 +10,8 @@ export const story: StoryObj<typeof Modal> = {
 	args: {
 		// Slots
 		slotTitle: 'Modal title',
-		slotAction: '<button class="p-xs-3 bg-color-primary text-color-text-inverse rounded-md">Submit</button>',
+		slotAction:
+			'<button class="p-xs-3 bg-color-primary-button-bg text-color-text-inverse rounded-md">Submit</button>',
 		slotExtra: 'Extra content',
 		children: randomLongText(20),
 		// Props

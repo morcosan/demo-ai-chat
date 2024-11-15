@@ -6,26 +6,26 @@
 			"changeLanguage": "Mainīt valodu",
 			"close": "Aizvērt",
 			"delete": "Dzēst",
-			"deselectAll": "Noņemt visas atzīmes",
+			"deselectAll": "Noņemt visu izvēli",
 			"openMenu": "Atvērt izvēlni",
 			"rename": "Pārdēvēt",
 			"saveChanges": "Saglabāt izmaiņas",
 			"search": "Meklēt",
 			"searchMore": "Rādīt vairāk rezultātu",
-			"selectAll": "Atlasīt visu",
-			"signOut": "Iziet"
+			"selectAll": "Izvēlēties visu",
+			"signOut": "Izrakstīties"
 		},
 		"error": {
 			"noChanges": "Nav izmaiņu",
-			"nothingFound": "Nekas nav atrasts \"{search}\""
+			"nothingFound": "Nekas netika atrasts \"{search}\""
 		},
 		"label": {
 			"apiDocs": "API dokumentācija",
 			"asia": "Āzija",
-			"avatar": "Attēls",
+			"avatar": "Avatars",
 			"custom": "Pielāgots",
 			"darkTheme": "Tumšs",
-			"default": "Noklusējums",
+			"default": "Noklusējuma",
 			"description": "Apraksts",
 			"designSystem": "Dizaina sistēma",
 			"errors": "Kļūdas",
@@ -33,20 +33,22 @@
 			"githubRepo": "GitHub repozitorijs",
 			"language": "Valoda",
 			"lightTheme": "Gaišs",
-			"name": "Vārds",
-			"optionalField": "(Neobligāts)",
-			"quickSettings": "Ātrās iestatnes",
+			"name": "Nosaukums",
+			"navigationBar": "Navigācijas josla",
+			"navigationMenu": "Navigācijas izvēlne",
+			"optionalField": "(Nav obligāts)",
+			"quickSettings": "Ātrie iestatījumi",
 			"requiredField": "(Obligāts)",
 			"settings": "Iestatījumi",
-			"uiLibrary": "UI bibliotēka:",
-			"uiTheme": "UI tēma:"
+			"uiLibrary": "UI bibliotēka",
+			"uiTheme": "UI tēma"
 		},
 		"placeholder": {
 			"search": "Meklēt..."
 		},
 		"state": {
 			"dataSaved": "Jūsu dati ir saglabāti",
-			"deleting": "Dzēš...",
+			"deleting": "Dzēšana...",
 			"loading": "Ielādē...",
 			"searching": "Meklē...",
 			"updating": "Atjaunina..."
@@ -61,62 +63,66 @@
 			"confirmRenameChat": "Apstiprināt čata pārdēvēšanu",
 			"createAgent": "Izveidot aģentu",
 			"deleteAgent": "Dzēst aģentu",
-			"deleteSelectedChats": "Dzēst atlasītos čatus",
+			"deleteSelectedChats": "Dzēst izvēlētos čatus",
+			"deselectChat": "Noņemt čata izvēli",
 			"manageAgents": "Pārvaldīt aģentus",
 			"manageChats": "Pārvaldīt čatus",
 			"openChat": "Atvērt čatu",
-			"openSubchat_zero": "Izveidot apakščatu",
-			"openSubchat_one": "Atvērt apakščatu ({count} ziņa)",
 			"openSubchat_other": "Atvērt apakščatu ({count} ziņas)",
-			"sendMessage": "Sūtīt ziņu",
-			"showMoreAgents": "Rādīt vairāk aģentu",
-			"showMoreChats": "Rādīt vairāk čatu",
+			"openSubchat_zero": "Izveidot apakščatu",
+			"searchChats": "Meklēt čatus",
+			"selectChat": "Izvēlēties čatu",
+			"sendMessage": "Nosūtīt ziņu",
+			"showMoreAgents": "Rādīt vairāk aģentus",
+			"showMoreChats": "Rādīt vairāk čatus",
 			"showSubchats": "Rādīt apakščatus ({count})",
-			"startSearching_one": "Ievadiet vismaz {count} rakstzīmi",
-			"startSearching_other": "Ievadiet vismaz {count} rakstzīmes"
+			"startSearching_one": "Ievadiet vismaz {count} simbolu",
+			"startSearching_other": "Ievadiet vismaz {count} simbolus"
 		},
 		"description": {
-			"loremIpsumGPT": "Visintelektuālākais modelis",
+			"loremIpsumGPT": "Inteliģentākais modelis",
 			"rammusGPT": "Labākais emocionālais atbalsts"
 		},
 		"error": {
-			"agentAvatar": "Jums jāpievieno attēls aģentam",
-			"agentName": "Jums jāpievieno vārds aģentam",
+			"agentAvatar": "Jums jāpievieno aģenta avatars",
+			"agentName": "Jums jāpievieno aģenta nosaukums",
 			"emptyMessage": "Jūsu ziņa ir tukša"
 		},
 		"label": {
 			"agents": "Aģenti",
+			"chatTitle": "Čata nosaukums",
 			"chats": "Čati",
 			"customInstructions": "Pielāgotas instrukcijas",
 			"gptModel": "GPT modelis",
 			"newAgent": "Jauns aģents",
 			"newChat": "Jauns čats",
+			"newMessage": "Jauna ziņa",
 			"noChats": "Nav čatu",
 			"noSubchats": "Nav apakščatu",
-			"selectedValue": "Atlasītā vērtība:",
+			"selectedAgent": "Izvēlētais aģents",
+			"selectedValue": "Izvēlētā vērtība",
 			"subchats": "Apakščati",
-			"xMessages_zero": "Nav ziņu",
-			"xMessages_one": "{count} ziņa",
+			"xMessages_one": "1 ziņa",
 			"xMessages_other": "{count} ziņas",
-			"xSearchResults_zero": "Nav meklēšanas rezultātu",
 			"xSearchResults_one": "{count} meklēšanas rezultāts",
 			"xSearchResults_other": "{count} meklēšanas rezultāti",
-			"xSelectedMessages_zero": "Nav atlasītu ziņu",
-			"xSelectedMessages_one": "{count} ziņa atlasīta",
-			"xSelectedMessages_other": "{count} ziņas atlasītas"
+			"xSearchResults_zero": "Meklēšanas rezultāti nav atrasti",
+			"xSelectedMessages_one": "Izvēlēta 1 ziņa",
+			"xSelectedMessages_other": "Izvēlētas {count} ziņas"
 		},
 		"placeholder": {
-			"newMessage": "Uzdodiet jautājumu...",
+			"newMessage": "Runāt ar {name}...",
 			"rename": "Automātiski ģenerēt jaunu nosaukumu..."
 		},
 		"state": {
 			"loadingAgents": "Ielādē aģentus...",
 			"loadingChats": "Ielādē čatus...",
-			"loadingGPTs": "Ielādē GPT...",
+			"loadingGPTs": "Ielādē GPT modeļus...",
 			"loadingMessages": "Ielādē ziņas...",
 			"loadingPreviousMessages": "Ielādē iepriekšējās ziņas...",
 			"loadingSubchats": "Ielādē apakščatus...",
-			"renamingChat": "Pārdēvē čatu..."
+			"renamingChat": "Pārdēvē čatu...",
+			"thinking": "Domā..."
 		},
 		"warning": {
 			"deletingAgent": "Šis aģents tiks neatgriezeniski dzēsts",
@@ -126,27 +132,27 @@
 	"userSettings": {
 		"action": {
 			"manageAccount": "Pārvaldīt kontu",
-			"manageBilling": "Pārvaldīt rēķinus"
+			"manageBilling": "Pārvaldīt norēķinus"
 		},
 		"error": {
 			"address": "Jums jāpievieno adrese",
-			"avatar": "Jums jāpievieno jūsu attēls",
+			"avatar": "Jums jāpievieno savs avatars",
 			"city": "Jums jāpievieno pilsēta",
 			"country": "Jums jāpievieno valsts",
-			"email": "Jums jāpievieno e-pasta adrese",
+			"email": "Jums jāpievieno sava e-pasta adrese",
 			"legalName": "Jums jāpievieno juridiskais nosaukums",
-			"name": "Jums jāpievieno jūsu vārds",
+			"name": "Jums jāpievieno savs nosaukums",
 			"postalCode": "Jums jāpievieno pasta indekss"
 		},
 		"label": {
 			"account": "Konts",
 			"address": "Adrese",
-			"billing": "Rēķini",
+			"billing": "Norēķini",
 			"city": "Pilsēta",
 			"country": "Valsts",
 			"email": "E-pasta adrese",
 			"legalName": "Juridiskais nosaukums",
-			"phone": "Tālruņa numurs",
+			"phone": "Telefona numurs",
 			"postalCode": "Pasta indekss",
 			"private": "Privāts",
 			"public": "Publisks",

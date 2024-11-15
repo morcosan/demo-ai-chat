@@ -64,8 +64,8 @@ export const QUERY_DEFAULTS = {
 export const TYPES: EndpointType[] = ['GET', 'POST', 'PATCH', 'DELETE']
 
 export const TYPE_COLOR = {
-	GET: 'text-color-success',
-	POST: 'text-color-primary',
-	PATCH: 'text-color-secondary-text-default',
-	DELETE: 'text-color-danger',
+	GET: 'text-color-success-page-text',
+	POST: 'text-color-primary-page-text',
+	PATCH: 'text-color-secondary-page-text',
+	DELETE: 'text-color-danger-page-text',
 }

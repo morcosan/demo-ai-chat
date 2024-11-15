@@ -56,7 +56,7 @@ export const AgentGptItem = (props: Props) => {
 					<span
 						className={cx(
 							'line-clamp-1 break-all text-size-xs',
-							selected ? 'text-color-secondary-text-default' : 'text-color-text-subtle'
+							selected ? 'text-color-secondary-button-text' : 'text-color-text-subtle'
 						)}
 					>
 						{desc}
