@@ -7,6 +7,7 @@ export const mapDtoToGPT = (dto: GptDTO): GPT => {
 		name: dto.name || '',
 		avatar: dto.avatar || '',
 		desc: dto.desc || '',
+		usable: dto.usable || false,
 	}
 }
 
@@ -17,7 +18,7 @@ export const mapDtoToAgent = (dto: AgentDTO): Agent => {
 		name: dto.name || '',
 		avatar: dto.avatar || '',
 		desc: dto.desc || '',
-		setup: dto.setup || '',
+		prompt: dto.prompt || '',
 		createdAt: dto.createdAt || '',
 		updatedAt: dto.updatedAt || null,
 	}

@@ -99,7 +99,7 @@ export const NewMessageToolbar = (props: Props) => {
 			name: payload.name.trim(),
 			avatar: payload.avatar.trim(),
 			desc: payload.desc.trim(),
-			setup: payload.setup.trim(),
+			prompt: payload.prompt.trim(),
 		})
 
 		const newAgent = listing.agents[0]

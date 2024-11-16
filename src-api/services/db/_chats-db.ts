@@ -71,7 +71,7 @@ const createDbMessages = async () => {
 		for (let index = 0; index < total; index++) {
 			const agentId = randomFromAgentIds()
 			const gptUnit = await getGptUnit(agentId)
-			const response = await gptUnit!.getResponse([])
+			const response = gptUnit ? await gptUnit.getResponse([]) : ''
 
 			const userMessage: DbMessage = {
 				id: createMessageId(),
@@ -111,7 +111,7 @@ const addSubchats = async (message: DbMessage, messages: DbMessage[]) => {
 		const userResponse = randomLongText(randomInt(1, 3))
 		const agentId = role === 'agent' ? randomFromAgentIds() : 0
 		const gptUnit = await getGptUnit(agentId)
-		const response = role === 'agent' ? await gptUnit!.getResponse([]) : userResponse
+		const response = role === 'agent' ? (gptUnit ? await gptUnit.getResponse([]) : '') : userResponse
 
 		messages.push({
 			id: createMessageId(),

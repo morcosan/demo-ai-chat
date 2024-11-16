@@ -37,6 +37,7 @@ export interface DbGPT {
 	name: string
 	avatar: string
 	desc: string
+	usable: boolean
 }
 
 export interface DbAgent {
@@ -45,7 +46,7 @@ export interface DbAgent {
 	name: string
 	avatar: string
 	desc: string
-	setup: string
+	prompt: string
 	createdAt: string
 	updatedAt: string | null
 }

@@ -82,7 +82,7 @@ export interface AgentsApiPayload extends ApiPayload {
 	name?: string
 	avatar?: string
 	desc?: string
-	setup?: string
+	prompt?: string
 }
 export interface ChatsApiPayload extends ApiPayload {
 	chatId?: number

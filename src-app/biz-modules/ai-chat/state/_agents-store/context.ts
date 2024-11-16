@@ -41,7 +41,7 @@ export const EMPTY_AGENT: Agent = {
 	name: '',
 	avatar: '',
 	desc: '',
-	setup: '',
+	prompt: '',
 	createdAt: '',
 	updatedAt: '',
 }

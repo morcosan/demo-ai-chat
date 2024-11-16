@@ -19,9 +19,9 @@ import {
 	randomText,
 	randomTrue,
 } from '@utils/release'
-import { GeminiNano } from '../gpt/gemini-nano'
-import { LoremIpsum } from '../gpt/lorem-ipsum'
-import { Rammus } from '../gpt/rammus'
+import { GeminiNanoAPI } from '../gpt/gemini-nano-api'
+import { LoremIpsumAPI } from '../gpt/lorem-ipsum-api'
+import { RammusAPI } from '../gpt/rammus-api'
 
 let _GPTs: DbGPT[]
 
@@ -52,23 +52,23 @@ const initGPTs = () => {
 			name: 'Lorem Ipsum GPT',
 			avatar: ENV__ROOT_URL_PATH + '/avatars/default.svg',
 			desc: '',
+			usable: LoremIpsumAPI.isAvailable(),
 		},
 		{
 			id: GPT_ID__RAMMUS,
 			name: 'Rammus GPT',
 			avatar: ENV__ROOT_URL_PATH + '/avatars/rammus.png',
 			desc: '',
+			usable: RammusAPI.isAvailable(),
 		},
-	]
-
-	if (GeminiNano.isAvailable) {
-		_GPTs.push({
+		{
 			id: GPT_ID__GEMINI_NANO,
 			name: 'Gemini Nano',
 			avatar: ENV__ROOT_URL_PATH + '/avatars/gemini.svg',
 			desc: '',
-		})
-	}
+			usable: GeminiNanoAPI.isAvailable(),
+		},
+	]
 }
 
 const initAgentsDB = () => {
@@ -101,7 +101,7 @@ const createDbAgents = () => {
 			name: gpt.name,
 			avatar: gpt.avatar,
 			desc: UI_TAG__GPT_DESCRIPTION,
-			setup: '',
+			prompt: '',
 			createdAt: randomRecentDate(),
 			updatedAt: null,
 		})),
@@ -111,7 +111,7 @@ const createDbAgents = () => {
 			name: `AI ${department} Expert`,
 			avatar: randomImageHD(),
 			desc: `Expert in ${department}`,
-			setup: `You are an expert in ${department}`,
+			prompt: `You are an expert in ${department}`,
 			createdAt: randomRecentDate(),
 			updatedAt: null,
 		})),
@@ -121,7 +121,7 @@ const createDbAgents = () => {
 			name: randomText(randomInt(1, randomTrue() ? 4 : 20)) + ' AI',
 			avatar: randomImageHD(),
 			desc: randomLongText(randomInt(0, 5)),
-			setup: randomLongText(randomInt(0, 10)),
+			prompt: randomLongText(randomInt(0, 10)),
 			createdAt: randomRecentDate(),
 			updatedAt: null,
 		})),
@@ -140,11 +140,11 @@ const getGptUnit = async (agentId: number): Promise<GptUnit | null> => {
 	const agent = _dbActiveAgents.find((agent: DbAgent) => agent.id === agentId)
 	if (agent) {
 		const config: GptConfig = {
-			setup: agent.setup,
+			prompt: agent.prompt,
 		}
-		if (agent.gptId === GPT_ID__GEMINI_NANO) return GeminiNano.createUnit(config)
-		if (agent.gptId === GPT_ID__LOREM_IPSUM) return LoremIpsum.createUnit(config)
-		if (agent.gptId === GPT_ID__RAMMUS) return Rammus.createUnit(config)
+		if (agent.gptId === GPT_ID__GEMINI_NANO) return GeminiNanoAPI.createUnit(config)
+		if (agent.gptId === GPT_ID__LOREM_IPSUM) return LoremIpsumAPI.createUnit(config)
+		if (agent.gptId === GPT_ID__RAMMUS) return RammusAPI.createUnit(config)
 	}
 	return null
 }

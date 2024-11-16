@@ -224,7 +224,8 @@ export const chatsService = {
 		const gptUnit = await getGptUnit(agentId)
 
 		if (!chatId) return { ...RESP__NOT_FOUND, error: `Chat ID ${chatId} not found` }
-		if (!gptUnit) return { ...RESP__NOT_FOUND, error: `Agent ID ${agentId} not found` }
+		if (!agentId) return { ...RESP__NOT_FOUND, error: `Agent ID ${agentId} not found` }
+		if (!gptUnit) return { ...RESP__NOT_FOUND, error: `GPT for agent ${agentId} not found` }
 		if (!text) return { ...RESP__NOT_FOUND, error: `Text is empty` }
 
 		if (subchatId) {

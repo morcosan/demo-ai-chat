@@ -38,7 +38,7 @@ export const AgentEditModal = (props: Props) => {
 		initial.name !== payload.name.trim() ||
 		initial.avatar !== payload.avatar.trim() ||
 		initial.desc !== payload.desc.trim() ||
-		initial.setup !== payload.setup.trim()
+		initial.prompt !== payload.prompt.trim()
 
 	const hasErrors = (errors: object) => Object.values(errors).some((value: string) => value)
 
@@ -188,21 +188,21 @@ export const AgentEditModal = (props: Props) => {
 
 					{/* SETUP */}
 					<div className="flex flex-1 flex-col">
-						<FieldLabel fieldId={`${props.id}-field-setup`} optional>
+						<FieldLabel fieldId={`${props.id}-field-prompt`} optional>
 							{t('aiChat.label.customInstructions')}
 						</FieldLabel>
 						<TextField
-							id={`${props.id}-field-setup`}
+							id={`${props.id}-field-prompt`}
 							variant="primary"
-							value={payload.setup}
-							ariaDescription={feedback.setup ? `${t('core.label.errors')}: ${feedback.setup}` : ''}
+							value={payload.prompt}
+							ariaDescription={feedback.prompt ? `${t('core.label.errors')}: ${feedback.prompt}` : ''}
 							disabled={props.agent.updating}
-							invalid={Boolean(feedback.setup)}
+							invalid={Boolean(feedback.prompt)}
 							className="flex-1"
 							multiline
-							onChange={(setup: string) => setPayload({ ...payload, setup })}
+							onChange={(prompt: string) => setPayload({ ...payload, prompt })}
 						/>
-						<FieldError error={feedback.setup} />
+						<FieldError error={feedback.prompt} />
 					</div>
 				</div>
 			</div>

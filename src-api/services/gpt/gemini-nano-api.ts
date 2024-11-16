@@ -2,14 +2,14 @@ import { GptAPI, GptConfig, GptUnit } from '@api/types'
 
 // Google docs: https://docs.google.com/document/d/1VG8HIyz361zGduWgNG7R_R8Xkv0OOJ8b5C9QKeCjU0c
 
-export const GeminiNano: GptAPI = {
-	isAvailable: Boolean(window.ai?.languageModel),
+export const GeminiNanoAPI: GptAPI = {
+	isAvailable: () => Boolean(window.ai?.languageModel),
 
-	async createUnit(config: GptConfig): Promise<GptUnit> {
-		if (!window.ai) throw new Error('window.ai is undefined')
+	async createUnit(config: GptConfig): Promise<GptUnit | null> {
+		if (!window.ai) return null
 
 		const session = await window.ai.languageModel.create({
-			systemPrompt: config.setup,
+			systemPrompt: config.prompt,
 			temperature: 1,
 			topK: 3,
 		})
