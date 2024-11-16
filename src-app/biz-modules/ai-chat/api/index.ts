@@ -18,8 +18,8 @@ import {
 import { mapDtoToAgent, mapDtoToChat, mapDtoToGPT, mapDtoToMessage, mapDtoToSubchat } from './_mappers'
 import { AgentListing, ChatListing, GptListing, MessageListing, SubchatListing } from './_types'
 
-export { UI_TAG__GPT_DESCRIPTION } from '@api/types'
-export type { AgentsApiPayload } from '@app/api'
+export { UI_TAG__GPT_DESCRIPTION } from '@app/api'
+export type { AgentsApiPayload, CreativityLevel } from '@app/api'
 export * from './_gpt'
 export * from './_types'
 

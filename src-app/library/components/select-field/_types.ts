@@ -29,8 +29,13 @@ export interface SelectFieldProps extends ReactProps {
 }
 
 export interface SelectOptionProps {
-	option: unknown
+	option: SelectOption | unknown
 	selected?: boolean
+}
+
+export interface SelectOption<T = unknown> {
+	label: string
+	value: T
 }
 
 export type SelectFilterFn = (option: object, keyword: string) => boolean

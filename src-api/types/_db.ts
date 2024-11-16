@@ -47,6 +47,9 @@ export interface DbAgent {
 	avatar: string
 	desc: string
 	prompt: string
+	creativity: CreativityLevel
 	createdAt: string
 	updatedAt: string | null
 }
+
+export type CreativityLevel = 'very-low' | 'low' | 'medium' | 'high' | 'very-high'

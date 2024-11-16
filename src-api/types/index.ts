@@ -1,4 +1,4 @@
-import { DbAccount, DbBilling } from './_db'
+import { CreativityLevel, DbAccount, DbBilling } from './_db'
 import { AgentDTO, ChatDTO, GptDTO, MessageDTO, SubchatDTO } from './_dto'
 
 export * from './_db'
@@ -83,6 +83,7 @@ export interface AgentsApiPayload extends ApiPayload {
 	avatar?: string
 	desc?: string
 	prompt?: string
+	creativity?: CreativityLevel
 }
 export interface ChatsApiPayload extends ApiPayload {
 	chatId?: number

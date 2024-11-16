@@ -1,8 +1,8 @@
 import { AgentEditField, Field } from '@app/biz-modules/ai-chat/components/agent-edit-field'
-import { ErrorSummary, FieldLabel, SelectField, SelectOptionProps } from '@app/library/release'
+import { ErrorSummary, FieldLabel, SelectField, SelectOption, SelectOptionProps } from '@app/library/release'
 import { Button, DeleteSvg, Modal } from '@ds/release'
 import { useEffect, useState } from 'react'
-import { Agent, GPT } from '../api'
+import { Agent, CreativityLevel, GPT } from '../api'
 import { EMPTY_AGENT, useAiChatAgents } from '../state'
 import { AgentGptItem } from './items/agent-gpt-item'
 
@@ -27,22 +27,32 @@ export const AgentEditModal = (props: Props) => {
 	const [payload, setPayload] = useState<Agent>(props.agent || EMPTY_AGENT)
 	const [feedback, setFeedback] = useState<FormPayload<Agent>>(EMPTY_AGENT)
 
+	const creativityOptions: SelectOption<CreativityLevel>[] = [
+		{ value: 'very-low', label: t('core.label.levelVeryLow') },
+		{ value: 'low', label: t('core.label.levelLow') },
+		{ value: 'medium', label: t('core.label.levelMedium') },
+		{ value: 'high', label: t('core.label.levelHigh') },
+		{ value: 'very-high', label: t('core.label.levelVeryHigh') },
+	]
+
 	const isEditing = Boolean(props.agent?.id)
 	const canDelete = Boolean(
 		props.onDelete && isEditing && allAgents.filter((agent: Agent) => agent.id && !agent.deleting).length > 1
 	)
 
 	const sectionClass = cx('flex flex-1 flex-col gap-sm-2')
+	const delimiterClass = cx('mx-sm-1 hidden w-px self-stretch bg-color-border-subtle lg:block')
 
 	const fieldMap = {
 		name: { id: `${props.id}-field-name`, label: t('core.label.name') },
 		avatar: { id: `${props.id}-field-avatar`, label: t('core.label.avatar') },
 		gptId: { id: `${props.id}-field-gpt`, label: t('aiChat.label.gptModel') },
+		creativity: { id: `${props.id}-field-creativity`, label: t('aiChat.label.creativityLevel') },
 		desc: {
 			id: `${props.id}-field-desc`,
 			label: t('core.label.description'),
 			optional: true,
-			props: { minRows: 3, multiline: true },
+			props: { minRows: 4, multiline: true },
 		},
 		prompt: {
 			id: `${props.id}-field-prompt`,
@@ -57,7 +67,8 @@ export const AgentEditModal = (props: Props) => {
 		initial.name !== payload.name.trim() ||
 		initial.avatar !== payload.avatar.trim() ||
 		initial.desc !== payload.desc.trim() ||
-		initial.prompt !== payload.prompt.trim()
+		initial.prompt !== payload.prompt.trim() ||
+		initial.creativity !== payload.creativity
 
 	const hasErrors = (errors: object) => Object.values(errors).some((value: string) => value)
 
@@ -96,7 +107,7 @@ export const AgentEditModal = (props: Props) => {
 	return props.agent ? (
 		<Modal
 			opened={props.opened}
-			width="lg"
+			width="xl"
 			persistent={hasChanges || props.agent.updating}
 			noClose={props.agent.updating}
 			slotTitle={isEditing ? t('aiChat.action.configureAgent') : t('aiChat.label.newAgent')}
@@ -161,11 +172,23 @@ export const AgentEditModal = (props: Props) => {
 					/>
 				</div>
 
-				{/* DELIMITER */}
-				<div className="mx-sm-1 hidden w-px self-stretch bg-color-border-subtle lg:block" />
+				<div className={delimiterClass} />
 
 				{/* RIGHT */}
 				<div className={sectionClass}>
+					{/* CREATIVITY */}
+					<div className="flex flex-col">
+						<FieldLabel fieldId={fieldMap.creativity.id}>{fieldMap.creativity.label}</FieldLabel>
+						<SelectField
+							id={fieldMap.creativity.id}
+							variant="primary"
+							value={payload.creativity}
+							options={creativityOptions}
+							disabled={props.agent.updating}
+							onChange={(creativity: CreativityLevel) => setPayload({ ...payload, creativity })}
+						/>
+					</div>
+
 					{/* GPT */}
 					<div className="flex flex-col">
 						<FieldLabel fieldId={fieldMap.gptId.id}>{fieldMap.gptId.label}</FieldLabel>
@@ -182,7 +205,12 @@ export const AgentEditModal = (props: Props) => {
 							onChange={(gptId: number) => setPayload({ ...payload, gptId })}
 						/>
 					</div>
+				</div>
 
+				<div className={delimiterClass} />
+
+				{/* RIGHT */}
+				<div className={sectionClass}>
 					{/* PROMPT */}
 					<AgentEditField
 						field={fieldMap.prompt}

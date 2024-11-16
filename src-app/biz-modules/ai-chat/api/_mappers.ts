@@ -19,6 +19,7 @@ export const mapDtoToAgent = (dto: AgentDTO): Agent => {
 		avatar: dto.avatar || '',
 		desc: dto.desc || '',
 		prompt: dto.prompt || '',
+		creativity: dto.creativity || 'medium',
 		createdAt: dto.createdAt || '',
 		updatedAt: dto.updatedAt || null,
 	}

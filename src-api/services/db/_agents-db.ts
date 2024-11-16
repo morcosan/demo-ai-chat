@@ -1,4 +1,5 @@
 import {
+	CreativityLevel,
 	DbAgent,
 	DbGPT,
 	GPT_ID__GEMINI_NANO,
@@ -93,6 +94,7 @@ const initAgentsDB = () => {
 
 const createDbAgents = () => {
 	const departments = ['Design', 'Frontend', 'Backend', 'Marketing', 'Business']
+	const levels = ['high', 'medium', 'very-low', 'very-high', 'low'] satisfies CreativityLevel[]
 
 	setDbActiveAgents([
 		..._GPTs.map((gpt: DbGPT) => ({
@@ -102,16 +104,18 @@ const createDbAgents = () => {
 			avatar: gpt.avatar,
 			desc: UI_TAG__GPT_DESCRIPTION,
 			prompt: '',
+			creativity: 'medium' as CreativityLevel,
 			createdAt: randomRecentDate(),
 			updatedAt: null,
 		})),
-		...departments.map((department: string) => ({
+		...departments.map((department: string, index: number) => ({
 			id: createAgentId(),
 			gptId: randomFromArray(_GPTs).id,
 			name: `AI ${department} Expert`,
 			avatar: randomImageHD(),
 			desc: `Expert in ${department}`,
 			prompt: `You are an expert in ${department}`,
+			creativity: levels[index],
 			createdAt: randomRecentDate(),
 			updatedAt: null,
 		})),
@@ -122,6 +126,7 @@ const createDbAgents = () => {
 			avatar: randomImageHD(),
 			desc: randomLongText(randomInt(0, 5)),
 			prompt: randomLongText(randomInt(0, 10)),
+			creativity: randomFromArray<CreativityLevel>(levels),
 			createdAt: randomRecentDate(),
 			updatedAt: null,
 		})),

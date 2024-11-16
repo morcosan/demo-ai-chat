@@ -3,6 +3,7 @@ import {
 	AgentsApiPayload,
 	AgentsApiQuery,
 	ApiResponse,
+	CreativityLevel,
 	DbAgent,
 	GptApiData,
 	STATUS__SUCCESS,
@@ -74,7 +75,7 @@ export const agentsService = {
 	},
 
 	async postAgent(payload: AgentsApiPayload): Promise<ApiResponse<AgentsApiData>> {
-		const { avatar, name, desc, prompt } = payload
+		const { avatar, name, desc, prompt, creativity } = payload
 		const gptId = extractInt(payload.gptId, 0, isGreaterThanZero)
 
 		if (!name || !avatar || !gptId) return { ...RESP__INVALID_DATA, error: `Name, avatar and GPT cannot be empty` }
@@ -86,6 +87,7 @@ export const agentsService = {
 			avatar: avatar,
 			desc: desc || '',
 			prompt: prompt || '',
+			creativity: (creativity || 'medium') as CreativityLevel,
 			createdAt: new Date().toISOString(),
 			updatedAt: null,
 		}
@@ -98,7 +100,7 @@ export const agentsService = {
 	},
 
 	async patchAgent(payload: AgentsApiPayload): Promise<ApiResponse<AgentsApiData>> {
-		const { avatar, name, desc, prompt } = payload
+		const { avatar, name, desc, prompt, creativity } = payload
 		const agentId = extractInt(payload.agentId, 0, isGreaterThanZero)
 		const gptId = extractInt(payload.gptId, 0, isGreaterThanZero)
 		const dbAgents = getDbActiveAgents()
@@ -113,6 +115,7 @@ export const agentsService = {
 		agent.avatar = avatar
 		agent.desc = desc || ''
 		agent.prompt = prompt || ''
+		agent.creativity = (creativity || '') as CreativityLevel
 		agent.updatedAt = new Date().toISOString()
 
 		setDbActiveAgents(dbAgents)
