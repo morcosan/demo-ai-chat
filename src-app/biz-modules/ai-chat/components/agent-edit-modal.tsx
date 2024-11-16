@@ -1,5 +1,6 @@
-import { ErrorSummary, FieldError, FieldLabel, SelectField, SelectOptionProps } from '@app/library/release'
-import { Button, DeleteSvg, Modal, TextField } from '@ds/release'
+import { AgentEditField, Field } from '@app/biz-modules/ai-chat/components/agent-edit-field'
+import { ErrorSummary, FieldLabel, SelectField, SelectOptionProps } from '@app/library/release'
+import { Button, DeleteSvg, Modal } from '@ds/release'
 import { useEffect, useState } from 'react'
 import { Agent, GPT } from '../api'
 import { EMPTY_AGENT, useAiChatAgents } from '../state'
@@ -32,6 +33,24 @@ export const AgentEditModal = (props: Props) => {
 	)
 
 	const sectionClass = cx('flex flex-1 flex-col gap-sm-2')
+
+	const fieldMap = {
+		name: { id: `${props.id}-field-name`, label: t('core.label.name') },
+		avatar: { id: `${props.id}-field-avatar`, label: t('core.label.avatar') },
+		gptId: { id: `${props.id}-field-gpt`, label: t('aiChat.label.gptModel') },
+		desc: {
+			id: `${props.id}-field-desc`,
+			label: t('core.label.description'),
+			optional: true,
+			props: { minRows: 3, multiline: true },
+		},
+		prompt: {
+			id: `${props.id}-field-prompt`,
+			label: t('aiChat.label.customInstructions'),
+			optional: true,
+			props: { minRows: 5, multiline: true, className: 'flex-1' },
+		},
+	} satisfies Partial<Record<keyof Agent, Field>>
 
 	const hasChanges =
 		initial.gptId !== payload.gptId ||
@@ -109,59 +128,37 @@ export const AgentEditModal = (props: Props) => {
 				{/* LEFT */}
 				<div className={sectionClass}>
 					{/* NAME */}
-					<div className="flex flex-col">
-						<FieldLabel fieldId={`${props.id}-field-name`}>{t('core.label.name')}</FieldLabel>
-						<TextField
-							id={`${props.id}-field-name`}
-							variant="primary"
-							value={payload.name}
-							ariaDescription={feedback.name ? `${t('core.label.errors')}: ${feedback.name}` : ''}
-							disabled={props.agent.updating}
-							invalid={Boolean(feedback.name)}
-							onChange={(name: string) => setPayload({ ...payload, name })}
-						/>
-						<FieldError error={feedback.name} />
-					</div>
+					<AgentEditField
+						field={fieldMap.name}
+						value={payload.name}
+						error={feedback.name}
+						disabled={props.agent.updating}
+						onChange={(name: string) => setPayload({ ...payload, name })}
+					/>
 
 					{/* AVATAR */}
 					<div className="flex">
-						<div className="flex flex-1 flex-col">
-							<FieldLabel fieldId={`${props.id}-field-avatar`}>{t('core.label.avatar')}</FieldLabel>
-							<TextField
-								id={`${props.id}-field-avatar`}
-								variant="primary"
-								value={payload.avatar}
-								ariaDescription={feedback.avatar ? `${t('core.label.errors')}: ${feedback.avatar}` : ''}
-								disabled={props.agent.updating}
-								invalid={Boolean(feedback.avatar)}
-								onChange={(avatar: string) => setPayload({ ...payload, avatar })}
-							/>
-							<FieldError error={feedback.avatar} />
-						</div>
-
+						<AgentEditField
+							field={fieldMap.avatar}
+							value={payload.avatar}
+							error={feedback.avatar}
+							disabled={props.agent.updating}
+							className="flex-1"
+							onChange={(avatar: string) => setPayload({ ...payload, avatar })}
+						/>
 						<div className="ml-xs-6 mt-xs-6">
 							<img src={payload.avatar} alt="" className="h-sm-8 w-sm-8 rounded-full" />
 						</div>
 					</div>
 
 					{/* DESCRIPTION */}
-					<div className="flex flex-col">
-						<FieldLabel fieldId={`${props.id}-field-desc`} optional>
-							{t('core.label.description')}
-						</FieldLabel>
-						<TextField
-							id={`${props.id}-field-desc`}
-							variant="primary"
-							value={payload.desc}
-							ariaDescription={feedback.desc ? `${t('core.label.errors')}: ${feedback.desc}` : ''}
-							disabled={props.agent.updating}
-							invalid={Boolean(feedback.desc)}
-							minRows={3}
-							multiline
-							onChange={(desc: string) => setPayload({ ...payload, desc })}
-						/>
-						<FieldError error={feedback.desc} />
-					</div>
+					<AgentEditField
+						field={fieldMap.desc}
+						value={payload.desc}
+						error={feedback.desc}
+						disabled={props.agent.updating}
+						onChange={(desc: string) => setPayload({ ...payload, desc })}
+					/>
 				</div>
 
 				{/* DELIMITER */}
@@ -171,9 +168,9 @@ export const AgentEditModal = (props: Props) => {
 				<div className={sectionClass}>
 					{/* GPT */}
 					<div className="flex flex-col">
-						<FieldLabel fieldId={`${props.id}-field-gpt`}>{t('aiChat.label.gptModel')}</FieldLabel>
+						<FieldLabel fieldId={fieldMap.gptId.id}>{fieldMap.gptId.label}</FieldLabel>
 						<SelectField
-							id={`${props.id}-field-gpt`}
+							id={fieldMap.gptId.id}
 							variant="primary"
 							value={payload.gptId}
 							options={allGPTs}
@@ -186,24 +183,15 @@ export const AgentEditModal = (props: Props) => {
 						/>
 					</div>
 
-					{/* SETUP */}
-					<div className="flex flex-1 flex-col">
-						<FieldLabel fieldId={`${props.id}-field-prompt`} optional>
-							{t('aiChat.label.customInstructions')}
-						</FieldLabel>
-						<TextField
-							id={`${props.id}-field-prompt`}
-							variant="primary"
-							value={payload.prompt}
-							ariaDescription={feedback.prompt ? `${t('core.label.errors')}: ${feedback.prompt}` : ''}
-							disabled={props.agent.updating}
-							invalid={Boolean(feedback.prompt)}
-							className="flex-1"
-							multiline
-							onChange={(prompt: string) => setPayload({ ...payload, prompt })}
-						/>
-						<FieldError error={feedback.prompt} />
-					</div>
+					{/* PROMPT */}
+					<AgentEditField
+						field={fieldMap.prompt}
+						value={payload.prompt}
+						error={feedback.prompt}
+						disabled={props.agent.updating}
+						className="flex-1"
+						onChange={(prompt: string) => setPayload({ ...payload, prompt })}
+					/>
 				</div>
 			</div>
 		</Modal>

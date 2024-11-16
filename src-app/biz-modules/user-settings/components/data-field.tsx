@@ -16,7 +16,8 @@ export interface Field<T> {
 	props?: Partial<TextFieldProps>
 }
 
-export const DataField = <T,>({ field, value, error, disabled, onChange }: Props<T>) => {
+export const DataField = <T,>(props: Props<T>) => {
+	const { field, value, error, disabled, onChange } = props
 	const { isViewportMinSM } = useUiViewport()
 
 	return (
