@@ -1,6 +1,6 @@
 import { AgentEditField, Field } from '@app/biz-modules/ai-chat/components/agent-edit-field'
 import { ErrorSummary, FieldLabel, SelectField, SelectOption, SelectOptionProps } from '@app/library/release'
-import { Button, DeleteSvg, Modal } from '@ds/release'
+import { Button, DeleteSvg, Modal, WarningSvg } from '@ds/release'
 import { useEffect, useState } from 'react'
 import { Agent, CreativityLevel, GPT } from '../api'
 import { EMPTY_AGENT, useAiChatAgents } from '../state'
@@ -210,7 +210,15 @@ export const AgentEditModal = (props: Props) => {
 					</div>
 
 					{!isGptEnabled && (
-						<div className="bg-color-danger-card-bg p-xs-4 text-color-danger-card-text">error</div>
+						<div
+							className={cx(
+								'flex items-center px-xs-6 py-xs-4',
+								'rounded-md bg-color-danger-card-bg text-color-danger-card-text'
+							)}
+						>
+							<WarningSvg className="mr-xs-4 w-xs-7" />
+							error
+						</div>
 					)}
 				</div>
 
