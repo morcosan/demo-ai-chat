@@ -51,6 +51,7 @@ export const useButtonBase = (rawProps: ButtonProps) => {
 	const cssBase: CSS = {
 		position: 'relative',
 		zIndex: 0,
+		display: 'inline-block',
 		border: '0 solid transparent',
 		lineHeight: $lineHeight['sm'], // Needed for font descender
 

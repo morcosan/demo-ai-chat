@@ -7,6 +7,7 @@
 			"close": "Close",
 			"delete": "Delete",
 			"deselectAll": "Deselect all",
+			"goToUrl": "Go to {url}",
 			"openMenu": "Open menu",
 			"rename": "Rename",
 			"saveChanges": "Save changes",
@@ -85,7 +86,7 @@
 			"startSearching_other": "Type at least {count} characters"
 		},
 		"description": {
-			"geminiNano": "Available only in Chrome browser",
+			"geminiNano": "Mini GPT for Google Chrome",
 			"loremIpsumGPT": "Most intelligent model",
 			"rammusGPT": "Best emotional support"
 		},
@@ -133,7 +134,9 @@
 		},
 		"warning": {
 			"deletingAgent": "This agent will be permanently deleted",
-			"deletingChats": "These chats will be permanently deleted"
+			"deletingChats": "These chats will be permanently deleted",
+			"geminiGptInsideChrome": "This GPT requires development settings:",
+			"geminiGptOutsideChrome": "This GPT is available only in Google Chrome browser"
 		}
 	},
 	"userSettings": {
