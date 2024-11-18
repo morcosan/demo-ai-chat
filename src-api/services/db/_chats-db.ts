@@ -9,7 +9,7 @@ import {
 } from '@utils/release'
 import { DbChat, DbMessage, MessageRole } from '../../types'
 import { addMinutesToDate } from '../../utilities/various'
-import { getGptUnit, randomFromAgentIds } from './_agents-db'
+import { getGptResponse, randomFromAgentIds } from './_agents-db'
 
 let _dbChats: DbChat[]
 let _dbMessages: DbMessage[]
@@ -70,8 +70,7 @@ const createDbMessages = async () => {
 
 		for (let index = 0; index < total; index++) {
 			const agentId = randomFromAgentIds()
-			const gptUnit = await getGptUnit(agentId)
-			const response = gptUnit ? await gptUnit.getResponse([]) : ''
+			const response = await getGptResponse(agentId, [])
 
 			const userMessage: DbMessage = {
 				id: createMessageId(),
@@ -110,8 +109,7 @@ const addSubchats = async (message: DbMessage, messages: DbMessage[]) => {
 		const role = roles[index % 2]
 		const userResponse = randomLongText(randomInt(1, 3))
 		const agentId = role === 'agent' ? randomFromAgentIds() : 0
-		const gptUnit = await getGptUnit(agentId)
-		const response = role === 'agent' ? (gptUnit ? await gptUnit.getResponse([]) : '') : userResponse
+		const response = role === 'agent' ? await getGptResponse(agentId, []) : userResponse
 
 		messages.push({
 			id: createMessageId(),

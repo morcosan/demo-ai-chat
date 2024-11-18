@@ -23,7 +23,7 @@ import {
 	createMessageId,
 	getDbChats,
 	getDbMessages,
-	getGptUnit,
+	getGptResponse,
 	getSizeForChat,
 	resetChatsDB,
 	setDbChats,
@@ -221,11 +221,9 @@ export const chatsService = {
 		const subchatId = extractInt(payload.subchatId, 0, isGreaterThanZero)
 		const agentId = extractInt(payload.agentId, 0, isGreaterThanZero)
 		const dbMessages = getDbMessages()
-		const gptUnit = await getGptUnit(agentId)
 
 		if (!chatId) return { ...RESP__NOT_FOUND, error: `Chat ID ${chatId} not found` }
 		if (!agentId) return { ...RESP__NOT_FOUND, error: `Agent ID ${agentId} not found` }
-		if (!gptUnit) return { ...RESP__NOT_FOUND, error: `GPT for agent ${agentId} not found` }
 		if (!text) return { ...RESP__NOT_FOUND, error: `Text is empty` }
 
 		if (subchatId) {
@@ -233,7 +231,8 @@ export const chatsService = {
 			if (!exists) return { ...RESP__NOT_FOUND, error: `Subchat ID ${subchatId} not found` }
 		}
 
-		const agentResponse = await gptUnit.getResponse([text])
+		const agentResponse = await getGptResponse(agentId, [text])
+		if (!agentResponse) return { ...RESP__NOT_FOUND, error: `GPT for agent ${agentId} not found` }
 
 		const userMessage: DbMessage = {
 			id: createMessageId(),

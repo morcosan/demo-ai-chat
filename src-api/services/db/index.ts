@@ -13,7 +13,7 @@ export {
 	setDbActiveAgents,
 	getDbDeletedAgents,
 	setDbDeletedAgents,
-	getGptUnit,
+	getGptResponse,
 } from './_agents-db'
 export { getDbBilling, resetDbBilling, setDbBilling } from './_billing-db'
 export {

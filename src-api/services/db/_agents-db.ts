@@ -6,7 +6,6 @@ import {
 	GPT_ID__LOREM_IPSUM,
 	GPT_ID__RAMMUS,
 	GptConfig,
-	GptUnit,
 	UI_TAG__GPT_DESCRIPTION,
 } from '@api/types'
 import {
@@ -146,26 +145,26 @@ const randomFromAgentIds = () => {
 	return randomFromArray(agents).id
 }
 
-const getGptUnit = async (agentId: number): Promise<GptUnit | null> => {
+const getGptResponse = async (agentId: number, messages: string[]): Promise<string> => {
 	const agent = _dbActiveAgents.find((agent: DbAgent) => agent.id === agentId)
 	if (agent) {
 		const config: GptConfig = {
 			prompt: agent.prompt,
 			creativity: agent.creativity,
 		}
-		if (agent.gptId === GPT_ID__GEMINI_NANO) return GeminiNanoAPI.createUnit(config)
-		if (agent.gptId === GPT_ID__LOREM_IPSUM) return LoremIpsumAPI.createUnit(config)
-		if (agent.gptId === GPT_ID__RAMMUS) return RammusAPI.createUnit(config)
+		if (agent.gptId === GPT_ID__GEMINI_NANO) return GeminiNanoAPI.getResponse(config, messages)
+		if (agent.gptId === GPT_ID__LOREM_IPSUM) return LoremIpsumAPI.getResponse(config, messages)
+		if (agent.gptId === GPT_ID__RAMMUS) return RammusAPI.getResponse(config, messages)
 	}
-	return null
+	return ''
 }
 
 export {
 	createAgentId,
 	getDbActiveAgents,
 	getDbDeletedAgents,
+	getGptResponse,
 	getGPTs,
-	getGptUnit,
 	initAgentsDB,
 	randomFromAgentIds,
 	resetAgentsDB,

@@ -8,14 +8,10 @@ export const UI_TAG__GPT_DESCRIPTION = '{gpt_description}'
 
 export interface GptAPI {
 	isAvailable(): boolean
-	createUnit(config: GptConfig): Promise<GptUnit | null>
+	getResponse(config: GptConfig, messages: string[]): Promise<string>
 }
 
 export interface GptConfig {
 	creativity: CreativityLevel
 	prompt: string
-}
-
-export interface GptUnit {
-	getResponse(messages: string[]): Promise<string>
 }
