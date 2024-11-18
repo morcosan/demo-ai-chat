@@ -7,6 +7,7 @@ import {
 	ChatsApiQuery,
 	DbChat,
 	DbMessage,
+	GptMessage,
 	MessagesApiData,
 	MessagesApiPayload,
 	MessagesApiQuery,
@@ -220,6 +221,7 @@ export const chatsService = {
 		const chatId = extractInt(payload.chatId, 0, isGreaterThanZero)
 		const subchatId = extractInt(payload.subchatId, 0, isGreaterThanZero)
 		const agentId = extractInt(payload.agentId, 0, isGreaterThanZero)
+		const parentId = subchatId || chatId
 		const dbMessages = getDbMessages()
 
 		if (!chatId) return { ...RESP__NOT_FOUND, error: `Chat ID ${chatId} not found` }
@@ -231,13 +233,22 @@ export const chatsService = {
 			if (!exists) return { ...RESP__NOT_FOUND, error: `Subchat ID ${subchatId} not found` }
 		}
 
-		const agentResponse = await getGptResponse(agentId, [text])
+		const gptMessages = dbMessages
+			.filter((message: DbMessage) => message.parentId === parentId)
+			.map(
+				(message: DbMessage): GptMessage => ({
+					text: message.text,
+					role: message.role,
+				})
+			)
+		const agentResponse = await getGptResponse(agentId, [...gptMessages, { text, role: 'user' }])
+
 		if (!agentResponse) return { ...RESP__NOT_FOUND, error: `GPT for agent ${agentId} not found` }
 
 		const userMessage: DbMessage = {
 			id: createMessageId(),
 			chatId: chatId,
-			parentId: subchatId || chatId,
+			parentId: parentId,
 			agentId: agentId,
 			text: text,
 			role: 'user',
@@ -246,7 +257,7 @@ export const chatsService = {
 		const agentMessage: DbMessage = {
 			id: createMessageId(),
 			chatId: chatId,
-			parentId: subchatId || chatId,
+			parentId: parentId,
 			agentId: agentId,
 			text: agentResponse,
 			role: 'agent',

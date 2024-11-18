@@ -6,6 +6,7 @@ import {
 	GPT_ID__LOREM_IPSUM,
 	GPT_ID__RAMMUS,
 	GptConfig,
+	GptMessage,
 	UI_TAG__GPT_DESCRIPTION,
 } from '@api/types'
 import {
@@ -145,7 +146,7 @@ const randomFromAgentIds = () => {
 	return randomFromArray(agents).id
 }
 
-const getGptResponse = async (agentId: number, messages: string[]): Promise<string> => {
+const getGptResponse = async (agentId: number, messages: GptMessage[]): Promise<string> => {
 	const agent = _dbActiveAgents.find((agent: DbAgent) => agent.id === agentId)
 	if (agent) {
 		const config: GptConfig = {

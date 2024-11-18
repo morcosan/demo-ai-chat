@@ -1,7 +1,4 @@
-import { CreativityLevel, GptAPI, GptConfig } from '@api/types'
-
-// Google docs:
-// https://docs.google.com/document/d/1VG8HIyz361zGduWgNG7R_R8Xkv0OOJ8b5C9QKeCjU0c
+import { CreativityLevel, GptAPI, GptConfig, GptMessage } from '@api/types'
 
 const TEMPERATURE_MAP: Record<CreativityLevel, number> = {
 	min: 0,
@@ -14,15 +11,27 @@ const TEMPERATURE_MAP: Record<CreativityLevel, number> = {
 export const GeminiNanoAPI: GptAPI = {
 	isAvailable: () => Boolean(window.ai?.languageModel),
 
-	async getResponse(config: GptConfig, messages: string[]): Promise<string> {
+	async getResponse(config: GptConfig, messages: GptMessage[]): Promise<string> {
 		if (!window.ai) return ''
 
-		const session = await window.ai.languageModel.create({
-			systemPrompt: config.prompt,
-			temperature: TEMPERATURE_MAP[config.creativity],
-			topK: 3,
-		})
+		try {
+			const prompt = messages.reduce((acc: string, message: GptMessage) => {
+				return `${acc} \n\n <<${message.role}>> \n ${message.text} \n\n <<agent>> \n`
+			}, '')
 
-		return session.prompt(messages[0])
+			// https://docs.google.com/document/d/1VG8HIyz361zGduWgNG7R_R8Xkv0OOJ8b5C9QKeCjU0c
+			const session = await window.ai.languageModel.create({
+				systemPrompt: config.prompt,
+				temperature: TEMPERATURE_MAP[config.creativity],
+				topK: 3,
+			})
+			const resp = await session.prompt(prompt)
+
+			return resp.replace(/<<agent>>/gi, '')
+			//
+		} catch (error) {
+			ERROR(error)
+			return ''
+		}
 	},
 }
