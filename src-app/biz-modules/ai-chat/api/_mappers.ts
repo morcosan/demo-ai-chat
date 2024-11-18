@@ -7,7 +7,7 @@ export const mapDtoToGPT = (dto: GptDTO): GPT => {
 		name: dto.name || '',
 		avatar: dto.avatar || '',
 		desc: dto.desc || '',
-		usable: dto.usable || false,
+		enabled: dto.enabled || false,
 	}
 }
 

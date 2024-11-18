@@ -53,21 +53,21 @@ const initGPTs = () => {
 			name: 'Lorem Ipsum GPT',
 			avatar: ENV__ROOT_URL_PATH + '/avatars/default.svg',
 			desc: '',
-			usable: LoremIpsumAPI.isAvailable(),
+			enabled: LoremIpsumAPI.isAvailable(),
 		},
 		{
 			id: GPT_ID__RAMMUS,
 			name: 'Rammus GPT',
 			avatar: ENV__ROOT_URL_PATH + '/avatars/rammus.png',
 			desc: '',
-			usable: RammusAPI.isAvailable(),
+			enabled: RammusAPI.isAvailable(),
 		},
 		{
 			id: GPT_ID__GEMINI_NANO,
 			name: 'Gemini Nano',
 			avatar: ENV__ROOT_URL_PATH + '/avatars/gemini.svg',
 			desc: '',
-			usable: GeminiNanoAPI.isAvailable(),
+			enabled: GeminiNanoAPI.isAvailable(),
 		},
 	]
 }
@@ -139,7 +139,12 @@ const resetAgentsDB = () => {
 	createDbAgents()
 }
 
-const randomFromAgentIds = () => randomFromArray(_dbActiveAgents).id
+const randomFromAgentIds = () => {
+	const gptIds = [GPT_ID__LOREM_IPSUM, GPT_ID__RAMMUS]
+	const agents = _dbActiveAgents.filter((agent: DbAgent) => gptIds.includes(agent.gptId))
+
+	return randomFromArray(agents).id
+}
 
 const getGptUnit = async (agentId: number): Promise<GptUnit | null> => {
 	const agent = _dbActiveAgents.find((agent: DbAgent) => agent.id === agentId)

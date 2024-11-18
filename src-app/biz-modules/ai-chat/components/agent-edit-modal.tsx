@@ -40,6 +40,8 @@ export const AgentEditModal = (props: Props) => {
 		props.onDelete && isEditing && allAgents.filter((agent: Agent) => agent.id && !agent.deleting).length > 1
 	)
 
+	const isGptEnabled = allGPTs.find((gpt: GPT) => gpt.id === payload.gptId)?.enabled
+
 	const sectionClass = cx('flex flex-1 flex-col gap-sm-2')
 	const delimiterClass = cx('mx-sm-1 hidden w-px self-stretch bg-color-border-subtle lg:block')
 
@@ -92,10 +94,11 @@ export const AgentEditModal = (props: Props) => {
 
 	useEffect(() => {
 		if (props.agent && allGPTs.length) {
-			const initial = {
+			const initial: Agent = {
 				...props.agent,
 				gptId: props.agent.gptId || allGPTs[0].id,
 				avatar: props.agent.avatar || allGPTs[0].avatar,
+				creativity: props.agent.creativity || 'medium',
 			}
 			setInitial(initial)
 			setPayload(initial)
@@ -205,6 +208,10 @@ export const AgentEditModal = (props: Props) => {
 							onChange={(gptId: number) => setPayload({ ...payload, gptId })}
 						/>
 					</div>
+
+					{!isGptEnabled && (
+						<div className="bg-color-danger-card-bg p-xs-4 text-color-danger-card-text">error</div>
+					)}
 				</div>
 
 				<div className={delimiterClass} />
