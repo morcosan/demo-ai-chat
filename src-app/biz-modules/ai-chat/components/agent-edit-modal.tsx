@@ -43,7 +43,7 @@ export const AgentEditModal = (props: Props) => {
 
 	const isGptEnabled = allGPTs.find((gpt: GPT) => gpt.id === payload.gptId)?.enabled
 
-	const sectionClass = cx('flex flex-1 flex-col gap-sm-2')
+	const sectionClass = cx('flex flex-1 flex-col gap-y-sm-2')
 	const delimiterClass = cx('mx-sm-1 hidden w-px self-stretch bg-color-border-subtle lg:block')
 
 	const fieldMap = {
@@ -55,13 +55,13 @@ export const AgentEditModal = (props: Props) => {
 			id: `${props.id}-field-desc`,
 			label: t('core.label.description'),
 			optional: true,
-			props: { minRows: 4, multiline: true },
+			props: { minRows: 3, multiline: true },
 		},
 		prompt: {
 			id: `${props.id}-field-prompt`,
 			label: t('aiChat.label.customInstructions'),
 			optional: true,
-			props: { minRows: 5, multiline: true, className: 'flex-1' },
+			props: { minRows: 6, multiline: true, className: 'flex-1' },
 		},
 	} satisfies Partial<Record<keyof Agent, Field>>
 
@@ -117,7 +117,7 @@ export const AgentEditModal = (props: Props) => {
 	return props.agent ? (
 		<Modal
 			opened={props.opened}
-			width="xl"
+			width="lg"
 			persistent={hasChanges || props.agent.updating}
 			noClose={props.agent.updating}
 			slotTitle={isEditing ? t('aiChat.action.configureAgent') : t('aiChat.label.newAgent')}
@@ -145,134 +145,131 @@ export const AgentEditModal = (props: Props) => {
 			{hasErrors(feedback) && <ErrorSummary errors={feedback} className="mb-sm-1" />}
 
 			{/* BODY */}
-			<div className="flex flex-col gap-y-sm-3 lg:flex-row">
-				{/* LEFT */}
-				<div className={sectionClass}>
-					{/* NAME */}
-					<AgentEditField
-						field={fieldMap.name}
-						value={payload.name}
-						error={feedback.name}
-						disabled={props.agent.updating}
-						onChange={(name: string) => setPayload({ ...payload, name })}
-					/>
-
-					{/* AVATAR */}
-					<div className="flex">
+			<div className={sectionClass}>
+				<div className={cx(sectionClass, 'lg:flex-row')}>
+					{/* LEFT */}
+					<div className={sectionClass}>
+						{/* NAME */}
 						<AgentEditField
-							field={fieldMap.avatar}
-							value={payload.avatar}
-							error={feedback.avatar}
+							field={fieldMap.name}
+							value={payload.name}
+							error={feedback.name}
 							disabled={props.agent.updating}
-							className="flex-1"
-							onChange={(avatar: string) => setPayload({ ...payload, avatar })}
+							onChange={(name: string) => setPayload({ ...payload, name })}
 						/>
-						<div className="ml-xs-6 mt-xs-6">
-							<img src={payload.avatar} alt="" className="h-sm-8 w-sm-8 rounded-full" />
-						</div>
-					</div>
 
-					{/* DESCRIPTION */}
-					<AgentEditField
-						field={fieldMap.desc}
-						value={payload.desc}
-						error={feedback.desc}
-						disabled={props.agent.updating}
-						onChange={(desc: string) => setPayload({ ...payload, desc })}
-					/>
-				</div>
-
-				<div className={delimiterClass} />
-
-				{/* RIGHT */}
-				<div className={sectionClass}>
-					{/* CREATIVITY */}
-					<div className="flex flex-col">
-						<FieldLabel fieldId={fieldMap.creativity.id}>{fieldMap.creativity.label}</FieldLabel>
-						<SelectField
-							id={fieldMap.creativity.id}
-							variant="primary"
-							value={payload.creativity}
-							options={creativityOptions}
-							disabled={props.agent.updating}
-							onChange={(creativity: CreativityLevel) => setPayload({ ...payload, creativity })}
-						/>
-					</div>
-
-					{/* GPT */}
-					<div className="flex flex-col">
-						<FieldLabel fieldId={fieldMap.gptId.id}>{fieldMap.gptId.label}</FieldLabel>
-						<SelectField
-							id={fieldMap.gptId.id}
-							variant="primary"
-							value={payload.gptId}
-							options={allGPTs}
-							keyLabel="name"
-							keyValue="id"
-							disabled={props.agent.updating}
-							compValue={GptValue}
-							compOption={GptOption}
-							onChange={(gptId: number) => setPayload({ ...payload, gptId })}
-						/>
-					</div>
-
-					{!isGptEnabled && (
-						<div
-							className={cx(
-								'flex rounded-md px-button-px-item py-xs-6',
-								'bg-color-danger-card-bg text-size-sm text-color-danger-card-text'
-							)}
-						>
-							<WarningSvg className="mx-xs-2 w-xs-8 min-w-xs-8" />
-
-							<div>
-								<div className="px-button-px-item">
-									{isChromeBrowser() ? (
-										<>
-											{t('aiChat.warning.geminiGptInsideChrome')}
-											<ul className="mt-xs-2 list-disc pl-xs-9">
-												<li>Prompt API for Gemini Nano</li>
-											</ul>
-										</>
-									) : (
-										t('aiChat.warning.geminiGptOutsideChrome')
-									)}
-								</div>
-
-								{isChromeBrowser() && (
-									<Button
-										linkHref="chrome://flags/#prompt-api-for-gemini-nano"
-										linkType="external"
-										variant="item-text-default"
-										size="sm"
-										className="-mb-xs-2 mt-xs-2"
-										onClick={onClickChromeFlags}
-									>
-										<span className="flex items-center gap-xs-4">
-											<span>{t('core.action.goToUrl', { url: 'chrome://flags' })}</span>
-											<NewTabSvg className="w-xs-5" />
-										</span>
-									</Button>
-								)}
+						{/* AVATAR */}
+						<div className="flex">
+							<AgentEditField
+								field={fieldMap.avatar}
+								value={payload.avatar}
+								error={feedback.avatar}
+								disabled={props.agent.updating}
+								className="flex-1"
+								onChange={(avatar: string) => setPayload({ ...payload, avatar })}
+							/>
+							<div className="ml-xs-6 mt-xs-6">
+								<img src={payload.avatar} alt="" className="h-sm-8 w-sm-8 rounded-full" />
 							</div>
 						</div>
-					)}
+
+						{/* DESCRIPTION */}
+						<AgentEditField
+							field={fieldMap.desc}
+							value={payload.desc}
+							error={feedback.desc}
+							disabled={props.agent.updating}
+							onChange={(desc: string) => setPayload({ ...payload, desc })}
+						/>
+					</div>
+
+					<div className={delimiterClass} />
+
+					{/* RIGHT */}
+					<div className={sectionClass}>
+						{/* GPT */}
+						<div className="flex flex-col">
+							<FieldLabel fieldId={fieldMap.gptId.id}>{fieldMap.gptId.label}</FieldLabel>
+							<SelectField
+								id={fieldMap.gptId.id}
+								variant="primary"
+								value={payload.gptId}
+								options={allGPTs}
+								keyLabel="name"
+								keyValue="id"
+								disabled={props.agent.updating}
+								compValue={GptValue}
+								compOption={GptOption}
+								onChange={(gptId: number) => setPayload({ ...payload, gptId })}
+							/>
+						</div>
+
+						{!isGptEnabled && (
+							<div
+								className={cx(
+									'flex rounded-md px-button-px-item py-xs-6',
+									'bg-color-danger-card-bg text-size-sm text-color-danger-card-text'
+								)}
+							>
+								<WarningSvg className="mx-xs-2 w-xs-8 min-w-xs-8" />
+
+								<div>
+									<div className="px-button-px-item">
+										{isChromeBrowser() ? (
+											<>
+												{t('aiChat.warning.geminiGptInsideChrome')}
+												<ul className="mt-xs-2 list-disc pl-xs-9">
+													<li>Prompt API for Gemini Nano</li>
+												</ul>
+											</>
+										) : (
+											t('aiChat.warning.geminiGptOutsideChrome')
+										)}
+									</div>
+
+									{isChromeBrowser() && (
+										<Button
+											linkHref="chrome://flags/#prompt-api-for-gemini-nano"
+											linkType="external"
+											variant="item-text-default"
+											size="sm"
+											className="-mb-xs-2 mt-xs-2"
+											onClick={onClickChromeFlags}
+										>
+											<span className="flex items-center gap-xs-4">
+												<span>{t('core.action.goToUrl', { url: 'chrome://flags' })}</span>
+												<NewTabSvg className="w-xs-5" />
+											</span>
+										</Button>
+									)}
+								</div>
+							</div>
+						)}
+
+						{/* CREATIVITY */}
+						<div className="flex flex-col">
+							<FieldLabel fieldId={fieldMap.creativity.id}>{fieldMap.creativity.label}</FieldLabel>
+							<SelectField
+								id={fieldMap.creativity.id}
+								variant="primary"
+								value={payload.creativity}
+								options={creativityOptions}
+								disabled={props.agent.updating}
+								onChange={(creativity: CreativityLevel) => setPayload({ ...payload, creativity })}
+							/>
+						</div>
+					</div>
 				</div>
 
-				<div className={delimiterClass} />
-
-				{/* RIGHT */}
-				<div className={sectionClass}>
-					{/* PROMPT */}
-					<AgentEditField
-						field={fieldMap.prompt}
-						value={payload.prompt}
-						error={feedback.prompt}
-						disabled={props.agent.updating}
-						className="flex-1"
-						onChange={(prompt: string) => setPayload({ ...payload, prompt })}
-					/>
-				</div>
+				{/* PROMPT */}
+				<AgentEditField
+					field={fieldMap.prompt}
+					value={payload.prompt}
+					error={feedback.prompt}
+					disabled={props.agent.updating}
+					className="flex-1"
+					onChange={(prompt: string) => setPayload({ ...payload, prompt })}
+				/>
 			</div>
 		</Modal>
 	) : null
