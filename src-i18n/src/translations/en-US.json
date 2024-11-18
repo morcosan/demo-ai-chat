@@ -136,7 +136,8 @@
 			"deletingAgent": "This agent will be permanently deleted",
 			"deletingChats": "These chats will be permanently deleted",
 			"geminiGptInsideChrome": "This GPT requires development settings:",
-			"geminiGptOutsideChrome": "This GPT is available only in Google Chrome browser"
+			"geminiGptOutsideChrome": "This GPT is available only in Google Chrome browser",
+			"invalidGpt": "Invalid GPT"
 		}
 	},
 	"userSettings": {

@@ -1,5 +1,5 @@
 import { SelectField, SelectOptionProps } from '@app/library/release'
-import { BuildSvg, IconButton } from '@ds/release'
+import { BuildSvg, IconButton, WarningSvg } from '@ds/release'
 import { COOKIE_KEY } from '@utils/release'
 import { uniqBy } from 'lodash'
 import { useEffect, useState } from 'react'
@@ -25,7 +25,7 @@ const AgentOption = (props: SelectOptionProps) => (
 
 export const NewMessageToolbar = (props: Props) => {
 	const { listLoading, isChatView, onPostMessage } = props
-	const { chatViewAgentId, setChatViewAgentId } = useAiChatAgents()
+	const { allGPTs, chatViewAgentId, setChatViewAgentId } = useAiChatAgents()
 	const [currAgentId, setCurrAgentId] = useState(0)
 	const [agents, setAgents] = useRefreshableAgents()
 	const [agentPagination, setAgentPagination] = useState<Pagination>({ page: 0, count: 0 })
@@ -36,6 +36,7 @@ export const NewMessageToolbar = (props: Props) => {
 	const agentCookieKey = isChatView ? COOKIE_KEY.APP_AGENT_FOR_CHAT : COOKIE_KEY.APP_AGENT_FOR_SUBCHAT
 
 	const currAgent = agents.find((agent: Agent) => agent.id === currAgentId) || EMPTY_AGENT
+	const currGPT = allGPTs.find((gpt) => gpt.id === currAgent.gptId)
 
 	const canLoadMoreAgents = !agentPagination.page || agents.length < agentPagination.count
 
@@ -138,10 +139,10 @@ export const NewMessageToolbar = (props: Props) => {
 		!agentPagination.page && fetchMoreAgents(loadAgentId())
 	}, [agentPagination])
 
-	return (
+	return currAgent && currGPT ? (
 		<div>
 			{/* TOOLBAR */}
-			<div className="mb-xs-1">
+			<div className="mb-xs-1 flex items-center">
 				<SelectField
 					id={isChatView ? 'agent-chat' : 'agent-subchat'}
 					variant={isChatView ? 'primary' : 'secondary'}
@@ -150,6 +151,7 @@ export const NewMessageToolbar = (props: Props) => {
 					keyValue="id"
 					keyLabel="name"
 					filterFn={agentFilterFn}
+					invalid={!currGPT?.enabled}
 					loading={agentLoading === 'full'}
 					loadingMore={agentLoading === 'more'}
 					canLoadMore={canLoadMoreAgents}
@@ -165,11 +167,19 @@ export const NewMessageToolbar = (props: Props) => {
 					onSearch={onSearchAgent}
 					onScrollEnd={fetchMoreAgents}
 				/>
+
+				{!currGPT.enabled && (
+					<div className="flex items-center text-size-xs text-color-danger-page-text">
+						<WarningSvg className="ml-xs-3 mr-xs-1 w-xs-6 min-w-xs-6" />
+						{t('aiChat.warning.invalidGpt')}
+					</div>
+				)}
+
 				<IconButton
 					tooltip={t('aiChat.action.configureAgent')}
 					loading={agentLoading === 'full'}
 					size="sm"
-					className="text-color-text-subtle"
+					className="ml-xs-0 text-color-text-subtle"
 					onClick={() => setShowsAgentModal(true)}
 				>
 					<BuildSvg className="w-xs-5" />
@@ -188,10 +198,11 @@ export const NewMessageToolbar = (props: Props) => {
 			{/* TEXT FIELD */}
 			<NewMessageField
 				agent={currAgent}
+				gpt={currGPT}
 				listLoading={listLoading}
 				isChatView={isChatView}
 				onPostMessage={onPostMessage}
 			/>
 		</div>
-	)
+	) : null
 }
