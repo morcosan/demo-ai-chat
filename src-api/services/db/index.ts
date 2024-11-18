@@ -28,7 +28,7 @@ export {
 	hasMessagesByAgent,
 } from './_chats-db'
 
-initAccountDB()
-initBillingDB()
-initAgentsDB()
-initChatsDB() // Must come after agents
+await initAccountDB()
+await initBillingDB()
+await initAgentsDB()
+await initChatsDB() // Must come after agents

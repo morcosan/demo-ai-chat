@@ -46,34 +46,34 @@ const setDbDeletedAgents = (value: DbAgent[]) => {
 	localStorage.setItem(COOKIE_KEY.DB_AGENTS_DELETED, JSON.stringify(value))
 }
 
-const initGPTs = () => {
+const initGPTs = async () => {
 	_GPTs = [
 		{
 			id: GPT_ID__LOREM_IPSUM,
 			name: 'Lorem Ipsum GPT',
 			avatar: ENV__ROOT_URL_PATH + '/avatars/default.svg',
 			desc: '',
-			enabled: LoremIpsumAPI.isAvailable(),
+			enabled: await LoremIpsumAPI.isAvailable(),
 		},
 		{
 			id: GPT_ID__RAMMUS,
 			name: 'Rammus GPT',
 			avatar: ENV__ROOT_URL_PATH + '/avatars/rammus.png',
 			desc: '',
-			enabled: RammusAPI.isAvailable(),
+			enabled: await RammusAPI.isAvailable(),
 		},
 		{
 			id: GPT_ID__GEMINI_NANO,
 			name: 'Gemini Nano',
 			avatar: ENV__ROOT_URL_PATH + '/avatars/gemini.svg',
 			desc: '',
-			enabled: GeminiNanoAPI.isAvailable(),
+			enabled: await GeminiNanoAPI.isAvailable(),
 		},
 	]
 }
 
-const initAgentsDB = () => {
-	initGPTs()
+const initAgentsDB = async () => {
+	await initGPTs()
 
 	try {
 		const json = localStorage.getItem(COOKIE_KEY.DB_AGENTS)

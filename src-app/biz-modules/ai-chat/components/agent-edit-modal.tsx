@@ -1,10 +1,10 @@
-import { AgentEditField, Field } from '@app/biz-modules/ai-chat/components/agent-edit-field'
 import { ErrorSummary, FieldLabel, SelectField, SelectOption, SelectOptionProps } from '@app/library/release'
-import { Button, DeleteSvg, Modal, NewTabSvg, WarningSvg } from '@ds/release'
-import { isChromeBrowser } from '@utils/release'
+import { Button, DeleteSvg, Modal } from '@ds/release'
 import { useEffect, useState } from 'react'
 import { Agent, CreativityLevel, GPT } from '../api'
 import { EMPTY_AGENT, useAiChatAgents } from '../state'
+import { AgentEditField, Field } from './agent-edit-field'
+import { GptWarning } from './gpt-warning'
 import { AgentGptItem } from './items/agent-gpt-item'
 
 interface Props {
@@ -91,12 +91,6 @@ export const AgentEditModal = (props: Props) => {
 		if (!hasErrors(validation)) {
 			props.onSubmit(payload)
 		}
-	}
-
-	const onClickChromeFlags = (event: ReactMouseEvent) => {
-		// Browser security blocks navigation to chrome://flags
-		event.preventDefault()
-		navigator.clipboard.writeText((event.target as HTMLAnchorElement).href).then(() => window.open('', '_blank'))
 	}
 
 	useEffect(() => {
@@ -204,47 +198,7 @@ export const AgentEditModal = (props: Props) => {
 							/>
 						</div>
 
-						{!isGptEnabled && (
-							<div
-								className={cx(
-									'flex rounded-md px-button-px-item py-xs-6',
-									'bg-color-danger-card-bg text-size-sm text-color-danger-card-text'
-								)}
-							>
-								<WarningSvg className="mx-xs-2 w-xs-8 min-w-xs-8" />
-
-								<div>
-									<div className="px-button-px-item">
-										{isChromeBrowser() ? (
-											<>
-												{t('aiChat.warning.geminiGptInsideChrome')}
-												<ul className="mt-xs-2 list-disc pl-xs-9">
-													<li>Prompt API for Gemini Nano</li>
-												</ul>
-											</>
-										) : (
-											t('aiChat.warning.geminiGptOutsideChrome')
-										)}
-									</div>
-
-									{isChromeBrowser() && (
-										<Button
-											linkHref="chrome://flags/#prompt-api-for-gemini-nano"
-											linkType="external"
-											variant="item-text-default"
-											size="sm"
-											className="-mb-xs-2 mt-xs-2"
-											onClick={onClickChromeFlags}
-										>
-											<span className="flex items-center gap-xs-4">
-												<span>{t('core.action.goToUrl', { url: 'chrome://flags' })}</span>
-												<NewTabSvg className="w-xs-5" />
-											</span>
-										</Button>
-									)}
-								</div>
-							</div>
-						)}
+						{!isGptEnabled && <GptWarning className="-mt-xs-5" />}
 
 						{/* CREATIVITY */}
 						<div className="flex flex-col">

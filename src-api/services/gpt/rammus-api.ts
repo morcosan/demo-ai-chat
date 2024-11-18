@@ -5,7 +5,7 @@ const MAIN_RESPONSE = 'OK.'
 const OTHER_RESPONSES: string[] = ['Right.', 'Alright.', 'Yeah.', 'Yeh.', 'Yep.', 'Mhm.']
 
 export const RammusAPI: GptAPI = {
-	isAvailable: () => true,
+	isAvailable: async () => true,
 
 	async getResponse(): Promise<string> {
 		return randomTrue() ? MAIN_RESPONSE : randomFromArray(OTHER_RESPONSES)

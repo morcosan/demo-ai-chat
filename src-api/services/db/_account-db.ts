@@ -11,7 +11,7 @@ const setDbAccount = (value: DbAccount) => {
 	localStorage.setItem(COOKIE_KEY.DB_ACCOUNT, JSON.stringify(value))
 }
 
-const initAccountDB = () => {
+const initAccountDB = async () => {
 	try {
 		const json = localStorage.getItem(COOKIE_KEY.DB_ACCOUNT)
 		_account = JSON.parse(json || '')

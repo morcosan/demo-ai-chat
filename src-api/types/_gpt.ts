@@ -5,7 +5,7 @@ export const GPT_ID__GEMINI_NANO = 333
 export const UI_TAG__GPT_DESCRIPTION = '{gpt_description}'
 
 export interface GptAPI {
-	isAvailable(): boolean
+	isAvailable(): Promise<boolean>
 	getResponse(config: GptConfig, messages: GptMessage[]): Promise<string>
 }
 

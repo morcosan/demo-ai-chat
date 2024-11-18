@@ -9,6 +9,11 @@ declare global {
 
 	interface GeminiNanoModel {
 		create(config: GeminiNanoConfig): Promise<GeminiNanoSession>
+		capabilities(): Promise<GeminiNanoCapabilities>
+	}
+
+	interface GeminiNanoCapabilities {
+		available: 'readily' | unknown
 	}
 
 	interface GeminiNanoConfig {

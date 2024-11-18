@@ -9,7 +9,13 @@ const TEMPERATURE_MAP: Record<CreativityLevel, number> = {
 }
 
 export const GeminiNanoAPI: GptAPI = {
-	isAvailable: () => Boolean(window.ai?.languageModel),
+	isAvailable: async () => {
+		log(window.ai && (await window.ai.languageModel.capabilities()))
+
+		return Boolean(
+			window.ai?.languageModel && (await window.ai.languageModel.capabilities()).available === 'readily'
+		)
+	},
 
 	async getResponse(config: GptConfig, messages: GptMessage[]): Promise<string> {
 		if (!window.ai) return ''
