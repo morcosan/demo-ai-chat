@@ -1,4 +1,5 @@
-import { CreativityLevel, DbAccount, DbBilling } from './_db'
+import { CreativityLevel } from '@api/types/_gpt'
+import { DbAccount, DbBilling } from './_db'
 import { AgentDTO, ChatDTO, GptDTO, MessageDTO, SubchatDTO } from './_dto'
 
 export * from './_db'
