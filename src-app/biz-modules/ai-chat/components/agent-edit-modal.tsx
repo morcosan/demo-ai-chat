@@ -29,11 +29,11 @@ export const AgentEditModal = (props: Props) => {
 	const [feedback, setFeedback] = useState<FormPayload<Agent>>(EMPTY_AGENT)
 
 	const creativityOptions: SelectOption<CreativityLevel>[] = [
-		{ value: 'very-low', label: t('core.label.levelVeryLow') },
+		{ value: 'min', label: t('core.label.levelVeryLow') },
 		{ value: 'low', label: t('core.label.levelLow') },
-		{ value: 'medium', label: t('core.label.levelMedium') },
+		{ value: 'mid', label: t('core.label.levelMedium') },
 		{ value: 'high', label: t('core.label.levelHigh') },
-		{ value: 'very-high', label: t('core.label.levelVeryHigh') },
+		{ value: 'max', label: t('core.label.levelVeryHigh') },
 	]
 
 	const isEditing = Boolean(props.agent?.id)

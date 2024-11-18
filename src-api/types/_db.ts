@@ -52,4 +52,4 @@ export interface DbAgent {
 	updatedAt: string | null
 }
 
-export type CreativityLevel = 'very-low' | 'low' | 'medium' | 'high' | 'very-high'
+export type CreativityLevel = 'min' | 'low' | 'mid' | 'high' | 'max'

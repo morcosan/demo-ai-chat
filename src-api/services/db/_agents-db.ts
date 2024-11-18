@@ -94,7 +94,7 @@ const initAgentsDB = () => {
 
 const createDbAgents = () => {
 	const departments = ['Design', 'Frontend', 'Backend', 'Marketing', 'Business']
-	const levels = ['high', 'medium', 'very-low', 'very-high', 'low'] satisfies CreativityLevel[]
+	const levels = ['high', 'mid', 'min', 'max', 'low'] satisfies CreativityLevel[]
 
 	setDbActiveAgents([
 		..._GPTs.map((gpt: DbGPT) => ({
@@ -104,7 +104,7 @@ const createDbAgents = () => {
 			avatar: gpt.avatar,
 			desc: UI_TAG__GPT_DESCRIPTION,
 			prompt: '',
-			creativity: 'medium' as CreativityLevel,
+			creativity: 'mid' as CreativityLevel,
 			createdAt: randomRecentDate(),
 			updatedAt: null,
 		})),
@@ -151,6 +151,7 @@ const getGptUnit = async (agentId: number): Promise<GptUnit | null> => {
 	if (agent) {
 		const config: GptConfig = {
 			prompt: agent.prompt,
+			creativity: agent.creativity,
 		}
 		if (agent.gptId === GPT_ID__GEMINI_NANO) return GeminiNanoAPI.createUnit(config)
 		if (agent.gptId === GPT_ID__LOREM_IPSUM) return LoremIpsumAPI.createUnit(config)
