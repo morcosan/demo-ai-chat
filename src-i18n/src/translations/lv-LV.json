@@ -6,9 +6,11 @@
 			"changeLanguage": "Mainīt valodu",
 			"close": "Aizvērt",
 			"delete": "Dzēst",
-			"deselectAll": "Noņemt visu izvēli",
+			"deselectAll": "Noņemt visas atzīmes",
+			"goToUrl": "Doties uz {url}",
 			"openMenu": "Atvērt izvēlni",
 			"rename": "Pārdēvēt",
+			"retry": "Mēģināt vēlreiz",
 			"saveChanges": "Saglabāt izmaiņas",
 			"search": "Meklēt",
 			"searchMore": "Rādīt vairāk rezultātu",
@@ -17,7 +19,8 @@
 		},
 		"error": {
 			"noChanges": "Nav izmaiņu",
-			"nothingFound": "Nekas netika atrasts \"{search}\""
+			"nothingFound": "Nekas nav atrasts \"{search}\"",
+			"unsent": "Nenosūtīts"
 		},
 		"label": {
 			"apiDocs": "API dokumentācija",
@@ -32,14 +35,19 @@
 			"europe": "Eiropa",
 			"githubRepo": "GitHub repozitorijs",
 			"language": "Valoda",
+			"levelHigh": "Augsts",
+			"levelLow": "Zems",
+			"levelMedium": "Vidējs",
+			"levelVeryHigh": "Ļoti augsts",
+			"levelVeryLow": "Ļoti zems",
 			"lightTheme": "Gaišs",
-			"name": "Nosaukums",
+			"name": "Vārds",
 			"navigationBar": "Navigācijas josla",
 			"navigationMenu": "Navigācijas izvēlne",
-			"optionalField": "(Nav obligāts)",
-			"quickSettings": "Ātrie iestatījumi",
-			"requiredField": "(Obligāts)",
+			"optionalField": "(Neobligāti)",
+			"requiredField": "(Obligāti)",
 			"settings": "Iestatījumi",
+			"quickSettings": "Ātrie iestatījumi",
 			"uiLibrary": "UI bibliotēka",
 			"uiTheme": "UI tēma"
 		},
@@ -48,9 +56,10 @@
 		},
 		"state": {
 			"dataSaved": "Jūsu dati ir saglabāti",
-			"deleting": "Dzēšana...",
+			"deleting": "Dzēš...",
 			"loading": "Ielādē...",
 			"searching": "Meklē...",
+			"sending": "Sūta...",
 			"updating": "Atjaunina..."
 		}
 	},
@@ -68,30 +77,35 @@
 			"manageAgents": "Pārvaldīt aģentus",
 			"manageChats": "Pārvaldīt čatus",
 			"openChat": "Atvērt čatu",
-			"openSubchat_other": "Atvērt apakščatu ({count} ziņas)",
 			"openSubchat_zero": "Izveidot apakščatu",
+			"openSubchat_one": "Atvērt apakščatu ({count} ziņa)",
+			"openSubchat_other": "Atvērt apakščatu ({count} ziņas)",
 			"searchChats": "Meklēt čatus",
 			"selectChat": "Izvēlēties čatu",
 			"sendMessage": "Nosūtīt ziņu",
-			"showMoreAgents": "Rādīt vairāk aģentus",
-			"showMoreChats": "Rādīt vairāk čatus",
+			"showMoreAgents": "Rādīt vairāk aģentu",
+			"showMoreChats": "Rādīt vairāk čatu",
 			"showSubchats": "Rādīt apakščatus ({count})",
-			"startSearching_one": "Ievadiet vismaz {count} simbolu",
-			"startSearching_other": "Ievadiet vismaz {count} simbolus"
+			"startSearching_zero": "Ierakstiet vismaz {count} rakstzīmes",
+			"startSearching_one": "Ierakstiet vismaz {count} rakstzīmi",
+			"startSearching_other": "Ierakstiet vismaz {count} rakstzīmes"
 		},
 		"description": {
-			"loremIpsumGPT": "Inteliģentākais modelis",
+			"geminiNano": "Mini GPT priekš Google Chrome",
+			"loremIpsumGPT": "Visintelektuālākais modelis",
 			"rammusGPT": "Labākais emocionālais atbalsts"
 		},
 		"error": {
-			"agentAvatar": "Jums jāpievieno aģenta avatars",
-			"agentName": "Jums jāpievieno aģenta nosaukums",
-			"emptyMessage": "Jūsu ziņa ir tukša"
+			"agentAvatar": "Jums jāpievieno avatars aģentam",
+			"agentName": "Jums jāpievieno vārds aģentam",
+			"emptyMessage": "Jūsu ziņa ir tukša",
+			"failedMessage": "Radās problēma ar jūsu ziņas piegādi"
 		},
 		"label": {
 			"agents": "Aģenti",
 			"chatTitle": "Čata nosaukums",
 			"chats": "Čati",
+			"creativityLevel": "Radošuma līmenis",
 			"customInstructions": "Pielāgotas instrukcijas",
 			"gptModel": "GPT modelis",
 			"newAgent": "Jauns aģents",
@@ -102,22 +116,24 @@
 			"selectedAgent": "Izvēlētais aģents",
 			"selectedValue": "Izvēlētā vērtība",
 			"subchats": "Apakščati",
+			"xMessages_zero": "Nav ziņu",
 			"xMessages_one": "1 ziņa",
 			"xMessages_other": "{count} ziņas",
+			"xSearchResults_zero": "Nav meklēšanas rezultātu",
 			"xSearchResults_one": "{count} meklēšanas rezultāts",
 			"xSearchResults_other": "{count} meklēšanas rezultāti",
-			"xSearchResults_zero": "Meklēšanas rezultāti nav atrasti",
-			"xSelectedMessages_one": "Izvēlēta 1 ziņa",
-			"xSelectedMessages_other": "Izvēlētas {count} ziņas"
+			"xSelectedMessages_zero": "Nav izvēlētu ziņu",
+			"xSelectedMessages_one": "1 ziņa izvēlēta",
+			"xSelectedMessages_other": "{count} ziņas izvēlētas"
 		},
 		"placeholder": {
-			"newMessage": "Runāt ar {name}...",
-			"rename": "Automātiski ģenerēt jaunu nosaukumu..."
+			"newMessage": "Runā ar {name}...",
+			"rename": "Ģenerēt jaunu nosaukumu automātiski..."
 		},
 		"state": {
 			"loadingAgents": "Ielādē aģentus...",
 			"loadingChats": "Ielādē čatus...",
-			"loadingGPTs": "Ielādē GPT modeļus...",
+			"loadingGPTs": "Ielādē GPT...",
 			"loadingMessages": "Ielādē ziņas...",
 			"loadingPreviousMessages": "Ielādē iepriekšējās ziņas...",
 			"loadingSubchats": "Ielādē apakščatus...",
@@ -126,7 +142,10 @@
 		},
 		"warning": {
 			"deletingAgent": "Šis aģents tiks neatgriezeniski dzēsts",
-			"deletingChats": "Šie čati tiks neatgriezeniski dzēsti"
+			"deletingChats": "Šie čati tiks neatgriezeniski dzēsti",
+			"geminiGptInsideChrome": "Šim GPT nepieciešami šādi iespējotie iestatījumi:",
+			"geminiGptOutsideChrome": "Šis GPT ir pieejams tikai Google Chrome pārlūkprogrammā",
+			"invalidGpt": "Nederīgs GPT"
 		}
 	},
 	"userSettings": {
@@ -136,12 +155,12 @@
 		},
 		"error": {
 			"address": "Jums jāpievieno adrese",
-			"avatar": "Jums jāpievieno savs avatars",
+			"avatar": "Jums jāpievieno avatars",
 			"city": "Jums jāpievieno pilsēta",
 			"country": "Jums jāpievieno valsts",
-			"email": "Jums jāpievieno sava e-pasta adrese",
+			"email": "Jums jāpievieno e-pasta adrese",
 			"legalName": "Jums jāpievieno juridiskais nosaukums",
-			"name": "Jums jāpievieno savs nosaukums",
+			"name": "Jums jāpievieno vārds",
 			"postalCode": "Jums jāpievieno pasta indekss"
 		},
 		"label": {
@@ -152,7 +171,7 @@
 			"country": "Valsts",
 			"email": "E-pasta adrese",
 			"legalName": "Juridiskais nosaukums",
-			"phone": "Telefona numurs",
+			"phone": "Tālruņa numurs",
 			"postalCode": "Pasta indekss",
 			"private": "Privāts",
 			"public": "Publisks",

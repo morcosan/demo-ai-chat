@@ -6,18 +6,21 @@
 			"changeLanguage": "ენის შეცვლა",
 			"close": "დახურვა",
 			"delete": "წაშლა",
-			"deselectAll": "ყველას არჩევის მოხსნა",
+			"deselectAll": "ყველას მოხსნა",
+			"goToUrl": "გადასვლა {url}",
 			"openMenu": "მენიუს გახსნა",
-			"rename": "სახელის შეცვლა",
+			"rename": "გადარქმევა",
+			"retry": "ხელახლა ცდა",
 			"saveChanges": "ცვლილებების შენახვა",
 			"search": "ძიება",
-			"searchMore": "მეტი შედეგის ჩვენება",
+			"searchMore": "მეტის ჩვენება",
 			"selectAll": "ყველას არჩევა",
-			"signOut": "გასვლა"
+			"signOut": "გამოსვლა"
 		},
 		"error": {
 			"noChanges": "ცვლილებები არ არის",
-			"nothingFound": "\"{search}\"-ზე არაფერი მოიძებნა"
+			"nothingFound": "\"{search}\"-ზე შედეგი ვერ მოიძებნა",
+			"unsent": "გაუგზავნელი"
 		},
 		"label": {
 			"apiDocs": "API დოკუმენტაცია",
@@ -30,8 +33,13 @@
 			"designSystem": "დიზაინის სისტემა",
 			"errors": "შეცდომები",
 			"europe": "ევროპა",
-			"githubRepo": "GitHub რეპოზიტორია",
+			"githubRepo": "GitHub საცავი",
 			"language": "ენა",
+			"levelHigh": "მაღალი",
+			"levelLow": "დაბალი",
+			"levelMedium": "საშუალო",
+			"levelVeryHigh": "ძალიან მაღალი",
+			"levelVeryLow": "ძალიან დაბალი",
 			"lightTheme": "ნათელი",
 			"name": "სახელი",
 			"navigationBar": "ნავიგაციის ზოლი",
@@ -48,91 +56,98 @@
 		},
 		"state": {
 			"dataSaved": "თქვენი მონაცემები შენახულია",
-			"deleting": "წაშლა...",
-			"loading": "ჩატვირთვა...",
-			"searching": "ძიება...",
+			"deleting": "შლილი...",
+			"loading": "იტვირთება...",
+			"searching": "ეძებს...",
+			"sending": "გაგზავნა...",
 			"updating": "განახლება..."
 		}
 	},
 	"aiChat": {
 		"action": {
-			"backToSubchats": "უკან ქვესაუბრები",
+			"backToSubchats": "სუბჩატებზე დაბრუნება",
 			"configureAgent": "აგენტის კონფიგურაცია",
 			"confirmDeleteAgent": "აგენტის წაშლის დადასტურება",
-			"confirmDeleteChats": "საუბრების წაშლის დადასტურება",
-			"confirmRenameChat": "საუბრის სახელის შეცვლის დადასტურება",
+			"confirmDeleteChats": "ჩათების წაშლის დადასტურება",
+			"confirmRenameChat": "ჩათის გადარქმევის დადასტურება",
 			"createAgent": "აგენტის შექმნა",
 			"deleteAgent": "აგენტის წაშლა",
-			"deleteSelectedChats": "არჩეული საუბრების წაშლა",
-			"deselectChat": "საუბრის არჩევის მოხსნა",
+			"deleteSelectedChats": "არჩეული ჩათების წაშლა",
+			"deselectChat": "ჩათის არჩევის მოხსნა",
 			"manageAgents": "აგენტების მართვა",
-			"manageChats": "საუბრების მართვა",
-			"openChat": "საუბრის გახსნა",
-			"openSubchat_other": "ქვესაუბრის გახსნა ({count} შეტყობინება)",
-			"openSubchat_zero": "ქვესაუბრის შექმნა",
-			"searchChats": "საუბრების ძიება",
-			"selectChat": "საუბრის არჩევა",
+			"manageChats": "ჩათების მართვა",
+			"openChat": "ჩათის გახსნა",
+			"openSubchat_other": "სუბჩატის გახსნა ({count} შეტყობინება)",
+			"openSubchat_zero": "სუბჩატის შექმნა",
+			"searchChats": "ჩათებში ძიება",
+			"selectChat": "ჩათის არჩევა",
 			"sendMessage": "შეტყობინების გაგზავნა",
 			"showMoreAgents": "მეტი აგენტის ჩვენება",
-			"showMoreChats": "მეტი საუბრის ჩვენება",
-			"showSubchats": "ქვესაუბრების ჩვენება ({count})",
-			"startSearching_one": "ჩაწერეთ მინიმუმ {count} სიმბოლო",
-			"startSearching_other": "ჩაწერეთ მინიმუმ {count} სიმბოლო"
+			"showMoreChats": "მეტი ჩათის ჩვენება",
+			"showSubchats": "სუბჩატების ჩვენება ({count})",
+			"startSearching_one": "შეიყვანეთ მინიმუმ {count} სიმბოლო",
+			"startSearching_other": "შეიყვანეთ მინიმუმ {count} სიმბოლოები"
 		},
 		"description": {
+			"geminiNano": "მინი GPT Google Chrome-ისთვის",
 			"loremIpsumGPT": "ყველაზე ინტელექტუალური მოდელი",
 			"rammusGPT": "საუკეთესო ემოციური მხარდაჭერა"
 		},
 		"error": {
-			"agentAvatar": "უნდა დაამატოთ ავატარი აგენტისთვის",
-			"agentName": "უნდა დაამატოთ სახელი აგენტისთვის",
-			"emptyMessage": "თქვენი შეტყობინება ცარიელია"
+			"agentAvatar": "აგენტისთვის ავატარის დამატება აუცილებელია",
+			"agentName": "აგენტისთვის სახელის დამატება აუცილებელია",
+			"emptyMessage": "თქვენი შეტყობინება ცარიელია",
+			"failedMessage": "შეტყობინების გაგზავნისას პრობლემა წარმოიშვა"
 		},
 		"label": {
 			"agents": "აგენტები",
-			"chatTitle": "საუბრის სათაური",
-			"chats": "საუბრები",
+			"chatTitle": "ჩათის სათაური",
+			"chats": "ჩათები",
+			"creativityLevel": "კრეატიულობის დონე",
 			"customInstructions": "მორგებული ინსტრუქციები",
 			"gptModel": "GPT მოდელი",
 			"newAgent": "ახალი აგენტი",
-			"newChat": "ახალი საუბარი",
+			"newChat": "ახალი ჩათი",
 			"newMessage": "ახალი შეტყობინება",
-			"noChats": "არ არის საუბრები",
-			"noSubchats": "არ არის ქვესაუბრები",
+			"noChats": "ჩათები არ არის",
+			"noSubchats": "სუბჩატები არ არის",
 			"selectedAgent": "არჩეული აგენტი",
 			"selectedValue": "არჩეული მნიშვნელობა",
-			"subchats": "ქვესაუბრები",
+			"subchats": "სუბჩატები",
 			"xMessages_one": "1 შეტყობინება",
 			"xMessages_other": "{count} შეტყობინება",
 			"xSearchResults_one": "{count} ძიების შედეგი",
-			"xSearchResults_other": "{count} ძიების შედეგი",
-			"xSearchResults_zero": "ძიების შედეგი არ არის",
+			"xSearchResults_other": "{count} ძიების შედეგები",
+			"xSearchResults_zero": "ძიების შედეგები არ არის",
 			"xSelectedMessages_one": "არჩეულია 1 შეტყობინება",
 			"xSelectedMessages_other": "არჩეულია {count} შეტყობინება"
 		},
 		"placeholder": {
-			"newMessage": "ესაუბრეთ {name}...",
-			"rename": "ავტომატურად გენერირებული ახალი სახელი..."
+			"newMessage": "ესაუბრეთ {name}-ს...",
+			"rename": "შეიქმნას ახალი სახელი ავტომატურად..."
 		},
 		"state": {
 			"loadingAgents": "აგენტების ჩატვირთვა...",
-			"loadingChats": "საუბრების ჩატვირთვა...",
-			"loadingGPTs": "GPT მოდელების ჩატვირთვა...",
+			"loadingChats": "ჩათების ჩატვირთვა...",
+			"loadingGPTs": "GPT-ების ჩატვირთვა...",
 			"loadingMessages": "შეტყობინებების ჩატვირთვა...",
 			"loadingPreviousMessages": "წინა შეტყობინებების ჩატვირთვა...",
-			"loadingSubchats": "ქვესაუბრების ჩატვირთვა...",
-			"renamingChat": "საუბრის სახელის შეცვლა...",
+			"loadingSubchats": "სუბჩატების ჩატვირთვა...",
+			"renamingChat": "ჩათის გადარქმევა...",
 			"thinking": "ფიქრი..."
 		},
 		"warning": {
-			"deletingAgent": "ეს აგენტი წაიშლება სამუდამოდ",
-			"deletingChats": "ეს საუბრები წაიშლება სამუდამოდ"
+			"deletingAgent": "ამ აგენტს საბოლოოდ წაშლის",
+			"deletingChats": "ეს ჩათები საბოლოოდ წაიშლება",
+			"geminiGptInsideChrome": "ამ GPT-ისთვის საჭიროა გააქტიურებული იყოს შემდეგი პარამეტრები:",
+			"geminiGptOutsideChrome": "ეს GPT ხელმისაწვდომია მხოლოდ Google Chrome ბრაუზერში",
+			"invalidGpt": "არასწორი GPT"
 		}
 	},
 	"userSettings": {
 		"action": {
 			"manageAccount": "ანგარიშის მართვა",
-			"manageBilling": "ბილინგის მართვა"
+			"manageBilling": "ანგარიშსწორების მართვა"
 		},
 		"error": {
 			"address": "უნდა დაამატოთ მისამართი",
@@ -140,23 +155,23 @@
 			"city": "უნდა დაამატოთ ქალაქი",
 			"country": "უნდა დაამატოთ ქვეყანა",
 			"email": "უნდა დაამატოთ ელ.ფოსტა",
-			"legalName": "უნდა დაამატოთ კანონიერი სახელი",
+			"legalName": "უნდა დაამატოთ იურიდიული სახელი",
 			"name": "უნდა დაამატოთ სახელი",
 			"postalCode": "უნდა დაამატოთ საფოსტო კოდი"
 		},
 		"label": {
 			"account": "ანგარიში",
 			"address": "მისამართი",
-			"billing": "ბილინგი",
+			"billing": "ანგარიშსწორება",
 			"city": "ქალაქი",
 			"country": "ქვეყანა",
 			"email": "ელ.ფოსტა",
-			"legalName": "კანონიერი სახელი",
+			"legalName": "იურიდიული სახელი",
 			"phone": "ტელეფონის ნომერი",
 			"postalCode": "საფოსტო კოდი",
 			"private": "პირადი",
-			"public": "საზოგადოებრივი",
-			"vatNumber": "საგადასახადო ნომერი"
+			"public": "საჯარო",
+			"vatNumber": "დღგ-ის ნომერი"
 		}
 	}
 }

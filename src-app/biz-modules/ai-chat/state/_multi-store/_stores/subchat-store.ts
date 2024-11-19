@@ -39,9 +39,10 @@ export const useSubchatStore = (chatStore: ChatStore, allSubchatsStore: AllSubch
 	const [subchatLoading, setSubchatLoading] = useState<ListLoading>(false)
 
 	const canLoadSubchatMessages = !subchatPagination.page || subchatMessages.length < subchatPagination.count
+	const isActiveLoading = subchatLoading !== false && subchatLoading !== 'error'
 
 	const loadActiveSubchat = async (subchatId: number) => {
-		if (subchatLoading || !activeChat || isNaN(subchatId) || subchatId === activeSubchat?.id) return
+		if (isActiveLoading || !activeChat || isNaN(subchatId) || subchatId === activeSubchat?.id) return
 
 		setSubchatLoading('full')
 
@@ -66,6 +67,7 @@ export const useSubchatStore = (chatStore: ChatStore, allSubchatsStore: AllSubch
 		setActiveSubchat(null)
 		setSubchatMessages([])
 		setSubchatPagination({ page: 0, count: 0 })
+		setSubchatLoading(false)
 	}
 
 	const getSubchatFromChatMessages = (subchatId: number): Subchat | null => {
@@ -103,23 +105,37 @@ export const useSubchatStore = (chatStore: ChatStore, allSubchatsStore: AllSubch
 	}
 
 	const postSubchatMessage = async (text: string, agentId: number) => {
-		if (subchatLoading || !activeChat || !activeSubchat) return
+		if (isActiveLoading || !activeChat || !activeSubchat) return
+
+		const ghostCount = subchatMessages.filter((message: Message) => message.id < 0).length
+		const messages: Message[] = subchatMessages.filter((message: Message) => message.id > 0)
+		const pagination: Pagination = { ...subchatPagination, count: subchatPagination.count - ghostCount }
 
 		setSubchatLoading('update')
 		setSubchatMessages([
-			...subchatMessages,
+			...messages,
 			createGhostMessage(activeChat.id, activeSubchat.id, 'user', text, agentId),
 			createGhostMessage(activeChat.id, activeSubchat.id, 'agent', '', agentId),
 		])
-		setSubchatPagination({ ...subchatPagination, count: subchatPagination.count + 1 })
-		updateChatAndSubchats(subchatPagination.count + 1)
+		setSubchatPagination({ ...pagination, count: pagination.count + 1 }) // Used for scrolling
+		updateChatAndSubchats(pagination.count + 1)
 
 		const listing = await API.postMessage(activeChat.id, text, agentId, activeSubchat.id)
 
-		setSubchatMessages([...subchatMessages, ...listing.messages])
-		setSubchatPagination({ ...subchatPagination, count: subchatPagination.count + listing.count })
-		setSubchatLoading(false)
-		updateChatAndSubchats(subchatPagination.count + listing.count)
+		if (listing.count) {
+			setSubchatMessages([...messages, ...listing.messages]) // Old state
+			setSubchatLoading(false)
+		} else {
+			setSubchatMessages([
+				...messages, // Old state
+				createGhostMessage(activeChat.id, activeSubchat.id, 'user', text, agentId, true),
+				createGhostMessage(activeChat.id, activeSubchat.id, 'agent', '', agentId, true),
+			])
+			setSubchatLoading('error')
+		}
+
+		setSubchatPagination({ ...pagination, count: pagination.count + 2 }) // Old state, used for scrolling
+		updateChatAndSubchats(pagination.count + 2)
 	}
 
 	const updateChatAndSubchats = (subchatSize: number) => {

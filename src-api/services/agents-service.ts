@@ -3,9 +3,10 @@ import {
 	AgentsApiPayload,
 	AgentsApiQuery,
 	ApiResponse,
+	CreativityLevel,
 	DbAgent,
 	GptApiData,
-	STATUS__SUCCESS,
+	Status,
 	UI_TAG__GPT_DESCRIPTION,
 } from '../types'
 import { RESP__INVALID_DATA, RESP__NOT_FOUND } from '../utilities/network'
@@ -15,7 +16,7 @@ import {
 	createAgentId,
 	getDbActiveAgents,
 	getDbDeletedAgents,
-	GPTs,
+	getGPTs,
 	hasMessagesByAgent,
 	resetAgentsDB,
 	setDbActiveAgents,
@@ -28,8 +29,8 @@ const DEFAULT_PAGE = 1
 export const agentsService = {
 	async getGPTs(): Promise<ApiResponse<GptApiData>> {
 		return {
-			status: STATUS__SUCCESS,
-			data: { count: GPTs.length, items: GPTs },
+			status: Status.SUCCESS,
+			data: { count: getGPTs().length, items: getGPTs() },
 		}
 	},
 
@@ -45,7 +46,7 @@ export const agentsService = {
 			const agents = dbAgents.filter((agent: DbAgent) => agentIds.includes(agent.id))
 
 			return {
-				status: STATUS__SUCCESS,
+				status: Status.SUCCESS,
 				data: { count: agents.length, items: agents },
 			}
 		} else {
@@ -64,7 +65,7 @@ export const agentsService = {
 			}
 
 			return {
-				status: STATUS__SUCCESS,
+				status: Status.SUCCESS,
 				data: {
 					count: agents.length,
 					items: agents.slice(count * (page - 1), count * page),
@@ -74,7 +75,7 @@ export const agentsService = {
 	},
 
 	async postAgent(payload: AgentsApiPayload): Promise<ApiResponse<AgentsApiData>> {
-		const { avatar, name, desc, setup } = payload
+		const { avatar, name, desc, prompt, creativity } = payload
 		const gptId = extractInt(payload.gptId, 0, isGreaterThanZero)
 
 		if (!name || !avatar || !gptId) return { ...RESP__INVALID_DATA, error: `Name, avatar and GPT cannot be empty` }
@@ -85,20 +86,21 @@ export const agentsService = {
 			name: name,
 			avatar: avatar,
 			desc: desc || '',
-			setup: setup || '',
+			prompt: prompt || '',
+			creativity: (creativity || 'medium') as CreativityLevel,
 			createdAt: new Date().toISOString(),
 			updatedAt: null,
 		}
 		setDbActiveAgents([agent, ...getDbActiveAgents()])
 
 		return {
-			status: STATUS__SUCCESS,
+			status: Status.SUCCESS,
 			data: { count: 1, items: [agent] },
 		}
 	},
 
 	async patchAgent(payload: AgentsApiPayload): Promise<ApiResponse<AgentsApiData>> {
-		const { avatar, name, desc, setup } = payload
+		const { avatar, name, desc, prompt, creativity } = payload
 		const agentId = extractInt(payload.agentId, 0, isGreaterThanZero)
 		const gptId = extractInt(payload.gptId, 0, isGreaterThanZero)
 		const dbAgents = getDbActiveAgents()
@@ -112,12 +114,13 @@ export const agentsService = {
 		agent.name = name
 		agent.avatar = avatar
 		agent.desc = desc || ''
-		agent.setup = setup || ''
+		agent.prompt = prompt || ''
+		agent.creativity = (creativity || '') as CreativityLevel
 		agent.updatedAt = new Date().toISOString()
 
 		setDbActiveAgents(dbAgents)
 
-		return { status: STATUS__SUCCESS, data: { count: 1, items: [agent] } }
+		return { status: Status.SUCCESS, data: { count: 1, items: [agent] } }
 	},
 
 	async deleteAgents(query: AgentsApiQuery): Promise<ApiResponse<AgentsApiData>> {
@@ -142,7 +145,7 @@ export const agentsService = {
 		setDbDeletedAgents(dbDeletedAgents)
 
 		return {
-			status: STATUS__SUCCESS,
+			status: Status.SUCCESS,
 			data: { count: dbActiveAgents.length, items: [] },
 		}
 	},

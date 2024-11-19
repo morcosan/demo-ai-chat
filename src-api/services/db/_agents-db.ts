@@ -1,4 +1,14 @@
-import { DbAgent, DbGPT, GPT_ID__LOREM_IPSUM, GPT_ID__RAMMUS, GptAPI, UI_TAG__GPT_DESCRIPTION } from '@api/types'
+import {
+	CreativityLevel,
+	DbAgent,
+	DbGPT,
+	GPT_ID__GEMINI_NANO,
+	GPT_ID__LOREM_IPSUM,
+	GPT_ID__RAMMUS,
+	GptConfig,
+	GptMessage,
+	UI_TAG__GPT_DESCRIPTION,
+} from '@api/types'
 import {
 	COOKIE_KEY,
 	randomArray,
@@ -10,23 +20,13 @@ import {
 	randomText,
 	randomTrue,
 } from '@utils/release'
-import { LoremIpsum } from '../gpt/lorem-ipsum'
-import { Rammus } from '../gpt/rammus'
+import { GeminiNanoAPI } from '../gpt/gemini-nano-api'
+import { LoremIpsumAPI } from '../gpt/lorem-ipsum-api'
+import { RammusAPI } from '../gpt/rammus-api'
 
-const GPTs: DbGPT[] = [
-	{
-		id: GPT_ID__LOREM_IPSUM,
-		name: 'Lorem Ipsum GPT',
-		avatar: ENV__ROOT_URL_PATH + '/avatars/default.svg',
-		desc: '',
-	},
-	{
-		id: GPT_ID__RAMMUS,
-		name: 'Rammus GPT',
-		avatar: ENV__ROOT_URL_PATH + '/avatars/rammus.png',
-		desc: '',
-	},
-]
+let _GPTs: DbGPT[]
+
+const getGPTs = () => _GPTs
 
 let _dbActiveAgents: DbAgent[]
 let _dbDeletedAgents: DbAgent[]
@@ -46,7 +46,35 @@ const setDbDeletedAgents = (value: DbAgent[]) => {
 	localStorage.setItem(COOKIE_KEY.DB_AGENTS_DELETED, JSON.stringify(value))
 }
 
-const initAgentsDB = () => {
+const initGPTs = async () => {
+	_GPTs = [
+		{
+			id: GPT_ID__LOREM_IPSUM,
+			name: 'Lorem Ipsum GPT',
+			avatar: ENV__ROOT_URL_PATH + '/avatars/default.svg',
+			desc: '',
+			enabled: await LoremIpsumAPI.isAvailable(),
+		},
+		{
+			id: GPT_ID__RAMMUS,
+			name: 'Rammus GPT',
+			avatar: ENV__ROOT_URL_PATH + '/avatars/rammus.png',
+			desc: '',
+			enabled: await RammusAPI.isAvailable(),
+		},
+		{
+			id: GPT_ID__GEMINI_NANO,
+			name: 'Gemini Nano',
+			avatar: ENV__ROOT_URL_PATH + '/avatars/gemini.svg',
+			desc: '',
+			enabled: await GeminiNanoAPI.isAvailable(),
+		},
+	]
+}
+
+const initAgentsDB = async () => {
+	await initGPTs()
+
 	try {
 		const json = localStorage.getItem(COOKIE_KEY.DB_AGENTS)
 		_dbActiveAgents = JSON.parse(json || '')
@@ -66,35 +94,39 @@ const initAgentsDB = () => {
 
 const createDbAgents = () => {
 	const departments = ['Design', 'Frontend', 'Backend', 'Marketing', 'Business']
+	const levels = ['high', 'mid', 'min', 'max', 'low'] satisfies CreativityLevel[]
 
 	setDbActiveAgents([
-		...GPTs.map((gpt: DbGPT) => ({
+		..._GPTs.map((gpt: DbGPT) => ({
 			id: createAgentId(),
 			gptId: gpt.id,
 			name: gpt.name,
 			avatar: gpt.avatar,
 			desc: UI_TAG__GPT_DESCRIPTION,
-			setup: '',
+			prompt: '',
+			creativity: 'mid' as CreativityLevel,
 			createdAt: randomRecentDate(),
 			updatedAt: null,
 		})),
-		...departments.map((department: string) => ({
+		...departments.map((department: string, index: number) => ({
 			id: createAgentId(),
-			gptId: randomFromArray(GPTs).id,
+			gptId: randomFromArray(_GPTs).id,
 			name: `AI ${department} Expert`,
 			avatar: randomImageHD(),
 			desc: `Expert in ${department}`,
-			setup: `You are an expert in ${department}`,
+			prompt: `You are an expert in ${department}`,
+			creativity: levels[index],
 			createdAt: randomRecentDate(),
 			updatedAt: null,
 		})),
 		...randomArray(0, 50).map(() => ({
 			id: createAgentId(),
-			gptId: randomFromArray(GPTs).id,
+			gptId: randomFromArray(_GPTs).id,
 			name: randomText(randomInt(1, randomTrue() ? 4 : 20)) + ' AI',
 			avatar: randomImageHD(),
 			desc: randomLongText(randomInt(0, 5)),
-			setup: randomLongText(randomInt(0, 10)),
+			prompt: randomLongText(randomInt(0, 10)),
+			creativity: randomFromArray<CreativityLevel>(levels),
 			createdAt: randomRecentDate(),
 			updatedAt: null,
 		})),
@@ -107,22 +139,33 @@ const resetAgentsDB = () => {
 	createDbAgents()
 }
 
-const randomFromAgentIds = () => randomFromArray(_dbActiveAgents).id
+const randomFromAgentIds = () => {
+	const gptIds = [GPT_ID__LOREM_IPSUM, GPT_ID__RAMMUS]
+	const agents = _dbActiveAgents.filter((agent: DbAgent) => gptIds.includes(agent.gptId))
 
-const getGptAPI = (agentId: number): GptAPI | null => {
+	return randomFromArray(agents).id
+}
+
+const getGptResponse = async (agentId: number, messages: GptMessage[]): Promise<string> => {
 	const agent = _dbActiveAgents.find((agent: DbAgent) => agent.id === agentId)
-	if (!agent) return null
-	if (agent.gptId === GPT_ID__LOREM_IPSUM) return LoremIpsum
-	if (agent.gptId === GPT_ID__RAMMUS) return Rammus
-	return null
+	if (agent) {
+		const config: GptConfig = {
+			prompt: agent.prompt,
+			creativity: agent.creativity,
+		}
+		if (agent.gptId === GPT_ID__GEMINI_NANO) return GeminiNanoAPI.getResponse(config, messages)
+		if (agent.gptId === GPT_ID__LOREM_IPSUM) return LoremIpsumAPI.getResponse(config, messages)
+		if (agent.gptId === GPT_ID__RAMMUS) return RammusAPI.getResponse(config, messages)
+	}
+	return ''
 }
 
 export {
 	createAgentId,
 	getDbActiveAgents,
 	getDbDeletedAgents,
-	getGptAPI,
-	GPTs,
+	getGptResponse,
+	getGPTs,
 	initAgentsDB,
 	randomFromAgentIds,
 	resetAgentsDB,

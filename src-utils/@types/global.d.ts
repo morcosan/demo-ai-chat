@@ -17,11 +17,13 @@ declare global {
 	type ReactMouseEvent = MouseEvent
 
 	interface ReactProps {
+		id?: string
 		className?: string
 		style?: CSSProperties
 		children?: ReactNode
 	}
 	interface ReactPropsExtended {
+		id?: string
 		className?: string
 		style?: CSSProperties
 		children?: ReactNode | ((...args) => ReactNode)
@@ -41,7 +43,7 @@ declare global {
 		count: number
 	}
 
-	type ListLoading = false | 'full' | 'more' | 'update'
+	type ListLoading = false | 'full' | 'more' | 'update' | 'error'
 
 	type FormPayload<T> = Partial<Pick<T, { [K in keyof T]: T[K] extends string ? K : never }[keyof T]>>
 }

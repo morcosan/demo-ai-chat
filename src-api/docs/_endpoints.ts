@@ -19,13 +19,13 @@ export const ENDPOINTS: Endpoint[] = [
 	{ type: 'GET', path: '/api/subchats', params: ['chatId', 'subchatIds', 'count', 'page'] },
 
 	// POST
-	{ type: 'POST', path: '/api/agents', params: ['agentId', 'gptId', 'name', 'avatar', 'desc', 'setup'] },
+	{ type: 'POST', path: '/api/agents', params: ['agentId', 'gptId', 'name', 'avatar', 'desc', 'prompt'] },
 	{ type: 'POST', path: '/api/chats', params: ['title'] },
 	{ type: 'POST', path: '/api/messages', params: ['chatId', 'subchatId', 'text'] },
 
 	// PATCH
 	{ type: 'PATCH', path: '/api/account', params: ['name', 'email', 'phone', 'avatar'] },
-	{ type: 'PATCH', path: '/api/agents', params: ['agentId', 'gptId', 'name', 'avatar', 'desc', 'setup'] },
+	{ type: 'PATCH', path: '/api/agents', params: ['agentId', 'gptId', 'name', 'avatar', 'desc', 'prompt'] },
 	{
 		type: 'PATCH',
 		path: '/api/billing',
@@ -57,7 +57,7 @@ export const QUERY_DEFAULTS = {
 	page: '1',
 	phone: '+123456789',
 	postalCode: '123456',
-	setup: 'You are an expert',
+	prompt: 'You are an expert',
 	vatNumber: 'FR123',
 }
 

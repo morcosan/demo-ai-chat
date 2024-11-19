@@ -7,17 +7,20 @@
 			"close": "Chiudi",
 			"delete": "Elimina",
 			"deselectAll": "Deseleziona tutto",
+			"goToUrl": "Vai a {url}",
 			"openMenu": "Apri menu",
 			"rename": "Rinomina",
+			"retry": "Riprova",
 			"saveChanges": "Salva modifiche",
 			"search": "Cerca",
 			"searchMore": "Mostra più risultati",
 			"selectAll": "Seleziona tutto",
-			"signOut": "Disconnetti"
+			"signOut": "Esci"
 		},
 		"error": {
-			"noChanges": "Nessuna modifica",
-			"nothingFound": "Nessun risultato trovato per \"{search}\""
+			"noChanges": "Non ci sono modifiche",
+			"nothingFound": "Nessun risultato trovato per \"{search}\"",
+			"unsent": "Non inviato"
 		},
 		"label": {
 			"apiDocs": "Documentazione API",
@@ -32,6 +35,11 @@
 			"europe": "Europa",
 			"githubRepo": "Repository GitHub",
 			"language": "Lingua",
+			"levelHigh": "Alto",
+			"levelLow": "Basso",
+			"levelMedium": "Medio",
+			"levelVeryHigh": "Molto alto",
+			"levelVeryLow": "Molto basso",
 			"lightTheme": "Chiaro",
 			"name": "Nome",
 			"navigationBar": "Barra di navigazione",
@@ -51,6 +59,7 @@
 			"deleting": "Eliminazione in corso...",
 			"loading": "Caricamento in corso...",
 			"searching": "Ricerca in corso...",
+			"sending": "Invio in corso...",
 			"updating": "Aggiornamento in corso..."
 		}
 	},
@@ -70,7 +79,7 @@
 			"openChat": "Apri chat",
 			"openSubchat_other": "Apri sottochat ({count} messaggi)",
 			"openSubchat_zero": "Crea sottochat",
-			"searchChats": "Cerca chat",
+			"searchChats": "Cerca nelle chat",
 			"selectChat": "Seleziona chat",
 			"sendMessage": "Invia messaggio",
 			"showMoreAgents": "Mostra più agenti",
@@ -80,18 +89,21 @@
 			"startSearching_other": "Digita almeno {count} caratteri"
 		},
 		"description": {
+			"geminiNano": "Mini GPT per Google Chrome",
 			"loremIpsumGPT": "Modello più intelligente",
-			"rammusGPT": "Miglior supporto emotivo"
+			"rammusGPT": "Il miglior supporto emotivo"
 		},
 		"error": {
 			"agentAvatar": "Devi aggiungere un avatar per l'agente",
 			"agentName": "Devi aggiungere un nome per l'agente",
-			"emptyMessage": "Il tuo messaggio è vuoto"
+			"emptyMessage": "Il tuo messaggio è vuoto",
+			"failedMessage": "C'è stato un problema con l'invio del tuo messaggio"
 		},
 		"label": {
 			"agents": "Agenti",
 			"chatTitle": "Titolo chat",
 			"chats": "Chat",
+			"creativityLevel": "Livello di creatività",
 			"customInstructions": "Istruzioni personalizzate",
 			"gptModel": "Modello GPT",
 			"newAgent": "Nuovo agente",
@@ -117,16 +129,19 @@
 		"state": {
 			"loadingAgents": "Caricamento agenti...",
 			"loadingChats": "Caricamento chat...",
-			"loadingGPTs": "Caricamento modelli GPT...",
+			"loadingGPTs": "Caricamento GPT...",
 			"loadingMessages": "Caricamento messaggi...",
 			"loadingPreviousMessages": "Caricamento messaggi precedenti...",
 			"loadingSubchats": "Caricamento sottochat...",
-			"renamingChat": "Rinominando chat...",
-			"thinking": "In elaborazione..."
+			"renamingChat": "Rinominazione chat...",
+			"thinking": "Sto pensando..."
 		},
 		"warning": {
-			"deletingAgent": "Questo agente verrà eliminato definitivamente",
-			"deletingChats": "Queste chat verranno eliminate definitivamente"
+			"deletingAgent": "Questo agente sarà eliminato in modo permanente",
+			"deletingChats": "Queste chat saranno eliminate in modo permanente",
+			"geminiGptInsideChrome": "Questo GPT richiede che queste impostazioni siano attivate:",
+			"geminiGptOutsideChrome": "Questo GPT è disponibile solo nel browser Google Chrome",
+			"invalidGpt": "GPT non valido"
 		}
 	},
 	"userSettings": {
@@ -156,7 +171,7 @@
 			"postalCode": "Codice postale",
 			"private": "Privato",
 			"public": "Pubblico",
-			"vatNumber": "Numero di partita IVA"
+			"vatNumber": "Numero IVA"
 		}
 	}
 }

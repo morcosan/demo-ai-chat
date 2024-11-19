@@ -1,14 +1,16 @@
 {
 	"core": {
 		"action": {
-			"back": "Volver",
-			"backToHome": "Volver a la página de inicio",
+			"back": "Atrás",
+			"backToHome": "Volver a la página principal",
 			"changeLanguage": "Cambiar idioma",
 			"close": "Cerrar",
 			"delete": "Eliminar",
 			"deselectAll": "Deseleccionar todo",
+			"goToUrl": "Ir a {url}",
 			"openMenu": "Abrir menú",
 			"rename": "Renombrar",
+			"retry": "Reintentar",
 			"saveChanges": "Guardar cambios",
 			"search": "Buscar",
 			"searchMore": "Mostrar más resultados",
@@ -17,7 +19,8 @@
 		},
 		"error": {
 			"noChanges": "No hay cambios",
-			"nothingFound": "No se encontró nada para \"{search}\""
+			"nothingFound": "No se encontró nada para \"{search}\"",
+			"unsent": "No enviado"
 		},
 		"label": {
 			"apiDocs": "Documentación API",
@@ -30,16 +33,21 @@
 			"designSystem": "Sistema de diseño",
 			"errors": "Errores",
 			"europe": "Europa",
-			"githubRepo": "Repositorio de GitHub",
+			"githubRepo": "Repositorio GitHub",
 			"language": "Idioma",
+			"levelHigh": "Alto",
+			"levelLow": "Bajo",
+			"levelMedium": "Medio",
+			"levelVeryHigh": "Muy alto",
+			"levelVeryLow": "Muy bajo",
 			"lightTheme": "Claro",
 			"name": "Nombre",
 			"navigationBar": "Barra de navegación",
 			"navigationMenu": "Menú de navegación",
 			"optionalField": "(Opcional)",
-			"quickSettings": "Configuración rápida",
+			"quickSettings": "Ajustes rápidos",
 			"requiredField": "(Requerido)",
-			"settings": "Configuración",
+			"settings": "Configuraciones",
 			"uiLibrary": "Biblioteca UI",
 			"uiTheme": "Tema UI"
 		},
@@ -51,6 +59,7 @@
 			"deleting": "Eliminando...",
 			"loading": "Cargando...",
 			"searching": "Buscando...",
+			"sending": "Enviando...",
 			"updating": "Actualizando..."
 		}
 	},
@@ -60,7 +69,7 @@
 			"configureAgent": "Configurar agente",
 			"confirmDeleteAgent": "Confirmar eliminación del agente",
 			"confirmDeleteChats": "Confirmar eliminación de chats",
-			"confirmRenameChat": "Confirmar renombramiento de chat",
+			"confirmRenameChat": "Confirmar cambio de nombre del chat",
 			"createAgent": "Crear agente",
 			"deleteAgent": "Eliminar agente",
 			"deleteSelectedChats": "Eliminar chats seleccionados",
@@ -70,35 +79,38 @@
 			"openChat": "Abrir chat",
 			"openSubchat_other": "Abrir subchat ({count} mensajes)",
 			"openSubchat_zero": "Crear subchat",
-			"searchChats": "Buscar en chats",
+			"searchChats": "Buscar chats",
 			"selectChat": "Seleccionar chat",
 			"sendMessage": "Enviar mensaje",
 			"showMoreAgents": "Mostrar más agentes",
 			"showMoreChats": "Mostrar más chats",
 			"showSubchats": "Mostrar subchats ({count})",
-			"startSearching_one": "Escriba al menos {count} carácter",
-			"startSearching_other": "Escriba al menos {count} caracteres"
+			"startSearching_one": "Escribe al menos {count} carácter",
+			"startSearching_other": "Escribe al menos {count} caracteres"
 		},
 		"description": {
+			"geminiNano": "Mini GPT para Google Chrome",
 			"loremIpsumGPT": "El modelo más inteligente",
-			"rammusGPT": "Mejor soporte emocional"
+			"rammusGPT": "El mejor soporte emocional"
 		},
 		"error": {
-			"agentAvatar": "Debe añadir un avatar para el agente",
-			"agentName": "Debe añadir un nombre para el agente",
-			"emptyMessage": "Tu mensaje está vacío"
+			"agentAvatar": "Debes agregar un avatar para el agente",
+			"agentName": "Debes agregar un nombre para el agente",
+			"emptyMessage": "Tu mensaje está vacío",
+			"failedMessage": "Hubo un problema al entregar tu mensaje"
 		},
 		"label": {
 			"agents": "Agentes",
 			"chatTitle": "Título del chat",
 			"chats": "Chats",
+			"creativityLevel": "Nivel de creatividad",
 			"customInstructions": "Instrucciones personalizadas",
 			"gptModel": "Modelo GPT",
 			"newAgent": "Nuevo agente",
 			"newChat": "Nuevo chat",
 			"newMessage": "Nuevo mensaje",
-			"noChats": "No hay chats",
-			"noSubchats": "No hay subchats",
+			"noChats": "Sin chats",
+			"noSubchats": "Sin subchats",
 			"selectedAgent": "Agente seleccionado",
 			"selectedValue": "Valor seleccionado",
 			"subchats": "Subchats",
@@ -106,18 +118,18 @@
 			"xMessages_other": "{count} mensajes",
 			"xSearchResults_one": "{count} resultado de búsqueda",
 			"xSearchResults_other": "{count} resultados de búsqueda",
-			"xSearchResults_zero": "No hay resultados de búsqueda",
+			"xSearchResults_zero": "Sin resultados de búsqueda",
 			"xSelectedMessages_one": "1 mensaje seleccionado",
 			"xSelectedMessages_other": "{count} mensajes seleccionados"
 		},
 		"placeholder": {
-			"newMessage": "Hablar con {name}...",
+			"newMessage": "Habla con {name}...",
 			"rename": "Generar un nuevo nombre automáticamente..."
 		},
 		"state": {
 			"loadingAgents": "Cargando agentes...",
 			"loadingChats": "Cargando chats...",
-			"loadingGPTs": "Cargando modelos GPT...",
+			"loadingGPTs": "Cargando GPTs...",
 			"loadingMessages": "Cargando mensajes...",
 			"loadingPreviousMessages": "Cargando mensajes anteriores...",
 			"loadingSubchats": "Cargando subchats...",
@@ -125,8 +137,11 @@
 			"thinking": "Pensando..."
 		},
 		"warning": {
-			"deletingAgent": "Este agente se eliminará permanentemente",
-			"deletingChats": "Estos chats se eliminarán permanentemente"
+			"deletingAgent": "Este agente será eliminado permanentemente",
+			"deletingChats": "Estos chats serán eliminados permanentemente",
+			"geminiGptInsideChrome": "Este GPT requiere que se activen las siguientes configuraciones:",
+			"geminiGptOutsideChrome": "Este GPT solo está disponible en el navegador Google Chrome",
+			"invalidGpt": "GPT inválido"
 		}
 	},
 	"userSettings": {
@@ -135,14 +150,14 @@
 			"manageBilling": "Gestionar facturación"
 		},
 		"error": {
-			"address": "Debe añadir la dirección",
-			"avatar": "Debe añadir un avatar",
-			"city": "Debe añadir la ciudad",
-			"country": "Debe añadir el país",
-			"email": "Debe añadir su dirección de correo electrónico",
-			"legalName": "Debe añadir el nombre legal",
-			"name": "Debe añadir su nombre",
-			"postalCode": "Debe añadir el código postal"
+			"address": "Debes agregar la dirección",
+			"avatar": "Debes agregar tu avatar",
+			"city": "Debes agregar la ciudad",
+			"country": "Debes agregar el país",
+			"email": "Debes agregar tu dirección de correo electrónico",
+			"legalName": "Debes agregar el nombre legal",
+			"name": "Debes agregar tu nombre",
+			"postalCode": "Debes agregar el código postal"
 		},
 		"label": {
 			"account": "Cuenta",
@@ -150,7 +165,7 @@
 			"billing": "Facturación",
 			"city": "Ciudad",
 			"country": "País",
-			"email": "Dirección de correo electrónico",
+			"email": "Correo electrónico",
 			"legalName": "Nombre legal",
 			"phone": "Número de teléfono",
 			"postalCode": "Código postal",

@@ -1,5 +1,5 @@
-import { Agent, GPT, GPT_ID__LOREM_IPSUM, GPT_ID__RAMMUS } from '../../api'
-import { parseGptDescription } from '../../utils'
+import { Agent, GPT } from '../../api'
+import { getGptDescription, parseGptDescription } from '../../utils'
 
 interface Props extends ReactProps {
 	gpt?: GPT
@@ -16,13 +16,7 @@ export const AgentGptItem = (props: Props) => {
 
 	const avatar = gpt?.avatar || agent?.avatar || ''
 	const name = gpt?.name || agent?.name || ''
-
-	const desc = (() => {
-		if (agent?.desc) return parseGptDescription(agent.gptId, agent.desc)
-		if (gpt?.id === GPT_ID__LOREM_IPSUM) return t('aiChat.description.loremIpsumGPT')
-		if (gpt?.id === GPT_ID__RAMMUS) return t('aiChat.description.rammusGPT')
-		return ''
-	})()
+	const desc = agent?.desc ? parseGptDescription(agent.gptId, agent.desc) : getGptDescription(gpt?.id)
 
 	const avatarClass = cx(
 		'rounded-full',

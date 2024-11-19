@@ -6,25 +6,28 @@
 			"changeLanguage": "Spremeni jezik",
 			"close": "Zapri",
 			"delete": "Izbriši",
-			"deselectAll": "Počisti izbor",
+			"deselectAll": "Poništi izbiro vsega",
+			"goToUrl": "Pojdi na {url}",
 			"openMenu": "Odpri meni",
 			"rename": "Preimenuj",
+			"retry": "Poskusi znova",
 			"saveChanges": "Shrani spremembe",
-			"search": "Išči",
+			"search": "Iskanje",
 			"searchMore": "Prikaži več rezultatov",
 			"selectAll": "Izberi vse",
 			"signOut": "Odjava"
 		},
 		"error": {
 			"noChanges": "Ni sprememb",
-			"nothingFound": "Nič ni najdeno za \"{search}\""
+			"nothingFound": "Nič ni bilo najdeno za \"{search}\"",
+			"unsent": "Neposlana"
 		},
 		"label": {
 			"apiDocs": "API dokumentacija",
 			"asia": "Azija",
 			"avatar": "Avatar",
 			"custom": "Po meri",
-			"darkTheme": "Temna",
+			"darkTheme": "Temno",
 			"default": "Privzeto",
 			"description": "Opis",
 			"designSystem": "Oblikovalski sistem",
@@ -32,141 +35,143 @@
 			"europe": "Evropa",
 			"githubRepo": "GitHub repozitorij",
 			"language": "Jezik",
-			"lightTheme": "Svetla",
+			"levelHigh": "Visoka",
+			"levelLow": "Nizka",
+			"levelMedium": "Srednja",
+			"levelVeryHigh": "Zelo visoka",
+			"levelVeryLow": "Zelo nizka",
+			"lightTheme": "Svetlo",
 			"name": "Ime",
 			"navigationBar": "Navigacijska vrstica",
 			"navigationMenu": "Navigacijski meni",
 			"optionalField": "(Neobvezno)",
+			"quickSettings": "Hitre nastavitve",
 			"requiredField": "(Obvezno)",
 			"settings": "Nastavitve",
 			"uiLibrary": "UI knjižnica",
 			"uiTheme": "UI tema"
 		},
 		"placeholder": {
-			"search": "Išči..."
+			"search": "Iskanje..."
 		},
 		"state": {
 			"dataSaved": "Vaši podatki so shranjeni",
 			"deleting": "Brisanje...",
 			"loading": "Nalaganje...",
 			"searching": "Iskanje...",
+			"sending": "Pošiljanje...",
 			"updating": "Posodabljanje..."
 		}
 	},
 	"aiChat": {
 		"action": {
-			"backToSubchats": "Nazaj na podklepete",
-			"configureAgent": "Nastavi agenta",
-			"confirmDeleteAgent": "Potrdi brisanje agenta",
-			"confirmDeleteChats": "Potrdi brisanje pogovorov",
-			"confirmRenameChat": "Potrdi preimenovanje pogovora",
+			"backToSubchats": "Nazaj na subchate",
+			"configureAgent": "Konfiguriraj agenta",
+			"confirmDeleteAgent": "Potrdi izbris agenta",
+			"confirmDeleteChats": "Potrdi izbris chatov",
+			"confirmRenameChat": "Potrdi preimenovanje chata",
 			"createAgent": "Ustvari agenta",
 			"deleteAgent": "Izbriši agenta",
-			"deleteSelectedChats": "Izbriši izbrane pogovore",
-			"deselectChat": "Počisti izbor pogovora",
+			"deleteSelectedChats": "Izbriši izbrane chate",
+			"deselectChat": "Poništi izbiro chata",
 			"manageAgents": "Upravljaj agente",
-			"manageChats": "Upravljaj pogovore",
-			"openChat": "Odpri pogovor",
-			"openSubchat_few": "Odpri podklepet ({count} sporočila)",
-			"openSubchat_one": "Odpri podklepet ({count} sporočilo)",
-			"openSubchat_other": "Odpri podklepet ({count} sporočil)",
-			"openSubchat_two": "Odpri podklepet ({count} sporočili)",
-			"openSubchat_zero": "Ustvari podklepet",
-			"searchChats": "Išči pogovore",
-			"selectChat": "Izberi pogovor",
+			"manageChats": "Upravljaj chate",
+			"openChat": "Odpri chat",
+			"openSubchat_other": "Odpri subchat ({count} sporočil)",
+			"openSubchat_zero": "Ustvari subchat",
+			"searchChats": "Išči po chatih",
+			"selectChat": "Izberi chat",
 			"sendMessage": "Pošlji sporočilo",
 			"showMoreAgents": "Prikaži več agentov",
-			"showMoreChats": "Prikaži več pogovorov",
-			"showSubchats": "Prikaži podklepete ({count})",
-			"startSearching_few": "Vnesite vsaj {count} znake",
+			"showMoreChats": "Prikaži več chatov",
+			"showSubchats": "Prikaži subchate ({count})",
 			"startSearching_one": "Vnesite vsaj {count} znak",
-			"startSearching_other": "Vnesite vsaj {count} znakov",
-			"startSearching_two": "Vnesite vsaj {count} znaka"
+			"startSearching_other": "Vnesite vsaj {count} znakov"
 		},
 		"description": {
-			"loremIpsumGPT": "Najinteligentnejši model",
+			"geminiNano": "Mini GPT za Google Chrome",
+			"loremIpsumGPT": "Najpametnejši model",
 			"rammusGPT": "Najboljša čustvena podpora"
 		},
 		"error": {
-			"agentAvatar": "Dodati morate avatar za agenta",
-			"agentName": "Dodati morate ime za agenta",
-			"emptyMessage": "Vaše sporočilo je prazno"
+			"agentAvatar": "Morate dodati avatar za agenta",
+			"agentName": "Morate dodati ime za agenta",
+			"emptyMessage": "Vaše sporočilo je prazno",
+			"failedMessage": "Prišlo je do težave pri dostavi vašega sporočila"
 		},
 		"label": {
 			"agents": "Agenti",
-			"chatTitle": "Naslov pogovora",
-			"chats": "Pogovori",
+			"chatTitle": "Naslov chata",
+			"chats": "Chat",
+			"creativityLevel": "Raven ustvarjalnosti",
 			"customInstructions": "Navodila po meri",
 			"gptModel": "GPT model",
 			"newAgent": "Nov agent",
-			"newChat": "Nov pogovor",
+			"newChat": "Nov chat",
 			"newMessage": "Novo sporočilo",
-			"noChats": "Ni pogovorov",
-			"noSubchats": "Ni podklepetov",
-			"selectedAgent": "Izbran agent",
+			"noChats": "Ni chatov",
+			"noSubchats": "Ni subchatov",
+			"selectedAgent": "Izbrani agent",
 			"selectedValue": "Izbrana vrednost",
-			"subchats": "Podklepeti",
-			"xMessages_few": "{count} sporočila",
-			"xMessages_one": "{count} sporočilo",
+			"subchats": "Subchati",
+			"xMessages_one": "1 sporočilo",
 			"xMessages_other": "{count} sporočil",
-			"xMessages_two": "{count} sporočili",
-			"xSearchResults_few": "{count} rezultati iskanja",
 			"xSearchResults_one": "{count} rezultat iskanja",
 			"xSearchResults_other": "{count} rezultatov iskanja",
-			"xSearchResults_two": "{count} rezultata iskanja",
 			"xSearchResults_zero": "Ni rezultatov iskanja",
-			"xSelectedMessages_few": "{count} izbrana sporočila",
-			"xSelectedMessages_one": "{count} izbrano sporočilo",
-			"xSelectedMessages_other": "{count} izbranih sporočil",
-			"xSelectedMessages_two": "{count} izbrani sporočili"
+			"xSelectedMessages_one": "1 sporočilo izbrano",
+			"xSelectedMessages_other": "{count} sporočil izbranih"
 		},
 		"placeholder": {
-			"newMessage": "Pogovor z {name}...",
-			"rename": "Samodejno ustvari novo ime..."
+			"newMessage": "Pogovorite se z {name}...",
+			"rename": "Samodejno generiraj novo ime..."
 		},
 		"state": {
-			"loadingAgents": "Nalaganje agentov...",
-			"loadingChats": "Nalaganje pogovorov...",
-			"loadingGPTs": "Nalaganje GPT-jev...",
-			"loadingMessages": "Nalaganje sporočil...",
-			"loadingPreviousMessages": "Nalaganje prejšnjih sporočil...",
-			"loadingSubchats": "Nalaganje podklepetov...",
-			"renamingChat": "Preimenovanje pogovora...",
-			"thinking": "Razmišljanje..."
+			"loadingAgents": "Nalagam agente...",
+			"loadingChats": "Nalagam chate...",
+			"loadingGPTs": "Nalagam GPT-je...",
+			"loadingMessages": "Nalagam sporočila...",
+			"loadingPreviousMessages": "Nalagam prejšnja sporočila...",
+			"loadingSubchats": "Nalagam subchate...",
+			"renamingChat": "Preimenovanje chata...",
+			"thinking": "Razmišljam..."
 		},
 		"warning": {
 			"deletingAgent": "Ta agent bo trajno izbrisan",
-			"deletingChats": "Ti pogovori bodo trajno izbrisani"
+			"deletingChats": "Ti chati bodo trajno izbrisani",
+			"geminiGptInsideChrome": "Ta GPT zahteva omogočene naslednje nastavitve:",
+			"geminiGptOutsideChrome": "Ta GPT je na voljo samo v brskalniku Google Chrome",
+			"invalidGpt": "Neveljaven GPT"
 		}
 	},
 	"userSettings": {
 		"action": {
 			"manageAccount": "Upravljaj račun",
-			"manageBilling": "Upravljaj plačila"
+			"manageBilling": "Upravljaj obračunavanje"
 		},
 		"error": {
-			"address": "Dodati morate naslov",
-			"avatar": "Dodati morate svoj avatar",
-			"city": "Dodati morate mesto",
-			"country": "Dodati morate državo",
-			"email": "Dodati morate svoj e-poštni naslov",
-			"legalName": "Dodati morate pravno ime",
-			"name": "Dodati morate svoje ime",
-			"postalCode": "Dodati morate poštno številko"
+			"address": "Morate dodati naslov",
+			"avatar": "Morate dodati avatar",
+			"city": "Morate dodati mesto",
+			"country": "Morate dodati državo",
+			"email": "Morate dodati e-poštni naslov",
+			"legalName": "Morate dodati zakonsko ime",
+			"name": "Morate dodati ime",
+			"postalCode": "Morate dodati poštno številko"
 		},
 		"label": {
 			"account": "Račun",
 			"address": "Naslov",
-			"billing": "Plačila",
+			"billing": "Obračunavanje",
 			"city": "Mesto",
 			"country": "Država",
 			"email": "E-poštni naslov",
-			"legalName": "Pravno ime",
+			"legalName": "Zakonsko ime",
 			"phone": "Telefonska številka",
 			"postalCode": "Poštna številka",
 			"private": "Zasebno",
 			"public": "Javno",
-			"vatNumber": "ID za DDV"
+			"vatNumber": "Davčna številka"
 		}
 	}
 }

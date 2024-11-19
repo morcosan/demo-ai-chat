@@ -61,11 +61,13 @@ uz-UZ
 vi-VN
 zh-CN
 
-Subchat means "sub" + "chat", so translate "chat" word and "sub" prefix.
-VAT means "Value Added Tax", translate as abbreviation in each language.
-
 The name of the downloaded file must be the exact name of the json file, same letter case.
 Create 1 complete json file each time.
 Mention the locale when you are done.
 
+Special notes:
+Subchat means "sub" + "chat", so translate "chat" word and add "sub" prefix.
+VAT means "Value Added Tax" number or code, translate as abbreviation in each language.
+
+-----------
 Here is the translations json in english:

@@ -7,8 +7,10 @@
 			"close": "Close",
 			"delete": "Delete",
 			"deselectAll": "Deselect all",
+			"goToUrl": "Go to {url}",
 			"openMenu": "Open menu",
 			"rename": "Rename",
+			"retry": "Retry",
 			"saveChanges": "Save changes",
 			"search": "Search",
 			"searchMore": "Show more results",
@@ -17,7 +19,8 @@
 		},
 		"error": {
 			"noChanges": "There are no changes",
-			"nothingFound": "Nothing found for \"{search}\""
+			"nothingFound": "Nothing found for \"{search}\"",
+			"unsent": "Unsent"
 		},
 		"label": {
 			"apiDocs": "API Docs",
@@ -32,6 +35,11 @@
 			"europe": "Europe",
 			"githubRepo": "GitHub Repo",
 			"language": "Language",
+			"levelHigh": "High",
+			"levelLow": "Low",
+			"levelMedium": "Medium",
+			"levelVeryHigh": "Very high",
+			"levelVeryLow": "Very low",
 			"lightTheme": "Light",
 			"name": "Name",
 			"navigationBar": "Navigation bar",
@@ -51,6 +59,7 @@
 			"deleting": "Deleting...",
 			"loading": "Loading...",
 			"searching": "Searching...",
+			"sending": "Sending...",
 			"updating": "Updating..."
 		}
 	},
@@ -80,18 +89,21 @@
 			"startSearching_other": "Type at least {count} characters"
 		},
 		"description": {
+			"geminiNano": "Mini GPT for Google Chrome",
 			"loremIpsumGPT": "Most intelligent model",
 			"rammusGPT": "Best emotional support"
 		},
 		"error": {
 			"agentAvatar": "You must add an avatar for the agent",
 			"agentName": "You must add a name for the agent",
-			"emptyMessage": "Your message is empty"
+			"emptyMessage": "Your message is empty",
+			"failedMessage": "There was a problem delivering your message"
 		},
 		"label": {
 			"agents": "Agents",
 			"chatTitle": "Chat title",
 			"chats": "Chats",
+			"creativityLevel": "Creativity level",
 			"customInstructions": "Custom instructions",
 			"gptModel": "GPT model",
 			"newAgent": "New agent",
@@ -126,7 +138,10 @@
 		},
 		"warning": {
 			"deletingAgent": "This agent will be permanently deleted",
-			"deletingChats": "These chats will be permanently deleted"
+			"deletingChats": "These chats will be permanently deleted",
+			"geminiGptInsideChrome": "This GPT requires these settings to be enabled:",
+			"geminiGptOutsideChrome": "This GPT is available only in Google Chrome browser",
+			"invalidGpt": "Invalid GPT"
 		}
 	},
 	"userSettings": {

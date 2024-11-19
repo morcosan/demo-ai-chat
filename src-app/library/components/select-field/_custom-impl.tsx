@@ -169,9 +169,10 @@ export const CustomImpl = (rawProps: SelectFieldProps) => {
 					type="text"
 					role="combobox"
 					inputMode={hasKeyboard ? 'text' : 'none'}
+					disabled={props.disabled}
 					placeholder={props.placeholder}
 					aria-label={props.ariaLabel}
-					aria-describedby={`${props.id}-value`}
+					aria-describedby={`${props.id}-value ${props.ariaDescribedBy || ''}`}
 					aria-expanded={isOpened}
 					aria-autocomplete="list"
 					aria-haspopup="listbox"

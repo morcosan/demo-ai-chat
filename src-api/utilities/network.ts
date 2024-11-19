@@ -1,10 +1,11 @@
 import { API__MAX_THROTTLING, API__RANDOM_ERROR } from '@api/config'
 import { randomFalse, randomInt } from '@utils/release'
-import { ApiResponse, STATUS__INVALID_DATA, STATUS__NOT_FOUND, STATUS__SERVER_ERROR } from '../types'
+import { ApiResponse, Status } from '../types'
 
-export const RESP__INVALID_DATA: ApiResponse = { status: STATUS__INVALID_DATA, data: null }
-export const RESP__NOT_FOUND: ApiResponse = { status: STATUS__NOT_FOUND, data: null }
-export const RESP__SERVER_ERROR: ApiResponse = { status: STATUS__SERVER_ERROR, data: null }
+export const RESP__INVALID_DATA: ApiResponse = { status: Status.INVALID_DATA, data: null }
+export const RESP__NOT_AVAILABLE: ApiResponse = { status: Status.NOT_AVAILABLE, data: null }
+export const RESP__NOT_FOUND: ApiResponse = { status: Status.NOT_FOUND, data: null }
+export const RESP__SERVER_ERROR: ApiResponse = { status: Status.SERVER_ERROR, data: null }
 
 export const applyNetwork = async (resp: ApiResponse | Promise<ApiResponse>): Promise<ApiResponse> => {
 	// Simulate network throttling

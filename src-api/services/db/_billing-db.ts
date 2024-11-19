@@ -11,7 +11,7 @@ const setDbBilling = (value: DbBilling) => {
 	localStorage.setItem(COOKIE_KEY.DB_BILLING, JSON.stringify(value))
 }
 
-const initBillingDB = () => {
+const initBillingDB = async () => {
 	try {
 		const json = localStorage.getItem(COOKIE_KEY.DB_BILLING)
 		_billing = JSON.parse(json || '')

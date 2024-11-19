@@ -6,9 +6,11 @@
 			"changeLanguage": "Vaihda kieltä",
 			"close": "Sulje",
 			"delete": "Poista",
-			"deselectAll": "Poista kaikkien valinta",
+			"deselectAll": "Poista valinnat",
+			"goToUrl": "Siirry osoitteeseen {url}",
 			"openMenu": "Avaa valikko",
 			"rename": "Nimeä uudelleen",
+			"retry": "Yritä uudelleen",
 			"saveChanges": "Tallenna muutokset",
 			"search": "Hae",
 			"searchMore": "Näytä lisää tuloksia",
@@ -17,7 +19,8 @@
 		},
 		"error": {
 			"noChanges": "Ei muutoksia",
-			"nothingFound": "Ei löytynyt mitään hakusanalla \"{search}\""
+			"nothingFound": "Hakusanalla \"{search}\" ei löytynyt mitään",
+			"unsent": "Ei lähetetty"
 		},
 		"label": {
 			"apiDocs": "API-dokumentaatio",
@@ -27,11 +30,16 @@
 			"darkTheme": "Tumma",
 			"default": "Oletus",
 			"description": "Kuvaus",
-			"designSystem": "Design-järjestelmä",
+			"designSystem": "Suunnittelujärjestelmä",
 			"errors": "Virheet",
 			"europe": "Eurooppa",
-			"githubRepo": "GitHub-repo",
+			"githubRepo": "GitHub-repositorio",
 			"language": "Kieli",
+			"levelHigh": "Korkea",
+			"levelLow": "Matala",
+			"levelMedium": "Keskitaso",
+			"levelVeryHigh": "Erittäin korkea",
+			"levelVeryLow": "Erittäin matala",
 			"lightTheme": "Vaalea",
 			"name": "Nimi",
 			"navigationBar": "Navigointipalkki",
@@ -51,15 +59,16 @@
 			"deleting": "Poistetaan...",
 			"loading": "Ladataan...",
 			"searching": "Haetaan...",
+			"sending": "Lähetetään...",
 			"updating": "Päivitetään..."
 		}
 	},
 	"aiChat": {
 		"action": {
-			"backToSubchats": "Takaisin alakeskusteluihin",
+			"backToSubchats": "Takaisin ala-keskusteluihin",
 			"configureAgent": "Määritä agentti",
-			"confirmDeleteAgent": "Vahvista agentin poistaminen",
-			"confirmDeleteChats": "Vahvista keskustelujen poistaminen",
+			"confirmDeleteAgent": "Vahvista agentin poisto",
+			"confirmDeleteChats": "Vahvista keskustelujen poisto",
 			"confirmRenameChat": "Vahvista keskustelun uudelleennimeäminen",
 			"createAgent": "Luo agentti",
 			"deleteAgent": "Poista agentti",
@@ -68,40 +77,43 @@
 			"manageAgents": "Hallitse agentteja",
 			"manageChats": "Hallitse keskusteluja",
 			"openChat": "Avaa keskustelu",
-			"openSubchat_other": "Avaa alakeskustelu ({count} viestiä)",
-			"openSubchat_zero": "Luo alakeskustelu",
+			"openSubchat_other": "Avaa ala-keskustelu ({count} viestiä)",
+			"openSubchat_zero": "Luo ala-keskustelu",
 			"searchChats": "Hae keskusteluja",
 			"selectChat": "Valitse keskustelu",
 			"sendMessage": "Lähetä viesti",
 			"showMoreAgents": "Näytä lisää agentteja",
 			"showMoreChats": "Näytä lisää keskusteluja",
-			"showSubchats": "Näytä alakeskustelut ({count})",
+			"showSubchats": "Näytä ala-keskustelut ({count})",
 			"startSearching_one": "Kirjoita vähintään {count} merkki",
 			"startSearching_other": "Kirjoita vähintään {count} merkkiä"
 		},
 		"description": {
+			"geminiNano": "Mini-GPT Google Chromelle",
 			"loremIpsumGPT": "Älykkäin malli",
-			"rammusGPT": "Paras tunnepohjainen tuki"
+			"rammusGPT": "Paras emotionaalinen tuki"
 		},
 		"error": {
-			"agentAvatar": "Sinun on lisättävä agentin avatar",
-			"agentName": "Sinun on lisättävä agentin nimi",
-			"emptyMessage": "Viestisi on tyhjä"
+			"agentAvatar": "Sinun on lisättävä agentille avatar",
+			"agentName": "Sinun on lisättävä agentille nimi",
+			"emptyMessage": "Viestisi on tyhjä",
+			"failedMessage": "Viestin toimituksessa tapahtui virhe"
 		},
 		"label": {
 			"agents": "Agentit",
 			"chatTitle": "Keskustelun otsikko",
 			"chats": "Keskustelut",
+			"creativityLevel": "Luovuuden taso",
 			"customInstructions": "Mukautetut ohjeet",
 			"gptModel": "GPT-malli",
 			"newAgent": "Uusi agentti",
 			"newChat": "Uusi keskustelu",
 			"newMessage": "Uusi viesti",
 			"noChats": "Ei keskusteluja",
-			"noSubchats": "Ei alakeskusteluja",
+			"noSubchats": "Ei ala-keskusteluja",
 			"selectedAgent": "Valittu agentti",
 			"selectedValue": "Valittu arvo",
-			"subchats": "Alakeskustelut",
+			"subchats": "Ala-keskustelut",
 			"xMessages_one": "1 viesti",
 			"xMessages_other": "{count} viestiä",
 			"xSearchResults_one": "{count} hakutulos",
@@ -111,22 +123,25 @@
 			"xSelectedMessages_other": "{count} viestiä valittu"
 		},
 		"placeholder": {
-			"newMessage": "Puhu {name}... kanssa",
+			"newMessage": "Keskustele {name} kanssa...",
 			"rename": "Luo uusi nimi automaattisesti..."
 		},
 		"state": {
-			"loadingAgents": "Ladataan agentteja...",
-			"loadingChats": "Ladataan keskusteluja...",
-			"loadingGPTs": "Ladataan GPT:itä...",
-			"loadingMessages": "Ladataan viestejä...",
-			"loadingPreviousMessages": "Ladataan edellisiä viestejä...",
-			"loadingSubchats": "Ladataan alakeskusteluja...",
-			"renamingChat": "Uudelleennimetään keskustelua...",
-			"thinking": "Ajatellaan..."
+			"loadingAgents": "Agentteja ladataan...",
+			"loadingChats": "Keskusteluja ladataan...",
+			"loadingGPTs": "GPT-malleja ladataan...",
+			"loadingMessages": "Viestit ladataan...",
+			"loadingPreviousMessages": "Aikaisempia viestejä ladataan...",
+			"loadingSubchats": "Ala-keskusteluja ladataan...",
+			"renamingChat": "Keskustelun nimeäminen uudelleen...",
+			"thinking": "Ajattelee..."
 		},
 		"warning": {
 			"deletingAgent": "Tämä agentti poistetaan pysyvästi",
-			"deletingChats": "Nämä keskustelut poistetaan pysyvästi"
+			"deletingChats": "Nämä keskustelut poistetaan pysyvästi",
+			"geminiGptInsideChrome": "Tämä GPT vaatii seuraavien asetusten aktivoinnin:",
+			"geminiGptOutsideChrome": "Tämä GPT on saatavilla vain Google Chrome -selaimessa",
+			"invalidGpt": "Virheellinen GPT"
 		}
 	},
 	"userSettings": {
@@ -136,12 +151,12 @@
 		},
 		"error": {
 			"address": "Sinun on lisättävä osoite",
-			"avatar": "Sinun on lisättävä avatar",
+			"avatar": "Sinun on lisättävä avatarisi",
 			"city": "Sinun on lisättävä kaupunki",
 			"country": "Sinun on lisättävä maa",
-			"email": "Sinun on lisättävä sähköpostiosoite",
+			"email": "Sinun on lisättävä sähköpostiosoitteesi",
 			"legalName": "Sinun on lisättävä virallinen nimi",
-			"name": "Sinun on lisättävä nimi",
+			"name": "Sinun on lisättävä nimesi",
 			"postalCode": "Sinun on lisättävä postinumero"
 		},
 		"label": {

@@ -6,18 +6,21 @@
 			"changeLanguage": "Sprache ändern",
 			"close": "Schließen",
 			"delete": "Löschen",
-			"deselectAll": "Alles abwählen",
+			"deselectAll": "Alle abwählen",
+			"goToUrl": "Gehe zu {url}",
 			"openMenu": "Menü öffnen",
 			"rename": "Umbenennen",
+			"retry": "Erneut versuchen",
 			"saveChanges": "Änderungen speichern",
 			"search": "Suchen",
-			"searchMore": "Weitere Ergebnisse anzeigen",
-			"selectAll": "Alles auswählen",
+			"searchMore": "Mehr Ergebnisse anzeigen",
+			"selectAll": "Alle auswählen",
 			"signOut": "Abmelden"
 		},
 		"error": {
-			"noChanges": "Keine Änderungen",
-			"nothingFound": "Nichts gefunden für \"{search}\""
+			"noChanges": "Keine Änderungen vorhanden",
+			"nothingFound": "Nichts gefunden für \"{search}\"",
+			"unsent": "Nicht gesendet"
 		},
 		"label": {
 			"apiDocs": "API-Dokumentation",
@@ -30,8 +33,13 @@
 			"designSystem": "Designsystem",
 			"errors": "Fehler",
 			"europe": "Europa",
-			"githubRepo": "GitHub-Repo",
+			"githubRepo": "GitHub-Repository",
 			"language": "Sprache",
+			"levelHigh": "Hoch",
+			"levelLow": "Niedrig",
+			"levelMedium": "Mittel",
+			"levelVeryHigh": "Sehr hoch",
+			"levelVeryLow": "Sehr niedrig",
 			"lightTheme": "Hell",
 			"name": "Name",
 			"navigationBar": "Navigationsleiste",
@@ -51,14 +59,15 @@
 			"deleting": "Löschen...",
 			"loading": "Laden...",
 			"searching": "Suchen...",
+			"sending": "Senden...",
 			"updating": "Aktualisieren..."
 		}
 	},
 	"aiChat": {
 		"action": {
-			"backToSubchats": "Zurück zu Unter-Chats",
+			"backToSubchats": "Zurück zu den Unterchats",
 			"configureAgent": "Agent konfigurieren",
-			"confirmDeleteAgent": "Löschen des Agenten bestätigen",
+			"confirmDeleteAgent": "Löschen des Agents bestätigen",
 			"confirmDeleteChats": "Löschen der Chats bestätigen",
 			"confirmRenameChat": "Umbenennen des Chats bestätigen",
 			"createAgent": "Agent erstellen",
@@ -68,40 +77,43 @@
 			"manageAgents": "Agenten verwalten",
 			"manageChats": "Chats verwalten",
 			"openChat": "Chat öffnen",
-			"openSubchat_other": "Unter-Chat öffnen ({count} Nachrichten)",
-			"openSubchat_zero": "Unter-Chat erstellen",
+			"openSubchat_other": "Unterchat öffnen ({count} Nachrichten)",
+			"openSubchat_zero": "Unterchat erstellen",
 			"searchChats": "Chats durchsuchen",
 			"selectChat": "Chat auswählen",
 			"sendMessage": "Nachricht senden",
-			"showMoreAgents": "Weitere Agenten anzeigen",
-			"showMoreChats": "Weitere Chats anzeigen",
-			"showSubchats": "Unter-Chats anzeigen ({count})",
+			"showMoreAgents": "Mehr Agenten anzeigen",
+			"showMoreChats": "Mehr Chats anzeigen",
+			"showSubchats": "Unterchats anzeigen ({count})",
 			"startSearching_one": "Geben Sie mindestens {count} Zeichen ein",
 			"startSearching_other": "Geben Sie mindestens {count} Zeichen ein"
 		},
 		"description": {
-			"loremIpsumGPT": "Das intelligenteste Modell",
+			"geminiNano": "Mini-GPT für Google Chrome",
+			"loremIpsumGPT": "Intelligentestes Modell",
 			"rammusGPT": "Beste emotionale Unterstützung"
 		},
 		"error": {
 			"agentAvatar": "Sie müssen ein Avatar für den Agenten hinzufügen",
 			"agentName": "Sie müssen einen Namen für den Agenten hinzufügen",
-			"emptyMessage": "Ihre Nachricht ist leer"
+			"emptyMessage": "Ihre Nachricht ist leer",
+			"failedMessage": "Ein Problem beim Versenden Ihrer Nachricht ist aufgetreten"
 		},
 		"label": {
 			"agents": "Agenten",
 			"chatTitle": "Chat-Titel",
 			"chats": "Chats",
+			"creativityLevel": "Kreativitätslevel",
 			"customInstructions": "Benutzerdefinierte Anweisungen",
 			"gptModel": "GPT-Modell",
 			"newAgent": "Neuer Agent",
 			"newChat": "Neuer Chat",
 			"newMessage": "Neue Nachricht",
 			"noChats": "Keine Chats",
-			"noSubchats": "Keine Unter-Chats",
+			"noSubchats": "Keine Unterchats",
 			"selectedAgent": "Ausgewählter Agent",
 			"selectedValue": "Ausgewählter Wert",
-			"subchats": "Unter-Chats",
+			"subchats": "Unterchats",
 			"xMessages_one": "1 Nachricht",
 			"xMessages_other": "{count} Nachrichten",
 			"xSearchResults_one": "{count} Suchergebnis",
@@ -111,22 +123,25 @@
 			"xSelectedMessages_other": "{count} Nachrichten ausgewählt"
 		},
 		"placeholder": {
-			"newMessage": "Sprechen Sie mit {name}...",
-			"rename": "Automatisch neuen Namen generieren..."
+			"newMessage": "Mit {name} sprechen...",
+			"rename": "Automatisch einen neuen Namen generieren..."
 		},
 		"state": {
-			"loadingAgents": "Agenten werden geladen...",
-			"loadingChats": "Chats werden geladen...",
-			"loadingGPTs": "GPT-Modelle werden geladen...",
-			"loadingMessages": "Nachrichten werden geladen...",
-			"loadingPreviousMessages": "Vorherige Nachrichten werden geladen...",
-			"loadingSubchats": "Unter-Chats werden geladen...",
-			"renamingChat": "Chat wird umbenannt...",
-			"thinking": "Denkt nach..."
+			"loadingAgents": "Agenten laden...",
+			"loadingChats": "Chats laden...",
+			"loadingGPTs": "GPTs laden...",
+			"loadingMessages": "Nachrichten laden...",
+			"loadingPreviousMessages": "Vorherige Nachrichten laden...",
+			"loadingSubchats": "Unterchats laden...",
+			"renamingChat": "Chat umbenennen...",
+			"thinking": "Denken..."
 		},
 		"warning": {
 			"deletingAgent": "Dieser Agent wird dauerhaft gelöscht",
-			"deletingChats": "Diese Chats werden dauerhaft gelöscht"
+			"deletingChats": "Diese Chats werden dauerhaft gelöscht",
+			"geminiGptInsideChrome": "Dieses GPT erfordert die Aktivierung folgender Einstellungen:",
+			"geminiGptOutsideChrome": "Dieses GPT ist nur im Google Chrome-Browser verfügbar",
+			"invalidGpt": "Ungültiges GPT"
 		}
 	},
 	"userSettings": {
@@ -136,7 +151,7 @@
 		},
 		"error": {
 			"address": "Sie müssen die Adresse hinzufügen",
-			"avatar": "Sie müssen ein Avatar hinzufügen",
+			"avatar": "Sie müssen Ihr Avatar hinzufügen",
 			"city": "Sie müssen die Stadt hinzufügen",
 			"country": "Sie müssen das Land hinzufügen",
 			"email": "Sie müssen Ihre E-Mail-Adresse hinzufügen",
@@ -156,7 +171,7 @@
 			"postalCode": "Postleitzahl",
 			"private": "Privat",
 			"public": "Öffentlich",
-			"vatNumber": "Umsatzsteuernummer"
+			"vatNumber": "USt-IdNr"
 		}
 	}
 }

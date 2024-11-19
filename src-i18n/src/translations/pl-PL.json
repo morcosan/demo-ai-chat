@@ -2,22 +2,25 @@
 	"core": {
 		"action": {
 			"back": "Wstecz",
-			"backToHome": "Powrót na stronę główną",
+			"backToHome": "Powrót do strony głównej",
 			"changeLanguage": "Zmień język",
 			"close": "Zamknij",
 			"delete": "Usuń",
-			"deselectAll": "Odznacz wszystkie",
+			"deselectAll": "Odznacz wszystko",
+			"goToUrl": "Przejdź do {url}",
 			"openMenu": "Otwórz menu",
 			"rename": "Zmień nazwę",
+			"retry": "Spróbuj ponownie",
 			"saveChanges": "Zapisz zmiany",
 			"search": "Szukaj",
 			"searchMore": "Pokaż więcej wyników",
-			"selectAll": "Zaznacz wszystkie",
+			"selectAll": "Zaznacz wszystko",
 			"signOut": "Wyloguj się"
 		},
 		"error": {
 			"noChanges": "Brak zmian",
-			"nothingFound": "Nie znaleziono wyników dla \"{search}\""
+			"nothingFound": "Nic nie znaleziono dla \"{search}\"",
+			"unsent": "Niewysłane"
 		},
 		"label": {
 			"apiDocs": "Dokumentacja API",
@@ -25,21 +28,26 @@
 			"avatar": "Awatar",
 			"custom": "Niestandardowe",
 			"darkTheme": "Ciemny",
-			"default": "Domyślny",
+			"default": "Domyślne",
 			"description": "Opis",
-			"designSystem": "System projektowania",
+			"designSystem": "System projektowy",
 			"errors": "Błędy",
 			"europe": "Europa",
 			"githubRepo": "Repozytorium GitHub",
 			"language": "Język",
+			"levelHigh": "Wysoki",
+			"levelLow": "Niski",
+			"levelMedium": "Średni",
+			"levelVeryHigh": "Bardzo wysoki",
+			"levelVeryLow": "Bardzo niski",
 			"lightTheme": "Jasny",
 			"name": "Nazwa",
-			"navigationBar": "Pasek nawigacyjny",
-			"navigationMenu": "Menu nawigacyjne",
+			"navigationBar": "Pasek nawigacji",
+			"navigationMenu": "Menu nawigacji",
 			"optionalField": "(Opcjonalne)",
-			"quickSettings": "Szybkie ustawienia",
 			"requiredField": "(Wymagane)",
 			"settings": "Ustawienia",
+			"quickSettings": "Szybkie ustawienia",
 			"uiLibrary": "Biblioteka UI",
 			"uiTheme": "Motyw UI"
 		},
@@ -50,14 +58,15 @@
 			"dataSaved": "Twoje dane zostały zapisane",
 			"deleting": "Usuwanie...",
 			"loading": "Ładowanie...",
-			"searching": "Wyszukiwanie...",
-			"updating": "Aktualizacja..."
+			"searching": "Szukanie...",
+			"sending": "Wysyłanie...",
+			"updating": "Aktualizowanie..."
 		}
 	},
 	"aiChat": {
 		"action": {
 			"backToSubchats": "Powrót do subczatów",
-			"configureAgent": "Skonfiguruj agenta",
+			"configureAgent": "Konfiguruj agenta",
 			"confirmDeleteAgent": "Potwierdź usunięcie agenta",
 			"confirmDeleteChats": "Potwierdź usunięcie czatów",
 			"confirmRenameChat": "Potwierdź zmianę nazwy czatu",
@@ -68,30 +77,38 @@
 			"manageAgents": "Zarządzaj agentami",
 			"manageChats": "Zarządzaj czatami",
 			"openChat": "Otwórz czat",
-			"openSubchat_other": "Otwórz subczat ({count} wiadomości)",
 			"openSubchat_zero": "Utwórz subczat",
-			"searchChats": "Szukaj w czatach",
+			"openSubchat_one": "Otwórz subczat ({count} wiadomość)",
+			"openSubchat_few": "Otwórz subczat ({count} wiadomości)",
+			"openSubchat_many": "Otwórz subczat ({count} wiadomości)",
+			"openSubchat_other": "Otwórz subczat ({count} wiadomości)",
+			"searchChats": "Szukaj czatów",
 			"selectChat": "Wybierz czat",
 			"sendMessage": "Wyślij wiadomość",
 			"showMoreAgents": "Pokaż więcej agentów",
 			"showMoreChats": "Pokaż więcej czatów",
 			"showSubchats": "Pokaż subczaty ({count})",
 			"startSearching_one": "Wpisz co najmniej {count} znak",
-			"startSearching_other": "Wpisz co najmniej {count} znaki"
+			"startSearching_few": "Wpisz co najmniej {count} znaki",
+			"startSearching_many": "Wpisz co najmniej {count} znaków",
+			"startSearching_other": "Wpisz co najmniej {count} znaków"
 		},
 		"description": {
-			"loremIpsumGPT": "Najinteligentniejszy model",
+			"geminiNano": "Mini GPT dla Google Chrome",
+			"loremIpsumGPT": "Najbardziej inteligentny model",
 			"rammusGPT": "Najlepsze wsparcie emocjonalne"
 		},
 		"error": {
-			"agentAvatar": "Musisz dodać awatar agenta",
-			"agentName": "Musisz dodać nazwę agenta",
-			"emptyMessage": "Twoja wiadomość jest pusta"
+			"agentAvatar": "Musisz dodać awatar dla agenta",
+			"agentName": "Musisz dodać nazwę dla agenta",
+			"emptyMessage": "Twoja wiadomość jest pusta",
+			"failedMessage": "Wystąpił problem z dostarczeniem twojej wiadomości"
 		},
 		"label": {
 			"agents": "Agenci",
 			"chatTitle": "Tytuł czatu",
 			"chats": "Czaty",
+			"creativityLevel": "Poziom kreatywności",
 			"customInstructions": "Niestandardowe instrukcje",
 			"gptModel": "Model GPT",
 			"newAgent": "Nowy agent",
@@ -102,22 +119,30 @@
 			"selectedAgent": "Wybrany agent",
 			"selectedValue": "Wybrana wartość",
 			"subchats": "Subczaty",
+			"xMessages_zero": "Brak wiadomości",
 			"xMessages_one": "1 wiadomość",
+			"xMessages_few": "{count} wiadomości",
+			"xMessages_many": "{count} wiadomości",
 			"xMessages_other": "{count} wiadomości",
-			"xSearchResults_one": "{count} wynik wyszukiwania",
-			"xSearchResults_other": "{count} wyniki wyszukiwania",
 			"xSearchResults_zero": "Brak wyników wyszukiwania",
-			"xSelectedMessages_one": "1 wiadomość wybrana",
-			"xSelectedMessages_other": "{count} wiadomości wybrane"
+			"xSearchResults_one": "{count} wynik wyszukiwania",
+			"xSearchResults_few": "{count} wyniki wyszukiwania",
+			"xSearchResults_many": "{count} wyników wyszukiwania",
+			"xSearchResults_other": "{count} wyników wyszukiwania",
+			"xSelectedMessages_zero": "Brak wybranych wiadomości",
+			"xSelectedMessages_one": "1 wybrana wiadomość",
+			"xSelectedMessages_few": "{count} wybrane wiadomości",
+			"xSelectedMessages_many": "{count} wybranych wiadomości",
+			"xSelectedMessages_other": "{count} wybranych wiadomości"
 		},
 		"placeholder": {
-			"newMessage": "Porozmawiaj z {name}...",
+			"newMessage": "Rozmawiaj z {name}...",
 			"rename": "Wygeneruj nową nazwę automatycznie..."
 		},
 		"state": {
 			"loadingAgents": "Ładowanie agentów...",
 			"loadingChats": "Ładowanie czatów...",
-			"loadingGPTs": "Ładowanie modeli GPT...",
+			"loadingGPTs": "Ładowanie GPT...",
 			"loadingMessages": "Ładowanie wiadomości...",
 			"loadingPreviousMessages": "Ładowanie poprzednich wiadomości...",
 			"loadingSubchats": "Ładowanie subczatów...",
@@ -126,37 +151,40 @@
 		},
 		"warning": {
 			"deletingAgent": "Ten agent zostanie trwale usunięty",
-			"deletingChats": "Te czaty zostaną trwale usunięte"
+			"deletingChats": "Te czaty zostaną trwale usunięte",
+			"geminiGptInsideChrome": "Ten GPT wymaga włączenia następujących ustawień:",
+			"geminiGptOutsideChrome": "Ten GPT jest dostępny tylko w przeglądarce Google Chrome",
+			"invalidGpt": "Nieprawidłowy GPT"
 		}
 	},
 	"userSettings": {
 		"action": {
 			"manageAccount": "Zarządzaj kontem",
-			"manageBilling": "Zarządzaj rozliczeniami"
+			"manageBilling": "Zarządzaj płatnościami"
 		},
 		"error": {
 			"address": "Musisz dodać adres",
 			"avatar": "Musisz dodać swój awatar",
 			"city": "Musisz dodać miasto",
 			"country": "Musisz dodać kraj",
-			"email": "Musisz dodać swój adres e-mail",
+			"email": "Musisz dodać adres email",
 			"legalName": "Musisz dodać nazwę prawną",
-			"name": "Musisz dodać swoje imię",
+			"name": "Musisz dodać swoją nazwę",
 			"postalCode": "Musisz dodać kod pocztowy"
 		},
 		"label": {
 			"account": "Konto",
 			"address": "Adres",
-			"billing": "Rozliczenia",
+			"billing": "Płatności",
 			"city": "Miasto",
 			"country": "Kraj",
-			"email": "Adres e-mail",
+			"email": "Adres email",
 			"legalName": "Nazwa prawna",
 			"phone": "Numer telefonu",
 			"postalCode": "Kod pocztowy",
 			"private": "Prywatne",
 			"public": "Publiczne",
-			"vatNumber": "Numer VAT"
+			"vatNumber": "NIP"
 		}
 	}
 }

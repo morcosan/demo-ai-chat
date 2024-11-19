@@ -1,5 +1,5 @@
 import { SelectField, SelectOptionProps } from '@app/library/release'
-import { BuildSvg, IconButton } from '@ds/release'
+import { BuildSvg, Button, IconButton, WarningSvg } from '@ds/release'
 import { COOKIE_KEY } from '@utils/release'
 import { uniqBy } from 'lodash'
 import { useEffect, useState } from 'react'
@@ -25,7 +25,7 @@ const AgentOption = (props: SelectOptionProps) => (
 
 export const NewMessageToolbar = (props: Props) => {
 	const { listLoading, isChatView, onPostMessage } = props
-	const { chatViewAgentId, setChatViewAgentId } = useAiChatAgents()
+	const { allGPTs, chatViewAgentId, setChatViewAgentId } = useAiChatAgents()
 	const [currAgentId, setCurrAgentId] = useState(0)
 	const [agents, setAgents] = useRefreshableAgents()
 	const [agentPagination, setAgentPagination] = useState<Pagination>({ page: 0, count: 0 })
@@ -33,9 +33,12 @@ export const NewMessageToolbar = (props: Props) => {
 	const [search, setSearch] = useState('')
 	const [showsAgentModal, setShowsAgentModal] = useState(false)
 
+	const id = isChatView ? 'agent-chat' : 'agent-subchat'
+
 	const agentCookieKey = isChatView ? COOKIE_KEY.APP_AGENT_FOR_CHAT : COOKIE_KEY.APP_AGENT_FOR_SUBCHAT
 
 	const currAgent = agents.find((agent: Agent) => agent.id === currAgentId) || EMPTY_AGENT
+	const currGPT = allGPTs.find((gpt) => gpt.id === currAgent.gptId)
 
 	const canLoadMoreAgents = !agentPagination.page || agents.length < agentPagination.count
 
@@ -99,7 +102,8 @@ export const NewMessageToolbar = (props: Props) => {
 			name: payload.name.trim(),
 			avatar: payload.avatar.trim(),
 			desc: payload.desc.trim(),
-			setup: payload.setup.trim(),
+			prompt: payload.prompt.trim(),
+			creativity: payload.creativity,
 		})
 
 		const newAgent = listing.agents[0]
@@ -137,23 +141,26 @@ export const NewMessageToolbar = (props: Props) => {
 		!agentPagination.page && fetchMoreAgents(loadAgentId())
 	}, [agentPagination])
 
-	return (
+	return currAgent && currGPT ? (
 		<div>
 			{/* TOOLBAR */}
-			<div className="mb-xs-1">
+			<div className="mb-xs-1 flex items-center">
 				<SelectField
-					id={isChatView ? 'agent-chat' : 'agent-subchat'}
+					id={id}
 					variant={isChatView ? 'primary' : 'secondary'}
 					value={currAgentId}
 					options={agents}
 					keyValue="id"
 					keyLabel="name"
 					filterFn={agentFilterFn}
+					invalid={!currGPT?.enabled}
+					disabled={listLoading === 'error'}
 					loading={agentLoading === 'full'}
 					loadingMore={agentLoading === 'more'}
 					canLoadMore={canLoadMoreAgents}
 					loadingText={t('aiChat.state.loadingAgents')}
 					ariaLabel={t('aiChat.label.selectedAgent')}
+					ariaDescription={!currGPT.enabled ? t('aiChat.warning.invalidGpt') : ''}
 					size="sm"
 					popupPos="top"
 					compValue={AgentValue}
@@ -164,6 +171,19 @@ export const NewMessageToolbar = (props: Props) => {
 					onSearch={onSearchAgent}
 					onScrollEnd={fetchMoreAgents}
 				/>
+
+				{!currGPT.enabled && (
+					<Button
+						variant="item-text-danger"
+						size="sm"
+						className="text-size-xs"
+						onClick={() => setShowsAgentModal(true)}
+					>
+						<WarningSvg className="mr-xs-1 w-xs-6 min-w-xs-6" />
+						{t('aiChat.warning.invalidGpt')}
+					</Button>
+				)}
+
 				<IconButton
 					tooltip={t('aiChat.action.configureAgent')}
 					loading={agentLoading === 'full'}
@@ -177,7 +197,7 @@ export const NewMessageToolbar = (props: Props) => {
 
 			{/* AGENT MODAL */}
 			<AgentEditModal
-				id={isChatView ? 'agent-modal-chat' : 'agent-modal-subchat'}
+				id={`${id}-modal`}
 				agent={currAgent}
 				opened={showsAgentModal}
 				onSubmit={onSubmitAgent}
@@ -187,10 +207,11 @@ export const NewMessageToolbar = (props: Props) => {
 			{/* TEXT FIELD */}
 			<NewMessageField
 				agent={currAgent}
+				gpt={currGPT}
 				listLoading={listLoading}
 				isChatView={isChatView}
 				onPostMessage={onPostMessage}
 			/>
 		</div>
-	)
+	) : null
 }
