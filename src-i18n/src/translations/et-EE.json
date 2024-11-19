@@ -6,9 +6,11 @@
 			"changeLanguage": "Muuda keelt",
 			"close": "Sulge",
 			"delete": "Kustuta",
-			"deselectAll": "Tühista kõigi valik",
+			"deselectAll": "Tühista kõik valikud",
+			"goToUrl": "Mine lehele {url}",
 			"openMenu": "Ava menüü",
 			"rename": "Nimeta ümber",
+			"retry": "Proovi uuesti",
 			"saveChanges": "Salvesta muudatused",
 			"search": "Otsi",
 			"searchMore": "Näita rohkem tulemusi",
@@ -16,8 +18,9 @@
 			"signOut": "Logi välja"
 		},
 		"error": {
-			"noChanges": "Muudatusi ei ole",
-			"nothingFound": "Midagi ei leitud \"{search}\" jaoks"
+			"noChanges": "Muutusi pole",
+			"nothingFound": "Ei leitud midagi otsingule \"{search}\"",
+			"unsent": "Saatmata"
 		},
 		"label": {
 			"apiDocs": "API dokumentatsioon",
@@ -30,18 +33,23 @@
 			"designSystem": "Disainisüsteem",
 			"errors": "Veateated",
 			"europe": "Euroopa",
-			"githubRepo": "GitHubi hoidla",
+			"githubRepo": "GitHubi repo",
 			"language": "Keel",
+			"levelHigh": "Kõrge",
+			"levelLow": "Madal",
+			"levelMedium": "Keskmine",
+			"levelVeryHigh": "Väga kõrge",
+			"levelVeryLow": "Väga madal",
 			"lightTheme": "Hele",
 			"name": "Nimi",
 			"navigationBar": "Navigeerimisriba",
 			"navigationMenu": "Navigeerimismenüü",
 			"optionalField": "(Valikuline)",
 			"quickSettings": "Kiirseaded",
-			"requiredField": "(Nõutav)",
+			"requiredField": "(Kohustuslik)",
 			"settings": "Seaded",
-			"uiLibrary": "UI Raamatukogu",
-			"uiTheme": "UI Teema"
+			"uiLibrary": "UI raamatukogu",
+			"uiTheme": "UI teema"
 		},
 		"placeholder": {
 			"search": "Otsi..."
@@ -51,13 +59,14 @@
 			"deleting": "Kustutamine...",
 			"loading": "Laadimine...",
 			"searching": "Otsimine...",
+			"sending": "Saatmine...",
 			"updating": "Uuendamine..."
 		}
 	},
 	"aiChat": {
 		"action": {
 			"backToSubchats": "Tagasi alamvestlustesse",
-			"configureAgent": "Konfigureeri agent",
+			"configureAgent": "Seadista agent",
 			"confirmDeleteAgent": "Kinnita agendi kustutamine",
 			"confirmDeleteChats": "Kinnita vestluste kustutamine",
 			"confirmRenameChat": "Kinnita vestluse ümbernimetamine",
@@ -80,25 +89,28 @@
 			"startSearching_other": "Sisestage vähemalt {count} märki"
 		},
 		"description": {
+			"geminiNano": "Mini GPT Google Chrome jaoks",
 			"loremIpsumGPT": "Kõige intelligentsem mudel",
 			"rammusGPT": "Parim emotsionaalne tugi"
 		},
 		"error": {
 			"agentAvatar": "Peate lisama agendi avatari",
 			"agentName": "Peate lisama agendi nime",
-			"emptyMessage": "Teie sõnum on tühi"
+			"emptyMessage": "Teie sõnum on tühi",
+			"failedMessage": "Teie sõnumi edastamisel ilmnes probleem"
 		},
 		"label": {
 			"agents": "Agendid",
 			"chatTitle": "Vestluse pealkiri",
 			"chats": "Vestlused",
+			"creativityLevel": "Loomingulisuse tase",
 			"customInstructions": "Kohandatud juhised",
 			"gptModel": "GPT mudel",
 			"newAgent": "Uus agent",
 			"newChat": "Uus vestlus",
 			"newMessage": "Uus sõnum",
-			"noChats": "Pole vestlusi",
-			"noSubchats": "Pole alamvestlusi",
+			"noChats": "Vestlusi pole",
+			"noSubchats": "Alamvestlusi pole",
 			"selectedAgent": "Valitud agent",
 			"selectedValue": "Valitud väärtus",
 			"subchats": "Alamvestlused",
@@ -106,12 +118,12 @@
 			"xMessages_other": "{count} sõnumit",
 			"xSearchResults_one": "{count} otsingutulemus",
 			"xSearchResults_other": "{count} otsingutulemust",
-			"xSearchResults_zero": "Otsingutulemused puuduvad",
-			"xSelectedMessages_one": "1 valitud sõnum",
-			"xSelectedMessages_other": "{count} valitud sõnumit"
+			"xSearchResults_zero": "Otsingutulemusi pole",
+			"xSelectedMessages_one": "1 sõnum valitud",
+			"xSelectedMessages_other": "{count} sõnumit valitud"
 		},
 		"placeholder": {
-			"newMessage": "Rääkige {name}-le...",
+			"newMessage": "Rääkige {name}...",
 			"rename": "Loo automaatselt uus nimi..."
 		},
 		"state": {
@@ -122,17 +134,20 @@
 			"loadingPreviousMessages": "Eelmiste sõnumite laadimine...",
 			"loadingSubchats": "Alamvestluste laadimine...",
 			"renamingChat": "Vestluse ümbernimetamine...",
-			"thinking": "Mõtlemine..."
+			"thinking": "Mõtleb..."
 		},
 		"warning": {
 			"deletingAgent": "See agent kustutatakse jäädavalt",
-			"deletingChats": "Need vestlused kustutatakse jäädavalt"
+			"deletingChats": "Need vestlused kustutatakse jäädavalt",
+			"geminiGptInsideChrome": "See GPT nõuab järgmiste seadete lubamist:",
+			"geminiGptOutsideChrome": "See GPT on saadaval ainult Google Chrome'i brauseris",
+			"invalidGpt": "Vigane GPT"
 		}
 	},
 	"userSettings": {
 		"action": {
 			"manageAccount": "Halda kontot",
-			"manageBilling": "Halda arveldust"
+			"manageBilling": "Halda arveldamist"
 		},
 		"error": {
 			"address": "Peate lisama aadressi",
@@ -140,23 +155,23 @@
 			"city": "Peate lisama linna",
 			"country": "Peate lisama riigi",
 			"email": "Peate lisama oma e-posti aadressi",
-			"legalName": "Peate lisama seadusliku nime",
+			"legalName": "Peate lisama juriidilise nime",
 			"name": "Peate lisama oma nime",
 			"postalCode": "Peate lisama postiindeksi"
 		},
 		"label": {
 			"account": "Konto",
 			"address": "Aadress",
-			"billing": "Arveldus",
+			"billing": "Arveldamine",
 			"city": "Linn",
 			"country": "Riik",
 			"email": "E-posti aadress",
-			"legalName": "Seaduslik nimi",
+			"legalName": "Juriidiline nimi",
 			"phone": "Telefoninumber",
 			"postalCode": "Postiindeks",
 			"private": "Privaatne",
 			"public": "Avalik",
-			"vatNumber": "KMKR number"
+			"vatNumber": "KMKR nr"
 		}
 	}
 }

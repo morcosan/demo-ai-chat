@@ -3,12 +3,14 @@
 		"action": {
 			"back": "Tillbaka",
 			"backToHome": "Tillbaka till startsidan",
-			"changeLanguage": "Ändra språk",
+			"changeLanguage": "Byt språk",
 			"close": "Stäng",
 			"delete": "Radera",
 			"deselectAll": "Avmarkera alla",
-			"openMenu": "Öppna meny",
+			"goToUrl": "Gå till {url}",
+			"openMenu": "Öppna menyn",
 			"rename": "Byt namn",
+			"retry": "Försök igen",
 			"saveChanges": "Spara ändringar",
 			"search": "Sök",
 			"searchMore": "Visa fler resultat",
@@ -17,14 +19,15 @@
 		},
 		"error": {
 			"noChanges": "Inga ändringar",
-			"nothingFound": "Inget hittades för \"{search}\""
+			"nothingFound": "Inget hittades för \"{search}\"",
+			"unsent": "Ej skickat"
 		},
 		"label": {
 			"apiDocs": "API-dokumentation",
 			"asia": "Asien",
 			"avatar": "Avatar",
 			"custom": "Anpassad",
-			"darkTheme": "Mörkt",
+			"darkTheme": "Mörk",
 			"default": "Standard",
 			"description": "Beskrivning",
 			"designSystem": "Designsystem",
@@ -32,11 +35,17 @@
 			"europe": "Europa",
 			"githubRepo": "GitHub-repo",
 			"language": "Språk",
-			"lightTheme": "Ljust",
+			"levelHigh": "Hög",
+			"levelLow": "Låg",
+			"levelMedium": "Medel",
+			"levelVeryHigh": "Mycket hög",
+			"levelVeryLow": "Mycket låg",
+			"lightTheme": "Ljus",
 			"name": "Namn",
 			"navigationBar": "Navigeringsfält",
 			"navigationMenu": "Navigeringsmeny",
 			"optionalField": "(Valfritt)",
+			"quickSettings": "Snabbinställningar",
 			"requiredField": "(Obligatoriskt)",
 			"settings": "Inställningar",
 			"uiLibrary": "UI-bibliotek",
@@ -46,19 +55,20 @@
 			"search": "Sök..."
 		},
 		"state": {
-			"dataSaved": "Dina uppgifter är sparade",
-			"deleting": "Raderar...",
+			"dataSaved": "Dina data har sparats",
+			"deleting": "Tar bort...",
 			"loading": "Laddar...",
 			"searching": "Söker...",
+			"sending": "Skickar...",
 			"updating": "Uppdaterar..."
 		}
 	},
 	"aiChat": {
 		"action": {
-			"backToSubchats": "Tillbaka till underchatt",
+			"backToSubchats": "Tillbaka till underchattar",
 			"configureAgent": "Konfigurera agent",
-			"confirmDeleteAgent": "Bekräfta radering av agent",
-			"confirmDeleteChats": "Bekräfta radering av chattar",
+			"confirmDeleteAgent": "Bekräfta borttagning av agent",
+			"confirmDeleteChats": "Bekräfta borttagning av chattar",
 			"confirmRenameChat": "Bekräfta namnbyte av chatt",
 			"createAgent": "Skapa agent",
 			"deleteAgent": "Radera agent",
@@ -67,66 +77,71 @@
 			"manageAgents": "Hantera agenter",
 			"manageChats": "Hantera chattar",
 			"openChat": "Öppna chatt",
-			"openSubchat_one": "Öppna underchatt ({count} meddelande)",
 			"openSubchat_other": "Öppna underchatt ({count} meddelanden)",
 			"openSubchat_zero": "Skapa underchatt",
-			"searchChats": "Sök chattar",
+			"searchChats": "Sök i chattar",
 			"selectChat": "Välj chatt",
 			"sendMessage": "Skicka meddelande",
 			"showMoreAgents": "Visa fler agenter",
 			"showMoreChats": "Visa fler chattar",
-			"showSubchats": "Visa underchatt ({count})",
+			"showSubchats": "Visa underchattar ({count})",
 			"startSearching_one": "Skriv minst {count} tecken",
 			"startSearching_other": "Skriv minst {count} tecken"
 		},
 		"description": {
-			"loremIpsumGPT": "Mest intelligenta modellen",
-			"rammusGPT": "Bästa känslomässiga stödet"
+			"geminiNano": "Mini GPT för Google Chrome",
+			"loremIpsumGPT": "Den mest intelligenta modellen",
+			"rammusGPT": "Bästa emotionella stöd"
 		},
 		"error": {
 			"agentAvatar": "Du måste lägga till en avatar för agenten",
 			"agentName": "Du måste lägga till ett namn för agenten",
-			"emptyMessage": "Ditt meddelande är tomt"
+			"emptyMessage": "Ditt meddelande är tomt",
+			"failedMessage": "Det uppstod ett problem vid leverans av ditt meddelande"
 		},
 		"label": {
 			"agents": "Agenter",
-			"chatTitle": "Chattrubrik",
+			"chatTitle": "Chattitel",
 			"chats": "Chattar",
+			"creativityLevel": "Kreativitetsnivå",
 			"customInstructions": "Anpassade instruktioner",
 			"gptModel": "GPT-modell",
 			"newAgent": "Ny agent",
 			"newChat": "Ny chatt",
 			"newMessage": "Nytt meddelande",
 			"noChats": "Inga chattar",
-			"noSubchats": "Inga underchatt",
+			"noSubchats": "Inga underchattar",
 			"selectedAgent": "Vald agent",
 			"selectedValue": "Valt värde",
-			"subchats": "Underchatt",
-			"xMessages_one": "{count} meddelande",
+			"subchats": "Underchattar",
+			"xMessages_one": "1 meddelande",
 			"xMessages_other": "{count} meddelanden",
 			"xSearchResults_one": "{count} sökresultat",
 			"xSearchResults_other": "{count} sökresultat",
 			"xSearchResults_zero": "Inga sökresultat",
-			"xSelectedMessages_one": "{count} valt meddelande",
-			"xSelectedMessages_other": "{count} valda meddelanden"
+			"xSelectedMessages_one": "1 meddelande valt",
+			"xSelectedMessages_other": "{count} meddelanden valda"
 		},
 		"placeholder": {
-			"newMessage": "Chatta med {name}...",
-			"rename": "Generera ett nytt namn automatiskt..."
+			"newMessage": "Prata med {name}...",
+			"rename": "Generera nytt namn automatiskt..."
 		},
 		"state": {
 			"loadingAgents": "Laddar agenter...",
 			"loadingChats": "Laddar chattar...",
-			"loadingGPTs": "Laddar GPT:er...",
+			"loadingGPTs": "Laddar GPT...",
 			"loadingMessages": "Laddar meddelanden...",
 			"loadingPreviousMessages": "Laddar tidigare meddelanden...",
-			"loadingSubchats": "Laddar underchatt...",
+			"loadingSubchats": "Laddar underchattar...",
 			"renamingChat": "Byter namn på chatt...",
 			"thinking": "Tänker..."
 		},
 		"warning": {
 			"deletingAgent": "Denna agent kommer att raderas permanent",
-			"deletingChats": "Dessa chattar kommer att raderas permanent"
+			"deletingChats": "Dessa chattar kommer att raderas permanent",
+			"geminiGptInsideChrome": "Denna GPT kräver följande inställningar aktiverade:",
+			"geminiGptOutsideChrome": "Denna GPT är endast tillgänglig i webbläsaren Google Chrome",
+			"invalidGpt": "Ogiltig GPT"
 		}
 	},
 	"userSettings": {
@@ -135,14 +150,14 @@
 			"manageBilling": "Hantera fakturering"
 		},
 		"error": {
-			"address": "Du måste lägga till en adress",
+			"address": "Du måste lägga till adressen",
 			"avatar": "Du måste lägga till din avatar",
-			"city": "Du måste lägga till en stad",
-			"country": "Du måste lägga till ett land",
+			"city": "Du måste lägga till staden",
+			"country": "Du måste lägga till landet",
 			"email": "Du måste lägga till din e-postadress",
 			"legalName": "Du måste lägga till det juridiska namnet",
 			"name": "Du måste lägga till ditt namn",
-			"postalCode": "Du måste lägga till ett postnummer"
+			"postalCode": "Du måste lägga till postnumret"
 		},
 		"label": {
 			"account": "Konto",

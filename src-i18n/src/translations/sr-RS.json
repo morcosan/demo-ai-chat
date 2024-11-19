@@ -2,13 +2,15 @@
 	"core": {
 		"action": {
 			"back": "Назад",
-			"backToHome": "Назад на почетну страницу",
+			"backToHome": "Назад на почетну страну",
 			"changeLanguage": "Промени језик",
 			"close": "Затвори",
 			"delete": "Обриши",
-			"deselectAll": "Поништи све изборе",
+			"deselectAll": "Поништи избор",
+			"goToUrl": "Иди на {url}",
 			"openMenu": "Отвори мени",
 			"rename": "Преименуј",
+			"retry": "Покушај поново",
 			"saveChanges": "Сачувај промене",
 			"search": "Претрага",
 			"searchMore": "Прикажи више резултата",
@@ -17,7 +19,8 @@
 		},
 		"error": {
 			"noChanges": "Нема промена",
-			"nothingFound": "Ништа није пронађено за \"{search}\""
+			"nothingFound": "Ништа није пронађено за \"{search}\"",
+			"unsent": "Није послато"
 		},
 		"label": {
 			"apiDocs": "API документација",
@@ -27,11 +30,16 @@
 			"darkTheme": "Тамна",
 			"default": "Подразумевано",
 			"description": "Опис",
-			"designSystem": "Дизајн систем",
+			"designSystem": "Систем дизајна",
 			"errors": "Грешке",
 			"europe": "Европа",
 			"githubRepo": "GitHub репозиторијум",
 			"language": "Језик",
+			"levelHigh": "Високо",
+			"levelLow": "Ниско",
+			"levelMedium": "Средње",
+			"levelVeryHigh": "Веома високо",
+			"levelVeryLow": "Веома ниско",
 			"lightTheme": "Светла",
 			"name": "Име",
 			"navigationBar": "Навигациона трака",
@@ -39,6 +47,7 @@
 			"optionalField": "(Опционо)",
 			"requiredField": "(Обавезно)",
 			"settings": "Подешавања",
+			"quickSettings": "Брза подешавања",
 			"uiLibrary": "UI библиотека",
 			"uiTheme": "UI тема"
 		},
@@ -50,6 +59,7 @@
 			"deleting": "Брисање...",
 			"loading": "Учитавање...",
 			"searching": "Претрага...",
+			"sending": "Слање...",
 			"updating": "Ажурирање..."
 		}
 	},
@@ -67,36 +77,37 @@
 			"manageAgents": "Управљај агентима",
 			"manageChats": "Управљај разговорима",
 			"openChat": "Отвори разговор",
-			"openSubchat_few": "Отвори подразговор ({count} поруке)",
-			"openSubchat_many": "Отвори подразговор ({count} порука)",
-			"openSubchat_one": "Отвори подразговор ({count} порука)",
-			"openSubchat_other": "Отвори подразговор ({count} порука)",
 			"openSubchat_zero": "Креирај подразговор",
+			"openSubchat_one": "Отвори подразговор ({count} порука)",
+			"openSubchat_few": "Отвори подразговор ({count} поруке)",
+			"openSubchat_other": "Отвори подразговор ({count} порука)",
 			"searchChats": "Претражи разговоре",
 			"selectChat": "Изабери разговор",
 			"sendMessage": "Пошаљи поруку",
 			"showMoreAgents": "Прикажи више агената",
 			"showMoreChats": "Прикажи више разговора",
 			"showSubchats": "Прикажи подразговоре ({count})",
-			"startSearching_few": "Унесите бар {count} карактера",
-			"startSearching_many": "Унесите бар {count} карактера",
-			"startSearching_one": "Унесите бар {count} карактер",
-			"startSearching_other": "Унесите бар {count} карактера"
+			"startSearching_one": "Укуцајте бар {count} карактер",
+			"startSearching_few": "Укуцајте бар {count} карактера",
+			"startSearching_other": "Укуцајте бар {count} карактера"
 		},
 		"description": {
+			"geminiNano": "Мини GPT за Google Chrome",
 			"loremIpsumGPT": "Најинтелигентнији модел",
 			"rammusGPT": "Најбоља емоционална подршка"
 		},
 		"error": {
 			"agentAvatar": "Морате додати аватар за агента",
 			"agentName": "Морате додати име за агента",
-			"emptyMessage": "Ваша порука је празна"
+			"emptyMessage": "Ваша порука је празна",
+			"failedMessage": "Дошло је до проблема при испоруци ваше поруке"
 		},
 		"label": {
 			"agents": "Агенти",
 			"chatTitle": "Наслов разговора",
 			"chats": "Разговори",
-			"customInstructions": "Прилагођена упутства",
+			"creativityLevel": "Ниво креативности",
+			"customInstructions": "Прилагођене инструкције",
 			"gptModel": "GPT модел",
 			"newAgent": "Нови агент",
 			"newChat": "Нови разговор",
@@ -106,18 +117,17 @@
 			"selectedAgent": "Изабрани агент",
 			"selectedValue": "Изабрана вредност",
 			"subchats": "Подразговори",
+			"xMessages_zero": "Нема порука",
+			"xMessages_one": "1 порука",
 			"xMessages_few": "{count} поруке",
-			"xMessages_many": "{count} порука",
-			"xMessages_one": "{count} порука",
 			"xMessages_other": "{count} порука",
-			"xSearchResults_few": "{count} резултата претраге",
-			"xSearchResults_many": "{count} резултата претраге",
-			"xSearchResults_one": "{count} резултат претраге",
-			"xSearchResults_other": "{count} резултата претраге",
 			"xSearchResults_zero": "Нема резултата претраге",
+			"xSearchResults_one": "{count} резултат претраге",
+			"xSearchResults_few": "{count} резултата претраге",
+			"xSearchResults_other": "{count} резултата претраге",
+			"xSelectedMessages_zero": "Нема изабраних порука",
+			"xSelectedMessages_one": "1 изабрана порука",
 			"xSelectedMessages_few": "{count} изабране поруке",
-			"xSelectedMessages_many": "{count} изабраних порука",
-			"xSelectedMessages_one": "{count} изабрана порука",
 			"xSelectedMessages_other": "{count} изабраних порука"
 		},
 		"placeholder": {
@@ -127,7 +137,7 @@
 		"state": {
 			"loadingAgents": "Учитавање агената...",
 			"loadingChats": "Учитавање разговора...",
-			"loadingGPTs": "Учитавање GPT-а...",
+			"loadingGPTs": "Учитавање GPT-ова...",
 			"loadingMessages": "Учитавање порука...",
 			"loadingPreviousMessages": "Учитавање претходних порука...",
 			"loadingSubchats": "Учитавање подразговора...",
@@ -136,7 +146,10 @@
 		},
 		"warning": {
 			"deletingAgent": "Овај агент ће бити трајно обрисан",
-			"deletingChats": "Ови разговори ће бити трајно обрисани"
+			"deletingChats": "Ови разговори ће бити трајно обрисани",
+			"geminiGptInsideChrome": "Овај GPT захтева да ова подешавања буду омогућена:",
+			"geminiGptOutsideChrome": "Овај GPT је доступан само у Google Chrome прегледачу",
+			"invalidGpt": "Неважећи GPT"
 		}
 	},
 	"userSettings": {
@@ -149,7 +162,7 @@
 			"avatar": "Морате додати свој аватар",
 			"city": "Морате додати град",
 			"country": "Морате додати државу",
-			"email": "Морате додати своју имејл адресу",
+			"email": "Морате додати е-пошту",
 			"legalName": "Морате додати правно име",
 			"name": "Морате додати своје име",
 			"postalCode": "Морате додати поштански број"
@@ -160,7 +173,7 @@
 			"billing": "Наплата",
 			"city": "Град",
 			"country": "Држава",
-			"email": "Имејл адреса",
+			"email": "Адреса е-поште",
 			"legalName": "Правно име",
 			"phone": "Број телефона",
 			"postalCode": "Поштански број",

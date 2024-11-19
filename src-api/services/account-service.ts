@@ -1,9 +1,9 @@
-import { AccountApiPayload, AccountDTO, ApiResponse, STATUS__SUCCESS } from '@api/types'
+import { AccountApiPayload, AccountDTO, ApiResponse, Status } from '@api/types'
 import { getDbAccount, resetDbAccount, setDbAccount } from './db'
 
 export const accountService = {
 	async getAccount(): Promise<ApiResponse<AccountDTO>> {
-		return { status: STATUS__SUCCESS, data: getDbAccount() }
+		return { status: Status.SUCCESS, data: getDbAccount() }
 	},
 
 	async patchAccount(payload: AccountApiPayload): Promise<ApiResponse<AccountDTO>> {
@@ -16,7 +16,7 @@ export const accountService = {
 			phone: payload.phone?.trim() || '',
 		})
 
-		return { status: STATUS__SUCCESS, data: getDbAccount() }
+		return { status: Status.SUCCESS, data: getDbAccount() }
 	},
 
 	async resetDB() {

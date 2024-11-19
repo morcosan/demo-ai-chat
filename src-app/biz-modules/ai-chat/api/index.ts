@@ -11,15 +11,15 @@ import {
 	MessagesApiData,
 	MessagesApiPayload,
 	MessagesApiQuery,
-	STATUS__SUCCESS,
+	Status,
 	SubchatsApiData,
 	SubchatsApiQuery,
 } from '@app/api'
 import { mapDtoToAgent, mapDtoToChat, mapDtoToGPT, mapDtoToMessage, mapDtoToSubchat } from './_mappers'
 import { AgentListing, ChatListing, GptListing, MessageListing, SubchatListing } from './_types'
 
-export { UI_TAG__GPT_DESCRIPTION } from '@api/types'
-export type { AgentsApiPayload } from '@app/api'
+export { UI_TAG__GPT_DESCRIPTION } from '@app/api'
+export type { AgentsApiPayload, CreativityLevel } from '@app/api'
 export * from './_gpt'
 export * from './_types'
 
@@ -31,7 +31,7 @@ export const API = {
 	async getGPTs(): Promise<GptListing> {
 		const resp = await mainAPI.get<GptApiData>('/api/gpts', {})
 
-		return resp.status === STATUS__SUCCESS && resp.data
+		return resp.status === Status.SUCCESS && resp.data
 			? { gpts: resp.data.items.map(mapDtoToGPT), count: resp.data.count }
 			: { gpts: [], count: 0 }
 	},
@@ -47,7 +47,7 @@ export const API = {
 		}
 		const resp = await mainAPI.get<AgentsApiData>('/api/agents', query)
 
-		return resp.status === STATUS__SUCCESS && resp.data
+		return resp.status === Status.SUCCESS && resp.data
 			? { agents: resp.data.items.map(mapDtoToAgent), count: resp.data.count }
 			: { agents: [], count: 0 }
 	},
@@ -57,7 +57,7 @@ export const API = {
 
 		clearDataCache('/api/agents')
 
-		return resp.status === STATUS__SUCCESS && resp.data
+		return resp.status === Status.SUCCESS && resp.data
 			? { agents: resp.data.items.map(mapDtoToAgent), count: resp.data.count }
 			: { agents: [], count: 0 }
 	},
@@ -67,7 +67,7 @@ export const API = {
 
 		clearDataCache('/api/agents')
 
-		return resp.status === STATUS__SUCCESS && resp.data
+		return resp.status === Status.SUCCESS && resp.data
 			? { agents: resp.data.items.map(mapDtoToAgent), count: resp.data.count }
 			: { agents: [], count: 0 }
 	},
@@ -78,7 +78,7 @@ export const API = {
 
 		clearDataCache('/api/agents')
 
-		return resp.status === STATUS__SUCCESS && resp.data
+		return resp.status === Status.SUCCESS && resp.data
 			? { agents: [], count: resp.data.count }
 			: { agents: [], count: 0 }
 	},
@@ -92,7 +92,7 @@ export const API = {
 		}
 		const resp = await mainAPI.get<ChatsApiData>('/api/chats', query)
 
-		return resp.status === STATUS__SUCCESS && resp.data
+		return resp.status === Status.SUCCESS && resp.data
 			? { chats: resp.data.items.map(mapDtoToChat), count: resp.data.count }
 			: { chats: [], count: 0 }
 	},
@@ -103,7 +103,7 @@ export const API = {
 
 		clearDataCache('/api/chats')
 
-		return resp.status === STATUS__SUCCESS && resp.data
+		return resp.status === Status.SUCCESS && resp.data
 			? { chats: resp.data.items.map(mapDtoToChat), count: resp.data.count }
 			: { chats: [], count: 0 }
 	},
@@ -114,7 +114,7 @@ export const API = {
 
 		clearDataCache('/api/chats')
 
-		return resp.status === STATUS__SUCCESS && resp.data
+		return resp.status === Status.SUCCESS && resp.data
 			? { chats: resp.data.items.map(mapDtoToChat), count: resp.data.count }
 			: { chats: [], count: 0 }
 	},
@@ -125,7 +125,7 @@ export const API = {
 
 		clearDataCache('/api/chats')
 
-		return resp.status === STATUS__SUCCESS && resp.data
+		return resp.status === Status.SUCCESS && resp.data
 			? { chats: [], count: resp.data.count }
 			: { chats: [], count: 0 }
 	},
@@ -139,7 +139,7 @@ export const API = {
 		}
 		const resp = await mainAPI.get<SubchatsApiData>('/api/subchats', query)
 
-		return resp.status === STATUS__SUCCESS && resp.data
+		return resp.status === Status.SUCCESS && resp.data
 			? { subchats: resp.data.items.map(mapDtoToSubchat), count: resp.data.count }
 			: { subchats: [], count: 0 }
 	},
@@ -158,7 +158,7 @@ export const API = {
 		}
 		const resp = await mainAPI.get<MessagesApiData>('/api/messages', query)
 
-		return resp.status === STATUS__SUCCESS && resp.data
+		return resp.status === Status.SUCCESS && resp.data
 			? { messages: resp.data.items.map(mapDtoToMessage), count: resp.data.count }
 			: { messages: [], count: 0 }
 	},
@@ -170,7 +170,7 @@ export const API = {
 		clearDataCache('/api/messages')
 		subchatId && clearDataCache('/api/subchats')
 
-		return resp.status === STATUS__SUCCESS && resp.data
+		return resp.status === Status.SUCCESS && resp.data
 			? { messages: resp.data.items.map(mapDtoToMessage), count: resp.data.count }
 			: { messages: [], count: 0 }
 	},

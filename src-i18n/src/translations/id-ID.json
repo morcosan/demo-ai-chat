@@ -2,22 +2,25 @@
 	"core": {
 		"action": {
 			"back": "Kembali",
-			"backToHome": "Kembali ke beranda",
-			"changeLanguage": "Ganti bahasa",
+			"backToHome": "Kembali ke halaman utama",
+			"changeLanguage": "Ubah bahasa",
 			"close": "Tutup",
 			"delete": "Hapus",
-			"deselectAll": "Batalkan pilihan semua",
+			"deselectAll": "Batalkan semua pilihan",
+			"goToUrl": "Pergi ke {url}",
 			"openMenu": "Buka menu",
 			"rename": "Ganti nama",
+			"retry": "Coba lagi",
 			"saveChanges": "Simpan perubahan",
 			"search": "Cari",
-			"searchMore": "Tampilkan hasil lebih banyak",
+			"searchMore": "Tampilkan lebih banyak hasil",
 			"selectAll": "Pilih semua",
 			"signOut": "Keluar"
 		},
 		"error": {
 			"noChanges": "Tidak ada perubahan",
-			"nothingFound": "Tidak ditemukan hasil untuk \"{search}\""
+			"nothingFound": "Tidak ditemukan hasil untuk \"{search}\"",
+			"unsent": "Belum terkirim"
 		},
 		"label": {
 			"apiDocs": "Dokumentasi API",
@@ -32,12 +35,17 @@
 			"europe": "Eropa",
 			"githubRepo": "Repositori GitHub",
 			"language": "Bahasa",
+			"levelHigh": "Tinggi",
+			"levelLow": "Rendah",
+			"levelMedium": "Sedang",
+			"levelVeryHigh": "Sangat tinggi",
+			"levelVeryLow": "Sangat rendah",
 			"lightTheme": "Terang",
 			"name": "Nama",
-			"navigationBar": "Bilah Navigasi",
-			"navigationMenu": "Menu Navigasi",
+			"navigationBar": "Bilah navigasi",
+			"navigationMenu": "Menu navigasi",
 			"optionalField": "(Opsional)",
-			"quickSettings": "Pengaturan Cepat",
+			"quickSettings": "Pengaturan cepat",
 			"requiredField": "(Wajib)",
 			"settings": "Pengaturan",
 			"uiLibrary": "Perpustakaan UI",
@@ -51,6 +59,7 @@
 			"deleting": "Menghapus...",
 			"loading": "Memuat...",
 			"searching": "Mencari...",
+			"sending": "Mengirim...",
 			"updating": "Memperbarui..."
 		}
 	},
@@ -80,18 +89,21 @@
 			"startSearching_other": "Ketik setidaknya {count} karakter"
 		},
 		"description": {
+			"geminiNano": "Mini GPT untuk Google Chrome",
 			"loremIpsumGPT": "Model paling cerdas",
 			"rammusGPT": "Dukungan emosional terbaik"
 		},
 		"error": {
 			"agentAvatar": "Anda harus menambahkan avatar untuk agen",
 			"agentName": "Anda harus menambahkan nama untuk agen",
-			"emptyMessage": "Pesan Anda kosong"
+			"emptyMessage": "Pesan Anda kosong",
+			"failedMessage": "Ada masalah dalam pengiriman pesan Anda"
 		},
 		"label": {
 			"agents": "Agen",
 			"chatTitle": "Judul obrolan",
 			"chats": "Obrolan",
+			"creativityLevel": "Tingkat kreativitas",
 			"customInstructions": "Instruksi kustom",
 			"gptModel": "Model GPT",
 			"newAgent": "Agen baru",
@@ -117,7 +129,7 @@
 		"state": {
 			"loadingAgents": "Memuat agen...",
 			"loadingChats": "Memuat obrolan...",
-			"loadingGPTs": "Memuat GPT...",
+			"loadingGPTs": "Memuat GPTs...",
 			"loadingMessages": "Memuat pesan...",
 			"loadingPreviousMessages": "Memuat pesan sebelumnya...",
 			"loadingSubchats": "Memuat subchat...",
@@ -126,7 +138,10 @@
 		},
 		"warning": {
 			"deletingAgent": "Agen ini akan dihapus secara permanen",
-			"deletingChats": "Obrolan ini akan dihapus secara permanen"
+			"deletingChats": "Obrolan ini akan dihapus secara permanen",
+			"geminiGptInsideChrome": "GPT ini membutuhkan pengaturan ini diaktifkan:",
+			"geminiGptOutsideChrome": "GPT ini hanya tersedia di browser Google Chrome",
+			"invalidGpt": "GPT tidak valid"
 		}
 	},
 	"userSettings": {
@@ -139,7 +154,7 @@
 			"avatar": "Anda harus menambahkan avatar Anda",
 			"city": "Anda harus menambahkan kota",
 			"country": "Anda harus menambahkan negara",
-			"email": "Anda harus menambahkan alamat email Anda",
+			"email": "Anda harus menambahkan alamat email",
 			"legalName": "Anda harus menambahkan nama resmi",
 			"name": "Anda harus menambahkan nama Anda",
 			"postalCode": "Anda harus menambahkan kode pos"
@@ -156,7 +171,7 @@
 			"postalCode": "Kode pos",
 			"private": "Pribadi",
 			"public": "Publik",
-			"vatNumber": "Nomor NPWP"
+			"vatNumber": "Nomor PPN"
 		}
 	}
 }

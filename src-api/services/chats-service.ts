@@ -7,15 +7,16 @@ import {
 	ChatsApiQuery,
 	DbChat,
 	DbMessage,
+	GptMessage,
 	MessagesApiData,
 	MessagesApiPayload,
 	MessagesApiQuery,
-	STATUS__SUCCESS,
+	Status,
 	SubchatDTO,
 	SubchatsApiData,
 	SubchatsApiQuery,
 } from '../types'
-import { RESP__NOT_FOUND } from '../utilities/network'
+import { RESP__NOT_AVAILABLE, RESP__NOT_FOUND } from '../utilities/network'
 import { extractInt, extractIntArray, isGreaterThanZero } from '../utilities/parsers'
 import { isValidPagination } from '../utilities/validators'
 import {
@@ -23,7 +24,7 @@ import {
 	createMessageId,
 	getDbChats,
 	getDbMessages,
-	getGptAPI,
+	getGptResponse,
 	getSizeForChat,
 	resetChatsDB,
 	setDbChats,
@@ -45,7 +46,7 @@ export const chatsService = {
 			const chats = dbChats.filter((chat: DbChat) => chatIds.includes(chat.id))
 
 			return {
-				status: STATUS__SUCCESS,
+				status: Status.SUCCESS,
 				data: {
 					count: chats.length,
 					items: chats.map((chat: DbChat) => ({ ...chat, size: getSizeForChat(chat) })),
@@ -61,7 +62,7 @@ export const chatsService = {
 			const pageChats = chats.slice(count * (page - 1), count * page)
 
 			return {
-				status: STATUS__SUCCESS,
+				status: Status.SUCCESS,
 				data: {
 					count: chats.length,
 					items: pageChats.map((chat: DbChat) => ({ ...chat, size: getSizeForChat(chat) })),
@@ -83,7 +84,7 @@ export const chatsService = {
 		setDbChats([chat, ...getDbChats()])
 
 		return {
-			status: STATUS__SUCCESS,
+			status: Status.SUCCESS,
 			data: { count: 1, items: [{ ...chat, size: getSizeForChat(chat) }] },
 		}
 	},
@@ -101,7 +102,7 @@ export const chatsService = {
 		setDbChats(dbChats)
 
 		return {
-			status: STATUS__SUCCESS,
+			status: Status.SUCCESS,
 			data: { count: 1, items: [{ ...chat, size: getSizeForChat(chat) }] },
 		}
 	},
@@ -120,7 +121,7 @@ export const chatsService = {
 		setDbChats(dbChats)
 
 		return {
-			status: STATUS__SUCCESS,
+			status: Status.SUCCESS,
 			data: { count: dbChats.length, items: [] },
 		}
 	},
@@ -144,7 +145,7 @@ export const chatsService = {
 			const items = dbMessages.filter((message: DbMessage) => subchatIds.includes(message.id)).map(dtoFn)
 
 			return {
-				status: STATUS__SUCCESS,
+				status: Status.SUCCESS,
 				data: { count: items.length, items },
 			}
 		} else {
@@ -161,7 +162,7 @@ export const chatsService = {
 			}
 
 			return {
-				status: STATUS__SUCCESS,
+				status: Status.SUCCESS,
 				data: {
 					count: subchats.length,
 					items: subchats.slice(count * (page - 1), count * page),
@@ -204,7 +205,7 @@ export const chatsService = {
 		}
 
 		return {
-			status: STATUS__SUCCESS,
+			status: Status.SUCCESS,
 			data: {
 				count: allMessages.length,
 				items: pageMessages.map((message: DbMessage) => ({
@@ -220,11 +221,11 @@ export const chatsService = {
 		const chatId = extractInt(payload.chatId, 0, isGreaterThanZero)
 		const subchatId = extractInt(payload.subchatId, 0, isGreaterThanZero)
 		const agentId = extractInt(payload.agentId, 0, isGreaterThanZero)
+		const parentId = subchatId || chatId
 		const dbMessages = getDbMessages()
-		const gptAPI = getGptAPI(agentId)
 
 		if (!chatId) return { ...RESP__NOT_FOUND, error: `Chat ID ${chatId} not found` }
-		if (!gptAPI) return { ...RESP__NOT_FOUND, error: `Agent ID ${agentId} not found` }
+		if (!agentId) return { ...RESP__NOT_FOUND, error: `Agent ID ${agentId} not found` }
 		if (!text) return { ...RESP__NOT_FOUND, error: `Text is empty` }
 
 		if (subchatId) {
@@ -232,12 +233,22 @@ export const chatsService = {
 			if (!exists) return { ...RESP__NOT_FOUND, error: `Subchat ID ${subchatId} not found` }
 		}
 
-		const agentResponse = await gptAPI.getResponse([])
+		const gptMessages = dbMessages
+			.filter((message: DbMessage) => message.parentId === parentId)
+			.map(
+				(message: DbMessage): GptMessage => ({
+					text: message.text,
+					role: message.role,
+				})
+			)
+		const agentResponse = await getGptResponse(agentId, [...gptMessages, { text, role: 'user' }])
+
+		if (!agentResponse) return { ...RESP__NOT_AVAILABLE, error: `GPT for agent ${agentId} not available` }
 
 		const userMessage: DbMessage = {
 			id: createMessageId(),
 			chatId: chatId,
-			parentId: subchatId || chatId,
+			parentId: parentId,
 			agentId: agentId,
 			text: text,
 			role: 'user',
@@ -246,7 +257,7 @@ export const chatsService = {
 		const agentMessage: DbMessage = {
 			id: createMessageId(),
 			chatId: chatId,
-			parentId: subchatId || chatId,
+			parentId: parentId,
 			agentId: agentId,
 			text: agentResponse,
 			role: 'agent',
@@ -256,7 +267,7 @@ export const chatsService = {
 		setDbMessages([...dbMessages, userMessage, agentMessage])
 
 		return {
-			status: STATUS__SUCCESS,
+			status: Status.SUCCESS,
 			data: {
 				count: 2,
 				items: [userMessage, agentMessage].map((message: DbMessage) => ({ ...message, subchatSize: 0 })),

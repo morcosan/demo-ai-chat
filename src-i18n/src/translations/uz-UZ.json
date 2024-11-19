@@ -6,18 +6,21 @@
 			"changeLanguage": "Tilni o'zgartirish",
 			"close": "Yopish",
 			"delete": "O'chirish",
-			"deselectAll": "Barchasini bekor qilish",
+			"deselectAll": "Hammasini bekor qilish",
+			"goToUrl": "{url} ga o'tish",
 			"openMenu": "Menyuni ochish",
 			"rename": "Qayta nomlash",
+			"retry": "Qayta urinish",
 			"saveChanges": "O'zgarishlarni saqlash",
 			"search": "Qidirish",
-			"searchMore": "Ko'proq natija ko'rsatish",
-			"selectAll": "Barchasini tanlash",
+			"searchMore": "Ko'proq natijalarni ko'rsatish",
+			"selectAll": "Hammasini tanlash",
 			"signOut": "Chiqish"
 		},
 		"error": {
 			"noChanges": "O'zgarishlar yo'q",
-			"nothingFound": "\"{search}\" uchun hech narsa topilmadi"
+			"nothingFound": "\"{search}\" uchun hech narsa topilmadi",
+			"unsent": "Yuborilmagan"
 		},
 		"label": {
 			"apiDocs": "API hujjatlari",
@@ -32,11 +35,17 @@
 			"europe": "Yevropa",
 			"githubRepo": "GitHub repozitoriyasi",
 			"language": "Til",
+			"levelHigh": "Yuqori",
+			"levelLow": "Past",
+			"levelMedium": "O'rta",
+			"levelVeryHigh": "Juda yuqori",
+			"levelVeryLow": "Juda past",
 			"lightTheme": "Yorug'",
 			"name": "Ism",
 			"navigationBar": "Navigatsiya paneli",
 			"navigationMenu": "Navigatsiya menyusi",
 			"optionalField": "(Ixtiyoriy)",
+			"quickSettings": "Tezkor sozlamalar",
 			"requiredField": "(Majburiy)",
 			"settings": "Sozlamalar",
 			"uiLibrary": "UI kutubxonasi",
@@ -50,12 +59,13 @@
 			"deleting": "O'chirilmoqda...",
 			"loading": "Yuklanmoqda...",
 			"searching": "Qidirilmoqda...",
+			"sending": "Yuborilmoqda...",
 			"updating": "Yangilanmoqda..."
 		}
 	},
 	"aiChat": {
 		"action": {
-			"backToSubchats": "Kichik chatlarga qaytish",
+			"backToSubchats": "Subchatga qaytish",
 			"configureAgent": "Agentni sozlash",
 			"confirmDeleteAgent": "Agentni o'chirishni tasdiqlash",
 			"confirmDeleteChats": "Chatlarni o'chirishni tasdiqlash",
@@ -63,55 +73,57 @@
 			"createAgent": "Agent yaratish",
 			"deleteAgent": "Agentni o'chirish",
 			"deleteSelectedChats": "Tanlangan chatlarni o'chirish",
-			"deselectChat": "Chatni bekor qilish",
+			"deselectChat": "Chatni tanlashni bekor qilish",
 			"manageAgents": "Agentlarni boshqarish",
 			"manageChats": "Chatlarni boshqarish",
 			"openChat": "Chatni ochish",
-			"openSubchat_one": "Kichik chatni ochish ({count} xabar)",
-			"openSubchat_other": "Kichik chatni ochish ({count} xabar)",
-			"openSubchat_zero": "Kichik chat yaratish",
+			"openSubchat_other": "Subchatni ochish ({count} xabar)",
+			"openSubchat_zero": "Subchat yaratish",
 			"searchChats": "Chatlarni qidirish",
 			"selectChat": "Chatni tanlash",
 			"sendMessage": "Xabar yuborish",
 			"showMoreAgents": "Ko'proq agentlarni ko'rsatish",
 			"showMoreChats": "Ko'proq chatlarni ko'rsatish",
-			"showSubchats": "Kichik chatlarni ko'rsatish ({count})",
-			"startSearching_one": "Kamida {count} belgi kiriting",
-			"startSearching_other": "Kamida {count} belgi kiriting"
+			"showSubchats": "Subchatlarni ko'rsatish ({count})",
+			"startSearching_one": "Kamida {count} ta belgi kiriting",
+			"startSearching_other": "Kamida {count} ta belgi kiriting"
 		},
 		"description": {
+			"geminiNano": "Google Chrome uchun Mini GPT",
 			"loremIpsumGPT": "Eng aqlli model",
 			"rammusGPT": "Eng yaxshi emotsional qo'llab-quvvatlash"
 		},
 		"error": {
 			"agentAvatar": "Agent uchun avatar qo'shishingiz kerak",
-			"agentName": "Agent uchun ism qo'shishingiz kerak",
-			"emptyMessage": "Xabaringiz bo'sh"
+			"agentName": "Agent uchun nom qo'shishingiz kerak",
+			"emptyMessage": "Xabaringiz bo'sh",
+			"failedMessage": "Xabaringizni yetkazishda muammo yuz berdi"
 		},
 		"label": {
 			"agents": "Agentlar",
 			"chatTitle": "Chat sarlavhasi",
 			"chats": "Chatlar",
+			"creativityLevel": "Ijodkorlik darajasi",
 			"customInstructions": "Maxsus ko'rsatmalar",
 			"gptModel": "GPT modeli",
 			"newAgent": "Yangi agent",
 			"newChat": "Yangi chat",
 			"newMessage": "Yangi xabar",
 			"noChats": "Chatlar yo'q",
-			"noSubchats": "Kichik chatlar yo'q",
+			"noSubchats": "Subchatlar yo'q",
 			"selectedAgent": "Tanlangan agent",
 			"selectedValue": "Tanlangan qiymat",
-			"subchats": "Kichik chatlar",
+			"subchats": "Subchatlar",
 			"xMessages_one": "{count} xabar",
 			"xMessages_other": "{count} xabar",
 			"xSearchResults_one": "{count} qidiruv natijasi",
 			"xSearchResults_other": "{count} qidiruv natijasi",
 			"xSearchResults_zero": "Qidiruv natijalari yo'q",
-			"xSelectedMessages_one": "{count} tanlangan xabar",
-			"xSelectedMessages_other": "{count} tanlangan xabar"
+			"xSelectedMessages_one": "{count} xabar tanlangan",
+			"xSelectedMessages_other": "{count} xabar tanlangan"
 		},
 		"placeholder": {
-			"newMessage": "{name} bilan suhbatlashish...",
+			"newMessage": "{name} bilan suhbatlashing...",
 			"rename": "Avtomatik yangi nom yaratish..."
 		},
 		"state": {
@@ -120,26 +132,29 @@
 			"loadingGPTs": "GPTlar yuklanmoqda...",
 			"loadingMessages": "Xabarlar yuklanmoqda...",
 			"loadingPreviousMessages": "Oldingi xabarlar yuklanmoqda...",
-			"loadingSubchats": "Kichik chatlar yuklanmoqda...",
+			"loadingSubchats": "Subchatlar yuklanmoqda...",
 			"renamingChat": "Chat qayta nomlanmoqda...",
 			"thinking": "O'ylanmoqda..."
 		},
 		"warning": {
 			"deletingAgent": "Bu agent butunlay o'chiriladi",
-			"deletingChats": "Bu chatlar butunlay o'chiriladi"
+			"deletingChats": "Bu chatlar butunlay o'chiriladi",
+			"geminiGptInsideChrome": "Bu GPT uchun quyidagi sozlamalar yoqilishi kerak:",
+			"geminiGptOutsideChrome": "Bu GPT faqat Google Chrome brauzerida mavjud",
+			"invalidGpt": "Noto'g'ri GPT"
 		}
 	},
 	"userSettings": {
 		"action": {
 			"manageAccount": "Hisobni boshqarish",
-			"manageBilling": "Hisob-kitobni boshqarish"
+			"manageBilling": "To'lovni boshqarish"
 		},
 		"error": {
 			"address": "Manzilni qo'shishingiz kerak",
-			"avatar": "Avataringizni qo'shishingiz kerak",
+			"avatar": "Avatarni qo'shishingiz kerak",
 			"city": "Shaharni qo'shishingiz kerak",
 			"country": "Mamlakatni qo'shishingiz kerak",
-			"email": "Elektron pochtangizni qo'shishingiz kerak",
+			"email": "Elektron pochta manzilini qo'shishingiz kerak",
 			"legalName": "Yuridik nomni qo'shishingiz kerak",
 			"name": "Ismingizni qo'shishingiz kerak",
 			"postalCode": "Pochta indeksini qo'shishingiz kerak"
@@ -147,10 +162,10 @@
 		"label": {
 			"account": "Hisob",
 			"address": "Manzil",
-			"billing": "Hisob-kitob",
+			"billing": "To'lov",
 			"city": "Shahar",
 			"country": "Mamlakat",
-			"email": "Elektron pochta",
+			"email": "Elektron pochta manzili",
 			"legalName": "Yuridik nom",
 			"phone": "Telefon raqami",
 			"postalCode": "Pochta indeksi",

@@ -4,6 +4,8 @@ window.cx = clsx
 
 window.wait = (time: number) => new Promise((resolve) => setTimeout(resolve, time))
 
+window.ERROR = (...args: unknown[]) => console.error(...args)
+
 window.LOG = (...args: unknown[]) => {
 	const format: unknown[] = ['%c', 'color: lightgreen']
 

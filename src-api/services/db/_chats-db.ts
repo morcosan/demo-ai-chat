@@ -9,7 +9,7 @@ import {
 } from '@utils/release'
 import { DbChat, DbMessage, MessageRole } from '../../types'
 import { addMinutesToDate } from '../../utilities/various'
-import { getGptAPI, randomFromAgentIds } from './_agents-db'
+import { getGptResponse, randomFromAgentIds } from './_agents-db'
 
 let _dbChats: DbChat[]
 let _dbMessages: DbMessage[]
@@ -30,7 +30,7 @@ const setDbMessages = (value: DbMessage[]) => {
 	localStorage.setItem(COOKIE_KEY.DB_MESSAGES, JSON.stringify(value))
 }
 
-const initChatsDB = () => {
+const initChatsDB = async () => {
 	try {
 		const json = localStorage.getItem(COOKIE_KEY.DB_CHATS)
 		_dbChats = JSON.parse(json || '')
@@ -70,7 +70,7 @@ const createDbMessages = async () => {
 
 		for (let index = 0; index < total; index++) {
 			const agentId = randomFromAgentIds()
-			const response = await getGptAPI(agentId)!.getResponse([])
+			const response = await getGptResponse(agentId, [])
 
 			const userMessage: DbMessage = {
 				id: createMessageId(),
@@ -109,7 +109,7 @@ const addSubchats = async (message: DbMessage, messages: DbMessage[]) => {
 		const role = roles[index % 2]
 		const userResponse = randomLongText(randomInt(1, 3))
 		const agentId = role === 'agent' ? randomFromAgentIds() : 0
-		const response = role === 'agent' ? await getGptAPI(agentId)!.getResponse([]) : userResponse
+		const response = role === 'agent' ? await getGptResponse(agentId, []) : userResponse
 
 		messages.push({
 			id: createMessageId(),

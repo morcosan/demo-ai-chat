@@ -1,3 +1,5 @@
+import { CreativityLevel, MessageRole } from './_gpt'
+
 export interface DbAccount {
 	name: string
 	email: string
@@ -30,13 +32,12 @@ export interface DbMessage {
 	createdAt: string
 }
 
-export type MessageRole = 'user' | 'agent' | 'system'
-
 export interface DbGPT {
 	id: number
 	name: string
 	avatar: string
 	desc: string
+	enabled: boolean
 }
 
 export interface DbAgent {
@@ -45,7 +46,8 @@ export interface DbAgent {
 	name: string
 	avatar: string
 	desc: string
-	setup: string
+	prompt: string
+	creativity: CreativityLevel
 	createdAt: string
 	updatedAt: string | null
 }

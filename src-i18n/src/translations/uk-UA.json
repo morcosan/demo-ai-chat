@@ -2,13 +2,15 @@
 	"core": {
 		"action": {
 			"back": "Назад",
-			"backToHome": "Назад на головну",
+			"backToHome": "На головну",
 			"changeLanguage": "Змінити мову",
 			"close": "Закрити",
 			"delete": "Видалити",
-			"deselectAll": "Скасувати вибір усіх",
+			"deselectAll": "Скасувати вибір",
+			"goToUrl": "Перейти до {url}",
 			"openMenu": "Відкрити меню",
 			"rename": "Перейменувати",
+			"retry": "Повторити",
 			"saveChanges": "Зберегти зміни",
 			"search": "Пошук",
 			"searchMore": "Показати більше результатів",
@@ -17,13 +19,14 @@
 		},
 		"error": {
 			"noChanges": "Немає змін",
-			"nothingFound": "Нічого не знайдено для \"{search}\""
+			"nothingFound": "Нічого не знайдено для \"{search}\"",
+			"unsent": "Не відправлено"
 		},
 		"label": {
 			"apiDocs": "API документація",
 			"asia": "Азія",
 			"avatar": "Аватар",
-			"custom": "Власне",
+			"custom": "Користувацький",
 			"darkTheme": "Темна",
 			"default": "За замовчуванням",
 			"description": "Опис",
@@ -32,11 +35,17 @@
 			"europe": "Європа",
 			"githubRepo": "GitHub репозиторій",
 			"language": "Мова",
+			"levelHigh": "Високий",
+			"levelLow": "Низький",
+			"levelMedium": "Середній",
+			"levelVeryHigh": "Дуже високий",
+			"levelVeryLow": "Дуже низький",
 			"lightTheme": "Світла",
 			"name": "Ім'я",
 			"navigationBar": "Панель навігації",
 			"navigationMenu": "Меню навігації",
 			"optionalField": "(Необов'язково)",
+			"quickSettings": "Швидкі налаштування",
 			"requiredField": "(Обов'язково)",
 			"settings": "Налаштування",
 			"uiLibrary": "UI бібліотека",
@@ -50,6 +59,7 @@
 			"deleting": "Видалення...",
 			"loading": "Завантаження...",
 			"searching": "Пошук...",
+			"sending": "Відправлення...",
 			"updating": "Оновлення..."
 		}
 	},
@@ -64,13 +74,12 @@
 			"deleteAgent": "Видалити агента",
 			"deleteSelectedChats": "Видалити вибрані чати",
 			"deselectChat": "Скасувати вибір чату",
-			"manageAgents": "Керувати агентами",
-			"manageChats": "Керувати чатами",
+			"manageAgents": "Керування агентами",
+			"manageChats": "Керування чатами",
 			"openChat": "Відкрити чат",
 			"openSubchat_few": "Відкрити підчат ({count} повідомлення)",
 			"openSubchat_many": "Відкрити підчат ({count} повідомлень)",
 			"openSubchat_one": "Відкрити підчат ({count} повідомлення)",
-			"openSubchat_other": "Відкрити підчат ({count} повідомлень)",
 			"openSubchat_zero": "Створити підчат",
 			"searchChats": "Пошук чатів",
 			"selectChat": "Вибрати чат",
@@ -78,25 +87,27 @@
 			"showMoreAgents": "Показати більше агентів",
 			"showMoreChats": "Показати більше чатів",
 			"showSubchats": "Показати підчати ({count})",
-			"startSearching_few": "Введіть щонайменше {count} символи",
-			"startSearching_many": "Введіть щонайменше {count} символів",
-			"startSearching_one": "Введіть щонайменше {count} символ",
-			"startSearching_other": "Введіть щонайменше {count} символів"
+			"startSearching_one": "Введіть хоча б {count} символ",
+			"startSearching_few": "Введіть хоча б {count} символи",
+			"startSearching_many": "Введіть хоча б {count} символів"
 		},
 		"description": {
+			"geminiNano": "Міні GPT для Google Chrome",
 			"loremIpsumGPT": "Найрозумніша модель",
 			"rammusGPT": "Найкраща емоційна підтримка"
 		},
 		"error": {
-			"agentAvatar": "Ви маєте додати аватар для агента",
-			"agentName": "Ви маєте додати ім'я для агента",
-			"emptyMessage": "Ваше повідомлення порожнє"
+			"agentAvatar": "Ви повинні додати аватар для агента",
+			"agentName": "Ви повинні додати ім'я для агента",
+			"emptyMessage": "Ваше повідомлення порожнє",
+			"failedMessage": "Виникла проблема з доставкою вашого повідомлення"
 		},
 		"label": {
 			"agents": "Агенти",
 			"chatTitle": "Назва чату",
 			"chats": "Чати",
-			"customInstructions": "Власні інструкції",
+			"creativityLevel": "Рівень креативності",
+			"customInstructions": "Користувацькі інструкції",
 			"gptModel": "GPT модель",
 			"newAgent": "Новий агент",
 			"newChat": "Новий чат",
@@ -106,22 +117,19 @@
 			"selectedAgent": "Вибраний агент",
 			"selectedValue": "Вибране значення",
 			"subchats": "Підчати",
+			"xMessages_one": "{count} повідомлення",
 			"xMessages_few": "{count} повідомлення",
 			"xMessages_many": "{count} повідомлень",
-			"xMessages_one": "{count} повідомлення",
-			"xMessages_other": "{count} повідомлень",
+			"xSearchResults_one": "{count} результат пошуку",
 			"xSearchResults_few": "{count} результати пошуку",
 			"xSearchResults_many": "{count} результатів пошуку",
-			"xSearchResults_one": "{count} результат пошуку",
-			"xSearchResults_other": "{count} результатів пошуку",
 			"xSearchResults_zero": "Немає результатів пошуку",
-			"xSelectedMessages_few": "{count} вибрані повідомлення",
-			"xSelectedMessages_many": "{count} вибраних повідомлень",
-			"xSelectedMessages_one": "{count} вибране повідомлення",
-			"xSelectedMessages_other": "{count} вибраних повідомлень"
+			"xSelectedMessages_one": "Вибрано {count} повідомлення",
+			"xSelectedMessages_few": "Вибрано {count} повідомлення",
+			"xSelectedMessages_many": "Вибрано {count} повідомлень"
 		},
 		"placeholder": {
-			"newMessage": "Розмова з {name}...",
+			"newMessage": "Спілкуйтеся з {name}...",
 			"rename": "Згенерувати нову назву автоматично..."
 		},
 		"state": {
@@ -132,27 +140,30 @@
 			"loadingPreviousMessages": "Завантаження попередніх повідомлень...",
 			"loadingSubchats": "Завантаження підчатів...",
 			"renamingChat": "Перейменування чату...",
-			"thinking": "Думає..."
+			"thinking": "Думаю..."
 		},
 		"warning": {
-			"deletingAgent": "Цей агент буде видалений назавжди",
-			"deletingChats": "Ці чати будуть видалені назавжди"
+			"deletingAgent": "Цього агента буде остаточно видалено",
+			"deletingChats": "Ці чати буде остаточно видалено",
+			"geminiGptInsideChrome": "Цей GPT вимагає увімкнення таких налаштувань:",
+			"geminiGptOutsideChrome": "Цей GPT доступний тільки в браузері Google Chrome",
+			"invalidGpt": "Недійсний GPT"
 		}
 	},
 	"userSettings": {
 		"action": {
-			"manageAccount": "Керувати обліковим записом",
-			"manageBilling": "Керувати оплатою"
+			"manageAccount": "Керування обліковим записом",
+			"manageBilling": "Керування оплатою"
 		},
 		"error": {
-			"address": "Ви маєте додати адресу",
-			"avatar": "Ви маєте додати свій аватар",
-			"city": "Ви маєте додати місто",
-			"country": "Ви маєте додати країну",
-			"email": "Ви маєте додати свою електронну адресу",
-			"legalName": "Ви маєте додати юридичну назву",
-			"name": "Ви маєте додати своє ім'я",
-			"postalCode": "Ви маєте додати поштовий індекс"
+			"address": "Ви повинні додати адресу",
+			"avatar": "Ви повинні додати свій аватар",
+			"city": "Ви повинні додати місто",
+			"country": "Ви повинні додати країну",
+			"email": "Ви повинні додати свою електронну адресу",
+			"legalName": "Ви повинні додати юридичну назву",
+			"name": "Ви повинні додати своє ім'я",
+			"postalCode": "Ви повинні додати поштовий індекс"
 		},
 		"label": {
 			"account": "Обліковий запис",

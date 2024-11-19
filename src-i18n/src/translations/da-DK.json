@@ -2,13 +2,15 @@
 	"core": {
 		"action": {
 			"back": "Tilbage",
-			"backToHome": "Tilbage til startside",
+			"backToHome": "Tilbage til hjemmesiden",
 			"changeLanguage": "Skift sprog",
 			"close": "Luk",
 			"delete": "Slet",
 			"deselectAll": "Fravælg alle",
+			"goToUrl": "Gå til {url}",
 			"openMenu": "Åbn menu",
 			"rename": "Omdøb",
+			"retry": "Prøv igen",
 			"saveChanges": "Gem ændringer",
 			"search": "Søg",
 			"searchMore": "Vis flere resultater",
@@ -16,8 +18,9 @@
 			"signOut": "Log ud"
 		},
 		"error": {
-			"noChanges": "Ingen ændringer",
-			"nothingFound": "Intet fundet for \"{search}\""
+			"noChanges": "Der er ingen ændringer",
+			"nothingFound": "Intet fundet for \"{search}\"",
+			"unsent": "Ikke sendt"
 		},
 		"label": {
 			"apiDocs": "API-dokumentation",
@@ -32,9 +35,14 @@
 			"europe": "Europa",
 			"githubRepo": "GitHub-repo",
 			"language": "Sprog",
+			"levelHigh": "Høj",
+			"levelLow": "Lav",
+			"levelMedium": "Mellem",
+			"levelVeryHigh": "Meget høj",
+			"levelVeryLow": "Meget lav",
 			"lightTheme": "Lys",
 			"name": "Navn",
-			"navigationBar": "Navigationslinje",
+			"navigationBar": "Navigationsbjælke",
 			"navigationMenu": "Navigationsmenu",
 			"optionalField": "(Valgfrit)",
 			"quickSettings": "Hurtige indstillinger",
@@ -51,6 +59,7 @@
 			"deleting": "Sletter...",
 			"loading": "Indlæser...",
 			"searching": "Søger...",
+			"sending": "Sender...",
 			"updating": "Opdaterer..."
 		}
 	},
@@ -80,18 +89,21 @@
 			"startSearching_other": "Skriv mindst {count} tegn"
 		},
 		"description": {
+			"geminiNano": "Mini GPT til Google Chrome",
 			"loremIpsumGPT": "Den mest intelligente model",
-			"rammusGPT": "Den bedste følelsesmæssige støtte"
+			"rammusGPT": "Bedste følelsesmæssige støtte"
 		},
 		"error": {
 			"agentAvatar": "Du skal tilføje en avatar til agenten",
 			"agentName": "Du skal tilføje et navn til agenten",
-			"emptyMessage": "Din besked er tom"
+			"emptyMessage": "Din besked er tom",
+			"failedMessage": "Der opstod et problem med at levere din besked"
 		},
 		"label": {
 			"agents": "Agenter",
-			"chatTitle": "Chat titel",
+			"chatTitle": "Chat-titel",
 			"chats": "Chats",
+			"creativityLevel": "Kreativitetsniveau",
 			"customInstructions": "Brugerdefinerede instruktioner",
 			"gptModel": "GPT-model",
 			"newAgent": "Ny agent",
@@ -107,17 +119,17 @@
 			"xSearchResults_one": "{count} søgeresultat",
 			"xSearchResults_other": "{count} søgeresultater",
 			"xSearchResults_zero": "Ingen søgeresultater",
-			"xSelectedMessages_one": "1 valgt besked",
-			"xSelectedMessages_other": "{count} valgte beskeder"
+			"xSelectedMessages_one": "1 besked valgt",
+			"xSelectedMessages_other": "{count} beskeder valgt"
 		},
 		"placeholder": {
 			"newMessage": "Tal med {name}...",
-			"rename": "Generer nyt navn automatisk..."
+			"rename": "Generer et nyt navn automatisk..."
 		},
 		"state": {
 			"loadingAgents": "Indlæser agenter...",
 			"loadingChats": "Indlæser chats...",
-			"loadingGPTs": "Indlæser GPT-modeller...",
+			"loadingGPTs": "Indlæser GPT'er...",
 			"loadingMessages": "Indlæser beskeder...",
 			"loadingPreviousMessages": "Indlæser tidligere beskeder...",
 			"loadingSubchats": "Indlæser underchats...",
@@ -125,8 +137,11 @@
 			"thinking": "Tænker..."
 		},
 		"warning": {
-			"deletingAgent": "Denne agent vil blive permanent slettet",
-			"deletingChats": "Disse chats vil blive permanent slettet"
+			"deletingAgent": "Denne agent vil blive slettet permanent",
+			"deletingChats": "Disse chats vil blive slettet permanent",
+			"geminiGptInsideChrome": "Denne GPT kræver, at følgende indstillinger aktiveres:",
+			"geminiGptOutsideChrome": "Denne GPT er kun tilgængelig i Google Chrome-browseren",
+			"invalidGpt": "Ugyldig GPT"
 		}
 	},
 	"userSettings": {
@@ -135,14 +150,14 @@
 			"manageBilling": "Administrer fakturering"
 		},
 		"error": {
-			"address": "Du skal tilføje en adresse",
-			"avatar": "Du skal tilføje en avatar",
-			"city": "Du skal tilføje en by",
-			"country": "Du skal tilføje et land",
-			"email": "Du skal tilføje en e-mailadresse",
+			"address": "Du skal tilføje adressen",
+			"avatar": "Du skal tilføje din avatar",
+			"city": "Du skal tilføje byen",
+			"country": "Du skal tilføje landet",
+			"email": "Du skal tilføje din e-mailadresse",
 			"legalName": "Du skal tilføje det juridiske navn",
-			"name": "Du skal tilføje et navn",
-			"postalCode": "Du skal tilføje et postnummer"
+			"name": "Du skal tilføje dit navn",
+			"postalCode": "Du skal tilføje postnummeret"
 		},
 		"label": {
 			"account": "Konto",
@@ -156,7 +171,7 @@
 			"postalCode": "Postnummer",
 			"private": "Privat",
 			"public": "Offentlig",
-			"vatNumber": "Momsnummer"
+			"vatNumber": "CVR-nummer"
 		}
 	}
 }

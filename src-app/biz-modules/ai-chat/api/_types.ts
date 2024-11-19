@@ -10,6 +10,7 @@ export interface Chat extends ChatDTO {
 
 export interface Message extends MessageDTO {
 	loading?: boolean
+	failed?: boolean
 }
 
 export interface Agent extends AgentDTO {

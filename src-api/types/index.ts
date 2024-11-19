@@ -1,3 +1,4 @@
+import { CreativityLevel } from '@api/types/_gpt'
 import { DbAccount, DbBilling } from './_db'
 import { AgentDTO, ChatDTO, GptDTO, MessageDTO, SubchatDTO } from './_dto'
 
@@ -82,7 +83,8 @@ export interface AgentsApiPayload extends ApiPayload {
 	name?: string
 	avatar?: string
 	desc?: string
-	setup?: string
+	prompt?: string
+	creativity?: CreativityLevel
 }
 export interface ChatsApiPayload extends ApiPayload {
 	chatId?: number

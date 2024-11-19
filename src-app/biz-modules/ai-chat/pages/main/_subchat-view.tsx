@@ -1,7 +1,7 @@
 import { LoadingText } from '@app/library/release'
 import { ArrowBackSvg, IconButton } from '@ds/release'
 import { debounce } from 'lodash'
-import { UIEvent, useEffect, useMemo } from 'react'
+import { UIEvent, useEffect, useMemo, useState } from 'react'
 import { Agent, Message } from '../../api'
 import { MessageItem } from '../../components/items/message-item'
 import { NewMessageToolbar } from '../../components/new-message-toolbar'
@@ -21,6 +21,16 @@ export const SubchatView = () => {
 	} = useAiChat()
 	const { allAgentsForChat, loadMissingAgents } = useAiChatAgents()
 	const { containerRef, saveScrollPos, scrollToPos } = useScrollable()
+	const [sentText, setSentText] = useState('')
+	const [sentAgentId, setSentAgentId] = useState(0)
+
+	const onPostMessage = (text: string, agentId: number) => {
+		setSentText(text)
+		setSentAgentId(agentId)
+		postSubchatMessage(text, agentId)
+	}
+
+	const onRetryMessage = () => postSubchatMessage(sentText, sentAgentId)
 
 	const onScroll = debounce((event: UIEvent) => {
 		const THRESHOLD = 50 // px
@@ -50,6 +60,7 @@ export const SubchatView = () => {
 						message={message}
 						agent={allAgentsForChat.find((agent: Agent) => agent.id === message.agentId)}
 						isSubchat
+						onRetry={onRetryMessage}
 					/>
 				))}
 			</ul>
@@ -95,7 +106,7 @@ export const SubchatView = () => {
 
 			{/* NEW MESSAGE FIELD */}
 			<div className="mx-a11y-scrollbar mb-xs-5 mt-xs-1">
-				<NewMessageToolbar listLoading={subchatLoading} onPostMessage={postSubchatMessage} />
+				<NewMessageToolbar listLoading={subchatLoading} onPostMessage={onPostMessage} />
 			</div>
 		</div>
 	)

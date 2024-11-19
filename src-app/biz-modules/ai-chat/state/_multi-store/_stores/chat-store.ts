@@ -39,9 +39,10 @@ export const useChatStore = (allChatsStore: AllChatsStore): ChatStore => {
 	const [shouldRename, setShouldRename] = useState(false)
 
 	const canLoadChatMessages = !chatPagination.page || chatMessages.length < chatPagination.count
+	const isActiveLoading = chatLoading !== false && chatLoading !== 'error'
 
 	const loadActiveChat = async (chatId: number) => {
-		if (chatLoading || isNaN(chatId) || chatId === activeChat?.id) return
+		if (isActiveLoading || isNaN(chatId) || chatId === activeChat?.id) return
 
 		let chat = allChats.find((chat: Chat) => chat.id === chatId) || null
 		if (!chat) {
@@ -52,6 +53,7 @@ export const useChatStore = (allChatsStore: AllChatsStore): ChatStore => {
 		setActiveChat(chat)
 		setChatMessages([])
 		setChatPagination({ page: 0, count: 0 })
+		setChatLoading(false)
 
 		return Boolean(chat)
 	}
@@ -60,6 +62,7 @@ export const useChatStore = (allChatsStore: AllChatsStore): ChatStore => {
 		setActiveChat(null)
 		setChatMessages([])
 		setChatPagination({ page: 0, count: 0 })
+		setChatLoading(false)
 	}
 
 	const loadMoreChatMessages = async () => {
@@ -75,7 +78,11 @@ export const useChatStore = (allChatsStore: AllChatsStore): ChatStore => {
 	}
 
 	const postChatMessage = async (text: string, agentId: number) => {
-		if (chatLoading) return
+		if (isActiveLoading) return
+
+		const ghostCount = chatMessages.filter((message: Message) => message.id < 0).length
+		const messages: Message[] = chatMessages.filter((message: Message) => message.id > 0)
+		const pagination: Pagination = { ...chatPagination, count: chatPagination.count - ghostCount }
 
 		let chat = activeChat
 		if (!chat) {
@@ -87,11 +94,11 @@ export const useChatStore = (allChatsStore: AllChatsStore): ChatStore => {
 
 		setChatLoading('update')
 		setChatMessages([
-			...chatMessages,
+			...messages,
 			createGhostMessage(chat.id, 0, 'user', text, agentId),
 			createGhostMessage(chat.id, 0, 'agent', '', agentId),
 		])
-		setChatPagination({ page, count: chatPagination.count + 1 })
+		setChatPagination({ page, count: pagination.count + 1 }) // Used for scrolling
 
 		if (!activeChat) {
 			chat = await createNewChat()
@@ -101,13 +108,23 @@ export const useChatStore = (allChatsStore: AllChatsStore): ChatStore => {
 
 		const listing = await API.postMessage(chat.id, text, agentId)
 
-		setChatMessages([...chatMessages, ...listing.messages])
-		setChatPagination({ page, count: chatPagination.count + listing.count })
-		setChatLoading(false)
+		if (listing.count) {
+			setChatMessages([...messages, ...listing.messages]) // Old state
+			setChatLoading(false)
 
-		if (!activeChat) {
-			setShouldRename(true)
+			if (!activeChat) {
+				setShouldRename(true)
+			}
+		} else {
+			setChatMessages([
+				...messages, // Old state
+				createGhostMessage(chat.id, 0, 'user', text, agentId, true),
+				createGhostMessage(chat.id, 0, 'agent', '', agentId, true),
+			])
+			setChatLoading('error')
 		}
+
+		setChatPagination({ page, count: pagination.count + 2 }) // Old state, used for scrolling
 	}
 
 	const updateMessage = (message: Message) => {

@@ -1,45 +1,54 @@
 {
 	"core": {
 		"action": {
-			"back": "ย้อนกลับ",
-			"backToHome": "กลับไปหน้าแรก",
+			"back": "กลับ",
+			"backToHome": "กลับไปที่หน้าแรก",
 			"changeLanguage": "เปลี่ยนภาษา",
 			"close": "ปิด",
 			"delete": "ลบ",
-			"deselectAll": "ยกเลิกเลือกทั้งหมด",
+			"deselectAll": "ยกเลิกการเลือกทั้งหมด",
+			"goToUrl": "ไปที่ {url}",
 			"openMenu": "เปิดเมนู",
 			"rename": "เปลี่ยนชื่อ",
+			"retry": "ลองอีกครั้ง",
 			"saveChanges": "บันทึกการเปลี่ยนแปลง",
 			"search": "ค้นหา",
-			"searchMore": "แสดงผลลัพธ์เพิ่มเติม",
+			"searchMore": "แสดงผลเพิ่มเติม",
 			"selectAll": "เลือกทั้งหมด",
 			"signOut": "ออกจากระบบ"
 		},
 		"error": {
 			"noChanges": "ไม่มีการเปลี่ยนแปลง",
-			"nothingFound": "ไม่พบผลลัพธ์สำหรับ \"{search}\""
+			"nothingFound": "ไม่พบ \"{search}\"",
+			"unsent": "ยังไม่ได้ส่ง"
 		},
 		"label": {
 			"apiDocs": "เอกสาร API",
 			"asia": "เอเชีย",
-			"avatar": "รูปประจำตัว",
+			"avatar": "อวาตาร์",
 			"custom": "กำหนดเอง",
-			"darkTheme": "โทนมืด",
+			"darkTheme": "โหมดมืด",
 			"default": "ค่าเริ่มต้น",
 			"description": "คำอธิบาย",
-			"designSystem": "ระบบการออกแบบ",
+			"designSystem": "ระบบออกแบบ",
 			"errors": "ข้อผิดพลาด",
 			"europe": "ยุโรป",
 			"githubRepo": "ที่เก็บ GitHub",
 			"language": "ภาษา",
-			"lightTheme": "โทนสว่าง",
+			"levelHigh": "สูง",
+			"levelLow": "ต่ำ",
+			"levelMedium": "ปานกลาง",
+			"levelVeryHigh": "สูงมาก",
+			"levelVeryLow": "ต่ำมาก",
+			"lightTheme": "โหมดสว่าง",
 			"name": "ชื่อ",
 			"navigationBar": "แถบนำทาง",
 			"navigationMenu": "เมนูนำทาง",
-			"optionalField": "(ไม่จำเป็น)",
+			"optionalField": "(ไม่บังคับ)",
+			"quickSettings": "การตั้งค่าด่วน",
 			"requiredField": "(จำเป็น)",
 			"settings": "การตั้งค่า",
-			"uiLibrary": "ไลบรารี UI",
+			"uiLibrary": "คลัง UI",
 			"uiTheme": "ธีม UI"
 		},
 		"placeholder": {
@@ -50,78 +59,89 @@
 			"deleting": "กำลังลบ...",
 			"loading": "กำลังโหลด...",
 			"searching": "กำลังค้นหา...",
+			"sending": "กำลังส่ง...",
 			"updating": "กำลังอัปเดต..."
 		}
 	},
 	"aiChat": {
 		"action": {
-			"backToSubchats": "กลับไปยังการสนทนาย่อย",
-			"configureAgent": "กำหนดค่าเอเจนต์",
-			"confirmDeleteAgent": "ยืนยันการลบเอเจนต์",
-			"confirmDeleteChats": "ยืนยันการลบการสนทนา",
-			"confirmRenameChat": "ยืนยันการเปลี่ยนชื่อการสนทนา",
-			"createAgent": "สร้างเอเจนต์",
-			"deleteAgent": "ลบเอเจนต์",
-			"deleteSelectedChats": "ลบการสนทนาที่เลือก",
-			"deselectChat": "ยกเลิกการเลือกการสนทนา",
-			"manageAgents": "จัดการเอเจนต์",
-			"manageChats": "จัดการการสนทนา",
-			"openChat": "เปิดการสนทนา",
-			"openSubchat_other": "เปิดการสนทนาย่อย ({count} ข้อความ)",
-			"openSubchat_zero": "สร้างการสนทนาย่อย",
-			"searchChats": "ค้นหาการสนทนา",
-			"selectChat": "เลือกการสนทนา",
+			"backToSubchats": "กลับไปที่ซับแชท",
+			"configureAgent": "กำหนดค่าตัวแทน",
+			"confirmDeleteAgent": "ยืนยันการลบตัวแทน",
+			"confirmDeleteChats": "ยืนยันการลบแชท",
+			"confirmRenameChat": "ยืนยันการเปลี่ยนชื่อแชท",
+			"createAgent": "สร้างตัวแทน",
+			"deleteAgent": "ลบตัวแทน",
+			"deleteSelectedChats": "ลบแชทที่เลือก",
+			"deselectChat": "ยกเลิกการเลือกแชท",
+			"manageAgents": "จัดการตัวแทน",
+			"manageChats": "จัดการแชท",
+			"openChat": "เปิดแชท",
+			"openSubchat_other": "เปิดซับแชท ({count} ข้อความ)",
+			"openSubchat_zero": "สร้างซับแชท",
+			"searchChats": "ค้นหาแชท",
+			"selectChat": "เลือกแชท",
 			"sendMessage": "ส่งข้อความ",
-			"showMoreAgents": "แสดงเอเจนต์เพิ่มเติม",
-			"showMoreChats": "แสดงการสนทนาเพิ่มเติม",
-			"showSubchats": "แสดงการสนทนาย่อย ({count})",
-			"startSearching_other": "พิมพ์อย่างน้อย {count} ตัวอักษร"
+			"showMoreAgents": "แสดงตัวแทนเพิ่มเติม",
+			"showMoreChats": "แสดงแชทเพิ่มเติม",
+			"showSubchats": "แสดงซับแชท ({count})",
+			"startSearching_one": "พิมพ์อย่างน้อย {count} อักขระ",
+			"startSearching_other": "พิมพ์อย่างน้อย {count} อักขระ"
 		},
 		"description": {
+			"geminiNano": "Mini GPT สำหรับ Google Chrome",
 			"loremIpsumGPT": "โมเดลที่ฉลาดที่สุด",
-			"rammusGPT": "การสนับสนุนด้านอารมณ์ที่ดีที่สุด"
+			"rammusGPT": "การสนับสนุนทางอารมณ์ที่ดีที่สุด"
 		},
 		"error": {
-			"agentAvatar": "คุณต้องเพิ่มรูปประจำตัวสำหรับเอเจนต์",
-			"agentName": "คุณต้องเพิ่มชื่อสำหรับเอเจนต์",
-			"emptyMessage": "ข้อความของคุณว่างเปล่า"
+			"agentAvatar": "คุณต้องเพิ่มอวาตาร์สำหรับตัวแทน",
+			"agentName": "คุณต้องเพิ่มชื่อสำหรับตัวแทน",
+			"emptyMessage": "ข้อความของคุณว่างเปล่า",
+			"failedMessage": "เกิดปัญหาในการส่งข้อความของคุณ"
 		},
 		"label": {
-			"agents": "เอเจนต์",
-			"chatTitle": "ชื่อการสนทนา",
-			"chats": "การสนทนา",
+			"agents": "ตัวแทน",
+			"chatTitle": "ชื่อแชท",
+			"chats": "แชท",
+			"creativityLevel": "ระดับความคิดสร้างสรรค์",
 			"customInstructions": "คำแนะนำที่กำหนดเอง",
 			"gptModel": "โมเดล GPT",
-			"newAgent": "เอเจนต์ใหม่",
-			"newChat": "การสนทนาใหม่",
+			"newAgent": "ตัวแทนใหม่",
+			"newChat": "แชทใหม่",
 			"newMessage": "ข้อความใหม่",
-			"noChats": "ไม่มีการสนทนา",
-			"noSubchats": "ไม่มีการสนทนาย่อย",
-			"selectedAgent": "เอเจนต์ที่เลือก",
+			"noChats": "ไม่มีแชท",
+			"noSubchats": "ไม่มีซับแชท",
+			"selectedAgent": "ตัวแทนที่เลือก",
 			"selectedValue": "ค่าที่เลือก",
-			"subchats": "การสนทนาย่อย",
+			"subchats": "ซับแชท",
+			"xMessages_one": "1 ข้อความ",
 			"xMessages_other": "{count} ข้อความ",
+			"xSearchResults_one": "{count} ผลการค้นหา",
 			"xSearchResults_other": "{count} ผลการค้นหา",
 			"xSearchResults_zero": "ไม่มีผลการค้นหา",
-			"xSelectedMessages_other": "{count} ข้อความที่เลือก"
+			"xSelectedMessages_one": "เลือก 1 ข้อความ",
+			"xSelectedMessages_other": "เลือก {count} ข้อความ"
 		},
 		"placeholder": {
 			"newMessage": "พูดคุยกับ {name}...",
-			"rename": "สร้างชื่อใหม่อัตโนมัติ..."
+			"rename": "สร้างชื่อใหม่โดยอัตโนมัติ..."
 		},
 		"state": {
-			"loadingAgents": "กำลังโหลดเอเจนต์...",
-			"loadingChats": "กำลังโหลดการสนทนา...",
+			"loadingAgents": "กำลังโหลดตัวแทน...",
+			"loadingChats": "กำลังโหลดแชท...",
 			"loadingGPTs": "กำลังโหลด GPT...",
 			"loadingMessages": "กำลังโหลดข้อความ...",
 			"loadingPreviousMessages": "กำลังโหลดข้อความก่อนหน้า...",
-			"loadingSubchats": "กำลังโหลดการสนทนาย่อย...",
-			"renamingChat": "กำลังเปลี่ยนชื่อการสนทนา...",
+			"loadingSubchats": "กำลังโหลดซับแชท...",
+			"renamingChat": "กำลังเปลี่ยนชื่อแชท...",
 			"thinking": "กำลังคิด..."
 		},
 		"warning": {
-			"deletingAgent": "เอเจนต์นี้จะถูกลบอย่างถาวร",
-			"deletingChats": "การสนทนาเหล่านี้จะถูกลบอย่างถาวร"
+			"deletingAgent": "ตัวแทนนี้จะถูกลบอย่างถาวร",
+			"deletingChats": "แชทเหล่านี้จะถูกลบอย่างถาวร",
+			"geminiGptInsideChrome": "GPT นี้ต้องเปิดการตั้งค่าต่อไปนี้:",
+			"geminiGptOutsideChrome": "GPT นี้ใช้ได้เฉพาะในเบราว์เซอร์ Google Chrome",
+			"invalidGpt": "GPT ไม่ถูกต้อง"
 		}
 	},
 	"userSettings": {
@@ -131,10 +151,10 @@
 		},
 		"error": {
 			"address": "คุณต้องเพิ่มที่อยู่",
-			"avatar": "คุณต้องเพิ่มรูปประจำตัว",
+			"avatar": "คุณต้องเพิ่มอวาตาร์ของคุณ",
 			"city": "คุณต้องเพิ่มเมือง",
 			"country": "คุณต้องเพิ่มประเทศ",
-			"email": "คุณต้องเพิ่มที่อยู่อีเมล",
+			"email": "คุณต้องเพิ่มที่อยู่อีเมลของคุณ",
 			"legalName": "คุณต้องเพิ่มชื่อทางกฎหมาย",
 			"name": "คุณต้องเพิ่มชื่อของคุณ",
 			"postalCode": "คุณต้องเพิ่มรหัสไปรษณีย์"
@@ -151,7 +171,7 @@
 			"postalCode": "รหัสไปรษณีย์",
 			"private": "ส่วนตัว",
 			"public": "สาธารณะ",
-			"vatNumber": "เลขประจำตัวผู้เสียภาษี"
+			"vatNumber": "หมายเลขภาษีมูลค่าเพิ่ม"
 		}
 	}
 }

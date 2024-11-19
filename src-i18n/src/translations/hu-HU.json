@@ -3,40 +3,48 @@
 		"action": {
 			"back": "Vissza",
 			"backToHome": "Vissza a kezdőlapra",
-			"changeLanguage": "Nyelv megváltoztatása",
-			"close": "Bezárás",
-			"delete": "Törlés",
-			"deselectAll": "Kijelölések törlése",
+			"changeLanguage": "Nyelv váltása",
+			"close": "Bezár",
+			"delete": "Töröl",
+			"deselectAll": "Minden kiválasztás törlése",
+			"goToUrl": "Menj a(z) {url} címre",
 			"openMenu": "Menü megnyitása",
-			"rename": "Átnevezés",
+			"rename": "Átnevez",
+			"retry": "Újra próbál",
 			"saveChanges": "Változtatások mentése",
 			"search": "Keresés",
-			"searchMore": "További találatok megjelenítése",
-			"selectAll": "Összes kiválasztása",
+			"searchMore": "További eredmények megjelenítése",
+			"selectAll": "Mindet kiválaszt",
 			"signOut": "Kijelentkezés"
 		},
 		"error": {
-			"noChanges": "Nincsenek változtatások",
-			"nothingFound": "Nincs találat \"{search}\" kifejezésre"
+			"noChanges": "Nincsenek változások",
+			"nothingFound": "Nincs találat a(z) \"{search}\" kifejezésre",
+			"unsent": "Nem elküldött"
 		},
 		"label": {
 			"apiDocs": "API Dokumentáció",
 			"asia": "Ázsia",
 			"avatar": "Avatar",
-			"custom": "Egyedi",
+			"custom": "Egyéni",
 			"darkTheme": "Sötét",
 			"default": "Alapértelmezett",
 			"description": "Leírás",
-			"designSystem": "Design rendszer",
+			"designSystem": "Tervezési rendszer",
 			"errors": "Hibák",
 			"europe": "Európa",
-			"githubRepo": "GitHub Repo",
+			"githubRepo": "GitHub Repozitórium",
 			"language": "Nyelv",
+			"levelHigh": "Magas",
+			"levelLow": "Alacsony",
+			"levelMedium": "Közepes",
+			"levelVeryHigh": "Nagyon magas",
+			"levelVeryLow": "Nagyon alacsony",
 			"lightTheme": "Világos",
 			"name": "Név",
 			"navigationBar": "Navigációs sáv",
 			"navigationMenu": "Navigációs menü",
-			"optionalField": "(Nem kötelező)",
+			"optionalField": "(Opcionális)",
 			"quickSettings": "Gyorsbeállítások",
 			"requiredField": "(Kötelező)",
 			"settings": "Beállítások",
@@ -47,72 +55,76 @@
 			"search": "Keresés..."
 		},
 		"state": {
-			"dataSaved": "Adatai elmentve",
+			"dataSaved": "Az adataid mentve lettek",
 			"deleting": "Törlés...",
 			"loading": "Betöltés...",
 			"searching": "Keresés...",
+			"sending": "Küldés...",
 			"updating": "Frissítés..."
 		}
 	},
 	"aiChat": {
 		"action": {
-			"backToSubchats": "Vissza az albeszélgetésekhez",
-			"configureAgent": "Ügynök beállítása",
+			"backToSubchats": "Vissza a részbeszélgetésekhez",
+			"configureAgent": "Ügynök konfigurálása",
 			"confirmDeleteAgent": "Ügynök törlésének megerősítése",
 			"confirmDeleteChats": "Beszélgetések törlésének megerősítése",
 			"confirmRenameChat": "Beszélgetés átnevezésének megerősítése",
 			"createAgent": "Ügynök létrehozása",
 			"deleteAgent": "Ügynök törlése",
 			"deleteSelectedChats": "Kiválasztott beszélgetések törlése",
-			"deselectChat": "Beszélgetés kijelölésének törlése",
+			"deselectChat": "Beszélgetés kiválasztásának megszüntetése",
 			"manageAgents": "Ügynökök kezelése",
 			"manageChats": "Beszélgetések kezelése",
 			"openChat": "Beszélgetés megnyitása",
-			"openSubchat_other": "Albeszélgetés megnyitása ({count} üzenet)",
-			"openSubchat_zero": "Albeszélgetés létrehozása",
+			"openSubchat_other": "Részbeszélgetés megnyitása ({count} üzenet)",
+			"openSubchat_zero": "Részbeszélgetés létrehozása",
 			"searchChats": "Beszélgetések keresése",
 			"selectChat": "Beszélgetés kiválasztása",
 			"sendMessage": "Üzenet küldése",
-			"showMoreAgents": "További ügynökök megjelenítése",
-			"showMoreChats": "További beszélgetések megjelenítése",
-			"showSubchats": "Albeszélgetések megjelenítése ({count})",
+			"showMoreAgents": "Több ügynök megjelenítése",
+			"showMoreChats": "Több beszélgetés megjelenítése",
+			"showSubchats": "Részbeszélgetések megjelenítése ({count})",
 			"startSearching_one": "Írjon be legalább {count} karaktert",
 			"startSearching_other": "Írjon be legalább {count} karaktert"
 		},
 		"description": {
+			"geminiNano": "Mini GPT a Google Chrome-hoz",
 			"loremIpsumGPT": "A legintelligensebb modell",
-			"rammusGPT": "A legjobb érzelmi támogatás"
+			"rammusGPT": "Legjobb érzelmi támogatás"
 		},
 		"error": {
-			"agentAvatar": "Hozzá kell adnia egy avatart az ügynökhöz",
-			"agentName": "Hozzá kell adnia egy nevet az ügynökhöz",
-			"emptyMessage": "Az üzenete üres"
+			"agentAvatar": "Ügynök avatarját hozzá kell adni",
+			"agentName": "Ügynök nevét hozzá kell adni",
+			"emptyMessage": "Az üzeneted üres",
+			"failedMessage": "Hiba történt az üzenet elküldésekor"
 		},
 		"label": {
 			"agents": "Ügynökök",
 			"chatTitle": "Beszélgetés címe",
 			"chats": "Beszélgetések",
-			"customInstructions": "Egyedi utasítások",
+			"creativityLevel": "Kreativitási szint",
+			"customInstructions": "Egyéni utasítások",
 			"gptModel": "GPT modell",
 			"newAgent": "Új ügynök",
 			"newChat": "Új beszélgetés",
 			"newMessage": "Új üzenet",
 			"noChats": "Nincsenek beszélgetések",
-			"noSubchats": "Nincsenek albeszélgetések",
+			"noSubchats": "Nincsenek részbeszélgetések",
 			"selectedAgent": "Kiválasztott ügynök",
 			"selectedValue": "Kiválasztott érték",
-			"subchats": "Albeszélgetések",
+			"subchats": "Részbeszélgetések",
 			"xMessages_one": "1 üzenet",
 			"xMessages_other": "{count} üzenet",
 			"xSearchResults_one": "{count} keresési eredmény",
 			"xSearchResults_other": "{count} keresési eredmény",
 			"xSearchResults_zero": "Nincs keresési eredmény",
-			"xSelectedMessages_one": "1 kiválasztott üzenet",
-			"xSelectedMessages_other": "{count} kiválasztott üzenet"
+			"xSelectedMessages_one": "1 üzenet kiválasztva",
+			"xSelectedMessages_other": "{count} üzenet kiválasztva"
 		},
 		"placeholder": {
-			"newMessage": "Beszélgetés {name}...",
-			"rename": "Új név automatikus generálása..."
+			"newMessage": "Beszéljen {name}...",
+			"rename": "Automatikusan generáljon új nevet..."
 		},
 		"state": {
 			"loadingAgents": "Ügynökök betöltése...",
@@ -120,13 +132,16 @@
 			"loadingGPTs": "GPT-k betöltése...",
 			"loadingMessages": "Üzenetek betöltése...",
 			"loadingPreviousMessages": "Előző üzenetek betöltése...",
-			"loadingSubchats": "Albeszélgetések betöltése...",
+			"loadingSubchats": "Részbeszélgetések betöltése...",
 			"renamingChat": "Beszélgetés átnevezése...",
-			"thinking": "Gondolkodás..."
+			"thinking": "Gondolkodik..."
 		},
 		"warning": {
-			"deletingAgent": "Ez az ügynök véglegesen törlődik",
-			"deletingChats": "Ezek a beszélgetések véglegesen törlődnek"
+			"deletingAgent": "Ez az ügynök véglegesen törölve lesz",
+			"deletingChats": "Ezek a beszélgetések véglegesen törölve lesznek",
+			"geminiGptInsideChrome": "Ehhez a GPT-hez a következő beállítások engedélyezése szükséges:",
+			"geminiGptOutsideChrome": "Ez a GPT csak a Google Chrome böngészőben érhető el",
+			"invalidGpt": "Érvénytelen GPT"
 		}
 	},
 	"userSettings": {
@@ -135,14 +150,14 @@
 			"manageBilling": "Számlázás kezelése"
 		},
 		"error": {
-			"address": "Meg kell adnia a címet",
-			"avatar": "Meg kell adnia az avatarját",
-			"city": "Meg kell adnia a várost",
-			"country": "Meg kell adnia az országot",
-			"email": "Meg kell adnia az email címét",
-			"legalName": "Meg kell adnia a hivatalos nevet",
-			"name": "Meg kell adnia a nevét",
-			"postalCode": "Meg kell adnia az irányítószámot"
+			"address": "Hozzá kell adni a címet",
+			"avatar": "Hozzá kell adni az avatarját",
+			"city": "Hozzá kell adni a várost",
+			"country": "Hozzá kell adni az országot",
+			"email": "Hozzá kell adni az e-mail címet",
+			"legalName": "Hozzá kell adni a jogi nevet",
+			"name": "Hozzá kell adni a nevét",
+			"postalCode": "Hozzá kell adni az irányítószámot"
 		},
 		"label": {
 			"account": "Fiók",
@@ -150,8 +165,8 @@
 			"billing": "Számlázás",
 			"city": "Város",
 			"country": "Ország",
-			"email": "Email cím",
-			"legalName": "Hivatalos név",
+			"email": "E-mail cím",
+			"legalName": "Jogi név",
 			"phone": "Telefonszám",
 			"postalCode": "Irányítószám",
 			"private": "Privát",

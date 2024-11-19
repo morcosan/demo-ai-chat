@@ -37,7 +37,8 @@ const AgentsPage = () => {
 			name: payload.name.trim(),
 			avatar: payload.avatar.trim(),
 			desc: payload.desc.trim(),
-			setup: payload.setup.trim(),
+			prompt: payload.prompt.trim(),
+			creativity: payload.creativity,
 		})
 		success && setShowsEditModal(false)
 	}

@@ -1,9 +1,9 @@
-import { ApiResponse, BillingApiPayload, BillingDTO, STATUS__SUCCESS } from '@api/types'
+import { ApiResponse, BillingApiPayload, BillingDTO, Status } from '@api/types'
 import { getDbBilling, resetDbBilling, setDbBilling } from './db'
 
 export const billingService = {
 	async getBilling(): Promise<ApiResponse<BillingDTO>> {
-		return { status: STATUS__SUCCESS, data: getDbBilling() }
+		return { status: Status.SUCCESS, data: getDbBilling() }
 	},
 
 	async patchBilling(payload: BillingApiPayload): Promise<ApiResponse<BillingDTO>> {
@@ -18,7 +18,7 @@ export const billingService = {
 			vatNumber: payload.vatNumber?.trim() || '',
 		})
 
-		return { status: STATUS__SUCCESS, data: getDbBilling() }
+		return { status: Status.SUCCESS, data: getDbBilling() }
 	},
 
 	async resetDB() {

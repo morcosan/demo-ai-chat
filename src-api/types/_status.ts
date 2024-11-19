@@ -1,4 +1,7 @@
-export const STATUS__SUCCESS = 200
-export const STATUS__INVALID_DATA = 400
-export const STATUS__NOT_FOUND = 404
-export const STATUS__SERVER_ERROR = 500
+export enum Status {
+	SUCCESS = 200,
+	INVALID_DATA = 400,
+	NOT_FOUND = 404,
+	SERVER_ERROR = 500,
+	NOT_AVAILABLE = 503,
+}
