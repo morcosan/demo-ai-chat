@@ -1,7 +1,7 @@
 import { LoadingText } from '@app/library/release'
 import { useUiTheme } from '@ds/release'
 import { debounce } from 'lodash'
-import { UIEvent, useEffect, useMemo } from 'react'
+import { UIEvent, useEffect, useMemo, useState } from 'react'
 import { useNavigate, useParams, useSearchParams } from 'react-router-dom'
 import { Agent, Message } from '../../api'
 import { MessageItem } from '../../components/items/message-item'
@@ -27,6 +27,8 @@ export const ChatView = () => {
 	const { containerRef, saveScrollPos, scrollToPos } = useScrollable()
 	const { $lineHeight, $fontSize, $spacing } = useUiTheme()
 	const { chatId: chatIdStr } = useParams()
+	const [sentText, setSentText] = useState('')
+	const [sentAgentId, setSentAgentId] = useState(0)
 	const [searchParams] = useSearchParams()
 	const navigate = useNavigate()
 
@@ -40,6 +42,14 @@ export const ChatView = () => {
 	const calcH1Padding2 = $spacing['xs-3']
 	const calcH1FontSize = `calc(2 * ${$fontSize['xl']} + ${$fontSize['xs']})`
 	const calcH1Height = `calc(${$lineHeight['sm']} * ${calcH1FontSize} + ${calcH1Padding1} + ${calcH1Padding2})`
+
+	const onPostMessage = (text: string, agentId: number) => {
+		setSentText(text)
+		setSentAgentId(agentId)
+		postChatMessage(text, agentId)
+	}
+
+	const onRetryMessage = () => postChatMessage(sentText, sentAgentId)
 
 	const onScroll = debounce((event: UIEvent) => {
 		const THRESHOLD = 50 // px
@@ -87,6 +97,7 @@ export const ChatView = () => {
 						message={message}
 						agent={allAgentsForChat.find((agent: Agent) => agent.id === message.agentId)}
 						subchatId={subchatId}
+						onRetry={onRetryMessage}
 					/>
 				))}
 			</ul>
@@ -144,7 +155,7 @@ export const ChatView = () => {
 				<NewMessageToolbar
 					listLoading={allChatsLoading ? 'update' : chatLoading}
 					isChatView
-					onPostMessage={postChatMessage}
+					onPostMessage={onPostMessage}
 				/>
 			</div>
 		</div>

@@ -1,3 +1,4 @@
+import { Button, ReloadSvg, WarningSvg } from '@ds/release'
 import { Agent, Message } from '../../api'
 import { SubchatButton } from '../subchat-button'
 import { AgentGptItem } from './agent-gpt-item'
@@ -7,17 +8,19 @@ interface Props {
 	agent?: Agent
 	subchatId?: number
 	isSubchat?: boolean
+	onRetry?(): void
 }
 
 export const MessageItem = (props: Props) => {
-	const { message, agent, subchatId, isSubchat } = props
+	const { message, agent, subchatId, isSubchat, onRetry } = props
 
 	const wrapperClass = cx(
 		'group relative ml-scrollbar-w flex flex-col items-end',
 		'mb-sm-0 lg:mb-sm-2',
 		!isSubchat && 'px-xs-5 lg:px-md-0'
 	)
-	const userItemClass = cx(
+	const baseCardClass = cx('relative w-fit rounded-md px-xs-6 py-xs-3 shadow-xs')
+	const userCardClass = cx(
 		isSubchat
 			? 'max-w-[80%] bg-color-secondary-card-bg text-color-secondary-card-text'
 			: 'max-w-[70%] bg-color-primary-card-bg text-color-primary-card-text'
@@ -31,14 +34,28 @@ export const MessageItem = (props: Props) => {
 	return (
 		<li className={wrapperClass}>
 			{message.role === 'user' ? (
-				<div className={cx('relative w-fit rounded-md px-xs-6 py-xs-3 shadow-xs', userItemClass)}>
+				<div className={cx(baseCardClass, userCardClass)}>
 					<div className="whitespace-pre-wrap">{message.text}</div>
 
-					{Boolean(message.loading && message.role === 'user') && (
-						<div className="absolute bottom-0 right-0 translate-y-full leading-1">
-							<span className="px-xs-1 text-size-xs text-color-text-placeholder">Sending...</span>
-						</div>
-					)}
+					<div
+						className={cx(
+							'absolute bottom-0 right-0 translate-y-full',
+							'whitespace-nowrap px-xs-2 pt-xs-0 text-size-xs leading-1',
+							message.loading && 'text-color-text-placeholder',
+							message.failed && 'text-color-danger-page-text'
+						)}
+					>
+						{message.loading ? (
+							t('core.state.sending')
+						) : message.failed ? (
+							<div className="flex items-center">
+								<WarningSvg className="mr-xs-2 h-xs-4 w-xs-4" />
+								{t('core.error.unsent')}
+							</div>
+						) : (
+							''
+						)}
+					</div>
 				</div>
 			) : (
 				<div className="w-full py-xs-1">
@@ -48,14 +65,24 @@ export const MessageItem = (props: Props) => {
 						<div className="w-fit animate-pulse rounded-md bg-color-bg-skeleton px-button-px-item py-xs-2 text-size-sm">
 							{t('aiChat.state.thinking')}
 						</div>
+					) : message.failed ? (
+						<>
+							<div className={cx(baseCardClass, 'bg-color-danger-card-bg text-color-danger-card-text')}>
+								{t('aiChat.error.failedMessage')}
+							</div>
+							<Button variant="text-default" size="sm" className="mt-xs-1 block" onClick={onRetry}>
+								<ReloadSvg className="mr-xs-2 w-xs-6" />
+								{t('core.action.retry')}
+							</Button>
+						</>
 					) : (
-						<div className="w-fit rounded-md bg-color-bg-card px-xs-6 py-xs-3 shadow-xs">{message.text}</div>
+						<div className={cx(baseCardClass, 'bg-color-bg-card')}>{message.text}</div>
 					)}
 				</div>
 			)}
 
 			{/* SUBCHAT BUTTON */}
-			{!isSubchat && (
+			{!isSubchat && !message.failed && (
 				<div className={subchatClass}>
 					<SubchatButton message={message} subchatId={subchatId} />
 				</div>

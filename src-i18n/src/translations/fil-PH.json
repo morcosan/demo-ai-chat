@@ -6,21 +6,24 @@
 			"changeLanguage": "Palitan ang wika",
 			"close": "Isara",
 			"delete": "Tanggalin",
-			"deselectAll": "Tanggalin ang pagkakapili sa lahat",
+			"deselectAll": "Alisin ang lahat ng napili",
+			"goToUrl": "Pumunta sa {url}",
 			"openMenu": "Buksan ang menu",
 			"rename": "Palitan ang pangalan",
+			"retry": "Subukang muli",
 			"saveChanges": "I-save ang mga pagbabago",
 			"search": "Maghanap",
-			"searchMore": "Ipakita ang higit pang resulta",
+			"searchMore": "Ipakita pa ang mga resulta",
 			"selectAll": "Piliin lahat",
 			"signOut": "Mag-sign out"
 		},
 		"error": {
 			"noChanges": "Walang mga pagbabago",
-			"nothingFound": "Walang nahanap para sa \"{search}\""
+			"nothingFound": "Walang nahanap para sa \"{search}\"",
+			"unsent": "Hindi naipadala"
 		},
 		"label": {
-			"apiDocs": "API Docs",
+			"apiDocs": "Mga Dokumento ng API",
 			"asia": "Asya",
 			"avatar": "Avatar",
 			"custom": "Pasadyang",
@@ -28,18 +31,23 @@
 			"default": "Default",
 			"description": "Paglalarawan",
 			"designSystem": "Sistema ng Disenyo",
-			"errors": "Mga error",
+			"errors": "Mga Error",
 			"europe": "Europa",
-			"githubRepo": "GitHub Repo",
+			"githubRepo": "GitHub Repository",
 			"language": "Wika",
+			"levelHigh": "Mataas",
+			"levelLow": "Mababa",
+			"levelMedium": "Katamtaman",
+			"levelVeryHigh": "Napakataas",
+			"levelVeryLow": "Napakababa",
 			"lightTheme": "Maliwanag",
 			"name": "Pangalan",
 			"navigationBar": "Navigation bar",
-			"navigationMenu": "Navigation menu",
+			"navigationMenu": "Menu ng Navigation",
 			"optionalField": "(Opsyonal)",
-			"quickSettings": "Mabilis na setting",
+			"quickSettings": "Mabilis na mga setting",
 			"requiredField": "(Kailangan)",
-			"settings": "Mga setting",
+			"settings": "Mga Setting",
 			"uiLibrary": "UI Library",
 			"uiTheme": "UI Tema"
 		},
@@ -47,10 +55,11 @@
 			"search": "Maghanap..."
 		},
 		"state": {
-			"dataSaved": "Na-save na ang iyong data",
-			"deleting": "Binubura...",
+			"dataSaved": "Ang iyong data ay nasave na",
+			"deleting": "Tinatanggal...",
 			"loading": "Naglo-load...",
 			"searching": "Naghahanap...",
+			"sending": "Ipinapadala...",
 			"updating": "Ina-update..."
 		}
 	},
@@ -61,39 +70,42 @@
 			"confirmDeleteAgent": "Kumpirmahin ang pagtanggal ng agent",
 			"confirmDeleteChats": "Kumpirmahin ang pagtanggal ng mga chat",
 			"confirmRenameChat": "Kumpirmahin ang pagpapalit ng pangalan ng chat",
-			"createAgent": "Lumikha ng agent",
+			"createAgent": "Gumawa ng agent",
 			"deleteAgent": "Tanggalin ang agent",
-			"deleteSelectedChats": "Tanggalin ang napiling mga chat",
-			"deselectChat": "Tanggalin ang pagkakapili sa chat",
+			"deleteSelectedChats": "Tanggalin ang mga napiling chat",
+			"deselectChat": "Alisin ang pagkakapili sa chat",
 			"manageAgents": "Pamahalaan ang mga agent",
 			"manageChats": "Pamahalaan ang mga chat",
 			"openChat": "Buksan ang chat",
-			"openSubchat_other": "Buksan ang subchat ({count} na mga mensahe)",
-			"openSubchat_zero": "Lumikha ng subchat",
+			"openSubchat_other": "Buksan ang subchat ({count} na mensahe)",
+			"openSubchat_zero": "Gumawa ng subchat",
 			"searchChats": "Maghanap ng mga chat",
 			"selectChat": "Piliin ang chat",
 			"sendMessage": "Ipadala ang mensahe",
-			"showMoreAgents": "Ipakita ang higit pang mga agent",
-			"showMoreChats": "Ipakita ang higit pang mga chat",
+			"showMoreAgents": "Ipakita pa ang mga agent",
+			"showMoreChats": "Ipakita pa ang mga chat",
 			"showSubchats": "Ipakita ang mga subchat ({count})",
-			"startSearching_one": "Mag-type ng hindi bababa sa {count} karakter",
-			"startSearching_other": "Mag-type ng hindi bababa sa {count} mga karakter"
+			"startSearching_one": "Mag-type ng hindi bababa sa {count} na karakter",
+			"startSearching_other": "Mag-type ng hindi bababa sa {count} na mga karakter"
 		},
 		"description": {
-			"loremIpsumGPT": "Pinaka-intelihenteng modelo",
+			"geminiNano": "Mini GPT para sa Google Chrome",
+			"loremIpsumGPT": "Pinaka-matalinong modelo",
 			"rammusGPT": "Pinakamahusay na emosyonal na suporta"
 		},
 		"error": {
 			"agentAvatar": "Kailangan mong magdagdag ng avatar para sa agent",
 			"agentName": "Kailangan mong magdagdag ng pangalan para sa agent",
-			"emptyMessage": "Ang iyong mensahe ay walang laman"
+			"emptyMessage": "Walang laman ang iyong mensahe",
+			"failedMessage": "Nagkaroon ng problema sa pagpapadala ng iyong mensahe"
 		},
 		"label": {
-			"agents": "Mga agent",
+			"agents": "Mga Agent",
 			"chatTitle": "Pamagat ng chat",
-			"chats": "Mga chat",
+			"chats": "Mga Chat",
+			"creativityLevel": "Antas ng pagkamalikhain",
 			"customInstructions": "Pasadyang mga tagubilin",
-			"gptModel": "GPT na modelo",
+			"gptModel": "GPT modelo",
 			"newAgent": "Bagong agent",
 			"newChat": "Bagong chat",
 			"newMessage": "Bagong mensahe",
@@ -101,18 +113,18 @@
 			"noSubchats": "Walang mga subchat",
 			"selectedAgent": "Napiling agent",
 			"selectedValue": "Napiling halaga",
-			"subchats": "Mga subchat",
-			"xMessages_one": "1 mensahe",
+			"subchats": "Mga Subchat",
+			"xMessages_one": "1 na mensahe",
 			"xMessages_other": "{count} na mga mensahe",
-			"xSearchResults_one": "{count} resulta ng paghahanap",
-			"xSearchResults_other": "{count} mga resulta ng paghahanap",
-			"xSearchResults_zero": "Walang mga resulta ng paghahanap",
-			"xSelectedMessages_one": "1 mensaheng napili",
-			"xSelectedMessages_other": "{count} na mga mensaheng napili"
+			"xSearchResults_one": "{count} na resulta ng paghahanap",
+			"xSearchResults_other": "{count} na mga resulta ng paghahanap",
+			"xSearchResults_zero": "Walang resulta ng paghahanap",
+			"xSelectedMessages_one": "1 na mensahe napili",
+			"xSelectedMessages_other": "{count} na mga mensahe napili"
 		},
 		"placeholder": {
 			"newMessage": "Makipag-usap kay {name}...",
-			"rename": "Awtomatikong bumuo ng bagong pangalan..."
+			"rename": "Gumawa ng bagong pangalan nang awtomatiko..."
 		},
 		"state": {
 			"loadingAgents": "Naglo-load ng mga agent...",
@@ -121,12 +133,15 @@
 			"loadingMessages": "Naglo-load ng mga mensahe...",
 			"loadingPreviousMessages": "Naglo-load ng mga nakaraang mensahe...",
 			"loadingSubchats": "Naglo-load ng mga subchat...",
-			"renamingChat": "Pinapalitan ang pangalan ng chat...",
-			"thinking": "Nagiisip..."
+			"renamingChat": "Binabago ang pangalan ng chat...",
+			"thinking": "Nag-iisip..."
 		},
 		"warning": {
-			"deletingAgent": "Ang agent na ito ay permanenteng tatanggalin",
-			"deletingChats": "Ang mga chat na ito ay permanenteng tatanggalin"
+			"deletingAgent": "Ang agent na ito ay permanenteng matatanggal",
+			"deletingChats": "Ang mga chat na ito ay permanenteng matatanggal",
+			"geminiGptInsideChrome": "Ang GPT na ito ay nangangailangan ng pag-activate ng mga sumusunod na setting:",
+			"geminiGptOutsideChrome": "Ang GPT na ito ay makukuha lamang sa Google Chrome browser",
+			"invalidGpt": "Hindi wastong GPT"
 		}
 	},
 	"userSettings": {
@@ -156,7 +171,7 @@
 			"postalCode": "Postal code",
 			"private": "Pribado",
 			"public": "Pampubliko",
-			"vatNumber": "VAT number"
+			"vatNumber": "VAT numero"
 		}
 	}
 }

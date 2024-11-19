@@ -55,10 +55,10 @@ export const useSelectFieldBase = (rawProps: SelectFieldProps) => {
 		return {}
 	})()
 
-	const colorBorder = props.subtle
-		? 'transparent'
-		: props.invalid
-			? $color['danger-page-text']
+	const colorBorder = props.invalid
+		? $color['danger-page-text']
+		: props.subtle
+			? 'transparent'
 			: props.readonly
 				? $color['border-subtle']
 				: $color['border-default']

@@ -7,8 +7,10 @@
 			"close": "Tutup",
 			"delete": "Padam",
 			"deselectAll": "Nyahpilih semua",
+			"goToUrl": "Pergi ke {url}",
 			"openMenu": "Buka menu",
-			"rename": "Tukar nama",
+			"rename": "Namakan semula",
+			"retry": "Cuba semula",
 			"saveChanges": "Simpan perubahan",
 			"search": "Cari",
 			"searchMore": "Tunjukkan lebih banyak hasil",
@@ -17,7 +19,8 @@
 		},
 		"error": {
 			"noChanges": "Tiada perubahan",
-			"nothingFound": "Tiada hasil dijumpai untuk \"{search}\""
+			"nothingFound": "Tiada hasil untuk \"{search}\"",
+			"unsent": "Tidak dihantar"
 		},
 		"label": {
 			"apiDocs": "Dokumentasi API",
@@ -26,21 +29,26 @@
 			"custom": "Tersuai",
 			"darkTheme": "Gelap",
 			"default": "Lalai",
-			"description": "Deskripsi",
+			"description": "Penerangan",
 			"designSystem": "Sistem Reka Bentuk",
 			"errors": "Ralat",
 			"europe": "Eropah",
 			"githubRepo": "Repo GitHub",
 			"language": "Bahasa",
-			"lightTheme": "Terang",
+			"levelHigh": "Tinggi",
+			"levelLow": "Rendah",
+			"levelMedium": "Sederhana",
+			"levelVeryHigh": "Sangat tinggi",
+			"levelVeryLow": "Sangat rendah",
+			"lightTheme": "Cerah",
 			"name": "Nama",
-			"navigationBar": "Bar Navigasi",
-			"navigationMenu": "Menu Navigasi",
+			"navigationBar": "Bar navigasi",
+			"navigationMenu": "Menu navigasi",
 			"optionalField": "(Pilihan)",
-			"quickSettings": "Tetapan Pantas",
-			"requiredField": "(Wajib)",
+			"requiredField": "(Diperlukan)",
 			"settings": "Tetapan",
-			"uiLibrary": "Perpustakaan UI",
+			"quickSettings": "Tetapan pantas",
+			"uiLibrary": "Pustaka UI",
 			"uiTheme": "Tema UI"
 		},
 		"placeholder": {
@@ -51,82 +59,88 @@
 			"deleting": "Memadam...",
 			"loading": "Memuatkan...",
 			"searching": "Mencari...",
-			"updating": "Mengemas kini..."
+			"sending": "Menghantar...",
+			"updating": "Mengemaskini..."
 		}
 	},
 	"aiChat": {
 		"action": {
 			"backToSubchats": "Kembali ke subchat",
-			"configureAgent": "Konfigurasikan agen",
-			"confirmDeleteAgent": "Sahkan pemadaman agen",
-			"confirmDeleteChats": "Sahkan pemadaman chat",
-			"confirmRenameChat": "Sahkan penukaran nama chat",
-			"createAgent": "Cipta agen",
-			"deleteAgent": "Padam agen",
-			"deleteSelectedChats": "Padam chat terpilih",
-			"deselectChat": "Nyahpilih chat",
-			"manageAgents": "Urus agen",
-			"manageChats": "Urus chat",
-			"openChat": "Buka chat",
+			"configureAgent": "Konfigurasi ejen",
+			"confirmDeleteAgent": "Sahkan pemadaman ejen",
+			"confirmDeleteChats": "Sahkan pemadaman perbualan",
+			"confirmRenameChat": "Sahkan penamaan semula perbualan",
+			"createAgent": "Cipta ejen",
+			"deleteAgent": "Padam ejen",
+			"deleteSelectedChats": "Padam perbualan terpilih",
+			"deselectChat": "Nyahpilih perbualan",
+			"manageAgents": "Urus ejen",
+			"manageChats": "Urus perbualan",
+			"openChat": "Buka perbualan",
 			"openSubchat_other": "Buka subchat ({count} mesej)",
 			"openSubchat_zero": "Cipta subchat",
-			"searchChats": "Cari chat",
-			"selectChat": "Pilih chat",
+			"searchChats": "Cari perbualan",
+			"selectChat": "Pilih perbualan",
 			"sendMessage": "Hantar mesej",
-			"showMoreAgents": "Tunjukkan lebih banyak agen",
-			"showMoreChats": "Tunjukkan lebih banyak chat",
+			"showMoreAgents": "Tunjukkan lebih banyak ejen",
+			"showMoreChats": "Tunjukkan lebih banyak perbualan",
 			"showSubchats": "Tunjukkan subchat ({count})",
-			"startSearching_one": "Taip sekurang-kurangnya {count} aksara",
 			"startSearching_other": "Taip sekurang-kurangnya {count} aksara"
 		},
 		"description": {
+			"geminiNano": "Mini GPT untuk Google Chrome",
 			"loremIpsumGPT": "Model paling pintar",
 			"rammusGPT": "Sokongan emosi terbaik"
 		},
 		"error": {
-			"agentAvatar": "Anda perlu menambah avatar untuk agen",
-			"agentName": "Anda perlu menambah nama untuk agen",
-			"emptyMessage": "Mesej anda kosong"
+			"agentAvatar": "Anda perlu menambah avatar untuk ejen",
+			"agentName": "Anda perlu menambah nama untuk ejen",
+			"emptyMessage": "Mesej anda kosong",
+			"failedMessage": "Terdapat masalah menghantar mesej anda"
 		},
 		"label": {
-			"agents": "Agen",
-			"chatTitle": "Tajuk chat",
-			"chats": "Chat",
+			"agents": "Ejen",
+			"chatTitle": "Tajuk perbualan",
+			"chats": "Perbualan",
+			"creativityLevel": "Tahap kreativiti",
 			"customInstructions": "Arahan tersuai",
 			"gptModel": "Model GPT",
-			"newAgent": "Agen baharu",
-			"newChat": "Chat baharu",
+			"newAgent": "Ejen baharu",
+			"newChat": "Perbualan baharu",
 			"newMessage": "Mesej baharu",
-			"noChats": "Tiada chat",
+			"noChats": "Tiada perbualan",
 			"noSubchats": "Tiada subchat",
-			"selectedAgent": "Agen terpilih",
+			"selectedAgent": "Ejen terpilih",
 			"selectedValue": "Nilai terpilih",
 			"subchats": "Subchat",
-			"xMessages_one": "1 mesej",
 			"xMessages_other": "{count} mesej",
-			"xSearchResults_one": "{count} hasil carian",
+			"xMessages_one": "1 mesej",
 			"xSearchResults_other": "{count} hasil carian",
+			"xSearchResults_one": "{count} hasil carian",
 			"xSearchResults_zero": "Tiada hasil carian",
-			"xSelectedMessages_one": "1 mesej terpilih",
-			"xSelectedMessages_other": "{count} mesej terpilih"
+			"xSelectedMessages_other": "{count} mesej dipilih",
+			"xSelectedMessages_one": "1 mesej dipilih"
 		},
 		"placeholder": {
-			"newMessage": "Berbual dengan {name}...",
-			"rename": "Hasilkan nama baharu secara automatik..."
+			"newMessage": "Bercakap dengan {name}...",
+			"rename": "Jana nama baharu secara automatik..."
 		},
 		"state": {
-			"loadingAgents": "Memuatkan agen...",
-			"loadingChats": "Memuatkan chat...",
-			"loadingGPTs": "Memuatkan model GPT...",
+			"loadingAgents": "Memuatkan ejen...",
+			"loadingChats": "Memuatkan perbualan...",
+			"loadingGPTs": "Memuatkan GPT...",
 			"loadingMessages": "Memuatkan mesej...",
 			"loadingPreviousMessages": "Memuatkan mesej sebelumnya...",
 			"loadingSubchats": "Memuatkan subchat...",
-			"renamingChat": "Menukar nama chat...",
+			"renamingChat": "Menamakan semula perbualan...",
 			"thinking": "Berfikir..."
 		},
 		"warning": {
-			"deletingAgent": "Agen ini akan dipadamkan secara kekal",
-			"deletingChats": "Chat ini akan dipadamkan secara kekal"
+			"deletingAgent": "Ejen ini akan dipadam secara kekal",
+			"deletingChats": "Perbualan ini akan dipadam secara kekal",
+			"geminiGptInsideChrome": "GPT ini memerlukan tetapan berikut diaktifkan:",
+			"geminiGptOutsideChrome": "GPT ini hanya tersedia di pelayar Google Chrome",
+			"invalidGpt": "GPT tidak sah"
 		}
 	},
 	"userSettings": {
@@ -139,10 +153,10 @@
 			"avatar": "Anda perlu menambah avatar anda",
 			"city": "Anda perlu menambah bandar",
 			"country": "Anda perlu menambah negara",
-			"email": "Anda perlu menambah alamat e-mel anda",
+			"email": "Anda perlu menambah alamat e-mel",
 			"legalName": "Anda perlu menambah nama sah",
 			"name": "Anda perlu menambah nama anda",
-			"postalCode": "Anda perlu menambah poskod"
+			"postalCode": "Anda perlu menambah kod pos"
 		},
 		"label": {
 			"account": "Akaun",
@@ -153,10 +167,10 @@
 			"email": "Alamat e-mel",
 			"legalName": "Nama sah",
 			"phone": "Nombor telefon",
-			"postalCode": "Poskod",
+			"postalCode": "Kod pos",
 			"private": "Peribadi",
-			"public": "Umum",
-			"vatNumber": "Nombor VAT"
+			"public": "Awam",
+			"vatNumber": "Nombor CBP"
 		}
 	}
 }

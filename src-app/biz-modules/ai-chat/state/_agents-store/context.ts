@@ -1,5 +1,5 @@
 import { createContext } from 'react'
-import { Agent, AgentsApiPayload, GPT } from '../../api'
+import { Agent, AgentsApiPayload, CreativityLevel, GPT } from '../../api'
 
 export interface Store {
 	allAgents: Agent[]
@@ -41,7 +41,8 @@ export const EMPTY_AGENT: Agent = {
 	name: '',
 	avatar: '',
 	desc: '',
-	setup: '',
+	prompt: '',
+	creativity: '' as CreativityLevel,
 	createdAt: '',
 	updatedAt: '',
 }

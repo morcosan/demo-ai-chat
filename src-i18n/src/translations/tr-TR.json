@@ -7,22 +7,25 @@
 			"close": "Kapat",
 			"delete": "Sil",
 			"deselectAll": "Tümünü kaldır",
+			"goToUrl": "{url} adresine git",
 			"openMenu": "Menüyü aç",
 			"rename": "Yeniden adlandır",
+			"retry": "Tekrar dene",
 			"saveChanges": "Değişiklikleri kaydet",
 			"search": "Ara",
 			"searchMore": "Daha fazla sonuç göster",
 			"selectAll": "Tümünü seç",
-			"signOut": "Çıkış yap"
+			"signOut": "Oturumu kapat"
 		},
 		"error": {
 			"noChanges": "Değişiklik yok",
-			"nothingFound": "\"{search}\" için sonuç bulunamadı"
+			"nothingFound": "\"{search}\" için sonuç bulunamadı",
+			"unsent": "Gönderilmedi"
 		},
 		"label": {
-			"apiDocs": "API Belgeleri",
+			"apiDocs": "API Dokümanları",
 			"asia": "Asya",
-			"avatar": "Avatar",
+			"avatar": "Profil resmi",
 			"custom": "Özel",
 			"darkTheme": "Koyu",
 			"default": "Varsayılan",
@@ -32,12 +35,18 @@
 			"europe": "Avrupa",
 			"githubRepo": "GitHub Deposu",
 			"language": "Dil",
+			"levelHigh": "Yüksek",
+			"levelLow": "Düşük",
+			"levelMedium": "Orta",
+			"levelVeryHigh": "Çok yüksek",
+			"levelVeryLow": "Çok düşük",
 			"lightTheme": "Açık",
 			"name": "Ad",
 			"navigationBar": "Gezinme çubuğu",
 			"navigationMenu": "Gezinme menüsü",
 			"optionalField": "(İsteğe bağlı)",
-			"requiredField": "(Zorunlu)",
+			"quickSettings": "Hızlı ayarlar",
+			"requiredField": "(Gerekli)",
 			"settings": "Ayarlar",
 			"uiLibrary": "UI Kütüphanesi",
 			"uiTheme": "UI Teması"
@@ -50,6 +59,7 @@
 			"deleting": "Siliniyor...",
 			"loading": "Yükleniyor...",
 			"searching": "Aranıyor...",
+			"sending": "Gönderiliyor...",
 			"updating": "Güncelleniyor..."
 		}
 	},
@@ -57,9 +67,9 @@
 		"action": {
 			"backToSubchats": "Alt sohbetlere dön",
 			"configureAgent": "Ajanı yapılandır",
-			"confirmDeleteAgent": "Ajan silmeyi onayla",
+			"confirmDeleteAgent": "Ajanı silmeyi onayla",
 			"confirmDeleteChats": "Sohbetleri silmeyi onayla",
-			"confirmRenameChat": "Sohbet yeniden adlandırmayı onayla",
+			"confirmRenameChat": "Sohbeti yeniden adlandırmayı onayla",
 			"createAgent": "Ajan oluştur",
 			"deleteAgent": "Ajanı sil",
 			"deleteSelectedChats": "Seçili sohbetleri sil",
@@ -70,7 +80,7 @@
 			"openSubchat_other": "Alt sohbeti aç ({count} mesaj)",
 			"openSubchat_zero": "Alt sohbet oluştur",
 			"searchChats": "Sohbetlerde ara",
-			"selectChat": "Sohbet seç",
+			"selectChat": "Sohbeti seç",
 			"sendMessage": "Mesaj gönder",
 			"showMoreAgents": "Daha fazla ajan göster",
 			"showMoreChats": "Daha fazla sohbet göster",
@@ -79,18 +89,21 @@
 			"startSearching_other": "En az {count} karakter yazın"
 		},
 		"description": {
-			"loremIpsumGPT": "En akıllı model",
+			"geminiNano": "Google Chrome için Mini GPT",
+			"loremIpsumGPT": "En zeki model",
 			"rammusGPT": "En iyi duygusal destek"
 		},
 		"error": {
-			"agentAvatar": "Ajan için bir avatar eklemelisiniz",
-			"agentName": "Ajan için bir isim eklemelisiniz",
-			"emptyMessage": "Mesajınız boş"
+			"agentAvatar": "Ajan için bir profil resmi eklemelisiniz",
+			"agentName": "Ajan için bir ad eklemelisiniz",
+			"emptyMessage": "Mesajınız boş",
+			"failedMessage": "Mesajınızın iletilmesinde bir sorun oluştu"
 		},
 		"label": {
 			"agents": "Ajanlar",
 			"chatTitle": "Sohbet başlığı",
 			"chats": "Sohbetler",
+			"creativityLevel": "Yaratıcılık seviyesi",
 			"customInstructions": "Özel talimatlar",
 			"gptModel": "GPT modeli",
 			"newAgent": "Yeni ajan",
@@ -101,17 +114,17 @@
 			"selectedAgent": "Seçili ajan",
 			"selectedValue": "Seçili değer",
 			"subchats": "Alt sohbetler",
-			"xMessages_one": "{count} mesaj",
+			"xMessages_one": "1 mesaj",
 			"xMessages_other": "{count} mesaj",
 			"xSearchResults_one": "{count} arama sonucu",
 			"xSearchResults_other": "{count} arama sonucu",
 			"xSearchResults_zero": "Arama sonucu yok",
-			"xSelectedMessages_one": "{count} mesaj seçildi",
+			"xSelectedMessages_one": "1 mesaj seçildi",
 			"xSelectedMessages_other": "{count} mesaj seçildi"
 		},
 		"placeholder": {
 			"newMessage": "{name} ile konuş...",
-			"rename": "Otomatik olarak yeni bir isim oluştur..."
+			"rename": "Otomatik olarak yeni bir ad oluştur..."
 		},
 		"state": {
 			"loadingAgents": "Ajanlar yükleniyor...",
@@ -125,7 +138,10 @@
 		},
 		"warning": {
 			"deletingAgent": "Bu ajan kalıcı olarak silinecek",
-			"deletingChats": "Bu sohbetler kalıcı olarak silinecek"
+			"deletingChats": "Bu sohbetler kalıcı olarak silinecek",
+			"geminiGptInsideChrome": "Bu GPT'nin çalışması için şu ayarların etkinleştirilmesi gerekiyor:",
+			"geminiGptOutsideChrome": "Bu GPT yalnızca Google Chrome tarayıcısında kullanılabilir",
+			"invalidGpt": "Geçersiz GPT"
 		}
 	},
 	"userSettings": {
@@ -135,13 +151,13 @@
 		},
 		"error": {
 			"address": "Adres eklemelisiniz",
-			"avatar": "Avatar eklemelisiniz",
+			"avatar": "Profil resmi eklemelisiniz",
 			"city": "Şehir eklemelisiniz",
 			"country": "Ülke eklemelisiniz",
-			"email": "E-posta adresi eklemelisiniz",
-			"legalName": "Yasal ad eklemelisiniz",
+			"email": "E-posta adresinizi eklemelisiniz",
+			"legalName": "Yasal adı eklemelisiniz",
 			"name": "Adınızı eklemelisiniz",
-			"postalCode": "Posta kodu eklemelisiniz"
+			"postalCode": "Posta kodunu eklemelisiniz"
 		},
 		"label": {
 			"account": "Hesap",

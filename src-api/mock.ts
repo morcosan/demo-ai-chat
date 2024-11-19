@@ -1,13 +1,16 @@
+import { initDB } from '@api/services/db'
 import { accountService } from './services/account-service'
 import { agentsService } from './services/agents-service'
 import { billingService } from './services/billing-service'
 import { chatsService } from './services/chats-service'
-import { ApiPayload, ApiQuery, ApiResponse, STATUS__SUCCESS } from './types'
+import { ApiPayload, ApiQuery, ApiResponse, Status } from './types'
 import { applyNetwork, RESP__NOT_FOUND } from './utilities/network'
 
 export const mockAPI = {
 	async get<T>(path: string, query: ApiQuery): Promise<ApiResponse<T>> {
 		let resp = RESP__NOT_FOUND
+
+		await initDB()
 
 		if (path === '/api/account') resp = await accountService.getAccount()
 		if (path === '/api/agents') resp = await agentsService.getAgents(query)
@@ -26,6 +29,8 @@ export const mockAPI = {
 	async post<T>(path: string, payload: ApiPayload): Promise<ApiResponse<T>> {
 		let resp = RESP__NOT_FOUND
 
+		await initDB()
+
 		if (path === '/api/agents') resp = await agentsService.postAgent(payload)
 		if (path === '/api/chats') resp = await chatsService.postChat(payload)
 		if (path === '/api/messages') resp = await chatsService.postMessage(payload)
@@ -38,6 +43,8 @@ export const mockAPI = {
 
 	async patch<T>(path: string, payload: ApiPayload): Promise<ApiResponse<T>> {
 		let resp = RESP__NOT_FOUND
+
+		await initDB()
 
 		if (path === '/api/account') resp = await accountService.patchAccount(payload)
 		if (path === '/api/agents') resp = await agentsService.patchAgent(payload)
@@ -53,6 +60,8 @@ export const mockAPI = {
 	async delete<T>(path: string, query: ApiQuery): Promise<ApiResponse<T>> {
 		let resp = RESP__NOT_FOUND
 
+		await initDB()
+
 		if (path === '/api/agents') resp = await agentsService.deleteAgents(query)
 		if (path === '/api/chats') resp = await chatsService.deleteChats(query)
 		if (path === '/api/database') {
@@ -60,7 +69,7 @@ export const mockAPI = {
 			await billingService.resetDB()
 			await agentsService.resetDB()
 			await chatsService.resetDB() // Must come after agents
-			resp = { status: STATUS__SUCCESS, data: null }
+			resp = { status: Status.SUCCESS, data: null }
 		}
 
 		resp = await applyNetwork(resp)

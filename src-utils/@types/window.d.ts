@@ -5,6 +5,7 @@ import { ClassValue } from 'clsx'
 export {}
 
 declare global {
+	var ERROR: (...args: unknown[]) => void
 	var LOG: (...args: unknown[]) => void
 	var LOG_DEV: (...args: unknown[]) => void
 	var log: (...args: unknown[]) => void

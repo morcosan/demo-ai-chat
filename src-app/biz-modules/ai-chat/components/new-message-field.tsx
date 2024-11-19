@@ -1,28 +1,29 @@
 import { IconButton, SendSvg, TextField, TextFieldRef } from '@ds/release'
 import { useCallback, useRef, useState } from 'react'
-import { Agent } from '../api'
+import { Agent, GPT } from '../api'
 import { useSubmittable } from '../hooks/submittable'
 
 interface Props {
 	agent: Agent
+	gpt: GPT
 	listLoading: ListLoading
 	isChatView?: boolean
 	onPostMessage(text: string, agentId: number): void
 }
 
 export const NewMessageField = (props: Props) => {
-	const { agent, listLoading, isChatView, onPostMessage } = props
+	const { agent, gpt, listLoading, isChatView, onPostMessage } = props
 	const [inputValue, setInputValue] = useState<string>('')
 	const inputRef = useRef<TextFieldRef>(null)
 
 	const message = inputValue.trim()
 	const isLoading = listLoading === 'update'
-	const isDisabled = listLoading === 'full' || listLoading === 'more'
+	const isDisabled = listLoading === 'full' || listLoading === 'more' || listLoading === 'error'
 
 	const onChange = (value: string) => setInputValue(value)
 
 	const onSubmit = useCallback(() => {
-		if (isDisabled) return
+		if (isDisabled || !gpt.enabled) return
 		if (listLoading || !message) return
 
 		onPostMessage(message, agent.id)
@@ -54,6 +55,7 @@ export const NewMessageField = (props: Props) => {
 					variant={isChatView ? 'solid-primary' : 'solid-secondary'}
 					size={isChatView ? 'md' : 'sm'}
 					loading={isLoading}
+					disabled={!gpt.enabled || listLoading === 'error'}
 					onClick={onSubmit}
 				>
 					<SendSvg className={isChatView ? 'h-xs-9' : 'h-xs-7'} />
@@ -62,6 +64,7 @@ export const NewMessageField = (props: Props) => {
 			maxLength={1000}
 			maxRows={10}
 			disabled={isDisabled}
+			invalid={!gpt.enabled}
 			className="w-full"
 			multiline
 			onChange={onChange}

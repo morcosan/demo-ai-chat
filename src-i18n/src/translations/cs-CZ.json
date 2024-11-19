@@ -7,8 +7,10 @@
 			"close": "Zavřít",
 			"delete": "Smazat",
 			"deselectAll": "Zrušit výběr všeho",
+			"goToUrl": "Přejít na {url}",
 			"openMenu": "Otevřít nabídku",
 			"rename": "Přejmenovat",
+			"retry": "Zkusit znovu",
 			"saveChanges": "Uložit změny",
 			"search": "Hledat",
 			"searchMore": "Zobrazit více výsledků",
@@ -17,7 +19,8 @@
 		},
 		"error": {
 			"noChanges": "Žádné změny",
-			"nothingFound": "Nic nebylo nalezeno pro \"{search}\""
+			"nothingFound": "Nic nebylo nalezeno pro \"{search}\"",
+			"unsent": "Neposláno"
 		},
 		"label": {
 			"apiDocs": "API Dokumentace",
@@ -30,14 +33,19 @@
 			"designSystem": "Designový systém",
 			"errors": "Chyby",
 			"europe": "Evropa",
-			"githubRepo": "GitHub Repozitář",
+			"githubRepo": "GitHub Repo",
 			"language": "Jazyk",
+			"levelHigh": "Vysoká",
+			"levelLow": "Nízká",
+			"levelMedium": "Střední",
+			"levelVeryHigh": "Velmi vysoká",
+			"levelVeryLow": "Velmi nízká",
 			"lightTheme": "Světlý",
-			"name": "Název",
+			"name": "Jméno",
 			"navigationBar": "Navigační lišta",
 			"navigationMenu": "Navigační nabídka",
-			"optionalField": "(Volitelné)",
-			"quickSettings": "Rychlá nastavení",
+			"optionalField": "(Nepovinné)",
+			"quickSettings": "Rychlé nastavení",
 			"requiredField": "(Povinné)",
 			"settings": "Nastavení",
 			"uiLibrary": "UI Knihovna",
@@ -50,13 +58,14 @@
 			"dataSaved": "Vaše data byla uložena",
 			"deleting": "Mazání...",
 			"loading": "Načítání...",
-			"searching": "Vyhledávání...",
+			"searching": "Hledání...",
+			"sending": "Odesílání...",
 			"updating": "Aktualizace..."
 		}
 	},
 	"aiChat": {
 		"action": {
-			"backToSubchats": "Zpět na podchaty",
+			"backToSubchats": "Zpět k podchatům",
 			"configureAgent": "Nastavit agenta",
 			"confirmDeleteAgent": "Potvrdit smazání agenta",
 			"confirmDeleteChats": "Potvrdit smazání chatů",
@@ -70,30 +79,33 @@
 			"openChat": "Otevřít chat",
 			"openSubchat_other": "Otevřít podchat ({count} zpráv)",
 			"openSubchat_zero": "Vytvořit podchat",
-			"searchChats": "Vyhledat v chatech",
+			"searchChats": "Hledat v chatech",
 			"selectChat": "Vybrat chat",
 			"sendMessage": "Odeslat zprávu",
 			"showMoreAgents": "Zobrazit více agentů",
 			"showMoreChats": "Zobrazit více chatů",
 			"showSubchats": "Zobrazit podchaty ({count})",
-			"startSearching_one": "Napište alespoň {count} znak",
-			"startSearching_other": "Napište alespoň {count} znaky"
+			"startSearching_one": "Zadejte alespoň {count} znak",
+			"startSearching_other": "Zadejte alespoň {count} znaky"
 		},
 		"description": {
+			"geminiNano": "Mini GPT pro Google Chrome",
 			"loremIpsumGPT": "Nejinteligentnější model",
-			"rammusGPT": "Nejlepší emocionální podpora"
+			"rammusGPT": "Nejlepší emoční podpora"
 		},
 		"error": {
 			"agentAvatar": "Musíte přidat avatar pro agenta",
 			"agentName": "Musíte přidat jméno pro agenta",
-			"emptyMessage": "Vaše zpráva je prázdná"
+			"emptyMessage": "Vaše zpráva je prázdná",
+			"failedMessage": "Nastal problém s doručením vaší zprávy"
 		},
 		"label": {
 			"agents": "Agenti",
 			"chatTitle": "Název chatu",
 			"chats": "Chaty",
-			"customInstructions": "Vlastní pokyny",
-			"gptModel": "Model GPT",
+			"creativityLevel": "Úroveň kreativity",
+			"customInstructions": "Vlastní instrukce",
+			"gptModel": "GPT model",
 			"newAgent": "Nový agent",
 			"newChat": "Nový chat",
 			"newMessage": "Nová zpráva",
@@ -104,29 +116,32 @@
 			"subchats": "Podchaty",
 			"xMessages_one": "1 zpráva",
 			"xMessages_other": "{count} zpráv",
-			"xSearchResults_one": "{count} výsledek hledání",
-			"xSearchResults_other": "{count} výsledky hledání",
-			"xSearchResults_zero": "Žádné výsledky hledání",
-			"xSelectedMessages_one": "1 vybraná zpráva",
-			"xSelectedMessages_other": "{count} vybrané zprávy"
+			"xSearchResults_one": "{count} výsledek vyhledávání",
+			"xSearchResults_other": "{count} výsledky vyhledávání",
+			"xSearchResults_zero": "Žádné výsledky vyhledávání",
+			"xSelectedMessages_one": "1 zpráva vybrána",
+			"xSelectedMessages_other": "{count} zpráv vybráno"
 		},
 		"placeholder": {
 			"newMessage": "Mluvte s {name}...",
-			"rename": "Automaticky generovat nový název..."
+			"rename": "Automaticky vytvořit nové jméno..."
 		},
 		"state": {
 			"loadingAgents": "Načítání agentů...",
 			"loadingChats": "Načítání chatů...",
-			"loadingGPTs": "Načítání modelů GPT...",
+			"loadingGPTs": "Načítání GPT modelů...",
 			"loadingMessages": "Načítání zpráv...",
 			"loadingPreviousMessages": "Načítání předchozích zpráv...",
 			"loadingSubchats": "Načítání podchatů...",
-			"renamingChat": "Přejmenování chatu...",
+			"renamingChat": "Přejmenovávání chatu...",
 			"thinking": "Přemýšlí..."
 		},
 		"warning": {
 			"deletingAgent": "Tento agent bude trvale smazán",
-			"deletingChats": "Tyto chaty budou trvale smazány"
+			"deletingChats": "Tyto chaty budou trvale smazány",
+			"geminiGptInsideChrome": "Tento GPT vyžaduje aktivaci následujících nastavení:",
+			"geminiGptOutsideChrome": "Tento GPT je dostupný pouze v prohlížeči Google Chrome",
+			"invalidGpt": "Neplatný GPT"
 		}
 	},
 	"userSettings": {
@@ -140,9 +155,9 @@
 			"city": "Musíte přidat město",
 			"country": "Musíte přidat zemi",
 			"email": "Musíte přidat e-mailovou adresu",
-			"legalName": "Musíte přidat právní jméno",
+			"legalName": "Musíte přidat zákonné jméno",
 			"name": "Musíte přidat jméno",
-			"postalCode": "Musíte přidat poštovní kód"
+			"postalCode": "Musíte přidat PSČ"
 		},
 		"label": {
 			"account": "Účet",
@@ -151,11 +166,11 @@
 			"city": "Město",
 			"country": "Země",
 			"email": "E-mailová adresa",
-			"legalName": "Právní jméno",
+			"legalName": "Zákonné jméno",
 			"phone": "Telefonní číslo",
-			"postalCode": "Poštovní kód",
-			"private": "Soukromý",
-			"public": "Veřejný",
+			"postalCode": "PSČ",
+			"private": "Soukromé",
+			"public": "Veřejné",
 			"vatNumber": "DIČ"
 		}
 	}

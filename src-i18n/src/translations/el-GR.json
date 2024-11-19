@@ -2,36 +2,44 @@
 	"core": {
 		"action": {
 			"back": "Πίσω",
-			"backToHome": "Επιστροφή στην αρχική σελίδα",
+			"backToHome": "Πίσω στην αρχική σελίδα",
 			"changeLanguage": "Αλλαγή γλώσσας",
 			"close": "Κλείσιμο",
 			"delete": "Διαγραφή",
 			"deselectAll": "Αποεπιλογή όλων",
+			"goToUrl": "Μετάβαση στο {url}",
 			"openMenu": "Άνοιγμα μενού",
 			"rename": "Μετονομασία",
+			"retry": "Δοκιμή ξανά",
 			"saveChanges": "Αποθήκευση αλλαγών",
 			"search": "Αναζήτηση",
-			"searchMore": "Περισσότερα αποτελέσματα",
+			"searchMore": "Εμφάνιση περισσότερων αποτελεσμάτων",
 			"selectAll": "Επιλογή όλων",
 			"signOut": "Αποσύνδεση"
 		},
 		"error": {
 			"noChanges": "Δεν υπάρχουν αλλαγές",
-			"nothingFound": "Δεν βρέθηκε κάτι για \"{search}\""
+			"nothingFound": "Δεν βρέθηκε τίποτα για \"{search}\"",
+			"unsent": "Μη αποσταλθέν"
 		},
 		"label": {
 			"apiDocs": "Έγγραφα API",
 			"asia": "Ασία",
 			"avatar": "Άβαταρ",
 			"custom": "Προσαρμοσμένο",
-			"darkTheme": "Σκοτεινό",
-			"default": "Προεπιλογή",
+			"darkTheme": "Σκούρο",
+			"default": "Προεπιλεγμένο",
 			"description": "Περιγραφή",
-			"designSystem": "Σύστημα σχεδίασης",
+			"designSystem": "Σύστημα Σχεδιασμού",
 			"errors": "Σφάλματα",
 			"europe": "Ευρώπη",
 			"githubRepo": "Αποθετήριο GitHub",
 			"language": "Γλώσσα",
+			"levelHigh": "Υψηλό",
+			"levelLow": "Χαμηλό",
+			"levelMedium": "Μέτριο",
+			"levelVeryHigh": "Πολύ υψηλό",
+			"levelVeryLow": "Πολύ χαμηλό",
 			"lightTheme": "Φωτεινό",
 			"name": "Όνομα",
 			"navigationBar": "Γραμμή πλοήγησης",
@@ -51,82 +59,89 @@
 			"deleting": "Διαγραφή...",
 			"loading": "Φόρτωση...",
 			"searching": "Αναζήτηση...",
+			"sending": "Αποστολή...",
 			"updating": "Ενημέρωση..."
 		}
 	},
 	"aiChat": {
 		"action": {
-			"backToSubchats": "Πίσω στις υποσυζητήσεις",
-			"configureAgent": "Διαμόρφωση αντιπροσώπου",
-			"confirmDeleteAgent": "Επιβεβαίωση διαγραφής αντιπροσώπου",
-			"confirmDeleteChats": "Επιβεβαίωση διαγραφής συζητήσεων",
+			"backToSubchats": "Πίσω στα υποσυνομιλίες",
+			"configureAgent": "Διαμόρφωση πράκτορα",
+			"confirmDeleteAgent": "Επιβεβαίωση διαγραφής πράκτορα",
+			"confirmDeleteChats": "Επιβεβαίωση διαγραφής συνομιλιών",
 			"confirmRenameChat": "Επιβεβαίωση μετονομασίας συνομιλίας",
-			"createAgent": "Δημιουργία αντιπροσώπου",
-			"deleteAgent": "Διαγραφή αντιπροσώπου",
-			"deleteSelectedChats": "Διαγραφή επιλεγμένων συζητήσεων",
+			"createAgent": "Δημιουργία πράκτορα",
+			"deleteAgent": "Διαγραφή πράκτορα",
+			"deleteSelectedChats": "Διαγραφή επιλεγμένων συνομιλιών",
 			"deselectChat": "Αποεπιλογή συνομιλίας",
-			"manageAgents": "Διαχείριση αντιπροσώπων",
-			"manageChats": "Διαχείριση συζητήσεων",
+			"manageAgents": "Διαχείριση πρακτόρων",
+			"manageChats": "Διαχείριση συνομιλιών",
 			"openChat": "Άνοιγμα συνομιλίας",
-			"openSubchat_other": "Άνοιγμα υποσυζήτησης ({count} μηνύματα)",
-			"openSubchat_zero": "Δημιουργία υποσυζήτησης",
-			"searchChats": "Αναζήτηση συζητήσεων",
+			"openSubchat_other": "Άνοιγμα υποσυνομιλίας ({count} μηνύματα)",
+			"openSubchat_zero": "Δημιουργία υποσυνομιλίας",
+			"searchChats": "Αναζήτηση συνομιλιών",
 			"selectChat": "Επιλογή συνομιλίας",
 			"sendMessage": "Αποστολή μηνύματος",
-			"showMoreAgents": "Περισσότεροι αντιπρόσωποι",
-			"showMoreChats": "Περισσότερες συνομιλίες",
-			"showSubchats": "Εμφάνιση υποσυζητήσεων ({count})",
+			"showMoreAgents": "Εμφάνιση περισσότερων πρακτόρων",
+			"showMoreChats": "Εμφάνιση περισσότερων συνομιλιών",
+			"showSubchats": "Εμφάνιση υποσυνομιλιών ({count})",
 			"startSearching_one": "Πληκτρολογήστε τουλάχιστον {count} χαρακτήρα",
 			"startSearching_other": "Πληκτρολογήστε τουλάχιστον {count} χαρακτήρες"
 		},
 		"description": {
+			"geminiNano": "Μίνι GPT για το Google Chrome",
 			"loremIpsumGPT": "Το πιο έξυπνο μοντέλο",
-			"rammusGPT": "Καλύτερη συναισθηματική υποστήριξη"
+			"rammusGPT": "Η καλύτερη συναισθηματική υποστήριξη"
 		},
 		"error": {
-			"agentAvatar": "Πρέπει να προσθέσετε άβαταρ για τον αντιπρόσωπο",
-			"agentName": "Πρέπει να προσθέσετε όνομα για τον αντιπρόσωπο",
-			"emptyMessage": "Το μήνυμά σας είναι κενό"
+			"agentAvatar": "Πρέπει να προσθέσετε ένα άβαταρ για τον πράκτορα",
+			"agentName": "Πρέπει να προσθέσετε ένα όνομα για τον πράκτορα",
+			"emptyMessage": "Το μήνυμά σας είναι κενό",
+			"failedMessage": "Προέκυψε πρόβλημα κατά την αποστολή του μηνύματός σας"
 		},
 		"label": {
-			"agents": "Αντιπρόσωποι",
+			"agents": "Πράκτορες",
 			"chatTitle": "Τίτλος συνομιλίας",
-			"chats": "Συζητήσεις",
+			"chats": "Συνομιλίες",
+			"creativityLevel": "Επίπεδο δημιουργικότητας",
 			"customInstructions": "Προσαρμοσμένες οδηγίες",
 			"gptModel": "Μοντέλο GPT",
-			"newAgent": "Νέος αντιπρόσωπος",
+			"newAgent": "Νέος πράκτορας",
 			"newChat": "Νέα συνομιλία",
 			"newMessage": "Νέο μήνυμα",
-			"noChats": "Χωρίς συζητήσεις",
-			"noSubchats": "Χωρίς υποσυζητήσεις",
-			"selectedAgent": "Επιλεγμένος αντιπρόσωπος",
+			"noChats": "Καμία συνομιλία",
+			"noSubchats": "Καμία υποσυνομιλία",
+			"selectedAgent": "Επιλεγμένος πράκτορας",
 			"selectedValue": "Επιλεγμένη τιμή",
-			"subchats": "Υποσυζητήσεις",
+			"subchats": "Υποσυνομιλίες",
 			"xMessages_one": "1 μήνυμα",
 			"xMessages_other": "{count} μηνύματα",
 			"xSearchResults_one": "{count} αποτέλεσμα αναζήτησης",
 			"xSearchResults_other": "{count} αποτελέσματα αναζήτησης",
-			"xSearchResults_zero": "Χωρίς αποτελέσματα αναζήτησης",
-			"xSelectedMessages_one": "1 επιλεγμένο μήνυμα",
-			"xSelectedMessages_other": "{count} επιλεγμένα μηνύματα"
+			"xSearchResults_zero": "Κανένα αποτέλεσμα αναζήτησης",
+			"xSelectedMessages_one": "1 μήνυμα επιλεγμένο",
+			"xSelectedMessages_other": "{count} μηνύματα επιλεγμένα"
 		},
 		"placeholder": {
-			"newMessage": "Μιλήστε στον {name}...",
-			"rename": "Αυτόματη δημιουργία νέου ονόματος..."
+			"newMessage": "Μιλήστε με τον/την {name}...",
+			"rename": "Δημιουργήστε αυτόματα νέο όνομα..."
 		},
 		"state": {
-			"loadingAgents": "Φόρτωση αντιπροσώπων...",
-			"loadingChats": "Φόρτωση συζητήσεων...",
+			"loadingAgents": "Φόρτωση πρακτόρων...",
+			"loadingChats": "Φόρτωση συνομιλιών...",
 			"loadingGPTs": "Φόρτωση μοντέλων GPT...",
 			"loadingMessages": "Φόρτωση μηνυμάτων...",
 			"loadingPreviousMessages": "Φόρτωση προηγούμενων μηνυμάτων...",
-			"loadingSubchats": "Φόρτωση υποσυζητήσεων...",
+			"loadingSubchats": "Φόρτωση υποσυνομιλιών...",
 			"renamingChat": "Μετονομασία συνομιλίας...",
-			"thinking": "Σκέψη..."
+			"thinking": "Σκέφτεται..."
 		},
 		"warning": {
-			"deletingAgent": "Αυτός ο αντιπρόσωπος θα διαγραφεί οριστικά",
-			"deletingChats": "Αυτές οι συνομιλίες θα διαγραφούν οριστικά"
+			"deletingAgent": "Αυτός ο πράκτορας θα διαγραφεί μόνιμα",
+			"deletingChats": "Αυτές οι συνομιλίες θα διαγραφούν μόνιμα",
+			"geminiGptInsideChrome": "Αυτό το GPT απαιτεί την ενεργοποίηση των παρακάτω ρυθμίσεων:",
+			"geminiGptOutsideChrome": "Αυτό το GPT είναι διαθέσιμο μόνο στον περιηγητή Google Chrome",
+			"invalidGpt": "Μη έγκυρο GPT"
 		}
 	},
 	"userSettings": {
@@ -140,7 +155,7 @@
 			"city": "Πρέπει να προσθέσετε την πόλη",
 			"country": "Πρέπει να προσθέσετε τη χώρα",
 			"email": "Πρέπει να προσθέσετε τη διεύθυνση email σας",
-			"legalName": "Πρέπει να προσθέσετε το νομικό όνομα",
+			"legalName": "Πρέπει να προσθέσετε το νόμιμο όνομα",
 			"name": "Πρέπει να προσθέσετε το όνομά σας",
 			"postalCode": "Πρέπει να προσθέσετε τον ταχυδρομικό κώδικα"
 		},
@@ -151,12 +166,12 @@
 			"city": "Πόλη",
 			"country": "Χώρα",
 			"email": "Διεύθυνση email",
-			"legalName": "Νομικό όνομα",
-			"phone": "Αριθμός τηλεφώνου",
+			"legalName": "Νόμιμο όνομα",
+			"phone": "Τηλεφωνικός αριθμός",
 			"postalCode": "Ταχυδρομικός κώδικας",
 			"private": "Ιδιωτικό",
 			"public": "Δημόσιο",
-			"vatNumber": "Αριθμός ΦΠΑ"
+			"vatNumber": "ΑΦΜ"
 		}
 	}
 }

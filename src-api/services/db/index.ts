@@ -7,13 +7,13 @@ export { getDbAccount, resetDbAccount, setDbAccount } from './_account-db'
 export {
 	createAgentId,
 	getDbActiveAgents,
-	GPTs,
+	getDbDeletedAgents,
+	getGptResponse,
+	getGPTs,
 	randomFromAgentIds,
 	resetAgentsDB,
 	setDbActiveAgents,
-	getDbDeletedAgents,
 	setDbDeletedAgents,
-	getGptAPI,
 } from './_agents-db'
 export { getDbBilling, resetDbBilling, setDbBilling } from './_billing-db'
 export {
@@ -21,14 +21,21 @@ export {
 	createMessageId,
 	getDbChats,
 	getDbMessages,
+	getSizeForChat,
+	hasMessagesByAgent,
 	resetChatsDB,
 	setDbChats,
 	setDbMessages,
-	getSizeForChat,
-	hasMessagesByAgent,
 } from './_chats-db'
 
-initAccountDB()
-initBillingDB()
-initAgentsDB()
-initChatsDB() // Must come after agents
+let _dbReady = false
+
+export const initDB = async () => {
+	if (_dbReady) return
+
+	await initAccountDB()
+	await initBillingDB()
+	await initAgentsDB()
+	await initChatsDB() // Must come after agents
+	_dbReady = true
+}

@@ -2,44 +2,52 @@
 	"core": {
 		"action": {
 			"back": "Geri",
-			"backToHome": "Ana səhifəyə qayıt",
+			"backToHome": "Ana səhifəyə geri dön",
 			"changeLanguage": "Dili dəyiş",
 			"close": "Bağla",
 			"delete": "Sil",
-			"deselectAll": "Hamısını seçməyi ləğv et",
+			"deselectAll": "Hamısını seçimi ləğv et",
+			"goToUrl": "{url} ünvanına get",
 			"openMenu": "Menyunu aç",
 			"rename": "Adını dəyiş",
-			"saveChanges": "Dəyişiklikləri saxla",
+			"retry": "Təkrar cəhd et",
+			"saveChanges": "Dəyişiklikləri yadda saxla",
 			"search": "Axtar",
 			"searchMore": "Daha çox nəticə göstər",
 			"selectAll": "Hamısını seç",
 			"signOut": "Çıxış"
 		},
 		"error": {
-			"noChanges": "Dəyişikliklər yoxdur",
-			"nothingFound": "\"{search}\" üçün heç nə tapılmadı"
+			"noChanges": "Dəyişiklik yoxdur",
+			"nothingFound": "\"{search}\" üçün heç nə tapılmadı",
+			"unsent": "Göndərilməmiş"
 		},
 		"label": {
 			"apiDocs": "API Sənədləri",
 			"asia": "Asiya",
 			"avatar": "Avatar",
 			"custom": "Xüsusi",
-			"darkTheme": "Qaranlıq",
-			"default": "Standart",
+			"darkTheme": "Tünd",
+			"default": "Varsayılan",
 			"description": "Təsvir",
 			"designSystem": "Dizayn Sistemi",
-			"errors": "Xətalar",
+			"errors": "Səhvlər",
 			"europe": "Avropa",
-			"githubRepo": "GitHub Repo",
+			"githubRepo": "GitHub Anbarı",
 			"language": "Dil",
-			"lightTheme": "İşıq",
+			"levelHigh": "Yüksək",
+			"levelLow": "Aşağı",
+			"levelMedium": "Orta",
+			"levelVeryHigh": "Çox yüksək",
+			"levelVeryLow": "Çox aşağı",
+			"lightTheme": "Açıq",
 			"name": "Ad",
-			"navigationBar": "Naviqasiya paneli",
-			"navigationMenu": "Naviqasiya menyusu",
-			"optionalField": "(İstəyə bağlı)",
-			"quickSettings": "Tez parametrlər",
-			"requiredField": "(Məcburi)",
-			"settings": "Parametrlər",
+			"navigationBar": "Navigasiya paneli",
+			"navigationMenu": "Navigasiya menyusu",
+			"optionalField": "(İxtiyari)",
+			"quickSettings": "Tez tənzimləmələr",
+			"requiredField": "(Vacib)",
+			"settings": "Ayarlar",
 			"uiLibrary": "UI Kitabxanası",
 			"uiTheme": "UI Mövzusu"
 		},
@@ -47,107 +55,114 @@
 			"search": "Axtar..."
 		},
 		"state": {
-			"dataSaved": "Məlumatınız saxlanıldı",
+			"dataSaved": "Məlumatlarınız yadda saxlanıldı",
 			"deleting": "Silinir...",
 			"loading": "Yüklənir...",
 			"searching": "Axtarılır...",
+			"sending": "Göndərilir...",
 			"updating": "Yenilənir..."
 		}
 	},
 	"aiChat": {
 		"action": {
-			"backToSubchats": "Alt çatlara qayıt",
-			"configureAgent": "Agent qur",
-			"confirmDeleteAgent": "Agentin silinməsini təsdiq edin",
-			"confirmDeleteChats": "Çatların silinməsini təsdiq edin",
-			"confirmRenameChat": "Çatın adının dəyişdirilməsini təsdiq edin",
+			"backToSubchats": "Subchat-lərə geri dön",
+			"configureAgent": "Ageni konfiqurasiya et",
+			"confirmDeleteAgent": "Agenin silinməsini təsdiqlə",
+			"confirmDeleteChats": "Söhbətlərin silinməsini təsdiqlə",
+			"confirmRenameChat": "Söhbətin adının dəyişdirilməsini təsdiqlə",
 			"createAgent": "Agent yarat",
-			"deleteAgent": "Agenti sil",
-			"deleteSelectedChats": "Seçilmiş çatları sil",
-			"deselectChat": "Çatı seçməyi ləğv et",
+			"deleteAgent": "Ageni sil",
+			"deleteSelectedChats": "Seçilmiş söhbətləri sil",
+			"deselectChat": "Söhbətin seçimini ləğv et",
 			"manageAgents": "Agentləri idarə et",
-			"manageChats": "Çatları idarə et",
-			"openChat": "Çatı aç",
-			"openSubchat_other": "Alt çatı aç ({count} mesajlar)",
-			"openSubchat_zero": "Alt çat yarat",
-			"searchChats": "Çatları axtar",
-			"selectChat": "Çatı seç",
-			"sendMessage": "Mesaj göndər",
+			"manageChats": "Söhbətləri idarə et",
+			"openChat": "Söhbəti aç",
+			"openSubchat_other": "Subchat-ı aç ({count} mesaj)",
+			"openSubchat_zero": "Subchat yarat",
+			"searchChats": "Söhbətləri axtar",
+			"selectChat": "Söhbəti seç",
+			"sendMessage": "Mesajı göndər",
 			"showMoreAgents": "Daha çox agent göstər",
-			"showMoreChats": "Daha çox çat göstər",
-			"showSubchats": "Alt çatları göstər ({count})",
-			"startSearching_one": "Ən azı {count} simvol yazın",
-			"startSearching_other": "Ən azı {count} simvol yazın"
+			"showMoreChats": "Daha çox söhbət göstər",
+			"showSubchats": "Subchat-ləri göstər ({count})",
+			"startSearching_one": "Ən az {count} simvol daxil edin",
+			"startSearching_other": "Ən az {count} simvol daxil edin"
 		},
 		"description": {
+			"geminiNano": "Google Chrome üçün mini GPT",
 			"loremIpsumGPT": "Ən ağıllı model",
 			"rammusGPT": "Ən yaxşı emosional dəstək"
 		},
 		"error": {
 			"agentAvatar": "Agent üçün avatar əlavə etməlisiniz",
 			"agentName": "Agent üçün ad əlavə etməlisiniz",
-			"emptyMessage": "Mesajınız boşdur"
+			"emptyMessage": "Mesajınız boşdur",
+			"failedMessage": "Mesajınızın çatdırılmasında problem baş verdi"
 		},
 		"label": {
 			"agents": "Agentlər",
-			"chatTitle": "Çat başlığı",
-			"chats": "Çatlar",
+			"chatTitle": "Söhbət başlığı",
+			"chats": "Söhbətlər",
+			"creativityLevel": "Yaradıcılıq səviyyəsi",
 			"customInstructions": "Xüsusi təlimatlar",
 			"gptModel": "GPT modeli",
 			"newAgent": "Yeni agent",
-			"newChat": "Yeni çat",
+			"newChat": "Yeni söhbət",
 			"newMessage": "Yeni mesaj",
-			"noChats": "Çatlar yoxdur",
-			"noSubchats": "Alt çatlar yoxdur",
+			"noChats": "Söhbət yoxdur",
+			"noSubchats": "Subchat yoxdur",
 			"selectedAgent": "Seçilmiş agent",
 			"selectedValue": "Seçilmiş dəyər",
-			"subchats": "Alt çatlar",
+			"subchats": "Subchat-lər",
 			"xMessages_one": "1 mesaj",
-			"xMessages_other": "{count} mesajlar",
+			"xMessages_other": "{count} mesaj",
 			"xSearchResults_one": "{count} axtarış nəticəsi",
 			"xSearchResults_other": "{count} axtarış nəticələri",
 			"xSearchResults_zero": "Axtarış nəticəsi yoxdur",
 			"xSelectedMessages_one": "1 mesaj seçildi",
-			"xSelectedMessages_other": "{count} mesajlar seçildi"
+			"xSelectedMessages_other": "{count} mesaj seçildi"
 		},
 		"placeholder": {
-			"newMessage": "{name} ilə danış...",
-			"rename": "Avtomatik yeni ad yaradın..."
+			"newMessage": "{name}-ə danış...",
+			"rename": "Avtomatik yeni ad yarat..."
 		},
 		"state": {
 			"loadingAgents": "Agentlər yüklənir...",
-			"loadingChats": "Çatlar yüklənir...",
-			"loadingGPTs": "GPT modelləri yüklənir...",
+			"loadingChats": "Söhbətlər yüklənir...",
+			"loadingGPTs": "GPT-lər yüklənir...",
 			"loadingMessages": "Mesajlar yüklənir...",
 			"loadingPreviousMessages": "Əvvəlki mesajlar yüklənir...",
-			"loadingSubchats": "Alt çatlar yüklənir...",
-			"renamingChat": "Çatın adı dəyişdirilir...",
+			"loadingSubchats": "Subchat-lər yüklənir...",
+			"renamingChat": "Söhbətin adı dəyişdirilir...",
 			"thinking": "Düşünür..."
 		},
 		"warning": {
 			"deletingAgent": "Bu agent daimi olaraq silinəcək",
-			"deletingChats": "Bu çatlar daimi olaraq silinəcək"
+			"deletingChats": "Bu söhbətlər daimi olaraq silinəcək",
+			"geminiGptInsideChrome": "Bu GPT üçün bu parametrlərin aktivləşdirilməsi tələb olunur:",
+			"geminiGptOutsideChrome": "Bu GPT yalnız Google Chrome brauzerində mövcuddur",
+			"invalidGpt": "Keçərsiz GPT"
 		}
 	},
 	"userSettings": {
 		"action": {
 			"manageAccount": "Hesabı idarə et",
-			"manageBilling": "Ödənişləri idarə et"
+			"manageBilling": "Ödənişi idarə et"
 		},
 		"error": {
-			"address": "Ünvan əlavə etməlisiniz",
-			"avatar": "Avatar əlavə etməlisiniz",
-			"city": "Şəhər əlavə etməlisiniz",
-			"country": "Ölkə əlavə etməlisiniz",
-			"email": "E-poçt ünvanı əlavə etməlisiniz",
+			"address": "Ünvanı əlavə etməlisiniz",
+			"avatar": "Avatarınızı əlavə etməlisiniz",
+			"city": "Şəhəri əlavə etməlisiniz",
+			"country": "Ölkəni əlavə etməlisiniz",
+			"email": "E-poçt ünvanınızı əlavə etməlisiniz",
 			"legalName": "Hüquqi adı əlavə etməlisiniz",
-			"name": "Ad əlavə etməlisiniz",
-			"postalCode": "Poçt kodu əlavə etməlisiniz"
+			"name": "Adınızı əlavə etməlisiniz",
+			"postalCode": "Poçt kodunu əlavə etməlisiniz"
 		},
 		"label": {
 			"account": "Hesab",
 			"address": "Ünvan",
-			"billing": "Ödənişlər",
+			"billing": "Ödəniş",
 			"city": "Şəhər",
 			"country": "Ölkə",
 			"email": "E-poçt ünvanı",
@@ -156,7 +171,7 @@
 			"postalCode": "Poçt kodu",
 			"private": "Şəxsi",
 			"public": "İctimai",
-			"vatNumber": "VÖEN"
+			"vatNumber": "ƏDV nömrəsi"
 		}
 	}
 }

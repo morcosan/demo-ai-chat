@@ -6,33 +6,41 @@
 			"changeLanguage": "भाषा बदलें",
 			"close": "बंद करें",
 			"delete": "हटाएं",
-			"deselectAll": "सभी को असूचीबद्ध करें",
+			"deselectAll": "सभी चयन हटाएं",
+			"goToUrl": "{url} पर जाएं",
 			"openMenu": "मेनू खोलें",
 			"rename": "नाम बदलें",
+			"retry": "फिर से प्रयास करें",
 			"saveChanges": "परिवर्तन सहेजें",
 			"search": "खोजें",
-			"searchMore": "अधिक परिणाम दिखाएं",
-			"selectAll": "सभी चुनें",
-			"signOut": "साइन आउट करें"
+			"searchMore": "और परिणाम दिखाएं",
+			"selectAll": "सभी का चयन करें",
+			"signOut": "साइन आउट"
 		},
 		"error": {
-			"noChanges": "कोई परिवर्तन नहीं हैं",
-			"nothingFound": "\"{search}\" के लिए कुछ नहीं मिला"
+			"noChanges": "कोई बदलाव नहीं",
+			"nothingFound": "\"{search}\" के लिए कुछ नहीं मिला",
+			"unsent": "अप्रेषित"
 		},
 		"label": {
 			"apiDocs": "API दस्तावेज़",
 			"asia": "एशिया",
 			"avatar": "अवतार",
-			"custom": "अनुकूलित",
-			"darkTheme": "डार्क",
+			"custom": "कस्टम",
+			"darkTheme": "गहरा",
 			"default": "डिफ़ॉल्ट",
 			"description": "विवरण",
 			"designSystem": "डिज़ाइन सिस्टम",
 			"errors": "त्रुटियाँ",
 			"europe": "यूरोप",
-			"githubRepo": "GitHub रेपो",
+			"githubRepo": "GitHub रिपॉजिटरी",
 			"language": "भाषा",
-			"lightTheme": "लाइट",
+			"levelHigh": "उच्च",
+			"levelLow": "निम्न",
+			"levelMedium": "मध्यम",
+			"levelVeryHigh": "बहुत उच्च",
+			"levelVeryLow": "बहुत निम्न",
+			"lightTheme": "हल्का",
 			"name": "नाम",
 			"navigationBar": "नेविगेशन बार",
 			"navigationMenu": "नेविगेशन मेनू",
@@ -48,23 +56,24 @@
 		},
 		"state": {
 			"dataSaved": "आपका डेटा सहेजा गया है",
-			"deleting": "हटाया जा रहा है...",
+			"deleting": "हटा रहा है...",
 			"loading": "लोड हो रहा है...",
-			"searching": "खोजा जा रहा है...",
+			"searching": "खोज रहा है...",
+			"sending": "भेजा जा रहा है...",
 			"updating": "अपडेट किया जा रहा है..."
 		}
 	},
 	"aiChat": {
 		"action": {
-			"backToSubchats": "उप-चैट्स पर वापस जाएं",
+			"backToSubchats": "उप-चैट्स पर वापस",
 			"configureAgent": "एजेंट कॉन्फ़िगर करें",
-			"confirmDeleteAgent": "एजेंट हटाने की पुष्टि करें",
-			"confirmDeleteChats": "चैट्स हटाने की पुष्टि करें",
+			"confirmDeleteAgent": "एजेंट को हटाने की पुष्टि करें",
+			"confirmDeleteChats": "चैट्स को हटाने की पुष्टि करें",
 			"confirmRenameChat": "चैट का नाम बदलने की पुष्टि करें",
 			"createAgent": "एजेंट बनाएं",
 			"deleteAgent": "एजेंट हटाएं",
 			"deleteSelectedChats": "चयनित चैट्स हटाएं",
-			"deselectChat": "चैट को असूचीबद्ध करें",
+			"deselectChat": "चैट का चयन हटाएं",
 			"manageAgents": "एजेंट्स प्रबंधित करें",
 			"manageChats": "चैट्स प्रबंधित करें",
 			"openChat": "चैट खोलें",
@@ -73,26 +82,29 @@
 			"searchChats": "चैट्स खोजें",
 			"selectChat": "चैट चुनें",
 			"sendMessage": "संदेश भेजें",
-			"showMoreAgents": "अधिक एजेंट्स दिखाएं",
-			"showMoreChats": "अधिक चैट्स दिखाएं",
+			"showMoreAgents": "और एजेंट्स दिखाएं",
+			"showMoreChats": "और चैट्स दिखाएं",
 			"showSubchats": "उप-चैट्स दिखाएं ({count})",
-			"startSearching_one": "कम से कम {count} अक्षर टाइप करें",
-			"startSearching_other": "कम से कम {count} अक्षर टाइप करें"
+			"startSearching_one": "कम से कम {count} अक्षर लिखें",
+			"startSearching_other": "कम से कम {count} अक्षर लिखें"
 		},
 		"description": {
+			"geminiNano": "Google Chrome के लिए मिनी GPT",
 			"loremIpsumGPT": "सबसे बुद्धिमान मॉडल",
 			"rammusGPT": "सर्वश्रेष्ठ भावनात्मक समर्थन"
 		},
 		"error": {
-			"agentAvatar": "एजेंट के लिए अवतार जोड़ना आवश्यक है",
-			"agentName": "एजेंट के लिए नाम जोड़ना आवश्यक है",
-			"emptyMessage": "आपका संदेश खाली है"
+			"agentAvatar": "आपको एजेंट के लिए एक अवतार जोड़ना होगा",
+			"agentName": "आपको एजेंट के लिए एक नाम जोड़ना होगा",
+			"emptyMessage": "आपका संदेश खाली है",
+			"failedMessage": "आपका संदेश भेजने में समस्या हुई"
 		},
 		"label": {
 			"agents": "एजेंट्स",
-			"chatTitle": "चैट शीर्षक",
+			"chatTitle": "चैट का शीर्षक",
 			"chats": "चैट्स",
-			"customInstructions": "अनुकूलित निर्देश",
+			"creativityLevel": "रचनात्मकता का स्तर",
+			"customInstructions": "कस्टम निर्देश",
 			"gptModel": "GPT मॉडल",
 			"newAgent": "नया एजेंट",
 			"newChat": "नई चैट",
@@ -100,7 +112,7 @@
 			"noChats": "कोई चैट्स नहीं",
 			"noSubchats": "कोई उप-चैट्स नहीं",
 			"selectedAgent": "चयनित एजेंट",
-			"selectedValue": "चयनित मान",
+			"selectedValue": "चयनित मूल्य",
 			"subchats": "उप-चैट्स",
 			"xMessages_one": "1 संदेश",
 			"xMessages_other": "{count} संदेश",
@@ -112,21 +124,24 @@
 		},
 		"placeholder": {
 			"newMessage": "{name} से बात करें...",
-			"rename": "स्वचालित रूप से नया नाम उत्पन्न करें..."
+			"rename": "स्वचालित रूप से एक नया नाम बनाएं..."
 		},
 		"state": {
 			"loadingAgents": "एजेंट्स लोड हो रहे हैं...",
 			"loadingChats": "चैट्स लोड हो रहे हैं...",
-			"loadingGPTs": "GPTs लोड हो रहे हैं...",
+			"loadingGPTs": "GPT मॉडल लोड हो रहे हैं...",
 			"loadingMessages": "संदेश लोड हो रहे हैं...",
 			"loadingPreviousMessages": "पिछले संदेश लोड हो रहे हैं...",
 			"loadingSubchats": "उप-चैट्स लोड हो रहे हैं...",
-			"renamingChat": "चैट का नाम बदल रहा है...",
+			"renamingChat": "चैट का नाम बदला जा रहा है...",
 			"thinking": "सोच रहा है..."
 		},
 		"warning": {
 			"deletingAgent": "यह एजेंट स्थायी रूप से हटा दिया जाएगा",
-			"deletingChats": "ये चैट्स स्थायी रूप से हटा दी जाएंगी"
+			"deletingChats": "ये चैट्स स्थायी रूप से हटा दी जाएंगी",
+			"geminiGptInsideChrome": "इस GPT के लिए निम्नलिखित सेटिंग्स सक्षम होनी चाहिए:",
+			"geminiGptOutsideChrome": "यह GPT केवल Google Chrome ब्राउज़र में उपलब्ध है",
+			"invalidGpt": "अमान्य GPT"
 		}
 	},
 	"userSettings": {
@@ -135,14 +150,14 @@
 			"manageBilling": "बिलिंग प्रबंधित करें"
 		},
 		"error": {
-			"address": "पता जोड़ना आवश्यक है",
-			"avatar": "आपका अवतार जोड़ना आवश्यक है",
-			"city": "शहर जोड़ना आवश्यक है",
-			"country": "देश जोड़ना आवश्यक है",
-			"email": "आपका ईमेल पता जोड़ना आवश्यक है",
-			"legalName": "कानूनी नाम जोड़ना आवश्यक है",
-			"name": "आपका नाम जोड़ना आवश्यक है",
-			"postalCode": "पोस्टल कोड जोड़ना आवश्यक है"
+			"address": "आपको पता जोड़ना होगा",
+			"avatar": "आपको अपना अवतार जोड़ना होगा",
+			"city": "आपको शहर जोड़ना होगा",
+			"country": "आपको देश जोड़ना होगा",
+			"email": "आपको अपना ईमेल पता जोड़ना होगा",
+			"legalName": "आपको कानूनी नाम जोड़ना होगा",
+			"name": "आपको अपना नाम जोड़ना होगा",
+			"postalCode": "आपको पोस्टल कोड जोड़ना होगा"
 		},
 		"label": {
 			"account": "खाता",
@@ -156,7 +171,7 @@
 			"postalCode": "पोस्टल कोड",
 			"private": "निजी",
 			"public": "सार्वजनिक",
-			"vatNumber": "VAT नंबर"
+			"vatNumber": "वस्तु एवं सेवा कर संख्या"
 		}
 	}
 }
