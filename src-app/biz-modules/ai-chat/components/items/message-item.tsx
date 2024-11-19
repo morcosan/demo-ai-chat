@@ -1,3 +1,4 @@
+import { MarkdownText } from '@app/library/release'
 import { Button, ReloadSvg, WarningSvg } from '@ds/release'
 import { Agent, Message } from '../../api'
 import { SubchatButton } from '../subchat-button'
@@ -19,11 +20,11 @@ export const MessageItem = (props: Props) => {
 		'mb-sm-0 lg:mb-sm-2',
 		!isSubchat && 'px-xs-5 lg:px-md-0'
 	)
-	const baseCardClass = cx('relative w-fit rounded-md px-xs-6 py-xs-3 shadow-xs')
+	const baseCardClass = cx('relative w-fit max-w-full rounded-md px-xs-6 py-xs-3 shadow-xs')
 	const userCardClass = cx(
 		isSubchat
-			? 'max-w-[80%] bg-color-secondary-card-bg text-color-secondary-card-text'
-			: 'max-w-[70%] bg-color-primary-card-bg text-color-primary-card-text'
+			? '!max-w-[80%] bg-color-secondary-card-bg text-color-secondary-card-text'
+			: '!max-w-[70%] bg-color-primary-card-bg text-color-primary-card-text'
 	)
 	const subchatClass = cx({
 		'flex-center lg:absolute lg:right-0 lg:top-0': true,
@@ -35,7 +36,7 @@ export const MessageItem = (props: Props) => {
 		<li className={wrapperClass}>
 			{message.role === 'user' ? (
 				<div className={cx(baseCardClass, userCardClass)}>
-					<div className="whitespace-pre-wrap">{message.text}</div>
+					<MarkdownText text={message.text} className="max-w-full" />
 
 					<div
 						className={cx(
@@ -76,7 +77,9 @@ export const MessageItem = (props: Props) => {
 							</Button>
 						</>
 					) : (
-						<div className={cx(baseCardClass, 'bg-color-bg-card')}>{message.text}</div>
+						<div className={cx(baseCardClass, 'bg-color-bg-card')}>
+							<MarkdownText text={message.text} />
+						</div>
 					)}
 				</div>
 			)}

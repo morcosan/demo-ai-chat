@@ -2,6 +2,8 @@ import { mockAPI } from '@api/mock'
 import { ApiResponse } from '@api/types'
 import { AiChatSvg, ArrowBackSvg, Button, IconButton, TextField, useUiTheme } from '@ds/release'
 import hljs from 'highlight.js'
+import hljsCssDark from 'highlight.js/styles/a11y-dark.css?raw'
+import hljsCssLight from 'highlight.js/styles/a11y-light.css?raw'
 import { useCallback, useEffect, useMemo, useState } from 'react'
 import { Link, useLocation, useSearchParams } from 'react-router-dom'
 import { Endpoint, ENDPOINTS, EndpointType, QUERY_DEFAULTS, TYPE_COLOR, TYPES } from './_endpoints'
@@ -14,6 +16,8 @@ const ApiDocsPage = () => {
 	const [query, setQuery] = useState<Record<string, string>>(QUERY_DEFAULTS)
 	const [resp, setResp] = useState<ApiResponse | null>(null)
 	const [fetching, setFetching] = useState(false)
+
+	const hljsCSS = isUiDark ? hljsCssDark : hljsCssLight
 
 	const respHtml = useMemo(() => hljs.highlight(JSON.stringify(resp, null, 2), { language: 'json' }).value, [resp])
 
@@ -38,12 +42,10 @@ const ApiDocsPage = () => {
 		setQuery(QUERY_DEFAULTS)
 	}, [location])
 
-	useEffect(() => {
-		isUiDark ? import('highlight.js/styles/a11y-dark.css') : import('highlight.js/styles/a11y-light.css')
-	}, [])
-
 	return (
 		<div className="h-screen w-screen overflow-x-hidden px-xs-5 py-xs-9 pb-sm-9 md:px-sm-0 md:py-sm-3">
+			<style>{hljsCSS}</style>
+
 			{endpoint ? (
 				<>
 					<h1 className="mb-sm-5 flex items-center font-mono text-size-xl">
@@ -89,7 +91,12 @@ const ApiDocsPage = () => {
 					<div className="mt-sm-7 px-button-px-item">
 						<span className="text-size-lg text-color-text-subtle">Response</span>
 
-						<pre className="mt-xs-2 min-h-lg-0 overflow-auto bg-color-bg-coding p-xs-3">
+						<pre
+							className={cx(
+								'mt-xs-2 min-h-lg-0 overflow-auto p-xs-3',
+								'rounded-sm border border-color-border-subtle bg-color-bg-coding'
+							)}
+						>
 							{resp ? <div dangerouslySetInnerHTML={{ __html: respHtml }} /> : fetching ? 'Fetching...' : ''}
 						</pre>
 					</div>
