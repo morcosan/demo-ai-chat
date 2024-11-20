@@ -1,8 +1,7 @@
-a {
-	color: var(--ds-color-primary-page-text);
-}
-
 a.ds-link {
+	color: var(--ds-color-text-link);
+	font-weight: var(--ds-font-weight-lg);
+
 	&:hover,
 	&:focus {
 		text-decoration: underline;

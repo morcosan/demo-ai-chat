@@ -26,7 +26,7 @@ const ESCAPE_HTML: TokenizerExtension = {
 }
 
 export const Markdown = ({ text, className }: Props) => {
-	const { $color, $fontSize, $fontWeight, $radius, $spacing, isUiDark } = useUiTheme()
+	const { $color, $fontSize, $fontWeight, $radius, $spacing, $shadow, isUiDark } = useUiTheme()
 
 	const hljsCSS = isUiDark ? hljsCssDark : hljsCssLight
 
@@ -41,10 +41,12 @@ export const Markdown = ({ text, className }: Props) => {
 			border: `1px solid ${$color['border-default']}`,
 			borderRadius: $radius['sm'],
 			backgroundColor: $color['bg-coding'],
+			boxShadow: $shadow['xs'],
 		},
 		'pre + *, * + pre': { marginTop: `${$spacing['sm-0']} !important` },
 
 		'*:not(pre) > code': {
+			margin: '0 2px 0 1px',
 			width: 'fit-content',
 			padding: '3px 6px',
 			borderRadius: $radius['xs'],
@@ -53,6 +55,7 @@ export const Markdown = ({ text, className }: Props) => {
 			fontSize: $fontSize['sm'],
 			fontWeight: $fontWeight['md'],
 			whiteSpace: 'nowrap',
+			boxShadow: $shadow['xs'],
 		},
 
 		'ul, ol': {

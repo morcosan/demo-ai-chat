@@ -91,7 +91,7 @@
 	--ds-color-bg-page: var(--ds-color-grey-2);
 	--ds-color-bg-card: var(--ds-color-grey-1);
 	--ds-color-bg-popup: var(--ds-color-white);
-	--ds-color-bg-coding: var(--ds-color-grey-3);
+	--ds-color-bg-coding: var(--ds-color-white);
 	--ds-color-bg-field: var(--ds-color-black-glass-1);
 	--ds-color-bg-skeleton: var(--ds-color-black-glass-3);
 
@@ -106,6 +106,7 @@
 	--ds-color-text-placeholder: var(--ds-color-grey-11);
 	--ds-color-text-inverse: var(--ds-color-white);
 	--ds-color-text-coding: var(--ds-color-purple-7);
+	--ds-color-text-link: var(--ds-color-purple-7);
 
 	--ds-color-hover-text-default: var(--ds-color-black-glass-2);
 	--ds-color-hover-text-pressed: var(--ds-color-black-glass-3);
@@ -167,6 +168,7 @@
 	--ds-color-text-placeholder: var(--ds-color-grey-11);
 	--ds-color-text-inverse: var(--ds-color-black);
 	--ds-color-text-coding: var(--ds-color-purple-2);
+	--ds-color-text-link: var(--ds-color-purple-2);
 
 	--ds-color-hover-text-default: var(--ds-color-black-glass-5);
 	--ds-color-hover-text-pressed: var(--ds-color-black-glass-6);
