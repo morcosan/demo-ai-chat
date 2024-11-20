@@ -74,6 +74,28 @@ export const Markdown = ({ text, className }: Props) => {
 
 		'& > *:not(pre):only-child': { margin: `calc(-1 * ${$spacing['xs-1']}) 0` },
 
+		'h1, h2, h3, h4, h5, h6': {
+			margin: `${$spacing['xs-4']} 0 ${$spacing['xs-1']}`,
+			fontSize: $fontSize['lg'],
+			fontWeight: $fontWeight['lg'],
+		},
+
+		h1: {
+			marginTop: $spacing['xs-9'],
+			fontSize: $fontSize['xxl'],
+		},
+		h2: {
+			marginTop: $spacing['xs-7'],
+			fontSize: $fontSize['xl'],
+		},
+		h3: {
+			marginTop: $spacing['xs-6'],
+		},
+
+		'h1:first-child, h2:first-child, h3:first-child, h4:first-child, h5:first-child, h6:first-child': {
+			marginTop: 0,
+		},
+
 		strong: { fontWeight: $fontWeight['xl'] },
 	}
 
