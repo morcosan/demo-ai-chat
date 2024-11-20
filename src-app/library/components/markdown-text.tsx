@@ -11,27 +11,57 @@ interface Props extends ReactProps {
 }
 
 export const MarkdownText = ({ text, className }: Props) => {
-	const { $spacing, isUiDark } = useUiTheme()
+	const { $color, $fontSize, $fontWeight, $radius, $spacing, isUiDark } = useUiTheme()
 
 	const hljsCSS = isUiDark ? hljsCssDark : hljsCssLight
 
 	const cssMarkdown: CSS = {
-		'pre + *': {
-			marginTop: $spacing['xs-9'],
+		'pre > code': {
+			display: 'block',
+			overflowX: 'auto',
+			margin: `${$spacing['xs-1']} -1px`,
+			padding: `${$spacing['xs-5']} ${$spacing['xs-6']}`,
+			border: `1px solid ${$color['border-subtle']}`,
+			borderRadius: $radius['sm'],
+			backgroundColor: $color['bg-coding'],
 		},
-	}
+		'pre + *': { marginTop: `${$spacing['sm-0']} !important` },
 
-	const codeClass = cx(
-		'my-xs-2 block overflow-x-auto px-xs-6 py-xs-5',
-		'rounded-sm border border-color-border-subtle bg-color-bg-coding'
-	)
+		'*:not(pre) > code': {
+			width: 'fit-content',
+			padding: '3px 6px',
+			borderRadius: $radius['xs'],
+			backgroundColor: $color['bg-coding'],
+			color: $color['text-coding'],
+			fontSize: $fontSize['sm'],
+			fontWeight: $fontWeight['md'],
+			whiteSpace: 'nowrap',
+		},
+
+		'ul, ol': {
+			display: 'flex',
+			flexDirection: 'column',
+			gap: $spacing['xs-1'],
+			margin: `${$spacing['xs-2']} 0 ${$spacing['xs-1']}`,
+			paddingLeft: $spacing['sm-1'],
+
+			'& p': { margin: 0 },
+		},
+		ul: { listStyle: 'disc' },
+		ol: { listStyle: 'auto' },
+		'ul + *, ol + *': { marginTop: `${$spacing['sm-0']} !important` },
+
+		p: { marginTop: $spacing['xs-4'] },
+		'p:only-child': { margin: `calc(-1 * ${$spacing['xs-1']}) 0` },
+
+		strong: { fontWeight: $fontWeight['xl'] },
+	}
 
 	const langFn = (lang: string) => (hljs.getLanguage(lang) ? lang : 'plaintext')
 
 	const marked = new Marked(
 		markedHighlight({
-			emptyLangClass: codeClass,
-			langPrefix: `${codeClass} lang-`,
+			langPrefix: 'lang-',
 			highlight: (code: string, lang: string) => hljs.highlight(code, { language: langFn(lang) }).value,
 		})
 	)
@@ -41,7 +71,10 @@ export const MarkdownText = ({ text, className }: Props) => {
 		<>
 			<style>{hljsCSS}</style>
 
-			<div className={className} css={cssMarkdown} dangerouslySetInnerHTML={{ __html: html }} />
+			<div className={className} css={cssMarkdown}>
+				{text}
+			</div>
+			{/*<div className={className} css={cssMarkdown} dangerouslySetInnerHTML={{ __html: html }} />*/}
 		</>
 	)
 }

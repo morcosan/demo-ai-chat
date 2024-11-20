@@ -20,7 +20,7 @@ export const MessageItem = (props: Props) => {
 		'mb-sm-0 lg:mb-sm-2',
 		!isSubchat && 'px-xs-5 lg:px-md-0'
 	)
-	const baseCardClass = cx('relative w-fit max-w-full rounded-md px-xs-6 py-xs-3 shadow-xs')
+	const baseCardClass = cx('relative w-fit max-w-full rounded-md px-xs-7 py-xs-6 shadow-xs')
 	const userCardClass = cx(
 		isSubchat
 			? '!max-w-[80%] bg-color-secondary-card-bg text-color-secondary-card-text'
