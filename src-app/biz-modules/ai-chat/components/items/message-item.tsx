@@ -1,4 +1,4 @@
-import { MarkdownText } from '@app/library/release'
+import { Markdown } from '@app/library/release'
 import { Button, ReloadSvg, WarningSvg } from '@ds/release'
 import { Agent, Message } from '../../api'
 import { SubchatButton } from '../subchat-button'
@@ -36,7 +36,7 @@ export const MessageItem = (props: Props) => {
 		<li className={wrapperClass}>
 			{message.role === 'user' ? (
 				<div className={cx(baseCardClass, userCardClass)}>
-					<MarkdownText text={message.text} className="max-w-full" />
+					<Markdown text={message.text} className="max-w-full" />
 
 					<div
 						className={cx(
@@ -78,7 +78,7 @@ export const MessageItem = (props: Props) => {
 						</>
 					) : (
 						<div className={cx(baseCardClass, 'bg-color-bg-card')}>
-							<MarkdownText text={message.text} />
+							<Markdown text={message.text} />
 						</div>
 					)}
 				</div>

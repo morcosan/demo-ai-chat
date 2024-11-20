@@ -1,8 +1,9 @@
 import { useUiTheme } from '@ds/src/systems/ui-theme'
+import DOMPurify from 'dompurify'
 import hljs from 'highlight.js'
 import hljsCssDark from 'highlight.js/styles/a11y-dark.css?raw'
 import hljsCssLight from 'highlight.js/styles/a11y-light.css?raw'
-import { Marked } from 'marked'
+import { Marked, TokenizerExtension } from 'marked'
 import { markedHighlight } from 'marked-highlight'
 import { useMemo } from 'react'
 
@@ -10,7 +11,19 @@ interface Props extends ReactProps {
 	text: string
 }
 
-export const MarkdownText = ({ text, className }: Props) => {
+// Escape all html tags
+const ESCAPE_EXT: TokenizerExtension = {
+	name: 'EscapeExt',
+	level: 'inline',
+	start: (src: string) => src.indexOf('<'),
+	tokenizer: (src: string) => {
+		const rule = /^<[^>]*>/ // Match HTML tags
+		const match = rule.exec(src)
+		if (match) return { type: 'text', raw: match[0], text: match[0] }
+	},
+}
+
+export const Markdown = ({ text, className }: Props) => {
 	const { $color, $fontSize, $fontWeight, $radius, $spacing, isUiDark } = useUiTheme()
 
 	const hljsCSS = isUiDark ? hljsCssDark : hljsCssLight
@@ -57,24 +70,21 @@ export const MarkdownText = ({ text, className }: Props) => {
 		strong: { fontWeight: $fontWeight['xl'] },
 	}
 
-	const langFn = (lang: string) => (hljs.getLanguage(lang) ? lang : 'plaintext')
+	const highlightFn = (code: string, lang: string) => {
+		return hljs.highlight(code, { language: hljs.getLanguage(lang) ? lang : 'plaintext' }).value
+	}
 
-	const marked = new Marked(
-		markedHighlight({
-			langPrefix: 'lang-',
-			highlight: (code: string, lang: string) => hljs.highlight(code, { language: langFn(lang) }).value,
-		})
-	)
-	const html = useMemo(() => marked.parse(text), [text, isUiDark])
+	// https://marked.js.org
+	const marked = new Marked(markedHighlight({ langPrefix: 'lang-', highlight: highlightFn }))
+	marked.use({ extensions: [ESCAPE_EXT] })
+
+	const html = useMemo(() => DOMPurify.sanitize(marked.parse(text, { async: false })), [text, isUiDark])
 
 	return (
 		<>
 			<style>{hljsCSS}</style>
 
-			<div className={className} css={cssMarkdown}>
-				{text}
-			</div>
-			{/*<div className={className} css={cssMarkdown} dangerouslySetInnerHTML={{ __html: html }} />*/}
+			<div className={className} css={cssMarkdown} dangerouslySetInnerHTML={{ __html: html }} />
 		</>
 	)
 }
