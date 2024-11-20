@@ -87,6 +87,7 @@ export const TOKENS__COLOR = {
 	'bg-coding': { $ref: { light: 'white', dark: 'grey-20' } },
 	'bg-field': { $ref: { light: 'black-glass-1', dark: 'black-glass-4' } },
 	'bg-skeleton': { $ref: { light: 'black-glass-3', dark: 'white-glass-5' } },
+	'bg-link': { $ref: { light: 'black-glass-2', dark: 'black-glass-5' } },
 
 	'border-active': { $ref: { light: 'grey-12', dark: 'grey-8' } },
 	'border-hover': { $ref: { light: 'grey-11', dark: 'grey-12' } },
@@ -99,7 +100,7 @@ export const TOKENS__COLOR = {
 	'text-placeholder': { $ref: { light: 'grey-11', dark: 'grey-11' } },
 	'text-inverse': { $ref: { light: 'white', dark: 'black' } },
 	'text-coding': { $ref: { light: 'purple-7', dark: 'purple-2' } },
-	'text-link': { $ref: { light: 'purple-7', dark: 'purple-2' } },
+	'text-link': { $ref: { light: 'purple-8', dark: 'purple-1' } },
 
 	'hover-text-default': { $ref: { light: 'black-glass-2', dark: 'black-glass-5' } },
 	'hover-text-pressed': { $ref: { light: 'black-glass-3', dark: 'black-glass-6' } },

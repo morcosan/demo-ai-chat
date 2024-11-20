@@ -1,10 +1,31 @@
 a.ds-link {
+	border: 1px solid transparent;
+	border-radius: var(--ds-radius-xs);
+	background-color: var(--ds-color-bg-link);
+	padding: 0 var(--ds-spacing-xs-2) 2px;
 	color: var(--ds-color-text-link);
 	font-weight: var(--ds-font-weight-lg);
+	text-decoration: underline;
+	text-underline-offset: 0.1em;
 
 	&:hover,
 	&:focus {
-		text-decoration: underline;
-		text-underline-offset: 0.15em;
+		border-color: var(--ds-color-text-link);
+	}
+}
+
+a.ds-header-link {
+	border: 1px solid transparent;
+	border-radius: var(--ds-radius-sm);
+	padding: 0 var(--ds-spacing-xs-1) 2px;
+	color: var(--ds-color-primary-page-text);
+	font-weight: var(--ds-font-weight-lg);
+	text-decoration: underline;
+	text-underline-offset: 0.15em;
+
+	&:hover,
+	&:focus {
+		border-color: var(--ds-color-primary-page-text);
+		background-color: var(--ds-color-bg-link);
 	}
 }
