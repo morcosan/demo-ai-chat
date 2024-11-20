@@ -1,19 +1,21 @@
+import { NewTabSvg } from '@ds/release'
 import { useUiTheme } from '@ds/src/systems/ui-theme'
 import DOMPurify from 'dompurify'
 import hljs from 'highlight.js'
 import hljsCssDark from 'highlight.js/styles/a11y-dark.css?raw'
 import hljsCssLight from 'highlight.js/styles/a11y-light.css?raw'
-import { Marked, TokenizerExtension } from 'marked'
+import { Marked, Renderer, TokenizerExtension, Tokens } from 'marked'
 import { markedHighlight } from 'marked-highlight'
 import { useMemo } from 'react'
+import { renderToStaticMarkup } from 'react-dom/server'
 
 interface Props extends ReactProps {
 	text: string
 }
 
 // Escape all html tags
-const ESCAPE_EXT: TokenizerExtension = {
-	name: 'EscapeExt',
+const ESCAPE_HTML: TokenizerExtension = {
+	name: 'ESCAPE_HTML',
 	level: 'inline',
 	start: (src: string) => src.indexOf('<'),
 	tokenizer: (src: string) => {
@@ -78,8 +80,9 @@ export const Markdown = ({ text, className }: Props) => {
 			margin: `${$spacing['xs-4']} 0 ${$spacing['xs-1']}`,
 			fontSize: $fontSize['lg'],
 			fontWeight: $fontWeight['lg'],
-		},
 
+			'&:first-child': { marginTop: 0 },
+		},
 		h1: {
 			marginTop: $spacing['xs-9'],
 			fontSize: $fontSize['xxl'],
@@ -92,10 +95,6 @@ export const Markdown = ({ text, className }: Props) => {
 			marginTop: $spacing['xs-6'],
 		},
 
-		'h1:first-child, h2:first-child, h3:first-child, h4:first-child, h5:first-child, h6:first-child': {
-			marginTop: 0,
-		},
-
 		strong: { fontWeight: $fontWeight['xl'] },
 	}
 
@@ -104,10 +103,23 @@ export const Markdown = ({ text, className }: Props) => {
 	}
 
 	// https://marked.js.org
+	const renderer = new Renderer()
+	renderer.link = ({ href, text }: Tokens.Link) => {
+		return renderToStaticMarkup(
+			<a href={href} target="_blank" rel="noopener noreferrer" className="ds-link">
+				{text}
+				<NewTabSvg className="ml-xs-2 inline-block h-xs-4 w-xs-4 align-baseline" />
+			</a>
+		)
+	}
 	const marked = new Marked(markedHighlight({ langPrefix: 'lang-', highlight: highlightFn }))
-	marked.use({ extensions: [ESCAPE_EXT] })
+	marked.setOptions({ renderer })
+	marked.use({ extensions: [ESCAPE_HTML] })
 
-	const html = useMemo(() => DOMPurify.sanitize(marked.parse(text, { async: false })), [text, isUiDark])
+	const html = useMemo(() => {
+		const parsed = marked.parse(text, { async: false })
+		return DOMPurify.sanitize(parsed, { ADD_ATTR: ['target'] })
+	}, [text, isUiDark])
 
 	return (
 		<>
