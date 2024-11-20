@@ -29,16 +29,18 @@ export const Markdown = ({ text, className }: Props) => {
 	const hljsCSS = isUiDark ? hljsCssDark : hljsCssLight
 
 	const cssMarkdown: CSS = {
+		pre: {
+			margin: `${$spacing['xs-0']} -1px`,
+		},
 		'pre > code': {
 			display: 'block',
 			overflowX: 'auto',
-			margin: `${$spacing['xs-1']} -1px`,
 			padding: `${$spacing['xs-5']} ${$spacing['xs-6']}`,
-			border: `1px solid ${$color['border-subtle']}`,
+			border: `1px solid ${$color['border-default']}`,
 			borderRadius: $radius['sm'],
 			backgroundColor: $color['bg-coding'],
 		},
-		'pre + *': { marginTop: `${$spacing['sm-0']} !important` },
+		'pre + *, * + pre': { marginTop: `${$spacing['sm-0']} !important` },
 
 		'*:not(pre) > code': {
 			width: 'fit-content',
@@ -59,13 +61,18 @@ export const Markdown = ({ text, className }: Props) => {
 			paddingLeft: $spacing['sm-1'],
 
 			'& p': { margin: 0 },
+
+			'&:only-child': {
+				paddingLeft: $spacing['xs-8'],
+			},
 		},
 		ul: { listStyle: 'disc' },
 		ol: { listStyle: 'auto' },
 		'ul + *, ol + *': { marginTop: `${$spacing['sm-0']} !important` },
 
-		p: { marginTop: $spacing['xs-4'] },
-		'p:only-child': { margin: `calc(-1 * ${$spacing['xs-1']}) 0` },
+		'p:not(:first-child)': { marginTop: $spacing['xs-4'] },
+
+		'& > *:not(pre):only-child': { margin: `calc(-1 * ${$spacing['xs-1']}) 0` },
 
 		strong: { fontWeight: $fontWeight['xl'] },
 	}

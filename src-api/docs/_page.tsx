@@ -93,8 +93,8 @@ const ApiDocsPage = () => {
 
 						<pre
 							className={cx(
-								'mt-xs-2 min-h-lg-0 overflow-auto p-xs-3',
-								'rounded-sm border border-color-border-subtle bg-color-bg-coding'
+								'mt-xs-2 min-h-lg-0 overflow-auto px-xs-6 py-xs-5',
+								'rounded-sm border border-color-border-default bg-color-bg-coding'
 							)}
 						>
 							{resp ? <div dangerouslySetInnerHTML={{ __html: respHtml }} /> : fetching ? 'Fetching...' : ''}

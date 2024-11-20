@@ -84,8 +84,8 @@ export const TOKENS__COLOR = {
 	'bg-page': { $ref: { light: 'grey-2', dark: 'grey-19' } },
 	'bg-card': { $ref: { light: 'grey-1', dark: 'grey-18' } },
 	'bg-popup': { $ref: { light: 'white', dark: 'grey-17' } },
+	'bg-coding': { $ref: { light: 'grey-3', dark: 'grey-20' } },
 	'bg-field': { $ref: { light: 'black-glass-1', dark: 'black-glass-4' } },
-	'bg-coding': { $ref: { light: 'black-glass-1', dark: 'black-glass-5' } },
 	'bg-skeleton': { $ref: { light: 'black-glass-3', dark: 'white-glass-5' } },
 
 	'border-active': { $ref: { light: 'grey-12', dark: 'grey-8' } },

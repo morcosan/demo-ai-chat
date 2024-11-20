@@ -91,8 +91,8 @@
 	--ds-color-bg-page: var(--ds-color-grey-2);
 	--ds-color-bg-card: var(--ds-color-grey-1);
 	--ds-color-bg-popup: var(--ds-color-white);
+	--ds-color-bg-coding: var(--ds-color-grey-3);
 	--ds-color-bg-field: var(--ds-color-black-glass-1);
-	--ds-color-bg-coding: var(--ds-color-black-glass-1);
 	--ds-color-bg-skeleton: var(--ds-color-black-glass-3);
 
 	--ds-color-border-active: var(--ds-color-grey-12);
@@ -153,7 +153,7 @@
 	--ds-color-bg-card: var(--ds-color-grey-18);
 	--ds-color-bg-popup: var(--ds-color-grey-17);
 	--ds-color-bg-field: var(--ds-color-black-glass-4);
-	--ds-color-bg-coding: var(--ds-color-black-glass-5);
+	--ds-color-bg-coding: var(--ds-color-grey-20);
 	--ds-color-bg-skeleton: var(--ds-color-white-glass-5);
 
 	--ds-color-border-active: var(--ds-color-grey-8);
