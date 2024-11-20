@@ -1,7 +1,9 @@
 import { LoadingText } from '@app/library/release'
 import { Button } from '@ds/release'
+import DOMPurify from 'dompurify'
 import { debounce } from 'lodash'
-import { UIEvent } from 'react'
+import { marked } from 'marked'
+import { UIEvent, useMemo } from 'react'
 import { Subchat } from '../../api'
 import { StickyToolbar } from '../../components/sticky-toolbar'
 import { SubchatIcon } from '../../components/subchat-icon'
@@ -16,6 +18,34 @@ export const SubchatsView = () => {
 		isScrollEnd && loadMoreSubchats()
 	}, 300)
 
+	const htmlParser = document.createElement('div')
+
+	const parseMarkdown = (text: string) => {
+		htmlParser.innerHTML = DOMPurify.sanitize(marked.parse(text, { async: false }))
+		return htmlParser.textContent
+	}
+
+	const slotSubchats = useMemo(
+		() => (
+			<ul>
+				{allSubchats.map((subchat: Subchat) => (
+					<li key={subchat.id}>
+						<Button
+							linkHref={`/chat/${subchat.chatId}?subchat=${subchat.id}`}
+							variant="item-text-default"
+							size="lg"
+							className="block"
+						>
+							<SubchatIcon count={subchat.size} className="mr-xs-4 min-w-sm-3" />
+							<span className="line-clamp-1">{parseMarkdown(subchat.text)}</span>
+						</Button>
+					</li>
+				))}
+			</ul>
+		),
+		[allSubchats]
+	)
+
 	return (
 		<div className="h-full py-xs-1">
 			<div className="h-full overflow-y-scroll pb-xs-9 pl-scrollbar-w pr-a11y-padding" onScroll={onScroll}>
@@ -26,18 +56,8 @@ export const SubchatsView = () => {
 					</div>
 				</StickyToolbar>
 
-				{allSubchats.map((subchat: Subchat) => (
-					<Button
-						key={subchat.id}
-						linkHref={`/chat/${subchat.chatId}?subchat=${subchat.id}`}
-						variant="item-text-default"
-						size="lg"
-						className="block"
-					>
-						<SubchatIcon count={subchat.size} className="mr-xs-4 min-w-sm-3" />
-						<span className="line-clamp-1">{subchat.text}</span>
-					</Button>
-				))}
+				{slotSubchats}
+
 				{allSubchats.length < allSubchatsPagination.count && (
 					<LoadingText
 						text={t('aiChat.state.loadingSubchats')}
