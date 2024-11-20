@@ -122,7 +122,7 @@ export const Markdown = ({ text, className }: Props) => {
 	const html = useMemo(() => {
 		const parsed = marked.parse(text, { async: false })
 		return DOMPurify.sanitize(parsed, { ADD_ATTR: ['target'] })
-	}, [text, isUiDark])
+	}, [text])
 
 	return (
 		<>
