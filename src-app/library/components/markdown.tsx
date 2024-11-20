@@ -46,7 +46,7 @@ export const Markdown = ({ text, className }: Props) => {
 		'pre + *, * + pre': { marginTop: `${$spacing['sm-0']} !important` },
 
 		'*:not(pre) > code': {
-			margin: '0 2px 0 1px',
+			margin: '0 1px',
 			width: 'fit-content',
 			padding: '3px 6px',
 			borderRadius: $radius['xs'],
