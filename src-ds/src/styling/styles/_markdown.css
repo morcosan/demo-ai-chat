@@ -97,4 +97,8 @@
 	& strong {
 		font-weight: var(--ds-font-weight-xl);
 	}
+
+	& a {
+		word-break: break-word;
+	}
 }
