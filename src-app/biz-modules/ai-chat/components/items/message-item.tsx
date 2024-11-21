@@ -1,6 +1,6 @@
 import { Markdown } from '@app/library/release'
 import { Button, CopySvg, ReloadSvg, useUiViewport, WarningSvg } from '@ds/release'
-import { useMemo } from 'react'
+import { useMemo, useState } from 'react'
 import { Agent, Message } from '../../api'
 import { SubchatButton } from '../subchat-button'
 import { AgentGptItem } from './agent-gpt-item'
@@ -16,24 +16,30 @@ interface Props {
 export const MessageItem = (props: Props) => {
 	const { message, agent, subchatId, isSubchat, onRetry } = props
 	const { isViewportMinLG } = useUiViewport()
+	const [isClicked, setIsClicked] = useState(false)
+	const [isCopied, setIsCopied] = useState(false)
+
+	const showsToolbar = isClicked || message.id === subchatId
 
 	const itemClass = cx(
 		'group relative ml-scrollbar-w flex flex-col',
-		isViewportMinLG ? (message.role === 'user' ? 'mb-xs-0' : 'mb-xs-6') : 'mb-sm-0',
+		isViewportMinLG ? (message.role === 'user' ? 'mb-xs-0' : 'mb-xs-6') : 'mb-xs-6',
 		!isSubchat && (isViewportMinLG ? 'px-md-0' : 'px-xs-5')
 	)
 
 	const baseCardClass = cx('relative w-fit max-w-full rounded-md px-xs-7 py-xs-6 shadow-xs')
 	const userCardClass = cx(
 		'ml-auto',
+		isViewportMinLG ? (isSubchat ? '!max-w-[80%]' : '!max-w-[70%]') : '!max-w-[90%]',
 		isSubchat
-			? '!max-w-[80%] bg-color-secondary-card-bg text-color-secondary-card-text'
-			: '!max-w-[70%] bg-color-primary-card-bg text-color-primary-card-text'
+			? 'bg-color-secondary-card-bg text-color-secondary-card-text'
+			: 'bg-color-primary-card-bg text-color-primary-card-text'
 	)
 
 	const toolbarClass = cx(
 		'mx-px mt-xs-1 flex min-h-button-h-xs flex-wrap gap-xs-0',
 		isViewportMinLG && 'opacity-0 group-hover:opacity-100',
+		!isViewportMinLG && !showsToolbar && 'pointer-events-none opacity-0',
 		'focus-within:opacity-100'
 	)
 
@@ -49,8 +55,13 @@ export const MessageItem = (props: Props) => {
 		message.id === subchatId && '!opacity-100'
 	)
 
+	const onClickItem = () => setIsClicked((value: boolean) => !value)
+
+	const onClickToolbar = (event: ReactMouseEvent) => event.stopPropagation()
+
 	const onClickCopy = () => {
-		navigator.clipboard.writeText(message.text)
+		navigator.clipboard.writeText(message.text).then(() => setIsCopied(true))
+		wait(1000).then(() => setIsCopied(false))
 	}
 
 	const slotMarkdown = useMemo(() => <Markdown text={message.text} />, [message.text])
@@ -70,7 +81,7 @@ export const MessageItem = (props: Props) => {
 	}, [isViewportMinLG, message, subchatId, isSubchat])
 
 	return (
-		<li className={itemClass}>
+		<li className={itemClass} onClick={onClickItem}>
 			{message.role === 'user' ? (
 				<div className={cx(baseCardClass, userCardClass)}>
 					{slotMarkdown}
@@ -123,15 +134,19 @@ export const MessageItem = (props: Props) => {
 			{Boolean(isViewportMinLG) && slotSubchat}
 
 			{/* TOOLBAR */}
-			<div className={toolbarClass}>
+			<div className={toolbarClass} onClick={onClickToolbar}>
 				<Button
 					variant="text-subtle"
 					size="xs"
-					className={cx(message.role === 'user' && 'ml-auto')}
+					className={cx(message.role === 'user' && 'ml-auto', isCopied && 'text-color-transparent')}
 					onClick={onClickCopy}
 				>
 					<CopySvg className="mr-xs-2 mt-px h-xs-4 w-xs-4" />
 					{t('core.action.copy')}
+
+					{Boolean(isCopied) && (
+						<span className="absolute-center text-color-success-page-text">{t('core.label.copied')}</span>
+					)}
 				</Button>
 
 				{/* SUBCHAT BUTTON */}
