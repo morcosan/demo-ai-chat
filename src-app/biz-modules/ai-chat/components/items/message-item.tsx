@@ -19,11 +19,12 @@ export const MessageItem = (props: Props) => {
 	const [isClicked, setIsClicked] = useState(false)
 	const [isCopied, setIsCopied] = useState(false)
 
+	const isUser = message.role === 'user'
 	const showsToolbar = isClicked || message.id === subchatId
 
 	const itemClass = cx(
 		'group relative ml-scrollbar-w flex flex-col',
-		isViewportMinLG ? (message.role === 'user' ? 'mb-xs-0' : 'mb-xs-6') : 'mb-xs-6',
+		isViewportMinLG ? (isUser ? 'mb-xs-0' : 'mb-xs-6') : 'mb-xs-6',
 		!isSubchat && (isViewportMinLG ? 'px-md-0' : 'px-xs-5')
 	)
 
@@ -37,7 +38,9 @@ export const MessageItem = (props: Props) => {
 	)
 
 	const toolbarClass = cx(
-		'mx-px mt-xs-1 flex min-h-button-h-xs flex-wrap gap-xs-0',
+		'flex flex-wrap gap-xs-0',
+		'mx-px mt-xs-1 min-h-button-h-xs w-fit',
+		isUser && 'ml-auto',
 		isViewportMinLG && 'opacity-0 group-hover:opacity-100',
 		!isViewportMinLG && !showsToolbar && 'pointer-events-none opacity-0',
 		'focus-within:opacity-100'
@@ -82,7 +85,7 @@ export const MessageItem = (props: Props) => {
 
 	return (
 		<li className={itemClass} onClick={onClickItem}>
-			{message.role === 'user' ? (
+			{isUser ? (
 				<div className={cx(baseCardClass, userCardClass)}>
 					{slotMarkdown}
 
@@ -138,7 +141,7 @@ export const MessageItem = (props: Props) => {
 				<Button
 					variant="text-subtle"
 					size="xs"
-					className={cx(message.role === 'user' && 'ml-auto', isCopied && 'text-color-transparent')}
+					className={cx(isCopied && 'text-color-transparent')}
 					onClick={onClickCopy}
 				>
 					<CopySvg className="mr-xs-2 mt-px h-xs-4 w-xs-4" />
