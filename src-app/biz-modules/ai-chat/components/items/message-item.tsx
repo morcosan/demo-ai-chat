@@ -17,7 +17,7 @@ export const MessageItem = (props: Props) => {
 	const { message, agent, subchatId, isSubchat, onRetry } = props
 	const { isViewportMinLG } = useUiViewport()
 
-	const wrapperClass = cx(
+	const itemClass = cx(
 		'group relative ml-scrollbar-w flex flex-col',
 		isViewportMinLG ? (message.role === 'user' ? 'mb-xs-0' : 'mb-xs-6') : 'mb-sm-0',
 		!isSubchat && (isViewportMinLG ? 'px-md-0' : 'px-xs-5')
@@ -32,19 +32,18 @@ export const MessageItem = (props: Props) => {
 	)
 
 	const toolbarClass = cx(
-		'mx-px mt-xs-1 flex min-h-button-h-xs flex-wrap gap-xs-2',
+		'mx-px mt-xs-1 flex min-h-button-h-xs flex-wrap gap-xs-0',
 		isViewportMinLG && 'opacity-0 group-hover:opacity-100',
 		'focus-within:opacity-100'
 	)
 
 	const subchatWrapperClass = cx(
 		'flex-center',
-		isViewportMinLG && 'absolute right-0 top-0',
-		message.loading && 'invisible',
-		!isSubchat && 'w-md-0'
+		isViewportMinLG && 'absolute right-0 top-0 w-md-0',
+		message.loading && 'invisible'
 	)
 	const subchatButtonClass = cx(
-		'px-xs-3',
+		isViewportMinLG && 'px-xs-3',
 		isViewportMinLG && message.role === 'agent' && 'mt-sm-1',
 		!message.subchatSize && isViewportMinLG && 'opacity-0 focus:opacity-100 group-hover:opacity-100',
 		message.id === subchatId && '!opacity-100'
@@ -54,14 +53,16 @@ export const MessageItem = (props: Props) => {
 		navigator.clipboard.writeText(message.text)
 	}
 
+	const slotMarkdown = useMemo(() => <Markdown text={message.text} />, [message.text])
+
 	const slotSubchat = useMemo(() => {
 		if (isSubchat || message.failed) return null
 		return (
 			<div className={subchatWrapperClass}>
 				<SubchatButton
 					message={message}
-					size={isViewportMinLG ? 'md' : 'xs'}
 					selected={message.id === subchatId}
+					small={!isViewportMinLG}
 					className={subchatButtonClass}
 				/>
 			</div>
@@ -69,10 +70,10 @@ export const MessageItem = (props: Props) => {
 	}, [isViewportMinLG, message, subchatId, isSubchat])
 
 	return (
-		<li className={wrapperClass}>
+		<li className={itemClass}>
 			{message.role === 'user' ? (
 				<div className={cx(baseCardClass, userCardClass)}>
-					<Markdown text={message.text} className="max-w-full" />
+					{slotMarkdown}
 
 					<div
 						className={cx(
@@ -113,9 +114,7 @@ export const MessageItem = (props: Props) => {
 							</Button>
 						</>
 					) : (
-						<div className={cx(baseCardClass, 'bg-color-bg-card')}>
-							<Markdown text={message.text} />
-						</div>
+						<div className={cx(baseCardClass, 'bg-color-bg-card')}>{slotMarkdown}</div>
 					)}
 				</div>
 			)}
@@ -131,7 +130,7 @@ export const MessageItem = (props: Props) => {
 					className={cx(message.role === 'user' && 'ml-auto')}
 					onClick={onClickCopy}
 				>
-					<CopySvg className="mr-xs-2 h-xs-4 w-xs-4" />
+					<CopySvg className="mr-xs-2 mt-px h-xs-4 w-xs-4" />
 					{t('core.action.copy')}
 				</Button>
 

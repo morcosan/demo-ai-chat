@@ -1,15 +1,18 @@
 .ds-markdown {
+	max-width: 100%;
+
 	& pre {
 		margin: var(--ds-spacing-xs-0) -1px;
-	}
-	& pre > code {
-		display: block;
-		box-shadow: var(--ds-shadow-xs);
-		border: 1px solid var(--ds-color-border-default);
-		border-radius: var(--ds-radius-sm);
-		background-color: var(--ds-color-bg-coding);
-		padding: var(--ds-spacing-xs-5) var(--ds-spacing-xs-6);
-		overflow-x: auto;
+
+		& > code {
+			display: block;
+			box-shadow: var(--ds-shadow-xs);
+			border: 1px solid var(--ds-color-border-default);
+			border-radius: var(--ds-radius-sm);
+			background-color: var(--ds-color-bg-coding);
+			padding: var(--ds-spacing-xs-5) var(--ds-spacing-xs-6);
+			overflow-x: auto;
+		}
 	}
 
 	& pre + *,
