@@ -28,7 +28,6 @@
 		color: var(--ds-color-text-coding);
 		font-weight: var(--ds-font-weight-md);
 		font-size: var(--ds-font-size-sm);
-		white-space: nowrap;
 	}
 
 	& ul,

@@ -1,5 +1,6 @@
 import { Markdown } from '@app/library/release'
-import { Button, CopySvg, ReloadSvg, WarningSvg } from '@ds/release'
+import { Button, CopySvg, ReloadSvg, useUiViewport, WarningSvg } from '@ds/release'
+import { useMemo } from 'react'
 import { Agent, Message } from '../../api'
 import { SubchatButton } from '../subchat-button'
 import { AgentGptItem } from './agent-gpt-item'
@@ -14,12 +15,12 @@ interface Props {
 
 export const MessageItem = (props: Props) => {
 	const { message, agent, subchatId, isSubchat, onRetry } = props
+	const { isViewportMinLG } = useUiViewport()
 
 	const wrapperClass = cx(
 		'group relative ml-scrollbar-w flex flex-col',
-		'mb-sm-0',
-		message.role === 'user' ? 'lg:mb-xs-0' : 'lg:mb-xs-6',
-		!isSubchat && 'px-xs-5 lg:px-md-0'
+		isViewportMinLG ? (message.role === 'user' ? 'mb-xs-0' : 'mb-xs-6') : 'mb-sm-0',
+		!isSubchat && (isViewportMinLG ? 'px-md-0' : 'px-xs-5')
 	)
 
 	const baseCardClass = cx('relative w-fit max-w-full rounded-md px-xs-7 py-xs-6 shadow-xs')
@@ -32,24 +33,40 @@ export const MessageItem = (props: Props) => {
 
 	const toolbarClass = cx(
 		'mx-px mt-xs-1 flex min-h-button-h-xs flex-wrap gap-xs-2',
-		'focus-within:opacity-100 lg:opacity-0 lg:group-hover:opacity-100'
+		isViewportMinLG && 'opacity-0 group-hover:opacity-100',
+		'focus-within:opacity-100'
 	)
 
-	const subchatWrapperClass = cx({
-		'flex-center lg:absolute lg:right-0 lg:top-0': true,
-		invisible: message.loading,
-		'w-md-0': !isSubchat,
-	})
-	const subchatButtonClass = cx({
-		'px-xs-3': true,
-		'lg:mt-sm-1': message.role === 'agent',
-		'focus:opacity-100 lg:opacity-0 lg:group-hover:opacity-100': !message.subchatSize,
-		'!opacity-100': message.id === subchatId,
-	})
+	const subchatWrapperClass = cx(
+		'flex-center',
+		isViewportMinLG && 'absolute right-0 top-0',
+		message.loading && 'invisible',
+		!isSubchat && 'w-md-0'
+	)
+	const subchatButtonClass = cx(
+		'px-xs-3',
+		isViewportMinLG && message.role === 'agent' && 'mt-sm-1',
+		!message.subchatSize && isViewportMinLG && 'opacity-0 focus:opacity-100 group-hover:opacity-100',
+		message.id === subchatId && '!opacity-100'
+	)
 
 	const onClickCopy = () => {
 		navigator.clipboard.writeText(message.text)
 	}
+
+	const slotSubchat = useMemo(() => {
+		if (isSubchat || message.failed) return null
+		return (
+			<div className={subchatWrapperClass}>
+				<SubchatButton
+					message={message}
+					size={isViewportMinLG ? 'md' : 'xs'}
+					selected={message.id === subchatId}
+					className={subchatButtonClass}
+				/>
+			</div>
+		)
+	}, [isViewportMinLG, message, subchatId, isSubchat])
 
 	return (
 		<li className={wrapperClass}>
@@ -104,11 +121,7 @@ export const MessageItem = (props: Props) => {
 			)}
 
 			{/* SUBCHAT BUTTON */}
-			{!isSubchat && !message.failed && (
-				<div className={subchatWrapperClass}>
-					<SubchatButton message={message} subchatId={subchatId} className={subchatButtonClass} />
-				</div>
-			)}
+			{Boolean(isViewportMinLG) && slotSubchat}
 
 			{/* TOOLBAR */}
 			<div className={toolbarClass}>
@@ -121,6 +134,9 @@ export const MessageItem = (props: Props) => {
 					<CopySvg className="mr-xs-2 h-xs-4 w-xs-4" />
 					{t('core.action.copy')}
 				</Button>
+
+				{/* SUBCHAT BUTTON */}
+				{!isViewportMinLG && slotSubchat}
 			</div>
 		</li>
 	)
