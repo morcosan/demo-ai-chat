@@ -1,23 +1,18 @@
 import { mockAPI } from '@api/mock'
 import { ApiResponse } from '@api/types'
-import { AiChatSvg, ArrowBackSvg, Button, IconButton, TextField, useUiTheme } from '@ds/release'
+import { AiChatSvg, ArrowBackSvg, Button, IconButton, TextField } from '@ds/release'
 import hljs from 'highlight.js'
-import hljsCssDark from 'highlight.js/styles/a11y-dark.css?raw'
-import hljsCssLight from 'highlight.js/styles/a11y-light.css?raw'
 import { useCallback, useEffect, useMemo, useState } from 'react'
 import { Link, useLocation, useSearchParams } from 'react-router-dom'
 import { Endpoint, ENDPOINTS, EndpointType, QUERY_DEFAULTS, TYPE_COLOR, TYPES } from './_endpoints'
 
 const ApiDocsPage = () => {
-	const { isUiDark } = useUiTheme()
 	const location = useLocation()
 	const [searchParams] = useSearchParams()
 	const [endpoint, setEndpoint] = useState<Endpoint | null>(null)
 	const [query, setQuery] = useState<Record<string, string>>(QUERY_DEFAULTS)
 	const [resp, setResp] = useState<ApiResponse | null>(null)
 	const [fetching, setFetching] = useState(false)
-
-	const hljsCSS = isUiDark ? hljsCssDark : hljsCssLight
 
 	const respHtml = useMemo(() => hljs.highlight(JSON.stringify(resp, null, 2), { language: 'json' }).value, [resp])
 
@@ -44,8 +39,6 @@ const ApiDocsPage = () => {
 
 	return (
 		<div className="h-screen w-screen overflow-x-hidden px-xs-5 py-xs-9 pb-sm-9 md:px-sm-0 md:py-sm-3">
-			<style>{hljsCSS}</style>
-
 			{endpoint ? (
 				<>
 					<h1 className="mb-sm-5 flex items-center font-mono text-size-xl">
