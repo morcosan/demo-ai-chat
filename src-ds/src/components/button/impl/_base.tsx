@@ -14,7 +14,14 @@ const VARIANTS_ITEM: Variant[] = ['item-text-default', 'item-text-danger', 'item
 const VARIANTS_PRIMARY: Variant[] = ['solid-primary', 'ghost-primary']
 const VARIANTS_SECONDARY: Variant[] = ['solid-secondary', 'ghost-secondary', 'item-solid-secondary']
 const VARIANTS_SOLID: Variant[] = ['solid-primary', 'solid-secondary', 'solid-danger', 'item-solid-secondary']
-const VARIANTS_TEXT: Variant[] = ['text-default', 'text-danger', 'item-text-default', 'item-text-danger']
+const VARIANTS_SUBTLE: Variant[] = ['text-subtle']
+const VARIANTS_TEXT: Variant[] = [
+	'text-default',
+	'text-subtle',
+	'text-danger',
+	'item-text-default',
+	'item-text-danger',
+]
 
 export const useButtonBase = (rawProps: ButtonProps) => {
 	const props = useDefaults<ButtonProps>(rawProps, {
@@ -33,6 +40,7 @@ export const useButtonBase = (rawProps: ButtonProps) => {
 	const isVPrimary = VARIANTS_PRIMARY.includes(props.variant)
 	const isVSecondary = VARIANTS_SECONDARY.includes(props.variant)
 	const isVSolid = VARIANTS_SOLID.includes(props.variant)
+	const isVSubtle = VARIANTS_SUBTLE.includes(props.variant)
 	const isVText = VARIANTS_TEXT.includes(props.variant)
 
 	const cssTextColorFn = (color: string) => ({ color, fill: 'currentColor', stroke: 'currentColor' })
@@ -89,6 +97,7 @@ export const useButtonBase = (rawProps: ButtonProps) => {
 		}
 		if (isVDanger) return cssTextColorFn($color['danger-page-text'])
 		if (isVDefault) return cssTextColorFn($color['text-default'])
+		if (isVSubtle) return cssTextColorFn($color['text-subtle'])
 		return {}
 	})()
 
@@ -157,8 +166,10 @@ export const useButtonBase = (rawProps: ButtonProps) => {
 	const cssRadius: CSS = cssRadiusFn(props.size === 'lg' ? $radius['md'] : $radius['sm'])
 
 	const cssFont: CSS = (() => {
-		if (isVItem && isVDefault) return { fontWeight: $fontWeight['sm'], fontSize: 'unset' }
-		if (isVItem && !isVDefault) return { fontWeight: $fontWeight['md'], fontSize: 'unset' }
+		if (isVItem) {
+			if (isVDefault) return { fontWeight: $fontWeight['sm'], fontSize: 'unset' }
+			if (!isVDefault) return { fontWeight: $fontWeight['md'], fontSize: 'unset' }
+		}
 		if (props.size === 'xs') return cssFontFn($fontSize['xs'])
 		if (props.size === 'sm') return cssFontFn($fontSize['sm'])
 		if (props.size === 'md') return cssFontFn($fontSize['md'])
@@ -210,6 +221,7 @@ export const useButtonBase = (rawProps: ButtonProps) => {
 		isVPrimary,
 		isVSecondary,
 		isVSolid,
+		isVSubtle,
 		isVText,
 		props,
 	}

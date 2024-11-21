@@ -9,7 +9,8 @@ import { useIconButtonBase } from './_base'
 export const AntImpl = (rawProps: IconButtonProps) => {
 	const { $color, $spacing, isUiLight } = useUiTheme()
 	const buttonBase = useIconButtonBase(rawProps)
-	const { cssAll, isVDanger, isVDefault, isVPrimary, isVSecondary, isVSolid, props, baseBindings } = buttonBase
+	const { cssAll, isVDanger, isVDefault, isVSubtle, isVPrimary, isVSecondary, isVSolid, props, baseBindings } =
+		buttonBase
 
 	const cssHover: CSS = (() => {
 		// AntDesign will try to enforce hover colors
@@ -23,6 +24,7 @@ export const AntImpl = (rawProps: IconButtonProps) => {
 		}
 		if (isVDanger) return cssFn($color['danger-page-text'], 'transparent')
 		if (isVDefault) return cssFn($color['text-default'], 'transparent')
+		if (isVSubtle) return cssFn($color['text-subtle'], 'transparent')
 		return {}
 	})()
 

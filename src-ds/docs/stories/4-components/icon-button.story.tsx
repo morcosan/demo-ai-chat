@@ -34,7 +34,7 @@ const meta: Meta<typeof IconButton> = {
 		{
 			tooltip: 'text',
 			size: ['xs', 'sm', 'md', 'lg'],
-			variant: ['text-default', 'text-danger', 'solid-primary', 'solid-secondary', 'solid-danger'],
+			variant: ['text-default', 'text-subtle', 'text-danger', 'solid-primary', 'solid-secondary', 'solid-danger'],
 			pressed: 'boolean',
 			loading: 'boolean',
 			disabled: 'boolean',
@@ -127,6 +127,7 @@ const meta: Meta<typeof IconButton> = {
 			type IconButtonSize = 'xs' | 'sm' | 'md' | 'lg'
 			type IconButtonVariant =
 				| 'text-default'
+				| 'text-subtle'
 				| 'text-danger'
 				| 'solid-primary'
 				| 'solid-secondary'
@@ -137,6 +138,7 @@ const meta: Meta<typeof IconButton> = {
 		const svg = <LogoutSvg className="h-xs-7 w-xs-7" />
 		const variants: IconButtonVariant[] = [
 			'text-default',
+			'text-subtle',
 			'text-danger',
 			'solid-primary',
 			'solid-secondary',

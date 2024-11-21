@@ -3,6 +3,7 @@ import { LinkType } from '../_shared/types'
 export type IconButtonSize = 'xs' | 'sm' | 'md' | 'lg'
 export type IconButtonVariant =
 	| 'text-default'
+	| 'text-subtle'
 	| 'text-danger'
 	| 'solid-primary'
 	| 'solid-secondary'

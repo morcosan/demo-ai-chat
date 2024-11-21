@@ -43,6 +43,7 @@ const meta: Meta<typeof Button> = {
 				'ghost-secondary',
 				'ghost-danger',
 				'text-default',
+				'text-subtle',
 				'text-danger',
 				'item-solid-secondary',
 				'item-text-default',
@@ -147,6 +148,7 @@ const meta: Meta<typeof Button> = {
 				| 'ghost-secondary'
 				| 'ghost-danger'
 				| 'text-default'
+				| 'text-subtle'
 				| 'text-danger'
 				| 'item-solid-secondary'
 				| 'item-text-default'
@@ -164,6 +166,7 @@ const meta: Meta<typeof Button> = {
 			'ghost-secondary',
 			'ghost-danger',
 			'text-default',
+			'text-subtle',
 			'text-danger',
 			'item-solid-secondary',
 			'item-text-default',
