@@ -41,7 +41,8 @@ export const Markdown = ({ text, className }: Props) => {
 	marked.use({ extensions: [ESCAPE_HTML] })
 
 	const html = useMemo(() => {
-		const parsed = marked.parse(text, { async: false })
+		const unparsed = text.replace(/\n/g, '  \n') // Fix new lines for markdown
+		const parsed = marked.parse(unparsed, { async: false })
 		return DOMPurify.sanitize(parsed, { ADD_ATTR: ['target'] })
 	}, [text])
 

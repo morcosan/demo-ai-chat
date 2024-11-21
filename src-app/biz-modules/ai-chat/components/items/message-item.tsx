@@ -1,5 +1,5 @@
 import { Markdown } from '@app/library/release'
-import { Button, ReloadSvg, WarningSvg } from '@ds/release'
+import { Button, CopySvg, ReloadSvg, WarningSvg } from '@ds/release'
 import { Agent, Message } from '../../api'
 import { SubchatButton } from '../subchat-button'
 import { AgentGptItem } from './agent-gpt-item'
@@ -16,21 +16,40 @@ export const MessageItem = (props: Props) => {
 	const { message, agent, subchatId, isSubchat, onRetry } = props
 
 	const wrapperClass = cx(
-		'group relative ml-scrollbar-w flex flex-col items-end',
-		'mb-sm-0 lg:mb-sm-2',
+		'group relative ml-scrollbar-w flex flex-col',
+		'mb-sm-0',
+		message.role === 'user' ? 'lg:mb-xs-0' : 'lg:mb-xs-6',
 		!isSubchat && 'px-xs-5 lg:px-md-0'
 	)
+
 	const baseCardClass = cx('relative w-fit max-w-full rounded-md px-xs-7 py-xs-6 shadow-xs')
 	const userCardClass = cx(
+		'ml-auto',
 		isSubchat
 			? '!max-w-[80%] bg-color-secondary-card-bg text-color-secondary-card-text'
 			: '!max-w-[70%] bg-color-primary-card-bg text-color-primary-card-text'
 	)
-	const subchatClass = cx({
+
+	const toolbarClass = cx(
+		'mx-px mt-xs-1 flex min-h-button-h-xs flex-wrap gap-xs-2',
+		'focus-within:opacity-100 lg:opacity-0 lg:group-hover:opacity-100'
+	)
+
+	const subchatWrapperClass = cx({
 		'flex-center lg:absolute lg:right-0 lg:top-0': true,
 		invisible: message.loading,
 		'w-md-0': !isSubchat,
 	})
+	const subchatButtonClass = cx({
+		'px-xs-3': true,
+		'lg:mt-sm-1': message.role === 'agent',
+		'focus:opacity-100 lg:opacity-0 lg:group-hover:opacity-100': !message.subchatSize,
+		'!opacity-100': message.id === subchatId,
+	})
+
+	const onClickCopy = () => {
+		navigator.clipboard.writeText(message.text)
+	}
 
 	return (
 		<li className={wrapperClass}>
@@ -59,7 +78,7 @@ export const MessageItem = (props: Props) => {
 					</div>
 				</div>
 			) : (
-				<div className="w-full py-xs-1">
+				<div>
 					<AgentGptItem agent={agent} className="mx-xs-2 mb-xs-4" compact subtle />
 
 					{message.loading ? (
@@ -86,10 +105,23 @@ export const MessageItem = (props: Props) => {
 
 			{/* SUBCHAT BUTTON */}
 			{!isSubchat && !message.failed && (
-				<div className={subchatClass}>
-					<SubchatButton message={message} subchatId={subchatId} />
+				<div className={subchatWrapperClass}>
+					<SubchatButton message={message} subchatId={subchatId} className={subchatButtonClass} />
 				</div>
 			)}
+
+			{/* TOOLBAR */}
+			<div className={toolbarClass}>
+				<Button
+					variant="text-subtle"
+					size="xs"
+					className={cx(message.role === 'user' && 'ml-auto')}
+					onClick={onClickCopy}
+				>
+					<CopySvg className="mr-xs-2 h-xs-4 w-xs-4" />
+					{t('core.action.copy')}
+				</Button>
+			</div>
 		</li>
 	)
 }
