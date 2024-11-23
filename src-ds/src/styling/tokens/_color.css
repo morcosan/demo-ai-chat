@@ -51,7 +51,7 @@
 	--ds-color-red-4: #f87171;
 	--ds-color-red-5: #de3434;
 	--ds-color-red-6: #d92323;
-	--ds-color-red-7: #b91c1c;
+	--ds-color-red-7: #b61b1b;
 	--ds-color-red-8: #7f1d1d;
 
 	--ds-color-green-1: #dcfce7;
@@ -121,7 +121,7 @@
 	--ds-color-primary-hover-pressed: var(--ds-color-hover-button-pressed);
 	--ds-color-primary-card-bg: var(--ds-color-purple-1);
 	--ds-color-primary-card-text: var(--ds-color-purple-8);
-	--ds-color-primary-card-subtext: var(--ds-color-purple-8);
+	--ds-color-primary-card-subtext: var(--ds-color-purple-7);
 	--ds-color-primary-page-text: var(--ds-color-purple-6);
 
 	--ds-color-secondary-button-bg: var(--ds-color-yellow-3);
@@ -130,7 +130,7 @@
 	--ds-color-secondary-hover-pressed: var(--ds-color-black-glass-5);
 	--ds-color-secondary-card-bg: var(--ds-color-yellow-1);
 	--ds-color-secondary-card-text: var(--ds-color-yellow-8);
-	--ds-color-secondary-card-subtext: var(--ds-color-yellow-8);
+	--ds-color-secondary-card-subtext: var(--ds-color-yellow-7);
 	--ds-color-secondary-page-text: var(--ds-color-yellow-7);
 
 	--ds-color-danger-button-bg: var(--ds-color-red-6);
@@ -139,7 +139,7 @@
 	--ds-color-danger-hover-pressed: var(--ds-color-hover-button-pressed);
 	--ds-color-danger-card-bg: var(--ds-color-red-1);
 	--ds-color-danger-card-text: var(--ds-color-red-8);
-	--ds-color-danger-card-subtext: var(--ds-color-red-8);
+	--ds-color-danger-card-subtext: var(--ds-color-red-7);
 	--ds-color-danger-page-text: var(--ds-color-red-6);
 
 	--ds-color-success-button-bg: var(--ds-color-green-6);
@@ -148,7 +148,7 @@
 	--ds-color-success-hover-pressed: var(--ds-color-hover-button-pressed);
 	--ds-color-success-card-bg: var(--ds-color-green-1);
 	--ds-color-success-card-text: var(--ds-color-green-8);
-	--ds-color-success-card-subtext: var(--ds-color-green-8);
+	--ds-color-success-card-subtext: var(--ds-color-green-7);
 	--ds-color-success-page-text: var(--ds-color-green-7);
 
 	--ds-color-modal-overlay-subtle: var(--ds-color-black-glass-5);
@@ -196,7 +196,7 @@
 	--ds-color-secondary-button-text: var(--ds-color-yellow-7);
 	--ds-color-secondary-hover-default: var(--ds-color-hover-button-default);
 	--ds-color-secondary-hover-pressed: var(--ds-color-black-glass-6);
-	--ds-color-secondary-card-bg: var(--ds-color-yellow-6);
+	--ds-color-secondary-card-bg: var(--ds-color-yellow-7);
 	--ds-color-secondary-card-text: var(--ds-color-white);
 	--ds-color-secondary-card-subtext: var(--ds-color-yellow-1);
 	--ds-color-secondary-page-text: var(--ds-color-yellow-2);
@@ -207,7 +207,7 @@
 	--ds-color-danger-hover-pressed: var(--ds-color-hover-button-pressed);
 	--ds-color-danger-card-bg: var(--ds-color-red-8);
 	--ds-color-danger-card-text: var(--ds-color-white);
-	--ds-color-danger-card-subtext: var(--ds-color-white);
+	--ds-color-danger-card-subtext: var(--ds-color-red-2);
 	--ds-color-danger-page-text: var(--ds-color-red-3);
 
 	--ds-color-success-button-bg: var(--ds-color-green-6);
@@ -216,7 +216,7 @@
 	--ds-color-success-hover-pressed: var(--ds-color-hover-button-pressed);
 	--ds-color-success-card-bg: var(--ds-color-green-8);
 	--ds-color-success-card-text: var(--ds-color-white);
-	--ds-color-success-card-subtext: var(--ds-color-white);
+	--ds-color-success-card-subtext: var(--ds-color-green-3);
 	--ds-color-success-page-text: var(--ds-color-green-3);
 
 	--ds-color-modal-overlay-subtle: var(--ds-color-black-glass-6);
