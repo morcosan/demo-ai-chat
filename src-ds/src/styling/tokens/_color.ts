@@ -114,6 +114,7 @@ export const TOKENS__COLOR = {
 	'primary-hover-pressed': { $ref: { light: 'hover-button-pressed', dark: 'hover-button-pressed' } },
 	'primary-card-bg': { $ref: { light: 'purple-1', dark: 'purple-8' } },
 	'primary-card-text': { $ref: { light: 'purple-8', dark: 'white' } },
+	'primary-card-subtext': { $ref: { light: 'purple-8', dark: 'white' } },
 	'primary-page-text': { $ref: { light: 'purple-6', dark: 'purple-3' } },
 
 	'secondary-button-bg': { $ref: { light: 'yellow-3', dark: 'yellow-2' } },
@@ -122,6 +123,7 @@ export const TOKENS__COLOR = {
 	'secondary-hover-pressed': { $ref: { light: 'black-glass-5', dark: 'black-glass-6' } },
 	'secondary-card-bg': { $ref: { light: 'yellow-1', dark: 'yellow-6' } },
 	'secondary-card-text': { $ref: { light: 'yellow-8', dark: 'white' } },
+	'secondary-card-subtext': { $ref: { light: 'yellow-8', dark: 'white' } },
 	'secondary-page-text': { $ref: { light: 'yellow-7', dark: 'yellow-2' } },
 
 	'danger-button-bg': { $ref: { light: 'red-6', dark: 'red-5' } },
@@ -130,6 +132,7 @@ export const TOKENS__COLOR = {
 	'danger-hover-pressed': { $ref: { light: 'hover-button-pressed', dark: 'hover-button-pressed' } },
 	'danger-card-bg': { $ref: { light: 'red-1', dark: 'red-8' } },
 	'danger-card-text': { $ref: { light: 'red-8', dark: 'white' } },
+	'danger-card-subtext': { $ref: { light: 'red-8', dark: 'white' } },
 	'danger-page-text': { $ref: { light: 'red-6', dark: 'red-3' } },
 
 	'success-button-bg': { $ref: { light: 'green-6', dark: 'green-6' } },
@@ -138,6 +141,7 @@ export const TOKENS__COLOR = {
 	'success-hover-pressed': { $ref: { light: 'hover-button-pressed', dark: 'hover-button-pressed' } },
 	'success-card-bg': { $ref: { light: 'green-1', dark: 'green-8' } },
 	'success-card-text': { $ref: { light: 'green-8', dark: 'white' } },
+	'success-card-subtext': { $ref: { light: 'green-8', dark: 'white' } },
 	'success-page-text': { $ref: { light: 'green-7', dark: 'green-3' } },
 
 	'modal-overlay-subtle': { $ref: { light: 'black-glass-7', dark: 'black-glass-6' } },

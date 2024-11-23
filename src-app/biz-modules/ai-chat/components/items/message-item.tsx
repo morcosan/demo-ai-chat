@@ -59,6 +59,12 @@ export const MessageItem = (props: Props) => {
 		message.id === subchatId && '!opacity-100'
 	)
 
+	const cssUserMarkdown: CSS = {
+		'.ds-markdown .ds-markdown-img-box img + div': {
+			color: isSubchat ? 'var(--ds-color-secondary-card-subtext)' : 'var(--ds-color-primary-card-subtext)',
+		},
+	}
+
 	const onClickItem = () => setIsClicked((value: boolean) => !value)
 
 	const onClickToolbar = (event: ReactMouseEvent) => event.stopPropagation()
@@ -87,7 +93,7 @@ export const MessageItem = (props: Props) => {
 	return (
 		<li className={itemClass} onClick={onClickItem}>
 			{isUser ? (
-				<div className={cx(baseCardClass, userCardClass)}>
+				<div className={cx(baseCardClass, userCardClass)} css={cssUserMarkdown}>
 					{slotMarkdown}
 
 					<div
