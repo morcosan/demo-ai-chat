@@ -4,6 +4,7 @@ import {
 	randomBool,
 	randomFalse,
 	randomFromArray,
+	randomImageHD,
 	randomInt,
 	randomText,
 	randomTrue,
@@ -47,7 +48,11 @@ export const randomMarkdownParagraph = () => {
 	const marks = ['', '', '', '', '*', '**', '***', '___', '`', '```']
 	const paragraph = randomArray(randomInt(1, 4)).reduce((acc: string) => {
 		const mark = randomFromArray(marks)
-		const text = randomTrue() ? randomText(randomInt(1, 10)) : randomMarkdownLink()
+		const text = randomTrue()
+			? randomText(randomInt(1, 10))
+			: randomTrue()
+				? randomMarkdownLink()
+				: randomMarkdownImage()
 		return acc + (acc ? ' ' : '') + mark + text + mark
 	}, '')
 
@@ -59,3 +64,5 @@ export const randomMarkdownBreak = () => randomFromArray(['. ', '.\n', '.\n\n'])
 export const randomMarkdownLine = () => randomFromArray(['---\n', '***\n', '___\n'])
 
 export const randomMarkdownLink = () => `[${randomText(randomInt(0, 10))}](${randomAvatar()})`
+
+export const randomMarkdownImage = () => `![${randomText()}](${randomImageHD()} "${randomText(randomInt(0, 10))}")`
