@@ -21,13 +21,11 @@
 	}
 
 	& *:not(pre) > code {
-		display: inline-block;
 		margin: 0 1px;
 		box-shadow: var(--ds-shadow-xs);
 		border-radius: var(--ds-radius-xs);
 		background-color: var(--ds-color-bg-coding);
 		padding: 1px var(--ds-spacing-xs-2);
-		width: fit-content;
 		color: var(--ds-color-text-coding);
 		font-weight: var(--ds-font-weight-md);
 		font-size: var(--ds-font-size-sm);
