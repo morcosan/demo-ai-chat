@@ -45,7 +45,7 @@ export const randomMarkdownBody = () => {
 }
 
 export const randomMarkdownParagraph = () => {
-	const marks = ['', '', '', '', '*', '**', '***', '___', '`', '```']
+	const marks = ['', '', '', '', '*', '**', '***', '___', '`', '```', '~~']
 	const paragraph = randomArray(randomInt(1, 4)).reduce((acc: string) => {
 		const mark = randomFromArray(marks)
 		const text = randomTrue()
