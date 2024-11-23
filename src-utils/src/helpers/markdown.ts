@@ -1,4 +1,4 @@
-import { randomArray, randomFromArray, randomInt, randomText } from './random'
+import { randomArray, randomBool, randomFromArray, randomInt, randomText } from './random'
 
 export const randomMarkdown = () => {
 	const fns = [randomMarkdownHeader, randomMarkdownBody]
@@ -20,12 +20,13 @@ export const randomMarkdownBody = () => {
 
 	return randomArray(randomInt(1, 20)).reduce((acc: string) => {
 		let prefix = randomFromArray(prefixes)
+		prefix = /[-+*1]/.test(prefix) && randomBool() ? ' '.repeat(4) + prefix : prefix
 
-		counterOL = prefix === '1. ' ? counterOL + 1 : 0
-		counterBQ = prefix === '>' ? counterBQ + 1 : 0
+		counterOL = prefix.includes('1.') ? counterOL + 1 : 0
+		counterBQ = prefix.includes('>') ? counterBQ + 1 : 0
 
-		if (prefix === '1. ') prefix = prefix.replace('1', String(counterOL))
-		if (prefix === '>') prefix = prefix.replace('>', '>'.repeat(counterBQ))
+		if (prefix.includes('1.')) prefix = prefix.replace('1', String(counterOL))
+		if (prefix.includes('>')) prefix = prefix.replace('>', '>'.repeat(counterBQ))
 
 		return acc + prefix + randomMarkdownParagraph()
 	}, '')
@@ -35,7 +36,7 @@ export const randomMarkdownParagraph = () => {
 	const marks = ['', '', '', '', '*', '**', '***', '___', '`', '```']
 	const paragraph = randomArray(randomInt(1, 4)).reduce((acc: string) => {
 		const mark = randomFromArray(marks)
-		return acc + ' ' + mark + randomText(randomInt(1, 10)) + mark
+		return acc + (acc ? ' ' : '') + mark + randomText(randomInt(1, 10)) + mark
 	}, '')
 
 	return paragraph + randomMarkdownBreak()

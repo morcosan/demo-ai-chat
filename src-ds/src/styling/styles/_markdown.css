@@ -40,22 +40,36 @@
 		display: flex;
 		flex-direction: column;
 		gap: var(--ds-spacing-xs-1);
+		counter-reset: --counter;
 		margin: var(--ds-spacing-xs-2) 0 var(--ds-spacing-xs-1);
 		padding-left: var(--ds-spacing-sm-1);
 
 		& p {
 			margin: 0;
 		}
+	}
+	& ul {
+		list-style: disc;
 
 		&:only-child {
 			padding-left: var(--ds-spacing-xs-8);
 		}
 	}
-	& ul {
-		list-style: disc;
-	}
 	& ol {
-		list-style: auto;
+		& > li {
+			position: relative;
+			counter-increment: --counter;
+
+			&::before {
+				position: absolute;
+				top: 0;
+				left: 0;
+				transform: translateX(-100%);
+				padding-right: var(--ds-spacing-xs-3);
+				content: counter(--counter) '.';
+				text-align: right;
+			}
+		}
 	}
 	& ul + *,
 	& ol + * {
