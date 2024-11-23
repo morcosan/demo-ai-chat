@@ -31,7 +31,7 @@ export const Markdown = ({ text, className }: Props) => {
 	renderer.link = ({ href, text }: Tokens.Link) => {
 		return renderToStaticMarkup(
 			<a href={href} target="_blank" rel="noopener noreferrer" className="ds-link">
-				{text}
+				{text || href}
 				<NewTabSvg className="ml-xs-2 inline-block h-xs-4 w-xs-4 align-baseline" />
 			</a>
 		)

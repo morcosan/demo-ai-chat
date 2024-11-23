@@ -1,4 +1,13 @@
-import { randomArray, randomBool, randomFalse, randomFromArray, randomInt, randomText } from './random'
+import {
+	randomArray,
+	randomAvatar,
+	randomBool,
+	randomFalse,
+	randomFromArray,
+	randomInt,
+	randomText,
+	randomTrue,
+} from './random'
 
 export const randomMarkdown = () => {
 	const fns = [randomMarkdownHeader, randomMarkdownBody]
@@ -38,7 +47,8 @@ export const randomMarkdownParagraph = () => {
 	const marks = ['', '', '', '', '*', '**', '***', '___', '`', '```']
 	const paragraph = randomArray(randomInt(1, 4)).reduce((acc: string) => {
 		const mark = randomFromArray(marks)
-		return acc + (acc ? ' ' : '') + mark + randomText(randomInt(1, 10)) + mark
+		const text = randomTrue() ? randomText(randomInt(1, 10)) : randomMarkdownLink()
+		return acc + (acc ? ' ' : '') + mark + text + mark
 	}, '')
 
 	return paragraph + randomMarkdownBreak()
@@ -47,3 +57,5 @@ export const randomMarkdownParagraph = () => {
 export const randomMarkdownBreak = () => randomFromArray(['. ', '.\n', '.\n\n'])
 
 export const randomMarkdownLine = () => randomFromArray(['---\n', '***\n', '___\n'])
+
+export const randomMarkdownLink = () => `[${randomText(randomInt(0, 10))}](${randomAvatar()})`

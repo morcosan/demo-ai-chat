@@ -4,6 +4,7 @@ a.ds-link {
 	background-color: var(--ds-color-bg-link);
 	padding: 0 var(--ds-spacing-xs-2) 2px;
 	color: var(--ds-color-text-link);
+	font-style: normal;
 	font-weight: var(--ds-font-weight-lg);
 	text-decoration: underline;
 	text-underline-offset: 0.1em;
@@ -19,6 +20,7 @@ a.ds-header-link {
 	border-radius: var(--ds-radius-sm);
 	padding: 0 var(--ds-spacing-xs-1) 2px;
 	color: var(--ds-color-primary-page-text);
+	font-style: normal;
 	font-weight: var(--ds-font-weight-lg);
 	text-decoration: underline;
 	text-underline-offset: 0.15em;

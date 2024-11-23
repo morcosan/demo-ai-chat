@@ -117,6 +117,10 @@
 
 	& a {
 		word-break: break-word;
+
+		&:first-child {
+			margin-left: -2px;
+		}
 	}
 
 	& blockquote {
