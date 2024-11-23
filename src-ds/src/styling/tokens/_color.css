@@ -95,6 +95,7 @@
 	--ds-color-bg-field: var(--ds-color-black-glass-1);
 	--ds-color-bg-skeleton: var(--ds-color-black-glass-3);
 	--ds-color-bg-link: var(--ds-color-black-glass-2);
+	--ds-color-bg-blockquote: var(--ds-color-black-glass-1);
 
 	--ds-color-border-active: var(--ds-color-grey-12);
 	--ds-color-border-hover: var(--ds-color-grey-11);
@@ -158,6 +159,7 @@
 	--ds-color-bg-coding: var(--ds-color-grey-20);
 	--ds-color-bg-skeleton: var(--ds-color-white-glass-5);
 	--ds-color-bg-link: var(--ds-color-black-glass-5);
+	--ds-color-bg-blockquote: var(--ds-color-white-glass-2);
 
 	--ds-color-border-active: var(--ds-color-grey-8);
 	--ds-color-border-hover: var(--ds-color-grey-12);

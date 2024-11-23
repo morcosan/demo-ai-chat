@@ -1,21 +1,33 @@
 import { randomArray, randomFromArray, randomInt, randomText } from './random'
 
 export const randomMarkdown = () => {
-	const fns = [randomMarkdownHeading, randomMarkdownText]
+	const fns = [randomMarkdownHeader, randomMarkdownBody]
 
 	return randomArray(randomInt(1, 10)).reduce((acc: string) => {
 		return acc + '\n' + randomFromArray(fns)()
 	}, '')
 }
 
-export const randomMarkdownHeading = () => {
+export const randomMarkdownHeader = () => {
 	const prefixes = ['#', '##', '###', '####', '#####', '######']
 	return randomFromArray(prefixes) + ' ' + randomText(randomInt(1, 10))
 }
 
-export const randomMarkdownText = () => {
+export const randomMarkdownBody = () => {
+	const prefixes = ['', '', '', '>', '- ', '* ', '+ ', '1. ']
+	let counterOL = 0
+	let counterBQ = 0
+
 	return randomArray(randomInt(1, 20)).reduce((acc: string) => {
-		return acc + randomMarkdownParagraph()
+		let prefix = randomFromArray(prefixes)
+
+		counterOL = prefix === '1. ' ? counterOL + 1 : 0
+		counterBQ = prefix === '>' ? counterBQ + 1 : 0
+
+		if (prefix === '1. ') prefix = prefix.replace('1', String(counterOL))
+		if (prefix === '>') prefix = prefix.replace('>', '>'.repeat(counterBQ))
+
+		return acc + prefix + randomMarkdownParagraph()
 	}, '')
 }
 
@@ -29,6 +41,4 @@ export const randomMarkdownParagraph = () => {
 	return paragraph + randomMarkdownBreak()
 }
 
-export const randomMarkdownBreak = () => {
-	return randomFromArray(['. ', '.\n', '.\n\n'])
-}
+export const randomMarkdownBreak = () => randomFromArray(['. ', '.\n', '.\n\n'])
