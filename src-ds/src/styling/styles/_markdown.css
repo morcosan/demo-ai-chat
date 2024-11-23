@@ -80,6 +80,11 @@
 		margin-top: var(--ds-spacing-xs-4);
 	}
 
+	& hr {
+		margin: var(--ds-spacing-sm-0) 0;
+		border-color: var(--ds-color-border-subtle);
+	}
+
 	& h1,
 	& h2,
 	& h3,
