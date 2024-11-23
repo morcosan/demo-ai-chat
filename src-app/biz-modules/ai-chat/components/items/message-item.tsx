@@ -43,7 +43,8 @@ export const MessageItem = (props: Props) => {
 		isUser && 'ml-auto',
 		isViewportMinLG && 'opacity-0 group-hover:opacity-100',
 		!isViewportMinLG && !showsToolbar && 'pointer-events-none opacity-0',
-		'focus-within:opacity-100'
+		'focus-within:opacity-100',
+		message.loading && 'invisible'
 	)
 
 	const subchatWrapperClass = cx(
