@@ -1,10 +1,12 @@
-import { NewTabSvg } from '@ds/release'
+import { Button, CopySvg, NewTabSvg } from '@ds/release'
 import DOMPurify from 'dompurify'
 import hljs from 'highlight.js'
 import { Marked, Renderer, TokenizerExtension, Tokens } from 'marked'
 import { markedHighlight } from 'marked-highlight'
 import { useMemo } from 'react'
+import { createRoot } from 'react-dom/client'
 import { renderToStaticMarkup } from 'react-dom/server'
+import { MemoryRouter } from 'react-router-dom'
 
 interface Props extends ReactProps {
 	text: string
@@ -41,10 +43,13 @@ export const Markdown = ({ text, className }: Props) => {
 			</span>
 		)
 	}
-	renderer.code = ({ text, lang }: Tokens.Code) => {
+	renderer.code = ({ text, lang, raw }: Tokens.Code) => {
 		return renderToStaticMarkup(
 			<pre>
-				<div>{lang || 'plaintext'}</div>
+				<div>
+					{lang || 'plaintext'}
+					<div data-code-raw={raw} />
+				</div>
 				<code dangerouslySetInnerHTML={{ __html: text }} />
 			</pre>
 		)
@@ -58,11 +63,46 @@ export const Markdown = ({ text, className }: Props) => {
 	marked.setOptions({ renderer })
 	marked.use({ extensions: [ESCAPE_HTML] })
 
+	const injectComponents = (container: HTMLDivElement) => {
+		if (!container) return
+
+		const placeholder = container.querySelector('[data-code-raw]')
+		if (!placeholder) return
+
+		const rawCode = placeholder.getAttribute('data-code-raw') || ''
+		placeholder.removeAttribute('data-code-raw')
+
+		createRoot(placeholder).render(
+			<MemoryRouter>
+				<Button
+					variant="text-default"
+					size="xs"
+					tooltip={rawCode}
+					className="-mr-button-px-xs"
+					onClick={() => onClickCopyCode(rawCode)}
+				>
+					<CopySvg className="mb-px mr-xs-3 h-xs-4 w-xs-4" />
+					{t('core.action.copyCode')}
+				</Button>
+			</MemoryRouter>
+		)
+	}
+
+	const onClickCopyCode = (rawCode: string) => {
+		navigator.clipboard.writeText(rawCode)
+	}
+
 	const html = useMemo(() => {
 		const unparsed = text.replace(/\n/g, '  \n') // Fix new lines for markdown
 		const parsed = marked.parse(unparsed, { async: false })
 		return DOMPurify.sanitize(parsed, { ADD_ATTR: ['target'] })
 	}, [text])
 
-	return <div className={cx('ds-markdown', className)} dangerouslySetInnerHTML={{ __html: html }} />
+	return (
+		<div
+			ref={injectComponents}
+			className={cx('ds-markdown', className)}
+			dangerouslySetInnerHTML={{ __html: html }}
+		/>
+	)
 }
