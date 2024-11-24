@@ -1,6 +1,7 @@
 export * from './src/components/wrappers'
 export * from './src/constants/cookie'
 export * from './src/constants/css'
+export * from './src/constants/random'
 export * from './src/helpers/date'
 export * from './src/helpers/html'
 export * from './src/helpers/keyboard'

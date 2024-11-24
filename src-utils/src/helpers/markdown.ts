@@ -1,4 +1,12 @@
 import {
+	RANDOM_CPP,
+	RANDOM_CSHARP,
+	RANDOM_JAVA,
+	RANDOM_JAVASCRIPT,
+	RANDOM_PHP,
+	RANDOM_PYTHON,
+} from '../constants/random'
+import {
 	randomArray,
 	randomAvatar,
 	randomBool,
@@ -11,7 +19,7 @@ import {
 } from './random'
 
 export const randomMarkdown = () => {
-	const fns = [randomMarkdownHeader, randomMarkdownContent, randomMarkdownTable]
+	const fns = [randomMarkdownHeader, randomMarkdownContent, randomMarkdownTable, randomMarkdownCode]
 
 	return randomArray(randomInt(1, 10)).reduce((acc: string) => {
 		return acc + randomFromArray(fns)() + '\n'
@@ -81,4 +89,8 @@ export const randomMarkdownTable = () => {
 		) +
 		'\n'
 	)
+}
+
+export const randomMarkdownCode = () => {
+	return randomFromArray([RANDOM_JAVASCRIPT, RANDOM_CPP, RANDOM_CSHARP, RANDOM_JAVA, RANDOM_PHP, RANDOM_PYTHON])
 }
