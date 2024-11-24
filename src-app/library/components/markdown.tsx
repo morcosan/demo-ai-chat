@@ -66,26 +66,26 @@ export const Markdown = ({ text, className }: Props) => {
 	const injectComponents = (container: HTMLDivElement) => {
 		if (!container) return
 
-		const placeholder = container.querySelector('[data-code-raw]')
-		if (!placeholder) return
+		// Create copy-code buttons
+		container.querySelectorAll('[data-code-raw]').forEach((elem: Element) => {
+			const rawCode = elem.getAttribute('data-code-raw') || ''
+			elem.removeAttribute('data-code-raw')
 
-		const rawCode = placeholder.getAttribute('data-code-raw') || ''
-		placeholder.removeAttribute('data-code-raw')
-
-		createRoot(placeholder).render(
-			<MemoryRouter>
-				<Button
-					variant="text-default"
-					size="xs"
-					tooltip={rawCode}
-					className="-mr-button-px-xs"
-					onClick={() => onClickCopyCode(rawCode)}
-				>
-					<CopySvg className="mb-px mr-xs-2 h-xs-4 w-xs-4" />
-					{t('core.action.copy')}
-				</Button>
-			</MemoryRouter>
-		)
+			createRoot(elem).render(
+				<MemoryRouter>
+					<Button
+						variant="text-default"
+						size="xs"
+						tooltip={rawCode}
+						className="-mr-button-px-xs"
+						onClick={() => onClickCopyCode(rawCode)}
+					>
+						<CopySvg className="mb-px mr-xs-2 h-xs-4 w-xs-4" />
+						{t('core.action.copy')}
+					</Button>
+				</MemoryRouter>
+			)
+		})
 	}
 
 	const onClickCopyCode = (rawCode: string) => {
