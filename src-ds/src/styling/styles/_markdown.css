@@ -139,6 +139,9 @@
 			& input {
 				display: none;
 			}
+			& input + * {
+				margin-top: 0 !important;
+			}
 		}
 	}
 
