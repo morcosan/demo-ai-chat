@@ -247,7 +247,7 @@
 			margin-top: var(--margin-xxs);
 		}
 		&:last-child {
-			margin-bottom: var(--margin-xxs);
+			margin-bottom: 0;
 		}
 
 		& img {
