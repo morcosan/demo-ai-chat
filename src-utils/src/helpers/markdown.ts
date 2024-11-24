@@ -24,7 +24,7 @@ export const randomMarkdownHeader = () => {
 }
 
 export const randomMarkdownBody = () => {
-	const prefixes = ['', '', '', '>', '- ', '* ', '+ ', '1. ']
+	const prefixes = ['', '', '', '>', '- ', '* ', '+ ', '1. ', '- [ ] ', '- [x] ']
 	let counterOL = 0
 	let counterBQ = 0
 

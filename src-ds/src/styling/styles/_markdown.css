@@ -1,12 +1,14 @@
 .ds-markdown {
+	max-width: 100%;
 	--margin-xs: var(--ds-spacing-xs-2);
 	--margin-sm: var(--ds-spacing-xs-4);
 	--margin-md: var(--ds-spacing-xs-6);
 	--margin-lg: var(--ds-spacing-xs-8);
 	--margin-xl: var(--ds-spacing-sm-0);
 
-	max-width: 100%;
-
+	/*
+	 * CODE
+	 */
 	& pre {
 		margin: var(--margin-xs) -1px;
 
@@ -41,6 +43,9 @@
 		}
 	}
 
+	/*
+	 * LISTS
+	 */
 	& ul,
 	& ol {
 		display: flex;
@@ -50,24 +55,36 @@
 		margin: var(--margin-xs) 0 var(--ds-spacing-xs-1);
 		padding-left: var(--ds-spacing-sm-1);
 
-		& p {
-			margin: 0;
+		& + * {
+			margin-top: var(--margin-xl) !important;
 		}
 	}
-	& ul > li {
-		position: relative;
+	/*
+	 * BULLET LISTS
+	 */
+	& ul {
+		&:only-child {
+			padding-left: var(--ds-spacing-xs-9);
+		}
 
-		&::before {
-			position: absolute;
-			top: 0;
-			left: 0;
-			transform: translateX(-100%);
-			padding: var(--ds-spacing-xs-4);
-			content: '•';
-			font-size: var(--ds-font-size-xl);
-			line-height: 0;
+		& > li {
+			position: relative;
+
+			&::before {
+				position: absolute;
+				top: 0;
+				left: 0;
+				transform: translateX(-100%);
+				padding: var(--ds-spacing-xs-4);
+				content: '•';
+				font-size: var(--ds-font-size-xl);
+				line-height: 0;
+			}
 		}
 	}
+	/*
+	 * NUMBER LISTS
+	 */
 	& ol > li {
 		position: relative;
 		counter-increment: --counter;
@@ -82,23 +99,68 @@
 			text-align: right;
 		}
 	}
-	& ul:only-child {
-		padding-left: var(--ds-spacing-xs-9);
-	}
-	& ul + *,
-	& ol + * {
-		margin-top: var(--margin-xl) !important;
+	/*
+	 * CHECKBOX LISTS
+	 */
+	& ul > li {
+		&:has(> input),
+		&:has(> p > input) {
+			&::before {
+				display: flex;
+				position: absolute;
+				top: var(--ds-spacing-xs-1);
+				left: calc(-1 * var(--ds-spacing-xs-2));
+				transform: translateX(-100%);
+				border: 1px solid currentColor;
+				border-radius: var(--ds-radius-xs);
+				padding: 0;
+				width: var(--ds-spacing-xs-7);
+				height: var(--ds-spacing-xs-7);
+			}
+
+			&:has(> input[checked])::before,
+			&:has(> p > input[checked])::before {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				background-color: var(--ds-color-success-card-bg);
+				content: '✓';
+				font-weight: var(--ds-font-weight-xl);
+				font-size: 11px;
+			}
+			&:has(> input:not([checked]))::before,
+			&:has(> p > input:not([checked]))::before {
+				content: '';
+			}
+
+			& input {
+				display: none;
+			}
+		}
 	}
 
+	/*
+	 * PARAGRAPH
+	 */
 	& p:not(:first-child) {
 		margin-top: var(--margin-sm);
 	}
+	ul p,
+	ol p {
+		margin: 0;
+	}
 
+	/*
+	 * DELIMITER
+	 */
 	& hr {
 		margin: var(--margin-xl) 0;
 		border-color: var(--ds-color-border-subtle);
 	}
 
+	/*
+	 * HEADINGS
+	 */
 	& h1,
 	& h2,
 	& h3,
@@ -125,10 +187,16 @@
 		margin-top: var(--margin-md);
 	}
 
+	/*
+	 * BOLD
+	 */
 	& strong {
 		font-weight: var(--ds-font-weight-xl);
 	}
 
+	/*
+	 * LINKS
+	 */
 	& a {
 		word-break: break-word;
 
@@ -137,6 +205,9 @@
 		}
 	}
 
+	/*
+	 * BLOCKQUOTES
+	 */
 	& blockquote {
 		margin: var(--margin-md) 0;
 		border-left: 2px solid var(--ds-color-text-subtle);
@@ -153,6 +224,9 @@
 		}
 	}
 
+	/*
+	 * IMAGES
+	 */
 	& .ds-markdown-img-box {
 		margin: var(--margin-lg) 0;
 
@@ -174,6 +248,9 @@
 		}
 	}
 
+	/*
+	 * GENERAL
+	 */
 	& > *:not(pre):not(blockquote):only-child {
 		margin: calc(-1 * var(--ds-spacing-xs-1)) 0;
 	}
