@@ -38,10 +38,10 @@ export const Markdown = ({ text, className }: Props) => {
 	}
 	renderer.image = ({ href, text, title }: Tokens.Image) => {
 		return renderToStaticMarkup(
-			<div className="ds-markdown-img-box">
+			<span className="ds-markdown-img-box">
 				<img src={href} alt={title + ': ' + text} />
-				<div aria-hidden="true">{title}</div>
-			</div>
+				<span aria-hidden="true">{title}</span>
+			</span>
 		)
 	}
 	const marked = new Marked(markedHighlight({ langPrefix: 'lang-', highlight: highlightFn }))
