@@ -9,13 +9,14 @@
 			"deselectAll": "Deselect all",
 			"goToUrl": "Go to {url}",
 			"openMenu": "Open menu",
+			"copy": "Copy",
+			"copyCode": "Copy code",
 			"rename": "Rename",
 			"retry": "Retry",
 			"saveChanges": "Save changes",
 			"search": "Search",
 			"searchMore": "Show more results",
 			"selectAll": "Select all",
-			"copy": "Copy",
 			"signOut": "Sign out"
 		},
 		"error": {

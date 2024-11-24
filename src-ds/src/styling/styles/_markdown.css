@@ -32,6 +32,7 @@
 			top: 1px;
 			right: 1px;
 			left: 1px;
+			justify-content: space-between;
 			align-items: center;
 			border-bottom: 1px solid var(--ds-color-border-subtle);
 			background-color: var(--ds-color-bg-blockquote);
