@@ -40,6 +40,7 @@
 		color: var(--ds-color-text-coding);
 		font-weight: var(--ds-font-weight-md);
 		font-size: var(--ds-font-size-sm);
+		word-break: break-word;
 
 		&:first-child {
 			margin-left: -1px;
@@ -112,7 +113,7 @@
 				display: flex;
 				position: absolute;
 				top: var(--ds-spacing-xs-1);
-				left: calc(-1 * var(--ds-spacing-xs-2));
+				left: calc(-1 * var(--ds-spacing-xs-3));
 				transform: translateX(-100%);
 				border: 1px solid currentColor;
 				border-radius: var(--ds-radius-xs);
@@ -272,11 +273,14 @@
 	 * TABLE
 	 */
 	& table {
+		display: block;
 		margin: var(--margin-xl) 0;
 		border: 1px solid var(--ds-color-border-default);
 		border-radius: var(--ds-radius-sm);
 		border-collapse: separate;
 		border-spacing: 0;
+		max-width: fit-content;
+		overflow-x: auto;
 
 		&:first-child {
 			margin-top: var(--margin-xxs);
