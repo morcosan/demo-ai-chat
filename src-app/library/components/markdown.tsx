@@ -23,11 +23,8 @@ const ESCAPE_HTML: TokenizerExtension = {
 }
 
 export const Markdown = ({ text, className }: Props) => {
-	const highlightFn = (code: string, lang: string) => {
-		return hljs.highlight(code, { language: hljs.getLanguage(lang) ? lang : 'plaintext' }).value
-	}
-
 	const renderer = new Renderer()
+
 	renderer.link = ({ href, text }: Tokens.Link) => {
 		return renderToStaticMarkup(
 			<a href={href} target="_blank" rel="noopener noreferrer" className="ds-link">
@@ -44,7 +41,20 @@ export const Markdown = ({ text, className }: Props) => {
 			</span>
 		)
 	}
-	const marked = new Marked(markedHighlight({ langPrefix: 'lang-', highlight: highlightFn }))
+	renderer.code = ({ text, lang }: Tokens.Code) => {
+		return renderToStaticMarkup(
+			<pre>
+				<div>{lang || 'plaintext'}</div>
+				<code dangerouslySetInnerHTML={{ __html: text }} />
+			</pre>
+		)
+	}
+
+	const highlightFn = (code: string, lang: string) => {
+		return hljs.highlight(code, { language: hljs.getLanguage(lang) ? lang : 'plaintext' }).value
+	}
+
+	const marked = new Marked(markedHighlight({ highlight: highlightFn }))
 	marked.setOptions({ renderer })
 	marked.use({ extensions: [ESCAPE_HTML] })
 

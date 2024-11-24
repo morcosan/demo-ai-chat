@@ -11,7 +11,13 @@
 	 * CODE
 	 */
 	& pre {
+		position: relative;
 		margin: var(--margin-xl) 0;
+		border: 1px solid var(--ds-color-border-default);
+		border-radius: var(--ds-radius-sm);
+		padding-top: var(--bar-height);
+		overflow: hidden;
+		--bar-height: var(--ds-spacing-button-h-sm);
 
 		&:first-child {
 			margin-top: var(--margin-xxs);
@@ -20,11 +26,25 @@
 			margin-bottom: var(--margin-xxs);
 		}
 
+		& > div {
+			display: flex;
+			position: absolute;
+			top: 1px;
+			right: 1px;
+			left: 1px;
+			align-items: center;
+			border-bottom: 1px solid var(--ds-color-border-subtle);
+			background-color: var(--ds-color-bg-blockquote);
+			padding: 0 var(--ds-spacing-xs-6);
+			height: var(--bar-height);
+			color: var(--ds-color-text-subtle);
+			font-size: var(--ds-font-size-xs);
+		}
+
 		& > code {
 			display: block;
 			box-shadow: var(--ds-shadow-xs);
-			border: 1px solid var(--ds-color-border-default);
-			border-radius: var(--ds-radius-sm);
+
 			background-color: var(--ds-color-bg-coding);
 			padding: var(--ds-spacing-xs-5) var(--ds-spacing-xs-6);
 			overflow-x: auto;
