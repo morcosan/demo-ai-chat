@@ -81,8 +81,8 @@ export const Markdown = ({ text, className }: Props) => {
 					className="-mr-button-px-xs"
 					onClick={() => onClickCopyCode(rawCode)}
 				>
-					<CopySvg className="mb-px mr-xs-3 h-xs-4 w-xs-4" />
-					{t('core.action.copyCode')}
+					<CopySvg className="mb-px mr-xs-2 h-xs-4 w-xs-4" />
+					{t('core.action.copy')}
 				</Button>
 			</MemoryRouter>
 		)
