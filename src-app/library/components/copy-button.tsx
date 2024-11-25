@@ -3,10 +3,11 @@ import { useState } from 'react'
 
 interface Props extends ReactProps {
 	variant: ButtonVariant
+	tooltip: string
 	text: string
 }
 
-export const CopyButton = ({ variant, text, className }: Props) => {
+export const CopyButton = ({ variant, tooltip, text, className }: Props) => {
 	const [isCopied, setIsCopied] = useState(false)
 
 	const onClick = () => {
@@ -18,6 +19,7 @@ export const CopyButton = ({ variant, text, className }: Props) => {
 		<Button
 			variant={variant}
 			size="xs"
+			tooltip={tooltip}
 			className={cx(className, isCopied && '!text-color-transparent')}
 			onClick={onClick}
 		>

@@ -88,7 +88,12 @@ export const Markdown = ({ text, className }: Props) => {
 			root.render(
 				// Button component requires a router context
 				<MemoryRouter>
-					<CopyButton variant="text-default" text={code} className="-mr-button-px-xs" />
+					<CopyButton
+						variant="text-default"
+						tooltip={t('aiChat.action.copyCode')}
+						text={code}
+						className="-mr-button-px-xs"
+					/>
 				</MemoryRouter>
 			)
 			rootRefs.current.set(elem, root)

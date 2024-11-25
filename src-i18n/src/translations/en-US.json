@@ -72,6 +72,8 @@
 			"confirmDeleteAgent": "Confirm deleting agent",
 			"confirmDeleteChats": "Confirm deleting chats",
 			"confirmRenameChat": "Confirm renaming chat",
+			"copyCode": "Copy the code",
+			"copyMessage": "Copy the message",
 			"createAgent": "Create agent",
 			"deleteAgent": "Delete agent",
 			"deleteSelectedChats": "Delete selected chats",

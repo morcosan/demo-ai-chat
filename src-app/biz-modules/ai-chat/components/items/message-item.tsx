@@ -139,7 +139,7 @@ export const MessageItem = (props: Props) => {
 
 			{/* TOOLBAR */}
 			<div className={toolbarClass} onClick={onClickToolbar}>
-				<CopyButton variant="text-subtle" text={message.text} />
+				<CopyButton variant="text-subtle" tooltip={t('aiChat.action.copyMessage')} text={message.text} />
 
 				{/* SUBCHAT BUTTON */}
 				{!isViewportMinLG && slotSubchat}
