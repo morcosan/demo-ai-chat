@@ -1,4 +1,4 @@
-import { Button, CopySvg, NewTabSvg } from '@ds/release'
+import { NewTabSvg } from '@ds/release'
 import DOMPurify from 'dompurify'
 import hljs from 'highlight.js'
 import { Marked, Renderer, TokenizerExtension, Tokens } from 'marked'
@@ -7,6 +7,7 @@ import { useMemo, useRef } from 'react'
 import { createRoot } from 'react-dom/client'
 import { renderToStaticMarkup } from 'react-dom/server'
 import { MemoryRouter } from 'react-router-dom'
+import { CopyButton } from './copy-button'
 
 interface Props extends ReactProps {
 	text: string
@@ -59,9 +60,8 @@ export const Markdown = ({ text, className }: Props) => {
 		)
 	}
 
-	const highlightFn = (code: string, lang: string) => {
-		return hljs.highlight(code, { language: hljs.getLanguage(lang) ? lang : 'plaintext' }).value
-	}
+	const languageFn = (lang: string) => ({ language: hljs.getLanguage(lang) ? lang : 'plaintext' })
+	const highlightFn = (code: string, lang: string) => hljs.highlight(code, languageFn(lang)).value
 
 	const marked = new Marked(markedHighlight({ highlight: highlightFn }))
 	marked.setOptions({ renderer })
@@ -77,33 +77,18 @@ export const Markdown = ({ text, className }: Props) => {
 	}, [text])
 
 	const injectCodeActions = (container: HTMLDivElement) => {
-		if (!container) return
+		const elems = container?.querySelectorAll('[data-code-actions]')
+		elems?.forEach((elem: Element, index: number) => {
+			const regex = /```(?:\w+)?\s([\s\S]*?)```/
+			const match = rawCodeRef.current[index].match(regex)
+			const code = match?.[1]?.trim() || ''
 
-		// Create copy-code buttons
-		container.querySelectorAll('[data-code-actions]').forEach((elem: Element, index: number) => {
 			createRoot(elem).render(
 				<MemoryRouter>
-					<Button
-						variant="text-default"
-						size="xs"
-						tooltip={rawCodeRef.current[index]}
-						className="-mr-button-px-xs"
-						onClick={() => onClickCopyCode(rawCodeRef.current[index])}
-					>
-						<CopySvg className="mb-px mr-xs-2 h-xs-4 w-xs-4" />
-						{t('core.action.copy')}
-					</Button>
+					<CopyButton variant="text-default" text={code} className="-mr-button-px-xs" />
 				</MemoryRouter>
 			)
 		})
-	}
-
-	const onClickCopyCode = (rawCode: string) => {
-		const regex = /```(?:\w+)?\s([\s\S]*?)```/
-		const match = rawCode.match(regex)
-		const code = match?.[1]?.trim() || ''
-
-		navigator.clipboard.writeText(code)
 	}
 
 	return (

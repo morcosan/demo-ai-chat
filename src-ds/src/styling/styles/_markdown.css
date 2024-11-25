@@ -15,6 +15,7 @@
 		margin: var(--margin-xl) 0;
 		border: 1px solid var(--ds-color-border-default);
 		border-radius: var(--ds-radius-sm);
+		background-color: var(--ds-color-bg-card);
 		padding-top: var(--bar-height);
 		overflow: hidden;
 		--bar-height: var(--ds-spacing-button-h-sm);

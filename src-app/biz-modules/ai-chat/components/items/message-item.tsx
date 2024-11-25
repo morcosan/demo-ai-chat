@@ -1,5 +1,5 @@
-import { Markdown } from '@app/library/release'
-import { Button, CopySvg, ReloadSvg, useUiViewport, WarningSvg } from '@ds/release'
+import { CopyButton, Markdown } from '@app/library/release'
+import { Button, ReloadSvg, useUiViewport, WarningSvg } from '@ds/release'
 import { useMemo, useState } from 'react'
 import { Agent, Message } from '../../api'
 import { SubchatButton } from '../subchat-button'
@@ -17,7 +17,6 @@ export const MessageItem = (props: Props) => {
 	const { message, agent, subchatId, isSubchat, onRetry } = props
 	const { isViewportMinLG } = useUiViewport()
 	const [isClicked, setIsClicked] = useState(false)
-	const [isCopied, setIsCopied] = useState(false)
 
 	const isUser = message.role === 'user'
 	const showsToolbar = isClicked || message.id === subchatId
@@ -68,11 +67,6 @@ export const MessageItem = (props: Props) => {
 	const onClickItem = () => setIsClicked((value: boolean) => !value)
 
 	const onClickToolbar = (event: ReactMouseEvent) => event.stopPropagation()
-
-	const onClickCopy = () => {
-		navigator.clipboard.writeText(message.text).then(() => setIsCopied(true))
-		wait(1000).then(() => setIsCopied(false))
-	}
 
 	const slotMarkdown = useMemo(() => <Markdown text={message.text} />, [message.text])
 
@@ -145,19 +139,7 @@ export const MessageItem = (props: Props) => {
 
 			{/* TOOLBAR */}
 			<div className={toolbarClass} onClick={onClickToolbar}>
-				<Button
-					variant="text-subtle"
-					size="xs"
-					className={cx(isCopied && 'text-color-transparent')}
-					onClick={onClickCopy}
-				>
-					<CopySvg className="mr-xs-2 mt-px h-xs-4 w-xs-4" />
-					{t('core.action.copy')}
-
-					{Boolean(isCopied) && (
-						<span className="absolute-center text-color-success-page-text">{t('core.label.copied')}</span>
-					)}
-				</Button>
+				<CopyButton variant="text-subtle" text={message.text} />
 
 				{/* SUBCHAT BUTTON */}
 				{!isViewportMinLG && slotSubchat}
