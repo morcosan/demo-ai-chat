@@ -4,7 +4,7 @@ import hljs from 'highlight.js'
 import { Marked, Renderer, TokenizerExtension, Tokens } from 'marked'
 import { markedHighlight } from 'marked-highlight'
 import { useMemo, useRef } from 'react'
-import { createRoot } from 'react-dom/client'
+import { createRoot, Root } from 'react-dom/client'
 import { renderToStaticMarkup } from 'react-dom/server'
 import { MemoryRouter } from 'react-router-dom'
 import { CopyButton } from './copy-button'
@@ -26,7 +26,8 @@ const ESCAPE_HTML: TokenizerExtension = {
 }
 
 export const Markdown = ({ text, className }: Props) => {
-	const rawCodeRef = useRef<string[]>([])
+	const rawCodeRefs = useRef<string[]>([])
+	const rootRefs = useRef(new WeakMap<Element, Root>())
 
 	const renderer = new Renderer()
 
@@ -47,7 +48,7 @@ export const Markdown = ({ text, className }: Props) => {
 		)
 	}
 	renderer.code = ({ text, lang, raw }: Tokens.Code) => {
-		rawCodeRef.current.push(raw)
+		rawCodeRefs.current.push(raw)
 
 		return renderToStaticMarkup(
 			<pre>
@@ -68,7 +69,7 @@ export const Markdown = ({ text, className }: Props) => {
 	marked.use({ extensions: [ESCAPE_HTML] })
 
 	const html = useMemo(() => {
-		rawCodeRef.current = []
+		rawCodeRefs.current = []
 
 		const unparsed = text.replace(/\n/g, '  \n') // Fix new lines for markdown
 		const parsed = marked.parse(unparsed, { async: false })
@@ -80,14 +81,17 @@ export const Markdown = ({ text, className }: Props) => {
 		const elems = container?.querySelectorAll('[data-code-actions]')
 		elems?.forEach((elem: Element, index: number) => {
 			const regex = /```(?:\w+)?\s([\s\S]*?)```/
-			const match = rawCodeRef.current[index].match(regex)
-			const code = match?.[1]?.trim() || ''
+			const raw = rawCodeRefs.current[index]
+			const code = raw.startsWith('```') ? raw.match(regex)?.[1].trim() || '' : raw
 
-			createRoot(elem).render(
+			const root = rootRefs.current.get(elem) || createRoot(elem)
+			root.render(
+				// Button component requires a router context
 				<MemoryRouter>
 					<CopyButton variant="text-default" text={code} className="-mr-button-px-xs" />
 				</MemoryRouter>
 			)
+			rootRefs.current.set(elem, root)
 		})
 	}
 
