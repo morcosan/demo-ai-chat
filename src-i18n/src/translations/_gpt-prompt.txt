@@ -1,6 +1,6 @@
-I will give you the translation json for english language.
+I will give you the translation JSON for english language.
 I will also give you a list of locales for the languages that I need.
-I want you to create a json file for each locale that I give you.
+I want you to create a JSON file for each locale that I give you.
 I am using react i18n library, with this format:
 {
     "key_zero": "zero",
@@ -12,13 +12,11 @@ I am using react i18n library, with this format:
 }
 For each language, you must check whether the language has multiple plural forms.
 If you see a key with "_other" suffix, create new keys for that translation according to i18n config.
-Create new keys only if the translation is different than "_other" translation.
-You must translate the json values in each language for each locale.
-Use the name of the locale plus ".json" extension for file name.
-Example: en-US.json
-Use tabs for indenting.
-Just give me the files, with no other text.
+You must translate only the JSON values in each language for each locale.
+JSON keys or words in {} must remain in english.
 
+---
+These are the locales:
 ro-RO
 ar-AE
 az-AZ
@@ -61,13 +59,21 @@ uz-UZ
 vi-VN
 zh-CN
 
-The name of the downloaded file must be the exact name of the json file, same letter case.
-Create 1 complete json file each time.
-Mention the locale when you are done.
+---
+Output notes:
+- The name of the downloaded file must be the exact name of the JSON file, same letter case
+- Use tabs for indenting
+- Create 1 complete JSON file each time
+- Mention the locale after you are done
+- Just give me the JSON, no other text
+- For download, use the name of the locale plus ".json" extension for file name (example: en-US.JSON)
 
-Special notes:
-Subchat means "sub" + "chat", so translate "chat" word and add "sub" prefix.
-VAT means "Value Added Tax" number or code, translate as abbreviation in each language.
+---
+Translation notes:
+- Subchat means "sub" + "chat", so translate "chat" word and add "sub" prefix
+- VAT means "Value Added Tax" number or code, translate as abbreviation in each language
+- What is marked as "state" in JSON should be translated as gerund verb, not noun
+- When addressing the user, use a polite but direct tone, use singular form
 
------------
-Here is the translations json in english:
+---
+Here is the translations JSON in english:

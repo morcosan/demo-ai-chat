@@ -2,38 +2,40 @@
 	"core": {
 		"action": {
 			"back": "Kembali",
-			"backToHome": "Kembali ke halaman utama",
-			"changeLanguage": "Ubah bahasa",
+			"backToHome": "Kembali ke beranda",
+			"changeLanguage": "Ganti bahasa",
 			"close": "Tutup",
 			"delete": "Hapus",
 			"deselectAll": "Batalkan semua pilihan",
-			"goToUrl": "Pergi ke {url}",
+			"goToUrl": "Buka {url}",
 			"openMenu": "Buka menu",
+			"copy": "Salin",
 			"rename": "Ganti nama",
 			"retry": "Coba lagi",
 			"saveChanges": "Simpan perubahan",
 			"search": "Cari",
-			"searchMore": "Tampilkan lebih banyak hasil",
+			"searchMore": "Tampilkan hasil lainnya",
 			"selectAll": "Pilih semua",
 			"signOut": "Keluar"
 		},
 		"error": {
 			"noChanges": "Tidak ada perubahan",
-			"nothingFound": "Tidak ditemukan hasil untuk \"{search}\"",
+			"nothingFound": "Tidak ditemukan untuk \"{search}\"",
 			"unsent": "Belum terkirim"
 		},
 		"label": {
 			"apiDocs": "Dokumentasi API",
 			"asia": "Asia",
 			"avatar": "Avatar",
+			"copied": "Tersalin",
 			"custom": "Kustom",
 			"darkTheme": "Gelap",
-			"default": "Default",
+			"default": "Bawaan",
 			"description": "Deskripsi",
 			"designSystem": "Sistem Desain",
-			"errors": "Kesalahan",
+			"errors": "Error",
 			"europe": "Eropa",
-			"githubRepo": "Repositori GitHub",
+			"githubRepo": "Repo GitHub",
 			"language": "Bahasa",
 			"levelHigh": "Tinggi",
 			"levelLow": "Rendah",
@@ -42,20 +44,20 @@
 			"levelVeryLow": "Sangat rendah",
 			"lightTheme": "Terang",
 			"name": "Nama",
-			"navigationBar": "Bilah navigasi",
+			"navigationBar": "Bar navigasi",
 			"navigationMenu": "Menu navigasi",
 			"optionalField": "(Opsional)",
 			"quickSettings": "Pengaturan cepat",
 			"requiredField": "(Wajib)",
 			"settings": "Pengaturan",
-			"uiLibrary": "Perpustakaan UI",
+			"uiLibrary": "Pustaka UI",
 			"uiTheme": "Tema UI"
 		},
 		"placeholder": {
 			"search": "Cari..."
 		},
 		"state": {
-			"dataSaved": "Data Anda telah disimpan",
+			"dataSaved": "Data Anda tersimpan",
 			"deleting": "Menghapus...",
 			"loading": "Memuat...",
 			"searching": "Mencari...",
@@ -67,26 +69,28 @@
 		"action": {
 			"backToSubchats": "Kembali ke subchat",
 			"configureAgent": "Konfigurasi agen",
-			"confirmDeleteAgent": "Konfirmasi penghapusan agen",
-			"confirmDeleteChats": "Konfirmasi penghapusan obrolan",
-			"confirmRenameChat": "Konfirmasi penggantian nama obrolan",
+			"confirmDeleteAgent": "Konfirmasi hapus agen",
+			"confirmDeleteChats": "Konfirmasi hapus chat",
+			"confirmRenameChat": "Konfirmasi ganti nama chat",
+			"copyCode": "Salin kode",
+			"copyMessage": "Salin pesan",
 			"createAgent": "Buat agen",
 			"deleteAgent": "Hapus agen",
-			"deleteSelectedChats": "Hapus obrolan terpilih",
-			"deselectChat": "Batalkan pilihan obrolan",
+			"deleteSelectedChats": "Hapus chat terpilih",
+			"deselectChat": "Batalkan pilihan chat",
 			"manageAgents": "Kelola agen",
-			"manageChats": "Kelola obrolan",
-			"openChat": "Buka obrolan",
+			"manageChats": "Kelola chat",
+			"openChat": "Buka chat",
 			"openSubchat_other": "Buka subchat ({count} pesan)",
 			"openSubchat_zero": "Buat subchat",
-			"searchChats": "Cari obrolan",
-			"selectChat": "Pilih obrolan",
+			"searchChats": "Cari chat",
+			"selectChat": "Pilih chat",
 			"sendMessage": "Kirim pesan",
-			"showMoreAgents": "Tampilkan lebih banyak agen",
-			"showMoreChats": "Tampilkan lebih banyak obrolan",
+			"showMoreAgents": "Tampilkan agen lainnya",
+			"showMoreChats": "Tampilkan chat lainnya",
 			"showSubchats": "Tampilkan subchat ({count})",
-			"startSearching_one": "Ketik setidaknya {count} karakter",
-			"startSearching_other": "Ketik setidaknya {count} karakter"
+			"startSearching_one": "Ketik minimal {count} karakter",
+			"startSearching_other": "Ketik minimal {count} karakter"
 		},
 		"description": {
 			"geminiNano": "Mini GPT untuk Google Chrome",
@@ -97,19 +101,19 @@
 			"agentAvatar": "Anda harus menambahkan avatar untuk agen",
 			"agentName": "Anda harus menambahkan nama untuk agen",
 			"emptyMessage": "Pesan Anda kosong",
-			"failedMessage": "Ada masalah dalam pengiriman pesan Anda"
+			"failedMessage": "Ada masalah saat mengirim pesan Anda"
 		},
 		"label": {
 			"agents": "Agen",
-			"chatTitle": "Judul obrolan",
-			"chats": "Obrolan",
+			"chatTitle": "Judul chat",
+			"chats": "Chat",
 			"creativityLevel": "Tingkat kreativitas",
 			"customInstructions": "Instruksi kustom",
 			"gptModel": "Model GPT",
 			"newAgent": "Agen baru",
-			"newChat": "Obrolan baru",
+			"newChat": "Chat baru",
 			"newMessage": "Pesan baru",
-			"noChats": "Tidak ada obrolan",
+			"noChats": "Tidak ada chat",
 			"noSubchats": "Tidak ada subchat",
 			"selectedAgent": "Agen terpilih",
 			"selectedValue": "Nilai terpilih",
@@ -128,18 +132,18 @@
 		},
 		"state": {
 			"loadingAgents": "Memuat agen...",
-			"loadingChats": "Memuat obrolan...",
-			"loadingGPTs": "Memuat GPTs...",
+			"loadingChats": "Memuat chat...",
+			"loadingGPTs": "Memuat GPT...",
 			"loadingMessages": "Memuat pesan...",
 			"loadingPreviousMessages": "Memuat pesan sebelumnya...",
 			"loadingSubchats": "Memuat subchat...",
-			"renamingChat": "Mengganti nama obrolan...",
+			"renamingChat": "Mengganti nama chat...",
 			"thinking": "Berpikir..."
 		},
 		"warning": {
-			"deletingAgent": "Agen ini akan dihapus secara permanen",
-			"deletingChats": "Obrolan ini akan dihapus secara permanen",
-			"geminiGptInsideChrome": "GPT ini membutuhkan pengaturan ini diaktifkan:",
+			"deletingAgent": "Agen ini akan dihapus permanen",
+			"deletingChats": "Chat ini akan dihapus permanen",
+			"geminiGptInsideChrome": "GPT ini memerlukan pengaturan berikut diaktifkan:",
 			"geminiGptOutsideChrome": "GPT ini hanya tersedia di browser Google Chrome",
 			"invalidGpt": "GPT tidak valid"
 		}
@@ -147,14 +151,14 @@
 	"userSettings": {
 		"action": {
 			"manageAccount": "Kelola akun",
-			"manageBilling": "Kelola penagihan"
+			"manageBilling": "Kelola tagihan"
 		},
 		"error": {
 			"address": "Anda harus menambahkan alamat",
 			"avatar": "Anda harus menambahkan avatar Anda",
 			"city": "Anda harus menambahkan kota",
 			"country": "Anda harus menambahkan negara",
-			"email": "Anda harus menambahkan alamat email",
+			"email": "Anda harus menambahkan alamat email Anda",
 			"legalName": "Anda harus menambahkan nama resmi",
 			"name": "Anda harus menambahkan nama Anda",
 			"postalCode": "Anda harus menambahkan kode pos"
@@ -162,16 +166,16 @@
 		"label": {
 			"account": "Akun",
 			"address": "Alamat",
-			"billing": "Penagihan",
+			"billing": "Tagihan",
 			"city": "Kota",
 			"country": "Negara",
 			"email": "Alamat email",
 			"legalName": "Nama resmi",
 			"phone": "Nomor telepon",
 			"postalCode": "Kode pos",
-			"private": "Pribadi",
+			"private": "Privat",
 			"public": "Publik",
-			"vatNumber": "Nomor PPN"
+			"vatNumber": "NPWP"
 		}
 	}
 }

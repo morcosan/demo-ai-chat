@@ -16,7 +16,7 @@ export const PageHeader = ({ breadcrumb, slotTitle, slotRight }: Props) => {
 			<h1 className="flex items-center text-size-xl font-weight-lg lg:text-size-xxl">
 				{breadcrumb !== undefined && (
 					<>
-						<Link to={breadcrumb.href} className="ds-link">
+						<Link to={breadcrumb.href} className="ds-header-link">
 							{breadcrumb.title}
 						</Link>
 						<span className="mx-xs-2 font-weight-xs">/</span>

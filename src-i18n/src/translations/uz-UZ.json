@@ -7,8 +7,9 @@
 			"close": "Yopish",
 			"delete": "O'chirish",
 			"deselectAll": "Hammasini bekor qilish",
-			"goToUrl": "{url} ga o'tish",
+			"goToUrl": "{url}ga o'tish",
 			"openMenu": "Menyuni ochish",
+			"copy": "Nusxalash",
 			"rename": "Qayta nomlash",
 			"retry": "Qayta urinish",
 			"saveChanges": "O'zgarishlarni saqlash",
@@ -23,17 +24,18 @@
 			"unsent": "Yuborilmagan"
 		},
 		"label": {
-			"apiDocs": "API hujjatlari",
+			"apiDocs": "API Hujjatlari",
 			"asia": "Osiyo",
 			"avatar": "Avatar",
+			"copied": "Nusxalandi",
 			"custom": "Maxsus",
-			"darkTheme": "Qorong'i",
+			"darkTheme": "Qora",
 			"default": "Standart",
 			"description": "Tavsif",
-			"designSystem": "Dizayn tizimi",
+			"designSystem": "Dizayn Tizimi",
 			"errors": "Xatolar",
 			"europe": "Yevropa",
-			"githubRepo": "GitHub repozitoriyasi",
+			"githubRepo": "GitHub Repozitoriyasi",
 			"language": "Til",
 			"levelHigh": "Yuqori",
 			"levelLow": "Past",
@@ -45,11 +47,10 @@
 			"navigationBar": "Navigatsiya paneli",
 			"navigationMenu": "Navigatsiya menyusi",
 			"optionalField": "(Ixtiyoriy)",
-			"quickSettings": "Tezkor sozlamalar",
 			"requiredField": "(Majburiy)",
 			"settings": "Sozlamalar",
-			"uiLibrary": "UI kutubxonasi",
-			"uiTheme": "UI mavzusi"
+			"uiLibrary": "UI Kutubxonasi",
+			"uiTheme": "UI Mavzusi"
 		},
 		"placeholder": {
 			"search": "Qidirish..."
@@ -65,19 +66,21 @@
 	},
 	"aiChat": {
 		"action": {
-			"backToSubchats": "Subchatga qaytish",
+			"backToSubchats": "Subchatlarga qaytish",
 			"configureAgent": "Agentni sozlash",
 			"confirmDeleteAgent": "Agentni o'chirishni tasdiqlash",
 			"confirmDeleteChats": "Chatlarni o'chirishni tasdiqlash",
 			"confirmRenameChat": "Chatni qayta nomlashni tasdiqlash",
+			"copyCode": "Kodni nusxalash",
+			"copyMessage": "Xabarni nusxalash",
 			"createAgent": "Agent yaratish",
 			"deleteAgent": "Agentni o'chirish",
 			"deleteSelectedChats": "Tanlangan chatlarni o'chirish",
-			"deselectChat": "Chatni tanlashni bekor qilish",
+			"deselectChat": "Chatni bekor qilish",
 			"manageAgents": "Agentlarni boshqarish",
 			"manageChats": "Chatlarni boshqarish",
 			"openChat": "Chatni ochish",
-			"openSubchat_other": "Subchatni ochish ({count} xabar)",
+			"openSubchat": "{count} ta xabarli subchatni ochish",
 			"openSubchat_zero": "Subchat yaratish",
 			"searchChats": "Chatlarni qidirish",
 			"selectChat": "Chatni tanlash",
@@ -85,7 +88,6 @@
 			"showMoreAgents": "Ko'proq agentlarni ko'rsatish",
 			"showMoreChats": "Ko'proq chatlarni ko'rsatish",
 			"showSubchats": "Subchatlarni ko'rsatish ({count})",
-			"startSearching_one": "Kamida {count} ta belgi kiriting",
 			"startSearching_other": "Kamida {count} ta belgi kiriting"
 		},
 		"description": {
@@ -103,7 +105,7 @@
 			"agents": "Agentlar",
 			"chatTitle": "Chat sarlavhasi",
 			"chats": "Chatlar",
-			"creativityLevel": "Ijodkorlik darajasi",
+			"creativityLevel": "Kreativlik darajasi",
 			"customInstructions": "Maxsus ko'rsatmalar",
 			"gptModel": "GPT modeli",
 			"newAgent": "Yangi agent",
@@ -114,17 +116,15 @@
 			"selectedAgent": "Tanlangan agent",
 			"selectedValue": "Tanlangan qiymat",
 			"subchats": "Subchatlar",
-			"xMessages_one": "{count} xabar",
-			"xMessages_other": "{count} xabar",
-			"xSearchResults_one": "{count} qidiruv natijasi",
-			"xSearchResults_other": "{count} qidiruv natijasi",
+			"xMessages_other": "{count} ta xabar",
+			"xSearchResults_one": "{count} ta qidiruv natijasi",
+			"xSearchResults_other": "{count} ta qidiruv natijalari",
 			"xSearchResults_zero": "Qidiruv natijalari yo'q",
-			"xSelectedMessages_one": "{count} xabar tanlangan",
-			"xSelectedMessages_other": "{count} xabar tanlangan"
+			"xSelectedMessages_other": "{count} ta xabar tanlandi"
 		},
 		"placeholder": {
 			"newMessage": "{name} bilan suhbatlashing...",
-			"rename": "Avtomatik yangi nom yaratish..."
+			"rename": "Avtomatik ravishda yangi nom yarating..."
 		},
 		"state": {
 			"loadingAgents": "Agentlar yuklanmoqda...",
@@ -139,7 +139,7 @@
 		"warning": {
 			"deletingAgent": "Bu agent butunlay o'chiriladi",
 			"deletingChats": "Bu chatlar butunlay o'chiriladi",
-			"geminiGptInsideChrome": "Bu GPT uchun quyidagi sozlamalar yoqilishi kerak:",
+			"geminiGptInsideChrome": "Bu GPT uchun quyidagi sozlamalar yoqilgan bo'lishi kerak:",
 			"geminiGptOutsideChrome": "Bu GPT faqat Google Chrome brauzerida mavjud",
 			"invalidGpt": "Noto'g'ri GPT"
 		}
@@ -147,22 +147,22 @@
 	"userSettings": {
 		"action": {
 			"manageAccount": "Hisobni boshqarish",
-			"manageBilling": "To'lovni boshqarish"
+			"manageBilling": "To'lovlarni boshqarish"
 		},
 		"error": {
-			"address": "Manzilni qo'shishingiz kerak",
-			"avatar": "Avatarni qo'shishingiz kerak",
-			"city": "Shaharni qo'shishingiz kerak",
-			"country": "Mamlakatni qo'shishingiz kerak",
-			"email": "Elektron pochta manzilini qo'shishingiz kerak",
-			"legalName": "Yuridik nomni qo'shishingiz kerak",
-			"name": "Ismingizni qo'shishingiz kerak",
-			"postalCode": "Pochta indeksini qo'shishingiz kerak"
+			"address": "Manzilni kiritishingiz kerak",
+			"avatar": "Avatarni kiritishingiz kerak",
+			"city": "Shaharni kiritishingiz kerak",
+			"country": "Mamlakatni kiritishingiz kerak",
+			"email": "Elektron pochta manzilini kiritishingiz kerak",
+			"legalName": "Yuridik nomni kiritishingiz kerak",
+			"name": "Ismingizni kiritishingiz kerak",
+			"postalCode": "Pochta indeksini kiritishingiz kerak"
 		},
 		"label": {
 			"account": "Hisob",
 			"address": "Manzil",
-			"billing": "To'lov",
+			"billing": "To'lovlar",
 			"city": "Shahar",
 			"country": "Mamlakat",
 			"email": "Elektron pochta manzili",

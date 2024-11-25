@@ -6,14 +6,15 @@
 			"changeLanguage": "Тілді өзгерту",
 			"close": "Жабу",
 			"delete": "Жою",
-			"deselectAll": "Барлығын таңдаудан шығару",
-			"goToUrl": "{url} сайтына өту",
+			"deselectAll": "Барлығын алып тастау",
+			"goToUrl": "{url} сілтемесіне өту",
 			"openMenu": "Мәзірді ашу",
-			"rename": "Атауын өзгерту",
+			"copy": "Көшіру",
+			"rename": "Атын өзгерту",
 			"retry": "Қайталау",
 			"saveChanges": "Өзгерістерді сақтау",
 			"search": "Іздеу",
-			"searchMore": "Көбірек нәтиже көрсету",
+			"searchMore": "Қосымша нәтижелерді көрсету",
 			"selectAll": "Барлығын таңдау",
 			"signOut": "Шығу"
 		},
@@ -23,17 +24,18 @@
 			"unsent": "Жіберілмеген"
 		},
 		"label": {
-			"apiDocs": "API құжаттама",
+			"apiDocs": "API құжаттамасы",
 			"asia": "Азия",
 			"avatar": "Аватар",
-			"custom": "Арнайы",
+			"copied": "Көшірілді",
+			"custom": "Қосымша",
 			"darkTheme": "Қараңғы",
 			"default": "Әдепкі",
 			"description": "Сипаттама",
 			"designSystem": "Дизайн жүйесі",
 			"errors": "Қателер",
 			"europe": "Еуропа",
-			"githubRepo": "GitHub репозиторий",
+			"githubRepo": "GitHub репозиторийі",
 			"language": "Тіл",
 			"levelHigh": "Жоғары",
 			"levelLow": "Төмен",
@@ -41,15 +43,15 @@
 			"levelVeryHigh": "Өте жоғары",
 			"levelVeryLow": "Өте төмен",
 			"lightTheme": "Жарық",
-			"name": "Атауы",
-			"navigationBar": "Навигация жолағы",
+			"name": "Аты",
+			"navigationBar": "Навигация тақтасы",
 			"navigationMenu": "Навигация мәзірі",
-			"optionalField": "(Қосымша)",
-			"quickSettings": "Жылдам баптаулар",
-			"requiredField": "(Қажет)",
+			"optionalField": "(Міндетті емес)",
+			"quickSettings": "Жылдам параметрлер",
+			"requiredField": "(Міндетті)",
 			"settings": "Параметрлер",
-			"uiLibrary": "UI кітапхана",
-			"uiTheme": "UI тақырып"
+			"uiLibrary": "UI кітапханасы",
+			"uiTheme": "UI тақырыбы"
 		},
 		"placeholder": {
 			"search": "Іздеу..."
@@ -58,7 +60,7 @@
 			"dataSaved": "Деректеріңіз сақталды",
 			"deleting": "Жойылуда...",
 			"loading": "Жүктелуде...",
-			"searching": "Іздестірілуде...",
+			"searching": "Іздеу...",
 			"sending": "Жіберілуде...",
 			"updating": "Жаңартылуда..."
 		}
@@ -69,42 +71,45 @@
 			"configureAgent": "Агентті баптау",
 			"confirmDeleteAgent": "Агентті жоюды растау",
 			"confirmDeleteChats": "Чаттарды жоюды растау",
-			"confirmRenameChat": "Чатты қайта атауды растау",
+			"confirmRenameChat": "Чат атауын өзгертуді растау",
+			"copyCode": "Кодты көшіру",
+			"copyMessage": "Хабарламаны көшіру",
 			"createAgent": "Агент жасау",
 			"deleteAgent": "Агентті жою",
 			"deleteSelectedChats": "Таңдалған чаттарды жою",
-			"deselectChat": "Чатты таңдаудан шығару",
+			"deselectChat": "Чатты таңдаудан алып тастау",
 			"manageAgents": "Агенттерді басқару",
 			"manageChats": "Чаттарды басқару",
 			"openChat": "Чатты ашу",
-			"openSubchat_other": "Субчатты ашу ({count} хабарламалар)",
 			"openSubchat_zero": "Субчат жасау",
+			"openSubchat_one": "Субчатты ашу ({count} хабарлама)",
+			"openSubchat_other": "Субчатты ашу ({count} хабарлама)",
 			"searchChats": "Чаттарды іздеу",
 			"selectChat": "Чатты таңдау",
 			"sendMessage": "Хабарлама жіберу",
 			"showMoreAgents": "Көбірек агенттерді көрсету",
 			"showMoreChats": "Көбірек чаттарды көрсету",
 			"showSubchats": "Субчаттарды көрсету ({count})",
-			"startSearching_one": "Кемінде {count} таңба енгізіңіз",
-			"startSearching_other": "Кемінде {count} таңбаларды енгізіңіз"
+			"startSearching_one": "Кем дегенде {count} таңба енгізіңіз",
+			"startSearching_other": "Кем дегенде {count} таңба енгізіңіз"
 		},
 		"description": {
-			"geminiNano": "Google Chrome үшін Mini GPT",
+			"geminiNano": "Google Chrome үшін шағын GPT",
 			"loremIpsumGPT": "Ең ақылды модель",
-			"rammusGPT": "Үздік эмоциялық қолдау"
+			"rammusGPT": "Ең жақсы эмоционалды қолдау"
 		},
 		"error": {
-			"agentAvatar": "Агент үшін аватар қосу қажет",
-			"agentName": "Агент үшін атау қосу қажет",
+			"agentAvatar": "Агент үшін аватар қосуыңыз керек",
+			"agentName": "Агент үшін атау қосуыңыз керек",
 			"emptyMessage": "Хабарламаңыз бос",
-			"failedMessage": "Хабарламаны жеткізу кезінде ақау пайда болды"
+			"failedMessage": "Хабарламаңызды жеткізуде мәселе туындады"
 		},
 		"label": {
 			"agents": "Агенттер",
-			"chatTitle": "Чат атауы",
+			"chatTitle": "Чат тақырыбы",
 			"chats": "Чаттар",
 			"creativityLevel": "Шығармашылық деңгейі",
-			"customInstructions": "Арнайы нұсқаулар",
+			"customInstructions": "Қосымша нұсқаулар",
 			"gptModel": "GPT моделі",
 			"newAgent": "Жаңа агент",
 			"newChat": "Жаңа чат",
@@ -114,32 +119,32 @@
 			"selectedAgent": "Таңдалған агент",
 			"selectedValue": "Таңдалған мән",
 			"subchats": "Субчаттар",
-			"xMessages_one": "1 хабарлама",
+			"xMessages_one": "{count} хабарлама",
 			"xMessages_other": "{count} хабарлама",
-			"xSearchResults_one": "{count} іздеу нәтижесі",
-			"xSearchResults_other": "{count} іздеу нәтижелері",
 			"xSearchResults_zero": "Іздеу нәтижелері жоқ",
-			"xSelectedMessages_one": "1 хабарлама таңдалды",
+			"xSearchResults_one": "{count} іздеу нәтижесі",
+			"xSearchResults_other": "{count} іздеу нәтижесі",
+			"xSelectedMessages_one": "{count} хабарлама таңдалды",
 			"xSelectedMessages_other": "{count} хабарлама таңдалды"
 		},
 		"placeholder": {
-			"newMessage": "{name}-мен сөйлесу...",
-			"rename": "Автоматты түрде жаңа атау жасау..."
+			"newMessage": "{name} қатысушысымен сөйлесу...",
+			"rename": "Жаңа атауды автоматты түрде жасау..."
 		},
 		"state": {
-			"loadingAgents": "Агенттерді жүктеу...",
-			"loadingChats": "Чаттарды жүктеу...",
-			"loadingGPTs": "GPT-лерді жүктеу...",
-			"loadingMessages": "Хабарламаларды жүктеу...",
-			"loadingPreviousMessages": "Алдыңғы хабарламаларды жүктеу...",
-			"loadingSubchats": "Субчаттарды жүктеу...",
-			"renamingChat": "Чатты қайта атау...",
+			"loadingAgents": "Агенттер жүктелуде...",
+			"loadingChats": "Чаттар жүктелуде...",
+			"loadingGPTs": "GPT жүктелуде...",
+			"loadingMessages": "Хабарламалар жүктелуде...",
+			"loadingPreviousMessages": "Алдыңғы хабарламалар жүктелуде...",
+			"loadingSubchats": "Субчаттар жүктелуде...",
+			"renamingChat": "Чат атауы өзгертілуде...",
 			"thinking": "Ойлануда..."
 		},
 		"warning": {
-			"deletingAgent": "Бұл агент түбегейлі жойылады",
-			"deletingChats": "Бұл чаттар түбегейлі жойылады",
-			"geminiGptInsideChrome": "Бұл GPT келесі баптаулардың қосылуын талап етеді:",
+			"deletingAgent": "Бұл агент біржола жойылады",
+			"deletingChats": "Бұл чаттар біржола жойылады",
+			"geminiGptInsideChrome": "Бұл GPT келесі параметрлердің қосылуын талап етеді:",
 			"geminiGptOutsideChrome": "Бұл GPT тек Google Chrome браузерінде қол жетімді",
 			"invalidGpt": "Жарамсыз GPT"
 		}
@@ -150,14 +155,14 @@
 			"manageBilling": "Төлемдерді басқару"
 		},
 		"error": {
-			"address": "Мекенжай қосу қажет",
-			"avatar": "Аватар қосу қажет",
-			"city": "Қала қосу қажет",
-			"country": "Ел қосу қажет",
-			"email": "Электрондық пошта мекенжайын қосу қажет",
-			"legalName": "Құқықтық атау қосу қажет",
-			"name": "Атау қосу қажет",
-			"postalCode": "Пошталық индекс қосу қажет"
+			"address": "Мекенжайды қосуыңыз керек",
+			"avatar": "Аватарыңызды қосуыңыз керек",
+			"city": "Қаланы қосуыңыз керек",
+			"country": "Елді қосуыңыз керек",
+			"email": "Электрондық пошта мекенжайыңызды қосуыңыз керек",
+			"legalName": "Заңды атауды қосуыңыз керек",
+			"name": "Атыңызды қосуыңыз керек",
+			"postalCode": "Пошта индексін қосуыңыз керек"
 		},
 		"label": {
 			"account": "Есептік жазба",
@@ -166,12 +171,12 @@
 			"city": "Қала",
 			"country": "Ел",
 			"email": "Электрондық пошта",
-			"legalName": "Құқықтық атау",
+			"legalName": "Заңды атау",
 			"phone": "Телефон нөмірі",
-			"postalCode": "Пошталық индекс",
+			"postalCode": "Пошта индексі",
 			"private": "Жеке",
-			"public": "Қоғамдық",
-			"vatNumber": "ҚҚС нөмірі"
+			"public": "Жалпыға қолжетімді",
+			"vatNumber": "БСН"
 		}
 	}
 }

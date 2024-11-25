@@ -2,13 +2,14 @@
 	"core": {
 		"action": {
 			"back": "واپس",
-			"backToHome": "ہوم پیج پر واپس جائیں",
+			"backToHome": "ہوم پیج پر واپس",
 			"changeLanguage": "زبان تبدیل کریں",
 			"close": "بند کریں",
 			"delete": "حذف کریں",
-			"deselectAll": "سب کو نامنتخب کریں",
+			"deselectAll": "سب کو غیر منتخب کریں",
 			"goToUrl": "{url} پر جائیں",
 			"openMenu": "مینو کھولیں",
+			"copy": "کاپی کریں",
 			"rename": "نام تبدیل کریں",
 			"retry": "دوبارہ کوشش کریں",
 			"saveChanges": "تبدیلیاں محفوظ کریں",
@@ -26,7 +27,8 @@
 			"apiDocs": "اے پی آئی دستاویزات",
 			"asia": "ایشیا",
 			"avatar": "تصویر",
-			"custom": "حسب ضرورت",
+			"copied": "کاپی ہو گیا",
+			"custom": "مرضی کے مطابق",
 			"darkTheme": "ڈارک",
 			"default": "ڈیفالٹ",
 			"description": "تفصیل",
@@ -46,7 +48,7 @@
 			"navigationMenu": "نیویگیشن مینو",
 			"optionalField": "(اختیاری)",
 			"quickSettings": "فوری ترتیبات",
-			"requiredField": "(ضروری)",
+			"requiredField": "(درکار)",
 			"settings": "ترتیبات",
 			"uiLibrary": "یو آئی لائبریری",
 			"uiTheme": "یو آئی تھیم"
@@ -56,27 +58,30 @@
 		},
 		"state": {
 			"dataSaved": "آپ کا ڈیٹا محفوظ ہو گیا",
-			"deleting": "حذف کیا جا رہا ہے...",
+			"deleting": "حذف کر رہا ہے...",
 			"loading": "لوڈ ہو رہا ہے...",
-			"searching": "تلاش کیا جا رہا ہے...",
-			"sending": "بھیجا جا رہا ہے...",
-			"updating": "اپڈیٹ ہو رہا ہے..."
+			"searching": "تلاش کر رہا ہے...",
+			"sending": "بھیج رہا ہے...",
+			"updating": "اپ ڈیٹ کر رہا ہے..."
 		}
 	},
 	"aiChat": {
 		"action": {
-			"backToSubchats": "ذیلی چیٹس پر واپس جائیں",
+			"backToSubchats": "ذیلی چیٹس پر واپس",
 			"configureAgent": "ایجنٹ کی ترتیب کریں",
-			"confirmDeleteAgent": "ایجنٹ کی حذف کی تصدیق کریں",
-			"confirmDeleteChats": "چیٹس کی حذف کی تصدیق کریں",
-			"confirmRenameChat": "چیٹ کے نام کی تبدیلی کی تصدیق کریں",
+			"confirmDeleteAgent": "ایجنٹ کو حذف کرنے کی تصدیق کریں",
+			"confirmDeleteChats": "چیٹس کو حذف کرنے کی تصدیق کریں",
+			"confirmRenameChat": "چیٹ کا نام تبدیل کرنے کی تصدیق کریں",
+			"copyCode": "کوڈ کاپی کریں",
+			"copyMessage": "پیغام کاپی کریں",
 			"createAgent": "ایجنٹ بنائیں",
 			"deleteAgent": "ایجنٹ حذف کریں",
 			"deleteSelectedChats": "منتخب چیٹس حذف کریں",
-			"deselectChat": "چیٹ کو نامنتخب کریں",
+			"deselectChat": "چیٹ غیر منتخب کریں",
 			"manageAgents": "ایجنٹس کا انتظام کریں",
 			"manageChats": "چیٹس کا انتظام کریں",
 			"openChat": "چیٹ کھولیں",
+			"openSubchat_one": "ذیلی چیٹ کھولیں ({count} پیغام)",
 			"openSubchat_other": "ذیلی چیٹ کھولیں ({count} پیغامات)",
 			"openSubchat_zero": "ذیلی چیٹ بنائیں",
 			"searchChats": "چیٹس تلاش کریں",
@@ -94,10 +99,10 @@
 			"rammusGPT": "بہترین جذباتی مدد"
 		},
 		"error": {
-			"agentAvatar": "آپ کو ایجنٹ کے لیے تصویر شامل کرنی ہوگی",
+			"agentAvatar": "آپ کو ایجنٹ کے لیے تصویر شامل کرنا ہوگی",
 			"agentName": "آپ کو ایجنٹ کے لیے نام شامل کرنا ہوگا",
 			"emptyMessage": "آپ کا پیغام خالی ہے",
-			"failedMessage": "آپ کا پیغام بھیجنے میں مسئلہ ہوا"
+			"failedMessage": "آپ کا پیغام بھیجنے میں مسئلہ پیش آیا"
 		},
 		"label": {
 			"agents": "ایجنٹس",
@@ -111,15 +116,15 @@
 			"newMessage": "نیا پیغام",
 			"noChats": "کوئی چیٹس نہیں",
 			"noSubchats": "کوئی ذیلی چیٹس نہیں",
-			"selectedAgent": "منتخب شدہ ایجنٹ",
-			"selectedValue": "منتخب شدہ قیمت",
+			"selectedAgent": "منتخب ایجنٹ",
+			"selectedValue": "منتخب قیمت",
 			"subchats": "ذیلی چیٹس",
-			"xMessages_one": "{count} پیغام",
+			"xMessages_one": "1 پیغام",
 			"xMessages_other": "{count} پیغامات",
 			"xSearchResults_one": "{count} تلاش کا نتیجہ",
 			"xSearchResults_other": "{count} تلاش کے نتائج",
-			"xSearchResults_zero": "کوئی تلاش کے نتائج نہیں",
-			"xSelectedMessages_one": "{count} پیغام منتخب",
+			"xSearchResults_zero": "کوئی تلاش کا نتیجہ نہیں",
+			"xSelectedMessages_one": "1 پیغام منتخب",
 			"xSelectedMessages_other": "{count} پیغامات منتخب"
 		},
 		"placeholder": {
@@ -129,17 +134,17 @@
 		"state": {
 			"loadingAgents": "ایجنٹس لوڈ ہو رہے ہیں...",
 			"loadingChats": "چیٹس لوڈ ہو رہی ہیں...",
-			"loadingGPTs": "جی پی ٹیز لوڈ ہو رہے ہیں...",
+			"loadingGPTs": "جی پی ٹیز لوڈ ہو رہی ہیں...",
 			"loadingMessages": "پیغامات لوڈ ہو رہے ہیں...",
 			"loadingPreviousMessages": "پچھلے پیغامات لوڈ ہو رہے ہیں...",
 			"loadingSubchats": "ذیلی چیٹس لوڈ ہو رہی ہیں...",
-			"renamingChat": "چیٹ کا نام تبدیل کیا جا رہا ہے...",
+			"renamingChat": "چیٹ کا نام تبدیل ہو رہا ہے...",
 			"thinking": "سوچ رہا ہے..."
 		},
 		"warning": {
 			"deletingAgent": "یہ ایجنٹ مستقل طور پر حذف ہو جائے گا",
 			"deletingChats": "یہ چیٹس مستقل طور پر حذف ہو جائیں گی",
-			"geminiGptInsideChrome": "اس جی پی ٹی کے لیے ان ترتیبات کا فعال ہونا ضروری ہے:",
+			"geminiGptInsideChrome": "اس جی پی ٹی کے لیے یہ ترتیبات فعال ہونی چاہئیں:",
 			"geminiGptOutsideChrome": "یہ جی پی ٹی صرف گوگل کروم براؤزر میں دستیاب ہے",
 			"invalidGpt": "غلط جی پی ٹی"
 		}
@@ -151,10 +156,10 @@
 		},
 		"error": {
 			"address": "آپ کو پتہ شامل کرنا ہوگا",
-			"avatar": "آپ کو اپنی تصویر شامل کرنی ہوگی",
+			"avatar": "آپ کو اپنی تصویر شامل کرنا ہوگی",
 			"city": "آپ کو شہر شامل کرنا ہوگا",
 			"country": "آپ کو ملک شامل کرنا ہوگا",
-			"email": "آپ کو اپنا ای میل ایڈریس شامل کرنا ہوگا",
+			"email": "آپ کو اپنا ای میل پتہ شامل کرنا ہوگا",
 			"legalName": "آپ کو قانونی نام شامل کرنا ہوگا",
 			"name": "آپ کو اپنا نام شامل کرنا ہوگا",
 			"postalCode": "آپ کو پوسٹل کوڈ شامل کرنا ہوگا"
@@ -165,13 +170,13 @@
 			"billing": "بلنگ",
 			"city": "شہر",
 			"country": "ملک",
-			"email": "ای میل ایڈریس",
+			"email": "ای میل پتہ",
 			"legalName": "قانونی نام",
 			"phone": "فون نمبر",
 			"postalCode": "پوسٹل کوڈ",
 			"private": "نجی",
 			"public": "عوامی",
-			"vatNumber": "این ٹی این"
+			"vatNumber": "وی اے ٹی نمبر"
 		}
 	}
 }

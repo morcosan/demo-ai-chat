@@ -9,6 +9,7 @@
 			"deselectAll": "Desselecionar tudo",
 			"goToUrl": "Ir para {url}",
 			"openMenu": "Abrir menu",
+			"copy": "Copiar",
 			"rename": "Renomear",
 			"retry": "Tentar novamente",
 			"saveChanges": "Guardar alterações",
@@ -18,7 +19,7 @@
 			"signOut": "Terminar sessão"
 		},
 		"error": {
-			"noChanges": "Não há alterações",
+			"noChanges": "Não existem alterações",
 			"nothingFound": "Nada encontrado para \"{search}\"",
 			"unsent": "Não enviado"
 		},
@@ -26,9 +27,10 @@
 			"apiDocs": "Documentação API",
 			"asia": "Ásia",
 			"avatar": "Avatar",
+			"copied": "Copiado",
 			"custom": "Personalizado",
 			"darkTheme": "Escuro",
-			"default": "Predefinido",
+			"default": "Padrão",
 			"description": "Descrição",
 			"designSystem": "Sistema de Design",
 			"errors": "Erros",
@@ -45,9 +47,9 @@
 			"navigationBar": "Barra de navegação",
 			"navigationMenu": "Menu de navegação",
 			"optionalField": "(Opcional)",
+			"quickSettings": "Definições rápidas",
 			"requiredField": "(Obrigatório)",
 			"settings": "Definições",
-			"quickSettings": "Definições rápidas",
 			"uiLibrary": "Biblioteca UI",
 			"uiTheme": "Tema UI"
 		},
@@ -70,6 +72,8 @@
 			"confirmDeleteAgent": "Confirmar eliminação do agente",
 			"confirmDeleteChats": "Confirmar eliminação das conversas",
 			"confirmRenameChat": "Confirmar renomeação da conversa",
+			"copyCode": "Copiar o código",
+			"copyMessage": "Copiar a mensagem",
 			"createAgent": "Criar agente",
 			"deleteAgent": "Eliminar agente",
 			"deleteSelectedChats": "Eliminar conversas selecionadas",
@@ -86,7 +90,7 @@
 			"showMoreAgents": "Mostrar mais agentes",
 			"showMoreChats": "Mostrar mais conversas",
 			"showSubchats": "Mostrar subchats ({count})",
-			"startSearching_one": "Digite pelo menos {count} caractere",
+			"startSearching_one": "Digite pelo menos {count} caracter",
 			"startSearching_other": "Digite pelo menos {count} caracteres"
 		},
 		"description": {
@@ -115,14 +119,12 @@
 			"selectedAgent": "Agente selecionado",
 			"selectedValue": "Valor selecionado",
 			"subchats": "Subchats",
-			"xMessages_zero": "Sem mensagens",
-			"xMessages_one": "1 mensagem",
+			"xMessages_one": "{count} mensagem",
 			"xMessages_other": "{count} mensagens",
-			"xSearchResults_zero": "Sem resultados",
-			"xSearchResults_one": "{count} resultado",
-			"xSearchResults_other": "{count} resultados",
-			"xSelectedMessages_zero": "Nenhuma mensagem selecionada",
-			"xSelectedMessages_one": "1 mensagem selecionada",
+			"xSearchResults_zero": "Sem resultados de pesquisa",
+			"xSearchResults_one": "{count} resultado de pesquisa",
+			"xSearchResults_other": "{count} resultados de pesquisa",
+			"xSelectedMessages_one": "{count} mensagem selecionada",
 			"xSelectedMessages_other": "{count} mensagens selecionadas"
 		},
 		"placeholder": {
@@ -153,18 +155,18 @@
 			"manageBilling": "Gerir faturação"
 		},
 		"error": {
-			"address": "Deve adicionar a morada",
+			"address": "Deve adicionar o endereço",
 			"avatar": "Deve adicionar o seu avatar",
 			"city": "Deve adicionar a cidade",
 			"country": "Deve adicionar o país",
-			"email": "Deve adicionar o endereço de email",
+			"email": "Deve adicionar o seu endereço de email",
 			"legalName": "Deve adicionar o nome legal",
 			"name": "Deve adicionar o seu nome",
 			"postalCode": "Deve adicionar o código postal"
 		},
 		"label": {
 			"account": "Conta",
-			"address": "Morada",
+			"address": "Endereço",
 			"billing": "Faturação",
 			"city": "Cidade",
 			"country": "País",
@@ -174,7 +176,7 @@
 			"postalCode": "Código postal",
 			"private": "Privado",
 			"public": "Público",
-			"vatNumber": "Número de contribuinte"
+			"vatNumber": "NIF"
 		}
 	}
 }

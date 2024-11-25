@@ -3,20 +3,15 @@ import { Message } from '../api'
 import { AiChatView, useAiChatLayout } from '../state'
 import { SubchatIcon } from './subchat-icon'
 
-interface Props {
+interface Props extends ReactProps {
 	message: Message
-	subchatId?: number
+	selected: boolean
+	small: boolean
 }
 
-export const SubchatButton = ({ message, subchatId }: Props) => {
+export const SubchatButton = (props: Props) => {
+	const { message, selected, small, className } = props
 	const { activeView, setActiveView } = useAiChatLayout()
-
-	const subchatButtonClass = cx({
-		'px-xs-3': true,
-		'lg:mt-sm-2': message.role === 'agent',
-		'focus:opacity-100 lg:opacity-0 lg:group-hover:opacity-100': !message.subchatSize,
-		'!opacity-100': message.id === subchatId,
-	})
 
 	const onClickSubchat = () => {
 		activeView === AiChatView.MOBILE_CHAT && setActiveView(AiChatView.MOBILE_SUBCHAT)
@@ -26,12 +21,13 @@ export const SubchatButton = ({ message, subchatId }: Props) => {
 		<Button
 			tooltip={t('aiChat.action.openSubchat', { count: message.subchatSize })}
 			linkHref={`/chat/${message.chatId}?subchat=${message.id}`}
-			variant="item-text-default"
-			highlight={message.id === subchatId ? 'pressed' : 'default'}
-			className={subchatButtonClass}
+			variant={small ? 'text-subtle' : 'item-text-default'}
+			size={small ? 'xs' : 'md'}
+			highlight={selected ? 'pressed' : 'default'}
+			className={className}
 			onClick={onClickSubchat}
 		>
-			<SubchatIcon count={message.subchatSize || -1} />
+			<SubchatIcon count={message.subchatSize || -1} small={small} className={cx(small && 'pt-xs-0')} />
 		</Button>
 	)
 }

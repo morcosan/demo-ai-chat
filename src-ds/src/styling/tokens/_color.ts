@@ -47,7 +47,7 @@ export const TOKENS__COLOR = {
 	'red-4': { $value: '#f87171' },
 	'red-5': { $value: '#de3434' },
 	'red-6': { $value: '#d92323' },
-	'red-7': { $value: '#b91c1c' },
+	'red-7': { $value: '#b61b1b' },
 	'red-8': { $value: '#7f1d1d' },
 
 	'green-1': { $value: '#dcfce7' },
@@ -84,9 +84,11 @@ export const TOKENS__COLOR = {
 	'bg-page': { $ref: { light: 'grey-2', dark: 'grey-19' } },
 	'bg-card': { $ref: { light: 'grey-1', dark: 'grey-18' } },
 	'bg-popup': { $ref: { light: 'white', dark: 'grey-17' } },
+	'bg-coding': { $ref: { light: 'white', dark: 'grey-20' } },
 	'bg-field': { $ref: { light: 'black-glass-1', dark: 'black-glass-4' } },
-	'bg-coding': { $ref: { light: 'black-glass-2', dark: 'black-glass-5' } },
 	'bg-skeleton': { $ref: { light: 'black-glass-3', dark: 'white-glass-5' } },
+	'bg-link': { $ref: { light: 'black-glass-2', dark: 'black-glass-5' } },
+	'bg-blockquote': { $ref: { light: 'black-glass-1', dark: 'white-glass-2' } },
 
 	'border-active': { $ref: { light: 'grey-12', dark: 'grey-8' } },
 	'border-hover': { $ref: { light: 'grey-11', dark: 'grey-12' } },
@@ -99,6 +101,7 @@ export const TOKENS__COLOR = {
 	'text-placeholder': { $ref: { light: 'grey-11', dark: 'grey-11' } },
 	'text-inverse': { $ref: { light: 'white', dark: 'black' } },
 	'text-coding': { $ref: { light: 'purple-7', dark: 'purple-2' } },
+	'text-link': { $ref: { light: 'purple-8', dark: 'purple-1' } },
 
 	'hover-text-default': { $ref: { light: 'black-glass-2', dark: 'black-glass-5' } },
 	'hover-text-pressed': { $ref: { light: 'black-glass-3', dark: 'black-glass-6' } },
@@ -111,6 +114,7 @@ export const TOKENS__COLOR = {
 	'primary-hover-pressed': { $ref: { light: 'hover-button-pressed', dark: 'hover-button-pressed' } },
 	'primary-card-bg': { $ref: { light: 'purple-1', dark: 'purple-8' } },
 	'primary-card-text': { $ref: { light: 'purple-8', dark: 'white' } },
+	'primary-card-subtext': { $ref: { light: 'purple-7', dark: 'purple-3' } },
 	'primary-page-text': { $ref: { light: 'purple-6', dark: 'purple-3' } },
 
 	'secondary-button-bg': { $ref: { light: 'yellow-3', dark: 'yellow-2' } },
@@ -119,6 +123,7 @@ export const TOKENS__COLOR = {
 	'secondary-hover-pressed': { $ref: { light: 'black-glass-5', dark: 'black-glass-6' } },
 	'secondary-card-bg': { $ref: { light: 'yellow-1', dark: 'yellow-6' } },
 	'secondary-card-text': { $ref: { light: 'yellow-8', dark: 'white' } },
+	'secondary-card-subtext': { $ref: { light: 'yellow-7', dark: 'yellow-1' } },
 	'secondary-page-text': { $ref: { light: 'yellow-7', dark: 'yellow-2' } },
 
 	'danger-button-bg': { $ref: { light: 'red-6', dark: 'red-5' } },
@@ -127,6 +132,7 @@ export const TOKENS__COLOR = {
 	'danger-hover-pressed': { $ref: { light: 'hover-button-pressed', dark: 'hover-button-pressed' } },
 	'danger-card-bg': { $ref: { light: 'red-1', dark: 'red-8' } },
 	'danger-card-text': { $ref: { light: 'red-8', dark: 'white' } },
+	'danger-card-subtext': { $ref: { light: 'red-7', dark: 'red-2' } },
 	'danger-page-text': { $ref: { light: 'red-6', dark: 'red-3' } },
 
 	'success-button-bg': { $ref: { light: 'green-6', dark: 'green-6' } },
@@ -135,6 +141,7 @@ export const TOKENS__COLOR = {
 	'success-hover-pressed': { $ref: { light: 'hover-button-pressed', dark: 'hover-button-pressed' } },
 	'success-card-bg': { $ref: { light: 'green-1', dark: 'green-8' } },
 	'success-card-text': { $ref: { light: 'green-8', dark: 'white' } },
+	'success-card-subtext': { $ref: { light: 'green-7', dark: 'green-3' } },
 	'success-page-text': { $ref: { light: 'green-7', dark: 'green-3' } },
 
 	'modal-overlay-subtle': { $ref: { light: 'black-glass-7', dark: 'black-glass-6' } },

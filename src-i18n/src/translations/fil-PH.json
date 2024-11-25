@@ -3,17 +3,18 @@
 		"action": {
 			"back": "Bumalik",
 			"backToHome": "Bumalik sa homepage",
-			"changeLanguage": "Palitan ang wika",
+			"changeLanguage": "Baguhin ang wika",
 			"close": "Isara",
-			"delete": "Tanggalin",
-			"deselectAll": "Alisin ang lahat ng napili",
+			"delete": "Burahin", 
+			"deselectAll": "I-deselect lahat",
 			"goToUrl": "Pumunta sa {url}",
 			"openMenu": "Buksan ang menu",
+			"copy": "Kopyahin",
 			"rename": "Palitan ang pangalan",
-			"retry": "Subukang muli",
+			"retry": "Subukan muli",
 			"saveChanges": "I-save ang mga pagbabago",
 			"search": "Maghanap",
-			"searchMore": "Ipakita pa ang mga resulta",
+			"searchMore": "Ipakita ang iba pang resulta", 
 			"selectAll": "Piliin lahat",
 			"signOut": "Mag-sign out"
 		},
@@ -23,17 +24,18 @@
 			"unsent": "Hindi naipadala"
 		},
 		"label": {
-			"apiDocs": "Mga Dokumento ng API",
+			"apiDocs": "API Docs",
 			"asia": "Asya",
 			"avatar": "Avatar",
-			"custom": "Pasadyang",
+			"copied": "Nakopya na",
+			"custom": "Pasadya",
 			"darkTheme": "Madilim",
 			"default": "Default",
 			"description": "Paglalarawan",
 			"designSystem": "Sistema ng Disenyo",
 			"errors": "Mga Error",
 			"europe": "Europa",
-			"githubRepo": "GitHub Repository",
+			"githubRepo": "GitHub Repo",
 			"language": "Wika",
 			"levelHigh": "Mataas",
 			"levelLow": "Mababa",
@@ -43,20 +45,19 @@
 			"lightTheme": "Maliwanag",
 			"name": "Pangalan",
 			"navigationBar": "Navigation bar",
-			"navigationMenu": "Menu ng Navigation",
+			"navigationMenu": "Navigation menu",
 			"optionalField": "(Opsyonal)",
-			"quickSettings": "Mabilis na mga setting",
 			"requiredField": "(Kailangan)",
 			"settings": "Mga Setting",
 			"uiLibrary": "UI Library",
-			"uiTheme": "UI Tema"
+			"uiTheme": "UI Theme"
 		},
 		"placeholder": {
 			"search": "Maghanap..."
 		},
 		"state": {
-			"dataSaved": "Ang iyong data ay nasave na",
-			"deleting": "Tinatanggal...",
+			"dataSaved": "Na-save na ang iyong data",
+			"deleting": "Binubura...",
 			"loading": "Naglo-load...",
 			"searching": "Naghahanap...",
 			"sending": "Ipinapadala...",
@@ -67,37 +68,39 @@
 		"action": {
 			"backToSubchats": "Bumalik sa mga subchat",
 			"configureAgent": "I-configure ang agent",
-			"confirmDeleteAgent": "Kumpirmahin ang pagtanggal ng agent",
-			"confirmDeleteChats": "Kumpirmahin ang pagtanggal ng mga chat",
+			"confirmDeleteAgent": "Kumpirmahin ang pagbura ng agent",
+			"confirmDeleteChats": "Kumpirmahin ang pagbura ng mga chat",
 			"confirmRenameChat": "Kumpirmahin ang pagpapalit ng pangalan ng chat",
+			"copyCode": "Kopyahin ang code",
+			"copyMessage": "Kopyahin ang mensahe",
 			"createAgent": "Gumawa ng agent",
-			"deleteAgent": "Tanggalin ang agent",
-			"deleteSelectedChats": "Tanggalin ang mga napiling chat",
-			"deselectChat": "Alisin ang pagkakapili sa chat",
+			"deleteAgent": "Burahin ang agent",
+			"deleteSelectedChats": "Burahin ang mga napiling chat",
+			"deselectChat": "I-deselect ang chat",
 			"manageAgents": "Pamahalaan ang mga agent",
 			"manageChats": "Pamahalaan ang mga chat",
 			"openChat": "Buksan ang chat",
-			"openSubchat_other": "Buksan ang subchat ({count} na mensahe)",
 			"openSubchat_zero": "Gumawa ng subchat",
+			"openSubchat_other": "Buksan ang subchat ({count} na mensahe)",
 			"searchChats": "Maghanap ng mga chat",
 			"selectChat": "Piliin ang chat",
 			"sendMessage": "Ipadala ang mensahe",
-			"showMoreAgents": "Ipakita pa ang mga agent",
-			"showMoreChats": "Ipakita pa ang mga chat",
+			"showMoreAgents": "Ipakita ang iba pang mga agent",
+			"showMoreChats": "Ipakita ang iba pang mga chat",
 			"showSubchats": "Ipakita ang mga subchat ({count})",
-			"startSearching_one": "Mag-type ng hindi bababa sa {count} na karakter",
-			"startSearching_other": "Mag-type ng hindi bababa sa {count} na mga karakter"
+			"startSearching_one": "Mag-type ng {count} character",
+			"startSearching_other": "Mag-type ng {count} na character"
 		},
 		"description": {
 			"geminiNano": "Mini GPT para sa Google Chrome",
-			"loremIpsumGPT": "Pinaka-matalinong modelo",
-			"rammusGPT": "Pinakamahusay na emosyonal na suporta"
+			"loremIpsumGPT": "Pinakamatalinong modelo",
+			"rammusGPT": "Pinakamahusay na emotional support"
 		},
 		"error": {
 			"agentAvatar": "Kailangan mong magdagdag ng avatar para sa agent",
 			"agentName": "Kailangan mong magdagdag ng pangalan para sa agent",
 			"emptyMessage": "Walang laman ang iyong mensahe",
-			"failedMessage": "Nagkaroon ng problema sa pagpapadala ng iyong mensahe"
+			"failedMessage": "May problema sa pagpapadala ng iyong mensahe"
 		},
 		"label": {
 			"agents": "Mga Agent",
@@ -105,7 +108,7 @@
 			"chats": "Mga Chat",
 			"creativityLevel": "Antas ng pagkamalikhain",
 			"customInstructions": "Pasadyang mga tagubilin",
-			"gptModel": "GPT modelo",
+			"gptModel": "GPT model",
 			"newAgent": "Bagong agent",
 			"newChat": "Bagong chat",
 			"newMessage": "Bagong mensahe",
@@ -114,17 +117,17 @@
 			"selectedAgent": "Napiling agent",
 			"selectedValue": "Napiling halaga",
 			"subchats": "Mga Subchat",
-			"xMessages_one": "1 na mensahe",
-			"xMessages_other": "{count} na mga mensahe",
-			"xSearchResults_one": "{count} na resulta ng paghahanap",
-			"xSearchResults_other": "{count} na mga resulta ng paghahanap",
-			"xSearchResults_zero": "Walang resulta ng paghahanap",
-			"xSelectedMessages_one": "1 na mensahe napili",
-			"xSelectedMessages_other": "{count} na mga mensahe napili"
+			"xMessages_one": "1 mensahe",
+			"xMessages_other": "{count} na mensahe",
+			"xSearchResults_zero": "Walang mga resulta ng paghahanap",
+			"xSearchResults_one": "{count} resulta ng paghahanap",
+			"xSearchResults_other": "{count} na resulta ng paghahanap",
+			"xSelectedMessages_one": "1 mensaheng napili",
+			"xSelectedMessages_other": "{count} na mensaheng napili"
 		},
 		"placeholder": {
 			"newMessage": "Makipag-usap kay {name}...",
-			"rename": "Gumawa ng bagong pangalan nang awtomatiko..."
+			"rename": "Awtomatikong bumuo ng bagong pangalan..."
 		},
 		"state": {
 			"loadingAgents": "Naglo-load ng mga agent...",
@@ -133,36 +136,36 @@
 			"loadingMessages": "Naglo-load ng mga mensahe...",
 			"loadingPreviousMessages": "Naglo-load ng mga nakaraang mensahe...",
 			"loadingSubchats": "Naglo-load ng mga subchat...",
-			"renamingChat": "Binabago ang pangalan ng chat...",
+			"renamingChat": "Pinapalitan ang pangalan ng chat...",
 			"thinking": "Nag-iisip..."
 		},
 		"warning": {
-			"deletingAgent": "Ang agent na ito ay permanenteng matatanggal",
-			"deletingChats": "Ang mga chat na ito ay permanenteng matatanggal",
-			"geminiGptInsideChrome": "Ang GPT na ito ay nangangailangan ng pag-activate ng mga sumusunod na setting:",
-			"geminiGptOutsideChrome": "Ang GPT na ito ay makukuha lamang sa Google Chrome browser",
+			"deletingAgent": "Permanenteng mabubura ang agent na ito",
+			"deletingChats": "Permanenteng mabubura ang mga chat na ito",
+			"geminiGptInsideChrome": "Ang GPT na ito ay nangangailangan ng mga sumusunod na setting na naka-enable:",
+			"geminiGptOutsideChrome": "Ang GPT na ito ay magagamit lamang sa Google Chrome browser",
 			"invalidGpt": "Hindi wastong GPT"
 		}
 	},
 	"userSettings": {
 		"action": {
 			"manageAccount": "Pamahalaan ang account",
-			"manageBilling": "Pamahalaan ang pagsingil"
+			"manageBilling": "Pamahalaan ang billing"
 		},
 		"error": {
-			"address": "Kailangan mong idagdag ang address",
-			"avatar": "Kailangan mong idagdag ang iyong avatar",
-			"city": "Kailangan mong idagdag ang lungsod",
-			"country": "Kailangan mong idagdag ang bansa",
-			"email": "Kailangan mong idagdag ang iyong email address",
-			"legalName": "Kailangan mong idagdag ang legal na pangalan",
-			"name": "Kailangan mong idagdag ang iyong pangalan",
-			"postalCode": "Kailangan mong idagdag ang postal code"
+			"address": "Kailangan mong magdagdag ng address",
+			"avatar": "Kailangan mong magdagdag ng iyong avatar",
+			"city": "Kailangan mong magdagdag ng lungsod",
+			"country": "Kailangan mong magdagdag ng bansa",
+			"email": "Kailangan mong magdagdag ng iyong email address",
+			"legalName": "Kailangan mong magdagdag ng legal na pangalan",
+			"name": "Kailangan mong magdagdag ng iyong pangalan",
+			"postalCode": "Kailangan mong magdagdag ng postal code"
 		},
 		"label": {
 			"account": "Account",
 			"address": "Address",
-			"billing": "Pagsingil",
+			"billing": "Billing",
 			"city": "Lungsod",
 			"country": "Bansa",
 			"email": "Email address",
@@ -171,7 +174,7 @@
 			"postalCode": "Postal code",
 			"private": "Pribado",
 			"public": "Pampubliko",
-			"vatNumber": "VAT numero"
+			"vatNumber": "TIN"
 		}
 	}
 }

@@ -2,42 +2,44 @@
 	"core": {
 		"action": {
 			"back": "Πίσω",
-			"backToHome": "Πίσω στην αρχική σελίδα",
+			"backToHome": "Επιστροφή στην αρχική",
 			"changeLanguage": "Αλλαγή γλώσσας",
 			"close": "Κλείσιμο",
 			"delete": "Διαγραφή",
 			"deselectAll": "Αποεπιλογή όλων",
 			"goToUrl": "Μετάβαση στο {url}",
 			"openMenu": "Άνοιγμα μενού",
+			"copy": "Αντιγραφή",
 			"rename": "Μετονομασία",
-			"retry": "Δοκιμή ξανά",
+			"retry": "Επανάληψη",
 			"saveChanges": "Αποθήκευση αλλαγών",
 			"search": "Αναζήτηση",
-			"searchMore": "Εμφάνιση περισσότερων αποτελεσμάτων",
+			"searchMore": "Εμφάνιση περισσότερων",
 			"selectAll": "Επιλογή όλων",
 			"signOut": "Αποσύνδεση"
 		},
 		"error": {
 			"noChanges": "Δεν υπάρχουν αλλαγές",
 			"nothingFound": "Δεν βρέθηκε τίποτα για \"{search}\"",
-			"unsent": "Μη αποσταλθέν"
+			"unsent": "Μη απεσταλμένο"
 		},
 		"label": {
-			"apiDocs": "Έγγραφα API",
+			"apiDocs": "Τεκμηρίωση API",
 			"asia": "Ασία",
 			"avatar": "Άβαταρ",
+			"copied": "Αντιγράφηκε",
 			"custom": "Προσαρμοσμένο",
 			"darkTheme": "Σκούρο",
-			"default": "Προεπιλεγμένο",
+			"default": "Προεπιλογή",
 			"description": "Περιγραφή",
-			"designSystem": "Σύστημα Σχεδιασμού",
+			"designSystem": "Σύστημα Σχεδίασης",
 			"errors": "Σφάλματα",
 			"europe": "Ευρώπη",
 			"githubRepo": "Αποθετήριο GitHub",
 			"language": "Γλώσσα",
 			"levelHigh": "Υψηλό",
 			"levelLow": "Χαμηλό",
-			"levelMedium": "Μέτριο",
+			"levelMedium": "Μεσαίο",
 			"levelVeryHigh": "Πολύ υψηλό",
 			"levelVeryLow": "Πολύ χαμηλό",
 			"lightTheme": "Φωτεινό",
@@ -65,11 +67,13 @@
 	},
 	"aiChat": {
 		"action": {
-			"backToSubchats": "Πίσω στα υποσυνομιλίες",
+			"backToSubchats": "Πίσω στις υποσυνομιλίες",
 			"configureAgent": "Διαμόρφωση πράκτορα",
 			"confirmDeleteAgent": "Επιβεβαίωση διαγραφής πράκτορα",
 			"confirmDeleteChats": "Επιβεβαίωση διαγραφής συνομιλιών",
 			"confirmRenameChat": "Επιβεβαίωση μετονομασίας συνομιλίας",
+			"copyCode": "Αντιγραφή κώδικα",
+			"copyMessage": "Αντιγραφή μηνύματος",
 			"createAgent": "Δημιουργία πράκτορα",
 			"deleteAgent": "Διαγραφή πράκτορα",
 			"deleteSelectedChats": "Διαγραφή επιλεγμένων συνομιλιών",
@@ -89,15 +93,15 @@
 			"startSearching_other": "Πληκτρολογήστε τουλάχιστον {count} χαρακτήρες"
 		},
 		"description": {
-			"geminiNano": "Μίνι GPT για το Google Chrome",
+			"geminiNano": "Mini GPT για Google Chrome",
 			"loremIpsumGPT": "Το πιο έξυπνο μοντέλο",
-			"rammusGPT": "Η καλύτερη συναισθηματική υποστήριξη"
+			"rammusGPT": "Καλύτερη συναισθηματική υποστήριξη"
 		},
 		"error": {
-			"agentAvatar": "Πρέπει να προσθέσετε ένα άβαταρ για τον πράκτορα",
-			"agentName": "Πρέπει να προσθέσετε ένα όνομα για τον πράκτορα",
+			"agentAvatar": "Πρέπει να προσθέσετε άβαταρ για τον πράκτορα",
+			"agentName": "Πρέπει να προσθέσετε όνομα για τον πράκτορα",
 			"emptyMessage": "Το μήνυμά σας είναι κενό",
-			"failedMessage": "Προέκυψε πρόβλημα κατά την αποστολή του μηνύματός σας"
+			"failedMessage": "Υπήρξε πρόβλημα στην παράδοση του μηνύματός σας"
 		},
 		"label": {
 			"agents": "Πράκτορες",
@@ -109,8 +113,8 @@
 			"newAgent": "Νέος πράκτορας",
 			"newChat": "Νέα συνομιλία",
 			"newMessage": "Νέο μήνυμα",
-			"noChats": "Καμία συνομιλία",
-			"noSubchats": "Καμία υποσυνομιλία",
+			"noChats": "Δεν υπάρχουν συνομιλίες",
+			"noSubchats": "Δεν υπάρχουν υποσυνομιλίες",
 			"selectedAgent": "Επιλεγμένος πράκτορας",
 			"selectedValue": "Επιλεγμένη τιμή",
 			"subchats": "Υποσυνομιλίες",
@@ -119,17 +123,17 @@
 			"xSearchResults_one": "{count} αποτέλεσμα αναζήτησης",
 			"xSearchResults_other": "{count} αποτελέσματα αναζήτησης",
 			"xSearchResults_zero": "Κανένα αποτέλεσμα αναζήτησης",
-			"xSelectedMessages_one": "1 μήνυμα επιλεγμένο",
-			"xSelectedMessages_other": "{count} μηνύματα επιλεγμένα"
+			"xSelectedMessages_one": "1 επιλεγμένο μήνυμα",
+			"xSelectedMessages_other": "{count} επιλεγμένα μηνύματα"
 		},
 		"placeholder": {
-			"newMessage": "Μιλήστε με τον/την {name}...",
-			"rename": "Δημιουργήστε αυτόματα νέο όνομα..."
+			"newMessage": "Μίλησε με {name}...",
+			"rename": "Αυτόματη δημιουργία νέου ονόματος..."
 		},
 		"state": {
 			"loadingAgents": "Φόρτωση πρακτόρων...",
 			"loadingChats": "Φόρτωση συνομιλιών...",
-			"loadingGPTs": "Φόρτωση μοντέλων GPT...",
+			"loadingGPTs": "Φόρτωση GPT...",
 			"loadingMessages": "Φόρτωση μηνυμάτων...",
 			"loadingPreviousMessages": "Φόρτωση προηγούμενων μηνυμάτων...",
 			"loadingSubchats": "Φόρτωση υποσυνομιλιών...",
@@ -137,9 +141,9 @@
 			"thinking": "Σκέφτεται..."
 		},
 		"warning": {
-			"deletingAgent": "Αυτός ο πράκτορας θα διαγραφεί μόνιμα",
-			"deletingChats": "Αυτές οι συνομιλίες θα διαγραφούν μόνιμα",
-			"geminiGptInsideChrome": "Αυτό το GPT απαιτεί την ενεργοποίηση των παρακάτω ρυθμίσεων:",
+			"deletingAgent": "Αυτός ο πράκτορας θα διαγραφεί οριστικά",
+			"deletingChats": "Αυτές οι συνομιλίες θα διαγραφούν οριστικά",
+			"geminiGptInsideChrome": "Αυτό το GPT απαιτεί την ενεργοποίηση αυτών των ρυθμίσεων:",
 			"geminiGptOutsideChrome": "Αυτό το GPT είναι διαθέσιμο μόνο στον περιηγητή Google Chrome",
 			"invalidGpt": "Μη έγκυρο GPT"
 		}
@@ -147,14 +151,14 @@
 	"userSettings": {
 		"action": {
 			"manageAccount": "Διαχείριση λογαριασμού",
-			"manageBilling": "Διαχείριση χρέωσης"
+			"manageBilling": "Διαχείριση χρεώσεων"
 		},
 		"error": {
 			"address": "Πρέπει να προσθέσετε τη διεύθυνση",
 			"avatar": "Πρέπει να προσθέσετε το άβαταρ σας",
 			"city": "Πρέπει να προσθέσετε την πόλη",
 			"country": "Πρέπει να προσθέσετε τη χώρα",
-			"email": "Πρέπει να προσθέσετε τη διεύθυνση email σας",
+			"email": "Πρέπει να προσθέσετε το email σας",
 			"legalName": "Πρέπει να προσθέσετε το νόμιμο όνομα",
 			"name": "Πρέπει να προσθέσετε το όνομά σας",
 			"postalCode": "Πρέπει να προσθέσετε τον ταχυδρομικό κώδικα"
@@ -162,12 +166,12 @@
 		"label": {
 			"account": "Λογαριασμός",
 			"address": "Διεύθυνση",
-			"billing": "Χρέωση",
+			"billing": "Χρεώσεις",
 			"city": "Πόλη",
 			"country": "Χώρα",
 			"email": "Διεύθυνση email",
 			"legalName": "Νόμιμο όνομα",
-			"phone": "Τηλεφωνικός αριθμός",
+			"phone": "Αριθμός τηλεφώνου",
 			"postalCode": "Ταχυδρομικός κώδικας",
 			"private": "Ιδιωτικό",
 			"public": "Δημόσιο",
