@@ -3,7 +3,7 @@ import DOMPurify from 'dompurify'
 import hljs from 'highlight.js'
 import { Marked, Renderer, TokenizerExtension, Tokens } from 'marked'
 import { markedHighlight } from 'marked-highlight'
-import { useMemo } from 'react'
+import { useMemo, useRef } from 'react'
 import { createRoot } from 'react-dom/client'
 import { renderToStaticMarkup } from 'react-dom/server'
 import { MemoryRouter } from 'react-router-dom'
@@ -25,6 +25,8 @@ const ESCAPE_HTML: TokenizerExtension = {
 }
 
 export const Markdown = ({ text, className }: Props) => {
+	const rawCodeRef = useRef<string[]>([])
+
 	const renderer = new Renderer()
 
 	renderer.link = ({ href, text }: Tokens.Link) => {
@@ -44,11 +46,13 @@ export const Markdown = ({ text, className }: Props) => {
 		)
 	}
 	renderer.code = ({ text, lang, raw }: Tokens.Code) => {
+		rawCodeRef.current.push(raw)
+
 		return renderToStaticMarkup(
 			<pre>
 				<div>
 					{lang || 'plaintext'}
-					<div data-code-raw={raw} />
+					<div data-code-actions="" />
 				</div>
 				<code dangerouslySetInnerHTML={{ __html: text }} />
 			</pre>
@@ -63,22 +67,28 @@ export const Markdown = ({ text, className }: Props) => {
 	marked.setOptions({ renderer })
 	marked.use({ extensions: [ESCAPE_HTML] })
 
-	const injectComponents = (container: HTMLDivElement) => {
+	const html = useMemo(() => {
+		rawCodeRef.current = []
+
+		const unparsed = text.replace(/\n/g, '  \n') // Fix new lines for markdown
+		const parsed = marked.parse(unparsed, { async: false })
+
+		return DOMPurify.sanitize(parsed, { ADD_ATTR: ['target'] })
+	}, [text])
+
+	const injectCodeActions = (container: HTMLDivElement) => {
 		if (!container) return
 
 		// Create copy-code buttons
-		container.querySelectorAll('[data-code-raw]').forEach((elem: Element) => {
-			const rawCode = elem.getAttribute('data-code-raw') || ''
-			elem.removeAttribute('data-code-raw')
-
+		container.querySelectorAll('[data-code-actions]').forEach((elem: Element, index: number) => {
 			createRoot(elem).render(
 				<MemoryRouter>
 					<Button
 						variant="text-default"
 						size="xs"
-						tooltip={rawCode}
+						tooltip={rawCodeRef.current[index]}
 						className="-mr-button-px-xs"
-						onClick={() => onClickCopyCode(rawCode)}
+						onClick={() => onClickCopyCode(rawCodeRef.current[index])}
 					>
 						<CopySvg className="mb-px mr-xs-2 h-xs-4 w-xs-4" />
 						{t('core.action.copy')}
@@ -89,18 +99,16 @@ export const Markdown = ({ text, className }: Props) => {
 	}
 
 	const onClickCopyCode = (rawCode: string) => {
-		navigator.clipboard.writeText(rawCode)
-	}
+		const regex = /```(?:\w+)?\s([\s\S]*?)```/
+		const match = rawCode.match(regex)
+		const code = match?.[1]?.trim() || ''
 
-	const html = useMemo(() => {
-		const unparsed = text.replace(/\n/g, '  \n') // Fix new lines for markdown
-		const parsed = marked.parse(unparsed, { async: false })
-		return DOMPurify.sanitize(parsed, { ADD_ATTR: ['target'] })
-	}, [text])
+		navigator.clipboard.writeText(code)
+	}
 
 	return (
 		<div
-			ref={injectComponents}
+			ref={injectCodeActions}
 			className={cx('ds-markdown', className)}
 			dangerouslySetInnerHTML={{ __html: html }}
 		/>
