@@ -7,18 +7,19 @@
 			"close": "Schließen",
 			"delete": "Löschen",
 			"deselectAll": "Alle abwählen",
-			"goToUrl": "Gehe zu {url}",
+			"goToUrl": "Zu {url} gehen",
 			"openMenu": "Menü öffnen",
+			"copy": "Kopieren",
 			"rename": "Umbenennen",
 			"retry": "Erneut versuchen",
 			"saveChanges": "Änderungen speichern",
 			"search": "Suchen",
-			"searchMore": "Mehr Ergebnisse anzeigen",
+			"searchMore": "Weitere Ergebnisse anzeigen",
 			"selectAll": "Alle auswählen",
 			"signOut": "Abmelden"
 		},
 		"error": {
-			"noChanges": "Keine Änderungen vorhanden",
+			"noChanges": "Keine Änderungen",
 			"nothingFound": "Nichts gefunden für \"{search}\"",
 			"unsent": "Nicht gesendet"
 		},
@@ -26,11 +27,12 @@
 			"apiDocs": "API-Dokumentation",
 			"asia": "Asien",
 			"avatar": "Avatar",
+			"copied": "Kopiert",
 			"custom": "Benutzerdefiniert",
 			"darkTheme": "Dunkel",
 			"default": "Standard",
 			"description": "Beschreibung",
-			"designSystem": "Designsystem",
+			"designSystem": "Design-System",
 			"errors": "Fehler",
 			"europe": "Europa",
 			"githubRepo": "GitHub-Repository",
@@ -49,27 +51,29 @@
 			"requiredField": "(Erforderlich)",
 			"settings": "Einstellungen",
 			"uiLibrary": "UI-Bibliothek",
-			"uiTheme": "UI-Thema"
+			"uiTheme": "UI-Design"
 		},
 		"placeholder": {
 			"search": "Suchen..."
 		},
 		"state": {
-			"dataSaved": "Ihre Daten wurden gespeichert",
-			"deleting": "Löschen...",
-			"loading": "Laden...",
-			"searching": "Suchen...",
-			"sending": "Senden...",
-			"updating": "Aktualisieren..."
+			"dataSaved": "Ihre Daten sind gespeichert",
+			"deleting": "Wird gelöscht...",
+			"loading": "Wird geladen...",
+			"searching": "Wird gesucht...",
+			"sending": "Wird gesendet...",
+			"updating": "Wird aktualisiert..."
 		}
 	},
 	"aiChat": {
 		"action": {
-			"backToSubchats": "Zurück zu den Unterchats",
+			"backToSubchats": "Zurück zu Unterhaltungen",
 			"configureAgent": "Agent konfigurieren",
-			"confirmDeleteAgent": "Löschen des Agents bestätigen",
-			"confirmDeleteChats": "Löschen der Chats bestätigen",
-			"confirmRenameChat": "Umbenennen des Chats bestätigen",
+			"confirmDeleteAgent": "Agent-Löschung bestätigen",
+			"confirmDeleteChats": "Chat-Löschung bestätigen",
+			"confirmRenameChat": "Chat-Umbenennung bestätigen",
+			"copyCode": "Code kopieren",
+			"copyMessage": "Nachricht kopieren",
 			"createAgent": "Agent erstellen",
 			"deleteAgent": "Agent löschen",
 			"deleteSelectedChats": "Ausgewählte Chats löschen",
@@ -77,27 +81,27 @@
 			"manageAgents": "Agenten verwalten",
 			"manageChats": "Chats verwalten",
 			"openChat": "Chat öffnen",
-			"openSubchat_other": "Unterchat öffnen ({count} Nachrichten)",
-			"openSubchat_zero": "Unterchat erstellen",
+			"openSubchat_other": "Unterhaltung öffnen ({count} Nachrichten)",
+			"openSubchat_zero": "Unterhaltung erstellen",
 			"searchChats": "Chats durchsuchen",
 			"selectChat": "Chat auswählen",
 			"sendMessage": "Nachricht senden",
-			"showMoreAgents": "Mehr Agenten anzeigen",
-			"showMoreChats": "Mehr Chats anzeigen",
-			"showSubchats": "Unterchats anzeigen ({count})",
-			"startSearching_one": "Geben Sie mindestens {count} Zeichen ein",
-			"startSearching_other": "Geben Sie mindestens {count} Zeichen ein"
+			"showMoreAgents": "Weitere Agenten anzeigen",
+			"showMoreChats": "Weitere Chats anzeigen",
+			"showSubchats": "Unterhaltungen anzeigen ({count})",
+			"startSearching_one": "Mindestens {count} Zeichen eingeben",
+			"startSearching_other": "Mindestens {count} Zeichen eingeben"
 		},
 		"description": {
 			"geminiNano": "Mini-GPT für Google Chrome",
-			"loremIpsumGPT": "Intelligentestes Modell",
+			"loremIpsumGPT": "Das intelligenteste Modell",
 			"rammusGPT": "Beste emotionale Unterstützung"
 		},
 		"error": {
-			"agentAvatar": "Sie müssen ein Avatar für den Agenten hinzufügen",
+			"agentAvatar": "Sie müssen einen Avatar für den Agenten hinzufügen",
 			"agentName": "Sie müssen einen Namen für den Agenten hinzufügen",
 			"emptyMessage": "Ihre Nachricht ist leer",
-			"failedMessage": "Ein Problem beim Versenden Ihrer Nachricht ist aufgetreten"
+			"failedMessage": "Ihre Nachricht konnte nicht zugestellt werden"
 		},
 		"label": {
 			"agents": "Agenten",
@@ -110,10 +114,10 @@
 			"newChat": "Neuer Chat",
 			"newMessage": "Neue Nachricht",
 			"noChats": "Keine Chats",
-			"noSubchats": "Keine Unterchats",
+			"noSubchats": "Keine Unterhaltungen",
 			"selectedAgent": "Ausgewählter Agent",
 			"selectedValue": "Ausgewählter Wert",
-			"subchats": "Unterchats",
+			"subchats": "Unterhaltungen",
 			"xMessages_one": "1 Nachricht",
 			"xMessages_other": "{count} Nachrichten",
 			"xSearchResults_one": "{count} Suchergebnis",
@@ -124,23 +128,23 @@
 		},
 		"placeholder": {
 			"newMessage": "Mit {name} sprechen...",
-			"rename": "Automatisch einen neuen Namen generieren..."
+			"rename": "Automatisch neuen Namen generieren..."
 		},
 		"state": {
-			"loadingAgents": "Agenten laden...",
-			"loadingChats": "Chats laden...",
-			"loadingGPTs": "GPTs laden...",
-			"loadingMessages": "Nachrichten laden...",
-			"loadingPreviousMessages": "Vorherige Nachrichten laden...",
-			"loadingSubchats": "Unterchats laden...",
-			"renamingChat": "Chat umbenennen...",
-			"thinking": "Denken..."
+			"loadingAgents": "Agenten werden geladen...",
+			"loadingChats": "Chats werden geladen...",
+			"loadingGPTs": "GPTs werden geladen...",
+			"loadingMessages": "Nachrichten werden geladen...",
+			"loadingPreviousMessages": "Vorherige Nachrichten werden geladen...",
+			"loadingSubchats": "Unterhaltungen werden geladen...",
+			"renamingChat": "Chat wird umbenannt...",
+			"thinking": "Denkt nach..."
 		},
 		"warning": {
-			"deletingAgent": "Dieser Agent wird dauerhaft gelöscht",
-			"deletingChats": "Diese Chats werden dauerhaft gelöscht",
-			"geminiGptInsideChrome": "Dieses GPT erfordert die Aktivierung folgender Einstellungen:",
-			"geminiGptOutsideChrome": "Dieses GPT ist nur im Google Chrome-Browser verfügbar",
+			"deletingAgent": "Dieser Agent wird permanent gelöscht",
+			"deletingChats": "Diese Chats werden permanent gelöscht",
+			"geminiGptInsideChrome": "Dieses GPT erfordert die Aktivierung dieser Einstellungen:",
+			"geminiGptOutsideChrome": "Dieses GPT ist nur im Google Chrome Browser verfügbar",
 			"invalidGpt": "Ungültiges GPT"
 		}
 	},
@@ -151,7 +155,7 @@
 		},
 		"error": {
 			"address": "Sie müssen die Adresse hinzufügen",
-			"avatar": "Sie müssen Ihr Avatar hinzufügen",
+			"avatar": "Sie müssen Ihren Avatar hinzufügen",
 			"city": "Sie müssen die Stadt hinzufügen",
 			"country": "Sie müssen das Land hinzufügen",
 			"email": "Sie müssen Ihre E-Mail-Adresse hinzufügen",
@@ -170,8 +174,8 @@
 			"phone": "Telefonnummer",
 			"postalCode": "Postleitzahl",
 			"private": "Privat",
-			"public": "Öffentlich",
-			"vatNumber": "USt-IdNr"
+			"public": "Öffentlich", 
+			"vatNumber": "USt-IdNr."
 		}
 	}
 }

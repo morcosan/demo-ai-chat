@@ -17,6 +17,7 @@ export const AntImpl = (rawProps: ButtonProps) => {
 		isVGhost,
 		isVItem,
 		isVPrimary,
+		isVSubtle,
 		isVSecondary,
 		isVSolid,
 		props,
@@ -39,6 +40,7 @@ export const AntImpl = (rawProps: ButtonProps) => {
 		}
 		if (isVDanger) return cssFn($color['danger-page-text'], 'transparent')
 		if (isVDefault) return cssFn($color['text-default'], 'transparent')
+		if (isVSubtle) return cssFn($color['text-subtle'], 'transparent')
 		return {}
 	})()
 

@@ -2,38 +2,40 @@
 	"core": {
 		"action": {
 			"back": "Indietro",
-			"backToHome": "Torna alla homepage",
+			"backToHome": "Torna alla home",
 			"changeLanguage": "Cambia lingua",
 			"close": "Chiudi",
 			"delete": "Elimina",
 			"deselectAll": "Deseleziona tutto",
 			"goToUrl": "Vai a {url}",
 			"openMenu": "Apri menu",
+			"copy": "Copia",
 			"rename": "Rinomina",
 			"retry": "Riprova",
 			"saveChanges": "Salva modifiche",
 			"search": "Cerca",
-			"searchMore": "Mostra più risultati",
+			"searchMore": "Mostra altri risultati",
 			"selectAll": "Seleziona tutto",
 			"signOut": "Esci"
 		},
 		"error": {
 			"noChanges": "Non ci sono modifiche",
-			"nothingFound": "Nessun risultato trovato per \"{search}\"",
+			"nothingFound": "Nessun risultato per \"{search}\"",
 			"unsent": "Non inviato"
 		},
 		"label": {
-			"apiDocs": "Documentazione API",
+			"apiDocs": "API Docs",
 			"asia": "Asia",
 			"avatar": "Avatar",
+			"copied": "Copiato",
 			"custom": "Personalizzato",
 			"darkTheme": "Scuro",
 			"default": "Predefinito",
 			"description": "Descrizione",
-			"designSystem": "Sistema di design",
+			"designSystem": "Design System",
 			"errors": "Errori",
 			"europe": "Europa",
-			"githubRepo": "Repository GitHub",
+			"githubRepo": "GitHub Repo",
 			"language": "Lingua",
 			"levelHigh": "Alto",
 			"levelLow": "Basso",
@@ -45,7 +47,6 @@
 			"navigationBar": "Barra di navigazione",
 			"navigationMenu": "Menu di navigazione",
 			"optionalField": "(Opzionale)",
-			"quickSettings": "Impostazioni rapide",
 			"requiredField": "(Obbligatorio)",
 			"settings": "Impostazioni",
 			"uiLibrary": "Libreria UI",
@@ -57,19 +58,21 @@
 		"state": {
 			"dataSaved": "I tuoi dati sono stati salvati",
 			"deleting": "Eliminazione in corso...",
-			"loading": "Caricamento in corso...",
+			"loading": "Caricamento...",
 			"searching": "Ricerca in corso...",
 			"sending": "Invio in corso...",
-			"updating": "Aggiornamento in corso..."
+			"updating": "Aggiornamento..."
 		}
 	},
 	"aiChat": {
 		"action": {
-			"backToSubchats": "Torna ai sottochat",
+			"backToSubchats": "Torna alle subchat",
 			"configureAgent": "Configura agente",
 			"confirmDeleteAgent": "Conferma eliminazione agente",
 			"confirmDeleteChats": "Conferma eliminazione chat",
 			"confirmRenameChat": "Conferma rinomina chat",
+			"copyCode": "Copia il codice",
+			"copyMessage": "Copia il messaggio",
 			"createAgent": "Crea agente",
 			"deleteAgent": "Elimina agente",
 			"deleteSelectedChats": "Elimina chat selezionate",
@@ -77,27 +80,27 @@
 			"manageAgents": "Gestisci agenti",
 			"manageChats": "Gestisci chat",
 			"openChat": "Apri chat",
-			"openSubchat_other": "Apri sottochat ({count} messaggi)",
-			"openSubchat_zero": "Crea sottochat",
-			"searchChats": "Cerca nelle chat",
+			"openSubchat_zero": "Crea subchat",
+			"openSubchat_other": "Apri subchat ({count} messaggi)",
+			"searchChats": "Cerca chat",
 			"selectChat": "Seleziona chat",
 			"sendMessage": "Invia messaggio",
-			"showMoreAgents": "Mostra più agenti",
-			"showMoreChats": "Mostra più chat",
-			"showSubchats": "Mostra sottochat ({count})",
-			"startSearching_one": "Digita almeno {count} carattere",
-			"startSearching_other": "Digita almeno {count} caratteri"
+			"showMoreAgents": "Mostra altri agenti",
+			"showMoreChats": "Mostra altre chat",
+			"showSubchats": "Mostra subchat ({count})",
+			"startSearching_one": "Digita {count} carattere",
+			"startSearching_other": "Digita {count} caratteri"
 		},
 		"description": {
 			"geminiNano": "Mini GPT per Google Chrome",
 			"loremIpsumGPT": "Modello più intelligente",
-			"rammusGPT": "Il miglior supporto emotivo"
+			"rammusGPT": "Miglior supporto emotivo"
 		},
 		"error": {
 			"agentAvatar": "Devi aggiungere un avatar per l'agente",
 			"agentName": "Devi aggiungere un nome per l'agente",
 			"emptyMessage": "Il tuo messaggio è vuoto",
-			"failedMessage": "C'è stato un problema con l'invio del tuo messaggio"
+			"failedMessage": "C'è stato un problema nell'invio del tuo messaggio"
 		},
 		"label": {
 			"agents": "Agenti",
@@ -110,15 +113,15 @@
 			"newChat": "Nuova chat",
 			"newMessage": "Nuovo messaggio",
 			"noChats": "Nessuna chat",
-			"noSubchats": "Nessun sottochat",
+			"noSubchats": "Nessuna subchat",
 			"selectedAgent": "Agente selezionato",
 			"selectedValue": "Valore selezionato",
-			"subchats": "Sottochat",
+			"subchats": "Subchat",
 			"xMessages_one": "1 messaggio",
 			"xMessages_other": "{count} messaggi",
-			"xSearchResults_one": "{count} risultato di ricerca",
-			"xSearchResults_other": "{count} risultati di ricerca",
-			"xSearchResults_zero": "Nessun risultato di ricerca",
+			"xSearchResults_zero": "Nessun risultato",
+			"xSearchResults_one": "{count} risultato",
+			"xSearchResults_other": "{count} risultati",
 			"xSelectedMessages_one": "1 messaggio selezionato",
 			"xSelectedMessages_other": "{count} messaggi selezionati"
 		},
@@ -132,14 +135,14 @@
 			"loadingGPTs": "Caricamento GPT...",
 			"loadingMessages": "Caricamento messaggi...",
 			"loadingPreviousMessages": "Caricamento messaggi precedenti...",
-			"loadingSubchats": "Caricamento sottochat...",
-			"renamingChat": "Rinominazione chat...",
-			"thinking": "Sto pensando..."
+			"loadingSubchats": "Caricamento subchat...",
+			"renamingChat": "Rinomina chat...",
+			"thinking": "Pensando..."
 		},
 		"warning": {
-			"deletingAgent": "Questo agente sarà eliminato in modo permanente",
-			"deletingChats": "Queste chat saranno eliminate in modo permanente",
-			"geminiGptInsideChrome": "Questo GPT richiede che queste impostazioni siano attivate:",
+			"deletingAgent": "Questo agente verrà eliminato permanentemente",
+			"deletingChats": "Queste chat verranno eliminate permanentemente",
+			"geminiGptInsideChrome": "Questo GPT richiede che le seguenti impostazioni siano abilitate:",
 			"geminiGptOutsideChrome": "Questo GPT è disponibile solo nel browser Google Chrome",
 			"invalidGpt": "GPT non valido"
 		}
@@ -155,7 +158,7 @@
 			"city": "Devi aggiungere la città",
 			"country": "Devi aggiungere il paese",
 			"email": "Devi aggiungere il tuo indirizzo email",
-			"legalName": "Devi aggiungere il nome legale",
+			"legalName": "Devi aggiungere la ragione sociale",
 			"name": "Devi aggiungere il tuo nome",
 			"postalCode": "Devi aggiungere il codice postale"
 		},
@@ -166,12 +169,12 @@
 			"city": "Città",
 			"country": "Paese",
 			"email": "Indirizzo email",
-			"legalName": "Nome legale",
+			"legalName": "Ragione sociale",
 			"phone": "Numero di telefono",
 			"postalCode": "Codice postale",
 			"private": "Privato",
 			"public": "Pubblico",
-			"vatNumber": "Numero IVA"
+			"vatNumber": "P.IVA"
 		}
 	}
 }

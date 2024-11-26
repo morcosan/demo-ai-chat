@@ -2,51 +2,52 @@
 	"core": {
 		"action": {
 			"back": "Retour",
-			"backToHome": "Retour à la page d'accueil",
+			"backToHome": "Retour à l'accueil",
 			"changeLanguage": "Changer de langue",
 			"close": "Fermer",
 			"delete": "Supprimer",
-			"deselectAll": "Désélectionner tout",
+			"deselectAll": "Tout désélectionner",
 			"goToUrl": "Aller à {url}",
 			"openMenu": "Ouvrir le menu",
+			"copy": "Copier",
 			"rename": "Renommer",
 			"retry": "Réessayer",
 			"saveChanges": "Enregistrer les modifications",
 			"search": "Rechercher",
-			"searchMore": "Voir plus de résultats",
+			"searchMore": "Afficher plus de résultats",
 			"selectAll": "Tout sélectionner",
 			"signOut": "Se déconnecter"
 		},
 		"error": {
-			"noChanges": "Aucun changement",
-			"nothingFound": "Aucun résultat trouvé pour \"{search}\"",
+			"noChanges": "Aucune modification",
+			"nothingFound": "Aucun résultat pour \"{search}\"",
 			"unsent": "Non envoyé"
 		},
 		"label": {
 			"apiDocs": "Documentation API",
 			"asia": "Asie",
 			"avatar": "Avatar",
+			"copied": "Copié",
 			"custom": "Personnalisé",
 			"darkTheme": "Sombre",
 			"default": "Par défaut",
 			"description": "Description",
-			"designSystem": "Système de conception",
+			"designSystem": "Système de design",
 			"errors": "Erreurs",
 			"europe": "Europe",
 			"githubRepo": "Dépôt GitHub",
 			"language": "Langue",
 			"levelHigh": "Élevé",
-			"levelLow": "Bas",
+			"levelLow": "Faible",
 			"levelMedium": "Moyen",
 			"levelVeryHigh": "Très élevé",
-			"levelVeryLow": "Très bas",
+			"levelVeryLow": "Très faible",
 			"lightTheme": "Clair",
 			"name": "Nom",
 			"navigationBar": "Barre de navigation",
-			"navigationMenu": "Menu de navigation",
-			"optionalField": "(Optionnel)",
-			"quickSettings": "Paramètres rapides",
-			"requiredField": "(Requis)",
+			"navigationMenu": "Menu de navigation", 
+			"optionalField": "(Facultatif)",
+			"requiredField": "(Obligatoire)",
 			"settings": "Paramètres",
 			"uiLibrary": "Bibliothèque UI",
 			"uiTheme": "Thème UI"
@@ -55,12 +56,12 @@
 			"search": "Rechercher..."
 		},
 		"state": {
-			"dataSaved": "Vos données ont été enregistrées",
-			"deleting": "Suppression...",
-			"loading": "Chargement...",
-			"searching": "Recherche...",
-			"sending": "Envoi...",
-			"updating": "Mise à jour..."
+			"dataSaved": "Vos données sont enregistrées",
+			"deleting": "Suppression en cours",
+			"loading": "Chargement en cours",
+			"searching": "Recherche en cours",
+			"sending": "Envoi en cours",
+			"updating": "Mise à jour en cours"
 		}
 	},
 	"aiChat": {
@@ -69,7 +70,9 @@
 			"configureAgent": "Configurer l'agent",
 			"confirmDeleteAgent": "Confirmer la suppression de l'agent",
 			"confirmDeleteChats": "Confirmer la suppression des conversations",
-			"confirmRenameChat": "Confirmer le changement de nom de la conversation",
+			"confirmRenameChat": "Confirmer le renommage de la conversation",
+			"copyCode": "Copier le code",
+			"copyMessage": "Copier le message",
 			"createAgent": "Créer un agent",
 			"deleteAgent": "Supprimer l'agent",
 			"deleteSelectedChats": "Supprimer les conversations sélectionnées",
@@ -77,27 +80,28 @@
 			"manageAgents": "Gérer les agents",
 			"manageChats": "Gérer les conversations",
 			"openChat": "Ouvrir la conversation",
-			"openSubchat_other": "Ouvrir la sous-conversation ({count} messages)",
 			"openSubchat_zero": "Créer une sous-conversation",
-			"searchChats": "Rechercher dans les conversations",
+			"openSubchat_one": "Ouvrir la sous-conversation (1 message)",
+			"openSubchat_other": "Ouvrir la sous-conversation ({count} messages)",
+			"searchChats": "Rechercher des conversations",
 			"selectChat": "Sélectionner la conversation",
 			"sendMessage": "Envoyer le message",
-			"showMoreAgents": "Voir plus d'agents",
-			"showMoreChats": "Voir plus de conversations",
-			"showSubchats": "Voir les sous-conversations ({count})",
+			"showMoreAgents": "Afficher plus d'agents",
+			"showMoreChats": "Afficher plus de conversations",
+			"showSubchats": "Afficher les sous-conversations ({count})",
 			"startSearching_one": "Tapez au moins {count} caractère",
 			"startSearching_other": "Tapez au moins {count} caractères"
 		},
 		"description": {
 			"geminiNano": "Mini GPT pour Google Chrome",
-			"loremIpsumGPT": "Le modèle le plus intelligent",
-			"rammusGPT": "Le meilleur soutien émotionnel"
+			"loremIpsumGPT": "Modèle le plus intelligent",
+			"rammusGPT": "Meilleur soutien émotionnel"
 		},
 		"error": {
 			"agentAvatar": "Vous devez ajouter un avatar pour l'agent",
 			"agentName": "Vous devez ajouter un nom pour l'agent",
 			"emptyMessage": "Votre message est vide",
-			"failedMessage": "Un problème est survenu lors de l'envoi de votre message"
+			"failedMessage": "Il y a eu un problème lors de l'envoi de votre message"
 		},
 		"label": {
 			"agents": "Agents",
@@ -109,38 +113,38 @@
 			"newAgent": "Nouvel agent",
 			"newChat": "Nouvelle conversation",
 			"newMessage": "Nouveau message",
-			"noChats": "Pas de conversations",
-			"noSubchats": "Pas de sous-conversations",
+			"noChats": "Aucune conversation",
+			"noSubchats": "Aucune sous-conversation",
 			"selectedAgent": "Agent sélectionné",
 			"selectedValue": "Valeur sélectionnée",
 			"subchats": "Sous-conversations",
 			"xMessages_one": "1 message",
 			"xMessages_other": "{count} messages",
-			"xSearchResults_one": "{count} résultat de recherche",
-			"xSearchResults_other": "{count} résultats de recherche",
-			"xSearchResults_zero": "Aucun résultat de recherche",
+			"xSearchResults_zero": "Aucun résultat",
+			"xSearchResults_one": "{count} résultat",
+			"xSearchResults_other": "{count} résultats",
 			"xSelectedMessages_one": "1 message sélectionné",
 			"xSelectedMessages_other": "{count} messages sélectionnés"
 		},
 		"placeholder": {
 			"newMessage": "Parlez à {name}...",
-			"rename": "Générer automatiquement un nouveau nom..."
+			"rename": "Générer un nouveau nom automatiquement..."
 		},
 		"state": {
-			"loadingAgents": "Chargement des agents...",
-			"loadingChats": "Chargement des conversations...",
-			"loadingGPTs": "Chargement des modèles GPT...",
-			"loadingMessages": "Chargement des messages...",
-			"loadingPreviousMessages": "Chargement des messages précédents...",
-			"loadingSubchats": "Chargement des sous-conversations...",
-			"renamingChat": "Changement de nom de la conversation...",
-			"thinking": "Réflexion..."
+			"loadingAgents": "Chargement des agents en cours",
+			"loadingChats": "Chargement des conversations en cours",
+			"loadingGPTs": "Chargement des GPTs en cours",
+			"loadingMessages": "Chargement des messages en cours",
+			"loadingPreviousMessages": "Chargement des messages précédents en cours",
+			"loadingSubchats": "Chargement des sous-conversations en cours",
+			"renamingChat": "Renommage de la conversation en cours",
+			"thinking": "Réflexion en cours"
 		},
 		"warning": {
-			"deletingAgent": "Cet agent sera supprimé de façon permanente",
-			"deletingChats": "Ces conversations seront supprimées de façon permanente",
+			"deletingAgent": "Cet agent sera définitivement supprimé",
+			"deletingChats": "Ces conversations seront définitivement supprimées",
 			"geminiGptInsideChrome": "Ce GPT nécessite l'activation des paramètres suivants :",
-			"geminiGptOutsideChrome": "Ce GPT est disponible uniquement dans le navigateur Google Chrome",
+			"geminiGptOutsideChrome": "Ce GPT n'est disponible que dans le navigateur Google Chrome",
 			"invalidGpt": "GPT invalide"
 		}
 	},
@@ -171,7 +175,7 @@
 			"postalCode": "Code postal",
 			"private": "Privé",
 			"public": "Public",
-			"vatNumber": "Numéro de TVA"
+			"vatNumber": "N° TVA"
 		}
 	}
 }

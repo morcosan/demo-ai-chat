@@ -7,12 +7,13 @@ import { IconButtonProps, IconButtonVariant } from '../_types'
 
 type Variant = IconButtonVariant | undefined
 
-const VARIANTS_SOLID: Variant[] = ['solid-primary', 'solid-secondary', 'solid-danger']
-const VARIANTS_TEXT: Variant[] = ['text-default', 'text-danger']
-const VARIANTS_PRIMARY: Variant[] = ['solid-primary']
-const VARIANTS_SECONDARY: Variant[] = ['solid-secondary']
 const VARIANTS_DANGER: Variant[] = ['solid-danger', 'text-danger']
 const VARIANTS_DEFAULT: Variant[] = ['text-default']
+const VARIANTS_PRIMARY: Variant[] = ['solid-primary']
+const VARIANTS_SECONDARY: Variant[] = ['solid-secondary']
+const VARIANTS_SOLID: Variant[] = ['solid-primary', 'solid-secondary', 'solid-danger']
+const VARIANTS_SUBTLE: Variant[] = ['text-subtle']
+const VARIANTS_TEXT: Variant[] = ['text-default', 'text-subtle', 'text-danger']
 
 export const useIconButtonBase = (rawProps: IconButtonProps) => {
 	const props = useDefaults<IconButtonProps>(rawProps, {
@@ -28,6 +29,7 @@ export const useIconButtonBase = (rawProps: IconButtonProps) => {
 	const isVPrimary = VARIANTS_PRIMARY.includes(props.variant)
 	const isVSecondary = VARIANTS_SECONDARY.includes(props.variant)
 	const isVSolid = VARIANTS_SOLID.includes(props.variant)
+	const isVSubtle = VARIANTS_SUBTLE.includes(props.variant)
 	const isVText = VARIANTS_TEXT.includes(props.variant)
 
 	const cssTextColorFn = (color: string) => ({ color, fill: 'currentColor', stroke: 'currentColor' })
@@ -75,6 +77,7 @@ export const useIconButtonBase = (rawProps: IconButtonProps) => {
 		}
 		if (isVDanger) return cssTextColorFn($color['danger-page-text'])
 		if (isVDefault) return cssTextColorFn($color['text-default'])
+		if (isVSubtle) return cssTextColorFn($color['text-subtle'])
 		return {}
 	})()
 
@@ -146,6 +149,7 @@ export const useIconButtonBase = (rawProps: IconButtonProps) => {
 		isVPrimary,
 		isVSecondary,
 		isVSolid,
+		isVSubtle,
 		isVText,
 		props,
 	}

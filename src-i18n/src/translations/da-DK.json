@@ -2,13 +2,14 @@
 	"core": {
 		"action": {
 			"back": "Tilbage",
-			"backToHome": "Tilbage til hjemmesiden",
+			"backToHome": "Tilbage til forsiden",
 			"changeLanguage": "Skift sprog",
 			"close": "Luk",
 			"delete": "Slet",
 			"deselectAll": "Fravælg alle",
 			"goToUrl": "Gå til {url}",
 			"openMenu": "Åbn menu",
+			"copy": "Kopiér",
 			"rename": "Omdøb",
 			"retry": "Prøv igen",
 			"saveChanges": "Gem ændringer",
@@ -18,38 +19,39 @@
 			"signOut": "Log ud"
 		},
 		"error": {
-			"noChanges": "Der er ingen ændringer",
+			"noChanges": "Ingen ændringer",
 			"nothingFound": "Intet fundet for \"{search}\"",
 			"unsent": "Ikke sendt"
 		},
 		"label": {
-			"apiDocs": "API-dokumentation",
+			"apiDocs": "API Dokumentation",
 			"asia": "Asien",
 			"avatar": "Avatar",
-			"custom": "Brugerdefineret",
+			"copied": "Kopieret",
+			"custom": "Tilpasset",
 			"darkTheme": "Mørk",
 			"default": "Standard",
 			"description": "Beskrivelse",
 			"designSystem": "Designsystem",
 			"errors": "Fejl",
 			"europe": "Europa",
-			"githubRepo": "GitHub-repo",
+			"githubRepo": "GitHub Depot",
 			"language": "Sprog",
 			"levelHigh": "Høj",
 			"levelLow": "Lav",
-			"levelMedium": "Mellem",
+			"levelMedium": "Medium",
 			"levelVeryHigh": "Meget høj",
 			"levelVeryLow": "Meget lav",
 			"lightTheme": "Lys",
 			"name": "Navn",
-			"navigationBar": "Navigationsbjælke",
+			"navigationBar": "Navigationslinje",
 			"navigationMenu": "Navigationsmenu",
-			"optionalField": "(Valgfrit)",
-			"quickSettings": "Hurtige indstillinger",
+			"optionalField": "(Valgfri)",
+			"quickSettings": "Hurtigindstillinger",
 			"requiredField": "(Påkrævet)",
 			"settings": "Indstillinger",
-			"uiLibrary": "UI-bibliotek",
-			"uiTheme": "UI-tema"
+			"uiLibrary": "UI Bibliotek",
+			"uiTheme": "UI Tema"
 		},
 		"placeholder": {
 			"search": "Søg..."
@@ -65,11 +67,13 @@
 	},
 	"aiChat": {
 		"action": {
-			"backToSubchats": "Tilbage til underchats",
+			"backToSubchats": "Tilbage til underchat",
 			"configureAgent": "Konfigurer agent",
 			"confirmDeleteAgent": "Bekræft sletning af agent",
 			"confirmDeleteChats": "Bekræft sletning af chats",
 			"confirmRenameChat": "Bekræft omdøbning af chat",
+			"copyCode": "Kopiér koden",
+			"copyMessage": "Kopiér beskeden",
 			"createAgent": "Opret agent",
 			"deleteAgent": "Slet agent",
 			"deleteSelectedChats": "Slet valgte chats",
@@ -101,11 +105,11 @@
 		},
 		"label": {
 			"agents": "Agenter",
-			"chatTitle": "Chat-titel",
+			"chatTitle": "Chattitel",
 			"chats": "Chats",
 			"creativityLevel": "Kreativitetsniveau",
-			"customInstructions": "Brugerdefinerede instruktioner",
-			"gptModel": "GPT-model",
+			"customInstructions": "Tilpassede instruktioner",
+			"gptModel": "GPT model",
 			"newAgent": "Ny agent",
 			"newChat": "Ny chat",
 			"newMessage": "Ny besked",
@@ -124,12 +128,12 @@
 		},
 		"placeholder": {
 			"newMessage": "Tal med {name}...",
-			"rename": "Generer et nyt navn automatisk..."
+			"rename": "Generér nyt navn automatisk..."
 		},
 		"state": {
 			"loadingAgents": "Indlæser agenter...",
 			"loadingChats": "Indlæser chats...",
-			"loadingGPTs": "Indlæser GPT'er...",
+			"loadingGPTs": "Indlæser GPTs...",
 			"loadingMessages": "Indlæser beskeder...",
 			"loadingPreviousMessages": "Indlæser tidligere beskeder...",
 			"loadingSubchats": "Indlæser underchats...",
@@ -139,8 +143,8 @@
 		"warning": {
 			"deletingAgent": "Denne agent vil blive slettet permanent",
 			"deletingChats": "Disse chats vil blive slettet permanent",
-			"geminiGptInsideChrome": "Denne GPT kræver, at følgende indstillinger aktiveres:",
-			"geminiGptOutsideChrome": "Denne GPT er kun tilgængelig i Google Chrome-browseren",
+			"geminiGptInsideChrome": "Denne GPT kræver at disse indstillinger er aktiveret:",
+			"geminiGptOutsideChrome": "Denne GPT er kun tilgængelig i Google Chrome browser",
 			"invalidGpt": "Ugyldig GPT"
 		}
 	},

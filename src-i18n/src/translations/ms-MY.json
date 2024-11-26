@@ -9,23 +9,25 @@
 			"deselectAll": "Nyahpilih semua",
 			"goToUrl": "Pergi ke {url}",
 			"openMenu": "Buka menu",
+			"copy": "Salin",
 			"rename": "Namakan semula",
 			"retry": "Cuba semula",
 			"saveChanges": "Simpan perubahan",
 			"search": "Cari",
-			"searchMore": "Tunjukkan lebih banyak hasil",
+			"searchMore": "Tunjuk lebih banyak hasil",
 			"selectAll": "Pilih semua",
 			"signOut": "Log keluar"
 		},
 		"error": {
 			"noChanges": "Tiada perubahan",
-			"nothingFound": "Tiada hasil untuk \"{search}\"",
-			"unsent": "Tidak dihantar"
+			"nothingFound": "Tiada hasil carian untuk \"{search}\"",
+			"unsent": "Belum dihantar"
 		},
 		"label": {
 			"apiDocs": "Dokumentasi API",
 			"asia": "Asia",
 			"avatar": "Avatar",
+			"copied": "Disalin",
 			"custom": "Tersuai",
 			"darkTheme": "Gelap",
 			"default": "Lalai",
@@ -33,22 +35,22 @@
 			"designSystem": "Sistem Reka Bentuk",
 			"errors": "Ralat",
 			"europe": "Eropah",
-			"githubRepo": "Repo GitHub",
+			"githubRepo": "Repositori GitHub",
 			"language": "Bahasa",
 			"levelHigh": "Tinggi",
 			"levelLow": "Rendah",
 			"levelMedium": "Sederhana",
 			"levelVeryHigh": "Sangat tinggi",
 			"levelVeryLow": "Sangat rendah",
-			"lightTheme": "Cerah",
+			"lightTheme": "Terang",
 			"name": "Nama",
 			"navigationBar": "Bar navigasi",
 			"navigationMenu": "Menu navigasi",
 			"optionalField": "(Pilihan)",
+			"quickSettings": "Tetapan pantas",
 			"requiredField": "(Diperlukan)",
 			"settings": "Tetapan",
-			"quickSettings": "Tetapan pantas",
-			"uiLibrary": "Pustaka UI",
+			"uiLibrary": "Perpustakaan UI",
 			"uiTheme": "Tema UI"
 		},
 		"placeholder": {
@@ -70,21 +72,23 @@
 			"confirmDeleteAgent": "Sahkan pemadaman ejen",
 			"confirmDeleteChats": "Sahkan pemadaman perbualan",
 			"confirmRenameChat": "Sahkan penamaan semula perbualan",
-			"createAgent": "Cipta ejen",
+			"copyCode": "Salin kod",
+			"copyMessage": "Salin mesej",
+			"createAgent": "Buat ejen",
 			"deleteAgent": "Padam ejen",
 			"deleteSelectedChats": "Padam perbualan terpilih",
 			"deselectChat": "Nyahpilih perbualan",
 			"manageAgents": "Urus ejen",
 			"manageChats": "Urus perbualan",
 			"openChat": "Buka perbualan",
+			"openSubchat_zero": "Buat subchat",
 			"openSubchat_other": "Buka subchat ({count} mesej)",
-			"openSubchat_zero": "Cipta subchat",
 			"searchChats": "Cari perbualan",
 			"selectChat": "Pilih perbualan",
 			"sendMessage": "Hantar mesej",
-			"showMoreAgents": "Tunjukkan lebih banyak ejen",
-			"showMoreChats": "Tunjukkan lebih banyak perbualan",
-			"showSubchats": "Tunjukkan subchat ({count})",
+			"showMoreAgents": "Tunjuk lebih banyak ejen",
+			"showMoreChats": "Tunjuk lebih banyak perbualan",
+			"showSubchats": "Tunjuk subchat ({count})",
 			"startSearching_other": "Taip sekurang-kurangnya {count} aksara"
 		},
 		"description": {
@@ -105,39 +109,36 @@
 			"creativityLevel": "Tahap kreativiti",
 			"customInstructions": "Arahan tersuai",
 			"gptModel": "Model GPT",
-			"newAgent": "Ejen baharu",
-			"newChat": "Perbualan baharu",
-			"newMessage": "Mesej baharu",
+			"newAgent": "Ejen baru",
+			"newChat": "Perbualan baru",
+			"newMessage": "Mesej baru",
 			"noChats": "Tiada perbualan",
 			"noSubchats": "Tiada subchat",
 			"selectedAgent": "Ejen terpilih",
 			"selectedValue": "Nilai terpilih",
 			"subchats": "Subchat",
 			"xMessages_other": "{count} mesej",
-			"xMessages_one": "1 mesej",
-			"xSearchResults_other": "{count} hasil carian",
-			"xSearchResults_one": "{count} hasil carian",
 			"xSearchResults_zero": "Tiada hasil carian",
-			"xSelectedMessages_other": "{count} mesej dipilih",
-			"xSelectedMessages_one": "1 mesej dipilih"
+			"xSearchResults_other": "{count} hasil carian",
+			"xSelectedMessages_other": "{count} mesej dipilih"
 		},
 		"placeholder": {
-			"newMessage": "Bercakap dengan {name}...",
-			"rename": "Jana nama baharu secara automatik..."
+			"newMessage": "Bual dengan {name}...",
+			"rename": "Jana nama baru secara automatik..."
 		},
 		"state": {
 			"loadingAgents": "Memuatkan ejen...",
 			"loadingChats": "Memuatkan perbualan...",
 			"loadingGPTs": "Memuatkan GPT...",
 			"loadingMessages": "Memuatkan mesej...",
-			"loadingPreviousMessages": "Memuatkan mesej sebelumnya...",
+			"loadingPreviousMessages": "Memuatkan mesej terdahulu...",
 			"loadingSubchats": "Memuatkan subchat...",
 			"renamingChat": "Menamakan semula perbualan...",
 			"thinking": "Berfikir..."
 		},
 		"warning": {
-			"deletingAgent": "Ejen ini akan dipadam secara kekal",
-			"deletingChats": "Perbualan ini akan dipadam secara kekal",
+			"deletingAgent": "Ejen ini akan dipadamkan secara kekal",
+			"deletingChats": "Perbualan ini akan dipadamkan secara kekal",
 			"geminiGptInsideChrome": "GPT ini memerlukan tetapan berikut diaktifkan:",
 			"geminiGptOutsideChrome": "GPT ini hanya tersedia di pelayar Google Chrome",
 			"invalidGpt": "GPT tidak sah"
@@ -146,31 +147,31 @@
 	"userSettings": {
 		"action": {
 			"manageAccount": "Urus akaun",
-			"manageBilling": "Urus pengebilan"
+			"manageBilling": "Urus pembayaran"
 		},
 		"error": {
 			"address": "Anda perlu menambah alamat",
 			"avatar": "Anda perlu menambah avatar anda",
 			"city": "Anda perlu menambah bandar",
 			"country": "Anda perlu menambah negara",
-			"email": "Anda perlu menambah alamat e-mel",
+			"email": "Anda perlu menambah alamat emel",
 			"legalName": "Anda perlu menambah nama sah",
 			"name": "Anda perlu menambah nama anda",
-			"postalCode": "Anda perlu menambah kod pos"
+			"postalCode": "Anda perlu menambah poskod"
 		},
 		"label": {
 			"account": "Akaun",
 			"address": "Alamat",
-			"billing": "Pengebilan",
+			"billing": "Pembayaran",
 			"city": "Bandar",
 			"country": "Negara",
-			"email": "Alamat e-mel",
+			"email": "Alamat emel",
 			"legalName": "Nama sah",
 			"phone": "Nombor telefon",
-			"postalCode": "Kod pos",
+			"postalCode": "Poskod",
 			"private": "Peribadi",
 			"public": "Awam",
-			"vatNumber": "Nombor CBP"
+			"vatNumber": "Nombor SST"
 		}
 	}
 }

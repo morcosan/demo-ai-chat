@@ -2,15 +2,16 @@
 	"core": {
 		"action": {
 			"back": "Geri",
-			"backToHome": "Ana səhifəyə geri dön",
+			"backToHome": "Ana səhifəyə qayıt",
 			"changeLanguage": "Dili dəyiş",
 			"close": "Bağla",
 			"delete": "Sil",
-			"deselectAll": "Hamısını seçimi ləğv et",
-			"goToUrl": "{url} ünvanına get",
+			"deselectAll": "Hamısının seçimini ləğv et",
+			"goToUrl": "{url} ünvanına keç",
 			"openMenu": "Menyunu aç",
+			"copy": "Kopyala",
 			"rename": "Adını dəyiş",
-			"retry": "Təkrar cəhd et",
+			"retry": "Yenidən cəhd et",
 			"saveChanges": "Dəyişiklikləri yadda saxla",
 			"search": "Axtar",
 			"searchMore": "Daha çox nəticə göstər",
@@ -20,36 +21,37 @@
 		"error": {
 			"noChanges": "Dəyişiklik yoxdur",
 			"nothingFound": "\"{search}\" üçün heç nə tapılmadı",
-			"unsent": "Göndərilməmiş"
+			"unsent": "Göndərilməyib"
 		},
 		"label": {
 			"apiDocs": "API Sənədləri",
 			"asia": "Asiya",
 			"avatar": "Avatar",
+			"copied": "Kopyalandı",
 			"custom": "Xüsusi",
 			"darkTheme": "Tünd",
-			"default": "Varsayılan",
+			"default": "Standart",
 			"description": "Təsvir",
 			"designSystem": "Dizayn Sistemi",
-			"errors": "Səhvlər",
+			"errors": "Xətalar",
 			"europe": "Avropa",
-			"githubRepo": "GitHub Anbarı",
+			"githubRepo": "GitHub Deposu",
 			"language": "Dil",
 			"levelHigh": "Yüksək",
 			"levelLow": "Aşağı",
 			"levelMedium": "Orta",
 			"levelVeryHigh": "Çox yüksək",
 			"levelVeryLow": "Çox aşağı",
-			"lightTheme": "Açıq",
+			"lightTheme": "İşıqlı",
 			"name": "Ad",
-			"navigationBar": "Navigasiya paneli",
-			"navigationMenu": "Navigasiya menyusu",
-			"optionalField": "(İxtiyari)",
-			"quickSettings": "Tez tənzimləmələr",
+			"navigationBar": "Naviqasiya paneli",
+			"navigationMenu": "Naviqasiya menyusu",
+			"optionalField": "(İstəyə bağlı)",
+			"quickSettings": "Sürətli parametrlər",
 			"requiredField": "(Vacib)",
-			"settings": "Ayarlar",
-			"uiLibrary": "UI Kitabxanası",
-			"uiTheme": "UI Mövzusu"
+			"settings": "Parametrlər",
+			"uiLibrary": "İstifadəçi İnterfeysi Kitabxanası",
+			"uiTheme": "İstifadəçi İnterfeysi Mövzusu"
 		},
 		"placeholder": {
 			"search": "Axtar..."
@@ -65,31 +67,33 @@
 	},
 	"aiChat": {
 		"action": {
-			"backToSubchats": "Subchat-lərə geri dön",
-			"configureAgent": "Ageni konfiqurasiya et",
-			"confirmDeleteAgent": "Agenin silinməsini təsdiqlə",
+			"backToSubchats": "Alt-söhbətlərə qayıt",
+			"configureAgent": "Agenti konfiqurasiya et",
+			"confirmDeleteAgent": "Agentin silinməsini təsdiqlə",
 			"confirmDeleteChats": "Söhbətlərin silinməsini təsdiqlə",
 			"confirmRenameChat": "Söhbətin adının dəyişdirilməsini təsdiqlə",
+			"copyCode": "Kodu kopyala",
+			"copyMessage": "Mesajı kopyala",
 			"createAgent": "Agent yarat",
-			"deleteAgent": "Ageni sil",
+			"deleteAgent": "Agenti sil",
 			"deleteSelectedChats": "Seçilmiş söhbətləri sil",
-			"deselectChat": "Söhbətin seçimini ləğv et",
+			"deselectChat": "Söhbət seçimini ləğv et",
 			"manageAgents": "Agentləri idarə et",
 			"manageChats": "Söhbətləri idarə et",
 			"openChat": "Söhbəti aç",
-			"openSubchat_other": "Subchat-ı aç ({count} mesaj)",
-			"openSubchat_zero": "Subchat yarat",
-			"searchChats": "Söhbətləri axtar",
+			"openSubchat_other": "Alt-söhbəti aç ({count} mesaj)",
+			"openSubchat_zero": "Alt-söhbət yarat",
+			"searchChats": "Söhbətlərdə axtar",
 			"selectChat": "Söhbəti seç",
-			"sendMessage": "Mesajı göndər",
+			"sendMessage": "Mesaj göndər",
 			"showMoreAgents": "Daha çox agent göstər",
 			"showMoreChats": "Daha çox söhbət göstər",
-			"showSubchats": "Subchat-ləri göstər ({count})",
-			"startSearching_one": "Ən az {count} simvol daxil edin",
-			"startSearching_other": "Ən az {count} simvol daxil edin"
+			"showSubchats": "Alt-söhbətləri göstər ({count})",
+			"startSearching_one": "Ən azı {count} simvol daxil edin",
+			"startSearching_other": "Ən azı {count} simvol daxil edin"
 		},
 		"description": {
-			"geminiNano": "Google Chrome üçün mini GPT",
+			"geminiNano": "Google Chrome üçün Mini GPT",
 			"loremIpsumGPT": "Ən ağıllı model",
 			"rammusGPT": "Ən yaxşı emosional dəstək"
 		},
@@ -97,7 +101,7 @@
 			"agentAvatar": "Agent üçün avatar əlavə etməlisiniz",
 			"agentName": "Agent üçün ad əlavə etməlisiniz",
 			"emptyMessage": "Mesajınız boşdur",
-			"failedMessage": "Mesajınızın çatdırılmasında problem baş verdi"
+			"failedMessage": "Mesajınızın çatdırılmasında problem yarandı"
 		},
 		"label": {
 			"agents": "Agentlər",
@@ -110,20 +114,20 @@
 			"newChat": "Yeni söhbət",
 			"newMessage": "Yeni mesaj",
 			"noChats": "Söhbət yoxdur",
-			"noSubchats": "Subchat yoxdur",
+			"noSubchats": "Alt-söhbət yoxdur",
 			"selectedAgent": "Seçilmiş agent",
 			"selectedValue": "Seçilmiş dəyər",
-			"subchats": "Subchat-lər",
+			"subchats": "Alt-söhbətlər",
 			"xMessages_one": "1 mesaj",
 			"xMessages_other": "{count} mesaj",
 			"xSearchResults_one": "{count} axtarış nəticəsi",
-			"xSearchResults_other": "{count} axtarış nəticələri",
+			"xSearchResults_other": "{count} axtarış nəticəsi",
 			"xSearchResults_zero": "Axtarış nəticəsi yoxdur",
-			"xSelectedMessages_one": "1 mesaj seçildi",
-			"xSelectedMessages_other": "{count} mesaj seçildi"
+			"xSelectedMessages_one": "1 mesaj seçilib",
+			"xSelectedMessages_other": "{count} mesaj seçilib"
 		},
 		"placeholder": {
-			"newMessage": "{name}-ə danış...",
+			"newMessage": "{name} ilə danış...",
 			"rename": "Avtomatik yeni ad yarat..."
 		},
 		"state": {
@@ -132,28 +136,28 @@
 			"loadingGPTs": "GPT-lər yüklənir...",
 			"loadingMessages": "Mesajlar yüklənir...",
 			"loadingPreviousMessages": "Əvvəlki mesajlar yüklənir...",
-			"loadingSubchats": "Subchat-lər yüklənir...",
+			"loadingSubchats": "Alt-söhbətlər yüklənir...",
 			"renamingChat": "Söhbətin adı dəyişdirilir...",
 			"thinking": "Düşünür..."
 		},
 		"warning": {
-			"deletingAgent": "Bu agent daimi olaraq silinəcək",
-			"deletingChats": "Bu söhbətlər daimi olaraq silinəcək",
-			"geminiGptInsideChrome": "Bu GPT üçün bu parametrlərin aktivləşdirilməsi tələb olunur:",
+			"deletingAgent": "Bu agent birdəfəlik silinəcək",
+			"deletingChats": "Bu söhbətlər birdəfəlik silinəcək",
+			"geminiGptInsideChrome": "Bu GPT bu parametrlərin aktivləşdirilməsini tələb edir:",
 			"geminiGptOutsideChrome": "Bu GPT yalnız Google Chrome brauzerində mövcuddur",
-			"invalidGpt": "Keçərsiz GPT"
+			"invalidGpt": "Yanlış GPT"
 		}
 	},
 	"userSettings": {
 		"action": {
 			"manageAccount": "Hesabı idarə et",
-			"manageBilling": "Ödənişi idarə et"
+			"manageBilling": "Ödənişləri idarə et"
 		},
 		"error": {
-			"address": "Ünvanı əlavə etməlisiniz",
+			"address": "Ünvan əlavə etməlisiniz",
 			"avatar": "Avatarınızı əlavə etməlisiniz",
-			"city": "Şəhəri əlavə etməlisiniz",
-			"country": "Ölkəni əlavə etməlisiniz",
+			"city": "Şəhər əlavə etməlisiniz",
+			"country": "Ölkə əlavə etməlisiniz",
 			"email": "E-poçt ünvanınızı əlavə etməlisiniz",
 			"legalName": "Hüquqi adı əlavə etməlisiniz",
 			"name": "Adınızı əlavə etməlisiniz",

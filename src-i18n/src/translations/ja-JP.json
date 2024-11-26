@@ -2,30 +2,32 @@
 	"core": {
 		"action": {
 			"back": "戻る",
-			"backToHome": "ホームページに戻る",
+			"backToHome": "ホームに戻る",
 			"changeLanguage": "言語を変更",
 			"close": "閉じる",
 			"delete": "削除",
-			"deselectAll": "すべての選択を解除",
+			"deselectAll": "すべて選択解除",
 			"goToUrl": "{url}に移動",
 			"openMenu": "メニューを開く",
+			"copy": "コピー",
 			"rename": "名前を変更",
 			"retry": "再試行",
 			"saveChanges": "変更を保存",
 			"search": "検索",
-			"searchMore": "さらに結果を表示",
+			"searchMore": "さらに表示",
 			"selectAll": "すべて選択",
 			"signOut": "サインアウト"
 		},
 		"error": {
 			"noChanges": "変更はありません",
-			"nothingFound": "\"{search}\"に一致するものは見つかりませんでした",
+			"nothingFound": "\"{search}\"の検索結果はありません",
 			"unsent": "未送信"
 		},
 		"label": {
-			"apiDocs": "API ドキュメント",
+			"apiDocs": "APIドキュメント",
 			"asia": "アジア",
 			"avatar": "アバター",
+			"copied": "コピー済み",
 			"custom": "カスタム",
 			"darkTheme": "ダーク",
 			"default": "デフォルト",
@@ -33,23 +35,22 @@
 			"designSystem": "デザインシステム",
 			"errors": "エラー",
 			"europe": "ヨーロッパ",
-			"githubRepo": "GitHub リポジトリ",
+			"githubRepo": "GitHubリポジトリ",
 			"language": "言語",
 			"levelHigh": "高",
 			"levelLow": "低",
 			"levelMedium": "中",
-			"levelVeryHigh": "非常に高い",
-			"levelVeryLow": "非常に低い",
+			"levelVeryHigh": "最高",
+			"levelVeryLow": "最低",
 			"lightTheme": "ライト",
 			"name": "名前",
 			"navigationBar": "ナビゲーションバー",
 			"navigationMenu": "ナビゲーションメニュー",
-			"optionalField": "（オプション）",
-			"quickSettings": "クイック設定",
-			"requiredField": "（必須）",
+			"optionalField": "(任意)",
+			"requiredField": "(必須)",
 			"settings": "設定",
-			"uiLibrary": "UI ライブラリ",
-			"uiTheme": "UI テーマ"
+			"uiLibrary": "UIライブラリ",
+			"uiTheme": "UIテーマ"
 		},
 		"placeholder": {
 			"search": "検索..."
@@ -70,6 +71,8 @@
 			"confirmDeleteAgent": "エージェントの削除を確認",
 			"confirmDeleteChats": "チャットの削除を確認",
 			"confirmRenameChat": "チャットの名前変更を確認",
+			"copyCode": "コードをコピー",
+			"copyMessage": "メッセージをコピー",
 			"createAgent": "エージェントを作成",
 			"deleteAgent": "エージェントを削除",
 			"deleteSelectedChats": "選択したチャットを削除",
@@ -77,25 +80,25 @@
 			"manageAgents": "エージェントを管理",
 			"manageChats": "チャットを管理",
 			"openChat": "チャットを開く",
-			"openSubchat_other": "サブチャットを開く（{count} メッセージ）",
 			"openSubchat_zero": "サブチャットを作成",
+			"openSubchat_other": "サブチャットを開く ({count}件のメッセージ)",
 			"searchChats": "チャットを検索",
 			"selectChat": "チャットを選択",
 			"sendMessage": "メッセージを送信",
-			"showMoreAgents": "さらにエージェントを表示",
-			"showMoreChats": "さらにチャットを表示",
-			"showSubchats": "サブチャットを表示（{count}）",
-			"startSearching_one": "{count} 文字以上入力してください",
-			"startSearching_other": "{count} 文字以上入力してください"
+			"showMoreAgents": "エージェントをさらに表示",
+			"showMoreChats": "チャットをさらに表示",
+			"showSubchats": "サブチャットを表示 ({count})",
+			"startSearching_other": "{count}文字以上入力してください",
+			"startSearching_one": "{count}文字以上入力してください"
 		},
 		"description": {
-			"geminiNano": "Google Chrome 用のミニ GPT",
+			"geminiNano": "Google Chrome用ミニGPT",
 			"loremIpsumGPT": "最も知的なモデル",
 			"rammusGPT": "最高の感情サポート"
 		},
 		"error": {
-			"agentAvatar": "エージェントのアバターを追加する必要があります",
-			"agentName": "エージェントの名前を追加する必要があります",
+			"agentAvatar": "エージェントのアバターを追加してください",
+			"agentName": "エージェントの名前を追加してください",
 			"emptyMessage": "メッセージが空です",
 			"failedMessage": "メッセージの送信に問題が発生しました"
 		},
@@ -105,43 +108,40 @@
 			"chats": "チャット",
 			"creativityLevel": "創造性レベル",
 			"customInstructions": "カスタム指示",
-			"gptModel": "GPT モデル",
-			"newAgent": "新しいエージェント",
-			"newChat": "新しいチャット",
-			"newMessage": "新しいメッセージ",
-			"noChats": "チャットがありません",
-			"noSubchats": "サブチャットがありません",
+			"gptModel": "GPTモデル",
+			"newAgent": "新規エージェント",
+			"newChat": "新規チャット",
+			"newMessage": "新規メッセージ",
+			"noChats": "チャットなし",
+			"noSubchats": "サブチャットなし",
 			"selectedAgent": "選択されたエージェント",
 			"selectedValue": "選択された値",
 			"subchats": "サブチャット",
-			"xMessages_one": "1 メッセージ",
-			"xMessages_other": "{count} メッセージ",
-			"xSearchResults_one": "{count} 件の検索結果",
-			"xSearchResults_other": "{count} 件の検索結果",
-			"xSearchResults_zero": "検索結果はありません",
-			"xSelectedMessages_one": "1 件のメッセージが選択されました",
-			"xSelectedMessages_other": "{count} 件のメッセージが選択されました"
+			"xMessages_other": "{count}件のメッセージ",
+			"xSearchResults_zero": "検索結果なし",
+			"xSearchResults_other": "{count}件の検索結果",
+			"xSelectedMessages_other": "{count}件のメッセージを選択"
 		},
 		"placeholder": {
-			"newMessage": "{name} に話しかける...",
-			"rename": "自動的に新しい名前を生成..."
+			"newMessage": "{name}と会話...",
+			"rename": "自動で新しい名前を生成..."
 		},
 		"state": {
 			"loadingAgents": "エージェントを読み込み中...",
 			"loadingChats": "チャットを読み込み中...",
-			"loadingGPTs": "GPT を読み込み中...",
+			"loadingGPTs": "GPTを読み込み中...",
 			"loadingMessages": "メッセージを読み込み中...",
-			"loadingPreviousMessages": "以前のメッセージを読み込み中...",
+			"loadingPreviousMessages": "過去のメッセージを読み込み中...",
 			"loadingSubchats": "サブチャットを読み込み中...",
-			"renamingChat": "チャットの名前を変更中...",
+			"renamingChat": "チャット名を変更中...",
 			"thinking": "考え中..."
 		},
 		"warning": {
-			"deletingAgent": "このエージェントは永久に削除されます",
-			"deletingChats": "これらのチャットは永久に削除されます",
-			"geminiGptInsideChrome": "この GPT には次の設定が必要です:",
-			"geminiGptOutsideChrome": "この GPT は Google Chrome ブラウザでのみ使用可能です",
-			"invalidGpt": "無効な GPT"
+			"deletingAgent": "このエージェントは完全に削除されます",
+			"deletingChats": "これらのチャットは完全に削除されます",
+			"geminiGptInsideChrome": "このGPTには以下の設定が必要です：",
+			"geminiGptOutsideChrome": "このGPTはGoogle Chromeブラウザでのみ利用可能です",
+			"invalidGpt": "無効なGPT"
 		}
 	},
 	"userSettings": {
@@ -150,28 +150,28 @@
 			"manageBilling": "請求を管理"
 		},
 		"error": {
-			"address": "住所を追加する必要があります",
-			"avatar": "アバターを追加する必要があります",
-			"city": "市を追加する必要があります",
-			"country": "国を追加する必要があります",
-			"email": "メールアドレスを追加する必要があります",
-			"legalName": "法定名を追加する必要があります",
-			"name": "名前を追加する必要があります",
-			"postalCode": "郵便番号を追加する必要があります"
+			"address": "住所を追加してください",
+			"avatar": "アバターを追加してください",
+			"city": "市区町村を追加してください",
+			"country": "国を追加してください",
+			"email": "メールアドレスを追加してください",
+			"legalName": "法人名を追加してください",
+			"name": "名前を追加してください",
+			"postalCode": "郵便番号を追加してください"
 		},
 		"label": {
 			"account": "アカウント",
 			"address": "住所",
 			"billing": "請求",
-			"city": "市",
+			"city": "市区町村",
 			"country": "国",
 			"email": "メールアドレス",
-			"legalName": "法定名",
+			"legalName": "法人名",
 			"phone": "電話番号",
 			"postalCode": "郵便番号",
 			"private": "プライベート",
 			"public": "公開",
-			"vatNumber": "VAT 番号"
+			"vatNumber": "法人番号"
 		}
 	}
 }

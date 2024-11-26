@@ -7,8 +7,9 @@
 			"close": "Sulge",
 			"delete": "Kustuta",
 			"deselectAll": "Tühista kõik valikud",
-			"goToUrl": "Mine lehele {url}",
+			"goToUrl": "Mine {url}",
 			"openMenu": "Ava menüü",
+			"copy": "Kopeeri",
 			"rename": "Nimeta ümber",
 			"retry": "Proovi uuesti",
 			"saveChanges": "Salvesta muudatused",
@@ -18,7 +19,7 @@
 			"signOut": "Logi välja"
 		},
 		"error": {
-			"noChanges": "Muutusi pole",
+			"noChanges": "Muudatusi pole",
 			"nothingFound": "Ei leitud midagi otsingule \"{search}\"",
 			"unsent": "Saatmata"
 		},
@@ -26,14 +27,15 @@
 			"apiDocs": "API dokumentatsioon",
 			"asia": "Aasia",
 			"avatar": "Avatar",
+			"copied": "Kopeeritud",
 			"custom": "Kohandatud",
 			"darkTheme": "Tume",
 			"default": "Vaikimisi",
 			"description": "Kirjeldus",
 			"designSystem": "Disainisüsteem",
-			"errors": "Veateated",
+			"errors": "Vead",
 			"europe": "Euroopa",
-			"githubRepo": "GitHubi repo",
+			"githubRepo": "GitHub repo",
 			"language": "Keel",
 			"levelHigh": "Kõrge",
 			"levelLow": "Madal",
@@ -48,14 +50,14 @@
 			"quickSettings": "Kiirseaded",
 			"requiredField": "(Kohustuslik)",
 			"settings": "Seaded",
-			"uiLibrary": "UI raamatukogu",
+			"uiLibrary": "UI teek",
 			"uiTheme": "UI teema"
 		},
 		"placeholder": {
 			"search": "Otsi..."
 		},
 		"state": {
-			"dataSaved": "Teie andmed on salvestatud",
+			"dataSaved": "Sinu andmed on salvestatud",
 			"deleting": "Kustutamine...",
 			"loading": "Laadimine...",
 			"searching": "Otsimine...",
@@ -70,6 +72,8 @@
 			"confirmDeleteAgent": "Kinnita agendi kustutamine",
 			"confirmDeleteChats": "Kinnita vestluste kustutamine",
 			"confirmRenameChat": "Kinnita vestluse ümbernimetamine",
+			"copyCode": "Kopeeri kood",
+			"copyMessage": "Kopeeri sõnum",
 			"createAgent": "Loo agent",
 			"deleteAgent": "Kustuta agent",
 			"deleteSelectedChats": "Kustuta valitud vestlused",
@@ -85,25 +89,25 @@
 			"showMoreAgents": "Näita rohkem agente",
 			"showMoreChats": "Näita rohkem vestlusi",
 			"showSubchats": "Näita alamvestlusi ({count})",
-			"startSearching_one": "Sisestage vähemalt {count} märk",
-			"startSearching_other": "Sisestage vähemalt {count} märki"
+			"startSearching_one": "Sisesta vähemalt {count} märk",
+			"startSearching_other": "Sisesta vähemalt {count} märki"
 		},
 		"description": {
-			"geminiNano": "Mini GPT Google Chrome jaoks",
+			"geminiNano": "Mini GPT Google Chrome'i jaoks",
 			"loremIpsumGPT": "Kõige intelligentsem mudel",
 			"rammusGPT": "Parim emotsionaalne tugi"
 		},
 		"error": {
-			"agentAvatar": "Peate lisama agendi avatari",
-			"agentName": "Peate lisama agendi nime",
-			"emptyMessage": "Teie sõnum on tühi",
-			"failedMessage": "Teie sõnumi edastamisel ilmnes probleem"
+			"agentAvatar": "Pead lisama agendile avatari",
+			"agentName": "Pead lisama agendile nime",
+			"emptyMessage": "Sinu sõnum on tühi",
+			"failedMessage": "Sinu sõnumi edastamisel tekkis probleem"
 		},
 		"label": {
 			"agents": "Agendid",
 			"chatTitle": "Vestluse pealkiri",
 			"chats": "Vestlused",
-			"creativityLevel": "Loomingulisuse tase",
+			"creativityLevel": "Loovuse tase",
 			"customInstructions": "Kohandatud juhised",
 			"gptModel": "GPT mudel",
 			"newAgent": "Uus agent",
@@ -116,30 +120,30 @@
 			"subchats": "Alamvestlused",
 			"xMessages_one": "1 sõnum",
 			"xMessages_other": "{count} sõnumit",
-			"xSearchResults_one": "{count} otsingutulemus",
-			"xSearchResults_other": "{count} otsingutulemust",
-			"xSearchResults_zero": "Otsingutulemusi pole",
-			"xSelectedMessages_one": "1 sõnum valitud",
-			"xSelectedMessages_other": "{count} sõnumit valitud"
+			"xSearchResults_one": "{count} otsingu tulemus",
+			"xSearchResults_other": "{count} otsingu tulemust",
+			"xSearchResults_zero": "Otsingu tulemusi pole",
+			"xSelectedMessages_one": "1 valitud sõnum",
+			"xSelectedMessages_other": "{count} valitud sõnumit"
 		},
 		"placeholder": {
-			"newMessage": "Rääkige {name}...",
-			"rename": "Loo automaatselt uus nimi..."
+			"newMessage": "Räägi {name}ga...",
+			"rename": "Genereeri uus nimi automaatselt..."
 		},
 		"state": {
 			"loadingAgents": "Agentide laadimine...",
 			"loadingChats": "Vestluste laadimine...",
-			"loadingGPTs": "GPT mudelite laadimine...",
+			"loadingGPTs": "GPTde laadimine...",
 			"loadingMessages": "Sõnumite laadimine...",
 			"loadingPreviousMessages": "Eelmiste sõnumite laadimine...",
 			"loadingSubchats": "Alamvestluste laadimine...",
 			"renamingChat": "Vestluse ümbernimetamine...",
-			"thinking": "Mõtleb..."
+			"thinking": "Mõtlemine..."
 		},
 		"warning": {
 			"deletingAgent": "See agent kustutatakse jäädavalt",
 			"deletingChats": "Need vestlused kustutatakse jäädavalt",
-			"geminiGptInsideChrome": "See GPT nõuab järgmiste seadete lubamist:",
+			"geminiGptInsideChrome": "See GPT nõuab nende seadete aktiveerimist:",
 			"geminiGptOutsideChrome": "See GPT on saadaval ainult Google Chrome'i brauseris",
 			"invalidGpt": "Vigane GPT"
 		}
@@ -147,22 +151,22 @@
 	"userSettings": {
 		"action": {
 			"manageAccount": "Halda kontot",
-			"manageBilling": "Halda arveldamist"
+			"manageBilling": "Halda arveldust"
 		},
 		"error": {
-			"address": "Peate lisama aadressi",
-			"avatar": "Peate lisama oma avatari",
-			"city": "Peate lisama linna",
-			"country": "Peate lisama riigi",
-			"email": "Peate lisama oma e-posti aadressi",
-			"legalName": "Peate lisama juriidilise nime",
-			"name": "Peate lisama oma nime",
-			"postalCode": "Peate lisama postiindeksi"
+			"address": "Pead lisama aadressi",
+			"avatar": "Pead lisama oma avatari",
+			"city": "Pead lisama linna",
+			"country": "Pead lisama riigi",
+			"email": "Pead lisama oma e-posti aadressi",
+			"legalName": "Pead lisama juriidilise nime",
+			"name": "Pead lisama oma nime",
+			"postalCode": "Pead lisama postiindeksi"
 		},
 		"label": {
 			"account": "Konto",
 			"address": "Aadress",
-			"billing": "Arveldamine",
+			"billing": "Arveldus",
 			"city": "Linn",
 			"country": "Riik",
 			"email": "E-posti aadress",
@@ -171,7 +175,7 @@
 			"postalCode": "Postiindeks",
 			"private": "Privaatne",
 			"public": "Avalik",
-			"vatNumber": "KMKR nr"
+			"vatNumber": "KMKR number"
 		}
 	}
 }

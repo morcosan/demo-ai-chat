@@ -1,13 +1,12 @@
 import { mockAPI } from '@api/mock'
 import { ApiResponse } from '@api/types'
-import { AiChatSvg, ArrowBackSvg, Button, IconButton, TextField, useUiTheme } from '@ds/release'
+import { AiChatSvg, ArrowBackSvg, Button, IconButton, TextField } from '@ds/release'
 import hljs from 'highlight.js'
 import { useCallback, useEffect, useMemo, useState } from 'react'
 import { Link, useLocation, useSearchParams } from 'react-router-dom'
 import { Endpoint, ENDPOINTS, EndpointType, QUERY_DEFAULTS, TYPE_COLOR, TYPES } from './_endpoints'
 
 const ApiDocsPage = () => {
-	const { isUiDark } = useUiTheme()
 	const location = useLocation()
 	const [searchParams] = useSearchParams()
 	const [endpoint, setEndpoint] = useState<Endpoint | null>(null)
@@ -37,10 +36,6 @@ const ApiDocsPage = () => {
 		setResp(null)
 		setQuery(QUERY_DEFAULTS)
 	}, [location])
-
-	useEffect(() => {
-		isUiDark ? import('highlight.js/styles/a11y-dark.css') : import('highlight.js/styles/a11y-light.css')
-	}, [])
 
 	return (
 		<div className="h-screen w-screen overflow-x-hidden px-xs-5 py-xs-9 pb-sm-9 md:px-sm-0 md:py-sm-3">
@@ -89,7 +84,12 @@ const ApiDocsPage = () => {
 					<div className="mt-sm-7 px-button-px-item">
 						<span className="text-size-lg text-color-text-subtle">Response</span>
 
-						<pre className="mt-xs-2 min-h-lg-0 overflow-auto bg-color-bg-coding p-xs-3">
+						<pre
+							className={cx(
+								'mt-xs-2 min-h-lg-0 overflow-auto px-xs-6 py-xs-5',
+								'rounded-sm border border-color-border-default bg-color-bg-coding'
+							)}
+						>
 							{resp ? <div dangerouslySetInnerHTML={{ __html: respHtml }} /> : fetching ? 'Fetching...' : ''}
 						</pre>
 					</div>

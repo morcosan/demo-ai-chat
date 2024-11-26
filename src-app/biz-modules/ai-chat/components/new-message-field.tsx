@@ -61,7 +61,7 @@ export const NewMessageField = (props: Props) => {
 					<SendSvg className={isChatView ? 'h-xs-9' : 'h-xs-7'} />
 				</IconButton>
 			}
-			maxLength={1000}
+			maxLength={10000}
 			maxRows={10}
 			disabled={isDisabled}
 			invalid={!gpt.enabled}

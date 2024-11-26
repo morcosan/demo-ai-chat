@@ -3,12 +3,13 @@
 		"action": {
 			"back": "Takaisin",
 			"backToHome": "Takaisin etusivulle",
-			"changeLanguage": "Vaihda kieltä",
+			"changeLanguage": "Vaihda kieli",
 			"close": "Sulje",
 			"delete": "Poista",
-			"deselectAll": "Poista valinnat",
+			"deselectAll": "Poista kaikki valinnat",
 			"goToUrl": "Siirry osoitteeseen {url}",
 			"openMenu": "Avaa valikko",
+			"copy": "Kopioi",
 			"rename": "Nimeä uudelleen",
 			"retry": "Yritä uudelleen",
 			"saveChanges": "Tallenna muutokset",
@@ -19,13 +20,14 @@
 		},
 		"error": {
 			"noChanges": "Ei muutoksia",
-			"nothingFound": "Hakusanalla \"{search}\" ei löytynyt mitään",
-			"unsent": "Ei lähetetty"
+			"nothingFound": "Ei tuloksia haulle \"{search}\"",
+			"unsent": "Lähettämätön"
 		},
 		"label": {
 			"apiDocs": "API-dokumentaatio",
 			"asia": "Aasia",
 			"avatar": "Avatar",
+			"copied": "Kopioitu",
 			"custom": "Mukautettu",
 			"darkTheme": "Tumma",
 			"default": "Oletus",
@@ -45,7 +47,7 @@
 			"navigationBar": "Navigointipalkki",
 			"navigationMenu": "Navigointivalikko",
 			"optionalField": "(Valinnainen)",
-			"quickSettings": "Pikavalinnat",
+			"quickSettings": "Pika-asetukset",
 			"requiredField": "(Pakollinen)",
 			"settings": "Asetukset",
 			"uiLibrary": "UI-kirjasto",
@@ -65,11 +67,13 @@
 	},
 	"aiChat": {
 		"action": {
-			"backToSubchats": "Takaisin ala-keskusteluihin",
+			"backToSubchats": "Takaisin alikeskusteluihin",
 			"configureAgent": "Määritä agentti",
 			"confirmDeleteAgent": "Vahvista agentin poisto",
 			"confirmDeleteChats": "Vahvista keskustelujen poisto",
 			"confirmRenameChat": "Vahvista keskustelun uudelleennimeäminen",
+			"copyCode": "Kopioi koodi",
+			"copyMessage": "Kopioi viesti",
 			"createAgent": "Luo agentti",
 			"deleteAgent": "Poista agentti",
 			"deleteSelectedChats": "Poista valitut keskustelut",
@@ -77,43 +81,43 @@
 			"manageAgents": "Hallitse agentteja",
 			"manageChats": "Hallitse keskusteluja",
 			"openChat": "Avaa keskustelu",
-			"openSubchat_other": "Avaa ala-keskustelu ({count} viestiä)",
-			"openSubchat_zero": "Luo ala-keskustelu",
+			"openSubchat_other": "Avaa alikeskustelu ({count} viestiä)",
+			"openSubchat_zero": "Luo alikeskustelu",
 			"searchChats": "Hae keskusteluja",
 			"selectChat": "Valitse keskustelu",
 			"sendMessage": "Lähetä viesti",
 			"showMoreAgents": "Näytä lisää agentteja",
 			"showMoreChats": "Näytä lisää keskusteluja",
-			"showSubchats": "Näytä ala-keskustelut ({count})",
+			"showSubchats": "Näytä alikeskustelut ({count})",
 			"startSearching_one": "Kirjoita vähintään {count} merkki",
 			"startSearching_other": "Kirjoita vähintään {count} merkkiä"
 		},
 		"description": {
-			"geminiNano": "Mini-GPT Google Chromelle",
+			"geminiNano": "Mini GPT Google Chromelle",
 			"loremIpsumGPT": "Älykkäin malli",
 			"rammusGPT": "Paras emotionaalinen tuki"
 		},
 		"error": {
-			"agentAvatar": "Sinun on lisättävä agentille avatar",
-			"agentName": "Sinun on lisättävä agentille nimi",
+			"agentAvatar": "Sinun täytyy lisätä avatar agentille",
+			"agentName": "Sinun täytyy lisätä nimi agentille",
 			"emptyMessage": "Viestisi on tyhjä",
-			"failedMessage": "Viestin toimituksessa tapahtui virhe"
+			"failedMessage": "Viestisi toimittamisessa oli ongelma"
 		},
 		"label": {
 			"agents": "Agentit",
 			"chatTitle": "Keskustelun otsikko",
 			"chats": "Keskustelut",
-			"creativityLevel": "Luovuuden taso",
+			"creativityLevel": "Luovuustaso",
 			"customInstructions": "Mukautetut ohjeet",
 			"gptModel": "GPT-malli",
 			"newAgent": "Uusi agentti",
 			"newChat": "Uusi keskustelu",
 			"newMessage": "Uusi viesti",
 			"noChats": "Ei keskusteluja",
-			"noSubchats": "Ei ala-keskusteluja",
+			"noSubchats": "Ei alikeskusteluja",
 			"selectedAgent": "Valittu agentti",
 			"selectedValue": "Valittu arvo",
-			"subchats": "Ala-keskustelut",
+			"subchats": "Alikeskustelut",
 			"xMessages_one": "1 viesti",
 			"xMessages_other": "{count} viestiä",
 			"xSearchResults_one": "{count} hakutulos",
@@ -123,23 +127,23 @@
 			"xSelectedMessages_other": "{count} viestiä valittu"
 		},
 		"placeholder": {
-			"newMessage": "Keskustele {name} kanssa...",
+			"newMessage": "Keskustele {name}n kanssa...",
 			"rename": "Luo uusi nimi automaattisesti..."
 		},
 		"state": {
-			"loadingAgents": "Agentteja ladataan...",
-			"loadingChats": "Keskusteluja ladataan...",
-			"loadingGPTs": "GPT-malleja ladataan...",
-			"loadingMessages": "Viestit ladataan...",
-			"loadingPreviousMessages": "Aikaisempia viestejä ladataan...",
-			"loadingSubchats": "Ala-keskusteluja ladataan...",
-			"renamingChat": "Keskustelun nimeäminen uudelleen...",
+			"loadingAgents": "Ladataan agentteja...",
+			"loadingChats": "Ladataan keskusteluja...",
+			"loadingGPTs": "Ladataan GPT:itä...",
+			"loadingMessages": "Ladataan viestejä...",
+			"loadingPreviousMessages": "Ladataan aiempia viestejä...",
+			"loadingSubchats": "Ladataan alikeskusteluja...",
+			"renamingChat": "Nimetään keskustelua uudelleen...",
 			"thinking": "Ajattelee..."
 		},
 		"warning": {
 			"deletingAgent": "Tämä agentti poistetaan pysyvästi",
 			"deletingChats": "Nämä keskustelut poistetaan pysyvästi",
-			"geminiGptInsideChrome": "Tämä GPT vaatii seuraavien asetusten aktivoinnin:",
+			"geminiGptInsideChrome": "Tämä GPT vaatii näiden asetusten aktivoinnin:",
 			"geminiGptOutsideChrome": "Tämä GPT on saatavilla vain Google Chrome -selaimessa",
 			"invalidGpt": "Virheellinen GPT"
 		}
@@ -150,14 +154,14 @@
 			"manageBilling": "Hallitse laskutusta"
 		},
 		"error": {
-			"address": "Sinun on lisättävä osoite",
-			"avatar": "Sinun on lisättävä avatarisi",
-			"city": "Sinun on lisättävä kaupunki",
-			"country": "Sinun on lisättävä maa",
-			"email": "Sinun on lisättävä sähköpostiosoitteesi",
-			"legalName": "Sinun on lisättävä virallinen nimi",
-			"name": "Sinun on lisättävä nimesi",
-			"postalCode": "Sinun on lisättävä postinumero"
+			"address": "Sinun täytyy lisätä osoite",
+			"avatar": "Sinun täytyy lisätä avatarisi",
+			"city": "Sinun täytyy lisätä kaupunki",
+			"country": "Sinun täytyy lisätä maa",
+			"email": "Sinun täytyy lisätä sähköpostiosoitteesi",
+			"legalName": "Sinun täytyy lisätä virallinen nimi",
+			"name": "Sinun täytyy lisätä nimesi",
+			"postalCode": "Sinun täytyy lisätä postinumero"
 		},
 		"label": {
 			"account": "Tili",
@@ -171,7 +175,7 @@
 			"postalCode": "Postinumero",
 			"private": "Yksityinen",
 			"public": "Julkinen",
-			"vatNumber": "ALV-numero"
+			"vatNumber": "Y-tunnus"
 		}
 	}
 }

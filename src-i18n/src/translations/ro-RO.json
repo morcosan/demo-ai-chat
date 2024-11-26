@@ -9,8 +9,9 @@
 			"deselectAll": "Deselectează tot",
 			"goToUrl": "Mergi la {url}",
 			"openMenu": "Deschide meniu",
+			"copy": "Copiază",
 			"rename": "Redenumește",
-			"retry": "Încearcă din nou",
+			"retry": "Reîncearcă",
 			"saveChanges": "Salvează modificările",
 			"search": "Caută",
 			"searchMore": "Arată mai multe rezultate",
@@ -26,21 +27,22 @@
 			"apiDocs": "Documentație API",
 			"asia": "Asia",
 			"avatar": "Avatar",
+			"copied": "Copiat",
 			"custom": "Personalizat",
-			"darkTheme": "Închis",
+			"darkTheme": "Întunecat",
 			"default": "Implicit",
 			"description": "Descriere",
-			"designSystem": "Sistem de design",
+			"designSystem": "Sistem de Design",
 			"errors": "Erori",
 			"europe": "Europa",
-			"githubRepo": "Depozit GitHub",
+			"githubRepo": "Repo GitHub",
 			"language": "Limbă",
 			"levelHigh": "Ridicat",
 			"levelLow": "Scăzut",
 			"levelMedium": "Mediu",
 			"levelVeryHigh": "Foarte ridicat",
 			"levelVeryLow": "Foarte scăzut",
-			"lightTheme": "Deschis",
+			"lightTheme": "Luminos",
 			"name": "Nume",
 			"navigationBar": "Bară de navigare",
 			"navigationMenu": "Meniu de navigare",
@@ -55,7 +57,7 @@
 			"search": "Caută..."
 		},
 		"state": {
-			"dataSaved": "Datele tale au fost salvate",
+			"dataSaved": "Datele tale sunt salvate",
 			"deleting": "Se șterge...",
 			"loading": "Se încarcă...",
 			"searching": "Se caută...",
@@ -70,8 +72,10 @@
 			"confirmDeleteAgent": "Confirmă ștergerea agentului",
 			"confirmDeleteChats": "Confirmă ștergerea chat-urilor",
 			"confirmRenameChat": "Confirmă redenumirea chat-ului",
+			"copyCode": "Copiază codul",
+			"copyMessage": "Copiază mesajul",
 			"createAgent": "Creează agent",
-			"deleteAgent": "Șterge agentul",
+			"deleteAgent": "Șterge agent",
 			"deleteSelectedChats": "Șterge chat-urile selectate",
 			"deselectChat": "Deselectează chat-ul",
 			"manageAgents": "Gestionează agenții",
@@ -80,6 +84,7 @@
 			"openSubchat_few": "Deschide subchat ({count} mesaje)",
 			"openSubchat_many": "Deschide subchat ({count} de mesaje)",
 			"openSubchat_one": "Deschide subchat ({count} mesaj)",
+			"openSubchat_other": "Deschide subchat ({count} de mesaje)",
 			"openSubchat_zero": "Creează subchat",
 			"searchChats": "Caută chat-uri",
 			"selectChat": "Selectează chat",
@@ -87,9 +92,10 @@
 			"showMoreAgents": "Arată mai mulți agenți",
 			"showMoreChats": "Arată mai multe chat-uri",
 			"showSubchats": "Arată subchat-uri ({count})",
+			"startSearching_one": "Scrie cel puțin {count} caracter",
 			"startSearching_few": "Scrie cel puțin {count} caractere",
 			"startSearching_many": "Scrie cel puțin {count} de caractere",
-			"startSearching_one": "Scrie cel puțin {count} caracter"
+			"startSearching_other": "Scrie cel puțin {count} de caractere"
 		},
 		"description": {
 			"geminiNano": "Mini GPT pentru Google Chrome",
@@ -104,7 +110,7 @@
 		},
 		"label": {
 			"agents": "Agenți",
-			"chatTitle": "Titlul chat-ului",
+			"chatTitle": "Titlu chat",
 			"chats": "Chat-uri",
 			"creativityLevel": "Nivel de creativitate",
 			"customInstructions": "Instrucțiuni personalizate",
@@ -117,16 +123,19 @@
 			"selectedAgent": "Agent selectat",
 			"selectedValue": "Valoare selectată",
 			"subchats": "Subchat-uri",
+			"xMessages_one": "1 mesaj",
 			"xMessages_few": "{count} mesaje",
 			"xMessages_many": "{count} de mesaje",
-			"xMessages_one": "{count} mesaj",
-			"xSearchResults_few": "{count} rezultate ale căutării",
-			"xSearchResults_many": "{count} de rezultate ale căutării",
-			"xSearchResults_one": "{count} rezultat al căutării",
-			"xSearchResults_zero": "Niciun rezultat al căutării",
+			"xMessages_other": "{count} de mesaje",
+			"xSearchResults_one": "{count} rezultat",
+			"xSearchResults_few": "{count} rezultate",
+			"xSearchResults_many": "{count} de rezultate",
+			"xSearchResults_other": "{count} de rezultate",
+			"xSearchResults_zero": "Niciun rezultat",
+			"xSelectedMessages_one": "1 mesaj selectat",
 			"xSelectedMessages_few": "{count} mesaje selectate",
 			"xSelectedMessages_many": "{count} de mesaje selectate",
-			"xSelectedMessages_one": "{count} mesaj selectat"
+			"xSelectedMessages_other": "{count} de mesaje selectate"
 		},
 		"placeholder": {
 			"newMessage": "Vorbește cu {name}...",
@@ -143,9 +152,9 @@
 			"thinking": "Se gândește..."
 		},
 		"warning": {
-			"deletingAgent": "Acest agent va fi șters permanent",
-			"deletingChats": "Aceste chat-uri vor fi șterse permanent",
-			"geminiGptInsideChrome": "Acest GPT necesită activarea următoarelor setări:",
+			"deletingAgent": "Acest agent va fi șters definitiv",
+			"deletingChats": "Aceste chat-uri vor fi șterse definitiv",
+			"geminiGptInsideChrome": "Acest GPT necesită activarea acestor setări:",
 			"geminiGptOutsideChrome": "Acest GPT este disponibil doar în browserul Google Chrome",
 			"invalidGpt": "GPT invalid"
 		}
@@ -160,7 +169,7 @@
 			"avatar": "Trebuie să adaugi avatarul tău",
 			"city": "Trebuie să adaugi orașul",
 			"country": "Trebuie să adaugi țara",
-			"email": "Trebuie să adaugi adresa de email",
+			"email": "Trebuie să adaugi adresa ta de email",
 			"legalName": "Trebuie să adaugi numele legal",
 			"name": "Trebuie să adaugi numele tău",
 			"postalCode": "Trebuie să adaugi codul poștal"
@@ -177,7 +186,7 @@
 			"postalCode": "Cod poștal",
 			"private": "Privat",
 			"public": "Public",
-			"vatNumber": "CUI"
+			"vatNumber": "Cod TVA"
 		}
 	}
 }

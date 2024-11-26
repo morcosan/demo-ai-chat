@@ -41,6 +41,7 @@ export const TAILWIND_THEME = {
 	zIndex: createTokens(TOKENS__Z_INDEX, CssPrefix.Z_INDEX, ''),
 
 	extend: {
+		colors: { 'color-transparent': 'transparent' },
 		borderRadius: { none: 0 },
 		height: { screen: '100vh' },
 		margin: { 0: 0, px: '1px', auto: 'auto' },

@@ -1,39 +1,41 @@
 {
 	"core": {
 		"action": {
-			"back": "กลับ",
-			"backToHome": "กลับไปที่หน้าแรก",
+			"back": "ย้อนกลับ",
+			"backToHome": "กลับไปหน้าแรก",
 			"changeLanguage": "เปลี่ยนภาษา",
 			"close": "ปิด",
 			"delete": "ลบ",
-			"deselectAll": "ยกเลิกการเลือกทั้งหมด",
+			"deselectAll": "ยกเลิกเลือกทั้งหมด",
 			"goToUrl": "ไปที่ {url}",
 			"openMenu": "เปิดเมนู",
+			"copy": "คัดลอก",
 			"rename": "เปลี่ยนชื่อ",
-			"retry": "ลองอีกครั้ง",
+			"retry": "ลองใหม่",
 			"saveChanges": "บันทึกการเปลี่ยนแปลง",
 			"search": "ค้นหา",
-			"searchMore": "แสดงผลเพิ่มเติม",
+			"searchMore": "แสดงผลลัพธ์เพิ่มเติม",
 			"selectAll": "เลือกทั้งหมด",
 			"signOut": "ออกจากระบบ"
 		},
 		"error": {
 			"noChanges": "ไม่มีการเปลี่ยนแปลง",
-			"nothingFound": "ไม่พบ \"{search}\"",
+			"nothingFound": "ไม่พบผลลัพธ์สำหรับ \"{search}\"",
 			"unsent": "ยังไม่ได้ส่ง"
 		},
 		"label": {
 			"apiDocs": "เอกสาร API",
 			"asia": "เอเชีย",
-			"avatar": "อวาตาร์",
+			"avatar": "รูปประจำตัว",
+			"copied": "คัดลอกแล้ว",
 			"custom": "กำหนดเอง",
 			"darkTheme": "โหมดมืด",
 			"default": "ค่าเริ่มต้น",
 			"description": "คำอธิบาย",
-			"designSystem": "ระบบออกแบบ",
+			"designSystem": "ระบบการออกแบบ",
 			"errors": "ข้อผิดพลาด",
 			"europe": "ยุโรป",
-			"githubRepo": "ที่เก็บ GitHub",
+			"githubRepo": "GitHub Repository",
 			"language": "ภาษา",
 			"levelHigh": "สูง",
 			"levelLow": "ต่ำ",
@@ -48,7 +50,7 @@
 			"quickSettings": "การตั้งค่าด่วน",
 			"requiredField": "(จำเป็น)",
 			"settings": "การตั้งค่า",
-			"uiLibrary": "คลัง UI",
+			"uiLibrary": "ไลบรารี UI",
 			"uiTheme": "ธีม UI"
 		},
 		"placeholder": {
@@ -65,81 +67,79 @@
 	},
 	"aiChat": {
 		"action": {
-			"backToSubchats": "กลับไปที่ซับแชท",
-			"configureAgent": "กำหนดค่าตัวแทน",
-			"confirmDeleteAgent": "ยืนยันการลบตัวแทน",
+			"backToSubchats": "กลับไปที่แชทย่อย",
+			"configureAgent": "กำหนดค่าเอเจนต์",
+			"confirmDeleteAgent": "ยืนยันการลบเอเจนต์",
 			"confirmDeleteChats": "ยืนยันการลบแชท",
 			"confirmRenameChat": "ยืนยันการเปลี่ยนชื่อแชท",
-			"createAgent": "สร้างตัวแทน",
-			"deleteAgent": "ลบตัวแทน",
+			"copyCode": "คัดลอกโค้ด",
+			"copyMessage": "คัดลอกข้อความ",
+			"createAgent": "สร้างเอเจนต์",
+			"deleteAgent": "ลบเอเจนต์",
 			"deleteSelectedChats": "ลบแชทที่เลือก",
-			"deselectChat": "ยกเลิกการเลือกแชท",
-			"manageAgents": "จัดการตัวแทน",
+			"deselectChat": "ยกเลิกเลือกแชท",
+			"manageAgents": "จัดการเอเจนต์",
 			"manageChats": "จัดการแชท",
 			"openChat": "เปิดแชท",
-			"openSubchat_other": "เปิดซับแชท ({count} ข้อความ)",
-			"openSubchat_zero": "สร้างซับแชท",
+			"openSubchat_zero": "สร้างแชทย่อย",
+			"openSubchat_other": "เปิดแชทย่อย ({count} ข้อความ)",
 			"searchChats": "ค้นหาแชท",
 			"selectChat": "เลือกแชท",
 			"sendMessage": "ส่งข้อความ",
-			"showMoreAgents": "แสดงตัวแทนเพิ่มเติม",
+			"showMoreAgents": "แสดงเอเจนต์เพิ่มเติม",
 			"showMoreChats": "แสดงแชทเพิ่มเติม",
-			"showSubchats": "แสดงซับแชท ({count})",
-			"startSearching_one": "พิมพ์อย่างน้อย {count} อักขระ",
-			"startSearching_other": "พิมพ์อย่างน้อย {count} อักขระ"
+			"showSubchats": "แสดงแชทย่อย ({count})",
+			"startSearching_other": "พิมพ์อย่างน้อย {count} ตัวอักษร"
 		},
 		"description": {
-			"geminiNano": "Mini GPT สำหรับ Google Chrome",
+			"geminiNano": "มินิ GPT สำหรับ Google Chrome",
 			"loremIpsumGPT": "โมเดลที่ฉลาดที่สุด",
-			"rammusGPT": "การสนับสนุนทางอารมณ์ที่ดีที่สุด"
+			"rammusGPT": "การสนับสนุนด้านอารมณ์ที่ดีที่สุด"
 		},
 		"error": {
-			"agentAvatar": "คุณต้องเพิ่มอวาตาร์สำหรับตัวแทน",
-			"agentName": "คุณต้องเพิ่มชื่อสำหรับตัวแทน",
+			"agentAvatar": "คุณต้องเพิ่มรูปประจำตัวสำหรับเอเจนต์",
+			"agentName": "คุณต้องเพิ่มชื่อสำหรับเอเจนต์",
 			"emptyMessage": "ข้อความของคุณว่างเปล่า",
-			"failedMessage": "เกิดปัญหาในการส่งข้อความของคุณ"
+			"failedMessage": "มีปัญหาในการส่งข้อความของคุณ"
 		},
 		"label": {
-			"agents": "ตัวแทน",
+			"agents": "เอเจนต์",
 			"chatTitle": "ชื่อแชท",
 			"chats": "แชท",
 			"creativityLevel": "ระดับความคิดสร้างสรรค์",
 			"customInstructions": "คำแนะนำที่กำหนดเอง",
 			"gptModel": "โมเดล GPT",
-			"newAgent": "ตัวแทนใหม่",
+			"newAgent": "เอเจนต์ใหม่",
 			"newChat": "แชทใหม่",
 			"newMessage": "ข้อความใหม่",
 			"noChats": "ไม่มีแชท",
-			"noSubchats": "ไม่มีซับแชท",
-			"selectedAgent": "ตัวแทนที่เลือก",
+			"noSubchats": "ไม่มีแชทย่อย",
+			"selectedAgent": "เอเจนต์ที่เลือก",
 			"selectedValue": "ค่าที่เลือก",
-			"subchats": "ซับแชท",
-			"xMessages_one": "1 ข้อความ",
+			"subchats": "แชทย่อย",
 			"xMessages_other": "{count} ข้อความ",
-			"xSearchResults_one": "{count} ผลการค้นหา",
+			"xSearchResults_zero": "ไม่พบผลการค้นหา",
 			"xSearchResults_other": "{count} ผลการค้นหา",
-			"xSearchResults_zero": "ไม่มีผลการค้นหา",
-			"xSelectedMessages_one": "เลือก 1 ข้อความ",
-			"xSelectedMessages_other": "เลือก {count} ข้อความ"
+			"xSelectedMessages_other": "{count} ข้อความที่เลือก"
 		},
 		"placeholder": {
 			"newMessage": "พูดคุยกับ {name}...",
-			"rename": "สร้างชื่อใหม่โดยอัตโนมัติ..."
+			"rename": "สร้างชื่อใหม่อัตโนมัติ..."
 		},
 		"state": {
-			"loadingAgents": "กำลังโหลดตัวแทน...",
+			"loadingAgents": "กำลังโหลดเอเจนต์...",
 			"loadingChats": "กำลังโหลดแชท...",
 			"loadingGPTs": "กำลังโหลด GPT...",
 			"loadingMessages": "กำลังโหลดข้อความ...",
 			"loadingPreviousMessages": "กำลังโหลดข้อความก่อนหน้า...",
-			"loadingSubchats": "กำลังโหลดซับแชท...",
+			"loadingSubchats": "กำลังโหลดแชทย่อย...",
 			"renamingChat": "กำลังเปลี่ยนชื่อแชท...",
 			"thinking": "กำลังคิด..."
 		},
 		"warning": {
-			"deletingAgent": "ตัวแทนนี้จะถูกลบอย่างถาวร",
+			"deletingAgent": "เอเจนต์นี้จะถูกลบอย่างถาวร",
 			"deletingChats": "แชทเหล่านี้จะถูกลบอย่างถาวร",
-			"geminiGptInsideChrome": "GPT นี้ต้องเปิดการตั้งค่าต่อไปนี้:",
+			"geminiGptInsideChrome": "GPT นี้ต้องการให้เปิดใช้งานการตั้งค่าเหล่านี้:",
 			"geminiGptOutsideChrome": "GPT นี้ใช้ได้เฉพาะในเบราว์เซอร์ Google Chrome",
 			"invalidGpt": "GPT ไม่ถูกต้อง"
 		}
@@ -151,10 +151,10 @@
 		},
 		"error": {
 			"address": "คุณต้องเพิ่มที่อยู่",
-			"avatar": "คุณต้องเพิ่มอวาตาร์ของคุณ",
+			"avatar": "คุณต้องเพิ่มรูปประจำตัว",
 			"city": "คุณต้องเพิ่มเมือง",
 			"country": "คุณต้องเพิ่มประเทศ",
-			"email": "คุณต้องเพิ่มที่อยู่อีเมลของคุณ",
+			"email": "คุณต้องเพิ่มที่อยู่อีเมล",
 			"legalName": "คุณต้องเพิ่มชื่อทางกฎหมาย",
 			"name": "คุณต้องเพิ่มชื่อของคุณ",
 			"postalCode": "คุณต้องเพิ่มรหัสไปรษณีย์"
@@ -171,7 +171,7 @@
 			"postalCode": "รหัสไปรษณีย์",
 			"private": "ส่วนตัว",
 			"public": "สาธารณะ",
-			"vatNumber": "หมายเลขภาษีมูลค่าเพิ่ม"
+			"vatNumber": "เลขประจำตัวผู้เสียภาษี"
 		}
 	}
 }

@@ -2,13 +2,14 @@
 	"core": {
 		"action": {
 			"back": "Terug",
-			"backToHome": "Terug naar startpagina",
+			"backToHome": "Terug naar homepage",
 			"changeLanguage": "Taal wijzigen",
 			"close": "Sluiten",
 			"delete": "Verwijderen",
 			"deselectAll": "Alles deselecteren",
 			"goToUrl": "Ga naar {url}",
 			"openMenu": "Menu openen",
+			"copy": "Kopiëren",
 			"rename": "Hernoemen",
 			"retry": "Opnieuw proberen",
 			"saveChanges": "Wijzigingen opslaan",
@@ -23,9 +24,10 @@
 			"unsent": "Niet verzonden"
 		},
 		"label": {
-			"apiDocs": "API Documentatie",
+			"apiDocs": "API Docs",
 			"asia": "Azië",
 			"avatar": "Avatar",
+			"copied": "Gekopieerd",
 			"custom": "Aangepast",
 			"darkTheme": "Donker",
 			"default": "Standaard",
@@ -33,7 +35,7 @@
 			"designSystem": "Design Systeem",
 			"errors": "Fouten",
 			"europe": "Europa",
-			"githubRepo": "GitHub Repository",
+			"githubRepo": "GitHub Repo",
 			"language": "Taal",
 			"levelHigh": "Hoog",
 			"levelLow": "Laag",
@@ -47,7 +49,6 @@
 			"optionalField": "(Optioneel)",
 			"requiredField": "(Verplicht)",
 			"settings": "Instellingen",
-			"quickSettings": "Snelle instellingen",
 			"uiLibrary": "UI Bibliotheek",
 			"uiTheme": "UI Thema"
 		},
@@ -67,17 +68,19 @@
 		"action": {
 			"backToSubchats": "Terug naar subchats",
 			"configureAgent": "Agent configureren",
-			"confirmDeleteAgent": "Bevestig verwijderen agent",
-			"confirmDeleteChats": "Bevestig verwijderen chats",
-			"confirmRenameChat": "Bevestig hernoemen chat",
-			"createAgent": "Agent aanmaken",
+			"confirmDeleteAgent": "Verwijderen agent bevestigen",
+			"confirmDeleteChats": "Verwijderen chats bevestigen",
+			"confirmRenameChat": "Hernoemen chat bevestigen",
+			"copyCode": "Code kopiëren",
+			"copyMessage": "Bericht kopiëren",
+			"createAgent": "Agent maken",
 			"deleteAgent": "Agent verwijderen",
 			"deleteSelectedChats": "Geselecteerde chats verwijderen",
 			"deselectChat": "Chat deselecteren",
 			"manageAgents": "Agents beheren",
 			"manageChats": "Chats beheren",
 			"openChat": "Chat openen",
-			"openSubchat_zero": "Subchat aanmaken",
+			"openSubchat_zero": "Subchat maken",
 			"openSubchat_one": "Subchat openen ({count} bericht)",
 			"openSubchat_other": "Subchat openen ({count} berichten)",
 			"searchChats": "Chats zoeken",
@@ -98,7 +101,7 @@
 			"agentAvatar": "Je moet een avatar toevoegen voor de agent",
 			"agentName": "Je moet een naam toevoegen voor de agent",
 			"emptyMessage": "Je bericht is leeg",
-			"failedMessage": "Er was een probleem met het bezorgen van je bericht"
+			"failedMessage": "Er was een probleem met het verzenden van je bericht"
 		},
 		"label": {
 			"agents": "Agents",
@@ -115,19 +118,17 @@
 			"selectedAgent": "Geselecteerde agent",
 			"selectedValue": "Geselecteerde waarde",
 			"subchats": "Subchats",
-			"xMessages_zero": "Geen berichten",
 			"xMessages_one": "1 bericht",
 			"xMessages_other": "{count} berichten",
 			"xSearchResults_zero": "Geen zoekresultaten",
 			"xSearchResults_one": "{count} zoekresultaat",
 			"xSearchResults_other": "{count} zoekresultaten",
-			"xSelectedMessages_zero": "Geen berichten geselecteerd",
 			"xSelectedMessages_one": "1 bericht geselecteerd",
 			"xSelectedMessages_other": "{count} berichten geselecteerd"
 		},
 		"placeholder": {
 			"newMessage": "Praat met {name}...",
-			"rename": "Genereer automatisch een nieuwe naam..."
+			"rename": "Automatisch nieuwe naam genereren..."
 		},
 		"state": {
 			"loadingAgents": "Agents laden...",
@@ -142,7 +143,7 @@
 		"warning": {
 			"deletingAgent": "Deze agent wordt permanent verwijderd",
 			"deletingChats": "Deze chats worden permanent verwijderd",
-			"geminiGptInsideChrome": "Deze GPT vereist dat deze instellingen zijn ingeschakeld:",
+			"geminiGptInsideChrome": "Deze GPT vereist dat de volgende instellingen zijn ingeschakeld:",
 			"geminiGptOutsideChrome": "Deze GPT is alleen beschikbaar in Google Chrome browser",
 			"invalidGpt": "Ongeldige GPT"
 		}
@@ -154,12 +155,12 @@
 		},
 		"error": {
 			"address": "Je moet een adres toevoegen",
-			"avatar": "Je moet je avatar toevoegen",
+			"avatar": "Je moet een avatar toevoegen",
 			"city": "Je moet een stad toevoegen",
 			"country": "Je moet een land toevoegen",
-			"email": "Je moet je e-mailadres toevoegen",
-			"legalName": "Je moet de juridische naam toevoegen",
-			"name": "Je moet je naam toevoegen",
+			"email": "Je moet een e-mailadres toevoegen",
+			"legalName": "Je moet een wettelijke naam toevoegen",
+			"name": "Je moet een naam toevoegen",
 			"postalCode": "Je moet een postcode toevoegen"
 		},
 		"label": {
@@ -169,7 +170,7 @@
 			"city": "Stad",
 			"country": "Land",
 			"email": "E-mailadres",
-			"legalName": "Juridische naam",
+			"legalName": "Wettelijke naam",
 			"phone": "Telefoonnummer",
 			"postalCode": "Postcode",
 			"private": "Privé",
