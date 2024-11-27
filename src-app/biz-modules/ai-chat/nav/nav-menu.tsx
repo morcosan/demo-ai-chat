@@ -96,7 +96,7 @@ export const AiChatNavMenu = (props: Props) => {
 					<div className={cx(!collapsed && '-ml-xs-3 mr-xs-2')}>
 						<AiChatSvg className="h-xs-7 w-xs-7" />
 					</div>
-					<span className={cx(collapsed && 'hidden')}>{t('aiChat.label.newChat')}</span>
+					<span className={cx('truncate', collapsed && 'hidden')}>{t('aiChat.label.newChat')}</span>
 				</Button>
 			</div>
 

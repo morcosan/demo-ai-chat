@@ -31,7 +31,8 @@ export const DesktopNavbar = ({ unselected, onClickLanguage }: Props) => {
 	const expandedClass = 'w-lg-7 min-w-lg-7'
 	const collapsedClass = 'w-md-6 min-w-md-6'
 	const navbarClass = cx(
-		`absolute left-0 top-0 z-navbar h-full`,
+		'absolute left-0 top-0 z-navbar h-full',
+		'transition-all duration-100 ease-in-out',
 		isNavCollapsed ? collapsedClass : expandedClass,
 		'flex flex-col px-a11y-scrollbar py-xs-3',
 		'border-r border-color-border-shadow bg-color-bg-card shadow-lg'

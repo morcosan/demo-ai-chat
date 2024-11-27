@@ -17,7 +17,7 @@ export const AppLogo = ({ collapsed, mobile, className }: Props) => {
 			) : (
 				<>
 					<AiChatSvg className="h-sm-2 w-sm-2 animate-pulse" />
-					<span className={cx('font-weight-md leading-1', collapsed && 'hidden')}>AI Chat</span>
+					<span className={cx('truncate font-weight-md leading-1', collapsed && 'hidden')}>AI Chat</span>
 				</>
 			)}
 		</Link>
