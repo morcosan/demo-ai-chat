@@ -55,17 +55,17 @@
 
 	& *:not(pre) > code {
 		margin: 0 1px;
-		box-shadow: var(--ds-shadow-xs);
+		border: 1px solid var(--ds-color-border-default);
 		border-radius: var(--ds-radius-xs);
 		background-color: var(--ds-color-bg-coding);
-		padding: 1px var(--ds-spacing-xs-2);
-		color: var(--ds-color-text-coding);
+		padding: var(--ds-spacing-xs-1) var(--ds-spacing-xs-3) var(--ds-spacing-xs-0);
 		font-weight: var(--ds-font-weight-md);
 		font-size: var(--ds-font-size-sm);
 		word-break: break-word;
 
+		input[type='checkbox'] + &,
 		&:first-child {
-			margin-left: -1px;
+			margin-left: -2px;
 		}
 	}
 
