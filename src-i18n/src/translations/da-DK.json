@@ -93,7 +93,7 @@
 			"startSearching_other": "Skriv mindst {count} tegn"
 		},
 		"description": {
-			"geminiNano": "Mini GPT til Google Chrome",
+			"chromeGPT": "Mini GPT til Google Chrome",
 			"loremIpsumGPT": "Den mest intelligente model",
 			"rammusGPT": "Bedste følelsesmæssige støtte"
 		},
@@ -143,8 +143,8 @@
 		"warning": {
 			"deletingAgent": "Denne agent vil blive slettet permanent",
 			"deletingChats": "Disse chats vil blive slettet permanent",
-			"geminiGptInsideChrome": "Denne GPT kræver at disse indstillinger er aktiveret:",
-			"geminiGptOutsideChrome": "Denne GPT er kun tilgængelig i Google Chrome browser",
+			"chromeGptInsideChrome": "Denne GPT kræver at disse indstillinger er aktiveret:",
+			"chromeGptOutsideChrome": "Denne GPT er kun tilgængelig i Google Chrome browser",
 			"invalidGpt": "Ugyldig GPT"
 		}
 	},

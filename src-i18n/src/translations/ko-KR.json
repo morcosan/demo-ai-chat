@@ -92,7 +92,7 @@
 			"startSearching_other": "최소 {count}자 입력"
 		},
 		"description": {
-			"geminiNano": "Google Chrome용 미니 GPT",
+			"chromeGPT": "Google Chrome용 미니 GPT",
 			"loremIpsumGPT": "가장 지능적인 모델",
 			"rammusGPT": "최고의 감정 지원"
 		},
@@ -139,8 +139,8 @@
 		"warning": {
 			"deletingAgent": "이 에이전트가 영구적으로 삭제됩니다",
 			"deletingChats": "이 채팅들이 영구적으로 삭제됩니다",
-			"geminiGptInsideChrome": "이 GPT는 다음 설정이 활성화되어야 합니다:",
-			"geminiGptOutsideChrome": "이 GPT는 Google Chrome 브라우저에서만 사용 가능합니다",
+			"chromeGptInsideChrome": "이 GPT는 다음 설정이 활성화되어야 합니다:",
+			"chromeGptOutsideChrome": "이 GPT는 Google Chrome 브라우저에서만 사용 가능합니다",
 			"invalidGpt": "잘못된 GPT"
 		}
 	},

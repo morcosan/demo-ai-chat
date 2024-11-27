@@ -93,7 +93,7 @@
 			"startSearching_other": "Ketik minimal {count} karakter"
 		},
 		"description": {
-			"geminiNano": "Mini GPT untuk Google Chrome",
+			"chromeGPT": "Mini GPT untuk Google Chrome",
 			"loremIpsumGPT": "Model paling cerdas",
 			"rammusGPT": "Dukungan emosional terbaik"
 		},
@@ -143,8 +143,8 @@
 		"warning": {
 			"deletingAgent": "Agen ini akan dihapus permanen",
 			"deletingChats": "Chat ini akan dihapus permanen",
-			"geminiGptInsideChrome": "GPT ini memerlukan pengaturan berikut diaktifkan:",
-			"geminiGptOutsideChrome": "GPT ini hanya tersedia di browser Google Chrome",
+			"chromeGptInsideChrome": "GPT ini memerlukan pengaturan berikut diaktifkan:",
+			"chromeGptOutsideChrome": "GPT ini hanya tersedia di browser Google Chrome",
 			"invalidGpt": "GPT tidak valid"
 		}
 	},

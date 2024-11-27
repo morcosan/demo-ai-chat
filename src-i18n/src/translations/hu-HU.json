@@ -93,7 +93,7 @@
 			"startSearching_other": "Írjon be legalább {count} karaktert"
 		},
 		"description": {
-			"geminiNano": "Mini GPT Google Chrome-hoz",
+			"chromeGPT": "Mini GPT Google Chrome-hoz",
 			"loremIpsumGPT": "Legokosabb modell",
 			"rammusGPT": "Legjobb érzelmi támogatás"
 		},
@@ -143,8 +143,8 @@
 		"warning": {
 			"deletingAgent": "Ez az ágens véglegesen törlésre kerül",
 			"deletingChats": "Ezek a chatek véglegesen törlésre kerülnek",
-			"geminiGptInsideChrome": "Ehhez a GPT-hez az alábbi beállítások szükségesek:",
-			"geminiGptOutsideChrome": "Ez a GPT csak Google Chrome böngészőben érhető el",
+			"chromeGptInsideChrome": "Ehhez a GPT-hez az alábbi beállítások szükségesek:",
+			"chromeGptOutsideChrome": "Ez a GPT csak Google Chrome böngészőben érhető el",
 			"invalidGpt": "Érvénytelen GPT"
 		}
 	},

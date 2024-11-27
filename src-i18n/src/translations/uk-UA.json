@@ -96,7 +96,7 @@
 			"startSearching_many": "Введіть хоча б {count} символів"
 		},
 		"description": {
-			"geminiNano": "Міні GPT для Google Chrome",
+			"chromeGPT": "Міні GPT для Google Chrome",
 			"loremIpsumGPT": "Найрозумніша модель",
 			"rammusGPT": "Найкраща емоційна підтримка"
 		},
@@ -149,8 +149,8 @@
 		"warning": {
 			"deletingAgent": "Цього агента буде остаточно видалено",
 			"deletingChats": "Ці чати буде остаточно видалено",
-			"geminiGptInsideChrome": "Цей GPT вимагає активації наступних налаштувань:",
-			"geminiGptOutsideChrome": "Цей GPT доступний лише в браузері Google Chrome",
+			"chromeGptInsideChrome": "Цей GPT вимагає активації наступних налаштувань:",
+			"chromeGptOutsideChrome": "Цей GPT доступний лише в браузері Google Chrome",
 			"invalidGpt": "Недійсний GPT"
 		}
 	},

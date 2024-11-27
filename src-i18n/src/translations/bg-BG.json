@@ -93,7 +93,7 @@
 			"startSearching_other": "Въведи поне {count} знака"
 		},
 		"description": {
-			"geminiNano": "Мини GPT за Google Chrome",
+			"chromeGPT": "Мини GPT за Google Chrome",
 			"loremIpsumGPT": "Най-интелигентният модел",
 			"rammusGPT": "Най-добрата емоционална подкрепа"
 		},
@@ -143,8 +143,8 @@
 		"warning": {
 			"deletingAgent": "Този агент ще бъде изтрит завинаги",
 			"deletingChats": "Тези чатове ще бъдат изтрити завинаги",
-			"geminiGptInsideChrome": "Този GPT изисква активиране на тези настройки:",
-			"geminiGptOutsideChrome": "Този GPT е достъпен само в Google Chrome браузър",
+			"chromeGptInsideChrome": "Този GPT изисква активиране на тези настройки:",
+			"chromeGptOutsideChrome": "Този GPT е достъпен само в Google Chrome браузър",
 			"invalidGpt": "Невалиден GPT"
 		}
 	},

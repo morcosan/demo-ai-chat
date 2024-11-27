@@ -92,7 +92,7 @@
 			"startSearching_other": "请输入至少 {count} 个字符"
 		},
 		"description": {
-			"geminiNano": "Google Chrome 迷你 GPT",
+			"chromeGPT": "Google Chrome 迷你 GPT",
 			"loremIpsumGPT": "最智能的模型",
 			"rammusGPT": "最佳情感支持"
 		},
@@ -139,8 +139,8 @@
 		"warning": {
 			"deletingAgent": "此助手将被永久删除",
 			"deletingChats": "这些对话将被永久删除",
-			"geminiGptInsideChrome": "此 GPT 需要启用以下设置：",
-			"geminiGptOutsideChrome": "此 GPT 仅在 Google Chrome 浏览器中可用",
+			"chromeGptInsideChrome": "此 GPT 需要启用以下设置：",
+			"chromeGptOutsideChrome": "此 GPT 仅在 Google Chrome 浏览器中可用",
 			"invalidGpt": "无效的 GPT"
 		}
 	},

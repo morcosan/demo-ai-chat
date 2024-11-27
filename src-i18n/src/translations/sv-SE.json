@@ -94,7 +94,7 @@
 			"startSearching_other": "Skriv minst {count} tecken"
 		},
 		"description": {
-			"geminiNano": "Mini GPT för Google Chrome",
+			"chromeGPT": "Mini GPT för Google Chrome",
 			"loremIpsumGPT": "Mest intelligenta modellen",
 			"rammusGPT": "Bästa emotionella stödet"
 		},
@@ -144,8 +144,8 @@
 		"warning": {
 			"deletingAgent": "Denna agent kommer att raderas permanent",
 			"deletingChats": "Dessa chattar kommer att raderas permanent",
-			"geminiGptInsideChrome": "Denna GPT kräver att dessa inställningar är aktiverade:",
-			"geminiGptOutsideChrome": "Denna GPT är endast tillgänglig i Google Chrome webbläsare",
+			"chromeGptInsideChrome": "Denna GPT kräver att dessa inställningar är aktiverade:",
+			"chromeGptOutsideChrome": "Denna GPT är endast tillgänglig i Google Chrome webbläsare",
 			"invalidGpt": "Ogiltig GPT"
 		}
 	},

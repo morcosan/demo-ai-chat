@@ -94,7 +94,7 @@
 			"startSearching_other": "Shkruaj të paktën {count} karaktere"
 		},
 		"description": {
-			"geminiNano": "Mini GPT për Google Chrome",
+			"chromeGPT": "Mini GPT për Google Chrome",
 			"loremIpsumGPT": "Modeli më inteligjent",
 			"rammusGPT": "Mbështetja më e mirë emocionale"
 		},
@@ -144,8 +144,8 @@
 		"warning": {
 			"deletingAgent": "Ky agjent do të fshihet përgjithmonë",
 			"deletingChats": "Këto biseda do të fshihen përgjithmonë",
-			"geminiGptInsideChrome": "Ky GPT kërkon që këto cilësime të jenë të aktivizuara:",
-			"geminiGptOutsideChrome": "Ky GPT është i disponueshëm vetëm në shfletuesin Google Chrome",
+			"chromeGptInsideChrome": "Ky GPT kërkon që këto cilësime të jenë të aktivizuara:",
+			"chromeGptOutsideChrome": "Ky GPT është i disponueshëm vetëm në shfletuesin Google Chrome",
 			"invalidGpt": "GPT i pavlefshëm"
 		}
 	},

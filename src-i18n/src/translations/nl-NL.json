@@ -93,7 +93,7 @@
 			"startSearching_other": "Type minimaal {count} tekens"
 		},
 		"description": {
-			"geminiNano": "Mini GPT voor Google Chrome",
+			"chromeGPT": "Mini GPT voor Google Chrome",
 			"loremIpsumGPT": "Meest intelligente model",
 			"rammusGPT": "Beste emotionele ondersteuning"
 		},
@@ -143,8 +143,8 @@
 		"warning": {
 			"deletingAgent": "Deze agent wordt permanent verwijderd",
 			"deletingChats": "Deze chats worden permanent verwijderd",
-			"geminiGptInsideChrome": "Deze GPT vereist dat de volgende instellingen zijn ingeschakeld:",
-			"geminiGptOutsideChrome": "Deze GPT is alleen beschikbaar in Google Chrome browser",
+			"chromeGptInsideChrome": "Deze GPT vereist dat de volgende instellingen zijn ingeschakeld:",
+			"chromeGptOutsideChrome": "Deze GPT is alleen beschikbaar in Google Chrome browser",
 			"invalidGpt": "Ongeldige GPT"
 		}
 	},

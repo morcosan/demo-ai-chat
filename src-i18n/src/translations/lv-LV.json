@@ -95,7 +95,7 @@
 			"startSearching_other": "Ievadiet vismaz {count} rakstzīmes"
 		},
 		"description": {
-			"geminiNano": "Mini GPT Google Chrome",
+			"chromeGPT": "Mini GPT Google Chrome",
 			"loremIpsumGPT": "Visintelektuālākais modelis",
 			"rammusGPT": "Labākais emocionālais atbalsts"
 		},
@@ -147,8 +147,8 @@
 		"warning": {
 			"deletingAgent": "Šis aģents tiks neatgriezeniski dzēsts",
 			"deletingChats": "Šie čati tiks neatgriezeniski dzēsti",
-			"geminiGptInsideChrome": "Šim GPT nepieciešami šādi ieslēgti iestatījumi:",
-			"geminiGptOutsideChrome": "Šis GPT ir pieejams tikai Google Chrome pārlūkā",
+			"chromeGptInsideChrome": "Šim GPT nepieciešami šādi ieslēgti iestatījumi:",
+			"chromeGptOutsideChrome": "Šis GPT ir pieejams tikai Google Chrome pārlūkā",
 			"invalidGpt": "Nederīgs GPT"
 		}
 	},

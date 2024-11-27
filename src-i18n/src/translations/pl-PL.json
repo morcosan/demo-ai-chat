@@ -98,7 +98,7 @@
 			"startSearching_other": "Wpisz przynajmniej {count} znaków"
 		},
 		"description": {
-			"geminiNano": "Mini GPT dla Google Chrome",
+			"chromeGPT": "Mini GPT dla Google Chrome",
 			"loremIpsumGPT": "Najbardziej inteligentny model",
 			"rammusGPT": "Najlepsze wsparcie emocjonalne"
 		},
@@ -154,8 +154,8 @@
 		"warning": {
 			"deletingAgent": "Ten agent zostanie trwale usunięty",
 			"deletingChats": "Te czaty zostaną trwale usunięte",
-			"geminiGptInsideChrome": "Ten GPT wymaga włączenia następujących ustawień:",
-			"geminiGptOutsideChrome": "Ten GPT jest dostępny tylko w przeglądarce Google Chrome",
+			"chromeGptInsideChrome": "Ten GPT wymaga włączenia następujących ustawień:",
+			"chromeGptOutsideChrome": "Ten GPT jest dostępny tylko w przeglądarce Google Chrome",
 			"invalidGpt": "Nieprawidłowy GPT"
 		}
 	},

@@ -2,7 +2,7 @@
 	"core": {
 		"action": {
 			"back": "Späť",
-			"backToHome": "Späť na domovskú stránku", 
+			"backToHome": "Späť na domovskú stránku",
 			"changeLanguage": "Zmeniť jazyk",
 			"close": "Zavrieť",
 			"delete": "Vymazať",
@@ -38,7 +38,7 @@
 			"githubRepo": "GitHub Repozitár",
 			"language": "Jazyk",
 			"levelHigh": "Vysoký",
-			"levelLow": "Nízky", 
+			"levelLow": "Nízky",
 			"levelMedium": "Stredný",
 			"levelVeryHigh": "Veľmi vysoký",
 			"levelVeryLow": "Veľmi nízky",
@@ -96,7 +96,7 @@
 			"startSearching_many": "Napíšte aspoň {count} znakov"
 		},
 		"description": {
-			"geminiNano": "Mini GPT pre Google Chrome",
+			"chromeGPT": "Mini GPT pre Google Chrome",
 			"loremIpsumGPT": "Najinteligentnejší model",
 			"rammusGPT": "Najlepšia emocionálna podpora"
 		},
@@ -149,8 +149,8 @@
 		"warning": {
 			"deletingAgent": "Tento agent bude natrvalo vymazaný",
 			"deletingChats": "Tieto chaty budú natrvalo vymazané",
-			"geminiGptInsideChrome": "Tento GPT vyžaduje povolenie týchto nastavení:",
-			"geminiGptOutsideChrome": "Tento GPT je dostupný iba v prehliadači Google Chrome",
+			"chromeGptInsideChrome": "Tento GPT vyžaduje povolenie týchto nastavení:",
+			"chromeGptOutsideChrome": "Tento GPT je dostupný iba v prehliadači Google Chrome",
 			"invalidGpt": "Neplatný GPT"
 		}
 	},

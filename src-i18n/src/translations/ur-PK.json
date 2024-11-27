@@ -94,7 +94,7 @@
 			"startSearching_other": "کم از کم {count} حروف ٹائپ کریں"
 		},
 		"description": {
-			"geminiNano": "گوگل کروم کے لیے منی جی پی ٹی",
+			"chromeGPT": "گوگل کروم کے لیے منی جی پی ٹی",
 			"loremIpsumGPT": "سب سے ذہین ماڈل",
 			"rammusGPT": "بہترین جذباتی مدد"
 		},
@@ -144,8 +144,8 @@
 		"warning": {
 			"deletingAgent": "یہ ایجنٹ مستقل طور پر حذف ہو جائے گا",
 			"deletingChats": "یہ چیٹس مستقل طور پر حذف ہو جائیں گی",
-			"geminiGptInsideChrome": "اس جی پی ٹی کے لیے یہ ترتیبات فعال ہونی چاہئیں:",
-			"geminiGptOutsideChrome": "یہ جی پی ٹی صرف گوگل کروم براؤزر میں دستیاب ہے",
+			"chromeGptInsideChrome": "اس جی پی ٹی کے لیے یہ ترتیبات فعال ہونی چاہئیں:",
+			"chromeGptOutsideChrome": "یہ جی پی ٹی صرف گوگل کروم براؤزر میں دستیاب ہے",
 			"invalidGpt": "غلط جی پی ٹی"
 		}
 	},

@@ -99,7 +99,7 @@
 			"startSearching_other": "اكتب {count} حرف على الأقل"
 		},
 		"description": {
-			"geminiNano": "GPT مصغر لمتصفح Google Chrome",
+			"chromeGPT": "GPT مصغر لمتصفح Google Chrome",
 			"loremIpsumGPT": "النموذج الأكثر ذكاءً",
 			"rammusGPT": "أفضل دعم عاطفي"
 		},
@@ -160,8 +160,8 @@
 		"warning": {
 			"deletingAgent": "سيتم حذف هذا الوكيل نهائياً",
 			"deletingChats": "سيتم حذف هذه الدردشات نهائياً",
-			"geminiGptInsideChrome": "يتطلب هذا النموذج تفعيل هذه الإعدادات:",
-			"geminiGptOutsideChrome": "هذا النموذج متاح فقط في متصفح Google Chrome",
+			"chromeGptInsideChrome": "يتطلب هذا النموذج تفعيل هذه الإعدادات:",
+			"chromeGptOutsideChrome": "هذا النموذج متاح فقط في متصفح Google Chrome",
 			"invalidGpt": "نموذج GPT غير صالح"
 		}
 	},

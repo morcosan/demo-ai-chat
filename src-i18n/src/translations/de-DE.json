@@ -93,7 +93,7 @@
 			"startSearching_other": "Mindestens {count} Zeichen eingeben"
 		},
 		"description": {
-			"geminiNano": "Mini-GPT für Google Chrome",
+			"chromeGPT": "Mini-GPT für Google Chrome",
 			"loremIpsumGPT": "Das intelligenteste Modell",
 			"rammusGPT": "Beste emotionale Unterstützung"
 		},
@@ -143,8 +143,8 @@
 		"warning": {
 			"deletingAgent": "Dieser Agent wird permanent gelöscht",
 			"deletingChats": "Diese Chats werden permanent gelöscht",
-			"geminiGptInsideChrome": "Dieses GPT erfordert die Aktivierung dieser Einstellungen:",
-			"geminiGptOutsideChrome": "Dieses GPT ist nur im Google Chrome Browser verfügbar",
+			"chromeGptInsideChrome": "Dieses GPT erfordert die Aktivierung dieser Einstellungen:",
+			"chromeGptOutsideChrome": "Dieses GPT ist nur im Google Chrome Browser verfügbar",
 			"invalidGpt": "Ungültiges GPT"
 		}
 	},
@@ -174,7 +174,7 @@
 			"phone": "Telefonnummer",
 			"postalCode": "Postleitzahl",
 			"private": "Privat",
-			"public": "Öffentlich", 
+			"public": "Öffentlich",
 			"vatNumber": "USt-IdNr."
 		}
 	}

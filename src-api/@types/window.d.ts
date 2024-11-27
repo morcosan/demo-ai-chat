@@ -3,28 +3,28 @@
 export {}
 
 declare global {
-	interface GeminiNanoAI {
-		languageModel: GeminiNanoModel
+	interface ChromeAI {
+		languageModel: ChromeAiModel
 	}
 
-	interface GeminiNanoModel {
-		create(config: GeminiNanoConfig): Promise<GeminiNanoSession>
-		capabilities(): Promise<GeminiNanoCapabilities>
+	interface ChromeAiModel {
+		create(config: ChromeAiConfig): Promise<ChromeAiSession>
+		capabilities(): Promise<ChromeAiCapabilities>
 	}
 
-	interface GeminiNanoCapabilities {
+	interface ChromeAiCapabilities {
 		available: 'readily' | unknown
 	}
 
-	interface GeminiNanoConfig {
+	interface ChromeAiConfig {
 		systemPrompt: string
 		temperature: number
 		topK: number
 	}
 
-	interface GeminiNanoSession {
+	interface ChromeAiSession {
 		prompt(message: string): Promise<string>
 	}
 
-	var ai: GeminiNanoAI | undefined
+	var ai: ChromeAI | undefined
 }

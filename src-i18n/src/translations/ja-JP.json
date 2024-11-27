@@ -92,7 +92,7 @@
 			"startSearching_one": "{count}文字以上入力してください"
 		},
 		"description": {
-			"geminiNano": "Google Chrome用ミニGPT",
+			"chromeGPT": "Google Chrome用ミニGPT",
 			"loremIpsumGPT": "最も知的なモデル",
 			"rammusGPT": "最高の感情サポート"
 		},
@@ -139,8 +139,8 @@
 		"warning": {
 			"deletingAgent": "このエージェントは完全に削除されます",
 			"deletingChats": "これらのチャットは完全に削除されます",
-			"geminiGptInsideChrome": "このGPTには以下の設定が必要です：",
-			"geminiGptOutsideChrome": "このGPTはGoogle Chromeブラウザでのみ利用可能です",
+			"chromeGptInsideChrome": "このGPTには以下の設定が必要です：",
+			"chromeGptOutsideChrome": "このGPTはGoogle Chromeブラウザでのみ利用可能です",
 			"invalidGpt": "無効なGPT"
 		}
 	},

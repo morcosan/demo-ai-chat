@@ -92,7 +92,7 @@
 			"startSearching_other": "შეიყვანეთ {count} სიმბოლო"
 		},
 		"description": {
-			"geminiNano": "მინი GPT Google Chrome-ისთვის",
+			"chromeGPT": "მინი GPT Google Chrome-ისთვის",
 			"loremIpsumGPT": "ყველაზე ჭკვიანი მოდელი",
 			"rammusGPT": "საუკეთესო ემოციური მხარდაჭერა"
 		},
@@ -142,8 +142,8 @@
 		"warning": {
 			"deletingAgent": "ეს აგენტი სამუდამოდ წაიშლება",
 			"deletingChats": "ეს ჩატები სამუდამოდ წაიშლება",
-			"geminiGptInsideChrome": "ეს GPT მოითხოვს შემდეგი პარამეტრების ჩართვას:",
-			"geminiGptOutsideChrome": "ეს GPT ხელმისაწვდომია მხოლოდ Google Chrome ბრაუზერში",
+			"chromeGptInsideChrome": "ეს GPT მოითხოვს შემდეგი პარამეტრების ჩართვას:",
+			"chromeGptOutsideChrome": "ეს GPT ხელმისაწვდომია მხოლოდ Google Chrome ბრაუზერში",
 			"invalidGpt": "არასწორი GPT"
 		}
 	},

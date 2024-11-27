@@ -92,7 +92,7 @@
 			"startSearching_other": "Taip sekurang-kurangnya {count} aksara"
 		},
 		"description": {
-			"geminiNano": "Mini GPT untuk Google Chrome",
+			"chromeGPT": "Mini GPT untuk Google Chrome",
 			"loremIpsumGPT": "Model paling pintar",
 			"rammusGPT": "Sokongan emosi terbaik"
 		},
@@ -139,8 +139,8 @@
 		"warning": {
 			"deletingAgent": "Ejen ini akan dipadamkan secara kekal",
 			"deletingChats": "Perbualan ini akan dipadamkan secara kekal",
-			"geminiGptInsideChrome": "GPT ini memerlukan tetapan berikut diaktifkan:",
-			"geminiGptOutsideChrome": "GPT ini hanya tersedia di pelayar Google Chrome",
+			"chromeGptInsideChrome": "GPT ini memerlukan tetapan berikut diaktifkan:",
+			"chromeGptOutsideChrome": "GPT ini hanya tersedia di pelayar Google Chrome",
 			"invalidGpt": "GPT tidak sah"
 		}
 	},

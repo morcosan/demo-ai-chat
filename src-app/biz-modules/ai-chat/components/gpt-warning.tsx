@@ -26,7 +26,7 @@ export const GptWarning = ({ id, className }: ReactProps) => {
 				<div className="px-button-px-item">
 					{isChrome ? (
 						<>
-							{t('aiChat.warning.geminiGptInsideChrome')}
+							{t('aiChat.warning.chromeGptInsideChrome')}
 
 							<ul className="mt-xs-2 list-disc pl-xs-9">
 								<li>Enables optimization guide on device</li>
@@ -34,7 +34,7 @@ export const GptWarning = ({ id, className }: ReactProps) => {
 							</ul>
 						</>
 					) : (
-						t('aiChat.warning.geminiGptOutsideChrome')
+						t('aiChat.warning.chromeGptOutsideChrome')
 					)}
 				</div>
 

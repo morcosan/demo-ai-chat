@@ -93,7 +93,7 @@
 			"startSearching_other": "Sláðu inn {count} stafi"
 		},
 		"description": {
-			"geminiNano": "Mini GPT fyrir Google Chrome",
+			"chromeGPT": "Mini GPT fyrir Google Chrome",
 			"loremIpsumGPT": "Gáfaðasta líkanið",
 			"rammusGPT": "Besti tilfinningalegur stuðningur"
 		},
@@ -143,8 +143,8 @@
 		"warning": {
 			"deletingAgent": "Þessum umboðsaðila verður eytt varanlega",
 			"deletingChats": "Þessum spjöllum verður eytt varanlega",
-			"geminiGptInsideChrome": "Þetta GPT þarf eftirfarandi stillingar virkar:",
-			"geminiGptOutsideChrome": "Þetta GPT er aðeins í boði í Google Chrome vafra",
+			"chromeGptInsideChrome": "Þetta GPT þarf eftirfarandi stillingar virkar:",
+			"chromeGptOutsideChrome": "Þetta GPT er aðeins í boði í Google Chrome vafra",
 			"invalidGpt": "Ógilt GPT"
 		}
 	},

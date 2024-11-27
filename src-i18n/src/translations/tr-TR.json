@@ -94,7 +94,7 @@
 			"startSearching_other": "En az {count} karakter yazın"
 		},
 		"description": {
-			"geminiNano": "Google Chrome için Mini GPT",
+			"chromeGPT": "Google Chrome için Mini GPT",
 			"loremIpsumGPT": "En zeki model",
 			"rammusGPT": "En iyi duygusal destek"
 		},
@@ -144,8 +144,8 @@
 		"warning": {
 			"deletingAgent": "Bu ajan kalıcı olarak silinecek",
 			"deletingChats": "Bu sohbetler kalıcı olarak silinecek",
-			"geminiGptInsideChrome": "Bu GPT'nin bu ayarların etkinleştirilmesini gerektirir:",
-			"geminiGptOutsideChrome": "Bu GPT yalnızca Google Chrome tarayıcısında kullanılabilir",
+			"chromeGptInsideChrome": "Bu GPT'nin bu ayarların etkinleştirilmesini gerektirir:",
+			"chromeGptOutsideChrome": "Bu GPT yalnızca Google Chrome tarayıcısında kullanılabilir",
 			"invalidGpt": "Geçersiz GPT"
 		}
 	},

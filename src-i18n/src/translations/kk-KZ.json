@@ -94,7 +94,7 @@
 			"startSearching_other": "Кем дегенде {count} таңба енгізіңіз"
 		},
 		"description": {
-			"geminiNano": "Google Chrome үшін шағын GPT",
+			"chromeGPT": "Google Chrome үшін шағын GPT",
 			"loremIpsumGPT": "Ең ақылды модель",
 			"rammusGPT": "Ең жақсы эмоционалды қолдау"
 		},
@@ -144,8 +144,8 @@
 		"warning": {
 			"deletingAgent": "Бұл агент біржола жойылады",
 			"deletingChats": "Бұл чаттар біржола жойылады",
-			"geminiGptInsideChrome": "Бұл GPT келесі параметрлердің қосылуын талап етеді:",
-			"geminiGptOutsideChrome": "Бұл GPT тек Google Chrome браузерінде қол жетімді",
+			"chromeGptInsideChrome": "Бұл GPT келесі параметрлердің қосылуын талап етеді:",
+			"chromeGptOutsideChrome": "Бұл GPT тек Google Chrome браузерінде қол жетімді",
 			"invalidGpt": "Жарамсыз GPT"
 		}
 	},

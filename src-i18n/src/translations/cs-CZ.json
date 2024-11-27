@@ -98,7 +98,7 @@
 			"startSearching_other": "Zadejte alespoň {count} znaků"
 		},
 		"description": {
-			"geminiNano": "Mini GPT pro Google Chrome",
+			"chromeGPT": "Mini GPT pro Google Chrome",
 			"loremIpsumGPT": "Nejinteligentnější model",
 			"rammusGPT": "Nejlepší emocionální podpora"
 		},
@@ -154,8 +154,8 @@
 		"warning": {
 			"deletingAgent": "Tento agent bude trvale smazán",
 			"deletingChats": "Tyto konverzace budou trvale smazány",
-			"geminiGptInsideChrome": "Tento GPT vyžaduje aktivaci těchto nastavení:",
-			"geminiGptOutsideChrome": "Tento GPT je dostupný pouze v prohlížeči Google Chrome",
+			"chromeGptInsideChrome": "Tento GPT vyžaduje aktivaci těchto nastavení:",
+			"chromeGptOutsideChrome": "Tento GPT je dostupný pouze v prohlížeči Google Chrome",
 			"invalidGpt": "Neplatný GPT"
 		}
 	},

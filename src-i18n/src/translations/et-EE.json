@@ -93,7 +93,7 @@
 			"startSearching_other": "Sisesta vähemalt {count} märki"
 		},
 		"description": {
-			"geminiNano": "Mini GPT Google Chrome'i jaoks",
+			"chromeGPT": "Mini GPT Google Chrome'i jaoks",
 			"loremIpsumGPT": "Kõige intelligentsem mudel",
 			"rammusGPT": "Parim emotsionaalne tugi"
 		},
@@ -143,8 +143,8 @@
 		"warning": {
 			"deletingAgent": "See agent kustutatakse jäädavalt",
 			"deletingChats": "Need vestlused kustutatakse jäädavalt",
-			"geminiGptInsideChrome": "See GPT nõuab nende seadete aktiveerimist:",
-			"geminiGptOutsideChrome": "See GPT on saadaval ainult Google Chrome'i brauseris",
+			"chromeGptInsideChrome": "See GPT nõuab nende seadete aktiveerimist:",
+			"chromeGptOutsideChrome": "See GPT on saadaval ainult Google Chrome'i brauseris",
 			"invalidGpt": "Vigane GPT"
 		}
 	},

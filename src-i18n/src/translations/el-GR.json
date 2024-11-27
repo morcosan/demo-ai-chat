@@ -93,7 +93,7 @@
 			"startSearching_other": "Πληκτρολογήστε τουλάχιστον {count} χαρακτήρες"
 		},
 		"description": {
-			"geminiNano": "Mini GPT για Google Chrome",
+			"chromeGPT": "Mini GPT για Google Chrome",
 			"loremIpsumGPT": "Το πιο έξυπνο μοντέλο",
 			"rammusGPT": "Καλύτερη συναισθηματική υποστήριξη"
 		},
@@ -143,8 +143,8 @@
 		"warning": {
 			"deletingAgent": "Αυτός ο πράκτορας θα διαγραφεί οριστικά",
 			"deletingChats": "Αυτές οι συνομιλίες θα διαγραφούν οριστικά",
-			"geminiGptInsideChrome": "Αυτό το GPT απαιτεί την ενεργοποίηση αυτών των ρυθμίσεων:",
-			"geminiGptOutsideChrome": "Αυτό το GPT είναι διαθέσιμο μόνο στον περιηγητή Google Chrome",
+			"chromeGptInsideChrome": "Αυτό το GPT απαιτεί την ενεργοποίηση αυτών των ρυθμίσεων:",
+			"chromeGptOutsideChrome": "Αυτό το GPT είναι διαθέσιμο μόνο στον περιηγητή Google Chrome",
 			"invalidGpt": "Μη έγκυρο GPT"
 		}
 	},

@@ -92,7 +92,7 @@
 			"startSearching_other": "វាយបញ្ចូលយ៉ាងហោចណាស់ {count} តួអក្សរ"
 		},
 		"description": {
-			"geminiNano": "Mini GPT សម្រាប់ Google Chrome",
+			"chromeGPT": "Mini GPT សម្រាប់ Google Chrome",
 			"loremIpsumGPT": "ម៉ូដែលឆ្លាតបំផុត",
 			"rammusGPT": "ការគាំទ្រផ្លូវចិត្តល្អបំផុត"
 		},
@@ -142,8 +142,8 @@
 		"warning": {
 			"deletingAgent": "ភ្នាក់ងារនេះនឹងត្រូវលុបជាអចិន្ត្រៃយ៍",
 			"deletingChats": "ការជជែកទាំងនេះនឹងត្រូវលុបជាអចិន្ត្រៃយ៍",
-			"geminiGptInsideChrome": "GPT នេះតម្រូវឲ្យបើកការកំណត់ខាងក្រោម៖",
-			"geminiGptOutsideChrome": "GPT នេះមានសម្រាប់តែកម្មវិធីរុករក Google Chrome ប៉ុណ្ណោះ",
+			"chromeGptInsideChrome": "GPT នេះតម្រូវឲ្យបើកការកំណត់ខាងក្រោម៖",
+			"chromeGptOutsideChrome": "GPT នេះមានសម្រាប់តែកម្មវិធីរុករក Google Chrome ប៉ុណ្ណោះ",
 			"invalidGpt": "GPT មិនត្រឹមត្រូវ"
 		}
 	},

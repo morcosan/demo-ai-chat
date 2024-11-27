@@ -91,7 +91,7 @@
 			"startSearching_other": "Nhập ít nhất {count} ký tự"
 		},
 		"description": {
-			"geminiNano": "Mini GPT cho Google Chrome",
+			"chromeGPT": "Mini GPT cho Google Chrome",
 			"loremIpsumGPT": "Mô hình thông minh nhất",
 			"rammusGPT": "Hỗ trợ cảm xúc tốt nhất"
 		},
@@ -139,8 +139,8 @@
 		"warning": {
 			"deletingAgent": "Agent này sẽ bị xóa vĩnh viễn",
 			"deletingChats": "Các cuộc trò chuyện này sẽ bị xóa vĩnh viễn",
-			"geminiGptInsideChrome": "GPT này yêu cầu các cài đặt sau được bật:",
-			"geminiGptOutsideChrome": "GPT này chỉ có sẵn trong trình duyệt Google Chrome",
+			"chromeGptInsideChrome": "GPT này yêu cầu các cài đặt sau được bật:",
+			"chromeGptOutsideChrome": "GPT này chỉ có sẵn trong trình duyệt Google Chrome",
 			"invalidGpt": "GPT không hợp lệ"
 		}
 	},

@@ -5,7 +5,7 @@
 			"backToHome": "Bumalik sa homepage",
 			"changeLanguage": "Baguhin ang wika",
 			"close": "Isara",
-			"delete": "Burahin", 
+			"delete": "Burahin",
 			"deselectAll": "I-deselect lahat",
 			"goToUrl": "Pumunta sa {url}",
 			"openMenu": "Buksan ang menu",
@@ -14,7 +14,7 @@
 			"retry": "Subukan muli",
 			"saveChanges": "I-save ang mga pagbabago",
 			"search": "Maghanap",
-			"searchMore": "Ipakita ang iba pang resulta", 
+			"searchMore": "Ipakita ang iba pang resulta",
 			"selectAll": "Piliin lahat",
 			"signOut": "Mag-sign out"
 		},
@@ -92,7 +92,7 @@
 			"startSearching_other": "Mag-type ng {count} na character"
 		},
 		"description": {
-			"geminiNano": "Mini GPT para sa Google Chrome",
+			"chromeGPT": "Mini GPT para sa Google Chrome",
 			"loremIpsumGPT": "Pinakamatalinong modelo",
 			"rammusGPT": "Pinakamahusay na emotional support"
 		},
@@ -142,8 +142,8 @@
 		"warning": {
 			"deletingAgent": "Permanenteng mabubura ang agent na ito",
 			"deletingChats": "Permanenteng mabubura ang mga chat na ito",
-			"geminiGptInsideChrome": "Ang GPT na ito ay nangangailangan ng mga sumusunod na setting na naka-enable:",
-			"geminiGptOutsideChrome": "Ang GPT na ito ay magagamit lamang sa Google Chrome browser",
+			"chromeGptInsideChrome": "Ang GPT na ito ay nangangailangan ng mga sumusunod na setting na naka-enable:",
+			"chromeGptOutsideChrome": "Ang GPT na ito ay magagamit lamang sa Google Chrome browser",
 			"invalidGpt": "Hindi wastong GPT"
 		}
 	},

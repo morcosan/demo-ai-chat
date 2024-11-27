@@ -98,7 +98,7 @@
 			"startSearching_other": "Vnesite vsaj {count} znakov"
 		},
 		"description": {
-			"geminiNano": "Mini GPT za Google Chrome",
+			"chromeGPT": "Mini GPT za Google Chrome",
 			"loremIpsumGPT": "Najinteligentnejši model",
 			"rammusGPT": "Najboljša čustvena podpora"
 		},
@@ -154,8 +154,8 @@
 		"warning": {
 			"deletingAgent": "Ta agent bo trajno izbrisan",
 			"deletingChats": "Ti klepeti bodo trajno izbrisani",
-			"geminiGptInsideChrome": "Ta GPT zahteva omogočene te nastavitve:",
-			"geminiGptOutsideChrome": "Ta GPT je na voljo samo v brskalniku Google Chrome",
+			"chromeGptInsideChrome": "Ta GPT zahteva omogočene te nastavitve:",
+			"chromeGptOutsideChrome": "Ta GPT je na voljo samo v brskalniku Google Chrome",
 			"invalidGpt": "Neveljaven GPT"
 		}
 	},
@@ -185,7 +185,7 @@
 			"phone": "Telefonska številka",
 			"postalCode": "Poštna številka",
 			"private": "Zasebno",
-			"public": "Javno", 
+			"public": "Javno",
 			"vatNumber": "ID za DDV"
 		}
 	}

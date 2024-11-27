@@ -98,7 +98,7 @@
 			"startSearching_other": "Scrie cel puțin {count} de caractere"
 		},
 		"description": {
-			"geminiNano": "Mini GPT pentru Google Chrome",
+			"chromeGPT": "Mini GPT pentru Google Chrome",
 			"loremIpsumGPT": "Cel mai inteligent model",
 			"rammusGPT": "Cel mai bun suport emoțional"
 		},
@@ -154,8 +154,8 @@
 		"warning": {
 			"deletingAgent": "Acest agent va fi șters definitiv",
 			"deletingChats": "Aceste chat-uri vor fi șterse definitiv",
-			"geminiGptInsideChrome": "Acest GPT necesită activarea acestor setări:",
-			"geminiGptOutsideChrome": "Acest GPT este disponibil doar în browserul Google Chrome",
+			"chromeGptInsideChrome": "Acest GPT necesită activarea acestor setări:",
+			"chromeGptOutsideChrome": "Acest GPT este disponibil doar în browserul Google Chrome",
 			"invalidGpt": "GPT invalid"
 		}
 	},

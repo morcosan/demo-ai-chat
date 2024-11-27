@@ -93,7 +93,7 @@
 			"startSearching_other": "Ən azı {count} simvol daxil edin"
 		},
 		"description": {
-			"geminiNano": "Google Chrome üçün Mini GPT",
+			"chromeGPT": "Google Chrome üçün Mini GPT",
 			"loremIpsumGPT": "Ən ağıllı model",
 			"rammusGPT": "Ən yaxşı emosional dəstək"
 		},
@@ -143,8 +143,8 @@
 		"warning": {
 			"deletingAgent": "Bu agent birdəfəlik silinəcək",
 			"deletingChats": "Bu söhbətlər birdəfəlik silinəcək",
-			"geminiGptInsideChrome": "Bu GPT bu parametrlərin aktivləşdirilməsini tələb edir:",
-			"geminiGptOutsideChrome": "Bu GPT yalnız Google Chrome brauzerində mövcuddur",
+			"chromeGptInsideChrome": "Bu GPT bu parametrlərin aktivləşdirilməsini tələb edir:",
+			"chromeGptOutsideChrome": "Bu GPT yalnız Google Chrome brauzerində mövcuddur",
 			"invalidGpt": "Yanlış GPT"
 		}
 	},

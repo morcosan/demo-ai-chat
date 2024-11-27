@@ -93,7 +93,7 @@
 			"startSearching_other": "Kirjoita vähintään {count} merkkiä"
 		},
 		"description": {
-			"geminiNano": "Mini GPT Google Chromelle",
+			"chromeGPT": "Mini GPT Google Chromelle",
 			"loremIpsumGPT": "Älykkäin malli",
 			"rammusGPT": "Paras emotionaalinen tuki"
 		},
@@ -143,8 +143,8 @@
 		"warning": {
 			"deletingAgent": "Tämä agentti poistetaan pysyvästi",
 			"deletingChats": "Nämä keskustelut poistetaan pysyvästi",
-			"geminiGptInsideChrome": "Tämä GPT vaatii näiden asetusten aktivoinnin:",
-			"geminiGptOutsideChrome": "Tämä GPT on saatavilla vain Google Chrome -selaimessa",
+			"chromeGptInsideChrome": "Tämä GPT vaatii näiden asetusten aktivoinnin:",
+			"chromeGptOutsideChrome": "Tämä GPT on saatavilla vain Google Chrome -selaimessa",
 			"invalidGpt": "Virheellinen GPT"
 		}
 	},

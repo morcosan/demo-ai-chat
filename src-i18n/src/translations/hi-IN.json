@@ -93,7 +93,7 @@
 			"startSearching_other": "कम से कम {count} अक्षर टाइप करें"
 		},
 		"description": {
-			"geminiNano": "गूगल क्रोम के लिए मिनी जीपीटी",
+			"chromeGPT": "गूगल क्रोम के लिए मिनी जीपीटी",
 			"loremIpsumGPT": "सबसे बुद्धिमान मॉडल",
 			"rammusGPT": "सर्वश्रेष्ठ भावनात्मक समर्थन"
 		},
@@ -143,8 +143,8 @@
 		"warning": {
 			"deletingAgent": "यह एजेंट स्थायी रूप से हटा दिया जाएगा",
 			"deletingChats": "ये चैट स्थायी रूप से हटा दी जाएंगी",
-			"geminiGptInsideChrome": "इस जीपीटी के लिए इन सेटिंग्स को सक्षम करना आवश्यक है:",
-			"geminiGptOutsideChrome": "यह जीपीटी केवल गूगल क्रोम ब्राउज़र में उपलब्ध है",
+			"chromeGptInsideChrome": "इस जीपीटी के लिए इन सेटिंग्स को सक्षम करना आवश्यक है:",
+			"chromeGptOutsideChrome": "यह जीपीटी केवल गूगल क्रोम ब्राउज़र में उपलब्ध है",
 			"invalidGpt": "अमान्य जीपीटी"
 		}
 	},
