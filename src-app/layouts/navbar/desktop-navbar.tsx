@@ -29,7 +29,7 @@ export const DesktopNavbar = ({ unselected, onClickLanguage }: Props) => {
 	)
 
 	const expandedClass = 'w-lg-7 min-w-lg-7'
-	const collapsedClass = 'w-md-3 min-w-md-3'
+	const collapsedClass = 'w-md-6 min-w-md-6'
 	const navbarClass = cx(
 		`absolute left-0 top-0 z-navbar h-full`,
 		isNavCollapsed ? collapsedClass : expandedClass,
@@ -103,8 +103,8 @@ export const DesktopNavbar = ({ unselected, onClickLanguage }: Props) => {
 				{/* PIN */}
 				<IconButton
 					tooltip={isNavPinned ? 'Unpin nav menu' : 'Pin nav menu'}
-					size="md"
-					className={cx('absolute right-xs-1 top-xs-1', isNavCollapsed && 'hidden')}
+					size="sm"
+					className="absolute right-xs-2 top-xs-2"
 					onClick={() => setIsNavPinned(!isNavPinned)}
 				>
 					<PinSvg className={cx('h-xs-5', pinColorClass)} />
@@ -115,11 +115,7 @@ export const DesktopNavbar = ({ unselected, onClickLanguage }: Props) => {
 
 				{/* SETTINGS */}
 				<div ref={settingsRef} className="relative">
-					<SettingsButton
-						highlight={isSettingsOpened ? 'pressed' : 'default'}
-						collapsed={isNavCollapsed}
-						onClick={onToggleSettings}
-					/>
+					<SettingsButton highlight={isSettingsOpened ? 'pressed' : 'default'} onClick={onToggleSettings} />
 					<div className={settingsMenuClass}>
 						<SettingsMenu onClickLanguage={onClickLanguageItem} />
 					</div>

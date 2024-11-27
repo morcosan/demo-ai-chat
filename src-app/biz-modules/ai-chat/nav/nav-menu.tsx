@@ -73,13 +73,13 @@ export const AiChatNavMenu = (props: Props) => {
 
 	return (
 		<>
-			<div className="flex items-center gap-xs-3 px-xs-2">
+			<div className="flex items-center px-xs-2">
 				{/* SEARCH */}
 				<Button
 					tooltip={t('core.action.search')}
 					variant="ghost-primary"
 					size="sm"
-					className="w-button-h-sm p-0"
+					className="mr-xs-2 w-button-h-sm min-w-button-h-sm p-0"
 					onClick={() => setShowsSearch(true)}
 				>
 					<SearchSvg className="w-xs-6 min-w-xs-6" />
@@ -90,7 +90,7 @@ export const AiChatNavMenu = (props: Props) => {
 					linkHref="/chat"
 					loading={allChatsLoading === 'update'}
 					size="sm"
-					className="flex-1 text-size-sm"
+					className={cx('flex-1 text-size-sm', collapsed && 'p-0')}
 					onClick={onHideNavMenu}
 				>
 					<div className={cx(!collapsed && '-ml-xs-3 mr-xs-2')}>
