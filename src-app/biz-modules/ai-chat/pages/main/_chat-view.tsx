@@ -7,7 +7,7 @@ import { Agent, Message } from '../../api'
 import { MessageItem } from '../../components/items/message-item'
 import { NewMessageToolbar } from '../../components/new-message-toolbar'
 import { StickyToolbar } from '../../components/sticky-toolbar'
-import { useScrollable } from '../../hooks/scrollable'
+import { useScrollable } from '../../hooks/use-scrollable'
 import { useAiChat, useAiChatAgents } from '../../state'
 
 export const ChatView = () => {

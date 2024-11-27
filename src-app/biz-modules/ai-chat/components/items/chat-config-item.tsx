@@ -2,7 +2,7 @@ import { LoadingText } from '@app/library/release'
 import { CloseSvg, DeleteSvg, EditSvg, IconButton, SendSvg, TextField, TextFieldRef } from '@ds/release'
 import { useEffect, useRef, useState } from 'react'
 import { Chat } from '../../api'
-import { useSubmittable } from '../../hooks/submittable'
+import { useSubmittable } from '../../hooks/use-submittable'
 import { Checkbox } from '../checkbox'
 
 interface Props extends ReactProps {
