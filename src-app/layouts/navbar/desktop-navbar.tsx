@@ -33,14 +33,11 @@ export const DesktopNavbar = ({ unselected, onClickLanguage }: Props) => {
 	const navbarClass = cx(
 		`absolute left-0 top-0 z-navbar h-full`,
 		isNavCollapsed ? collapsedClass : expandedClass,
-		'flex flex-col px-a11y-scrollbar py-scrollbar-w',
+		'flex flex-col px-a11y-scrollbar py-xs-3',
 		'border-r border-color-border-shadow bg-color-bg-card shadow-lg'
 	)
 
-	const pinClass = cx(
-		'h-xs-6',
-		isNavPinned ? 'text-color-secondary-page-text' : 'rotate-45 text-color-text-subtle'
-	)
+	const pinColorClass = cx(isNavPinned ? 'text-color-secondary-page-text' : 'rotate-45 text-color-text-subtle')
 
 	const onClickLanguageItem = () => {
 		setIsSettingsOpened(false)
@@ -101,15 +98,16 @@ export const DesktopNavbar = ({ unselected, onClickLanguage }: Props) => {
 				onMouseLeave={onMouseLeaveNavbar}
 			>
 				{/* LOGO */}
-				<AppLogo collapsed={isNavCollapsed} className="mb-xs-5" />
+				<AppLogo collapsed={isNavCollapsed} className="mb-xs-4" />
 
 				{/* PIN */}
 				<IconButton
 					tooltip={isNavPinned ? 'Unpin nav menu' : 'Pin nav menu'}
+					size="md"
 					className={cx('absolute right-xs-1 top-xs-1', isNavCollapsed && 'hidden')}
 					onClick={() => setIsNavPinned(!isNavPinned)}
 				>
-					<PinSvg className={pinClass} />
+					<PinSvg className={cx('h-xs-5', pinColorClass)} />
 				</IconButton>
 
 				{/* AI CHAT */}

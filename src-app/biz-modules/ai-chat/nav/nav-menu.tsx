@@ -73,19 +73,32 @@ export const AiChatNavMenu = (props: Props) => {
 
 	return (
 		<>
-			{/* NEW CHAT */}
-			<Button linkHref="/chat" loading={allChatsLoading === 'update'} onClick={onHideNavMenu}>
-				<div className={cx(!collapsed && '-ml-xs-4 mr-xs-3')}>
-					<AiChatSvg className="h-xs-9 w-xs-9" />
-				</div>
-				<span className={cx(collapsed && 'hidden')}>{t('aiChat.label.newChat')}</span>
-			</Button>
+			<div className="flex items-center gap-xs-3 px-xs-2">
+				{/* SEARCH */}
+				<Button
+					tooltip={t('core.action.search')}
+					variant="ghost-primary"
+					size="sm"
+					className="w-button-h-sm p-0"
+					onClick={() => setShowsSearch(true)}
+				>
+					<SearchSvg className="w-xs-6 min-w-xs-6" />
+				</Button>
 
-			{/* SEARCH */}
-			<Button variant="ghost-primary" className="mt-xs-7" onClick={() => setShowsSearch(true)}>
-				<SearchSvg className="w-xs-5 min-w-xs-5" />
-				{!collapsed && <span className="ml-xs-3">{t('core.action.search')}</span>}
-			</Button>
+				{/* NEW CHAT */}
+				<Button
+					linkHref="/chat"
+					loading={allChatsLoading === 'update'}
+					size="sm"
+					className="flex-1 text-size-sm"
+					onClick={onHideNavMenu}
+				>
+					<div className={cx(!collapsed && '-ml-xs-3 mr-xs-2')}>
+						<AiChatSvg className="h-xs-7 w-xs-7" />
+					</div>
+					<span className={cx(collapsed && 'hidden')}>{t('aiChat.label.newChat')}</span>
+				</Button>
+			</div>
 
 			{/* AGENTS */}
 			<NavListing
@@ -98,7 +111,7 @@ export const AiChatNavMenu = (props: Props) => {
 				loadingText={t('aiChat.state.loadingAgents')}
 				emptyText=""
 				headerClass="mt-xs-9"
-				listingStyle={{ maxHeight: `calc(4 * ${$spacing['button-h-md']} + ${$spacing['a11y-padding']})` }}
+				listingStyle={{ maxHeight: `calc(4 * ${$spacing['button-h-sm']} + ${$spacing['a11y-padding']})` }}
 				collapsed={collapsed}
 				onScrollEnd={loadMoreAgents}
 			>

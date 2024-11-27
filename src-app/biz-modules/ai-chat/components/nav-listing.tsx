@@ -29,7 +29,7 @@ export const NavListing = (props: Props) => {
 	return (
 		<>
 			{/* HEADER */}
-			<div className={cx('flex h-button-h-sm w-full items-center justify-between', props.headerClass)}>
+			<div className={cx('flex h-button-h-xs w-full items-center justify-between', props.headerClass)}>
 				<span className="ml-button-px-item truncate text-size-sm text-color-text-subtle">
 					{props.headerText}
 					&nbsp;
@@ -42,7 +42,7 @@ export const NavListing = (props: Props) => {
 					size="sm"
 					className={cx(props.collapsed && 'hidden')}
 				>
-					<SettingsSvg className="h-xs-6 text-color-text-subtle" />
+					<SettingsSvg className="h-xs-5 text-color-text-subtle" />
 				</IconButton>
 			</div>
 
