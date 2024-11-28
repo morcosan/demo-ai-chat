@@ -2,6 +2,7 @@ import { useUserAccount } from '@app/biz-modules/user-settings/state'
 import { Button, SplitSvg } from '@ds/release'
 import { useI18n } from '@i18n/release'
 import { DateFormat, formatDate } from '@utils/release'
+import { useMemo } from 'react'
 import { Agent } from '../../api'
 import { SearchResult } from '../../state'
 import { HighlightedText } from '../highlighted-text'
@@ -28,7 +29,26 @@ export const SearchResultItem = (props: Props) => {
 	const createdAt = result.message ? result.message.createdAt : result.chat?.createdAt || ''
 	const linkHref = isSubchat ? `/chat/${chatId}?subchat=${subchatId}` : `/chat/${chatId}`
 	const lcKeyword = keyword.toLowerCase()
-	const text = result.message?.text.split('\n').find((line) => line.toLowerCase().includes(lcKeyword)) || ''
+
+	const text = useMemo(() => {
+		const lines = result.message?.text.split('\n') || []
+		const maxLines = 5
+		const maxChars = 200
+
+		const index = lines.findIndex((line) => line.toLowerCase().includes(lcKeyword))
+		if (index < 0) return ''
+
+		let text = lines[index]
+		let indexDiff = 0
+
+		while (indexDiff * 2 + 1 < maxLines && text.length < maxChars) {
+			indexDiff++
+			if (lines[index + indexDiff]) text = text + '\n' + lines[index + indexDiff]
+			if (lines[index - indexDiff]) text = lines[index - indexDiff] + '\n' + text
+		}
+
+		return text
+	}, [result.message?.text])
 
 	return (
 		<li className={cx('flex flex-col last:mb-0', result.message ? 'mb-sm-7' : 'mb-sm-4')}>
@@ -81,6 +101,7 @@ export const SearchResultItem = (props: Props) => {
 					text={text}
 					keyword={keyword}
 					className="mt-xs-2 px-button-px-item text-size-sm text-color-text-subtle"
+					multiline
 				/>
 			)}
 		</li>

@@ -22,7 +22,7 @@ export const SubchatsView = () => {
 
 	const parseMarkdown = (text: string) => {
 		htmlParser.innerHTML = DOMPurify.sanitize(marked.parse(text, { async: false }))
-		return htmlParser.textContent
+		return htmlParser.textContent || ''
 	}
 
 	const slotSubchats = useMemo(
