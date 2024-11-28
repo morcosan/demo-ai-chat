@@ -25,11 +25,11 @@ export const SubchatsView = () => {
 						<Button
 							linkHref={`/chat/${subchat.chatId}?subchat=${subchat.id}`}
 							variant="item-text-default"
-							size="lg"
+							size="md"
 							className="block"
 						>
 							<SubchatIcon count={subchat.size} className="mr-xs-4 min-w-sm-3" />
-							<span className="line-clamp-1">{getTextFromMarkdown(subchat.text)}</span>
+							<span className="line-clamp-1 text-size-sm">{getTextFromMarkdown(subchat.text)}</span>
 						</Button>
 					</li>
 				))}
