@@ -269,13 +269,6 @@
 		display: block;
 		margin: var(--margin-lg) 0;
 
-		&:first-child {
-			margin-top: var(--margin-xxs);
-		}
-		&:last-child {
-			margin-bottom: 0;
-		}
-
 		& img {
 			border-radius: var(--ds-radius-xs);
 			max-width: 100%;
@@ -289,6 +282,12 @@
 			font-weight: var(--ds-font-weight-sm);
 			font-size: var(--ds-font-size-xs);
 		}
+	}
+	& *:first-child > .ds-markdown-img-box:first-child {
+		margin-top: var(--margin-xxs);
+	}
+	& *:last-child > .ds-markdown-img-box:last-child {
+		margin-bottom: 0;
 	}
 
 	/*

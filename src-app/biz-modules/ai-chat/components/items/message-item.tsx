@@ -27,7 +27,7 @@ export const MessageItem = (props: Props) => {
 		!isSubchat && (isViewportMinLG ? 'px-md-0' : 'px-xs-5')
 	)
 
-	const baseCardClass = cx('relative w-fit max-w-full rounded-md px-xs-7 py-xs-6 shadow-xs')
+	const baseCardClass = cx('relative w-fit max-w-full rounded-xl px-xs-9 py-xs-8 shadow-xs')
 	const userCardClass = cx(
 		'ml-auto',
 		isViewportMinLG ? (isSubchat ? '!max-w-[80%]' : '!max-w-[70%]') : '!max-w-[90%]',
