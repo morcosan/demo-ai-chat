@@ -22,9 +22,9 @@ export const MessageItem = (props: Props) => {
 	const showsToolbar = isClicked || message.id === subchatId
 
 	const itemClass = cx(
-		'group relative ml-scrollbar-w flex flex-col',
+		'group relative flex flex-col',
 		isViewportMinLG ? (isUser ? 'mb-xs-0' : 'mb-xs-6') : 'mb-xs-6',
-		!isSubchat && (isViewportMinLG ? 'px-md-0' : 'px-xs-5')
+		!isSubchat && isViewportMinLG && 'mx-md-0'
 	)
 
 	const baseCardClass = cx('relative w-fit max-w-full rounded-xl px-xs-9 py-xs-8 shadow-xs')

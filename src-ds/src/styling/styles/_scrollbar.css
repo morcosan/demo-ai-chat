@@ -27,9 +27,13 @@
 	background: transparent;
 }
 
-
 /* Firefox */
 /**
  * Not needed
  * Firefox automatically adjusts scrollbar based on element's background color
  */
+
+.ds-scrollable {
+	padding: var(--ds-spacing-a11y-padding);
+	padding-left: var(--ds-spacing-a11y-scrollbar);
+}

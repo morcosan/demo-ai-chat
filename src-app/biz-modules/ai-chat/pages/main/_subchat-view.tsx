@@ -72,12 +72,12 @@ export const SubchatView = () => {
 		<div className="flex h-full flex-col py-xs-1">
 			<div
 				ref={containerRef}
-				className="flex flex-1 flex-col overflow-y-scroll pb-sm-1 pl-scrollbar-w pr-a11y-padding"
+				className="ds-scrollable flex flex-1 flex-col overflow-y-scroll pb-sm-1"
 				onScroll={onScroll}
 			>
 				{/* TOOLBAR */}
 				<StickyToolbar stretched permanent>
-					<div className="flex items-center gap-xs-2 px-xs-1 py-xs-1">
+					<div className="flex items-center gap-xs-2 py-xs-1">
 						<IconButton linkHref={`/chat/${activeChat?.id}`} tooltip={t('aiChat.action.backToSubchats')} size="sm">
 							<ArrowBackSvg className="h-xs-5" />
 						</IconButton>
@@ -105,7 +105,7 @@ export const SubchatView = () => {
 			</div>
 
 			{/* NEW MESSAGE FIELD */}
-			<div className="mx-a11y-scrollbar mb-xs-5 mt-xs-1">
+			<div className="mx-scrollbar-w mb-xs-5 mt-xs-1">
 				<NewMessageToolbar listLoading={subchatLoading} onPostMessage={onPostMessage} />
 			</div>
 		</div>

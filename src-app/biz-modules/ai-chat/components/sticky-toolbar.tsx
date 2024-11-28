@@ -8,7 +8,11 @@ interface Props extends ReactPropsExtended {
 export const StickyToolbar = ({ permanent, stretched, children, className, style }: Props) => {
 	const { isSticky, stickyRef } = useStickyHandler()
 
-	const stickyClass = cx('sticky top-0 z-sticky', stretched && '-mx-a11y-padding', className)
+	const stickyClass = cx(
+		'sticky z-sticky',
+		stretched ? '-top-a11y-padding -mx-a11y-padding -mt-a11y-padding' : 'top-0',
+		className
+	)
 	const slotClass = cx(
 		'bg-color-bg-page',
 		stretched && 'px-a11y-padding',

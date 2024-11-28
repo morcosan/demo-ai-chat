@@ -108,12 +108,15 @@ export const ChatView = () => {
 	return (
 		<div className="relative flex h-full w-full flex-1 flex-col py-xs-1">
 			{activeChat || chatId ? (
-				<div ref={containerRef} className="flex-1 overflow-y-auto pb-sm-5" onScroll={onScroll}>
+				<div ref={containerRef} className="ds-scrollable flex-1 overflow-y-scroll pb-sm-5" onScroll={onScroll}>
 					<div className={cx(widthClass, chatLoading === 'full' && 'h-full', 'flex flex-col pt-sm-0')}>
 						{/* TOOLBAR */}
-						<StickyToolbar style={{ minHeight: calcH1Height, lineHeight: calcH1LineHeight }}>
+						<StickyToolbar style={{ minHeight: calcH1Height, lineHeight: calcH1LineHeight }} stretched>
 							{(isSticky: boolean) => (
-								<h1 className="mx-xs-5 px-xs-5 pt-xs-0 lg:mx-md-0" style={{ paddingBottom: calcH1Padding2 }}>
+								<h1
+									className="ml-xs-2 px-a11y-padding pt-xs-0 lg:mx-md-0"
+									style={{ paddingBottom: calcH1Padding2 }}
+								>
 									<div className={cx('text-size-xl font-weight-md', isSticky ? 'line-clamp-1' : 'line-clamp-2')}>
 										{activeChat?.title}
 									</div>
@@ -151,7 +154,7 @@ export const ChatView = () => {
 			)}
 
 			{/* NEW MESSAGE FIELD */}
-			<div className={cx('mt-xs-1 px-xs-7 pb-xs-5 lg:px-md-0', widthClass)}>
+			<div className={cx('mt-xs-1 px-scrollbar-w pb-xs-5 lg:px-md-0', widthClass)}>
 				<NewMessageToolbar
 					listLoading={allChatsLoading ? 'update' : chatLoading}
 					isChatView
