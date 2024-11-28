@@ -89,6 +89,7 @@
 			"showMoreAgents": "Show more agents",
 			"showMoreChats": "Show more chats",
 			"showSubchats": "Show subchats ({count})",
+			"startNewChat": "Start a new conversation",
 			"startSearching_one": "Type at least {count} character",
 			"startSearching_other": "Type at least {count} characters"
 		},

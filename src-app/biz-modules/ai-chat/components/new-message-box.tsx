@@ -12,7 +12,7 @@ import { AgentEditModal } from './agent-edit-modal'
 import { AgentGptItem } from './items/agent-gpt-item'
 import { NewMessageField } from './new-message-field'
 
-interface Props extends ReactProps {
+interface Props {
 	listLoading: ListLoading
 	isChatView?: boolean
 	onPostMessage(text: string, agentId: number): void
@@ -23,7 +23,7 @@ const AgentOption = (props: SelectOptionProps) => (
 	<AgentGptItem agent={props.option as Agent} selected={props.selected} />
 )
 
-export const NewMessageToolbar = (props: Props) => {
+export const NewMessageBox = (props: Props) => {
 	const { listLoading, isChatView, onPostMessage } = props
 	const { allGPTs, chatViewAgentId, setChatViewAgentId } = useAiChatAgents()
 	const [currAgentId, setCurrAgentId] = useState(0)
@@ -142,7 +142,22 @@ export const NewMessageToolbar = (props: Props) => {
 	}, [agentPagination])
 
 	return currAgent && currGPT ? (
-		<div>
+		<div
+			className={cx(
+				'absolute z-sticky',
+				'-left-a11y-padding -right-a11y-padding bottom-xs-0 px-xs-3 pb-xs-3 pt-xs-1',
+				'lg:-left-xs-7 lg:-right-xs-7 lg:bottom-xs-3 lg:px-xs-7 lg:pb-xs-5 lg:pt-xs-3'
+			)}
+		>
+			{/* BACKGROUND */}
+			<div
+				className={cx(
+					'absolute-overlay overflow-hidden rounded-lg lg:rounded-xl',
+					'border border-color-border-shadow shadow-lg backdrop-blur-default',
+					'before:absolute-overlay before:bg-color-bg-card before:opacity-90'
+				)}
+			/>
+
 			{/* TOOLBAR */}
 			<div className="mb-xs-1 flex items-center">
 				<SelectField
