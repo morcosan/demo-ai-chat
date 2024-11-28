@@ -48,7 +48,7 @@ export const MessageItem = (props: Props) => {
 
 	const subchatWrapperClass = cx(
 		'flex-center',
-		isViewportMinLG && 'absolute right-0 top-0 w-md-0',
+		isViewportMinLG && 'absolute right-0 top-0 w-md-0 translate-x-full',
 		message.loading && 'invisible'
 	)
 	const subchatButtonClass = cx(
