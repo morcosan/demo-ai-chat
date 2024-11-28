@@ -52,20 +52,21 @@ export const randomMarkdownContent = () => {
 	}, '')
 }
 
-export const randomMarkdownParagraph = () => {
-	const marks = ['', '', '', '', '*', '**', '***', '___', '`', '```', '~~']
-	const paragraph = randomArray(randomInt(1, 4)).reduce((acc: string) => {
-		const mark = randomFromArray(marks)
+export const randomMarkdownText = () => {
+	const wrappers = ['', '', '', '', '*', '**', '***', '___', '`', '```', '~~']
+
+	return randomArray(randomInt(1, 4)).reduce((acc: string) => {
+		const wrapper = randomFromArray(wrappers)
 		const text = randomTrue()
 			? randomText(randomInt(1, 10))
 			: randomTrue()
 				? randomMarkdownLink()
 				: randomMarkdownImage()
-		return acc + (acc ? ' ' : '') + mark + text + mark
+		return acc + (acc ? ' ' : '') + wrapper + text + wrapper
 	}, '')
-
-	return paragraph + randomMarkdownBreak()
 }
+
+export const randomMarkdownParagraph = () => randomMarkdownText() + randomMarkdownBreak()
 
 export const randomMarkdownBreak = () => randomFromArray(['. ', '.\n', '.\n\n'])
 
@@ -76,15 +77,15 @@ export const randomMarkdownLink = () => `[${randomText(randomInt(0, 10))}](${ran
 export const randomMarkdownImage = () => `![${randomText()}](${randomImageHD()} "${randomText(randomInt(0, 10))}")`
 
 export const randomMarkdownTable = () => {
-	const cols = randomArray(1, 5)
-	const rows = randomArray(0, 5)
+	const cols = randomArray(1, 4)
+	const rows = randomArray(0, 4)
 
 	return (
 		'\n' +
 		cols.reduce((acc: string) => acc + randomText(randomInt(1, 3)) + '|', '|') +
 		cols.reduce((acc: string) => acc + '-|', '\n|') +
 		rows.reduce(
-			(acc: string) => acc + '\n' + cols.reduce((acc: string) => acc + randomText(randomInt(1, 3)) + '|', '|'),
+			(acc: string) => acc + '\n' + cols.reduce((acc: string) => acc + randomMarkdownText() + '|', '|'),
 			''
 		) +
 		'\n'
