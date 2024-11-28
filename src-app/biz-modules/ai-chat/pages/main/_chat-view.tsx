@@ -113,16 +113,21 @@ export const ChatView = () => {
 						{/* TOOLBAR */}
 						<StickyToolbar style={{ minHeight: calcH1Height, lineHeight: calcH1LineHeight }} stretched>
 							{(isSticky: boolean) => (
-								<h1
-									className="ml-xs-2 px-a11y-padding pt-xs-0 lg:mx-md-0"
-									style={{ paddingBottom: calcH1Padding2 }}
-								>
-									<div className={cx('text-size-xl font-weight-md', isSticky ? 'line-clamp-1' : 'line-clamp-2')}>
+								<h1 className="px-a11y-padding pt-xs-0 lg:mx-md-0" style={{ paddingBottom: calcH1Padding2 }}>
+									<div
+										className={cx(
+											'pl-xs-1 text-size-xl font-weight-md',
+											isSticky ? 'line-clamp-1' : 'line-clamp-2'
+										)}
+									>
 										{activeChat?.title}
 									</div>
 
 									{Boolean(chatPagination.count) && (
-										<div className="text-size-xs text-color-text-subtle" style={{ marginTop: calcH1Padding1 }}>
+										<div
+											className="pl-xs-1 text-size-xs text-color-text-subtle"
+											style={{ marginTop: calcH1Padding1 }}
+										>
 											{t('aiChat.label.xMessages', { count: chatPagination.count })}
 										</div>
 									)}

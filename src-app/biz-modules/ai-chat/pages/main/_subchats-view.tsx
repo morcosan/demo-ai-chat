@@ -19,7 +19,7 @@ export const SubchatsView = () => {
 
 	const slotSubchats = useMemo(
 		() => (
-			<ul className="py-a11y-padding">
+			<ul className="pt-a11y-padding">
 				{allSubchats.map((subchat: Subchat) => (
 					<li key={subchat.id}>
 						<Button
