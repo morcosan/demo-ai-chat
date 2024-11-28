@@ -8,7 +8,10 @@ export const HighlightedText = ({ text, keyword, multiline, className }: Props) 
 	const lowerKeyword = keyword.toLowerCase()
 	const regexKeyword = keyword.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
 	const regex = multiline ? new RegExp(`(${regexKeyword}|\n)`, 'gi') : new RegExp(`(${regexKeyword})`, 'gi')
-	const parts = text.split(regex)
+	const parts = text
+		.split(regex)
+		.filter((v: string) => v)
+		.reduce((acc: string[], v: string) => (v === '\n' && acc[acc.length - 1] === '\n' ? acc : [...acc, v]), [])
 
 	return (
 		<span className={className}>

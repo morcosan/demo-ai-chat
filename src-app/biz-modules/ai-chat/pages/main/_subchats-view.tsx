@@ -1,13 +1,12 @@
 import { LoadingText } from '@app/library/release'
 import { Button } from '@ds/release'
-import DOMPurify from 'dompurify'
 import { debounce } from 'lodash'
-import { marked } from 'marked'
 import { UIEvent, useMemo } from 'react'
 import { Subchat } from '../../api'
 import { StickyToolbar } from '../../components/sticky-toolbar'
 import { SubchatIcon } from '../../components/subchat-icon'
 import { useAiChat } from '../../state'
+import { getTextFromMarkdown } from '../../utils/markdown'
 
 export const SubchatsView = () => {
 	const { allSubchats, allSubchatsLoading, allSubchatsPagination, loadMoreSubchats } = useAiChat()
@@ -17,13 +16,6 @@ export const SubchatsView = () => {
 		const isScrollEnd = container.offsetHeight + container.scrollTop >= container.scrollHeight
 		isScrollEnd && loadMoreSubchats()
 	}, 300)
-
-	const htmlParser = document.createElement('div')
-
-	const parseMarkdown = (text: string) => {
-		htmlParser.innerHTML = DOMPurify.sanitize(marked.parse(text, { async: false }))
-		return htmlParser.textContent || ''
-	}
 
 	const slotSubchats = useMemo(
 		() => (
@@ -37,7 +29,7 @@ export const SubchatsView = () => {
 							className="block"
 						>
 							<SubchatIcon count={subchat.size} className="mr-xs-4 min-w-sm-3" />
-							<span className="line-clamp-1">{parseMarkdown(subchat.text)}</span>
+							<span className="line-clamp-1">{getTextFromMarkdown(subchat.text)}</span>
 						</Button>
 					</li>
 				))}

@@ -5,6 +5,7 @@ import { DateFormat, formatDate } from '@utils/release'
 import { useMemo } from 'react'
 import { Agent } from '../../api'
 import { SearchResult } from '../../state'
+import { getTextFromMarkdown } from '../../utils/markdown'
 import { HighlightedText } from '../highlighted-text'
 import { AgentGptItem } from './agent-gpt-item'
 
@@ -23,32 +24,35 @@ export const SearchResultItem = (props: Props) => {
 	const chatId = result.message ? result.message.chatId : result.chat?.id
 	const isSubchat = result.message && result.message.parentId !== result.message.chatId
 	const subchatId = isSubchat ? result.message?.parentId : 0
-	const title = (isSubchat ? result.subchat?.text : result.chat?.title) || ''
 	const size = isSubchat ? result.subchat?.size : result.chat?.size || 0
 	const role = result.message?.role
 	const createdAt = result.message ? result.message.createdAt : result.chat?.createdAt || ''
 	const linkHref = isSubchat ? `/chat/${chatId}?subchat=${subchatId}` : `/chat/${chatId}`
-	const lcKeyword = keyword.toLowerCase()
+	const lowerKeyword = keyword.toLowerCase()
 
-	const text = useMemo(() => {
+	const messageText = useMemo(() => {
 		const lines = result.message?.text.split('\n') || []
 		const maxLines = 5
 		const maxChars = 200
 
-		const index = lines.findIndex((line) => line.toLowerCase().includes(lcKeyword))
+		const index = lines.findIndex((line) => line.toLowerCase().includes(lowerKeyword))
 		if (index < 0) return ''
 
-		let text = lines[index]
+		let markdown = lines[index]
 		let indexDiff = 0
 
-		while (indexDiff * 2 + 1 < maxLines && text.length < maxChars) {
+		while (indexDiff * 2 + 1 < maxLines && markdown.length < maxChars) {
 			indexDiff++
-			if (lines[index + indexDiff]) text = text + '\n' + lines[index + indexDiff]
-			if (lines[index - indexDiff]) text = lines[index - indexDiff] + '\n' + text
+			if (lines[index + indexDiff]) markdown = markdown + '\n' + lines[index + indexDiff]
+			if (lines[index - indexDiff]) markdown = lines[index - indexDiff] + '\n' + markdown
 		}
 
-		return text
+		return getTextFromMarkdown(markdown)
 	}, [result.message?.text])
+
+	const chatTitle = useMemo(() => {
+		return (isSubchat ? getTextFromMarkdown(result.subchat?.text || '') : result.chat?.title) || ''
+	}, [isSubchat, result.subchat?.text, result.chat?.title])
 
 	return (
 		<li className={cx('flex flex-col last:mb-0', result.message ? 'mb-sm-7' : 'mb-sm-4')}>
@@ -63,7 +67,7 @@ export const SearchResultItem = (props: Props) => {
 					{Boolean(isSubchat) && <SplitSvg className="h-xs-9 min-w-xs-9 text-color-secondary-page-text" />}
 
 					{/* CHAT TITLE */}
-					<HighlightedText text={title} keyword={keyword} className="flex-1 truncate" />
+					<HighlightedText text={chatTitle} keyword={keyword} className="flex-1 truncate" />
 
 					{/* MESSAGE COUNT */}
 					<span className="ml-xs-3 hidden text-size-xs text-color-text-subtle sm:block">
@@ -96,9 +100,9 @@ export const SearchResultItem = (props: Props) => {
 			</div>
 
 			{/* MESSAGE */}
-			{Boolean(text) && (
+			{Boolean(messageText) && (
 				<HighlightedText
-					text={text}
+					text={messageText}
 					keyword={keyword}
 					className="mt-xs-2 px-button-px-item text-size-sm text-color-text-subtle"
 					multiline
