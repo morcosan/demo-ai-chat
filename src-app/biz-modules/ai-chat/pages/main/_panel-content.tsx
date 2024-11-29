@@ -1,5 +1,5 @@
 import { LoadingText } from '@app/library/release'
-import { useEffect, useRef } from 'react'
+import { useEffect } from 'react'
 import { useNavigate, useSearchParams } from 'react-router-dom'
 import { SubchatToolbar } from '../../components/subchat-toolbar'
 import { useAiChat } from '../../state'
@@ -18,6 +18,7 @@ export const PanelContent = (props: Props) => {
 		activeSubchat,
 		allSubchats,
 		allSubchatsLoading,
+		allSubchatsPagination,
 		chatLoading,
 		subchatLoading,
 		loadActiveSubchat,
@@ -25,7 +26,6 @@ export const PanelContent = (props: Props) => {
 	} = useAiChat()
 	const [searchParams] = useSearchParams()
 	const navigate = useNavigate()
-	const prevChatLoadingRef = useRef<ListLoading>(false)
 
 	const subchatId = parseInt(String(searchParams.get('subchat')))
 
@@ -46,14 +46,8 @@ export const PanelContent = (props: Props) => {
 	}, [activeChat, subchatId])
 
 	useEffect(() => {
-		if (chatLoading || (prevChatLoadingRef.current !== 'full' && prevChatLoadingRef.current !== false)) {
-			prevChatLoadingRef.current = chatLoading
-			return
-		}
-		if (!allSubchatsLoading) {
-			allSubchats.length ? onShowPanel() : onHidePanel()
-		}
-	}, [allSubchats, chatLoading, allSubchatsLoading])
+		allSubchatsPagination.page && (allSubchats.length ? onShowPanel() : onHidePanel())
+	}, [allSubchats, allSubchatsPagination])
 
 	return !activeChat ? (
 		<div />

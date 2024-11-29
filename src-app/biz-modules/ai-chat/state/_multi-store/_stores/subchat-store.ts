@@ -118,7 +118,7 @@ export const useSubchatStore = (chatStore: ChatStore, allSubchatsStore: AllSubch
 			createGhostMessage(activeChat.id, activeSubchat.id, 'agent', '', agentId),
 		])
 		setSubchatPagination({ ...pagination, count: pagination.count + 1 }) // Used for scrolling
-		updateChatAndSubchats(pagination.count + 1)
+		updateChatAndSubchats(pagination.count + 1, false)
 
 		const listing = await API.postMessage(activeChat.id, text, agentId, activeSubchat.id)
 
@@ -135,17 +135,19 @@ export const useSubchatStore = (chatStore: ChatStore, allSubchatsStore: AllSubch
 		}
 
 		setSubchatPagination({ ...pagination, count: pagination.count + 2 }) // Old state, used for scrolling
-		updateChatAndSubchats(pagination.count + 2)
+		updateChatAndSubchats(pagination.count + 2, true)
 	}
 
-	const updateChatAndSubchats = (subchatSize: number) => {
+	const updateChatAndSubchats = (subchatSize: number, final: boolean) => {
 		if (!activeSubchat) return
 
 		const message = chatMessages.find((message: Message) => message.id === activeSubchat.id)
 		message && updateMessage({ ...message, subchatSize })
 
-		const subchat = allSubchats.find((subchat: Subchat) => subchat.id === activeSubchat.id)
-		subchat ? updateSubchat({ ...subchat, size: subchatSize }) : resetAllSubchats()
+		if (final) {
+			const subchat = allSubchats.find((subchat: Subchat) => subchat.id === activeSubchat.id)
+			subchat ? updateSubchat({ ...subchat, size: subchatSize }) : resetAllSubchats()
+		}
 	}
 
 	useEffect(() => {

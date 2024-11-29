@@ -8,7 +8,7 @@ import { PanelContent } from './_panel-content'
 export const AiChatMainPage = () => {
 	const { isViewportMaxLG } = useUiViewport()
 	const { activeView, panelWidth, setActiveView } = useAiChatLayout()
-	const [showsPanel, setShowsPanel] = useState(true)
+	const [showsPanel, setShowsPanel] = useState(false)
 
 	const isSubchatView = activeView === AiChatView.MOBILE_SUBCHAT
 
