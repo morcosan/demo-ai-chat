@@ -77,7 +77,7 @@ export const SubchatView = (props: Props) => {
 		<div className="flex h-full flex-col">
 			<div
 				ref={containerRef}
-				className="ds-scrollable flex flex-1 flex-col overflow-y-scroll !pb-lg-1 lg:!pb-lg-3"
+				className="ds-scrollable flex flex-1 flex-col !pb-lg-1 lg:!pb-lg-3"
 				onScroll={onScroll}
 			>
 				{/* TOOLBAR */}

@@ -48,7 +48,7 @@ export const NavListing = (props: Props) => {
 
 			{/* LISTING */}
 			<div
-				className={cx('ds-scrollable -mx-a11y-scrollbar flex flex-col overflow-y-scroll', props.listingClass)}
+				className={cx('ds-scrollable -mx-a11y-scrollbar flex flex-col', props.listingClass)}
 				style={{ width: 'calc(100% + 2 * var(--ds-spacing-a11y-scrollbar))', ...props.listingStyle }}
 				onScroll={onScrollListing}
 			>

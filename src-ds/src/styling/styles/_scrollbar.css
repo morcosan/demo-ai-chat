@@ -36,4 +36,5 @@
 .ds-scrollable {
 	padding: var(--ds-spacing-a11y-padding);
 	padding-left: var(--ds-spacing-a11y-scrollbar);
+	overflow-y: scroll;
 }

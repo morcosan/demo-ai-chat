@@ -45,7 +45,7 @@ export const SubchatsView = (props: Props) => {
 
 	return (
 		<div className="h-full">
-			<div className="ds-scrollable h-full overflow-y-scroll pb-xs-9" onScroll={onScroll}>
+			<div className="ds-scrollable h-full pb-xs-9" onScroll={onScroll}>
 				{/* TOOLBAR */}
 				<SubchatToolbar onHidePanel={onHidePanel}>
 					<span className="pl-xs-6">

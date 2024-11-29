@@ -1,6 +1,7 @@
 import { LoadingText } from '@app/library/release'
 import { useEffect } from 'react'
 import { useNavigate, useSearchParams } from 'react-router-dom'
+import { SubchatToolbar } from '../../components/subchat-toolbar'
 import { useAiChat } from '../../state'
 import { SubchatView } from './_subchat-view'
 import { SubchatsView } from './_subchats-view'
@@ -54,7 +55,10 @@ export const PanelContent = (props: Props) => {
 	) : chatLoading === 'full' || allSubchatsLoading === 'full' ? (
 		<LoadingText text={t('aiChat.state.loadingSubchats')} className="flex-center h-full" />
 	) : !allSubchats.length && !subchatLoading ? (
-		<div className="flex-center h-full w-full text-color-text-subtle">{t('aiChat.label.noSubchats')}</div>
+		<div className="ds-scrollable flex h-full flex-col">
+			<SubchatToolbar onHidePanel={onHidePanel} />
+			<div className="flex-center h-full w-full text-color-text-subtle">{t('aiChat.label.noSubchats')}</div>
+		</div>
 	) : (
 		<SubchatsView onHidePanel={onHidePanel} />
 	)
