@@ -65,7 +65,7 @@ export const SubchatView = (props: Props) => {
 						message={message}
 						agent={allAgentsForChat.find((agent: Agent) => agent.id === message.agentId)}
 						isSubchat
-						onRetry={onRetryMessage}
+						onClickRetry={onRetryMessage}
 					/>
 				))}
 			</ul>

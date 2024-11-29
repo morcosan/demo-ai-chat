@@ -10,11 +10,12 @@ interface Props {
 	agent?: Agent
 	subchatId?: number
 	isSubchat?: boolean
-	onRetry?(): void
+	onClickRetry?(): void
+	onClickSubchat?(): void
 }
 
 export const MessageItem = (props: Props) => {
-	const { message, agent, subchatId, isSubchat, onRetry } = props
+	const { message, agent, subchatId, isSubchat, onClickRetry, onClickSubchat } = props
 	const { isViewportMinLG } = useUiViewport()
 	const [isClicked, setIsClicked] = useState(false)
 
@@ -79,6 +80,7 @@ export const MessageItem = (props: Props) => {
 					selected={message.id === subchatId}
 					small={!isViewportMinLG}
 					className={subchatButtonClass}
+					onClick={onClickSubchat}
 				/>
 			</div>
 		)
@@ -123,7 +125,7 @@ export const MessageItem = (props: Props) => {
 							<div className={cx(baseCardClass, 'bg-color-danger-card-bg text-color-danger-card-text')}>
 								{t('aiChat.error.failedMessage')}
 							</div>
-							<Button variant="text-default" size="sm" className="mt-xs-1 block" onClick={onRetry}>
+							<Button variant="text-default" size="sm" className="mt-xs-1 block" onClick={onClickRetry}>
 								<ReloadSvg className="mr-xs-2 w-xs-6" />
 								{t('core.action.retry')}
 							</Button>

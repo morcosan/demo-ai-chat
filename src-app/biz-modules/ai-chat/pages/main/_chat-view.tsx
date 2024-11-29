@@ -10,7 +10,12 @@ import { StickyToolbar } from '../../components/sticky-toolbar'
 import { useScrollable } from '../../hooks/use-scrollable'
 import { useAiChat, useAiChatAgents } from '../../state'
 
-export const ChatView = () => {
+interface Props {
+	onTogglePanel(): void
+}
+
+export const ChatView = (props: Props) => {
+	const { onTogglePanel } = props
 	const {
 		activeChat,
 		allChatsLoading,
@@ -97,7 +102,8 @@ export const ChatView = () => {
 						message={message}
 						agent={allAgentsForChat.find((agent: Agent) => agent.id === message.agentId)}
 						subchatId={subchatId}
-						onRetry={onRetryMessage}
+						onClickRetry={onRetryMessage}
+						onClickSubchat={onTogglePanel}
 					/>
 				))}
 			</ul>
