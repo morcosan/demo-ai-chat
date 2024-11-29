@@ -72,7 +72,7 @@ export const SubchatView = () => {
 		<div className="flex h-full flex-col py-xs-1">
 			<div
 				ref={containerRef}
-				className="ds-scrollable flex flex-1 flex-col overflow-y-scroll pb-sm-1"
+				className="ds-scrollable flex flex-1 flex-col overflow-y-scroll !pb-lg-1 lg:!pb-lg-3"
 				onScroll={onScroll}
 			>
 				{/* TOOLBAR */}
@@ -105,7 +105,7 @@ export const SubchatView = () => {
 			</div>
 
 			{/* NEW MESSAGE FIELD */}
-			<div className="mx-scrollbar-w mb-xs-5 mt-xs-1">
+			<div className="relative mx-a11y-scrollbar">
 				<NewMessageBox listLoading={subchatLoading} onPostMessage={onPostMessage} />
 			</div>
 		</div>
