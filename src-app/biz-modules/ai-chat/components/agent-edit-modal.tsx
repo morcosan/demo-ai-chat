@@ -99,7 +99,7 @@ export const AgentEditModal = (props: Props) => {
 				...props.agent,
 				gptId: props.agent.gptId || allGPTs[0].id,
 				avatar: props.agent.avatar || allGPTs[0].avatar,
-				creativity: props.agent.creativity || 'medium',
+				creativity: props.agent.creativity || ('mid' satisfies CreativityLevel),
 			}
 			setInitial(initial)
 			setPayload(initial)

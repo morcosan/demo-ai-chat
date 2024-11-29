@@ -87,7 +87,7 @@ export const agentsService = {
 			avatar: avatar,
 			desc: desc || '',
 			prompt: prompt || '',
-			creativity: (creativity || 'medium') as CreativityLevel,
+			creativity: creativity || ('mid' satisfies CreativityLevel),
 			createdAt: new Date().toISOString(),
 			updatedAt: null,
 		}
