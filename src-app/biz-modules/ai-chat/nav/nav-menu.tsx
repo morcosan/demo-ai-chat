@@ -59,12 +59,7 @@ export const AiChatNavMenu = (props: Props) => {
 		() => (
 			<ul>
 				{allChats.map((chat: Chat) => (
-					<ChatItem
-						key={chat.id}
-						chat={chat}
-						selected={activeChat?.id === chat.id}
-						onHideNavMenu={onHideNavMenu}
-					/>
+					<ChatItem key={chat.id} chat={chat} selected={activeChat?.id === chat.id} onClick={onHideNavMenu} />
 				))}
 			</ul>
 		),

@@ -4,11 +4,11 @@ import { Chat } from '../../api'
 interface Props {
 	chat: Chat
 	selected?: boolean
-	onHideNavMenu?(): void
+	onClick?(): void
 }
 
 export const ChatItem = (props: Props) => {
-	const { chat, selected, onHideNavMenu } = props
+	const { chat, selected, onClick } = props
 
 	return (
 		<li>
@@ -19,7 +19,7 @@ export const ChatItem = (props: Props) => {
 				tooltip={chat.title}
 				size="sm"
 				className="block focus:z-1"
-				onClick={onHideNavMenu}
+				onClick={onClick}
 			>
 				<span className="truncate text-size-sm">{chat.title}</span>
 			</Button>
