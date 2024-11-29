@@ -137,7 +137,6 @@ export const AgentEditModal = (props: Props) => {
 		>
 			{/* ERRORS */}
 			{hasErrors(feedback) && <ErrorSummary errors={feedback} className="mb-sm-1" />}
-
 			{/* BODY */}
 			<div className={sectionClass}>
 				<div className={cx(sectionClass, 'lg:flex-row')}>

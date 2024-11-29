@@ -55,7 +55,7 @@ export const AiChatMainPage = () => {
 					{/* VISIBLE */}
 					<div
 						className={cx(
-							'absolute right-0 top-0 z-sticky h-full pl-xs-1',
+							'absolute right-0 top-0 z-navbar h-full pl-xs-1',
 							desktopPanelWidth,
 							'transition-transform duration-300 ease-in-out',
 							showsPanel ? 'translate-x-0' : 'pointer-events-none translate-x-full'
@@ -68,7 +68,10 @@ export const AiChatMainPage = () => {
 					</div>
 
 					{/* HIDDEN */}
-					<div className={cx('fixed right-a11y-scrollbar top-a11y-padding pt-px', showsPanel && 'hidden')}>
+					<div
+						className={cx('fixed right-a11y-scrollbar top-a11y-padding pt-px', showsPanel && 'hidden')}
+						style={{ zIndex: 'calc(var(--ds-z-index-navbar) - 1)' }}
+					>
 						<IconButton tooltip={t('core.action.showPanel')} size="sm" onClick={() => setShowsPanel(true)}>
 							<PanelOpenSvg className="h-xs-7" />
 						</IconButton>

@@ -1,4 +1,4 @@
-import { SelectField, SelectOptionProps } from '@app/library/release'
+import { Portal, SelectField, SelectOptionProps } from '@app/library/release'
 import { BuildSvg, Button, IconButton, WarningSvg } from '@ds/release'
 import { COOKIE_KEY } from '@utils/release'
 import { uniqBy } from 'lodash'
@@ -213,13 +213,15 @@ export const NewMessageBox = (props: Props) => {
 			</div>
 
 			{/* AGENT MODAL */}
-			<AgentEditModal
-				id={`${id}-modal`}
-				agent={currAgent}
-				opened={showsAgentModal}
-				onSubmit={onSubmitAgent}
-				onClose={() => setShowsAgentModal(false)}
-			/>
+			<Portal>
+				<AgentEditModal
+					id={`${id}-modal`}
+					agent={currAgent}
+					opened={showsAgentModal}
+					onSubmit={onSubmitAgent}
+					onClose={() => setShowsAgentModal(false)}
+				/>
+			</Portal>
 
 			{/* TEXT FIELD */}
 			<NewMessageField
