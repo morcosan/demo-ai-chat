@@ -11,12 +11,12 @@ export interface Store {
 	activeView: AiChatView
 	panelWidth: number
 	setActiveView(tab: AiChatView): void
-	updatePanelWidth(width: number): void
+	setPanelWidth(width: number): void
 }
 
 export const LayoutContext = createContext<Store>({
 	activeView: AiChatView.DESKTOP,
 	panelWidth: 0,
 	setActiveView: () => {},
-	updatePanelWidth: () => {},
+	setPanelWidth: () => {},
 })

@@ -8,14 +8,14 @@ interface Props extends ReactProps {
 
 export const SubchatToolbar = (props: Props) => {
 	const { children, onHidePanel } = props
-	const { panelWidth, updatePanelWidth } = useAiChatLayout()
+	const { panelWidth, setPanelWidth } = useAiChatLayout()
 
-	const PANEL_WIDTHS = [30, 35, 40, 45, 50]
+	const PANEL_WIDTHS = [30, 35, 40, 45, 50, 55, 60, 65, 70]
 
 	const onClickResize = () => {
 		const nextWidth = PANEL_WIDTHS.find((width: number) => width > panelWidth) || PANEL_WIDTHS[0]
 
-		updatePanelWidth(nextWidth)
+		setPanelWidth(nextWidth)
 	}
 
 	return (
