@@ -7,12 +7,10 @@ import { PanelContent } from './_panel-content'
 
 export const AiChatMainPage = () => {
 	const { isViewportMaxLG } = useUiViewport()
-	const { activeView, setActiveView } = useAiChatLayout()
+	const { activeView, panelWidth, setActiveView } = useAiChatLayout()
 	const [showsPanel, setShowsPanel] = useState(true)
 
 	const isSubchatView = activeView === AiChatView.MOBILE_SUBCHAT
-
-	const desktopPanelWidth = 'w-[35%] min-w-xl-1'
 
 	useEffect(() => {
 		setActiveView(isViewportMaxLG ? AiChatView.MOBILE_CHAT : AiChatView.DESKTOP)
@@ -48,18 +46,19 @@ export const AiChatMainPage = () => {
 						className={cx(
 							'relative h-full pl-xs-0',
 							'transition-all duration-300 ease-in-out',
-							showsPanel ? desktopPanelWidth : 'w-0 min-w-0'
+							showsPanel ? 'min-w-xl-1' : 'min-w-0'
 						)}
+						style={{ width: showsPanel ? `${panelWidth}%` : 0 }}
 					/>
 
 					{/* VISIBLE */}
 					<div
 						className={cx(
-							'absolute right-0 top-0 z-navbar h-full pl-xs-1',
-							desktopPanelWidth,
-							'transition-transform duration-300 ease-in-out',
+							'absolute right-0 top-0 z-navbar h-full min-w-xl-1 pl-xs-1',
+							'bg-color-bg-page transition-transform duration-300 ease-in-out',
 							showsPanel ? 'translate-x-0' : 'pointer-events-none translate-x-full'
 						)}
+						style={{ width: `${panelWidth}%` }}
 					>
 						{/* DELIMITER */}
 						<div className="absolute left-0 top-0 h-full w-xs-1 bg-color-border-shadow" />
