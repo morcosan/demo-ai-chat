@@ -41,7 +41,7 @@ export const ChatView = (props: Props) => {
 	const chatId = parseInt(chatIdStr || '')
 	const subchatId = parseInt(String(searchParams.get('subchat')))
 
-	const widthClass = 'mx-auto w-full max-w-xxl-2'
+	const widthClass = 'mx-auto w-full max-w-xxl-3'
 
 	const calcH1LineHeight = $lineHeight['sm']
 	const calcH1PY1 = $spacing['xs-2']

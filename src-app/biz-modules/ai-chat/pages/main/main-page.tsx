@@ -12,6 +12,8 @@ export const AiChatMainPage = () => {
 
 	const isSubchatView = activeView === AiChatView.MOBILE_SUBCHAT
 
+	const desktopPanelWidth = 'w-[35%] min-w-xl-1'
+
 	useEffect(() => {
 		setActiveView(isViewportMaxLG ? AiChatView.MOBILE_CHAT : AiChatView.DESKTOP)
 
@@ -44,16 +46,17 @@ export const AiChatMainPage = () => {
 					{/* SPACE HOLDER */}
 					<div
 						className={cx(
-							'relative h-full',
+							'relative h-full pl-xs-0',
 							'transition-all duration-300 ease-in-out',
-							showsPanel ? 'w-[30%] min-w-xl-0 pl-xs-0' : 'w-0 min-w-0'
+							showsPanel ? desktopPanelWidth : 'w-0 min-w-0'
 						)}
 					/>
 
 					{/* VISIBLE */}
 					<div
 						className={cx(
-							'absolute right-0 top-0 z-sticky h-full w-[30%] min-w-xl-0 pl-xs-1',
+							'absolute right-0 top-0 z-sticky h-full pl-xs-1',
+							desktopPanelWidth,
 							'transition-transform duration-300 ease-in-out',
 							showsPanel ? 'translate-x-0' : 'pointer-events-none translate-x-full'
 						)}
