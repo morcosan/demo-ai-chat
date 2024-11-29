@@ -3,19 +3,22 @@
 		"action": {
 			"back": "Kembali",
 			"backToHome": "Kembali ke beranda",
-			"changeLanguage": "Ganti bahasa",
+			"changeLanguage": "Ubah bahasa",
 			"close": "Tutup",
+			"copy": "Salin",
 			"delete": "Hapus",
 			"deselectAll": "Batalkan semua pilihan",
 			"goToUrl": "Buka {url}",
+			"hidePanel": "Sembunyikan panel",
 			"openMenu": "Buka menu",
-			"copy": "Salin",
-			"rename": "Ganti nama",
+			"rename": "Ubah nama",
+			"resizePanel": "Ubah ukuran panel",
 			"retry": "Coba lagi",
 			"saveChanges": "Simpan perubahan",
 			"search": "Cari",
 			"searchMore": "Tampilkan hasil lainnya",
 			"selectAll": "Pilih semua",
+			"showPanel": "Tampilkan panel",
 			"signOut": "Keluar"
 		},
 		"error": {
@@ -30,7 +33,7 @@
 			"copied": "Tersalin",
 			"custom": "Kustom",
 			"darkTheme": "Gelap",
-			"default": "Bawaan",
+			"default": "Default",
 			"description": "Deskripsi",
 			"designSystem": "Sistem Desain",
 			"errors": "Error",
@@ -44,7 +47,7 @@
 			"levelVeryLow": "Sangat rendah",
 			"lightTheme": "Terang",
 			"name": "Nama",
-			"navigationBar": "Bar navigasi",
+			"navigationBar": "Bilah navigasi",
 			"navigationMenu": "Menu navigasi",
 			"optionalField": "(Opsional)",
 			"quickSettings": "Pengaturan cepat",
@@ -71,7 +74,7 @@
 			"configureAgent": "Konfigurasi agen",
 			"confirmDeleteAgent": "Konfirmasi hapus agen",
 			"confirmDeleteChats": "Konfirmasi hapus chat",
-			"confirmRenameChat": "Konfirmasi ganti nama chat",
+			"confirmRenameChat": "Konfirmasi ubah nama chat",
 			"copyCode": "Salin kode",
 			"copyMessage": "Salin pesan",
 			"createAgent": "Buat agen",
@@ -81,15 +84,15 @@
 			"manageAgents": "Kelola agen",
 			"manageChats": "Kelola chat",
 			"openChat": "Buka chat",
-			"openSubchat_other": "Buka subchat ({count} pesan)",
 			"openSubchat_zero": "Buat subchat",
+			"openSubchat_other": "Buka subchat ({count} pesan)",
 			"searchChats": "Cari chat",
 			"selectChat": "Pilih chat",
 			"sendMessage": "Kirim pesan",
-			"showMoreAgents": "Tampilkan agen lainnya",
-			"showMoreChats": "Tampilkan chat lainnya",
+			"showMoreAgents": "Tampilkan lebih banyak agen",
+			"showMoreChats": "Tampilkan lebih banyak chat",
 			"showSubchats": "Tampilkan subchat ({count})",
-			"startSearching_one": "Ketik minimal {count} karakter",
+			"startNewChat": "Mulai percakapan baru",
 			"startSearching_other": "Ketik minimal {count} karakter"
 		},
 		"description": {
@@ -118,17 +121,14 @@
 			"selectedAgent": "Agen terpilih",
 			"selectedValue": "Nilai terpilih",
 			"subchats": "Subchat",
-			"xMessages_one": "1 pesan",
 			"xMessages_other": "{count} pesan",
-			"xSearchResults_one": "{count} hasil pencarian",
-			"xSearchResults_other": "{count} hasil pencarian",
 			"xSearchResults_zero": "Tidak ada hasil pencarian",
-			"xSelectedMessages_one": "1 pesan dipilih",
-			"xSelectedMessages_other": "{count} pesan dipilih"
+			"xSearchResults_other": "{count} hasil pencarian",
+			"xSelectedMessages_other": "{count} pesan terpilih"
 		},
 		"placeholder": {
 			"newMessage": "Bicara dengan {name}...",
-			"rename": "Buat nama baru secara otomatis..."
+			"rename": "Generate nama baru secara otomatis..."
 		},
 		"state": {
 			"loadingAgents": "Memuat agen...",
@@ -137,13 +137,13 @@
 			"loadingMessages": "Memuat pesan...",
 			"loadingPreviousMessages": "Memuat pesan sebelumnya...",
 			"loadingSubchats": "Memuat subchat...",
-			"renamingChat": "Mengganti nama chat...",
+			"renamingChat": "Mengubah nama chat...",
 			"thinking": "Berpikir..."
 		},
 		"warning": {
-			"deletingAgent": "Agen ini akan dihapus permanen",
-			"deletingChats": "Chat ini akan dihapus permanen",
-			"chromeGptInsideChrome": "GPT ini memerlukan pengaturan berikut diaktifkan:",
+			"deletingAgent": "Agen ini akan dihapus secara permanen",
+			"deletingChats": "Chat ini akan dihapus secara permanen",
+			"chromeGptInsideChrome": "GPT ini memerlukan pengaturan berikut untuk diaktifkan:",
 			"chromeGptOutsideChrome": "GPT ini hanya tersedia di browser Google Chrome",
 			"invalidGpt": "GPT tidak valid"
 		}
@@ -151,7 +151,7 @@
 	"userSettings": {
 		"action": {
 			"manageAccount": "Kelola akun",
-			"manageBilling": "Kelola tagihan"
+			"manageBilling": "Kelola pembayaran"
 		},
 		"error": {
 			"address": "Anda harus menambahkan alamat",
@@ -159,21 +159,21 @@
 			"city": "Anda harus menambahkan kota",
 			"country": "Anda harus menambahkan negara",
 			"email": "Anda harus menambahkan alamat email Anda",
-			"legalName": "Anda harus menambahkan nama resmi",
+			"legalName": "Anda harus menambahkan nama legal",
 			"name": "Anda harus menambahkan nama Anda",
 			"postalCode": "Anda harus menambahkan kode pos"
 		},
 		"label": {
 			"account": "Akun",
 			"address": "Alamat",
-			"billing": "Tagihan",
+			"billing": "Pembayaran",
 			"city": "Kota",
 			"country": "Negara",
 			"email": "Alamat email",
-			"legalName": "Nama resmi",
+			"legalName": "Nama legal",
 			"phone": "Nomor telepon",
 			"postalCode": "Kode pos",
-			"private": "Privat",
+			"private": "Pribadi",
 			"public": "Publik",
 			"vatNumber": "NPWP"
 		}

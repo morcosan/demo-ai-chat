@@ -5,43 +5,46 @@
 			"backToHome": "Kthehu në faqen kryesore",
 			"changeLanguage": "Ndrysho gjuhën",
 			"close": "Mbyll",
+			"copy": "Kopjo",
 			"delete": "Fshi",
 			"deselectAll": "Çzgjidh të gjitha",
 			"goToUrl": "Shko tek {url}",
+			"hidePanel": "Fshih panelin",
 			"openMenu": "Hap menynë",
-			"copy": "Kopjo",
-			"rename": "Riemëro",
+			"rename": "Riemërto",
+			"resizePanel": "Ndrysho madhësinë e panelit",
 			"retry": "Provo përsëri",
 			"saveChanges": "Ruaj ndryshimet",
 			"search": "Kërko",
 			"searchMore": "Shfaq më shumë rezultate",
 			"selectAll": "Zgjidh të gjitha",
+			"showPanel": "Shfaq panelin",
 			"signOut": "Dil"
 		},
 		"error": {
 			"noChanges": "Nuk ka ndryshime",
 			"nothingFound": "Asgjë nuk u gjet për \"{search}\"",
-			"unsent": "Pa dërguar"
+			"unsent": "E padërguar"
 		},
 		"label": {
 			"apiDocs": "Dokumentacioni API",
 			"asia": "Azi",
-			"avatar": "Avatar",
+			"avatar": "Avatari",
 			"copied": "U kopjua",
-			"custom": "Të personalizuara",
+			"custom": "Personalizuar",
 			"darkTheme": "E errët",
 			"default": "Parazgjedhur",
 			"description": "Përshkrimi",
-			"designSystem": "Sistemi i dizajnit",
+			"designSystem": "Sistemi i Dizajnit",
 			"errors": "Gabimet",
 			"europe": "Evropë",
 			"githubRepo": "Depoja GitHub",
 			"language": "Gjuha",
-			"levelHigh": "I lartë",
-			"levelLow": "I ulët",
-			"levelMedium": "Mesatar",
-			"levelVeryHigh": "Shumë i lartë",
-			"levelVeryLow": "Shumë i ulët",
+			"levelHigh": "E lartë",
+			"levelLow": "E ulët",
+			"levelMedium": "Mesatare",
+			"levelVeryHigh": "Shumë e lartë",
+			"levelVeryLow": "Shumë e ulët",
 			"lightTheme": "E ndritshme",
 			"name": "Emri",
 			"navigationBar": "Shiriti i navigimit",
@@ -57,7 +60,7 @@
 			"search": "Kërko..."
 		},
 		"state": {
-			"dataSaved": "Të dhënat tuaja u ruajtën",
+			"dataSaved": "Të dhënat tuaja janë ruajtur",
 			"deleting": "Duke fshirë...",
 			"loading": "Duke ngarkuar...",
 			"searching": "Duke kërkuar...",
@@ -67,7 +70,7 @@
 	},
 	"aiChat": {
 		"action": {
-			"backToSubchats": "Kthehu tek nënbisedat",
+			"backToSubchats": "Kthehu te nënbisedat",
 			"configureAgent": "Konfiguro agjentin",
 			"confirmDeleteAgent": "Konfirmo fshirjen e agjentit",
 			"confirmDeleteChats": "Konfirmo fshirjen e bisedave",
@@ -81,7 +84,6 @@
 			"manageAgents": "Menaxho agjentët",
 			"manageChats": "Menaxho bisedat",
 			"openChat": "Hap bisedën",
-			"openSubchat_one": "Hap nënbisedën ({count} mesazh)",
 			"openSubchat_other": "Hap nënbisedën ({count} mesazhe)",
 			"openSubchat_zero": "Krijo nënbisedë",
 			"searchChats": "Kërko bisedat",
@@ -90,7 +92,7 @@
 			"showMoreAgents": "Shfaq më shumë agjentë",
 			"showMoreChats": "Shfaq më shumë biseda",
 			"showSubchats": "Shfaq nënbisedat ({count})",
-			"startSearching_one": "Shkruaj të paktën {count} karakter",
+			"startNewChat": "Fillo një bisedë të re",
 			"startSearching_other": "Shkruaj të paktën {count} karaktere"
 		},
 		"description": {
@@ -102,7 +104,7 @@
 			"agentAvatar": "Duhet të shtoni një avatar për agjentin",
 			"agentName": "Duhet të shtoni një emër për agjentin",
 			"emptyMessage": "Mesazhi juaj është bosh",
-			"failedMessage": "Pati një problem në dërgimin e mesazhit tuaj"
+			"failedMessage": "Pati një problem me dërgimin e mesazhit tuaj"
 		},
 		"label": {
 			"agents": "Agjentët",
@@ -119,16 +121,13 @@
 			"selectedAgent": "Agjenti i zgjedhur",
 			"selectedValue": "Vlera e zgjedhur",
 			"subchats": "Nënbisedat",
-			"xMessages_one": "1 mesazh",
 			"xMessages_other": "{count} mesazhe",
-			"xSearchResults_one": "{count} rezultat kërkimi",
-			"xSearchResults_other": "{count} rezultate kërkimi",
 			"xSearchResults_zero": "Asnjë rezultat kërkimi",
-			"xSelectedMessages_one": "1 mesazh i zgjedhur",
+			"xSearchResults_other": "{count} rezultate kërkimi",
 			"xSelectedMessages_other": "{count} mesazhe të zgjedhura"
 		},
 		"placeholder": {
-			"newMessage": "Bisedo me {name}...",
+			"newMessage": "Fol me {name}...",
 			"rename": "Gjenero një emër të ri automatikisht..."
 		},
 		"state": {

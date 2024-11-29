@@ -2,24 +2,27 @@
 	"core": {
 		"action": {
 			"back": "Voltar",
-			"backToHome": "Voltar à página inicial",
+			"backToHome": "Voltar para a página inicial",
 			"changeLanguage": "Alterar idioma",
 			"close": "Fechar",
+			"copy": "Copiar",
 			"delete": "Eliminar",
 			"deselectAll": "Desselecionar tudo",
 			"goToUrl": "Ir para {url}",
+			"hidePanel": "Ocultar painel",
 			"openMenu": "Abrir menu",
-			"copy": "Copiar",
 			"rename": "Renomear",
+			"resizePanel": "Redimensionar painel",
 			"retry": "Tentar novamente",
 			"saveChanges": "Guardar alterações",
 			"search": "Pesquisar",
 			"searchMore": "Mostrar mais resultados",
 			"selectAll": "Selecionar tudo",
+			"showPanel": "Mostrar painel",
 			"signOut": "Terminar sessão"
 		},
 		"error": {
-			"noChanges": "Não existem alterações",
+			"noChanges": "Não há alterações",
 			"nothingFound": "Nada encontrado para \"{search}\"",
 			"unsent": "Não enviado"
 		},
@@ -47,9 +50,9 @@
 			"navigationBar": "Barra de navegação",
 			"navigationMenu": "Menu de navegação",
 			"optionalField": "(Opcional)",
-			"quickSettings": "Definições rápidas",
+			"quickSettings": "Configurações rápidas",
 			"requiredField": "(Obrigatório)",
-			"settings": "Definições",
+			"settings": "Configurações",
 			"uiLibrary": "Biblioteca UI",
 			"uiTheme": "Tema UI"
 		},
@@ -70,28 +73,28 @@
 			"backToSubchats": "Voltar aos subchats",
 			"configureAgent": "Configurar agente",
 			"confirmDeleteAgent": "Confirmar eliminação do agente",
-			"confirmDeleteChats": "Confirmar eliminação das conversas",
-			"confirmRenameChat": "Confirmar renomeação da conversa",
+			"confirmDeleteChats": "Confirmar eliminação de chats",
+			"confirmRenameChat": "Confirmar renomeação do chat",
 			"copyCode": "Copiar o código",
-			"copyMessage": "Copiar a mensagem",
+			"copyMessage": "Copiar mensagem",
 			"createAgent": "Criar agente",
 			"deleteAgent": "Eliminar agente",
-			"deleteSelectedChats": "Eliminar conversas selecionadas",
-			"deselectChat": "Desselecionar conversa",
+			"deleteSelectedChats": "Eliminar chats selecionados",
+			"deselectChat": "Desselecionar chat",
 			"manageAgents": "Gerir agentes",
-			"manageChats": "Gerir conversas",
-			"openChat": "Abrir conversa",
-			"openSubchat_zero": "Criar subchat",
-			"openSubchat_one": "Abrir subchat ({count} mensagem)",
+			"manageChats": "Gerir chats",
+			"openChat": "Abrir chat",
 			"openSubchat_other": "Abrir subchat ({count} mensagens)",
-			"searchChats": "Pesquisar conversas",
-			"selectChat": "Selecionar conversa",
+			"openSubchat_zero": "Criar subchat",
+			"searchChats": "Pesquisar chats",
+			"selectChat": "Selecionar chat",
 			"sendMessage": "Enviar mensagem",
 			"showMoreAgents": "Mostrar mais agentes",
-			"showMoreChats": "Mostrar mais conversas",
+			"showMoreChats": "Mostrar mais chats",
 			"showSubchats": "Mostrar subchats ({count})",
-			"startSearching_one": "Digite pelo menos {count} caracter",
-			"startSearching_other": "Digite pelo menos {count} caracteres"
+			"startNewChat": "Iniciar uma nova conversa",
+			"startSearching_one": "Escreva pelo menos {count} caractere",
+			"startSearching_other": "Escreva pelo menos {count} caracteres"
 		},
 		"description": {
 			"chromeGPT": "Mini GPT para Google Chrome",
@@ -102,49 +105,49 @@
 			"agentAvatar": "Deve adicionar um avatar para o agente",
 			"agentName": "Deve adicionar um nome para o agente",
 			"emptyMessage": "A sua mensagem está vazia",
-			"failedMessage": "Ocorreu um problema ao entregar a sua mensagem"
+			"failedMessage": "Houve um problema ao entregar a sua mensagem"
 		},
 		"label": {
 			"agents": "Agentes",
-			"chatTitle": "Título da conversa",
-			"chats": "Conversas",
+			"chatTitle": "Título do chat",
+			"chats": "Chats",
 			"creativityLevel": "Nível de criatividade",
 			"customInstructions": "Instruções personalizadas",
 			"gptModel": "Modelo GPT",
 			"newAgent": "Novo agente",
-			"newChat": "Nova conversa",
+			"newChat": "Novo chat",
 			"newMessage": "Nova mensagem",
-			"noChats": "Sem conversas",
+			"noChats": "Sem chats",
 			"noSubchats": "Sem subchats",
 			"selectedAgent": "Agente selecionado",
 			"selectedValue": "Valor selecionado",
 			"subchats": "Subchats",
-			"xMessages_one": "{count} mensagem",
+			"xMessages_one": "1 mensagem",
 			"xMessages_other": "{count} mensagens",
+			"xSearchResults_one": "{count} resultado da pesquisa",
+			"xSearchResults_other": "{count} resultados da pesquisa",
 			"xSearchResults_zero": "Sem resultados de pesquisa",
-			"xSearchResults_one": "{count} resultado de pesquisa",
-			"xSearchResults_other": "{count} resultados de pesquisa",
-			"xSelectedMessages_one": "{count} mensagem selecionada",
+			"xSelectedMessages_one": "1 mensagem selecionada",
 			"xSelectedMessages_other": "{count} mensagens selecionadas"
 		},
 		"placeholder": {
 			"newMessage": "Fale com {name}...",
-			"rename": "Gerar um novo nome automaticamente..."
+			"rename": "Gerar automaticamente um novo nome..."
 		},
 		"state": {
 			"loadingAgents": "A carregar agentes...",
-			"loadingChats": "A carregar conversas...",
+			"loadingChats": "A carregar chats...",
 			"loadingGPTs": "A carregar GPTs...",
 			"loadingMessages": "A carregar mensagens...",
 			"loadingPreviousMessages": "A carregar mensagens anteriores...",
 			"loadingSubchats": "A carregar subchats...",
-			"renamingChat": "A renomear conversa...",
+			"renamingChat": "A renomear chat...",
 			"thinking": "A pensar..."
 		},
 		"warning": {
 			"deletingAgent": "Este agente será eliminado permanentemente",
-			"deletingChats": "Estas conversas serão eliminadas permanentemente",
-			"chromeGptInsideChrome": "Este GPT requer que estas definições estejam ativadas:",
+			"deletingChats": "Estes chats serão eliminados permanentemente",
+			"chromeGptInsideChrome": "Este GPT requer as seguintes definições ativadas:",
 			"chromeGptOutsideChrome": "Este GPT está disponível apenas no navegador Google Chrome",
 			"invalidGpt": "GPT inválido"
 		}
@@ -176,7 +179,7 @@
 			"postalCode": "Código postal",
 			"private": "Privado",
 			"public": "Público",
-			"vatNumber": "NIF"
+			"vatNumber": "Número de IVA"
 		}
 	}
 }

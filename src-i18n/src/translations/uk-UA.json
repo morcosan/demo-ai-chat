@@ -2,20 +2,23 @@
 	"core": {
 		"action": {
 			"back": "Назад",
-			"backToHome": "Назад на головну",
+			"backToHome": "На головну",
 			"changeLanguage": "Змінити мову",
 			"close": "Закрити",
-			"delete": "Видалити",
-			"deselectAll": "Скасувати всі вибрані",
-			"goToUrl": "Перейти до {url}",
-			"openMenu": "Відкрити меню",
 			"copy": "Копіювати",
+			"delete": "Видалити",
+			"deselectAll": "Зняти всі позначення",
+			"goToUrl": "Перейти до {url}",
+			"hidePanel": "Приховати панель",
+			"openMenu": "Відкрити меню",
 			"rename": "Перейменувати",
+			"resizePanel": "Змінити розмір панелі",
 			"retry": "Повторити",
 			"saveChanges": "Зберегти зміни",
 			"search": "Пошук",
 			"searchMore": "Показати більше результатів",
 			"selectAll": "Вибрати все",
+			"showPanel": "Показати панель",
 			"signOut": "Вийти"
 		},
 		"error": {
@@ -24,18 +27,18 @@
 			"unsent": "Не надіслано"
 		},
 		"label": {
-			"apiDocs": "API Документація",
+			"apiDocs": "API документація",
 			"asia": "Азія",
 			"avatar": "Аватар",
 			"copied": "Скопійовано",
-			"custom": "Власний",
+			"custom": "Користувацький",
 			"darkTheme": "Темна",
 			"default": "За замовчуванням",
 			"description": "Опис",
 			"designSystem": "Система дизайну",
 			"errors": "Помилки",
 			"europe": "Європа",
-			"githubRepo": "GitHub Репозиторій",
+			"githubRepo": "GitHub репозиторій",
 			"language": "Мова",
 			"levelHigh": "Високий",
 			"levelLow": "Низький",
@@ -45,13 +48,12 @@
 			"lightTheme": "Світла",
 			"name": "Ім'я",
 			"navigationBar": "Панель навігації",
-			"navigationMenu": "Навігаційне меню",
+			"navigationMenu": "Меню навігації",
 			"optionalField": "(Необов'язково)",
-			"quickSettings": "Швидкі налаштування",
 			"requiredField": "(Обов'язково)",
 			"settings": "Налаштування",
-			"uiLibrary": "UI Бібліотека",
-			"uiTheme": "UI Тема"
+			"uiLibrary": "UI бібліотека",
+			"uiTheme": "UI тема"
 		},
 		"placeholder": {
 			"search": "Пошук..."
@@ -77,20 +79,21 @@
 			"createAgent": "Створити агента",
 			"deleteAgent": "Видалити агента",
 			"deleteSelectedChats": "Видалити вибрані чати",
-			"deselectChat": "Скасувати вибір чату",
-			"manageAgents": "Керувати агентами",
-			"manageChats": "Керувати чатами",
+			"deselectChat": "Зняти вибір чату",
+			"manageAgents": "Керування агентами",
+			"manageChats": "Керування чатами",
 			"openChat": "Відкрити чат",
-			"openSubchat_one": "Відкрити підчат ({count} повідомлення)",
+			"openSubchat_zero": "Створити підчат",
+			"openSubchat_one": "Відкрити підчат (1 повідомлення)",
 			"openSubchat_few": "Відкрити підчат ({count} повідомлення)",
 			"openSubchat_many": "Відкрити підчат ({count} повідомлень)",
-			"openSubchat_zero": "Створити підчат",
 			"searchChats": "Пошук чатів",
 			"selectChat": "Вибрати чат",
 			"sendMessage": "Надіслати повідомлення",
 			"showMoreAgents": "Показати більше агентів",
 			"showMoreChats": "Показати більше чатів",
 			"showSubchats": "Показати підчати ({count})",
+			"startNewChat": "Розпочати нову розмову",
 			"startSearching_one": "Введіть хоча б {count} символ",
 			"startSearching_few": "Введіть хоча б {count} символи",
 			"startSearching_many": "Введіть хоча б {count} символів"
@@ -111,8 +114,8 @@
 			"chatTitle": "Назва чату",
 			"chats": "Чати",
 			"creativityLevel": "Рівень креативності",
-			"customInstructions": "Власні інструкції",
-			"gptModel": "GPT модель",
+			"customInstructions": "Користувацькі інструкції",
+			"gptModel": "Модель GPT",
 			"newAgent": "Новий агент",
 			"newChat": "Новий чат",
 			"newMessage": "Нове повідомлення",
@@ -124,16 +127,16 @@
 			"xMessages_one": "1 повідомлення",
 			"xMessages_few": "{count} повідомлення",
 			"xMessages_many": "{count} повідомлень",
+			"xSearchResults_zero": "Немає результатів пошуку",
 			"xSearchResults_one": "{count} результат пошуку",
 			"xSearchResults_few": "{count} результати пошуку",
 			"xSearchResults_many": "{count} результатів пошуку",
-			"xSearchResults_zero": "Немає результатів пошуку",
-			"xSelectedMessages_one": "1 вибране повідомлення",
-			"xSelectedMessages_few": "{count} вибрані повідомлення",
-			"xSelectedMessages_many": "{count} вибраних повідомлень"
+			"xSelectedMessages_one": "1 повідомлення вибрано",
+			"xSelectedMessages_few": "{count} повідомлення вибрано",
+			"xSelectedMessages_many": "{count} повідомлень вибрано"
 		},
 		"placeholder": {
-			"newMessage": "Напишіть {name}...",
+			"newMessage": "Спілкуйтесь з {name}...",
 			"rename": "Згенерувати нову назву автоматично..."
 		},
 		"state": {
@@ -149,15 +152,15 @@
 		"warning": {
 			"deletingAgent": "Цього агента буде остаточно видалено",
 			"deletingChats": "Ці чати буде остаточно видалено",
-			"chromeGptInsideChrome": "Цей GPT вимагає активації наступних налаштувань:",
-			"chromeGptOutsideChrome": "Цей GPT доступний лише в браузері Google Chrome",
+			"chromeGptInsideChrome": "Цей GPT потребує увімкнення наступних налаштувань:",
+			"chromeGptOutsideChrome": "Цей GPT доступний тільки у браузері Google Chrome",
 			"invalidGpt": "Недійсний GPT"
 		}
 	},
 	"userSettings": {
 		"action": {
-			"manageAccount": "Керувати обліковим записом",
-			"manageBilling": "Керувати оплатою"
+			"manageAccount": "Керування обліковим записом",
+			"manageBilling": "Керування оплатою"
 		},
 		"error": {
 			"address": "Ви повинні додати адресу",
@@ -165,7 +168,7 @@
 			"city": "Ви повинні додати місто",
 			"country": "Ви повинні додати країну",
 			"email": "Ви повинні додати свою електронну адресу",
-			"legalName": "Ви повинні додати юридичне ім'я",
+			"legalName": "Ви повинні додати юридичну назву",
 			"name": "Ви повинні додати своє ім'я",
 			"postalCode": "Ви повинні додати поштовий індекс"
 		},
@@ -176,7 +179,7 @@
 			"city": "Місто",
 			"country": "Країна",
 			"email": "Електронна адреса",
-			"legalName": "Юридичне ім'я",
+			"legalName": "Юридична назва",
 			"phone": "Номер телефону",
 			"postalCode": "Поштовий індекс",
 			"private": "Приватний",

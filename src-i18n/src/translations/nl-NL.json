@@ -2,20 +2,23 @@
 	"core": {
 		"action": {
 			"back": "Terug",
-			"backToHome": "Terug naar homepage",
+			"backToHome": "Terug naar startpagina",
 			"changeLanguage": "Taal wijzigen",
 			"close": "Sluiten",
+			"copy": "Kopiëren",
 			"delete": "Verwijderen",
 			"deselectAll": "Alles deselecteren",
 			"goToUrl": "Ga naar {url}",
+			"hidePanel": "Paneel verbergen",
 			"openMenu": "Menu openen",
-			"copy": "Kopiëren",
 			"rename": "Hernoemen",
+			"resizePanel": "Paneel aanpassen",
 			"retry": "Opnieuw proberen",
 			"saveChanges": "Wijzigingen opslaan",
 			"search": "Zoeken",
-			"searchMore": "Meer resultaten tonen",
+			"searchMore": "Meer resultaten weergeven",
 			"selectAll": "Alles selecteren",
+			"showPanel": "Paneel weergeven",
 			"signOut": "Uitloggen"
 		},
 		"error": {
@@ -24,7 +27,7 @@
 			"unsent": "Niet verzonden"
 		},
 		"label": {
-			"apiDocs": "API Docs",
+			"apiDocs": "API-documentatie",
 			"asia": "Azië",
 			"avatar": "Avatar",
 			"copied": "Gekopieerd",
@@ -32,7 +35,7 @@
 			"darkTheme": "Donker",
 			"default": "Standaard",
 			"description": "Beschrijving",
-			"designSystem": "Design Systeem",
+			"designSystem": "Ontwerp systeem",
 			"errors": "Fouten",
 			"europe": "Europa",
 			"githubRepo": "GitHub Repo",
@@ -47,30 +50,31 @@
 			"navigationBar": "Navigatiebalk",
 			"navigationMenu": "Navigatiemenu",
 			"optionalField": "(Optioneel)",
-			"requiredField": "(Verplicht)",
+			"quickSettings": "Snelle instellingen",
+			"requiredField": "(Vereist)",
 			"settings": "Instellingen",
-			"uiLibrary": "UI Bibliotheek",
-			"uiTheme": "UI Thema"
+			"uiLibrary": "UI-bibliotheek",
+			"uiTheme": "UI-thema"
 		},
 		"placeholder": {
 			"search": "Zoeken..."
 		},
 		"state": {
-			"dataSaved": "Je gegevens zijn opgeslagen",
-			"deleting": "Verwijderen...",
-			"loading": "Laden...",
-			"searching": "Zoeken...",
-			"sending": "Verzenden...",
-			"updating": "Bijwerken..."
+			"dataSaved": "Uw gegevens zijn opgeslagen",
+			"deleting": "Bezig met verwijderen...",
+			"loading": "Bezig met laden...",
+			"searching": "Bezig met zoeken...",
+			"sending": "Bezig met verzenden...",
+			"updating": "Bezig met bijwerken..."
 		}
 	},
 	"aiChat": {
 		"action": {
 			"backToSubchats": "Terug naar subchats",
 			"configureAgent": "Agent configureren",
-			"confirmDeleteAgent": "Verwijderen agent bevestigen",
-			"confirmDeleteChats": "Verwijderen chats bevestigen",
-			"confirmRenameChat": "Hernoemen chat bevestigen",
+			"confirmDeleteAgent": "Verwijderen van agent bevestigen",
+			"confirmDeleteChats": "Verwijderen van chats bevestigen",
+			"confirmRenameChat": "Naam van chat bevestigen",
 			"copyCode": "Code kopiëren",
 			"copyMessage": "Bericht kopiëren",
 			"createAgent": "Agent maken",
@@ -80,28 +84,28 @@
 			"manageAgents": "Agents beheren",
 			"manageChats": "Chats beheren",
 			"openChat": "Chat openen",
-			"openSubchat_zero": "Subchat maken",
-			"openSubchat_one": "Subchat openen ({count} bericht)",
 			"openSubchat_other": "Subchat openen ({count} berichten)",
+			"openSubchat_zero": "Subchat maken",
 			"searchChats": "Chats zoeken",
 			"selectChat": "Chat selecteren",
 			"sendMessage": "Bericht verzenden",
-			"showMoreAgents": "Meer agents tonen",
-			"showMoreChats": "Meer chats tonen",
-			"showSubchats": "Subchats tonen ({count})",
-			"startSearching_one": "Type minimaal {count} teken",
-			"startSearching_other": "Type minimaal {count} tekens"
+			"showMoreAgents": "Meer agents weergeven",
+			"showMoreChats": "Meer chats weergeven",
+			"showSubchats": "Subchats weergeven ({count})",
+			"startNewChat": "Nieuw gesprek starten",
+			"startSearching_one": "Typ minimaal {count} teken",
+			"startSearching_other": "Typ minimaal {count} tekens"
 		},
 		"description": {
 			"chromeGPT": "Mini GPT voor Google Chrome",
-			"loremIpsumGPT": "Meest intelligente model",
+			"loremIpsumGPT": "Intelligentste model",
 			"rammusGPT": "Beste emotionele ondersteuning"
 		},
 		"error": {
-			"agentAvatar": "Je moet een avatar toevoegen voor de agent",
-			"agentName": "Je moet een naam toevoegen voor de agent",
-			"emptyMessage": "Je bericht is leeg",
-			"failedMessage": "Er was een probleem met het verzenden van je bericht"
+			"agentAvatar": "U moet een avatar toevoegen voor de agent",
+			"agentName": "U moet een naam toevoegen voor de agent",
+			"emptyMessage": "Uw bericht is leeg",
+			"failedMessage": "Er is een probleem opgetreden bij het verzenden van uw bericht"
 		},
 		"label": {
 			"agents": "Agents",
@@ -109,7 +113,7 @@
 			"chats": "Chats",
 			"creativityLevel": "Creativiteitsniveau",
 			"customInstructions": "Aangepaste instructies",
-			"gptModel": "GPT model",
+			"gptModel": "GPT-model",
 			"newAgent": "Nieuwe agent",
 			"newChat": "Nieuwe chat",
 			"newMessage": "Nieuw bericht",
@@ -120,31 +124,31 @@
 			"subchats": "Subchats",
 			"xMessages_one": "1 bericht",
 			"xMessages_other": "{count} berichten",
-			"xSearchResults_zero": "Geen zoekresultaten",
 			"xSearchResults_one": "{count} zoekresultaat",
 			"xSearchResults_other": "{count} zoekresultaten",
+			"xSearchResults_zero": "Geen zoekresultaten",
 			"xSelectedMessages_one": "1 bericht geselecteerd",
 			"xSelectedMessages_other": "{count} berichten geselecteerd"
 		},
 		"placeholder": {
 			"newMessage": "Praat met {name}...",
-			"rename": "Automatisch nieuwe naam genereren..."
+			"rename": "Automatisch een nieuwe naam genereren..."
 		},
 		"state": {
 			"loadingAgents": "Agents laden...",
 			"loadingChats": "Chats laden...",
-			"loadingGPTs": "GPTs laden...",
+			"loadingGPTs": "GPT's laden...",
 			"loadingMessages": "Berichten laden...",
 			"loadingPreviousMessages": "Vorige berichten laden...",
 			"loadingSubchats": "Subchats laden...",
 			"renamingChat": "Chat hernoemen...",
-			"thinking": "Nadenken..."
+			"thinking": "Denken..."
 		},
 		"warning": {
 			"deletingAgent": "Deze agent wordt permanent verwijderd",
 			"deletingChats": "Deze chats worden permanent verwijderd",
-			"chromeGptInsideChrome": "Deze GPT vereist dat de volgende instellingen zijn ingeschakeld:",
-			"chromeGptOutsideChrome": "Deze GPT is alleen beschikbaar in Google Chrome browser",
+			"chromeGptInsideChrome": "Deze GPT vereist de volgende instellingen om ingeschakeld te worden:",
+			"chromeGptOutsideChrome": "Deze GPT is alleen beschikbaar in de Google Chrome-browser",
 			"invalidGpt": "Ongeldige GPT"
 		}
 	},
@@ -154,14 +158,14 @@
 			"manageBilling": "Facturering beheren"
 		},
 		"error": {
-			"address": "Je moet een adres toevoegen",
-			"avatar": "Je moet een avatar toevoegen",
-			"city": "Je moet een stad toevoegen",
-			"country": "Je moet een land toevoegen",
-			"email": "Je moet een e-mailadres toevoegen",
-			"legalName": "Je moet een wettelijke naam toevoegen",
-			"name": "Je moet een naam toevoegen",
-			"postalCode": "Je moet een postcode toevoegen"
+			"address": "U moet het adres toevoegen",
+			"avatar": "U moet uw avatar toevoegen",
+			"city": "U moet de stad toevoegen",
+			"country": "U moet het land toevoegen",
+			"email": "U moet uw e-mailadres toevoegen",
+			"legalName": "U moet de wettelijke naam toevoegen",
+			"name": "U moet uw naam toevoegen",
+			"postalCode": "U moet de postcode toevoegen"
 		},
 		"label": {
 			"account": "Account",

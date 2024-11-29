@@ -5,17 +5,20 @@
 			"backToHome": "Ana səhifəyə qayıt",
 			"changeLanguage": "Dili dəyiş",
 			"close": "Bağla",
-			"delete": "Sil",
-			"deselectAll": "Hamısının seçimini ləğv et",
-			"goToUrl": "{url} ünvanına keç",
-			"openMenu": "Menyunu aç",
 			"copy": "Kopyala",
+			"delete": "Sil",
+			"deselectAll": "Hamısını ləğv et",
+			"goToUrl": "{url} ünvanına get",
+			"hidePanel": "Paneli gizlət",
+			"openMenu": "Menyunu aç",
 			"rename": "Adını dəyiş",
+			"resizePanel": "Panel ölçüsünü dəyiş",
 			"retry": "Yenidən cəhd et",
-			"saveChanges": "Dəyişiklikləri yadda saxla",
+			"saveChanges": "Dəyişiklikləri saxla",
 			"search": "Axtar",
 			"searchMore": "Daha çox nəticə göstər",
 			"selectAll": "Hamısını seç",
+			"showPanel": "Paneli göstər",
 			"signOut": "Çıxış"
 		},
 		"error": {
@@ -35,7 +38,7 @@
 			"designSystem": "Dizayn Sistemi",
 			"errors": "Xətalar",
 			"europe": "Avropa",
-			"githubRepo": "GitHub Deposu",
+			"githubRepo": "GitHub Repo",
 			"language": "Dil",
 			"levelHigh": "Yüksək",
 			"levelLow": "Aşağı",
@@ -48,16 +51,16 @@
 			"navigationMenu": "Naviqasiya menyusu",
 			"optionalField": "(İstəyə bağlı)",
 			"quickSettings": "Sürətli parametrlər",
-			"requiredField": "(Vacib)",
+			"requiredField": "(Tələb olunur)",
 			"settings": "Parametrlər",
-			"uiLibrary": "İstifadəçi İnterfeysi Kitabxanası",
-			"uiTheme": "İstifadəçi İnterfeysi Mövzusu"
+			"uiLibrary": "UI Kitabxanası",
+			"uiTheme": "UI Teması"
 		},
 		"placeholder": {
 			"search": "Axtar..."
 		},
 		"state": {
-			"dataSaved": "Məlumatlarınız yadda saxlanıldı",
+			"dataSaved": "Məlumatlarınız saxlanıldı",
 			"deleting": "Silinir...",
 			"loading": "Yüklənir...",
 			"searching": "Axtarılır...",
@@ -67,9 +70,9 @@
 	},
 	"aiChat": {
 		"action": {
-			"backToSubchats": "Alt-söhbətlərə qayıt",
+			"backToSubchats": "Alt söhbətlərə qayıt",
 			"configureAgent": "Agenti konfiqurasiya et",
-			"confirmDeleteAgent": "Agentin silinməsini təsdiqlə",
+			"confirmDeleteAgent": "Agent silinməsini təsdiqlə",
 			"confirmDeleteChats": "Söhbətlərin silinməsini təsdiqlə",
 			"confirmRenameChat": "Söhbətin adının dəyişdirilməsini təsdiqlə",
 			"copyCode": "Kodu kopyala",
@@ -81,14 +84,16 @@
 			"manageAgents": "Agentləri idarə et",
 			"manageChats": "Söhbətləri idarə et",
 			"openChat": "Söhbəti aç",
-			"openSubchat_other": "Alt-söhbəti aç ({count} mesaj)",
-			"openSubchat_zero": "Alt-söhbət yarat",
+			"openSubchat_zero": "Alt söhbət yarat",
+			"openSubchat_one": "Alt söhbəti aç ({count} mesaj)",
+			"openSubchat_other": "Alt söhbəti aç ({count} mesaj)",
 			"searchChats": "Söhbətlərdə axtar",
 			"selectChat": "Söhbəti seç",
 			"sendMessage": "Mesaj göndər",
 			"showMoreAgents": "Daha çox agent göstər",
 			"showMoreChats": "Daha çox söhbət göstər",
-			"showSubchats": "Alt-söhbətləri göstər ({count})",
+			"showSubchats": "Alt söhbətləri göstər ({count})",
+			"startNewChat": "Yeni söhbətə başla",
 			"startSearching_one": "Ən azı {count} simvol daxil edin",
 			"startSearching_other": "Ən azı {count} simvol daxil edin"
 		},
@@ -114,15 +119,15 @@
 			"newChat": "Yeni söhbət",
 			"newMessage": "Yeni mesaj",
 			"noChats": "Söhbət yoxdur",
-			"noSubchats": "Alt-söhbət yoxdur",
+			"noSubchats": "Alt söhbət yoxdur",
 			"selectedAgent": "Seçilmiş agent",
 			"selectedValue": "Seçilmiş dəyər",
-			"subchats": "Alt-söhbətlər",
+			"subchats": "Alt söhbətlər",
 			"xMessages_one": "1 mesaj",
 			"xMessages_other": "{count} mesaj",
+			"xSearchResults_zero": "Axtarış nəticəsi yoxdur",
 			"xSearchResults_one": "{count} axtarış nəticəsi",
 			"xSearchResults_other": "{count} axtarış nəticəsi",
-			"xSearchResults_zero": "Axtarış nəticəsi yoxdur",
 			"xSelectedMessages_one": "1 mesaj seçilib",
 			"xSelectedMessages_other": "{count} mesaj seçilib"
 		},
@@ -136,14 +141,14 @@
 			"loadingGPTs": "GPT-lər yüklənir...",
 			"loadingMessages": "Mesajlar yüklənir...",
 			"loadingPreviousMessages": "Əvvəlki mesajlar yüklənir...",
-			"loadingSubchats": "Alt-söhbətlər yüklənir...",
+			"loadingSubchats": "Alt söhbətlər yüklənir...",
 			"renamingChat": "Söhbətin adı dəyişdirilir...",
 			"thinking": "Düşünür..."
 		},
 		"warning": {
 			"deletingAgent": "Bu agent birdəfəlik silinəcək",
 			"deletingChats": "Bu söhbətlər birdəfəlik silinəcək",
-			"chromeGptInsideChrome": "Bu GPT bu parametrlərin aktivləşdirilməsini tələb edir:",
+			"chromeGptInsideChrome": "Bu GPT aşağıdakı parametrlərin aktivləşdirilməsini tələb edir:",
 			"chromeGptOutsideChrome": "Bu GPT yalnız Google Chrome brauzerində mövcuddur",
 			"invalidGpt": "Yanlış GPT"
 		}
@@ -161,7 +166,7 @@
 			"email": "E-poçt ünvanınızı əlavə etməlisiniz",
 			"legalName": "Hüquqi adı əlavə etməlisiniz",
 			"name": "Adınızı əlavə etməlisiniz",
-			"postalCode": "Poçt kodunu əlavə etməlisiniz"
+			"postalCode": "Poçt indeksi əlavə etməlisiniz"
 		},
 		"label": {
 			"account": "Hesab",
@@ -172,7 +177,7 @@
 			"email": "E-poçt ünvanı",
 			"legalName": "Hüquqi ad",
 			"phone": "Telefon nömrəsi",
-			"postalCode": "Poçt kodu",
+			"postalCode": "Poçt indeksi",
 			"private": "Şəxsi",
 			"public": "İctimai",
 			"vatNumber": "ƏDV nömrəsi"
