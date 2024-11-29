@@ -3,8 +3,8 @@ import { Button } from '@ds/release'
 import { debounce } from 'lodash'
 import { UIEvent, useMemo } from 'react'
 import { Subchat } from '../../api'
-import { StickyToolbar } from '../../components/sticky-toolbar'
 import { SubchatIcon } from '../../components/subchat-icon'
+import { SubchatToolbar } from '../../components/subchat-toolbar'
 import { useAiChat } from '../../state'
 import { getTextFromMarkdown } from '../../utils/markdown'
 
@@ -42,11 +42,11 @@ export const SubchatsView = () => {
 		<div className="h-full">
 			<div className="ds-scrollable h-full overflow-y-scroll pb-xs-9" onScroll={onScroll}>
 				{/* TOOLBAR */}
-				<StickyToolbar stretched permanent>
-					<div className="flex h-button-h-md items-center px-xs-6 text-size-sm leading-1">
+				<SubchatToolbar>
+					<span className="pl-xs-6">
 						{t('aiChat.label.subchats')} ({allSubchatsPagination.count})
-					</div>
-				</StickyToolbar>
+					</span>
+				</SubchatToolbar>
 
 				{slotSubchats}
 

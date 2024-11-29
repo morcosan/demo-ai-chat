@@ -5,7 +5,7 @@ import { UIEvent, useEffect, useMemo, useState } from 'react'
 import { Agent, Message } from '../../api'
 import { MessageItem } from '../../components/items/message-item'
 import { NewMessageBox } from '../../components/new-message-box'
-import { StickyToolbar } from '../../components/sticky-toolbar'
+import { SubchatToolbar } from '../../components/subchat-toolbar'
 import { useScrollable } from '../../hooks/use-scrollable'
 import { useAiChat, useAiChatAgents } from '../../state'
 
@@ -76,17 +76,13 @@ export const SubchatView = () => {
 				onScroll={onScroll}
 			>
 				{/* TOOLBAR */}
-				<StickyToolbar stretched permanent>
-					<div className="flex items-center gap-xs-2 py-xs-1">
-						<IconButton linkHref={`/chat/${activeChat?.id}`} tooltip={t('aiChat.action.backToSubchats')} size="sm">
-							<ArrowBackSvg className="h-xs-5" />
-						</IconButton>
+				<SubchatToolbar>
+					<IconButton linkHref={`/chat/${activeChat?.id}`} tooltip={t('aiChat.action.backToSubchats')} size="sm">
+						<ArrowBackSvg className="h-xs-5" />
+					</IconButton>
 
-						<div className="pb-px text-size-sm">
-							{Boolean(subchatPagination.count) && t('aiChat.label.xMessages', { count: subchatPagination.count })}
-						</div>
-					</div>
-				</StickyToolbar>
+					{Boolean(subchatPagination.count) && t('aiChat.label.xMessages', { count: subchatPagination.count })}
+				</SubchatToolbar>
 
 				{subchatLoading === 'full' ? (
 					<LoadingText text={t('aiChat.state.loadingMessages')} className="flex-center h-full" />
