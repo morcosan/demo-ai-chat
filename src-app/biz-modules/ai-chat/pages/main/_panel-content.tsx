@@ -45,8 +45,13 @@ export const PanelContent = (props: Props) => {
 	}, [activeChat, subchatId])
 
 	useEffect(() => {
-		activeChat && allSubchats.length ? onShowPanel() : onHidePanel()
-	}, [activeChat, allSubchats])
+		if (chatLoading || allSubchatsLoading) return
+		if (activeChat && allSubchats.length) {
+			onShowPanel()
+		} else {
+			onHidePanel()
+		}
+	}, [activeChat, allSubchats, chatLoading, allSubchatsLoading])
 
 	return !activeChat ? (
 		<div />
