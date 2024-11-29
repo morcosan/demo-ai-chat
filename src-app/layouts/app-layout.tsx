@@ -64,7 +64,7 @@ export const AppLayout = ({ blank, children }: Props) => {
 						className={cx(
 							'fixed bottom-0 left-0 right-0 mr-button-h-md',
 							'border-r border-t border-color-border-shadow bg-color-bg-card shadow-lg',
-							'transition-transform duration-300 ease-out',
+							'transition-transform duration-300 ease-in-out',
 							showsNavMenu ? 'translate-x-0' : '-translate-x-full'
 						)}
 						style={{ top: 'var(--app-spacing-navbar-h)', zIndex: 'calc(var(--ds-z-index-navbar) - 1)' }}

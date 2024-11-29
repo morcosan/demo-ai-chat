@@ -34,24 +34,24 @@ export const AiChatMainPage = () => {
 			{activeView === AiChatView.DESKTOP && (
 				<>
 					{/* SPACE HOLDER */}
-					{/*<div*/}
-					{/*	className={cx(*/}
-					{/*		'relative h-full',*/}
-					{/*		'transition-width duration-300 ease-in-out',*/}
-					{/*		showsPanel ? 'w-[30%] min-w-xl-0 ml-xs-2' : 'w-0'*/}
-					{/*	)}*/}
-					{/*/>*/}
+					<div
+						className={cx(
+							'relative h-full',
+							'transition-all duration-300 ease-in-out',
+							showsPanel ? 'w-[30%] min-w-xl-0 pl-xs-0' : 'w-0 min-w-0'
+						)}
+					/>
 
 					{/* VISIBLE */}
 					<div
 						className={cx(
-							'absolute right-0 top-0 z-sticky h-full w-[30%] min-w-xl-0',
-							'bg-color-bg-page transition-transform duration-300 ease-in-out',
+							'absolute right-0 top-0 z-sticky h-full w-[30%] min-w-xl-0 pl-xs-1',
+							'transition-transform duration-300 ease-in-out',
 							showsPanel ? 'translate-x-0' : 'pointer-events-none translate-x-full'
 						)}
 					>
 						{/* DELIMITER */}
-						<div className="absolute -left-xs-1 top-0 h-full w-xs-1 bg-color-border-shadow" />
+						<div className="absolute left-0 top-0 h-full w-xs-1 bg-color-border-shadow" />
 						{/* VIEW */}
 						{slotPanel}
 					</div>

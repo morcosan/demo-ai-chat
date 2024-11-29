@@ -53,7 +53,10 @@ export const PanelContent = (props: Props) => {
 	) : activeSubchat ? (
 		<SubchatView onHidePanel={onHidePanel} />
 	) : chatLoading === 'full' || allSubchatsLoading === 'full' ? (
-		<LoadingText text={t('aiChat.state.loadingSubchats')} className="flex-center h-full" />
+		<div className="ds-scrollable flex h-full flex-col">
+			<SubchatToolbar onHidePanel={onHidePanel} />
+			<LoadingText text={t('aiChat.state.loadingSubchats')} className="flex-center h-full" />
+		</div>
 	) : !allSubchats.length && !subchatLoading ? (
 		<div className="ds-scrollable flex h-full flex-col">
 			<SubchatToolbar onHidePanel={onHidePanel} />
