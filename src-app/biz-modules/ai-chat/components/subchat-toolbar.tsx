@@ -1,4 +1,4 @@
-import { IconButton, PanelCloseSvg } from '@ds/release'
+import { IconButton, PanelCloseSvg, useUiViewport } from '@ds/release'
 import { StickyToolbar } from './sticky-toolbar'
 
 interface Props extends ReactProps {
@@ -6,6 +6,7 @@ interface Props extends ReactProps {
 }
 
 export const SubchatToolbar = (props: Props) => {
+	const { isViewportMaxLG } = useUiViewport()
 	const { children, onHidePanel } = props
 
 	return (
@@ -13,7 +14,7 @@ export const SubchatToolbar = (props: Props) => {
 			<div className="flex h-button-h-md items-center gap-xs-2 pt-px text-size-sm">
 				{children}
 
-				<div className="ml-auto">
+				<div className={cx('ml-auto', isViewportMaxLG && 'hidden')}>
 					<IconButton tooltip={t('core.action.hidePanel')} size="sm" onClick={onHidePanel}>
 						<PanelCloseSvg className="h-xs-7" />
 					</IconButton>
