@@ -69,7 +69,7 @@ export const SubchatView = () => {
 	)
 
 	return (
-		<div className="flex h-full flex-col py-xs-1">
+		<div className="flex h-full flex-col">
 			<div
 				ref={containerRef}
 				className="ds-scrollable flex flex-1 flex-col overflow-y-scroll !pb-lg-1 lg:!pb-lg-3"
