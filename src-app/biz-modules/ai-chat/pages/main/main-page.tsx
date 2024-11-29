@@ -20,7 +20,15 @@ export const AiChatMainPage = () => {
 		}
 	}, [isViewportMaxLG])
 
-	const slotPage = useMemo(() => <ChatView onTogglePanel={() => setShowsPanel((value: boolean) => !value)} />, [])
+	const slotPage = useMemo(
+		() => (
+			<ChatView
+				onShowPanel={() => setShowsPanel(true)}
+				onTogglePanel={() => setShowsPanel((value: boolean) => !value)}
+			/>
+		),
+		[]
+	)
 	const slotPanel = useMemo(
 		() => <PanelContent onShowPanel={() => setShowsPanel(true)} onHidePanel={() => setShowsPanel(false)} />,
 		[]
