@@ -5,12 +5,18 @@ import { UIEvent, useEffect, useMemo, useState } from 'react'
 import { useNavigate, useParams, useSearchParams } from 'react-router-dom'
 import { Agent, Message } from '../../api'
 import { MessageItem } from '../../components/items/message-item'
-import { NewMessageToolbar } from '../../components/new-message-toolbar'
+import { NewMessageBox } from '../../components/new-message-box'
 import { StickyToolbar } from '../../components/sticky-toolbar'
-import { useScrollable } from '../../hooks/scrollable'
+import { useScrollable } from '../../hooks/use-scrollable'
 import { useAiChat, useAiChatAgents } from '../../state'
 
-export const ChatView = () => {
+interface Props {
+	onShowPanel(): void
+	onTogglePanel(): void
+}
+
+export const ChatView = (props: Props) => {
+	const { onShowPanel, onTogglePanel } = props
 	const {
 		activeChat,
 		allChatsLoading,
@@ -35,13 +41,13 @@ export const ChatView = () => {
 	const chatId = parseInt(chatIdStr || '')
 	const subchatId = parseInt(String(searchParams.get('subchat')))
 
-	const widthClass = 'mx-auto w-full max-w-xxl-2'
+	const widthClass = 'mx-auto w-full max-w-xxl-3'
 
 	const calcH1LineHeight = $lineHeight['sm']
-	const calcH1Padding1 = $spacing['xs-3']
-	const calcH1Padding2 = $spacing['xs-3']
+	const calcH1PY1 = $spacing['xs-2']
+	const calcH1PY2 = $spacing['xs-3']
 	const calcH1FontSize = `calc(2 * ${$fontSize['xl']} + ${$fontSize['xs']})`
-	const calcH1Height = `calc(${$lineHeight['sm']} * ${calcH1FontSize} + ${calcH1Padding1} + ${calcH1Padding2})`
+	const calcH1Height = `calc(${$lineHeight['sm']} * ${calcH1FontSize} + ${calcH1PY1} + ${calcH1PY2})`
 
 	const onPostMessage = (text: string, agentId: number) => {
 		setSentText(text)
@@ -97,7 +103,8 @@ export const ChatView = () => {
 						message={message}
 						agent={allAgentsForChat.find((agent: Agent) => agent.id === message.agentId)}
 						subchatId={subchatId}
-						onRetry={onRetryMessage}
+						onClickRetry={onRetryMessage}
+						onClickSubchat={() => (message.id === subchatId ? onTogglePanel() : onShowPanel())}
 					/>
 				))}
 			</ul>
@@ -106,20 +113,28 @@ export const ChatView = () => {
 	)
 
 	return (
-		<div className="relative flex h-full w-full flex-1 flex-col py-xs-1">
-			{activeChat || chatId ? (
-				<div ref={containerRef} className="flex-1 overflow-y-auto pb-sm-5" onScroll={onScroll}>
+		<div className="relative flex h-full w-full min-w-0 flex-1 flex-col">
+			<div ref={containerRef} className="ds-scrollable flex-1 !pb-lg-1 lg:!pb-lg-3" onScroll={onScroll}>
+				{activeChat || chatId ? (
 					<div className={cx(widthClass, chatLoading === 'full' && 'h-full', 'flex flex-col pt-sm-0')}>
 						{/* TOOLBAR */}
-						<StickyToolbar style={{ minHeight: calcH1Height, lineHeight: calcH1LineHeight }}>
+						<StickyToolbar style={{ minHeight: calcH1Height, lineHeight: calcH1LineHeight }} stretched>
 							{(isSticky: boolean) => (
-								<h1 className="mx-xs-5 px-xs-5 pt-xs-0 lg:mx-md-0" style={{ paddingBottom: calcH1Padding2 }}>
-									<div className={cx('text-size-xl font-weight-md', isSticky ? 'line-clamp-1' : 'line-clamp-2')}>
+								<h1
+									className="px-a11y-padding lg:mx-md-0"
+									style={{ paddingTop: calcH1PY1, paddingBottom: calcH1PY2 }}
+								>
+									<div
+										className={cx(
+											'pl-xs-1 text-size-xl font-weight-md',
+											isSticky ? 'line-clamp-1' : 'line-clamp-2'
+										)}
+									>
 										{activeChat?.title}
 									</div>
 
 									{Boolean(chatPagination.count) && (
-										<div className="text-size-xs text-color-text-subtle" style={{ marginTop: calcH1Padding1 }}>
+										<div className="pl-xs-1 text-size-xs text-color-text-subtle" style={{ marginTop: calcH1PY2 }}>
 											{t('aiChat.label.xMessages', { count: chatPagination.count })}
 										</div>
 									)}
@@ -143,20 +158,24 @@ export const ChatView = () => {
 							</div>
 						)}
 					</div>
-				</div>
-			) : (
-				<div className="flex-center flex-1 flex-col overflow-y-auto">
-					<h1 className="mt-xs-4 text-size-xl font-weight-xs text-color-text-subtle">Start a new conversation</h1>
-				</div>
-			)}
+				) : (
+					<h1 className="flex-center h-full flex-1 flex-col text-size-xl font-weight-xs text-color-text-subtle">
+						{t('aiChat.action.startNewChat')}
+					</h1>
+				)}
+			</div>
 
 			{/* NEW MESSAGE FIELD */}
-			<div className={cx('mt-xs-1 px-xs-7 pb-xs-5 lg:px-md-0', widthClass)}>
-				<NewMessageToolbar
-					listLoading={allChatsLoading ? 'update' : chatLoading}
-					isChatView
-					onPostMessage={onPostMessage}
-				/>
+			<div className="mx-a11y-scrollbar">
+				<div className={cx('lg:px-md-0', widthClass)}>
+					<div className="relative">
+						<NewMessageBox
+							listLoading={allChatsLoading ? 'update' : chatLoading}
+							isChatView
+							onPostMessage={onPostMessage}
+						/>
+					</div>
+				</div>
 			</div>
 		</div>
 	)

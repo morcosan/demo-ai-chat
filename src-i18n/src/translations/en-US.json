@@ -5,17 +5,20 @@
 			"backToHome": "Back to homepage",
 			"changeLanguage": "Change language",
 			"close": "Close",
+			"copy": "Copy",
 			"delete": "Delete",
 			"deselectAll": "Deselect all",
 			"goToUrl": "Go to {url}",
+			"hidePanel": "Hide panel",
 			"openMenu": "Open menu",
-			"copy": "Copy",
 			"rename": "Rename",
+			"resizePanel": "Resize panel",
 			"retry": "Retry",
 			"saveChanges": "Save changes",
 			"search": "Search",
 			"searchMore": "Show more results",
 			"selectAll": "Select all",
+			"showPanel": "Show panel",
 			"signOut": "Sign out"
 		},
 		"error": {
@@ -89,11 +92,12 @@
 			"showMoreAgents": "Show more agents",
 			"showMoreChats": "Show more chats",
 			"showSubchats": "Show subchats ({count})",
+			"startNewChat": "Start a new conversation",
 			"startSearching_one": "Type at least {count} character",
 			"startSearching_other": "Type at least {count} characters"
 		},
 		"description": {
-			"geminiNano": "Mini GPT for Google Chrome",
+			"chromeGPT": "Mini GPT for Google Chrome",
 			"loremIpsumGPT": "Most intelligent model",
 			"rammusGPT": "Best emotional support"
 		},
@@ -143,8 +147,8 @@
 		"warning": {
 			"deletingAgent": "This agent will be permanently deleted",
 			"deletingChats": "These chats will be permanently deleted",
-			"geminiGptInsideChrome": "This GPT requires these settings to be enabled:",
-			"geminiGptOutsideChrome": "This GPT is available only in Google Chrome browser",
+			"chromeGptInsideChrome": "This GPT requires these settings to be enabled:",
+			"chromeGptOutsideChrome": "This GPT is available only in Google Chrome browser",
 			"invalidGpt": "Invalid GPT"
 		}
 	},

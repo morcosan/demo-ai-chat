@@ -1,15 +1,19 @@
 import { LoadingText } from '@app/library/release'
 import { Button } from '@ds/release'
-import DOMPurify from 'dompurify'
 import { debounce } from 'lodash'
-import { marked } from 'marked'
 import { UIEvent, useMemo } from 'react'
 import { Subchat } from '../../api'
-import { StickyToolbar } from '../../components/sticky-toolbar'
 import { SubchatIcon } from '../../components/subchat-icon'
+import { SubchatToolbar } from '../../components/subchat-toolbar'
 import { useAiChat } from '../../state'
+import { getTextFromMarkdown } from '../../utils/markdown'
 
-export const SubchatsView = () => {
+interface Props {
+	onHidePanel(): void
+}
+
+export const SubchatsView = (props: Props) => {
+	const { onHidePanel } = props
 	const { allSubchats, allSubchatsLoading, allSubchatsPagination, loadMoreSubchats } = useAiChat()
 
 	const onScroll = debounce((event: UIEvent) => {
@@ -18,26 +22,19 @@ export const SubchatsView = () => {
 		isScrollEnd && loadMoreSubchats()
 	}, 300)
 
-	const htmlParser = document.createElement('div')
-
-	const parseMarkdown = (text: string) => {
-		htmlParser.innerHTML = DOMPurify.sanitize(marked.parse(text, { async: false }))
-		return htmlParser.textContent
-	}
-
 	const slotSubchats = useMemo(
 		() => (
-			<ul>
+			<ul className="pt-a11y-padding">
 				{allSubchats.map((subchat: Subchat) => (
 					<li key={subchat.id}>
 						<Button
 							linkHref={`/chat/${subchat.chatId}?subchat=${subchat.id}`}
 							variant="item-text-default"
-							size="lg"
+							size="md"
 							className="block"
 						>
 							<SubchatIcon count={subchat.size} className="mr-xs-4 min-w-sm-3" />
-							<span className="line-clamp-1">{parseMarkdown(subchat.text)}</span>
+							<span className="line-clamp-1 text-size-sm">{getTextFromMarkdown(subchat.text)}</span>
 						</Button>
 					</li>
 				))}
@@ -47,14 +44,14 @@ export const SubchatsView = () => {
 	)
 
 	return (
-		<div className="h-full py-xs-1">
-			<div className="h-full overflow-y-scroll pb-xs-9 pl-scrollbar-w pr-a11y-padding" onScroll={onScroll}>
+		<div className="h-full">
+			<div className="ds-scrollable h-full pb-xs-9" onScroll={onScroll}>
 				{/* TOOLBAR */}
-				<StickyToolbar stretched permanent>
-					<div className="flex h-button-h-md items-center px-xs-6 text-size-sm leading-1">
+				<SubchatToolbar onHidePanel={onHidePanel}>
+					<span className="pl-xs-6">
 						{t('aiChat.label.subchats')} ({allSubchatsPagination.count})
-					</div>
-				</StickyToolbar>
+					</span>
+				</SubchatToolbar>
 
 				{slotSubchats}
 

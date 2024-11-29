@@ -2,7 +2,7 @@
 
 import { useUiTheme } from '@ds/release'
 import { CSS__ABSOLUTE_OVERLAY, useDefaults } from '@utils/release'
-import { useClickable } from '../../_shared/clickable'
+import { useClickable } from '../../_shared/use-clickable'
 import { IconButtonProps, IconButtonVariant } from '../_types'
 
 type Variant = IconButtonVariant | undefined

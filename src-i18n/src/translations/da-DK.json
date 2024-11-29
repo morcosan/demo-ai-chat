@@ -5,21 +5,24 @@
 			"backToHome": "Tilbage til forsiden",
 			"changeLanguage": "Skift sprog",
 			"close": "Luk",
+			"copy": "Kopiér",
 			"delete": "Slet",
 			"deselectAll": "Fravælg alle",
 			"goToUrl": "Gå til {url}",
+			"hidePanel": "Skjul panel",
 			"openMenu": "Åbn menu",
-			"copy": "Kopiér",
 			"rename": "Omdøb",
+			"resizePanel": "Tilpas panelstørrelse",
 			"retry": "Prøv igen",
 			"saveChanges": "Gem ændringer",
 			"search": "Søg",
 			"searchMore": "Vis flere resultater",
 			"selectAll": "Vælg alle",
+			"showPanel": "Vis panel",
 			"signOut": "Log ud"
 		},
 		"error": {
-			"noChanges": "Ingen ændringer",
+			"noChanges": "Der er ingen ændringer",
 			"nothingFound": "Intet fundet for \"{search}\"",
 			"unsent": "Ikke sendt"
 		},
@@ -32,10 +35,10 @@
 			"darkTheme": "Mørk",
 			"default": "Standard",
 			"description": "Beskrivelse",
-			"designSystem": "Designsystem",
+			"designSystem": "Design System",
 			"errors": "Fejl",
 			"europe": "Europa",
-			"githubRepo": "GitHub Depot",
+			"githubRepo": "GitHub Repo",
 			"language": "Sprog",
 			"levelHigh": "Høj",
 			"levelLow": "Lav",
@@ -47,7 +50,7 @@
 			"navigationBar": "Navigationslinje",
 			"navigationMenu": "Navigationsmenu",
 			"optionalField": "(Valgfri)",
-			"quickSettings": "Hurtigindstillinger",
+			"quickSettings": "Hurtige indstillinger",
 			"requiredField": "(Påkrævet)",
 			"settings": "Indstillinger",
 			"uiLibrary": "UI Bibliotek",
@@ -67,8 +70,8 @@
 	},
 	"aiChat": {
 		"action": {
-			"backToSubchats": "Tilbage til underchat",
-			"configureAgent": "Konfigurer agent",
+			"backToSubchats": "Tilbage til subchats",
+			"configureAgent": "Konfigurér agent",
 			"confirmDeleteAgent": "Bekræft sletning af agent",
 			"confirmDeleteChats": "Bekræft sletning af chats",
 			"confirmRenameChat": "Bekræft omdøbning af chat",
@@ -78,24 +81,26 @@
 			"deleteAgent": "Slet agent",
 			"deleteSelectedChats": "Slet valgte chats",
 			"deselectChat": "Fravælg chat",
-			"manageAgents": "Administrer agenter",
-			"manageChats": "Administrer chats",
+			"manageAgents": "Administrér agenter",
+			"manageChats": "Administrér chats",
 			"openChat": "Åbn chat",
-			"openSubchat_other": "Åbn underchat ({count} beskeder)",
-			"openSubchat_zero": "Opret underchat",
+			"openSubchat_zero": "Opret subchat",
+			"openSubchat_one": "Åbn subchat ({count} besked)",
+			"openSubchat_other": "Åbn subchat ({count} beskeder)",
 			"searchChats": "Søg i chats",
 			"selectChat": "Vælg chat",
 			"sendMessage": "Send besked",
 			"showMoreAgents": "Vis flere agenter",
 			"showMoreChats": "Vis flere chats",
-			"showSubchats": "Vis underchats ({count})",
+			"showSubchats": "Vis subchats ({count})",
+			"startNewChat": "Start ny samtale",
 			"startSearching_one": "Skriv mindst {count} tegn",
 			"startSearching_other": "Skriv mindst {count} tegn"
 		},
 		"description": {
-			"geminiNano": "Mini GPT til Google Chrome",
+			"chromeGPT": "Mini GPT til Google Chrome",
 			"loremIpsumGPT": "Den mest intelligente model",
-			"rammusGPT": "Bedste følelsesmæssige støtte"
+			"rammusGPT": "Bedste emotionelle støtte"
 		},
 		"error": {
 			"agentAvatar": "Du skal tilføje en avatar til agenten",
@@ -105,7 +110,7 @@
 		},
 		"label": {
 			"agents": "Agenter",
-			"chatTitle": "Chattitel",
+			"chatTitle": "Chat titel",
 			"chats": "Chats",
 			"creativityLevel": "Kreativitetsniveau",
 			"customInstructions": "Tilpassede instruktioner",
@@ -114,21 +119,21 @@
 			"newChat": "Ny chat",
 			"newMessage": "Ny besked",
 			"noChats": "Ingen chats",
-			"noSubchats": "Ingen underchats",
+			"noSubchats": "Ingen subchats",
 			"selectedAgent": "Valgt agent",
 			"selectedValue": "Valgt værdi",
-			"subchats": "Underchats",
+			"subchats": "Subchats",
 			"xMessages_one": "1 besked",
 			"xMessages_other": "{count} beskeder",
+			"xSearchResults_zero": "Ingen søgeresultater",
 			"xSearchResults_one": "{count} søgeresultat",
 			"xSearchResults_other": "{count} søgeresultater",
-			"xSearchResults_zero": "Ingen søgeresultater",
 			"xSelectedMessages_one": "1 besked valgt",
 			"xSelectedMessages_other": "{count} beskeder valgt"
 		},
 		"placeholder": {
 			"newMessage": "Tal med {name}...",
-			"rename": "Generér nyt navn automatisk..."
+			"rename": "Generér automatisk nyt navn..."
 		},
 		"state": {
 			"loadingAgents": "Indlæser agenter...",
@@ -136,22 +141,22 @@
 			"loadingGPTs": "Indlæser GPTs...",
 			"loadingMessages": "Indlæser beskeder...",
 			"loadingPreviousMessages": "Indlæser tidligere beskeder...",
-			"loadingSubchats": "Indlæser underchats...",
+			"loadingSubchats": "Indlæser subchats...",
 			"renamingChat": "Omdøber chat...",
 			"thinking": "Tænker..."
 		},
 		"warning": {
 			"deletingAgent": "Denne agent vil blive slettet permanent",
 			"deletingChats": "Disse chats vil blive slettet permanent",
-			"geminiGptInsideChrome": "Denne GPT kræver at disse indstillinger er aktiveret:",
-			"geminiGptOutsideChrome": "Denne GPT er kun tilgængelig i Google Chrome browser",
+			"chromeGptInsideChrome": "Denne GPT kræver at følgende indstillinger er aktiveret:",
+			"chromeGptOutsideChrome": "Denne GPT er kun tilgængelig i Google Chrome browser",
 			"invalidGpt": "Ugyldig GPT"
 		}
 	},
 	"userSettings": {
 		"action": {
-			"manageAccount": "Administrer konto",
-			"manageBilling": "Administrer fakturering"
+			"manageAccount": "Administrér konto",
+			"manageBilling": "Administrér fakturering"
 		},
 		"error": {
 			"address": "Du skal tilføje adressen",

@@ -4,7 +4,7 @@ import { randomFromArray, randomTrue } from '@utils/release'
 const MAIN_RESPONSE = 'OK.'
 const OTHER_RESPONSES: string[] = ['Right.', 'Alright.', 'Yeah.', 'Yeh.', 'Yep.', 'Mhm.']
 
-export const RammusAPI: GptAPI = {
+export const RammusGPT: GptAPI = {
 	isAvailable: async () => true,
 
 	async getResponse(): Promise<string> {

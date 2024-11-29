@@ -15,6 +15,7 @@ import {
 	SubchatsApiData,
 	SubchatsApiQuery,
 } from '@app/api'
+import { getIntByViewport } from '@utils/release'
 import { mapDtoToAgent, mapDtoToChat, mapDtoToGPT, mapDtoToMessage, mapDtoToSubchat } from './_mappers'
 import { AgentListing, ChatListing, GptListing, MessageListing, SubchatListing } from './_types'
 
@@ -40,7 +41,7 @@ export const API = {
 		const [agentIds, page, search, everywhere] = args
 		const query: AgentsApiQuery = {
 			agentIds: (agentIds || []).join(','),
-			count: 20,
+			count: getIntByViewport([20, 30, 40, 60]),
 			page: page || 1,
 			search,
 			everywhere,
@@ -86,7 +87,7 @@ export const API = {
 	async getChats(chatIds?: number[], page?: number, search?: string): Promise<ChatListing> {
 		const query: ChatsApiQuery = {
 			chatIds: (chatIds || []).join(','),
-			count: 20,
+			count: getIntByViewport([20, 30, 40, 60]),
 			page: page || 1,
 			search,
 		}
@@ -132,7 +133,7 @@ export const API = {
 
 	async getSubchats(chatId?: number, subchatIds?: number[], page?: number): Promise<SubchatListing> {
 		const query: SubchatsApiQuery = {
-			count: 20,
+			count: getIntByViewport([30, 40, 50, 70]),
 			page: page || 1,
 			subchatIds: (subchatIds || []).join(','),
 			chatId,
@@ -150,7 +151,7 @@ export const API = {
 		}
 
 		const query: MessagesApiQuery = {
-			count: 20,
+			count: getIntByViewport([15, 25, 35, 50]),
 			page: page || 1,
 			chatId,
 			subchatId,

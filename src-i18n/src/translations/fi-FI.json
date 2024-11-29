@@ -5,17 +5,20 @@
 			"backToHome": "Takaisin etusivulle",
 			"changeLanguage": "Vaihda kieli",
 			"close": "Sulje",
+			"copy": "Kopioi",
 			"delete": "Poista",
 			"deselectAll": "Poista kaikki valinnat",
-			"goToUrl": "Siirry osoitteeseen {url}",
+			"goToUrl": "Siirry {url}",
+			"hidePanel": "Piilota paneeli",
 			"openMenu": "Avaa valikko",
-			"copy": "Kopioi",
 			"rename": "Nimeä uudelleen",
+			"resizePanel": "Muuta paneelin kokoa",
 			"retry": "Yritä uudelleen",
 			"saveChanges": "Tallenna muutokset",
 			"search": "Hae",
 			"searchMore": "Näytä lisää tuloksia",
 			"selectAll": "Valitse kaikki",
+			"showPanel": "Näytä paneeli",
 			"signOut": "Kirjaudu ulos"
 		},
 		"error": {
@@ -26,7 +29,7 @@
 		"label": {
 			"apiDocs": "API-dokumentaatio",
 			"asia": "Aasia",
-			"avatar": "Avatar",
+			"avatar": "Profiilikuva",
 			"copied": "Kopioitu",
 			"custom": "Mukautettu",
 			"darkTheme": "Tumma",
@@ -47,17 +50,16 @@
 			"navigationBar": "Navigointipalkki",
 			"navigationMenu": "Navigointivalikko",
 			"optionalField": "(Valinnainen)",
-			"quickSettings": "Pika-asetukset",
 			"requiredField": "(Pakollinen)",
 			"settings": "Asetukset",
-			"uiLibrary": "UI-kirjasto",
-			"uiTheme": "UI-teema"
+			"uiLibrary": "Käyttöliittymäkirjasto",
+			"uiTheme": "Käyttöliittymän teema"
 		},
 		"placeholder": {
 			"search": "Hae..."
 		},
 		"state": {
-			"dataSaved": "Tietosi on tallennettu",
+			"dataSaved": "Tiedot on tallennettu",
 			"deleting": "Poistetaan...",
 			"loading": "Ladataan...",
 			"searching": "Haetaan...",
@@ -89,19 +91,19 @@
 			"showMoreAgents": "Näytä lisää agentteja",
 			"showMoreChats": "Näytä lisää keskusteluja",
 			"showSubchats": "Näytä alikeskustelut ({count})",
-			"startSearching_one": "Kirjoita vähintään {count} merkki",
+			"startNewChat": "Aloita uusi keskustelu",
 			"startSearching_other": "Kirjoita vähintään {count} merkkiä"
 		},
 		"description": {
-			"geminiNano": "Mini GPT Google Chromelle",
+			"chromeGPT": "Mini GPT Google Chromelle",
 			"loremIpsumGPT": "Älykkäin malli",
 			"rammusGPT": "Paras emotionaalinen tuki"
 		},
 		"error": {
-			"agentAvatar": "Sinun täytyy lisätä avatar agentille",
+			"agentAvatar": "Sinun täytyy lisätä profiilikuva agentille",
 			"agentName": "Sinun täytyy lisätä nimi agentille",
 			"emptyMessage": "Viestisi on tyhjä",
-			"failedMessage": "Viestisi toimittamisessa oli ongelma"
+			"failedMessage": "Viestin toimittamisessa oli ongelma"
 		},
 		"label": {
 			"agents": "Agentit",
@@ -143,8 +145,8 @@
 		"warning": {
 			"deletingAgent": "Tämä agentti poistetaan pysyvästi",
 			"deletingChats": "Nämä keskustelut poistetaan pysyvästi",
-			"geminiGptInsideChrome": "Tämä GPT vaatii näiden asetusten aktivoinnin:",
-			"geminiGptOutsideChrome": "Tämä GPT on saatavilla vain Google Chrome -selaimessa",
+			"chromeGptInsideChrome": "Tämä GPT vaatii seuraavien asetusten käyttöönoton:",
+			"chromeGptOutsideChrome": "Tämä GPT on saatavilla vain Google Chrome -selaimessa",
 			"invalidGpt": "Virheellinen GPT"
 		}
 	},
@@ -155,7 +157,7 @@
 		},
 		"error": {
 			"address": "Sinun täytyy lisätä osoite",
-			"avatar": "Sinun täytyy lisätä avatarisi",
+			"avatar": "Sinun täytyy lisätä profiilikuvasi",
 			"city": "Sinun täytyy lisätä kaupunki",
 			"country": "Sinun täytyy lisätä maa",
 			"email": "Sinun täytyy lisätä sähköpostiosoitteesi",
@@ -175,7 +177,7 @@
 			"postalCode": "Postinumero",
 			"private": "Yksityinen",
 			"public": "Julkinen",
-			"vatNumber": "Y-tunnus"
+			"vatNumber": "ALV-numero"
 		}
 	}
 }

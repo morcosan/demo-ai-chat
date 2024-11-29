@@ -2,20 +2,23 @@
 	"core": {
 		"action": {
 			"back": "Indietro",
-			"backToHome": "Torna alla home",
+			"backToHome": "Torna alla homepage",
 			"changeLanguage": "Cambia lingua",
 			"close": "Chiudi",
+			"copy": "Copia",
 			"delete": "Elimina",
 			"deselectAll": "Deseleziona tutto",
 			"goToUrl": "Vai a {url}",
+			"hidePanel": "Nascondi pannello",
 			"openMenu": "Apri menu",
-			"copy": "Copia",
 			"rename": "Rinomina",
+			"resizePanel": "Ridimensiona pannello",
 			"retry": "Riprova",
 			"saveChanges": "Salva modifiche",
 			"search": "Cerca",
 			"searchMore": "Mostra altri risultati",
 			"selectAll": "Seleziona tutto",
+			"showPanel": "Mostra pannello",
 			"signOut": "Esci"
 		},
 		"error": {
@@ -24,7 +27,7 @@
 			"unsent": "Non inviato"
 		},
 		"label": {
-			"apiDocs": "API Docs",
+			"apiDocs": "Documentazione API",
 			"asia": "Asia",
 			"avatar": "Avatar",
 			"copied": "Copiato",
@@ -32,10 +35,10 @@
 			"darkTheme": "Scuro",
 			"default": "Predefinito",
 			"description": "Descrizione",
-			"designSystem": "Design System",
+			"designSystem": "Sistema di Design",
 			"errors": "Errori",
 			"europe": "Europa",
-			"githubRepo": "GitHub Repo",
+			"githubRepo": "Repository GitHub",
 			"language": "Lingua",
 			"levelHigh": "Alto",
 			"levelLow": "Basso",
@@ -47,6 +50,7 @@
 			"navigationBar": "Barra di navigazione",
 			"navigationMenu": "Menu di navigazione",
 			"optionalField": "(Opzionale)",
+			"quickSettings": "Impostazioni rapide",
 			"requiredField": "(Obbligatorio)",
 			"settings": "Impostazioni",
 			"uiLibrary": "Libreria UI",
@@ -58,15 +62,15 @@
 		"state": {
 			"dataSaved": "I tuoi dati sono stati salvati",
 			"deleting": "Eliminazione in corso...",
-			"loading": "Caricamento...",
+			"loading": "Caricamento in corso...",
 			"searching": "Ricerca in corso...",
 			"sending": "Invio in corso...",
-			"updating": "Aggiornamento..."
+			"updating": "Aggiornamento in corso..."
 		}
 	},
 	"aiChat": {
 		"action": {
-			"backToSubchats": "Torna alle subchat",
+			"backToSubchats": "Torna alle sottochat",
 			"configureAgent": "Configura agente",
 			"confirmDeleteAgent": "Conferma eliminazione agente",
 			"confirmDeleteChats": "Conferma eliminazione chat",
@@ -80,19 +84,21 @@
 			"manageAgents": "Gestisci agenti",
 			"manageChats": "Gestisci chat",
 			"openChat": "Apri chat",
-			"openSubchat_zero": "Crea subchat",
-			"openSubchat_other": "Apri subchat ({count} messaggi)",
+			"openSubchat_zero": "Crea sottochat",
+			"openSubchat_one": "Apri sottochat ({count} messaggio)",
+			"openSubchat_other": "Apri sottochat ({count} messaggi)",
 			"searchChats": "Cerca chat",
 			"selectChat": "Seleziona chat",
 			"sendMessage": "Invia messaggio",
 			"showMoreAgents": "Mostra altri agenti",
 			"showMoreChats": "Mostra altre chat",
-			"showSubchats": "Mostra subchat ({count})",
-			"startSearching_one": "Digita {count} carattere",
-			"startSearching_other": "Digita {count} caratteri"
+			"showSubchats": "Mostra sottochat ({count})",
+			"startNewChat": "Inizia una nuova conversazione",
+			"startSearching_one": "Digita almeno {count} carattere",
+			"startSearching_other": "Digita almeno {count} caratteri"
 		},
 		"description": {
-			"geminiNano": "Mini GPT per Google Chrome",
+			"chromeGPT": "Mini GPT per Google Chrome",
 			"loremIpsumGPT": "Modello più intelligente",
 			"rammusGPT": "Miglior supporto emotivo"
 		},
@@ -113,10 +119,10 @@
 			"newChat": "Nuova chat",
 			"newMessage": "Nuovo messaggio",
 			"noChats": "Nessuna chat",
-			"noSubchats": "Nessuna subchat",
+			"noSubchats": "Nessuna sottochat",
 			"selectedAgent": "Agente selezionato",
 			"selectedValue": "Valore selezionato",
-			"subchats": "Subchat",
+			"subchats": "Sottochat",
 			"xMessages_one": "1 messaggio",
 			"xMessages_other": "{count} messaggi",
 			"xSearchResults_zero": "Nessun risultato",
@@ -130,20 +136,20 @@
 			"rename": "Genera automaticamente un nuovo nome..."
 		},
 		"state": {
-			"loadingAgents": "Caricamento agenti...",
-			"loadingChats": "Caricamento chat...",
-			"loadingGPTs": "Caricamento GPT...",
-			"loadingMessages": "Caricamento messaggi...",
-			"loadingPreviousMessages": "Caricamento messaggi precedenti...",
-			"loadingSubchats": "Caricamento subchat...",
-			"renamingChat": "Rinomina chat...",
+			"loadingAgents": "Caricamento agenti in corso...",
+			"loadingChats": "Caricamento chat in corso...",
+			"loadingGPTs": "Caricamento GPT in corso...",
+			"loadingMessages": "Caricamento messaggi in corso...",
+			"loadingPreviousMessages": "Caricamento messaggi precedenti in corso...",
+			"loadingSubchats": "Caricamento sottochat in corso...",
+			"renamingChat": "Rinomina chat in corso...",
 			"thinking": "Pensando..."
 		},
 		"warning": {
 			"deletingAgent": "Questo agente verrà eliminato permanentemente",
 			"deletingChats": "Queste chat verranno eliminate permanentemente",
-			"geminiGptInsideChrome": "Questo GPT richiede che le seguenti impostazioni siano abilitate:",
-			"geminiGptOutsideChrome": "Questo GPT è disponibile solo nel browser Google Chrome",
+			"chromeGptInsideChrome": "Questo GPT richiede che le seguenti impostazioni siano abilitate:",
+			"chromeGptOutsideChrome": "Questo GPT è disponibile solo nel browser Google Chrome",
 			"invalidGpt": "GPT non valido"
 		}
 	},
@@ -174,7 +180,7 @@
 			"postalCode": "Codice postale",
 			"private": "Privato",
 			"public": "Pubblico",
-			"vatNumber": "P.IVA"
+			"vatNumber": "Partita IVA"
 		}
 	}
 }

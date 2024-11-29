@@ -1,0 +1,11 @@
+export enum ViewportSize {
+	WIDTH_4K = 3840,
+	WIDTH_2K = 2560,
+	WIDTH_FHD = 1920,
+	WIDTH_HD = 1280,
+
+	HEIGHT_4K = 2160,
+	HEIGHT_2K = 1440,
+	HEIGHT_FHD = 1080,
+	HEIGHT_HD = 720,
+}

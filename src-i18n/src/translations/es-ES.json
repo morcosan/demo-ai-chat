@@ -2,20 +2,23 @@
 	"core": {
 		"action": {
 			"back": "Atrás",
-			"backToHome": "Volver al inicio",
+			"backToHome": "Volver a la página principal",
 			"changeLanguage": "Cambiar idioma",
 			"close": "Cerrar",
+			"copy": "Copiar",
 			"delete": "Eliminar",
 			"deselectAll": "Deseleccionar todo",
 			"goToUrl": "Ir a {url}",
+			"hidePanel": "Ocultar panel",
 			"openMenu": "Abrir menú",
-			"copy": "Copiar",
 			"rename": "Renombrar",
+			"resizePanel": "Redimensionar panel",
 			"retry": "Reintentar",
 			"saveChanges": "Guardar cambios",
 			"search": "Buscar",
 			"searchMore": "Mostrar más resultados",
 			"selectAll": "Seleccionar todo",
+			"showPanel": "Mostrar panel",
 			"signOut": "Cerrar sesión"
 		},
 		"error": {
@@ -72,8 +75,8 @@
 			"confirmDeleteAgent": "Confirmar eliminación del agente",
 			"confirmDeleteChats": "Confirmar eliminación de chats",
 			"confirmRenameChat": "Confirmar renombrar chat",
-			"copyCode": "Copiar código",
-			"copyMessage": "Copiar mensaje",
+			"copyCode": "Copiar el código",
+			"copyMessage": "Copiar el mensaje",
 			"createAgent": "Crear agente",
 			"deleteAgent": "Eliminar agente",
 			"deleteSelectedChats": "Eliminar chats seleccionados",
@@ -81,20 +84,21 @@
 			"manageAgents": "Gestionar agentes",
 			"manageChats": "Gestionar chats",
 			"openChat": "Abrir chat",
-			"openSubchat_other": "Abrir subchat ({count} mensajes)",
 			"openSubchat_zero": "Crear subchat",
+			"openSubchat_other": "Abrir subchat ({count} mensajes)",
 			"searchChats": "Buscar chats",
 			"selectChat": "Seleccionar chat",
 			"sendMessage": "Enviar mensaje",
 			"showMoreAgents": "Mostrar más agentes",
 			"showMoreChats": "Mostrar más chats",
 			"showSubchats": "Mostrar subchats ({count})",
+			"startNewChat": "Iniciar una nueva conversación",
 			"startSearching_one": "Escribe al menos {count} carácter",
 			"startSearching_other": "Escribe al menos {count} caracteres"
 		},
 		"description": {
-			"geminiNano": "Mini GPT para Google Chrome",
-			"loremIpsumGPT": "El modelo más inteligente",
+			"chromeGPT": "Mini GPT para Google Chrome",
+			"loremIpsumGPT": "Modelo más inteligente",
 			"rammusGPT": "Mejor soporte emocional"
 		},
 		"error": {
@@ -120,15 +124,15 @@
 			"subchats": "Subchats",
 			"xMessages_one": "1 mensaje",
 			"xMessages_other": "{count} mensajes",
-			"xSearchResults_one": "{count} resultado",
-			"xSearchResults_other": "{count} resultados",
-			"xSearchResults_zero": "Sin resultados",
+			"xSearchResults_zero": "Sin resultados de búsqueda",
+			"xSearchResults_one": "{count} resultado de búsqueda",
+			"xSearchResults_other": "{count} resultados de búsqueda",
 			"xSelectedMessages_one": "1 mensaje seleccionado",
 			"xSelectedMessages_other": "{count} mensajes seleccionados"
 		},
 		"placeholder": {
 			"newMessage": "Habla con {name}...",
-			"rename": "Generar nuevo nombre automáticamente..."
+			"rename": "Generar un nuevo nombre automáticamente..."
 		},
 		"state": {
 			"loadingAgents": "Cargando agentes...",
@@ -143,8 +147,8 @@
 		"warning": {
 			"deletingAgent": "Este agente será eliminado permanentemente",
 			"deletingChats": "Estos chats serán eliminados permanentemente",
-			"geminiGptInsideChrome": "Este GPT requiere activar estos ajustes:",
-			"geminiGptOutsideChrome": "Este GPT solo está disponible en el navegador Google Chrome",
+			"chromeGptInsideChrome": "Este GPT requiere que estos ajustes estén habilitados:",
+			"chromeGptOutsideChrome": "Este GPT solo está disponible en el navegador Google Chrome",
 			"invalidGpt": "GPT no válido"
 		}
 	},
@@ -158,7 +162,7 @@
 			"avatar": "Debes añadir tu avatar",
 			"city": "Debes añadir la ciudad",
 			"country": "Debes añadir el país",
-			"email": "Debes añadir tu correo electrónico",
+			"email": "Debes añadir tu dirección de correo electrónico",
 			"legalName": "Debes añadir el nombre legal",
 			"name": "Debes añadir tu nombre",
 			"postalCode": "Debes añadir el código postal"

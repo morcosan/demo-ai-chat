@@ -17,11 +17,12 @@ export const AgentItem = (props: Props) => {
 				variant={selected ? 'item-solid-secondary' : 'item-text-default'}
 				highlight={selected ? 'selected' : 'default'}
 				tooltip={agent.name}
+				size="sm"
 				className="block focus:z-1"
 				onClick={onClick}
 			>
-				<img src={agent.avatar} alt="" className="mr-xs-4 h-sm-1 w-sm-1 rounded-full" />
-				<span className="truncate">{agent.name}</span>
+				<img src={agent.avatar} alt="" className="mr-xs-4 h-xs-9 w-xs-9 rounded-full" />
+				<span className="truncate text-size-sm">{agent.name}</span>
 			</Button>
 		</li>
 	)

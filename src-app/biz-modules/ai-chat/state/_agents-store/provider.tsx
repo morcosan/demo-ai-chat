@@ -1,7 +1,7 @@
 import { uniqBy } from 'lodash'
 import { useEffect, useMemo, useState } from 'react'
 import { Agent, AgentsApiPayload, API, GPT } from '../../api'
-import { useRefreshableAgents } from '../../hooks/refreshable-agents'
+import { useRefreshableAgents } from '../../hooks/use-refreshable-agents'
 import { AgentsContext, EMPTY_AGENT, Store } from './context'
 
 const agentIdFn = (agent: Agent) => agent.id

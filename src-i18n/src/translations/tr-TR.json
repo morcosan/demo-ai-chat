@@ -5,22 +5,25 @@
 			"backToHome": "Ana sayfaya dön",
 			"changeLanguage": "Dili değiştir",
 			"close": "Kapat",
+			"copy": "Kopyala",
 			"delete": "Sil",
 			"deselectAll": "Tümünü kaldır",
 			"goToUrl": "{url} adresine git",
+			"hidePanel": "Paneli gizle",
 			"openMenu": "Menüyü aç",
-			"copy": "Kopyala",
 			"rename": "Yeniden adlandır",
+			"resizePanel": "Panel boyutunu değiştir",
 			"retry": "Tekrar dene",
 			"saveChanges": "Değişiklikleri kaydet",
 			"search": "Ara",
 			"searchMore": "Daha fazla sonuç göster",
 			"selectAll": "Tümünü seç",
+			"showPanel": "Paneli göster",
 			"signOut": "Oturumu kapat"
 		},
 		"error": {
 			"noChanges": "Değişiklik yok",
-			"nothingFound": "\"{search}\" için sonuç bulunamadı",
+			"nothingFound": "\"{search}\" için hiçbir şey bulunamadı",
 			"unsent": "Gönderilmedi"
 		},
 		"label": {
@@ -67,11 +70,11 @@
 	},
 	"aiChat": {
 		"action": {
-			"backToSubchats": "Alt sohbetlere dön",
+			"backToSubchats": "Alt sohbetlere geri dön",
 			"configureAgent": "Ajanı yapılandır",
-			"confirmDeleteAgent": "Ajan silmeyi onayla",
-			"confirmDeleteChats": "Sohbet silmeyi onayla",
-			"confirmRenameChat": "Sohbet yeniden adlandırmayı onayla",
+			"confirmDeleteAgent": "Ajanı silmeyi onayla",
+			"confirmDeleteChats": "Sohbetleri silmeyi onayla",
+			"confirmRenameChat": "Sohbeti yeniden adlandırmayı onayla",
 			"copyCode": "Kodu kopyala",
 			"copyMessage": "Mesajı kopyala",
 			"createAgent": "Ajan oluştur",
@@ -81,26 +84,27 @@
 			"manageAgents": "Ajanları yönet",
 			"manageChats": "Sohbetleri yönet",
 			"openChat": "Sohbeti aç",
+			"openSubchat_zero": "Alt sohbet oluştur",
 			"openSubchat_one": "Alt sohbeti aç ({count} mesaj)",
 			"openSubchat_other": "Alt sohbeti aç ({count} mesaj)",
-			"openSubchat_zero": "Alt sohbet oluştur",
-			"searchChats": "Sohbetleri ara",
-			"selectChat": "Sohbet seç",
+			"searchChats": "Sohbetlerde ara",
+			"selectChat": "Sohbeti seç",
 			"sendMessage": "Mesaj gönder",
 			"showMoreAgents": "Daha fazla ajan göster",
 			"showMoreChats": "Daha fazla sohbet göster",
 			"showSubchats": "Alt sohbetleri göster ({count})",
+			"startNewChat": "Yeni bir konuşma başlat",
 			"startSearching_one": "En az {count} karakter yazın",
 			"startSearching_other": "En az {count} karakter yazın"
 		},
 		"description": {
-			"geminiNano": "Google Chrome için Mini GPT",
-			"loremIpsumGPT": "En zeki model",
+			"chromeGPT": "Google Chrome için Mini GPT",
+			"loremIpsumGPT": "En akıllı model",
 			"rammusGPT": "En iyi duygusal destek"
 		},
 		"error": {
 			"agentAvatar": "Ajan için bir avatar eklemelisiniz",
-			"agentName": "Ajan için bir isim eklemelisiniz",
+			"agentName": "Ajan için bir ad eklemelisiniz",
 			"emptyMessage": "Mesajınız boş",
 			"failedMessage": "Mesajınızın iletilmesinde bir sorun oluştu"
 		},
@@ -116,15 +120,17 @@
 			"newMessage": "Yeni mesaj",
 			"noChats": "Sohbet yok",
 			"noSubchats": "Alt sohbet yok",
-			"selectedAgent": "Seçili ajan",
-			"selectedValue": "Seçili değer",
+			"selectedAgent": "Seçilen ajan",
+			"selectedValue": "Seçilen değer",
 			"subchats": "Alt sohbetler",
-			"xMessages_one": "1 mesaj",
+			"xMessages_zero": "Mesaj yok",
+			"xMessages_one": "{count} mesaj",
 			"xMessages_other": "{count} mesaj",
+			"xSearchResults_zero": "Arama sonucu yok",
 			"xSearchResults_one": "{count} arama sonucu",
 			"xSearchResults_other": "{count} arama sonucu",
-			"xSearchResults_zero": "Arama sonucu yok",
-			"xSelectedMessages_one": "1 mesaj seçildi",
+			"xSelectedMessages_zero": "Seçili mesaj yok",
+			"xSelectedMessages_one": "{count} mesaj seçildi",
 			"xSelectedMessages_other": "{count} mesaj seçildi"
 		},
 		"placeholder": {
@@ -144,8 +150,8 @@
 		"warning": {
 			"deletingAgent": "Bu ajan kalıcı olarak silinecek",
 			"deletingChats": "Bu sohbetler kalıcı olarak silinecek",
-			"geminiGptInsideChrome": "Bu GPT'nin bu ayarların etkinleştirilmesini gerektirir:",
-			"geminiGptOutsideChrome": "Bu GPT yalnızca Google Chrome tarayıcısında kullanılabilir",
+			"chromeGptInsideChrome": "Bu GPT'nin çalışması için şu ayarların etkinleştirilmesi gerekiyor:",
+			"chromeGptOutsideChrome": "Bu GPT yalnızca Google Chrome tarayıcısında kullanılabilir",
 			"invalidGpt": "Geçersiz GPT"
 		}
 	},
@@ -160,9 +166,9 @@
 			"city": "Şehir eklemelisiniz",
 			"country": "Ülke eklemelisiniz",
 			"email": "E-posta adresinizi eklemelisiniz",
-			"legalName": "Yasal adınızı eklemelisiniz",
+			"legalName": "Yasal adı eklemelisiniz",
 			"name": "Adınızı eklemelisiniz",
-			"postalCode": "Posta kodu eklemelisiniz"
+			"postalCode": "Posta kodunu eklemelisiniz"
 		},
 		"label": {
 			"account": "Hesap",

@@ -5,18 +5,21 @@
 			"backToHome": "Aftur á forsíðu",
 			"changeLanguage": "Breyta tungumáli",
 			"close": "Loka",
+			"copy": "Afrita",
 			"delete": "Eyða",
 			"deselectAll": "Afvelja allt",
 			"goToUrl": "Fara á {url}",
+			"hidePanel": "Fela spjald",
 			"openMenu": "Opna valmynd",
-			"copy": "Afrita",
 			"rename": "Endurnefna",
+			"resizePanel": "Breyta stærð spjalds",
 			"retry": "Reyna aftur",
 			"saveChanges": "Vista breytingar",
 			"search": "Leita",
 			"searchMore": "Sýna fleiri niðurstöður",
 			"selectAll": "Velja allt",
-			"signOut": "Skrá út"
+			"showPanel": "Sýna spjald",
+			"signOut": "Útskrá"
 		},
 		"error": {
 			"noChanges": "Engar breytingar",
@@ -24,7 +27,7 @@
 			"unsent": "Ósent"
 		},
 		"label": {
-			"apiDocs": "API Skjöl",
+			"apiDocs": "API skjöl",
 			"asia": "Asía",
 			"avatar": "Prófílmynd",
 			"copied": "Afritað",
@@ -35,7 +38,7 @@
 			"designSystem": "Hönnunarkerfi",
 			"errors": "Villur",
 			"europe": "Evrópa",
-			"githubRepo": "GitHub Repo",
+			"githubRepo": "GitHub geymsla",
 			"language": "Tungumál",
 			"levelHigh": "Hátt",
 			"levelLow": "Lágt",
@@ -45,12 +48,13 @@
 			"lightTheme": "Ljós",
 			"name": "Nafn",
 			"navigationBar": "Leiðarstika",
-			"navigationMenu": "Valmynd",
+			"navigationMenu": "Leiðarvalmynd",
 			"optionalField": "(Valfrjálst)",
+			"quickSettings": "Flýtistillingar",
 			"requiredField": "(Skylda)",
 			"settings": "Stillingar",
-			"uiLibrary": "UI Safn",
-			"uiTheme": "UI Þema"
+			"uiLibrary": "UI safn",
+			"uiTheme": "UI þema"
 		},
 		"placeholder": {
 			"search": "Leita..."
@@ -67,17 +71,17 @@
 	"aiChat": {
 		"action": {
 			"backToSubchats": "Til baka í undirspjall",
-			"configureAgent": "Stilla umboðsaðila",
-			"confirmDeleteAgent": "Staðfesta eyðingu umboðsaðila",
+			"configureAgent": "Stilla aðstoðarmann",
+			"confirmDeleteAgent": "Staðfesta eyðingu aðstoðarmanns",
 			"confirmDeleteChats": "Staðfesta eyðingu spjalla",
 			"confirmRenameChat": "Staðfesta endurnefningu spjalls",
-			"copyCode": "Afrita kóðann",
-			"copyMessage": "Afrita skilaboðin",
-			"createAgent": "Búa til umboðsaðila",
-			"deleteAgent": "Eyða umboðsaðila",
+			"copyCode": "Afrita kóða",
+			"copyMessage": "Afrita skilaboð",
+			"createAgent": "Búa til aðstoðarmann",
+			"deleteAgent": "Eyða aðstoðarmanni",
 			"deleteSelectedChats": "Eyða völdum spjöllum",
 			"deselectChat": "Afvelja spjall",
-			"manageAgents": "Stjórna umboðsaðilum",
+			"manageAgents": "Stjórna aðstoðarmönnum",
 			"manageChats": "Stjórna spjöllum",
 			"openChat": "Opna spjall",
 			"openSubchat_zero": "Búa til undirspjall",
@@ -86,36 +90,37 @@
 			"searchChats": "Leita í spjöllum",
 			"selectChat": "Velja spjall",
 			"sendMessage": "Senda skilaboð",
-			"showMoreAgents": "Sýna fleiri umboðsaðila",
+			"showMoreAgents": "Sýna fleiri aðstoðarmenn",
 			"showMoreChats": "Sýna fleiri spjöll",
 			"showSubchats": "Sýna undirspjöll ({count})",
-			"startSearching_one": "Sláðu inn {count} staf",
-			"startSearching_other": "Sláðu inn {count} stafi"
+			"startNewChat": "Hefja nýtt samtal",
+			"startSearching_one": "Sláðu inn að minnsta kosti {count} staf",
+			"startSearching_other": "Sláðu inn að minnsta kosti {count} stafi"
 		},
 		"description": {
-			"geminiNano": "Mini GPT fyrir Google Chrome",
-			"loremIpsumGPT": "Gáfaðasta líkanið",
-			"rammusGPT": "Besti tilfinningalegur stuðningur"
+			"chromeGPT": "Mini GPT fyrir Google Chrome",
+			"loremIpsumGPT": "Greindasta líkanið",
+			"rammusGPT": "Besti tilfinningalegi stuðningurinn"
 		},
 		"error": {
-			"agentAvatar": "Þú verður að bæta við prófílmynd fyrir umboðsaðilann",
-			"agentName": "Þú verður að bæta við nafni fyrir umboðsaðilann",
+			"agentAvatar": "Þú verður að bæta við prófílmynd fyrir aðstoðarmanninn",
+			"agentName": "Þú verður að bæta við nafni fyrir aðstoðarmanninn",
 			"emptyMessage": "Skilaboðin þín eru tóm",
 			"failedMessage": "Vandamál kom upp við að senda skilaboðin þín"
 		},
 		"label": {
-			"agents": "Umboðsaðilar",
-			"chatTitle": "Titill spjalls",
+			"agents": "Aðstoðarmenn",
+			"chatTitle": "Heiti spjalls",
 			"chats": "Spjöll",
 			"creativityLevel": "Sköpunarstig",
 			"customInstructions": "Sérsniðnar leiðbeiningar",
 			"gptModel": "GPT líkan",
-			"newAgent": "Nýr umboðsaðili",
+			"newAgent": "Nýr aðstoðarmaður",
 			"newChat": "Nýtt spjall",
 			"newMessage": "Ný skilaboð",
 			"noChats": "Engin spjöll",
 			"noSubchats": "Engin undirspjöll",
-			"selectedAgent": "Valinn umboðsaðili",
+			"selectedAgent": "Valinn aðstoðarmaður",
 			"selectedValue": "Valið gildi",
 			"subchats": "Undirspjöll",
 			"xMessages_one": "1 skilaboð",
@@ -123,7 +128,7 @@
 			"xSearchResults_zero": "Engar leitarniðurstöður",
 			"xSearchResults_one": "{count} leitarniðurstaða",
 			"xSearchResults_other": "{count} leitarniðurstöður",
-			"xSelectedMessages_one": "1 skilaboð valið",
+			"xSelectedMessages_one": "1 skilaboð valin",
 			"xSelectedMessages_other": "{count} skilaboð valin"
 		},
 		"placeholder": {
@@ -131,20 +136,20 @@
 			"rename": "Búa til nýtt nafn sjálfkrafa..."
 		},
 		"state": {
-			"loadingAgents": "Hleð umboðsaðilum...",
-			"loadingChats": "Hleð spjöllum...",
-			"loadingGPTs": "Hleð GPTs...",
-			"loadingMessages": "Hleð skilaboðum...",
-			"loadingPreviousMessages": "Hleð fyrri skilaboðum...",
-			"loadingSubchats": "Hleð undirspjöllum...",
+			"loadingAgents": "Hleð aðstoðarmenn...",
+			"loadingChats": "Hleð spjöll...",
+			"loadingGPTs": "Hleð GPT...",
+			"loadingMessages": "Hleð skilaboð...",
+			"loadingPreviousMessages": "Hleð fyrri skilaboð...",
+			"loadingSubchats": "Hleð undirspjöll...",
 			"renamingChat": "Endurnefni spjall...",
 			"thinking": "Hugsa..."
 		},
 		"warning": {
-			"deletingAgent": "Þessum umboðsaðila verður eytt varanlega",
+			"deletingAgent": "Þessum aðstoðarmanni verður eytt varanlega",
 			"deletingChats": "Þessum spjöllum verður eytt varanlega",
-			"geminiGptInsideChrome": "Þetta GPT þarf eftirfarandi stillingar virkar:",
-			"geminiGptOutsideChrome": "Þetta GPT er aðeins í boði í Google Chrome vafra",
+			"chromeGptInsideChrome": "Þetta GPT krefst þess að eftirfarandi stillingar séu virkar:",
+			"chromeGptOutsideChrome": "Þetta GPT er aðeins í boði í Google Chrome vafra",
 			"invalidGpt": "Ógilt GPT"
 		}
 	},

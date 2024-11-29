@@ -4,12 +4,17 @@ import { debounce } from 'lodash'
 import { UIEvent, useEffect, useMemo, useState } from 'react'
 import { Agent, Message } from '../../api'
 import { MessageItem } from '../../components/items/message-item'
-import { NewMessageToolbar } from '../../components/new-message-toolbar'
-import { StickyToolbar } from '../../components/sticky-toolbar'
-import { useScrollable } from '../../hooks/scrollable'
+import { NewMessageBox } from '../../components/new-message-box'
+import { SubchatToolbar } from '../../components/subchat-toolbar'
+import { useScrollable } from '../../hooks/use-scrollable'
 import { useAiChat, useAiChatAgents } from '../../state'
 
-export const SubchatView = () => {
+interface Props {
+	onHidePanel(): void
+}
+
+export const SubchatView = (props: Props) => {
+	const { onHidePanel } = props
 	const {
 		activeChat,
 		canLoadSubchatMessages,
@@ -60,7 +65,7 @@ export const SubchatView = () => {
 						message={message}
 						agent={allAgentsForChat.find((agent: Agent) => agent.id === message.agentId)}
 						isSubchat
-						onRetry={onRetryMessage}
+						onClickRetry={onRetryMessage}
 					/>
 				))}
 			</ul>
@@ -69,24 +74,20 @@ export const SubchatView = () => {
 	)
 
 	return (
-		<div className="flex h-full flex-col py-xs-1">
+		<div className="flex h-full flex-col">
 			<div
 				ref={containerRef}
-				className="flex flex-1 flex-col overflow-y-scroll pb-sm-1 pl-scrollbar-w pr-a11y-padding"
+				className="ds-scrollable flex flex-1 flex-col !pb-lg-1 lg:!pb-lg-3"
 				onScroll={onScroll}
 			>
 				{/* TOOLBAR */}
-				<StickyToolbar stretched permanent>
-					<div className="flex items-center gap-xs-2 px-xs-1 py-xs-1">
-						<IconButton linkHref={`/chat/${activeChat?.id}`} tooltip={t('aiChat.action.backToSubchats')} size="sm">
-							<ArrowBackSvg className="h-xs-5" />
-						</IconButton>
+				<SubchatToolbar onHidePanel={onHidePanel}>
+					<IconButton linkHref={`/chat/${activeChat?.id}`} tooltip={t('aiChat.action.backToSubchats')} size="sm">
+						<ArrowBackSvg className="h-xs-5" />
+					</IconButton>
 
-						<div className="pb-px text-size-sm">
-							{Boolean(subchatPagination.count) && t('aiChat.label.xMessages', { count: subchatPagination.count })}
-						</div>
-					</div>
-				</StickyToolbar>
+					{Boolean(subchatPagination.count) && t('aiChat.label.xMessages', { count: subchatPagination.count })}
+				</SubchatToolbar>
 
 				{subchatLoading === 'full' ? (
 					<LoadingText text={t('aiChat.state.loadingMessages')} className="flex-center h-full" />
@@ -105,8 +106,8 @@ export const SubchatView = () => {
 			</div>
 
 			{/* NEW MESSAGE FIELD */}
-			<div className="mx-a11y-scrollbar mb-xs-5 mt-xs-1">
-				<NewMessageToolbar listLoading={subchatLoading} onPostMessage={onPostMessage} />
+			<div className="relative mx-a11y-scrollbar">
+				<NewMessageBox listLoading={subchatLoading} onPostMessage={onPostMessage} />
 			</div>
 		</div>
 	)

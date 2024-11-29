@@ -107,7 +107,6 @@
 	--ds-color-text-subtle: var(--ds-color-grey-13);
 	--ds-color-text-placeholder: var(--ds-color-grey-11);
 	--ds-color-text-inverse: var(--ds-color-white);
-	--ds-color-text-coding: var(--ds-color-purple-7);
 	--ds-color-text-link: var(--ds-color-purple-8);
 
 	--ds-color-hover-text-default: var(--ds-color-black-glass-2);
@@ -175,7 +174,6 @@
 	--ds-color-text-subtle: var(--ds-color-grey-8);
 	--ds-color-text-placeholder: var(--ds-color-grey-11);
 	--ds-color-text-inverse: var(--ds-color-black);
-	--ds-color-text-coding: var(--ds-color-purple-2);
 	--ds-color-text-link: var(--ds-color-purple-1);
 
 	--ds-color-hover-text-default: var(--ds-color-black-glass-5);

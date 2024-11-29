@@ -5,22 +5,25 @@
 			"backToHome": "Tagasi avalehele",
 			"changeLanguage": "Muuda keelt",
 			"close": "Sulge",
+			"copy": "Kopeeri",
 			"delete": "Kustuta",
 			"deselectAll": "Tühista kõik valikud",
 			"goToUrl": "Mine {url}",
+			"hidePanel": "Peida paneel",
 			"openMenu": "Ava menüü",
-			"copy": "Kopeeri",
 			"rename": "Nimeta ümber",
+			"resizePanel": "Muuda paneeli suurust",
 			"retry": "Proovi uuesti",
 			"saveChanges": "Salvesta muudatused",
 			"search": "Otsi",
 			"searchMore": "Näita rohkem tulemusi",
 			"selectAll": "Vali kõik",
+			"showPanel": "Näita paneeli",
 			"signOut": "Logi välja"
 		},
 		"error": {
 			"noChanges": "Muudatusi pole",
-			"nothingFound": "Ei leitud midagi otsingule \"{search}\"",
+			"nothingFound": "Otsingule \"{search}\" ei leitud midagi",
 			"unsent": "Saatmata"
 		},
 		"label": {
@@ -35,7 +38,7 @@
 			"designSystem": "Disainisüsteem",
 			"errors": "Vead",
 			"europe": "Euroopa",
-			"githubRepo": "GitHub repo",
+			"githubRepo": "GitHub repositoorium",
 			"language": "Keel",
 			"levelHigh": "Kõrge",
 			"levelLow": "Madal",
@@ -47,7 +50,6 @@
 			"navigationBar": "Navigeerimisriba",
 			"navigationMenu": "Navigeerimismenüü",
 			"optionalField": "(Valikuline)",
-			"quickSettings": "Kiirseaded",
 			"requiredField": "(Kohustuslik)",
 			"settings": "Seaded",
 			"uiLibrary": "UI teek",
@@ -57,7 +59,7 @@
 			"search": "Otsi..."
 		},
 		"state": {
-			"dataSaved": "Sinu andmed on salvestatud",
+			"dataSaved": "Teie andmed on salvestatud",
 			"deleting": "Kustutamine...",
 			"loading": "Laadimine...",
 			"searching": "Otsimine...",
@@ -81,6 +83,7 @@
 			"manageAgents": "Halda agente",
 			"manageChats": "Halda vestlusi",
 			"openChat": "Ava vestlus",
+			"openSubchat_one": "Ava alamvestlus ({count} sõnum)",
 			"openSubchat_other": "Ava alamvestlus ({count} sõnumit)",
 			"openSubchat_zero": "Loo alamvestlus",
 			"searchChats": "Otsi vestlusi",
@@ -89,11 +92,12 @@
 			"showMoreAgents": "Näita rohkem agente",
 			"showMoreChats": "Näita rohkem vestlusi",
 			"showSubchats": "Näita alamvestlusi ({count})",
-			"startSearching_one": "Sisesta vähemalt {count} märk",
-			"startSearching_other": "Sisesta vähemalt {count} märki"
+			"startNewChat": "Alusta uut vestlust",
+			"startSearching_one": "Sisesta vähemalt {count} tähemärk",
+			"startSearching_other": "Sisesta vähemalt {count} tähemärki"
 		},
 		"description": {
-			"geminiNano": "Mini GPT Google Chrome'i jaoks",
+			"chromeGPT": "Mini GPT Google Chrome'i jaoks",
 			"loremIpsumGPT": "Kõige intelligentsem mudel",
 			"rammusGPT": "Parim emotsionaalne tugi"
 		},
@@ -123,17 +127,17 @@
 			"xSearchResults_one": "{count} otsingu tulemus",
 			"xSearchResults_other": "{count} otsingu tulemust",
 			"xSearchResults_zero": "Otsingu tulemusi pole",
-			"xSelectedMessages_one": "1 valitud sõnum",
-			"xSelectedMessages_other": "{count} valitud sõnumit"
+			"xSelectedMessages_one": "1 sõnum valitud",
+			"xSelectedMessages_other": "{count} sõnumit valitud"
 		},
 		"placeholder": {
 			"newMessage": "Räägi {name}ga...",
-			"rename": "Genereeri uus nimi automaatselt..."
+			"rename": "Genereeri automaatselt uus nimi..."
 		},
 		"state": {
 			"loadingAgents": "Agentide laadimine...",
 			"loadingChats": "Vestluste laadimine...",
-			"loadingGPTs": "GPTde laadimine...",
+			"loadingGPTs": "GPT-de laadimine...",
 			"loadingMessages": "Sõnumite laadimine...",
 			"loadingPreviousMessages": "Eelmiste sõnumite laadimine...",
 			"loadingSubchats": "Alamvestluste laadimine...",
@@ -143,8 +147,8 @@
 		"warning": {
 			"deletingAgent": "See agent kustutatakse jäädavalt",
 			"deletingChats": "Need vestlused kustutatakse jäädavalt",
-			"geminiGptInsideChrome": "See GPT nõuab nende seadete aktiveerimist:",
-			"geminiGptOutsideChrome": "See GPT on saadaval ainult Google Chrome'i brauseris",
+			"chromeGptInsideChrome": "See GPT nõuab järgmiste seadete lubamist:",
+			"chromeGptOutsideChrome": "See GPT on saadaval ainult Google Chrome'i brauseris",
 			"invalidGpt": "Vigane GPT"
 		}
 	},
@@ -175,7 +179,7 @@
 			"postalCode": "Postiindeks",
 			"private": "Privaatne",
 			"public": "Avalik",
-			"vatNumber": "KMKR number"
+			"vatNumber": "KM number"
 		}
 	}
 }

@@ -1,18 +1,18 @@
-import { SelectField, SelectOptionProps } from '@app/library/release'
+import { Portal, SelectField, SelectOptionProps } from '@app/library/release'
 import { BuildSvg, Button, IconButton, WarningSvg } from '@ds/release'
 import { COOKIE_KEY } from '@utils/release'
 import { uniqBy } from 'lodash'
 import { useEffect, useState } from 'react'
 import { Agent, API } from '../api'
-import { useRefreshableAgents } from '../hooks/refreshable-agents'
+import { useRefreshableAgents } from '../hooks/use-refreshable-agents'
 import { EMPTY_AGENT, useAiChatAgents } from '../state'
-import { parseGptDescription } from '../utils'
 import { aiChatEmitter, EVENT__REFRESH_AGENT } from '../utils/events'
+import { parseGptDescription } from '../utils/gpt'
 import { AgentEditModal } from './agent-edit-modal'
 import { AgentGptItem } from './items/agent-gpt-item'
 import { NewMessageField } from './new-message-field'
 
-interface Props extends ReactProps {
+interface Props {
 	listLoading: ListLoading
 	isChatView?: boolean
 	onPostMessage(text: string, agentId: number): void
@@ -23,7 +23,7 @@ const AgentOption = (props: SelectOptionProps) => (
 	<AgentGptItem agent={props.option as Agent} selected={props.selected} />
 )
 
-export const NewMessageToolbar = (props: Props) => {
+export const NewMessageBox = (props: Props) => {
 	const { listLoading, isChatView, onPostMessage } = props
 	const { allGPTs, chatViewAgentId, setChatViewAgentId } = useAiChatAgents()
 	const [currAgentId, setCurrAgentId] = useState(0)
@@ -142,7 +142,24 @@ export const NewMessageToolbar = (props: Props) => {
 	}, [agentPagination])
 
 	return currAgent && currGPT ? (
-		<div>
+		<div
+			className={cx(
+				'absolute z-sticky',
+				isChatView && '-left-a11y-padding -right-a11y-padding bottom-xs-1 px-xs-3 pb-xs-3 pt-xs-1',
+				isChatView && 'lg:-left-xs-7 lg:-right-xs-7 lg:bottom-xs-3 lg:px-xs-7 lg:pb-xs-5 lg:pt-xs-3',
+				!isChatView && '-left-a11y-padding -right-a11y-padding bottom-xs-1 px-xs-3 pb-xs-3 pt-xs-1',
+				!isChatView && 'lg:bottom-xs-4'
+			)}
+		>
+			{/* BACKGROUND */}
+			<div
+				className={cx(
+					'absolute-overlay overflow-hidden rounded-lg lg:rounded-xl',
+					'border border-color-border-shadow shadow-lg backdrop-blur-default',
+					'before:absolute-overlay before:bg-color-bg-card before:opacity-90'
+				)}
+			/>
+
 			{/* TOOLBAR */}
 			<div className="mb-xs-1 flex items-center">
 				<SelectField
@@ -196,13 +213,15 @@ export const NewMessageToolbar = (props: Props) => {
 			</div>
 
 			{/* AGENT MODAL */}
-			<AgentEditModal
-				id={`${id}-modal`}
-				agent={currAgent}
-				opened={showsAgentModal}
-				onSubmit={onSubmitAgent}
-				onClose={() => setShowsAgentModal(false)}
-			/>
+			<Portal>
+				<AgentEditModal
+					id={`${id}-modal`}
+					agent={currAgent}
+					opened={showsAgentModal}
+					onSubmit={onSubmitAgent}
+					onClose={() => setShowsAgentModal(false)}
+				/>
+			</Portal>
 
 			{/* TEXT FIELD */}
 			<NewMessageField

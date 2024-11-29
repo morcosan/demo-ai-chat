@@ -10,11 +10,12 @@ interface Props {
 	agent?: Agent
 	subchatId?: number
 	isSubchat?: boolean
-	onRetry?(): void
+	onClickRetry?(): void
+	onClickSubchat?(): void
 }
 
 export const MessageItem = (props: Props) => {
-	const { message, agent, subchatId, isSubchat, onRetry } = props
+	const { message, agent, subchatId, isSubchat, onClickRetry, onClickSubchat } = props
 	const { isViewportMinLG } = useUiViewport()
 	const [isClicked, setIsClicked] = useState(false)
 
@@ -22,12 +23,12 @@ export const MessageItem = (props: Props) => {
 	const showsToolbar = isClicked || message.id === subchatId
 
 	const itemClass = cx(
-		'group relative ml-scrollbar-w flex flex-col',
+		'group relative flex flex-col',
 		isViewportMinLG ? (isUser ? 'mb-xs-0' : 'mb-xs-6') : 'mb-xs-6',
-		!isSubchat && (isViewportMinLG ? 'px-md-0' : 'px-xs-5')
+		!isSubchat && isViewportMinLG && 'mx-md-0'
 	)
 
-	const baseCardClass = cx('relative w-fit max-w-full rounded-md px-xs-7 py-xs-6 shadow-xs')
+	const baseCardClass = cx('relative w-fit max-w-full rounded-xl px-xs-9 py-xs-8 shadow-xs')
 	const userCardClass = cx(
 		'ml-auto',
 		isViewportMinLG ? (isSubchat ? '!max-w-[80%]' : '!max-w-[70%]') : '!max-w-[90%]',
@@ -48,7 +49,7 @@ export const MessageItem = (props: Props) => {
 
 	const subchatWrapperClass = cx(
 		'flex-center',
-		isViewportMinLG && 'absolute right-0 top-0 w-md-0',
+		isViewportMinLG && 'absolute right-0 top-0 w-md-0 translate-x-full',
 		message.loading && 'invisible'
 	)
 	const subchatButtonClass = cx(
@@ -79,6 +80,7 @@ export const MessageItem = (props: Props) => {
 					selected={message.id === subchatId}
 					small={!isViewportMinLG}
 					className={subchatButtonClass}
+					onClick={onClickSubchat}
 				/>
 			</div>
 		)
@@ -123,7 +125,7 @@ export const MessageItem = (props: Props) => {
 							<div className={cx(baseCardClass, 'bg-color-danger-card-bg text-color-danger-card-text')}>
 								{t('aiChat.error.failedMessage')}
 							</div>
-							<Button variant="text-default" size="sm" className="mt-xs-1 block" onClick={onRetry}>
+							<Button variant="text-default" size="sm" className="mt-xs-1 block" onClick={onClickRetry}>
 								<ReloadSvg className="mr-xs-2 w-xs-6" />
 								{t('core.action.retry')}
 							</Button>
