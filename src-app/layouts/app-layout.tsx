@@ -19,10 +19,11 @@ export const AppLayout = ({ blank, children }: Props) => {
 	const [showsNavMenu, setShowsNavMenu] = useState(false)
 	const [showsSettingsMenu, setShowsSettingsMenu] = useState(false)
 
-	const contentClass = cx({
-		'flex flex-col px-xs-8 pb-sm-5 pt-xs-7 md:px-sm-5 lg:mx-auto lg:max-w-xxl-2 lg:pb-sm-9 lg:pt-sm-3': blank,
-		'flex h-full w-full': !blank,
-	})
+	const contentClass = cx(
+		'relative',
+		blank && 'flex flex-col px-xs-8 pb-sm-5 pt-xs-7 md:px-sm-5 lg:mx-auto lg:max-w-xxl-2 lg:pb-sm-9 lg:pt-sm-3',
+		!blank && 'flex h-full w-full'
+	)
 
 	const onToggleNavMenu = () => {
 		setShowsNavMenu(!showsNavMenu)

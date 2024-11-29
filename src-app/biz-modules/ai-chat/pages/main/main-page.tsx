@@ -21,7 +21,10 @@ export const AiChatMainPage = () => {
 	}, [isViewportMaxLG])
 
 	const slotPage = useMemo(() => <ChatView />, [])
-	const slotPanel = useMemo(() => <PanelContent onHidePanel={() => setShowsPanel(false)} />, [])
+	const slotPanel = useMemo(
+		() => <PanelContent onShowPanel={() => setShowsPanel(true)} onHidePanel={() => setShowsPanel(false)} />,
+		[]
+	)
 
 	return (
 		<AppLayout>
@@ -30,8 +33,23 @@ export const AiChatMainPage = () => {
 			{/* DESKTOP */}
 			{activeView === AiChatView.DESKTOP && (
 				<>
+					{/* SPACE HOLDER */}
+					{/*<div*/}
+					{/*	className={cx(*/}
+					{/*		'relative h-full',*/}
+					{/*		'transition-width duration-300 ease-in-out',*/}
+					{/*		showsPanel ? 'w-[30%] min-w-xl-0 ml-xs-2' : 'w-0'*/}
+					{/*	)}*/}
+					{/*/>*/}
+
 					{/* VISIBLE */}
-					<div className={cx('relative ml-xs-2 h-full w-[30%] min-w-xl-0', !showsPanel && 'hidden')}>
+					<div
+						className={cx(
+							'absolute right-0 top-0 z-sticky h-full w-[30%] min-w-xl-0',
+							'bg-color-bg-page transition-transform duration-300 ease-in-out',
+							showsPanel ? 'translate-x-0' : 'pointer-events-none translate-x-full'
+						)}
+					>
 						{/* DELIMITER */}
 						<div className="absolute -left-xs-1 top-0 h-full w-xs-1 bg-color-border-shadow" />
 						{/* VIEW */}
@@ -59,7 +77,7 @@ export const AiChatMainPage = () => {
 					className={cx(
 						'fixed bottom-0 left-0 right-0 ml-button-h-md',
 						'border-l border-t border-color-border-shadow bg-color-bg-page shadow-lg',
-						'transition-transform duration-300 ease-out',
+						'transition-transform duration-300 ease-in-out',
 						isSubchatView ? 'translate-x-0' : 'translate-x-full'
 					)}
 					style={{ top: 'var(--app-spacing-navbar-h)', zIndex: 'calc(var(--ds-z-index-navbar) - 1)' }}

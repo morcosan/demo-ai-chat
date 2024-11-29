@@ -145,9 +145,9 @@ export const NewMessageBox = (props: Props) => {
 		<div
 			className={cx(
 				'absolute z-sticky',
-				isChatView && '-left-a11y-padding -right-a11y-padding bottom-xs-0 px-xs-3 pb-xs-3 pt-xs-1',
+				isChatView && '-left-a11y-padding -right-a11y-padding bottom-xs-1 px-xs-3 pb-xs-3 pt-xs-1',
 				isChatView && 'lg:-left-xs-7 lg:-right-xs-7 lg:bottom-xs-3 lg:px-xs-7 lg:pb-xs-5 lg:pt-xs-3',
-				!isChatView && '-left-a11y-padding -right-a11y-padding bottom-xs-0 px-xs-3 pb-xs-3 pt-xs-1',
+				!isChatView && '-left-a11y-padding -right-a11y-padding bottom-xs-1 px-xs-3 pb-xs-3 pt-xs-1',
 				!isChatView && 'lg:bottom-xs-4'
 			)}
 		>

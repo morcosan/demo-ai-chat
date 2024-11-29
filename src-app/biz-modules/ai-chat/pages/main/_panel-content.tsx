@@ -6,11 +6,12 @@ import { SubchatView } from './_subchat-view'
 import { SubchatsView } from './_subchats-view'
 
 interface Props {
+	onShowPanel(): void
 	onHidePanel(): void
 }
 
 export const PanelContent = (props: Props) => {
-	const { onHidePanel } = props
+	const { onShowPanel, onHidePanel } = props
 	const {
 		activeChat,
 		activeSubchat,
@@ -41,6 +42,10 @@ export const PanelContent = (props: Props) => {
 	useEffect(() => {
 		subchatId ? loadSubchat() : resetActiveSubchat()
 	}, [activeChat, subchatId])
+
+	useEffect(() => {
+		activeChat && allSubchats.length ? onShowPanel() : onHidePanel()
+	}, [activeChat, allSubchats])
 
 	return !activeChat ? (
 		<div />

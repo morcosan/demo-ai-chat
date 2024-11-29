@@ -38,10 +38,10 @@ export const ChatView = () => {
 	const widthClass = 'mx-auto w-full max-w-xxl-2'
 
 	const calcH1LineHeight = $lineHeight['sm']
-	const calcH1Padding1 = $spacing['xs-3']
-	const calcH1Padding2 = $spacing['xs-3']
+	const calcH1PY1 = $spacing['xs-2']
+	const calcH1PY2 = $spacing['xs-3']
 	const calcH1FontSize = `calc(2 * ${$fontSize['xl']} + ${$fontSize['xs']})`
-	const calcH1Height = `calc(${$lineHeight['sm']} * ${calcH1FontSize} + ${calcH1Padding1} + ${calcH1Padding2})`
+	const calcH1Height = `calc(${$lineHeight['sm']} * ${calcH1FontSize} + ${calcH1PY1} + ${calcH1PY2})`
 
 	const onPostMessage = (text: string, agentId: number) => {
 		setSentText(text)
@@ -106,7 +106,7 @@ export const ChatView = () => {
 	)
 
 	return (
-		<div className="relative flex h-full w-full min-w-0 flex-1 flex-col py-xs-1">
+		<div className="relative flex h-full w-full min-w-0 flex-1 flex-col">
 			<div
 				ref={containerRef}
 				className="ds-scrollable flex-1 overflow-y-scroll !pb-lg-1 lg:!pb-lg-3"
@@ -117,7 +117,10 @@ export const ChatView = () => {
 						{/* TOOLBAR */}
 						<StickyToolbar style={{ minHeight: calcH1Height, lineHeight: calcH1LineHeight }} stretched>
 							{(isSticky: boolean) => (
-								<h1 className="px-a11y-padding pt-xs-0 lg:mx-md-0" style={{ paddingBottom: calcH1Padding2 }}>
+								<h1
+									className="px-a11y-padding lg:mx-md-0"
+									style={{ paddingTop: calcH1PY1, paddingBottom: calcH1PY2 }}
+								>
 									<div
 										className={cx(
 											'pl-xs-1 text-size-xl font-weight-md',
@@ -128,10 +131,7 @@ export const ChatView = () => {
 									</div>
 
 									{Boolean(chatPagination.count) && (
-										<div
-											className="pl-xs-1 text-size-xs text-color-text-subtle"
-											style={{ marginTop: calcH1Padding1 }}
-										>
+										<div className="pl-xs-1 text-size-xs text-color-text-subtle" style={{ marginTop: calcH1PY2 }}>
 											{t('aiChat.label.xMessages', { count: chatPagination.count })}
 										</div>
 									)}
