@@ -1,14 +1,17 @@
 import { AppLayout } from '@app/layouts/app-layout'
-import { useUiViewport } from '@ds/release'
+import { IconButton, PanelOpenSvg, useUiViewport } from '@ds/release'
 import { ReactNode, useEffect } from 'react'
 import { AiChatView, useAiChatLayout } from '../../state'
 
 interface Props {
-	slotChatView?: ReactNode
-	slotSubchatView?: ReactNode
+	showsPanel: boolean
+	slotPage?: ReactNode
+	slotPanel?: ReactNode
+	onShowPanel(): void
 }
 
-export const PageLayout = ({ slotChatView, slotSubchatView }: Props) => {
+export const PageLayout = (props: Props) => {
+	const { showsPanel, slotPage, slotPanel, onShowPanel } = props
 	const { isViewportMaxLG } = useUiViewport()
 	const { activeView, setActiveView } = useAiChatLayout()
 
@@ -24,17 +27,24 @@ export const PageLayout = ({ slotChatView, slotSubchatView }: Props) => {
 
 	return (
 		<AppLayout>
-			{slotChatView}
+			{slotPage}
 
 			{/* DESKTOP */}
-			{activeView === AiChatView.DESKTOP && (
-				<div className="relative ml-xs-2 h-full w-[30%] min-w-xl-0">
-					{/* DELIMITER */}
-					<div className="absolute -left-xs-1 top-0 h-full w-xs-1 bg-color-border-shadow" />
-					{/* VIEW */}
-					{slotSubchatView}
-				</div>
-			)}
+			{activeView === AiChatView.DESKTOP &&
+				(showsPanel ? (
+					<div className="relative ml-xs-2 h-full w-[30%] min-w-xl-0">
+						{/* DELIMITER */}
+						<div className="absolute -left-xs-1 top-0 h-full w-xs-1 bg-color-border-shadow" />
+						{/* VIEW */}
+						{slotPanel}
+					</div>
+				) : (
+					<div className="fixed right-a11y-scrollbar top-a11y-padding pt-px">
+						<IconButton tooltip={t('core.action.showPanel')} size="sm" onClick={onShowPanel}>
+							<PanelOpenSvg className="h-xs-7" />
+						</IconButton>
+					</div>
+				))}
 
 			{/* MOBILE OVERLAY */}
 			<div
@@ -53,7 +63,7 @@ export const PageLayout = ({ slotChatView, slotSubchatView }: Props) => {
 					)}
 					style={{ top: 'var(--app-spacing-navbar-h)', zIndex: 'calc(var(--ds-z-index-navbar) - 1)' }}
 				>
-					{slotSubchatView}
+					{slotPanel}
 				</div>
 			)}
 		</AppLayout>

@@ -5,7 +5,12 @@ import { useAiChat } from '../../state'
 import { SubchatView } from './_subchat-view'
 import { SubchatsView } from './_subchats-view'
 
-export const PagePanel = () => {
+interface Props {
+	onHidePanel(): void
+}
+
+export const PanelContent = (props: Props) => {
+	const { onHidePanel } = props
 	const {
 		activeChat,
 		activeSubchat,
@@ -40,12 +45,12 @@ export const PagePanel = () => {
 	return !activeChat ? (
 		<div />
 	) : activeSubchat ? (
-		<SubchatView />
+		<SubchatView onHidePanel={onHidePanel} />
 	) : chatLoading === 'full' || allSubchatsLoading === 'full' ? (
 		<LoadingText text={t('aiChat.state.loadingSubchats')} className="flex-center h-full" />
 	) : !allSubchats.length && !subchatLoading ? (
 		<div className="flex-center h-full w-full text-color-text-subtle">{t('aiChat.label.noSubchats')}</div>
 	) : (
-		<SubchatsView />
+		<SubchatsView onHidePanel={onHidePanel} />
 	)
 }

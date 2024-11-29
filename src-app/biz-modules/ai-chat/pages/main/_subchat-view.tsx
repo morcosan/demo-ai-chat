@@ -9,7 +9,12 @@ import { SubchatToolbar } from '../../components/subchat-toolbar'
 import { useScrollable } from '../../hooks/use-scrollable'
 import { useAiChat, useAiChatAgents } from '../../state'
 
-export const SubchatView = () => {
+interface Props {
+	onHidePanel(): void
+}
+
+export const SubchatView = (props: Props) => {
+	const { onHidePanel } = props
 	const {
 		activeChat,
 		canLoadSubchatMessages,
@@ -76,7 +81,7 @@ export const SubchatView = () => {
 				onScroll={onScroll}
 			>
 				{/* TOOLBAR */}
-				<SubchatToolbar>
+				<SubchatToolbar onHidePanel={onHidePanel}>
 					<IconButton linkHref={`/chat/${activeChat?.id}`} tooltip={t('aiChat.action.backToSubchats')} size="sm">
 						<ArrowBackSvg className="h-xs-5" />
 					</IconButton>

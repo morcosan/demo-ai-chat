@@ -8,7 +8,12 @@ import { SubchatToolbar } from '../../components/subchat-toolbar'
 import { useAiChat } from '../../state'
 import { getTextFromMarkdown } from '../../utils/markdown'
 
-export const SubchatsView = () => {
+interface Props {
+	onHidePanel(): void
+}
+
+export const SubchatsView = (props: Props) => {
+	const { onHidePanel } = props
 	const { allSubchats, allSubchatsLoading, allSubchatsPagination, loadMoreSubchats } = useAiChat()
 
 	const onScroll = debounce((event: UIEvent) => {
@@ -42,7 +47,7 @@ export const SubchatsView = () => {
 		<div className="h-full">
 			<div className="ds-scrollable h-full overflow-y-scroll pb-xs-9" onScroll={onScroll}>
 				{/* TOOLBAR */}
-				<SubchatToolbar>
+				<SubchatToolbar onHidePanel={onHidePanel}>
 					<span className="pl-xs-6">
 						{t('aiChat.label.subchats')} ({allSubchatsPagination.count})
 					</span>

@@ -1,9 +1,19 @@
+import { useState } from 'react'
 import { ChatView } from './_chat-view'
 import { PageLayout } from './_page-layout'
-import { PagePanel } from './_page-panel'
+import { PanelContent } from './_panel-content'
 
 export const AiChatMainPage = () => {
-	return <PageLayout slotChatView={<ChatView />} slotSubchatView={<PagePanel />} />
+	const [showsPanel, setShowsPanel] = useState(true)
+
+	return (
+		<PageLayout
+			showsPanel={showsPanel}
+			slotPage={<ChatView />}
+			slotPanel={<PanelContent onHidePanel={() => setShowsPanel(false)} />}
+			onShowPanel={() => setShowsPanel(true)}
+		/>
+	)
 }
 
 export default AiChatMainPage
