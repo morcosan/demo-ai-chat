@@ -13,5 +13,6 @@ export const useAiChatSearch = () => useContext(SearchContext)
 
 export { EMPTY_AGENT } from './_agents-store/context'
 export { AiChatView } from './_layout-store/context'
+export { AiChatPreviewType } from './_preview-store/context'
 export { AiChatProvider } from './_provider'
 export type { SearchResult } from './_search-store/context'

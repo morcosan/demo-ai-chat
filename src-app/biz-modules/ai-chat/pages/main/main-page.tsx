@@ -34,7 +34,7 @@ export const AiChatMainPage = () => {
 		() => (
 			<>
 				<PanelContent onShowPanel={() => setShowsPanel(true)} onHidePanel={() => setShowsPanel(false)} />
-				<PreviewView />
+				<PreviewView className="ml-xs-1" />
 			</>
 		),
 		[]
@@ -57,7 +57,7 @@ export const AiChatMainPage = () => {
 						style={{ width: showsPanel ? `${panelWidth}%` : 0 }}
 					/>
 
-					{/* VISIBLE */}
+					{/* VISIBLE PANEL */}
 					<div
 						className={cx(
 							'absolute right-0 top-0 z-navbar h-full min-w-xl-1 pl-xs-1',
@@ -72,7 +72,7 @@ export const AiChatMainPage = () => {
 						{slotPanel}
 					</div>
 
-					{/* HIDDEN */}
+					{/* HIDDEN PANEL */}
 					<div
 						className={cx('fixed right-a11y-scrollbar top-a11y-padding pt-px', showsPanel && 'hidden')}
 						style={{ zIndex: 'calc(var(--ds-z-index-navbar) - 1)' }}

@@ -11,24 +11,14 @@ import { CopyButton } from './copy-button'
 
 interface Props extends ReactProps {
 	text: string
+	onPreviewCode?(code: string, lang: string): void
+	onPreviewLink?(url: string, text: string): void
 }
 
-// Escape all html tags
-const ESCAPE_HTML: TokenizerExtension = {
-	name: 'ESCAPE_HTML',
-	level: 'inline',
-	start: (src: string) => src.indexOf('<'),
-	tokenizer: (src: string) => {
-		const rule = /^<[^>]*>/ // Match HTML tags
-		const match = rule.exec(src)
-		if (match) return { type: 'text', raw: match[0], text: match[0] }
-	},
-}
-
-export const Markdown = ({ text, className }: Props) => {
+export const Markdown = (props: Props) => {
+	const { text, className, onPreviewCode, onPreviewLink } = props
 	const rawCodeRefs = useRef<string[]>([])
 	const rootRefs = useRef(new WeakMap<Element, Root>())
-
 	const renderer = new Renderer()
 
 	renderer.link = ({ href, text }: Tokens.Link) => {
@@ -39,6 +29,7 @@ export const Markdown = ({ text, className }: Props) => {
 			</a>
 		)
 	}
+
 	renderer.image = ({ href, text, title }: Tokens.Image) => {
 		return renderToStaticMarkup(
 			<span className="ds-markdown-img-box">
@@ -47,6 +38,7 @@ export const Markdown = ({ text, className }: Props) => {
 			</span>
 		)
 	}
+
 	renderer.code = ({ text, lang, raw }: Tokens.Code) => {
 		rawCodeRefs.current.push(raw)
 
@@ -61,24 +53,8 @@ export const Markdown = ({ text, className }: Props) => {
 		)
 	}
 
-	const languageFn = (lang: string) => ({ language: hljs.getLanguage(lang) ? lang : 'plaintext' })
-	const highlightFn = (code: string, lang: string) => hljs.highlight(code, languageFn(lang)).value
-
-	const marked = new Marked(markedHighlight({ highlight: highlightFn }))
-	marked.setOptions({ renderer })
-	marked.use({ extensions: [ESCAPE_HTML] })
-
-	const html = useMemo(() => {
-		rawCodeRefs.current = []
-
-		const unparsed = text.replace(/\n/g, '  \n') // Fix new lines for markdown
-		const parsed = marked.parse(unparsed, { async: false })
-
-		return DOMPurify.sanitize(parsed, { ADD_ATTR: ['target'] })
-	}, [text])
-
 	const injectCodeActions = (container: HTMLDivElement) => {
-		const elems = container?.querySelectorAll('[data-code-actions]')
+		const elems = container.querySelectorAll('[data-code-actions]')
 		elems?.forEach((elem: Element, index: number) => {
 			const regex = /```(?:\w+)?\s([\s\S]*?)```/
 			const raw = rawCodeRefs.current[index]
@@ -100,11 +76,57 @@ export const Markdown = ({ text, className }: Props) => {
 		})
 	}
 
+	const injectLinkActions = (container: HTMLDivElement) => {
+		const elems = container.querySelectorAll('a')
+		elems?.forEach((elem: Element) => {
+			elem.addEventListener('click', (event: Event) => {
+				const mouseEvent = event as MouseEvent
+				const target = event.target as HTMLAnchorElement
+
+				// Capture only left-click
+				if (onPreviewLink && mouseEvent.button === 0) {
+					event.preventDefault()
+					onPreviewLink(target.href, target.text)
+				}
+			})
+		})
+	}
+
+	const injectActions = (container: HTMLDivElement | null) => {
+		if (!container) return
+		injectCodeActions(container)
+		injectLinkActions(container)
+	}
+
+	const languageFn = (lang: string) => ({ language: hljs.getLanguage(lang) ? lang : 'plaintext' })
+	const highlightFn = (code: string, lang: string) => hljs.highlight(code, languageFn(lang)).value
+
+	const marked = new Marked(markedHighlight({ highlight: highlightFn }))
+	marked.setOptions({ renderer })
+	marked.use({ extensions: [ESCAPE_HTML] })
+
+	const html = useMemo(() => {
+		rawCodeRefs.current = []
+
+		const unparsed = text.replace(/\n/g, '  \n') // Fix new lines for markdown
+		const parsed = marked.parse(unparsed, { async: false })
+
+		return DOMPurify.sanitize(parsed, { ADD_ATTR: ['target'] })
+	}, [text])
+
 	return (
-		<div
-			ref={injectCodeActions}
-			className={cx('ds-markdown', className)}
-			dangerouslySetInnerHTML={{ __html: html }}
-		/>
+		<div ref={injectActions} className={cx('ds-markdown', className)} dangerouslySetInnerHTML={{ __html: html }} />
 	)
+}
+
+// Escape all html tags
+const ESCAPE_HTML: TokenizerExtension = {
+	name: 'ESCAPE_HTML',
+	level: 'inline',
+	start: (src: string) => src.indexOf('<'),
+	tokenizer: (src: string) => {
+		const rule = /^<[^>]*>/ // Match HTML tags
+		const match = rule.exec(src)
+		if (match) return { type: 'text', raw: match[0], text: match[0] }
+	},
 }

@@ -2,7 +2,11 @@ import { Button, IconButton, PanelCloseSvg, ResizeSvg } from '@ds/release'
 import { useAiChatLayout } from '../state'
 import { StickyToolbar } from './sticky-toolbar'
 
-export const PanelToolbar = ({ children }: ReactProps) => {
+interface Props extends ReactProps {
+	isChatView?: boolean
+}
+
+export const PanelToolbar = ({ isChatView, children }: Props) => {
 	const { panelWidth, setPanelWidth, setShowsPanel } = useAiChatLayout()
 
 	const PANEL_WIDTHS = [30, 35, 40, 45, 50, 55, 60, 65, 70]
@@ -29,7 +33,7 @@ export const PanelToolbar = ({ children }: ReactProps) => {
 						<ResizeSvg className="mr-xs-0 h-xs-7" />
 
 						<span className="mr-px text-size-xs leading-1" aria-live="polite">
-							{panelWidth}%
+							{isChatView ? 100 - panelWidth : panelWidth}%
 						</span>
 					</Button>
 
