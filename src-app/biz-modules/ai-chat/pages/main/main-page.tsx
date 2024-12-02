@@ -4,6 +4,7 @@ import { useEffect, useMemo } from 'react'
 import { AiChatView, useAiChatLayout } from '../../state'
 import { ChatView } from './_chat-view'
 import { PanelContent } from './_panel-content'
+import { PreviewView } from './_preview-view'
 
 export const AiChatMainPage = () => {
 	const { isViewportMaxLG } = useUiViewport()
@@ -19,15 +20,29 @@ export const AiChatMainPage = () => {
 		}
 	}, [isViewportMaxLG])
 
-	const slotPage = useMemo(() => <ChatView />, [])
+	const slotPage = useMemo(
+		() => (
+			<>
+				<ChatView />
+				<PreviewView isChatView />
+			</>
+		),
+		[]
+	)
+
 	const slotPanel = useMemo(
-		() => <PanelContent onShowPanel={() => setShowsPanel(true)} onHidePanel={() => setShowsPanel(false)} />,
+		() => (
+			<>
+				<PanelContent onShowPanel={() => setShowsPanel(true)} onHidePanel={() => setShowsPanel(false)} />
+				<PreviewView />
+			</>
+		),
 		[]
 	)
 
 	return (
 		<AppLayout>
-			{slotPage}
+			<div className="relative flex h-full w-full min-w-0 flex-1 flex-col">{slotPage}</div>
 
 			{/* DESKTOP */}
 			{activeView === AiChatView.DESKTOP && (

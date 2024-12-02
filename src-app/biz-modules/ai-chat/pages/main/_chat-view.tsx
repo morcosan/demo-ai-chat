@@ -106,7 +106,7 @@ export const ChatView = () => {
 	)
 
 	return (
-		<div className="relative flex h-full w-full min-w-0 flex-1 flex-col">
+		<>
 			<div ref={containerRef} className="ds-scrollable flex-1 !pb-lg-1 lg:!pb-lg-3" onScroll={onScroll}>
 				{activeChat || chatId ? (
 					<div className={cx(widthClass, chatLoading === 'full' && 'h-full', 'flex flex-col pt-sm-0')}>
@@ -170,6 +170,6 @@ export const ChatView = () => {
 					</div>
 				</div>
 			</div>
-		</div>
+		</>
 	)
 }
