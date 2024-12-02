@@ -30,16 +30,16 @@ export const PreviewView = ({ isChatView, className }: Props) => {
 					<div className="flex h-full flex-col pb-xs-2">
 						{/* URL TOOLBAR */}
 						<div className="my-xs-0 flex h-button-h-sm items-center">
-							<IconButton tooltip={t('aiChat.action.reloadPreview')} size="sm" className="-ml-xs-2">
+							<IconButton tooltip={t('aiChat.action.reloadPreview')} size="sm" className="-ml-xs-1">
 								<ReloadSvg className="w-xs-6" />
 							</IconButton>
 							<a
 								href={previewContent || ''}
 								target="_blank"
 								rel="noopener noreferrer"
-								className="ds-link ml-xs-0 flex max-w-full items-center"
+								className="ds-link ml-xs-0 flex max-w-full items-center truncate"
 							>
-								<span className="line-clamp-1 block w-full text-size-sm">{previewContent}</span>
+								<span className="block w-full truncate break-words text-size-sm">{previewContent}</span>
 								<NewTabSvg className="ml-xs-2 mt-px h-xs-5 w-xs-5" />
 							</a>
 						</div>
