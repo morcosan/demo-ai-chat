@@ -7,16 +7,15 @@ interface Props extends ReactProps {
 	message: Message
 	selected: boolean
 	small: boolean
-	onClick?(): void
 }
 
 export const SubchatButton = (props: Props) => {
-	const { message, selected, small, className, onClick } = props
-	const { activeView, setActiveView } = useAiChatLayout()
+	const { message, selected, small, className } = props
+	const { activeView, setActiveView, setShowsPanel } = useAiChatLayout()
 
 	const onClickSubchat = () => {
 		activeView === AiChatView.MOBILE_CHAT && setActiveView(AiChatView.MOBILE_SUBCHAT)
-		onClick?.()
+		selected ? setShowsPanel((value: boolean) => !value) : setShowsPanel(true)
 	}
 
 	return (

@@ -11,11 +11,10 @@ interface Props {
 	subchatId?: number
 	isSubchat?: boolean
 	onClickRetry?(): void
-	onClickSubchat?(): void
 }
 
 export const MessageItem = (props: Props) => {
-	const { message, agent, subchatId, isSubchat, onClickRetry, onClickSubchat } = props
+	const { message, agent, subchatId, isSubchat, onClickRetry } = props
 	const { isViewportMinLG } = useUiViewport()
 	const [isClicked, setIsClicked] = useState(false)
 
@@ -80,7 +79,6 @@ export const MessageItem = (props: Props) => {
 					selected={message.id === subchatId}
 					small={!isViewportMinLG}
 					className={subchatButtonClass}
-					onClick={onClickSubchat}
 				/>
 			</div>
 		)

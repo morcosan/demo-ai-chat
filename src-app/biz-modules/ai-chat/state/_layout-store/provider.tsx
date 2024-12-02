@@ -7,6 +7,7 @@ const DEFAULT_PANEL_WIDTH = 40
 export const LayoutProvider = ({ children }: ReactProps) => {
 	const [activeView, setActiveView] = useState<AiChatView>(AiChatView.NONE)
 	const [panelWidth, setPanelWidth] = useState(DEFAULT_PANEL_WIDTH)
+	const [showsPanel, setShowsPanel] = useState(false)
 
 	const loadPanelWidth = () => {
 		const cookie = parseInt(localStorage.getItem(COOKIE_KEY.APP_PANEL_WIDTH) || '')
@@ -24,13 +25,15 @@ export const LayoutProvider = ({ children }: ReactProps) => {
 		() => ({
 			activeView,
 			panelWidth,
+			showsPanel,
 			setActiveView,
 			setPanelWidth(width: number) {
 				setPanelWidth(width)
 				localStorage.setItem(COOKIE_KEY.APP_PANEL_WIDTH, width.toString())
 			},
+			setShowsPanel,
 		}),
-		[activeView, panelWidth]
+		[activeView, panelWidth, showsPanel]
 	)
 
 	return <LayoutContext.Provider value={store}>{children}</LayoutContext.Provider>

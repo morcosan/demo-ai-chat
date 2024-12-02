@@ -2,13 +2,8 @@ import { Button, IconButton, PanelCloseSvg, ResizeSvg } from '@ds/release'
 import { useAiChatLayout } from '../state'
 import { StickyToolbar } from './sticky-toolbar'
 
-interface Props extends ReactProps {
-	onHidePanel(): void
-}
-
-export const SubchatToolbar = (props: Props) => {
-	const { children, onHidePanel } = props
-	const { panelWidth, setPanelWidth } = useAiChatLayout()
+export const PanelToolbar = ({ children }: ReactProps) => {
+	const { panelWidth, setPanelWidth, setShowsPanel } = useAiChatLayout()
 
 	const PANEL_WIDTHS = [30, 35, 40, 45, 50, 55, 60, 65, 70]
 
@@ -38,7 +33,7 @@ export const SubchatToolbar = (props: Props) => {
 						</span>
 					</Button>
 
-					<IconButton tooltip={t('core.action.hidePanel')} size="sm" onClick={onHidePanel}>
+					<IconButton tooltip={t('core.action.hidePanel')} size="sm" onClick={() => setShowsPanel(false)}>
 						<PanelCloseSvg className="h-xs-7" />
 					</IconButton>
 				</div>

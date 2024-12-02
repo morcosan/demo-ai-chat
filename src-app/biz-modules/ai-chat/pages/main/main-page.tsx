@@ -1,14 +1,13 @@
 import { AppLayout } from '@app/layouts/app-layout'
 import { IconButton, PanelOpenSvg, useUiViewport } from '@ds/release'
-import { useEffect, useMemo, useState } from 'react'
+import { useEffect, useMemo } from 'react'
 import { AiChatView, useAiChatLayout } from '../../state'
 import { ChatView } from './_chat-view'
 import { PanelContent } from './_panel-content'
 
 export const AiChatMainPage = () => {
 	const { isViewportMaxLG } = useUiViewport()
-	const { activeView, panelWidth, setActiveView } = useAiChatLayout()
-	const [showsPanel, setShowsPanel] = useState(false)
+	const { activeView, panelWidth, showsPanel, setActiveView, setShowsPanel } = useAiChatLayout()
 
 	const isSubchatView = activeView === AiChatView.MOBILE_SUBCHAT
 
@@ -20,15 +19,7 @@ export const AiChatMainPage = () => {
 		}
 	}, [isViewportMaxLG])
 
-	const slotPage = useMemo(
-		() => (
-			<ChatView
-				onShowPanel={() => setShowsPanel(true)}
-				onTogglePanel={() => setShowsPanel((value: boolean) => !value)}
-			/>
-		),
-		[]
-	)
+	const slotPage = useMemo(() => <ChatView />, [])
 	const slotPanel = useMemo(
 		() => <PanelContent onShowPanel={() => setShowsPanel(true)} onHidePanel={() => setShowsPanel(false)} />,
 		[]
