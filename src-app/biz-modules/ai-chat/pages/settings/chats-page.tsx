@@ -1,10 +1,9 @@
 import { AppLayout } from '@app/layouts/app-layout'
-import { LoadingText, PageHeader } from '@app/library/release'
+import { Checkbox, LoadingText, PageHeader } from '@app/library/release'
 import { Button, Modal, WarningSvg } from '@ds/release'
 import { uniqBy } from 'lodash'
 import { useCallback, useMemo, useState } from 'react'
 import { Chat } from '../../api'
-import { Checkbox } from '../../components/checkbox'
 import { ChatConfigItem } from '../../components/items/chat-config-item'
 import { useAiChat } from '../../state'
 

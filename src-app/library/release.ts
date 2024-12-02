@@ -1,3 +1,4 @@
+export * from './components/checkbox'
 export * from './components/copy-button'
 export * from './components/error-summary'
 export * from './components/field-error'
