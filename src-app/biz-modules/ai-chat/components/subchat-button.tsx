@@ -12,13 +12,13 @@ interface Props extends ReactProps {
 export const SubchatButton = (props: Props) => {
 	const { message, selected, small, className } = props
 	const { activeView, setActiveView, setShowsPanel } = useAiChatLayout()
-	const { previewContent, closePreview } = useAiChatPreview()
+	const { previewUrl, closePreview } = useAiChatPreview()
 
 	const onClickSubchat = () => {
 		activeView === AiChatView.MOBILE_CHAT && setActiveView(AiChatView.MOBILE_SUBCHAT)
 
 		if (selected) {
-			previewContent ? setShowsPanel(true) : setShowsPanel((value: boolean) => !value)
+			previewUrl ? setShowsPanel(true) : setShowsPanel((value: boolean) => !value)
 		} else {
 			setShowsPanel(true)
 		}

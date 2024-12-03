@@ -1,4 +1,4 @@
-import { NewTabSvg } from '@ds/release'
+import { Button, NewTabSvg, PreviewSvg } from '@ds/release'
 import DOMPurify from 'dompurify'
 import hljs from 'highlight.js'
 import { Marked, Renderer, TokenizerExtension, Tokens } from 'marked'
@@ -43,7 +43,7 @@ export const Markdown = (props: Props) => {
 		rawCodeRefs.current.push(raw)
 
 		return renderToStaticMarkup(
-			<pre>
+			<pre data-lang={lang}>
 				<div>
 					{lang || 'plaintext'}
 					<div data-code-actions="" />
@@ -59,17 +59,22 @@ export const Markdown = (props: Props) => {
 			const regex = /```(?:\w+)?\s([\s\S]*?)```/
 			const raw = rawCodeRefs.current[index]
 			const code = raw.startsWith('```') ? raw.match(regex)?.[1].trim() || '' : raw
+			const lang = elem.closest('pre')?.getAttribute('data-lang') || 'plaintext'
 
 			const root = rootRefs.current.get(elem) || createRoot(elem)
 			root.render(
 				// Button component requires a router context
 				<MemoryRouter>
-					<CopyButton
+					<CopyButton variant="text-default" tooltip={t('aiChat.action.copyCode')} text={code} />
+					<Button
+						tooltip={t('aiChat.action.previewCode')}
 						variant="text-default"
-						tooltip={t('aiChat.action.copyCode')}
-						text={code}
-						className="-mr-button-px-xs"
-					/>
+						size="xs"
+						onClick={() => onPreviewCode?.(code, lang)}
+					>
+						<PreviewSvg className="mr-xs-2 h-xs-6 w-xs-6" />
+						<span className="leading-1">{t('core.action.preview')}</span>
+					</Button>
 				</MemoryRouter>
 			)
 			rootRefs.current.set(elem, root)

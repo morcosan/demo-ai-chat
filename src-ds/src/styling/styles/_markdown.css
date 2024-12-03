@@ -37,10 +37,16 @@
 			align-items: center;
 			border-bottom: 1px solid var(--ds-color-border-subtle);
 			background-color: var(--ds-color-bg-blockquote);
-			padding: 0 var(--ds-spacing-xs-6);
+			padding: 1px var(--ds-spacing-xs-6) 0;
 			height: var(--bar-height);
 			color: var(--ds-color-text-subtle);
 			font-size: var(--ds-font-size-xs);
+
+			& > div:last-child {
+				display: flex;
+				align-items: center;
+				margin-right: calc(-1 * var(--ds-spacing-button-px-xs));
+			}
 		}
 
 		& > code {

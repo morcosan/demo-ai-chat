@@ -25,7 +25,7 @@ export const PanelView = (props: Props) => {
 		loadActiveSubchat,
 		resetActiveSubchat,
 	} = useAiChat()
-	const { previewSource, openPreview } = useAiChatPreview()
+	const { previewSource, openCodePreview, openUrlPreview } = useAiChatPreview()
 	const [isViewVisible, setIsViewVisible] = useState(true)
 	const [searchParams] = useSearchParams()
 	const navigate = useNavigate()
@@ -72,7 +72,7 @@ export const PanelView = (props: Props) => {
 		<div className="relative h-full">
 			<div className={cx('relative h-full', !isViewVisible && 'invisible')}>
 				{!activeChat ? null : activeSubchat ? (
-					<SubchatView openPreview={openPreview} />
+					<SubchatView openCodePreview={openCodePreview} openUrlPreview={openUrlPreview} />
 				) : chatLoading === 'full' || allSubchatsLoading === 'full' ? (
 					<PanelBase>
 						<LoadingText text={t('aiChat.state.loadingSubchats')} className="flex-center h-full" />

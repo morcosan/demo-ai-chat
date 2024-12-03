@@ -8,7 +8,7 @@ import { MessageItem } from '../../components/items/message-item'
 import { NewMessageBox } from '../../components/new-message-box'
 import { StickyToolbar } from '../../components/sticky-toolbar'
 import { useScrollable } from '../../hooks/use-scrollable'
-import { AiChatPreviewSource, AiChatPreviewType, useAiChat, useAiChatAgents, useAiChatPreview } from '../../state'
+import { AiChatPreviewSource, useAiChat, useAiChatAgents, useAiChatPreview } from '../../state'
 import { PreviewView } from './nested/_preview-view'
 
 export const ChatView = () => {
@@ -25,7 +25,7 @@ export const ChatView = () => {
 		resetActiveChat,
 	} = useAiChat()
 	const { allAgentsForChat, loadMissingAgents } = useAiChatAgents()
-	const { previewSource, openPreview } = useAiChatPreview()
+	const { previewSource, openCodePreview, openUrlPreview } = useAiChatPreview()
 	const { containerRef, saveScrollPos, scrollToPos } = useScrollable()
 	const { $lineHeight, $fontSize, $spacing } = useUiTheme()
 	const { chatId: chatIdStr } = useParams()
@@ -107,7 +107,8 @@ export const ChatView = () => {
 						agent={allAgentsForChat.find((agent: Agent) => agent.id === message.agentId)}
 						subchatId={subchatId}
 						onClickRetry={onRetryMessage}
-						onPreviewLink={(url: string) => openPreview(url, AiChatPreviewType.URL, AiChatPreviewSource.CHAT)}
+						onPreviewCode={(code, lang) => openCodePreview(code, lang, AiChatPreviewSource.CHAT)}
+						onPreviewLink={(url) => openUrlPreview(url, AiChatPreviewSource.CHAT)}
 					/>
 				))}
 			</ul>
