@@ -71,6 +71,7 @@
 	"aiChat": {
 		"action": {
 			"backToSubchats": "Back to subchats",
+			"closePreview": "Close preview",
 			"configureAgent": "Configure agent",
 			"confirmDeleteAgent": "Confirm deleting agent",
 			"confirmDeleteChats": "Confirm deleting chats",

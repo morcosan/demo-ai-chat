@@ -5,13 +5,15 @@ interface Props extends ReactProps {
 	containerRef?: RefObject<HTMLDivElement>
 	containerClass?: string
 	isChatView?: boolean
+	isPreview?: boolean
 	slotToolbar?: ReactNode
 	slotFooter?: ReactNode
 	onScroll?(event: UIEvent): void
 }
 
 export const PanelBase = (props: Props) => {
-	const { containerRef, containerClass, isChatView, slotToolbar, slotFooter, children, onScroll } = props
+	const { containerRef, containerClass, isChatView, isPreview, slotToolbar, slotFooter, children, onScroll } =
+		props
 
 	return (
 		<div className="flex h-full flex-col">
@@ -21,7 +23,9 @@ export const PanelBase = (props: Props) => {
 				onScroll={onScroll}
 			>
 				{/* TOOLBAR */}
-				<PanelToolbar isChatView={isChatView}>{slotToolbar}</PanelToolbar>
+				<PanelToolbar isChatView={isChatView} isPreview={isPreview}>
+					{slotToolbar}
+				</PanelToolbar>
 
 				{/* CONTENT */}
 				{children}

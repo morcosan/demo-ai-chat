@@ -25,14 +25,15 @@ export const PreviewView = ({ isChatView, className }: Props) => {
 
 	return (
 		<div className={cx('absolute-overlay z-sticky bg-color-bg-page', !isVisible && 'hidden', className)}>
-			<PanelBase slotToolbar={<span className="px-xs-1">{title}</span>} isChatView={isChatView}>
+			<PanelBase slotToolbar={<span className="px-xs-3">{title}</span>} isChatView={isChatView} isPreview>
 				{isUrl ? (
 					<div className="flex h-full flex-col pb-xs-2">
 						{/* URL TOOLBAR */}
 						<div className="my-xs-0 flex h-button-h-sm items-center">
-							<IconButton tooltip={t('aiChat.action.reloadPreview')} size="sm" className="-ml-xs-1">
+							<IconButton tooltip={t('aiChat.action.reloadPreview')} size="sm">
 								<ReloadSvg className="w-xs-6" />
 							</IconButton>
+
 							<a
 								href={previewContent || ''}
 								target="_blank"

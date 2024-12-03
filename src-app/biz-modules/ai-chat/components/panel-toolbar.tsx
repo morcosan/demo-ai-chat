@@ -1,13 +1,16 @@
-import { Button, IconButton, PanelCloseSvg, ResizeSvg } from '@ds/release'
-import { useAiChatLayout } from '../state'
+import { Button, CloseSvg, IconButton, PanelCloseSvg, ResizeSvg } from '@ds/release'
+import { useAiChatLayout, useAiChatPreview } from '../state'
 import { StickyToolbar } from './sticky-toolbar'
 
 interface Props extends ReactProps {
 	isChatView?: boolean
+	isPreview?: boolean
 }
 
-export const PanelToolbar = ({ isChatView, children }: Props) => {
+export const PanelToolbar = (props: Props) => {
+	const { isChatView, isPreview, children } = props
 	const { panelWidth, setPanelWidth, setShowsPanel } = useAiChatLayout()
+	const { closePreview } = useAiChatPreview()
 
 	const PANEL_WIDTHS = [30, 35, 40, 45, 50, 55, 60, 65, 70]
 
@@ -37,9 +40,15 @@ export const PanelToolbar = ({ isChatView, children }: Props) => {
 						</span>
 					</Button>
 
-					<IconButton tooltip={t('core.action.hidePanel')} size="sm" onClick={() => setShowsPanel(false)}>
-						<PanelCloseSvg className="h-xs-7" />
-					</IconButton>
+					{isPreview ? (
+						<IconButton tooltip={t('aiChat.action.closePreview')} size="sm" onClick={closePreview}>
+							<CloseSvg className="h-xs-7" />
+						</IconButton>
+					) : (
+						<IconButton tooltip={t('core.action.hidePanel')} size="sm" onClick={() => setShowsPanel(false)}>
+							<PanelCloseSvg className="h-xs-7" />
+						</IconButton>
+					)}
 				</div>
 			</div>
 		</StickyToolbar>
