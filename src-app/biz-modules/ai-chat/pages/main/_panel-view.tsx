@@ -1,8 +1,8 @@
 import { LoadingText } from '@app/library/release'
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import { useNavigate, useSearchParams } from 'react-router-dom'
 import { PanelBase } from '../../components/panel-base'
-import { useAiChat } from '../../state'
+import { AiChatPreviewSource, useAiChat, useAiChatPreview } from '../../state'
 import { PreviewView } from './nested/_preview-view'
 import { SubchatView } from './nested/_subchat-view'
 import { SubchatsView } from './nested/_subchats-view'
@@ -25,6 +25,8 @@ export const PanelView = (props: Props) => {
 		loadActiveSubchat,
 		resetActiveSubchat,
 	} = useAiChat()
+	const { previewSource, openPreview } = useAiChatPreview()
+	const [isViewVisible, setIsViewVisible] = useState(true)
 	const [searchParams] = useSearchParams()
 	const navigate = useNavigate()
 
@@ -54,21 +56,29 @@ export const PanelView = (props: Props) => {
 		}
 	}, [allSubchats, allSubchatsPagination])
 
+	useEffect(() => {
+		previewSource === AiChatPreviewSource.CHAT
+			? wait(300).then(() => setIsViewVisible(false))
+			: setIsViewVisible(true)
+	}, [previewSource])
+
 	return (
 		<div className="relative h-full">
-			{!activeChat ? null : activeSubchat ? (
-				<SubchatView />
-			) : chatLoading === 'full' || allSubchatsLoading === 'full' ? (
-				<PanelBase>
-					<LoadingText text={t('aiChat.state.loadingSubchats')} className="flex-center h-full" />
-				</PanelBase>
-			) : !allSubchats.length && !subchatLoading ? (
-				<PanelBase>
-					<div className="flex-center h-full w-full text-color-text-subtle">{t('aiChat.label.noSubchats')}</div>
-				</PanelBase>
-			) : (
-				<SubchatsView />
-			)}
+			<div className={cx('relative h-full', !isViewVisible && 'invisible')}>
+				{!activeChat ? null : activeSubchat ? (
+					<SubchatView openPreview={openPreview} />
+				) : chatLoading === 'full' || allSubchatsLoading === 'full' ? (
+					<PanelBase>
+						<LoadingText text={t('aiChat.state.loadingSubchats')} className="flex-center h-full" />
+					</PanelBase>
+				) : !allSubchats.length && !subchatLoading ? (
+					<PanelBase>
+						<div className="flex-center h-full w-full text-color-text-subtle">{t('aiChat.label.noSubchats')}</div>
+					</PanelBase>
+				) : (
+					<SubchatsView />
+				)}
+			</div>
 
 			<PreviewView />
 		</div>

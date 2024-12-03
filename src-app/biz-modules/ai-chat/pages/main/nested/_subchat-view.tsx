@@ -7,15 +7,14 @@ import { MessageItem } from '../../../components/items/message-item'
 import { NewMessageBox } from '../../../components/new-message-box'
 import { PanelBase } from '../../../components/panel-base'
 import { useScrollable } from '../../../hooks/use-scrollable'
-import {
-	AiChatPreviewSource,
-	AiChatPreviewType,
-	useAiChat,
-	useAiChatAgents,
-	useAiChatPreview,
-} from '../../../state'
+import { AiChatPreviewSource, AiChatPreviewType, useAiChat, useAiChatAgents } from '../../../state'
 
-export const SubchatView = () => {
+interface Props {
+	openPreview(content: string, type: AiChatPreviewType, source: AiChatPreviewSource): void
+}
+
+export const SubchatView = (props: Props) => {
+	const { openPreview } = props
 	const {
 		activeChat,
 		canLoadSubchatMessages,
@@ -26,7 +25,6 @@ export const SubchatView = () => {
 		postSubchatMessage,
 	} = useAiChat()
 	const { allAgentsForChat, loadMissingAgents } = useAiChatAgents()
-	const { openPreview } = useAiChatPreview()
 	const { containerRef, saveScrollPos, scrollToPos } = useScrollable()
 	const [sentText, setSentText] = useState('')
 	const [sentAgentId, setSentAgentId] = useState(0)
