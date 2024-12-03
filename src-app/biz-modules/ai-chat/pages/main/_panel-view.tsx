@@ -57,6 +57,12 @@ export const PanelView = (props: Props) => {
 	}, [allSubchats, allSubchatsPagination])
 
 	useEffect(() => {
+		if (previewSource === AiChatPreviewSource.NONE) {
+			!allSubchats.length && !activeSubchat && onHidePanel()
+		} else {
+			onShowPanel()
+		}
+
 		previewSource === AiChatPreviewSource.CHAT
 			? wait(300).then(() => setIsViewVisible(false))
 			: setIsViewVisible(true)
