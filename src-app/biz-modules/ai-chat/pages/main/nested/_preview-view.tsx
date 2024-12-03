@@ -10,6 +10,7 @@ interface Props extends ReactProps {
 export const PreviewView = ({ isChatView }: Props) => {
 	const { previewContent, previewSource, previewType } = useAiChatPreview()
 	const [isViewVisible, setIsViewVisible] = useState(true)
+	const [iframeKey, setIframeKey] = useState(0)
 
 	const isSourceChat = previewSource === AiChatPreviewSource.CHAT
 	const isSourceSubchat = previewSource === AiChatPreviewSource.SUBCHAT
@@ -42,7 +43,11 @@ export const PreviewView = ({ isChatView }: Props) => {
 					<div className="flex h-full flex-col pb-xs-2">
 						{/* URL TOOLBAR */}
 						<div className="my-a11y-padding flex h-button-h-sm items-center">
-							<IconButton tooltip={t('aiChat.action.reloadPreview')} size="sm">
+							<IconButton
+								tooltip={t('aiChat.action.reloadPreview')}
+								size="sm"
+								onClick={() => setIframeKey((key: number) => key + 1)}
+							>
 								<ReloadSvg className="w-xs-6" />
 							</IconButton>
 
@@ -58,6 +63,7 @@ export const PreviewView = ({ isChatView }: Props) => {
 						</div>
 
 						<iframe
+							key={iframeKey}
 							src={previewContent || ''}
 							referrerPolicy="no-referrer"
 							sandbox="allow-scripts allow-same-origin allow-forms"
