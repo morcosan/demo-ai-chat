@@ -1,24 +1,23 @@
 import { IconButton, NewTabSvg, ReloadSvg } from '@ds/release'
 import { useEffect, useState } from 'react'
 import { PanelBase } from '../../../components/panel-base'
-import { AiChatPreviewSource, AiChatPreviewType, useAiChatPreview } from '../../../state'
+import { AiChatPreviewSource, useAiChatPreview } from '../../../state'
 
 interface Props extends ReactProps {
 	isChatView?: boolean
 }
 
 export const PreviewView = ({ isChatView }: Props) => {
-	const { previewUrl, previewCode, previewLang, previewSource, previewType } = useAiChatPreview()
-	const [isViewVisible, setIsViewVisible] = useState(true)
+	const { previewUrl, previewCode, previewLang, previewSource } = useAiChatPreview()
+	const [isVisible, setIsVisible] = useState(true)
 	const [iframeKey, setIframeKey] = useState(0)
 
+	const isUrl = Boolean(previewUrl)
+	const isCode = Boolean(previewCode && previewLang)
 	const isSourceChat = previewSource === AiChatPreviewSource.CHAT
 	const isSourceSubchat = previewSource === AiChatPreviewSource.SUBCHAT
 	const isValidView = Boolean(isChatView ? isSourceSubchat : isSourceChat)
-	const showsPreview = Boolean(previewUrl || (previewCode && previewLang)) && isValidView
-
-	const isUrl = previewType === AiChatPreviewType.URL
-	const isCode = previewType === AiChatPreviewType.CODE
+	const showsPreview = Boolean(isUrl || isCode) && isValidView
 
 	const title = (() => {
 		if (isUrl) return t('aiChat.label.urlPreview')
@@ -27,7 +26,7 @@ export const PreviewView = ({ isChatView }: Props) => {
 	})()
 
 	useEffect(() => {
-		showsPreview ? setIsViewVisible(true) : wait(200).then(() => setIsViewVisible(false))
+		showsPreview ? setIsVisible(true) : wait(200).then(() => setIsVisible(false))
 	}, [showsPreview])
 
 	return (
@@ -36,7 +35,7 @@ export const PreviewView = ({ isChatView }: Props) => {
 				'absolute-overlay z-sticky bg-color-bg-page',
 				'transition-opacity duration-200 ease-in',
 				!showsPreview && 'pointer-events-none opacity-0',
-				!isViewVisible && 'invisible'
+				!isVisible && 'invisible'
 			)}
 		>
 			<PanelBase slotToolbar={<span className="px-xs-3">{title}</span>} isChatView={isChatView} isPreview>

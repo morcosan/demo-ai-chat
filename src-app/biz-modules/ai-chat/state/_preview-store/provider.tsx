@@ -1,18 +1,16 @@
 import { useMemo, useState } from 'react'
-import { AiChatPreviewSource, AiChatPreviewType, PreviewContext, Store } from './context'
+import { AiChatPreviewSource, PreviewContext, Store } from './context'
 
 export const PreviewProvider = ({ children }: ReactProps) => {
 	const [previewCode, setPreviewCode] = useState<string | null>(null)
 	const [previewLang, setPreviewLang] = useState<string | null>(null)
 	const [previewSource, setPreviewSource] = useState<AiChatPreviewSource>(AiChatPreviewSource.NONE)
-	const [previewType, setPreviewType] = useState<AiChatPreviewType>(AiChatPreviewType.NONE)
 	const [previewUrl, setPreviewUrl] = useState<string | null>(null)
 
 	const openUrlPreview = (url: string, source: AiChatPreviewSource) => {
 		setPreviewCode(null)
 		setPreviewLang(null)
 		setPreviewSource(source)
-		setPreviewType(AiChatPreviewType.URL)
 		setPreviewUrl(url)
 	}
 
@@ -20,7 +18,6 @@ export const PreviewProvider = ({ children }: ReactProps) => {
 		setPreviewCode(code)
 		setPreviewLang(lang)
 		setPreviewSource(source)
-		setPreviewType(AiChatPreviewType.CODE)
 		setPreviewUrl(null)
 	}
 
@@ -28,7 +25,6 @@ export const PreviewProvider = ({ children }: ReactProps) => {
 		setPreviewCode(null)
 		setPreviewLang(null)
 		setPreviewSource(AiChatPreviewSource.NONE)
-		setPreviewType(AiChatPreviewType.NONE)
 		setPreviewUrl(null)
 	}
 
@@ -37,13 +33,12 @@ export const PreviewProvider = ({ children }: ReactProps) => {
 			previewCode,
 			previewLang,
 			previewSource,
-			previewType,
 			previewUrl,
 			closePreview,
 			openCodePreview,
 			openUrlPreview,
 		}),
-		[previewCode, previewLang, previewSource, previewType, previewUrl]
+		[previewCode, previewLang, previewSource, previewUrl]
 	)
 
 	return <PreviewContext.Provider value={store}>{children}</PreviewContext.Provider>
