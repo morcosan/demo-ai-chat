@@ -1,14 +1,14 @@
 import { AppLayout } from '@app/layouts/app-layout'
 import { IconButton, PanelOpenSvg, useUiViewport } from '@ds/release'
-import { useEffect, useMemo } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 import { AiChatView, useAiChatLayout } from '../../state'
 import { ChatView } from './_chat-view'
 import { PanelContent } from './_panel-content'
-import { PreviewView } from './_preview-view'
 
 export const AiChatMainPage = () => {
 	const { isViewportMaxLG } = useUiViewport()
 	const { activeView, panelWidth, showsPanel, setActiveView, setShowsPanel } = useAiChatLayout()
+	const [isPanelVisible, setIsPanelVisible] = useState(false)
 
 	const isSubchatView = activeView === AiChatView.MOBILE_SUBCHAT
 
@@ -20,23 +20,13 @@ export const AiChatMainPage = () => {
 		}
 	}, [isViewportMaxLG])
 
-	const slotPage = useMemo(
-		() => (
-			<>
-				<ChatView />
-				<PreviewView isChatView />
-			</>
-		),
-		[]
-	)
+	useEffect(() => {
+		showsPanel ? setIsPanelVisible(true) : wait(300).then(() => setIsPanelVisible(false))
+	}, [showsPanel])
 
+	const slotPage = useMemo(() => <ChatView />, [])
 	const slotPanel = useMemo(
-		() => (
-			<>
-				<PanelContent onShowPanel={() => setShowsPanel(true)} onHidePanel={() => setShowsPanel(false)} />
-				<PreviewView className="ml-xs-1" />
-			</>
-		),
+		() => <PanelContent onShowPanel={() => setShowsPanel(true)} onHidePanel={() => setShowsPanel(false)} />,
 		[]
 	)
 
@@ -57,22 +47,23 @@ export const AiChatMainPage = () => {
 						style={{ width: showsPanel ? `${panelWidth}%` : 0 }}
 					/>
 
-					{/* VISIBLE PANEL */}
+					{/* PANEL */}
 					<div
 						className={cx(
 							'absolute right-0 top-0 z-navbar h-full min-w-xl-1 pl-xs-1',
 							'bg-color-bg-page transition-transform duration-300 ease-in-out',
-							showsPanel ? 'translate-x-0' : 'pointer-events-none translate-x-full'
+							showsPanel ? 'translate-x-0' : 'pointer-events-none translate-x-full',
+							!isPanelVisible && 'invisible'
 						)}
 						style={{ width: `${panelWidth}%` }}
 					>
 						{/* DELIMITER */}
 						<div className="absolute left-0 top-0 h-full w-xs-1 bg-color-border-shadow" />
 						{/* VIEW */}
-						{slotPanel}
+						<div className="relative h-full">{slotPanel}</div>
 					</div>
 
-					{/* HIDDEN PANEL */}
+					{/* SHOW BUTTON */}
 					<div
 						className={cx('fixed right-a11y-scrollbar top-a11y-padding pt-px', showsPanel && 'hidden')}
 						style={{ zIndex: 'calc(var(--ds-z-index-navbar) - 1)' }}

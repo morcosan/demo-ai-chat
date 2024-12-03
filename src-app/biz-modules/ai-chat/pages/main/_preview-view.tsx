@@ -27,7 +27,7 @@ export const PreviewView = ({ isChatView, className }: Props) => {
 			className={cx(
 				'absolute-overlay z-sticky bg-color-bg-page',
 				'transition-opacity duration-200 ease-in',
-				!isVisible && 'pointer-events-none opacity-0',
+				!isVisible && 'pointer-events-none hidden opacity-0',
 				className
 			)}
 		>
@@ -35,7 +35,7 @@ export const PreviewView = ({ isChatView, className }: Props) => {
 				{isUrl ? (
 					<div className="flex h-full flex-col pb-xs-2">
 						{/* URL TOOLBAR */}
-						<div className="my-xs-0 flex h-button-h-sm items-center">
+						<div className="my-a11y-padding flex h-button-h-sm items-center">
 							<IconButton tooltip={t('aiChat.action.reloadPreview')} size="sm">
 								<ReloadSvg className="w-xs-6" />
 							</IconButton>

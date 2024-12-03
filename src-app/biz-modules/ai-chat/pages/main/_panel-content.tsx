@@ -3,6 +3,7 @@ import { useEffect } from 'react'
 import { useNavigate, useSearchParams } from 'react-router-dom'
 import { PanelBase } from '../../components/panel-base'
 import { useAiChat } from '../../state'
+import { PreviewView } from './_preview-view'
 import { SubchatView } from './_subchat-view'
 import { SubchatsView } from './_subchats-view'
 
@@ -53,19 +54,23 @@ export const PanelContent = (props: Props) => {
 		}
 	}, [allSubchats, allSubchatsPagination])
 
-	return !activeChat ? (
-		<div />
-	) : activeSubchat ? (
-		<SubchatView />
-	) : chatLoading === 'full' || allSubchatsLoading === 'full' ? (
-		<PanelBase>
-			<LoadingText text={t('aiChat.state.loadingSubchats')} className="flex-center h-full" />
-		</PanelBase>
-	) : !allSubchats.length && !subchatLoading ? (
-		<PanelBase>
-			<div className="flex-center h-full w-full text-color-text-subtle">{t('aiChat.label.noSubchats')}</div>
-		</PanelBase>
-	) : (
-		<SubchatsView />
+	return (
+		<>
+			{!activeChat ? null : activeSubchat ? (
+				<SubchatView />
+			) : chatLoading === 'full' || allSubchatsLoading === 'full' ? (
+				<PanelBase>
+					<LoadingText text={t('aiChat.state.loadingSubchats')} className="flex-center h-full" />
+				</PanelBase>
+			) : !allSubchats.length && !subchatLoading ? (
+				<PanelBase>
+					<div className="flex-center h-full w-full text-color-text-subtle">{t('aiChat.label.noSubchats')}</div>
+				</PanelBase>
+			) : (
+				<SubchatsView />
+			)}
+
+			<PreviewView />
+		</>
 	)
 }

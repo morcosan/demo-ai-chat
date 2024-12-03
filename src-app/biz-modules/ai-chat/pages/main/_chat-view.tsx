@@ -9,6 +9,7 @@ import { NewMessageBox } from '../../components/new-message-box'
 import { StickyToolbar } from '../../components/sticky-toolbar'
 import { useScrollable } from '../../hooks/use-scrollable'
 import { AiChatPreviewSource, AiChatPreviewType, useAiChat, useAiChatAgents, useAiChatPreview } from '../../state'
+import { PreviewView } from './_preview-view'
 
 export const ChatView = () => {
 	const {
@@ -172,6 +173,8 @@ export const ChatView = () => {
 					</div>
 				</div>
 			</div>
+
+			<PreviewView isChatView />
 		</>
 	)
 }
