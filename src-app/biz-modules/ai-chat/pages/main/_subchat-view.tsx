@@ -7,7 +7,7 @@ import { MessageItem } from '../../components/items/message-item'
 import { NewMessageBox } from '../../components/new-message-box'
 import { PanelBase } from '../../components/panel-base'
 import { useScrollable } from '../../hooks/use-scrollable'
-import { AiChatPreviewType, useAiChat, useAiChatAgents, useAiChatPreview } from '../../state'
+import { AiChatPreviewSource, AiChatPreviewType, useAiChat, useAiChatAgents, useAiChatPreview } from '../../state'
 
 export const SubchatView = () => {
 	const {
@@ -62,7 +62,7 @@ export const SubchatView = () => {
 						agent={allAgentsForChat.find((agent: Agent) => agent.id === message.agentId)}
 						isSubchat
 						onClickRetry={onRetryMessage}
-						onPreviewLink={(url: string) => openPreview(url, AiChatPreviewType.URL, message)}
+						onPreviewLink={(url: string) => openPreview(url, AiChatPreviewType.URL, AiChatPreviewSource.SUBCHAT)}
 					/>
 				))}
 			</ul>

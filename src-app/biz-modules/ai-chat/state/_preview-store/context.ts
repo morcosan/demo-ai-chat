@@ -1,5 +1,10 @@
 import { createContext } from 'react'
-import { Message } from '../../api'
+
+export enum AiChatPreviewSource {
+	NONE,
+	CHAT,
+	SUBCHAT,
+}
 
 export enum AiChatPreviewType {
 	NONE,
@@ -9,15 +14,15 @@ export enum AiChatPreviewType {
 
 export interface Store {
 	previewContent: string | null
-	previewSource: Message | null
+	previewSource: AiChatPreviewSource
 	previewType: AiChatPreviewType
-	openPreview(content: string, type: AiChatPreviewType, source: Message): void
+	openPreview(content: string, type: AiChatPreviewType, source: AiChatPreviewSource): void
 	closePreview(): void
 }
 
 export const PreviewContext = createContext<Store>({
 	previewContent: null,
-	previewSource: null,
+	previewSource: AiChatPreviewSource.NONE,
 	previewType: AiChatPreviewType.NONE,
 	openPreview: () => {},
 	closePreview: () => {},

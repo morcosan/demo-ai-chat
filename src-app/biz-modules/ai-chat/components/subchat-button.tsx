@@ -1,6 +1,6 @@
 import { Button } from '@ds/release'
 import { Message } from '../api'
-import { AiChatView, useAiChatLayout } from '../state'
+import { AiChatView, useAiChatLayout, useAiChatPreview } from '../state'
 import { SubchatIcon } from './subchat-icon'
 
 interface Props extends ReactProps {
@@ -12,10 +12,18 @@ interface Props extends ReactProps {
 export const SubchatButton = (props: Props) => {
 	const { message, selected, small, className } = props
 	const { activeView, setActiveView, setShowsPanel } = useAiChatLayout()
+	const { previewContent, closePreview } = useAiChatPreview()
 
 	const onClickSubchat = () => {
 		activeView === AiChatView.MOBILE_CHAT && setActiveView(AiChatView.MOBILE_SUBCHAT)
-		selected ? setShowsPanel((value: boolean) => !value) : setShowsPanel(true)
+
+		if (selected) {
+			previewContent ? setShowsPanel(true) : setShowsPanel((value: boolean) => !value)
+		} else {
+			setShowsPanel(true)
+		}
+
+		closePreview()
 	}
 
 	return (

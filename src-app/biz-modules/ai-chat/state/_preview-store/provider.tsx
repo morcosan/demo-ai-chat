@@ -1,13 +1,12 @@
 import { useMemo, useState } from 'react'
-import { Message } from '../../api'
-import { AiChatPreviewType, PreviewContext, Store } from './context'
+import { AiChatPreviewSource, AiChatPreviewType, PreviewContext, Store } from './context'
 
 export const PreviewProvider = ({ children }: ReactProps) => {
 	const [previewContent, setPreviewContent] = useState<string | null>(null)
-	const [previewSource, setPreviewSource] = useState<Message | null>(null)
+	const [previewSource, setPreviewSource] = useState<AiChatPreviewSource>(AiChatPreviewSource.NONE)
 	const [previewType, setPreviewType] = useState<AiChatPreviewType>(AiChatPreviewType.NONE)
 
-	const openPreview = (content: string, type: AiChatPreviewType, source: Message) => {
+	const openPreview = (content: string, type: AiChatPreviewType, source: AiChatPreviewSource) => {
 		setPreviewContent(content)
 		setPreviewSource(source)
 		setPreviewType(type)
@@ -15,7 +14,7 @@ export const PreviewProvider = ({ children }: ReactProps) => {
 
 	const closePreview = () => {
 		setPreviewContent(null)
-		setPreviewSource(null)
+		setPreviewSource(AiChatPreviewSource.NONE)
 		setPreviewType(AiChatPreviewType.NONE)
 	}
 

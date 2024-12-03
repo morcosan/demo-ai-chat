@@ -8,7 +8,7 @@ import { MessageItem } from '../../components/items/message-item'
 import { NewMessageBox } from '../../components/new-message-box'
 import { StickyToolbar } from '../../components/sticky-toolbar'
 import { useScrollable } from '../../hooks/use-scrollable'
-import { AiChatPreviewType, useAiChat, useAiChatAgents, useAiChatPreview } from '../../state'
+import { AiChatPreviewSource, AiChatPreviewType, useAiChat, useAiChatAgents, useAiChatPreview } from '../../state'
 
 export const ChatView = () => {
 	const {
@@ -99,7 +99,7 @@ export const ChatView = () => {
 						agent={allAgentsForChat.find((agent: Agent) => agent.id === message.agentId)}
 						subchatId={subchatId}
 						onClickRetry={onRetryMessage}
-						onPreviewLink={(url: string) => openPreview(url, AiChatPreviewType.URL, message)}
+						onPreviewLink={(url: string) => openPreview(url, AiChatPreviewType.URL, AiChatPreviewSource.CHAT)}
 					/>
 				))}
 			</ul>

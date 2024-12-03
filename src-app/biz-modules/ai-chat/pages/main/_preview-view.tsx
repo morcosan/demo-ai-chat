@@ -1,6 +1,6 @@
 import { IconButton, NewTabSvg, ReloadSvg } from '@ds/release'
 import { PanelBase } from '../../components/panel-base'
-import { AiChatPreviewType, useAiChatPreview } from '../../state'
+import { AiChatPreviewSource, AiChatPreviewType, useAiChatPreview } from '../../state'
 
 interface Props extends ReactProps {
 	isChatView?: boolean
@@ -9,8 +9,9 @@ interface Props extends ReactProps {
 export const PreviewView = ({ isChatView, className }: Props) => {
 	const { previewContent, previewSource, previewType } = useAiChatPreview()
 
-	const isSubchat = Boolean(previewSource && previewSource.parentId !== previewSource.chatId)
-	const isVisible = Boolean(previewContent && (isChatView ? isSubchat : !isSubchat))
+	const isSourceChat = previewSource === AiChatPreviewSource.CHAT
+	const isSourceSubchat = previewSource === AiChatPreviewSource.SUBCHAT
+	const isVisible = Boolean(previewContent && (isChatView ? isSourceSubchat : isSourceChat))
 
 	const isUrl = previewType === AiChatPreviewType.URL
 	const isCode = previewType === AiChatPreviewType.CODE
@@ -21,10 +22,15 @@ export const PreviewView = ({ isChatView, className }: Props) => {
 		return ''
 	})()
 
-	log(isChatView, previewContent, isSubchat)
-
 	return (
-		<div className={cx('absolute-overlay z-sticky bg-color-bg-page', !isVisible && 'hidden', className)}>
+		<div
+			className={cx(
+				'absolute-overlay z-sticky bg-color-bg-page',
+				'transition-opacity duration-200 ease-in',
+				!isVisible && 'pointer-events-none opacity-0',
+				className
+			)}
+		>
 			<PanelBase slotToolbar={<span className="px-xs-3">{title}</span>} isChatView={isChatView} isPreview>
 				{isUrl ? (
 					<div className="flex h-full flex-col pb-xs-2">
