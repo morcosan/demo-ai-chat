@@ -3,7 +3,7 @@ import { IconButton, PanelOpenSvg, useUiViewport } from '@ds/release'
 import { useEffect, useMemo, useState } from 'react'
 import { AiChatView, useAiChatLayout } from '../../state'
 import { ChatView } from './_chat-view'
-import { PanelContent } from './_panel-content'
+import { PanelView } from './_panel-view'
 
 export const AiChatMainPage = () => {
 	const { isViewportMaxLG } = useUiViewport()
@@ -26,7 +26,7 @@ export const AiChatMainPage = () => {
 
 	const slotPage = useMemo(() => <ChatView />, [])
 	const slotPanel = useMemo(
-		() => <PanelContent onShowPanel={() => setShowsPanel(true)} onHidePanel={() => setShowsPanel(false)} />,
+		() => <PanelView onShowPanel={() => setShowsPanel(true)} onHidePanel={() => setShowsPanel(false)} />,
 		[]
 	)
 
@@ -60,7 +60,7 @@ export const AiChatMainPage = () => {
 						{/* DELIMITER */}
 						<div className="absolute left-0 top-0 h-full w-xs-1 bg-color-border-shadow" />
 						{/* VIEW */}
-						<div className="relative h-full">{slotPanel}</div>
+						{slotPanel}
 					</div>
 
 					{/* SHOW BUTTON */}
@@ -88,7 +88,8 @@ export const AiChatMainPage = () => {
 						'fixed bottom-0 left-0 right-0 ml-button-h-md',
 						'border-l border-t border-color-border-shadow bg-color-bg-page shadow-lg',
 						'transition-transform duration-300 ease-in-out',
-						isSubchatView ? 'translate-x-0' : 'translate-x-full'
+						isSubchatView ? 'translate-x-0' : 'translate-x-full',
+						!isPanelVisible && 'invisible'
 					)}
 					style={{ top: 'var(--app-spacing-navbar-h)', zIndex: 'calc(var(--ds-z-index-navbar) - 1)' }}
 				>

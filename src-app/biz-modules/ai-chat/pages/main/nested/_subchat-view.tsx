@@ -2,12 +2,18 @@ import { LoadingText } from '@app/library/release'
 import { ArrowBackSvg, IconButton } from '@ds/release'
 import { debounce } from 'lodash'
 import { UIEvent, useEffect, useMemo, useState } from 'react'
-import { Agent, Message } from '../../api'
-import { MessageItem } from '../../components/items/message-item'
-import { NewMessageBox } from '../../components/new-message-box'
-import { PanelBase } from '../../components/panel-base'
-import { useScrollable } from '../../hooks/use-scrollable'
-import { AiChatPreviewSource, AiChatPreviewType, useAiChat, useAiChatAgents, useAiChatPreview } from '../../state'
+import { Agent, Message } from '../../../api'
+import { MessageItem } from '../../../components/items/message-item'
+import { NewMessageBox } from '../../../components/new-message-box'
+import { PanelBase } from '../../../components/panel-base'
+import { useScrollable } from '../../../hooks/use-scrollable'
+import {
+	AiChatPreviewSource,
+	AiChatPreviewType,
+	useAiChat,
+	useAiChatAgents,
+	useAiChatPreview,
+} from '../../../state'
 
 export const SubchatView = () => {
 	const {

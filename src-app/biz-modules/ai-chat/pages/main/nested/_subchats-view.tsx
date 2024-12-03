@@ -2,11 +2,11 @@ import { LoadingText } from '@app/library/release'
 import { Button } from '@ds/release'
 import { debounce } from 'lodash'
 import { UIEvent, useMemo } from 'react'
-import { Subchat } from '../../api'
-import { PanelBase } from '../../components/panel-base'
-import { SubchatIcon } from '../../components/subchat-icon'
-import { useAiChat } from '../../state'
-import { getTextFromMarkdown } from '../../utils/markdown'
+import { Subchat } from '../../../api'
+import { PanelBase } from '../../../components/panel-base'
+import { SubchatIcon } from '../../../components/subchat-icon'
+import { useAiChat } from '../../../state'
+import { getTextFromMarkdown } from '../../../utils/markdown'
 
 export const SubchatsView = () => {
 	const { allSubchats, allSubchatsLoading, allSubchatsPagination, loadMoreSubchats } = useAiChat()

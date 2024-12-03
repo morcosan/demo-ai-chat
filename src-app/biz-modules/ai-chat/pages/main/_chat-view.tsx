@@ -9,7 +9,7 @@ import { NewMessageBox } from '../../components/new-message-box'
 import { StickyToolbar } from '../../components/sticky-toolbar'
 import { useScrollable } from '../../hooks/use-scrollable'
 import { AiChatPreviewSource, AiChatPreviewType, useAiChat, useAiChatAgents, useAiChatPreview } from '../../state'
-import { PreviewView } from './_preview-view'
+import { PreviewView } from './nested/_preview-view'
 
 export const ChatView = () => {
 	const {
@@ -25,12 +25,13 @@ export const ChatView = () => {
 		resetActiveChat,
 	} = useAiChat()
 	const { allAgentsForChat, loadMissingAgents } = useAiChatAgents()
-	const { openPreview } = useAiChatPreview()
+	const { previewSource, openPreview } = useAiChatPreview()
 	const { containerRef, saveScrollPos, scrollToPos } = useScrollable()
 	const { $lineHeight, $fontSize, $spacing } = useUiTheme()
 	const { chatId: chatIdStr } = useParams()
 	const [sentText, setSentText] = useState('')
 	const [sentAgentId, setSentAgentId] = useState(0)
+	const [isViewVisible, setIsViewVisible] = useState(true)
 	const [searchParams] = useSearchParams()
 	const navigate = useNavigate()
 
@@ -90,6 +91,12 @@ export const ChatView = () => {
 		loadMissingAgents([...new Set(chatMessages.map((message: Message) => message.agentId))])
 	}, [chatMessages])
 
+	useEffect(() => {
+		previewSource === AiChatPreviewSource.SUBCHAT
+			? wait(300).then(() => setIsViewVisible(false))
+			: setIsViewVisible(true)
+	}, [previewSource])
+
 	const slotMessages = useMemo(
 		() => (
 			<ul>
@@ -110,7 +117,11 @@ export const ChatView = () => {
 
 	return (
 		<>
-			<div ref={containerRef} className="ds-scrollable flex-1 !pb-lg-1 lg:!pb-lg-3" onScroll={onScroll}>
+			<div
+				ref={containerRef}
+				className={cx('ds-scrollable flex-1 !pb-lg-1 lg:!pb-lg-3', !isViewVisible && 'invisible')}
+				onScroll={onScroll}
+			>
 				{activeChat || chatId ? (
 					<div className={cx(widthClass, chatLoading === 'full' && 'h-full', 'flex flex-col pt-sm-0')}>
 						{/* TOOLBAR */}
@@ -162,7 +173,7 @@ export const ChatView = () => {
 			</div>
 
 			{/* NEW MESSAGE FIELD */}
-			<div className="mx-a11y-scrollbar">
+			<div className={cx('mx-a11y-scrollbar', !isViewVisible && 'invisible')}>
 				<div className={cx('lg:px-md-0', widthClass)}>
 					<div className="relative">
 						<NewMessageBox

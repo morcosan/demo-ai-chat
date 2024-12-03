@@ -3,16 +3,16 @@ import { useEffect } from 'react'
 import { useNavigate, useSearchParams } from 'react-router-dom'
 import { PanelBase } from '../../components/panel-base'
 import { useAiChat } from '../../state'
-import { PreviewView } from './_preview-view'
-import { SubchatView } from './_subchat-view'
-import { SubchatsView } from './_subchats-view'
+import { PreviewView } from './nested/_preview-view'
+import { SubchatView } from './nested/_subchat-view'
+import { SubchatsView } from './nested/_subchats-view'
 
 interface Props {
 	onShowPanel(): void
 	onHidePanel(): void
 }
 
-export const PanelContent = (props: Props) => {
+export const PanelView = (props: Props) => {
 	const { onShowPanel, onHidePanel } = props
 	const {
 		activeChat,
@@ -55,7 +55,7 @@ export const PanelContent = (props: Props) => {
 	}, [allSubchats, allSubchatsPagination])
 
 	return (
-		<>
+		<div className="relative h-full">
 			{!activeChat ? null : activeSubchat ? (
 				<SubchatView />
 			) : chatLoading === 'full' || allSubchatsLoading === 'full' ? (
@@ -71,6 +71,6 @@ export const PanelContent = (props: Props) => {
 			)}
 
 			<PreviewView />
-		</>
+		</div>
 	)
 }

@@ -1,6 +1,6 @@
 import { IconButton, NewTabSvg, ReloadSvg } from '@ds/release'
-import { PanelBase } from '../../components/panel-base'
-import { AiChatPreviewSource, AiChatPreviewType, useAiChatPreview } from '../../state'
+import { PanelBase } from '../../../components/panel-base'
+import { AiChatPreviewSource, AiChatPreviewType, useAiChatPreview } from '../../../state'
 
 interface Props extends ReactProps {
 	isChatView?: boolean
