@@ -58,7 +58,7 @@ export const PanelView = (props: Props) => {
 
 	useEffect(() => {
 		if (previewSource === AiChatPreviewSource.NONE) {
-			!allSubchats.length && !activeSubchat && onHidePanel()
+			!allSubchats.length && !activeSubchat && !subchatId && onHidePanel()
 		} else {
 			onShowPanel()
 		}
