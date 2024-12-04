@@ -35,6 +35,7 @@
 			left: 1px;
 			justify-content: space-between;
 			align-items: center;
+			z-index: 1;
 			border-bottom: 1px solid var(--ds-color-border-subtle);
 			background-color: var(--ds-color-bg-blockquote);
 			padding: 1px var(--ds-spacing-xs-6) 0;

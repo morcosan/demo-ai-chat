@@ -17,7 +17,7 @@ export const MarkdownCode = (props: Props) => {
 	const regex = /```(?:[\w/]+)?\s([\s\S]*?)(?:```|``|`|$)/
 	const code = raw.startsWith('```') ? raw.match(regex)?.[1].trim() || '' : raw
 
-	const MIN_ROWS = 5
+	const MIN_ROWS = 20
 	const canCollapse = code.split('\n').length > MIN_ROWS
 
 	return (
@@ -42,23 +42,31 @@ export const MarkdownCode = (props: Props) => {
 
 			<code
 				dangerouslySetInnerHTML={{ __html: html }}
-				className={cx(collapsed && 'max-h-lg-0 !overflow-hidden')}
+				className={cx(canCollapse && '!pb-sm-0', collapsed && 'max-h-xl-0 select-none !overflow-hidden')}
 			/>
 
 			{Boolean(canCollapse) && (
-				<div className="flex justify-center p-xs-0">
-					<Button
-						tooltip={t('aiChat.action.previewCode')}
-						variant="text-default"
-						size="xs"
-						onClick={() => setCollapsed((value) => !value)}
-					>
+				<div
+					className={cx(
+						'flex items-end justify-center rounded-sm',
+						collapsed
+							? 'absolute-overlay pb-scrollbar-h'
+							: 'absolute bottom-scrollbar-h left-1/2 -translate-x-1/2',
+						collapsed && 'bg-gradient-to-b from-color-transparent to-color-bg-card'
+					)}
+				>
+					<Button variant="text-default" size="xs" onClick={() => setCollapsed((value) => !value)}>
 						{collapsed ? (
-							<ChevronDownSvg className="mr-xs-2 h-xs-4 w-xs-4" />
+							<>
+								<ChevronDownSvg className="mr-xs-2 h-xs-4 w-xs-4" />
+								<span className="leading-1">{t('core.action.expand')}</span>
+							</>
 						) : (
-							<ChevronUpSvg className="mr-xs-2 h-xs-4 w-xs-4" />
+							<>
+								<ChevronUpSvg className="mr-xs-2 h-xs-4 w-xs-4" />
+								<span className="leading-1">{t('core.action.collapse')}</span>
+							</>
 						)}
-						<span className="leading-1">{t('core.action.expand')}</span>
 					</Button>
 				</div>
 			)}
