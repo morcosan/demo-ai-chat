@@ -29,18 +29,16 @@ export const DesktopNavbar = ({ unselected, onClickLanguage }: Props) => {
 	)
 
 	const expandedClass = 'w-lg-7 min-w-lg-7'
-	const collapsedClass = 'w-md-3 min-w-md-3'
+	const collapsedClass = 'w-md-6 min-w-md-6'
 	const navbarClass = cx(
-		`absolute left-0 top-0 z-navbar h-full`,
+		'absolute left-0 top-0 z-navbar h-full',
+		'transition-all duration-100 ease-in-out',
 		isNavCollapsed ? collapsedClass : expandedClass,
-		'flex flex-col px-a11y-scrollbar py-scrollbar-w',
+		'flex flex-col px-a11y-scrollbar py-xs-3',
 		'border-r border-color-border-shadow bg-color-bg-card shadow-lg'
 	)
 
-	const pinClass = cx(
-		'h-xs-6',
-		isNavPinned ? 'text-color-secondary-page-text' : 'rotate-45 text-color-text-subtle'
-	)
+	const pinColorClass = cx(isNavPinned ? 'text-color-secondary-page-text' : 'rotate-45 text-color-text-subtle')
 
 	const onClickLanguageItem = () => {
 		setIsSettingsOpened(false)
@@ -101,15 +99,16 @@ export const DesktopNavbar = ({ unselected, onClickLanguage }: Props) => {
 				onMouseLeave={onMouseLeaveNavbar}
 			>
 				{/* LOGO */}
-				<AppLogo collapsed={isNavCollapsed} className="mb-xs-5" />
+				<AppLogo collapsed={isNavCollapsed} className="mb-xs-4" />
 
 				{/* PIN */}
 				<IconButton
 					tooltip={isNavPinned ? 'Unpin nav menu' : 'Pin nav menu'}
-					className={cx('absolute right-xs-1 top-xs-1', isNavCollapsed && 'hidden')}
+					size="sm"
+					className="absolute right-xs-2 top-xs-2"
 					onClick={() => setIsNavPinned(!isNavPinned)}
 				>
-					<PinSvg className={pinClass} />
+					<PinSvg className={cx('h-xs-5', pinColorClass)} />
 				</IconButton>
 
 				{/* AI CHAT */}
@@ -117,11 +116,7 @@ export const DesktopNavbar = ({ unselected, onClickLanguage }: Props) => {
 
 				{/* SETTINGS */}
 				<div ref={settingsRef} className="relative">
-					<SettingsButton
-						highlight={isSettingsOpened ? 'pressed' : 'default'}
-						collapsed={isNavCollapsed}
-						onClick={onToggleSettings}
-					/>
+					<SettingsButton highlight={isSettingsOpened ? 'pressed' : 'default'} onClick={onToggleSettings} />
 					<div className={settingsMenuClass}>
 						<SettingsMenu onClickLanguage={onClickLanguageItem} />
 					</div>

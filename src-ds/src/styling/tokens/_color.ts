@@ -100,7 +100,6 @@ export const TOKENS__COLOR = {
 	'text-subtle': { $ref: { light: 'grey-13', dark: 'grey-8' } },
 	'text-placeholder': { $ref: { light: 'grey-11', dark: 'grey-11' } },
 	'text-inverse': { $ref: { light: 'white', dark: 'black' } },
-	'text-coding': { $ref: { light: 'purple-7', dark: 'purple-2' } },
 	'text-link': { $ref: { light: 'purple-8', dark: 'purple-1' } },
 
 	'hover-text-default': { $ref: { light: 'black-glass-2', dark: 'black-glass-5' } },

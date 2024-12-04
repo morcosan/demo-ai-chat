@@ -5,21 +5,24 @@
 			"backToHome": "Zurück zur Startseite",
 			"changeLanguage": "Sprache ändern",
 			"close": "Schließen",
+			"copy": "Kopieren",
 			"delete": "Löschen",
 			"deselectAll": "Alle abwählen",
-			"goToUrl": "Zu {url} gehen",
+			"goToUrl": "Gehe zu {url}",
+			"hidePanel": "Panel ausblenden",
 			"openMenu": "Menü öffnen",
-			"copy": "Kopieren",
 			"rename": "Umbenennen",
+			"resizePanel": "Panel-Größe ändern",
 			"retry": "Erneut versuchen",
 			"saveChanges": "Änderungen speichern",
 			"search": "Suchen",
-			"searchMore": "Weitere Ergebnisse anzeigen",
+			"searchMore": "Mehr Ergebnisse anzeigen",
 			"selectAll": "Alle auswählen",
+			"showPanel": "Panel anzeigen",
 			"signOut": "Abmelden"
 		},
 		"error": {
-			"noChanges": "Keine Änderungen",
+			"noChanges": "Keine Änderungen vorhanden",
 			"nothingFound": "Nichts gefunden für \"{search}\"",
 			"unsent": "Nicht gesendet"
 		},
@@ -35,7 +38,7 @@
 			"designSystem": "Design-System",
 			"errors": "Fehler",
 			"europe": "Europa",
-			"githubRepo": "GitHub-Repository",
+			"githubRepo": "GitHub Repository",
 			"language": "Sprache",
 			"levelHigh": "Hoch",
 			"levelLow": "Niedrig",
@@ -51,7 +54,7 @@
 			"requiredField": "(Erforderlich)",
 			"settings": "Einstellungen",
 			"uiLibrary": "UI-Bibliothek",
-			"uiTheme": "UI-Design"
+			"uiTheme": "UI-Theme"
 		},
 		"placeholder": {
 			"search": "Suchen..."
@@ -67,7 +70,7 @@
 	},
 	"aiChat": {
 		"action": {
-			"backToSubchats": "Zurück zu Unterhaltungen",
+			"backToSubchats": "Zurück zu Subchats",
 			"configureAgent": "Agent konfigurieren",
 			"confirmDeleteAgent": "Agent-Löschung bestätigen",
 			"confirmDeleteChats": "Chat-Löschung bestätigen",
@@ -81,19 +84,21 @@
 			"manageAgents": "Agenten verwalten",
 			"manageChats": "Chats verwalten",
 			"openChat": "Chat öffnen",
-			"openSubchat_other": "Unterhaltung öffnen ({count} Nachrichten)",
-			"openSubchat_zero": "Unterhaltung erstellen",
+			"openSubchat_zero": "Subchat erstellen",
+			"openSubchat_one": "Subchat öffnen ({count} Nachricht)",
+			"openSubchat_other": "Subchat öffnen ({count} Nachrichten)",
 			"searchChats": "Chats durchsuchen",
 			"selectChat": "Chat auswählen",
 			"sendMessage": "Nachricht senden",
-			"showMoreAgents": "Weitere Agenten anzeigen",
-			"showMoreChats": "Weitere Chats anzeigen",
-			"showSubchats": "Unterhaltungen anzeigen ({count})",
+			"showMoreAgents": "Mehr Agenten anzeigen",
+			"showMoreChats": "Mehr Chats anzeigen",
+			"showSubchats": "Subchats anzeigen ({count})",
+			"startNewChat": "Neue Unterhaltung beginnen",
 			"startSearching_one": "Mindestens {count} Zeichen eingeben",
 			"startSearching_other": "Mindestens {count} Zeichen eingeben"
 		},
 		"description": {
-			"geminiNano": "Mini-GPT für Google Chrome",
+			"chromeGPT": "Mini-GPT für Google Chrome",
 			"loremIpsumGPT": "Das intelligenteste Modell",
 			"rammusGPT": "Beste emotionale Unterstützung"
 		},
@@ -101,7 +106,7 @@
 			"agentAvatar": "Sie müssen einen Avatar für den Agenten hinzufügen",
 			"agentName": "Sie müssen einen Namen für den Agenten hinzufügen",
 			"emptyMessage": "Ihre Nachricht ist leer",
-			"failedMessage": "Ihre Nachricht konnte nicht zugestellt werden"
+			"failedMessage": "Es gab ein Problem beim Zustellen Ihrer Nachricht"
 		},
 		"label": {
 			"agents": "Agenten",
@@ -114,20 +119,20 @@
 			"newChat": "Neuer Chat",
 			"newMessage": "Neue Nachricht",
 			"noChats": "Keine Chats",
-			"noSubchats": "Keine Unterhaltungen",
+			"noSubchats": "Keine Subchats",
 			"selectedAgent": "Ausgewählter Agent",
 			"selectedValue": "Ausgewählter Wert",
-			"subchats": "Unterhaltungen",
+			"subchats": "Subchats",
 			"xMessages_one": "1 Nachricht",
 			"xMessages_other": "{count} Nachrichten",
+			"xSearchResults_zero": "Keine Suchergebnisse",
 			"xSearchResults_one": "{count} Suchergebnis",
 			"xSearchResults_other": "{count} Suchergebnisse",
-			"xSearchResults_zero": "Keine Suchergebnisse",
 			"xSelectedMessages_one": "1 Nachricht ausgewählt",
 			"xSelectedMessages_other": "{count} Nachrichten ausgewählt"
 		},
 		"placeholder": {
-			"newMessage": "Mit {name} sprechen...",
+			"newMessage": "Sprechen Sie mit {name}...",
 			"rename": "Automatisch neuen Namen generieren..."
 		},
 		"state": {
@@ -136,16 +141,16 @@
 			"loadingGPTs": "GPTs werden geladen...",
 			"loadingMessages": "Nachrichten werden geladen...",
 			"loadingPreviousMessages": "Vorherige Nachrichten werden geladen...",
-			"loadingSubchats": "Unterhaltungen werden geladen...",
+			"loadingSubchats": "Subchats werden geladen...",
 			"renamingChat": "Chat wird umbenannt...",
 			"thinking": "Denkt nach..."
 		},
 		"warning": {
-			"deletingAgent": "Dieser Agent wird permanent gelöscht",
-			"deletingChats": "Diese Chats werden permanent gelöscht",
-			"geminiGptInsideChrome": "Dieses GPT erfordert die Aktivierung dieser Einstellungen:",
-			"geminiGptOutsideChrome": "Dieses GPT ist nur im Google Chrome Browser verfügbar",
-			"invalidGpt": "Ungültiges GPT"
+			"deletingAgent": "Dieser Agent wird dauerhaft gelöscht",
+			"deletingChats": "Diese Chats werden dauerhaft gelöscht",
+			"chromeGptInsideChrome": "Dieser GPT erfordert die Aktivierung folgender Einstellungen:",
+			"chromeGptOutsideChrome": "Dieser GPT ist nur im Google Chrome Browser verfügbar",
+			"invalidGpt": "Ungültiger GPT"
 		}
 	},
 	"userSettings": {
@@ -174,7 +179,7 @@
 			"phone": "Telefonnummer",
 			"postalCode": "Postleitzahl",
 			"private": "Privat",
-			"public": "Öffentlich", 
+			"public": "Öffentlich",
 			"vatNumber": "USt-IdNr."
 		}
 	}

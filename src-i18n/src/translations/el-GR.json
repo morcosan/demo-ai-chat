@@ -2,20 +2,23 @@
 	"core": {
 		"action": {
 			"back": "Πίσω",
-			"backToHome": "Επιστροφή στην αρχική",
+			"backToHome": "Πίσω στην αρχική",
 			"changeLanguage": "Αλλαγή γλώσσας",
 			"close": "Κλείσιμο",
+			"copy": "Αντιγραφή",
 			"delete": "Διαγραφή",
 			"deselectAll": "Αποεπιλογή όλων",
 			"goToUrl": "Μετάβαση στο {url}",
+			"hidePanel": "Απόκρυψη πάνελ",
 			"openMenu": "Άνοιγμα μενού",
-			"copy": "Αντιγραφή",
 			"rename": "Μετονομασία",
-			"retry": "Επανάληψη",
+			"resizePanel": "Αλλαγή μεγέθους πάνελ",
+			"retry": "Προσπάθεια ξανά",
 			"saveChanges": "Αποθήκευση αλλαγών",
 			"search": "Αναζήτηση",
-			"searchMore": "Εμφάνιση περισσότερων",
+			"searchMore": "Εμφάνιση περισσότερων αποτελεσμάτων",
 			"selectAll": "Επιλογή όλων",
+			"showPanel": "Εμφάνιση πάνελ",
 			"signOut": "Αποσύνδεση"
 		},
 		"error": {
@@ -32,10 +35,10 @@
 			"darkTheme": "Σκούρο",
 			"default": "Προεπιλογή",
 			"description": "Περιγραφή",
-			"designSystem": "Σύστημα Σχεδίασης",
+			"designSystem": "Σύστημα Σχεδιασμού",
 			"errors": "Σφάλματα",
 			"europe": "Ευρώπη",
-			"githubRepo": "Αποθετήριο GitHub",
+			"githubRepo": "GitHub Repo",
 			"language": "Γλώσσα",
 			"levelHigh": "Υψηλό",
 			"levelLow": "Χαμηλό",
@@ -48,7 +51,7 @@
 			"navigationMenu": "Μενού πλοήγησης",
 			"optionalField": "(Προαιρετικό)",
 			"quickSettings": "Γρήγορες ρυθμίσεις",
-			"requiredField": "(Υποχρεωτικό)",
+			"requiredField": "(Απαιτείται)",
 			"settings": "Ρυθμίσεις",
 			"uiLibrary": "Βιβλιοθήκη UI",
 			"uiTheme": "Θέμα UI"
@@ -68,7 +71,7 @@
 	"aiChat": {
 		"action": {
 			"backToSubchats": "Πίσω στις υποσυνομιλίες",
-			"configureAgent": "Διαμόρφωση πράκτορα",
+			"configureAgent": "Ρύθμιση πράκτορα",
 			"confirmDeleteAgent": "Επιβεβαίωση διαγραφής πράκτορα",
 			"confirmDeleteChats": "Επιβεβαίωση διαγραφής συνομιλιών",
 			"confirmRenameChat": "Επιβεβαίωση μετονομασίας συνομιλίας",
@@ -81,19 +84,21 @@
 			"manageAgents": "Διαχείριση πρακτόρων",
 			"manageChats": "Διαχείριση συνομιλιών",
 			"openChat": "Άνοιγμα συνομιλίας",
-			"openSubchat_other": "Άνοιγμα υποσυνομιλίας ({count} μηνύματα)",
 			"openSubchat_zero": "Δημιουργία υποσυνομιλίας",
+			"openSubchat_one": "Άνοιγμα υποσυνομιλίας ({count} μήνυμα)",
+			"openSubchat_other": "Άνοιγμα υποσυνομιλίας ({count} μηνύματα)",
 			"searchChats": "Αναζήτηση συνομιλιών",
 			"selectChat": "Επιλογή συνομιλίας",
 			"sendMessage": "Αποστολή μηνύματος",
 			"showMoreAgents": "Εμφάνιση περισσότερων πρακτόρων",
 			"showMoreChats": "Εμφάνιση περισσότερων συνομιλιών",
 			"showSubchats": "Εμφάνιση υποσυνομιλιών ({count})",
+			"startNewChat": "Έναρξη νέας συνομιλίας",
 			"startSearching_one": "Πληκτρολογήστε τουλάχιστον {count} χαρακτήρα",
 			"startSearching_other": "Πληκτρολογήστε τουλάχιστον {count} χαρακτήρες"
 		},
 		"description": {
-			"geminiNano": "Mini GPT για Google Chrome",
+			"chromeGPT": "Mini GPT για Google Chrome",
 			"loremIpsumGPT": "Το πιο έξυπνο μοντέλο",
 			"rammusGPT": "Καλύτερη συναισθηματική υποστήριξη"
 		},
@@ -120,20 +125,20 @@
 			"subchats": "Υποσυνομιλίες",
 			"xMessages_one": "1 μήνυμα",
 			"xMessages_other": "{count} μηνύματα",
-			"xSearchResults_one": "{count} αποτέλεσμα αναζήτησης",
-			"xSearchResults_other": "{count} αποτελέσματα αναζήτησης",
-			"xSearchResults_zero": "Κανένα αποτέλεσμα αναζήτησης",
+			"xSearchResults_zero": "Κανένα αποτέλεσμα",
+			"xSearchResults_one": "{count} αποτέλεσμα",
+			"xSearchResults_other": "{count} αποτελέσματα",
 			"xSelectedMessages_one": "1 επιλεγμένο μήνυμα",
 			"xSelectedMessages_other": "{count} επιλεγμένα μηνύματα"
 		},
 		"placeholder": {
-			"newMessage": "Μίλησε με {name}...",
+			"newMessage": "Μιλήστε με τον/την {name}...",
 			"rename": "Αυτόματη δημιουργία νέου ονόματος..."
 		},
 		"state": {
 			"loadingAgents": "Φόρτωση πρακτόρων...",
 			"loadingChats": "Φόρτωση συνομιλιών...",
-			"loadingGPTs": "Φόρτωση GPT...",
+			"loadingGPTs": "Φόρτωση GPTs...",
 			"loadingMessages": "Φόρτωση μηνυμάτων...",
 			"loadingPreviousMessages": "Φόρτωση προηγούμενων μηνυμάτων...",
 			"loadingSubchats": "Φόρτωση υποσυνομιλιών...",
@@ -141,10 +146,10 @@
 			"thinking": "Σκέφτεται..."
 		},
 		"warning": {
-			"deletingAgent": "Αυτός ο πράκτορας θα διαγραφεί οριστικά",
-			"deletingChats": "Αυτές οι συνομιλίες θα διαγραφούν οριστικά",
-			"geminiGptInsideChrome": "Αυτό το GPT απαιτεί την ενεργοποίηση αυτών των ρυθμίσεων:",
-			"geminiGptOutsideChrome": "Αυτό το GPT είναι διαθέσιμο μόνο στον περιηγητή Google Chrome",
+			"deletingAgent": "Αυτός ο πράκτορας θα διαγραφεί μόνιμα",
+			"deletingChats": "Αυτές οι συνομιλίες θα διαγραφούν μόνιμα",
+			"chromeGptInsideChrome": "Αυτό το GPT απαιτεί την ενεργοποίηση των παρακάτω ρυθμίσεων:",
+			"chromeGptOutsideChrome": "Αυτό το GPT είναι διαθέσιμο μόνο στον περιηγητή Google Chrome",
 			"invalidGpt": "Μη έγκυρο GPT"
 		}
 	},
@@ -158,7 +163,7 @@
 			"avatar": "Πρέπει να προσθέσετε το άβαταρ σας",
 			"city": "Πρέπει να προσθέσετε την πόλη",
 			"country": "Πρέπει να προσθέσετε τη χώρα",
-			"email": "Πρέπει να προσθέσετε το email σας",
+			"email": "Πρέπει να προσθέσετε τη διεύθυνση email σας",
 			"legalName": "Πρέπει να προσθέσετε το νόμιμο όνομα",
 			"name": "Πρέπει να προσθέσετε το όνομά σας",
 			"postalCode": "Πρέπει να προσθέσετε τον ταχυδρομικό κώδικα"

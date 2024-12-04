@@ -60,19 +60,21 @@ ol.docs {
 
 .docs code,
 code.docs {
+	margin: 0 1px;
+	border: 1px solid var(--ds-color-border-default);
 	border-radius: var(--ds-radius-xs);
 	background-color: var(--ds-color-bg-coding);
-	padding: 3px 6px;
+	padding: var(--ds-spacing-xs-1) var(--ds-spacing-xs-3) var(--ds-spacing-xs-0);
 	width: fit-content;
-	color: var(--ds-color-text-coding);
+	font-weight: var(--ds-font-weight-md);
 	font-size: var(--ds-font-size-sm);
 	white-space: nowrap;
+	word-break: break-word;
 }
-
 pre.docs {
 	& code {
 		display: block;
-		padding: var(--ds-spacing-xs-2);
+		padding: var(--ds-spacing-xs-3) var(--ds-spacing-xs-4);
 		width: 100%;
 		white-space: unset;
 	}

@@ -9,7 +9,7 @@ interface Props {
 
 export const MobileNavMenu = ({ unselected, onHideNavMenu, onToggleSettings }: Props) => {
 	return (
-		<div className="flex h-full w-full flex-col px-a11y-scrollbar py-scrollbar-w pt-sm-0">
+		<div className="flex h-full w-full flex-col px-a11y-scrollbar py-scrollbar-w pt-xs-9">
 			<AiChatNavMenu unselected={unselected} onHideNavMenu={onHideNavMenu} />
 			<SettingsButton onClick={onToggleSettings} />
 		</div>

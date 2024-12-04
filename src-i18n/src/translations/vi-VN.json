@@ -2,24 +2,27 @@
 	"core": {
 		"action": {
 			"back": "Quay lại",
-			"backToHome": "Về trang chủ",
+			"backToHome": "Quay lại trang chủ",
 			"changeLanguage": "Thay đổi ngôn ngữ",
 			"close": "Đóng",
+			"copy": "Sao chép",
 			"delete": "Xóa",
 			"deselectAll": "Bỏ chọn tất cả",
 			"goToUrl": "Đi đến {url}",
+			"hidePanel": "Ẩn bảng điều khiển",
 			"openMenu": "Mở menu",
-			"copy": "Sao chép",
 			"rename": "Đổi tên",
+			"resizePanel": "Thay đổi kích thước bảng",
 			"retry": "Thử lại",
 			"saveChanges": "Lưu thay đổi",
 			"search": "Tìm kiếm",
 			"searchMore": "Hiển thị thêm kết quả",
 			"selectAll": "Chọn tất cả",
+			"showPanel": "Hiển thị bảng điều khiển",
 			"signOut": "Đăng xuất"
 		},
 		"error": {
-			"noChanges": "Không có thay đổi nào",
+			"noChanges": "Không có thay đổi",
 			"nothingFound": "Không tìm thấy kết quả cho \"{search}\"",
 			"unsent": "Chưa gửi"
 		},
@@ -47,10 +50,11 @@
 			"navigationBar": "Thanh điều hướng",
 			"navigationMenu": "Menu điều hướng",
 			"optionalField": "(Tùy chọn)",
+			"quickSettings": "Cài đặt nhanh",
 			"requiredField": "(Bắt buộc)",
 			"settings": "Cài đặt",
-			"uiLibrary": "Thư viện UI",
-			"uiTheme": "Giao diện UI"
+			"uiLibrary": "Thư viện giao diện",
+			"uiTheme": "Chủ đề giao diện"
 		},
 		"placeholder": {
 			"search": "Tìm kiếm..."
@@ -69,29 +73,31 @@
 			"backToSubchats": "Quay lại subchat",
 			"configureAgent": "Cấu hình agent",
 			"confirmDeleteAgent": "Xác nhận xóa agent",
-			"confirmDeleteChats": "Xác nhận xóa các cuộc trò chuyện",
-			"confirmRenameChat": "Xác nhận đổi tên cuộc trò chuyện",
+			"confirmDeleteChats": "Xác nhận xóa chat",
+			"confirmRenameChat": "Xác nhận đổi tên chat",
 			"copyCode": "Sao chép mã",
 			"copyMessage": "Sao chép tin nhắn",
 			"createAgent": "Tạo agent",
 			"deleteAgent": "Xóa agent",
-			"deleteSelectedChats": "Xóa các cuộc trò chuyện đã chọn",
-			"deselectChat": "Bỏ chọn cuộc trò chuyện",
+			"deleteSelectedChats": "Xóa các chat đã chọn",
+			"deselectChat": "Bỏ chọn chat",
 			"manageAgents": "Quản lý agent",
-			"manageChats": "Quản lý cuộc trò chuyện",
-			"openChat": "Mở cuộc trò chuyện",
-			"openSubchat": "Mở subchat ({count} tin nhắn)",
+			"manageChats": "Quản lý chat",
+			"openChat": "Mở chat",
+			"openSubchat_other": "Mở subchat ({count} tin nhắn)",
 			"openSubchat_zero": "Tạo subchat",
-			"searchChats": "Tìm kiếm cuộc trò chuyện",
-			"selectChat": "Chọn cuộc trò chuyện",
+			"searchChats": "Tìm kiếm chat",
+			"selectChat": "Chọn chat",
 			"sendMessage": "Gửi tin nhắn",
 			"showMoreAgents": "Hiển thị thêm agent",
-			"showMoreChats": "Hiển thị thêm cuộc trò chuyện",
+			"showMoreChats": "Hiển thị thêm chat",
 			"showSubchats": "Hiển thị subchat ({count})",
+			"startNewChat": "Bắt đầu cuộc trò chuyện mới",
+			"startSearching_one": "Nhập ít nhất {count} ký tự",
 			"startSearching_other": "Nhập ít nhất {count} ký tự"
 		},
 		"description": {
-			"geminiNano": "Mini GPT cho Google Chrome",
+			"chromeGPT": "Mini GPT cho Google Chrome",
 			"loremIpsumGPT": "Mô hình thông minh nhất",
 			"rammusGPT": "Hỗ trợ cảm xúc tốt nhất"
 		},
@@ -103,24 +109,26 @@
 		},
 		"label": {
 			"agents": "Agent",
-			"chatTitle": "Tiêu đề cuộc trò chuyện",
-			"chats": "Cuộc trò chuyện",
+			"chatTitle": "Tiêu đề chat",
+			"chats": "Chat",
 			"creativityLevel": "Mức độ sáng tạo",
 			"customInstructions": "Hướng dẫn tùy chỉnh",
 			"gptModel": "Mô hình GPT",
 			"newAgent": "Agent mới",
-			"newChat": "Cuộc trò chuyện mới",
+			"newChat": "Chat mới",
 			"newMessage": "Tin nhắn mới",
-			"noChats": "Không có cuộc trò chuyện",
+			"noChats": "Không có chat",
 			"noSubchats": "Không có subchat",
 			"selectedAgent": "Agent đã chọn",
 			"selectedValue": "Giá trị đã chọn",
 			"subchats": "Subchat",
+			"xMessages_one": "1 tin nhắn",
 			"xMessages_other": "{count} tin nhắn",
 			"xSearchResults_one": "{count} kết quả tìm kiếm",
 			"xSearchResults_other": "{count} kết quả tìm kiếm",
 			"xSearchResults_zero": "Không có kết quả tìm kiếm",
-			"xSelectedMessages_other": "Đã chọn {count} tin nhắn"
+			"xSelectedMessages_one": "1 tin nhắn đã chọn",
+			"xSelectedMessages_other": "{count} tin nhắn đã chọn"
 		},
 		"placeholder": {
 			"newMessage": "Trò chuyện với {name}...",
@@ -128,19 +136,19 @@
 		},
 		"state": {
 			"loadingAgents": "Đang tải agent...",
-			"loadingChats": "Đang tải cuộc trò chuyện...",
+			"loadingChats": "Đang tải chat...",
 			"loadingGPTs": "Đang tải GPT...",
 			"loadingMessages": "Đang tải tin nhắn...",
-			"loadingPreviousMessages": "Đang tải tin nhắn trước...",
+			"loadingPreviousMessages": "Đang tải tin nhắn trước đó...",
 			"loadingSubchats": "Đang tải subchat...",
-			"renamingChat": "Đang đổi tên cuộc trò chuyện...",
+			"renamingChat": "Đang đổi tên chat...",
 			"thinking": "Đang suy nghĩ..."
 		},
 		"warning": {
 			"deletingAgent": "Agent này sẽ bị xóa vĩnh viễn",
-			"deletingChats": "Các cuộc trò chuyện này sẽ bị xóa vĩnh viễn",
-			"geminiGptInsideChrome": "GPT này yêu cầu các cài đặt sau được bật:",
-			"geminiGptOutsideChrome": "GPT này chỉ có sẵn trong trình duyệt Google Chrome",
+			"deletingChats": "Các chat này sẽ bị xóa vĩnh viễn",
+			"chromeGptInsideChrome": "GPT này yêu cầu các cài đặt sau phải được bật:",
+			"chromeGptOutsideChrome": "GPT này chỉ khả dụng trên trình duyệt Google Chrome",
 			"invalidGpt": "GPT không hợp lệ"
 		}
 	},
@@ -156,8 +164,8 @@
 			"country": "Bạn phải thêm quốc gia",
 			"email": "Bạn phải thêm địa chỉ email",
 			"legalName": "Bạn phải thêm tên pháp lý",
-			"name": "Bạn phải thêm tên của bạn",
-			"postalCode": "Bạn phải thêm mã bưu chính"
+			"name": "Bạn phải thêm tên",
+			"postalCode": "Bạn phải thêm mã bưu điện"
 		},
 		"label": {
 			"account": "Tài khoản",
@@ -165,13 +173,13 @@
 			"billing": "Thanh toán",
 			"city": "Thành phố",
 			"country": "Quốc gia",
-			"email": "Địa chỉ email",
+			"email": "Email",
 			"legalName": "Tên pháp lý",
 			"phone": "Số điện thoại",
-			"postalCode": "Mã bưu chính",
+			"postalCode": "Mã bưu điện",
 			"private": "Riêng tư",
 			"public": "Công khai",
-			"vatNumber": "Mã số thuế"
+			"vatNumber": "Số VAT"
 		}
 	}
 }

@@ -29,7 +29,7 @@ export const NavListing = (props: Props) => {
 	return (
 		<>
 			{/* HEADER */}
-			<div className={cx('flex h-button-h-sm w-full items-center justify-between', props.headerClass)}>
+			<div className={cx('flex h-button-h-xs w-full items-center justify-between', props.headerClass)}>
 				<span className="ml-button-px-item truncate text-size-sm text-color-text-subtle">
 					{props.headerText}
 					&nbsp;
@@ -42,16 +42,13 @@ export const NavListing = (props: Props) => {
 					size="sm"
 					className={cx(props.collapsed && 'hidden')}
 				>
-					<SettingsSvg className="h-xs-6 text-color-text-subtle" />
+					<SettingsSvg className="h-xs-5 text-color-text-subtle" />
 				</IconButton>
 			</div>
 
 			{/* LISTING */}
 			<div
-				className={cx(
-					'-mx-a11y-scrollbar flex flex-col overflow-y-scroll p-a11y-padding !pl-a11y-scrollbar',
-					props.listingClass
-				)}
+				className={cx('ds-scrollable -mx-a11y-scrollbar flex flex-col', props.listingClass)}
 				style={{ width: 'calc(100% + 2 * var(--ds-spacing-a11y-scrollbar))', ...props.listingStyle }}
 				onScroll={onScrollListing}
 			>

@@ -5,17 +5,20 @@
 			"backToHome": "Към началната страница",
 			"changeLanguage": "Смяна на език",
 			"close": "Затвори",
-			"delete": "Изтрий",
-			"deselectAll": "Премахни всички избрани",
-			"goToUrl": "Отиди на {url}",
-			"openMenu": "Отвори меню",
 			"copy": "Копирай",
+			"delete": "Изтрий",
+			"deselectAll": "Премахни всички",
+			"goToUrl": "Отиди на {url}",
+			"hidePanel": "Скрий панела",
+			"openMenu": "Отвори меню",
 			"rename": "Преименувай",
+			"resizePanel": "Промени размера на панела",
 			"retry": "Опитай отново",
 			"saveChanges": "Запази промените",
 			"search": "Търси",
 			"searchMore": "Покажи още резултати",
 			"selectAll": "Избери всички",
+			"showPanel": "Покажи панела",
 			"signOut": "Изход"
 		},
 		"error": {
@@ -32,7 +35,7 @@
 			"darkTheme": "Тъмна",
 			"default": "По подразбиране",
 			"description": "Описание",
-			"designSystem": "Дизайн система",
+			"designSystem": "Дизайн Система",
 			"errors": "Грешки",
 			"europe": "Европа",
 			"githubRepo": "GitHub Хранилище",
@@ -68,7 +71,7 @@
 	"aiChat": {
 		"action": {
 			"backToSubchats": "Назад към подчатовете",
-			"configureAgent": "Конфигуриране на агент",
+			"configureAgent": "Конфигурирай агент",
 			"confirmDeleteAgent": "Потвърди изтриване на агент",
 			"confirmDeleteChats": "Потвърди изтриване на чатове",
 			"confirmRenameChat": "Потвърди преименуване на чат",
@@ -77,30 +80,32 @@
 			"createAgent": "Създай агент",
 			"deleteAgent": "Изтрий агент",
 			"deleteSelectedChats": "Изтрий избраните чатове",
-			"deselectChat": "Премахни избрания чат",
+			"deselectChat": "Премахни избора на чат",
 			"manageAgents": "Управление на агенти",
 			"manageChats": "Управление на чатове",
 			"openChat": "Отвори чат",
-			"openSubchat_other": "Отвори подчат ({count} съобщения)",
 			"openSubchat_zero": "Създай подчат",
+			"openSubchat_one": "Отвори подчат ({count} съобщение)",
+			"openSubchat_other": "Отвори подчат ({count} съобщения)",
 			"searchChats": "Търси в чатовете",
 			"selectChat": "Избери чат",
 			"sendMessage": "Изпрати съобщение",
 			"showMoreAgents": "Покажи още агенти",
 			"showMoreChats": "Покажи още чатове",
 			"showSubchats": "Покажи подчатове ({count})",
-			"startSearching_one": "Въведи поне {count} знак",
-			"startSearching_other": "Въведи поне {count} знака"
+			"startNewChat": "Започни нов разговор",
+			"startSearching_one": "Въведи поне {count} символ",
+			"startSearching_other": "Въведи поне {count} символа"
 		},
 		"description": {
-			"geminiNano": "Мини GPT за Google Chrome",
+			"chromeGPT": "Мини GPT за Google Chrome",
 			"loremIpsumGPT": "Най-интелигентният модел",
 			"rammusGPT": "Най-добрата емоционална подкрепа"
 		},
 		"error": {
 			"agentAvatar": "Трябва да добавите аватар за агента",
 			"agentName": "Трябва да добавите име за агента",
-			"emptyMessage": "Съобщението ви е празно",
+			"emptyMessage": "Съобщението е празно",
 			"failedMessage": "Възникна проблем при доставянето на съобщението"
 		},
 		"label": {
@@ -120,9 +125,9 @@
 			"subchats": "Подчатове",
 			"xMessages_one": "1 съобщение",
 			"xMessages_other": "{count} съобщения",
+			"xSearchResults_zero": "Няма резултати",
 			"xSearchResults_one": "{count} резултат",
 			"xSearchResults_other": "{count} резултата",
-			"xSearchResults_zero": "Няма резултати",
 			"xSelectedMessages_one": "1 избрано съобщение",
 			"xSelectedMessages_other": "{count} избрани съобщения"
 		},
@@ -143,14 +148,14 @@
 		"warning": {
 			"deletingAgent": "Този агент ще бъде изтрит завинаги",
 			"deletingChats": "Тези чатове ще бъдат изтрити завинаги",
-			"geminiGptInsideChrome": "Този GPT изисква активиране на тези настройки:",
-			"geminiGptOutsideChrome": "Този GPT е достъпен само в Google Chrome браузър",
+			"chromeGptInsideChrome": "Този GPT изисква следните настройки да бъдат активирани:",
+			"chromeGptOutsideChrome": "Този GPT е наличен само в Google Chrome браузър",
 			"invalidGpt": "Невалиден GPT"
 		}
 	},
 	"userSettings": {
 		"action": {
-			"manageAccount": "Управление на акаунт",
+			"manageAccount": "Управление на профил",
 			"manageBilling": "Управление на плащания"
 		},
 		"error": {
@@ -164,7 +169,7 @@
 			"postalCode": "Трябва да добавите пощенски код"
 		},
 		"label": {
-			"account": "Акаунт",
+			"account": "Профил",
 			"address": "Адрес",
 			"billing": "Плащания",
 			"city": "Град",

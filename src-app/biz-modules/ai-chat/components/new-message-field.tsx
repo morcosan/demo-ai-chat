@@ -1,7 +1,7 @@
 import { IconButton, SendSvg, TextField, TextFieldRef } from '@ds/release'
 import { useCallback, useRef, useState } from 'react'
 import { Agent, GPT } from '../api'
-import { useSubmittable } from '../hooks/submittable'
+import { useSubmittable } from '../hooks/use-submittable'
 
 interface Props {
 	agent: Agent

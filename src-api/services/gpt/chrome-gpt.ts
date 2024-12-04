@@ -8,7 +8,7 @@ const TEMPERATURE_MAP: Record<CreativityLevel, number> = {
 	max: 2,
 }
 
-export const GeminiNanoAPI: GptAPI = {
+export const ChromeGPT: GptAPI = {
 	isAvailable: async () => {
 		return Boolean(
 			window.ai?.languageModel && (await window.ai.languageModel.capabilities()).available === 'readily'

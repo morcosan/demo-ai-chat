@@ -1,4 +1,4 @@
-import { AgentDTO, ChatDTO, GptDTO, MessageDTO, SubchatDTO } from '@api/types'
+import { AgentDTO, ChatDTO, CreativityLevel, GptDTO, MessageDTO, SubchatDTO } from '@api/types'
 import { Agent, Chat, GPT, Message, Subchat } from './_types'
 
 export const mapDtoToGPT = (dto: GptDTO): GPT => {
@@ -19,7 +19,7 @@ export const mapDtoToAgent = (dto: AgentDTO): Agent => {
 		avatar: dto.avatar || '',
 		desc: dto.desc || '',
 		prompt: dto.prompt || '',
-		creativity: dto.creativity || 'medium',
+		creativity: dto.creativity || ('mid' satisfies CreativityLevel),
 		createdAt: dto.createdAt || '',
 		updatedAt: dto.updatedAt || null,
 	}

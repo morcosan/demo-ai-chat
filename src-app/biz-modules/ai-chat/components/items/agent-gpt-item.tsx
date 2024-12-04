@@ -1,5 +1,5 @@
 import { Agent, GPT } from '../../api'
-import { getGptDescription, parseGptDescription } from '../../utils'
+import { getGptDescription, parseGptDescription } from '../../utils/gpt'
 
 interface Props extends ReactProps {
 	gpt?: GPT

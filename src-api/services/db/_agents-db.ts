@@ -2,7 +2,7 @@ import {
 	CreativityLevel,
 	DbAgent,
 	DbGPT,
-	GPT_ID__GEMINI_NANO,
+	GPT_ID__CHROME,
 	GPT_ID__LOREM_IPSUM,
 	GPT_ID__RAMMUS,
 	GptConfig,
@@ -20,9 +20,9 @@ import {
 	randomText,
 	randomTrue,
 } from '@utils/release'
-import { GeminiNanoAPI } from '../gpt/gemini-nano-api'
-import { LoremIpsumAPI } from '../gpt/lorem-ipsum-api'
-import { RammusAPI } from '../gpt/rammus-api'
+import { ChromeGPT } from '../gpt/chrome-gpt'
+import { LoremIpsumGPT } from '../gpt/lorem-ipsum-gpt'
+import { RammusGPT } from '../gpt/rammus-gpt'
 
 let _GPTs: DbGPT[]
 
@@ -53,21 +53,21 @@ const initGPTs = async () => {
 			name: 'Lorem Ipsum GPT',
 			avatar: ENV__ROOT_URL_PATH + '/avatars/default.svg',
 			desc: '',
-			enabled: await LoremIpsumAPI.isAvailable(),
+			enabled: await LoremIpsumGPT.isAvailable(),
 		},
 		{
 			id: GPT_ID__RAMMUS,
 			name: 'Rammus GPT',
 			avatar: ENV__ROOT_URL_PATH + '/avatars/rammus.png',
 			desc: '',
-			enabled: await RammusAPI.isAvailable(),
+			enabled: await RammusGPT.isAvailable(),
 		},
 		{
-			id: GPT_ID__GEMINI_NANO,
-			name: 'Gemini Nano',
-			avatar: ENV__ROOT_URL_PATH + '/avatars/gemini.svg',
+			id: GPT_ID__CHROME,
+			name: 'Chrome GPT',
+			avatar: ENV__ROOT_URL_PATH + '/avatars/chrome.svg',
 			desc: '',
-			enabled: await GeminiNanoAPI.isAvailable(),
+			enabled: await ChromeGPT.isAvailable(),
 		},
 	]
 }
@@ -153,9 +153,9 @@ const getGptResponse = async (agentId: number, messages: GptMessage[]): Promise<
 			prompt: agent.prompt,
 			creativity: agent.creativity,
 		}
-		if (agent.gptId === GPT_ID__GEMINI_NANO) return GeminiNanoAPI.getResponse(config, messages)
-		if (agent.gptId === GPT_ID__LOREM_IPSUM) return LoremIpsumAPI.getResponse(config, messages)
-		if (agent.gptId === GPT_ID__RAMMUS) return RammusAPI.getResponse(config, messages)
+		if (agent.gptId === GPT_ID__CHROME) return ChromeGPT.getResponse(config, messages)
+		if (agent.gptId === GPT_ID__LOREM_IPSUM) return LoremIpsumGPT.getResponse(config, messages)
+		if (agent.gptId === GPT_ID__RAMMUS) return RammusGPT.getResponse(config, messages)
 	}
 	return ''
 }

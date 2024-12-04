@@ -1,16 +1,24 @@
 import { LoadingText } from '@app/library/release'
 import { useEffect } from 'react'
 import { useNavigate, useSearchParams } from 'react-router-dom'
+import { SubchatToolbar } from '../../components/subchat-toolbar'
 import { useAiChat } from '../../state'
 import { SubchatView } from './_subchat-view'
 import { SubchatsView } from './_subchats-view'
 
-export const PagePanel = () => {
+interface Props {
+	onShowPanel(): void
+	onHidePanel(): void
+}
+
+export const PanelContent = (props: Props) => {
+	const { onShowPanel, onHidePanel } = props
 	const {
 		activeChat,
 		activeSubchat,
 		allSubchats,
 		allSubchatsLoading,
+		allSubchatsPagination,
 		chatLoading,
 		subchatLoading,
 		loadActiveSubchat,
@@ -37,15 +45,29 @@ export const PagePanel = () => {
 		subchatId ? loadSubchat() : resetActiveSubchat()
 	}, [activeChat, subchatId])
 
+	useEffect(() => {
+		if (allSubchatsPagination.page) {
+			allSubchats.length ? onShowPanel() : onHidePanel()
+		} else {
+			!activeChat && onHidePanel()
+		}
+	}, [allSubchats, allSubchatsPagination])
+
 	return !activeChat ? (
 		<div />
 	) : activeSubchat ? (
-		<SubchatView />
+		<SubchatView onHidePanel={onHidePanel} />
 	) : chatLoading === 'full' || allSubchatsLoading === 'full' ? (
-		<LoadingText text={t('aiChat.state.loadingSubchats')} className="flex-center h-full" />
+		<div className="ds-scrollable flex h-full flex-col">
+			<SubchatToolbar onHidePanel={onHidePanel} />
+			<LoadingText text={t('aiChat.state.loadingSubchats')} className="flex-center h-full" />
+		</div>
 	) : !allSubchats.length && !subchatLoading ? (
-		<div className="flex-center h-full w-full text-color-text-subtle">{t('aiChat.label.noSubchats')}</div>
+		<div className="ds-scrollable flex h-full flex-col">
+			<SubchatToolbar onHidePanel={onHidePanel} />
+			<div className="flex-center h-full w-full text-color-text-subtle">{t('aiChat.label.noSubchats')}</div>
+		</div>
 	) : (
-		<SubchatsView />
+		<SubchatsView onHidePanel={onHidePanel} />
 	)
 }

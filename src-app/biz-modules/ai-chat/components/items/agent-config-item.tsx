@@ -2,7 +2,7 @@ import { LoadingText } from '@app/library/release'
 import { BuildSvg, IconButton } from '@ds/release'
 import { Agent, GPT } from '../../api'
 import { useAiChatAgents } from '../../state'
-import { parseGptDescription } from '../../utils'
+import { parseGptDescription } from '../../utils/gpt'
 
 interface Props extends ReactProps {
 	agent: Agent

@@ -100,7 +100,7 @@ export const AiChatSearchModal = () => {
 			) : (
 				// RESULTS
 				<div className="flex min-h-lg-2 flex-col">
-					<StickyToolbar className="!-top-a11y-padding -mt-a11y-padding" stretched>
+					<StickyToolbar stretched>
 						<div className="px-button-px-item pb-xs-5 text-size-sm text-color-text-subtle">
 							{t('aiChat.label.xSearchResults', { count: searchPagination.count })}
 						</div>
