@@ -52,6 +52,7 @@
 
 		& > code {
 			display: block;
+			outline-offset: -2px;
 			box-shadow: var(--ds-shadow-xs);
 			background-color: var(--ds-color-bg-coding);
 			padding: var(--ds-spacing-xs-5) var(--ds-spacing-xs-6);

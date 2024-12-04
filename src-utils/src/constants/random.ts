@@ -10,3 +10,5 @@ export const RANDOM_JAVA = '```java\n// Java\npublic class Main {\n  public stat
 export const RANDOM_CSHARP = '```csharp\n// C#\nusing System;\n\nclass Program {\n  static void Log() {\n    Console.WriteLine("Hello, World!");\n  }\n\n  static void Main() {\n    Log();\n  }\n}\n```'
 // prettier-ignore
 export const RANDOM_PHP = '```php\n// PHP\n<?php\nfunction log() {\n  echo "Hello, World!";\n}\n\nlog();\n?>\n```'
+// prettier-ignore
+export const RANDOM_HTML = `<!DOCTYPE html>\n<html>\n<body>\n<h1>My First Heading</h1>\n<p>My first paragraph.</p>\n</body>\n</html>`

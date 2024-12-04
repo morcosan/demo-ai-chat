@@ -1,4 +1,4 @@
-import { CopyButton } from '@app/library/release'
+import { MarkdownCode } from '@app/library/release'
 import { Button, IconButton, NewTabSvg, ReloadSvg } from '@ds/release'
 import { formatCode } from '@utils/release'
 import hljs from 'highlight.js'
@@ -143,19 +143,14 @@ export const PreviewView = ({ isChatView }: Props) => {
 							/>
 						) : (
 							<div className="ds-markdown mb-xs-2 flex-1">
-								<pre className="h-full">
-									<div className="ds-markdown-toolbar">
-										{previewLang}
-										<div className="ds-markdown-actions">
-											<CopyButton
-												variant="text-default"
-												tooltip={t('aiChat.action.copyCode')}
-												text={previewCode || ''}
-											/>
-										</div>
-									</div>
-									<code dangerouslySetInnerHTML={{ __html: codeHtml }} className="h-full" />
-								</pre>
+								<MarkdownCode
+									html={codeHtml}
+									raw={previewCode!}
+									lang={previewLang!}
+									fullHeight
+									noCollapse
+									noPreview
+								/>
 							</div>
 						))}
 				</div>
