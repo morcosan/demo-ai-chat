@@ -1,11 +1,12 @@
 import { CopyButton } from '@app/library/release'
 import { Button, IconButton, NewTabSvg, ReloadSvg } from '@ds/release'
+import { formatCode } from '@utils/release'
 import hljs from 'highlight.js'
-import { useEffect, useMemo, useState } from 'react'
+import { IframeHTMLAttributes, useEffect, useState } from 'react'
 import { PanelBase } from '../../../components/panel-base'
 import { AiChatPreviewSource, useAiChatPreview } from '../../../state'
 
-const RESULT_LANGUAGES = ['html', 'svg', 'xml']
+const RESULT_LANGUAGES = ['html', 'xhtml', 'svg']
 
 interface Props extends ReactProps {
 	isChatView?: boolean
@@ -16,15 +17,20 @@ export const PreviewView = ({ isChatView }: Props) => {
 	const [isVisible, setIsVisible] = useState(false)
 	const [iframeKey, setIframeKey] = useState(0)
 	const [showsResult, setShowsResult] = useState(false)
+	const [codeHtml, setCodeHtml] = useState('')
 
 	const isUrl = Boolean(previewUrl)
 	const isCode = Boolean(previewCode && previewLang)
 	const isSourceChat = previewSource === AiChatPreviewSource.CHAT
 	const isSourceSubchat = previewSource === AiChatPreviewSource.SUBCHAT
 	const isValidView = Boolean(isChatView ? isSourceSubchat : isSourceChat)
+
 	const showsPreview = Boolean(isUrl || isCode) && isValidView
-	const hasCodeResult = isCode && RESULT_LANGUAGES.includes(previewLang || '')
-	const hasToolbar = isUrl || (isCode && hasCodeResult)
+	const showsCodeResult = isCode && RESULT_LANGUAGES.includes(previewLang || '')
+	const showsToolbar = isUrl || (isCode && showsCodeResult)
+	const showsReload = isUrl || (isCode && showsResult)
+
+	const codeLang = previewLang ? (/^\w+$/.test(previewLang) ? previewLang : 'plaintext') : ''
 
 	const title = (() => {
 		if (isUrl) return t('aiChat.label.urlPreview')
@@ -32,17 +38,25 @@ export const PreviewView = ({ isChatView }: Props) => {
 		return ''
 	})()
 
-	log(previewCode)
-	log(previewLang)
+	const iframeProps: IframeHTMLAttributes<HTMLIFrameElement> = {
+		loading: 'lazy',
+		referrerPolicy: 'no-referrer',
+		className: cx('mb-xs-2 w-full flex-1 rounded-sm border border-color-border-default bg-color-white'),
+	}
 
-	const codeHtml = useMemo(
-		() => (previewCode && previewLang ? hljs.highlight(previewCode, { language: previewLang }).value : ''),
-		[previewCode]
-	)
+	const updateCodeHtml = async () => {
+		if (!previewCode) return setCodeHtml('')
+
+		const formatted = await formatCode(previewCode, codeLang)
+		const highlighted = hljs.highlight(formatted, { language: codeLang }).value
+
+		setCodeHtml(highlighted)
+	}
 
 	useEffect(() => {
 		setShowsResult(false)
-	}, [previewCode])
+		updateCodeHtml()
+	}, [previewCode, previewLang])
 
 	useEffect(() => {
 		showsPreview ? setIsVisible(true) : wait(200).then(() => setIsVisible(false))
@@ -65,7 +79,7 @@ export const PreviewView = ({ isChatView }: Props) => {
 			>
 				<div className="mb-xs-1 mt-a11y-padding flex flex-1 flex-col">
 					{/* TOOLBAR */}
-					{Boolean(hasToolbar) && (
+					{Boolean(showsToolbar) && (
 						<div className="my-a11y-padding flex h-button-h-sm items-center">
 							{/* CODE/RESULT  */}
 							{Boolean(isCode) && (
@@ -88,13 +102,15 @@ export const PreviewView = ({ isChatView }: Props) => {
 							)}
 
 							{/* RELOAD */}
-							<IconButton
-								tooltip={t('core.action.reload')}
-								size="sm"
-								onClick={() => setIframeKey((key: number) => key + 1)}
-							>
-								<ReloadSvg className="w-xs-6" />
-							</IconButton>
+							{Boolean(showsReload) && (
+								<IconButton
+									tooltip={t('core.action.reload')}
+									size="sm"
+									onClick={() => setIframeKey((key: number) => key + 1)}
+								>
+									<ReloadSvg className="w-xs-6" />
+								</IconButton>
+							)}
 
 							{/* URL */}
 							{Boolean(isUrl) && (
@@ -112,25 +128,16 @@ export const PreviewView = ({ isChatView }: Props) => {
 					)}
 
 					{/* URL CONTENT */}
-					{Boolean(isUrl) && (
-						<iframe
-							key={iframeKey}
-							src={previewUrl || ''}
-							referrerPolicy="no-referrer"
-							sandbox="allow-scripts allow-same-origin allow-forms"
-							className="mb-xs-2 w-full flex-1 rounded-sm border border-color-border-default bg-color-white"
-						/>
-					)}
+					{Boolean(isUrl) && <iframe {...iframeProps} key={iframeKey} src={previewUrl || ''} />}
 
 					{/* CODE CONTENT */}
 					{Boolean(isCode) &&
 						(showsResult ? (
 							<iframe
+								{...iframeProps}
 								key={iframeKey}
-								src={previewUrl || ''}
-								referrerPolicy="no-referrer"
-								sandbox="allow-scripts allow-same-origin allow-forms"
-								className="mb-xs-2 w-full flex-1 rounded-sm border border-color-border-default bg-color-white"
+								srcDoc={previewCode || ''}
+								sandbox="allow-scripts allow-same-origin allow-downloads allow-presentation"
 							/>
 						) : (
 							<div className="ds-markdown mb-xs-2 flex-1">

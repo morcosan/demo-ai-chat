@@ -56,7 +56,7 @@ export const Markdown = (props: Props) => {
 	const injectCodeActions = (container: HTMLDivElement) => {
 		const elems = container.querySelectorAll('[data-code-actions]')
 		elems?.forEach((elem: Element, index: number) => {
-			const regex = /```(?:\w+)?\s([\s\S]*?)(?:```|``|`|$)/
+			const regex = /```(?:[\w/]+)?\s([\s\S]*?)(?:```|``|`|$)/
 			const raw = rawCodeRefs.current[index]
 			const code = raw.startsWith('```') ? raw.match(regex)?.[1].trim() || '' : raw
 			const lang = elem.closest('pre')?.getAttribute('data-lang') || 'plaintext'
