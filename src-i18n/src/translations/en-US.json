@@ -32,6 +32,7 @@
 			"apiDocs": "API Docs",
 			"asia": "Asia",
 			"avatar": "Avatar",
+			"code": "Code",
 			"copied": "Copied",
 			"custom": "Custom",
 			"darkTheme": "Dark",
@@ -54,6 +55,7 @@
 			"optionalField": "(Optional)",
 			"quickSettings": "Quick settings",
 			"requiredField": "(Required)",
+			"result": "Result",
 			"settings": "Settings",
 			"uiLibrary": "UI Library",
 			"uiTheme": "UI Theme"
