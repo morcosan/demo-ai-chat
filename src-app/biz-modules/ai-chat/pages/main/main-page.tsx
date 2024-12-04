@@ -47,6 +47,16 @@ export const AiChatMainPage = () => {
 						style={{ width: showsPanel ? `${panelWidth}%` : 0 }}
 					/>
 
+					{/* SHOW BUTTON */}
+					<div
+						className={cx('fixed right-a11y-scrollbar top-a11y-padding pt-px', showsPanel && 'hidden')}
+						style={{ zIndex: 'calc(var(--ds-z-index-navbar) - 1)' }}
+					>
+						<IconButton tooltip={t('core.action.showPanel')} size="sm" onClick={() => setShowsPanel(true)}>
+							<PanelOpenSvg className="h-xs-7" />
+						</IconButton>
+					</div>
+
 					{/* PANEL */}
 					<div
 						className={cx(
@@ -61,16 +71,6 @@ export const AiChatMainPage = () => {
 						<div className="absolute left-0 top-0 h-full w-xs-1 bg-color-border-shadow" />
 						{/* VIEW */}
 						{slotPanel}
-					</div>
-
-					{/* SHOW BUTTON */}
-					<div
-						className={cx('fixed right-a11y-scrollbar top-a11y-padding pt-px', showsPanel && 'hidden')}
-						style={{ zIndex: 'calc(var(--ds-z-index-navbar) - 1)' }}
-					>
-						<IconButton tooltip={t('core.action.showPanel')} size="sm" onClick={() => setShowsPanel(true)}>
-							<PanelOpenSvg className="h-xs-7" />
-						</IconButton>
 					</div>
 				</>
 			)}
