@@ -127,10 +127,10 @@ export const Markdown = (props: Props) => {
 // Escape all html tags
 const ESCAPE_HTML: TokenizerExtension = {
 	name: 'ESCAPE_HTML',
-	level: 'inline',
+	level: 'block',
 	start: (src: string) => src.indexOf('<'),
 	tokenizer: (src: string) => {
-		const rule = /^<[^>]*>/ // Match HTML tags
+		const rule = /^<[^>]*(?:>|$)/ // Match HTML tags
 		const match = rule.exec(src)
 		if (match) return { type: 'text', raw: match[0], text: match[0] }
 	},

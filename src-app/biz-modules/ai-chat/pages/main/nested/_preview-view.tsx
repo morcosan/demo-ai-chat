@@ -85,14 +85,16 @@ export const PreviewView = ({ isChatView }: Props) => {
 							{Boolean(isCode) && (
 								<div role="group" className="flex gap-xs-0 px-xs-3">
 									<Button
-										variant={showsResult ? 'ghost-secondary' : 'solid-secondary'}
+										variant={showsResult ? 'text-default' : 'solid-secondary'}
+										highlight={showsResult ? 'default' : 'selected'}
 										size="xs"
 										onClick={() => setShowsResult(false)}
 									>
 										{t('core.label.code')}
 									</Button>
 									<Button
-										variant={showsResult ? 'solid-secondary' : 'ghost-secondary'}
+										variant={showsResult ? 'solid-secondary' : 'text-default'}
+										highlight={showsResult ? 'selected' : 'default'}
 										size="xs"
 										onClick={() => setShowsResult(true)}
 									>
