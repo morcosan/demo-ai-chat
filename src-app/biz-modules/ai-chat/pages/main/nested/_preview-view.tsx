@@ -5,6 +5,8 @@ import { useEffect, useMemo, useState } from 'react'
 import { PanelBase } from '../../../components/panel-base'
 import { AiChatPreviewSource, useAiChatPreview } from '../../../state'
 
+const RESULT_LANGUAGES = ['html', 'svg', 'xml']
+
 interface Props extends ReactProps {
 	isChatView?: boolean
 }
@@ -21,6 +23,8 @@ export const PreviewView = ({ isChatView }: Props) => {
 	const isSourceSubchat = previewSource === AiChatPreviewSource.SUBCHAT
 	const isValidView = Boolean(isChatView ? isSourceSubchat : isSourceChat)
 	const showsPreview = Boolean(isUrl || isCode) && isValidView
+	const hasCodeResult = isCode && RESULT_LANGUAGES.includes(previewLang || '')
+	const hasToolbar = isUrl || (isCode && hasCodeResult)
 
 	const title = (() => {
 		if (isUrl) return t('aiChat.label.urlPreview')
@@ -28,10 +32,17 @@ export const PreviewView = ({ isChatView }: Props) => {
 		return ''
 	})()
 
+	log(previewCode)
+	log(previewLang)
+
 	const codeHtml = useMemo(
 		() => (previewCode && previewLang ? hljs.highlight(previewCode, { language: previewLang }).value : ''),
 		[previewCode]
 	)
+
+	useEffect(() => {
+		setShowsResult(false)
+	}, [previewCode])
 
 	useEffect(() => {
 		showsPreview ? setIsVisible(true) : wait(200).then(() => setIsVisible(false))
@@ -49,13 +60,34 @@ export const PreviewView = ({ isChatView }: Props) => {
 			<PanelBase
 				slotToolbar={<span className="px-xs-3">{title}</span>}
 				isChatView={isChatView}
-				containerClass="!pb-xs-4"
+				containerClass=""
 				isPreview
 			>
-				{Boolean(isUrl) && (
-					<>
-						{/* URL TOOLBAR */}
+				<div className="mb-xs-1 mt-a11y-padding flex flex-1 flex-col">
+					{/* TOOLBAR */}
+					{Boolean(hasToolbar) && (
 						<div className="my-a11y-padding flex h-button-h-sm items-center">
+							{/* CODE/RESULT  */}
+							{Boolean(isCode) && (
+								<div role="group" className="flex gap-xs-0 px-xs-3">
+									<Button
+										variant={showsResult ? 'ghost-secondary' : 'solid-secondary'}
+										size="xs"
+										onClick={() => setShowsResult(false)}
+									>
+										{t('core.label.code')}
+									</Button>
+									<Button
+										variant={showsResult ? 'solid-secondary' : 'ghost-secondary'}
+										size="xs"
+										onClick={() => setShowsResult(true)}
+									>
+										{t('core.label.result')}
+									</Button>
+								</div>
+							)}
+
+							{/* RELOAD */}
 							<IconButton
 								tooltip={t('core.action.reload')}
 								size="sm"
@@ -64,69 +96,44 @@ export const PreviewView = ({ isChatView }: Props) => {
 								<ReloadSvg className="w-xs-6" />
 							</IconButton>
 
-							<a
-								href={previewUrl || ''}
-								target="_blank"
-								rel="noopener noreferrer"
-								className="ds-link ml-xs-0 flex max-w-full items-center truncate"
-							>
-								<span className="block w-full truncate break-words text-size-sm">{previewUrl}</span>
-								<NewTabSvg className="ml-xs-2 mt-px h-xs-5 w-xs-5" />
-							</a>
+							{/* URL */}
+							{Boolean(isUrl) && (
+								<a
+									href={previewUrl || ''}
+									target="_blank"
+									rel="noopener noreferrer"
+									className="ds-link ml-xs-0 flex max-w-full items-center truncate"
+								>
+									<span className="block w-full truncate break-words text-size-sm">{previewUrl}</span>
+									<NewTabSvg className="ml-xs-2 mt-px h-xs-5 w-xs-5" />
+								</a>
+							)}
 						</div>
+					)}
 
-						{/* URL CONTENT */}
+					{/* URL CONTENT */}
+					{Boolean(isUrl) && (
 						<iframe
 							key={iframeKey}
 							src={previewUrl || ''}
 							referrerPolicy="no-referrer"
 							sandbox="allow-scripts allow-same-origin allow-forms"
-							className="w-full flex-1 rounded-sm border border-color-border-default bg-color-white"
+							className="mb-xs-2 w-full flex-1 rounded-sm border border-color-border-default bg-color-white"
 						/>
-					</>
-				)}
+					)}
 
-				{Boolean(isCode) && (
-					<>
-						{/* CODE TOOLBAR */}
-						<div className="my-a11y-padding flex h-button-h-sm items-center">
-							<div role="group" className="flex gap-xs-0 px-xs-3">
-								<Button
-									variant={showsResult ? 'ghost-secondary' : 'solid-secondary'}
-									size="xs"
-									onClick={() => setShowsResult(false)}
-								>
-									{t('core.label.code')}
-								</Button>
-								<Button
-									variant={showsResult ? 'solid-secondary' : 'ghost-secondary'}
-									size="xs"
-									onClick={() => setShowsResult(true)}
-								>
-									{t('core.label.result')}
-								</Button>
-							</div>
-
-							<IconButton
-								tooltip={t('core.action.reload')}
-								size="sm"
-								onClick={() => setIframeKey((key: number) => key + 1)}
-							>
-								<ReloadSvg className="w-xs-6" />
-							</IconButton>
-						</div>
-
-						{/* CODE CONTENT */}
-						{showsResult ? (
+					{/* CODE CONTENT */}
+					{Boolean(isCode) &&
+						(showsResult ? (
 							<iframe
 								key={iframeKey}
 								src={previewUrl || ''}
 								referrerPolicy="no-referrer"
 								sandbox="allow-scripts allow-same-origin allow-forms"
-								className="w-full flex-1 rounded-sm border border-color-border-default bg-color-white"
+								className="mb-xs-2 w-full flex-1 rounded-sm border border-color-border-default bg-color-white"
 							/>
 						) : (
-							<div className="ds-markdown min-h-0 flex-1">
+							<div className="ds-markdown mb-xs-2 flex-1">
 								<pre className="h-full">
 									<div>
 										{previewLang}
@@ -141,9 +148,8 @@ export const PreviewView = ({ isChatView }: Props) => {
 									<code dangerouslySetInnerHTML={{ __html: codeHtml }} className="h-full" />
 								</pre>
 							</div>
-						)}
-					</>
-				)}
+						))}
+				</div>
 			</PanelBase>
 		</div>
 	)
