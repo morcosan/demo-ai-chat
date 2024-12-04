@@ -1,4 +1,4 @@
-import { Button, NewTabSvg, PreviewSvg } from '@ds/release'
+import { NewTabSvg } from '@ds/release'
 import DOMPurify from 'dompurify'
 import hljs from 'highlight.js'
 import { Marked, Renderer, TokenizerExtension, Tokens } from 'marked'
@@ -7,7 +7,13 @@ import { useMemo, useRef } from 'react'
 import { createRoot, Root } from 'react-dom/client'
 import { renderToStaticMarkup } from 'react-dom/server'
 import { MemoryRouter } from 'react-router-dom'
-import { CopyButton } from './copy-button'
+import { MarkdownCode } from './markdown-code'
+
+interface CodeData {
+	html: string
+	raw: string
+	lang?: string
+}
 
 interface Props extends ReactProps {
 	text: string
@@ -17,8 +23,8 @@ interface Props extends ReactProps {
 
 export const Markdown = (props: Props) => {
 	const { text, className, onPreviewCode, onPreviewLink } = props
-	const rawCodeRefs = useRef<string[]>([])
-	const rootRefs = useRef(new WeakMap<Element, Root>())
+	const codeDataRefs = useRef<CodeData[]>([])
+	const codeRootRefs = useRef(new WeakMap<Element, Root>())
 	const renderer = new Renderer()
 
 	renderer.link = ({ href, text }: Tokens.Link) => {
@@ -40,44 +46,22 @@ export const Markdown = (props: Props) => {
 	}
 
 	renderer.code = ({ text, lang, raw }: Tokens.Code) => {
-		rawCodeRefs.current.push(raw)
-
-		return renderToStaticMarkup(
-			<pre data-lang={lang}>
-				<div>
-					{lang || 'plaintext'}
-					<div data-code-actions="" />
-				</div>
-				<code dangerouslySetInnerHTML={{ __html: text }} />
-			</pre>
-		)
+		codeDataRefs.current.push({ html: text, lang, raw })
+		return renderToStaticMarkup(<div data-code-block="" />)
 	}
 
 	const injectCodeActions = (container: HTMLDivElement) => {
-		const elems = container.querySelectorAll('[data-code-actions]')
+		const elems = container.querySelectorAll('[data-code-block]')
 		elems?.forEach((elem: Element, index: number) => {
-			const regex = /```(?:[\w/]+)?\s([\s\S]*?)(?:```|``|`|$)/
-			const raw = rawCodeRefs.current[index]
-			const code = raw.startsWith('```') ? raw.match(regex)?.[1].trim() || '' : raw
-			const lang = elem.closest('pre')?.getAttribute('data-lang') || 'plaintext'
-
-			const root = rootRefs.current.get(elem) || createRoot(elem)
+			const data = codeDataRefs.current[index]
+			const root = codeRootRefs.current.get(elem) || createRoot(elem)
+			codeRootRefs.current.set(elem, root)
 			root.render(
 				// Button component requires a router context
 				<MemoryRouter>
-					<CopyButton variant="text-default" tooltip={t('aiChat.action.copyCode')} text={code} />
-					<Button
-						tooltip={t('aiChat.action.previewCode')}
-						variant="text-default"
-						size="xs"
-						onClick={() => onPreviewCode?.(code, lang)}
-					>
-						<PreviewSvg className="mr-xs-2 h-xs-6 w-xs-6" />
-						<span className="leading-1">{t('core.action.preview')}</span>
-					</Button>
+					<MarkdownCode html={data.html} lang={data.lang} raw={data.raw} onPreviewCode={onPreviewCode} />
 				</MemoryRouter>
 			)
-			rootRefs.current.set(elem, root)
 		})
 	}
 
@@ -87,7 +71,6 @@ export const Markdown = (props: Props) => {
 			elem.addEventListener('click', (event: Event) => {
 				const mouseEvent = event as MouseEvent
 				const target = event.target as HTMLAnchorElement
-
 				// Capture only left-click
 				if (onPreviewLink && mouseEvent.button === 0) {
 					event.preventDefault()
@@ -111,7 +94,7 @@ export const Markdown = (props: Props) => {
 	marked.use({ extensions: [ESCAPE_HTML] })
 
 	const html = useMemo(() => {
-		rawCodeRefs.current = []
+		codeDataRefs.current = []
 
 		const unparsed = text.replace(/\n/g, '  \n') // Fix new lines for markdown
 		const parsed = marked.parse(unparsed, { async: false })

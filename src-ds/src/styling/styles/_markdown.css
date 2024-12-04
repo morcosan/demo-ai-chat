@@ -27,7 +27,7 @@
 			margin-bottom: var(--margin-xxs);
 		}
 
-		& > div {
+		& div.ds-markdown-toolbar {
 			display: flex;
 			position: absolute;
 			top: 1px;
@@ -41,18 +41,17 @@
 			height: var(--bar-height);
 			color: var(--ds-color-text-subtle);
 			font-size: var(--ds-font-size-xs);
+		}
 
-			& > div:last-child {
-				display: flex;
-				align-items: center;
-				margin-right: calc(-1 * var(--ds-spacing-button-px-xs));
-			}
+		& div.ds-markdown-actions {
+			display: flex;
+			align-items: center;
+			margin-right: calc(-1 * var(--ds-spacing-button-px-xs));
 		}
 
 		& > code {
 			display: block;
 			box-shadow: var(--ds-shadow-xs);
-
 			background-color: var(--ds-color-bg-coding);
 			padding: var(--ds-spacing-xs-5) var(--ds-spacing-xs-6);
 			overflow-x: auto;

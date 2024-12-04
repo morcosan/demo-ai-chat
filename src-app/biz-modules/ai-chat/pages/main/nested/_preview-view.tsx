@@ -144,9 +144,9 @@ export const PreviewView = ({ isChatView }: Props) => {
 						) : (
 							<div className="ds-markdown mb-xs-2 flex-1">
 								<pre className="h-full">
-									<div>
+									<div className="ds-markdown-toolbar">
 										{previewLang}
-										<div>
+										<div className="ds-markdown-actions">
 											<CopyButton
 												variant="text-default"
 												tooltip={t('aiChat.action.copyCode')}
