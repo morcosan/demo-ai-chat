@@ -2,7 +2,7 @@ import { LoadingText } from '@app/library/release'
 import { useUiTheme } from '@ds/release'
 import { debounce } from 'lodash'
 import { UIEvent, useEffect, useMemo, useState } from 'react'
-import { useNavigate, useParams, useSearchParams } from 'react-router-dom'
+import { useLocation, useNavigate, useParams, useSearchParams } from 'react-router-dom'
 import { Agent, Message } from '../../api'
 import { MessageItem } from '../../components/items/message-item'
 import { NewMessageBox } from '../../components/new-message-box'
@@ -25,7 +25,7 @@ export const ChatView = () => {
 		resetActiveChat,
 	} = useAiChat()
 	const { allAgentsForChat, loadMissingAgents } = useAiChatAgents()
-	const { previewSource, openCodePreview, openUrlPreview } = useAiChatPreview()
+	const { previewSource, openCodePreview, openUrlPreview, closePreview } = useAiChatPreview()
 	const { containerRef, saveScrollPos, scrollToPos } = useScrollable()
 	const { $lineHeight, $fontSize, $spacing } = useUiTheme()
 	const { chatId: chatIdStr } = useParams()
@@ -33,6 +33,7 @@ export const ChatView = () => {
 	const [sentAgentId, setSentAgentId] = useState(0)
 	const [isViewVisible, setIsViewVisible] = useState(true)
 	const [searchParams] = useSearchParams()
+	const location = useLocation()
 	const navigate = useNavigate()
 
 	const chatId = parseInt(chatIdStr || '')
@@ -99,6 +100,10 @@ export const ChatView = () => {
 			? wait(300).then(() => setIsViewVisible(false))
 			: setIsViewVisible(true)
 	}, [previewSource])
+
+	useEffect(() => {
+		closePreview()
+	}, [location])
 
 	const slotMessages = useMemo(
 		() => (
