@@ -11,4 +11,4 @@ export const RANDOM_CSHARP = '```csharp\n// C#\nusing System;\n\nclass Program {
 // prettier-ignore
 export const RANDOM_PHP = '```php\n// PHP\n<?php\nfunction log() {\n  echo "Hello, World!";\n}\n\nlog();\n?>\n```'
 // prettier-ignore
-export const RANDOM_HTML = `<!DOCTYPE html>\n<html>\n<body>\n<h1>My First Heading</h1>\n<p>My first paragraph.</p>\n</body>\n</html>`
+export const RANDOM_HTML = '```html\n<!DOCTYPE html>\n<html>\n<body>\n<h1>My First Heading</h1>\n<p>My first paragraph.</p>\n</body>\n</html>\n```'
