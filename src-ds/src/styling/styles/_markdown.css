@@ -33,7 +33,6 @@
 			top: 1px;
 			right: 1px;
 			left: 1px;
-			justify-content: space-between;
 			align-items: center;
 			z-index: 1;
 			border-bottom: 1px solid var(--ds-color-border-subtle);
@@ -48,6 +47,7 @@
 			display: flex;
 			align-items: center;
 			margin-right: calc(-1 * var(--ds-spacing-button-px-xs));
+			margin-left: auto;
 		}
 
 		& > code {
