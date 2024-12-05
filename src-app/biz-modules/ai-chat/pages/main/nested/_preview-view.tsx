@@ -4,7 +4,7 @@ import { formatCode } from '@utils/release'
 import hljs from 'highlight.js'
 import { IframeHTMLAttributes, useEffect, useState } from 'react'
 import { PanelBase } from '../../../components/panel-base'
-import { AiChatPreviewSource, useAiChatPreview } from '../../../state'
+import { AiChatPreviewSource, AiChatView, useAiChatLayout, useAiChatPreview } from '../../../state'
 
 const RESULT_LANGUAGES = ['html', 'xhtml', 'svg']
 
@@ -13,6 +13,7 @@ interface Props extends ReactProps {
 }
 
 export const PreviewView = ({ isChatView }: Props) => {
+	const { activeView } = useAiChatLayout()
 	const { previewUrl, previewCode, previewLang, previewSource, closePreview } = useAiChatPreview()
 	const [isVisible, setIsVisible] = useState(false)
 	const [iframeKey, setIframeKey] = useState(0)
@@ -24,7 +25,9 @@ export const PreviewView = ({ isChatView }: Props) => {
 	const isCode = Boolean(previewCode && previewLang)
 	const isSourceChat = previewSource === AiChatPreviewSource.CHAT
 	const isSourceSubchat = previewSource === AiChatPreviewSource.SUBCHAT
-	const isValidView = Boolean(isChatView ? isSourceSubchat : isSourceChat)
+	const isValidView = Boolean(
+		activeView === AiChatView.DESKTOP ? (isChatView ? isSourceSubchat : isSourceChat) : isChatView
+	)
 
 	const showsPreview = Boolean(isUrl || isCode) && isValidView
 	const showsCodeResult = isCode && RESULT_LANGUAGES.includes(previewLang || '')
@@ -64,7 +67,13 @@ export const PreviewView = ({ isChatView }: Props) => {
 	}, [showsPreview])
 
 	return (
-		<div className={cx('absolute-overlay z-sticky overflow-hidden pt-button-h-xs', !isVisible && 'invisible')}>
+		<div
+			className={cx(
+				activeView === AiChatView.DESKTOP ? 'absolute-overlay' : 'fixed-overlay',
+				'z-modal overflow-hidden pt-button-h-xs',
+				!isVisible && 'invisible'
+			)}
+		>
 			{/* OVERLAY */}
 			<div className={cx('absolute-overlay z-[-1] backdrop-blur-subtle')} onClick={closePreview} />
 

@@ -1,8 +1,7 @@
-import { CopyButton } from '@app/library/release'
+import { CopyButton, Markdown } from '@app/library/release'
 import { Button, ReloadSvg, useUiViewport, WarningSvg } from '@ds/release'
 import { useMemo, useState } from 'react'
 import { Agent, Message } from '../../api'
-import { MessageMarkdown } from '../message-markdown'
 import { SubchatButton } from '../subchat-button'
 import { AgentGptItem } from './agent-gpt-item'
 
@@ -72,14 +71,7 @@ export const MessageItem = (props: Props) => {
 	const onClickToolbar = (event: ReactMouseEvent) => event.stopPropagation()
 
 	const slotMarkdown = useMemo(
-		() => (
-			<MessageMarkdown
-				text={message.text}
-				isSubchat={isSubchat}
-				onPreviewCode={onPreviewCode}
-				onPreviewUrl={onPreviewUrl}
-			/>
-		),
+		() => <Markdown text={message.text} onPreviewCode={onPreviewCode} onPreviewUrl={onPreviewUrl} />,
 		[message.text]
 	)
 
