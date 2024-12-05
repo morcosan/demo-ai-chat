@@ -7,6 +7,7 @@ interface Props extends ReactProps {
 	html: string
 	raw: string
 	lang?: string
+	error?: string
 	noCollapse?: boolean
 	noPreview?: boolean
 	fullHeight?: boolean
@@ -14,7 +15,7 @@ interface Props extends ReactProps {
 }
 
 export const MarkdownCode = (props: Props) => {
-	const { html, lang, raw, noCollapse, noPreview, fullHeight, onPreviewCode } = useDefaults(props, {
+	const { html, lang, raw, error, noCollapse, noPreview, fullHeight, onPreviewCode } = useDefaults(props, {
 		lang: 'plaintext',
 	})
 	const [collapsed, setCollapsed] = useState(true)
@@ -27,7 +28,7 @@ export const MarkdownCode = (props: Props) => {
 	const canPreview = !noPreview
 
 	return (
-		<pre className={cx(fullHeight && 'h-full')}>
+		<pre className={cx(fullHeight && 'flex h-full min-h-0 flex-col')}>
 			<div className="ds-markdown-toolbar">
 				{lang}
 
@@ -56,9 +57,20 @@ export const MarkdownCode = (props: Props) => {
 				className={cx(
 					canCollapse && '!pb-sm-0',
 					canCollapse && collapsed && 'max-h-xl-0 select-none !overflow-hidden',
-					fullHeight && 'h-full'
+					fullHeight && 'min-h-0 flex-1'
 				)}
 			/>
+
+			{Boolean(error) && (
+				<div
+					className={cx(
+						'max-h-lg-0 overflow-y-auto border-t border-color-border-default px-xs-6 py-xs-2',
+						'bg-color-danger-card-bg text-size-xs text-color-danger-card-text'
+					)}
+				>
+					{error}
+				</div>
+			)}
 
 			{Boolean(canCollapse) && (
 				<div

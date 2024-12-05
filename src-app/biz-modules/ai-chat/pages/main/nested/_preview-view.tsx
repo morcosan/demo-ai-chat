@@ -18,6 +18,7 @@ export const PreviewView = ({ isChatView }: Props) => {
 	const [iframeKey, setIframeKey] = useState(0)
 	const [showsResult, setShowsResult] = useState(false)
 	const [codeHtml, setCodeHtml] = useState('')
+	const [codeError, setCodeError] = useState('')
 
 	const isUrl = Boolean(previewUrl)
 	const isCode = Boolean(previewCode && previewLang)
@@ -45,11 +46,12 @@ export const PreviewView = ({ isChatView }: Props) => {
 	const updateCodeHtml = async () => {
 		if (!previewCode || !previewLang) return setCodeHtml('')
 
-		const formatted = await formatCode(previewCode, previewLang)
-		const options = { language: hljs.getLanguage(previewLang) ? previewLang : 'plaintext' }
-		const highlighted = hljs.highlight(formatted, options).value
+		const format = await formatCode(previewCode, previewLang)
+		const lang = hljs.getLanguage(previewLang) ? previewLang : 'plaintext'
+		const html = hljs.highlight(format.code, { language: lang }).value
 
-		setCodeHtml(highlighted)
+		setCodeHtml(html)
+		setCodeError(format.error ? String(format.error) : '')
 	}
 
 	useEffect(() => {
@@ -76,7 +78,7 @@ export const PreviewView = ({ isChatView }: Props) => {
 				containerClass=""
 				isPreview
 			>
-				<div className="mb-xs-1 mt-a11y-padding flex flex-1 flex-col">
+				<div className="mb-xs-1 mt-a11y-padding flex min-h-0 flex-1 flex-col">
 					{/* TOOLBAR */}
 					{Boolean(showsToolbar) && (
 						<div className="my-a11y-padding flex h-button-h-sm items-center">
@@ -141,11 +143,12 @@ export const PreviewView = ({ isChatView }: Props) => {
 								sandbox="allow-scripts allow-same-origin allow-downloads allow-presentation"
 							/>
 						) : (
-							<div className="ds-markdown mb-xs-2 flex-1">
+							<div className="ds-markdown mb-xs-2 min-h-0 flex-1">
 								<MarkdownCode
 									html={codeHtml}
 									raw={previewCode!}
 									lang={previewLang!}
+									error={codeError}
 									fullHeight
 									noCollapse
 									noPreview
