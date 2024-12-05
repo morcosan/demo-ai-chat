@@ -25,7 +25,7 @@ export const PanelView = (props: Props) => {
 		loadActiveSubchat,
 		resetActiveSubchat,
 	} = useAiChat()
-	const { previewSource, openCodePreview, openUrlPreview } = useAiChatPreview()
+	const { hasPreview, previewSource, openCodePreview, openUrlPreview } = useAiChatPreview()
 	const [isViewVisible, setIsViewVisible] = useState(true)
 	const [searchParams] = useSearchParams()
 	const navigate = useNavigate()
@@ -44,21 +44,23 @@ export const PanelView = (props: Props) => {
 		}
 	}
 
+	const hidePanel = () => !hasPreview && onHidePanel()
+
 	useEffect(() => {
 		subchatId ? loadSubchat() : resetActiveSubchat()
 	}, [activeChat, subchatId])
 
 	useEffect(() => {
 		if (allSubchatsPagination.page) {
-			allSubchats.length ? onShowPanel() : onHidePanel()
+			allSubchats.length ? onShowPanel() : hidePanel()
 		} else {
-			!activeChat && onHidePanel()
+			!activeChat && hidePanel()
 		}
 	}, [allSubchats, allSubchatsPagination])
 
 	useEffect(() => {
 		if (previewSource === AiChatPreviewSource.NONE) {
-			!allSubchats.length && !activeSubchat && !subchatId && onHidePanel()
+			!allSubchats.length && !activeSubchat && !subchatId && hidePanel()
 		} else {
 			onShowPanel()
 		}

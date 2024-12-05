@@ -30,8 +30,6 @@ export const PreviewView = ({ isChatView }: Props) => {
 	const showsToolbar = isUrl || (isCode && showsCodeResult)
 	const showsReload = isUrl || (isCode && showsResult)
 
-	const codeLang = previewLang ? (/^\w+$/.test(previewLang) ? previewLang : 'plaintext') : ''
-
 	const title = (() => {
 		if (isUrl) return t('aiChat.label.urlPreview')
 		if (isCode) return t('aiChat.label.codePreview')
@@ -45,10 +43,11 @@ export const PreviewView = ({ isChatView }: Props) => {
 	}
 
 	const updateCodeHtml = async () => {
-		if (!previewCode) return setCodeHtml('')
+		if (!previewCode || !previewLang) return setCodeHtml('')
 
-		const formatted = await formatCode(previewCode, codeLang)
-		const highlighted = hljs.highlight(formatted, { language: codeLang }).value
+		const formatted = await formatCode(previewCode, previewLang)
+		const options = { language: hljs.getLanguage(previewLang) ? previewLang : 'plaintext' }
+		const highlighted = hljs.highlight(formatted, options).value
 
 		setCodeHtml(highlighted)
 	}
