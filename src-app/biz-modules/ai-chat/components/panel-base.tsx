@@ -2,21 +2,32 @@ import { ReactNode, RefObject, UIEvent } from 'react'
 import { PanelToolbar } from './panel-toolbar'
 
 interface Props extends ReactProps {
-	containerRef?: RefObject<HTMLDivElement>
 	containerClass?: string
+	containerRef?: RefObject<HTMLDivElement>
 	isChatView?: boolean
 	isPreview?: boolean
-	slotToolbar?: ReactNode
+	noContent?: boolean
 	slotFooter?: ReactNode
+	slotToolbar?: ReactNode
 	onScroll?(event: UIEvent): void
 }
 
 export const PanelBase = (props: Props) => {
-	const { containerRef, containerClass, isChatView, isPreview, slotToolbar, slotFooter, children, onScroll } =
-		props
+	const {
+		children,
+		className,
+		containerClass,
+		containerRef,
+		isChatView,
+		isPreview,
+		noContent,
+		slotFooter,
+		slotToolbar,
+		onScroll,
+	} = props
 
 	return (
-		<div className="flex h-full flex-col">
+		<div className={cx('flex h-full flex-col', isPreview && 'bg-color-bg-card', className)}>
 			<div
 				ref={containerRef}
 				className={cx('ds-scrollable flex flex-1 flex-col', containerClass)}
@@ -28,10 +39,10 @@ export const PanelBase = (props: Props) => {
 				</PanelToolbar>
 
 				{/* CONTENT */}
-				{children}
+				{!noContent && children}
 			</div>
 
-			{slotFooter}
+			{!noContent && slotFooter}
 		</div>
 	)
 }

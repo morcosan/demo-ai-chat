@@ -75,19 +75,19 @@ export const PanelView = (props: Props) => {
 
 	return (
 		<div className="relative h-full">
-			<div className={cx('relative h-full', !isViewVisible && 'invisible')}>
+			<div className="relative h-full">
 				{!activeChat ? null : activeSubchat ? (
-					<SubchatView onPreviewCode={onPreviewCode} onPreviewUrl={onPreviewUrl} />
+					<SubchatView noContent={!isViewVisible} onPreviewCode={onPreviewCode} onPreviewUrl={onPreviewUrl} />
 				) : chatLoading === 'full' || allSubchatsLoading === 'full' ? (
-					<PanelBase>
+					<PanelBase noContent={!isViewVisible}>
 						<LoadingText text={t('aiChat.state.loadingSubchats')} className="flex-center h-full" />
 					</PanelBase>
 				) : !allSubchats.length && !subchatLoading ? (
-					<PanelBase>
+					<PanelBase noContent={!isViewVisible}>
 						<div className="flex-center h-full w-full text-color-text-subtle">{t('aiChat.label.noSubchats')}</div>
 					</PanelBase>
 				) : (
-					<SubchatsView />
+					<SubchatsView noContent={!isViewVisible} />
 				)}
 			</div>
 

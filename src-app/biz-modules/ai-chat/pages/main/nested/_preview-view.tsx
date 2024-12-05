@@ -13,7 +13,7 @@ interface Props extends ReactProps {
 }
 
 export const PreviewView = ({ isChatView }: Props) => {
-	const { previewUrl, previewCode, previewLang, previewSource } = useAiChatPreview()
+	const { previewUrl, previewCode, previewLang, previewSource, closePreview } = useAiChatPreview()
 	const [isVisible, setIsVisible] = useState(false)
 	const [iframeKey, setIframeKey] = useState(0)
 	const [showsResult, setShowsResult] = useState(false)
@@ -60,22 +60,22 @@ export const PreviewView = ({ isChatView }: Props) => {
 	}, [previewCode, previewLang])
 
 	useEffect(() => {
-		showsPreview ? setIsVisible(true) : wait(200).then(() => setIsVisible(false))
+		showsPreview ? setIsVisible(true) : wait(300).then(() => setIsVisible(false))
 	}, [showsPreview])
 
 	return (
-		<div
-			className={cx(
-				'absolute-overlay z-sticky bg-color-bg-page',
-				'transition-opacity duration-200 ease-in',
-				!showsPreview && 'pointer-events-none opacity-0',
-				!isVisible && 'invisible'
-			)}
-		>
+		<div className={cx('absolute-overlay z-sticky overflow-hidden pt-button-h-xs', !isVisible && 'invisible')}>
+			{/* OVERLAY */}
+			<div className={cx('absolute-overlay z-[-1] backdrop-blur-subtle')} onClick={closePreview} />
+
 			<PanelBase
+				className={cx(
+					'border-t border-color-border-shadow shadow-lg',
+					'transition-transform duration-300 ease-in-out',
+					showsPreview ? 'translate-y-0' : 'pointer-events-none translate-y-full'
+				)}
 				slotToolbar={<span className="px-xs-3">{title}</span>}
 				isChatView={isChatView}
-				containerClass=""
 				isPreview
 			>
 				<div className="mb-xs-1 mt-a11y-padding flex min-h-0 flex-1 flex-col">

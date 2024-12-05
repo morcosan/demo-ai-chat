@@ -3,9 +3,10 @@ import { useStickyHandler } from '@utils/release'
 interface Props extends ReactPropsExtended {
 	permanent?: boolean
 	stretched?: boolean
+	bgClass?: string
 }
 
-export const StickyToolbar = ({ permanent, stretched, children, className, style }: Props) => {
+export const StickyToolbar = ({ permanent, stretched, bgClass, children, className, style }: Props) => {
 	const { isSticky, stickyRef } = useStickyHandler()
 
 	const stickyClass = cx(
@@ -14,7 +15,7 @@ export const StickyToolbar = ({ permanent, stretched, children, className, style
 		className
 	)
 	const slotClass = cx(
-		'bg-color-bg-page',
+		bgClass || 'bg-color-bg-page',
 		stretched && 'px-a11y-padding',
 		(permanent || isSticky) && 'border-b border-color-border-shadow shadow-below-sm'
 	)

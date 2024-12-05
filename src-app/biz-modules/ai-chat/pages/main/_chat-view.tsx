@@ -121,11 +121,7 @@ export const ChatView = () => {
 
 	return (
 		<>
-			<div
-				ref={containerRef}
-				className={cx('ds-scrollable flex-1 !pb-lg-1 lg:!pb-lg-3', !isViewVisible && 'invisible')}
-				onScroll={onScroll}
-			>
+			<div ref={containerRef} className={cx('ds-scrollable flex-1 !pb-lg-1 lg:!pb-lg-3')} onScroll={onScroll}>
 				{activeChat || chatId ? (
 					<div className={cx(widthClass, chatLoading === 'full' && 'h-full', 'flex flex-col pt-sm-0')}>
 						{/* TOOLBAR */}
@@ -157,7 +153,7 @@ export const ChatView = () => {
 						{chatLoading === 'full' ? (
 							<LoadingText text={t('aiChat.state.loadingMessages')} className="absolute-overlay flex-center" />
 						) : (
-							<div className="flex flex-col">
+							<div className={cx('flex flex-col', !isViewVisible && 'invisible')}>
 								{/* LOAD MORE */}
 								<LoadingText
 									text={t('aiChat.state.loadingPreviousMessages')}

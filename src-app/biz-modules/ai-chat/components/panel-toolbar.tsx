@@ -21,7 +21,7 @@ export const PanelToolbar = (props: Props) => {
 	}
 
 	return (
-		<StickyToolbar stretched permanent>
+		<StickyToolbar bgClass={cx(isPreview && 'bg-color-bg-card')} stretched permanent>
 			<div className="flex h-button-h-md items-center gap-xs-2 pt-px text-size-sm">
 				{children}
 

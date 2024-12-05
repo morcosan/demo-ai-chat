@@ -8,7 +8,11 @@ import { SubchatIcon } from '../../../components/subchat-icon'
 import { useAiChat } from '../../../state'
 import { getTextFromMarkdown } from '../../../utils/markdown'
 
-export const SubchatsView = () => {
+interface Props {
+	noContent?: boolean
+}
+
+export const SubchatsView = ({ noContent }: Props) => {
 	const { allSubchats, allSubchatsLoading, allSubchatsPagination, loadMoreSubchats } = useAiChat()
 
 	const onScroll = debounce((event: UIEvent) => {
@@ -41,6 +45,7 @@ export const SubchatsView = () => {
 	return (
 		<PanelBase
 			containerClass="pb-xs-9"
+			noContent={noContent}
 			slotToolbar={
 				<span className="pl-xs-6">
 					{t('aiChat.label.subchats')} ({allSubchatsPagination.count})

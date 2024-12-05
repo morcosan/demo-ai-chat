@@ -21,8 +21,12 @@ export const AiChatMainPage = () => {
 	}, [isViewportMaxLG])
 
 	useEffect(() => {
-		showsPanel ? setIsPanelVisible(true) : wait(300).then(() => setIsPanelVisible(false))
-	}, [showsPanel])
+		if (activeView === AiChatView.DESKTOP) {
+			showsPanel ? setIsPanelVisible(true) : wait(300).then(() => setIsPanelVisible(false))
+		} else {
+			setIsPanelVisible(isSubchatView)
+		}
+	}, [showsPanel, activeView])
 
 	const slotPage = useMemo(() => <ChatView />, [])
 	const slotPanel = useMemo(
@@ -88,7 +92,8 @@ export const AiChatMainPage = () => {
 						'fixed bottom-0 left-0 right-0 ml-button-h-md',
 						'border-l border-t border-color-border-shadow bg-color-bg-page shadow-lg',
 						'transition-transform duration-300 ease-in-out',
-						isSubchatView ? 'translate-x-0' : 'translate-x-full'
+						isSubchatView ? 'translate-x-0' : 'translate-x-full',
+						!isPanelVisible && 'invisible'
 					)}
 					style={{ top: 'var(--app-spacing-navbar-h)', zIndex: 'calc(var(--ds-z-index-navbar) - 1)' }}
 				>

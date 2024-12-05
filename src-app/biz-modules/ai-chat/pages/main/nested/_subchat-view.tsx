@@ -10,12 +10,13 @@ import { useScrollable } from '../../../hooks/use-scrollable'
 import { useAiChat, useAiChatAgents } from '../../../state'
 
 interface Props {
-	onPreviewCode(code: string, lang: string): void
-	onPreviewUrl(url: string): void
+	noContent?: boolean
+	onPreviewCode?(code: string, lang: string): void
+	onPreviewUrl?(url: string): void
 }
 
 export const SubchatView = (props: Props) => {
-	const { onPreviewCode, onPreviewUrl } = props
+	const { noContent, onPreviewCode, onPreviewUrl } = props
 	const {
 		activeChat,
 		canLoadSubchatMessages,
@@ -80,6 +81,7 @@ export const SubchatView = (props: Props) => {
 		<PanelBase
 			containerRef={containerRef}
 			containerClass="!pb-lg-1 lg:!pb-lg-3"
+			noContent={noContent}
 			slotToolbar={
 				<>
 					<IconButton linkHref={`/chat/${activeChat?.id}`} tooltip={t('aiChat.action.backToSubchats')} size="sm">
