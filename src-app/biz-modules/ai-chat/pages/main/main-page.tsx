@@ -24,7 +24,7 @@ export const AiChatMainPage = () => {
 		if (activeView === AiChatView.DESKTOP) {
 			showsPanel ? setIsPanelVisible(true) : wait(300).then(() => setIsPanelVisible(false))
 		} else {
-			setIsPanelVisible(isSubchatView)
+			isSubchatView ? setIsPanelVisible(true) : wait(300).then(() => setIsPanelVisible(false))
 		}
 	}, [showsPanel, activeView])
 

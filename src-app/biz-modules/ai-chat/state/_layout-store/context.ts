@@ -11,7 +11,7 @@ export interface Store {
 	activeView: AiChatView
 	panelWidth: number
 	showsPanel: boolean
-	setActiveView(tab: AiChatView): void
+	setActiveView(tab: AiChatView | ((v: AiChatView) => AiChatView)): void
 	setPanelWidth(width: number): void
 	setShowsPanel(value: boolean | ((v: boolean) => boolean)): void
 }

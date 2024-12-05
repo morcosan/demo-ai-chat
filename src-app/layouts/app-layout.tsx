@@ -35,6 +35,14 @@ export const AppLayout = ({ blank, children }: Props) => {
 	}
 	const onToggleSettings = () => setShowsSettingsMenu(!showsSettingsMenu)
 
+	const onSelectSearchResult = (isSubchat: boolean) => {
+		setShowsNavMenu(false)
+
+		if (isSubchat) {
+			setActiveView((view: AiChatView) => (view === AiChatView.MOBILE_CHAT ? AiChatView.MOBILE_SUBCHAT : view))
+		}
+	}
+
 	useEffect(() => {
 		setShowsNavMenu(false)
 	}, [isViewportMaxLG])
@@ -96,7 +104,7 @@ export const AppLayout = ({ blank, children }: Props) => {
 
 				{/* MODALS */}
 				<I18nModal opened={showsI18nModal} onClose={() => setShowsI18nModal(false)} />
-				<AiChatSearchModal />
+				<AiChatSearchModal onClickResult={onSelectSearchResult} />
 			</main>
 		</div>
 	)
