@@ -88,8 +88,7 @@ export const AiChatMainPage = () => {
 						'fixed bottom-0 left-0 right-0 ml-button-h-md',
 						'border-l border-t border-color-border-shadow bg-color-bg-page shadow-lg',
 						'transition-transform duration-300 ease-in-out',
-						isSubchatView ? 'translate-x-0' : 'translate-x-full',
-						!isPanelVisible && 'invisible'
+						isSubchatView ? 'translate-x-0' : 'translate-x-full'
 					)}
 					style={{ top: 'var(--app-spacing-navbar-h)', zIndex: 'calc(var(--ds-z-index-navbar) - 1)' }}
 				>

@@ -3,6 +3,7 @@ import { AiChatView, useAiChatLayout } from '../state'
 
 interface Props {
 	text: string
+	isSubchat?: boolean
 	onPreviewCode?(code: string, lang: string): void
 	onPreviewUrl?(url: string): void
 }
@@ -10,7 +11,10 @@ interface Props {
 export const MessageMarkdown = (props: Props) => {
 	const { activeView, setActiveView } = useAiChatLayout()
 
-	const openPreview = () => activeView === AiChatView.MOBILE_CHAT && setActiveView(AiChatView.MOBILE_SUBCHAT)
+	const openPreview = () => {
+		if (activeView === AiChatView.MOBILE_CHAT) setActiveView(AiChatView.MOBILE_SUBCHAT)
+		if (activeView === AiChatView.MOBILE_SUBCHAT) setActiveView(AiChatView.MOBILE_CHAT)
+	}
 
 	const onPreviewCode = (code: string, lang: string) => {
 		props.onPreviewCode?.(code, lang)

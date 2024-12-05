@@ -72,7 +72,14 @@ export const MessageItem = (props: Props) => {
 	const onClickToolbar = (event: ReactMouseEvent) => event.stopPropagation()
 
 	const slotMarkdown = useMemo(
-		() => <MessageMarkdown text={message.text} onPreviewCode={onPreviewCode} onPreviewUrl={onPreviewUrl} />,
+		() => (
+			<MessageMarkdown
+				text={message.text}
+				isSubchat={isSubchat}
+				onPreviewCode={onPreviewCode}
+				onPreviewUrl={onPreviewUrl}
+			/>
+		),
 		[message.text]
 	)
 

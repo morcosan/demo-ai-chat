@@ -25,12 +25,12 @@ export const PanelToolbar = (props: Props) => {
 			<div className="flex h-button-h-md items-center gap-xs-2 pt-px text-size-sm">
 				{children}
 
-				<div className="ml-auto hidden items-center gap-xs-3 lg:flex">
+				<div className="ml-auto flex items-center gap-xs-3">
 					<Button
 						tooltip={t('core.action.resizePanel')}
 						variant="item-text-default"
 						size="sm"
-						className="px-xs-2"
+						className="hidden px-xs-2 lg:block"
 						onClick={onClickResize}
 					>
 						<ResizeSvg className="mr-xs-0 h-xs-7" />
@@ -45,7 +45,12 @@ export const PanelToolbar = (props: Props) => {
 							<CloseSvg className="h-xs-7" />
 						</IconButton>
 					) : (
-						<IconButton tooltip={t('core.action.hidePanel')} size="sm" onClick={() => setShowsPanel(false)}>
+						<IconButton
+							tooltip={t('core.action.hidePanel')}
+							size="sm"
+							className="hidden lg:block"
+							onClick={() => setShowsPanel(false)}
+						>
 							<PanelCloseSvg className="h-xs-7" />
 						</IconButton>
 					)}
