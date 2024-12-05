@@ -55,7 +55,7 @@ export const SearchResultItem = (props: Props) => {
 	}, [isSubchat, result.subchat?.text, result.chat?.title])
 
 	return (
-		<li className={cx('flex flex-col last:mb-0', result.message ? 'mb-sm-7' : 'mb-sm-4')}>
+		<li className={cx('flex flex-col break-words last:mb-0', result.message ? 'mb-sm-7' : 'mb-sm-4')}>
 			<Button
 				linkHref={linkHref}
 				variant="item-text-default"
