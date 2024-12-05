@@ -46,6 +46,9 @@ export const PanelView = (props: Props) => {
 
 	const hidePanel = () => !hasPreview && onHidePanel()
 
+	const onPreviewCode = (code: string, lang: string) => openCodePreview(code, lang, AiChatPreviewSource.SUBCHAT)
+	const onPreviewUrl = (url: string) => openUrlPreview(url, AiChatPreviewSource.SUBCHAT)
+
 	useEffect(() => {
 		subchatId ? loadSubchat() : resetActiveSubchat()
 	}, [activeChat, subchatId])
@@ -74,7 +77,7 @@ export const PanelView = (props: Props) => {
 		<div className="relative h-full">
 			<div className={cx('relative h-full', !isViewVisible && 'invisible')}>
 				{!activeChat ? null : activeSubchat ? (
-					<SubchatView openCodePreview={openCodePreview} openUrlPreview={openUrlPreview} />
+					<SubchatView onPreviewCode={onPreviewCode} onPreviewUrl={onPreviewUrl} />
 				) : chatLoading === 'full' || allSubchatsLoading === 'full' ? (
 					<PanelBase>
 						<LoadingText text={t('aiChat.state.loadingSubchats')} className="flex-center h-full" />

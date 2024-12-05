@@ -7,15 +7,15 @@ import { MessageItem } from '../../../components/items/message-item'
 import { NewMessageBox } from '../../../components/new-message-box'
 import { PanelBase } from '../../../components/panel-base'
 import { useScrollable } from '../../../hooks/use-scrollable'
-import { AiChatPreviewSource, useAiChat, useAiChatAgents } from '../../../state'
+import { useAiChat, useAiChatAgents } from '../../../state'
 
 interface Props {
-	openCodePreview(code: string, lang: string, source: AiChatPreviewSource): void
-	openUrlPreview(url: string, source: AiChatPreviewSource): void
+	onPreviewCode(code: string, lang: string): void
+	onPreviewUrl(url: string): void
 }
 
 export const SubchatView = (props: Props) => {
-	const { openCodePreview, openUrlPreview } = props
+	const { onPreviewCode, onPreviewUrl } = props
 	const {
 		activeChat,
 		canLoadSubchatMessages,
@@ -67,8 +67,8 @@ export const SubchatView = (props: Props) => {
 						agent={allAgentsForChat.find((agent: Agent) => agent.id === message.agentId)}
 						isSubchat
 						onClickRetry={onRetryMessage}
-						onPreviewCode={(code, lang) => openCodePreview(code, lang, AiChatPreviewSource.SUBCHAT)}
-						onPreviewLink={(url) => openUrlPreview(url, AiChatPreviewSource.SUBCHAT)}
+						onPreviewCode={onPreviewCode}
+						onPreviewUrl={onPreviewUrl}
 					/>
 				))}
 			</ul>

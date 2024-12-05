@@ -7,7 +7,7 @@ export const PreviewProvider = ({ children }: ReactProps) => {
 	const [previewSource, setPreviewSource] = useState<AiChatPreviewSource>(AiChatPreviewSource.NONE)
 	const [previewUrl, setPreviewUrl] = useState<string | null>(null)
 
-	const isPreviewActive = Boolean(
+	const hasPreview = Boolean(
 		(previewUrl || (previewCode && previewLang)) && previewSource !== AiChatPreviewSource.NONE
 	)
 
@@ -34,7 +34,7 @@ export const PreviewProvider = ({ children }: ReactProps) => {
 
 	const store: Store = useMemo(
 		() => ({
-			hasPreview: isPreviewActive,
+			hasPreview,
 			previewCode,
 			previewLang,
 			previewSource,

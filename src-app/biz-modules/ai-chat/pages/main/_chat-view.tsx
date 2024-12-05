@@ -54,6 +54,9 @@ export const ChatView = () => {
 
 	const onRetryMessage = () => postChatMessage(sentText, sentAgentId)
 
+	const onPreviewCode = (code: string, lang: string) => openCodePreview(code, lang, AiChatPreviewSource.CHAT)
+	const onPreviewUrl = (url: string) => openUrlPreview(url, AiChatPreviewSource.CHAT)
+
 	const onScroll = debounce((event: UIEvent) => {
 		const THRESHOLD = 50 // px
 		const container = event.target as HTMLElement
@@ -107,8 +110,8 @@ export const ChatView = () => {
 						agent={allAgentsForChat.find((agent: Agent) => agent.id === message.agentId)}
 						subchatId={subchatId}
 						onClickRetry={onRetryMessage}
-						onPreviewCode={(code, lang) => openCodePreview(code, lang, AiChatPreviewSource.CHAT)}
-						onPreviewLink={(url) => openUrlPreview(url, AiChatPreviewSource.CHAT)}
+						onPreviewCode={onPreviewCode}
+						onPreviewUrl={onPreviewUrl}
 					/>
 				))}
 			</ul>

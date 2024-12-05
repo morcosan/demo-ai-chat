@@ -18,11 +18,11 @@ interface CodeData {
 interface Props extends ReactProps {
 	text: string
 	onPreviewCode?(code: string, lang: string): void
-	onPreviewLink?(url: string, text: string): void
+	onPreviewUrl?(url: string): void
 }
 
 export const Markdown = (props: Props) => {
-	const { text, className, onPreviewCode, onPreviewLink } = props
+	const { text, className, onPreviewCode, onPreviewUrl } = props
 	const codeDataRefs = useRef<CodeData[]>([])
 	const codeRootRefs = useRef(new WeakMap<Element, Root>())
 	const renderer = new Renderer()
@@ -72,9 +72,9 @@ export const Markdown = (props: Props) => {
 				const mouseEvent = event as MouseEvent
 				const target = event.target as HTMLAnchorElement
 				// Capture only left-click
-				if (onPreviewLink && mouseEvent.button === 0) {
+				if (onPreviewUrl && mouseEvent.button === 0) {
 					event.preventDefault()
-					onPreviewLink(target.href, target.text)
+					onPreviewUrl(target.href)
 				}
 			})
 		})
