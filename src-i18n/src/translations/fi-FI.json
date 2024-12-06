@@ -5,12 +5,16 @@
 			"backToHome": "Takaisin etusivulle",
 			"changeLanguage": "Vaihda kieli",
 			"close": "Sulje",
+			"collapse": "Kutista",
 			"copy": "Kopioi",
 			"delete": "Poista",
 			"deselectAll": "Poista kaikki valinnat",
+			"expand": "Laajenna",
 			"goToUrl": "Siirry {url}",
 			"hidePanel": "Piilota paneeli",
 			"openMenu": "Avaa valikko",
+			"preview": "Esikatselu",
+			"reload": "Lataa uudelleen",
 			"rename": "Nimeä uudelleen",
 			"resizePanel": "Muuta paneelin kokoa",
 			"retry": "Yritä uudelleen",
@@ -29,7 +33,8 @@
 		"label": {
 			"apiDocs": "API-dokumentaatio",
 			"asia": "Aasia",
-			"avatar": "Profiilikuva",
+			"avatar": "Avatar",
+			"code": "Koodi",
 			"copied": "Kopioitu",
 			"custom": "Mukautettu",
 			"darkTheme": "Tumma",
@@ -38,7 +43,7 @@
 			"designSystem": "Suunnittelujärjestelmä",
 			"errors": "Virheet",
 			"europe": "Eurooppa",
-			"githubRepo": "GitHub-repositorio",
+			"githubRepo": "GitHub-repo",
 			"language": "Kieli",
 			"levelHigh": "Korkea",
 			"levelLow": "Matala",
@@ -51,15 +56,16 @@
 			"navigationMenu": "Navigointivalikko",
 			"optionalField": "(Valinnainen)",
 			"requiredField": "(Pakollinen)",
+			"result": "Tulos",
 			"settings": "Asetukset",
-			"uiLibrary": "Käyttöliittymäkirjasto",
-			"uiTheme": "Käyttöliittymän teema"
+			"uiLibrary": "UI-kirjasto",
+			"uiTheme": "UI-teema"
 		},
 		"placeholder": {
 			"search": "Hae..."
 		},
 		"state": {
-			"dataSaved": "Tiedot on tallennettu",
+			"dataSaved": "Tietosi on tallennettu",
 			"deleting": "Poistetaan...",
 			"loading": "Ladataan...",
 			"searching": "Haetaan...",
@@ -70,6 +76,7 @@
 	"aiChat": {
 		"action": {
 			"backToSubchats": "Takaisin alikeskusteluihin",
+			"closePreview": "Sulje esikatselu",
 			"configureAgent": "Määritä agentti",
 			"confirmDeleteAgent": "Vahvista agentin poisto",
 			"confirmDeleteChats": "Vahvista keskustelujen poisto",
@@ -83,8 +90,9 @@
 			"manageAgents": "Hallitse agentteja",
 			"manageChats": "Hallitse keskusteluja",
 			"openChat": "Avaa keskustelu",
-			"openSubchat_other": "Avaa alikeskustelu ({count} viestiä)",
 			"openSubchat_zero": "Luo alikeskustelu",
+			"openSubchat_other": "Avaa alikeskustelu ({count} viestiä)",
+			"previewCode": "Esikatsele koodi",
 			"searchChats": "Hae keskusteluja",
 			"selectChat": "Valitse keskustelu",
 			"sendMessage": "Lähetä viesti",
@@ -92,6 +100,7 @@
 			"showMoreChats": "Näytä lisää keskusteluja",
 			"showSubchats": "Näytä alikeskustelut ({count})",
 			"startNewChat": "Aloita uusi keskustelu",
+			"startSearching_one": "Kirjoita vähintään {count} merkki",
 			"startSearching_other": "Kirjoita vähintään {count} merkkiä"
 		},
 		"description": {
@@ -100,16 +109,17 @@
 			"rammusGPT": "Paras emotionaalinen tuki"
 		},
 		"error": {
-			"agentAvatar": "Sinun täytyy lisätä profiilikuva agentille",
+			"agentAvatar": "Sinun täytyy lisätä avatar agentille",
 			"agentName": "Sinun täytyy lisätä nimi agentille",
 			"emptyMessage": "Viestisi on tyhjä",
-			"failedMessage": "Viestin toimittamisessa oli ongelma"
+			"failedMessage": "Viestin lähettämisessä oli ongelma"
 		},
 		"label": {
 			"agents": "Agentit",
 			"chatTitle": "Keskustelun otsikko",
 			"chats": "Keskustelut",
-			"creativityLevel": "Luovuustaso",
+			"codePreview": "Koodin esikatselu",
+			"creativityLevel": "Luovuuden taso",
 			"customInstructions": "Mukautetut ohjeet",
 			"gptModel": "GPT-malli",
 			"newAgent": "Uusi agentti",
@@ -120,12 +130,13 @@
 			"selectedAgent": "Valittu agentti",
 			"selectedValue": "Valittu arvo",
 			"subchats": "Alikeskustelut",
-			"xMessages_one": "1 viesti",
+			"urlPreview": "URL-esikatselu",
+			"xMessages_one": "{count} viesti",
 			"xMessages_other": "{count} viestiä",
+			"xSearchResults_zero": "Ei hakutuloksia",
 			"xSearchResults_one": "{count} hakutulos",
 			"xSearchResults_other": "{count} hakutulosta",
-			"xSearchResults_zero": "Ei hakutuloksia",
-			"xSelectedMessages_one": "1 viesti valittu",
+			"xSelectedMessages_one": "{count} viesti valittu",
 			"xSelectedMessages_other": "{count} viestiä valittu"
 		},
 		"placeholder": {
@@ -157,12 +168,12 @@
 		},
 		"error": {
 			"address": "Sinun täytyy lisätä osoite",
-			"avatar": "Sinun täytyy lisätä profiilikuvasi",
+			"avatar": "Sinun täytyy lisätä avatar",
 			"city": "Sinun täytyy lisätä kaupunki",
 			"country": "Sinun täytyy lisätä maa",
-			"email": "Sinun täytyy lisätä sähköpostiosoitteesi",
+			"email": "Sinun täytyy lisätä sähköpostiosoite",
 			"legalName": "Sinun täytyy lisätä virallinen nimi",
-			"name": "Sinun täytyy lisätä nimesi",
+			"name": "Sinun täytyy lisätä nimi",
 			"postalCode": "Sinun täytyy lisätä postinumero"
 		},
 		"label": {

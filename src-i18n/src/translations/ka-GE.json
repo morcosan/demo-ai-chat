@@ -2,38 +2,43 @@
 	"core": {
 		"action": {
 			"back": "უკან",
-			"backToHome": "უკან მთავარ გვერდზე",
+			"backToHome": "მთავარზე დაბრუნება",
 			"changeLanguage": "ენის შეცვლა",
 			"close": "დახურვა",
+			"collapse": "ჩაკეცვა",
 			"copy": "კოპირება",
 			"delete": "წაშლა",
-			"deselectAll": "ყველას არჩევის მოხსნა",
-			"goToUrl": "გადასვლა {url}-ზე",
+			"deselectAll": "ყველას გაუქმება",
+			"expand": "გაშლა",
+			"goToUrl": "{url}-ზე გადასვლა",
 			"hidePanel": "პანელის დამალვა",
 			"openMenu": "მენიუს გახსნა",
-			"rename": "გადარქმევა",
+			"preview": "გადახედვა",
+			"reload": "განახლება",
+			"rename": "სახელის შეცვლა",
 			"resizePanel": "პანელის ზომის შეცვლა",
 			"retry": "ხელახლა ცდა",
 			"saveChanges": "ცვლილებების შენახვა",
 			"search": "ძიება",
-			"searchMore": "მეტის ჩვენება",
-			"selectAll": "ყველას არჩევა",
+			"searchMore": "მეტი შედეგის ჩვენება",
+			"selectAll": "ყველას მონიშვნა",
 			"showPanel": "პანელის ჩვენება",
 			"signOut": "გასვლა"
 		},
 		"error": {
 			"noChanges": "ცვლილებები არ არის",
-			"nothingFound": "\"{search}\"-ისთვის ვერაფერი მოიძებნა",
+			"nothingFound": "\"{search}\"-ისთვის არაფერი მოიძებნა",
 			"unsent": "გაუგზავნელი"
 		},
 		"label": {
 			"apiDocs": "API დოკუმენტაცია",
 			"asia": "აზია",
 			"avatar": "ავატარი",
+			"code": "კოდი",
 			"copied": "დაკოპირებულია",
 			"custom": "მორგებული",
 			"darkTheme": "მუქი",
-			"default": "ნაგულისხმები",
+			"default": "ნაგულისხმევი",
 			"description": "აღწერა",
 			"designSystem": "დიზაინის სისტემა",
 			"errors": "შეცდომები",
@@ -52,6 +57,7 @@
 			"optionalField": "(არასავალდებულო)",
 			"quickSettings": "სწრაფი პარამეტრები",
 			"requiredField": "(სავალდებულო)",
+			"result": "შედეგი",
 			"settings": "პარამეტრები",
 			"uiLibrary": "UI ბიბლიოთეკა",
 			"uiTheme": "UI თემა"
@@ -61,93 +67,97 @@
 		},
 		"state": {
 			"dataSaved": "თქვენი მონაცემები შენახულია",
-			"deleting": "შლაში...",
+			"deleting": "იშლება...",
 			"loading": "იტვირთება...",
-			"searching": "ძებნა...",
-			"sending": "გაგზავნა...",
-			"updating": "განახლება..."
+			"searching": "ძიება...",
+			"sending": "იგზავნება...",
+			"updating": "ახლდება..."
 		}
 	},
 	"aiChat": {
 		"action": {
-			"backToSubchats": "უკან სუბჩატებში",
+			"backToSubchats": "ქვეჩატებზე დაბრუნება",
+			"closePreview": "გადახედვის დახურვა",
 			"configureAgent": "აგენტის კონფიგურაცია",
 			"confirmDeleteAgent": "აგენტის წაშლის დადასტურება",
 			"confirmDeleteChats": "ჩატების წაშლის დადასტურება",
-			"confirmRenameChat": "ჩატის გადარქმევის დადასტურება",
+			"confirmRenameChat": "ჩატის სახელის შეცვლის დადასტურება",
 			"copyCode": "კოდის კოპირება",
 			"copyMessage": "შეტყობინების კოპირება",
 			"createAgent": "აგენტის შექმნა",
 			"deleteAgent": "აგენტის წაშლა",
 			"deleteSelectedChats": "არჩეული ჩატების წაშლა",
-			"deselectChat": "ჩატის არჩევის მოხსნა",
+			"deselectChat": "ჩატის მონიშვნის გაუქმება",
 			"manageAgents": "აგენტების მართვა",
 			"manageChats": "ჩატების მართვა",
 			"openChat": "ჩატის გახსნა",
-			"openSubchat_other": "სუბჩატის გახსნა ({count} შეტყობინება)",
-			"openSubchat_zero": "სუბჩატის შექმნა",
+			"openSubchat_other": "ქვეჩატის გახსნა ({count} შეტყობინება)",
+			"openSubchat_zero": "ქვეჩატის შექმნა",
+			"previewCode": "კოდის გადახედვა",
 			"searchChats": "ჩატების ძიება",
 			"selectChat": "ჩატის არჩევა",
 			"sendMessage": "შეტყობინების გაგზავნა",
 			"showMoreAgents": "მეტი აგენტის ჩვენება",
 			"showMoreChats": "მეტი ჩატის ჩვენება",
-			"showSubchats": "სუბჩატების ჩვენება ({count})",
+			"showSubchats": "ქვეჩატების ჩვენება ({count})",
 			"startNewChat": "ახალი საუბრის დაწყება",
 			"startSearching_one": "შეიყვანეთ მინიმუმ {count} სიმბოლო",
-			"startSearching_other": "შეიყვანეთ მინიმუმ {count} სიმბოლოები"
+			"startSearching_other": "შეიყვანეთ მინიმუმ {count} სიმბოლო"
 		},
 		"description": {
 			"chromeGPT": "მინი GPT Google Chrome-ისთვის",
-			"loremIpsumGPT": "ყველაზე ინტელექტუალური მოდელი",
+			"loremIpsumGPT": "ყველაზე ჭკვიანი მოდელი",
 			"rammusGPT": "საუკეთესო ემოციური მხარდაჭერა"
 		},
 		"error": {
-			"agentAvatar": "უნდა დაამატოთ აგენტის ავატარი",
-			"agentName": "უნდა დაამატოთ აგენტის სახელი",
+			"agentAvatar": "აგენტისთვის უნდა დაამატოთ ავატარი",
+			"agentName": "აგენტისთვის უნდა დაამატოთ სახელი",
 			"emptyMessage": "თქვენი შეტყობინება ცარიელია",
-			"failedMessage": "შეტყობინების მიწოდებისას პრობლემა წარმოიშვა"
+			"failedMessage": "თქვენი შეტყობინების მიწოდებისას პრობლემა წარმოიშვა"
 		},
 		"label": {
 			"agents": "აგენტები",
 			"chatTitle": "ჩატის სათაური",
 			"chats": "ჩატები",
-			"creativityLevel": "შემოქმედების დონე",
+			"codePreview": "კოდის გადახედვა",
+			"creativityLevel": "კრეატიულობის დონე",
 			"customInstructions": "მორგებული ინსტრუქციები",
 			"gptModel": "GPT მოდელი",
 			"newAgent": "ახალი აგენტი",
 			"newChat": "ახალი ჩატი",
 			"newMessage": "ახალი შეტყობინება",
 			"noChats": "ჩატები არ არის",
-			"noSubchats": "სუბჩატები არ არის",
+			"noSubchats": "ქვეჩატები არ არის",
 			"selectedAgent": "არჩეული აგენტი",
 			"selectedValue": "არჩეული მნიშვნელობა",
-			"subchats": "სუბჩატები",
+			"subchats": "ქვეჩატები",
+			"urlPreview": "URL-ის გადახედვა",
 			"xMessages_one": "1 შეტყობინება",
 			"xMessages_other": "{count} შეტყობინება",
 			"xSearchResults_one": "{count} ძიების შედეგი",
-			"xSearchResults_other": "{count} ძიების შედეგები",
+			"xSearchResults_other": "{count} ძიების შედეგი",
 			"xSearchResults_zero": "ძიების შედეგები არ არის",
-			"xSelectedMessages_one": "1 შეტყობინება არჩეულია",
-			"xSelectedMessages_other": "{count} შეტყობინება არჩეულია"
+			"xSelectedMessages_one": "1 შეტყობინება მონიშნულია",
+			"xSelectedMessages_other": "{count} შეტყობინება მონიშნულია"
 		},
 		"placeholder": {
-			"newMessage": "ესაუბრეთ {name}...",
+			"newMessage": "ესაუბრეთ {name}-ს...",
 			"rename": "ახალი სახელის ავტომატურად გენერირება..."
 		},
 		"state": {
-			"loadingAgents": "აგენტების ჩატვირთვა...",
-			"loadingChats": "ჩატების ჩატვირთვა...",
-			"loadingGPTs": "GPT-ების ჩატვირთვა...",
-			"loadingMessages": "შეტყობინებების ჩატვირთვა...",
-			"loadingPreviousMessages": "წინა შეტყობინებების ჩატვირთვა...",
-			"loadingSubchats": "სუბჩატების ჩატვირთვა...",
-			"renamingChat": "ჩატის გადარქმევა...",
-			"thinking": "ფიქრი..."
+			"loadingAgents": "აგენტები იტვირთება...",
+			"loadingChats": "ჩატები იტვირთება...",
+			"loadingGPTs": "GPT-ები იტვირთება...",
+			"loadingMessages": "შეტყობინებები იტვირთება...",
+			"loadingPreviousMessages": "წინა შეტყობინებები იტვირთება...",
+			"loadingSubchats": "ქვეჩატები იტვირთება...",
+			"renamingChat": "ჩატის სახელი იცვლება...",
+			"thinking": "ფიქრობს..."
 		},
 		"warning": {
-			"deletingAgent": "ამ აგენტის წაშლა საბოლოო იქნება",
-			"deletingChats": "ეს ჩატები საბოლოოდ წაიშლება",
-			"chromeGptInsideChrome": "ამ GPT-ის გამოყენება მოითხოვს შემდეგ პარამეტრების ჩართვას:",
+			"deletingAgent": "ეს აგენტი სამუდამოდ წაიშლება",
+			"deletingChats": "ეს ჩატები სამუდამოდ წაიშლება",
+			"chromeGptInsideChrome": "ამ GPT-ს სჭირდება შემდეგი პარამეტრების ჩართვა:",
 			"chromeGptOutsideChrome": "ეს GPT ხელმისაწვდომია მხოლოდ Google Chrome ბრაუზერში",
 			"invalidGpt": "არასწორი GPT"
 		}
@@ -155,14 +165,14 @@
 	"userSettings": {
 		"action": {
 			"manageAccount": "ანგარიშის მართვა",
-			"manageBilling": "ბილინგის მართვა"
+			"manageBilling": "გადახდების მართვა"
 		},
 		"error": {
 			"address": "უნდა დაამატოთ მისამართი",
 			"avatar": "უნდა დაამატოთ თქვენი ავატარი",
 			"city": "უნდა დაამატოთ ქალაქი",
 			"country": "უნდა დაამატოთ ქვეყანა",
-			"email": "უნდა დაამატოთ თქვენი ელ.ფოსტა",
+			"email": "უნდა დაამატოთ თქვენი ელ-ფოსტის მისამართი",
 			"legalName": "უნდა დაამატოთ იურიდიული სახელი",
 			"name": "უნდა დაამატოთ თქვენი სახელი",
 			"postalCode": "უნდა დაამატოთ საფოსტო კოდი"
@@ -170,16 +180,16 @@
 		"label": {
 			"account": "ანგარიში",
 			"address": "მისამართი",
-			"billing": "ბილინგი",
+			"billing": "გადახდები",
 			"city": "ქალაქი",
 			"country": "ქვეყანა",
-			"email": "ელ.ფოსტის მისამართი",
+			"email": "ელ-ფოსტის მისამართი",
 			"legalName": "იურიდიული სახელი",
 			"phone": "ტელეფონის ნომერი",
 			"postalCode": "საფოსტო კოდი",
 			"private": "პირადი",
 			"public": "საჯარო",
-			"vatNumber": "VAT ნომერი"
+			"vatNumber": "გადასახადის გადამხდელის ნომერი"
 		}
 	}
 }

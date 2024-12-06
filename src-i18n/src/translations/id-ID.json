@@ -5,18 +5,22 @@
 			"backToHome": "Kembali ke beranda",
 			"changeLanguage": "Ubah bahasa",
 			"close": "Tutup",
+			"collapse": "Ciutkan",
 			"copy": "Salin",
 			"delete": "Hapus",
 			"deselectAll": "Batalkan semua pilihan",
+			"expand": "Perluas",
 			"goToUrl": "Buka {url}",
 			"hidePanel": "Sembunyikan panel",
 			"openMenu": "Buka menu",
+			"preview": "Pratinjau",
+			"reload": "Muat ulang",
 			"rename": "Ubah nama",
 			"resizePanel": "Ubah ukuran panel",
 			"retry": "Coba lagi",
 			"saveChanges": "Simpan perubahan",
 			"search": "Cari",
-			"searchMore": "Tampilkan hasil lainnya",
+			"searchMore": "Tampilkan hasil lebih banyak",
 			"selectAll": "Pilih semua",
 			"showPanel": "Tampilkan panel",
 			"signOut": "Keluar"
@@ -30,13 +34,14 @@
 			"apiDocs": "Dokumentasi API",
 			"asia": "Asia",
 			"avatar": "Avatar",
+			"code": "Kode",
 			"copied": "Tersalin",
 			"custom": "Kustom",
 			"darkTheme": "Gelap",
-			"default": "Default",
+			"default": "Bawaan",
 			"description": "Deskripsi",
 			"designSystem": "Sistem Desain",
-			"errors": "Error",
+			"errors": "Kesalahan",
 			"europe": "Eropa",
 			"githubRepo": "Repo GitHub",
 			"language": "Bahasa",
@@ -47,11 +52,11 @@
 			"levelVeryLow": "Sangat rendah",
 			"lightTheme": "Terang",
 			"name": "Nama",
-			"navigationBar": "Bilah navigasi",
+			"navigationBar": "Bar navigasi",
 			"navigationMenu": "Menu navigasi",
 			"optionalField": "(Opsional)",
-			"quickSettings": "Pengaturan cepat",
 			"requiredField": "(Wajib)",
+			"result": "Hasil",
 			"settings": "Pengaturan",
 			"uiLibrary": "Pustaka UI",
 			"uiTheme": "Tema UI"
@@ -71,6 +76,7 @@
 	"aiChat": {
 		"action": {
 			"backToSubchats": "Kembali ke subchat",
+			"closePreview": "Tutup pratinjau",
 			"configureAgent": "Konfigurasi agen",
 			"confirmDeleteAgent": "Konfirmasi hapus agen",
 			"confirmDeleteChats": "Konfirmasi hapus chat",
@@ -84,13 +90,14 @@
 			"manageAgents": "Kelola agen",
 			"manageChats": "Kelola chat",
 			"openChat": "Buka chat",
-			"openSubchat_zero": "Buat subchat",
 			"openSubchat_other": "Buka subchat ({count} pesan)",
+			"openSubchat_zero": "Buat subchat",
+			"previewCode": "Pratinjau kode",
 			"searchChats": "Cari chat",
 			"selectChat": "Pilih chat",
 			"sendMessage": "Kirim pesan",
-			"showMoreAgents": "Tampilkan lebih banyak agen",
-			"showMoreChats": "Tampilkan lebih banyak chat",
+			"showMoreAgents": "Tampilkan agen lainnya",
+			"showMoreChats": "Tampilkan chat lainnya",
 			"showSubchats": "Tampilkan subchat ({count})",
 			"startNewChat": "Mulai percakapan baru",
 			"startSearching_other": "Ketik minimal {count} karakter"
@@ -104,12 +111,13 @@
 			"agentAvatar": "Anda harus menambahkan avatar untuk agen",
 			"agentName": "Anda harus menambahkan nama untuk agen",
 			"emptyMessage": "Pesan Anda kosong",
-			"failedMessage": "Ada masalah saat mengirim pesan Anda"
+			"failedMessage": "Ada masalah dalam mengirim pesan Anda"
 		},
 		"label": {
 			"agents": "Agen",
 			"chatTitle": "Judul chat",
 			"chats": "Chat",
+			"codePreview": "Pratinjau kode",
 			"creativityLevel": "Tingkat kreativitas",
 			"customInstructions": "Instruksi kustom",
 			"gptModel": "Model GPT",
@@ -121,6 +129,7 @@
 			"selectedAgent": "Agen terpilih",
 			"selectedValue": "Nilai terpilih",
 			"subchats": "Subchat",
+			"urlPreview": "Pratinjau URL",
 			"xMessages_other": "{count} pesan",
 			"xSearchResults_zero": "Tidak ada hasil pencarian",
 			"xSearchResults_other": "{count} hasil pencarian",
@@ -128,7 +137,7 @@
 		},
 		"placeholder": {
 			"newMessage": "Bicara dengan {name}...",
-			"rename": "Generate nama baru secara otomatis..."
+			"rename": "Buat nama baru secara otomatis..."
 		},
 		"state": {
 			"loadingAgents": "Memuat agen...",
@@ -151,14 +160,14 @@
 	"userSettings": {
 		"action": {
 			"manageAccount": "Kelola akun",
-			"manageBilling": "Kelola pembayaran"
+			"manageBilling": "Kelola penagihan"
 		},
 		"error": {
 			"address": "Anda harus menambahkan alamat",
 			"avatar": "Anda harus menambahkan avatar Anda",
 			"city": "Anda harus menambahkan kota",
 			"country": "Anda harus menambahkan negara",
-			"email": "Anda harus menambahkan alamat email Anda",
+			"email": "Anda harus menambahkan alamat email",
 			"legalName": "Anda harus menambahkan nama legal",
 			"name": "Anda harus menambahkan nama Anda",
 			"postalCode": "Anda harus menambahkan kode pos"
@@ -166,7 +175,7 @@
 		"label": {
 			"account": "Akun",
 			"address": "Alamat",
-			"billing": "Pembayaran",
+			"billing": "Penagihan",
 			"city": "Kota",
 			"country": "Negara",
 			"email": "Alamat email",

@@ -23,8 +23,8 @@ export const CopyButton = ({ variant, tooltip, text, className }: Props) => {
 			className={cx(className, isCopied && '!text-color-transparent')}
 			onClick={onClick}
 		>
-			<CopySvg className="mb-px mr-xs-2 h-xs-4 w-xs-4" />
-			{t('core.action.copy')}
+			<CopySvg className="mr-xs-2 h-xs-4 w-xs-4" />
+			<span className="leading-1">{t('core.action.copy')}</span>
 
 			{Boolean(isCopied) && (
 				<span className="absolute-center text-color-success-page-text">{t('core.label.copied')}</span>

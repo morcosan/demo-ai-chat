@@ -7,7 +7,11 @@ import { SearchResultItem } from '../components/items/search-result-item'
 import { StickyToolbar } from '../components/sticky-toolbar'
 import { SearchResult, useAiChatAgents, useAiChatSearch } from '../state'
 
-export const AiChatSearchModal = () => {
+interface Props {
+	onClickResult(isSubchat: boolean): void
+}
+
+export const AiChatSearchModal = (props: Props) => {
 	const {
 		showsSearch,
 		searchPagination,
@@ -65,7 +69,10 @@ export const AiChatSearchModal = () => {
 						result={result}
 						keyword={searchKeyword}
 						agent={allAgentsForChat.find((agent: Agent) => agent.id === result.message?.agentId)}
-						onClick={() => setShowsSearch(false)}
+						onClick={(isSubchat: boolean) => {
+							setShowsSearch(false)
+							props.onClickResult(isSubchat)
+						}}
 					/>
 				))}
 			</ul>

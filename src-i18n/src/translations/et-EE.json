@@ -5,12 +5,16 @@
 			"backToHome": "Tagasi avalehele",
 			"changeLanguage": "Muuda keelt",
 			"close": "Sulge",
+			"collapse": "Ahenda",
 			"copy": "Kopeeri",
 			"delete": "Kustuta",
 			"deselectAll": "Tühista kõik valikud",
+			"expand": "Laienda",
 			"goToUrl": "Mine {url}",
 			"hidePanel": "Peida paneel",
 			"openMenu": "Ava menüü",
+			"preview": "Eelvaade",
+			"reload": "Laadi uuesti",
 			"rename": "Nimeta ümber",
 			"resizePanel": "Muuda paneeli suurust",
 			"retry": "Proovi uuesti",
@@ -30,15 +34,16 @@
 			"apiDocs": "API dokumentatsioon",
 			"asia": "Aasia",
 			"avatar": "Avatar",
+			"code": "Kood",
 			"copied": "Kopeeritud",
 			"custom": "Kohandatud",
 			"darkTheme": "Tume",
 			"default": "Vaikimisi",
 			"description": "Kirjeldus",
-			"designSystem": "Disainisüsteem",
+			"designSystem": "Kujundussüsteem",
 			"errors": "Vead",
 			"europe": "Euroopa",
-			"githubRepo": "GitHub repositoorium",
+			"githubRepo": "GitHub repo",
 			"language": "Keel",
 			"levelHigh": "Kõrge",
 			"levelLow": "Madal",
@@ -51,6 +56,7 @@
 			"navigationMenu": "Navigeerimismenüü",
 			"optionalField": "(Valikuline)",
 			"requiredField": "(Kohustuslik)",
+			"result": "Tulemus",
 			"settings": "Seaded",
 			"uiLibrary": "UI teek",
 			"uiTheme": "UI teema"
@@ -70,6 +76,7 @@
 	"aiChat": {
 		"action": {
 			"backToSubchats": "Tagasi alamvestlustesse",
+			"closePreview": "Sulge eelvaade",
 			"configureAgent": "Seadista agent",
 			"confirmDeleteAgent": "Kinnita agendi kustutamine",
 			"confirmDeleteChats": "Kinnita vestluste kustutamine",
@@ -83,9 +90,9 @@
 			"manageAgents": "Halda agente",
 			"manageChats": "Halda vestlusi",
 			"openChat": "Ava vestlus",
-			"openSubchat_one": "Ava alamvestlus ({count} sõnum)",
-			"openSubchat_other": "Ava alamvestlus ({count} sõnumit)",
 			"openSubchat_zero": "Loo alamvestlus",
+			"openSubchat_other": "Ava alamvestlus ({count} sõnumit)",
+			"previewCode": "Koodi eelvaade",
 			"searchChats": "Otsi vestlusi",
 			"selectChat": "Vali vestlus",
 			"sendMessage": "Saada sõnum",
@@ -93,8 +100,8 @@
 			"showMoreChats": "Näita rohkem vestlusi",
 			"showSubchats": "Näita alamvestlusi ({count})",
 			"startNewChat": "Alusta uut vestlust",
-			"startSearching_one": "Sisesta vähemalt {count} tähemärk",
-			"startSearching_other": "Sisesta vähemalt {count} tähemärki"
+			"startSearching_one": "Sisesta vähemalt {count} märk",
+			"startSearching_other": "Sisesta vähemalt {count} märki"
 		},
 		"description": {
 			"chromeGPT": "Mini GPT Google Chrome'i jaoks",
@@ -111,6 +118,7 @@
 			"agents": "Agendid",
 			"chatTitle": "Vestluse pealkiri",
 			"chats": "Vestlused",
+			"codePreview": "Koodi eelvaade",
 			"creativityLevel": "Loovuse tase",
 			"customInstructions": "Kohandatud juhised",
 			"gptModel": "GPT mudel",
@@ -122,12 +130,13 @@
 			"selectedAgent": "Valitud agent",
 			"selectedValue": "Valitud väärtus",
 			"subchats": "Alamvestlused",
-			"xMessages_one": "1 sõnum",
+			"urlPreview": "URL-i eelvaade",
+			"xMessages_one": "{count} sõnum",
 			"xMessages_other": "{count} sõnumit",
-			"xSearchResults_one": "{count} otsingu tulemus",
-			"xSearchResults_other": "{count} otsingu tulemust",
-			"xSearchResults_zero": "Otsingu tulemusi pole",
-			"xSelectedMessages_one": "1 sõnum valitud",
+			"xSearchResults_zero": "Otsingutulemusi pole",
+			"xSearchResults_one": "{count} otsingutulemus",
+			"xSearchResults_other": "{count} otsingutulemust",
+			"xSelectedMessages_one": "{count} sõnum valitud",
 			"xSelectedMessages_other": "{count} sõnumit valitud"
 		},
 		"placeholder": {
@@ -179,7 +188,7 @@
 			"postalCode": "Postiindeks",
 			"private": "Privaatne",
 			"public": "Avalik",
-			"vatNumber": "KM number"
+			"vatNumber": "KMKR number"
 		}
 	}
 }
