@@ -18,6 +18,7 @@ export const AppLayout = ({ blank, children }: Props) => {
 	const [showsI18nModal, setShowsI18nModal] = useState(false)
 	const [showsNavMenu, setShowsNavMenu] = useState(false)
 	const [showsSettingsMenu, setShowsSettingsMenu] = useState(false)
+	const [isMenuVisible, setIsMenuVisible] = useState(false)
 
 	const contentClass = cx(
 		'relative',
@@ -34,6 +35,14 @@ export const AppLayout = ({ blank, children }: Props) => {
 	}
 	const onToggleSettings = () => setShowsSettingsMenu(!showsSettingsMenu)
 
+	const onSelectSearchResult = (isSubchat: boolean) => {
+		setShowsNavMenu(false)
+
+		if (isSubchat) {
+			setActiveView((view: AiChatView) => (view === AiChatView.MOBILE_CHAT ? AiChatView.MOBILE_SUBCHAT : view))
+		}
+	}
+
 	useEffect(() => {
 		setShowsNavMenu(false)
 	}, [isViewportMaxLG])
@@ -41,6 +50,10 @@ export const AppLayout = ({ blank, children }: Props) => {
 	useEffect(() => {
 		activeView === AiChatView.MOBILE_SUBCHAT && setShowsNavMenu(false)
 	}, [activeView])
+
+	useEffect(() => {
+		showsNavMenu ? setIsMenuVisible(true) : wait(300).then(() => setIsMenuVisible(false))
+	}, [showsNavMenu])
 
 	return (
 		<div
@@ -65,7 +78,8 @@ export const AppLayout = ({ blank, children }: Props) => {
 							'fixed bottom-0 left-0 right-0 mr-button-h-md',
 							'border-r border-t border-color-border-shadow bg-color-bg-card shadow-lg',
 							'transition-transform duration-300 ease-in-out',
-							showsNavMenu ? 'translate-x-0' : '-translate-x-full'
+							showsNavMenu ? 'translate-x-0' : '-translate-x-full',
+							!isMenuVisible && 'invisible'
 						)}
 						style={{ top: 'var(--app-spacing-navbar-h)', zIndex: 'calc(var(--ds-z-index-navbar) - 1)' }}
 					>
@@ -90,7 +104,7 @@ export const AppLayout = ({ blank, children }: Props) => {
 
 				{/* MODALS */}
 				<I18nModal opened={showsI18nModal} onClose={() => setShowsI18nModal(false)} />
-				<AiChatSearchModal />
+				<AiChatSearchModal onClickResult={onSelectSearchResult} />
 			</main>
 		</div>
 	)

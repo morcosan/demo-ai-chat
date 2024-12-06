@@ -13,7 +13,7 @@ interface Props {
 	result: SearchResult
 	keyword: string
 	agent?: Agent
-	onClick(): void
+	onClick(isSubchat: boolean): void
 }
 
 export const SearchResultItem = (props: Props) => {
@@ -21,8 +21,8 @@ export const SearchResultItem = (props: Props) => {
 	const { activeLocale } = useI18n()
 	const { account } = useUserAccount()
 
+	const isSubchat = Boolean(result.message && result.message.parentId !== result.message.chatId)
 	const chatId = result.message ? result.message.chatId : result.chat?.id
-	const isSubchat = result.message && result.message.parentId !== result.message.chatId
 	const subchatId = isSubchat ? result.message?.parentId : 0
 	const size = isSubchat ? result.subchat?.size : result.chat?.size || 0
 	const role = result.message?.role
@@ -55,12 +55,12 @@ export const SearchResultItem = (props: Props) => {
 	}, [isSubchat, result.subchat?.text, result.chat?.title])
 
 	return (
-		<li className={cx('flex flex-col last:mb-0', result.message ? 'mb-sm-7' : 'mb-sm-4')}>
+		<li className={cx('flex flex-col break-words last:mb-0', result.message ? 'mb-sm-7' : 'mb-sm-4')}>
 			<Button
 				linkHref={linkHref}
 				variant="item-text-default"
 				tooltip={t('aiChat.action.openChat')}
-				onClick={onClick}
+				onClick={() => onClick(isSubchat)}
 			>
 				<span className="flex w-full items-center gap-xs-2">
 					{/* SUBCHAT ICON */}

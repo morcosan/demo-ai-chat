@@ -2,18 +2,17 @@ import { LoadingText } from '@app/library/release'
 import { Button } from '@ds/release'
 import { debounce } from 'lodash'
 import { UIEvent, useMemo } from 'react'
-import { Subchat } from '../../api'
-import { SubchatIcon } from '../../components/subchat-icon'
-import { SubchatToolbar } from '../../components/subchat-toolbar'
-import { useAiChat } from '../../state'
-import { getTextFromMarkdown } from '../../utils/markdown'
+import { Subchat } from '../../../api'
+import { PanelBase } from '../../../components/panel-base'
+import { SubchatIcon } from '../../../components/subchat-icon'
+import { useAiChat } from '../../../state'
+import { getTextFromMarkdown } from '../../../utils/markdown'
 
 interface Props {
-	onHidePanel(): void
+	noContent?: boolean
 }
 
-export const SubchatsView = (props: Props) => {
-	const { onHidePanel } = props
+export const SubchatsView = ({ noContent }: Props) => {
 	const { allSubchats, allSubchatsLoading, allSubchatsPagination, loadMoreSubchats } = useAiChat()
 
 	const onScroll = debounce((event: UIEvent) => {
@@ -44,25 +43,25 @@ export const SubchatsView = (props: Props) => {
 	)
 
 	return (
-		<div className="h-full">
-			<div className="ds-scrollable h-full pb-xs-9" onScroll={onScroll}>
-				{/* TOOLBAR */}
-				<SubchatToolbar onHidePanel={onHidePanel}>
-					<span className="pl-xs-6">
-						{t('aiChat.label.subchats')} ({allSubchatsPagination.count})
-					</span>
-				</SubchatToolbar>
+		<PanelBase
+			containerClass="pb-xs-9"
+			noContent={noContent}
+			slotToolbar={
+				<span className="pl-xs-6">
+					{t('aiChat.label.subchats')} ({allSubchatsPagination.count})
+				</span>
+			}
+			onScroll={onScroll}
+		>
+			{slotSubchats}
 
-				{slotSubchats}
-
-				{allSubchats.length < allSubchatsPagination.count && (
-					<LoadingText
-						text={t('aiChat.state.loadingSubchats')}
-						className="min-h-sm-4 pl-sm-0 text-size-sm"
-						style={{ visibility: allSubchatsLoading === 'more' ? 'visible' : 'hidden' }}
-					/>
-				)}
-			</div>
-		</div>
+			{allSubchats.length < allSubchatsPagination.count && (
+				<LoadingText
+					text={t('aiChat.state.loadingSubchats')}
+					className="min-h-sm-4 pl-sm-0 text-size-sm"
+					style={{ visibility: allSubchatsLoading === 'more' ? 'visible' : 'hidden' }}
+				/>
+			)}
+		</PanelBase>
 	)
 }

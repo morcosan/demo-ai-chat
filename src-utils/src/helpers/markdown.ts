@@ -1,6 +1,7 @@
 import {
 	RANDOM_CPP,
 	RANDOM_CSHARP,
+	RANDOM_HTML,
 	RANDOM_JAVA,
 	RANDOM_JAVASCRIPT,
 	RANDOM_PHP,
@@ -93,5 +94,13 @@ export const randomMarkdownTable = () => {
 }
 
 export const randomMarkdownCode = () => {
-	return randomFromArray([RANDOM_JAVASCRIPT, RANDOM_CPP, RANDOM_CSHARP, RANDOM_JAVA, RANDOM_PHP, RANDOM_PYTHON])
+	return randomFromArray([
+		RANDOM_CPP,
+		RANDOM_CSHARP,
+		RANDOM_HTML,
+		RANDOM_JAVA,
+		RANDOM_JAVASCRIPT,
+		RANDOM_PHP,
+		RANDOM_PYTHON,
+	])
 }

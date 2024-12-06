@@ -2,21 +2,16 @@ import { LoadingText } from '@app/library/release'
 import { useUiTheme } from '@ds/release'
 import { debounce } from 'lodash'
 import { UIEvent, useEffect, useMemo, useState } from 'react'
-import { useNavigate, useParams, useSearchParams } from 'react-router-dom'
+import { useLocation, useNavigate, useParams, useSearchParams } from 'react-router-dom'
 import { Agent, Message } from '../../api'
 import { MessageItem } from '../../components/items/message-item'
 import { NewMessageBox } from '../../components/new-message-box'
 import { StickyToolbar } from '../../components/sticky-toolbar'
 import { useScrollable } from '../../hooks/use-scrollable'
-import { useAiChat, useAiChatAgents } from '../../state'
+import { AiChatPreviewSource, useAiChat, useAiChatAgents, useAiChatPreview } from '../../state'
+import { PreviewView } from './nested/_preview-view'
 
-interface Props {
-	onShowPanel(): void
-	onTogglePanel(): void
-}
-
-export const ChatView = (props: Props) => {
-	const { onShowPanel, onTogglePanel } = props
+export const ChatView = () => {
 	const {
 		activeChat,
 		allChatsLoading,
@@ -30,12 +25,15 @@ export const ChatView = (props: Props) => {
 		resetActiveChat,
 	} = useAiChat()
 	const { allAgentsForChat, loadMissingAgents } = useAiChatAgents()
+	const { previewSource, openCodePreview, openUrlPreview, closePreview } = useAiChatPreview()
 	const { containerRef, saveScrollPos, scrollToPos } = useScrollable()
 	const { $lineHeight, $fontSize, $spacing } = useUiTheme()
 	const { chatId: chatIdStr } = useParams()
 	const [sentText, setSentText] = useState('')
 	const [sentAgentId, setSentAgentId] = useState(0)
+	const [isViewVisible, setIsViewVisible] = useState(true)
 	const [searchParams] = useSearchParams()
+	const location = useLocation()
 	const navigate = useNavigate()
 
 	const chatId = parseInt(chatIdStr || '')
@@ -56,6 +54,9 @@ export const ChatView = (props: Props) => {
 	}
 
 	const onRetryMessage = () => postChatMessage(sentText, sentAgentId)
+
+	const onPreviewCode = (code: string, lang: string) => openCodePreview(code, lang, AiChatPreviewSource.CHAT)
+	const onPreviewUrl = (url: string) => openUrlPreview(url, AiChatPreviewSource.CHAT)
 
 	const onScroll = debounce((event: UIEvent) => {
 		const THRESHOLD = 50 // px
@@ -94,6 +95,16 @@ export const ChatView = (props: Props) => {
 		loadMissingAgents([...new Set(chatMessages.map((message: Message) => message.agentId))])
 	}, [chatMessages])
 
+	useEffect(() => {
+		previewSource === AiChatPreviewSource.SUBCHAT
+			? wait(300).then(() => setIsViewVisible(false))
+			: setIsViewVisible(true)
+	}, [previewSource])
+
+	useEffect(() => {
+		closePreview()
+	}, [location])
+
 	const slotMessages = useMemo(
 		() => (
 			<ul>
@@ -104,7 +115,8 @@ export const ChatView = (props: Props) => {
 						agent={allAgentsForChat.find((agent: Agent) => agent.id === message.agentId)}
 						subchatId={subchatId}
 						onClickRetry={onRetryMessage}
-						onClickSubchat={() => (message.id === subchatId ? onTogglePanel() : onShowPanel())}
+						onPreviewCode={onPreviewCode}
+						onPreviewUrl={onPreviewUrl}
 					/>
 				))}
 			</ul>
@@ -113,8 +125,8 @@ export const ChatView = (props: Props) => {
 	)
 
 	return (
-		<div className="relative flex h-full w-full min-w-0 flex-1 flex-col">
-			<div ref={containerRef} className="ds-scrollable flex-1 !pb-lg-1 lg:!pb-lg-3" onScroll={onScroll}>
+		<>
+			<div ref={containerRef} className={cx('ds-scrollable flex-1 !pb-lg-1 lg:!pb-lg-3')} onScroll={onScroll}>
 				{activeChat || chatId ? (
 					<div className={cx(widthClass, chatLoading === 'full' && 'h-full', 'flex flex-col pt-sm-0')}>
 						{/* TOOLBAR */}
@@ -146,7 +158,7 @@ export const ChatView = (props: Props) => {
 						{chatLoading === 'full' ? (
 							<LoadingText text={t('aiChat.state.loadingMessages')} className="absolute-overlay flex-center" />
 						) : (
-							<div className="flex flex-col">
+							<div className={cx('flex flex-col', !isViewVisible && 'invisible')}>
 								{/* LOAD MORE */}
 								<LoadingText
 									text={t('aiChat.state.loadingPreviousMessages')}
@@ -166,7 +178,7 @@ export const ChatView = (props: Props) => {
 			</div>
 
 			{/* NEW MESSAGE FIELD */}
-			<div className="mx-a11y-scrollbar">
+			<div className={cx('mx-a11y-scrollbar', !isViewVisible && 'invisible')}>
 				<div className={cx('lg:px-md-0', widthClass)}>
 					<div className="relative">
 						<NewMessageBox
@@ -177,6 +189,8 @@ export const ChatView = (props: Props) => {
 					</div>
 				</div>
 			</div>
-		</div>
+
+			<PreviewView isChatView />
+		</>
 	)
 }
