@@ -99,7 +99,7 @@ export const AppLayout = ({ blank, children }: Props) => {
 			)}
 
 			{/* PAGE CONTENT */}
-			<main className="h-full w-full flex-1 overflow-hidden">
+			<main className="h-full w-full flex-1 overflow-x-hidden">
 				<div className={contentClass}>{children}</div>
 
 				{/* MODALS */}
