@@ -3,12 +3,12 @@ import { IconButton, PanelOpenSvg, useUiViewport } from '@ds/release'
 import { useEffect, useMemo, useState } from 'react'
 import { AiChatView, useAiChatLayout } from '../../state'
 import { ChatView } from './_chat-view'
-import { PanelContent } from './_panel-content'
+import { PanelView } from './_panel-view'
 
 export const AiChatMainPage = () => {
 	const { isViewportMaxLG } = useUiViewport()
-	const { activeView, panelWidth, setActiveView } = useAiChatLayout()
-	const [showsPanel, setShowsPanel] = useState(false)
+	const { activeView, panelWidth, showsPanel, setActiveView, setShowsPanel } = useAiChatLayout()
+	const [isPanelVisible, setIsPanelVisible] = useState(false)
 
 	const isSubchatView = activeView === AiChatView.MOBILE_SUBCHAT
 
@@ -20,23 +20,23 @@ export const AiChatMainPage = () => {
 		}
 	}, [isViewportMaxLG])
 
-	const slotPage = useMemo(
-		() => (
-			<ChatView
-				onShowPanel={() => setShowsPanel(true)}
-				onTogglePanel={() => setShowsPanel((value: boolean) => !value)}
-			/>
-		),
-		[]
-	)
+	useEffect(() => {
+		if (activeView === AiChatView.DESKTOP) {
+			showsPanel ? setIsPanelVisible(true) : wait(300).then(() => setIsPanelVisible(false))
+		} else {
+			isSubchatView ? setIsPanelVisible(true) : wait(300).then(() => setIsPanelVisible(false))
+		}
+	}, [showsPanel, activeView])
+
+	const slotPage = useMemo(() => <ChatView />, [])
 	const slotPanel = useMemo(
-		() => <PanelContent onShowPanel={() => setShowsPanel(true)} onHidePanel={() => setShowsPanel(false)} />,
+		() => <PanelView onShowPanel={() => setShowsPanel(true)} onHidePanel={() => setShowsPanel(false)} />,
 		[]
 	)
 
 	return (
 		<AppLayout>
-			{slotPage}
+			<div className="relative flex h-full w-full min-w-0 flex-1 flex-col">{slotPage}</div>
 
 			{/* DESKTOP */}
 			{activeView === AiChatView.DESKTOP && (
@@ -51,22 +51,7 @@ export const AiChatMainPage = () => {
 						style={{ width: showsPanel ? `${panelWidth}%` : 0 }}
 					/>
 
-					{/* VISIBLE */}
-					<div
-						className={cx(
-							'absolute right-0 top-0 z-navbar h-full min-w-xl-1 pl-xs-1',
-							'bg-color-bg-page transition-transform duration-300 ease-in-out',
-							showsPanel ? 'translate-x-0' : 'pointer-events-none translate-x-full'
-						)}
-						style={{ width: `${panelWidth}%` }}
-					>
-						{/* DELIMITER */}
-						<div className="absolute left-0 top-0 h-full w-xs-1 bg-color-border-shadow" />
-						{/* VIEW */}
-						{slotPanel}
-					</div>
-
-					{/* HIDDEN */}
+					{/* SHOW BUTTON */}
 					<div
 						className={cx('fixed right-a11y-scrollbar top-a11y-padding pt-px', showsPanel && 'hidden')}
 						style={{ zIndex: 'calc(var(--ds-z-index-navbar) - 1)' }}
@@ -75,23 +60,40 @@ export const AiChatMainPage = () => {
 							<PanelOpenSvg className="h-xs-7" />
 						</IconButton>
 					</div>
+
+					{/* PANEL */}
+					<div
+						className={cx(
+							'absolute right-0 top-0 z-navbar h-full min-w-xl-1 pl-xs-1',
+							'bg-color-bg-page transition-transform duration-300 ease-in-out',
+							showsPanel ? 'translate-x-0' : 'pointer-events-none translate-x-full',
+							!isPanelVisible && 'invisible'
+						)}
+						style={{ width: `${panelWidth}%` }}
+					>
+						{/* DELIMITER */}
+						<div className="absolute left-0 top-0 h-full w-xs-1 bg-color-border-shadow" />
+						{/* VIEW */}
+						{slotPanel}
+					</div>
 				</>
 			)}
 
 			{/* MOBILE OVERLAY */}
 			<div
 				className={cx('absolute-overlay backdrop-blur-subtle', !isSubchatView && 'hidden')}
-				style={{ top: 'var(--app-spacing-navbar-h)', zIndex: 'calc(var(--ds-z-index-navbar) - 1)' }}
+				style={{ zIndex: 'calc(var(--ds-z-index-navbar) - 1)' }}
 				onClick={() => setActiveView(AiChatView.MOBILE_CHAT)}
 			/>
 			{/* MOBILE CONTENT */}
 			{activeView !== AiChatView.DESKTOP && (
 				<div
 					className={cx(
-						'fixed bottom-0 left-0 right-0 ml-button-h-md',
+						'fixed-overlay ml-button-h-md',
 						'border-l border-t border-color-border-shadow bg-color-bg-page shadow-lg',
 						'transition-transform duration-300 ease-in-out',
-						isSubchatView ? 'translate-x-0' : 'translate-x-full'
+						isSubchatView ? 'translate-x-0' : 'translate-x-full',
+						!isPanelVisible && 'invisible'
 					)}
 					style={{ top: 'var(--app-spacing-navbar-h)', zIndex: 'calc(var(--ds-z-index-navbar) - 1)' }}
 				>

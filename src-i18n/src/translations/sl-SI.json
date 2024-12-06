@@ -5,20 +5,24 @@
 			"backToHome": "Nazaj na domačo stran",
 			"changeLanguage": "Spremeni jezik",
 			"close": "Zapri",
+			"collapse": "Strni",
 			"copy": "Kopiraj",
 			"delete": "Izbriši",
 			"deselectAll": "Odstrani vse izbire",
+			"expand": "Razširi",
 			"goToUrl": "Pojdi na {url}",
-			"hidePanel": "Skrij panel",
+			"hidePanel": "Skrij ploščo",
 			"openMenu": "Odpri meni",
+			"preview": "Predogled",
+			"reload": "Osveži",
 			"rename": "Preimenuj",
-			"resizePanel": "Spremeni velikost panela",
+			"resizePanel": "Spremeni velikost plošče",
 			"retry": "Poskusi znova",
 			"saveChanges": "Shrani spremembe",
 			"search": "Išči",
-			"searchMore": "Prikaži več rezultatov",
+			"searchMore": "Pokaži več rezultatov",
 			"selectAll": "Izberi vse",
-			"showPanel": "Prikaži panel",
+			"showPanel": "Pokaži ploščo",
 			"signOut": "Odjava"
 		},
 		"error": {
@@ -30,6 +34,7 @@
 			"apiDocs": "API Dokumentacija",
 			"asia": "Azija",
 			"avatar": "Avatar",
+			"code": "Koda",
 			"copied": "Kopirano",
 			"custom": "Po meri",
 			"darkTheme": "Temna",
@@ -50,14 +55,14 @@
 			"navigationBar": "Navigacijska vrstica",
 			"navigationMenu": "Navigacijski meni",
 			"optionalField": "(Neobvezno)",
-			"quickSettings": "Hitre nastavitve",
 			"requiredField": "(Obvezno)",
+			"result": "Rezultat",
 			"settings": "Nastavitve",
 			"uiLibrary": "UI Knjižnica",
 			"uiTheme": "UI Tema"
 		},
 		"placeholder": {
-			"search": "Iskanje..."
+			"search": "Išči..."
 		},
 		"state": {
 			"dataSaved": "Vaši podatki so shranjeni",
@@ -70,7 +75,8 @@
 	},
 	"aiChat": {
 		"action": {
-			"backToSubchats": "Nazaj na podklepete",
+			"backToSubchats": "Nazaj na subchate",
+			"closePreview": "Zapri predogled",
 			"configureAgent": "Konfiguriraj agenta",
 			"confirmDeleteAgent": "Potrdi brisanje agenta",
 			"confirmDeleteChats": "Potrdi brisanje klepetov",
@@ -84,17 +90,18 @@
 			"manageAgents": "Upravljaj agente",
 			"manageChats": "Upravljaj klepete",
 			"openChat": "Odpri klepet",
-			"openSubchat_zero": "Ustvari podklepet",
-			"openSubchat_one": "Odpri podklepet ({count} sporočilo)",
-			"openSubchat_two": "Odpri podklepet ({count} sporočili)",
-			"openSubchat_few": "Odpri podklepet ({count} sporočila)",
-			"openSubchat_other": "Odpri podklepet ({count} sporočil)",
+			"openSubchat_zero": "Ustvari subchat",
+			"openSubchat_one": "Odpri subchat ({count} sporočilo)",
+			"openSubchat_two": "Odpri subchat ({count} sporočili)",
+			"openSubchat_few": "Odpri subchat ({count} sporočila)",
+			"openSubchat_other": "Odpri subchat ({count} sporočil)",
+			"previewCode": "Predogled kode",
 			"searchChats": "Išči klepete",
 			"selectChat": "Izberi klepet",
 			"sendMessage": "Pošlji sporočilo",
-			"showMoreAgents": "Prikaži več agentov",
-			"showMoreChats": "Prikaži več klepetov",
-			"showSubchats": "Prikaži podklepete ({count})",
+			"showMoreAgents": "Pokaži več agentov",
+			"showMoreChats": "Pokaži več klepetov",
+			"showSubchats": "Pokaži subchate ({count})",
 			"startNewChat": "Začni nov pogovor",
 			"startSearching_one": "Vnesite vsaj {count} znak",
 			"startSearching_two": "Vnesite vsaj {count} znaka",
@@ -103,7 +110,7 @@
 		},
 		"description": {
 			"chromeGPT": "Mini GPT za Google Chrome",
-			"loremIpsumGPT": "Najbolj inteligenten model",
+			"loremIpsumGPT": "Najpametnejši model",
 			"rammusGPT": "Najboljša čustvena podpora"
 		},
 		"error": {
@@ -116,6 +123,7 @@
 			"agents": "Agenti",
 			"chatTitle": "Naslov klepeta",
 			"chats": "Klepeti",
+			"codePreview": "Predogled kode",
 			"creativityLevel": "Raven ustvarjalnosti",
 			"customInstructions": "Navodila po meri",
 			"gptModel": "GPT model",
@@ -123,12 +131,12 @@
 			"newChat": "Nov klepet",
 			"newMessage": "Novo sporočilo",
 			"noChats": "Ni klepetov",
-			"noSubchats": "Ni podklepetov",
+			"noSubchats": "Ni subchatov",
 			"selectedAgent": "Izbrani agent",
 			"selectedValue": "Izbrana vrednost",
-			"subchats": "Podklepeti",
-			"xMessages_zero": "Ni sporočil",
-			"xMessages_one": "{count} sporočilo",
+			"subchats": "Subchati",
+			"urlPreview": "Predogled URL",
+			"xMessages_one": "1 sporočilo",
 			"xMessages_two": "{count} sporočili",
 			"xMessages_few": "{count} sporočila",
 			"xMessages_other": "{count} sporočil",
@@ -137,11 +145,10 @@
 			"xSearchResults_two": "{count} rezultata iskanja",
 			"xSearchResults_few": "{count} rezultati iskanja",
 			"xSearchResults_other": "{count} rezultatov iskanja",
-			"xSelectedMessages_zero": "Ni izbranih sporočil",
-			"xSelectedMessages_one": "{count} izbrano sporočilo",
-			"xSelectedMessages_two": "{count} izbrani sporočili",
-			"xSelectedMessages_few": "{count} izbrana sporočila",
-			"xSelectedMessages_other": "{count} izbranih sporočil"
+			"xSelectedMessages_one": "1 sporočilo izbrano",
+			"xSelectedMessages_two": "{count} sporočili izbrani",
+			"xSelectedMessages_few": "{count} sporočila izbrana",
+			"xSelectedMessages_other": "{count} sporočil izbranih"
 		},
 		"placeholder": {
 			"newMessage": "Pišite {name}...",
@@ -153,7 +160,7 @@
 			"loadingGPTs": "Nalaganje GPT-jev...",
 			"loadingMessages": "Nalaganje sporočil...",
 			"loadingPreviousMessages": "Nalaganje prejšnjih sporočil...",
-			"loadingSubchats": "Nalaganje podklepetov...",
+			"loadingSubchats": "Nalaganje subchatov...",
 			"renamingChat": "Preimenovanje klepeta...",
 			"thinking": "Razmišljanje..."
 		},
@@ -168,7 +175,7 @@
 	"userSettings": {
 		"action": {
 			"manageAccount": "Upravljaj račun",
-			"manageBilling": "Upravljaj plačila"
+			"manageBilling": "Upravljaj zaračunavanje"
 		},
 		"error": {
 			"address": "Dodati morate naslov",
@@ -183,7 +190,7 @@
 		"label": {
 			"account": "Račun",
 			"address": "Naslov",
-			"billing": "Plačila",
+			"billing": "Zaračunavanje",
 			"city": "Mesto",
 			"country": "Država",
 			"email": "E-poštni naslov",

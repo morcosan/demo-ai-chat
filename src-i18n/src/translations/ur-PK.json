@@ -2,36 +2,41 @@
 	"core": {
 		"action": {
 			"back": "واپس",
-			"backToHome": "ہوم پیج پر واپس",
+			"backToHome": "ہوم پیج پر واپس جائیں",
 			"changeLanguage": "زبان تبدیل کریں",
 			"close": "بند کریں",
+			"collapse": "سکیڑیں",
 			"copy": "کاپی کریں",
 			"delete": "حذف کریں",
-			"deselectAll": "سب کو غیر منتخب کریں",
+			"deselectAll": "تمام غیر منتخب کریں",
+			"expand": "پھیلائیں",
 			"goToUrl": "{url} پر جائیں",
 			"hidePanel": "پینل چھپائیں",
 			"openMenu": "مینو کھولیں",
+			"preview": "پیش نظارہ",
+			"reload": "دوبارہ لوڈ کریں",
 			"rename": "نام تبدیل کریں",
 			"resizePanel": "پینل کا سائز تبدیل کریں",
 			"retry": "دوبارہ کوشش کریں",
 			"saveChanges": "تبدیلیاں محفوظ کریں",
 			"search": "تلاش کریں",
 			"searchMore": "مزید نتائج دکھائیں",
-			"selectAll": "سب کو منتخب کریں",
+			"selectAll": "سب منتخب کریں",
 			"showPanel": "پینل دکھائیں",
-			"signOut": "لاگ آؤٹ"
+			"signOut": "سائن آؤٹ کریں"
 		},
 		"error": {
-			"noChanges": "کوئی تبدیلیاں نہیں",
+			"noChanges": "کوئی تبدیلیاں نہیں ہیں",
 			"nothingFound": "\"{search}\" کے لیے کچھ نہیں ملا",
 			"unsent": "نہیں بھیجا گیا"
 		},
 		"label": {
 			"apiDocs": "API دستاویزات",
 			"asia": "ایشیا",
-			"avatar": "اوتار",
-			"copied": "کاپی کیا گیا",
-			"custom": "حسب ضرورت",
+			"avatar": "تصویر",
+			"code": "کوڈ",
+			"copied": "کاپی ہو گیا",
+			"custom": "مخصوص",
 			"darkTheme": "ڈارک",
 			"default": "ڈیفالٹ",
 			"description": "تفصیل",
@@ -51,6 +56,7 @@
 			"navigationMenu": "نیویگیشن مینو",
 			"optionalField": "(اختیاری)",
 			"requiredField": "(ضروری)",
+			"result": "نتیجہ",
 			"settings": "ترتیبات",
 			"uiLibrary": "UI لائبریری",
 			"uiTheme": "UI تھیم"
@@ -69,7 +75,8 @@
 	},
 	"aiChat": {
 		"action": {
-			"backToSubchats": "ذیلی چیٹس پر واپس",
+			"backToSubchats": "ذیلی چیٹس پر واپس جائیں",
+			"closePreview": "پیش نظارہ بند کریں",
 			"configureAgent": "ایجنٹ کی ترتیب کریں",
 			"confirmDeleteAgent": "ایجنٹ کی حذف کی تصدیق کریں",
 			"confirmDeleteChats": "چیٹس کی حذف کی تصدیق کریں",
@@ -78,13 +85,14 @@
 			"copyMessage": "پیغام کاپی کریں",
 			"createAgent": "ایجنٹ بنائیں",
 			"deleteAgent": "ایجنٹ حذف کریں",
-			"deleteSelectedChats": "منتخب چیٹس حذف کریں",
-			"deselectChat": "چیٹ غیر منتخب کریں",
+			"deleteSelectedChats": "منتخب کردہ چیٹس حذف کریں",
+			"deselectChat": "چیٹ کو غیر منتخب کریں",
 			"manageAgents": "ایجنٹس کا انتظام کریں",
 			"manageChats": "چیٹس کا انتظام کریں",
 			"openChat": "چیٹ کھولیں",
-			"openSubchat_zero": "ذیلی چیٹ بنائیں",
 			"openSubchat_other": "ذیلی چیٹ کھولیں ({count} پیغامات)",
+			"openSubchat_zero": "ذیلی چیٹ بنائیں",
+			"previewCode": "کوڈ کا پیش نظارہ",
 			"searchChats": "چیٹس تلاش کریں",
 			"selectChat": "چیٹ منتخب کریں",
 			"sendMessage": "پیغام بھیجیں",
@@ -92,24 +100,24 @@
 			"showMoreChats": "مزید چیٹس دکھائیں",
 			"showSubchats": "ذیلی چیٹس دکھائیں ({count})",
 			"startNewChat": "نئی گفتگو شروع کریں",
-			"startSearching_one": "کم از کم {count} حرف ٹائپ کریں",
 			"startSearching_other": "کم از کم {count} حروف ٹائپ کریں"
 		},
 		"description": {
-			"chromeGPT": "گوگل کروم کے لیے منی GPT",
+			"chromeGPT": "گوگل کروم کے لیے مینی GPT",
 			"loremIpsumGPT": "سب سے ذہین ماڈل",
 			"rammusGPT": "بہترین جذباتی معاونت"
 		},
 		"error": {
-			"agentAvatar": "آپ کو ایجنٹ کے لیے اوتار شامل کرنا ہوگا",
+			"agentAvatar": "آپ کو ایجنٹ کے لیے تصویر شامل کرنی ہوگی",
 			"agentName": "آپ کو ایجنٹ کا نام شامل کرنا ہوگا",
 			"emptyMessage": "آپ کا پیغام خالی ہے",
-			"failedMessage": "آپ کے پیغام کی ترسیل میں مسئلہ پیش آیا"
+			"failedMessage": "آپ کا پیغام پہنچانے میں مسئلہ ہوا"
 		},
 		"label": {
 			"agents": "ایجنٹس",
 			"chatTitle": "چیٹ کا عنوان",
 			"chats": "چیٹس",
+			"codePreview": "کوڈ کا پیش نظارہ",
 			"creativityLevel": "تخلیقی سطح",
 			"customInstructions": "حسب ضرورت ہدایات",
 			"gptModel": "GPT ماڈل",
@@ -118,20 +126,21 @@
 			"newMessage": "نیا پیغام",
 			"noChats": "کوئی چیٹس نہیں",
 			"noSubchats": "کوئی ذیلی چیٹس نہیں",
-			"selectedAgent": "منتخب شدہ ایجنٹ",
-			"selectedValue": "منتخب شدہ قدر",
+			"selectedAgent": "منتخب کردہ ایجنٹ",
+			"selectedValue": "منتخب کردہ قدر",
 			"subchats": "ذیلی چیٹس",
-			"xMessages_one": "1 پیغام",
+			"urlPreview": "URL کا پیش نظارہ",
+			"xMessages_one": "{count} پیغام",
 			"xMessages_other": "{count} پیغامات",
-			"xSearchResults_zero": "کوئی تلاش نتائج نہیں",
-			"xSearchResults_one": "{count} تلاش نتیجہ",
-			"xSearchResults_other": "{count} تلاش نتائج",
-			"xSelectedMessages_one": "1 پیغام منتخب",
+			"xSearchResults_one": "{count} تلاش کا نتیجہ",
+			"xSearchResults_other": "{count} تلاش کے نتائج",
+			"xSearchResults_zero": "کوئی تلاش کا نتیجہ نہیں",
+			"xSelectedMessages_one": "{count} پیغام منتخب",
 			"xSelectedMessages_other": "{count} پیغامات منتخب"
 		},
 		"placeholder": {
 			"newMessage": "{name} سے بات کریں...",
-			"rename": "خود بخود نیا نام تجویز کریں..."
+			"rename": "خود بخود نیا نام تیار کریں..."
 		},
 		"state": {
 			"loadingAgents": "ایجنٹس لوڈ ہو رہے ہیں...",
@@ -146,7 +155,7 @@
 		"warning": {
 			"deletingAgent": "یہ ایجنٹ مستقل طور پر حذف ہو جائے گا",
 			"deletingChats": "یہ چیٹس مستقل طور پر حذف ہو جائیں گی",
-			"chromeGptInsideChrome": "اس GPT کے لیے یہ ترتیبات فعال ہونی چاہئیں:",
+			"chromeGptInsideChrome": "اس GPT کے لیے ان ترتیبات کو فعال کرنا ضروری ہے:",
 			"chromeGptOutsideChrome": "یہ GPT صرف گوگل کروم براؤزر میں دستیاب ہے",
 			"invalidGpt": "غلط GPT"
 		}
@@ -158,7 +167,7 @@
 		},
 		"error": {
 			"address": "آپ کو پتہ شامل کرنا ہوگا",
-			"avatar": "آپ کو اپنا اوتار شامل کرنا ہوگا",
+			"avatar": "آپ کو اپنی تصویر شامل کرنی ہوگی",
 			"city": "آپ کو شہر شامل کرنا ہوگا",
 			"country": "آپ کو ملک شامل کرنا ہوگا",
 			"email": "آپ کو اپنا ای میل ایڈریس شامل کرنا ہوگا",

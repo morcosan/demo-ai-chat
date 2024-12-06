@@ -4,15 +4,19 @@
 			"back": "Späť",
 			"backToHome": "Späť na domovskú stránku",
 			"changeLanguage": "Zmeniť jazyk",
-			"close": "Zavrieť",
+			"close": "Zatvoriť",
+			"collapse": "Zbaliť",
 			"copy": "Kopírovať",
 			"delete": "Vymazať",
-			"deselectAll": "Zrušiť všetky výbery",
+			"deselectAll": "Zrušiť výber všetkých",
+			"expand": "Rozbaliť",
 			"goToUrl": "Prejsť na {url}",
 			"hidePanel": "Skryť panel",
 			"openMenu": "Otvoriť menu",
+			"preview": "Náhľad",
+			"reload": "Obnoviť",
 			"rename": "Premenovať",
-			"resizePanel": "Zmeniť veľkosť panela",
+			"resizePanel": "Zmeniť veľkosť panelu",
 			"retry": "Skúsiť znova",
 			"saveChanges": "Uložiť zmeny",
 			"search": "Hľadať",
@@ -30,12 +34,13 @@
 			"apiDocs": "API Dokumentácia",
 			"asia": "Ázia",
 			"avatar": "Avatar",
+			"code": "Kód",
 			"copied": "Skopírované",
 			"custom": "Vlastné",
 			"darkTheme": "Tmavý",
 			"default": "Predvolené",
 			"description": "Popis",
-			"designSystem": "Dizajnový systém",
+			"designSystem": "Dizajn systém",
 			"errors": "Chyby",
 			"europe": "Európa",
 			"githubRepo": "GitHub Repozitár",
@@ -50,8 +55,8 @@
 			"navigationBar": "Navigačný panel",
 			"navigationMenu": "Navigačné menu",
 			"optionalField": "(Voliteľné)",
-			"quickSettings": "Rýchle nastavenia",
 			"requiredField": "(Povinné)",
+			"result": "Výsledok",
 			"settings": "Nastavenia",
 			"uiLibrary": "UI Knižnica",
 			"uiTheme": "UI Téma"
@@ -60,7 +65,7 @@
 			"search": "Hľadať..."
 		},
 		"state": {
-			"dataSaved": "Vaše údaje sú uložené",
+			"dataSaved": "Vaše dáta sú uložené",
 			"deleting": "Mazanie...",
 			"loading": "Načítavanie...",
 			"searching": "Vyhľadávanie...",
@@ -70,7 +75,8 @@
 	},
 	"aiChat": {
 		"action": {
-			"backToSubchats": "Späť na podchaty",
+			"backToSubchats": "Späť na subchaty",
+			"closePreview": "Zatvoriť náhľad",
 			"configureAgent": "Konfigurovať agenta",
 			"confirmDeleteAgent": "Potvrdiť vymazanie agenta",
 			"confirmDeleteChats": "Potvrdiť vymazanie chatov",
@@ -84,22 +90,23 @@
 			"manageAgents": "Spravovať agentov",
 			"manageChats": "Spravovať chaty",
 			"openChat": "Otvoriť chat",
-			"openSubchat_zero": "Vytvoriť podchat",
-			"openSubchat_one": "Otvoriť podchat ({count} správa)",
-			"openSubchat_few": "Otvoriť podchat ({count} správy)",
-			"openSubchat_many": "Otvoriť podchat ({count} správ)",
-			"openSubchat_other": "Otvoriť podchat ({count} správ)",
+			"openSubchat_zero": "Vytvoriť subchat",
+			"openSubchat_one": "Otvoriť subchat ({count} správa)",
+			"openSubchat_few": "Otvoriť subchat ({count} správy)",
+			"openSubchat_many": "Otvoriť subchat ({count} správ)",
+			"openSubchat_other": "Otvoriť subchat ({count} správ)",
+			"previewCode": "Náhľad kódu",
 			"searchChats": "Vyhľadať chaty",
 			"selectChat": "Vybrať chat",
 			"sendMessage": "Odoslať správu",
 			"showMoreAgents": "Zobraziť viac agentov",
 			"showMoreChats": "Zobraziť viac chatov",
-			"showSubchats": "Zobraziť podchaty ({count})",
+			"showSubchats": "Zobraziť subchaty ({count})",
 			"startNewChat": "Začať novú konverzáciu",
-			"startSearching_one": "Napíšte aspoň {count} znak",
-			"startSearching_few": "Napíšte aspoň {count} znaky",
-			"startSearching_many": "Napíšte aspoň {count} znakov",
-			"startSearching_other": "Napíšte aspoň {count} znakov"
+			"startSearching_one": "Zadajte aspoň {count} znak",
+			"startSearching_few": "Zadajte aspoň {count} znaky",
+			"startSearching_many": "Zadajte aspoň {count} znakov",
+			"startSearching_other": "Zadajte aspoň {count} znakov"
 		},
 		"description": {
 			"chromeGPT": "Mini GPT pre Google Chrome",
@@ -110,12 +117,13 @@
 			"agentAvatar": "Musíte pridať avatar pre agenta",
 			"agentName": "Musíte pridať meno pre agenta",
 			"emptyMessage": "Vaša správa je prázdna",
-			"failedMessage": "Nastal problém pri doručovaní vašej správy"
+			"failedMessage": "Vyskytol sa problém s doručením vašej správy"
 		},
 		"label": {
 			"agents": "Agenti",
 			"chatTitle": "Názov chatu",
 			"chats": "Chaty",
+			"codePreview": "Náhľad kódu",
 			"creativityLevel": "Úroveň kreativity",
 			"customInstructions": "Vlastné inštrukcie",
 			"gptModel": "GPT model",
@@ -123,11 +131,12 @@
 			"newChat": "Nový chat",
 			"newMessage": "Nová správa",
 			"noChats": "Žiadne chaty",
-			"noSubchats": "Žiadne podchaty",
+			"noSubchats": "Žiadne subchaty",
 			"selectedAgent": "Vybraný agent",
 			"selectedValue": "Vybraná hodnota",
-			"subchats": "Podchaty",
-			"xMessages_one": "{count} správa",
+			"subchats": "Subchaty",
+			"urlPreview": "Náhľad URL",
+			"xMessages_one": "1 správa",
 			"xMessages_few": "{count} správy",
 			"xMessages_many": "{count} správ",
 			"xMessages_other": "{count} správ",
@@ -136,14 +145,14 @@
 			"xSearchResults_few": "{count} výsledky vyhľadávania",
 			"xSearchResults_many": "{count} výsledkov vyhľadávania",
 			"xSearchResults_other": "{count} výsledkov vyhľadávania",
-			"xSelectedMessages_one": "{count} vybraná správa",
-			"xSelectedMessages_few": "{count} vybrané správy",
-			"xSelectedMessages_many": "{count} vybraných správ",
-			"xSelectedMessages_other": "{count} vybraných správ"
+			"xSelectedMessages_one": "1 správa vybraná",
+			"xSelectedMessages_few": "{count} správy vybrané",
+			"xSelectedMessages_many": "{count} správ vybraných",
+			"xSelectedMessages_other": "{count} správ vybraných"
 		},
 		"placeholder": {
-			"newMessage": "Píšte {name}...",
-			"rename": "Vygenerovať nové meno automaticky..."
+			"newMessage": "Písať {name}...",
+			"rename": "Vygenerovať nový názov automaticky..."
 		},
 		"state": {
 			"loadingAgents": "Načítavanie agentov...",
@@ -151,7 +160,7 @@
 			"loadingGPTs": "Načítavanie GPT...",
 			"loadingMessages": "Načítavanie správ...",
 			"loadingPreviousMessages": "Načítavanie predchádzajúcich správ...",
-			"loadingSubchats": "Načítavanie podchatov...",
+			"loadingSubchats": "Načítavanie subchatov...",
 			"renamingChat": "Premenovávanie chatu...",
 			"thinking": "Premýšľanie..."
 		},
@@ -159,7 +168,7 @@
 			"deletingAgent": "Tento agent bude natrvalo vymazaný",
 			"deletingChats": "Tieto chaty budú natrvalo vymazané",
 			"chromeGptInsideChrome": "Tento GPT vyžaduje povolenie týchto nastavení:",
-			"chromeGptOutsideChrome": "Tento GPT je dostupný len v prehliadači Google Chrome",
+			"chromeGptOutsideChrome": "Tento GPT je dostupný iba v prehliadači Google Chrome",
 			"invalidGpt": "Neplatný GPT"
 		}
 	},
@@ -190,7 +199,7 @@
 			"postalCode": "PSČ",
 			"private": "Súkromné",
 			"public": "Verejné",
-			"vatNumber": "IČ DPH"
+			"vatNumber": "DIČ"
 		}
 	}
 }

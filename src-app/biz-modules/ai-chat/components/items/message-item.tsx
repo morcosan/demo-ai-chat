@@ -11,11 +11,12 @@ interface Props {
 	subchatId?: number
 	isSubchat?: boolean
 	onClickRetry?(): void
-	onClickSubchat?(): void
+	onPreviewCode?(code: string, lang: string): void
+	onPreviewUrl?(url: string): void
 }
 
 export const MessageItem = (props: Props) => {
-	const { message, agent, subchatId, isSubchat, onClickRetry, onClickSubchat } = props
+	const { message, agent, subchatId, isSubchat, onClickRetry, onPreviewCode, onPreviewUrl } = props
 	const { isViewportMinLG } = useUiViewport()
 	const [isClicked, setIsClicked] = useState(false)
 
@@ -69,7 +70,10 @@ export const MessageItem = (props: Props) => {
 
 	const onClickToolbar = (event: ReactMouseEvent) => event.stopPropagation()
 
-	const slotMarkdown = useMemo(() => <Markdown text={message.text} />, [message.text])
+	const slotMarkdown = useMemo(
+		() => <Markdown text={message.text} onPreviewCode={onPreviewCode} onPreviewUrl={onPreviewUrl} />,
+		[message.text]
+	)
 
 	const slotSubchat = useMemo(() => {
 		if (isSubchat || message.failed) return null
@@ -80,7 +84,6 @@ export const MessageItem = (props: Props) => {
 					selected={message.id === subchatId}
 					small={!isViewportMinLG}
 					className={subchatButtonClass}
-					onClick={onClickSubchat}
 				/>
 			</div>
 		)

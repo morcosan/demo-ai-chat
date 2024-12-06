@@ -2,34 +2,39 @@
 	"core": {
 		"action": {
 			"back": "Kembali",
-			"backToHome": "Kembali ke halaman utama",
+			"backToHome": "Kembali ke laman utama",
 			"changeLanguage": "Tukar bahasa",
 			"close": "Tutup",
+			"collapse": "Runtuhkan",
 			"copy": "Salin",
 			"delete": "Padam",
 			"deselectAll": "Nyahpilih semua",
+			"expand": "Kembangkan",
 			"goToUrl": "Pergi ke {url}",
 			"hidePanel": "Sembunyikan panel",
 			"openMenu": "Buka menu",
+			"preview": "Pratonton",
+			"reload": "Muat semula",
 			"rename": "Tukar nama",
 			"resizePanel": "Ubah saiz panel",
-			"retry": "Cuba lagi",
+			"retry": "Cuba semula",
 			"saveChanges": "Simpan perubahan",
 			"search": "Cari",
-			"searchMore": "Tunjukkan lebih banyak hasil",
+			"searchMore": "Tunjuk lebih banyak keputusan",
 			"selectAll": "Pilih semua",
 			"showPanel": "Tunjukkan panel",
 			"signOut": "Log keluar"
 		},
 		"error": {
 			"noChanges": "Tiada perubahan",
-			"nothingFound": "Tiada hasil untuk \"{search}\"",
+			"nothingFound": "Tiada hasil carian untuk \"{search}\"",
 			"unsent": "Tidak dihantar"
 		},
 		"label": {
 			"apiDocs": "Dokumentasi API",
 			"asia": "Asia",
 			"avatar": "Avatar",
+			"code": "Kod",
 			"copied": "Disalin",
 			"custom": "Tersuai",
 			"darkTheme": "Gelap",
@@ -38,7 +43,7 @@
 			"designSystem": "Sistem Reka Bentuk",
 			"errors": "Ralat",
 			"europe": "Eropah",
-			"githubRepo": "Repositori GitHub",
+			"githubRepo": "Repo GitHub",
 			"language": "Bahasa",
 			"levelHigh": "Tinggi",
 			"levelLow": "Rendah",
@@ -50,10 +55,10 @@
 			"navigationBar": "Bar navigasi",
 			"navigationMenu": "Menu navigasi",
 			"optionalField": "(Pilihan)",
-			"quickSettings": "Tetapan pantas",
 			"requiredField": "(Wajib)",
+			"result": "Keputusan",
 			"settings": "Tetapan",
-			"uiLibrary": "Pustaka UI",
+			"uiLibrary": "Perpustakaan UI",
 			"uiTheme": "Tema UI"
 		},
 		"placeholder": {
@@ -65,36 +70,37 @@
 			"loading": "Sedang memuatkan...",
 			"searching": "Sedang mencari...",
 			"sending": "Sedang menghantar...",
-			"updating": "Sedang mengemas kini..."
+			"updating": "Sedang mengemaskini..."
 		}
 	},
 	"aiChat": {
 		"action": {
 			"backToSubchats": "Kembali ke subchat",
-			"configureAgent": "Konfigurasi ejen",
+			"closePreview": "Tutup pratonton",
+			"configureAgent": "Konfigurasikan ejen",
 			"confirmDeleteAgent": "Sahkan pemadaman ejen",
-			"confirmDeleteChats": "Sahkan pemadaman sembang",
-			"confirmRenameChat": "Sahkan penukaran nama sembang",
+			"confirmDeleteChats": "Sahkan pemadaman perbualan",
+			"confirmRenameChat": "Sahkan penukaran nama perbualan",
 			"copyCode": "Salin kod",
 			"copyMessage": "Salin mesej",
 			"createAgent": "Cipta ejen",
 			"deleteAgent": "Padam ejen",
-			"deleteSelectedChats": "Padam sembang terpilih",
-			"deselectChat": "Nyahpilih sembang",
+			"deleteSelectedChats": "Padam perbualan terpilih",
+			"deselectChat": "Nyahpilih perbualan",
 			"manageAgents": "Urus ejen",
-			"manageChats": "Urus sembang",
-			"openChat": "Buka sembang",
+			"manageChats": "Urus perbualan",
+			"openChat": "Buka perbualan",
 			"openSubchat_other": "Buka subchat ({count} mesej)",
 			"openSubchat_zero": "Cipta subchat",
-			"searchChats": "Cari sembang",
-			"selectChat": "Pilih sembang",
+			"previewCode": "Pratonton kod",
+			"searchChats": "Cari perbualan",
+			"selectChat": "Pilih perbualan",
 			"sendMessage": "Hantar mesej",
 			"showMoreAgents": "Tunjukkan lebih banyak ejen",
-			"showMoreChats": "Tunjukkan lebih banyak sembang",
+			"showMoreChats": "Tunjukkan lebih banyak perbualan",
 			"showSubchats": "Tunjukkan subchat ({count})",
-			"startNewChat": "Mulakan perbualan baharu",
-			"startSearching_one": "Masukkan sekurang-kurangnya {count} aksara",
-			"startSearching_other": "Masukkan sekurang-kurangnya {count} aksara"
+			"startNewChat": "Mulakan perbualan baru",
+			"startSearching_other": "Taip sekurang-kurangnya {count} aksara"
 		},
 		"description": {
 			"chromeGPT": "Mini GPT untuk Google Chrome",
@@ -102,84 +108,83 @@
 			"rammusGPT": "Sokongan emosi terbaik"
 		},
 		"error": {
-			"agentAvatar": "Anda mesti menambah avatar untuk ejen",
-			"agentName": "Anda mesti menambah nama untuk ejen",
+			"agentAvatar": "Anda perlu menambah avatar untuk ejen",
+			"agentName": "Anda perlu menambah nama untuk ejen",
 			"emptyMessage": "Mesej anda kosong",
-			"failedMessage": "Masalah berlaku semasa menghantar mesej anda"
+			"failedMessage": "Terdapat masalah menghantar mesej anda"
 		},
 		"label": {
 			"agents": "Ejen",
-			"chatTitle": "Tajuk sembang",
-			"chats": "Sembang",
+			"chatTitle": "Tajuk perbualan",
+			"chats": "Perbualan",
+			"codePreview": "Pratonton kod",
 			"creativityLevel": "Tahap kreativiti",
 			"customInstructions": "Arahan tersuai",
 			"gptModel": "Model GPT",
-			"newAgent": "Ejen baharu",
-			"newChat": "Sembang baharu",
-			"newMessage": "Mesej baharu",
-			"noChats": "Tiada sembang",
+			"newAgent": "Ejen baru",
+			"newChat": "Perbualan baru",
+			"newMessage": "Mesej baru",
+			"noChats": "Tiada perbualan",
 			"noSubchats": "Tiada subchat",
 			"selectedAgent": "Ejen terpilih",
 			"selectedValue": "Nilai terpilih",
 			"subchats": "Subchat",
-			"xMessages_one": "1 mesej",
+			"urlPreview": "Pratonton URL",
 			"xMessages_other": "{count} mesej",
-			"xSearchResults_one": "{count} hasil carian",
-			"xSearchResults_other": "{count} hasil carian",
 			"xSearchResults_zero": "Tiada hasil carian",
-			"xSelectedMessages_one": "1 mesej dipilih",
+			"xSearchResults_other": "{count} hasil carian",
 			"xSelectedMessages_other": "{count} mesej dipilih"
 		},
 		"placeholder": {
 			"newMessage": "Bercakap dengan {name}...",
-			"rename": "Cipta nama baharu secara automatik..."
+			"rename": "Jana nama baru secara automatik..."
 		},
 		"state": {
-			"loadingAgents": "Memuatkan ejen...",
-			"loadingChats": "Memuatkan sembang...",
-			"loadingGPTs": "Memuatkan GPT...",
-			"loadingMessages": "Memuatkan mesej...",
-			"loadingPreviousMessages": "Memuatkan mesej sebelumnya...",
-			"loadingSubchats": "Memuatkan subchat...",
-			"renamingChat": "Menukar nama sembang...",
-			"thinking": "Berfikir..."
+			"loadingAgents": "Sedang memuatkan ejen...",
+			"loadingChats": "Sedang memuatkan perbualan...",
+			"loadingGPTs": "Sedang memuatkan GPT...",
+			"loadingMessages": "Sedang memuatkan mesej...",
+			"loadingPreviousMessages": "Sedang memuatkan mesej sebelumnya...",
+			"loadingSubchats": "Sedang memuatkan subchat...",
+			"renamingChat": "Sedang menukar nama perbualan...",
+			"thinking": "Sedang berfikir..."
 		},
 		"warning": {
 			"deletingAgent": "Ejen ini akan dipadam secara kekal",
-			"deletingChats": "Sembang ini akan dipadam secara kekal",
+			"deletingChats": "Perbualan ini akan dipadam secara kekal",
 			"chromeGptInsideChrome": "GPT ini memerlukan tetapan berikut diaktifkan:",
-			"chromeGptOutsideChrome": "GPT ini hanya tersedia dalam pelayar Google Chrome",
+			"chromeGptOutsideChrome": "GPT ini hanya tersedia di pelayar Google Chrome",
 			"invalidGpt": "GPT tidak sah"
 		}
 	},
 	"userSettings": {
 		"action": {
 			"manageAccount": "Urus akaun",
-			"manageBilling": "Urus bil"
+			"manageBilling": "Urus pembayaran"
 		},
 		"error": {
-			"address": "Anda mesti menambah alamat",
-			"avatar": "Anda mesti menambah avatar",
-			"city": "Anda mesti menambah bandar",
-			"country": "Anda mesti menambah negara",
-			"email": "Anda mesti menambah alamat e-mel",
-			"legalName": "Anda mesti menambah nama sah",
-			"name": "Anda mesti menambah nama anda",
-			"postalCode": "Anda mesti menambah kod pos"
+			"address": "Anda perlu menambah alamat",
+			"avatar": "Anda perlu menambah avatar anda",
+			"city": "Anda perlu menambah bandar",
+			"country": "Anda perlu menambah negara",
+			"email": "Anda perlu menambah alamat e-mel",
+			"legalName": "Anda perlu menambah nama sah",
+			"name": "Anda perlu menambah nama anda",
+			"postalCode": "Anda perlu menambah poskod"
 		},
 		"label": {
 			"account": "Akaun",
 			"address": "Alamat",
-			"billing": "Bil",
+			"billing": "Pembayaran",
 			"city": "Bandar",
 			"country": "Negara",
 			"email": "Alamat e-mel",
 			"legalName": "Nama sah",
 			"phone": "Nombor telefon",
-			"postalCode": "Kod pos",
+			"postalCode": "Poskod",
 			"private": "Peribadi",
 			"public": "Awam",
-			"vatNumber": "Nombor SST"
+			"vatNumber": "Nombor CBP"
 		}
 	}
 }

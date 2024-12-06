@@ -27,26 +27,33 @@
 			margin-bottom: var(--margin-xxs);
 		}
 
-		& > div {
+		& div.ds-markdown-toolbar {
 			display: flex;
 			position: absolute;
 			top: 1px;
 			right: 1px;
 			left: 1px;
-			justify-content: space-between;
 			align-items: center;
+			z-index: 1;
 			border-bottom: 1px solid var(--ds-color-border-subtle);
 			background-color: var(--ds-color-bg-blockquote);
-			padding: 0 var(--ds-spacing-xs-6);
+			padding: 1px var(--ds-spacing-xs-6) 0;
 			height: var(--bar-height);
 			color: var(--ds-color-text-subtle);
 			font-size: var(--ds-font-size-xs);
 		}
 
+		& div.ds-markdown-actions {
+			display: flex;
+			align-items: center;
+			margin-right: calc(-1 * var(--ds-spacing-button-px-xs));
+			margin-left: auto;
+		}
+
 		& > code {
 			display: block;
+			outline-offset: -2px;
 			box-shadow: var(--ds-shadow-xs);
-
 			background-color: var(--ds-color-bg-coding);
 			padding: var(--ds-spacing-xs-5) var(--ds-spacing-xs-6);
 			overflow-x: auto;

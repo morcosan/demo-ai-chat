@@ -18,7 +18,11 @@ export const SubchatIcon = ({ count, small, className }: Props) => {
 		<span className={iconClass}>
 			<SplitSvg className={cx('mr-xs-0', small ? 'h-xs-7 w-xs-7' : 'h-xs-9 w-xs-9')} />
 
-			{isPlus ? <PlusSvg className="w-xs-4" /> : <span className="text-size-xs font-weight-md">{count}</span>}
+			{isPlus ? (
+				<PlusSvg className="h-xs-4 w-xs-4" />
+			) : (
+				<span className="text-size-xs font-weight-md">{count}</span>
+			)}
 		</span>
 	)
 }
