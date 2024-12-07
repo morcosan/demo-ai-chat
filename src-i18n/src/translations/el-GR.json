@@ -2,18 +2,22 @@
 	"core": {
 		"action": {
 			"back": "Πίσω",
-			"backToHome": "Πίσω στην αρχική",
+			"backToHome": "Επιστροφή στην αρχική",
 			"changeLanguage": "Αλλαγή γλώσσας",
 			"close": "Κλείσιμο",
+			"collapse": "Σύμπτυξη",
 			"copy": "Αντιγραφή",
 			"delete": "Διαγραφή",
 			"deselectAll": "Αποεπιλογή όλων",
+			"expand": "Επέκταση",
 			"goToUrl": "Μετάβαση στο {url}",
 			"hidePanel": "Απόκρυψη πάνελ",
 			"openMenu": "Άνοιγμα μενού",
+			"preview": "Προεπισκόπηση",
+			"reload": "Επαναφόρτωση",
 			"rename": "Μετονομασία",
 			"resizePanel": "Αλλαγή μεγέθους πάνελ",
-			"retry": "Προσπάθεια ξανά",
+			"retry": "Επανάληψη",
 			"saveChanges": "Αποθήκευση αλλαγών",
 			"search": "Αναζήτηση",
 			"searchMore": "Εμφάνιση περισσότερων αποτελεσμάτων",
@@ -24,12 +28,13 @@
 		"error": {
 			"noChanges": "Δεν υπάρχουν αλλαγές",
 			"nothingFound": "Δεν βρέθηκε τίποτα για \"{search}\"",
-			"unsent": "Μη απεσταλμένο"
+			"unsent": "Δεν στάλθηκε"
 		},
 		"label": {
 			"apiDocs": "Τεκμηρίωση API",
 			"asia": "Ασία",
-			"avatar": "Άβαταρ",
+			"avatar": "Εικόνα προφίλ",
+			"code": "Κώδικας",
 			"copied": "Αντιγράφηκε",
 			"custom": "Προσαρμοσμένο",
 			"darkTheme": "Σκούρο",
@@ -38,7 +43,7 @@
 			"designSystem": "Σύστημα Σχεδιασμού",
 			"errors": "Σφάλματα",
 			"europe": "Ευρώπη",
-			"githubRepo": "GitHub Repo",
+			"githubRepo": "GitHub Repository",
 			"language": "Γλώσσα",
 			"levelHigh": "Υψηλό",
 			"levelLow": "Χαμηλό",
@@ -51,7 +56,8 @@
 			"navigationMenu": "Μενού πλοήγησης",
 			"optionalField": "(Προαιρετικό)",
 			"quickSettings": "Γρήγορες ρυθμίσεις",
-			"requiredField": "(Απαιτείται)",
+			"requiredField": "(Υποχρεωτικό)",
+			"result": "Αποτέλεσμα",
 			"settings": "Ρυθμίσεις",
 			"uiLibrary": "Βιβλιοθήκη UI",
 			"uiTheme": "Θέμα UI"
@@ -70,7 +76,8 @@
 	},
 	"aiChat": {
 		"action": {
-			"backToSubchats": "Πίσω στις υποσυνομιλίες",
+			"backToSubchats": "Επιστροφή στα υποχάτ",
+			"closePreview": "Κλείσιμο προεπισκόπησης",
 			"configureAgent": "Ρύθμιση πράκτορα",
 			"confirmDeleteAgent": "Επιβεβαίωση διαγραφής πράκτορα",
 			"confirmDeleteChats": "Επιβεβαίωση διαγραφής συνομιλιών",
@@ -84,15 +91,16 @@
 			"manageAgents": "Διαχείριση πρακτόρων",
 			"manageChats": "Διαχείριση συνομιλιών",
 			"openChat": "Άνοιγμα συνομιλίας",
-			"openSubchat_zero": "Δημιουργία υποσυνομιλίας",
-			"openSubchat_one": "Άνοιγμα υποσυνομιλίας ({count} μήνυμα)",
-			"openSubchat_other": "Άνοιγμα υποσυνομιλίας ({count} μηνύματα)",
+			"openSubchat_zero": "Δημιουργία υποχάτ",
+			"openSubchat_one": "Άνοιγμα υποχάτ ({count} μήνυμα)",
+			"openSubchat_other": "Άνοιγμα υποχάτ ({count} μηνύματα)",
+			"previewCode": "Προεπισκόπηση κώδικα",
 			"searchChats": "Αναζήτηση συνομιλιών",
 			"selectChat": "Επιλογή συνομιλίας",
 			"sendMessage": "Αποστολή μηνύματος",
 			"showMoreAgents": "Εμφάνιση περισσότερων πρακτόρων",
 			"showMoreChats": "Εμφάνιση περισσότερων συνομιλιών",
-			"showSubchats": "Εμφάνιση υποσυνομιλιών ({count})",
+			"showSubchats": "Εμφάνιση υποχάτ ({count})",
 			"startNewChat": "Έναρξη νέας συνομιλίας",
 			"startSearching_one": "Πληκτρολογήστε τουλάχιστον {count} χαρακτήρα",
 			"startSearching_other": "Πληκτρολογήστε τουλάχιστον {count} χαρακτήρες"
@@ -103,7 +111,7 @@
 			"rammusGPT": "Καλύτερη συναισθηματική υποστήριξη"
 		},
 		"error": {
-			"agentAvatar": "Πρέπει να προσθέσετε άβαταρ για τον πράκτορα",
+			"agentAvatar": "Πρέπει να προσθέσετε εικόνα προφίλ για τον πράκτορα",
 			"agentName": "Πρέπει να προσθέσετε όνομα για τον πράκτορα",
 			"emptyMessage": "Το μήνυμά σας είναι κενό",
 			"failedMessage": "Υπήρξε πρόβλημα στην παράδοση του μηνύματός σας"
@@ -112,6 +120,7 @@
 			"agents": "Πράκτορες",
 			"chatTitle": "Τίτλος συνομιλίας",
 			"chats": "Συνομιλίες",
+			"codePreview": "Προεπισκόπηση κώδικα",
 			"creativityLevel": "Επίπεδο δημιουργικότητας",
 			"customInstructions": "Προσαρμοσμένες οδηγίες",
 			"gptModel": "Μοντέλο GPT",
@@ -119,20 +128,21 @@
 			"newChat": "Νέα συνομιλία",
 			"newMessage": "Νέο μήνυμα",
 			"noChats": "Δεν υπάρχουν συνομιλίες",
-			"noSubchats": "Δεν υπάρχουν υποσυνομιλίες",
+			"noSubchats": "Δεν υπάρχουν υποχάτ",
 			"selectedAgent": "Επιλεγμένος πράκτορας",
 			"selectedValue": "Επιλεγμένη τιμή",
-			"subchats": "Υποσυνομιλίες",
+			"subchats": "Υποχάτ",
+			"urlPreview": "Προεπισκόπηση URL",
 			"xMessages_one": "1 μήνυμα",
 			"xMessages_other": "{count} μηνύματα",
-			"xSearchResults_zero": "Κανένα αποτέλεσμα",
-			"xSearchResults_one": "{count} αποτέλεσμα",
-			"xSearchResults_other": "{count} αποτελέσματα",
+			"xSearchResults_zero": "Κανένα αποτέλεσμα αναζήτησης",
+			"xSearchResults_one": "{count} αποτέλεσμα αναζήτησης",
+			"xSearchResults_other": "{count} αποτελέσματα αναζήτησης",
 			"xSelectedMessages_one": "1 επιλεγμένο μήνυμα",
 			"xSelectedMessages_other": "{count} επιλεγμένα μηνύματα"
 		},
 		"placeholder": {
-			"newMessage": "Μιλήστε με τον/την {name}...",
+			"newMessage": "Μιλήστε με {name}...",
 			"rename": "Αυτόματη δημιουργία νέου ονόματος..."
 		},
 		"state": {
@@ -141,14 +151,14 @@
 			"loadingGPTs": "Φόρτωση GPTs...",
 			"loadingMessages": "Φόρτωση μηνυμάτων...",
 			"loadingPreviousMessages": "Φόρτωση προηγούμενων μηνυμάτων...",
-			"loadingSubchats": "Φόρτωση υποσυνομιλιών...",
+			"loadingSubchats": "Φόρτωση υποχάτ...",
 			"renamingChat": "Μετονομασία συνομιλίας...",
 			"thinking": "Σκέφτεται..."
 		},
 		"warning": {
 			"deletingAgent": "Αυτός ο πράκτορας θα διαγραφεί μόνιμα",
 			"deletingChats": "Αυτές οι συνομιλίες θα διαγραφούν μόνιμα",
-			"chromeGptInsideChrome": "Αυτό το GPT απαιτεί την ενεργοποίηση των παρακάτω ρυθμίσεων:",
+			"chromeGptInsideChrome": "Αυτό το GPT απαιτεί την ενεργοποίηση αυτών των ρυθμίσεων:",
 			"chromeGptOutsideChrome": "Αυτό το GPT είναι διαθέσιμο μόνο στον περιηγητή Google Chrome",
 			"invalidGpt": "Μη έγκυρο GPT"
 		}
@@ -160,10 +170,10 @@
 		},
 		"error": {
 			"address": "Πρέπει να προσθέσετε τη διεύθυνση",
-			"avatar": "Πρέπει να προσθέσετε το άβαταρ σας",
+			"avatar": "Πρέπει να προσθέσετε την εικόνα προφίλ σας",
 			"city": "Πρέπει να προσθέσετε την πόλη",
 			"country": "Πρέπει να προσθέσετε τη χώρα",
-			"email": "Πρέπει να προσθέσετε τη διεύθυνση email σας",
+			"email": "Πρέπει να προσθέσετε το email σας",
 			"legalName": "Πρέπει να προσθέσετε το νόμιμο όνομα",
 			"name": "Πρέπει να προσθέσετε το όνομά σας",
 			"postalCode": "Πρέπει να προσθέσετε τον ταχυδρομικό κώδικα"

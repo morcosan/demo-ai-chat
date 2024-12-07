@@ -5,12 +5,16 @@
 			"backToHome": "العودة إلى الصفحة الرئيسية",
 			"changeLanguage": "تغيير اللغة",
 			"close": "إغلاق",
+			"collapse": "طي",
 			"copy": "نسخ",
 			"delete": "حذف",
 			"deselectAll": "إلغاء تحديد الكل",
+			"expand": "توسيع",
 			"goToUrl": "الذهاب إلى {url}",
 			"hidePanel": "إخفاء اللوحة",
 			"openMenu": "فتح القائمة",
+			"preview": "معاينة",
+			"reload": "إعادة تحميل",
 			"rename": "إعادة تسمية",
 			"resizePanel": "تغيير حجم اللوحة",
 			"retry": "إعادة المحاولة",
@@ -30,13 +34,14 @@
 			"apiDocs": "وثائق API",
 			"asia": "آسيا",
 			"avatar": "الصورة الرمزية",
+			"code": "الكود",
 			"copied": "تم النسخ",
 			"custom": "مخصص",
 			"darkTheme": "داكن",
 			"default": "افتراضي",
 			"description": "الوصف",
 			"designSystem": "نظام التصميم",
-			"errors": "أخطاء",
+			"errors": "الأخطاء",
 			"europe": "أوروبا",
 			"githubRepo": "مستودع GitHub",
 			"language": "اللغة",
@@ -52,6 +57,7 @@
 			"optionalField": "(اختياري)",
 			"quickSettings": "إعدادات سريعة",
 			"requiredField": "(مطلوب)",
+			"result": "النتيجة",
 			"settings": "الإعدادات",
 			"uiLibrary": "مكتبة واجهة المستخدم",
 			"uiTheme": "سمة واجهة المستخدم"
@@ -61,16 +67,17 @@
 		},
 		"state": {
 			"dataSaved": "تم حفظ بياناتك",
-			"deleting": "جارٍ الحذف...",
-			"loading": "جارٍ التحميل...",
-			"searching": "جارٍ البحث...",
-			"sending": "جارٍ الإرسال...",
-			"updating": "جارٍ التحديث..."
+			"deleting": "جاري الحذف...",
+			"loading": "جاري التحميل...",
+			"searching": "جاري البحث...",
+			"sending": "جاري الإرسال...",
+			"updating": "جاري التحديث..."
 		}
 	},
 	"aiChat": {
 		"action": {
 			"backToSubchats": "العودة إلى المحادثات الفرعية",
+			"closePreview": "إغلاق المعاينة",
 			"configureAgent": "تكوين الوكيل",
 			"confirmDeleteAgent": "تأكيد حذف الوكيل",
 			"confirmDeleteChats": "تأكيد حذف المحادثات",
@@ -90,8 +97,9 @@
 			"openSubchat_few": "فتح المحادثة الفرعية ({count} رسائل)",
 			"openSubchat_many": "فتح المحادثة الفرعية ({count} رسالة)",
 			"openSubchat_other": "فتح المحادثة الفرعية ({count} رسالة)",
+			"previewCode": "معاينة الكود",
 			"searchChats": "البحث في المحادثات",
-			"selectChat": "اختيار المحادثة",
+			"selectChat": "تحديد المحادثة",
 			"sendMessage": "إرسال رسالة",
 			"showMoreAgents": "عرض المزيد من الوكلاء",
 			"showMoreChats": "عرض المزيد من المحادثات",
@@ -102,7 +110,7 @@
 			"startSearching_two": "اكتب حرفين على الأقل",
 			"startSearching_few": "اكتب {count} أحرف على الأقل",
 			"startSearching_many": "اكتب {count} حرفاً على الأقل",
-			"startSearching_other": "اكتب {count} حرفاً على الأقل"
+			"startSearching_other": "اكتب {count} حرف على الأقل"
 		},
 		"description": {
 			"chromeGPT": "GPT مصغر لمتصفح Google Chrome",
@@ -119,6 +127,7 @@
 			"agents": "الوكلاء",
 			"chatTitle": "عنوان المحادثة",
 			"chats": "المحادثات",
+			"codePreview": "معاينة الكود",
 			"creativityLevel": "مستوى الإبداع",
 			"customInstructions": "تعليمات مخصصة",
 			"gptModel": "نموذج GPT",
@@ -129,7 +138,8 @@
 			"noSubchats": "لا توجد محادثات فرعية",
 			"selectedAgent": "الوكيل المحدد",
 			"selectedValue": "القيمة المحددة",
-			"subchats": "محادثات فرعية",
+			"subchats": "المحادثات الفرعية",
+			"urlPreview": "معاينة الرابط",
 			"xMessages_zero": "لا توجد رسائل",
 			"xMessages_one": "رسالة واحدة",
 			"xMessages_two": "رسالتان",
@@ -142,31 +152,31 @@
 			"xSearchResults_few": "{count} نتائج بحث",
 			"xSearchResults_many": "{count} نتيجة بحث",
 			"xSearchResults_other": "{count} نتيجة بحث",
-			"xSelectedMessages_zero": "لا توجد رسائل محددة",
-			"xSelectedMessages_one": "رسالة واحدة محددة",
-			"xSelectedMessages_two": "رسالتان محددتان",
-			"xSelectedMessages_few": "{count} رسائل محددة",
-			"xSelectedMessages_many": "{count} رسالة محددة",
-			"xSelectedMessages_other": "{count} رسالة محددة"
+			"xSelectedMessages_zero": "لم يتم تحديد رسائل",
+			"xSelectedMessages_one": "تم تحديد رسالة واحدة",
+			"xSelectedMessages_two": "تم تحديد رسالتين",
+			"xSelectedMessages_few": "تم تحديد {count} رسائل",
+			"xSelectedMessages_many": "تم تحديد {count} رسالة",
+			"xSelectedMessages_other": "تم تحديد {count} رسالة"
 		},
 		"placeholder": {
 			"newMessage": "تحدث مع {name}...",
 			"rename": "توليد اسم جديد تلقائياً..."
 		},
 		"state": {
-			"loadingAgents": "جارٍ تحميل الوكلاء...",
-			"loadingChats": "جارٍ تحميل المحادثات...",
-			"loadingGPTs": "جارٍ تحميل نماذج GPT...",
-			"loadingMessages": "جارٍ تحميل الرسائل...",
-			"loadingPreviousMessages": "جارٍ تحميل الرسائل السابقة...",
-			"loadingSubchats": "جارٍ تحميل المحادثات الفرعية...",
-			"renamingChat": "جارٍ إعادة تسمية المحادثة...",
-			"thinking": "جارٍ التفكير..."
+			"loadingAgents": "جاري تحميل الوكلاء...",
+			"loadingChats": "جاري تحميل المحادثات...",
+			"loadingGPTs": "جاري تحميل نماذج GPT...",
+			"loadingMessages": "جاري تحميل الرسائل...",
+			"loadingPreviousMessages": "جاري تحميل الرسائل السابقة...",
+			"loadingSubchats": "جاري تحميل المحادثات الفرعية...",
+			"renamingChat": "جاري إعادة تسمية المحادثة...",
+			"thinking": "جاري التفكير..."
 		},
 		"warning": {
 			"deletingAgent": "سيتم حذف هذا الوكيل نهائياً",
 			"deletingChats": "سيتم حذف هذه المحادثات نهائياً",
-			"chromeGptInsideChrome": "يتطلب هذا النموذج تفعيل الإعدادات التالية:",
+			"chromeGptInsideChrome": "يتطلب هذا النموذج تمكين هذه الإعدادات:",
 			"chromeGptOutsideChrome": "هذا النموذج متاح فقط في متصفح Google Chrome",
 			"invalidGpt": "نموذج GPT غير صالح"
 		}
@@ -198,7 +208,7 @@
 			"postalCode": "الرمز البريدي",
 			"private": "خاص",
 			"public": "عام",
-			"vatNumber": "رقم ض.ق.م"
+			"vatNumber": "رقم ضريبة القيمة المضافة"
 		}
 	}
 }

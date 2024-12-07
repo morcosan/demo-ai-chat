@@ -5,12 +5,16 @@
 			"backToHome": "Ana sayfaya dön",
 			"changeLanguage": "Dili değiştir",
 			"close": "Kapat",
+			"collapse": "Daralt",
 			"copy": "Kopyala",
 			"delete": "Sil",
-			"deselectAll": "Tümünü kaldır",
+			"deselectAll": "Tümünü seçimi kaldır",
+			"expand": "Genişlet",
 			"goToUrl": "{url} adresine git",
 			"hidePanel": "Paneli gizle",
 			"openMenu": "Menüyü aç",
+			"preview": "Önizle",
+			"reload": "Yenile",
 			"rename": "Yeniden adlandır",
 			"resizePanel": "Panel boyutunu değiştir",
 			"retry": "Tekrar dene",
@@ -23,13 +27,14 @@
 		},
 		"error": {
 			"noChanges": "Değişiklik yok",
-			"nothingFound": "\"{search}\" için hiçbir şey bulunamadı",
-			"unsent": "Gönderilmedi"
+			"nothingFound": "\"{search}\" için sonuç bulunamadı",
+			"unsent": "Gönderilmemiş"
 		},
 		"label": {
-			"apiDocs": "API Belgeleri",
+			"apiDocs": "API Dokümanları",
 			"asia": "Asya",
-			"avatar": "Avatar",
+			"avatar": "Profil resmi",
+			"code": "Kod",
 			"copied": "Kopyalandı",
 			"custom": "Özel",
 			"darkTheme": "Koyu",
@@ -50,8 +55,8 @@
 			"navigationBar": "Gezinme çubuğu",
 			"navigationMenu": "Gezinme menüsü",
 			"optionalField": "(İsteğe bağlı)",
-			"quickSettings": "Hızlı ayarlar",
-			"requiredField": "(Zorunlu)",
+			"requiredField": "(Gerekli)",
+			"result": "Sonuç",
 			"settings": "Ayarlar",
 			"uiLibrary": "UI Kütüphanesi",
 			"uiTheme": "UI Teması"
@@ -70,7 +75,8 @@
 	},
 	"aiChat": {
 		"action": {
-			"backToSubchats": "Alt sohbetlere geri dön",
+			"backToSubchats": "Alt sohbetlere dön",
+			"closePreview": "Önizlemeyi kapat",
 			"configureAgent": "Ajanı yapılandır",
 			"confirmDeleteAgent": "Ajanı silmeyi onayla",
 			"confirmDeleteChats": "Sohbetleri silmeyi onayla",
@@ -84,9 +90,9 @@
 			"manageAgents": "Ajanları yönet",
 			"manageChats": "Sohbetleri yönet",
 			"openChat": "Sohbeti aç",
-			"openSubchat_zero": "Alt sohbet oluştur",
-			"openSubchat_one": "Alt sohbeti aç ({count} mesaj)",
 			"openSubchat_other": "Alt sohbeti aç ({count} mesaj)",
+			"openSubchat_zero": "Alt sohbet oluştur",
+			"previewCode": "Kodu önizle",
 			"searchChats": "Sohbetlerde ara",
 			"selectChat": "Sohbeti seç",
 			"sendMessage": "Mesaj gönder",
@@ -94,8 +100,7 @@
 			"showMoreChats": "Daha fazla sohbet göster",
 			"showSubchats": "Alt sohbetleri göster ({count})",
 			"startNewChat": "Yeni bir konuşma başlat",
-			"startSearching_one": "En az {count} karakter yazın",
-			"startSearching_other": "En az {count} karakter yazın"
+			"startSearching_other": "En az {count} karakter yaz"
 		},
 		"description": {
 			"chromeGPT": "Google Chrome için Mini GPT",
@@ -103,7 +108,7 @@
 			"rammusGPT": "En iyi duygusal destek"
 		},
 		"error": {
-			"agentAvatar": "Ajan için bir avatar eklemelisiniz",
+			"agentAvatar": "Ajan için bir profil resmi eklemelisiniz",
 			"agentName": "Ajan için bir ad eklemelisiniz",
 			"emptyMessage": "Mesajınız boş",
 			"failedMessage": "Mesajınızın iletilmesinde bir sorun oluştu"
@@ -112,6 +117,7 @@
 			"agents": "Ajanlar",
 			"chatTitle": "Sohbet başlığı",
 			"chats": "Sohbetler",
+			"codePreview": "Kod önizleme",
 			"creativityLevel": "Yaratıcılık seviyesi",
 			"customInstructions": "Özel talimatlar",
 			"gptModel": "GPT modeli",
@@ -120,17 +126,16 @@
 			"newMessage": "Yeni mesaj",
 			"noChats": "Sohbet yok",
 			"noSubchats": "Alt sohbet yok",
-			"selectedAgent": "Seçilen ajan",
-			"selectedValue": "Seçilen değer",
+			"selectedAgent": "Seçili ajan",
+			"selectedValue": "Seçili değer",
 			"subchats": "Alt sohbetler",
-			"xMessages_zero": "Mesaj yok",
-			"xMessages_one": "{count} mesaj",
+			"urlPreview": "URL önizleme",
+			"xMessages_one": "1 mesaj",
 			"xMessages_other": "{count} mesaj",
-			"xSearchResults_zero": "Arama sonucu yok",
 			"xSearchResults_one": "{count} arama sonucu",
 			"xSearchResults_other": "{count} arama sonucu",
-			"xSelectedMessages_zero": "Seçili mesaj yok",
-			"xSelectedMessages_one": "{count} mesaj seçildi",
+			"xSearchResults_zero": "Arama sonucu yok",
+			"xSelectedMessages_one": "1 mesaj seçildi",
 			"xSelectedMessages_other": "{count} mesaj seçildi"
 		},
 		"placeholder": {
@@ -161,10 +166,10 @@
 			"manageBilling": "Faturalandırmayı yönet"
 		},
 		"error": {
-			"address": "Adres eklemelisiniz",
-			"avatar": "Avatarınızı eklemelisiniz",
-			"city": "Şehir eklemelisiniz",
-			"country": "Ülke eklemelisiniz",
+			"address": "Adresi eklemelisiniz",
+			"avatar": "Profil resminizi eklemelisiniz",
+			"city": "Şehri eklemelisiniz",
+			"country": "Ülkeyi eklemelisiniz",
 			"email": "E-posta adresinizi eklemelisiniz",
 			"legalName": "Yasal adı eklemelisiniz",
 			"name": "Adınızı eklemelisiniz",

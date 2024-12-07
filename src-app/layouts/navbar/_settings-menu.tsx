@@ -69,14 +69,14 @@ export const SettingsMenu = ({ onClickBack, onClickLanguage }: Props) => {
 
 				<div role="group" aria-labelledby="ui-theme" className="flex flex-col gap-xs-1">
 					<Button
-						variant={isUiLight ? 'solid-primary' : 'text-default'}
+						variant={isUiLight ? 'solid-secondary' : 'text-default'}
 						size="xs"
 						onClick={() => changeColorTheme('light')}
 					>
 						☀️ {t('core.label.lightTheme')}&nbsp;
 					</Button>
 					<Button
-						variant={isUiDark ? 'solid-primary' : 'text-default'}
+						variant={isUiDark ? 'solid-secondary' : 'text-default'}
 						size="xs"
 						onClick={() => changeColorTheme('dark')}
 					>
