@@ -27,7 +27,7 @@
 		},
 		"error": {
 			"noChanges": "Muudatusi pole",
-			"nothingFound": "Otsingule \"{search}\" ei leitud midagi",
+			"nothingFound": "Otsingu \"{search}\" jaoks ei leitud midagi",
 			"unsent": "Saatmata"
 		},
 		"label": {
@@ -40,10 +40,10 @@
 			"darkTheme": "Tume",
 			"default": "Vaikimisi",
 			"description": "Kirjeldus",
-			"designSystem": "Kujundussüsteem",
+			"designSystem": "Disainisüsteem",
 			"errors": "Vead",
 			"europe": "Euroopa",
-			"githubRepo": "GitHub repo",
+			"githubRepo": "GitHub hoidla",
 			"language": "Keel",
 			"levelHigh": "Kõrge",
 			"levelLow": "Madal",
@@ -65,7 +65,7 @@
 			"search": "Otsi..."
 		},
 		"state": {
-			"dataSaved": "Teie andmed on salvestatud",
+			"dataSaved": "Sinu andmed on salvestatud",
 			"deleting": "Kustutamine...",
 			"loading": "Laadimine...",
 			"searching": "Otsimine...",
@@ -91,6 +91,7 @@
 			"manageChats": "Halda vestlusi",
 			"openChat": "Ava vestlus",
 			"openSubchat_zero": "Loo alamvestlus",
+			"openSubchat_one": "Ava alamvestlus ({count} sõnum)",
 			"openSubchat_other": "Ava alamvestlus ({count} sõnumit)",
 			"previewCode": "Koodi eelvaade",
 			"searchChats": "Otsi vestlusi",
@@ -104,7 +105,9 @@
 			"startSearching_other": "Sisesta vähemalt {count} märki"
 		},
 		"description": {
-			"chromeGPT": "Mini GPT Google Chrome'i jaoks",
+			"chatgpt4o": "OpenAI võimsaim mudel",
+			"chatgpt4oMini": "OpenAI soodsaim mudel",
+			"chromeGPT": "Chrome'i brauserisse sisseehitatud Mini GPT",
 			"loremIpsumGPT": "Kõige intelligentsem mudel",
 			"rammusGPT": "Parim emotsionaalne tugi"
 		},
@@ -131,16 +134,16 @@
 			"selectedValue": "Valitud väärtus",
 			"subchats": "Alamvestlused",
 			"urlPreview": "URL-i eelvaade",
-			"xMessages_one": "{count} sõnum",
+			"xMessages_one": "1 sõnum",
 			"xMessages_other": "{count} sõnumit",
-			"xSearchResults_zero": "Otsingutulemusi pole",
-			"xSearchResults_one": "{count} otsingutulemus",
-			"xSearchResults_other": "{count} otsingutulemust",
-			"xSelectedMessages_one": "{count} sõnum valitud",
+			"xSearchResults_zero": "Tulemusi pole",
+			"xSearchResults_one": "{count} tulemus",
+			"xSearchResults_other": "{count} tulemust",
+			"xSelectedMessages_one": "1 sõnum valitud",
 			"xSelectedMessages_other": "{count} sõnumit valitud"
 		},
 		"placeholder": {
-			"newMessage": "Räägi {name}ga...",
+			"newMessage": "Räägi {name}-ga...",
 			"rename": "Genereeri automaatselt uus nimi..."
 		},
 		"state": {
@@ -154,11 +157,12 @@
 			"thinking": "Mõtlemine..."
 		},
 		"warning": {
+			"chromeGptInsideChrome": "Chrome GPT vajab neid eksperimentaalseid seadeid:",
+			"chromeGptOutsideChrome": "Chrome GPT on saadaval ainult Chrome brauseris",
 			"deletingAgent": "See agent kustutatakse jäädavalt",
 			"deletingChats": "Need vestlused kustutatakse jäädavalt",
-			"chromeGptInsideChrome": "See GPT nõuab järgmiste seadete lubamist:",
-			"chromeGptOutsideChrome": "See GPT on saadaval ainult Google Chrome'i brauseris",
-			"invalidGpt": "Vigane GPT"
+			"invalidGpt": "Vigane GPT",
+			"missingOpenAiApiKey": "Pead seadistama oma OpenAI API võtme"
 		}
 	},
 	"userSettings": {
@@ -184,6 +188,7 @@
 			"country": "Riik",
 			"email": "E-posti aadress",
 			"legalName": "Juriidiline nimi",
+			"openaiApiKey": "OpenAI API võti",
 			"phone": "Telefoninumber",
 			"postalCode": "Postiindeks",
 			"private": "Privaatne",

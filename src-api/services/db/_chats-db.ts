@@ -7,9 +7,10 @@ import {
 	randomRecentDate,
 	randomText,
 } from '@utils/release'
-import { DbChat, DbMessage, MessageRole } from '../../types'
-import { addMinutesToDate } from '../../utilities/various'
-import { getGptResponse, randomFromAgentIds } from './_agents-db'
+import { DbAgent, DbChat, DbMessage, DEV_GPT_IDS, GptConfig, GptMessage, MessageRole } from '../../types'
+import { addMinutesToDate, DATETIME_REGEX, formatDate } from '../../utilities/various'
+import { ChatGPT4oMini } from '../gpt/chatgpt-4o-mini'
+import { getDbActiveAgents, getDbDeletedAgents, getGptResponse, randomFromAgentIds } from './_agents-db'
 
 let _dbChats: DbChat[]
 let _dbMessages: DbMessage[]
@@ -131,10 +132,37 @@ const hasMessagesByAgent = (agentId: number) => {
 	return _dbMessages.some((message: DbMessage) => message.agentId === agentId)
 }
 
-const resetChatsDB = async () => {
+const renameChat = async (chat: DbChat) => {
+	const messages = _dbMessages.filter((msg: DbMessage) => msg.parentId === chat.id)
+	const allAgents = [...getDbActiveAgents(), ...getDbDeletedAgents()]
+	const agentIds = messages.map((message: DbMessage) => message.agentId)
+	const gptIds = agentIds.map((id: number) => allAgents.find((agent: DbAgent) => agent.id === id)?.gptId || 0)
+	const hasDevGPT = gptIds.some((gptId: number) => DEV_GPT_IDS.includes(gptId))
+
+	if (!hasDevGPT) {
+		const config: GptConfig = { prompt: '', creativity: 'mid' }
+		const gptMessages: GptMessage[] = [
+			...messages.map((msg: DbMessage) => ({ text: msg.text, role: msg.role })),
+			{ text: 'Title this chat concisely in its spoken language, no quotes', role: 'user' },
+		]
+		const has4oMini = await ChatGPT4oMini.isAvailable()
+
+		if (has4oMini) return await ChatGPT4oMini.getResponse(config, gptMessages)
+	}
+
+	return chat.title.replace(DATETIME_REGEX, '') + ' ' + formatDate(new Date())
+}
+
+const resetChatsDB = async (random: boolean) => {
 	_nextId = 1001 // Reset id
-	createDbChats()
-	await createDbMessages()
+
+	if (random) {
+		createDbChats()
+		await createDbMessages()
+	} else {
+		setDbChats([])
+		setDbMessages([])
+	}
 }
 
 export {
@@ -145,6 +173,7 @@ export {
 	getSizeForChat,
 	hasMessagesByAgent,
 	initChatsDB,
+	renameChat,
 	resetChatsDB,
 	setDbChats,
 	setDbMessages,

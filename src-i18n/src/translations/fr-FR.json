@@ -3,7 +3,7 @@
 		"action": {
 			"back": "Retour",
 			"backToHome": "Retour à l'accueil",
-			"changeLanguage": "Changer la langue",
+			"changeLanguage": "Changer de langue",
 			"close": "Fermer",
 			"collapse": "Réduire",
 			"copy": "Copier",
@@ -40,7 +40,7 @@
 			"darkTheme": "Sombre",
 			"default": "Par défaut",
 			"description": "Description",
-			"designSystem": "Système de design",
+			"designSystem": "Système de Design",
 			"errors": "Erreurs",
 			"europe": "Europe",
 			"githubRepo": "Dépôt GitHub",
@@ -66,11 +66,11 @@
 		},
 		"state": {
 			"dataSaved": "Vos données sont enregistrées",
-			"deleting": "Suppression...",
+			"deleting": "Suppression en cours...",
 			"loading": "Chargement...",
-			"searching": "Recherche...",
-			"sending": "Envoi...",
-			"updating": "Mise à jour..."
+			"searching": "Recherche en cours...",
+			"sending": "Envoi en cours...",
+			"updating": "Mise à jour en cours..."
 		}
 	},
 	"aiChat": {
@@ -91,6 +91,7 @@
 			"manageChats": "Gérer les conversations",
 			"openChat": "Ouvrir la conversation",
 			"openSubchat_zero": "Créer une sous-conversation",
+			"openSubchat_one": "Ouvrir la sous-conversation ({count} message)",
 			"openSubchat_other": "Ouvrir la sous-conversation ({count} messages)",
 			"previewCode": "Aperçu du code",
 			"searchChats": "Rechercher des conversations",
@@ -100,13 +101,15 @@
 			"showMoreChats": "Afficher plus de conversations",
 			"showSubchats": "Afficher les sous-conversations ({count})",
 			"startNewChat": "Démarrer une nouvelle conversation",
-			"startSearching_one": "Saisissez au moins {count} caractère",
-			"startSearching_other": "Saisissez au moins {count} caractères"
+			"startSearching_one": "Tapez au moins {count} caractère",
+			"startSearching_other": "Tapez au moins {count} caractères"
 		},
 		"description": {
-			"chromeGPT": "Mini GPT pour Google Chrome",
-			"loremIpsumGPT": "Modèle le plus intelligent",
-			"rammusGPT": "Meilleur soutien émotionnel"
+			"chatgpt4o": "Le modèle le plus puissant d'OpenAI",
+			"chatgpt4oMini": "Le modèle le plus économique d'OpenAI",
+			"chromeGPT": "Mini GPT intégré au navigateur Chrome",
+			"loremIpsumGPT": "Le modèle le plus intelligent",
+			"rammusGPT": "Le meilleur soutien émotionnel"
 		},
 		"error": {
 			"agentAvatar": "Vous devez ajouter un avatar pour l'agent",
@@ -131,12 +134,12 @@
 			"selectedValue": "Valeur sélectionnée",
 			"subchats": "Sous-conversations",
 			"urlPreview": "Aperçu de l'URL",
-			"xMessages_one": "{count} message",
+			"xMessages_one": "1 message",
 			"xMessages_other": "{count} messages",
 			"xSearchResults_zero": "Aucun résultat",
 			"xSearchResults_one": "{count} résultat",
 			"xSearchResults_other": "{count} résultats",
-			"xSelectedMessages_one": "{count} message sélectionné",
+			"xSelectedMessages_one": "1 message sélectionné",
 			"xSelectedMessages_other": "{count} messages sélectionnés"
 		},
 		"placeholder": {
@@ -151,14 +154,15 @@
 			"loadingPreviousMessages": "Chargement des messages précédents...",
 			"loadingSubchats": "Chargement des sous-conversations...",
 			"renamingChat": "Renommage de la conversation...",
-			"thinking": "Réflexion..."
+			"thinking": "Réflexion en cours..."
 		},
 		"warning": {
+			"chromeGptInsideChrome": "Chrome GPT nécessite ces paramètres expérimentaux :",
+			"chromeGptOutsideChrome": "Chrome GPT est uniquement disponible dans le navigateur Chrome",
 			"deletingAgent": "Cet agent sera définitivement supprimé",
 			"deletingChats": "Ces conversations seront définitivement supprimées",
-			"chromeGptInsideChrome": "Ce GPT nécessite l'activation des paramètres suivants :",
-			"chromeGptOutsideChrome": "Ce GPT est uniquement disponible sur le navigateur Google Chrome",
-			"invalidGpt": "GPT invalide"
+			"invalidGpt": "GPT non valide",
+			"missingOpenAiApiKey": "Vous devez configurer votre clé API OpenAI"
 		}
 	},
 	"userSettings": {
@@ -184,6 +188,7 @@
 			"country": "Pays",
 			"email": "Adresse e-mail",
 			"legalName": "Nom légal",
+			"openaiApiKey": "Clé API OpenAI",
 			"phone": "Numéro de téléphone",
 			"postalCode": "Code postal",
 			"private": "Privé",

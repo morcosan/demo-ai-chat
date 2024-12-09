@@ -3,7 +3,7 @@
 		"action": {
 			"back": "返回",
 			"backToHome": "返回首页",
-			"changeLanguage": "更改语言",
+			"changeLanguage": "切换语言",
 			"close": "关闭",
 			"collapse": "收起",
 			"copy": "复制",
@@ -27,7 +27,7 @@
 		},
 		"error": {
 			"noChanges": "没有更改",
-			"nothingFound": "未找到与\"{search}\"相关的内容",
+			"nothingFound": "未找到 \"{search}\" 的相关结果",
 			"unsent": "未发送"
 		},
 		"label": {
@@ -55,6 +55,7 @@
 			"navigationBar": "导航栏",
 			"navigationMenu": "导航菜单",
 			"optionalField": "(可选)",
+			"quickSettings": "快速设置",
 			"requiredField": "(必填)",
 			"result": "结果",
 			"settings": "设置",
@@ -85,12 +86,12 @@
 			"copyMessage": "复制消息",
 			"createAgent": "创建助手",
 			"deleteAgent": "删除助手",
-			"deleteSelectedChats": "删除选中的对话",
+			"deleteSelectedChats": "删除所选对话",
 			"deselectChat": "取消选择对话",
 			"manageAgents": "管理助手",
 			"manageChats": "管理对话",
 			"openChat": "打开对话",
-			"openSubchat_other": "打开子对话 ({count} 条消息)",
+			"openSubchat_other": "打开子对话（{count} 条消息）",
 			"openSubchat_zero": "创建子对话",
 			"previewCode": "预览代码",
 			"searchChats": "搜索对话",
@@ -100,10 +101,13 @@
 			"showMoreChats": "显示更多对话",
 			"showSubchats": "显示子对话 ({count})",
 			"startNewChat": "开始新对话",
-			"startSearching_other": "请输入至少 {count} 个字符"
+			"startSearching_one": "请至少输入 {count} 个字符",
+			"startSearching_other": "请至少输入 {count} 个字符"
 		},
 		"description": {
-			"chromeGPT": "Google Chrome 迷你 GPT",
+			"chatgpt4o": "OpenAI 最强大的模型",
+			"chatgpt4oMini": "OpenAI 最经济的模型",
+			"chromeGPT": "Chrome 浏览器内置的迷你 GPT",
 			"loremIpsumGPT": "最智能的模型",
 			"rammusGPT": "最佳情感支持"
 		},
@@ -118,21 +122,24 @@
 			"chatTitle": "对话标题",
 			"chats": "对话",
 			"codePreview": "代码预览",
-			"creativityLevel": "创造力水平",
+			"creativityLevel": "创造力级别",
 			"customInstructions": "自定义指令",
 			"gptModel": "GPT 模型",
-			"newAgent": "新助手",
-			"newChat": "新对话",
+			"newAgent": "新建助手",
+			"newChat": "新建对话",
 			"newMessage": "新消息",
-			"noChats": "无对话",
-			"noSubchats": "无子对话",
-			"selectedAgent": "已选助手",
-			"selectedValue": "已选值",
+			"noChats": "暂无对话",
+			"noSubchats": "暂无子对话",
+			"selectedAgent": "已选择的助手",
+			"selectedValue": "已选择的值",
 			"subchats": "子对话",
 			"urlPreview": "URL 预览",
+			"xMessages_one": "1 条消息",
 			"xMessages_other": "{count} 条消息",
+			"xSearchResults_one": "{count} 个搜索结果",
 			"xSearchResults_other": "{count} 个搜索结果",
 			"xSearchResults_zero": "无搜索结果",
+			"xSelectedMessages_one": "已选择 1 条消息",
 			"xSelectedMessages_other": "已选择 {count} 条消息"
 		},
 		"placeholder": {
@@ -150,36 +157,38 @@
 			"thinking": "正在思考..."
 		},
 		"warning": {
+			"chromeGptInsideChrome": "Chrome GPT 需要以下实验性设置：",
+			"chromeGptOutsideChrome": "Chrome GPT 仅在 Chrome 浏览器中可用",
 			"deletingAgent": "此助手将被永久删除",
 			"deletingChats": "这些对话将被永久删除",
-			"chromeGptInsideChrome": "此 GPT 需要启用以下设置：",
-			"chromeGptOutsideChrome": "此 GPT 仅在 Google Chrome 浏览器中可用",
-			"invalidGpt": "无效的 GPT"
+			"invalidGpt": "无效的 GPT",
+			"missingOpenAiApiKey": "您必须配置 OpenAI API 密钥"
 		}
 	},
 	"userSettings": {
 		"action": {
-			"manageAccount": "管理账户",
-			"manageBilling": "管理付款"
+			"manageAccount": "管理账号",
+			"manageBilling": "管理账单"
 		},
 		"error": {
 			"address": "您必须添加地址",
 			"avatar": "您必须添加头像",
 			"city": "您必须添加城市",
-			"country": "您必须添加国家/地区",
-			"email": "您必须添加电子邮件地址",
+			"country": "您必须添加国家",
+			"email": "您必须添加电子邮箱",
 			"legalName": "您必须添加法定名称",
-			"name": "您必须添加名称",
+			"name": "您必须添加姓名",
 			"postalCode": "您必须添加邮政编码"
 		},
 		"label": {
-			"account": "账户",
+			"account": "账号",
 			"address": "地址",
-			"billing": "付款",
+			"billing": "账单",
 			"city": "城市",
-			"country": "国家/地区",
-			"email": "电子邮件地址",
+			"country": "国家",
+			"email": "电子邮箱",
 			"legalName": "法定名称",
+			"openaiApiKey": "OpenAI API 密钥",
 			"phone": "电话号码",
 			"postalCode": "邮政编码",
 			"private": "私密",

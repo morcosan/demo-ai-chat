@@ -47,6 +47,9 @@ export interface MessagesApiQuery extends ApiQuery {
 	page?: string | number
 	search?: string
 }
+export interface DatabaseApiQuery extends ApiQuery {
+	random?: string | boolean
+}
 
 /**
  * Response

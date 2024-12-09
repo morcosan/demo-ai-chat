@@ -16,18 +16,19 @@ const initAccountDB = async () => {
 		const json = localStorage.getItem(COOKIE_KEY.DB_ACCOUNT)
 		_account = JSON.parse(json || '')
 	} catch (_) {
-		resetDbAccount()
+		resetDbAccount(true)
 	}
 }
 
-const resetDbAccount = () => {
+const resetDbAccount = (random: boolean) => {
 	const name = randomFullName()
 
 	setDbAccount({
 		name,
 		email: faker.internet.email(),
-		phone: faker.phone.number({ style: 'international' }),
+		phone: random ? faker.phone.number({ style: 'international' }) : '',
 		avatar: randomAvatar(),
+		openaiApiKey: '',
 	})
 }
 

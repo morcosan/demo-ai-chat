@@ -2,7 +2,7 @@
 	"core": {
 		"action": {
 			"back": "Indietro",
-			"backToHome": "Torna alla home",
+			"backToHome": "Torna alla homepage",
 			"changeLanguage": "Cambia lingua",
 			"close": "Chiudi",
 			"collapse": "Comprimi",
@@ -54,7 +54,7 @@
 			"name": "Nome",
 			"navigationBar": "Barra di navigazione",
 			"navigationMenu": "Menu di navigazione",
-			"optionalField": "(Facoltativo)",
+			"optionalField": "(Opzionale)",
 			"requiredField": "(Obbligatorio)",
 			"result": "Risultato",
 			"settings": "Impostazioni",
@@ -65,7 +65,7 @@
 			"search": "Cerca..."
 		},
 		"state": {
-			"dataSaved": "I tuoi dati sono salvati",
+			"dataSaved": "I tuoi dati sono stati salvati",
 			"deleting": "Eliminando...",
 			"loading": "Caricando...",
 			"searching": "Cercando...",
@@ -91,7 +91,7 @@
 			"manageChats": "Gestisci chat",
 			"openChat": "Apri chat",
 			"openSubchat_zero": "Crea subchat",
-			"openSubchat_one": "Apri subchat (1 messaggio)",
+			"openSubchat_one": "Apri subchat ({count} messaggio)",
 			"openSubchat_other": "Apri subchat ({count} messaggi)",
 			"previewCode": "Anteprima del codice",
 			"searchChats": "Cerca chat",
@@ -105,21 +105,23 @@
 			"startSearching_other": "Digita almeno {count} caratteri"
 		},
 		"description": {
-			"chromeGPT": "Mini GPT per Google Chrome",
-			"loremIpsumGPT": "Modello più intelligente",
-			"rammusGPT": "Miglior supporto emotivo"
+			"chatgpt4o": "Il modello più potente di OpenAI",
+			"chatgpt4oMini": "Il modello più economico di OpenAI",
+			"chromeGPT": "Mini GPT integrato nel browser Chrome",
+			"loremIpsumGPT": "Il modello più intelligente",
+			"rammusGPT": "Il miglior supporto emotivo"
 		},
 		"error": {
 			"agentAvatar": "Devi aggiungere un avatar per l'agente",
 			"agentName": "Devi aggiungere un nome per l'agente",
 			"emptyMessage": "Il tuo messaggio è vuoto",
-			"failedMessage": "C'è stato un problema nell'invio del tuo messaggio"
+			"failedMessage": "Si è verificato un problema nell'invio del tuo messaggio"
 		},
 		"label": {
 			"agents": "Agenti",
-			"chatTitle": "Titolo della chat",
+			"chatTitle": "Titolo chat",
 			"chats": "Chat",
-			"codePreview": "Anteprima del codice",
+			"codePreview": "Anteprima codice",
 			"creativityLevel": "Livello di creatività",
 			"customInstructions": "Istruzioni personalizzate",
 			"gptModel": "Modello GPT",
@@ -142,12 +144,12 @@
 		},
 		"placeholder": {
 			"newMessage": "Parla con {name}...",
-			"rename": "Genera un nuovo nome automaticamente..."
+			"rename": "Genera automaticamente un nuovo nome..."
 		},
 		"state": {
 			"loadingAgents": "Caricando agenti...",
 			"loadingChats": "Caricando chat...",
-			"loadingGPTs": "Caricando GPTs...",
+			"loadingGPTs": "Caricando GPT...",
 			"loadingMessages": "Caricando messaggi...",
 			"loadingPreviousMessages": "Caricando messaggi precedenti...",
 			"loadingSubchats": "Caricando subchat...",
@@ -155,11 +157,12 @@
 			"thinking": "Pensando..."
 		},
 		"warning": {
+			"chromeGptInsideChrome": "Chrome GPT richiede queste impostazioni sperimentali:",
+			"chromeGptOutsideChrome": "Chrome GPT è disponibile solo nel browser Chrome",
 			"deletingAgent": "Questo agente verrà eliminato permanentemente",
 			"deletingChats": "Queste chat verranno eliminate permanentemente",
-			"chromeGptInsideChrome": "Questo GPT richiede che queste impostazioni siano abilitate:",
-			"chromeGptOutsideChrome": "Questo GPT è disponibile solo nel browser Google Chrome",
-			"invalidGpt": "GPT non valido"
+			"invalidGpt": "GPT non valido",
+			"missingOpenAiApiKey": "Devi configurare la tua chiave API OpenAI"
 		}
 	},
 	"userSettings": {
@@ -185,6 +188,7 @@
 			"country": "Paese",
 			"email": "Indirizzo email",
 			"legalName": "Ragione sociale",
+			"openaiApiKey": "Chiave API OpenAI",
 			"phone": "Numero di telefono",
 			"postalCode": "Codice postale",
 			"private": "Privato",

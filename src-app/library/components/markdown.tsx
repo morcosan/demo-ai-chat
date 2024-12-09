@@ -47,7 +47,7 @@ export const Markdown = (props: Props) => {
 
 	renderer.code = ({ text, lang, raw }: Tokens.Code) => {
 		codeDataRefs.current.push({ html: text, lang, raw })
-		return renderToStaticMarkup(<div data-code-block="" />)
+		return renderToStaticMarkup(<div data-code-block="" className="ds-markdown-wrapper" />)
 	}
 
 	const injectCodeActions = (container: HTMLDivElement) => {
@@ -80,10 +80,19 @@ export const Markdown = (props: Props) => {
 		})
 	}
 
+	const injectListStart = (container: HTMLDivElement) => {
+		const elems = container.querySelectorAll('ol[start]') as NodeListOf<HTMLElement>
+		elems?.forEach((elem: HTMLElement) => {
+			const start = parseInt(elem.getAttribute('start') || '')
+			!isNaN(start) && elem.style.setProperty('--start', String(start - 1))
+		})
+	}
+
 	const injectActions = (container: HTMLDivElement | null) => {
 		if (!container) return
 		injectCodeActions(container)
 		injectLinkActions(container)
+		injectListStart(container)
 	}
 
 	const languageFn = (lang: string) => ({ language: hljs.getLanguage(lang) ? lang : 'plaintext' })

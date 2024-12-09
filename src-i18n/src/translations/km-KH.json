@@ -8,27 +8,27 @@
 			"collapse": "បង្រួម",
 			"copy": "ចម្លង",
 			"delete": "លុប",
-			"deselectAll": "ដោះជ្រើសរើសទាំងអស់",
+			"deselectAll": "ដកការជ្រើសរើសទាំងអស់",
 			"expand": "ពង្រីក",
 			"goToUrl": "ទៅកាន់ {url}",
-			"hidePanel": "លាក់ផ្ទាំង",
+			"hidePanel": "លាក់បន្ទះ",
 			"openMenu": "បើកម៉ឺនុយ",
 			"preview": "មើលជាមុន",
 			"reload": "ផ្ទុកឡើងវិញ",
 			"rename": "ប្តូរឈ្មោះ",
-			"resizePanel": "ប្តូរទំហំផ្ទាំង",
+			"resizePanel": "ប្តូរទំហំបន្ទះ",
 			"retry": "ព្យាយាមម្តងទៀត",
 			"saveChanges": "រក្សាទុកការផ្លាស់ប្តូរ",
 			"search": "ស្វែងរក",
 			"searchMore": "បង្ហាញលទ្ធផលបន្ថែម",
 			"selectAll": "ជ្រើសរើសទាំងអស់",
-			"showPanel": "បង្ហាញផ្ទាំង",
+			"showPanel": "បង្ហាញបន្ទះ",
 			"signOut": "ចាកចេញ"
 		},
 		"error": {
-			"noChanges": "គ្មានការផ្លាស់ប្តូរទេ",
+			"noChanges": "មិនមានការផ្លាស់ប្តូរទេ",
 			"nothingFound": "រកមិនឃើញអ្វីសម្រាប់ \"{search}\"",
-			"unsent": "មិនបានផ្ញើ"
+			"unsent": "មិនទាន់បានផ្ញើ"
 		},
 		"label": {
 			"apiDocs": "ឯកសារ API",
@@ -48,12 +48,12 @@
 			"levelHigh": "ខ្ពស់",
 			"levelLow": "ទាប",
 			"levelMedium": "មធ្យម",
-			"levelVeryHigh": "ខ្ពស់ខ្លាំង",
-			"levelVeryLow": "ទាបខ្លាំង",
+			"levelVeryHigh": "ខ្ពស់ណាស់",
+			"levelVeryLow": "ទាបណាស់",
 			"lightTheme": "ភ្លឺ",
 			"name": "ឈ្មោះ",
-			"navigationBar": "របារចរាចរណ៍",
-			"navigationMenu": "ម៉ឺនុយចរាចរណ៍",
+			"navigationBar": "របារត្រាច់រក",
+			"navigationMenu": "ម៉ឺនុយត្រាច់រក",
 			"optionalField": "(ជាជម្រើស)",
 			"requiredField": "(តម្រូវ)",
 			"result": "លទ្ធផល",
@@ -75,7 +75,7 @@
 	},
 	"aiChat": {
 		"action": {
-			"backToSubchats": "ត្រឡប់ទៅជជែករង",
+			"backToSubchats": "ត្រឡប់ទៅការជជែកបន្ត",
 			"closePreview": "បិទការមើលជាមុន",
 			"configureAgent": "កំណត់រចនាសម្ព័ន្ធភ្នាក់ងារ",
 			"confirmDeleteAgent": "បញ្ជាក់ការលុបភ្នាក់ងារ",
@@ -86,53 +86,55 @@
 			"createAgent": "បង្កើតភ្នាក់ងារ",
 			"deleteAgent": "លុបភ្នាក់ងារ",
 			"deleteSelectedChats": "លុបការជជែកដែលបានជ្រើសរើស",
-			"deselectChat": "ដោះជ្រើសរើសការជជែក",
+			"deselectChat": "ដកការជ្រើសរើសការជជែក",
 			"manageAgents": "គ្រប់គ្រងភ្នាក់ងារ",
 			"manageChats": "គ្រប់គ្រងការជជែក",
 			"openChat": "បើកការជជែក",
-			"openSubchat_zero": "បង្កើតការជជែករង",
-			"openSubchat_other": "បើកការជជែករង ({count} សារ)",
+			"openSubchat_other": "បើកការជជែកបន្ត ({count} សារ)",
+			"openSubchat_zero": "បង្កើតការជជែកបន្ត",
 			"previewCode": "មើលកូដជាមុន",
 			"searchChats": "ស្វែងរកការជជែក",
 			"selectChat": "ជ្រើសរើសការជជែក",
 			"sendMessage": "ផ្ញើសារ",
 			"showMoreAgents": "បង្ហាញភ្នាក់ងារបន្ថែម",
 			"showMoreChats": "បង្ហាញការជជែកបន្ថែម",
-			"showSubchats": "បង្ហាញការជជែករង ({count})",
+			"showSubchats": "បង្ហាញការជជែកបន្ត ({count})",
 			"startNewChat": "ចាប់ផ្តើមការសន្ទនាថ្មី",
 			"startSearching_other": "វាយយ៉ាងហោចណាស់ {count} តួអក្សរ"
 		},
 		"description": {
-			"chromeGPT": "មីនី GPT សម្រាប់ Google Chrome",
-			"loremIpsumGPT": "ម៉ូដែលឆ្លាតវៃបំផុត",
+			"chatgpt4o": "ម៉ូឌែលដ៏មានសមត្ថភាពបំផុតរបស់ OpenAI",
+			"chatgpt4oMini": "ម៉ូឌែលដែលមានតម្លៃថោកបំផុតរបស់ OpenAI",
+			"chromeGPT": "GPT តូចមួយដែលបង្កប់ក្នុងកម្មវិធីរុករក Chrome",
+			"loremIpsumGPT": "ម៉ូឌែលឆ្លាតវៃបំផុត",
 			"rammusGPT": "ការគាំទ្រផ្នែកអារម្មណ៍ល្អបំផុត"
 		},
 		"error": {
-			"agentAvatar": "អ្នកត្រូវបន្ថែមរូបតំណាងសម្រាប់ភ្នាក់ងារ",
-			"agentName": "អ្នកត្រូវបន្ថែមឈ្មោះសម្រាប់ភ្នាក់ងារ",
+			"agentAvatar": "អ្នកត្រូវតែបន្ថែមរូបតំណាងសម្រាប់ភ្នាក់ងារ",
+			"agentName": "អ្នកត្រូវតែបន្ថែមឈ្មោះសម្រាប់ភ្នាក់ងារ",
 			"emptyMessage": "សាររបស់អ្នកទទេ",
 			"failedMessage": "មានបញ្ហាក្នុងការផ្ញើសាររបស់អ្នក"
 		},
 		"label": {
 			"agents": "ភ្នាក់ងារ",
-			"chatTitle": "ចំណងជើងជជែក",
+			"chatTitle": "ចំណងជើងការជជែក",
 			"chats": "ការជជែក",
 			"codePreview": "មើលកូដជាមុន",
-			"creativityLevel": "កម្រិតច្នៃប្រឌិត",
+			"creativityLevel": "កម្រិតភាពច្នៃប្រឌិត",
 			"customInstructions": "ការណែនាំផ្ទាល់ខ្លួន",
-			"gptModel": "ម៉ូដែល GPT",
+			"gptModel": "ម៉ូឌែល GPT",
 			"newAgent": "ភ្នាក់ងារថ្មី",
 			"newChat": "ការជជែកថ្មី",
 			"newMessage": "សារថ្មី",
 			"noChats": "គ្មានការជជែក",
-			"noSubchats": "គ្មានការជជែករង",
+			"noSubchats": "គ្មានការជជែកបន្ត",
 			"selectedAgent": "ភ្នាក់ងារដែលបានជ្រើសរើស",
 			"selectedValue": "តម្លៃដែលបានជ្រើសរើស",
-			"subchats": "ការជជែករង",
+			"subchats": "ការជជែកបន្ត",
 			"urlPreview": "មើល URL ជាមុន",
 			"xMessages_other": "{count} សារ",
-			"xSearchResults_zero": "គ្មានលទ្ធផលស្វែងរក",
 			"xSearchResults_other": "{count} លទ្ធផលស្វែងរក",
+			"xSearchResults_zero": "គ្មានលទ្ធផលស្វែងរក",
 			"xSelectedMessages_other": "{count} សារត្រូវបានជ្រើសរើស"
 		},
 		"placeholder": {
@@ -145,16 +147,17 @@
 			"loadingGPTs": "កំពុងផ្ទុក GPTs...",
 			"loadingMessages": "កំពុងផ្ទុកសារ...",
 			"loadingPreviousMessages": "កំពុងផ្ទុកសារមុនៗ...",
-			"loadingSubchats": "កំពុងផ្ទុកការជជែករង...",
+			"loadingSubchats": "កំពុងផ្ទុកការជជែកបន្ត...",
 			"renamingChat": "កំពុងប្តូរឈ្មោះការជជែក...",
 			"thinking": "កំពុងគិត..."
 		},
 		"warning": {
+			"chromeGptInsideChrome": "Chrome GPT ត្រូវការការកំណត់សាកល្បងទាំងនេះ:",
+			"chromeGptOutsideChrome": "Chrome GPT មានតែនៅក្នុងកម្មវិធីរុករក Chrome ប៉ុណ្ណោះ",
 			"deletingAgent": "ភ្នាក់ងារនេះនឹងត្រូវលុបជាអចិន្ត្រៃយ៍",
 			"deletingChats": "ការជជែកទាំងនេះនឹងត្រូវលុបជាអចិន្ត្រៃយ៍",
-			"chromeGptInsideChrome": "GPT នេះតម្រូវឱ្យបើកការកំណត់ទាំងនេះ៖",
-			"chromeGptOutsideChrome": "GPT នេះអាចប្រើបានតែក្នុងកម្មវិធីរុករក Google Chrome",
-			"invalidGpt": "GPT មិនត្រឹមត្រូវ"
+			"invalidGpt": "GPT មិនត្រឹមត្រូវ",
+			"missingOpenAiApiKey": "អ្នកត្រូវតែកំណត់រចនាសម្ព័ន្ធកូនសោ API OpenAI របស់អ្នក"
 		}
 	},
 	"userSettings": {
@@ -163,14 +166,14 @@
 			"manageBilling": "គ្រប់គ្រងការទូទាត់"
 		},
 		"error": {
-			"address": "អ្នកត្រូវបន្ថែមអាសយដ្ឋាន",
-			"avatar": "អ្នកត្រូវបន្ថែមរូបតំណាងរបស់អ្នក",
-			"city": "អ្នកត្រូវបន្ថែមទីក្រុង",
-			"country": "អ្នកត្រូវបន្ថែមប្រទេស",
-			"email": "អ្នកត្រូវបន្ថែមអាសយដ្ឋានអ៊ីមែល",
-			"legalName": "អ្នកត្រូវបន្ថែមឈ្មោះស្របច្បាប់",
-			"name": "អ្នកត្រូវបន្ថែមឈ្មោះរបស់អ្នក",
-			"postalCode": "អ្នកត្រូវបន្ថែមលេខកូដប្រៃសណីយ៍"
+			"address": "អ្នកត្រូវតែបន្ថែមអាសយដ្ឋាន",
+			"avatar": "អ្នកត្រូវតែបន្ថែមរូបតំណាងរបស់អ្នក",
+			"city": "អ្នកត្រូវតែបន្ថែមទីក្រុង",
+			"country": "អ្នកត្រូវតែបន្ថែមប្រទេស",
+			"email": "អ្នកត្រូវតែបន្ថែមអាសយដ្ឋានអ៊ីមែលរបស់អ្នក",
+			"legalName": "អ្នកត្រូវតែបន្ថែមឈ្មោះស្របច្បាប់",
+			"name": "អ្នកត្រូវតែបន្ថែមឈ្មោះរបស់អ្នក",
+			"postalCode": "អ្នកត្រូវតែបន្ថែមលេខកូដប្រៃសណីយ៍"
 		},
 		"label": {
 			"account": "គណនី",
@@ -180,11 +183,12 @@
 			"country": "ប្រទេស",
 			"email": "អាសយដ្ឋានអ៊ីមែល",
 			"legalName": "ឈ្មោះស្របច្បាប់",
+			"openaiApiKey": "កូនសោ API OpenAI",
 			"phone": "លេខទូរស័ព្ទ",
 			"postalCode": "លេខកូដប្រៃសណីយ៍",
 			"private": "ឯកជន",
 			"public": "សាធារណៈ",
-			"vatNumber": "លេខ VAT"
+			"vatNumber": "លេខ អតប"
 		}
 	}
 }

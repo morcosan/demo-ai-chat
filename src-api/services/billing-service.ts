@@ -21,7 +21,7 @@ export const billingService = {
 		return { status: Status.SUCCESS, data: getDbBilling() }
 	},
 
-	async resetDB() {
-		resetDbBilling()
+	async resetDB(random: boolean) {
+		resetDbBilling(random)
 	},
 }

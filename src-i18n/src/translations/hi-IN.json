@@ -5,10 +5,10 @@
 			"backToHome": "होमपेज पर वापस जाएं",
 			"changeLanguage": "भाषा बदलें",
 			"close": "बंद करें",
-			"collapse": "छोटा करें",
+			"collapse": "संकुचित करें",
 			"copy": "कॉपी करें",
 			"delete": "हटाएं",
-			"deselectAll": "सभी अचयनित करें",
+			"deselectAll": "सभी को अचयनित करें",
 			"expand": "विस्तृत करें",
 			"goToUrl": "{url} पर जाएं",
 			"hidePanel": "पैनल छिपाएं",
@@ -26,12 +26,12 @@
 			"signOut": "साइन आउट करें"
 		},
 		"error": {
-			"noChanges": "कोई परिवर्तन नहीं",
+			"noChanges": "कोई परिवर्तन नहीं है",
 			"nothingFound": "\"{search}\" के लिए कुछ नहीं मिला",
 			"unsent": "नहीं भेजा गया"
 		},
 		"label": {
-			"apiDocs": "API दस्तावेज़",
+			"apiDocs": "एपीआई डॉक्स",
 			"asia": "एशिया",
 			"avatar": "अवतार",
 			"code": "कोड",
@@ -43,7 +43,7 @@
 			"designSystem": "डिज़ाइन सिस्टम",
 			"errors": "त्रुटियां",
 			"europe": "यूरोप",
-			"githubRepo": "GitHub रेपो",
+			"githubRepo": "गिटहब रेपो",
 			"language": "भाषा",
 			"levelHigh": "उच्च",
 			"levelLow": "निम्न",
@@ -58,24 +58,24 @@
 			"requiredField": "(आवश्यक)",
 			"result": "परिणाम",
 			"settings": "सेटिंग्स",
-			"uiLibrary": "UI लाइब्रेरी",
-			"uiTheme": "UI थीम"
+			"uiLibrary": "यूआई लाइब्रेरी",
+			"uiTheme": "यूआई थीम"
 		},
 		"placeholder": {
 			"search": "खोजें..."
 		},
 		"state": {
 			"dataSaved": "आपका डेटा सहेजा गया है",
-			"deleting": "हटाया जा रहा है...",
+			"deleting": "हटा रहा है...",
 			"loading": "लोड हो रहा है...",
-			"searching": "खोजा जा रहा है...",
-			"sending": "भेजा जा रहा है...",
+			"searching": "खोज रहा है...",
+			"sending": "भेज रहा है...",
 			"updating": "अपडेट हो रहा है..."
 		}
 	},
 	"aiChat": {
 		"action": {
-			"backToSubchats": "सबचैट पर वापस जाएं",
+			"backToSubchats": "सब-चैट पर वापस जाएं",
 			"closePreview": "पूर्वावलोकन बंद करें",
 			"configureAgent": "एजेंट कॉन्फ़िगर करें",
 			"confirmDeleteAgent": "एजेंट हटाने की पुष्टि करें",
@@ -90,21 +90,24 @@
 			"manageAgents": "एजेंट प्रबंधित करें",
 			"manageChats": "चैट प्रबंधित करें",
 			"openChat": "चैट खोलें",
-			"openSubchat_zero": "सबचैट बनाएं",
-			"openSubchat_other": "सबचैट खोलें ({count} संदेश)",
-			"previewCode": "कोड का पूर्वावलोकन करें",
+			"openSubchat_one": "सब-चैट खोलें ({count} संदेश)",
+			"openSubchat_other": "सब-चैट खोलें ({count} संदेश)",
+			"openSubchat_zero": "सब-चैट बनाएं",
+			"previewCode": "कोड का पूर्वावलोकन",
 			"searchChats": "चैट खोजें",
 			"selectChat": "चैट चुनें",
 			"sendMessage": "संदेश भेजें",
-			"showMoreAgents": "अधिक एजेंट दिखाएं",
-			"showMoreChats": "अधिक चैट दिखाएं",
-			"showSubchats": "सबचैट दिखाएं ({count})",
+			"showMoreAgents": "और एजेंट दिखाएं",
+			"showMoreChats": "और चैट दिखाएं",
+			"showSubchats": "सब-चैट दिखाएं ({count})",
 			"startNewChat": "नई बातचीत शुरू करें",
 			"startSearching_one": "कम से कम {count} अक्षर टाइप करें",
 			"startSearching_other": "कम से कम {count} अक्षर टाइप करें"
 		},
 		"description": {
-			"chromeGPT": "Google Chrome के लिए मिनी GPT",
+			"chatgpt4o": "OpenAI का सबसे शक्तिशाली मॉडल",
+			"chatgpt4oMini": "OpenAI का सबसे सस्ता मॉडल",
+			"chromeGPT": "Chrome ब्राउज़र में एम्बेडेड मिनी GPT",
 			"loremIpsumGPT": "सबसे बुद्धिमान मॉडल",
 			"rammusGPT": "सर्वश्रेष्ठ भावनात्मक सहायता"
 		},
@@ -126,22 +129,22 @@
 			"newChat": "नई चैट",
 			"newMessage": "नया संदेश",
 			"noChats": "कोई चैट नहीं",
-			"noSubchats": "कोई सबचैट नहीं",
+			"noSubchats": "कोई सब-चैट नहीं",
 			"selectedAgent": "चयनित एजेंट",
-			"selectedValue": "चयनित मान",
-			"subchats": "सबचैट",
+			"selectedValue": "चयनित मूल्य",
+			"subchats": "सब-चैट",
 			"urlPreview": "URL पूर्वावलोकन",
 			"xMessages_one": "{count} संदेश",
 			"xMessages_other": "{count} संदेश",
-			"xSearchResults_zero": "कोई खोज परिणाम नहीं",
 			"xSearchResults_one": "{count} खोज परिणाम",
 			"xSearchResults_other": "{count} खोज परिणाम",
+			"xSearchResults_zero": "कोई खोज परिणाम नहीं",
 			"xSelectedMessages_one": "{count} संदेश चयनित",
 			"xSelectedMessages_other": "{count} संदेश चयनित"
 		},
 		"placeholder": {
 			"newMessage": "{name} से बात करें...",
-			"rename": "स्वचालित रूप से नया नाम जनरेट करें..."
+			"rename": "स्वचालित रूप से नया नाम उत्पन्न करें..."
 		},
 		"state": {
 			"loadingAgents": "एजेंट लोड हो रहे हैं...",
@@ -149,16 +152,17 @@
 			"loadingGPTs": "GPT लोड हो रहे हैं...",
 			"loadingMessages": "संदेश लोड हो रहे हैं...",
 			"loadingPreviousMessages": "पिछले संदेश लोड हो रहे हैं...",
-			"loadingSubchats": "सबचैट लोड हो रही हैं...",
-			"renamingChat": "चैट का नाम बदला जा रहा है...",
+			"loadingSubchats": "सब-चैट लोड हो रही हैं...",
+			"renamingChat": "चैट का नाम बदल रहा है...",
 			"thinking": "सोच रहा है..."
 		},
 		"warning": {
+			"chromeGptInsideChrome": "Chrome GPT को इन प्रायोगिक सेटिंग्स की आवश्यकता है:",
+			"chromeGptOutsideChrome": "Chrome GPT केवल Chrome ब्राउज़र में उपलब्ध है",
 			"deletingAgent": "यह एजेंट स्थायी रूप से हटा दिया जाएगा",
 			"deletingChats": "ये चैट स्थायी रूप से हटा दी जाएंगी",
-			"chromeGptInsideChrome": "इस GPT के लिए इन सेटिंग्स को सक्षम करना आवश्यक है:",
-			"chromeGptOutsideChrome": "यह GPT केवल Google Chrome ब्राउज़र में उपलब्ध है",
-			"invalidGpt": "अमान्य GPT"
+			"invalidGpt": "अमान्य GPT",
+			"missingOpenAiApiKey": "आपको अपनी OpenAI API कुंजी कॉन्फ़िगर करनी होगी"
 		}
 	},
 	"userSettings": {
@@ -184,6 +188,7 @@
 			"country": "देश",
 			"email": "ईमेल पता",
 			"legalName": "कानूनी नाम",
+			"openaiApiKey": "OpenAI API कुंजी",
 			"phone": "फ़ोन नंबर",
 			"postalCode": "पिन कोड",
 			"private": "निजी",

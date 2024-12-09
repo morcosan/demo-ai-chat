@@ -10,7 +10,7 @@
 			"delete": "Șterge",
 			"deselectAll": "Deselectează tot",
 			"expand": "Extinde",
-			"goToUrl": "Mergi la {url}",
+			"goToUrl": "Accesează {url}",
 			"hidePanel": "Ascunde panou",
 			"openMenu": "Deschide meniu",
 			"preview": "Previzualizare",
@@ -18,7 +18,7 @@
 			"rename": "Redenumește",
 			"resizePanel": "Redimensionează panou",
 			"retry": "Reîncearcă",
-			"saveChanges": "Salvează modificările",
+			"saveChanges": "Salvează modificări",
 			"search": "Caută",
 			"searchMore": "Arată mai multe rezultate",
 			"selectAll": "Selectează tot",
@@ -78,7 +78,7 @@
 		"action": {
 			"backToSubchats": "Înapoi la subchat-uri",
 			"closePreview": "Închide previzualizarea",
-			"configureAgent": "Configurează agentul",
+			"configureAgent": "Configurează agent",
 			"confirmDeleteAgent": "Confirmă ștergerea agentului",
 			"confirmDeleteChats": "Confirmă ștergerea chat-urilor",
 			"confirmRenameChat": "Confirmă redenumirea chat-ului",
@@ -88,13 +88,12 @@
 			"deleteAgent": "Șterge agent",
 			"deleteSelectedChats": "Șterge chat-urile selectate",
 			"deselectChat": "Deselectează chat",
-			"manageAgents": "Gestionează agenții",
-			"manageChats": "Gestionează chat-urile",
+			"manageAgents": "Gestionează agenți",
+			"manageChats": "Gestionează chat-uri",
 			"openChat": "Deschide chat",
 			"openSubchat_few": "Deschide subchat ({count} mesaje)",
-			"openSubchat_many": "Deschide subchat ({count} mesaje)",
 			"openSubchat_one": "Deschide subchat ({count} mesaj)",
-			"openSubchat_other": "Deschide subchat ({count} mesaje)",
+			"openSubchat_other": "Deschide subchat ({count} de mesaje)",
 			"openSubchat_zero": "Creează subchat",
 			"previewCode": "Previzualizează codul",
 			"searchChats": "Caută chat-uri",
@@ -103,14 +102,15 @@
 			"showMoreAgents": "Arată mai mulți agenți",
 			"showMoreChats": "Arată mai multe chat-uri",
 			"showSubchats": "Arată subchat-uri ({count})",
-			"startNewChat": "Începe o conversație nouă",
+			"startNewChat": "Începe o nouă conversație",
 			"startSearching_few": "Scrie cel puțin {count} caractere",
-			"startSearching_many": "Scrie cel puțin {count} caractere",
 			"startSearching_one": "Scrie cel puțin {count} caracter",
-			"startSearching_other": "Scrie cel puțin {count} caractere"
+			"startSearching_other": "Scrie cel puțin {count} de caractere"
 		},
 		"description": {
-			"chromeGPT": "Mini GPT pentru Google Chrome",
+			"chatgpt4o": "Cel mai puternic model OpenAI",
+			"chatgpt4oMini": "Cel mai ieftin model OpenAI",
+			"chromeGPT": "Mini GPT incorporat în browserul Chrome",
 			"loremIpsumGPT": "Cel mai inteligent model",
 			"rammusGPT": "Cel mai bun suport emoțional"
 		},
@@ -138,18 +138,15 @@
 			"subchats": "Subchat-uri",
 			"urlPreview": "Previzualizare URL",
 			"xMessages_few": "{count} mesaje",
-			"xMessages_many": "{count} mesaje",
 			"xMessages_one": "1 mesaj",
-			"xMessages_other": "{count} mesaje",
-			"xSearchResults_few": "{count} rezultate găsite",
-			"xSearchResults_many": "{count} rezultate găsite",
-			"xSearchResults_one": "{count} rezultat găsit",
-			"xSearchResults_other": "{count} rezultate găsite",
-			"xSearchResults_zero": "Niciun rezultat găsit",
+			"xMessages_other": "{count} de mesaje",
+			"xSearchResults_few": "{count} rezultate",
+			"xSearchResults_one": "{count} rezultat",
+			"xSearchResults_other": "{count} de rezultate",
+			"xSearchResults_zero": "Niciun rezultat",
 			"xSelectedMessages_few": "{count} mesaje selectate",
-			"xSelectedMessages_many": "{count} mesaje selectate",
 			"xSelectedMessages_one": "1 mesaj selectat",
-			"xSelectedMessages_other": "{count} mesaje selectate"
+			"xSelectedMessages_other": "{count} de mesaje selectate"
 		},
 		"placeholder": {
 			"newMessage": "Vorbește cu {name}...",
@@ -166,17 +163,18 @@
 			"thinking": "Se gândește..."
 		},
 		"warning": {
+			"chromeGptInsideChrome": "Chrome GPT necesită aceste setări experimentale:",
+			"chromeGptOutsideChrome": "Chrome GPT este disponibil doar în browserul Chrome",
 			"deletingAgent": "Acest agent va fi șters definitiv",
 			"deletingChats": "Aceste chat-uri vor fi șterse definitiv",
-			"chromeGptInsideChrome": "Acest GPT necesită activarea acestor setări:",
-			"chromeGptOutsideChrome": "Acest GPT este disponibil doar în browserul Google Chrome",
-			"invalidGpt": "GPT invalid"
+			"invalidGpt": "GPT invalid",
+			"missingOpenAiApiKey": "Trebuie să configurezi cheia API OpenAI"
 		}
 	},
 	"userSettings": {
 		"action": {
-			"manageAccount": "Gestionează contul",
-			"manageBilling": "Gestionează facturarea"
+			"manageAccount": "Gestionează cont",
+			"manageBilling": "Gestionează facturare"
 		},
 		"error": {
 			"address": "Trebuie să adaugi adresa",
@@ -196,6 +194,7 @@
 			"country": "Țară",
 			"email": "Adresă de email",
 			"legalName": "Nume legal",
+			"openaiApiKey": "Cheie API OpenAI",
 			"phone": "Număr de telefon",
 			"postalCode": "Cod poștal",
 			"private": "Privat",

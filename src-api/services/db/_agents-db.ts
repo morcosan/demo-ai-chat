@@ -2,9 +2,12 @@ import {
 	CreativityLevel,
 	DbAgent,
 	DbGPT,
-	GPT_ID__CHROME,
-	GPT_ID__LOREM_IPSUM,
-	GPT_ID__RAMMUS,
+	DEV_GPT_IDS,
+	GPT_ID__CHATGPT_4O,
+	GPT_ID__CHATGPT_4O_MINI,
+	GPT_ID__CHROME_GPT,
+	GPT_ID__LOREM_IPSUM_GPT,
+	GPT_ID__RAMMUS_GPT,
 	GptConfig,
 	GptMessage,
 	UI_TAG__GPT_DESCRIPTION,
@@ -20,14 +23,13 @@ import {
 	randomText,
 	randomTrue,
 } from '@utils/release'
+import { ChatGPT4o } from '../gpt/chatgpt-4o'
+import { ChatGPT4oMini } from '../gpt/chatgpt-4o-mini'
 import { ChromeGPT } from '../gpt/chrome-gpt'
 import { LoremIpsumGPT } from '../gpt/lorem-ipsum-gpt'
 import { RammusGPT } from '../gpt/rammus-gpt'
 
 let _GPTs: DbGPT[]
-
-const getGPTs = () => _GPTs
-
 let _dbActiveAgents: DbAgent[]
 let _dbDeletedAgents: DbAgent[]
 let _nextId = 1001
@@ -46,28 +48,53 @@ const setDbDeletedAgents = (value: DbAgent[]) => {
 	localStorage.setItem(COOKIE_KEY.DB_AGENTS_DELETED, JSON.stringify(value))
 }
 
+const getGPTs = async () => {
+	const enabledMap: Record<number, boolean> = {
+		[GPT_ID__LOREM_IPSUM_GPT]: await LoremIpsumGPT.isAvailable(),
+		[GPT_ID__RAMMUS_GPT]: await RammusGPT.isAvailable(),
+		[GPT_ID__CHROME_GPT]: await ChromeGPT.isAvailable(),
+		[GPT_ID__CHATGPT_4O_MINI]: await ChatGPT4oMini.isAvailable(),
+		[GPT_ID__CHATGPT_4O]: await ChatGPT4o.isAvailable(),
+	}
+	return _GPTs.map((gpt: DbGPT) => ({ ...gpt, enabled: enabledMap[gpt.id] }))
+}
+
 const initGPTs = async () => {
 	_GPTs = [
 		{
-			id: GPT_ID__LOREM_IPSUM,
+			id: GPT_ID__LOREM_IPSUM_GPT,
 			name: 'Lorem Ipsum GPT',
 			avatar: ENV__ROOT_URL_PATH + '/avatars/default.svg',
 			desc: '',
-			enabled: await LoremIpsumGPT.isAvailable(),
+			enabled: false,
 		},
 		{
-			id: GPT_ID__RAMMUS,
+			id: GPT_ID__RAMMUS_GPT,
 			name: 'Rammus GPT',
 			avatar: ENV__ROOT_URL_PATH + '/avatars/rammus.png',
 			desc: '',
-			enabled: await RammusGPT.isAvailable(),
+			enabled: false,
 		},
 		{
-			id: GPT_ID__CHROME,
+			id: GPT_ID__CHATGPT_4O_MINI,
+			name: 'ChatGPT 4o Mini',
+			avatar: ENV__ROOT_URL_PATH + '/avatars/openai.svg',
+			desc: '',
+			enabled: false,
+		},
+		{
+			id: GPT_ID__CHATGPT_4O,
+			name: 'ChatGPT 4o',
+			avatar: ENV__ROOT_URL_PATH + '/avatars/openai.svg',
+			desc: '',
+			enabled: false,
+		},
+		{
+			id: GPT_ID__CHROME_GPT,
 			name: 'Chrome GPT',
 			avatar: ENV__ROOT_URL_PATH + '/avatars/chrome.svg',
 			desc: '',
-			enabled: await ChromeGPT.isAvailable(),
+			enabled: false,
 		},
 	]
 }
@@ -80,7 +107,7 @@ const initAgentsDB = async () => {
 		_dbActiveAgents = JSON.parse(json || '')
 		_dbActiveAgents.forEach((agent: DbAgent) => agent.id >= _nextId && (_nextId = agent.id + 1))
 	} catch (_) {
-		createDbAgents()
+		createDbAgents(true)
 	}
 
 	try {
@@ -92,11 +119,11 @@ const initAgentsDB = async () => {
 	}
 }
 
-const createDbAgents = () => {
+const createDbAgents = (random: boolean) => {
 	const departments = ['Design', 'Frontend', 'Backend', 'Marketing', 'Business']
 	const levels = ['high', 'mid', 'min', 'max', 'low'] satisfies CreativityLevel[]
 
-	setDbActiveAgents([
+	const agents = [
 		..._GPTs.map((gpt: DbGPT) => ({
 			id: createAgentId(),
 			gptId: gpt.id,
@@ -108,40 +135,46 @@ const createDbAgents = () => {
 			createdAt: randomRecentDate(),
 			updatedAt: null,
 		})),
-		...departments.map((department: string, index: number) => ({
-			id: createAgentId(),
-			gptId: randomFromArray(_GPTs).id,
-			name: `AI ${department} Expert`,
-			avatar: randomImageHD(),
-			desc: `Expert in ${department}`,
-			prompt: `You are an expert in ${department}`,
-			creativity: levels[index],
-			createdAt: randomRecentDate(),
-			updatedAt: null,
-		})),
-		...randomArray(0, 50).map(() => ({
-			id: createAgentId(),
-			gptId: randomFromArray(_GPTs).id,
-			name: randomText(randomInt(1, randomTrue() ? 4 : 20)) + ' AI',
-			avatar: randomImageHD(),
-			desc: randomLongText(randomInt(0, 5)),
-			prompt: randomLongText(randomInt(0, 10)),
-			creativity: randomFromArray<CreativityLevel>(levels),
-			createdAt: randomRecentDate(),
-			updatedAt: null,
-		})),
-	])
+	]
+
+	if (random) {
+		agents.push(
+			...departments.map((department: string, index: number) => ({
+				id: createAgentId(),
+				gptId: randomFromArray(_GPTs).id,
+				name: `AI ${department} Expert`,
+				avatar: randomImageHD(),
+				desc: `Expert in ${department}`,
+				prompt: `You are an expert in ${department}`,
+				creativity: levels[index],
+				createdAt: randomRecentDate(),
+				updatedAt: null,
+			})),
+			...randomArray(0, 50).map(() => ({
+				id: createAgentId(),
+				gptId: randomFromArray(_GPTs).id,
+				name: randomText(randomInt(1, randomTrue() ? 4 : 20)) + ' AI',
+				avatar: randomImageHD(),
+				desc: randomLongText(randomInt(0, 5)),
+				prompt: randomLongText(randomInt(0, 10)),
+				creativity: randomFromArray<CreativityLevel>(levels),
+				createdAt: randomRecentDate(),
+				updatedAt: null,
+			}))
+		)
+	}
+
+	setDbActiveAgents(agents)
 }
 
-const resetAgentsDB = () => {
+const resetAgentsDB = (random: boolean) => {
 	_nextId = 1001 // Reset id
 	setDbDeletedAgents([])
-	createDbAgents()
+	createDbAgents(random)
 }
 
 const randomFromAgentIds = () => {
-	const gptIds = [GPT_ID__LOREM_IPSUM, GPT_ID__RAMMUS]
-	const agents = _dbActiveAgents.filter((agent: DbAgent) => gptIds.includes(agent.gptId))
+	const agents = _dbActiveAgents.filter((agent: DbAgent) => DEV_GPT_IDS.includes(agent.gptId))
 
 	return randomFromArray(agents).id
 }
@@ -153,9 +186,11 @@ const getGptResponse = async (agentId: number, messages: GptMessage[]): Promise<
 			prompt: agent.prompt,
 			creativity: agent.creativity,
 		}
-		if (agent.gptId === GPT_ID__CHROME) return ChromeGPT.getResponse(config, messages)
-		if (agent.gptId === GPT_ID__LOREM_IPSUM) return LoremIpsumGPT.getResponse(config, messages)
-		if (agent.gptId === GPT_ID__RAMMUS) return RammusGPT.getResponse(config, messages)
+		if (agent.gptId === GPT_ID__CHATGPT_4O) return ChatGPT4o.getResponse(config, messages)
+		if (agent.gptId === GPT_ID__CHATGPT_4O_MINI) return ChatGPT4oMini.getResponse(config, messages)
+		if (agent.gptId === GPT_ID__CHROME_GPT) return ChromeGPT.getResponse(config, messages)
+		if (agent.gptId === GPT_ID__LOREM_IPSUM_GPT) return LoremIpsumGPT.getResponse(config, messages)
+		if (agent.gptId === GPT_ID__RAMMUS_GPT) return RammusGPT.getResponse(config, messages)
 	}
 	return ''
 }

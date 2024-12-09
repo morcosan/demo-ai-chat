@@ -16,18 +16,18 @@ const initBillingDB = async () => {
 		const json = localStorage.getItem(COOKIE_KEY.DB_BILLING)
 		_billing = JSON.parse(json || '')
 	} catch (_) {
-		resetDbBilling()
+		resetDbBilling(true)
 	}
 }
 
-const resetDbBilling = () => {
+const resetDbBilling = (random: boolean) => {
 	setDbBilling({
 		name: randomFullName(),
 		address: faker.location.streetAddress({ useFullAddress: true }),
 		city: faker.location.city(),
 		country: faker.location.country(),
 		postalCode: faker.location.zipCode(),
-		vatNumber: `VAT-${faker.number.int({ min: 10000000, max: 99999999 })}`,
+		vatNumber: random ? `VAT-${faker.number.int({ min: 10000000, max: 99999999 })}` : '',
 	})
 }
 

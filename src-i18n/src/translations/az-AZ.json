@@ -5,16 +5,16 @@
 			"backToHome": "Ana səhifəyə qayıt",
 			"changeLanguage": "Dili dəyiş",
 			"close": "Bağla",
-			"collapse": "Yığcamlaşdır",
+			"collapse": "Yığ",
 			"copy": "Kopyala",
 			"delete": "Sil",
 			"deselectAll": "Hamısını ləğv et",
-			"expand": "Genişləndir",
-			"goToUrl": "{url} ünvanına get",
+			"expand": "Genişlət",
+			"goToUrl": "{url} ünvanına keç",
 			"hidePanel": "Paneli gizlət",
 			"openMenu": "Menyunu aç",
 			"preview": "Önbaxış",
-			"reload": "Yenidən yüklə",
+			"reload": "Yenilə",
 			"rename": "Adını dəyiş",
 			"resizePanel": "Panel ölçüsünü dəyiş",
 			"retry": "Yenidən cəhd et",
@@ -26,7 +26,7 @@
 			"signOut": "Çıxış"
 		},
 		"error": {
-			"noChanges": "Heç bir dəyişiklik yoxdur",
+			"noChanges": "Dəyişiklik yoxdur",
 			"nothingFound": "\"{search}\" üçün heç nə tapılmadı",
 			"unsent": "Göndərilməyib"
 		},
@@ -37,7 +37,7 @@
 			"code": "Kod",
 			"copied": "Kopyalandı",
 			"custom": "Xüsusi",
-			"darkTheme": "Tünd",
+			"darkTheme": "Qaranlıq",
 			"default": "Standart",
 			"description": "Təsvir",
 			"designSystem": "Dizayn Sistemi",
@@ -55,10 +55,10 @@
 			"navigationBar": "Naviqasiya paneli",
 			"navigationMenu": "Naviqasiya menyusu",
 			"optionalField": "(İstəyə bağlı)",
-			"quickSettings": "Sürətli tənzimləmələr",
-			"requiredField": "(Məcburi)",
+			"quickSettings": "Sürətli parametrlər",
+			"requiredField": "(Tələb olunur)",
 			"result": "Nəticə",
-			"settings": "Tənzimləmələr",
+			"settings": "Parametrlər",
 			"uiLibrary": "UI Kitabxanası",
 			"uiTheme": "UI Mövzusu"
 		},
@@ -91,11 +91,11 @@
 			"manageAgents": "Agentləri idarə et",
 			"manageChats": "Söhbətləri idarə et",
 			"openChat": "Söhbəti aç",
-			"openSubchat_zero": "Alt-söhbət yarat",
 			"openSubchat_one": "Alt-söhbəti aç ({count} mesaj)",
 			"openSubchat_other": "Alt-söhbəti aç ({count} mesaj)",
-			"previewCode": "Koda önbaxış",
-			"searchChats": "Söhbətlərdə axtar",
+			"openSubchat_zero": "Alt-söhbət yarat",
+			"previewCode": "Kodun önbaxışı",
+			"searchChats": "Söhbətləri axtar",
 			"selectChat": "Söhbəti seç",
 			"sendMessage": "Mesaj göndər",
 			"showMoreAgents": "Daha çox agent göstər",
@@ -106,7 +106,9 @@
 			"startSearching_other": "Ən azı {count} simvol daxil edin"
 		},
 		"description": {
-			"chromeGPT": "Google Chrome üçün Mini GPT",
+			"chatgpt4o": "OpenAI-nin ən güclü modeli",
+			"chatgpt4oMini": "OpenAI-nin ən ucuz modeli",
+			"chromeGPT": "Chrome brauzerdə quraşdırılmış Mini GPT",
 			"loremIpsumGPT": "Ən ağıllı model",
 			"rammusGPT": "Ən yaxşı emosional dəstək"
 		},
@@ -133,12 +135,12 @@
 			"selectedValue": "Seçilmiş dəyər",
 			"subchats": "Alt-söhbətlər",
 			"urlPreview": "URL önbaxışı",
-			"xMessages_one": "1 mesaj",
+			"xMessages_one": "{count} mesaj",
 			"xMessages_other": "{count} mesaj",
-			"xSearchResults_zero": "Axtarış nəticəsi yoxdur",
 			"xSearchResults_one": "{count} axtarış nəticəsi",
 			"xSearchResults_other": "{count} axtarış nəticəsi",
-			"xSelectedMessages_one": "1 mesaj seçilib",
+			"xSearchResults_zero": "Axtarış nəticəsi yoxdur",
+			"xSelectedMessages_one": "{count} mesaj seçilib",
 			"xSelectedMessages_other": "{count} mesaj seçilib"
 		},
 		"placeholder": {
@@ -156,11 +158,12 @@
 			"thinking": "Düşünür..."
 		},
 		"warning": {
-			"deletingAgent": "Bu agent həmişəlik silinəcək",
-			"deletingChats": "Bu söhbətlər həmişəlik silinəcək",
-			"chromeGptInsideChrome": "Bu GPT üçün bu parametrlərin aktivləşdirilməsi tələb olunur:",
-			"chromeGptOutsideChrome": "Bu GPT yalnız Google Chrome brauzerində mövcuddur",
-			"invalidGpt": "Yanlış GPT"
+			"chromeGptInsideChrome": "Chrome GPT bu eksperimental parametrləri tələb edir:",
+			"chromeGptOutsideChrome": "Chrome GPT yalnız Chrome brauzerdə mövcuddur",
+			"deletingAgent": "Bu agent birdəfəlik silinəcək",
+			"deletingChats": "Bu söhbətlər birdəfəlik silinəcək",
+			"invalidGpt": "Yanlış GPT",
+			"missingOpenAiApiKey": "OpenAI API açarınızı konfiqurasiya etməlisiniz"
 		}
 	},
 	"userSettings": {
@@ -186,6 +189,7 @@
 			"country": "Ölkə",
 			"email": "E-poçt ünvanı",
 			"legalName": "Hüquqi ad",
+			"openaiApiKey": "OpenAI API açarı",
 			"phone": "Telefon nömrəsi",
 			"postalCode": "Poçt kodu",
 			"private": "Şəxsi",

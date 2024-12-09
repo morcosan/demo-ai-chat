@@ -1,14 +1,13 @@
 import { uniqBy } from 'lodash'
 import { useEffect, useState } from 'react'
 import { API, Chat } from '../../../api'
-import { createGhostChat } from './_utils'
 
 export interface AllChatsStore {
 	allChats: Chat[]
 	allChatsPagination: Pagination
 	allChatsLoading: ListLoading
 	canLoadAllChats: boolean
-	createNewChat(): Promise<Chat | null>
+	createNewChat(newChat?: Chat): Promise<Chat | null>
 	deleteChats(chatIds: number[]): Promise<void>
 	loadMoreChats(): void
 	updateChat(chatId: number, title?: string): Promise<Chat | null>
@@ -45,10 +44,8 @@ export const useAllChatsStore = (): AllChatsStore => {
 		setAllChatsLoading(false)
 	}
 
-	const createNewChat = async (): Promise<Chat | null> => {
+	const createNewChat = async (newChat: Chat): Promise<Chat | null> => {
 		if (allChatsLoading) return null
-
-		const newChat = createGhostChat()
 
 		setAllChatsLoading('update')
 		setAllChats([newChat, ...allChats])

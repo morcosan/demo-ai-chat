@@ -17,8 +17,9 @@ export const AgentsProvider = ({ children }: ReactProps) => {
 
 	const canLoadAgents = !allAgentsPagination.page || allAgents.length < allAgentsPagination.count
 
-	const loadGPTs = async () => {
-		if (allGPTsLoading || allGPTs.length) return
+	const loadGPTs = async (reload?: boolean) => {
+		if (allGPTsLoading) return
+		if (allGPTs.length && !reload) return
 
 		setAllGPTsLoading('full')
 		const listing = await API.getGPTs()
@@ -127,6 +128,7 @@ export const AgentsProvider = ({ children }: ReactProps) => {
 			chatViewAgentId,
 			createNewAgent,
 			deleteAgent,
+			loadGPTs,
 			loadMissingAgents,
 			loadMoreAgents,
 			setChatViewAgentId,

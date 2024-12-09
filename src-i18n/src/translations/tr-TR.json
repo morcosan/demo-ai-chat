@@ -8,13 +8,13 @@
 			"collapse": "Daralt",
 			"copy": "Kopyala",
 			"delete": "Sil",
-			"deselectAll": "Tümünü seçimi kaldır",
+			"deselectAll": "Tümünü kaldır",
 			"expand": "Genişlet",
 			"goToUrl": "{url} adresine git",
 			"hidePanel": "Paneli gizle",
 			"openMenu": "Menüyü aç",
 			"preview": "Önizle",
-			"reload": "Yenile",
+			"reload": "Yeniden yükle",
 			"rename": "Yeniden adlandır",
 			"resizePanel": "Panel boyutunu değiştir",
 			"retry": "Tekrar dene",
@@ -31,9 +31,9 @@
 			"unsent": "Gönderilmemiş"
 		},
 		"label": {
-			"apiDocs": "API Dokümanları",
+			"apiDocs": "API Belgeleri",
 			"asia": "Asya",
-			"avatar": "Profil resmi",
+			"avatar": "Avatar",
 			"code": "Kod",
 			"copied": "Kopyalandı",
 			"custom": "Özel",
@@ -77,73 +77,72 @@
 		"action": {
 			"backToSubchats": "Alt sohbetlere dön",
 			"closePreview": "Önizlemeyi kapat",
-			"configureAgent": "Ajanı yapılandır",
-			"confirmDeleteAgent": "Ajanı silmeyi onayla",
+			"configureAgent": "Aracıyı yapılandır",
+			"confirmDeleteAgent": "Aracı silmeyi onayla",
 			"confirmDeleteChats": "Sohbetleri silmeyi onayla",
 			"confirmRenameChat": "Sohbeti yeniden adlandırmayı onayla",
 			"copyCode": "Kodu kopyala",
 			"copyMessage": "Mesajı kopyala",
-			"createAgent": "Ajan oluştur",
-			"deleteAgent": "Ajanı sil",
+			"createAgent": "Aracı oluştur",
+			"deleteAgent": "Aracıyı sil",
 			"deleteSelectedChats": "Seçili sohbetleri sil",
 			"deselectChat": "Sohbet seçimini kaldır",
-			"manageAgents": "Ajanları yönet",
+			"manageAgents": "Aracıları yönet",
 			"manageChats": "Sohbetleri yönet",
 			"openChat": "Sohbeti aç",
 			"openSubchat_other": "Alt sohbeti aç ({count} mesaj)",
 			"openSubchat_zero": "Alt sohbet oluştur",
 			"previewCode": "Kodu önizle",
 			"searchChats": "Sohbetlerde ara",
-			"selectChat": "Sohbeti seç",
+			"selectChat": "Sohbet seç",
 			"sendMessage": "Mesaj gönder",
-			"showMoreAgents": "Daha fazla ajan göster",
+			"showMoreAgents": "Daha fazla aracı göster",
 			"showMoreChats": "Daha fazla sohbet göster",
 			"showSubchats": "Alt sohbetleri göster ({count})",
 			"startNewChat": "Yeni bir konuşma başlat",
-			"startSearching_other": "En az {count} karakter yaz"
+			"startSearching_other": "En az {count} karakter yazın"
 		},
 		"description": {
-			"chromeGPT": "Google Chrome için Mini GPT",
+			"chatgpt4o": "OpenAI'nin en güçlü modeli",
+			"chatgpt4oMini": "OpenAI'nin en uygun fiyatlı modeli",
+			"chromeGPT": "Chrome tarayıcısına gömülü Mini GPT",
 			"loremIpsumGPT": "En akıllı model",
 			"rammusGPT": "En iyi duygusal destek"
 		},
 		"error": {
-			"agentAvatar": "Ajan için bir profil resmi eklemelisiniz",
-			"agentName": "Ajan için bir ad eklemelisiniz",
-			"emptyMessage": "Mesajınız boş",
-			"failedMessage": "Mesajınızın iletilmesinde bir sorun oluştu"
+			"agentAvatar": "Aracı için bir avatar eklemelisin",
+			"agentName": "Aracı için bir isim eklemelisin",
+			"emptyMessage": "Mesajın boş",
+			"failedMessage": "Mesajını iletirken bir sorun oluştu"
 		},
 		"label": {
-			"agents": "Ajanlar",
+			"agents": "Aracılar",
 			"chatTitle": "Sohbet başlığı",
 			"chats": "Sohbetler",
 			"codePreview": "Kod önizleme",
 			"creativityLevel": "Yaratıcılık seviyesi",
 			"customInstructions": "Özel talimatlar",
 			"gptModel": "GPT modeli",
-			"newAgent": "Yeni ajan",
+			"newAgent": "Yeni aracı",
 			"newChat": "Yeni sohbet",
 			"newMessage": "Yeni mesaj",
 			"noChats": "Sohbet yok",
 			"noSubchats": "Alt sohbet yok",
-			"selectedAgent": "Seçili ajan",
+			"selectedAgent": "Seçili aracı",
 			"selectedValue": "Seçili değer",
 			"subchats": "Alt sohbetler",
 			"urlPreview": "URL önizleme",
-			"xMessages_one": "1 mesaj",
 			"xMessages_other": "{count} mesaj",
-			"xSearchResults_one": "{count} arama sonucu",
 			"xSearchResults_other": "{count} arama sonucu",
 			"xSearchResults_zero": "Arama sonucu yok",
-			"xSelectedMessages_one": "1 mesaj seçildi",
 			"xSelectedMessages_other": "{count} mesaj seçildi"
 		},
 		"placeholder": {
 			"newMessage": "{name} ile konuş...",
-			"rename": "Otomatik olarak yeni bir ad oluştur..."
+			"rename": "Otomatik olarak yeni bir isim oluştur..."
 		},
 		"state": {
-			"loadingAgents": "Ajanlar yükleniyor...",
+			"loadingAgents": "Aracılar yükleniyor...",
 			"loadingChats": "Sohbetler yükleniyor...",
 			"loadingGPTs": "GPT'ler yükleniyor...",
 			"loadingMessages": "Mesajlar yükleniyor...",
@@ -153,11 +152,12 @@
 			"thinking": "Düşünüyor..."
 		},
 		"warning": {
-			"deletingAgent": "Bu ajan kalıcı olarak silinecek",
+			"chromeGptInsideChrome": "Chrome GPT şu deneysel ayarları gerektirir:",
+			"chromeGptOutsideChrome": "Chrome GPT yalnızca Chrome tarayıcısında kullanılabilir",
+			"deletingAgent": "Bu aracı kalıcı olarak silinecek",
 			"deletingChats": "Bu sohbetler kalıcı olarak silinecek",
-			"chromeGptInsideChrome": "Bu GPT'nin çalışması için şu ayarların etkinleştirilmesi gerekiyor:",
-			"chromeGptOutsideChrome": "Bu GPT yalnızca Google Chrome tarayıcısında kullanılabilir",
-			"invalidGpt": "Geçersiz GPT"
+			"invalidGpt": "Geçersiz GPT",
+			"missingOpenAiApiKey": "OpenAI API anahtarını yapılandırmalısın"
 		}
 	},
 	"userSettings": {
@@ -166,14 +166,14 @@
 			"manageBilling": "Faturalandırmayı yönet"
 		},
 		"error": {
-			"address": "Adresi eklemelisiniz",
-			"avatar": "Profil resminizi eklemelisiniz",
-			"city": "Şehri eklemelisiniz",
-			"country": "Ülkeyi eklemelisiniz",
-			"email": "E-posta adresinizi eklemelisiniz",
-			"legalName": "Yasal adı eklemelisiniz",
-			"name": "Adınızı eklemelisiniz",
-			"postalCode": "Posta kodunu eklemelisiniz"
+			"address": "Adres eklemelisin",
+			"avatar": "Avatarını eklemelisin",
+			"city": "Şehir eklemelisin",
+			"country": "Ülke eklemelisin",
+			"email": "E-posta adresini eklemelisin",
+			"legalName": "Yasal adı eklemelisin",
+			"name": "Adını eklemelisin",
+			"postalCode": "Posta kodunu eklemelisin"
 		},
 		"label": {
 			"account": "Hesap",
@@ -183,10 +183,11 @@
 			"country": "Ülke",
 			"email": "E-posta adresi",
 			"legalName": "Yasal ad",
+			"openaiApiKey": "OpenAI API anahtarı",
 			"phone": "Telefon numarası",
 			"postalCode": "Posta kodu",
 			"private": "Özel",
-			"public": "Herkese açık",
+			"public": "Genel",
 			"vatNumber": "VKN"
 		}
 	}

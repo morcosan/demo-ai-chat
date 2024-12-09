@@ -3,9 +3,9 @@
 		"action": {
 			"back": "Tillbaka",
 			"backToHome": "Tillbaka till startsidan",
-			"changeLanguage": "Ändra språk",
+			"changeLanguage": "Byt språk",
 			"close": "Stäng",
-			"collapse": "Komprimera",
+			"collapse": "Kollapsa",
 			"copy": "Kopiera",
 			"delete": "Radera",
 			"deselectAll": "Avmarkera alla",
@@ -26,7 +26,7 @@
 			"signOut": "Logga ut"
 		},
 		"error": {
-			"noChanges": "Inga ändringar",
+			"noChanges": "Det finns inga ändringar",
 			"nothingFound": "Inget hittades för \"{search}\"",
 			"unsent": "Ej skickad"
 		},
@@ -47,15 +47,15 @@
 			"language": "Språk",
 			"levelHigh": "Hög",
 			"levelLow": "Låg",
-			"levelMedium": "Mellan",
+			"levelMedium": "Medium",
 			"levelVeryHigh": "Mycket hög",
 			"levelVeryLow": "Mycket låg",
 			"lightTheme": "Ljus",
 			"name": "Namn",
-			"navigationBar": "Navigeringsfält",
-			"navigationMenu": "Navigeringsmeny",
-			"optionalField": "(Valfritt)",
-			"requiredField": "(Obligatoriskt)",
+			"navigationBar": "Navigationsfält",
+			"navigationMenu": "Navigationsmeny",
+			"optionalField": "(Valfri)",
+			"requiredField": "(Obligatorisk)",
 			"result": "Resultat",
 			"settings": "Inställningar",
 			"uiLibrary": "UI-bibliotek",
@@ -65,7 +65,7 @@
 			"search": "Sök..."
 		},
 		"state": {
-			"dataSaved": "Dina data är sparade",
+			"dataSaved": "Din data är sparad",
 			"deleting": "Raderar...",
 			"loading": "Laddar...",
 			"searching": "Söker...",
@@ -75,14 +75,14 @@
 	},
 	"aiChat": {
 		"action": {
-			"backToSubchats": "Tillbaka till subchatter",
+			"backToSubchats": "Tillbaka till subchatt",
 			"closePreview": "Stäng förhandsgranskning",
 			"configureAgent": "Konfigurera agent",
 			"confirmDeleteAgent": "Bekräfta radering av agent",
 			"confirmDeleteChats": "Bekräfta radering av chattar",
 			"confirmRenameChat": "Bekräfta namnbyte av chatt",
-			"copyCode": "Kopiera kod",
-			"copyMessage": "Kopiera meddelande",
+			"copyCode": "Kopiera koden",
+			"copyMessage": "Kopiera meddelandet",
 			"createAgent": "Skapa agent",
 			"deleteAgent": "Radera agent",
 			"deleteSelectedChats": "Radera markerade chattar",
@@ -90,24 +90,26 @@
 			"manageAgents": "Hantera agenter",
 			"manageChats": "Hantera chattar",
 			"openChat": "Öppna chatt",
-			"openSubchat_zero": "Skapa subchat",
-			"openSubchat_one": "Öppna subchat ({count} meddelande)",
-			"openSubchat_other": "Öppna subchat ({count} meddelanden)",
-			"previewCode": "Förhandsgranska kod",
+			"openSubchat_zero": "Skapa subchatt",
+			"openSubchat_one": "Öppna subchatt ({count} meddelande)",
+			"openSubchat_other": "Öppna subchatt ({count} meddelanden)",
+			"previewCode": "Förhandsgranska koden",
 			"searchChats": "Sök chattar",
 			"selectChat": "Välj chatt",
 			"sendMessage": "Skicka meddelande",
 			"showMoreAgents": "Visa fler agenter",
 			"showMoreChats": "Visa fler chattar",
-			"showSubchats": "Visa subchatter ({count})",
-			"startNewChat": "Starta ny konversation",
+			"showSubchats": "Visa subchatt ({count})",
+			"startNewChat": "Starta en ny konversation",
 			"startSearching_one": "Skriv minst {count} tecken",
 			"startSearching_other": "Skriv minst {count} tecken"
 		},
 		"description": {
-			"chromeGPT": "Mini GPT för Google Chrome",
-			"loremIpsumGPT": "Den mest intelligenta modellen",
-			"rammusGPT": "Bästa emotionella stödet"
+			"chatgpt4o": "OpenAIs kraftfullaste modell",
+			"chatgpt4oMini": "OpenAIs billigaste modell",
+			"chromeGPT": "Mini-GPT inbäddad i Chrome-webbläsaren",
+			"loremIpsumGPT": "Mest intelligenta modellen",
+			"rammusGPT": "Bästa känslomässiga stödet"
 		},
 		"error": {
 			"agentAvatar": "Du måste lägga till en avatar för agenten",
@@ -127,18 +129,20 @@
 			"newChat": "Ny chatt",
 			"newMessage": "Nytt meddelande",
 			"noChats": "Inga chattar",
-			"noSubchats": "Inga subchatter",
+			"noSubchats": "Inga subchatt",
 			"selectedAgent": "Vald agent",
 			"selectedValue": "Valt värde",
-			"subchats": "Subchatter",
+			"subchats": "Subchattar",
 			"urlPreview": "URL-förhandsgranskning",
+			"xMessages_zero": "Inga meddelanden",
 			"xMessages_one": "1 meddelande",
 			"xMessages_other": "{count} meddelanden",
 			"xSearchResults_zero": "Inga sökresultat",
 			"xSearchResults_one": "{count} sökresultat",
 			"xSearchResults_other": "{count} sökresultat",
-			"xSelectedMessages_one": "1 meddelande valt",
-			"xSelectedMessages_other": "{count} meddelanden valda"
+			"xSelectedMessages_zero": "Inga meddelanden markerade",
+			"xSelectedMessages_one": "1 meddelande markerat",
+			"xSelectedMessages_other": "{count} meddelanden markerade"
 		},
 		"placeholder": {
 			"newMessage": "Prata med {name}...",
@@ -147,19 +151,20 @@
 		"state": {
 			"loadingAgents": "Laddar agenter...",
 			"loadingChats": "Laddar chattar...",
-			"loadingGPTs": "Laddar GPT:er...",
+			"loadingGPTs": "Laddar GPTs...",
 			"loadingMessages": "Laddar meddelanden...",
 			"loadingPreviousMessages": "Laddar tidigare meddelanden...",
-			"loadingSubchats": "Laddar subchatter...",
+			"loadingSubchats": "Laddar subchattar...",
 			"renamingChat": "Byter namn på chatt...",
 			"thinking": "Tänker..."
 		},
 		"warning": {
+			"chromeGptInsideChrome": "Chrome GPT kräver dessa experimentella inställningar:",
+			"chromeGptOutsideChrome": "Chrome GPT är endast tillgänglig i Chrome-webbläsaren",
 			"deletingAgent": "Denna agent kommer att raderas permanent",
 			"deletingChats": "Dessa chattar kommer att raderas permanent",
-			"chromeGptInsideChrome": "Denna GPT kräver att följande inställningar är aktiverade:",
-			"chromeGptOutsideChrome": "Denna GPT är endast tillgänglig i Google Chrome-webbläsaren",
-			"invalidGpt": "Ogiltig GPT"
+			"invalidGpt": "Ogiltig GPT",
+			"missingOpenAiApiKey": "Du måste konfigurera din OpenAI API-nyckel"
 		}
 	},
 	"userSettings": {
@@ -185,6 +190,7 @@
 			"country": "Land",
 			"email": "E-postadress",
 			"legalName": "Juridiskt namn",
+			"openaiApiKey": "OpenAI API-nyckel",
 			"phone": "Telefonnummer",
 			"postalCode": "Postnummer",
 			"private": "Privat",

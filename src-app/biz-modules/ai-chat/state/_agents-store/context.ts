@@ -12,6 +12,7 @@ export interface Store {
 	chatViewAgentId: number
 	createNewAgent(payload: AgentsApiPayload): Promise<Agent | null>
 	deleteAgent(agentId: number): Promise<void>
+	loadGPTs(reload?: boolean): Promise<void>
 	loadMissingAgents(ids: number[]): void
 	loadMoreAgents(): void
 	setChatViewAgentId(id: number): void
@@ -29,6 +30,7 @@ export const AgentsContext = createContext<Store>({
 	chatViewAgentId: 0,
 	createNewAgent: async () => null,
 	deleteAgent: async () => {},
+	loadGPTs: async () => {},
 	loadMissingAgents: () => {},
 	loadMoreAgents: () => {},
 	setChatViewAgentId: () => {},

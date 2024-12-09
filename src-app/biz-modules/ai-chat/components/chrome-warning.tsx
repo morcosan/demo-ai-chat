@@ -1,7 +1,7 @@
 import { Button, NewTabSvg, WarningSvg } from '@ds/release'
 import { isChromeBrowser } from '@utils/release'
 
-export const GptWarning = ({ id, className }: ReactProps) => {
+export const ChromeWarning = ({ id, className }: ReactProps) => {
 	const isChrome = isChromeBrowser()
 
 	const onClickChromeFlags = (event: ReactMouseEvent) => {
@@ -22,29 +22,27 @@ export const GptWarning = ({ id, className }: ReactProps) => {
 		>
 			<WarningSvg className="mx-xs-2 w-xs-8 min-w-xs-8" />
 
-			<div>
-				<div className="px-button-px-item">
-					{isChrome ? (
-						<>
-							{t('aiChat.warning.chromeGptInsideChrome')}
+			<div className="px-xs-5">
+				{isChrome ? (
+					<>
+						{t('aiChat.warning.chromeGptInsideChrome')}
 
-							<ul className="mt-xs-2 list-disc pl-xs-9">
-								<li>Enables optimization guide on device</li>
-								<li>Prompt API for Gemini Nano</li>
-							</ul>
-						</>
-					) : (
-						t('aiChat.warning.chromeGptOutsideChrome')
-					)}
-				</div>
+						<ul className="mt-xs-2 list-disc pl-xs-9">
+							<li>Enables optimization guide on device</li>
+							<li>Prompt API for Gemini Nano</li>
+						</ul>
+					</>
+				) : (
+					t('aiChat.warning.chromeGptOutsideChrome')
+				)}
 
 				{Boolean(isChrome) && (
 					<Button
 						linkHref="chrome://flags"
 						linkType="external"
-						variant="item-text-default"
+						variant="text-default"
 						size="sm"
-						className="-mb-xs-2 mt-xs-2"
+						className="ds-link -mb-xs-2 -ml-link-px-xs mt-xs-3"
 						onClick={onClickChromeFlags}
 					>
 						<span className="flex items-center gap-xs-4">

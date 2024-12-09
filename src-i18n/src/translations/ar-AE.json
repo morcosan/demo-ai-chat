@@ -55,7 +55,7 @@
 			"navigationBar": "شريط التنقل",
 			"navigationMenu": "قائمة التنقل",
 			"optionalField": "(اختياري)",
-			"quickSettings": "إعدادات سريعة",
+			"quickSettings": "الإعدادات السريعة",
 			"requiredField": "(مطلوب)",
 			"result": "النتيجة",
 			"settings": "الإعدادات",
@@ -67,18 +67,18 @@
 		},
 		"state": {
 			"dataSaved": "تم حفظ بياناتك",
-			"deleting": "جاري الحذف...",
-			"loading": "جاري التحميل...",
-			"searching": "جاري البحث...",
-			"sending": "جاري الإرسال...",
-			"updating": "جاري التحديث..."
+			"deleting": "جارٍ الحذف...",
+			"loading": "جارٍ التحميل...",
+			"searching": "جارٍ البحث...",
+			"sending": "جارٍ الإرسال...",
+			"updating": "جارٍ التحديث..."
 		}
 	},
 	"aiChat": {
 		"action": {
-			"backToSubchats": "العودة إلى المحادثات الفرعية",
+			"backToSubchats": "العودة إلى الدردشات الفرعية",
 			"closePreview": "إغلاق المعاينة",
-			"configureAgent": "تكوين الوكيل",
+			"configureAgent": "إعداد الوكيل",
 			"confirmDeleteAgent": "تأكيد حذف الوكيل",
 			"confirmDeleteChats": "تأكيد حذف المحادثات",
 			"confirmRenameChat": "تأكيد إعادة تسمية المحادثة",
@@ -92,11 +92,11 @@
 			"manageChats": "إدارة المحادثات",
 			"openChat": "فتح المحادثة",
 			"openSubchat_zero": "إنشاء محادثة فرعية",
-			"openSubchat_one": "فتح المحادثة الفرعية (رسالة {count})",
-			"openSubchat_two": "فتح المحادثة الفرعية (رسالتان)",
-			"openSubchat_few": "فتح المحادثة الفرعية ({count} رسائل)",
-			"openSubchat_many": "فتح المحادثة الفرعية ({count} رسالة)",
-			"openSubchat_other": "فتح المحادثة الفرعية ({count} رسالة)",
+			"openSubchat_one": "فتح محادثة فرعية (رسالة واحدة)",
+			"openSubchat_two": "فتح محادثة فرعية (رسالتان)",
+			"openSubchat_few": "فتح محادثة فرعية ({count} رسائل)",
+			"openSubchat_many": "فتح محادثة فرعية ({count} رسالة)",
+			"openSubchat_other": "فتح محادثة فرعية ({count} رسالة)",
 			"previewCode": "معاينة الكود",
 			"searchChats": "البحث في المحادثات",
 			"selectChat": "تحديد المحادثة",
@@ -113,7 +113,9 @@
 			"startSearching_other": "اكتب {count} حرف على الأقل"
 		},
 		"description": {
-			"chromeGPT": "GPT مصغر لمتصفح Google Chrome",
+			"chatgpt4o": "أقوى نموذج من OpenAI",
+			"chatgpt4oMini": "أرخص نموذج من OpenAI",
+			"chromeGPT": "نموذج GPT مصغر مدمج في متصفح Chrome",
 			"loremIpsumGPT": "النموذج الأكثر ذكاءً",
 			"rammusGPT": "أفضل دعم عاطفي"
 		},
@@ -152,33 +154,34 @@
 			"xSearchResults_few": "{count} نتائج بحث",
 			"xSearchResults_many": "{count} نتيجة بحث",
 			"xSearchResults_other": "{count} نتيجة بحث",
-			"xSelectedMessages_zero": "لم يتم تحديد رسائل",
-			"xSelectedMessages_one": "تم تحديد رسالة واحدة",
-			"xSelectedMessages_two": "تم تحديد رسالتين",
-			"xSelectedMessages_few": "تم تحديد {count} رسائل",
-			"xSelectedMessages_many": "تم تحديد {count} رسالة",
-			"xSelectedMessages_other": "تم تحديد {count} رسالة"
+			"xSelectedMessages_zero": "لا توجد رسائل محددة",
+			"xSelectedMessages_one": "رسالة واحدة محددة",
+			"xSelectedMessages_two": "رسالتان محددتان",
+			"xSelectedMessages_few": "{count} رسائل محددة",
+			"xSelectedMessages_many": "{count} رسالة محددة",
+			"xSelectedMessages_other": "{count} رسالة محددة"
 		},
 		"placeholder": {
 			"newMessage": "تحدث مع {name}...",
 			"rename": "توليد اسم جديد تلقائياً..."
 		},
 		"state": {
-			"loadingAgents": "جاري تحميل الوكلاء...",
-			"loadingChats": "جاري تحميل المحادثات...",
-			"loadingGPTs": "جاري تحميل نماذج GPT...",
-			"loadingMessages": "جاري تحميل الرسائل...",
-			"loadingPreviousMessages": "جاري تحميل الرسائل السابقة...",
-			"loadingSubchats": "جاري تحميل المحادثات الفرعية...",
-			"renamingChat": "جاري إعادة تسمية المحادثة...",
-			"thinking": "جاري التفكير..."
+			"loadingAgents": "جارٍ تحميل الوكلاء...",
+			"loadingChats": "جارٍ تحميل المحادثات...",
+			"loadingGPTs": "جارٍ تحميل نماذج GPT...",
+			"loadingMessages": "جارٍ تحميل الرسائل...",
+			"loadingPreviousMessages": "جارٍ تحميل الرسائل السابقة...",
+			"loadingSubchats": "جارٍ تحميل المحادثات الفرعية...",
+			"renamingChat": "جارٍ إعادة تسمية المحادثة...",
+			"thinking": "جارٍ التفكير..."
 		},
 		"warning": {
+			"chromeGptInsideChrome": "يتطلب Chrome GPT هذه الإعدادات التجريبية:",
+			"chromeGptOutsideChrome": "Chrome GPT متاح فقط في متصفح Chrome",
 			"deletingAgent": "سيتم حذف هذا الوكيل نهائياً",
 			"deletingChats": "سيتم حذف هذه المحادثات نهائياً",
-			"chromeGptInsideChrome": "يتطلب هذا النموذج تمكين هذه الإعدادات:",
-			"chromeGptOutsideChrome": "هذا النموذج متاح فقط في متصفح Google Chrome",
-			"invalidGpt": "نموذج GPT غير صالح"
+			"invalidGpt": "نموذج GPT غير صالح",
+			"missingOpenAiApiKey": "يجب تكوين مفتاح API الخاص بـ OpenAI"
 		}
 	},
 	"userSettings": {
@@ -190,7 +193,7 @@
 			"address": "يجب إضافة العنوان",
 			"avatar": "يجب إضافة صورتك الرمزية",
 			"city": "يجب إضافة المدينة",
-			"country": "يجب إضافة الدولة",
+			"country": "يجب إضافة البلد",
 			"email": "يجب إضافة عنوان بريدك الإلكتروني",
 			"legalName": "يجب إضافة الاسم القانوني",
 			"name": "يجب إضافة اسمك",
@@ -201,14 +204,15 @@
 			"address": "العنوان",
 			"billing": "الفواتير",
 			"city": "المدينة",
-			"country": "الدولة",
-			"email": "البريد الإلكتروني",
+			"country": "البلد",
+			"email": "عنوان البريد الإلكتروني",
 			"legalName": "الاسم القانوني",
+			"openaiApiKey": "مفتاح API لـ OpenAI",
 			"phone": "رقم الهاتف",
 			"postalCode": "الرمز البريدي",
 			"private": "خاص",
 			"public": "عام",
-			"vatNumber": "رقم ضريبة القيمة المضافة"
+			"vatNumber": "رقم ض.ق.م"
 		}
 	}
 }

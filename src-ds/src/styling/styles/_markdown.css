@@ -1,25 +1,24 @@
 .ds-markdown {
-	max-width: 100%;
 	--margin-xxs: var(--ds-spacing-xs-0);
 	--margin-xs: var(--ds-spacing-xs-2);
 	--margin-sm: var(--ds-spacing-xs-4);
 	--margin-md: var(--ds-spacing-xs-6);
 	--margin-lg: var(--ds-spacing-xs-8);
 	--margin-xl: var(--ds-spacing-sm-0);
+	max-width: 100%;
 
 	/*
 	 * CODE
 	 */
 	& pre {
+		--bar-height: var(--ds-spacing-button-h-sm);
 		position: relative;
-		margin: var(--margin-xl) 0;
 		border: 1px solid var(--ds-color-border-default);
 		border-radius: var(--ds-radius-sm);
 		background-color: var(--ds-color-bg-card);
 		padding-top: var(--bar-height);
 		min-width: var(--ds-spacing-lg-7);
 		overflow: hidden;
-		--bar-height: var(--ds-spacing-button-h-sm);
 
 		&:first-child {
 			margin-top: var(--margin-xxs);
@@ -60,6 +59,10 @@
 			overflow-x: auto;
 		}
 	}
+	& pre,
+	& .ds-markdown-wrapper:has(> pre) {
+		margin: var(--margin-xl) 0;
+	}
 
 	& *:not(pre) > code {
 		margin: 0 1px;
@@ -72,6 +75,8 @@
 		word-break: break-word;
 
 		input[type='checkbox'] + &,
+		.ds-markdown-img-box + &,
+		br + &,
 		&:first-child {
 			margin-left: -2px;
 		}
@@ -82,10 +87,11 @@
 	 */
 	& ul,
 	& ol {
+		--start: 0;
 		display: flex;
 		flex-direction: column;
 		gap: var(--ds-spacing-xs-1);
-		counter-reset: --counter;
+		counter-reset: counterVar var(--start);
 		margin: var(--margin-xs) 0 var(--margin-xxs);
 		padding-left: var(--ds-spacing-sm-1);
 
@@ -121,7 +127,7 @@
 	 */
 	& ol > li {
 		position: relative;
-		counter-increment: --counter;
+		counter-increment: counterVar;
 
 		&::before {
 			position: absolute;
@@ -129,7 +135,7 @@
 			left: 0;
 			transform: translateX(-100%);
 			padding-right: var(--ds-spacing-xs-3);
-			content: counter(--counter) '.';
+			content: counter(counterVar) '.';
 			text-align: right;
 		}
 	}

@@ -1,10 +1,18 @@
 import { ErrorSummary, FieldLabel, SelectField, SelectOption, SelectOptionProps } from '@app/library/release'
 import { Button, DeleteSvg, Modal } from '@ds/release'
 import { useEffect, useState } from 'react'
-import { Agent, CreativityLevel, GPT } from '../api'
+import {
+	Agent,
+	CreativityLevel,
+	GPT,
+	GPT_ID__CHATGPT_4O,
+	GPT_ID__CHATGPT_4O_MINI,
+	GPT_ID__CHROME_GPT,
+} from '../api'
 import { EMPTY_AGENT, useAiChatAgents } from '../state'
 import { AgentEditField, Field } from './agent-edit-field'
-import { GptWarning } from './gpt-warning'
+import { ChatgptWarning } from './chatgpt-warning'
+import { ChromeWarning } from './chrome-warning'
 import { AgentGptItem } from './items/agent-gpt-item'
 
 interface Props {
@@ -42,6 +50,8 @@ export const AgentEditModal = (props: Props) => {
 	)
 
 	const isGptEnabled = allGPTs.find((gpt: GPT) => gpt.id === payload.gptId)?.enabled
+	const isChatGPT = [GPT_ID__CHATGPT_4O, GPT_ID__CHATGPT_4O_MINI].includes(payload.gptId)
+	const isChromeGPT = payload.gptId === GPT_ID__CHROME_GPT
 
 	const sectionClass = cx('flex flex-1 flex-col gap-y-sm-2')
 	const delimiterClass = cx('mx-sm-1 hidden w-px self-stretch bg-color-border-subtle lg:block')
@@ -107,6 +117,15 @@ export const AgentEditModal = (props: Props) => {
 
 		setFeedback(EMPTY_AGENT)
 	}, [props.agent, props.opened, allGPTs])
+
+	const slotWarning = (() => {
+		if (!isGptEnabled) {
+			const id = `${props.id}-gpt-warning`
+			if (isChromeGPT) return <ChromeWarning id={id} className="-mt-xs-5" />
+			if (isChatGPT) return <ChatgptWarning id={id} className="-mt-xs-5" />
+		}
+		return null
+	})()
 
 	return props.agent ? (
 		<Modal
@@ -198,7 +217,7 @@ export const AgentEditModal = (props: Props) => {
 							/>
 						</div>
 
-						{!isGptEnabled && <GptWarning id={`${props.id}-gpt-warning`} className="-mt-xs-5" />}
+						{slotWarning}
 
 						{/* CREATIVITY */}
 						<div className="flex flex-col">

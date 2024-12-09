@@ -28,9 +28,11 @@ const DEFAULT_PAGE = 1
 
 export const agentsService = {
 	async getGPTs(): Promise<ApiResponse<GptApiData>> {
+		const GPTs = await getGPTs()
+
 		return {
 			status: Status.SUCCESS,
-			data: { count: getGPTs().length, items: getGPTs() },
+			data: { count: GPTs.length, items: GPTs },
 		}
 	},
 
@@ -150,7 +152,7 @@ export const agentsService = {
 		}
 	},
 
-	async resetDB() {
-		resetAgentsDB()
+	async resetDB(random: boolean) {
+		resetAgentsDB(random)
 	},
 }

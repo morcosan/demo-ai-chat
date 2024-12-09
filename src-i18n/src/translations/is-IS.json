@@ -3,7 +3,7 @@
 		"action": {
 			"back": "Til baka",
 			"backToHome": "Aftur á forsíðu",
-			"changeLanguage": "Breyta tungumáli",
+			"changeLanguage": "Skipta um tungumál",
 			"close": "Loka",
 			"collapse": "Fella saman",
 			"copy": "Afrita",
@@ -23,7 +23,7 @@
 			"searchMore": "Sýna fleiri niðurstöður",
 			"selectAll": "Velja allt",
 			"showPanel": "Sýna spjald",
-			"signOut": "Skrá út"
+			"signOut": "Útskrá"
 		},
 		"error": {
 			"noChanges": "Engar breytingar",
@@ -31,35 +31,35 @@
 			"unsent": "Ósent"
 		},
 		"label": {
-			"apiDocs": "API skjölun",
+			"apiDocs": "API Skjölun",
 			"asia": "Asía",
-			"avatar": "Auðkennismynd",
+			"avatar": "Prófílmynd",
 			"code": "Kóði",
 			"copied": "Afritað",
 			"custom": "Sérsniðið",
-			"darkTheme": "Dökkt",
+			"darkTheme": "Dökkur",
 			"default": "Sjálfgefið",
 			"description": "Lýsing",
 			"designSystem": "Hönnunarkerfi",
 			"errors": "Villur",
 			"europe": "Evrópa",
-			"githubRepo": "GitHub geymsla",
+			"githubRepo": "GitHub Geymsla",
 			"language": "Tungumál",
 			"levelHigh": "Hátt",
 			"levelLow": "Lágt",
 			"levelMedium": "Miðlungs",
 			"levelVeryHigh": "Mjög hátt",
 			"levelVeryLow": "Mjög lágt",
-			"lightTheme": "Ljóst",
+			"lightTheme": "Ljós",
 			"name": "Nafn",
-			"navigationBar": "Leiðsögustika",
-			"navigationMenu": "Leiðsöguvalmynd",
+			"navigationBar": "Yfirlitsstika",
+			"navigationMenu": "Yfirlitsvalmynd",
 			"optionalField": "(Valfrjálst)",
 			"requiredField": "(Skylda)",
 			"result": "Niðurstaða",
 			"settings": "Stillingar",
-			"uiLibrary": "UI safn",
-			"uiTheme": "UI þema"
+			"uiLibrary": "Viðmótssafn",
+			"uiTheme": "Viðmótsþema"
 		},
 		"placeholder": {
 			"search": "Leita..."
@@ -81,8 +81,8 @@
 			"confirmDeleteAgent": "Staðfesta eyðingu umboðsmanns",
 			"confirmDeleteChats": "Staðfesta eyðingu spjalla",
 			"confirmRenameChat": "Staðfesta endurnefningu spjalls",
-			"copyCode": "Afrita kóða",
-			"copyMessage": "Afrita skilaboð",
+			"copyCode": "Afrita kóðann",
+			"copyMessage": "Afrita skilaboðin",
 			"createAgent": "Búa til umboðsmann",
 			"deleteAgent": "Eyða umboðsmanni",
 			"deleteSelectedChats": "Eyða völdum spjöllum",
@@ -91,37 +91,40 @@
 			"manageChats": "Stjórna spjöllum",
 			"openChat": "Opna spjall",
 			"openSubchat_zero": "Búa til undirspjall",
+			"openSubchat_one": "Opna undirspjall ({count} skilaboð)",
 			"openSubchat_other": "Opna undirspjall ({count} skilaboð)",
-			"previewCode": "Forskoða kóða",
+			"previewCode": "Forskoða kóðann",
 			"searchChats": "Leita í spjöllum",
 			"selectChat": "Velja spjall",
 			"sendMessage": "Senda skilaboð",
 			"showMoreAgents": "Sýna fleiri umboðsmenn",
 			"showMoreChats": "Sýna fleiri spjöll",
 			"showSubchats": "Sýna undirspjöll ({count})",
-			"startNewChat": "Hefja nýtt spjall",
+			"startNewChat": "Hefja nýtt samtal",
 			"startSearching_one": "Sláðu inn að minnsta kosti {count} staf",
 			"startSearching_other": "Sláðu inn að minnsta kosti {count} stafi"
 		},
 		"description": {
-			"chromeGPT": "Mini GPT fyrir Google Chrome",
-			"loremIpsumGPT": "Greindasta líkanið",
+			"chatgpt4o": "Öflugasta módel OpenAI",
+			"chatgpt4oMini": "Ódýrasta módel OpenAI",
+			"chromeGPT": "Mini GPT innbyggt í Chrome vafrann",
+			"loremIpsumGPT": "Greindasta módelið",
 			"rammusGPT": "Besti tilfinningalegur stuðningur"
 		},
 		"error": {
-			"agentAvatar": "Þú verður að bæta við auðkennismynd fyrir umboðsmanninn",
+			"agentAvatar": "Þú verður að bæta við prófílmynd fyrir umboðsmanninn",
 			"agentName": "Þú verður að bæta við nafni fyrir umboðsmanninn",
 			"emptyMessage": "Skilaboðin þín eru tóm",
-			"failedMessage": "Vandamál kom upp við að senda skilaboðin þín"
+			"failedMessage": "Það kom upp vandamál við að senda skilaboðin þín"
 		},
 		"label": {
 			"agents": "Umboðsmenn",
-			"chatTitle": "Titill spjalls",
+			"chatTitle": "Heiti spjalls",
 			"chats": "Spjöll",
-			"codePreview": "Forskoðun kóða",
+			"codePreview": "Kóðaforskoðun",
 			"creativityLevel": "Sköpunarstig",
 			"customInstructions": "Sérsniðnar leiðbeiningar",
-			"gptModel": "GPT líkan",
+			"gptModel": "GPT módel",
 			"newAgent": "Nýr umboðsmaður",
 			"newChat": "Nýtt spjall",
 			"newMessage": "Ný skilaboð",
@@ -130,23 +133,23 @@
 			"selectedAgent": "Valinn umboðsmaður",
 			"selectedValue": "Valið gildi",
 			"subchats": "Undirspjöll",
-			"urlPreview": "URL forskoðun",
-			"xMessages_one": "{count} skilaboð",
+			"urlPreview": "Vefslóðarforskoðun",
+			"xMessages_one": "1 skilaboð",
 			"xMessages_other": "{count} skilaboð",
 			"xSearchResults_zero": "Engar leitarniðurstöður",
 			"xSearchResults_one": "{count} leitarniðurstaða",
 			"xSearchResults_other": "{count} leitarniðurstöður",
-			"xSelectedMessages_one": "{count} skilaboð valin",
+			"xSelectedMessages_one": "1 skilaboð valið",
 			"xSelectedMessages_other": "{count} skilaboð valin"
 		},
 		"placeholder": {
 			"newMessage": "Spjalla við {name}...",
-			"rename": "Búa til nýtt nafn sjálfkrafa..."
+			"rename": "Búa sjálfkrafa til nýtt nafn..."
 		},
 		"state": {
 			"loadingAgents": "Hleð umboðsmönnum...",
 			"loadingChats": "Hleð spjöllum...",
-			"loadingGPTs": "Hleð GPT...",
+			"loadingGPTs": "Hleð GPTs...",
 			"loadingMessages": "Hleð skilaboðum...",
 			"loadingPreviousMessages": "Hleð fyrri skilaboðum...",
 			"loadingSubchats": "Hleð undirspjöllum...",
@@ -154,21 +157,22 @@
 			"thinking": "Hugsa..."
 		},
 		"warning": {
-			"deletingAgent": "Þessum umboðsmanni verður eytt varanlega",
-			"deletingChats": "Þessum spjöllum verður eytt varanlega",
-			"chromeGptInsideChrome": "Þetta GPT krefst þess að þessar stillingar séu virkar:",
-			"chromeGptOutsideChrome": "Þetta GPT er aðeins í boði í Google Chrome vafra",
-			"invalidGpt": "Ógilt GPT"
+			"chromeGptInsideChrome": "Chrome GPT þarfnast þessara tilraunastillinga:",
+			"chromeGptOutsideChrome": "Chrome GPT er aðeins í boði í Chrome vafranum",
+			"deletingAgent": "Þessum umboðsmanni verður varanlega eytt",
+			"deletingChats": "Þessum spjöllum verður varanlega eytt",
+			"invalidGpt": "Ógilt GPT",
+			"missingOpenAiApiKey": "Þú verður að stilla OpenAI API lykilinn þinn"
 		}
 	},
 	"userSettings": {
 		"action": {
 			"manageAccount": "Stjórna reikningi",
-			"manageBilling": "Stjórna reikningagerð"
+			"manageBilling": "Stjórna reikningum"
 		},
 		"error": {
 			"address": "Þú verður að bæta við heimilisfangi",
-			"avatar": "Þú verður að bæta við auðkennismynd",
+			"avatar": "Þú verður að bæta við prófílmynd",
 			"city": "Þú verður að bæta við borg",
 			"country": "Þú verður að bæta við landi",
 			"email": "Þú verður að bæta við netfangi",
@@ -179,15 +183,16 @@
 		"label": {
 			"account": "Reikningur",
 			"address": "Heimilisfang",
-			"billing": "Reikningagerð",
+			"billing": "Reikningar",
 			"city": "Borg",
 			"country": "Land",
 			"email": "Netfang",
 			"legalName": "Lögheiti",
+			"openaiApiKey": "OpenAI API lykill",
 			"phone": "Símanúmer",
 			"postalCode": "Póstnúmer",
-			"private": "Einkaaðgangur",
-			"public": "Opinn aðgangur",
+			"private": "Einkamál",
+			"public": "Opinbert",
 			"vatNumber": "VSK númer"
 		}
 	}

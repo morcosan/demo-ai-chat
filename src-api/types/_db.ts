@@ -3,8 +3,9 @@ import { CreativityLevel, MessageRole } from './_gpt'
 export interface DbAccount {
 	name: string
 	email: string
-	phone: string
 	avatar: string
+	phone: string
+	openaiApiKey: string
 }
 
 export interface DbBilling {
