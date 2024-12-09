@@ -105,7 +105,7 @@
 		"description": {
 			"chatgpt4o": "โมเดลที่ทรงพลังที่สุดของ OpenAI",
 			"chatgpt4oMini": "โมเดลที่ถูกที่สุดของ OpenAI",
-			"chromeGPT": "มินิ GPT ที่ฝังตัวในเบราว์เซอร์ Chrome",
+			"chromeGPT": "GPT ที่ฝังตัวในเบราว์เซอร์ Chrome",
 			"loremIpsumGPT": "โมเดลที่ฉลาดที่สุด",
 			"rammusGPT": "การสนับสนุนด้านอารมณ์ที่ดีที่สุด"
 		},

@@ -107,7 +107,7 @@
 		"description": {
 			"chatgpt4o": "OpenAI legerősebb modellje",
 			"chatgpt4oMini": "OpenAI legolcsóbb modellje",
-			"chromeGPT": "Chrome böngészőbe beépített mini GPT",
+			"chromeGPT": "Chrome böngészőbe beépített GPT",
 			"loremIpsumGPT": "Legintelligensebb modell",
 			"rammusGPT": "Legjobb érzelmi támogatás"
 		},

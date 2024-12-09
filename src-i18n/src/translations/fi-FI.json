@@ -107,7 +107,7 @@
 		"description": {
 			"chatgpt4o": "OpenAI:n tehokkain malli",
 			"chatgpt4oMini": "OpenAI:n edullisin malli",
-			"chromeGPT": "Chrome-selaimeen sisäänrakennettu Mini GPT",
+			"chromeGPT": "Chrome-selaimeen sisäänrakennettu GPT",
 			"loremIpsumGPT": "Älykkäin malli",
 			"rammusGPT": "Paras emotionaalinen tuki"
 		},

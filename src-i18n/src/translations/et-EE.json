@@ -107,7 +107,7 @@
 		"description": {
 			"chatgpt4o": "OpenAI võimsaim mudel",
 			"chatgpt4oMini": "OpenAI soodsaim mudel",
-			"chromeGPT": "Chrome'i brauserisse sisseehitatud Mini GPT",
+			"chromeGPT": "Chrome'i brauserisse sisseehitatud GPT",
 			"loremIpsumGPT": "Kõige intelligentsem mudel",
 			"rammusGPT": "Parim emotsionaalne tugi"
 		},

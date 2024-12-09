@@ -112,7 +112,7 @@
 		"description": {
 			"chatgpt4o": "Nejsilnější model OpenAI",
 			"chatgpt4oMini": "Nejlevnější model OpenAI",
-			"chromeGPT": "Mini GPT vestavěný v prohlížeči Chrome",
+			"chromeGPT": "GPT vestavěný v prohlížeči Chrome",
 			"loremIpsumGPT": "Nejinteligentnější model",
 			"rammusGPT": "Nejlepší emocionální podpora"
 		},

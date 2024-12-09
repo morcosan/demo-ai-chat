@@ -108,7 +108,7 @@
 		"description": {
 			"chatgpt4o": "OpenAI-nin ən güclü modeli",
 			"chatgpt4oMini": "OpenAI-nin ən ucuz modeli",
-			"chromeGPT": "Chrome brauzerdə quraşdırılmış Mini GPT",
+			"chromeGPT": "Chrome brauzerdə quraşdırılmış GPT",
 			"loremIpsumGPT": "Ən ağıllı model",
 			"rammusGPT": "Ən yaxşı emosional dəstək"
 		},

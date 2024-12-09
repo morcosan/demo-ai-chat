@@ -110,7 +110,7 @@
 		"description": {
 			"chatgpt4o": "Cel mai puternic model OpenAI",
 			"chatgpt4oMini": "Cel mai ieftin model OpenAI",
-			"chromeGPT": "Mini GPT incorporat în browserul Chrome",
+			"chromeGPT": "GPT incorporat în browserul Chrome",
 			"loremIpsumGPT": "Cel mai inteligent model",
 			"rammusGPT": "Cel mai bun suport emoțional"
 		},

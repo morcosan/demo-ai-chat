@@ -106,7 +106,7 @@
 		"description": {
 			"chatgpt4o": "Model terkuat OpenAI",
 			"chatgpt4oMini": "Model termurah OpenAI",
-			"chromeGPT": "Mini GPT tertanam di browser Chrome",
+			"chromeGPT": "GPT tertanam di browser Chrome",
 			"loremIpsumGPT": "Model paling cerdas",
 			"rammusGPT": "Dukungan emosional terbaik"
 		},

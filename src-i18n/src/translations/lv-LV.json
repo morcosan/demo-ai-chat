@@ -108,7 +108,7 @@
 		"description": {
 			"chatgpt4o": "OpenAI jaudīgākais modelis",
 			"chatgpt4oMini": "OpenAI lētākais modelis",
-			"chromeGPT": "Mini GPT iestrādāts Chrome pārlūkā",
+			"chromeGPT": "GPT iestrādāts Chrome pārlūkā",
 			"loremIpsumGPT": "Inteliģentākais modelis",
 			"rammusGPT": "Labākais emocionālais atbalsts"
 		},

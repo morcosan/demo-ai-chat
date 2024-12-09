@@ -107,7 +107,7 @@
 		"description": {
 			"chatgpt4o": "OpenAIs mest kraftfulde model",
 			"chatgpt4oMini": "OpenAIs billigste model",
-			"chromeGPT": "Mini GPT indbygget i Chrome-browser",
+			"chromeGPT": "GPT indbygget i Chrome-browser",
 			"loremIpsumGPT": "Mest intelligente model",
 			"rammusGPT": "Bedste emotionelle support"
 		},

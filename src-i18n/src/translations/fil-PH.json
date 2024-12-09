@@ -107,7 +107,7 @@
 		"description": {
 			"chatgpt4o": "Ang pinakamalakas na modelo ng OpenAI",
 			"chatgpt4oMini": "Ang pinakamurang modelo ng OpenAI",
-			"chromeGPT": "Mini GPT na naka-embed sa Chrome browser",
+			"chromeGPT": "GPT na naka-embed sa Chrome browser",
 			"loremIpsumGPT": "Ang pinakamatalinong modelo",
 			"rammusGPT": "Pinakamahusay na emotional support"
 		},

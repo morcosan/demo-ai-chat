@@ -109,7 +109,7 @@
 		"description": {
 			"chatgpt4o": "Najmoćniji OpenAI model",
 			"chatgpt4oMini": "Najjeftiniji OpenAI model",
-			"chromeGPT": "Mini GPT ugrađen u Chrome preglednik",
+			"chromeGPT": "GPT ugrađen u Chrome preglednik",
 			"loremIpsumGPT": "Najinteligentniji model",
 			"rammusGPT": "Najbolja emocionalna podrška"
 		},

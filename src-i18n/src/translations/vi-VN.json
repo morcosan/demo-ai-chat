@@ -107,7 +107,7 @@
 		"description": {
 			"chatgpt4o": "Mô hình mạnh nhất của OpenAI",
 			"chatgpt4oMini": "Mô hình rẻ nhất của OpenAI",
-			"chromeGPT": "Mini GPT tích hợp trong trình duyệt Chrome",
+			"chromeGPT": "GPT tích hợp trong trình duyệt Chrome",
 			"loremIpsumGPT": "Mô hình thông minh nhất",
 			"rammusGPT": "Hỗ trợ cảm xúc tốt nhất"
 		},

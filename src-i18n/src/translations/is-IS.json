@@ -107,7 +107,7 @@
 		"description": {
 			"chatgpt4o": "Öflugasta módel OpenAI",
 			"chatgpt4oMini": "Ódýrasta módel OpenAI",
-			"chromeGPT": "Mini GPT innbyggt í Chrome vafrann",
+			"chromeGPT": "GPT innbyggt í Chrome vafrann",
 			"loremIpsumGPT": "Greindasta módelið",
 			"rammusGPT": "Besti tilfinningalegur stuðningur"
 		},
