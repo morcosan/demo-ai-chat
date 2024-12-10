@@ -2,7 +2,7 @@ a.ds-link {
 	border: 1px solid transparent;
 	border-radius: var(--ds-radius-xs);
 	background-color: var(--ds-color-bg-link);
-	padding: 0 var(--ds-spacing-xs-2) 2px;
+	padding: 0 var(--ds-spacing-link-px-xs) 2px;
 	color: var(--ds-color-text-link);
 	font-style: normal;
 	font-weight: var(--ds-font-weight-lg);

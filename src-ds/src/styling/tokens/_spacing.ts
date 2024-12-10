@@ -70,6 +70,8 @@ export const TOKENS__SPACING = {
 	'button-h-md': { $ref: 'sm-4' },
 	'button-h-lg': { $ref: 'sm-6' },
 
+	'link-px-xs': { $ref: 'xs-2' },
+	
 	'button-px-xs': { $ref: 'xs-4' },
 	'button-px-sm': { $ref: 'xs-6' },
 	'button-px-md': { $ref: 'xs-8' },

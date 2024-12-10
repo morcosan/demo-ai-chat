@@ -14,12 +14,13 @@ export const accountService = {
 			avatar: payload.avatar?.trim() || dbAccount.avatar,
 			email: payload.email?.trim() || dbAccount.email,
 			phone: payload.phone?.trim() || '',
+			openaiApiKey: payload.openaiApiKey?.trim() || '',
 		})
 
 		return { status: Status.SUCCESS, data: getDbAccount() }
 	},
 
-	async resetDB() {
-		resetDbAccount()
+	async resetDB(random: boolean) {
+		resetDbAccount(random)
 	},
 }

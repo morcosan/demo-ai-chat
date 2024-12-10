@@ -5,25 +5,25 @@
 			"backToHome": "Natrag na početnu",
 			"changeLanguage": "Promijeni jezik",
 			"close": "Zatvori",
-			"collapse": "Smanji",
+			"collapse": "Sažmi",
 			"copy": "Kopiraj",
 			"delete": "Izbriši",
-			"deselectAll": "Poništi odabir",
+			"deselectAll": "Odznači sve",
 			"expand": "Proširi",
 			"goToUrl": "Idi na {url}",
 			"hidePanel": "Sakrij ploču",
 			"openMenu": "Otvori izbornik",
 			"preview": "Pregled",
-			"reload": "Osvježi",
+			"reload": "Ponovno učitaj",
 			"rename": "Preimenuj",
 			"resizePanel": "Promijeni veličinu ploče",
 			"retry": "Pokušaj ponovno",
 			"saveChanges": "Spremi promjene",
-			"search": "Traži",
+			"search": "Pretraži",
 			"searchMore": "Prikaži više rezultata",
-			"selectAll": "Odaberi sve",
+			"selectAll": "Označi sve",
 			"showPanel": "Prikaži ploču",
-			"signOut": "Odjava"
+			"signOut": "Odjavi se"
 		},
 		"error": {
 			"noChanges": "Nema promjena",
@@ -40,8 +40,8 @@
 			"darkTheme": "Tamno",
 			"default": "Zadano",
 			"description": "Opis",
-			"designSystem": "Sustav dizajna",
-			"errors": "Greške",
+			"designSystem": "Dizajn sustav",
+			"errors": "Pogreške",
 			"europe": "Europa",
 			"githubRepo": "GitHub repozitorij",
 			"language": "Jezik",
@@ -86,14 +86,14 @@
 			"createAgent": "Stvori agenta",
 			"deleteAgent": "Izbriši agenta",
 			"deleteSelectedChats": "Izbriši odabrane razgovore",
-			"deselectChat": "Poništi odabir razgovora",
+			"deselectChat": "Odznači razgovor",
 			"manageAgents": "Upravljaj agentima",
 			"manageChats": "Upravljaj razgovorima",
 			"openChat": "Otvori razgovor",
-			"openSubchat_zero": "Stvori podrazgovor",
 			"openSubchat_one": "Otvori podrazgovor ({count} poruka)",
 			"openSubchat_few": "Otvori podrazgovor ({count} poruke)",
 			"openSubchat_other": "Otvori podrazgovor ({count} poruka)",
+			"openSubchat_zero": "Stvori podrazgovor",
 			"previewCode": "Pregledaj kod",
 			"searchChats": "Pretraži razgovore",
 			"selectChat": "Odaberi razgovor",
@@ -107,7 +107,9 @@
 			"startSearching_other": "Upiši barem {count} znakova"
 		},
 		"description": {
-			"chromeGPT": "Mini GPT za Google Chrome",
+			"chatgpt4o": "Najmoćniji OpenAI model",
+			"chatgpt4oMini": "Najjeftiniji OpenAI model",
+			"chromeGPT": "GPT ugrađen u Chrome preglednik",
 			"loremIpsumGPT": "Najinteligentniji model",
 			"rammusGPT": "Najbolja emocionalna podrška"
 		},
@@ -137,16 +139,16 @@
 			"xMessages_one": "{count} poruka",
 			"xMessages_few": "{count} poruke",
 			"xMessages_other": "{count} poruka",
-			"xSearchResults_zero": "Nema rezultata pretraživanja",
 			"xSearchResults_one": "{count} rezultat pretraživanja",
 			"xSearchResults_few": "{count} rezultata pretraživanja",
 			"xSearchResults_other": "{count} rezultata pretraživanja",
-			"xSelectedMessages_one": "{count} odabrana poruka",
-			"xSelectedMessages_few": "{count} odabrane poruke",
-			"xSelectedMessages_other": "{count} odabranih poruka"
+			"xSearchResults_zero": "Nema rezultata pretraživanja",
+			"xSelectedMessages_one": "{count} poruka odabrana",
+			"xSelectedMessages_few": "{count} poruke odabrane",
+			"xSelectedMessages_other": "{count} poruka odabrano"
 		},
 		"placeholder": {
-			"newMessage": "Razgovaraj s {name}...",
+			"newMessage": "Razgovarajte s {name}...",
 			"rename": "Automatski generiraj novo ime..."
 		},
 		"state": {
@@ -160,11 +162,12 @@
 			"thinking": "Razmišljanje..."
 		},
 		"warning": {
+			"chromeGptInsideChrome": "Chrome GPT zahtijeva ove eksperimentalne postavke:",
+			"chromeGptOutsideChrome": "Chrome GPT je dostupan samo u Chrome pregledniku",
 			"deletingAgent": "Ovaj agent će biti trajno izbrisan",
 			"deletingChats": "Ovi razgovori će biti trajno izbrisani",
-			"chromeGptInsideChrome": "Ovaj GPT zahtijeva da ove postavke budu omogućene:",
-			"chromeGptOutsideChrome": "Ovaj GPT je dostupan samo u Google Chrome pregledniku",
-			"invalidGpt": "Nevažeći GPT"
+			"invalidGpt": "Nevažeći GPT",
+			"missingOpenAiApiKey": "Morate konfigurirati svoj OpenAI API ključ"
 		}
 	},
 	"userSettings": {
@@ -178,7 +181,7 @@
 			"city": "Morate dodati grad",
 			"country": "Morate dodati državu",
 			"email": "Morate dodati svoju email adresu",
-			"legalName": "Morate dodati pravni naziv",
+			"legalName": "Morate dodati pravno ime",
 			"name": "Morate dodati svoje ime",
 			"postalCode": "Morate dodati poštanski broj"
 		},
@@ -189,12 +192,13 @@
 			"city": "Grad",
 			"country": "Država",
 			"email": "Email adresa",
-			"legalName": "Pravni naziv",
+			"legalName": "Pravno ime",
+			"openaiApiKey": "OpenAI API ključ",
 			"phone": "Telefonski broj",
 			"postalCode": "Poštanski broj",
 			"private": "Privatno",
 			"public": "Javno",
-			"vatNumber": "OIB"
+			"vatNumber": "PDV broj"
 		}
 	}
 }

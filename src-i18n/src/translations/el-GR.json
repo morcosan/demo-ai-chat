@@ -2,7 +2,7 @@
 	"core": {
 		"action": {
 			"back": "Πίσω",
-			"backToHome": "Επιστροφή στην αρχική",
+			"backToHome": "Επιστροφή στην αρχική σελίδα",
 			"changeLanguage": "Αλλαγή γλώσσας",
 			"close": "Κλείσιμο",
 			"collapse": "Σύμπτυξη",
@@ -28,22 +28,22 @@
 		"error": {
 			"noChanges": "Δεν υπάρχουν αλλαγές",
 			"nothingFound": "Δεν βρέθηκε τίποτα για \"{search}\"",
-			"unsent": "Δεν στάλθηκε"
+			"unsent": "Μη απεσταλμένο"
 		},
 		"label": {
 			"apiDocs": "Τεκμηρίωση API",
 			"asia": "Ασία",
-			"avatar": "Εικόνα προφίλ",
+			"avatar": "Άβαταρ",
 			"code": "Κώδικας",
 			"copied": "Αντιγράφηκε",
 			"custom": "Προσαρμοσμένο",
 			"darkTheme": "Σκούρο",
 			"default": "Προεπιλογή",
 			"description": "Περιγραφή",
-			"designSystem": "Σύστημα Σχεδιασμού",
+			"designSystem": "Σύστημα Σχεδίασης",
 			"errors": "Σφάλματα",
 			"europe": "Ευρώπη",
-			"githubRepo": "GitHub Repository",
+			"githubRepo": "GitHub Repo",
 			"language": "Γλώσσα",
 			"levelHigh": "Υψηλό",
 			"levelLow": "Χαμηλό",
@@ -56,7 +56,7 @@
 			"navigationMenu": "Μενού πλοήγησης",
 			"optionalField": "(Προαιρετικό)",
 			"quickSettings": "Γρήγορες ρυθμίσεις",
-			"requiredField": "(Υποχρεωτικό)",
+			"requiredField": "(Απαιτείται)",
 			"result": "Αποτέλεσμα",
 			"settings": "Ρυθμίσεις",
 			"uiLibrary": "Βιβλιοθήκη UI",
@@ -67,18 +67,18 @@
 		},
 		"state": {
 			"dataSaved": "Τα δεδομένα σας αποθηκεύτηκαν",
-			"deleting": "Διαγραφή...",
-			"loading": "Φόρτωση...",
-			"searching": "Αναζήτηση...",
-			"sending": "Αποστολή...",
-			"updating": "Ενημέρωση..."
+			"deleting": "Διαγράφοντας...",
+			"loading": "Φορτώνοντας...",
+			"searching": "Αναζητώντας...",
+			"sending": "Αποστέλλοντας...",
+			"updating": "Ενημερώνοντας..."
 		}
 	},
 	"aiChat": {
 		"action": {
-			"backToSubchats": "Επιστροφή στα υποχάτ",
+			"backToSubchats": "Πίσω στα υποσυνομιλίες",
 			"closePreview": "Κλείσιμο προεπισκόπησης",
-			"configureAgent": "Ρύθμιση πράκτορα",
+			"configureAgent": "Διαμόρφωση πράκτορα",
 			"confirmDeleteAgent": "Επιβεβαίωση διαγραφής πράκτορα",
 			"confirmDeleteChats": "Επιβεβαίωση διαγραφής συνομιλιών",
 			"confirmRenameChat": "Επιβεβαίωση μετονομασίας συνομιλίας",
@@ -91,27 +91,29 @@
 			"manageAgents": "Διαχείριση πρακτόρων",
 			"manageChats": "Διαχείριση συνομιλιών",
 			"openChat": "Άνοιγμα συνομιλίας",
-			"openSubchat_zero": "Δημιουργία υποχάτ",
-			"openSubchat_one": "Άνοιγμα υποχάτ ({count} μήνυμα)",
-			"openSubchat_other": "Άνοιγμα υποχάτ ({count} μηνύματα)",
+			"openSubchat_zero": "Δημιουργία υποσυνομιλίας",
+			"openSubchat_one": "Άνοιγμα υποσυνομιλίας (1 μήνυμα)",
+			"openSubchat_other": "Άνοιγμα υποσυνομιλίας ({count} μηνύματα)",
 			"previewCode": "Προεπισκόπηση κώδικα",
 			"searchChats": "Αναζήτηση συνομιλιών",
 			"selectChat": "Επιλογή συνομιλίας",
 			"sendMessage": "Αποστολή μηνύματος",
 			"showMoreAgents": "Εμφάνιση περισσότερων πρακτόρων",
 			"showMoreChats": "Εμφάνιση περισσότερων συνομιλιών",
-			"showSubchats": "Εμφάνιση υποχάτ ({count})",
+			"showSubchats": "Εμφάνιση υποσυνομιλιών ({count})",
 			"startNewChat": "Έναρξη νέας συνομιλίας",
 			"startSearching_one": "Πληκτρολογήστε τουλάχιστον {count} χαρακτήρα",
 			"startSearching_other": "Πληκτρολογήστε τουλάχιστον {count} χαρακτήρες"
 		},
 		"description": {
-			"chromeGPT": "Mini GPT για Google Chrome",
+			"chatgpt4o": "Το ισχυρότερο μοντέλο της OpenAI",
+			"chatgpt4oMini": "Το οικονομικότερο μοντέλο της OpenAI",
+			"chromeGPT": "GPT ενσωματωμένο στον Chrome browser",
 			"loremIpsumGPT": "Το πιο έξυπνο μοντέλο",
 			"rammusGPT": "Καλύτερη συναισθηματική υποστήριξη"
 		},
 		"error": {
-			"agentAvatar": "Πρέπει να προσθέσετε εικόνα προφίλ για τον πράκτορα",
+			"agentAvatar": "Πρέπει να προσθέσετε άβαταρ για τον πράκτορα",
 			"agentName": "Πρέπει να προσθέσετε όνομα για τον πράκτορα",
 			"emptyMessage": "Το μήνυμά σας είναι κενό",
 			"failedMessage": "Υπήρξε πρόβλημα στην παράδοση του μηνύματός σας"
@@ -128,10 +130,10 @@
 			"newChat": "Νέα συνομιλία",
 			"newMessage": "Νέο μήνυμα",
 			"noChats": "Δεν υπάρχουν συνομιλίες",
-			"noSubchats": "Δεν υπάρχουν υποχάτ",
+			"noSubchats": "Δεν υπάρχουν υποσυνομιλίες",
 			"selectedAgent": "Επιλεγμένος πράκτορας",
 			"selectedValue": "Επιλεγμένη τιμή",
-			"subchats": "Υποχάτ",
+			"subchats": "Υποσυνομιλίες",
 			"urlPreview": "Προεπισκόπηση URL",
 			"xMessages_one": "1 μήνυμα",
 			"xMessages_other": "{count} μηνύματα",
@@ -142,25 +144,26 @@
 			"xSelectedMessages_other": "{count} επιλεγμένα μηνύματα"
 		},
 		"placeholder": {
-			"newMessage": "Μιλήστε με {name}...",
+			"newMessage": "Μιλήστε με τον/την {name}...",
 			"rename": "Αυτόματη δημιουργία νέου ονόματος..."
 		},
 		"state": {
-			"loadingAgents": "Φόρτωση πρακτόρων...",
-			"loadingChats": "Φόρτωση συνομιλιών...",
-			"loadingGPTs": "Φόρτωση GPTs...",
-			"loadingMessages": "Φόρτωση μηνυμάτων...",
-			"loadingPreviousMessages": "Φόρτωση προηγούμενων μηνυμάτων...",
-			"loadingSubchats": "Φόρτωση υποχάτ...",
-			"renamingChat": "Μετονομασία συνομιλίας...",
+			"loadingAgents": "Φορτώνοντας πράκτορες...",
+			"loadingChats": "Φορτώνοντας συνομιλίες...",
+			"loadingGPTs": "Φορτώνοντας GPTs...",
+			"loadingMessages": "Φορτώνοντας μηνύματα...",
+			"loadingPreviousMessages": "Φορτώνοντας προηγούμενα μηνύματα...",
+			"loadingSubchats": "Φορτώνοντας υποσυνομιλίες...",
+			"renamingChat": "Μετονομάζοντας συνομιλία...",
 			"thinking": "Σκέφτεται..."
 		},
 		"warning": {
+			"chromeGptInsideChrome": "Το Chrome GPT απαιτεί αυτές τις πειραματικές ρυθμίσεις:",
+			"chromeGptOutsideChrome": "Το Chrome GPT είναι διαθέσιμο μόνο στον Chrome browser",
 			"deletingAgent": "Αυτός ο πράκτορας θα διαγραφεί μόνιμα",
 			"deletingChats": "Αυτές οι συνομιλίες θα διαγραφούν μόνιμα",
-			"chromeGptInsideChrome": "Αυτό το GPT απαιτεί την ενεργοποίηση αυτών των ρυθμίσεων:",
-			"chromeGptOutsideChrome": "Αυτό το GPT είναι διαθέσιμο μόνο στον περιηγητή Google Chrome",
-			"invalidGpt": "Μη έγκυρο GPT"
+			"invalidGpt": "Μη έγκυρο GPT",
+			"missingOpenAiApiKey": "Πρέπει να ρυθμίσετε το κλειδί API του OpenAI"
 		}
 	},
 	"userSettings": {
@@ -170,10 +173,10 @@
 		},
 		"error": {
 			"address": "Πρέπει να προσθέσετε τη διεύθυνση",
-			"avatar": "Πρέπει να προσθέσετε την εικόνα προφίλ σας",
+			"avatar": "Πρέπει να προσθέσετε το άβαταρ σας",
 			"city": "Πρέπει να προσθέσετε την πόλη",
 			"country": "Πρέπει να προσθέσετε τη χώρα",
-			"email": "Πρέπει να προσθέσετε το email σας",
+			"email": "Πρέπει να προσθέσετε τη διεύθυνση email σας",
 			"legalName": "Πρέπει να προσθέσετε το νόμιμο όνομα",
 			"name": "Πρέπει να προσθέσετε το όνομά σας",
 			"postalCode": "Πρέπει να προσθέσετε τον ταχυδρομικό κώδικα"
@@ -186,6 +189,7 @@
 			"country": "Χώρα",
 			"email": "Διεύθυνση email",
 			"legalName": "Νόμιμο όνομα",
+			"openaiApiKey": "Κλειδί API OpenAI",
 			"phone": "Αριθμός τηλεφώνου",
 			"postalCode": "Ταχυδρομικός κώδικας",
 			"private": "Ιδιωτικό",

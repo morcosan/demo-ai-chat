@@ -1,4 +1,4 @@
-import { GPT_ID__LOREM_IPSUM } from '@api/types'
+import { GPT_ID__LOREM_IPSUM_GPT } from '@api/types'
 
 export type EndpointType = 'GET' | 'POST' | 'PATCH' | 'DELETE'
 
@@ -36,7 +36,7 @@ export const ENDPOINTS: Endpoint[] = [
 	// DELETE
 	{ type: 'DELETE', path: '/api/agents', params: ['agentIds'] },
 	{ type: 'DELETE', path: '/api/chats', params: ['chatIds'] },
-	{ type: 'DELETE', path: '/api/database', params: [] },
+	{ type: 'DELETE', path: '/api/database', params: ['random'] },
 ]
 
 export const QUERY_DEFAULTS = {
@@ -52,12 +52,13 @@ export const QUERY_DEFAULTS = {
 	desc: 'Example description',
 	email: 'john.doe@example.com',
 	everywhere: 'false',
-	gptId: String(GPT_ID__LOREM_IPSUM),
+	gptId: String(GPT_ID__LOREM_IPSUM_GPT),
 	name: 'John Doe',
 	page: '1',
 	phone: '+123456789',
 	postalCode: '123456',
 	prompt: 'You are an expert',
+	random: 'true',
 	vatNumber: 'FR123',
 }
 

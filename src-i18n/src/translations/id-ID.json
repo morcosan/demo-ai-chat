@@ -15,12 +15,12 @@
 			"openMenu": "Buka menu",
 			"preview": "Pratinjau",
 			"reload": "Muat ulang",
-			"rename": "Ubah nama",
+			"rename": "Ganti nama",
 			"resizePanel": "Ubah ukuran panel",
 			"retry": "Coba lagi",
 			"saveChanges": "Simpan perubahan",
 			"search": "Cari",
-			"searchMore": "Tampilkan hasil lebih banyak",
+			"searchMore": "Tampilkan hasil lainnya",
 			"selectAll": "Pilih semua",
 			"showPanel": "Tampilkan panel",
 			"signOut": "Keluar"
@@ -38,12 +38,12 @@
 			"copied": "Tersalin",
 			"custom": "Kustom",
 			"darkTheme": "Gelap",
-			"default": "Bawaan",
+			"default": "Default",
 			"description": "Deskripsi",
 			"designSystem": "Sistem Desain",
 			"errors": "Kesalahan",
 			"europe": "Eropa",
-			"githubRepo": "Repo GitHub",
+			"githubRepo": "Repositori GitHub",
 			"language": "Bahasa",
 			"levelHigh": "Tinggi",
 			"levelLow": "Rendah",
@@ -52,9 +52,10 @@
 			"levelVeryLow": "Sangat rendah",
 			"lightTheme": "Terang",
 			"name": "Nama",
-			"navigationBar": "Bar navigasi",
+			"navigationBar": "Bilah navigasi",
 			"navigationMenu": "Menu navigasi",
 			"optionalField": "(Opsional)",
+			"quickSettings": "Pengaturan cepat",
 			"requiredField": "(Wajib)",
 			"result": "Hasil",
 			"settings": "Pengaturan",
@@ -80,7 +81,7 @@
 			"configureAgent": "Konfigurasi agen",
 			"confirmDeleteAgent": "Konfirmasi hapus agen",
 			"confirmDeleteChats": "Konfirmasi hapus chat",
-			"confirmRenameChat": "Konfirmasi ubah nama chat",
+			"confirmRenameChat": "Konfirmasi ganti nama chat",
 			"copyCode": "Salin kode",
 			"copyMessage": "Salin pesan",
 			"createAgent": "Buat agen",
@@ -103,7 +104,9 @@
 			"startSearching_other": "Ketik minimal {count} karakter"
 		},
 		"description": {
-			"chromeGPT": "Mini GPT untuk Google Chrome",
+			"chatgpt4o": "Model terkuat OpenAI",
+			"chatgpt4oMini": "Model termurah OpenAI",
+			"chromeGPT": "GPT tertanam di browser Chrome",
 			"loremIpsumGPT": "Model paling cerdas",
 			"rammusGPT": "Dukungan emosional terbaik"
 		},
@@ -131,13 +134,13 @@
 			"subchats": "Subchat",
 			"urlPreview": "Pratinjau URL",
 			"xMessages_other": "{count} pesan",
-			"xSearchResults_zero": "Tidak ada hasil pencarian",
 			"xSearchResults_other": "{count} hasil pencarian",
+			"xSearchResults_zero": "Tidak ada hasil pencarian",
 			"xSelectedMessages_other": "{count} pesan terpilih"
 		},
 		"placeholder": {
 			"newMessage": "Bicara dengan {name}...",
-			"rename": "Buat nama baru secara otomatis..."
+			"rename": "Generate nama baru secara otomatis..."
 		},
 		"state": {
 			"loadingAgents": "Memuat agen...",
@@ -146,15 +149,16 @@
 			"loadingMessages": "Memuat pesan...",
 			"loadingPreviousMessages": "Memuat pesan sebelumnya...",
 			"loadingSubchats": "Memuat subchat...",
-			"renamingChat": "Mengubah nama chat...",
+			"renamingChat": "Mengganti nama chat...",
 			"thinking": "Berpikir..."
 		},
 		"warning": {
+			"chromeGptInsideChrome": "Chrome GPT memerlukan pengaturan eksperimental ini:",
+			"chromeGptOutsideChrome": "Chrome GPT hanya tersedia di browser Chrome",
 			"deletingAgent": "Agen ini akan dihapus secara permanen",
 			"deletingChats": "Chat ini akan dihapus secara permanen",
-			"chromeGptInsideChrome": "GPT ini memerlukan pengaturan berikut untuk diaktifkan:",
-			"chromeGptOutsideChrome": "GPT ini hanya tersedia di browser Google Chrome",
-			"invalidGpt": "GPT tidak valid"
+			"invalidGpt": "GPT tidak valid",
+			"missingOpenAiApiKey": "Anda harus mengkonfigurasi kunci API OpenAI Anda"
 		}
 	},
 	"userSettings": {
@@ -167,7 +171,7 @@
 			"avatar": "Anda harus menambahkan avatar Anda",
 			"city": "Anda harus menambahkan kota",
 			"country": "Anda harus menambahkan negara",
-			"email": "Anda harus menambahkan alamat email",
+			"email": "Anda harus menambahkan alamat email Anda",
 			"legalName": "Anda harus menambahkan nama legal",
 			"name": "Anda harus menambahkan nama Anda",
 			"postalCode": "Anda harus menambahkan kode pos"
@@ -180,6 +184,7 @@
 			"country": "Negara",
 			"email": "Alamat email",
 			"legalName": "Nama legal",
+			"openaiApiKey": "Kunci API OpenAI",
 			"phone": "Nomor telepon",
 			"postalCode": "Kode pos",
 			"private": "Pribadi",

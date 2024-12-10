@@ -27,7 +27,7 @@
 		},
 		"error": {
 			"noChanges": "Brak zmian",
-			"nothingFound": "Nie znaleziono \"{search}\"",
+			"nothingFound": "Nie znaleziono wyników dla \"{search}\"",
 			"unsent": "Niewysłane"
 		},
 		"label": {
@@ -55,6 +55,7 @@
 			"navigationBar": "Pasek nawigacji",
 			"navigationMenu": "Menu nawigacji",
 			"optionalField": "(Opcjonalne)",
+			"quickSettings": "Szybkie ustawienia",
 			"requiredField": "(Wymagane)",
 			"result": "Wynik",
 			"settings": "Ustawienia",
@@ -68,7 +69,7 @@
 			"dataSaved": "Twoje dane zostały zapisane",
 			"deleting": "Usuwanie...",
 			"loading": "Ładowanie...",
-			"searching": "Wyszukiwanie...",
+			"searching": "Szukanie...",
 			"sending": "Wysyłanie...",
 			"updating": "Aktualizowanie..."
 		}
@@ -77,7 +78,7 @@
 		"action": {
 			"backToSubchats": "Powrót do subczatów",
 			"closePreview": "Zamknij podgląd",
-			"configureAgent": "Konfiguruj agenta",
+			"configureAgent": "Skonfiguruj agenta",
 			"confirmDeleteAgent": "Potwierdź usunięcie agenta",
 			"confirmDeleteChats": "Potwierdź usunięcie czatów",
 			"confirmRenameChat": "Potwierdź zmianę nazwy czatu",
@@ -91,7 +92,7 @@
 			"manageChats": "Zarządzaj czatami",
 			"openChat": "Otwórz czat",
 			"openSubchat_zero": "Utwórz subczat",
-			"openSubchat_one": "Otwórz subczat ({count} wiadomość)",
+			"openSubchat_one": "Otwórz subczat (1 wiadomość)",
 			"openSubchat_few": "Otwórz subczat ({count} wiadomości)",
 			"openSubchat_many": "Otwórz subczat ({count} wiadomości)",
 			"openSubchat_other": "Otwórz subczat ({count} wiadomości)",
@@ -103,13 +104,15 @@
 			"showMoreChats": "Pokaż więcej czatów",
 			"showSubchats": "Pokaż subczaty ({count})",
 			"startNewChat": "Rozpocznij nową rozmowę",
-			"startSearching_one": "Wpisz przynajmniej {count} znak",
-			"startSearching_few": "Wpisz przynajmniej {count} znaki",
-			"startSearching_many": "Wpisz przynajmniej {count} znaków",
-			"startSearching_other": "Wpisz przynajmniej {count} znaków"
+			"startSearching_one": "Wpisz co najmniej {count} znak",
+			"startSearching_few": "Wpisz co najmniej {count} znaki",
+			"startSearching_many": "Wpisz co najmniej {count} znaków",
+			"startSearching_other": "Wpisz co najmniej {count} znaków"
 		},
 		"description": {
-			"chromeGPT": "Mini GPT dla Google Chrome",
+			"chatgpt4o": "Najpotężniejszy model OpenAI",
+			"chatgpt4oMini": "Najtańszy model OpenAI",
+			"chromeGPT": "GPT wbudowany w przeglądarkę Chrome",
 			"loremIpsumGPT": "Najbardziej inteligentny model",
 			"rammusGPT": "Najlepsze wsparcie emocjonalne"
 		},
@@ -117,7 +120,7 @@
 			"agentAvatar": "Musisz dodać awatar dla agenta",
 			"agentName": "Musisz dodać nazwę dla agenta",
 			"emptyMessage": "Twoja wiadomość jest pusta",
-			"failedMessage": "Wystąpił problem z dostarczeniem twojej wiadomości"
+			"failedMessage": "Wystąpił problem z dostarczeniem wiadomości"
 		},
 		"label": {
 			"agents": "Agenci",
@@ -136,7 +139,7 @@
 			"selectedValue": "Wybrana wartość",
 			"subchats": "Subczaty",
 			"urlPreview": "Podgląd URL",
-			"xMessages_one": "{count} wiadomość",
+			"xMessages_one": "1 wiadomość",
 			"xMessages_few": "{count} wiadomości",
 			"xMessages_many": "{count} wiadomości",
 			"xMessages_other": "{count} wiadomości",
@@ -145,19 +148,19 @@
 			"xSearchResults_few": "{count} wyniki wyszukiwania",
 			"xSearchResults_many": "{count} wyników wyszukiwania",
 			"xSearchResults_other": "{count} wyników wyszukiwania",
-			"xSelectedMessages_one": "{count} wiadomość wybrana",
-			"xSelectedMessages_few": "{count} wiadomości wybrane",
-			"xSelectedMessages_many": "{count} wiadomości wybranych",
-			"xSelectedMessages_other": "{count} wiadomości wybranych"
+			"xSelectedMessages_one": "1 wybrana wiadomość",
+			"xSelectedMessages_few": "{count} wybrane wiadomości",
+			"xSelectedMessages_many": "{count} wybranych wiadomości",
+			"xSelectedMessages_other": "{count} wybranych wiadomości"
 		},
 		"placeholder": {
-			"newMessage": "Porozmawiaj z {name}...",
+			"newMessage": "Rozmawiaj z {name}...",
 			"rename": "Wygeneruj nową nazwę automatycznie..."
 		},
 		"state": {
 			"loadingAgents": "Ładowanie agentów...",
 			"loadingChats": "Ładowanie czatów...",
-			"loadingGPTs": "Ładowanie GPT...",
+			"loadingGPTs": "Ładowanie modeli GPT...",
 			"loadingMessages": "Ładowanie wiadomości...",
 			"loadingPreviousMessages": "Ładowanie poprzednich wiadomości...",
 			"loadingSubchats": "Ładowanie subczatów...",
@@ -165,11 +168,12 @@
 			"thinking": "Myślenie..."
 		},
 		"warning": {
+			"chromeGptInsideChrome": "Chrome GPT wymaga tych eksperymentalnych ustawień:",
+			"chromeGptOutsideChrome": "Chrome GPT jest dostępny tylko w przeglądarce Chrome",
 			"deletingAgent": "Ten agent zostanie trwale usunięty",
 			"deletingChats": "Te czaty zostaną trwale usunięte",
-			"chromeGptInsideChrome": "Ten GPT wymaga włączenia następujących ustawień:",
-			"chromeGptOutsideChrome": "Ten GPT jest dostępny tylko w przeglądarce Google Chrome",
-			"invalidGpt": "Nieprawidłowy GPT"
+			"invalidGpt": "Nieprawidłowy GPT",
+			"missingOpenAiApiKey": "Musisz skonfigurować swój klucz API OpenAI"
 		}
 	},
 	"userSettings": {
@@ -182,7 +186,7 @@
 			"avatar": "Musisz dodać swój awatar",
 			"city": "Musisz dodać miasto",
 			"country": "Musisz dodać kraj",
-			"email": "Musisz dodać adres email",
+			"email": "Musisz dodać swój adres email",
 			"legalName": "Musisz dodać nazwę prawną",
 			"name": "Musisz dodać swoją nazwę",
 			"postalCode": "Musisz dodać kod pocztowy"
@@ -195,11 +199,12 @@
 			"country": "Kraj",
 			"email": "Adres email",
 			"legalName": "Nazwa prawna",
+			"openaiApiKey": "Klucz API OpenAI",
 			"phone": "Numer telefonu",
 			"postalCode": "Kod pocztowy",
 			"private": "Prywatne",
 			"public": "Publiczne",
-			"vatNumber": "Numer VAT"
+			"vatNumber": "NIP"
 		}
 	}
 }

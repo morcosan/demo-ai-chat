@@ -1,5 +1,4 @@
 import { addMinutesToDate } from '@api/utilities/various'
-import { randomText } from '@utils/release'
 import {
 	ApiResponse,
 	ChatsApiData,
@@ -26,6 +25,7 @@ import {
 	getDbMessages,
 	getGptResponse,
 	getSizeForChat,
+	renameChat,
 	resetChatsDB,
 	setDbChats,
 	setDbMessages,
@@ -97,7 +97,7 @@ export const chatsService = {
 		const chat = dbChats.find((chat: DbChat) => chat.id === chatId)
 		if (!chat) return { ...RESP__NOT_FOUND, error: `Chat ID ${chatId} not found` }
 
-		chat.title = title || randomText()
+		chat.title = title || (await renameChat(chat))
 
 		setDbChats(dbChats)
 
@@ -234,7 +234,7 @@ export const chatsService = {
 		}
 
 		const gptMessages = dbMessages
-			.filter((message: DbMessage) => message.parentId === parentId)
+			.filter((msg: DbMessage) => msg.parentId === parentId || msg.id === parentId)
 			.map(
 				(message: DbMessage): GptMessage => ({
 					text: message.text,
@@ -275,7 +275,7 @@ export const chatsService = {
 		}
 	},
 
-	async resetDB() {
-		await resetChatsDB()
+	async resetDB(random: boolean) {
+		await resetChatsDB(random)
 	},
 }

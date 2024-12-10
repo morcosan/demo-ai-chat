@@ -10,23 +10,23 @@
 			"delete": "Löschen",
 			"deselectAll": "Alle abwählen",
 			"expand": "Ausklappen",
-			"goToUrl": "Zu {url} gehen",
+			"goToUrl": "Gehe zu {url}",
 			"hidePanel": "Panel ausblenden",
 			"openMenu": "Menü öffnen",
 			"preview": "Vorschau",
 			"reload": "Neu laden",
 			"rename": "Umbenennen",
-			"resizePanel": "Panel-Größe anpassen",
-			"retry": "Erneut versuchen",
+			"resizePanel": "Panel-Größe ändern",
+			"retry": "Wiederholen",
 			"saveChanges": "Änderungen speichern",
 			"search": "Suchen",
-			"searchMore": "Weitere Ergebnisse anzeigen",
+			"searchMore": "Mehr Ergebnisse anzeigen",
 			"selectAll": "Alle auswählen",
 			"showPanel": "Panel anzeigen",
 			"signOut": "Abmelden"
 		},
 		"error": {
-			"noChanges": "Keine Änderungen vorhanden",
+			"noChanges": "Es gibt keine Änderungen",
 			"nothingFound": "Nichts gefunden für \"{search}\"",
 			"unsent": "Nicht gesendet"
 		},
@@ -67,11 +67,11 @@
 		},
 		"state": {
 			"dataSaved": "Ihre Daten sind gespeichert",
-			"deleting": "Wird gelöscht...",
-			"loading": "Wird geladen...",
-			"searching": "Wird gesucht...",
-			"sending": "Wird gesendet...",
-			"updating": "Wird aktualisiert..."
+			"deleting": "Löschend...",
+			"loading": "Ladend...",
+			"searching": "Suchend...",
+			"sending": "Sendend...",
+			"updating": "Aktualisierend..."
 		}
 	},
 	"aiChat": {
@@ -92,22 +92,24 @@
 			"manageChats": "Chats verwalten",
 			"openChat": "Chat öffnen",
 			"openSubchat_zero": "Subchat erstellen",
-			"openSubchat_one": "Subchat öffnen ({count} Nachricht)",
+			"openSubchat_one": "Subchat öffnen (1 Nachricht)",
 			"openSubchat_other": "Subchat öffnen ({count} Nachrichten)",
 			"previewCode": "Code-Vorschau",
 			"searchChats": "Chats durchsuchen",
 			"selectChat": "Chat auswählen",
 			"sendMessage": "Nachricht senden",
-			"showMoreAgents": "Weitere Agenten anzeigen",
-			"showMoreChats": "Weitere Chats anzeigen",
+			"showMoreAgents": "Mehr Agenten anzeigen",
+			"showMoreChats": "Mehr Chats anzeigen",
 			"showSubchats": "Subchats anzeigen ({count})",
-			"startNewChat": "Neue Unterhaltung beginnen",
+			"startNewChat": "Neue Konversation starten",
 			"startSearching_one": "Mindestens {count} Zeichen eingeben",
 			"startSearching_other": "Mindestens {count} Zeichen eingeben"
 		},
 		"description": {
-			"chromeGPT": "Mini-GPT für Google Chrome",
-			"loremIpsumGPT": "Das intelligenteste Modell",
+			"chatgpt4o": "OpenAIs leistungsfähigstes Modell",
+			"chatgpt4oMini": "OpenAIs günstigstes Modell",
+			"chromeGPT": "GPT eingebettet im Chrome-Browser",
+			"loremIpsumGPT": "Intelligentestes Modell",
 			"rammusGPT": "Beste emotionale Unterstützung"
 		},
 		"error": {
@@ -143,24 +145,25 @@
 		},
 		"placeholder": {
 			"newMessage": "Sprechen Sie mit {name}...",
-			"rename": "Automatisch neuen Namen generieren..."
+			"rename": "Automatisch einen neuen Namen generieren..."
 		},
 		"state": {
-			"loadingAgents": "Agenten werden geladen...",
-			"loadingChats": "Chats werden geladen...",
-			"loadingGPTs": "GPTs werden geladen...",
-			"loadingMessages": "Nachrichten werden geladen...",
-			"loadingPreviousMessages": "Vorherige Nachrichten werden geladen...",
-			"loadingSubchats": "Subchats werden geladen...",
-			"renamingChat": "Chat wird umbenannt...",
-			"thinking": "Denkt nach..."
+			"loadingAgents": "Agenten ladend...",
+			"loadingChats": "Chats ladend...",
+			"loadingGPTs": "GPTs ladend...",
+			"loadingMessages": "Nachrichten ladend...",
+			"loadingPreviousMessages": "Vorherige Nachrichten ladend...",
+			"loadingSubchats": "Subchats ladend...",
+			"renamingChat": "Chat umbenennend...",
+			"thinking": "Denkend..."
 		},
 		"warning": {
-			"deletingAgent": "Dieser Agent wird dauerhaft gelöscht",
-			"deletingChats": "Diese Chats werden dauerhaft gelöscht",
-			"chromeGptInsideChrome": "Dieser GPT erfordert die Aktivierung dieser Einstellungen:",
-			"chromeGptOutsideChrome": "Dieser GPT ist nur im Google Chrome Browser verfügbar",
-			"invalidGpt": "Ungültiger GPT"
+			"chromeGptInsideChrome": "Chrome GPT erfordert diese experimentellen Einstellungen:",
+			"chromeGptOutsideChrome": "Chrome GPT ist nur im Chrome-Browser verfügbar",
+			"deletingAgent": "Dieser Agent wird permanent gelöscht",
+			"deletingChats": "Diese Chats werden permanent gelöscht",
+			"invalidGpt": "Ungültiges GPT",
+			"missingOpenAiApiKey": "Sie müssen Ihren OpenAI API-Schlüssel konfigurieren"
 		}
 	},
 	"userSettings": {
@@ -186,6 +189,7 @@
 			"country": "Land",
 			"email": "E-Mail-Adresse",
 			"legalName": "Rechtlicher Name",
+			"openaiApiKey": "OpenAI API-Schlüssel",
 			"phone": "Telefonnummer",
 			"postalCode": "Postleitzahl",
 			"private": "Privat",

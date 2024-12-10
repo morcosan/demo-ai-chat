@@ -15,12 +15,12 @@
 			"openMenu": "Buka menu",
 			"preview": "Pratonton",
 			"reload": "Muat semula",
-			"rename": "Tukar nama",
+			"rename": "Namakan semula",
 			"resizePanel": "Ubah saiz panel",
 			"retry": "Cuba semula",
 			"saveChanges": "Simpan perubahan",
 			"search": "Cari",
-			"searchMore": "Tunjuk lebih banyak keputusan",
+			"searchMore": "Tunjukkan lebih banyak keputusan",
 			"selectAll": "Pilih semua",
 			"showPanel": "Tunjukkan panel",
 			"signOut": "Log keluar"
@@ -31,7 +31,7 @@
 			"unsent": "Tidak dihantar"
 		},
 		"label": {
-			"apiDocs": "Dokumentasi API",
+			"apiDocs": "Dokumen API",
 			"asia": "Asia",
 			"avatar": "Avatar",
 			"code": "Kod",
@@ -50,12 +50,12 @@
 			"levelMedium": "Sederhana",
 			"levelVeryHigh": "Sangat tinggi",
 			"levelVeryLow": "Sangat rendah",
-			"lightTheme": "Terang",
+			"lightTheme": "Cerah",
 			"name": "Nama",
 			"navigationBar": "Bar navigasi",
 			"navigationMenu": "Menu navigasi",
 			"optionalField": "(Pilihan)",
-			"requiredField": "(Wajib)",
+			"requiredField": "(Diperlukan)",
 			"result": "Keputusan",
 			"settings": "Tetapan",
 			"uiLibrary": "Perpustakaan UI",
@@ -70,17 +70,17 @@
 			"loading": "Sedang memuatkan...",
 			"searching": "Sedang mencari...",
 			"sending": "Sedang menghantar...",
-			"updating": "Sedang mengemaskini..."
+			"updating": "Sedang mengemas kini..."
 		}
 	},
 	"aiChat": {
 		"action": {
 			"backToSubchats": "Kembali ke subchat",
 			"closePreview": "Tutup pratonton",
-			"configureAgent": "Konfigurasikan ejen",
+			"configureAgent": "Konfigurasi ejen",
 			"confirmDeleteAgent": "Sahkan pemadaman ejen",
 			"confirmDeleteChats": "Sahkan pemadaman perbualan",
-			"confirmRenameChat": "Sahkan penukaran nama perbualan",
+			"confirmRenameChat": "Sahkan penamaan semula perbualan",
 			"copyCode": "Salin kod",
 			"copyMessage": "Salin mesej",
 			"createAgent": "Cipta ejen",
@@ -103,13 +103,15 @@
 			"startSearching_other": "Taip sekurang-kurangnya {count} aksara"
 		},
 		"description": {
-			"chromeGPT": "Mini GPT untuk Google Chrome",
+			"chatgpt4o": "Model terkuat OpenAI",
+			"chatgpt4oMini": "Model termurah OpenAI",
+			"chromeGPT": "GPT terbenam dalam pelayar Chrome",
 			"loremIpsumGPT": "Model paling pintar",
 			"rammusGPT": "Sokongan emosi terbaik"
 		},
 		"error": {
-			"agentAvatar": "Anda perlu menambah avatar untuk ejen",
-			"agentName": "Anda perlu menambah nama untuk ejen",
+			"agentAvatar": "Anda mesti menambah avatar untuk ejen",
+			"agentName": "Anda mesti menambah nama untuk ejen",
 			"emptyMessage": "Mesej anda kosong",
 			"failedMessage": "Terdapat masalah menghantar mesej anda"
 		},
@@ -131,12 +133,12 @@
 			"subchats": "Subchat",
 			"urlPreview": "Pratonton URL",
 			"xMessages_other": "{count} mesej",
-			"xSearchResults_zero": "Tiada hasil carian",
 			"xSearchResults_other": "{count} hasil carian",
+			"xSearchResults_zero": "Tiada hasil carian",
 			"xSelectedMessages_other": "{count} mesej dipilih"
 		},
 		"placeholder": {
-			"newMessage": "Bercakap dengan {name}...",
+			"newMessage": "Bual dengan {name}...",
 			"rename": "Jana nama baru secara automatik..."
 		},
 		"state": {
@@ -146,42 +148,44 @@
 			"loadingMessages": "Sedang memuatkan mesej...",
 			"loadingPreviousMessages": "Sedang memuatkan mesej sebelumnya...",
 			"loadingSubchats": "Sedang memuatkan subchat...",
-			"renamingChat": "Sedang menukar nama perbualan...",
+			"renamingChat": "Sedang menamakan semula perbualan...",
 			"thinking": "Sedang berfikir..."
 		},
 		"warning": {
+			"chromeGptInsideChrome": "Chrome GPT memerlukan tetapan eksperimen ini:",
+			"chromeGptOutsideChrome": "Chrome GPT hanya tersedia dalam pelayar Chrome",
 			"deletingAgent": "Ejen ini akan dipadam secara kekal",
 			"deletingChats": "Perbualan ini akan dipadam secara kekal",
-			"chromeGptInsideChrome": "GPT ini memerlukan tetapan berikut diaktifkan:",
-			"chromeGptOutsideChrome": "GPT ini hanya tersedia di pelayar Google Chrome",
-			"invalidGpt": "GPT tidak sah"
+			"invalidGpt": "GPT tidak sah",
+			"missingOpenAiApiKey": "Anda mesti mengkonfigurasi kunci API OpenAI anda"
 		}
 	},
 	"userSettings": {
 		"action": {
 			"manageAccount": "Urus akaun",
-			"manageBilling": "Urus pembayaran"
+			"manageBilling": "Urus pengebilan"
 		},
 		"error": {
-			"address": "Anda perlu menambah alamat",
-			"avatar": "Anda perlu menambah avatar anda",
-			"city": "Anda perlu menambah bandar",
-			"country": "Anda perlu menambah negara",
-			"email": "Anda perlu menambah alamat e-mel",
-			"legalName": "Anda perlu menambah nama sah",
-			"name": "Anda perlu menambah nama anda",
-			"postalCode": "Anda perlu menambah poskod"
+			"address": "Anda mesti menambah alamat",
+			"avatar": "Anda mesti menambah avatar anda",
+			"city": "Anda mesti menambah bandar",
+			"country": "Anda mesti menambah negara",
+			"email": "Anda mesti menambah alamat emel anda",
+			"legalName": "Anda mesti menambah nama sah",
+			"name": "Anda mesti menambah nama anda",
+			"postalCode": "Anda mesti menambah kod pos"
 		},
 		"label": {
 			"account": "Akaun",
 			"address": "Alamat",
-			"billing": "Pembayaran",
+			"billing": "Pengebilan",
 			"city": "Bandar",
 			"country": "Negara",
-			"email": "Alamat e-mel",
+			"email": "Alamat emel",
 			"legalName": "Nama sah",
+			"openaiApiKey": "Kunci API OpenAI",
 			"phone": "Nombor telefon",
-			"postalCode": "Poskod",
+			"postalCode": "Kod pos",
 			"private": "Peribadi",
 			"public": "Awam",
 			"vatNumber": "Nombor CBP"

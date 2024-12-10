@@ -82,6 +82,8 @@
 	--ds-spacing-button-h-md: var(--ds-spacing-sm-4);
 	--ds-spacing-button-h-lg: var(--ds-spacing-sm-6);
 
+	--ds-spacing-link-px-xs: var(--ds-spacing-xs-2);
+
 	--ds-spacing-button-px-xs: var(--ds-spacing-xs-4);
 	--ds-spacing-button-px-sm: var(--ds-spacing-xs-6);
 	--ds-spacing-button-px-md: var(--ds-spacing-xs-8);

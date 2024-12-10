@@ -105,7 +105,9 @@
 			"startSearching_other": "Type at least {count} characters"
 		},
 		"description": {
-			"chromeGPT": "Mini GPT for Google Chrome",
+			"chatgpt4o": "OpenAI's most powerful model",
+			"chatgpt4oMini": "OpenAI's cheapest model",
+			"chromeGPT": "GPT embedded in Chrome browser",
 			"loremIpsumGPT": "Most intelligent model",
 			"rammusGPT": "Best emotional support"
 		},
@@ -155,11 +157,12 @@
 			"thinking": "Thinking..."
 		},
 		"warning": {
+			"chromeGptInsideChrome": "Chrome GPT requires these experimental settings:",
+			"chromeGptOutsideChrome": "Chrome GPT is available only in Chrome browser",
 			"deletingAgent": "This agent will be permanently deleted",
 			"deletingChats": "These chats will be permanently deleted",
-			"chromeGptInsideChrome": "This GPT requires these settings to be enabled:",
-			"chromeGptOutsideChrome": "This GPT is available only in Google Chrome browser",
-			"invalidGpt": "Invalid GPT"
+			"invalidGpt": "Invalid GPT",
+			"missingOpenAiApiKey": "You must configure your OpenAI API key"
 		}
 	},
 	"userSettings": {
@@ -185,6 +188,7 @@
 			"country": "Country",
 			"email": "Email address",
 			"legalName": "Legal name",
+			"openaiApiKey": "OpenAI API key",
 			"phone": "Phone number",
 			"postalCode": "Postal code",
 			"private": "Private",

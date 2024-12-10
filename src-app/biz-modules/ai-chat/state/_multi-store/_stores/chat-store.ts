@@ -86,7 +86,7 @@ export const useChatStore = (allChatsStore: AllChatsStore): ChatStore => {
 
 		let chat = activeChat
 		if (!chat) {
-			chat = createGhostChat()
+			chat = createGhostChat(t('aiChat.label.newChat'))
 			setActiveChat(chat)
 		}
 
@@ -101,7 +101,7 @@ export const useChatStore = (allChatsStore: AllChatsStore): ChatStore => {
 		setChatPagination({ page, count: pagination.count + 1 }) // Used for scrolling
 
 		if (!activeChat) {
-			chat = await createNewChat()
+			chat = await createNewChat(chat)
 			setActiveChat(chat)
 			if (!chat) return
 		}
@@ -111,10 +111,7 @@ export const useChatStore = (allChatsStore: AllChatsStore): ChatStore => {
 		if (listing.count) {
 			setChatMessages([...messages, ...listing.messages]) // Old state
 			setChatLoading(false)
-
-			if (!activeChat) {
-				setShouldRename(true)
-			}
+			!activeChat && setShouldRename(true)
 		} else {
 			setChatMessages([
 				...messages, // Old state

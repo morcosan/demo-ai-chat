@@ -3,9 +3,9 @@
 		"action": {
 			"back": "Takaisin",
 			"backToHome": "Takaisin etusivulle",
-			"changeLanguage": "Vaihda kieli",
+			"changeLanguage": "Vaihda kieltä",
 			"close": "Sulje",
-			"collapse": "Kutista",
+			"collapse": "Pienennä",
 			"copy": "Kopioi",
 			"delete": "Poista",
 			"deselectAll": "Poista kaikki valinnat",
@@ -19,7 +19,7 @@
 			"resizePanel": "Muuta paneelin kokoa",
 			"retry": "Yritä uudelleen",
 			"saveChanges": "Tallenna muutokset",
-			"search": "Hae",
+			"search": "Haku",
 			"searchMore": "Näytä lisää tuloksia",
 			"selectAll": "Valitse kaikki",
 			"showPanel": "Näytä paneeli",
@@ -33,7 +33,7 @@
 		"label": {
 			"apiDocs": "API-dokumentaatio",
 			"asia": "Aasia",
-			"avatar": "Avatar",
+			"avatar": "Profiilikuva",
 			"code": "Koodi",
 			"copied": "Kopioitu",
 			"custom": "Mukautettu",
@@ -43,7 +43,7 @@
 			"designSystem": "Suunnittelujärjestelmä",
 			"errors": "Virheet",
 			"europe": "Eurooppa",
-			"githubRepo": "GitHub-repo",
+			"githubRepo": "GitHub-varasto",
 			"language": "Kieli",
 			"levelHigh": "Korkea",
 			"levelLow": "Matala",
@@ -75,7 +75,7 @@
 	},
 	"aiChat": {
 		"action": {
-			"backToSubchats": "Takaisin alikeskusteluihin",
+			"backToSubchats": "Takaisin alakeskusteluihin",
 			"closePreview": "Sulje esikatselu",
 			"configureAgent": "Määritä agentti",
 			"confirmDeleteAgent": "Vahvista agentin poisto",
@@ -90,29 +90,32 @@
 			"manageAgents": "Hallitse agentteja",
 			"manageChats": "Hallitse keskusteluja",
 			"openChat": "Avaa keskustelu",
-			"openSubchat_zero": "Luo alikeskustelu",
-			"openSubchat_other": "Avaa alikeskustelu ({count} viestiä)",
+			"openSubchat_zero": "Luo alakeskustelu",
+			"openSubchat_one": "Avaa alakeskustelu ({count} viesti)",
+			"openSubchat_other": "Avaa alakeskustelu ({count} viestiä)",
 			"previewCode": "Esikatsele koodi",
 			"searchChats": "Hae keskusteluja",
 			"selectChat": "Valitse keskustelu",
 			"sendMessage": "Lähetä viesti",
 			"showMoreAgents": "Näytä lisää agentteja",
 			"showMoreChats": "Näytä lisää keskusteluja",
-			"showSubchats": "Näytä alikeskustelut ({count})",
+			"showSubchats": "Näytä alakeskustelut ({count})",
 			"startNewChat": "Aloita uusi keskustelu",
 			"startSearching_one": "Kirjoita vähintään {count} merkki",
 			"startSearching_other": "Kirjoita vähintään {count} merkkiä"
 		},
 		"description": {
-			"chromeGPT": "Mini GPT Google Chromelle",
+			"chatgpt4o": "OpenAI:n tehokkain malli",
+			"chatgpt4oMini": "OpenAI:n edullisin malli",
+			"chromeGPT": "Chrome-selaimeen sisäänrakennettu GPT",
 			"loremIpsumGPT": "Älykkäin malli",
 			"rammusGPT": "Paras emotionaalinen tuki"
 		},
 		"error": {
-			"agentAvatar": "Sinun täytyy lisätä avatar agentille",
+			"agentAvatar": "Sinun täytyy lisätä profiilikuva agentille",
 			"agentName": "Sinun täytyy lisätä nimi agentille",
 			"emptyMessage": "Viestisi on tyhjä",
-			"failedMessage": "Viestin lähettämisessä oli ongelma"
+			"failedMessage": "Viestisi lähettämisessä oli ongelma"
 		},
 		"label": {
 			"agents": "Agentit",
@@ -126,17 +129,17 @@
 			"newChat": "Uusi keskustelu",
 			"newMessage": "Uusi viesti",
 			"noChats": "Ei keskusteluja",
-			"noSubchats": "Ei alikeskusteluja",
+			"noSubchats": "Ei alakeskusteluja",
 			"selectedAgent": "Valittu agentti",
 			"selectedValue": "Valittu arvo",
-			"subchats": "Alikeskustelut",
+			"subchats": "Alakeskustelut",
 			"urlPreview": "URL-esikatselu",
-			"xMessages_one": "{count} viesti",
+			"xMessages_one": "1 viesti",
 			"xMessages_other": "{count} viestiä",
 			"xSearchResults_zero": "Ei hakutuloksia",
 			"xSearchResults_one": "{count} hakutulos",
 			"xSearchResults_other": "{count} hakutulosta",
-			"xSelectedMessages_one": "{count} viesti valittu",
+			"xSelectedMessages_one": "1 viesti valittu",
 			"xSelectedMessages_other": "{count} viestiä valittu"
 		},
 		"placeholder": {
@@ -149,16 +152,17 @@
 			"loadingGPTs": "Ladataan GPT:itä...",
 			"loadingMessages": "Ladataan viestejä...",
 			"loadingPreviousMessages": "Ladataan aiempia viestejä...",
-			"loadingSubchats": "Ladataan alikeskusteluja...",
+			"loadingSubchats": "Ladataan alakeskusteluja...",
 			"renamingChat": "Nimetään keskustelua uudelleen...",
 			"thinking": "Ajattelee..."
 		},
 		"warning": {
+			"chromeGptInsideChrome": "Chrome GPT vaatii nämä kokeelliset asetukset:",
+			"chromeGptOutsideChrome": "Chrome GPT on saatavilla vain Chrome-selaimessa",
 			"deletingAgent": "Tämä agentti poistetaan pysyvästi",
 			"deletingChats": "Nämä keskustelut poistetaan pysyvästi",
-			"chromeGptInsideChrome": "Tämä GPT vaatii seuraavien asetusten käyttöönoton:",
-			"chromeGptOutsideChrome": "Tämä GPT on saatavilla vain Google Chrome -selaimessa",
-			"invalidGpt": "Virheellinen GPT"
+			"invalidGpt": "Virheellinen GPT",
+			"missingOpenAiApiKey": "Sinun täytyy määrittää OpenAI API -avaimesi"
 		}
 	},
 	"userSettings": {
@@ -168,12 +172,12 @@
 		},
 		"error": {
 			"address": "Sinun täytyy lisätä osoite",
-			"avatar": "Sinun täytyy lisätä avatar",
+			"avatar": "Sinun täytyy lisätä profiilikuvasi",
 			"city": "Sinun täytyy lisätä kaupunki",
 			"country": "Sinun täytyy lisätä maa",
-			"email": "Sinun täytyy lisätä sähköpostiosoite",
+			"email": "Sinun täytyy lisätä sähköpostiosoitteesi",
 			"legalName": "Sinun täytyy lisätä virallinen nimi",
-			"name": "Sinun täytyy lisätä nimi",
+			"name": "Sinun täytyy lisätä nimesi",
 			"postalCode": "Sinun täytyy lisätä postinumero"
 		},
 		"label": {
@@ -184,11 +188,12 @@
 			"country": "Maa",
 			"email": "Sähköpostiosoite",
 			"legalName": "Virallinen nimi",
+			"openaiApiKey": "OpenAI API -avain",
 			"phone": "Puhelinnumero",
 			"postalCode": "Postinumero",
 			"private": "Yksityinen",
 			"public": "Julkinen",
-			"vatNumber": "ALV-numero"
+			"vatNumber": "ALV-tunnus"
 		}
 	}
 }

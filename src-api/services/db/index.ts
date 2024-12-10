@@ -23,6 +23,7 @@ export {
 	getDbMessages,
 	getSizeForChat,
 	hasMessagesByAgent,
+	renameChat,
 	resetChatsDB,
 	setDbChats,
 	setDbMessages,

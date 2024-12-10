@@ -2,7 +2,7 @@
 	"core": {
 		"action": {
 			"back": "Назад",
-			"backToHome": "Назад на почетну",
+			"backToHome": "Назад на почетну страницу",
 			"changeLanguage": "Промени језик",
 			"close": "Затвори",
 			"collapse": "Скупи",
@@ -26,12 +26,12 @@
 			"signOut": "Одјави се"
 		},
 		"error": {
-			"noChanges": "Нема промена",
+			"noChanges": "Нема измена",
 			"nothingFound": "Ништа није пронађено за \"{search}\"",
 			"unsent": "Непослато"
 		},
 		"label": {
-			"apiDocs": "API Документација",
+			"apiDocs": "API документација",
 			"asia": "Азија",
 			"avatar": "Аватар",
 			"code": "Код",
@@ -43,7 +43,7 @@
 			"designSystem": "Дизајн систем",
 			"errors": "Грешке",
 			"europe": "Европа",
-			"githubRepo": "GitHub Репозиторијум",
+			"githubRepo": "GitHub репозиторијум",
 			"language": "Језик",
 			"levelHigh": "Висок",
 			"levelLow": "Низак",
@@ -55,11 +55,12 @@
 			"navigationBar": "Навигациона трака",
 			"navigationMenu": "Навигациони мени",
 			"optionalField": "(Опционо)",
+			"quickSettings": "Брзе поставке",
 			"requiredField": "(Обавезно)",
 			"result": "Резултат",
 			"settings": "Подешавања",
-			"uiLibrary": "UI Библиотека",
-			"uiTheme": "UI Тема"
+			"uiLibrary": "UI библиотека",
+			"uiTheme": "UI тема"
 		},
 		"placeholder": {
 			"search": "Претрага..."
@@ -68,7 +69,7 @@
 			"dataSaved": "Ваши подаци су сачувани",
 			"deleting": "Брисање...",
 			"loading": "Учитавање...",
-			"searching": "Претрага...",
+			"searching": "Претраживање...",
 			"sending": "Слање...",
 			"updating": "Ажурирање..."
 		}
@@ -94,7 +95,7 @@
 			"openSubchat_one": "Отвори подразговор ({count} порука)",
 			"openSubchat_few": "Отвори подразговор ({count} поруке)",
 			"openSubchat_other": "Отвори подразговор ({count} порука)",
-			"previewCode": "Прегледај код",
+			"previewCode": "Преглед кода",
 			"searchChats": "Претражи разговоре",
 			"selectChat": "Изабери разговор",
 			"sendMessage": "Пошаљи поруку",
@@ -107,7 +108,9 @@
 			"startSearching_other": "Унесите бар {count} карактера"
 		},
 		"description": {
-			"chromeGPT": "Мини GPT за Google Chrome",
+			"chatgpt4o": "Најмоћнији OpenAI модел",
+			"chatgpt4oMini": "Најјефтинији OpenAI модел",
+			"chromeGPT": "GPT уграђен у Chrome претраживач",
 			"loremIpsumGPT": "Најинтелигентнији модел",
 			"rammusGPT": "Најбоља емоционална подршка"
 		},
@@ -119,7 +122,7 @@
 		},
 		"label": {
 			"agents": "Агенти",
-			"chatTitle": "Наслов разговора",
+			"chatTitle": "Назив разговора",
 			"chats": "Разговори",
 			"codePreview": "Преглед кода",
 			"creativityLevel": "Ниво креативности",
@@ -134,19 +137,19 @@
 			"selectedValue": "Изабрана вредност",
 			"subchats": "Подразговори",
 			"urlPreview": "Преглед URL-а",
-			"xMessages_one": "1 порука",
+			"xMessages_one": "{count} порука",
 			"xMessages_few": "{count} поруке",
 			"xMessages_other": "{count} порука",
 			"xSearchResults_zero": "Нема резултата претраге",
 			"xSearchResults_one": "{count} резултат претраге",
 			"xSearchResults_few": "{count} резултата претраге",
 			"xSearchResults_other": "{count} резултата претраге",
-			"xSelectedMessages_one": "1 порука изабрана",
-			"xSelectedMessages_few": "{count} поруке изабране",
-			"xSelectedMessages_other": "{count} порука изабрано"
+			"xSelectedMessages_one": "{count} изабрана порука",
+			"xSelectedMessages_few": "{count} изабране поруке",
+			"xSelectedMessages_other": "{count} изабраних порука"
 		},
 		"placeholder": {
-			"newMessage": "Пишите {name}...",
+			"newMessage": "Разговарајте са {name}...",
 			"rename": "Аутоматски генериши ново име..."
 		},
 		"state": {
@@ -160,11 +163,12 @@
 			"thinking": "Размишљање..."
 		},
 		"warning": {
+			"chromeGptInsideChrome": "Chrome GPT захтева ова експериментална подешавања:",
+			"chromeGptOutsideChrome": "Chrome GPT је доступан само у Chrome претраживачу",
 			"deletingAgent": "Овај агент ће бити трајно обрисан",
 			"deletingChats": "Ови разговори ће бити трајно обрисани",
-			"chromeGptInsideChrome": "Овај GPT захтева да следећа подешавања буду омогућена:",
-			"chromeGptOutsideChrome": "Овај GPT је доступан само у Google Chrome прегледачу",
-			"invalidGpt": "Неважећи GPT"
+			"invalidGpt": "Неважећи GPT",
+			"missingOpenAiApiKey": "Морате конфигурисати ваш OpenAI API кључ"
 		}
 	},
 	"userSettings": {
@@ -178,7 +182,7 @@
 			"city": "Морате додати град",
 			"country": "Морате додати државу",
 			"email": "Морате додати вашу имејл адресу",
-			"legalName": "Морате додати правно име",
+			"legalName": "Морате додати правни назив",
 			"name": "Морате додати ваше име",
 			"postalCode": "Морате додати поштански број"
 		},
@@ -189,7 +193,8 @@
 			"city": "Град",
 			"country": "Држава",
 			"email": "Имејл адреса",
-			"legalName": "Правно име",
+			"legalName": "Правни назив",
+			"openaiApiKey": "OpenAI API кључ",
 			"phone": "Број телефона",
 			"postalCode": "Поштански број",
 			"private": "Приватно",

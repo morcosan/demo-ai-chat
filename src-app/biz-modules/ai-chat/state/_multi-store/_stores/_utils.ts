@@ -1,9 +1,9 @@
 import { MessageRole } from '@api/types'
 import { Chat, Message } from '../../../api'
 
-export const createGhostChat = (): Chat => ({
+export const createGhostChat = (title: string): Chat => ({
 	id: 0,
-	title: t('aiChat.label.newChat'),
+	title,
 	createdAt: new Date().toISOString(),
 	size: 0,
 })

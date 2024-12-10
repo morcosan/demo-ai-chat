@@ -22,7 +22,7 @@
 			"search": "검색",
 			"searchMore": "더 많은 결과 보기",
 			"selectAll": "전체 선택",
-			"showPanel": "패널 표시",
+			"showPanel": "패널 보기",
 			"signOut": "로그아웃"
 		},
 		"error": {
@@ -33,11 +33,11 @@
 		"label": {
 			"apiDocs": "API 문서",
 			"asia": "아시아",
-			"avatar": "프로필 사진",
+			"avatar": "아바타",
 			"code": "코드",
 			"copied": "복사됨",
-			"custom": "사용자 지정",
-			"darkTheme": "어두운 테마",
+			"custom": "사용자 정의",
+			"darkTheme": "다크",
 			"default": "기본값",
 			"description": "설명",
 			"designSystem": "디자인 시스템",
@@ -50,10 +50,10 @@
 			"levelMedium": "중간",
 			"levelVeryHigh": "매우 높음",
 			"levelVeryLow": "매우 낮음",
-			"lightTheme": "밝은 테마",
+			"lightTheme": "라이트",
 			"name": "이름",
-			"navigationBar": "내비게이션 바",
-			"navigationMenu": "내비게이션 메뉴",
+			"navigationBar": "탐색 바",
+			"navigationMenu": "탐색 메뉴",
 			"optionalField": "(선택사항)",
 			"requiredField": "(필수)",
 			"result": "결과",
@@ -75,9 +75,9 @@
 	},
 	"aiChat": {
 		"action": {
-			"backToSubchats": "서브챗으로 돌아가기",
+			"backToSubchats": "보조채팅으로 돌아가기",
 			"closePreview": "미리보기 닫기",
-			"configureAgent": "에이전트 설정",
+			"configureAgent": "에이전트 구성",
 			"confirmDeleteAgent": "에이전트 삭제 확인",
 			"confirmDeleteChats": "채팅 삭제 확인",
 			"confirmRenameChat": "채팅 이름 변경 확인",
@@ -90,27 +90,29 @@
 			"manageAgents": "에이전트 관리",
 			"manageChats": "채팅 관리",
 			"openChat": "채팅 열기",
-			"openSubchat_zero": "서브챗 만들기",
-			"openSubchat_other": "서브챗 열기 ({count}개의 메시지)",
+			"openSubchat_other": "보조채팅 열기 ({count}개의 메시지)",
+			"openSubchat_zero": "보조채팅 만들기",
 			"previewCode": "코드 미리보기",
 			"searchChats": "채팅 검색",
 			"selectChat": "채팅 선택",
 			"sendMessage": "메시지 보내기",
 			"showMoreAgents": "더 많은 에이전트 보기",
 			"showMoreChats": "더 많은 채팅 보기",
-			"showSubchats": "서브챗 보기 ({count})",
+			"showSubchats": "보조채팅 보기 ({count})",
 			"startNewChat": "새 대화 시작",
-			"startSearching_other": "최소 {count}자를 입력하세요"
+			"startSearching_other": "최소 {count}자 입력"
 		},
 		"description": {
-			"chromeGPT": "Google Chrome용 미니 GPT",
+			"chatgpt4o": "OpenAI의 가장 강력한 모델",
+			"chatgpt4oMini": "OpenAI의 가장 저렴한 모델",
+			"chromeGPT": "Chrome 브라우저에 내장된 미니 GPT",
 			"loremIpsumGPT": "가장 지능적인 모델",
 			"rammusGPT": "최고의 감정 지원"
 		},
 		"error": {
-			"agentAvatar": "에이전트의 프로필 사진을 추가해야 합니다",
+			"agentAvatar": "에이전트의 아바타를 추가해야 합니다",
 			"agentName": "에이전트의 이름을 추가해야 합니다",
-			"emptyMessage": "메시지가 비어 있습니다",
+			"emptyMessage": "메시지가 비어있습니다",
 			"failedMessage": "메시지 전송에 문제가 발생했습니다"
 		},
 		"label": {
@@ -119,24 +121,24 @@
 			"chats": "채팅",
 			"codePreview": "코드 미리보기",
 			"creativityLevel": "창의성 수준",
-			"customInstructions": "사용자 정의 지침",
+			"customInstructions": "사용자 지정 지침",
 			"gptModel": "GPT 모델",
 			"newAgent": "새 에이전트",
 			"newChat": "새 채팅",
 			"newMessage": "새 메시지",
 			"noChats": "채팅 없음",
-			"noSubchats": "서브챗 없음",
+			"noSubchats": "보조채팅 없음",
 			"selectedAgent": "선택된 에이전트",
 			"selectedValue": "선택된 값",
-			"subchats": "서브챗",
+			"subchats": "보조채팅",
 			"urlPreview": "URL 미리보기",
 			"xMessages_other": "{count}개의 메시지",
-			"xSearchResults_zero": "검색 결과 없음",
 			"xSearchResults_other": "검색 결과 {count}개",
+			"xSearchResults_zero": "검색 결과 없음",
 			"xSelectedMessages_other": "{count}개의 메시지 선택됨"
 		},
 		"placeholder": {
-			"newMessage": "{name}와(과) 대화하기...",
+			"newMessage": "{name}과(와) 대화하기...",
 			"rename": "자동으로 새 이름 생성..."
 		},
 		"state": {
@@ -145,16 +147,17 @@
 			"loadingGPTs": "GPT 로딩 중...",
 			"loadingMessages": "메시지 로딩 중...",
 			"loadingPreviousMessages": "이전 메시지 로딩 중...",
-			"loadingSubchats": "서브챗 로딩 중...",
+			"loadingSubchats": "보조채팅 로딩 중...",
 			"renamingChat": "채팅 이름 변경 중...",
 			"thinking": "생각하는 중..."
 		},
 		"warning": {
+			"chromeGptInsideChrome": "Chrome GPT는 다음 실험적 설정이 필요합니다:",
+			"chromeGptOutsideChrome": "Chrome GPT는 Chrome 브라우저에서만 사용 가능합니다",
 			"deletingAgent": "이 에이전트는 영구적으로 삭제됩니다",
 			"deletingChats": "이 채팅들은 영구적으로 삭제됩니다",
-			"chromeGptInsideChrome": "이 GPT는 다음 설정을 활성화해야 합니다:",
-			"chromeGptOutsideChrome": "이 GPT는 Google Chrome 브라우저에서만 사용할 수 있습니다",
-			"invalidGpt": "잘못된 GPT"
+			"invalidGpt": "잘못된 GPT",
+			"missingOpenAiApiKey": "OpenAI API 키를 구성해야 합니다"
 		}
 	},
 	"userSettings": {
@@ -164,7 +167,7 @@
 		},
 		"error": {
 			"address": "주소를 추가해야 합니다",
-			"avatar": "프로필 사진을 추가해야 합니다",
+			"avatar": "아바타를 추가해야 합니다",
 			"city": "도시를 추가해야 합니다",
 			"country": "국가를 추가해야 합니다",
 			"email": "이메일 주소를 추가해야 합니다",
@@ -180,6 +183,7 @@
 			"country": "국가",
 			"email": "이메일 주소",
 			"legalName": "법적 이름",
+			"openaiApiKey": "OpenAI API 키",
 			"phone": "전화번호",
 			"postalCode": "우편번호",
 			"private": "비공개",

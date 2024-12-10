@@ -7,6 +7,7 @@ const TEMPERATURE_MAP: Record<CreativityLevel, number> = {
 	high: 1.5,
 	max: 2,
 }
+const HISTORY_LIMIT = 20
 
 export const ChromeGPT: GptAPI = {
 	isAvailable: async () => {
@@ -19,7 +20,7 @@ export const ChromeGPT: GptAPI = {
 		if (!window.ai) return ''
 
 		try {
-			const prompt = messages.reduce((acc: string, message: GptMessage) => {
+			const prompt = messages.slice(-HISTORY_LIMIT).reduce((acc: string, message: GptMessage) => {
 				return `${acc} \n\n <<${message.role}>> \n ${message.text} \n\n <<agent>> \n`
 			}, '')
 

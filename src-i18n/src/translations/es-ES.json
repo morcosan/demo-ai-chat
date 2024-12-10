@@ -40,7 +40,7 @@
 			"darkTheme": "Oscuro",
 			"default": "Predeterminado",
 			"description": "Descripción",
-			"designSystem": "Sistema de diseño",
+			"designSystem": "Sistema de Diseño",
 			"errors": "Errores",
 			"europe": "Europa",
 			"githubRepo": "Repositorio GitHub",
@@ -80,7 +80,7 @@
 			"configureAgent": "Configurar agente",
 			"confirmDeleteAgent": "Confirmar eliminación del agente",
 			"confirmDeleteChats": "Confirmar eliminación de chats",
-			"confirmRenameChat": "Confirmar renombrar chat",
+			"confirmRenameChat": "Confirmar cambio de nombre del chat",
 			"copyCode": "Copiar el código",
 			"copyMessage": "Copiar el mensaje",
 			"createAgent": "Crear agente",
@@ -91,6 +91,7 @@
 			"manageChats": "Gestionar chats",
 			"openChat": "Abrir chat",
 			"openSubchat_zero": "Crear subchat",
+			"openSubchat_one": "Abrir subchat ({count} mensaje)",
 			"openSubchat_other": "Abrir subchat ({count} mensajes)",
 			"previewCode": "Vista previa del código",
 			"searchChats": "Buscar chats",
@@ -99,14 +100,16 @@
 			"showMoreAgents": "Mostrar más agentes",
 			"showMoreChats": "Mostrar más chats",
 			"showSubchats": "Mostrar subchats ({count})",
-			"startNewChat": "Iniciar nueva conversación",
+			"startNewChat": "Iniciar una nueva conversación",
 			"startSearching_one": "Escribe al menos {count} carácter",
 			"startSearching_other": "Escribe al menos {count} caracteres"
 		},
 		"description": {
-			"chromeGPT": "Mini GPT para Google Chrome",
-			"loremIpsumGPT": "Modelo más inteligente",
-			"rammusGPT": "Mejor soporte emocional"
+			"chatgpt4o": "El modelo más potente de OpenAI",
+			"chatgpt4oMini": "El modelo más económico de OpenAI",
+			"chromeGPT": "GPT integrado en el navegador Chrome",
+			"loremIpsumGPT": "El modelo más inteligente",
+			"rammusGPT": "El mejor soporte emocional"
 		},
 		"error": {
 			"agentAvatar": "Debes añadir un avatar para el agente",
@@ -154,11 +157,12 @@
 			"thinking": "Pensando..."
 		},
 		"warning": {
+			"chromeGptInsideChrome": "Chrome GPT requiere estos ajustes experimentales:",
+			"chromeGptOutsideChrome": "Chrome GPT solo está disponible en el navegador Chrome",
 			"deletingAgent": "Este agente será eliminado permanentemente",
 			"deletingChats": "Estos chats serán eliminados permanentemente",
-			"chromeGptInsideChrome": "Este GPT requiere que estos ajustes estén habilitados:",
-			"chromeGptOutsideChrome": "Este GPT solo está disponible en el navegador Google Chrome",
-			"invalidGpt": "GPT no válido"
+			"invalidGpt": "GPT no válido",
+			"missingOpenAiApiKey": "Debes configurar tu clave API de OpenAI"
 		}
 	},
 	"userSettings": {
@@ -171,7 +175,7 @@
 			"avatar": "Debes añadir tu avatar",
 			"city": "Debes añadir la ciudad",
 			"country": "Debes añadir el país",
-			"email": "Debes añadir tu dirección de correo electrónico",
+			"email": "Debes añadir tu dirección de correo",
 			"legalName": "Debes añadir el nombre legal",
 			"name": "Debes añadir tu nombre",
 			"postalCode": "Debes añadir el código postal"
@@ -184,6 +188,7 @@
 			"country": "País",
 			"email": "Correo electrónico",
 			"legalName": "Nombre legal",
+			"openaiApiKey": "Clave API de OpenAI",
 			"phone": "Número de teléfono",
 			"postalCode": "Código postal",
 			"private": "Privado",

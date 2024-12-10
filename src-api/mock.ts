@@ -1,10 +1,11 @@
-import { initDB } from '@api/services/db'
 import { accountService } from './services/account-service'
 import { agentsService } from './services/agents-service'
 import { billingService } from './services/billing-service'
 import { chatsService } from './services/chats-service'
-import { ApiPayload, ApiQuery, ApiResponse, Status } from './types'
+import { initDB } from './services/db'
+import { ApiPayload, ApiQuery, ApiResponse, DatabaseApiQuery, Status } from './types'
 import { applyNetwork, RESP__NOT_FOUND } from './utilities/network'
+import { extractBool } from './utilities/parsers'
 
 export const mockAPI = {
 	async get<T>(path: string, query: ApiQuery): Promise<ApiResponse<T>> {
@@ -65,10 +66,14 @@ export const mockAPI = {
 		if (path === '/api/agents') resp = await agentsService.deleteAgents(query)
 		if (path === '/api/chats') resp = await chatsService.deleteChats(query)
 		if (path === '/api/database') {
-			await accountService.resetDB()
-			await billingService.resetDB()
-			await agentsService.resetDB()
-			await chatsService.resetDB() // Must come after agents
+			const dbQuery = query as DatabaseApiQuery
+			const random = extractBool(dbQuery.random)
+
+			await accountService.resetDB(random)
+			await billingService.resetDB(random)
+			await agentsService.resetDB(random)
+			await chatsService.resetDB(random) // Must come after agents
+
 			resp = { status: Status.SUCCESS, data: null }
 		}
 

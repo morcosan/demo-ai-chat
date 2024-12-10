@@ -1,15 +1,17 @@
-import { Account } from '@app/biz-modules/user-settings/api'
+import { useAiChatAgents } from '@app/biz-modules/ai-chat/state'
 import { AppLayout } from '@app/layouts/app-layout'
 import { ErrorSummary, PageHeader, SuccessNotice } from '@app/library/release'
 import { Button } from '@ds/release'
 import { useCallback, useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next'
+import { Account } from '../api'
 import { DataField, Field } from '../components/data-field'
 import { EMPTY_ACCOUNT, useUserAccount } from '../state'
 
 const AccountPage = () => {
 	useTranslation()
 	const { account, accountLoading, updateAccount } = useUserAccount()
+	const { loadGPTs } = useAiChatAgents()
 	const [payload, setPayload] = useState<Account>(EMPTY_ACCOUNT)
 	const [feedback, setFeedback] = useState<FormPayload<Account>>(EMPTY_ACCOUNT)
 	const [successful, setSuccessful] = useState(false)
@@ -24,13 +26,15 @@ const AccountPage = () => {
 	const privateFields: Field<keyof Account>[] = [
 		{ key: 'email', label: t('userSettings.label.email') },
 		{ key: 'phone', label: t('userSettings.label.phone'), optional: true },
+		{ key: 'openaiApiKey', label: t('userSettings.label.openaiApiKey'), optional: true },
 	]
 
 	const hasChanges =
 		account.name !== payload.name.trim() ||
 		account.avatar !== payload.avatar.trim() ||
 		account.email !== payload.email.trim() ||
-		account.phone !== payload.phone.trim()
+		account.phone !== payload.phone.trim() ||
+		account.openaiApiKey !== payload.openaiApiKey.trim()
 
 	const hasErrors = (errors: object) => Object.values(errors).some((value: string) => value)
 
@@ -58,6 +62,7 @@ const AccountPage = () => {
 			setFeedback(EMPTY_ACCOUNT)
 			setSuccessful(true)
 			wait(3000).then(() => setSuccessful(false))
+			loadGPTs(true)
 		}
 	}, [payload])
 

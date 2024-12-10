@@ -37,7 +37,7 @@ export const AgentGptItem = (props: Props) => {
 				<img src={avatar} alt="" className={avatarClass} />
 			)}
 
-			<span className={cx('flex', compact ? 'items-center' : 'flex-col')}>
+			<span className={cx('mt-px flex', compact ? 'items-center' : 'flex-col')}>
 				{loading ? (
 					<span className={cx(nameClass, 'min-w-lg-0 animate-pulse rounded-xs bg-color-text-placeholder')}>
 						&nbsp;

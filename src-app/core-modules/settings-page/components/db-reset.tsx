@@ -7,12 +7,12 @@ export const DbReset = () => {
 	const [showsConfirm, setShowsConfirm] = useState(false)
 	const [showsLoading, setShowsLoading] = useState(false)
 
-	const onConfirmRebuild = () => {
+	const onConfirmReset = (random: boolean) => {
 		setShowsLoading(true)
 
 		// Page reload blocks react rendering
 		wait(100).then(async () => {
-			const success = await API.resetDatabase()
+			const success = await API.resetDatabase(random)
 			success && location.reload()
 		})
 	}
@@ -29,9 +29,15 @@ export const DbReset = () => {
 				opened={showsConfirm}
 				slotTitle="Confirm resetting database"
 				slotAction={
-					<Button variant="solid-danger" onClick={onConfirmRebuild}>
-						Reset and refresh
-					</Button>
+					<>
+						<Button variant="solid-danger" onClick={() => onConfirmReset(true)}>
+							Reset (random)
+						</Button>
+
+						<Button variant="solid-danger" onClick={() => onConfirmReset(false)}>
+							Reset (empty)
+						</Button>
+					</>
 				}
 				onClose={() => setShowsConfirm(false)}
 			>
@@ -41,7 +47,7 @@ export const DbReset = () => {
 				</div>
 				<div className="flex items-center">
 					<WarningSvg className="mr-xs-4 w-xs-8" />
-					New random data will be created
+					New random data can be created
 				</div>
 				<div className="mt-xs-2 flex items-center">Data: account, billing, agents, chats, messages</div>
 			</Modal>

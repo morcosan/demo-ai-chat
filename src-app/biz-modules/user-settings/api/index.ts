@@ -1,4 +1,12 @@
-import { AccountApiPayload, AccountDTO, BillingApiPayload, BillingDTO, mainAPI, Status } from '@app/api'
+import {
+	AccountApiPayload,
+	AccountDTO,
+	BillingApiPayload,
+	BillingDTO,
+	clearDataCache,
+	mainAPI,
+	Status,
+} from '@app/api'
 import { mapAccount, mapBilling } from './_mappers'
 import { Account, Billing } from './_types'
 
@@ -20,6 +28,8 @@ export const API = {
 	async updateAccount(account: Account): Promise<Account | null> {
 		const payload: AccountApiPayload = { ...account }
 		const resp = await mainAPI.patch<AccountDTO>('/api/account', payload)
+
+		clearDataCache('/api/gpts')
 
 		return resp.status === Status.SUCCESS && resp.data ? mapAccount(resp.data) : null
 	},

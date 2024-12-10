@@ -2,7 +2,7 @@
 	"core": {
 		"action": {
 			"back": "ย้อนกลับ",
-			"backToHome": "กลับไปที่หน้าแรก",
+			"backToHome": "กลับไปยังหน้าแรก",
 			"changeLanguage": "เปลี่ยนภาษา",
 			"close": "ปิด",
 			"collapse": "ย่อ",
@@ -11,46 +11,46 @@
 			"deselectAll": "ยกเลิกการเลือกทั้งหมด",
 			"expand": "ขยาย",
 			"goToUrl": "ไปที่ {url}",
-			"hidePanel": "ซ่อนแผงควบคุม",
+			"hidePanel": "ซ่อนแผง",
 			"openMenu": "เปิดเมนู",
 			"preview": "ดูตัวอย่าง",
 			"reload": "โหลดใหม่",
 			"rename": "เปลี่ยนชื่อ",
-			"resizePanel": "ปรับขนาดแผงควบคุม",
+			"resizePanel": "ปรับขนาดแผง",
 			"retry": "ลองใหม่",
 			"saveChanges": "บันทึกการเปลี่ยนแปลง",
 			"search": "ค้นหา",
 			"searchMore": "แสดงผลลัพธ์เพิ่มเติม",
 			"selectAll": "เลือกทั้งหมด",
-			"showPanel": "แสดงแผงควบคุม",
+			"showPanel": "แสดงแผง",
 			"signOut": "ออกจากระบบ"
 		},
 		"error": {
 			"noChanges": "ไม่มีการเปลี่ยนแปลง",
 			"nothingFound": "ไม่พบผลลัพธ์สำหรับ \"{search}\"",
-			"unsent": "ไม่ได้ส่ง"
+			"unsent": "ยังไม่ได้ส่ง"
 		},
 		"label": {
 			"apiDocs": "เอกสาร API",
 			"asia": "เอเชีย",
-			"avatar": "รูปโปรไฟล์",
+			"avatar": "รูปประจำตัว",
 			"code": "โค้ด",
 			"copied": "คัดลอกแล้ว",
 			"custom": "กำหนดเอง",
-			"darkTheme": "โหมดมืด",
+			"darkTheme": "มืด",
 			"default": "ค่าเริ่มต้น",
 			"description": "คำอธิบาย",
 			"designSystem": "ระบบการออกแบบ",
 			"errors": "ข้อผิดพลาด",
 			"europe": "ยุโรป",
-			"githubRepo": "GitHub Repository",
+			"githubRepo": "GitHub Repo",
 			"language": "ภาษา",
 			"levelHigh": "สูง",
 			"levelLow": "ต่ำ",
 			"levelMedium": "ปานกลาง",
 			"levelVeryHigh": "สูงมาก",
 			"levelVeryLow": "ต่ำมาก",
-			"lightTheme": "โหมดสว่าง",
+			"lightTheme": "สว่าง",
 			"name": "ชื่อ",
 			"navigationBar": "แถบนำทาง",
 			"navigationMenu": "เมนูนำทาง",
@@ -58,26 +58,26 @@
 			"requiredField": "(จำเป็น)",
 			"result": "ผลลัพธ์",
 			"settings": "การตั้งค่า",
-			"uiLibrary": "UI Library",
+			"uiLibrary": "ไลบรารี UI",
 			"uiTheme": "ธีม UI"
 		},
 		"placeholder": {
 			"search": "ค้นหา..."
 		},
 		"state": {
-			"dataSaved": "บันทึกข้อมูลของคุณแล้ว",
+			"dataSaved": "ข้อมูลของคุณถูกบันทึกแล้ว",
 			"deleting": "กำลังลบ...",
 			"loading": "กำลังโหลด...",
 			"searching": "กำลังค้นหา...",
 			"sending": "กำลังส่ง...",
-			"updating": "กำลังอัพเดท..."
+			"updating": "กำลังอัปเดต..."
 		}
 	},
 	"aiChat": {
 		"action": {
-			"backToSubchats": "กลับไปที่แชทย่อย",
+			"backToSubchats": "กลับไปยังซับแชท",
 			"closePreview": "ปิดตัวอย่าง",
-			"configureAgent": "ตั้งค่าเอเจนต์",
+			"configureAgent": "กำหนดค่าเอเจนต์",
 			"confirmDeleteAgent": "ยืนยันการลบเอเจนต์",
 			"confirmDeleteChats": "ยืนยันการลบแชท",
 			"confirmRenameChat": "ยืนยันการเปลี่ยนชื่อแชท",
@@ -90,25 +90,27 @@
 			"manageAgents": "จัดการเอเจนต์",
 			"manageChats": "จัดการแชท",
 			"openChat": "เปิดแชท",
-			"openSubchat_zero": "สร้างแชทย่อย",
-			"openSubchat_other": "เปิดแชทย่อย ({count} ข้อความ)",
+			"openSubchat_other": "เปิดซับแชท ({count} ข้อความ)",
+			"openSubchat_zero": "สร้างซับแชท",
 			"previewCode": "ดูตัวอย่างโค้ด",
 			"searchChats": "ค้นหาแชท",
 			"selectChat": "เลือกแชท",
 			"sendMessage": "ส่งข้อความ",
 			"showMoreAgents": "แสดงเอเจนต์เพิ่มเติม",
 			"showMoreChats": "แสดงแชทเพิ่มเติม",
-			"showSubchats": "แสดงแชทย่อย ({count})",
+			"showSubchats": "แสดงซับแชท ({count})",
 			"startNewChat": "เริ่มการสนทนาใหม่",
 			"startSearching_other": "พิมพ์อย่างน้อย {count} ตัวอักษร"
 		},
 		"description": {
-			"chromeGPT": "มินิ GPT สำหรับ Google Chrome",
+			"chatgpt4o": "โมเดลที่ทรงพลังที่สุดของ OpenAI",
+			"chatgpt4oMini": "โมเดลที่ถูกที่สุดของ OpenAI",
+			"chromeGPT": "GPT ที่ฝังตัวในเบราว์เซอร์ Chrome",
 			"loremIpsumGPT": "โมเดลที่ฉลาดที่สุด",
 			"rammusGPT": "การสนับสนุนด้านอารมณ์ที่ดีที่สุด"
 		},
 		"error": {
-			"agentAvatar": "คุณต้องเพิ่มรูปโปรไฟล์สำหรับเอเจนต์",
+			"agentAvatar": "คุณต้องเพิ่มรูปประจำตัวสำหรับเอเจนต์",
 			"agentName": "คุณต้องเพิ่มชื่อสำหรับเอเจนต์",
 			"emptyMessage": "ข้อความของคุณว่างเปล่า",
 			"failedMessage": "มีปัญหาในการส่งข้อความของคุณ"
@@ -125,36 +127,37 @@
 			"newChat": "แชทใหม่",
 			"newMessage": "ข้อความใหม่",
 			"noChats": "ไม่มีแชท",
-			"noSubchats": "ไม่มีแชทย่อย",
+			"noSubchats": "ไม่มีซับแชท",
 			"selectedAgent": "เอเจนต์ที่เลือก",
 			"selectedValue": "ค่าที่เลือก",
-			"subchats": "แชทย่อย",
+			"subchats": "ซับแชท",
 			"urlPreview": "ตัวอย่าง URL",
 			"xMessages_other": "{count} ข้อความ",
-			"xSearchResults_zero": "ไม่พบผลการค้นหา",
 			"xSearchResults_other": "{count} ผลการค้นหา",
+			"xSearchResults_zero": "ไม่มีผลการค้นหา",
 			"xSelectedMessages_other": "{count} ข้อความที่เลือก"
 		},
 		"placeholder": {
-			"newMessage": "พูดคุยกับ {name}...",
+			"newMessage": "คุยกับ {name}...",
 			"rename": "สร้างชื่อใหม่อัตโนมัติ..."
 		},
 		"state": {
 			"loadingAgents": "กำลังโหลดเอเจนต์...",
 			"loadingChats": "กำลังโหลดแชท...",
-			"loadingGPTs": "กำลังโหลด GPT...",
+			"loadingGPTs": "กำลังโหลด GPTs...",
 			"loadingMessages": "กำลังโหลดข้อความ...",
 			"loadingPreviousMessages": "กำลังโหลดข้อความก่อนหน้า...",
-			"loadingSubchats": "กำลังโหลดแชทย่อย...",
+			"loadingSubchats": "กำลังโหลดซับแชท...",
 			"renamingChat": "กำลังเปลี่ยนชื่อแชท...",
 			"thinking": "กำลังคิด..."
 		},
 		"warning": {
+			"chromeGptInsideChrome": "Chrome GPT ต้องการการตั้งค่าทดลองเหล่านี้:",
+			"chromeGptOutsideChrome": "Chrome GPT ใช้ได้เฉพาะในเบราว์เซอร์ Chrome เท่านั้น",
 			"deletingAgent": "เอเจนต์นี้จะถูกลบอย่างถาวร",
 			"deletingChats": "แชทเหล่านี้จะถูกลบอย่างถาวร",
-			"chromeGptInsideChrome": "GPT นี้ต้องการให้เปิดใช้งานการตั้งค่าต่อไปนี้:",
-			"chromeGptOutsideChrome": "GPT นี้ใช้ได้เฉพาะในเบราว์เซอร์ Google Chrome",
-			"invalidGpt": "GPT ไม่ถูกต้อง"
+			"invalidGpt": "GPT ไม่ถูกต้อง",
+			"missingOpenAiApiKey": "คุณต้องกำหนดค่า OpenAI API key ของคุณ"
 		}
 	},
 	"userSettings": {
@@ -164,12 +167,12 @@
 		},
 		"error": {
 			"address": "คุณต้องเพิ่มที่อยู่",
-			"avatar": "คุณต้องเพิ่มรูปโปรไฟล์",
+			"avatar": "คุณต้องเพิ่มรูปประจำตัวของคุณ",
 			"city": "คุณต้องเพิ่มเมือง",
 			"country": "คุณต้องเพิ่มประเทศ",
-			"email": "คุณต้องเพิ่มที่อยู่อีเมล",
+			"email": "คุณต้องเพิ่มที่อยู่อีเมลของคุณ",
 			"legalName": "คุณต้องเพิ่มชื่อทางกฎหมาย",
-			"name": "คุณต้องเพิ่มชื่อ",
+			"name": "คุณต้องเพิ่มชื่อของคุณ",
 			"postalCode": "คุณต้องเพิ่มรหัสไปรษณีย์"
 		},
 		"label": {
@@ -180,7 +183,8 @@
 			"country": "ประเทศ",
 			"email": "ที่อยู่อีเมล",
 			"legalName": "ชื่อทางกฎหมาย",
-			"phone": "เบอร์โทรศัพท์",
+			"openaiApiKey": "OpenAI API key",
+			"phone": "หมายเลขโทรศัพท์",
 			"postalCode": "รหัสไปรษณีย์",
 			"private": "ส่วนตัว",
 			"public": "สาธารณะ",
