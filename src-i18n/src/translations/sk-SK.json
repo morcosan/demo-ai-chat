@@ -16,7 +16,7 @@
 			"preview": "Náhľad",
 			"reload": "Obnoviť",
 			"rename": "Premenovať",
-			"resizePanel": "Zmeniť veľkosť panela",
+			"resizePanel": "Zmeniť veľkosť panelu",
 			"retry": "Skúsiť znova",
 			"saveChanges": "Uložiť zmeny",
 			"search": "Hľadať",
@@ -26,12 +26,12 @@
 			"signOut": "Odhlásiť sa"
 		},
 		"error": {
-			"noChanges": "Žiadne zmeny",
+			"noChanges": "Nie sú žiadne zmeny",
 			"nothingFound": "Nič sa nenašlo pre \"{search}\"",
 			"unsent": "Neodoslané"
 		},
 		"label": {
-			"apiDocs": "API dokumentácia",
+			"apiDocs": "API Dokumentácia",
 			"asia": "Ázia",
 			"avatar": "Avatar",
 			"code": "Kód",
@@ -43,7 +43,7 @@
 			"designSystem": "Dizajnový systém",
 			"errors": "Chyby",
 			"europe": "Európa",
-			"githubRepo": "GitHub repozitár",
+			"githubRepo": "GitHub Repozitár",
 			"language": "Jazyk",
 			"levelHigh": "Vysoká",
 			"levelLow": "Nízka",
@@ -59,8 +59,8 @@
 			"requiredField": "(Povinné)",
 			"result": "Výsledok",
 			"settings": "Nastavenia",
-			"uiLibrary": "UI knižnica",
-			"uiTheme": "UI téma"
+			"uiLibrary": "UI Knižnica",
+			"uiTheme": "UI Téma"
 		},
 		"placeholder": {
 			"search": "Hľadať..."
@@ -92,27 +92,29 @@
 			"manageChats": "Spravovať konverzácie",
 			"openChat": "Otvoriť konverzáciu",
 			"openSubchat_zero": "Vytvoriť podkonverzáciu",
-			"openSubchat_one": "Otvoriť podkonverzáciu ({count} správa)",
+			"openSubchat_one": "Otvoriť podkonverzáciu (1 správa)",
 			"openSubchat_few": "Otvoriť podkonverzáciu ({count} správy)",
 			"openSubchat_many": "Otvoriť podkonverzáciu ({count} správ)",
 			"openSubchat_other": "Otvoriť podkonverzáciu ({count} správ)",
 			"previewCode": "Náhľad kódu",
-			"searchChats": "Hľadať konverzácie",
+			"searchChats": "Vyhľadávať v konverzáciách",
 			"selectChat": "Vybrať konverzáciu",
 			"sendMessage": "Odoslať správu",
 			"showMoreAgents": "Zobraziť viac agentov",
 			"showMoreChats": "Zobraziť viac konverzácií",
 			"showSubchats": "Zobraziť podkonverzácie ({count})",
 			"startNewChat": "Začať novú konverzáciu",
-			"startSearching_one": "Zadajte aspoň {count} znak",
-			"startSearching_few": "Zadajte aspoň {count} znaky",
-			"startSearching_many": "Zadajte aspoň {count} znakov",
-			"startSearching_other": "Zadajte aspoň {count} znakov"
+			"startSearching_one": "Napíšte aspoň {count} znak",
+			"startSearching_few": "Napíšte aspoň {count} znaky",
+			"startSearching_many": "Napíšte aspoň {count} znakov",
+			"startSearching_other": "Napíšte aspoň {count} znakov"
 		},
 		"description": {
-			"chatgpt4o": "Najvýkonnejší model OpenAI",
-			"chatgpt4oMini": "Najlacnejší model OpenAI",
-			"chromeGPT": "GPT vstavaný v prehliadači Chrome",
+			"chatgpt4o": "Najlepší model od OpenAI",
+			"chatgpt4oMini": "Najlacnejší model od OpenAI",
+			"chromeGPT": "Vstavaný v prehliadači Chrome",
+			"claude35Haiku": "Najlacnejší model od Anthropic",
+			"claude35Sonnet": "Najlepší model od Anthropic",
 			"loremIpsumGPT": "Najinteligentnejší model",
 			"rammusGPT": "Najlepšia emocionálna podpora"
 		},
@@ -120,7 +122,8 @@
 			"agentAvatar": "Musíte pridať avatar pre agenta",
 			"agentName": "Musíte pridať meno pre agenta",
 			"emptyMessage": "Vaša správa je prázdna",
-			"failedMessage": "Nastal problém s doručením vašej správy"
+			"failedApiKey": "Vyskytol sa problém s vašim API kľúčom",
+			"failedMessage": "Vyskytol sa problém pri doručovaní vašej správy"
 		},
 		"label": {
 			"agents": "Agenti",
@@ -154,7 +157,7 @@
 			"xSelectedMessages_other": "{count} vybraných správ"
 		},
 		"placeholder": {
-			"newMessage": "Píšte správu pre {name}...",
+			"newMessage": "Písať správu pre {name}...",
 			"rename": "Vygenerovať nový názov automaticky..."
 		},
 		"state": {
@@ -173,7 +176,7 @@
 			"deletingAgent": "Tento agent bude natrvalo vymazaný",
 			"deletingChats": "Tieto konverzácie budú natrvalo vymazané",
 			"invalidGpt": "Neplatné GPT",
-			"missingOpenAiApiKey": "Musíte nakonfigurovať váš OpenAI API kľúč"
+			"missingApiKey": "Musíte nakonfigurovať váš {name} API kľúč"
 		}
 	},
 	"userSettings": {
@@ -194,17 +197,17 @@
 		"label": {
 			"account": "Účet",
 			"address": "Adresa",
+			"apiKey": "{name} API kľúč",
 			"billing": "Fakturácia",
 			"city": "Mesto",
 			"country": "Krajina",
 			"email": "Emailová adresa",
 			"legalName": "Právny názov",
-			"openaiApiKey": "OpenAI API kľúč",
 			"phone": "Telefónne číslo",
 			"postalCode": "PSČ",
 			"private": "Súkromné",
 			"public": "Verejné",
-			"vatNumber": "DIČ"
+			"vatNumber": "IČ DPH"
 		}
 	}
 }

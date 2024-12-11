@@ -2,7 +2,7 @@
 	"core": {
 		"action": {
 			"back": "Indietro",
-			"backToHome": "Torna alla homepage",
+			"backToHome": "Torna alla home",
 			"changeLanguage": "Cambia lingua",
 			"close": "Chiudi",
 			"collapse": "Comprimi",
@@ -40,7 +40,7 @@
 			"darkTheme": "Scuro",
 			"default": "Predefinito",
 			"description": "Descrizione",
-			"designSystem": "Sistema di Design",
+			"designSystem": "Sistema Design",
 			"errors": "Errori",
 			"europe": "Europa",
 			"githubRepo": "Repository GitHub",
@@ -81,8 +81,8 @@
 			"confirmDeleteAgent": "Conferma eliminazione agente",
 			"confirmDeleteChats": "Conferma eliminazione chat",
 			"confirmRenameChat": "Conferma rinomina chat",
-			"copyCode": "Copia il codice",
-			"copyMessage": "Copia il messaggio",
+			"copyCode": "Copia codice",
+			"copyMessage": "Copia messaggio",
 			"createAgent": "Crea agente",
 			"deleteAgent": "Elimina agente",
 			"deleteSelectedChats": "Elimina chat selezionate",
@@ -90,10 +90,10 @@
 			"manageAgents": "Gestisci agenti",
 			"manageChats": "Gestisci chat",
 			"openChat": "Apri chat",
-			"openSubchat_zero": "Crea subchat",
 			"openSubchat_one": "Apri subchat ({count} messaggio)",
 			"openSubchat_other": "Apri subchat ({count} messaggi)",
-			"previewCode": "Anteprima del codice",
+			"openSubchat_zero": "Crea subchat",
+			"previewCode": "Anteprima codice",
 			"searchChats": "Cerca chat",
 			"selectChat": "Seleziona chat",
 			"sendMessage": "Invia messaggio",
@@ -105,17 +105,20 @@
 			"startSearching_other": "Digita almeno {count} caratteri"
 		},
 		"description": {
-			"chatgpt4o": "Il modello più potente di OpenAI",
-			"chatgpt4oMini": "Il modello più economico di OpenAI",
-			"chromeGPT": "GPT integrato nel browser Chrome",
-			"loremIpsumGPT": "Il modello più intelligente",
-			"rammusGPT": "Il miglior supporto emotivo"
+			"chatgpt4o": "Miglior modello di OpenAI",
+			"chatgpt4oMini": "Modello più economico di OpenAI",
+			"chromeGPT": "Integrato nel browser Chrome",
+			"claude35Haiku": "Modello più economico di Anthropic",
+			"claude35Sonnet": "Miglior modello di Anthropic",
+			"loremIpsumGPT": "Modello più intelligente",
+			"rammusGPT": "Miglior supporto emotivo"
 		},
 		"error": {
 			"agentAvatar": "Devi aggiungere un avatar per l'agente",
 			"agentName": "Devi aggiungere un nome per l'agente",
 			"emptyMessage": "Il tuo messaggio è vuoto",
-			"failedMessage": "Si è verificato un problema nell'invio del tuo messaggio"
+			"failedApiKey": "C'è un problema con la tua chiave API",
+			"failedMessage": "C'è stato un problema nell'invio del tuo messaggio"
 		},
 		"label": {
 			"agents": "Agenti",
@@ -136,23 +139,23 @@
 			"urlPreview": "Anteprima URL",
 			"xMessages_one": "1 messaggio",
 			"xMessages_other": "{count} messaggi",
-			"xSearchResults_zero": "Nessun risultato",
 			"xSearchResults_one": "{count} risultato",
 			"xSearchResults_other": "{count} risultati",
+			"xSearchResults_zero": "Nessun risultato",
 			"xSelectedMessages_one": "1 messaggio selezionato",
 			"xSelectedMessages_other": "{count} messaggi selezionati"
 		},
 		"placeholder": {
 			"newMessage": "Parla con {name}...",
-			"rename": "Genera automaticamente un nuovo nome..."
+			"rename": "Genera un nuovo nome automaticamente..."
 		},
 		"state": {
-			"loadingAgents": "Caricando agenti...",
-			"loadingChats": "Caricando chat...",
-			"loadingGPTs": "Caricando GPT...",
-			"loadingMessages": "Caricando messaggi...",
-			"loadingPreviousMessages": "Caricando messaggi precedenti...",
-			"loadingSubchats": "Caricando subchat...",
+			"loadingAgents": "Caricamento agenti...",
+			"loadingChats": "Caricamento chat...",
+			"loadingGPTs": "Caricamento GPT...",
+			"loadingMessages": "Caricamento messaggi...",
+			"loadingPreviousMessages": "Caricamento messaggi precedenti...",
+			"loadingSubchats": "Caricamento subchat...",
 			"renamingChat": "Rinominando chat...",
 			"thinking": "Pensando..."
 		},
@@ -162,7 +165,7 @@
 			"deletingAgent": "Questo agente verrà eliminato permanentemente",
 			"deletingChats": "Queste chat verranno eliminate permanentemente",
 			"invalidGpt": "GPT non valido",
-			"missingOpenAiApiKey": "Devi configurare la tua chiave API OpenAI"
+			"missingApiKey": "Devi configurare la tua chiave API {name}"
 		}
 	},
 	"userSettings": {
@@ -175,25 +178,25 @@
 			"avatar": "Devi aggiungere il tuo avatar",
 			"city": "Devi aggiungere la città",
 			"country": "Devi aggiungere il paese",
-			"email": "Devi aggiungere il tuo indirizzo email",
-			"legalName": "Devi aggiungere la ragione sociale",
+			"email": "Devi aggiungere l'indirizzo email",
+			"legalName": "Devi aggiungere il nome legale",
 			"name": "Devi aggiungere il tuo nome",
 			"postalCode": "Devi aggiungere il codice postale"
 		},
 		"label": {
 			"account": "Account",
 			"address": "Indirizzo",
+			"apiKey": "Chiave API {name}",
 			"billing": "Fatturazione",
 			"city": "Città",
 			"country": "Paese",
 			"email": "Indirizzo email",
-			"legalName": "Ragione sociale",
-			"openaiApiKey": "Chiave API OpenAI",
+			"legalName": "Nome legale",
 			"phone": "Numero di telefono",
 			"postalCode": "Codice postale",
 			"private": "Privato",
 			"public": "Pubblico",
-			"vatNumber": "Partita IVA"
+			"vatNumber": "P.IVA"
 		}
 	}
 }

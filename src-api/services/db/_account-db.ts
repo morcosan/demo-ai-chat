@@ -29,6 +29,7 @@ const resetDbAccount = (random: boolean) => {
 		phone: random ? faker.phone.number({ style: 'international' }) : '',
 		avatar: randomAvatar(),
 		openaiApiKey: '',
+		anthropicApiKey: '',
 	})
 }
 

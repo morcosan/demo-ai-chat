@@ -2,7 +2,7 @@
 	"core": {
 		"action": {
 			"back": "Zpět",
-			"backToHome": "Zpět na úvodní stránku",
+			"backToHome": "Zpět na hlavní stránku",
 			"changeLanguage": "Změnit jazyk",
 			"close": "Zavřít",
 			"collapse": "Sbalit",
@@ -14,7 +14,7 @@
 			"hidePanel": "Skrýt panel",
 			"openMenu": "Otevřít menu",
 			"preview": "Náhled",
-			"reload": "Znovu načíst",
+			"reload": "Obnovit",
 			"rename": "Přejmenovat",
 			"resizePanel": "Změnit velikost panelu",
 			"retry": "Zkusit znovu",
@@ -27,7 +27,7 @@
 		},
 		"error": {
 			"noChanges": "Žádné změny",
-			"nothingFound": "Pro \"{search}\" nic nenalezeno",
+			"nothingFound": "Pro \"{search}\" nebylo nic nalezeno",
 			"unsent": "Neodesláno"
 		},
 		"label": {
@@ -40,16 +40,16 @@
 			"darkTheme": "Tmavý",
 			"default": "Výchozí",
 			"description": "Popis",
-			"designSystem": "Designový systém",
+			"designSystem": "Design Systém",
 			"errors": "Chyby",
 			"europe": "Evropa",
 			"githubRepo": "GitHub Repozitář",
 			"language": "Jazyk",
-			"levelHigh": "Vysoký",
-			"levelLow": "Nízký",
+			"levelHigh": "Vysoká",
+			"levelLow": "Nízká",
 			"levelMedium": "Střední",
-			"levelVeryHigh": "Velmi vysoký",
-			"levelVeryLow": "Velmi nízký",
+			"levelVeryHigh": "Velmi vysoká",
+			"levelVeryLow": "Velmi nízká",
 			"lightTheme": "Světlý",
 			"name": "Jméno",
 			"navigationBar": "Navigační lišta",
@@ -69,14 +69,14 @@
 			"dataSaved": "Vaše data jsou uložena",
 			"deleting": "Mazání...",
 			"loading": "Načítání...",
-			"searching": "Hledání...",
+			"searching": "Vyhledávání...",
 			"sending": "Odesílání...",
 			"updating": "Aktualizace..."
 		}
 	},
 	"aiChat": {
 		"action": {
-			"backToSubchats": "Zpět na podchaty",
+			"backToSubchats": "Zpět na subchaty",
 			"closePreview": "Zavřít náhled",
 			"configureAgent": "Konfigurovat agenta",
 			"confirmDeleteAgent": "Potvrdit smazání agenta",
@@ -91,36 +91,37 @@
 			"manageAgents": "Spravovat agenty",
 			"manageChats": "Spravovat chaty",
 			"openChat": "Otevřít chat",
-			"openSubchat_few": "Otevřít podchat ({count} zprávy)",
-			"openSubchat_many": "Otevřít podchat ({count} zpráv)",
-			"openSubchat_one": "Otevřít podchat ({count} zpráva)",
-			"openSubchat_other": "Otevřít podchat ({count} zpráv)",
-			"openSubchat_zero": "Vytvořit podchat",
+			"openSubchat_one": "Otevřít subchat ({count} zpráva)",
+			"openSubchat_few": "Otevřít subchat ({count} zprávy)",
+			"openSubchat_other": "Otevřít subchat ({count} zpráv)",
+			"openSubchat_zero": "Vytvořit subchat",
 			"previewCode": "Náhled kódu",
 			"searchChats": "Hledat chaty",
 			"selectChat": "Vybrat chat",
 			"sendMessage": "Odeslat zprávu",
 			"showMoreAgents": "Zobrazit více agentů",
 			"showMoreChats": "Zobrazit více chatů",
-			"showSubchats": "Zobrazit podchaty ({count})",
+			"showSubchats": "Zobrazit subchaty ({count})",
 			"startNewChat": "Začít novou konverzaci",
-			"startSearching_few": "Zadejte alespoň {count} znaky",
-			"startSearching_many": "Zadejte alespoň {count} znaků",
 			"startSearching_one": "Zadejte alespoň {count} znak",
+			"startSearching_few": "Zadejte alespoň {count} znaky",
 			"startSearching_other": "Zadejte alespoň {count} znaků"
 		},
 		"description": {
-			"chatgpt4o": "Nejsilnější model OpenAI",
-			"chatgpt4oMini": "Nejlevnější model OpenAI",
-			"chromeGPT": "GPT vestavěný v prohlížeči Chrome",
+			"chatgpt4o": "Nejlepší model od OpenAI",
+			"chatgpt4oMini": "Nejlevnější model od OpenAI",
+			"chromeGPT": "Integrovaný v prohlížeči Chrome",
+			"claude35Haiku": "Nejlevnější model od Anthropic",
+			"claude35Sonnet": "Nejlepší model od Anthropic",
 			"loremIpsumGPT": "Nejinteligentnější model",
-			"rammusGPT": "Nejlepší emocionální podpora"
+			"rammusGPT": "Nejlepší emoční podpora"
 		},
 		"error": {
 			"agentAvatar": "Musíte přidat avatar pro agenta",
 			"agentName": "Musíte přidat jméno pro agenta",
 			"emptyMessage": "Vaše zpráva je prázdná",
-			"failedMessage": "Nastal problém s doručením vaší zprávy"
+			"failedApiKey": "Vyskytl se problém s vaším API klíčem",
+			"failedMessage": "Vyskytl se problém při doručování vaší zprávy"
 		},
 		"label": {
 			"agents": "Agenti",
@@ -134,23 +135,20 @@
 			"newChat": "Nový chat",
 			"newMessage": "Nová zpráva",
 			"noChats": "Žádné chaty",
-			"noSubchats": "Žádné podchaty",
+			"noSubchats": "Žádné subchaty",
 			"selectedAgent": "Vybraný agent",
 			"selectedValue": "Vybraná hodnota",
-			"subchats": "Podchaty",
+			"subchats": "Subchaty",
 			"urlPreview": "Náhled URL",
-			"xMessages_few": "{count} zprávy",
-			"xMessages_many": "{count} zpráv",
 			"xMessages_one": "{count} zpráva",
+			"xMessages_few": "{count} zprávy",
 			"xMessages_other": "{count} zpráv",
-			"xSearchResults_few": "{count} výsledky hledání",
-			"xSearchResults_many": "{count} výsledků hledání",
-			"xSearchResults_one": "{count} výsledek hledání",
-			"xSearchResults_other": "{count} výsledků hledání",
-			"xSearchResults_zero": "Žádné výsledky hledání",
-			"xSelectedMessages_few": "{count} vybrané zprávy",
-			"xSelectedMessages_many": "{count} vybraných zpráv",
+			"xSearchResults_one": "{count} výsledek",
+			"xSearchResults_few": "{count} výsledky",
+			"xSearchResults_other": "{count} výsledků",
+			"xSearchResults_zero": "Žádné výsledky",
 			"xSelectedMessages_one": "{count} vybraná zpráva",
+			"xSelectedMessages_few": "{count} vybrané zprávy",
 			"xSelectedMessages_other": "{count} vybraných zpráv"
 		},
 		"placeholder": {
@@ -163,7 +161,7 @@
 			"loadingGPTs": "Načítání GPT...",
 			"loadingMessages": "Načítání zpráv...",
 			"loadingPreviousMessages": "Načítání předchozích zpráv...",
-			"loadingSubchats": "Načítání podchatů...",
+			"loadingSubchats": "Načítání subchatů...",
 			"renamingChat": "Přejmenování chatu...",
 			"thinking": "Přemýšlení..."
 		},
@@ -173,7 +171,7 @@
 			"deletingAgent": "Tento agent bude trvale smazán",
 			"deletingChats": "Tyto chaty budou trvale smazány",
 			"invalidGpt": "Neplatný GPT",
-			"missingOpenAiApiKey": "Musíte nakonfigurovat váš OpenAI API klíč"
+			"missingApiKey": "Musíte nakonfigurovat váš {name} API klíč"
 		}
 	},
 	"userSettings": {
@@ -194,16 +192,16 @@
 		"label": {
 			"account": "Účet",
 			"address": "Adresa",
+			"apiKey": "{name} API klíč",
 			"billing": "Fakturace",
 			"city": "Město",
 			"country": "Země",
 			"email": "E-mailová adresa",
 			"legalName": "Právní název",
-			"openaiApiKey": "OpenAI API klíč",
 			"phone": "Telefonní číslo",
 			"postalCode": "PSČ",
-			"private": "Soukromý",
-			"public": "Veřejný",
+			"private": "Soukromé",
+			"public": "Veřejné",
 			"vatNumber": "DIČ"
 		}
 	}

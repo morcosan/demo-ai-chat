@@ -2,7 +2,7 @@
 	"core": {
 		"action": {
 			"back": "Atrás",
-			"backToHome": "Volver a inicio",
+			"backToHome": "Volver a la página principal",
 			"changeLanguage": "Cambiar idioma",
 			"close": "Cerrar",
 			"collapse": "Contraer",
@@ -55,6 +55,7 @@
 			"navigationBar": "Barra de navegación",
 			"navigationMenu": "Menú de navegación",
 			"optionalField": "(Opcional)",
+			"quickSettings": "Ajustes rápidos",
 			"requiredField": "(Obligatorio)",
 			"result": "Resultado",
 			"settings": "Ajustes",
@@ -75,14 +76,14 @@
 	},
 	"aiChat": {
 		"action": {
-			"backToSubchats": "Volver a subchats",
+			"backToSubchats": "Volver a los subchats",
 			"closePreview": "Cerrar vista previa",
 			"configureAgent": "Configurar agente",
 			"confirmDeleteAgent": "Confirmar eliminación del agente",
 			"confirmDeleteChats": "Confirmar eliminación de chats",
-			"confirmRenameChat": "Confirmar cambio de nombre del chat",
-			"copyCode": "Copiar el código",
-			"copyMessage": "Copiar el mensaje",
+			"confirmRenameChat": "Confirmar renombrar chat",
+			"copyCode": "Copiar código",
+			"copyMessage": "Copiar mensaje",
 			"createAgent": "Crear agente",
 			"deleteAgent": "Eliminar agente",
 			"deleteSelectedChats": "Eliminar chats seleccionados",
@@ -91,7 +92,6 @@
 			"manageChats": "Gestionar chats",
 			"openChat": "Abrir chat",
 			"openSubchat_zero": "Crear subchat",
-			"openSubchat_one": "Abrir subchat ({count} mensaje)",
 			"openSubchat_other": "Abrir subchat ({count} mensajes)",
 			"previewCode": "Vista previa del código",
 			"searchChats": "Buscar chats",
@@ -105,16 +105,19 @@
 			"startSearching_other": "Escribe al menos {count} caracteres"
 		},
 		"description": {
-			"chatgpt4o": "El modelo más potente de OpenAI",
-			"chatgpt4oMini": "El modelo más económico de OpenAI",
-			"chromeGPT": "GPT integrado en el navegador Chrome",
-			"loremIpsumGPT": "El modelo más inteligente",
-			"rammusGPT": "El mejor soporte emocional"
+			"chatgpt4o": "Mejor modelo de OpenAI",
+			"chatgpt4oMini": "Modelo más económico de OpenAI",
+			"chromeGPT": "Integrado en el navegador Chrome",
+			"claude35Haiku": "Modelo más económico de Anthropic",
+			"claude35Sonnet": "Mejor modelo de Anthropic",
+			"loremIpsumGPT": "Modelo más inteligente",
+			"rammusGPT": "Mejor soporte emocional"
 		},
 		"error": {
 			"agentAvatar": "Debes añadir un avatar para el agente",
 			"agentName": "Debes añadir un nombre para el agente",
 			"emptyMessage": "Tu mensaje está vacío",
+			"failedApiKey": "Hay un problema con tu clave API",
 			"failedMessage": "Hubo un problema al entregar tu mensaje"
 		},
 		"label": {
@@ -162,7 +165,7 @@
 			"deletingAgent": "Este agente será eliminado permanentemente",
 			"deletingChats": "Estos chats serán eliminados permanentemente",
 			"invalidGpt": "GPT no válido",
-			"missingOpenAiApiKey": "Debes configurar tu clave API de OpenAI"
+			"missingApiKey": "Debes configurar tu clave API de {name}"
 		}
 	},
 	"userSettings": {
@@ -183,12 +186,12 @@
 		"label": {
 			"account": "Cuenta",
 			"address": "Dirección",
+			"apiKey": "Clave API de {name}",
 			"billing": "Facturación",
 			"city": "Ciudad",
 			"country": "País",
-			"email": "Correo electrónico",
+			"email": "Dirección de correo",
 			"legalName": "Nombre legal",
-			"openaiApiKey": "Clave API de OpenAI",
 			"phone": "Número de teléfono",
 			"postalCode": "Código postal",
 			"private": "Privado",

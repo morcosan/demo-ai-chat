@@ -3,14 +3,14 @@
 		"action": {
 			"back": "Kembali",
 			"backToHome": "Kembali ke beranda",
-			"changeLanguage": "Ubah bahasa",
+			"changeLanguage": "Ganti bahasa",
 			"close": "Tutup",
 			"collapse": "Ciutkan",
 			"copy": "Salin",
 			"delete": "Hapus",
 			"deselectAll": "Batalkan semua pilihan",
 			"expand": "Perluas",
-			"goToUrl": "Buka {url}",
+			"goToUrl": "Pergi ke {url}",
 			"hidePanel": "Sembunyikan panel",
 			"openMenu": "Buka menu",
 			"preview": "Pratinjau",
@@ -20,7 +20,7 @@
 			"retry": "Coba lagi",
 			"saveChanges": "Simpan perubahan",
 			"search": "Cari",
-			"searchMore": "Tampilkan hasil lainnya",
+			"searchMore": "Tampilkan hasil lebih banyak",
 			"selectAll": "Pilih semua",
 			"showPanel": "Tampilkan panel",
 			"signOut": "Keluar"
@@ -41,21 +41,20 @@
 			"default": "Default",
 			"description": "Deskripsi",
 			"designSystem": "Sistem Desain",
-			"errors": "Kesalahan",
+			"errors": "Error",
 			"europe": "Eropa",
-			"githubRepo": "Repositori GitHub",
+			"githubRepo": "Repo GitHub",
 			"language": "Bahasa",
 			"levelHigh": "Tinggi",
 			"levelLow": "Rendah",
-			"levelMedium": "Sedang",
+			"levelMedium": "Menengah",
 			"levelVeryHigh": "Sangat tinggi",
 			"levelVeryLow": "Sangat rendah",
 			"lightTheme": "Terang",
 			"name": "Nama",
-			"navigationBar": "Bilah navigasi",
+			"navigationBar": "Bar navigasi",
 			"navigationMenu": "Menu navigasi",
 			"optionalField": "(Opsional)",
-			"quickSettings": "Pengaturan cepat",
 			"requiredField": "(Wajib)",
 			"result": "Hasil",
 			"settings": "Pengaturan",
@@ -97,16 +96,18 @@
 			"searchChats": "Cari chat",
 			"selectChat": "Pilih chat",
 			"sendMessage": "Kirim pesan",
-			"showMoreAgents": "Tampilkan agen lainnya",
-			"showMoreChats": "Tampilkan chat lainnya",
+			"showMoreAgents": "Tampilkan lebih banyak agen",
+			"showMoreChats": "Tampilkan lebih banyak chat",
 			"showSubchats": "Tampilkan subchat ({count})",
 			"startNewChat": "Mulai percakapan baru",
 			"startSearching_other": "Ketik minimal {count} karakter"
 		},
 		"description": {
-			"chatgpt4o": "Model terkuat OpenAI",
-			"chatgpt4oMini": "Model termurah OpenAI",
-			"chromeGPT": "GPT tertanam di browser Chrome",
+			"chatgpt4o": "Model terbaik dari OpenAI",
+			"chatgpt4oMini": "Model termurah dari OpenAI",
+			"chromeGPT": "Tertanam di browser Chrome",
+			"claude35Haiku": "Model termurah dari Anthropic",
+			"claude35Sonnet": "Model terbaik dari Anthropic",
 			"loremIpsumGPT": "Model paling cerdas",
 			"rammusGPT": "Dukungan emosional terbaik"
 		},
@@ -114,6 +115,7 @@
 			"agentAvatar": "Anda harus menambahkan avatar untuk agen",
 			"agentName": "Anda harus menambahkan nama untuk agen",
 			"emptyMessage": "Pesan Anda kosong",
+			"failedApiKey": "Ada masalah dengan kunci API Anda",
 			"failedMessage": "Ada masalah dalam mengirim pesan Anda"
 		},
 		"label": {
@@ -140,7 +142,7 @@
 		},
 		"placeholder": {
 			"newMessage": "Bicara dengan {name}...",
-			"rename": "Generate nama baru secara otomatis..."
+			"rename": "Buat nama baru secara otomatis..."
 		},
 		"state": {
 			"loadingAgents": "Memuat agen...",
@@ -158,20 +160,20 @@
 			"deletingAgent": "Agen ini akan dihapus secara permanen",
 			"deletingChats": "Chat ini akan dihapus secara permanen",
 			"invalidGpt": "GPT tidak valid",
-			"missingOpenAiApiKey": "Anda harus mengkonfigurasi kunci API OpenAI Anda"
+			"missingApiKey": "Anda harus mengonfigurasi kunci API {name} Anda"
 		}
 	},
 	"userSettings": {
 		"action": {
 			"manageAccount": "Kelola akun",
-			"manageBilling": "Kelola penagihan"
+			"manageBilling": "Kelola tagihan"
 		},
 		"error": {
 			"address": "Anda harus menambahkan alamat",
 			"avatar": "Anda harus menambahkan avatar Anda",
 			"city": "Anda harus menambahkan kota",
 			"country": "Anda harus menambahkan negara",
-			"email": "Anda harus menambahkan alamat email Anda",
+			"email": "Anda harus menambahkan alamat email",
 			"legalName": "Anda harus menambahkan nama legal",
 			"name": "Anda harus menambahkan nama Anda",
 			"postalCode": "Anda harus menambahkan kode pos"
@@ -179,12 +181,12 @@
 		"label": {
 			"account": "Akun",
 			"address": "Alamat",
+			"apiKey": "Kunci API {name}",
 			"billing": "Penagihan",
 			"city": "Kota",
 			"country": "Negara",
 			"email": "Alamat email",
 			"legalName": "Nama legal",
-			"openaiApiKey": "Kunci API OpenAI",
 			"phone": "Nomor telepon",
 			"postalCode": "Kode pos",
 			"private": "Pribadi",

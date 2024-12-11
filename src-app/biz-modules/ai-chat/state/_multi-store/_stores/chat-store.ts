@@ -108,17 +108,17 @@ export const useChatStore = (allChatsStore: AllChatsStore): ChatStore => {
 
 		const listing = await API.postMessage(chat.id, text, agentId)
 
-		if (listing.count) {
+		if (listing.errorCode) {
+			setChatMessages([
+				...messages, // Old state
+				createGhostMessage(chat.id, 0, 'user', text, agentId, listing.errorCode),
+				createGhostMessage(chat.id, 0, 'agent', '', agentId, listing.errorCode),
+			])
+			setChatLoading('error')
+		} else {
 			setChatMessages([...messages, ...listing.messages]) // Old state
 			setChatLoading(false)
 			!activeChat && setShouldRename(true)
-		} else {
-			setChatMessages([
-				...messages, // Old state
-				createGhostMessage(chat.id, 0, 'user', text, agentId, true),
-				createGhostMessage(chat.id, 0, 'agent', '', agentId, true),
-			])
-			setChatLoading('error')
 		}
 
 		setChatPagination({ page, count: pagination.count + 2 }) // Old state, used for scrolling

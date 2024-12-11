@@ -9,8 +9,8 @@
 			"copy": "Kopieren",
 			"delete": "Löschen",
 			"deselectAll": "Alle abwählen",
-			"expand": "Ausklappen",
-			"goToUrl": "Gehe zu {url}",
+			"expand": "Erweitern",
+			"goToUrl": "Zu {url} gehen",
 			"hidePanel": "Panel ausblenden",
 			"openMenu": "Menü öffnen",
 			"preview": "Vorschau",
@@ -20,7 +20,7 @@
 			"retry": "Wiederholen",
 			"saveChanges": "Änderungen speichern",
 			"search": "Suchen",
-			"searchMore": "Mehr Ergebnisse anzeigen",
+			"searchMore": "Weitere Ergebnisse anzeigen",
 			"selectAll": "Alle auswählen",
 			"showPanel": "Panel anzeigen",
 			"signOut": "Abmelden"
@@ -55,7 +55,6 @@
 			"navigationBar": "Navigationsleiste",
 			"navigationMenu": "Navigationsmenü",
 			"optionalField": "(Optional)",
-			"quickSettings": "Schnelleinstellungen",
 			"requiredField": "(Erforderlich)",
 			"result": "Ergebnis",
 			"settings": "Einstellungen",
@@ -67,11 +66,11 @@
 		},
 		"state": {
 			"dataSaved": "Ihre Daten sind gespeichert",
-			"deleting": "Löschend...",
-			"loading": "Ladend...",
-			"searching": "Suchend...",
-			"sending": "Sendend...",
-			"updating": "Aktualisierend..."
+			"deleting": "Wird gelöscht...",
+			"loading": "Wird geladen...",
+			"searching": "Wird gesucht...",
+			"sending": "Wird gesendet...",
+			"updating": "Wird aktualisiert..."
 		}
 	},
 	"aiChat": {
@@ -91,24 +90,26 @@
 			"manageAgents": "Agenten verwalten",
 			"manageChats": "Chats verwalten",
 			"openChat": "Chat öffnen",
-			"openSubchat_zero": "Subchat erstellen",
-			"openSubchat_one": "Subchat öffnen (1 Nachricht)",
+			"openSubchat_one": "Subchat öffnen ({count} Nachricht)",
 			"openSubchat_other": "Subchat öffnen ({count} Nachrichten)",
+			"openSubchat_zero": "Subchat erstellen",
 			"previewCode": "Code-Vorschau",
 			"searchChats": "Chats durchsuchen",
 			"selectChat": "Chat auswählen",
 			"sendMessage": "Nachricht senden",
-			"showMoreAgents": "Mehr Agenten anzeigen",
-			"showMoreChats": "Mehr Chats anzeigen",
+			"showMoreAgents": "Weitere Agenten anzeigen",
+			"showMoreChats": "Weitere Chats anzeigen",
 			"showSubchats": "Subchats anzeigen ({count})",
 			"startNewChat": "Neue Konversation starten",
 			"startSearching_one": "Mindestens {count} Zeichen eingeben",
 			"startSearching_other": "Mindestens {count} Zeichen eingeben"
 		},
 		"description": {
-			"chatgpt4o": "OpenAIs leistungsfähigstes Modell",
-			"chatgpt4oMini": "OpenAIs günstigstes Modell",
-			"chromeGPT": "GPT eingebettet im Chrome-Browser",
+			"chatgpt4o": "Bestes Modell von OpenAI",
+			"chatgpt4oMini": "Günstigstes Modell von OpenAI",
+			"chromeGPT": "In Chrome-Browser eingebettet",
+			"claude35Haiku": "Günstigstes Modell von Anthropic",
+			"claude35Sonnet": "Bestes Modell von Anthropic",
 			"loremIpsumGPT": "Intelligentestes Modell",
 			"rammusGPT": "Beste emotionale Unterstützung"
 		},
@@ -116,6 +117,7 @@
 			"agentAvatar": "Sie müssen einen Avatar für den Agenten hinzufügen",
 			"agentName": "Sie müssen einen Namen für den Agenten hinzufügen",
 			"emptyMessage": "Ihre Nachricht ist leer",
+			"failedApiKey": "Es gibt ein Problem mit Ihrem API-Schlüssel",
 			"failedMessage": "Es gab ein Problem beim Zustellen Ihrer Nachricht"
 		},
 		"label": {
@@ -123,7 +125,7 @@
 			"chatTitle": "Chat-Titel",
 			"chats": "Chats",
 			"codePreview": "Code-Vorschau",
-			"creativityLevel": "Kreativitätslevel",
+			"creativityLevel": "Kreativitätsstufe",
 			"customInstructions": "Benutzerdefinierte Anweisungen",
 			"gptModel": "GPT-Modell",
 			"newAgent": "Neuer Agent",
@@ -137,33 +139,33 @@
 			"urlPreview": "URL-Vorschau",
 			"xMessages_one": "1 Nachricht",
 			"xMessages_other": "{count} Nachrichten",
-			"xSearchResults_zero": "Keine Suchergebnisse",
 			"xSearchResults_one": "{count} Suchergebnis",
 			"xSearchResults_other": "{count} Suchergebnisse",
+			"xSearchResults_zero": "Keine Suchergebnisse",
 			"xSelectedMessages_one": "1 Nachricht ausgewählt",
 			"xSelectedMessages_other": "{count} Nachrichten ausgewählt"
 		},
 		"placeholder": {
-			"newMessage": "Sprechen Sie mit {name}...",
+			"newMessage": "Mit {name} sprechen...",
 			"rename": "Automatisch einen neuen Namen generieren..."
 		},
 		"state": {
-			"loadingAgents": "Agenten ladend...",
-			"loadingChats": "Chats ladend...",
-			"loadingGPTs": "GPTs ladend...",
-			"loadingMessages": "Nachrichten ladend...",
-			"loadingPreviousMessages": "Vorherige Nachrichten ladend...",
-			"loadingSubchats": "Subchats ladend...",
-			"renamingChat": "Chat umbenennend...",
-			"thinking": "Denkend..."
+			"loadingAgents": "Agenten werden geladen...",
+			"loadingChats": "Chats werden geladen...",
+			"loadingGPTs": "GPTs werden geladen...",
+			"loadingMessages": "Nachrichten werden geladen...",
+			"loadingPreviousMessages": "Vorherige Nachrichten werden geladen...",
+			"loadingSubchats": "Subchats werden geladen...",
+			"renamingChat": "Chat wird umbenannt...",
+			"thinking": "Denkt nach..."
 		},
 		"warning": {
-			"chromeGptInsideChrome": "Chrome GPT erfordert diese experimentellen Einstellungen:",
+			"chromeGptInsideChrome": "Chrome GPT benötigt diese experimentellen Einstellungen:",
 			"chromeGptOutsideChrome": "Chrome GPT ist nur im Chrome-Browser verfügbar",
-			"deletingAgent": "Dieser Agent wird permanent gelöscht",
-			"deletingChats": "Diese Chats werden permanent gelöscht",
+			"deletingAgent": "Dieser Agent wird dauerhaft gelöscht",
+			"deletingChats": "Diese Chats werden dauerhaft gelöscht",
 			"invalidGpt": "Ungültiges GPT",
-			"missingOpenAiApiKey": "Sie müssen Ihren OpenAI API-Schlüssel konfigurieren"
+			"missingApiKey": "Sie müssen Ihren {name} API-Schlüssel konfigurieren"
 		}
 	},
 	"userSettings": {
@@ -184,12 +186,12 @@
 		"label": {
 			"account": "Konto",
 			"address": "Adresse",
+			"apiKey": "{name} API-Schlüssel",
 			"billing": "Abrechnung",
 			"city": "Stadt",
 			"country": "Land",
 			"email": "E-Mail-Adresse",
 			"legalName": "Rechtlicher Name",
-			"openaiApiKey": "OpenAI API-Schlüssel",
 			"phone": "Telefonnummer",
 			"postalCode": "Postleitzahl",
 			"private": "Privat",

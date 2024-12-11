@@ -5,16 +5,16 @@
 			"backToHome": "होमपेज पर वापस जाएं",
 			"changeLanguage": "भाषा बदलें",
 			"close": "बंद करें",
-			"collapse": "संकुचित करें",
+			"collapse": "छोटा करें",
 			"copy": "कॉपी करें",
 			"delete": "हटाएं",
 			"deselectAll": "सभी को अचयनित करें",
 			"expand": "विस्तृत करें",
 			"goToUrl": "{url} पर जाएं",
 			"hidePanel": "पैनल छिपाएं",
-			"openMenu": "मेन्यू खोलें",
+			"openMenu": "मेनू खोलें",
 			"preview": "पूर्वावलोकन",
-			"reload": "पुनः लोड करें",
+			"reload": "रीलोड करें",
 			"rename": "नाम बदलें",
 			"resizePanel": "पैनल का आकार बदलें",
 			"retry": "पुनः प्रयास करें",
@@ -43,7 +43,7 @@
 			"designSystem": "डिज़ाइन सिस्टम",
 			"errors": "त्रुटियां",
 			"europe": "यूरोप",
-			"githubRepo": "गिटहब रेपो",
+			"githubRepo": "GitHub रेपो",
 			"language": "भाषा",
 			"levelHigh": "उच्च",
 			"levelLow": "निम्न",
@@ -53,8 +53,9 @@
 			"lightTheme": "लाइट",
 			"name": "नाम",
 			"navigationBar": "नेविगेशन बार",
-			"navigationMenu": "नेविगेशन मेन्यू",
+			"navigationMenu": "नेविगेशन मेनू",
 			"optionalField": "(वैकल्पिक)",
+			"quickSettings": "त्वरित सेटिंग्स",
 			"requiredField": "(आवश्यक)",
 			"result": "परिणाम",
 			"settings": "सेटिंग्स",
@@ -66,19 +67,19 @@
 		},
 		"state": {
 			"dataSaved": "आपका डेटा सहेजा गया है",
-			"deleting": "हटा रहा है...",
+			"deleting": "हटाया जा रहा है...",
 			"loading": "लोड हो रहा है...",
 			"searching": "खोज रहा है...",
-			"sending": "भेज रहा है...",
+			"sending": "भेजा जा रहा है...",
 			"updating": "अपडेट हो रहा है..."
 		}
 	},
 	"aiChat": {
 		"action": {
-			"backToSubchats": "सब-चैट पर वापस जाएं",
+			"backToSubchats": "सबचैट पर वापस जाएं",
 			"closePreview": "पूर्वावलोकन बंद करें",
 			"configureAgent": "एजेंट कॉन्फ़िगर करें",
-			"confirmDeleteAgent": "एजेंट हटाने की पुष्टि करें",
+			"confirmDeleteAgent": "एजेंट को हटाने की पुष्टि करें",
 			"confirmDeleteChats": "चैट हटाने की पुष्टि करें",
 			"confirmRenameChat": "चैट का नाम बदलने की पुष्टि करें",
 			"copyCode": "कोड कॉपी करें",
@@ -90,32 +91,35 @@
 			"manageAgents": "एजेंट प्रबंधित करें",
 			"manageChats": "चैट प्रबंधित करें",
 			"openChat": "चैट खोलें",
-			"openSubchat_one": "सब-चैट खोलें ({count} संदेश)",
-			"openSubchat_other": "सब-चैट खोलें ({count} संदेश)",
-			"openSubchat_zero": "सब-चैट बनाएं",
+			"openSubchat_one": "सबचैट खोलें ({count} संदेश)",
+			"openSubchat_other": "सबचैट खोलें ({count} संदेश)",
+			"openSubchat_zero": "सबचैट बनाएं",
 			"previewCode": "कोड का पूर्वावलोकन",
 			"searchChats": "चैट खोजें",
 			"selectChat": "चैट चुनें",
 			"sendMessage": "संदेश भेजें",
 			"showMoreAgents": "और एजेंट दिखाएं",
 			"showMoreChats": "और चैट दिखाएं",
-			"showSubchats": "सब-चैट दिखाएं ({count})",
+			"showSubchats": "सबचैट दिखाएं ({count})",
 			"startNewChat": "नई बातचीत शुरू करें",
 			"startSearching_one": "कम से कम {count} अक्षर टाइप करें",
 			"startSearching_other": "कम से कम {count} अक्षर टाइप करें"
 		},
 		"description": {
-			"chatgpt4o": "OpenAI का सबसे शक्तिशाली मॉडल",
+			"chatgpt4o": "OpenAI का सर्वश्रेष्ठ मॉडल",
 			"chatgpt4oMini": "OpenAI का सबसे सस्ता मॉडल",
-			"chromeGPT": "Chrome ब्राउज़र में एम्बेडेड मिनी GPT",
+			"chromeGPT": "Chrome ब्राउज़र में एम्बेडेड",
+			"claude35Haiku": "Anthropic का सबसे सस्ता मॉडल",
+			"claude35Sonnet": "Anthropic का सर्वश्रेष्ठ मॉडल",
 			"loremIpsumGPT": "सबसे बुद्धिमान मॉडल",
-			"rammusGPT": "सर्वश्रेष्ठ भावनात्मक सहायता"
+			"rammusGPT": "सर्वश्रेष्ठ भावनात्मक समर्थन"
 		},
 		"error": {
 			"agentAvatar": "आपको एजेंट के लिए एक अवतार जोड़ना होगा",
 			"agentName": "आपको एजेंट के लिए एक नाम जोड़ना होगा",
 			"emptyMessage": "आपका संदेश खाली है",
-			"failedMessage": "आपका संदेश भेजने में समस्या हुई"
+			"failedApiKey": "आपकी एपीआई कुंजी में कोई समस्या है",
+			"failedMessage": "आपका संदेश भेजने में कोई समस्या हुई"
 		},
 		"label": {
 			"agents": "एजेंट",
@@ -124,22 +128,22 @@
 			"codePreview": "कोड पूर्वावलोकन",
 			"creativityLevel": "रचनात्मकता स्तर",
 			"customInstructions": "कस्टम निर्देश",
-			"gptModel": "GPT मॉडल",
+			"gptModel": "जीपीटी मॉडल",
 			"newAgent": "नया एजेंट",
 			"newChat": "नई चैट",
 			"newMessage": "नया संदेश",
 			"noChats": "कोई चैट नहीं",
-			"noSubchats": "कोई सब-चैट नहीं",
+			"noSubchats": "कोई सबचैट नहीं",
 			"selectedAgent": "चयनित एजेंट",
-			"selectedValue": "चयनित मूल्य",
-			"subchats": "सब-चैट",
-			"urlPreview": "URL पूर्वावलोकन",
-			"xMessages_one": "{count} संदेश",
+			"selectedValue": "चयनित मान",
+			"subchats": "सबचैट",
+			"urlPreview": "यूआरएल पूर्वावलोकन",
+			"xMessages_one": "1 संदेश",
 			"xMessages_other": "{count} संदेश",
 			"xSearchResults_one": "{count} खोज परिणाम",
 			"xSearchResults_other": "{count} खोज परिणाम",
 			"xSearchResults_zero": "कोई खोज परिणाम नहीं",
-			"xSelectedMessages_one": "{count} संदेश चयनित",
+			"xSelectedMessages_one": "1 संदेश चयनित",
 			"xSelectedMessages_other": "{count} संदेश चयनित"
 		},
 		"placeholder": {
@@ -149,11 +153,11 @@
 		"state": {
 			"loadingAgents": "एजेंट लोड हो रहे हैं...",
 			"loadingChats": "चैट लोड हो रही हैं...",
-			"loadingGPTs": "GPT लोड हो रहे हैं...",
+			"loadingGPTs": "जीपीटी लोड हो रहे हैं...",
 			"loadingMessages": "संदेश लोड हो रहे हैं...",
 			"loadingPreviousMessages": "पिछले संदेश लोड हो रहे हैं...",
-			"loadingSubchats": "सब-चैट लोड हो रही हैं...",
-			"renamingChat": "चैट का नाम बदल रहा है...",
+			"loadingSubchats": "सबचैट लोड हो रही हैं...",
+			"renamingChat": "चैट का नाम बदला जा रहा है...",
 			"thinking": "सोच रहा है..."
 		},
 		"warning": {
@@ -161,8 +165,8 @@
 			"chromeGptOutsideChrome": "Chrome GPT केवल Chrome ब्राउज़र में उपलब्ध है",
 			"deletingAgent": "यह एजेंट स्थायी रूप से हटा दिया जाएगा",
 			"deletingChats": "ये चैट स्थायी रूप से हटा दी जाएंगी",
-			"invalidGpt": "अमान्य GPT",
-			"missingOpenAiApiKey": "आपको अपनी OpenAI API कुंजी कॉन्फ़िगर करनी होगी"
+			"invalidGpt": "अमान्य जीपीटी",
+			"missingApiKey": "आपको अपनी {name} एपीआई कुंजी कॉन्फ़िगर करनी होगी"
 		}
 	},
 	"userSettings": {
@@ -183,17 +187,17 @@
 		"label": {
 			"account": "खाता",
 			"address": "पता",
+			"apiKey": "{name} एपीआई कुंजी",
 			"billing": "बिलिंग",
 			"city": "शहर",
 			"country": "देश",
 			"email": "ईमेल पता",
 			"legalName": "कानूनी नाम",
-			"openaiApiKey": "OpenAI API कुंजी",
 			"phone": "फ़ोन नंबर",
 			"postalCode": "पिन कोड",
 			"private": "निजी",
 			"public": "सार्वजनिक",
-			"vatNumber": "जीएसटी नंबर"
+			"vatNumber": "जीएसटी"
 		}
 	}
 }

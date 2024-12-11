@@ -122,16 +122,16 @@ export const useSubchatStore = (chatStore: ChatStore, allSubchatsStore: AllSubch
 
 		const listing = await API.postMessage(activeChat.id, text, agentId, activeSubchat.id)
 
-		if (listing.count) {
-			setSubchatMessages([...messages, ...listing.messages]) // Old state
-			setSubchatLoading(false)
-		} else {
+		if (listing.errorCode) {
 			setSubchatMessages([
 				...messages, // Old state
-				createGhostMessage(activeChat.id, activeSubchat.id, 'user', text, agentId, true),
-				createGhostMessage(activeChat.id, activeSubchat.id, 'agent', '', agentId, true),
+				createGhostMessage(activeChat.id, activeSubchat.id, 'user', text, agentId, listing.errorCode),
+				createGhostMessage(activeChat.id, activeSubchat.id, 'agent', '', agentId, listing.errorCode),
 			])
 			setSubchatLoading('error')
+		} else {
+			setSubchatMessages([...messages, ...listing.messages]) // Old state
+			setSubchatLoading(false)
 		}
 
 		setSubchatPagination({ ...pagination, count: pagination.count + 2 }) // Old state, used for scrolling

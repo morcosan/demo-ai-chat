@@ -16,6 +16,7 @@ export const EMPTY_ACCOUNT: Account = {
 	phone: '',
 	avatar: '',
 	openaiApiKey: '',
+	anthropicApiKey: '',
 }
 export const EMPTY_BILLING: Billing = {
 	name: '',

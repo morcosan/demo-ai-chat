@@ -40,7 +40,7 @@
 			"darkTheme": "Sombre",
 			"default": "Par défaut",
 			"description": "Description",
-			"designSystem": "Système de Design",
+			"designSystem": "Design System",
 			"errors": "Erreurs",
 			"europe": "Europe",
 			"githubRepo": "Dépôt GitHub",
@@ -55,6 +55,7 @@
 			"navigationBar": "Barre de navigation",
 			"navigationMenu": "Menu de navigation",
 			"optionalField": "(Facultatif)",
+			"quickSettings": "Paramètres rapides",
 			"requiredField": "(Obligatoire)",
 			"result": "Résultat",
 			"settings": "Paramètres",
@@ -90,9 +91,9 @@
 			"manageAgents": "Gérer les agents",
 			"manageChats": "Gérer les conversations",
 			"openChat": "Ouvrir la conversation",
-			"openSubchat_zero": "Créer une sous-conversation",
 			"openSubchat_one": "Ouvrir la sous-conversation ({count} message)",
 			"openSubchat_other": "Ouvrir la sous-conversation ({count} messages)",
+			"openSubchat_zero": "Créer une sous-conversation",
 			"previewCode": "Aperçu du code",
 			"searchChats": "Rechercher des conversations",
 			"selectChat": "Sélectionner la conversation",
@@ -101,21 +102,24 @@
 			"showMoreChats": "Afficher plus de conversations",
 			"showSubchats": "Afficher les sous-conversations ({count})",
 			"startNewChat": "Démarrer une nouvelle conversation",
-			"startSearching_one": "Tapez au moins {count} caractère",
-			"startSearching_other": "Tapez au moins {count} caractères"
+			"startSearching_one": "Saisissez au moins {count} caractère",
+			"startSearching_other": "Saisissez au moins {count} caractères"
 		},
 		"description": {
-			"chatgpt4o": "Le modèle le plus puissant d'OpenAI",
-			"chatgpt4oMini": "Le modèle le plus économique d'OpenAI",
-			"chromeGPT": "GPT intégré au navigateur Chrome",
-			"loremIpsumGPT": "Le modèle le plus intelligent",
-			"rammusGPT": "Le meilleur soutien émotionnel"
+			"chatgpt4o": "Meilleur modèle d'OpenAI",
+			"chatgpt4oMini": "Modèle le moins cher d'OpenAI",
+			"chromeGPT": "Intégré au navigateur Chrome",
+			"claude35Haiku": "Modèle le moins cher d'Anthropic",
+			"claude35Sonnet": "Meilleur modèle d'Anthropic",
+			"loremIpsumGPT": "Modèle le plus intelligent",
+			"rammusGPT": "Meilleur support émotionnel"
 		},
 		"error": {
 			"agentAvatar": "Vous devez ajouter un avatar pour l'agent",
 			"agentName": "Vous devez ajouter un nom pour l'agent",
 			"emptyMessage": "Votre message est vide",
-			"failedMessage": "Un problème est survenu lors de l'envoi de votre message"
+			"failedApiKey": "Il y a un problème avec votre clé API",
+			"failedMessage": "Il y a eu un problème lors de l'envoi de votre message"
 		},
 		"label": {
 			"agents": "Agents",
@@ -136,14 +140,14 @@
 			"urlPreview": "Aperçu de l'URL",
 			"xMessages_one": "1 message",
 			"xMessages_other": "{count} messages",
-			"xSearchResults_zero": "Aucun résultat",
-			"xSearchResults_one": "{count} résultat",
-			"xSearchResults_other": "{count} résultats",
+			"xSearchResults_one": "{count} résultat de recherche",
+			"xSearchResults_other": "{count} résultats de recherche",
+			"xSearchResults_zero": "Aucun résultat de recherche",
 			"xSelectedMessages_one": "1 message sélectionné",
 			"xSelectedMessages_other": "{count} messages sélectionnés"
 		},
 		"placeholder": {
-			"newMessage": "Parlez à {name}...",
+			"newMessage": "Parler à {name}...",
 			"rename": "Générer un nouveau nom automatiquement..."
 		},
 		"state": {
@@ -158,11 +162,11 @@
 		},
 		"warning": {
 			"chromeGptInsideChrome": "Chrome GPT nécessite ces paramètres expérimentaux :",
-			"chromeGptOutsideChrome": "Chrome GPT est uniquement disponible dans le navigateur Chrome",
+			"chromeGptOutsideChrome": "Chrome GPT n'est disponible que dans le navigateur Chrome",
 			"deletingAgent": "Cet agent sera définitivement supprimé",
 			"deletingChats": "Ces conversations seront définitivement supprimées",
-			"invalidGpt": "GPT non valide",
-			"missingOpenAiApiKey": "Vous devez configurer votre clé API OpenAI"
+			"invalidGpt": "GPT invalide",
+			"missingApiKey": "Vous devez configurer votre clé API {name}"
 		}
 	},
 	"userSettings": {
@@ -183,17 +187,17 @@
 		"label": {
 			"account": "Compte",
 			"address": "Adresse",
+			"apiKey": "Clé API {name}",
 			"billing": "Facturation",
 			"city": "Ville",
 			"country": "Pays",
 			"email": "Adresse e-mail",
 			"legalName": "Nom légal",
-			"openaiApiKey": "Clé API OpenAI",
 			"phone": "Numéro de téléphone",
 			"postalCode": "Code postal",
 			"private": "Privé",
 			"public": "Public",
-			"vatNumber": "Numéro TVA"
+			"vatNumber": "TVA"
 		}
 	}
 }

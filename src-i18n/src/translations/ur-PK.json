@@ -33,29 +33,30 @@
 		"label": {
 			"apiDocs": "API دستاویزات",
 			"asia": "ایشیا",
-			"avatar": "اوتار",
+			"avatar": "تصویر",
 			"code": "کوڈ",
 			"copied": "کاپی ہو گیا",
-			"custom": "حسب ضرورت",
+			"custom": "مخصوص",
 			"darkTheme": "ڈارک",
 			"default": "ڈیفالٹ",
 			"description": "تفصیل",
 			"designSystem": "ڈیزائن سسٹم",
-			"errors": "غلطیاں",
+			"errors": "خامیاں",
 			"europe": "یورپ",
 			"githubRepo": "GitHub ریپو",
 			"language": "زبان",
-			"levelHigh": "اعلی",
+			"levelHigh": "زیادہ",
 			"levelLow": "کم",
 			"levelMedium": "درمیانہ",
-			"levelVeryHigh": "بہت اعلی",
+			"levelVeryHigh": "بہت زیادہ",
 			"levelVeryLow": "بہت کم",
 			"lightTheme": "لائٹ",
 			"name": "نام",
 			"navigationBar": "نیویگیشن بار",
 			"navigationMenu": "نیویگیشن مینو",
 			"optionalField": "(اختیاری)",
-			"requiredField": "(درکار)",
+			"quickSettings": "فوری ترتیبات",
+			"requiredField": "(ضروری)",
 			"result": "نتیجہ",
 			"settings": "ترتیبات",
 			"uiLibrary": "UI لائبریری",
@@ -65,12 +66,12 @@
 			"search": "تلاش کریں..."
 		},
 		"state": {
-			"dataSaved": "آپ کا ڈیٹا محفوظ ہو گیا",
-			"deleting": "حذف کیا جا رہا ہے...",
+			"dataSaved": "آپ کا ڈیٹا محفوظ ہو گیا ہے",
+			"deleting": "حذف کر رہا ہے...",
 			"loading": "لوڈ ہو رہا ہے...",
 			"searching": "تلاش کر رہا ہے...",
-			"sending": "بھیجا جا رہا ہے...",
-			"updating": "اپ ڈیٹ ہو رہا ہے..."
+			"sending": "بھیج رہا ہے...",
+			"updating": "اپڈیٹ کر رہا ہے..."
 		}
 	},
 	"aiChat": {
@@ -78,9 +79,9 @@
 			"backToSubchats": "سب چیٹس پر واپس جائیں",
 			"closePreview": "پیش نظارہ بند کریں",
 			"configureAgent": "ایجنٹ کی ترتیب کریں",
-			"confirmDeleteAgent": "ایجنٹ کی حذف شدگی کی تصدیق کریں",
-			"confirmDeleteChats": "چیٹس کی حذف شدگی کی تصدیق کریں",
-			"confirmRenameChat": "چیٹ کے نام کی تبدیلی کی تصدیق کریں",
+			"confirmDeleteAgent": "ایجنٹ حذف کرنے کی تصدیق کریں",
+			"confirmDeleteChats": "چیٹس حذف کرنے کی تصدیق کریں",
+			"confirmRenameChat": "چیٹ کا نام تبدیل کرنے کی تصدیق کریں",
 			"copyCode": "کوڈ کاپی کریں",
 			"copyMessage": "پیغام کاپی کریں",
 			"createAgent": "ایجنٹ بنائیں",
@@ -90,9 +91,8 @@
 			"manageAgents": "ایجنٹس کا انتظام کریں",
 			"manageChats": "چیٹس کا انتظام کریں",
 			"openChat": "چیٹ کھولیں",
-			"openSubchat_zero": "سب چیٹ بنائیں",
-			"openSubchat_one": "سب چیٹ کھولیں ({count} پیغام)",
 			"openSubchat_other": "سب چیٹ کھولیں ({count} پیغامات)",
+			"openSubchat_zero": "سب چیٹ بنائیں",
 			"previewCode": "کوڈ کا پیش نظارہ",
 			"searchChats": "چیٹس تلاش کریں",
 			"selectChat": "چیٹ منتخب کریں",
@@ -100,53 +100,53 @@
 			"showMoreAgents": "مزید ایجنٹس دکھائیں",
 			"showMoreChats": "مزید چیٹس دکھائیں",
 			"showSubchats": "سب چیٹس دکھائیں ({count})",
-			"startNewChat": "نئی گفتگو شروع کریں",
-			"startSearching_one": "کم از کم {count} حرف ٹائپ کریں",
-			"startSearching_other": "کم از کم {count} حروف ٹائپ کریں"
+			"startNewChat": "نئی بات چیت شروع کریں",
+			"startSearching_other": "کم از کم {count} حروف لکھیں"
 		},
 		"description": {
-			"chatgpt4o": "OpenAI کا سب سے طاقتور ماڈل",
+			"chatgpt4o": "OpenAI کا بہترین ماڈل",
 			"chatgpt4oMini": "OpenAI کا سب سے سستا ماڈل",
-			"chromeGPT": "Chrome براؤزر میں شامل منی GPT",
-			"loremIpsumGPT": "سب سے زیادہ ذہین ماڈل",
+			"chromeGPT": "Chrome براؤزر میں شامل",
+			"claude35Haiku": "Anthropic کا سب سے سستا ماڈل",
+			"claude35Sonnet": "Anthropic کا بہترین ماڈل",
+			"loremIpsumGPT": "سب سے ذہین ماڈل",
 			"rammusGPT": "بہترین جذباتی مدد"
 		},
 		"error": {
-			"agentAvatar": "آپ کو ایجنٹ کے لیے اوتار شامل کرنا ہوگا",
-			"agentName": "آپ کو ایجنٹ کے لیے نام شامل کرنا ہوگا",
+			"agentAvatar": "آپ کو ایجنٹ کے لیے تصویر شامل کرنی ہوگی",
+			"agentName": "آپ کو ایجنٹ کا نام شامل کرنا ہوگا",
 			"emptyMessage": "آپ کا پیغام خالی ہے",
-			"failedMessage": "آپ کا پیغام پہنچانے میں مسئلہ پیش آیا"
+			"failedApiKey": "آپ کی API کلید میں مسئلہ ہے",
+			"failedMessage": "آپ کا پیغام بھیجنے میں مسئلہ ہوا"
 		},
 		"label": {
 			"agents": "ایجنٹس",
 			"chatTitle": "چیٹ کا عنوان",
 			"chats": "چیٹس",
-			"codePreview": "کوڈ کا پیش نظارہ",
+			"codePreview": "کوڈ پیش نظارہ",
 			"creativityLevel": "تخلیقی سطح",
-			"customInstructions": "حسب ضرورت ہدایات",
+			"customInstructions": "مخصوص ہدایات",
 			"gptModel": "GPT ماڈل",
 			"newAgent": "نیا ایجنٹ",
 			"newChat": "نئی چیٹ",
 			"newMessage": "نیا پیغام",
 			"noChats": "کوئی چیٹس نہیں",
 			"noSubchats": "کوئی سب چیٹس نہیں",
-			"selectedAgent": "منتخب کردہ ایجنٹ",
-			"selectedValue": "منتخب کردہ قدر",
+			"selectedAgent": "منتخب ایجنٹ",
+			"selectedValue": "منتخب قدر",
 			"subchats": "سب چیٹس",
-			"urlPreview": "URL کا پیش نظارہ",
-			"xMessages_zero": "کوئی پیغام نہیں",
+			"urlPreview": "URL پیش نظارہ",
 			"xMessages_one": "1 پیغام",
 			"xMessages_other": "{count} پیغامات",
-			"xSearchResults_zero": "کوئی تلاش کا نتیجہ نہیں",
 			"xSearchResults_one": "{count} تلاش کا نتیجہ",
 			"xSearchResults_other": "{count} تلاش کے نتائج",
-			"xSelectedMessages_zero": "کوئی پیغام منتخب نہیں",
+			"xSearchResults_zero": "کوئی تلاش کا نتیجہ نہیں",
 			"xSelectedMessages_one": "1 پیغام منتخب",
 			"xSelectedMessages_other": "{count} پیغامات منتخب"
 		},
 		"placeholder": {
 			"newMessage": "{name} سے بات کریں...",
-			"rename": "خود بخود نیا نام تجویز کریں..."
+			"rename": "خود بخود نیا نام بنائیں..."
 		},
 		"state": {
 			"loadingAgents": "ایجنٹس لوڈ ہو رہے ہیں...",
@@ -164,7 +164,7 @@
 			"deletingAgent": "یہ ایجنٹ مستقل طور پر حذف ہو جائے گا",
 			"deletingChats": "یہ چیٹس مستقل طور پر حذف ہو جائیں گی",
 			"invalidGpt": "غلط GPT",
-			"missingOpenAiApiKey": "آپ کو اپنی OpenAI API کلید ترتیب دینی ہوگی"
+			"missingApiKey": "آپ کو اپنی {name} API کلید ترتیب دینی ہوگی"
 		}
 	},
 	"userSettings": {
@@ -174,28 +174,28 @@
 		},
 		"error": {
 			"address": "آپ کو پتہ شامل کرنا ہوگا",
-			"avatar": "آپ کو اپنا اوتار شامل کرنا ہوگا",
+			"avatar": "آپ کو تصویر شامل کرنی ہوگی",
 			"city": "آپ کو شہر شامل کرنا ہوگا",
 			"country": "آپ کو ملک شامل کرنا ہوگا",
-			"email": "آپ کو اپنا ای میل ایڈریس شامل کرنا ہوگا",
+			"email": "آپ کو ای میل ایڈریس شامل کرنا ہوگا",
 			"legalName": "آپ کو قانونی نام شامل کرنا ہوگا",
-			"name": "آپ کو اپنا نام شامل کرنا ہوگا",
+			"name": "آپ کو نام شامل کرنا ہوگا",
 			"postalCode": "آپ کو پوسٹل کوڈ شامل کرنا ہوگا"
 		},
 		"label": {
 			"account": "اکاؤنٹ",
 			"address": "پتہ",
+			"apiKey": "{name} API کلید",
 			"billing": "بلنگ",
 			"city": "شہر",
 			"country": "ملک",
 			"email": "ای میل ایڈریس",
 			"legalName": "قانونی نام",
-			"openaiApiKey": "OpenAI API کلید",
 			"phone": "فون نمبر",
 			"postalCode": "پوسٹل کوڈ",
 			"private": "نجی",
 			"public": "عوامی",
-			"vatNumber": "این ٹی این"
+			"vatNumber": "NTN"
 		}
 	}
 }

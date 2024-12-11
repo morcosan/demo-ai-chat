@@ -16,7 +16,7 @@
 			"preview": "Forhåndsvisning",
 			"reload": "Genindlæs",
 			"rename": "Omdøb",
-			"resizePanel": "Tilpas panelstørrelse",
+			"resizePanel": "Tilpas panel",
 			"retry": "Prøv igen",
 			"saveChanges": "Gem ændringer",
 			"search": "Søg",
@@ -43,7 +43,7 @@
 			"designSystem": "Designsystem",
 			"errors": "Fejl",
 			"europe": "Europa",
-			"githubRepo": "GitHub-repository",
+			"githubRepo": "GitHub-depot",
 			"language": "Sprog",
 			"levelHigh": "Høj",
 			"levelLow": "Lav",
@@ -54,7 +54,7 @@
 			"name": "Navn",
 			"navigationBar": "Navigationslinje",
 			"navigationMenu": "Navigationsmenu",
-			"optionalField": "(Valgfrit)",
+			"optionalField": "(Valgfri)",
 			"requiredField": "(Påkrævet)",
 			"result": "Resultat",
 			"settings": "Indstillinger",
@@ -81,8 +81,8 @@
 			"confirmDeleteAgent": "Bekræft sletning af agent",
 			"confirmDeleteChats": "Bekræft sletning af chats",
 			"confirmRenameChat": "Bekræft omdøbning af chat",
-			"copyCode": "Kopiér koden",
-			"copyMessage": "Kopiér beskeden",
+			"copyCode": "Kopiér kode",
+			"copyMessage": "Kopiér besked",
 			"createAgent": "Opret agent",
 			"deleteAgent": "Slet agent",
 			"deleteSelectedChats": "Slet valgte chats",
@@ -93,7 +93,7 @@
 			"openSubchat_one": "Åbn subchat ({count} besked)",
 			"openSubchat_other": "Åbn subchat ({count} beskeder)",
 			"openSubchat_zero": "Opret subchat",
-			"previewCode": "Forhåndsvis koden",
+			"previewCode": "Forhåndsvis kode",
 			"searchChats": "Søg i chats",
 			"selectChat": "Vælg chat",
 			"sendMessage": "Send besked",
@@ -105,16 +105,19 @@
 			"startSearching_other": "Skriv mindst {count} tegn"
 		},
 		"description": {
-			"chatgpt4o": "OpenAIs mest kraftfulde model",
-			"chatgpt4oMini": "OpenAIs billigste model",
-			"chromeGPT": "GPT indbygget i Chrome-browser",
+			"chatgpt4o": "Bedste model fra OpenAI",
+			"chatgpt4oMini": "Billigste model fra OpenAI",
+			"chromeGPT": "Integreret i Chrome-browser",
+			"claude35Haiku": "Billigste model fra Anthropic",
+			"claude35Sonnet": "Bedste model fra Anthropic",
 			"loremIpsumGPT": "Mest intelligente model",
-			"rammusGPT": "Bedste emotionelle support"
+			"rammusGPT": "Bedste følelsesmæssige support"
 		},
 		"error": {
 			"agentAvatar": "Du skal tilføje en avatar til agenten",
 			"agentName": "Du skal tilføje et navn til agenten",
 			"emptyMessage": "Din besked er tom",
+			"failedApiKey": "Der er et problem med din API-nøgle",
 			"failedMessage": "Der opstod et problem med at levere din besked"
 		},
 		"label": {
@@ -162,7 +165,7 @@
 			"deletingAgent": "Denne agent vil blive permanent slettet",
 			"deletingChats": "Disse chats vil blive permanent slettet",
 			"invalidGpt": "Ugyldig GPT",
-			"missingOpenAiApiKey": "Du skal konfigurere din OpenAI API-nøgle"
+			"missingApiKey": "Du skal konfigurere din {name} API-nøgle"
 		}
 	},
 	"userSettings": {
@@ -183,12 +186,12 @@
 		"label": {
 			"account": "Konto",
 			"address": "Adresse",
+			"apiKey": "{name} API-nøgle",
 			"billing": "Fakturering",
 			"city": "By",
 			"country": "Land",
 			"email": "E-mailadresse",
 			"legalName": "Juridisk navn",
-			"openaiApiKey": "OpenAI API-nøgle",
 			"phone": "Telefonnummer",
 			"postalCode": "Postnummer",
 			"private": "Privat",

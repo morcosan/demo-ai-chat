@@ -8,6 +8,7 @@ export const mapAccount = (dto: AccountDTO): Account => {
 		phone: dto.phone || '',
 		avatar: dto.avatar || '',
 		openaiApiKey: dto.openaiApiKey || '',
+		anthropicApiKey: dto.anthropicApiKey || '',
 	}
 }
 
