@@ -27,7 +27,7 @@
 		},
 		"error": {
 			"noChanges": "Muudatusi pole",
-			"nothingFound": "Otsingu \"{search}\" jaoks ei leitud midagi",
+			"nothingFound": "Ei leitud midagi otsingule \"{search}\"",
 			"unsent": "Saatmata"
 		},
 		"label": {
@@ -40,10 +40,10 @@
 			"darkTheme": "Tume",
 			"default": "Vaikimisi",
 			"description": "Kirjeldus",
-			"designSystem": "Disainisüsteem",
+			"designSystem": "Kujundussüsteem",
 			"errors": "Vead",
 			"europe": "Euroopa",
-			"githubRepo": "GitHub hoidla",
+			"githubRepo": "GitHub repo",
 			"language": "Keel",
 			"levelHigh": "Kõrge",
 			"levelLow": "Madal",
@@ -52,21 +52,22 @@
 			"levelVeryLow": "Väga madal",
 			"lightTheme": "Hele",
 			"name": "Nimi",
-			"navigationBar": "Navigeerimisriba",
-			"navigationMenu": "Navigeerimismenüü",
+			"navigationBar": "Navigatsiooniriba",
+			"navigationMenu": "Navigatsioonimenüü",
 			"optionalField": "(Valikuline)",
+			"quickSettings": "Kiirseaded",
 			"requiredField": "(Kohustuslik)",
 			"result": "Tulemus",
 			"settings": "Seaded",
-			"uiLibrary": "UI teek",
-			"uiTheme": "UI teema"
+			"uiLibrary": "Kasutajaliidese teek",
+			"uiTheme": "Kasutajaliidese teema"
 		},
 		"placeholder": {
 			"search": "Otsi..."
 		},
 		"state": {
-			"dataSaved": "Sinu andmed on salvestatud",
-			"deleting": "Kustutamine...",
+			"dataSaved": "Teie andmed on salvestatud",
+			"deleting": "Kustutamas...",
 			"loading": "Laadimine...",
 			"searching": "Otsimine...",
 			"sending": "Saatmine...",
@@ -90,9 +91,9 @@
 			"manageAgents": "Halda agente",
 			"manageChats": "Halda vestlusi",
 			"openChat": "Ava vestlus",
-			"openSubchat_zero": "Loo alamvestlus",
 			"openSubchat_one": "Ava alamvestlus ({count} sõnum)",
 			"openSubchat_other": "Ava alamvestlus ({count} sõnumit)",
+			"openSubchat_zero": "Loo alamvestlus",
 			"previewCode": "Koodi eelvaade",
 			"searchChats": "Otsi vestlusi",
 			"selectChat": "Vali vestlus",
@@ -105,9 +106,11 @@
 			"startSearching_other": "Sisesta vähemalt {count} märki"
 		},
 		"description": {
-			"chatgpt4o": "OpenAI võimsaim mudel",
-			"chatgpt4oMini": "OpenAI soodsaim mudel",
-			"chromeGPT": "Chrome'i brauserisse sisseehitatud GPT",
+			"chatgpt4o": "Parim mudel OpenAI-lt",
+			"chatgpt4oMini": "Soodsaim mudel OpenAI-lt",
+			"chromeGPT": "Integreeritud Chrome brauserisse",
+			"claude35Haiku": "Soodsaim mudel Anthropicult",
+			"claude35Sonnet": "Parim mudel Anthropicult",
 			"loremIpsumGPT": "Kõige intelligentsem mudel",
 			"rammusGPT": "Parim emotsionaalne tugi"
 		},
@@ -115,6 +118,7 @@
 			"agentAvatar": "Pead lisama agendile avatari",
 			"agentName": "Pead lisama agendile nime",
 			"emptyMessage": "Sinu sõnum on tühi",
+			"failedApiKey": "Sinu API võtmega on probleem",
 			"failedMessage": "Sinu sõnumi edastamisel tekkis probleem"
 		},
 		"label": {
@@ -133,12 +137,12 @@
 			"selectedAgent": "Valitud agent",
 			"selectedValue": "Valitud väärtus",
 			"subchats": "Alamvestlused",
-			"urlPreview": "URL-i eelvaade",
+			"urlPreview": "URL eelvaade",
 			"xMessages_one": "1 sõnum",
 			"xMessages_other": "{count} sõnumit",
-			"xSearchResults_zero": "Tulemusi pole",
-			"xSearchResults_one": "{count} tulemus",
-			"xSearchResults_other": "{count} tulemust",
+			"xSearchResults_one": "{count} otsingu tulemus",
+			"xSearchResults_other": "{count} otsingu tulemust",
+			"xSearchResults_zero": "Otsingu tulemusi pole",
 			"xSelectedMessages_one": "1 sõnum valitud",
 			"xSelectedMessages_other": "{count} sõnumit valitud"
 		},
@@ -162,7 +166,7 @@
 			"deletingAgent": "See agent kustutatakse jäädavalt",
 			"deletingChats": "Need vestlused kustutatakse jäädavalt",
 			"invalidGpt": "Vigane GPT",
-			"missingOpenAiApiKey": "Pead seadistama oma OpenAI API võtme"
+			"missingApiKey": "Pead seadistama oma {name} API võtme"
 		}
 	},
 	"userSettings": {
@@ -183,12 +187,12 @@
 		"label": {
 			"account": "Konto",
 			"address": "Aadress",
+			"apiKey": "{name} API võti",
 			"billing": "Arveldus",
 			"city": "Linn",
 			"country": "Riik",
 			"email": "E-posti aadress",
 			"legalName": "Juriidiline nimi",
-			"openaiApiKey": "OpenAI API võti",
 			"phone": "Telefoninumber",
 			"postalCode": "Postiindeks",
 			"private": "Privaatne",

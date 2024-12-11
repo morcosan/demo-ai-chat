@@ -8,7 +8,7 @@
 			"collapse": "折りたたむ",
 			"copy": "コピー",
 			"delete": "削除",
-			"deselectAll": "すべて選択解除",
+			"deselectAll": "すべての選択を解除",
 			"expand": "展開",
 			"goToUrl": "{url}に移動",
 			"hidePanel": "パネルを非表示",
@@ -54,8 +54,9 @@
 			"name": "名前",
 			"navigationBar": "ナビゲーションバー",
 			"navigationMenu": "ナビゲーションメニュー",
-			"optionalField": "(任意)",
-			"requiredField": "(必須)",
+			"optionalField": "（任意）",
+			"quickSettings": "クイック設定",
+			"requiredField": "（必須）",
 			"result": "結果",
 			"settings": "設定",
 			"uiLibrary": "UIライブラリ",
@@ -65,12 +66,12 @@
 			"search": "検索..."
 		},
 		"state": {
-			"dataSaved": "データを保存しました",
-			"deleting": "削除中...",
-			"loading": "読み込み中...",
-			"searching": "検索中...",
-			"sending": "送信中...",
-			"updating": "更新中..."
+			"dataSaved": "データが保存されました",
+			"deleting": "削除しています...",
+			"loading": "読み込んでいます...",
+			"searching": "検索しています...",
+			"sending": "送信しています...",
+			"updating": "更新しています..."
 		}
 	},
 	"aiChat": {
@@ -90,22 +91,24 @@
 			"manageAgents": "エージェントを管理",
 			"manageChats": "チャットを管理",
 			"openChat": "チャットを開く",
-			"openSubchat_zero": "サブチャットを作成",
 			"openSubchat_other": "サブチャットを開く（{count}件のメッセージ）",
+			"openSubchat_zero": "サブチャットを作成",
 			"previewCode": "コードをプレビュー",
 			"searchChats": "チャットを検索",
 			"selectChat": "チャットを選択",
 			"sendMessage": "メッセージを送信",
-			"showMoreAgents": "さらにエージェントを表示",
-			"showMoreChats": "さらにチャットを表示",
-			"showSubchats": "サブチャットを表示（{count}）",
-			"startNewChat": "新しい会話を開始",
+			"showMoreAgents": "エージェントをさらに表示",
+			"showMoreChats": "チャットをさらに表示",
+			"showSubchats": "サブチャットを表示（{count}件）",
+			"startNewChat": "新しい会話を始める",
 			"startSearching_other": "最低{count}文字を入力してください"
 		},
 		"description": {
-			"chatgpt4o": "OpenAIの最も強力なモデル",
-			"chatgpt4oMini": "OpenAIの最も安価なモデル",
-			"chromeGPT": "Chromeブラウザに組み込まれたミニGPT",
+			"chatgpt4o": "OpenAIの最高モデル",
+			"chatgpt4oMini": "OpenAIの最安モデル",
+			"chromeGPT": "Chromeブラウザに組み込み",
+			"claude35Haiku": "Anthropicの最安モデル",
+			"claude35Sonnet": "Anthropicの最高モデル",
 			"loremIpsumGPT": "最も知的なモデル",
 			"rammusGPT": "最高の感情サポート"
 		},
@@ -113,11 +116,12 @@
 			"agentAvatar": "エージェントのアバターを追加してください",
 			"agentName": "エージェントの名前を追加してください",
 			"emptyMessage": "メッセージが空です",
-			"failedMessage": "メッセージの送信に問題が発生しました"
+			"failedApiKey": "APIキーに問題があります",
+			"failedMessage": "メッセージの配信に問題がありました"
 		},
 		"label": {
 			"agents": "エージェント",
-			"chatTitle": "チャットのタイトル",
+			"chatTitle": "チャットタイトル",
 			"chats": "チャット",
 			"codePreview": "コードプレビュー",
 			"creativityLevel": "創造性レベル",
@@ -126,38 +130,38 @@
 			"newAgent": "新規エージェント",
 			"newChat": "新規チャット",
 			"newMessage": "新規メッセージ",
-			"noChats": "チャットはありません",
-			"noSubchats": "サブチャットはありません",
-			"selectedAgent": "選択されたエージェント",
-			"selectedValue": "選択された値",
+			"noChats": "チャットなし",
+			"noSubchats": "サブチャットなし",
+			"selectedAgent": "選択したエージェント",
+			"selectedValue": "選択した値",
 			"subchats": "サブチャット",
 			"urlPreview": "URLプレビュー",
 			"xMessages_other": "{count}件のメッセージ",
-			"xSearchResults_zero": "検索結果はありません",
 			"xSearchResults_other": "{count}件の検索結果",
+			"xSearchResults_zero": "検索結果なし",
 			"xSelectedMessages_other": "{count}件のメッセージを選択"
 		},
 		"placeholder": {
-			"newMessage": "{name}と話す...",
-			"rename": "新しい名前を自動生成..."
+			"newMessage": "{name}と会話する...",
+			"rename": "自動的に新しい名前を生成..."
 		},
 		"state": {
-			"loadingAgents": "エージェントを読み込み中...",
-			"loadingChats": "チャットを読み込み中...",
-			"loadingGPTs": "GPTを読み込み中...",
-			"loadingMessages": "メッセージを読み込み中...",
-			"loadingPreviousMessages": "過去のメッセージを読み込み中...",
-			"loadingSubchats": "サブチャットを読み込み中...",
-			"renamingChat": "チャット名を変更中...",
-			"thinking": "考え中..."
+			"loadingAgents": "エージェントを読み込んでいます...",
+			"loadingChats": "チャットを読み込んでいます...",
+			"loadingGPTs": "GPTを読み込んでいます...",
+			"loadingMessages": "メッセージを読み込んでいます...",
+			"loadingPreviousMessages": "前のメッセージを読み込んでいます...",
+			"loadingSubchats": "サブチャットを読み込んでいます...",
+			"renamingChat": "チャット名を変更しています...",
+			"thinking": "考えています..."
 		},
 		"warning": {
 			"chromeGptInsideChrome": "Chrome GPTには以下の実験的設定が必要です：",
 			"chromeGptOutsideChrome": "Chrome GPTはChromeブラウザでのみ利用可能です",
-			"deletingAgent": "このエージェントは完全に削除されます",
-			"deletingChats": "これらのチャットは完全に削除されます",
+			"deletingAgent": "このエージェントは永久に削除されます",
+			"deletingChats": "これらのチャットは永久に削除されます",
 			"invalidGpt": "無効なGPT",
-			"missingOpenAiApiKey": "OpenAI APIキーを設定する必要があります"
+			"missingApiKey": "{name}のAPIキーを設定する必要があります"
 		}
 	},
 	"userSettings": {
@@ -178,12 +182,12 @@
 		"label": {
 			"account": "アカウント",
 			"address": "住所",
+			"apiKey": "{name}のAPIキー",
 			"billing": "請求",
 			"city": "市区町村",
 			"country": "国",
 			"email": "メールアドレス",
 			"legalName": "法人名",
-			"openaiApiKey": "OpenAI APIキー",
 			"phone": "電話番号",
 			"postalCode": "郵便番号",
 			"private": "プライベート",

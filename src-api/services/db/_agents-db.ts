@@ -3,13 +3,10 @@ import {
 	DbAgent,
 	DbGPT,
 	DEV_GPT_IDS,
-	GPT_ID__CHATGPT_4O,
-	GPT_ID__CHATGPT_4O_MINI,
-	GPT_ID__CHROME_GPT,
-	GPT_ID__LOREM_IPSUM_GPT,
-	GPT_ID__RAMMUS_GPT,
+	GPT_ID,
 	GptConfig,
 	GptMessage,
+	GptResponse,
 	UI_TAG__GPT_DESCRIPTION,
 } from '@api/types'
 import {
@@ -26,6 +23,8 @@ import {
 import { ChatGPT4o } from '../gpt/chatgpt-4o'
 import { ChatGPT4oMini } from '../gpt/chatgpt-4o-mini'
 import { ChromeGPT } from '../gpt/chrome-gpt'
+import { Claude35Haiku } from '../gpt/claude-3-5-haiku'
+import { Claude35Sonnet } from '../gpt/claude-3-5-sonnet'
 import { LoremIpsumGPT } from '../gpt/lorem-ipsum-gpt'
 import { RammusGPT } from '../gpt/rammus-gpt'
 
@@ -50,11 +49,13 @@ const setDbDeletedAgents = (value: DbAgent[]) => {
 
 const getGPTs = async () => {
 	const enabledMap: Record<number, boolean> = {
-		[GPT_ID__LOREM_IPSUM_GPT]: await LoremIpsumGPT.isAvailable(),
-		[GPT_ID__RAMMUS_GPT]: await RammusGPT.isAvailable(),
-		[GPT_ID__CHROME_GPT]: await ChromeGPT.isAvailable(),
-		[GPT_ID__CHATGPT_4O_MINI]: await ChatGPT4oMini.isAvailable(),
-		[GPT_ID__CHATGPT_4O]: await ChatGPT4o.isAvailable(),
+		[GPT_ID.CHATGPT_4O]: await ChatGPT4o.isAvailable(),
+		[GPT_ID.CHATGPT_4O_MINI]: await ChatGPT4oMini.isAvailable(),
+		[GPT_ID.CHROME_GPT]: await ChromeGPT.isAvailable(),
+		[GPT_ID.CLAUDE_3_5_HAIKU]: await Claude35Haiku.isAvailable(),
+		[GPT_ID.CLAUDE_3_5_SONNET]: await Claude35Sonnet.isAvailable(),
+		[GPT_ID.LOREM_IPSUM_GPT]: await LoremIpsumGPT.isAvailable(),
+		[GPT_ID.RAMMUS_GPT]: await RammusGPT.isAvailable(),
 	}
 	return _GPTs.map((gpt: DbGPT) => ({ ...gpt, enabled: enabledMap[gpt.id] }))
 }
@@ -62,35 +63,49 @@ const getGPTs = async () => {
 const initGPTs = async () => {
 	_GPTs = [
 		{
-			id: GPT_ID__LOREM_IPSUM_GPT,
+			id: GPT_ID.LOREM_IPSUM_GPT,
 			name: 'Lorem Ipsum GPT',
 			avatar: ENV__ROOT_URL_PATH + '/avatars/default.svg',
 			desc: '',
 			enabled: false,
 		},
 		{
-			id: GPT_ID__RAMMUS_GPT,
+			id: GPT_ID.RAMMUS_GPT,
 			name: 'Rammus GPT',
 			avatar: ENV__ROOT_URL_PATH + '/avatars/rammus.png',
 			desc: '',
 			enabled: false,
 		},
 		{
-			id: GPT_ID__CHATGPT_4O_MINI,
+			id: GPT_ID.CHATGPT_4O_MINI,
 			name: 'ChatGPT 4o Mini',
 			avatar: ENV__ROOT_URL_PATH + '/avatars/openai.svg',
 			desc: '',
 			enabled: false,
 		},
 		{
-			id: GPT_ID__CHATGPT_4O,
+			id: GPT_ID.CHATGPT_4O,
 			name: 'ChatGPT 4o',
 			avatar: ENV__ROOT_URL_PATH + '/avatars/openai.svg',
 			desc: '',
 			enabled: false,
 		},
 		{
-			id: GPT_ID__CHROME_GPT,
+			id: GPT_ID.CLAUDE_3_5_HAIKU,
+			name: 'Claude 3.5 Haiku',
+			avatar: ENV__ROOT_URL_PATH + '/avatars/anthropic.svg',
+			desc: '',
+			enabled: false,
+		},
+		{
+			id: GPT_ID.CLAUDE_3_5_SONNET,
+			name: 'Claude 3.5 Sonnet',
+			avatar: ENV__ROOT_URL_PATH + '/avatars/anthropic.svg',
+			desc: '',
+			enabled: false,
+		},
+		{
+			id: GPT_ID.CHROME_GPT,
 			name: 'Chrome GPT',
 			avatar: ENV__ROOT_URL_PATH + '/avatars/chrome.svg',
 			desc: '',
@@ -179,20 +194,22 @@ const randomFromAgentIds = () => {
 	return randomFromArray(agents).id
 }
 
-const getGptResponse = async (agentId: number, messages: GptMessage[]): Promise<string> => {
+const getGptResponse = async (agentId: number, messages: GptMessage[]): Promise<GptResponse> => {
 	const agent = _dbActiveAgents.find((agent: DbAgent) => agent.id === agentId)
 	if (agent) {
 		const config: GptConfig = {
 			prompt: agent.prompt,
 			creativity: agent.creativity,
 		}
-		if (agent.gptId === GPT_ID__CHATGPT_4O) return ChatGPT4o.getResponse(config, messages)
-		if (agent.gptId === GPT_ID__CHATGPT_4O_MINI) return ChatGPT4oMini.getResponse(config, messages)
-		if (agent.gptId === GPT_ID__CHROME_GPT) return ChromeGPT.getResponse(config, messages)
-		if (agent.gptId === GPT_ID__LOREM_IPSUM_GPT) return LoremIpsumGPT.getResponse(config, messages)
-		if (agent.gptId === GPT_ID__RAMMUS_GPT) return RammusGPT.getResponse(config, messages)
+		if (agent.gptId === GPT_ID.CHATGPT_4O) return ChatGPT4o.getResponse(config, messages)
+		if (agent.gptId === GPT_ID.CHATGPT_4O_MINI) return ChatGPT4oMini.getResponse(config, messages)
+		if (agent.gptId === GPT_ID.CHROME_GPT) return ChromeGPT.getResponse(config, messages)
+		if (agent.gptId === GPT_ID.CLAUDE_3_5_HAIKU) return Claude35Haiku.getResponse(config, messages)
+		if (agent.gptId === GPT_ID.CLAUDE_3_5_SONNET) return Claude35Sonnet.getResponse(config, messages)
+		if (agent.gptId === GPT_ID.LOREM_IPSUM_GPT) return LoremIpsumGPT.getResponse(config, messages)
+		if (agent.gptId === GPT_ID.RAMMUS_GPT) return RammusGPT.getResponse(config, messages)
 	}
-	return ''
+	return { text: '' }
 }
 
 export {

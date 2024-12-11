@@ -2,27 +2,27 @@
 	"core": {
 		"action": {
 			"back": "Назад",
-			"backToHome": "Към началната страница",
-			"changeLanguage": "Смяна на език",
+			"backToHome": "Обратно към началната страница",
+			"changeLanguage": "Смяна на езика",
 			"close": "Затвори",
 			"collapse": "Свий",
 			"copy": "Копирай",
 			"delete": "Изтрий",
-			"deselectAll": "Премахни всички избрани",
+			"deselectAll": "Отмени избора на всички",
 			"expand": "Разгъни",
-			"goToUrl": "Отиди към {url}",
-			"hidePanel": "Скрий панел",
+			"goToUrl": "Отиди на {url}",
+			"hidePanel": "Скрий панела",
 			"openMenu": "Отвори меню",
 			"preview": "Преглед",
 			"reload": "Презареди",
 			"rename": "Преименувай",
-			"resizePanel": "Промени размера на панела",
+			"resizePanel": "Преоразмери панела",
 			"retry": "Опитай отново",
 			"saveChanges": "Запази промените",
 			"search": "Търси",
 			"searchMore": "Покажи повече резултати",
 			"selectAll": "Избери всички",
-			"showPanel": "Покажи панел",
+			"showPanel": "Покажи панела",
 			"signOut": "Изход"
 		},
 		"error": {
@@ -36,20 +36,20 @@
 			"avatar": "Аватар",
 			"code": "Код",
 			"copied": "Копирано",
-			"custom": "Персонализиран",
+			"custom": "По избор",
 			"darkTheme": "Тъмна",
 			"default": "По подразбиране",
 			"description": "Описание",
-			"designSystem": "Система за дизайн",
+			"designSystem": "Дизайн система",
 			"errors": "Грешки",
 			"europe": "Европа",
 			"githubRepo": "GitHub Хранилище",
 			"language": "Език",
-			"levelHigh": "Висок",
-			"levelLow": "Нисък",
-			"levelMedium": "Среден",
-			"levelVeryHigh": "Много висок",
-			"levelVeryLow": "Много нисък",
+			"levelHigh": "Високо",
+			"levelLow": "Ниско",
+			"levelMedium": "Средно",
+			"levelVeryHigh": "Много високо",
+			"levelVeryLow": "Много ниско",
 			"lightTheme": "Светла",
 			"name": "Име",
 			"navigationBar": "Навигационна лента",
@@ -63,10 +63,10 @@
 			"uiTheme": "UI Тема"
 		},
 		"placeholder": {
-			"search": "Търсене..."
+			"search": "Търси..."
 		},
 		"state": {
-			"dataSaved": "Данните ви са запазени",
+			"dataSaved": "Данните са запазени",
 			"deleting": "Изтриване...",
 			"loading": "Зареждане...",
 			"searching": "Търсене...",
@@ -76,7 +76,7 @@
 	},
 	"aiChat": {
 		"action": {
-			"backToSubchats": "Назад към подчатовете",
+			"backToSubchats": "Обратно към подчатовете",
 			"closePreview": "Затвори прегледа",
 			"configureAgent": "Конфигурирай агент",
 			"confirmDeleteAgent": "Потвърди изтриването на агента",
@@ -87,7 +87,7 @@
 			"createAgent": "Създай агент",
 			"deleteAgent": "Изтрий агент",
 			"deleteSelectedChats": "Изтрий избраните чатове",
-			"deselectChat": "Премахни избрания чат",
+			"deselectChat": "Отмени избора на чат",
 			"manageAgents": "Управление на агенти",
 			"manageChats": "Управление на чатове",
 			"openChat": "Отвори чат",
@@ -95,34 +95,37 @@
 			"openSubchat_other": "Отвори подчат ({count} съобщения)",
 			"openSubchat_zero": "Създай подчат",
 			"previewCode": "Преглед на кода",
-			"searchChats": "Търси в чатовете",
+			"searchChats": "Търси чатове",
 			"selectChat": "Избери чат",
 			"sendMessage": "Изпрати съобщение",
 			"showMoreAgents": "Покажи повече агенти",
 			"showMoreChats": "Покажи повече чатове",
 			"showSubchats": "Покажи подчатове ({count})",
 			"startNewChat": "Започни нов разговор",
-			"startSearching_one": "Въведете поне {count} знак",
-			"startSearching_other": "Въведете поне {count} знака"
+			"startSearching_one": "Въведи поне {count} символ",
+			"startSearching_other": "Въведи поне {count} символа"
 		},
 		"description": {
-			"chatgpt4o": "Най-мощният модел на OpenAI",
-			"chatgpt4oMini": "Най-евтиният модел на OpenAI",
-			"chromeGPT": "GPT вграден в Chrome браузър",
+			"chatgpt4o": "Най-добрият модел от OpenAI",
+			"chatgpt4oMini": "Най-евтиният модел от OpenAI",
+			"chromeGPT": "Вграден в Chrome браузър",
+			"claude35Haiku": "Най-евтиният модел от Anthropic",
+			"claude35Sonnet": "Най-добрият модел от Anthropic",
 			"loremIpsumGPT": "Най-интелигентният модел",
-			"rammusGPT": "Най-добра емоционална подкрепа"
+			"rammusGPT": "Най-добрата емоционална подкрепа"
 		},
 		"error": {
 			"agentAvatar": "Трябва да добавите аватар за агента",
 			"agentName": "Трябва да добавите име за агента",
-			"emptyMessage": "Съобщението ви е празно",
-			"failedMessage": "Възникна проблем при доставянето на съобщението ви"
+			"emptyMessage": "Вашето съобщение е празно",
+			"failedApiKey": "Има проблем с вашия API ключ",
+			"failedMessage": "Възникна проблем при доставянето на вашето съобщение"
 		},
 		"label": {
 			"agents": "Агенти",
 			"chatTitle": "Заглавие на чата",
 			"chats": "Чатове",
-			"codePreview": "Преглед на код",
+			"codePreview": "Преглед на кода",
 			"creativityLevel": "Ниво на креативност",
 			"customInstructions": "Персонализирани инструкции",
 			"gptModel": "GPT модел",
@@ -137,9 +140,9 @@
 			"urlPreview": "Преглед на URL",
 			"xMessages_one": "{count} съобщение",
 			"xMessages_other": "{count} съобщения",
-			"xSearchResults_one": "{count} резултат от търсенето",
-			"xSearchResults_other": "{count} резултата от търсенето",
-			"xSearchResults_zero": "Няма резултати от търсенето",
+			"xSearchResults_one": "{count} резултат",
+			"xSearchResults_other": "{count} резултата",
+			"xSearchResults_zero": "Няма резултати",
 			"xSelectedMessages_one": "{count} избрано съобщение",
 			"xSelectedMessages_other": "{count} избрани съобщения"
 		},
@@ -154,29 +157,29 @@
 			"loadingMessages": "Зареждане на съобщения...",
 			"loadingPreviousMessages": "Зареждане на предишни съобщения...",
 			"loadingSubchats": "Зареждане на подчатове...",
-			"renamingChat": "Преименуване на чат...",
+			"renamingChat": "Преименуване на чата...",
 			"thinking": "Мисли..."
 		},
 		"warning": {
 			"chromeGptInsideChrome": "Chrome GPT изисква тези експериментални настройки:",
 			"chromeGptOutsideChrome": "Chrome GPT е достъпен само в Chrome браузър",
-			"deletingAgent": "Този агент ще бъде изтрит завинаги",
-			"deletingChats": "Тези чатове ще бъдат изтрити завинаги",
+			"deletingAgent": "Този агент ще бъде изтрит перманентно",
+			"deletingChats": "Тези чатове ще бъдат изтрити перманентно",
 			"invalidGpt": "Невалиден GPT",
-			"missingOpenAiApiKey": "Трябва да конфигурирате вашия OpenAI API ключ"
+			"missingApiKey": "Трябва да конфигурирате вашия {name} API ключ"
 		}
 	},
 	"userSettings": {
 		"action": {
-			"manageAccount": "Управление на акаунт",
-			"manageBilling": "Управление на плащания"
+			"manageAccount": "Управление на акаунта",
+			"manageBilling": "Управление на плащанията"
 		},
 		"error": {
 			"address": "Трябва да добавите адрес",
-			"avatar": "Трябва да добавите вашия аватар",
+			"avatar": "Трябва да добавите ваш аватар",
 			"city": "Трябва да добавите град",
 			"country": "Трябва да добавите държава",
-			"email": "Трябва да добавите вашия имейл адрес",
+			"email": "Трябва да добавите ваш имейл адрес",
 			"legalName": "Трябва да добавите юридическо име",
 			"name": "Трябва да добавите вашето име",
 			"postalCode": "Трябва да добавите пощенски код"
@@ -184,16 +187,16 @@
 		"label": {
 			"account": "Акаунт",
 			"address": "Адрес",
-			"billing": "Плащане",
+			"apiKey": "{name} API ключ",
+			"billing": "Плащания",
 			"city": "Град",
 			"country": "Държава",
 			"email": "Имейл адрес",
 			"legalName": "Юридическо име",
-			"openaiApiKey": "OpenAI API ключ",
 			"phone": "Телефонен номер",
 			"postalCode": "Пощенски код",
-			"private": "Частен",
-			"public": "Публичен",
+			"private": "Лично",
+			"public": "Публично",
 			"vatNumber": "ДДС номер"
 		}
 	}

@@ -1,7 +1,0 @@
-export {
-	GPT_ID__CHATGPT_4O,
-	GPT_ID__CHATGPT_4O_MINI,
-	GPT_ID__CHROME_GPT,
-	GPT_ID__LOREM_IPSUM_GPT,
-	GPT_ID__RAMMUS_GPT,
-} from '@api/types'

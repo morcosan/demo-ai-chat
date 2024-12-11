@@ -20,7 +20,7 @@
 			"retry": "Cuba semula",
 			"saveChanges": "Simpan perubahan",
 			"search": "Cari",
-			"searchMore": "Tunjukkan lebih banyak keputusan",
+			"searchMore": "Tunjuk lebih banyak hasil",
 			"selectAll": "Pilih semua",
 			"showPanel": "Tunjukkan panel",
 			"signOut": "Log keluar"
@@ -50,15 +50,15 @@
 			"levelMedium": "Sederhana",
 			"levelVeryHigh": "Sangat tinggi",
 			"levelVeryLow": "Sangat rendah",
-			"lightTheme": "Cerah",
+			"lightTheme": "Terang",
 			"name": "Nama",
 			"navigationBar": "Bar navigasi",
 			"navigationMenu": "Menu navigasi",
 			"optionalField": "(Pilihan)",
-			"requiredField": "(Diperlukan)",
-			"result": "Keputusan",
+			"requiredField": "(Wajib)",
+			"result": "Hasil",
 			"settings": "Tetapan",
-			"uiLibrary": "Perpustakaan UI",
+			"uiLibrary": "Pustaka UI",
 			"uiTheme": "Tema UI"
 		},
 		"placeholder": {
@@ -66,11 +66,11 @@
 		},
 		"state": {
 			"dataSaved": "Data anda telah disimpan",
-			"deleting": "Sedang memadam...",
-			"loading": "Sedang memuatkan...",
-			"searching": "Sedang mencari...",
-			"sending": "Sedang menghantar...",
-			"updating": "Sedang mengemas kini..."
+			"deleting": "Memadam...",
+			"loading": "Memuatkan...",
+			"searching": "Mencari...",
+			"sending": "Menghantar...",
+			"updating": "Mengemaskini..."
 		}
 	},
 	"aiChat": {
@@ -85,7 +85,7 @@
 			"copyMessage": "Salin mesej",
 			"createAgent": "Cipta ejen",
 			"deleteAgent": "Padam ejen",
-			"deleteSelectedChats": "Padam perbualan terpilih",
+			"deleteSelectedChats": "Padam perbualan yang dipilih",
 			"deselectChat": "Nyahpilih perbualan",
 			"manageAgents": "Urus ejen",
 			"manageChats": "Urus perbualan",
@@ -96,23 +96,26 @@
 			"searchChats": "Cari perbualan",
 			"selectChat": "Pilih perbualan",
 			"sendMessage": "Hantar mesej",
-			"showMoreAgents": "Tunjukkan lebih banyak ejen",
-			"showMoreChats": "Tunjukkan lebih banyak perbualan",
-			"showSubchats": "Tunjukkan subchat ({count})",
-			"startNewChat": "Mulakan perbualan baru",
+			"showMoreAgents": "Tunjuk lebih banyak ejen",
+			"showMoreChats": "Tunjuk lebih banyak perbualan",
+			"showSubchats": "Tunjuk subchat ({count})",
+			"startNewChat": "Mulakan perbualan baharu",
 			"startSearching_other": "Taip sekurang-kurangnya {count} aksara"
 		},
 		"description": {
-			"chatgpt4o": "Model terkuat OpenAI",
-			"chatgpt4oMini": "Model termurah OpenAI",
-			"chromeGPT": "GPT terbenam dalam pelayar Chrome",
+			"chatgpt4o": "Model terbaik dari OpenAI",
+			"chatgpt4oMini": "Model termurah dari OpenAI",
+			"chromeGPT": "Terbina dalam pelayar Chrome",
+			"claude35Haiku": "Model termurah dari Anthropic",
+			"claude35Sonnet": "Model terbaik dari Anthropic",
 			"loremIpsumGPT": "Model paling pintar",
 			"rammusGPT": "Sokongan emosi terbaik"
 		},
 		"error": {
-			"agentAvatar": "Anda mesti menambah avatar untuk ejen",
-			"agentName": "Anda mesti menambah nama untuk ejen",
+			"agentAvatar": "Anda perlu menambah avatar untuk ejen",
+			"agentName": "Anda perlu menambah nama untuk ejen",
 			"emptyMessage": "Mesej anda kosong",
+			"failedApiKey": "Terdapat masalah dengan kunci API anda",
 			"failedMessage": "Terdapat masalah menghantar mesej anda"
 		},
 		"label": {
@@ -123,33 +126,34 @@
 			"creativityLevel": "Tahap kreativiti",
 			"customInstructions": "Arahan tersuai",
 			"gptModel": "Model GPT",
-			"newAgent": "Ejen baru",
-			"newChat": "Perbualan baru",
-			"newMessage": "Mesej baru",
+			"newAgent": "Ejen baharu",
+			"newChat": "Perbualan baharu",
+			"newMessage": "Mesej baharu",
 			"noChats": "Tiada perbualan",
 			"noSubchats": "Tiada subchat",
-			"selectedAgent": "Ejen terpilih",
-			"selectedValue": "Nilai terpilih",
+			"selectedAgent": "Ejen yang dipilih",
+			"selectedValue": "Nilai yang dipilih",
 			"subchats": "Subchat",
 			"urlPreview": "Pratonton URL",
 			"xMessages_other": "{count} mesej",
+			"xSearchResults_one": "{count} hasil carian",
 			"xSearchResults_other": "{count} hasil carian",
 			"xSearchResults_zero": "Tiada hasil carian",
 			"xSelectedMessages_other": "{count} mesej dipilih"
 		},
 		"placeholder": {
 			"newMessage": "Bual dengan {name}...",
-			"rename": "Jana nama baru secara automatik..."
+			"rename": "Jana nama baharu secara automatik..."
 		},
 		"state": {
-			"loadingAgents": "Sedang memuatkan ejen...",
-			"loadingChats": "Sedang memuatkan perbualan...",
-			"loadingGPTs": "Sedang memuatkan GPT...",
-			"loadingMessages": "Sedang memuatkan mesej...",
-			"loadingPreviousMessages": "Sedang memuatkan mesej sebelumnya...",
-			"loadingSubchats": "Sedang memuatkan subchat...",
-			"renamingChat": "Sedang menamakan semula perbualan...",
-			"thinking": "Sedang berfikir..."
+			"loadingAgents": "Memuatkan ejen...",
+			"loadingChats": "Memuatkan perbualan...",
+			"loadingGPTs": "Memuatkan GPT...",
+			"loadingMessages": "Memuatkan mesej...",
+			"loadingPreviousMessages": "Memuatkan mesej sebelumnya...",
+			"loadingSubchats": "Memuatkan subchat...",
+			"renamingChat": "Menamakan semula perbualan...",
+			"thinking": "Berfikir..."
 		},
 		"warning": {
 			"chromeGptInsideChrome": "Chrome GPT memerlukan tetapan eksperimen ini:",
@@ -157,33 +161,33 @@
 			"deletingAgent": "Ejen ini akan dipadam secara kekal",
 			"deletingChats": "Perbualan ini akan dipadam secara kekal",
 			"invalidGpt": "GPT tidak sah",
-			"missingOpenAiApiKey": "Anda mesti mengkonfigurasi kunci API OpenAI anda"
+			"missingApiKey": "Anda perlu mengkonfigurasi kunci API {name} anda"
 		}
 	},
 	"userSettings": {
 		"action": {
 			"manageAccount": "Urus akaun",
-			"manageBilling": "Urus pengebilan"
+			"manageBilling": "Urus pembayaran"
 		},
 		"error": {
-			"address": "Anda mesti menambah alamat",
-			"avatar": "Anda mesti menambah avatar anda",
-			"city": "Anda mesti menambah bandar",
-			"country": "Anda mesti menambah negara",
-			"email": "Anda mesti menambah alamat emel anda",
-			"legalName": "Anda mesti menambah nama sah",
-			"name": "Anda mesti menambah nama anda",
-			"postalCode": "Anda mesti menambah kod pos"
+			"address": "Anda perlu menambah alamat",
+			"avatar": "Anda perlu menambah avatar anda",
+			"city": "Anda perlu menambah bandar",
+			"country": "Anda perlu menambah negara",
+			"email": "Anda perlu menambah alamat e-mel",
+			"legalName": "Anda perlu menambah nama sah",
+			"name": "Anda perlu menambah nama anda",
+			"postalCode": "Anda perlu menambah kod pos"
 		},
 		"label": {
 			"account": "Akaun",
 			"address": "Alamat",
-			"billing": "Pengebilan",
+			"apiKey": "Kunci API {name}",
+			"billing": "Pembayaran",
 			"city": "Bandar",
 			"country": "Negara",
-			"email": "Alamat emel",
+			"email": "Alamat e-mel",
 			"legalName": "Nama sah",
-			"openaiApiKey": "Kunci API OpenAI",
 			"phone": "Nombor telefon",
 			"postalCode": "Kod pos",
 			"private": "Peribadi",

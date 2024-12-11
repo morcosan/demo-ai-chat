@@ -15,6 +15,7 @@ export const accountService = {
 			email: payload.email?.trim() || dbAccount.email,
 			phone: payload.phone?.trim() || '',
 			openaiApiKey: payload.openaiApiKey?.trim() || '',
+			anthropicApiKey: payload.anthropicApiKey?.trim() || '',
 		})
 
 		return { status: Status.SUCCESS, data: getDbAccount() }

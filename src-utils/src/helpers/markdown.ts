@@ -19,10 +19,10 @@ import {
 	randomTrue,
 } from './random'
 
-export const randomMarkdown = () => {
+export const randomMarkdown = (max: number = 10) => {
 	const fns = [randomMarkdownHeader, randomMarkdownContent, randomMarkdownTable, randomMarkdownCode]
 
-	return randomArray(randomInt(1, 10)).reduce((acc: string) => {
+	return randomArray(randomInt(1, max)).reduce((acc: string) => {
 		return acc + randomFromArray(fns)() + '\n'
 	}, '')
 }

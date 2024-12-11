@@ -1,4 +1,4 @@
-import { AgentDTO, ChatDTO, GptDTO, MessageDTO, SubchatDTO } from '@api/types'
+import { AgentDTO, ChatDTO, GptDTO, MessageDTO, Status, SubchatDTO } from '@api/types'
 
 export type Subchat = SubchatDTO
 export type GPT = GptDTO
@@ -10,7 +10,7 @@ export interface Chat extends ChatDTO {
 
 export interface Message extends MessageDTO {
 	loading?: boolean
-	failed?: boolean
+	errorCode?: number
 }
 
 export interface Agent extends AgentDTO {
@@ -37,4 +37,9 @@ export interface SubchatListing {
 export interface MessageListing {
 	messages: Message[]
 	count: number
+	errorCode?: ApiError
+}
+export enum ApiError {
+	UNAUTHORIZED = Status.UNAUTHORIZED,
+	UNAVAILABLE = Status.UNAVAILABLE,
 }

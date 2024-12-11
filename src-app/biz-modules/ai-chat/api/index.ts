@@ -19,14 +19,15 @@ import { getIntByViewport } from '@utils/release'
 import { mapDtoToAgent, mapDtoToChat, mapDtoToGPT, mapDtoToMessage, mapDtoToSubchat } from './_mappers'
 import { AgentListing, ChatListing, GptListing, MessageListing, SubchatListing } from './_types'
 
+export { GPT_ID } from '@api/types'
 export { UI_TAG__GPT_DESCRIPTION } from '@app/api'
 export type { AgentsApiPayload, CreativityLevel } from '@app/api'
-export * from './_gpt'
 export * from './_types'
 
 export const MIN_SEARCH_LENGTH = 3
 
 type GetAgentsArgs = [agentIds?: number[], page?: number, search?: string, everywhere?: boolean]
+type PostMessageArgs = [chatId: number, text: string, agentId: number, subchatId?: number]
 
 export const API = {
 	async getGPTs(): Promise<GptListing> {
@@ -173,6 +174,6 @@ export const API = {
 
 		return resp.status === Status.SUCCESS && resp.data
 			? { messages: resp.data.items.map(mapDtoToMessage), count: resp.data.count }
-			: { messages: [], count: 0 }
+			: { messages: [], count: 0, errorCode: resp.status }
 	},
 }

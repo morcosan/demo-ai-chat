@@ -1,7 +1,7 @@
 import { CopyButton, Markdown } from '@app/library/release'
 import { Button, ReloadSvg, useUiViewport, WarningSvg } from '@ds/release'
 import { useMemo, useState } from 'react'
-import { Agent, Message } from '../../api'
+import { Agent, ApiError, Message } from '../../api'
 import { SubchatButton } from '../subchat-button'
 import { AgentGptItem } from './agent-gpt-item'
 
@@ -45,13 +45,13 @@ export const MessageItem = (props: Props) => {
 		isViewportMinLG && 'opacity-0 group-hover:opacity-100',
 		!isViewportMinLG && !showsToolbar && 'pointer-events-none opacity-0',
 		'focus-within:opacity-100',
-		message.loading && 'invisible'
+		(message.loading || message.errorCode) && 'invisible'
 	)
 
 	const subchatWrapperClass = cx(
 		'flex-center',
 		isViewportMinLG && 'absolute right-0 top-0 w-md-0 translate-x-full',
-		message.loading && 'invisible'
+		(message.loading || message.errorCode) && 'invisible'
 	)
 	const subchatButtonClass = cx(
 		isViewportMinLG && 'px-xs-3',
@@ -76,7 +76,7 @@ export const MessageItem = (props: Props) => {
 	)
 
 	const slotSubchat = useMemo(() => {
-		if (isSubchat || message.failed) return null
+		if (isSubchat || message.errorCode) return null
 		return (
 			<div className={subchatWrapperClass}>
 				<SubchatButton
@@ -89,6 +89,32 @@ export const MessageItem = (props: Props) => {
 		)
 	}, [isViewportMinLG, message, subchatId, isSubchat])
 
+	const slotError = useMemo(() => {
+		const isUnauthorized = message.errorCode === ApiError.UNAUTHORIZED
+		const text = isUnauthorized ? t('aiChat.error.failedApiKey') : t('aiChat.error.failedMessage')
+
+		return (
+			<>
+				{/* CARD */}
+				<div className={cx(baseCardClass, 'bg-color-danger-card-bg text-color-danger-card-text')}>{text}</div>
+
+				{/* TOOLBAR */}
+				{isUnauthorized ? (
+					<Button linkHref="/settings/account" variant="text-default" size="sm" className="mt-xs-1">
+						{t('core.action.goToUrl', {
+							url: `${t('core.label.settings')} / ${t('userSettings.label.account')}`,
+						})}
+					</Button>
+				) : (
+					<Button variant="text-default" size="sm" className="mt-xs-1" onClick={onClickRetry}>
+						<ReloadSvg className="mr-xs-2 w-xs-6" />
+						{t('core.action.retry')}
+					</Button>
+				)}
+			</>
+		)
+	}, [message.errorCode])
+
 	return (
 		<li className={itemClass} onClick={onClickItem}>
 			{isUser ? (
@@ -100,12 +126,12 @@ export const MessageItem = (props: Props) => {
 							'absolute bottom-0 right-0 translate-y-full',
 							'whitespace-nowrap px-xs-2 pt-xs-0 text-size-xs leading-1',
 							message.loading && 'text-color-text-placeholder',
-							message.failed && 'text-color-danger-page-text'
+							message.errorCode && 'text-color-danger-page-text'
 						)}
 					>
 						{message.loading ? (
 							t('core.state.sending')
-						) : message.failed ? (
+						) : message.errorCode ? (
 							<div className="flex items-center">
 								<WarningSvg className="mr-xs-2 h-xs-4 w-xs-4" />
 								{t('core.error.unsent')}
@@ -123,16 +149,8 @@ export const MessageItem = (props: Props) => {
 						<div className="w-fit animate-pulse rounded-md bg-color-bg-skeleton px-button-px-item py-xs-2 text-size-sm">
 							{t('aiChat.state.thinking')}
 						</div>
-					) : message.failed ? (
-						<>
-							<div className={cx(baseCardClass, 'bg-color-danger-card-bg text-color-danger-card-text')}>
-								{t('aiChat.error.failedMessage')}
-							</div>
-							<Button variant="text-default" size="sm" className="mt-xs-1 block" onClick={onClickRetry}>
-								<ReloadSvg className="mr-xs-2 w-xs-6" />
-								{t('core.action.retry')}
-							</Button>
-						</>
+					) : message.errorCode ? (
+						slotError
 					) : (
 						<div className={cx(baseCardClass, 'bg-color-bg-card')}>{slotMarkdown}</div>
 					)}

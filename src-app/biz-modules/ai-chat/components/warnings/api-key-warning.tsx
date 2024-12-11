@@ -1,6 +1,10 @@
 import { Button, WarningSvg } from '@ds/release'
 
-export const ChatgptWarning = ({ id, className }: ReactProps) => {
+interface Props extends ReactProps {
+	companyName: string
+}
+
+export const ApiKeyWarning = ({ companyName, id, className }: Props) => {
 	return (
 		<div
 			id={id}
@@ -13,7 +17,7 @@ export const ChatgptWarning = ({ id, className }: ReactProps) => {
 			<WarningSvg className="mx-xs-2 w-xs-8 min-w-xs-8" />
 
 			<div className="px-xs-5">
-				{t('aiChat.warning.missingOpenAiApiKey')}
+				<div>{t('aiChat.warning.missingApiKey', { name: companyName })}</div>
 
 				<Button
 					linkHref="/settings/account"

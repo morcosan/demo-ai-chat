@@ -11,18 +11,18 @@
 			"deselectAll": "Počisti izbor",
 			"expand": "Razširi",
 			"goToUrl": "Pojdi na {url}",
-			"hidePanel": "Skrij ploščo",
+			"hidePanel": "Skrij panel",
 			"openMenu": "Odpri meni",
 			"preview": "Predogled",
-			"reload": "Ponovno naloži",
+			"reload": "Osveži",
 			"rename": "Preimenuj",
-			"resizePanel": "Spremeni velikost plošče",
-			"retry": "Poskusi ponovno",
+			"resizePanel": "Spremeni velikost panela",
+			"retry": "Poskusi znova",
 			"saveChanges": "Shrani spremembe",
 			"search": "Išči",
-			"searchMore": "Pokaži več rezultatov",
+			"searchMore": "Prikaži več rezultatov",
 			"selectAll": "Izberi vse",
-			"showPanel": "Pokaži ploščo",
+			"showPanel": "Prikaži panel",
 			"signOut": "Odjava"
 		},
 		"error": {
@@ -31,7 +31,7 @@
 			"unsent": "Neposlano"
 		},
 		"label": {
-			"apiDocs": "API dokumentacija",
+			"apiDocs": "API Dokumentacija",
 			"asia": "Azija",
 			"avatar": "Avatar",
 			"code": "Koda",
@@ -43,7 +43,7 @@
 			"designSystem": "Oblikovalski sistem",
 			"errors": "Napake",
 			"europe": "Evropa",
-			"githubRepo": "GitHub repozitorij",
+			"githubRepo": "GitHub Repozitorij",
 			"language": "Jezik",
 			"levelHigh": "Visoka",
 			"levelLow": "Nizka",
@@ -59,11 +59,11 @@
 			"requiredField": "(Obvezno)",
 			"result": "Rezultat",
 			"settings": "Nastavitve",
-			"uiLibrary": "UI knjižnica",
-			"uiTheme": "UI tema"
+			"uiLibrary": "UI Knjižnica",
+			"uiTheme": "UI Tema"
 		},
 		"placeholder": {
-			"search": "Išči..."
+			"search": "Iskanje..."
 		},
 		"state": {
 			"dataSaved": "Vaši podatki so shranjeni",
@@ -79,15 +79,15 @@
 			"backToSubchats": "Nazaj na podklepete",
 			"closePreview": "Zapri predogled",
 			"configureAgent": "Nastavi agenta",
-			"confirmDeleteAgent": "Potrdi brisanje agenta",
-			"confirmDeleteChats": "Potrdi brisanje klepetov",
+			"confirmDeleteAgent": "Potrdi izbris agenta",
+			"confirmDeleteChats": "Potrdi izbris klepetov",
 			"confirmRenameChat": "Potrdi preimenovanje klepeta",
 			"copyCode": "Kopiraj kodo",
 			"copyMessage": "Kopiraj sporočilo",
 			"createAgent": "Ustvari agenta",
 			"deleteAgent": "Izbriši agenta",
 			"deleteSelectedChats": "Izbriši izbrane klepete",
-			"deselectChat": "Počisti izbor klepeta",
+			"deselectChat": "Počisti izbiro klepeta",
 			"manageAgents": "Upravljaj agente",
 			"manageChats": "Upravljaj klepete",
 			"openChat": "Odpri klepet",
@@ -100,9 +100,9 @@
 			"searchChats": "Išči klepete",
 			"selectChat": "Izberi klepet",
 			"sendMessage": "Pošlji sporočilo",
-			"showMoreAgents": "Pokaži več agentov",
-			"showMoreChats": "Pokaži več klepetov",
-			"showSubchats": "Pokaži podklepete ({count})",
+			"showMoreAgents": "Prikaži več agentov",
+			"showMoreChats": "Prikaži več klepetov",
+			"showSubchats": "Prikaži podklepete ({count})",
 			"startNewChat": "Začni nov pogovor",
 			"startSearching_one": "Vnesite vsaj {count} znak",
 			"startSearching_two": "Vnesite vsaj {count} znaka",
@@ -110,9 +110,11 @@
 			"startSearching_other": "Vnesite vsaj {count} znakov"
 		},
 		"description": {
-			"chatgpt4o": "Najzmogljivejši model OpenAI",
-			"chatgpt4oMini": "Najcenejši model OpenAI",
-			"chromeGPT": "GPT vgrajen v brskalnik Chrome",
+			"chatgpt4o": "Najboljši model od OpenAI",
+			"chatgpt4oMini": "Najcenejši model od OpenAI",
+			"chromeGPT": "Vgrajen v brskalnik Chrome",
+			"claude35Haiku": "Najcenejši model od Anthropic",
+			"claude35Sonnet": "Najboljši model od Anthropic",
 			"loremIpsumGPT": "Najinteligentnejši model",
 			"rammusGPT": "Najboljša čustvena podpora"
 		},
@@ -120,6 +122,7 @@
 			"agentAvatar": "Dodati morate avatar za agenta",
 			"agentName": "Dodati morate ime za agenta",
 			"emptyMessage": "Vaše sporočilo je prazno",
+			"failedApiKey": "Težava z vašim API ključem",
 			"failedMessage": "Prišlo je do težave pri dostavi vašega sporočila"
 		},
 		"label": {
@@ -154,13 +157,13 @@
 			"xSelectedMessages_other": "{count} izbranih sporočil"
 		},
 		"placeholder": {
-			"newMessage": "Pogovarjajte se z {name}...",
+			"newMessage": "Pišite {name}...",
 			"rename": "Samodejno ustvari novo ime..."
 		},
 		"state": {
 			"loadingAgents": "Nalaganje agentov...",
 			"loadingChats": "Nalaganje klepetov...",
-			"loadingGPTs": "Nalaganje GPT...",
+			"loadingGPTs": "Nalaganje GPT-jev...",
 			"loadingMessages": "Nalaganje sporočil...",
 			"loadingPreviousMessages": "Nalaganje prejšnjih sporočil...",
 			"loadingSubchats": "Nalaganje podklepetov...",
@@ -173,33 +176,33 @@
 			"deletingAgent": "Ta agent bo trajno izbrisan",
 			"deletingChats": "Ti klepeti bodo trajno izbrisani",
 			"invalidGpt": "Neveljaven GPT",
-			"missingOpenAiApiKey": "Konfigurirati morate vaš OpenAI API ključ"
+			"missingApiKey": "Nastaviti morate vaš {name} API ključ"
 		}
 	},
 	"userSettings": {
 		"action": {
 			"manageAccount": "Upravljaj račun",
-			"manageBilling": "Upravljaj zaračunavanje"
+			"manageBilling": "Upravljaj plačila"
 		},
 		"error": {
 			"address": "Dodati morate naslov",
-			"avatar": "Dodati morate vaš avatar",
+			"avatar": "Dodati morate svoj avatar",
 			"city": "Dodati morate mesto",
 			"country": "Dodati morate državo",
-			"email": "Dodati morate vaš e-poštni naslov",
+			"email": "Dodati morate svoj e-poštni naslov",
 			"legalName": "Dodati morate pravno ime",
-			"name": "Dodati morate vaše ime",
+			"name": "Dodati morate svoje ime",
 			"postalCode": "Dodati morate poštno številko"
 		},
 		"label": {
 			"account": "Račun",
 			"address": "Naslov",
-			"billing": "Zaračunavanje",
+			"apiKey": "{name} API ključ",
+			"billing": "Plačila",
 			"city": "Mesto",
 			"country": "Država",
 			"email": "E-poštni naslov",
 			"legalName": "Pravno ime",
-			"openaiApiKey": "OpenAI API ključ",
 			"phone": "Telefonska številka",
 			"postalCode": "Poštna številka",
 			"private": "Zasebno",

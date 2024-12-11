@@ -19,7 +19,7 @@
 			"resizePanel": "Muuta paneelin kokoa",
 			"retry": "Yritä uudelleen",
 			"saveChanges": "Tallenna muutokset",
-			"search": "Haku",
+			"search": "Hae",
 			"searchMore": "Näytä lisää tuloksia",
 			"selectAll": "Valitse kaikki",
 			"showPanel": "Näytä paneeli",
@@ -28,7 +28,7 @@
 		"error": {
 			"noChanges": "Ei muutoksia",
 			"nothingFound": "Ei tuloksia haulle \"{search}\"",
-			"unsent": "Lähettämätön"
+			"unsent": "Lähettämättä"
 		},
 		"label": {
 			"apiDocs": "API-dokumentaatio",
@@ -43,7 +43,7 @@
 			"designSystem": "Suunnittelujärjestelmä",
 			"errors": "Virheet",
 			"europe": "Eurooppa",
-			"githubRepo": "GitHub-varasto",
+			"githubRepo": "GitHub-repo",
 			"language": "Kieli",
 			"levelHigh": "Korkea",
 			"levelLow": "Matala",
@@ -55,11 +55,12 @@
 			"navigationBar": "Navigointipalkki",
 			"navigationMenu": "Navigointivalikko",
 			"optionalField": "(Valinnainen)",
+			"quickSettings": "Pika-asetukset",
 			"requiredField": "(Pakollinen)",
 			"result": "Tulos",
 			"settings": "Asetukset",
-			"uiLibrary": "UI-kirjasto",
-			"uiTheme": "UI-teema"
+			"uiLibrary": "Käyttöliittymäkirjasto",
+			"uiTheme": "Käyttöliittymäteema"
 		},
 		"placeholder": {
 			"search": "Hae..."
@@ -75,7 +76,7 @@
 	},
 	"aiChat": {
 		"action": {
-			"backToSubchats": "Takaisin alakeskusteluihin",
+			"backToSubchats": "Takaisin alikeskusteluihin",
 			"closePreview": "Sulje esikatselu",
 			"configureAgent": "Määritä agentti",
 			"confirmDeleteAgent": "Vahvista agentin poisto",
@@ -90,31 +91,34 @@
 			"manageAgents": "Hallitse agentteja",
 			"manageChats": "Hallitse keskusteluja",
 			"openChat": "Avaa keskustelu",
-			"openSubchat_zero": "Luo alakeskustelu",
-			"openSubchat_one": "Avaa alakeskustelu ({count} viesti)",
-			"openSubchat_other": "Avaa alakeskustelu ({count} viestiä)",
+			"openSubchat_one": "Avaa alikeskustelu ({count} viesti)",
+			"openSubchat_other": "Avaa alikeskustelu ({count} viestiä)",
+			"openSubchat_zero": "Luo alikeskustelu",
 			"previewCode": "Esikatsele koodi",
 			"searchChats": "Hae keskusteluja",
 			"selectChat": "Valitse keskustelu",
 			"sendMessage": "Lähetä viesti",
 			"showMoreAgents": "Näytä lisää agentteja",
 			"showMoreChats": "Näytä lisää keskusteluja",
-			"showSubchats": "Näytä alakeskustelut ({count})",
+			"showSubchats": "Näytä alikeskustelut ({count})",
 			"startNewChat": "Aloita uusi keskustelu",
 			"startSearching_one": "Kirjoita vähintään {count} merkki",
 			"startSearching_other": "Kirjoita vähintään {count} merkkiä"
 		},
 		"description": {
-			"chatgpt4o": "OpenAI:n tehokkain malli",
-			"chatgpt4oMini": "OpenAI:n edullisin malli",
-			"chromeGPT": "Chrome-selaimeen sisäänrakennettu GPT",
+			"chatgpt4o": "Paras malli OpenAI:lta",
+			"chatgpt4oMini": "Edullisin malli OpenAI:lta",
+			"chromeGPT": "Sisäänrakennettu Chrome-selaimeen",
+			"claude35Haiku": "Edullisin malli Anthropicilta",
+			"claude35Sonnet": "Paras malli Anthropicilta",
 			"loremIpsumGPT": "Älykkäin malli",
-			"rammusGPT": "Paras emotionaalinen tuki"
+			"rammusGPT": "Paras tunnetuki"
 		},
 		"error": {
 			"agentAvatar": "Sinun täytyy lisätä profiilikuva agentille",
 			"agentName": "Sinun täytyy lisätä nimi agentille",
 			"emptyMessage": "Viestisi on tyhjä",
+			"failedApiKey": "API-avaimessasi on ongelma",
 			"failedMessage": "Viestisi lähettämisessä oli ongelma"
 		},
 		"label": {
@@ -129,16 +133,16 @@
 			"newChat": "Uusi keskustelu",
 			"newMessage": "Uusi viesti",
 			"noChats": "Ei keskusteluja",
-			"noSubchats": "Ei alakeskusteluja",
+			"noSubchats": "Ei alikeskusteluja",
 			"selectedAgent": "Valittu agentti",
 			"selectedValue": "Valittu arvo",
-			"subchats": "Alakeskustelut",
+			"subchats": "Alikeskustelut",
 			"urlPreview": "URL-esikatselu",
 			"xMessages_one": "1 viesti",
 			"xMessages_other": "{count} viestiä",
-			"xSearchResults_zero": "Ei hakutuloksia",
 			"xSearchResults_one": "{count} hakutulos",
 			"xSearchResults_other": "{count} hakutulosta",
+			"xSearchResults_zero": "Ei hakutuloksia",
 			"xSelectedMessages_one": "1 viesti valittu",
 			"xSelectedMessages_other": "{count} viestiä valittu"
 		},
@@ -152,7 +156,7 @@
 			"loadingGPTs": "Ladataan GPT:itä...",
 			"loadingMessages": "Ladataan viestejä...",
 			"loadingPreviousMessages": "Ladataan aiempia viestejä...",
-			"loadingSubchats": "Ladataan alakeskusteluja...",
+			"loadingSubchats": "Ladataan alikeskusteluja...",
 			"renamingChat": "Nimetään keskustelua uudelleen...",
 			"thinking": "Ajattelee..."
 		},
@@ -162,7 +166,7 @@
 			"deletingAgent": "Tämä agentti poistetaan pysyvästi",
 			"deletingChats": "Nämä keskustelut poistetaan pysyvästi",
 			"invalidGpt": "Virheellinen GPT",
-			"missingOpenAiApiKey": "Sinun täytyy määrittää OpenAI API -avaimesi"
+			"missingApiKey": "Sinun täytyy määrittää {name} API-avaimesi"
 		}
 	},
 	"userSettings": {
@@ -183,12 +187,12 @@
 		"label": {
 			"account": "Tili",
 			"address": "Osoite",
+			"apiKey": "{name} API-avain",
 			"billing": "Laskutus",
 			"city": "Kaupunki",
 			"country": "Maa",
 			"email": "Sähköpostiosoite",
 			"legalName": "Virallinen nimi",
-			"openaiApiKey": "OpenAI API -avain",
 			"phone": "Puhelinnumero",
 			"postalCode": "Postinumero",
 			"private": "Yksityinen",

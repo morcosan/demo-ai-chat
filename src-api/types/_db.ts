@@ -6,6 +6,7 @@ export interface DbAccount {
 	avatar: string
 	phone: string
 	openaiApiKey: string
+	anthropicApiKey: string
 }
 
 export interface DbBilling {

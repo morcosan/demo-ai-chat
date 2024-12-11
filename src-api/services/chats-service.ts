@@ -15,7 +15,7 @@ import {
 	SubchatsApiData,
 	SubchatsApiQuery,
 } from '../types'
-import { RESP__NOT_AVAILABLE, RESP__NOT_FOUND } from '../utilities/network'
+import { RESP__NOT_FOUND, RESP__UNAUTHORIZED, RESP__UNAVAILABLE } from '../utilities/network'
 import { extractInt, extractIntArray, isGreaterThanZero } from '../utilities/parsers'
 import { isValidPagination } from '../utilities/validators'
 import {
@@ -243,7 +243,11 @@ export const chatsService = {
 			)
 		const agentResponse = await getGptResponse(agentId, [...gptMessages, { text, role: 'user' }])
 
-		if (!agentResponse) return { ...RESP__NOT_AVAILABLE, error: `GPT for agent ${agentId} not available` }
+		if (!agentResponse.text) {
+			return agentResponse.errorCode === Status.UNAUTHORIZED
+				? { ...RESP__UNAUTHORIZED, error: `GPT for agent ${agentId} is unauthorized` }
+				: { ...RESP__UNAVAILABLE, error: `GPT for agent ${agentId} is unavailable` }
+		}
 
 		const userMessage: DbMessage = {
 			id: createMessageId(),
@@ -259,7 +263,7 @@ export const chatsService = {
 			chatId: chatId,
 			parentId: parentId,
 			agentId: agentId,
-			text: agentResponse,
+			text: agentResponse.text,
 			role: 'agent',
 			createdAt: addMinutesToDate(userMessage.createdAt, 1).toISOString(),
 		}

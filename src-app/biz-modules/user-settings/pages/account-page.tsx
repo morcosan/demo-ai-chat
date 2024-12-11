@@ -26,7 +26,8 @@ const AccountPage = () => {
 	const privateFields: Field<keyof Account>[] = [
 		{ key: 'email', label: t('userSettings.label.email') },
 		{ key: 'phone', label: t('userSettings.label.phone'), optional: true },
-		{ key: 'openaiApiKey', label: t('userSettings.label.openaiApiKey'), optional: true },
+		{ key: 'openaiApiKey', label: t('userSettings.label.apiKey', { name: 'OpenAI' }), optional: true },
+		{ key: 'anthropicApiKey', label: t('userSettings.label.apiKey', { name: 'Anthropic' }), optional: true },
 	]
 
 	const hasChanges =
@@ -34,7 +35,8 @@ const AccountPage = () => {
 		account.avatar !== payload.avatar.trim() ||
 		account.email !== payload.email.trim() ||
 		account.phone !== payload.phone.trim() ||
-		account.openaiApiKey !== payload.openaiApiKey.trim()
+		account.openaiApiKey !== payload.openaiApiKey.trim() ||
+		account.anthropicApiKey !== payload.anthropicApiKey.trim()
 
 	const hasErrors = (errors: object) => Object.values(errors).some((value: string) => value)
 
