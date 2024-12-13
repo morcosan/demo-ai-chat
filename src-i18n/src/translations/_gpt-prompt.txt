@@ -67,6 +67,7 @@ Output notes:
 - Mention the locale after you are done
 - Just give me the JSON, no other text
 - For download, use the name of the locale plus ".json" extension for file name (example: en-US.JSON)
+- You must answer with markdown json code block.
 
 ---
 Translation notes:

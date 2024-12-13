@@ -3,24 +3,25 @@
 		"action": {
 			"back": "Bumalik",
 			"backToHome": "Bumalik sa homepage",
-			"changeLanguage": "Baguhin ang wika",
+			"changeLanguage": "Palitan ang wika",
 			"close": "Isara",
 			"collapse": "I-collapse",
 			"copy": "Kopyahin",
 			"delete": "Burahin",
 			"deselectAll": "I-deselect lahat",
+			"download": "I-download",
 			"expand": "I-expand",
 			"goToUrl": "Pumunta sa {url}",
 			"hidePanel": "Itago ang panel",
 			"openMenu": "Buksan ang menu",
 			"preview": "I-preview",
 			"reload": "I-reload",
-			"rename": "Palitan ang pangalan",
+			"rename": "I-rename",
 			"resizePanel": "I-resize ang panel",
 			"retry": "Subukan muli",
 			"saveChanges": "I-save ang mga pagbabago",
 			"search": "Maghanap",
-			"searchMore": "Ipakita ang iba pang resulta",
+			"searchMore": "Ipakita ang higit pang resulta",
 			"selectAll": "Piliin lahat",
 			"showPanel": "Ipakita ang panel",
 			"signOut": "Mag-sign out"
@@ -39,9 +40,9 @@
 			"custom": "Custom",
 			"darkTheme": "Madilim",
 			"default": "Default",
-			"description": "Paglalarawan",
+			"description": "Deskripsyon",
 			"designSystem": "Design System",
-			"errors": "Mga error",
+			"errors": "Mga Error",
 			"europe": "Europa",
 			"githubRepo": "GitHub Repo",
 			"language": "Wika",
@@ -55,7 +56,7 @@
 			"navigationBar": "Navigation bar",
 			"navigationMenu": "Navigation menu",
 			"optionalField": "(Opsyonal)",
-			"quickSettings": "Mabilisang settings",
+			"quickSettings": "Mabilis na settings",
 			"requiredField": "(Kinakailangan)",
 			"result": "Resulta",
 			"settings": "Mga Setting",
@@ -66,7 +67,7 @@
 			"search": "Maghanap..."
 		},
 		"state": {
-			"dataSaved": "Na-save ang iyong data",
+			"dataSaved": "Na-save na ang iyong data",
 			"deleting": "Binubura...",
 			"loading": "Naglo-load...",
 			"searching": "Naghahanap...",
@@ -81,38 +82,38 @@
 			"configureAgent": "I-configure ang agent",
 			"confirmDeleteAgent": "Kumpirmahin ang pagbura ng agent",
 			"confirmDeleteChats": "Kumpirmahin ang pagbura ng mga chat",
-			"confirmRenameChat": "Kumpirmahin ang pagpalit ng pangalan ng chat",
+			"confirmRenameChat": "Kumpirmahin ang pag-rename ng chat",
 			"copyCode": "Kopyahin ang code",
 			"copyMessage": "Kopyahin ang mensahe",
 			"createAgent": "Gumawa ng agent",
 			"deleteAgent": "Burahin ang agent",
 			"deleteSelectedChats": "Burahin ang mga napiling chat",
 			"deselectChat": "I-deselect ang chat",
-			"manageAgents": "Pamahalaan ang mga agent",
-			"manageChats": "Pamahalaan ang mga chat",
+			"downloadCode": "I-download ang code",
+			"manageAgents": "Pangasiwaan ang mga agent",
+			"manageChats": "Pangasiwaan ang mga chat",
 			"openChat": "Buksan ang chat",
-			"openSubchat_one": "Buksan ang subchat ({count} mensahe)",
-			"openSubchat_other": "Buksan ang subchat ({count} na mensahe)",
 			"openSubchat_zero": "Gumawa ng subchat",
+			"openSubchat_other": "Buksan ang subchat ({count} mensahe)",
 			"previewCode": "I-preview ang code",
 			"searchChats": "Maghanap ng mga chat",
 			"selectChat": "Piliin ang chat",
-			"sendMessage": "Ipadala ang mensahe",
-			"showMoreAgents": "Ipakita ang iba pang mga agent",
-			"showMoreChats": "Ipakita ang iba pang mga chat",
+			"sendMessage": "Magpadala ng mensahe",
+			"showMoreAgents": "Ipakita ang higit pang mga agent",
+			"showMoreChats": "Ipakita ang higit pang mga chat",
 			"showSubchats": "Ipakita ang mga subchat ({count})",
-			"startNewChat": "Magsimula ng bagong pag-uusap",
-			"startSearching_one": "Mag-type ng kahit {count} karakter",
-			"startSearching_other": "Mag-type ng kahit {count} na karakter"
+			"startNewChat": "Magsimula ng bagong usapan",
+			"startSearching_one": "Mag-type ng kahit {count} character",
+			"startSearching_other": "Mag-type ng kahit {count} characters"
 		},
 		"description": {
-			"chatgpt4o": "Pinakamahusay na model mula sa OpenAI",
-			"chatgpt4oMini": "Pinakamurang model mula sa OpenAI",
+			"chatgpt4o": "Pinakamahusay na modelo mula sa OpenAI",
+			"chatgpt4oMini": "Pinakamurang modelo mula sa OpenAI",
 			"chromeGPT": "Naka-embed sa Chrome browser",
-			"claude35Haiku": "Pinakamurang model mula sa Anthropic",
-			"claude35Sonnet": "Pinakamahusay na model mula sa Anthropic",
-			"loremIpsumGPT": "Pinakamatalinong model",
-			"rammusGPT": "Pinakamahusay sa emotional support"
+			"claude35Haiku": "Pinakamurang modelo mula sa Anthropic",
+			"claude35Sonnet": "Pinakamahusay na modelo mula sa Anthropic",
+			"loremIpsumGPT": "Pinakamatalinong modelo",
+			"rammusGPT": "Pinakamahusay na emotional support"
 		},
 		"error": {
 			"agentAvatar": "Kailangan mong magdagdag ng avatar para sa agent",
@@ -135,16 +136,16 @@
 			"noChats": "Walang mga chat",
 			"noSubchats": "Walang mga subchat",
 			"selectedAgent": "Napiling agent",
-			"selectedValue": "Napiling halaga",
+			"selectedValue": "Napiling value",
 			"subchats": "Mga Subchat",
 			"urlPreview": "Preview ng URL",
 			"xMessages_one": "1 mensahe",
-			"xMessages_other": "{count} na mensahe",
-			"xSearchResults_one": "{count} resulta ng paghahanap",
-			"xSearchResults_other": "{count} na resulta ng paghahanap",
+			"xMessages_other": "{count} mensahe",
 			"xSearchResults_zero": "Walang resulta ng paghahanap",
+			"xSearchResults_one": "{count} resulta ng paghahanap",
+			"xSearchResults_other": "{count} resulta ng paghahanap",
 			"xSelectedMessages_one": "1 mensaheng napili",
-			"xSelectedMessages_other": "{count} na mensaheng napili"
+			"xSelectedMessages_other": "{count} mensaheng napili"
 		},
 		"placeholder": {
 			"newMessage": "Makipag-usap kay {name}...",
@@ -157,12 +158,12 @@
 			"loadingMessages": "Naglo-load ng mga mensahe...",
 			"loadingPreviousMessages": "Naglo-load ng mga nakaraang mensahe...",
 			"loadingSubchats": "Naglo-load ng mga subchat...",
-			"renamingChat": "Pinapalitan ang pangalan ng chat...",
+			"renamingChat": "Pinangangalanan muli ang chat...",
 			"thinking": "Nag-iisip..."
 		},
 		"warning": {
-			"chromeGptInsideChrome": "Kailangan ng Chrome GPT ang mga sumusunod na experimental settings:",
-			"chromeGptOutsideChrome": "Available lang ang Chrome GPT sa Chrome browser",
+			"chromeGptInsideChrome": "Nangangailangan ang Chrome GPT ng mga sumusunod na experimental settings:",
+			"chromeGptOutsideChrome": "Available lamang ang Chrome GPT sa Chrome browser",
 			"deletingAgent": "Permanenteng mabubura ang agent na ito",
 			"deletingChats": "Permanenteng mabubura ang mga chat na ito",
 			"invalidGpt": "Di-wastong GPT",
@@ -171,8 +172,8 @@
 	},
 	"userSettings": {
 		"action": {
-			"manageAccount": "Pamahalaan ang account",
-			"manageBilling": "Pamahalaan ang billing"
+			"manageAccount": "Pangasiwaan ang account",
+			"manageBilling": "Pangasiwaan ang billing"
 		},
 		"error": {
 			"address": "Kailangan mong magdagdag ng address",
@@ -197,7 +198,7 @@
 			"postalCode": "Postal code",
 			"private": "Pribado",
 			"public": "Pampubliko",
-			"vatNumber": "TIN"
+			"vatNumber": "VAT number"
 		}
 	}
 }

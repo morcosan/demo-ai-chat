@@ -5,20 +5,21 @@
 			"backToHome": "Ana səhifəyə qayıt",
 			"changeLanguage": "Dili dəyiş",
 			"close": "Bağla",
-			"collapse": "Yığ",
+			"collapse": "Daralt",
 			"copy": "Kopyala",
 			"delete": "Sil",
 			"deselectAll": "Hamısının seçimini ləğv et",
+			"download": "Yüklə",
 			"expand": "Genişlət",
-			"goToUrl": "{url} ünvanına get",
+			"goToUrl": "{url} ünvanına keç",
 			"hidePanel": "Paneli gizlət",
 			"openMenu": "Menyunu aç",
 			"preview": "Önbaxış",
-			"reload": "Yenilə",
+			"reload": "Yenidən yüklə",
 			"rename": "Adını dəyiş",
 			"resizePanel": "Panel ölçüsünü dəyiş",
 			"retry": "Təkrar cəhd et",
-			"saveChanges": "Dəyişiklikləri saxla",
+			"saveChanges": "Dəyişiklikləri yadda saxla",
 			"search": "Axtar",
 			"searchMore": "Daha çox nəticə göstər",
 			"selectAll": "Hamısını seç",
@@ -26,9 +27,9 @@
 			"signOut": "Çıxış"
 		},
 		"error": {
-			"noChanges": "Dəyişiklik yoxdur",
+			"noChanges": "Heç bir dəyişiklik yoxdur",
 			"nothingFound": "\"{search}\" üçün heç nə tapılmadı",
-			"unsent": "Göndərilməyib"
+			"unsent": "Göndərilməmiş"
 		},
 		"label": {
 			"apiDocs": "API Sənədləri",
@@ -43,20 +44,20 @@
 			"designSystem": "Dizayn Sistemi",
 			"errors": "Xətalar",
 			"europe": "Avropa",
-			"githubRepo": "GitHub Deposu",
+			"githubRepo": "GitHub Repo",
 			"language": "Dil",
 			"levelHigh": "Yüksək",
 			"levelLow": "Aşağı",
 			"levelMedium": "Orta",
 			"levelVeryHigh": "Çox yüksək",
 			"levelVeryLow": "Çox aşağı",
-			"lightTheme": "İşıqlı",
+			"lightTheme": "Açıq",
 			"name": "Ad",
 			"navigationBar": "Naviqasiya paneli",
 			"navigationMenu": "Naviqasiya menyusu",
 			"optionalField": "(İstəyə bağlı)",
 			"quickSettings": "Sürətli parametrlər",
-			"requiredField": "(Məcburi)",
+			"requiredField": "(Tələb olunur)",
 			"result": "Nəticə",
 			"settings": "Parametrlər",
 			"uiLibrary": "İstifadəçi İnterfeysi Kitabxanası",
@@ -66,7 +67,7 @@
 			"search": "Axtar..."
 		},
 		"state": {
-			"dataSaved": "Məlumatlarınız saxlanıldı",
+			"dataSaved": "Məlumatlarınız yadda saxlanıldı",
 			"deleting": "Silinir...",
 			"loading": "Yüklənir...",
 			"searching": "Axtarılır...",
@@ -88,15 +89,16 @@
 			"deleteAgent": "Agenti sil",
 			"deleteSelectedChats": "Seçilmiş söhbətləri sil",
 			"deselectChat": "Söhbət seçimini ləğv et",
+			"downloadCode": "Kodu yüklə",
 			"manageAgents": "Agentləri idarə et",
 			"manageChats": "Söhbətləri idarə et",
 			"openChat": "Söhbəti aç",
 			"openSubchat_one": "Alt söhbəti aç ({count} mesaj)",
 			"openSubchat_other": "Alt söhbəti aç ({count} mesaj)",
 			"openSubchat_zero": "Alt söhbət yarat",
-			"previewCode": "Koda önbaxış",
-			"searchChats": "Söhbətləri axtar",
-			"selectChat": "Söhbəti seç",
+			"previewCode": "Kodun önbaxışı",
+			"searchChats": "Söhbətlərdə axtar",
+			"selectChat": "Söhbət seç",
 			"sendMessage": "Mesaj göndər",
 			"showMoreAgents": "Daha çox agent göstər",
 			"showMoreChats": "Daha çox söhbət göstər",
@@ -108,7 +110,7 @@
 		"description": {
 			"chatgpt4o": "OpenAI-dan ən yaxşı model",
 			"chatgpt4oMini": "OpenAI-dan ən ucuz model",
-			"chromeGPT": "Chrome brauzerində inteqrasiya olunub",
+			"chromeGPT": "Chrome brauzerində quraşdırılmış",
 			"claude35Haiku": "Anthropic-dən ən ucuz model",
 			"claude35Sonnet": "Anthropic-dən ən yaxşı model",
 			"loremIpsumGPT": "Ən ağıllı model",
@@ -166,7 +168,7 @@
 			"deletingAgent": "Bu agent birdəfəlik silinəcək",
 			"deletingChats": "Bu söhbətlər birdəfəlik silinəcək",
 			"invalidGpt": "Yanlış GPT",
-			"missingApiKey": "{name} API açarınızı konfiqurasiya etməlisiniz"
+			"missingApiKey": "{name} API açarını konfiqurasiya etməlisiniz"
 		}
 	},
 	"userSettings": {
@@ -175,14 +177,14 @@
 			"manageBilling": "Ödənişləri idarə et"
 		},
 		"error": {
-			"address": "Ünvan əlavə etməlisiniz",
+			"address": "Ünvanı əlavə etməlisiniz",
 			"avatar": "Avatarınızı əlavə etməlisiniz",
-			"city": "Şəhər əlavə etməlisiniz",
-			"country": "Ölkə əlavə etməlisiniz",
+			"city": "Şəhəri əlavə etməlisiniz",
+			"country": "Ölkəni əlavə etməlisiniz",
 			"email": "E-poçt ünvanınızı əlavə etməlisiniz",
 			"legalName": "Hüquqi adı əlavə etməlisiniz",
 			"name": "Adınızı əlavə etməlisiniz",
-			"postalCode": "Poçt indeksini əlavə etməlisiniz"
+			"postalCode": "Poçt kodunu əlavə etməlisiniz"
 		},
 		"label": {
 			"account": "Hesab",
@@ -194,7 +196,7 @@
 			"email": "E-poçt ünvanı",
 			"legalName": "Hüquqi ad",
 			"phone": "Telefon nömrəsi",
-			"postalCode": "Poçt indeksi",
+			"postalCode": "Poçt kodu",
 			"private": "Şəxsi",
 			"public": "İctimai",
 			"vatNumber": "ƏDV nömrəsi"

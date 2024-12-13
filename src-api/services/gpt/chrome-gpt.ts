@@ -1,4 +1,5 @@
-import { CreativityLevel, GptAPI, GptConfig, GptMessage, GptResponse, Status } from '@api/types'
+import { SYSTEM_PROMPTS } from '@api/services/gpt/_prompts'
+import { CreativityLevel, GPT_RESP__UNAVAILABLE, GptAPI, GptConfig, GptMessage, GptResponse } from '@api/types'
 
 const HISTORY_LIMIT = 20
 const CREATIVITY_MAP: Record<CreativityLevel, number> = {
@@ -17,25 +18,23 @@ export const ChromeGPT: GptAPI = {
 	},
 
 	async getResponse(config: GptConfig, messages: GptMessage[]): Promise<GptResponse> {
-		messages = messages.slice(-HISTORY_LIMIT)
+		if (!window.ai || !ChromeGPT.isAvailable()) return GPT_RESP__UNAVAILABLE
 
-		if (window.ai) {
-			const prompt = messages.reduce((acc: string, message: GptMessage) => {
-				return `${acc} \n\n <<${message.role}>> \n ${message.text} \n\n <<agent>> \n`
-			}, '')
+		const prompt = messages.slice(-HISTORY_LIMIT).reduce((acc: string, message: GptMessage) => {
+			return `${acc} \n\n <<${message.role}>> \n ${message.text} \n\n <<agent>> \n`
+		}, '')
 
-			// https://docs.google.com/document/d/1VG8HIyz361zGduWgNG7R_R8Xkv0OOJ8b5C9QKeCjU0c
-			const session = await window.ai.languageModel.create({
-				systemPrompt: config.prompt,
-				temperature: CREATIVITY_MAP[config.creativity],
-				topK: 3,
-			})
-			const resp = await session.prompt(prompt)
-			const text = resp.replace(/<<agent>>/gi, '')
+		const systemPrompt = SYSTEM_PROMPTS.reduce((acc, text) => acc + text + '\n', '') + config.prompt
 
-			return { text }
-		}
+		// https://docs.google.com/document/d/1VG8HIyz361zGduWgNG7R_R8Xkv0OOJ8b5C9QKeCjU0c
+		const session = await window.ai.languageModel.create({
+			systemPrompt,
+			temperature: CREATIVITY_MAP[config.creativity],
+			topK: 3,
+		})
+		const resp = await session.prompt(prompt)
+		const text = resp.replace(/<<agent>>/gi, '')
 
-		return { text: '', errorCode: Status.UNAVAILABLE }
+		return { text }
 	},
 }

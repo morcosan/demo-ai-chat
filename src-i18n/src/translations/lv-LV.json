@@ -2,13 +2,14 @@
 	"core": {
 		"action": {
 			"back": "Atpakaļ",
-			"backToHome": "Atpakaļ uz sākumlapu",
+			"backToHome": "Atgriezties sākumlapā",
 			"changeLanguage": "Mainīt valodu",
 			"close": "Aizvērt",
 			"collapse": "Sakļaut",
 			"copy": "Kopēt",
 			"delete": "Dzēst",
-			"deselectAll": "Noņemt visu atlasi",
+			"deselectAll": "Noņemt visas atzīmes",
+			"download": "Lejupielādēt",
 			"expand": "Izvērst",
 			"goToUrl": "Doties uz {url}",
 			"hidePanel": "Paslēpt paneli",
@@ -21,7 +22,7 @@
 			"saveChanges": "Saglabāt izmaiņas",
 			"search": "Meklēt",
 			"searchMore": "Rādīt vairāk rezultātu",
-			"selectAll": "Atlasīt visu",
+			"selectAll": "Atzīmēt visu",
 			"showPanel": "Rādīt paneli",
 			"signOut": "Izrakstīties"
 		},
@@ -37,7 +38,7 @@
 			"code": "Kods",
 			"copied": "Nokopēts",
 			"custom": "Pielāgots",
-			"darkTheme": "Tumšs",
+			"darkTheme": "Tumšais",
 			"default": "Noklusējuma",
 			"description": "Apraksts",
 			"designSystem": "Dizaina sistēma",
@@ -50,12 +51,12 @@
 			"levelMedium": "Vidējs",
 			"levelVeryHigh": "Ļoti augsts",
 			"levelVeryLow": "Ļoti zems",
-			"lightTheme": "Gaišs",
+			"lightTheme": "Gaišais",
 			"name": "Vārds",
 			"navigationBar": "Navigācijas josla",
 			"navigationMenu": "Navigācijas izvēlne",
-			"optionalField": "(Nav obligāti)",
-			"requiredField": "(Obligāti)",
+			"optionalField": "(Nav obligāts)",
+			"requiredField": "(Obligāts)",
 			"result": "Rezultāts",
 			"settings": "Iestatījumi",
 			"uiLibrary": "UI bibliotēka",
@@ -85,8 +86,9 @@
 			"copyMessage": "Kopēt ziņu",
 			"createAgent": "Izveidot aģentu",
 			"deleteAgent": "Dzēst aģentu",
-			"deleteSelectedChats": "Dzēst atlasītos čatus",
-			"deselectChat": "Noņemt čata atlasi",
+			"deleteSelectedChats": "Dzēst izvēlētos čatus",
+			"deselectChat": "Noņemt čata atzīmi",
+			"downloadCode": "Lejupielādēt kodu",
 			"manageAgents": "Pārvaldīt aģentus",
 			"manageChats": "Pārvaldīt čatus",
 			"openChat": "Atvērt čatu",
@@ -95,22 +97,21 @@
 			"openSubchat_other": "Atvērt apakščatu ({count} ziņas)",
 			"previewCode": "Priekšskatīt kodu",
 			"searchChats": "Meklēt čatus",
-			"selectChat": "Atlasīt čatu",
+			"selectChat": "Izvēlēties čatu",
 			"sendMessage": "Sūtīt ziņu",
 			"showMoreAgents": "Rādīt vairāk aģentu",
 			"showMoreChats": "Rādīt vairāk čatu",
 			"showSubchats": "Rādīt apakščatus ({count})",
 			"startNewChat": "Sākt jaunu sarunu",
-			"startSearching_zero": "Ievadiet vismaz {count} rakstzīmes",
 			"startSearching_one": "Ievadiet vismaz {count} rakstzīmi",
 			"startSearching_other": "Ievadiet vismaz {count} rakstzīmes"
 		},
 		"description": {
-			"chatgpt4o": "Labākais modelis no OpenAI",
-			"chatgpt4oMini": "Lētākais modelis no OpenAI",
+			"chatgpt4o": "Labākais OpenAI modelis",
+			"chatgpt4oMini": "Lētākais OpenAI modelis",
 			"chromeGPT": "Iebūvēts Chrome pārlūkā",
-			"claude35Haiku": "Lētākais modelis no Anthropic",
-			"claude35Sonnet": "Labākais modelis no Anthropic",
+			"claude35Haiku": "Lētākais Anthropic modelis",
+			"claude35Sonnet": "Labākais Anthropic modelis",
 			"loremIpsumGPT": "Visintelektuālākais modelis",
 			"rammusGPT": "Labākais emocionālais atbalsts"
 		},
@@ -118,7 +119,7 @@
 			"agentAvatar": "Jums jāpievieno avatars aģentam",
 			"agentName": "Jums jāpievieno vārds aģentam",
 			"emptyMessage": "Jūsu ziņa ir tukša",
-			"failedApiKey": "Ar jūsu API atslēgu ir problēma",
+			"failedApiKey": "Ir problēma ar jūsu API atslēgu",
 			"failedMessage": "Radās problēma ar jūsu ziņas piegādi"
 		},
 		"label": {
@@ -134,8 +135,8 @@
 			"newMessage": "Jauna ziņa",
 			"noChats": "Nav čatu",
 			"noSubchats": "Nav apakščatu",
-			"selectedAgent": "Atlasītais aģents",
-			"selectedValue": "Atlasītā vērtība",
+			"selectedAgent": "Izvēlētais aģents",
+			"selectedValue": "Izvēlētā vērtība",
 			"subchats": "Apakščati",
 			"urlPreview": "URL priekšskatījums",
 			"xMessages_zero": "Nav ziņu",
@@ -144,12 +145,12 @@
 			"xSearchResults_zero": "Nav meklēšanas rezultātu",
 			"xSearchResults_one": "{count} meklēšanas rezultāts",
 			"xSearchResults_other": "{count} meklēšanas rezultāti",
-			"xSelectedMessages_zero": "Nav atlasītu ziņu",
-			"xSelectedMessages_one": "{count} ziņa atlasīta",
-			"xSelectedMessages_other": "{count} ziņas atlasītas"
+			"xSelectedMessages_zero": "Nav izvēlētu ziņu",
+			"xSelectedMessages_one": "{count} ziņa izvēlēta",
+			"xSelectedMessages_other": "{count} ziņas izvēlētas"
 		},
 		"placeholder": {
-			"newMessage": "Sarunājieties ar {name}...",
+			"newMessage": "Sarunājies ar {name}...",
 			"rename": "Ģenerēt jaunu nosaukumu automātiski..."
 		},
 		"state": {
@@ -165,8 +166,8 @@
 		"warning": {
 			"chromeGptInsideChrome": "Chrome GPT nepieciešami šie eksperimentālie iestatījumi:",
 			"chromeGptOutsideChrome": "Chrome GPT ir pieejams tikai Chrome pārlūkā",
-			"deletingAgent": "Šis aģents tiks neatgriezeniski dzēsts",
-			"deletingChats": "Šie čati tiks neatgriezeniski dzēsti",
+			"deletingAgent": "Šis aģents tiks neatgriezeniski izdzēsts",
+			"deletingChats": "Šie čati tiks neatgriezeniski izdzēsti",
 			"invalidGpt": "Nederīgs GPT",
 			"missingApiKey": "Jums jākonfigurē sava {name} API atslēga"
 		}
@@ -174,7 +175,7 @@
 	"userSettings": {
 		"action": {
 			"manageAccount": "Pārvaldīt kontu",
-			"manageBilling": "Pārvaldīt norēķinus"
+			"manageBilling": "Pārvaldīt rēķinus"
 		},
 		"error": {
 			"address": "Jums jāpievieno adrese",
@@ -190,7 +191,7 @@
 			"account": "Konts",
 			"address": "Adrese",
 			"apiKey": "{name} API atslēga",
-			"billing": "Norēķini",
+			"billing": "Rēķini",
 			"city": "Pilsēta",
 			"country": "Valsts",
 			"email": "E-pasta adrese",

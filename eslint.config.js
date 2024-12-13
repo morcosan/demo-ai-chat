@@ -37,6 +37,8 @@ export default tsESLint.config(
 		},
 
 		rules: {
+			'no-useless-escape': 'off',
+
 			...reactPlugin.configs.recommended.rules,
 			'react/button-has-type': 'error',
 			'react/hook-use-state': 'error',

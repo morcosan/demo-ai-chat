@@ -3,12 +3,13 @@
 		"action": {
 			"back": "Voltar",
 			"backToHome": "Voltar à página inicial",
-			"changeLanguage": "Alterar idioma",
+			"changeLanguage": "Mudar idioma",
 			"close": "Fechar",
 			"collapse": "Recolher",
 			"copy": "Copiar",
 			"delete": "Eliminar",
 			"deselectAll": "Desmarcar tudo",
+			"download": "Transferir",
 			"expand": "Expandir",
 			"goToUrl": "Ir para {url}",
 			"hidePanel": "Ocultar painel",
@@ -31,7 +32,7 @@
 			"unsent": "Não enviado"
 		},
 		"label": {
-			"apiDocs": "Documentação da API",
+			"apiDocs": "Documentação API",
 			"asia": "Ásia",
 			"avatar": "Avatar",
 			"code": "Código",
@@ -87,6 +88,7 @@
 			"deleteAgent": "Eliminar agente",
 			"deleteSelectedChats": "Eliminar conversas selecionadas",
 			"deselectChat": "Desmarcar conversa",
+			"downloadCode": "Transferir código",
 			"manageAgents": "Gerir agentes",
 			"manageChats": "Gerir conversas",
 			"openChat": "Abrir conversa",
@@ -140,16 +142,15 @@
 			"xMessages_zero": "Sem mensagens",
 			"xMessages_one": "{count} mensagem",
 			"xMessages_other": "{count} mensagens",
-			"xSearchResults_zero": "Sem resultados",
-			"xSearchResults_one": "{count} resultado",
-			"xSearchResults_other": "{count} resultados",
-			"xSelectedMessages_zero": "Nenhuma mensagem selecionada",
+			"xSearchResults_zero": "Nenhum resultado encontrado",
+			"xSearchResults_one": "{count} resultado encontrado",
+			"xSearchResults_other": "{count} resultados encontrados",
 			"xSelectedMessages_one": "{count} mensagem selecionada",
 			"xSelectedMessages_other": "{count} mensagens selecionadas"
 		},
 		"placeholder": {
-			"newMessage": "Fale com {name}...",
-			"rename": "Gerar novo nome automaticamente..."
+			"newMessage": "Falar com {name}...",
+			"rename": "Gerar um novo nome automaticamente..."
 		},
 		"state": {
 			"loadingAgents": "A carregar agentes...",
@@ -163,7 +164,7 @@
 		},
 		"warning": {
 			"chromeGptInsideChrome": "O Chrome GPT requer estas definições experimentais:",
-			"chromeGptOutsideChrome": "O Chrome GPT só está disponível no navegador Chrome",
+			"chromeGptOutsideChrome": "O Chrome GPT está disponível apenas no navegador Chrome",
 			"deletingAgent": "Este agente será eliminado permanentemente",
 			"deletingChats": "Estas conversas serão eliminadas permanentemente",
 			"invalidGpt": "GPT inválido",

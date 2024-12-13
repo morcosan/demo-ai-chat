@@ -27,7 +27,6 @@ export * from './_types'
 export const MIN_SEARCH_LENGTH = 3
 
 type GetAgentsArgs = [agentIds?: number[], page?: number, search?: string, everywhere?: boolean]
-type PostMessageArgs = [chatId: number, text: string, agentId: number, subchatId?: number]
 
 export const API = {
 	async getGPTs(): Promise<GptListing> {

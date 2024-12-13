@@ -11,7 +11,7 @@ import { useAiChat, useAiChatAgents } from '../../../state'
 
 interface Props {
 	noContent?: boolean
-	onPreviewCode?(code: string, lang: string): void
+	onPreviewCode?(markdown: string): void
 	onPreviewUrl?(url: string): void
 }
 

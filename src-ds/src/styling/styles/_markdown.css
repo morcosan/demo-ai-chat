@@ -20,13 +20,6 @@
 		min-width: var(--ds-spacing-lg-7);
 		overflow: hidden;
 
-		&:first-child {
-			margin-top: var(--margin-xxs);
-		}
-		&:last-child {
-			margin-bottom: var(--margin-xxs);
-		}
-
 		& div.ds-markdown-toolbar {
 			display: flex;
 			position: absolute;
@@ -62,6 +55,13 @@
 	& pre,
 	& .ds-markdown-wrapper:has(> pre) {
 		margin: var(--margin-xl) 0;
+
+		&:first-child {
+			margin-top: var(--margin-xxs);
+		}
+		&:last-child {
+			margin-bottom: var(--margin-xxs);
+		}
 	}
 
 	& *:not(pre) > code {

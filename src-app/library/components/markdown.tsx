@@ -12,12 +12,11 @@ import { MarkdownCode } from './markdown-code'
 interface CodeData {
 	html: string
 	raw: string
-	lang?: string
 }
 
 interface Props extends ReactProps {
 	text: string
-	onPreviewCode?(code: string, lang: string): void
+	onPreviewCode?(markdown: string): void
 	onPreviewUrl?(url: string): void
 }
 
@@ -45,8 +44,8 @@ export const Markdown = (props: Props) => {
 		)
 	}
 
-	renderer.code = ({ text, lang, raw }: Tokens.Code) => {
-		codeDataRefs.current.push({ html: text, lang, raw })
+	renderer.code = ({ text, raw }: Tokens.Code) => {
+		codeDataRefs.current.push({ raw, html: text })
 		return renderToStaticMarkup(<div data-code-block="" className="ds-markdown-wrapper" />)
 	}
 
@@ -59,7 +58,7 @@ export const Markdown = (props: Props) => {
 			root.render(
 				// Button component requires a router context
 				<MemoryRouter>
-					<MarkdownCode html={data.html} lang={data.lang} raw={data.raw} onPreviewCode={onPreviewCode} />
+					<MarkdownCode markdownHtml={data.html} markdown={data.raw} noDownload onPreviewCode={onPreviewCode} />
 				</MemoryRouter>
 			)
 		})
@@ -95,7 +94,7 @@ export const Markdown = (props: Props) => {
 		injectListStart(container)
 	}
 
-	const languageFn = (lang: string) => ({ language: hljs.getLanguage(lang) ? lang : 'plaintext' })
+	const languageFn = (lang: string) => ({ language: hljs.getLanguage(lang) ? lang : 'text' })
 	const highlightFn = (code: string, lang: string) => hljs.highlight(code, languageFn(lang)).value
 
 	const marked = new Marked(markedHighlight({ highlight: highlightFn }))

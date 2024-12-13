@@ -2,15 +2,16 @@
 	"core": {
 		"action": {
 			"back": "Vissza",
-			"backToHome": "Vissza a főoldalra",
-			"changeLanguage": "Nyelv váltása",
+			"backToHome": "Vissza a kezdőlapra",
+			"changeLanguage": "Nyelv módosítása",
 			"close": "Bezárás",
 			"collapse": "Összecsukás",
 			"copy": "Másolás",
 			"delete": "Törlés",
 			"deselectAll": "Kijelölés megszüntetése",
-			"expand": "Kinyitás",
-			"goToUrl": "Ugrás a {url} oldalra",
+			"download": "Letöltés",
+			"expand": "Kibontás",
+			"goToUrl": "Ugrás ide: {url}",
 			"hidePanel": "Panel elrejtése",
 			"openMenu": "Menü megnyitása",
 			"preview": "Előnézet",
@@ -28,10 +29,10 @@
 		"error": {
 			"noChanges": "Nincsenek változtatások",
 			"nothingFound": "Nincs találat erre: \"{search}\"",
-			"unsent": "Nincs elküldve"
+			"unsent": "Nem lett elküldve"
 		},
 		"label": {
-			"apiDocs": "API Dokumentáció",
+			"apiDocs": "API dokumentáció",
 			"asia": "Ázsia",
 			"avatar": "Profilkép",
 			"code": "Kód",
@@ -40,10 +41,10 @@
 			"darkTheme": "Sötét",
 			"default": "Alapértelmezett",
 			"description": "Leírás",
-			"designSystem": "Design Rendszer",
+			"designSystem": "Design rendszer",
 			"errors": "Hibák",
 			"europe": "Európa",
-			"githubRepo": "GitHub Repo",
+			"githubRepo": "GitHub tároló",
 			"language": "Nyelv",
 			"levelHigh": "Magas",
 			"levelLow": "Alacsony",
@@ -55,18 +56,19 @@
 			"navigationBar": "Navigációs sáv",
 			"navigationMenu": "Navigációs menü",
 			"optionalField": "(Opcionális)",
+			"quickSettings": "Gyors beállítások",
 			"requiredField": "(Kötelező)",
 			"result": "Eredmény",
 			"settings": "Beállítások",
-			"uiLibrary": "UI Könyvtár",
-			"uiTheme": "UI Téma"
+			"uiLibrary": "UI könyvtár",
+			"uiTheme": "UI téma"
 		},
 		"placeholder": {
 			"search": "Keresés..."
 		},
 		"state": {
-			"dataSaved": "Az adatok elmentve",
-			"deleting": "Törlés folyamatban...",
+			"dataSaved": "Az adatok mentve",
+			"deleting": "Törlés...",
 			"loading": "Betöltés...",
 			"searching": "Keresés...",
 			"sending": "Küldés...",
@@ -77,27 +79,27 @@
 		"action": {
 			"backToSubchats": "Vissza az alcsevegésekhez",
 			"closePreview": "Előnézet bezárása",
-			"configureAgent": "Asszisztens beállítása",
-			"confirmDeleteAgent": "Asszisztens törlésének megerősítése",
+			"configureAgent": "Ágens beállítása",
+			"confirmDeleteAgent": "Ágens törlésének megerősítése",
 			"confirmDeleteChats": "Csevegések törlésének megerősítése",
 			"confirmRenameChat": "Csevegés átnevezésének megerősítése",
 			"copyCode": "Kód másolása",
 			"copyMessage": "Üzenet másolása",
-			"createAgent": "Asszisztens létrehozása",
-			"deleteAgent": "Asszisztens törlése",
+			"createAgent": "Ágens létrehozása",
+			"deleteAgent": "Ágens törlése",
 			"deleteSelectedChats": "Kijelölt csevegések törlése",
-			"deselectChat": "Csevegés kijelölésének törlése",
-			"manageAgents": "Asszisztensek kezelése",
+			"deselectChat": "Csevegés kijelölésének megszüntetése",
+			"downloadCode": "Kód letöltése",
+			"manageAgents": "Ágensek kezelése",
 			"manageChats": "Csevegések kezelése",
 			"openChat": "Csevegés megnyitása",
-			"openSubchat_one": "Alcsevegés megnyitása ({count} üzenet)",
 			"openSubchat_other": "Alcsevegés megnyitása ({count} üzenet)",
 			"openSubchat_zero": "Alcsevegés létrehozása",
 			"previewCode": "Kód előnézete",
 			"searchChats": "Csevegések keresése",
-			"selectChat": "Csevegés kijelölése",
+			"selectChat": "Csevegés kiválasztása",
 			"sendMessage": "Üzenet küldése",
-			"showMoreAgents": "További asszisztensek mutatása",
+			"showMoreAgents": "További ágensek mutatása",
 			"showMoreChats": "További csevegések mutatása",
 			"showSubchats": "Alcsevegések mutatása ({count})",
 			"startNewChat": "Új beszélgetés indítása",
@@ -105,35 +107,35 @@
 			"startSearching_other": "Írjon be legalább {count} karaktert"
 		},
 		"description": {
-			"chatgpt4o": "A legjobb modell az OpenAI-tól",
-			"chatgpt4oMini": "A legolcsóbb modell az OpenAI-tól",
-			"chromeGPT": "Chrome böngészőbe beépítve",
-			"claude35Haiku": "A legolcsóbb modell az Anthropic-tól",
-			"claude35Sonnet": "A legjobb modell az Anthropic-tól",
+			"chatgpt4o": "A legjobb OpenAI modell",
+			"chatgpt4oMini": "A legolcsóbb OpenAI modell",
+			"chromeGPT": "Chrome böngészőbe beépített",
+			"claude35Haiku": "A legolcsóbb Anthropic modell",
+			"claude35Sonnet": "A legjobb Anthropic modell",
 			"loremIpsumGPT": "A legintelligensebb modell",
 			"rammusGPT": "A legjobb érzelmi támogatás"
 		},
 		"error": {
-			"agentAvatar": "Profilképet kell adnia az asszisztensnek",
-			"agentName": "Nevet kell adnia az asszisztensnek",
+			"agentAvatar": "Profilképet kell hozzáadnia az ágenshez",
+			"agentName": "Nevet kell adnia az ágensnek",
 			"emptyMessage": "Az üzenet üres",
-			"failedApiKey": "Probléma van az API kulccsal",
+			"failedApiKey": "Probléma van az API kulcsával",
 			"failedMessage": "Probléma történt az üzenet kézbesítésekor"
 		},
 		"label": {
-			"agents": "Asszisztensek",
+			"agents": "Ágensek",
 			"chatTitle": "Csevegés címe",
 			"chats": "Csevegések",
 			"codePreview": "Kód előnézet",
-			"creativityLevel": "Kreativitási szint",
+			"creativityLevel": "Kreativitás szintje",
 			"customInstructions": "Egyéni utasítások",
 			"gptModel": "GPT modell",
-			"newAgent": "Új asszisztens",
+			"newAgent": "Új ágens",
 			"newChat": "Új csevegés",
 			"newMessage": "Új üzenet",
 			"noChats": "Nincsenek csevegések",
 			"noSubchats": "Nincsenek alcsevegések",
-			"selectedAgent": "Kiválasztott asszisztens",
+			"selectedAgent": "Kiválasztott ágens",
 			"selectedValue": "Kiválasztott érték",
 			"subchats": "Alcsevegések",
 			"urlPreview": "URL előnézet",
@@ -146,11 +148,11 @@
 			"xSelectedMessages_other": "{count} üzenet kijelölve"
 		},
 		"placeholder": {
-			"newMessage": "Beszélgetés {name} asszisztenssel...",
+			"newMessage": "Beszélgetés vele: {name}...",
 			"rename": "Új név automatikus generálása..."
 		},
 		"state": {
-			"loadingAgents": "Asszisztensek betöltése...",
+			"loadingAgents": "Ágensek betöltése...",
 			"loadingChats": "Csevegések betöltése...",
 			"loadingGPTs": "GPT-k betöltése...",
 			"loadingMessages": "Üzenetek betöltése...",
@@ -162,10 +164,10 @@
 		"warning": {
 			"chromeGptInsideChrome": "A Chrome GPT-hez ezek a kísérleti beállítások szükségesek:",
 			"chromeGptOutsideChrome": "A Chrome GPT csak Chrome böngészőben érhető el",
-			"deletingAgent": "Ez az asszisztens véglegesen törlődni fog",
-			"deletingChats": "Ezek a csevegések véglegesen törlődni fognak",
+			"deletingAgent": "Ez az ágens véglegesen törlésre kerül",
+			"deletingChats": "Ezek a csevegések véglegesen törlésre kerülnek",
 			"invalidGpt": "Érvénytelen GPT",
-			"missingApiKey": "Be kell állítania a {name} API kulcsát"
+			"missingApiKey": "Be kell állítania a(z) {name} API kulcsát"
 		}
 	},
 	"userSettings": {
@@ -179,7 +181,7 @@
 			"city": "Meg kell adnia a várost",
 			"country": "Meg kell adnia az országot",
 			"email": "Meg kell adnia az email címét",
-			"legalName": "Meg kell adnia a jogi nevet",
+			"legalName": "Meg kell adnia a hivatalos nevet",
 			"name": "Meg kell adnia a nevét",
 			"postalCode": "Meg kell adnia az irányítószámot"
 		},
@@ -191,12 +193,12 @@
 			"city": "Város",
 			"country": "Ország",
 			"email": "Email cím",
-			"legalName": "Jogi név",
+			"legalName": "Hivatalos név",
 			"phone": "Telefonszám",
 			"postalCode": "Irányítószám",
 			"private": "Privát",
 			"public": "Nyilvános",
-			"vatNumber": "ÁFSZ"
+			"vatNumber": "Adószám"
 		}
 	}
 }

@@ -9,6 +9,7 @@
 			"copy": "Kopeeri",
 			"delete": "Kustuta",
 			"deselectAll": "Tühista kõik valikud",
+			"download": "Laadi alla",
 			"expand": "Laienda",
 			"goToUrl": "Mine {url}",
 			"hidePanel": "Peida paneel",
@@ -26,8 +27,8 @@
 			"signOut": "Logi välja"
 		},
 		"error": {
-			"noChanges": "Muudatusi pole",
-			"nothingFound": "Ei leitud midagi otsingule \"{search}\"",
+			"noChanges": "Muudatusi ei ole",
+			"nothingFound": "Otsingule \"{search}\" ei leitud midagi",
 			"unsent": "Saatmata"
 		},
 		"label": {
@@ -43,7 +44,7 @@
 			"designSystem": "Kujundussüsteem",
 			"errors": "Vead",
 			"europe": "Euroopa",
-			"githubRepo": "GitHub repo",
+			"githubRepo": "GitHub hoidla",
 			"language": "Keel",
 			"levelHigh": "Kõrge",
 			"levelLow": "Madal",
@@ -52,21 +53,21 @@
 			"levelVeryLow": "Väga madal",
 			"lightTheme": "Hele",
 			"name": "Nimi",
-			"navigationBar": "Navigatsiooniriba",
-			"navigationMenu": "Navigatsioonimenüü",
+			"navigationBar": "Navigeerimisriba",
+			"navigationMenu": "Navigeerimismenüü",
 			"optionalField": "(Valikuline)",
 			"quickSettings": "Kiirseaded",
 			"requiredField": "(Kohustuslik)",
 			"result": "Tulemus",
 			"settings": "Seaded",
-			"uiLibrary": "Kasutajaliidese teek",
-			"uiTheme": "Kasutajaliidese teema"
+			"uiLibrary": "UI teek",
+			"uiTheme": "UI teema"
 		},
 		"placeholder": {
 			"search": "Otsi..."
 		},
 		"state": {
-			"dataSaved": "Teie andmed on salvestatud",
+			"dataSaved": "Andmed on salvestatud",
 			"deleting": "Kustutamas...",
 			"loading": "Laadimine...",
 			"searching": "Otsimine...",
@@ -88,12 +89,12 @@
 			"deleteAgent": "Kustuta agent",
 			"deleteSelectedChats": "Kustuta valitud vestlused",
 			"deselectChat": "Tühista vestluse valik",
+			"downloadCode": "Laadi kood alla",
 			"manageAgents": "Halda agente",
 			"manageChats": "Halda vestlusi",
 			"openChat": "Ava vestlus",
-			"openSubchat_one": "Ava alamvestlus ({count} sõnum)",
-			"openSubchat_other": "Ava alamvestlus ({count} sõnumit)",
 			"openSubchat_zero": "Loo alamvestlus",
+			"openSubchat_other": "Ava alamvestlus ({count} sõnumit)",
 			"previewCode": "Koodi eelvaade",
 			"searchChats": "Otsi vestlusi",
 			"selectChat": "Vali vestlus",
@@ -108,7 +109,7 @@
 		"description": {
 			"chatgpt4o": "Parim mudel OpenAI-lt",
 			"chatgpt4oMini": "Soodsaim mudel OpenAI-lt",
-			"chromeGPT": "Integreeritud Chrome brauserisse",
+			"chromeGPT": "Sisseehitatud Chrome brauserisse",
 			"claude35Haiku": "Soodsaim mudel Anthropicult",
 			"claude35Sonnet": "Parim mudel Anthropicult",
 			"loremIpsumGPT": "Kõige intelligentsem mudel",
@@ -137,17 +138,17 @@
 			"selectedAgent": "Valitud agent",
 			"selectedValue": "Valitud väärtus",
 			"subchats": "Alamvestlused",
-			"urlPreview": "URL eelvaade",
+			"urlPreview": "URL-i eelvaade",
 			"xMessages_one": "1 sõnum",
 			"xMessages_other": "{count} sõnumit",
-			"xSearchResults_one": "{count} otsingu tulemus",
-			"xSearchResults_other": "{count} otsingu tulemust",
-			"xSearchResults_zero": "Otsingu tulemusi pole",
+			"xSearchResults_zero": "Otsingutulemusi pole",
+			"xSearchResults_one": "{count} otsingutulemus",
+			"xSearchResults_other": "{count} otsingutulemust",
 			"xSelectedMessages_one": "1 sõnum valitud",
 			"xSelectedMessages_other": "{count} sõnumit valitud"
 		},
 		"placeholder": {
-			"newMessage": "Räägi {name}-ga...",
+			"newMessage": "Räägi {name}ga...",
 			"rename": "Genereeri automaatselt uus nimi..."
 		},
 		"state": {
@@ -197,7 +198,7 @@
 			"postalCode": "Postiindeks",
 			"private": "Privaatne",
 			"public": "Avalik",
-			"vatNumber": "KMKR number"
+			"vatNumber": "KM number"
 		}
 	}
 }

@@ -9,8 +9,8 @@ import {
 } from '@utils/release'
 import { DbAgent, DbChat, DbMessage, DEV_GPT_IDS, GptConfig, GptMessage, MessageRole } from '../../types'
 import { addMinutesToDate, DATETIME_REGEX, formatDate } from '../../utilities/various'
-import { ChatGPT4oMini } from '../gpt/chatgpt-4o-mini'
-import { Claude35Haiku } from '../gpt/claude-3-5-haiku'
+import { ChatGPT4oMini } from '../gpt/chatgpt'
+import { Claude35Haiku } from '../gpt/claude'
 import { getDbActiveAgents, getDbDeletedAgents, getGptResponse, randomFromAgentIds } from './_agents-db'
 
 let _dbChats: DbChat[]
@@ -146,10 +146,10 @@ const renameChat = async (chat: DbChat) => {
 			...messages.map((msg: DbMessage) => ({ text: msg.text, role: msg.role })),
 			{ text: 'Title this chat concisely in its spoken language, no quotes', role: 'user' },
 		]
-		let resp
+		let resp = { text: '' }
 
-		if (!resp && (await ChatGPT4oMini.isAvailable())) resp = await ChatGPT4oMini.getResponse(config, gptMessages)
-		if (!resp && (await Claude35Haiku.isAvailable())) resp = await Claude35Haiku.getResponse(config, gptMessages)
+		if (!resp?.text) resp = await ChatGPT4oMini.getResponse(config, gptMessages)
+		if (!resp?.text) resp = await Claude35Haiku.getResponse(config, gptMessages)
 
 		if (resp?.text) return resp.text
 	}

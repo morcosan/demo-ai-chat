@@ -2,20 +2,21 @@
 	"core": {
 		"action": {
 			"back": "უკან",
-			"backToHome": "მთავარ გვერდზე დაბრუნება",
+			"backToHome": "მთავარზე დაბრუნება",
 			"changeLanguage": "ენის შეცვლა",
 			"close": "დახურვა",
 			"collapse": "ჩაკეცვა",
 			"copy": "კოპირება",
 			"delete": "წაშლა",
 			"deselectAll": "ყველას გაუქმება",
+			"download": "ჩამოტვირთვა",
 			"expand": "გაშლა",
 			"goToUrl": "{url}-ზე გადასვლა",
 			"hidePanel": "პანელის დამალვა",
 			"openMenu": "მენიუს გახსნა",
 			"preview": "გადახედვა",
 			"reload": "განახლება",
-			"rename": "გადარქმევა",
+			"rename": "სახელის შეცვლა",
 			"resizePanel": "პანელის ზომის შეცვლა",
 			"retry": "ხელახლა ცდა",
 			"saveChanges": "ცვლილებების შენახვა",
@@ -69,31 +70,31 @@
 			"dataSaved": "თქვენი მონაცემები შენახულია",
 			"deleting": "იშლება...",
 			"loading": "იტვირთება...",
-			"searching": "მიმდინარეობს ძიება...",
+			"searching": "იძებნება...",
 			"sending": "იგზავნება...",
 			"updating": "ახლდება..."
 		}
 	},
 	"aiChat": {
 		"action": {
-			"backToSubchats": "ქვეჩატებში დაბრუნება",
+			"backToSubchats": "ქვეჩატებზე დაბრუნება",
 			"closePreview": "გადახედვის დახურვა",
 			"configureAgent": "აგენტის კონფიგურაცია",
 			"confirmDeleteAgent": "აგენტის წაშლის დადასტურება",
 			"confirmDeleteChats": "ჩატების წაშლის დადასტურება",
-			"confirmRenameChat": "ჩატის გადარქმევის დადასტურება",
+			"confirmRenameChat": "ჩატის სახელის შეცვლის დადასტურება",
 			"copyCode": "კოდის კოპირება",
 			"copyMessage": "შეტყობინების კოპირება",
 			"createAgent": "აგენტის შექმნა",
 			"deleteAgent": "აგენტის წაშლა",
 			"deleteSelectedChats": "არჩეული ჩატების წაშლა",
 			"deselectChat": "ჩატის მონიშვნის გაუქმება",
+			"downloadCode": "კოდის ჩამოტვირთვა",
 			"manageAgents": "აგენტების მართვა",
 			"manageChats": "ჩატების მართვა",
 			"openChat": "ჩატის გახსნა",
-			"openSubchat_zero": "ქვეჩატის შექმნა",
-			"openSubchat_one": "ქვეჩატის გახსნა ({count} შეტყობინება)",
 			"openSubchat_other": "ქვეჩატის გახსნა ({count} შეტყობინება)",
+			"openSubchat_zero": "ქვეჩატის შექმნა",
 			"previewCode": "კოდის გადახედვა",
 			"searchChats": "ჩატების ძიება",
 			"selectChat": "ჩატის არჩევა",
@@ -118,8 +119,8 @@
 			"agentAvatar": "თქვენ უნდა დაამატოთ აგენტის ავატარი",
 			"agentName": "თქვენ უნდა დაამატოთ აგენტის სახელი",
 			"emptyMessage": "თქვენი შეტყობინება ცარიელია",
-			"failedApiKey": "თქვენს API გასაღებთან პრობლემაა",
-			"failedMessage": "თქვენი შეტყობინების მიწოდებისას პრობლემა წარმოიშვა"
+			"failedApiKey": "თქვენს API გასაღებთან დაკავშირებით პრობლემაა",
+			"failedMessage": "თქვენი შეტყობინების მიწოდებისას წარმოიქმნა პრობლემა"
 		},
 		"label": {
 			"agents": "აგენტები",
@@ -140,9 +141,9 @@
 			"urlPreview": "URL-ის გადახედვა",
 			"xMessages_one": "1 შეტყობინება",
 			"xMessages_other": "{count} შეტყობინება",
-			"xSearchResults_zero": "ძიების შედეგები არ არის",
 			"xSearchResults_one": "{count} ძიების შედეგი",
 			"xSearchResults_other": "{count} ძიების შედეგი",
+			"xSearchResults_zero": "ძიების შედეგები არ არის",
 			"xSelectedMessages_one": "1 შეტყობინება არჩეულია",
 			"xSelectedMessages_other": "{count} შეტყობინება არჩეულია"
 		},
@@ -157,7 +158,7 @@
 			"loadingMessages": "შეტყობინებები იტვირთება...",
 			"loadingPreviousMessages": "წინა შეტყობინებები იტვირთება...",
 			"loadingSubchats": "ქვეჩატები იტვირთება...",
-			"renamingChat": "ჩატს სახელი ერქმევა...",
+			"renamingChat": "ჩატის სახელი იცვლება...",
 			"thinking": "ფიქრობს..."
 		},
 		"warning": {
@@ -179,10 +180,10 @@
 			"avatar": "თქვენ უნდა დაამატოთ თქვენი ავატარი",
 			"city": "თქვენ უნდა დაამატოთ ქალაქი",
 			"country": "თქვენ უნდა დაამატოთ ქვეყანა",
-			"email": "თქვენ უნდა დაამატოთ თქვენი ელ-ფოსტის მისამართი",
+			"email": "თქვენ უნდა დაამატოთ თქვენი ელფოსტის მისამართი",
 			"legalName": "თქვენ უნდა დაამატოთ იურიდიული სახელი",
 			"name": "თქვენ უნდა დაამატოთ თქვენი სახელი",
-			"postalCode": "თქვენ უნდა დაამატოთ საფოსტო კოდი"
+			"postalCode": "თქვენ უნდა დაამატოთ საფოსტო ინდექსი"
 		},
 		"label": {
 			"account": "ანგარიში",
@@ -191,13 +192,13 @@
 			"billing": "გადახდები",
 			"city": "ქალაქი",
 			"country": "ქვეყანა",
-			"email": "ელ-ფოსტის მისამართი",
+			"email": "ელფოსტის მისამართი",
 			"legalName": "იურიდიული სახელი",
 			"phone": "ტელეფონის ნომერი",
-			"postalCode": "საფოსტო კოდი",
+			"postalCode": "საფოსტო ინდექსი",
 			"private": "პირადი",
 			"public": "საჯარო",
-			"vatNumber": "დღგ-ის ნომერი"
+			"vatNumber": "დღგ-ს ნომერი"
 		}
 	}
 }

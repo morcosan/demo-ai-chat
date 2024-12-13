@@ -2,13 +2,14 @@
 	"core": {
 		"action": {
 			"back": "返回",
-			"backToHome": "返回首页",
+			"backToHome": "返回主页",
 			"changeLanguage": "更改语言",
 			"close": "关闭",
-			"collapse": "收起",
+			"collapse": "折叠",
 			"copy": "复制",
 			"delete": "删除",
 			"deselectAll": "取消全选",
+			"download": "下载",
 			"expand": "展开",
 			"goToUrl": "前往 {url}",
 			"hidePanel": "隐藏面板",
@@ -47,9 +48,9 @@
 			"language": "语言",
 			"levelHigh": "高",
 			"levelLow": "低",
-			"levelMedium": "中等",
-			"levelVeryHigh": "非常高",
-			"levelVeryLow": "非常低",
+			"levelMedium": "中",
+			"levelVeryHigh": "很高",
+			"levelVeryLow": "很低",
 			"lightTheme": "浅色",
 			"name": "名称",
 			"navigationBar": "导航栏",
@@ -88,11 +89,12 @@
 			"deleteAgent": "删除助手",
 			"deleteSelectedChats": "删除选中的对话",
 			"deselectChat": "取消选择对话",
+			"downloadCode": "下载代码",
 			"manageAgents": "管理助手",
 			"manageChats": "管理对话",
 			"openChat": "打开对话",
-			"openSubchat_zero": "创建子对话",
 			"openSubchat_other": "打开子对话（{count} 条消息）",
+			"openSubchat_zero": "创建子对话",
 			"previewCode": "预览代码",
 			"searchChats": "搜索对话",
 			"selectChat": "选择对话",
@@ -106,19 +108,19 @@
 		},
 		"description": {
 			"chatgpt4o": "OpenAI 最佳模型",
-			"chatgpt4oMini": "OpenAI 最经济型模型",
-			"chromeGPT": "Chrome 浏览器内置",
-			"claude35Haiku": "Anthropic 最经济型模型",
+			"chatgpt4oMini": "OpenAI 最经济模型",
+			"chromeGPT": "已集成到 Chrome 浏览器",
+			"claude35Haiku": "Anthropic 最经济模型",
 			"claude35Sonnet": "Anthropic 最佳模型",
 			"loremIpsumGPT": "最智能的模型",
 			"rammusGPT": "最佳情感支持"
 		},
 		"error": {
-			"agentAvatar": "请为助手添加头像",
-			"agentName": "请为助手添加名称",
-			"emptyMessage": "消息内容为空",
-			"failedApiKey": "API 密钥出现问题",
-			"failedMessage": "消息发送出现问题"
+			"agentAvatar": "您必须为助手添加头像",
+			"agentName": "您必须为助手添加名称",
+			"emptyMessage": "消息不能为空",
+			"failedApiKey": "您的 API 密钥有问题",
+			"failedMessage": "发送消息时出现问题"
 		},
 		"label": {
 			"agents": "助手",
@@ -131,17 +133,17 @@
 			"newAgent": "新建助手",
 			"newChat": "新建对话",
 			"newMessage": "新消息",
-			"noChats": "没有对话",
-			"noSubchats": "没有子对话",
+			"noChats": "无对话",
+			"noSubchats": "无子对话",
 			"selectedAgent": "已选择的助手",
 			"selectedValue": "已选择的值",
 			"subchats": "子对话",
 			"urlPreview": "URL 预览",
 			"xMessages_one": "1 条消息",
 			"xMessages_other": "{count} 条消息",
+			"xSearchResults_other": "{count} 个搜索结果",
 			"xSearchResults_zero": "无搜索结果",
 			"xSearchResults_one": "{count} 个搜索结果",
-			"xSearchResults_other": "{count} 个搜索结果",
 			"xSelectedMessages_one": "已选择 1 条消息",
 			"xSelectedMessages_other": "已选择 {count} 条消息"
 		},
@@ -154,10 +156,10 @@
 			"loadingChats": "正在加载对话...",
 			"loadingGPTs": "正在加载 GPT...",
 			"loadingMessages": "正在加载消息...",
-			"loadingPreviousMessages": "正在加载之前的消息...",
+			"loadingPreviousMessages": "正在加载历史消息...",
 			"loadingSubchats": "正在加载子对话...",
 			"renamingChat": "正在重命名对话...",
-			"thinking": "正在思考..."
+			"thinking": "思考中..."
 		},
 		"warning": {
 			"chromeGptInsideChrome": "Chrome GPT 需要以下实验性设置：",
@@ -165,7 +167,7 @@
 			"deletingAgent": "此助手将被永久删除",
 			"deletingChats": "这些对话将被永久删除",
 			"invalidGpt": "无效的 GPT",
-			"missingApiKey": "请配置 {name} API 密钥"
+			"missingApiKey": "您必须配置您的 {name} API 密钥"
 		}
 	},
 	"userSettings": {
@@ -174,14 +176,14 @@
 			"manageBilling": "管理账单"
 		},
 		"error": {
-			"address": "请填写地址",
-			"avatar": "请添加头像",
-			"city": "请填写城市",
-			"country": "请填写国家",
-			"email": "请填写电子邮箱地址",
-			"legalName": "请填写法定名称",
-			"name": "请填写姓名",
-			"postalCode": "请填写邮政编码"
+			"address": "您必须添加地址",
+			"avatar": "您必须添加头像",
+			"city": "您必须添加城市",
+			"country": "您必须添加国家",
+			"email": "您必须添加电子邮件地址",
+			"legalName": "您必须添加法定名称",
+			"name": "您必须添加名称",
+			"postalCode": "您必须添加邮政编码"
 		},
 		"label": {
 			"account": "账户",
@@ -190,13 +192,13 @@
 			"billing": "账单",
 			"city": "城市",
 			"country": "国家",
-			"email": "电子邮箱",
+			"email": "电子邮件地址",
 			"legalName": "法定名称",
 			"phone": "电话号码",
 			"postalCode": "邮政编码",
-			"private": "私有",
+			"private": "私密",
 			"public": "公开",
-			"vatNumber": "税号"
+			"vatNumber": "增值税号"
 		}
 	}
 }

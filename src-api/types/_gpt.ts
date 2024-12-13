@@ -1,3 +1,5 @@
+import { Status } from './_status'
+
 export const GPT_ID = {
 	LOREM_IPSUM_GPT: 111,
 	RAMMUS_GPT: 222,
@@ -11,6 +13,8 @@ export const GPT_ID = {
 export const DEV_GPT_IDS = [GPT_ID.LOREM_IPSUM_GPT, GPT_ID.RAMMUS_GPT]
 
 export const UI_TAG__GPT_DESCRIPTION = '{gpt_description}'
+
+export const GPT_RESP__UNAVAILABLE: GptResponse = { text: '', errorCode: Status.UNAVAILABLE }
 
 export interface GptAPI {
 	isAvailable(): Promise<boolean>
