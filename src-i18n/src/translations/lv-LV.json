@@ -8,10 +8,10 @@
 			"collapse": "Sakļaut",
 			"copy": "Kopēt",
 			"delete": "Dzēst",
-			"deselectAll": "Noņemt visas atzīmes",
+			"deselectAll": "Noņemt visu atlasi",
 			"expand": "Izvērst",
 			"goToUrl": "Doties uz {url}",
-			"hidePanel": "Slēpt paneli",
+			"hidePanel": "Paslēpt paneli",
 			"openMenu": "Atvērt izvēlni",
 			"preview": "Priekšskatīt",
 			"reload": "Pārlādēt",
@@ -23,7 +23,7 @@
 			"searchMore": "Rādīt vairāk rezultātu",
 			"selectAll": "Atlasīt visu",
 			"showPanel": "Rādīt paneli",
-			"signOut": "Iziet"
+			"signOut": "Izrakstīties"
 		},
 		"error": {
 			"noChanges": "Nav izmaiņu",
@@ -33,12 +33,12 @@
 		"label": {
 			"apiDocs": "API dokumentācija",
 			"asia": "Āzija",
-			"avatar": "Profila attēls",
+			"avatar": "Avatars",
 			"code": "Kods",
 			"copied": "Nokopēts",
 			"custom": "Pielāgots",
 			"darkTheme": "Tumšs",
-			"default": "Noklusējums",
+			"default": "Noklusējuma",
 			"description": "Apraksts",
 			"designSystem": "Dizaina sistēma",
 			"errors": "Kļūdas",
@@ -54,8 +54,8 @@
 			"name": "Vārds",
 			"navigationBar": "Navigācijas josla",
 			"navigationMenu": "Navigācijas izvēlne",
-			"optionalField": "(Nav obligāts)",
-			"requiredField": "(Obligāts)",
+			"optionalField": "(Nav obligāti)",
+			"requiredField": "(Obligāti)",
 			"result": "Rezultāts",
 			"settings": "Iestatījumi",
 			"uiLibrary": "UI bibliotēka",
@@ -66,11 +66,11 @@
 		},
 		"state": {
 			"dataSaved": "Jūsu dati ir saglabāti",
-			"deleting": "Dzēš...",
-			"loading": "Ielādē...",
-			"searching": "Meklē...",
-			"sending": "Sūta...",
-			"updating": "Atjaunina..."
+			"deleting": "Dzēšana...",
+			"loading": "Ielāde...",
+			"searching": "Meklēšana...",
+			"sending": "Sūtīšana...",
+			"updating": "Atjaunināšana..."
 		}
 	},
 	"aiChat": {
@@ -106,16 +106,19 @@
 			"startSearching_other": "Ievadiet vismaz {count} rakstzīmes"
 		},
 		"description": {
-			"chatgpt4o": "OpenAI jaudīgākais modelis",
-			"chatgpt4oMini": "OpenAI lētākais modelis",
-			"chromeGPT": "GPT iestrādāts Chrome pārlūkā",
-			"loremIpsumGPT": "Inteliģentākais modelis",
+			"chatgpt4o": "Labākais modelis no OpenAI",
+			"chatgpt4oMini": "Lētākais modelis no OpenAI",
+			"chromeGPT": "Iebūvēts Chrome pārlūkā",
+			"claude35Haiku": "Lētākais modelis no Anthropic",
+			"claude35Sonnet": "Labākais modelis no Anthropic",
+			"loremIpsumGPT": "Visintelektuālākais modelis",
 			"rammusGPT": "Labākais emocionālais atbalsts"
 		},
 		"error": {
-			"agentAvatar": "Jums jāpievieno profila attēls aģentam",
+			"agentAvatar": "Jums jāpievieno avatars aģentam",
 			"agentName": "Jums jāpievieno vārds aģentam",
 			"emptyMessage": "Jūsu ziņa ir tukša",
+			"failedApiKey": "Ar jūsu API atslēgu ir problēma",
 			"failedMessage": "Radās problēma ar jūsu ziņas piegādi"
 		},
 		"label": {
@@ -165,33 +168,33 @@
 			"deletingAgent": "Šis aģents tiks neatgriezeniski dzēsts",
 			"deletingChats": "Šie čati tiks neatgriezeniski dzēsti",
 			"invalidGpt": "Nederīgs GPT",
-			"missingOpenAiApiKey": "Jums jākonfigurē sava OpenAI API atslēga"
+			"missingApiKey": "Jums jākonfigurē sava {name} API atslēga"
 		}
 	},
 	"userSettings": {
 		"action": {
 			"manageAccount": "Pārvaldīt kontu",
-			"manageBilling": "Pārvaldīt maksājumus"
+			"manageBilling": "Pārvaldīt norēķinus"
 		},
 		"error": {
 			"address": "Jums jāpievieno adrese",
-			"avatar": "Jums jāpievieno profila attēls",
+			"avatar": "Jums jāpievieno savs avatars",
 			"city": "Jums jāpievieno pilsēta",
 			"country": "Jums jāpievieno valsts",
 			"email": "Jums jāpievieno e-pasta adrese",
 			"legalName": "Jums jāpievieno juridiskais nosaukums",
-			"name": "Jums jāpievieno vārds",
+			"name": "Jums jāpievieno savs vārds",
 			"postalCode": "Jums jāpievieno pasta indekss"
 		},
 		"label": {
 			"account": "Konts",
 			"address": "Adrese",
-			"billing": "Maksājumi",
+			"apiKey": "{name} API atslēga",
+			"billing": "Norēķini",
 			"city": "Pilsēta",
 			"country": "Valsts",
 			"email": "E-pasta adrese",
 			"legalName": "Juridiskais nosaukums",
-			"openaiApiKey": "OpenAI API atslēga",
 			"phone": "Tālruņa numurs",
 			"postalCode": "Pasta indekss",
 			"private": "Privāts",

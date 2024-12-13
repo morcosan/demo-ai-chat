@@ -2,13 +2,13 @@
 	"core": {
 		"action": {
 			"back": "ย้อนกลับ",
-			"backToHome": "กลับไปยังหน้าแรก",
+			"backToHome": "กลับไปที่หน้าแรก",
 			"changeLanguage": "เปลี่ยนภาษา",
 			"close": "ปิด",
 			"collapse": "ย่อ",
 			"copy": "คัดลอก",
 			"delete": "ลบ",
-			"deselectAll": "ยกเลิกการเลือกทั้งหมด",
+			"deselectAll": "ยกเลิกเลือกทั้งหมด",
 			"expand": "ขยาย",
 			"goToUrl": "ไปที่ {url}",
 			"hidePanel": "ซ่อนแผง",
@@ -37,7 +37,7 @@
 			"code": "โค้ด",
 			"copied": "คัดลอกแล้ว",
 			"custom": "กำหนดเอง",
-			"darkTheme": "มืด",
+			"darkTheme": "โหมดมืด",
 			"default": "ค่าเริ่มต้น",
 			"description": "คำอธิบาย",
 			"designSystem": "ระบบการออกแบบ",
@@ -50,11 +50,12 @@
 			"levelMedium": "ปานกลาง",
 			"levelVeryHigh": "สูงมาก",
 			"levelVeryLow": "ต่ำมาก",
-			"lightTheme": "สว่าง",
+			"lightTheme": "โหมดสว่าง",
 			"name": "ชื่อ",
 			"navigationBar": "แถบนำทาง",
 			"navigationMenu": "เมนูนำทาง",
-			"optionalField": "(ไม่จำเป็น)",
+			"optionalField": "(ไม่บังคับ)",
+			"quickSettings": "การตั้งค่าด่วน",
 			"requiredField": "(จำเป็น)",
 			"result": "ผลลัพธ์",
 			"settings": "การตั้งค่า",
@@ -75,9 +76,9 @@
 	},
 	"aiChat": {
 		"action": {
-			"backToSubchats": "กลับไปยังซับแชท",
+			"backToSubchats": "กลับไปที่ซับแชท",
 			"closePreview": "ปิดตัวอย่าง",
-			"configureAgent": "กำหนดค่าเอเจนต์",
+			"configureAgent": "ตั้งค่าเอเจนต์",
 			"confirmDeleteAgent": "ยืนยันการลบเอเจนต์",
 			"confirmDeleteChats": "ยืนยันการลบแชท",
 			"confirmRenameChat": "ยืนยันการเปลี่ยนชื่อแชท",
@@ -103,16 +104,19 @@
 			"startSearching_other": "พิมพ์อย่างน้อย {count} ตัวอักษร"
 		},
 		"description": {
-			"chatgpt4o": "โมเดลที่ทรงพลังที่สุดของ OpenAI",
-			"chatgpt4oMini": "โมเดลที่ถูกที่สุดของ OpenAI",
-			"chromeGPT": "GPT ที่ฝังตัวในเบราว์เซอร์ Chrome",
+			"chatgpt4o": "โมเดลที่ดีที่สุดจาก OpenAI",
+			"chatgpt4oMini": "โมเดลที่ถูกที่สุดจาก OpenAI",
+			"chromeGPT": "ฝังอยู่ในเบราว์เซอร์ Chrome",
+			"claude35Haiku": "โมเดลที่ถูกที่สุดจาก Anthropic",
+			"claude35Sonnet": "โมเดลที่ดีที่สุดจาก Anthropic",
 			"loremIpsumGPT": "โมเดลที่ฉลาดที่สุด",
-			"rammusGPT": "การสนับสนุนด้านอารมณ์ที่ดีที่สุด"
+			"rammusGPT": "ดีที่สุดในการให้กำลังใจ"
 		},
 		"error": {
 			"agentAvatar": "คุณต้องเพิ่มรูปประจำตัวสำหรับเอเจนต์",
 			"agentName": "คุณต้องเพิ่มชื่อสำหรับเอเจนต์",
 			"emptyMessage": "ข้อความของคุณว่างเปล่า",
+			"failedApiKey": "มีปัญหากับคีย์ API ของคุณ",
 			"failedMessage": "มีปัญหาในการส่งข้อความของคุณ"
 		},
 		"label": {
@@ -121,7 +125,7 @@
 			"chats": "แชท",
 			"codePreview": "ตัวอย่างโค้ด",
 			"creativityLevel": "ระดับความคิดสร้างสรรค์",
-			"customInstructions": "คำแนะนำที่กำหนดเอง",
+			"customInstructions": "คำสั่งที่กำหนดเอง",
 			"gptModel": "โมเดล GPT",
 			"newAgent": "เอเจนต์ใหม่",
 			"newChat": "แชทใหม่",
@@ -132,10 +136,13 @@
 			"selectedValue": "ค่าที่เลือก",
 			"subchats": "ซับแชท",
 			"urlPreview": "ตัวอย่าง URL",
+			"xMessages_one": "1 ข้อความ",
 			"xMessages_other": "{count} ข้อความ",
+			"xSearchResults_one": "{count} ผลการค้นหา",
 			"xSearchResults_other": "{count} ผลการค้นหา",
-			"xSearchResults_zero": "ไม่มีผลการค้นหา",
-			"xSelectedMessages_other": "{count} ข้อความที่เลือก"
+			"xSearchResults_zero": "ไม่พบผลการค้นหา",
+			"xSelectedMessages_one": "เลือก 1 ข้อความ",
+			"xSelectedMessages_other": "เลือก {count} ข้อความ"
 		},
 		"placeholder": {
 			"newMessage": "คุยกับ {name}...",
@@ -153,11 +160,11 @@
 		},
 		"warning": {
 			"chromeGptInsideChrome": "Chrome GPT ต้องการการตั้งค่าทดลองเหล่านี้:",
-			"chromeGptOutsideChrome": "Chrome GPT ใช้ได้เฉพาะในเบราว์เซอร์ Chrome เท่านั้น",
+			"chromeGptOutsideChrome": "Chrome GPT มีให้ใช้งานเฉพาะในเบราว์เซอร์ Chrome",
 			"deletingAgent": "เอเจนต์นี้จะถูกลบอย่างถาวร",
 			"deletingChats": "แชทเหล่านี้จะถูกลบอย่างถาวร",
 			"invalidGpt": "GPT ไม่ถูกต้อง",
-			"missingOpenAiApiKey": "คุณต้องกำหนดค่า OpenAI API key ของคุณ"
+			"missingApiKey": "คุณต้องตั้งค่าคีย์ API {name} ของคุณ"
 		}
 	},
 	"userSettings": {
@@ -167,23 +174,23 @@
 		},
 		"error": {
 			"address": "คุณต้องเพิ่มที่อยู่",
-			"avatar": "คุณต้องเพิ่มรูปประจำตัวของคุณ",
+			"avatar": "คุณต้องเพิ่มรูปประจำตัว",
 			"city": "คุณต้องเพิ่มเมือง",
 			"country": "คุณต้องเพิ่มประเทศ",
-			"email": "คุณต้องเพิ่มที่อยู่อีเมลของคุณ",
-			"legalName": "คุณต้องเพิ่มชื่อทางกฎหมาย",
-			"name": "คุณต้องเพิ่มชื่อของคุณ",
+			"email": "คุณต้องเพิ่มที่อยู่อีเมล",
+			"legalName": "คุณต้องเพิ่มชื่อตามกฎหมาย",
+			"name": "คุณต้องเพิ่มชื่อ",
 			"postalCode": "คุณต้องเพิ่มรหัสไปรษณีย์"
 		},
 		"label": {
 			"account": "บัญชี",
 			"address": "ที่อยู่",
+			"apiKey": "คีย์ API {name}",
 			"billing": "การเรียกเก็บเงิน",
 			"city": "เมือง",
 			"country": "ประเทศ",
 			"email": "ที่อยู่อีเมล",
-			"legalName": "ชื่อทางกฎหมาย",
-			"openaiApiKey": "OpenAI API key",
+			"legalName": "ชื่อตามกฎหมาย",
 			"phone": "หมายเลขโทรศัพท์",
 			"postalCode": "รหัสไปรษณีย์",
 			"private": "ส่วนตัว",

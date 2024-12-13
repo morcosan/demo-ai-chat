@@ -3,12 +3,12 @@
 		"action": {
 			"back": "Voltar",
 			"backToHome": "Voltar à página inicial",
-			"changeLanguage": "Mudar idioma",
+			"changeLanguage": "Alterar idioma",
 			"close": "Fechar",
 			"collapse": "Recolher",
 			"copy": "Copiar",
 			"delete": "Eliminar",
-			"deselectAll": "Desselecionar tudo",
+			"deselectAll": "Desmarcar tudo",
 			"expand": "Expandir",
 			"goToUrl": "Ir para {url}",
 			"hidePanel": "Ocultar painel",
@@ -31,7 +31,7 @@
 			"unsent": "Não enviado"
 		},
 		"label": {
-			"apiDocs": "Documentação API",
+			"apiDocs": "Documentação da API",
 			"asia": "Ásia",
 			"avatar": "Avatar",
 			"code": "Código",
@@ -55,7 +55,6 @@
 			"navigationBar": "Barra de navegação",
 			"navigationMenu": "Menu de navegação",
 			"optionalField": "(Opcional)",
-			"quickSettings": "Definições rápidas",
 			"requiredField": "(Obrigatório)",
 			"result": "Resultado",
 			"settings": "Definições",
@@ -81,20 +80,20 @@
 			"configureAgent": "Configurar agente",
 			"confirmDeleteAgent": "Confirmar eliminação do agente",
 			"confirmDeleteChats": "Confirmar eliminação das conversas",
-			"confirmRenameChat": "Confirmar alteração do nome da conversa",
-			"copyCode": "Copiar o código",
-			"copyMessage": "Copiar a mensagem",
+			"confirmRenameChat": "Confirmar renomeação da conversa",
+			"copyCode": "Copiar código",
+			"copyMessage": "Copiar mensagem",
 			"createAgent": "Criar agente",
 			"deleteAgent": "Eliminar agente",
 			"deleteSelectedChats": "Eliminar conversas selecionadas",
-			"deselectChat": "Desselecionar conversa",
+			"deselectChat": "Desmarcar conversa",
 			"manageAgents": "Gerir agentes",
 			"manageChats": "Gerir conversas",
 			"openChat": "Abrir conversa",
 			"openSubchat_zero": "Criar subchat",
 			"openSubchat_one": "Abrir subchat ({count} mensagem)",
 			"openSubchat_other": "Abrir subchat ({count} mensagens)",
-			"previewCode": "Pré-visualizar o código",
+			"previewCode": "Pré-visualizar código",
 			"searchChats": "Pesquisar conversas",
 			"selectChat": "Selecionar conversa",
 			"sendMessage": "Enviar mensagem",
@@ -102,20 +101,23 @@
 			"showMoreChats": "Mostrar mais conversas",
 			"showSubchats": "Mostrar subchats ({count})",
 			"startNewChat": "Iniciar nova conversa",
-			"startSearching_one": "Digite pelo menos {count} carácter",
+			"startSearching_one": "Digite pelo menos {count} caractere",
 			"startSearching_other": "Digite pelo menos {count} caracteres"
 		},
 		"description": {
-			"chatgpt4o": "O modelo mais poderoso da OpenAI",
-			"chatgpt4oMini": "O modelo mais económico da OpenAI",
-			"chromeGPT": "GPT integrado no navegador Chrome",
-			"loremIpsumGPT": "O modelo mais inteligente",
-			"rammusGPT": "O melhor suporte emocional"
+			"chatgpt4o": "Melhor modelo da OpenAI",
+			"chatgpt4oMini": "Modelo mais económico da OpenAI",
+			"chromeGPT": "Integrado no navegador Chrome",
+			"claude35Haiku": "Modelo mais económico da Anthropic",
+			"claude35Sonnet": "Melhor modelo da Anthropic",
+			"loremIpsumGPT": "Modelo mais inteligente",
+			"rammusGPT": "Melhor suporte emocional"
 		},
 		"error": {
 			"agentAvatar": "Deve adicionar um avatar para o agente",
 			"agentName": "Deve adicionar um nome para o agente",
 			"emptyMessage": "A sua mensagem está vazia",
+			"failedApiKey": "Existe um problema com a sua chave API",
 			"failedMessage": "Ocorreu um problema ao entregar a sua mensagem"
 		},
 		"label": {
@@ -135,17 +137,19 @@
 			"selectedValue": "Valor selecionado",
 			"subchats": "Subchats",
 			"urlPreview": "Pré-visualização do URL",
-			"xMessages_one": "1 mensagem",
+			"xMessages_zero": "Sem mensagens",
+			"xMessages_one": "{count} mensagem",
 			"xMessages_other": "{count} mensagens",
 			"xSearchResults_zero": "Sem resultados",
 			"xSearchResults_one": "{count} resultado",
 			"xSearchResults_other": "{count} resultados",
-			"xSelectedMessages_one": "1 mensagem selecionada",
+			"xSelectedMessages_zero": "Nenhuma mensagem selecionada",
+			"xSelectedMessages_one": "{count} mensagem selecionada",
 			"xSelectedMessages_other": "{count} mensagens selecionadas"
 		},
 		"placeholder": {
 			"newMessage": "Fale com {name}...",
-			"rename": "Gerar um novo nome automaticamente..."
+			"rename": "Gerar novo nome automaticamente..."
 		},
 		"state": {
 			"loadingAgents": "A carregar agentes...",
@@ -159,11 +163,11 @@
 		},
 		"warning": {
 			"chromeGptInsideChrome": "O Chrome GPT requer estas definições experimentais:",
-			"chromeGptOutsideChrome": "O Chrome GPT está disponível apenas no navegador Chrome",
+			"chromeGptOutsideChrome": "O Chrome GPT só está disponível no navegador Chrome",
 			"deletingAgent": "Este agente será eliminado permanentemente",
 			"deletingChats": "Estas conversas serão eliminadas permanentemente",
 			"invalidGpt": "GPT inválido",
-			"missingOpenAiApiKey": "Deve configurar a sua chave API OpenAI"
+			"missingApiKey": "Deve configurar a sua chave API {name}"
 		}
 	},
 	"userSettings": {
@@ -184,17 +188,17 @@
 		"label": {
 			"account": "Conta",
 			"address": "Morada",
+			"apiKey": "Chave API {name}",
 			"billing": "Faturação",
 			"city": "Cidade",
 			"country": "País",
 			"email": "Endereço de email",
 			"legalName": "Nome legal",
-			"openaiApiKey": "Chave API OpenAI",
 			"phone": "Número de telefone",
 			"postalCode": "Código postal",
 			"private": "Privado",
 			"public": "Público",
-			"vatNumber": "NIF"
+			"vatNumber": "Número de IVA"
 		}
 	}
 }

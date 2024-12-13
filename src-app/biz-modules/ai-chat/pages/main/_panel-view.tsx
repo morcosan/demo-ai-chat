@@ -54,7 +54,7 @@ export const PanelView = (props: Props) => {
 	}, [activeChat, subchatId])
 
 	useEffect(() => {
-		if (allSubchatsPagination.page) {
+		if (allSubchatsPagination.page && subchatLoading !== 'error') {
 			allSubchats.length ? onShowPanel() : hidePanel()
 		} else {
 			!activeChat && hidePanel()

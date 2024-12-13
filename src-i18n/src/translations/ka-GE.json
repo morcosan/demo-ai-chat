@@ -2,20 +2,20 @@
 	"core": {
 		"action": {
 			"back": "უკან",
-			"backToHome": "მთავარზე დაბრუნება",
+			"backToHome": "მთავარ გვერდზე დაბრუნება",
 			"changeLanguage": "ენის შეცვლა",
 			"close": "დახურვა",
 			"collapse": "ჩაკეცვა",
 			"copy": "კოპირება",
 			"delete": "წაშლა",
-			"deselectAll": "ყველას მონიშვნის მოხსნა",
+			"deselectAll": "ყველას გაუქმება",
 			"expand": "გაშლა",
 			"goToUrl": "{url}-ზე გადასვლა",
 			"hidePanel": "პანელის დამალვა",
 			"openMenu": "მენიუს გახსნა",
-			"preview": "წინასწარი ნახვა",
+			"preview": "გადახედვა",
 			"reload": "განახლება",
-			"rename": "სახელის შეცვლა",
+			"rename": "გადარქმევა",
 			"resizePanel": "პანელის ზომის შეცვლა",
 			"retry": "ხელახლა ცდა",
 			"saveChanges": "ცვლილებების შენახვა",
@@ -27,7 +27,7 @@
 		},
 		"error": {
 			"noChanges": "ცვლილებები არ არის",
-			"nothingFound": "არაფერი მოიძებნა \"{search}\"-ისთვის",
+			"nothingFound": "\"{search}\"-ისთვის არაფერი მოიძებნა",
 			"unsent": "გაუგზავნელი"
 		},
 		"label": {
@@ -55,6 +55,7 @@
 			"navigationBar": "ნავიგაციის ზოლი",
 			"navigationMenu": "ნავიგაციის მენიუ",
 			"optionalField": "(არასავალდებულო)",
+			"quickSettings": "სწრაფი პარამეტრები",
 			"requiredField": "(სავალდებულო)",
 			"result": "შედეგი",
 			"settings": "პარამეტრები",
@@ -75,47 +76,50 @@
 	},
 	"aiChat": {
 		"action": {
-			"backToSubchats": "სუბჩატებში დაბრუნება",
+			"backToSubchats": "ქვეჩატებში დაბრუნება",
 			"closePreview": "გადახედვის დახურვა",
 			"configureAgent": "აგენტის კონფიგურაცია",
 			"confirmDeleteAgent": "აგენტის წაშლის დადასტურება",
 			"confirmDeleteChats": "ჩატების წაშლის დადასტურება",
-			"confirmRenameChat": "ჩატის სახელის შეცვლის დადასტურება",
+			"confirmRenameChat": "ჩატის გადარქმევის დადასტურება",
 			"copyCode": "კოდის კოპირება",
 			"copyMessage": "შეტყობინების კოპირება",
 			"createAgent": "აგენტის შექმნა",
 			"deleteAgent": "აგენტის წაშლა",
 			"deleteSelectedChats": "არჩეული ჩატების წაშლა",
-			"deselectChat": "ჩატის მონიშვნის მოხსნა",
+			"deselectChat": "ჩატის მონიშვნის გაუქმება",
 			"manageAgents": "აგენტების მართვა",
 			"manageChats": "ჩატების მართვა",
 			"openChat": "ჩატის გახსნა",
-			"openSubchat_zero": "სუბჩატის შექმნა",
-			"openSubchat_one": "სუბჩატის გახსნა ({count} შეტყობინება)",
-			"openSubchat_other": "სუბჩატის გახსნა ({count} შეტყობინება)",
+			"openSubchat_zero": "ქვეჩატის შექმნა",
+			"openSubchat_one": "ქვეჩატის გახსნა ({count} შეტყობინება)",
+			"openSubchat_other": "ქვეჩატის გახსნა ({count} შეტყობინება)",
 			"previewCode": "კოდის გადახედვა",
 			"searchChats": "ჩატების ძიება",
 			"selectChat": "ჩატის არჩევა",
 			"sendMessage": "შეტყობინების გაგზავნა",
 			"showMoreAgents": "მეტი აგენტის ჩვენება",
 			"showMoreChats": "მეტი ჩატის ჩვენება",
-			"showSubchats": "სუბჩატების ჩვენება ({count})",
+			"showSubchats": "ქვეჩატების ჩვენება ({count})",
 			"startNewChat": "ახალი საუბრის დაწყება",
 			"startSearching_one": "შეიყვანეთ მინიმუმ {count} სიმბოლო",
 			"startSearching_other": "შეიყვანეთ მინიმუმ {count} სიმბოლო"
 		},
 		"description": {
-			"chatgpt4o": "OpenAI-ის ყველაზე მძლავრი მოდელი",
-			"chatgpt4oMini": "OpenAI-ის ყველაზე იაფი მოდელი",
-			"chromeGPT": "Chrome ბრაუზერში ჩაშენებული მინი GPT",
-			"loremIpsumGPT": "ყველაზე ჭკვიანი მოდელი",
+			"chatgpt4o": "საუკეთესო მოდელი OpenAI-დან",
+			"chatgpt4oMini": "ყველაზე იაფი მოდელი OpenAI-დან",
+			"chromeGPT": "ჩაშენებულია Chrome ბრაუზერში",
+			"claude35Haiku": "ყველაზე იაფი მოდელი Anthropic-დან",
+			"claude35Sonnet": "საუკეთესო მოდელი Anthropic-დან",
+			"loremIpsumGPT": "ყველაზე ინტელექტუალური მოდელი",
 			"rammusGPT": "საუკეთესო ემოციური მხარდაჭერა"
 		},
 		"error": {
-			"agentAvatar": "აგენტისთვის უნდა დაამატოთ ავატარი",
-			"agentName": "აგენტისთვის უნდა დაამატოთ სახელი",
+			"agentAvatar": "თქვენ უნდა დაამატოთ აგენტის ავატარი",
+			"agentName": "თქვენ უნდა დაამატოთ აგენტის სახელი",
 			"emptyMessage": "თქვენი შეტყობინება ცარიელია",
-			"failedMessage": "თქვენი შეტყობინების მიწოდებისას წარმოიქმნა პრობლემა"
+			"failedApiKey": "თქვენს API გასაღებთან პრობლემაა",
+			"failedMessage": "თქვენი შეტყობინების მიწოდებისას პრობლემა წარმოიშვა"
 		},
 		"label": {
 			"agents": "აგენტები",
@@ -129,10 +133,10 @@
 			"newChat": "ახალი ჩატი",
 			"newMessage": "ახალი შეტყობინება",
 			"noChats": "ჩატები არ არის",
-			"noSubchats": "სუბჩატები არ არის",
+			"noSubchats": "ქვეჩატები არ არის",
 			"selectedAgent": "არჩეული აგენტი",
 			"selectedValue": "არჩეული მნიშვნელობა",
-			"subchats": "სუბჩატები",
+			"subchats": "ქვეჩატები",
 			"urlPreview": "URL-ის გადახედვა",
 			"xMessages_one": "1 შეტყობინება",
 			"xMessages_other": "{count} შეტყობინება",
@@ -152,30 +156,30 @@
 			"loadingGPTs": "GPT-ები იტვირთება...",
 			"loadingMessages": "შეტყობინებები იტვირთება...",
 			"loadingPreviousMessages": "წინა შეტყობინებები იტვირთება...",
-			"loadingSubchats": "სუბჩატები იტვირთება...",
-			"renamingChat": "ჩატის სახელი იცვლება...",
+			"loadingSubchats": "ქვეჩატები იტვირთება...",
+			"renamingChat": "ჩატს სახელი ერქმევა...",
 			"thinking": "ფიქრობს..."
 		},
 		"warning": {
-			"chromeGptInsideChrome": "Chrome GPT საჭიროებს შემდეგ ექსპერიმენტულ პარამეტრებს:",
+			"chromeGptInsideChrome": "Chrome GPT საჭიროებს ამ ექსპერიმენტულ პარამეტრებს:",
 			"chromeGptOutsideChrome": "Chrome GPT ხელმისაწვდომია მხოლოდ Chrome ბრაუზერში",
 			"deletingAgent": "ეს აგენტი სამუდამოდ წაიშლება",
 			"deletingChats": "ეს ჩატები სამუდამოდ წაიშლება",
 			"invalidGpt": "არასწორი GPT",
-			"missingOpenAiApiKey": "თქვენ უნდა დააკონფიგურიროთ თქვენი OpenAI API გასაღები"
+			"missingApiKey": "თქვენ უნდა დააკონფიგურიროთ თქვენი {name} API გასაღები"
 		}
 	},
 	"userSettings": {
 		"action": {
 			"manageAccount": "ანგარიშის მართვა",
-			"manageBilling": "ბილინგის მართვა"
+			"manageBilling": "გადახდების მართვა"
 		},
 		"error": {
 			"address": "თქვენ უნდა დაამატოთ მისამართი",
 			"avatar": "თქვენ უნდა დაამატოთ თქვენი ავატარი",
 			"city": "თქვენ უნდა დაამატოთ ქალაქი",
 			"country": "თქვენ უნდა დაამატოთ ქვეყანა",
-			"email": "თქვენ უნდა დაამატოთ თქვენი ელფოსტის მისამართი",
+			"email": "თქვენ უნდა დაამატოთ თქვენი ელ-ფოსტის მისამართი",
 			"legalName": "თქვენ უნდა დაამატოთ იურიდიული სახელი",
 			"name": "თქვენ უნდა დაამატოთ თქვენი სახელი",
 			"postalCode": "თქვენ უნდა დაამატოთ საფოსტო კოდი"
@@ -183,17 +187,17 @@
 		"label": {
 			"account": "ანგარიში",
 			"address": "მისამართი",
-			"billing": "ბილინგი",
+			"apiKey": "{name} API გასაღები",
+			"billing": "გადახდები",
 			"city": "ქალაქი",
 			"country": "ქვეყანა",
-			"email": "ელფოსტის მისამართი",
+			"email": "ელ-ფოსტის მისამართი",
 			"legalName": "იურიდიული სახელი",
-			"openaiApiKey": "OpenAI API გასაღები",
 			"phone": "ტელეფონის ნომერი",
 			"postalCode": "საფოსტო კოდი",
 			"private": "პირადი",
 			"public": "საჯარო",
-			"vatNumber": "საიდენტიფიკაციო კოდი"
+			"vatNumber": "დღგ-ის ნომერი"
 		}
 	}
 }

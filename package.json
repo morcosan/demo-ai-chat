@@ -20,6 +20,7 @@
 		"uninstall": "rmdir /s /q \"node_modules\""
 	},
 	"dependencies": {
+		"@anthropic-ai/sdk": "^0.32.1",
 		"@emotion/cache": "^11.13.1",
 		"@emotion/react": "^11.13.3",
 		"@mui/lab": "^6.0.0-beta.9",

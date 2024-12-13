@@ -1,4 +1,4 @@
 import { GptAPI } from '@api/types'
-import { createChatGPT } from './_chatgpt-base'
+import { createChatGptAPI } from './_chatgpt-api'
 
-export const ChatGPT4oMini: GptAPI = createChatGPT('gpt-4o-mini')
+export const ChatGPT4oMini: GptAPI = createChatGptAPI('gpt-4o-mini')

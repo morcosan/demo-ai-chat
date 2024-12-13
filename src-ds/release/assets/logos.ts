@@ -1,4 +1,5 @@
 export { default as AiChatSvg } from './logos/ai-chat.svg'
+export { default as AnthropicSvg } from './logos/anthropic.svg'
 export { default as ChromeSvg } from './logos/chrome.svg'
 export { default as CssSvg } from './logos/css.svg'
 export { default as GeminiSvg } from './logos/gemini.svg'

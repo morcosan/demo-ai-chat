@@ -10,6 +10,7 @@ import {
 import { DbAgent, DbChat, DbMessage, DEV_GPT_IDS, GptConfig, GptMessage, MessageRole } from '../../types'
 import { addMinutesToDate, DATETIME_REGEX, formatDate } from '../../utilities/various'
 import { ChatGPT4oMini } from '../gpt/chatgpt-4o-mini'
+import { Claude35Haiku } from '../gpt/claude-3-5-haiku'
 import { getDbActiveAgents, getDbDeletedAgents, getGptResponse, randomFromAgentIds } from './_agents-db'
 
 let _dbChats: DbChat[]
@@ -87,7 +88,7 @@ const createDbMessages = async () => {
 				chatId: chat.id,
 				parentId: chat.id,
 				agentId: agentId,
-				text: response,
+				text: response.text,
 				role: 'agent',
 				createdAt: addMinutesToDate(date, (index * 2 + 1) * 5).toISOString(),
 			}
@@ -108,16 +109,16 @@ const addSubchats = async (message: DbMessage, messages: DbMessage[]) => {
 
 	for (let index = 0; index < total; index++) {
 		const role = roles[index % 2]
-		const userResponse = randomLongText(randomInt(1, 3))
+		const userText = randomLongText(randomInt(1, 3))
 		const agentId = role === 'agent' ? randomFromAgentIds() : 0
-		const response = role === 'agent' ? await getGptResponse(agentId, []) : userResponse
+		const response = role === 'agent' ? await getGptResponse(agentId, []) : { text: userText }
 
 		messages.push({
 			id: createMessageId(),
 			chatId: message.chatId,
 			parentId: message.id,
 			agentId: agentId,
-			text: response,
+			text: response.text,
 			role: role,
 			createdAt: addMinutesToDate(message.createdAt, (index + 1) * 10).toISOString(),
 		})
@@ -145,9 +146,12 @@ const renameChat = async (chat: DbChat) => {
 			...messages.map((msg: DbMessage) => ({ text: msg.text, role: msg.role })),
 			{ text: 'Title this chat concisely in its spoken language, no quotes', role: 'user' },
 		]
-		const has4oMini = await ChatGPT4oMini.isAvailable()
+		let resp
 
-		if (has4oMini) return await ChatGPT4oMini.getResponse(config, gptMessages)
+		if (!resp && (await ChatGPT4oMini.isAvailable())) resp = await ChatGPT4oMini.getResponse(config, gptMessages)
+		if (!resp && (await Claude35Haiku.isAvailable())) resp = await Claude35Haiku.getResponse(config, gptMessages)
+
+		if (resp?.text) return resp.text
 	}
 
 	return chat.title.replace(DATETIME_REGEX, '') + ' ' + formatDate(new Date())

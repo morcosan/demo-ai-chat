@@ -14,11 +14,11 @@ type GetNewMessageArgs = [
 	role: MessageRole,
 	text: string,
 	agentId: number,
-	failed?: boolean,
+	errorCode?: number,
 ]
 
 export const createGhostMessage = (...args: GetNewMessageArgs): Message => {
-	const [chatId, subchatId, role, text, agentId, failed] = args
+	const [chatId, subchatId, role, text, agentId, errorCode] = args
 
 	return {
 		id: role === 'user' ? -1 : -2,
@@ -29,7 +29,7 @@ export const createGhostMessage = (...args: GetNewMessageArgs): Message => {
 		role: role,
 		createdAt: new Date().toISOString(),
 		subchatSize: 0,
-		loading: !failed,
-		failed: failed || false,
+		loading: !errorCode,
+		errorCode: errorCode,
 	}
 }

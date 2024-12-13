@@ -82,8 +82,8 @@
 			"confirmDeleteAgent": "Confirm deleting agent",
 			"confirmDeleteChats": "Confirm deleting chats",
 			"confirmRenameChat": "Confirm renaming chat",
-			"copyCode": "Copy the code",
-			"copyMessage": "Copy the message",
+			"copyCode": "Copy code",
+			"copyMessage": "Copy message",
 			"createAgent": "Create agent",
 			"deleteAgent": "Delete agent",
 			"deleteSelectedChats": "Delete selected chats",
@@ -93,7 +93,7 @@
 			"openChat": "Open chat",
 			"openSubchat_other": "Open subchat ({count} messages)",
 			"openSubchat_zero": "Create subchat",
-			"previewCode": "Preview the code",
+			"previewCode": "Preview code",
 			"searchChats": "Search chats",
 			"selectChat": "Select chat",
 			"sendMessage": "Send message",
@@ -105,9 +105,11 @@
 			"startSearching_other": "Type at least {count} characters"
 		},
 		"description": {
-			"chatgpt4o": "OpenAI's most powerful model",
-			"chatgpt4oMini": "OpenAI's cheapest model",
-			"chromeGPT": "GPT embedded in Chrome browser",
+			"chatgpt4o": "Best model from OpenAI",
+			"chatgpt4oMini": "Cheapest model from OpenAI",
+			"chromeGPT": "Embedded in Chrome browser",
+			"claude35Haiku": "Cheapest model from Anthropic",
+			"claude35Sonnet": "Best model from Anthropic",
 			"loremIpsumGPT": "Most intelligent model",
 			"rammusGPT": "Best emotional support"
 		},
@@ -115,6 +117,7 @@
 			"agentAvatar": "You must add an avatar for the agent",
 			"agentName": "You must add a name for the agent",
 			"emptyMessage": "Your message is empty",
+			"failedApiKey": "There is a problem with your API key",
 			"failedMessage": "There was a problem delivering your message"
 		},
 		"label": {
@@ -162,7 +165,7 @@
 			"deletingAgent": "This agent will be permanently deleted",
 			"deletingChats": "These chats will be permanently deleted",
 			"invalidGpt": "Invalid GPT",
-			"missingOpenAiApiKey": "You must configure your OpenAI API key"
+			"missingApiKey": "You must configure your {name} API key"
 		}
 	},
 	"userSettings": {
@@ -183,12 +186,12 @@
 		"label": {
 			"account": "Account",
 			"address": "Address",
+			"apiKey": "{name} API key",
 			"billing": "Billing",
 			"city": "City",
 			"country": "Country",
 			"email": "Email address",
 			"legalName": "Legal name",
-			"openaiApiKey": "OpenAI API key",
 			"phone": "Phone number",
 			"postalCode": "Postal code",
 			"private": "Private",

@@ -1,4 +1,4 @@
-import { GPT_ID__LOREM_IPSUM_GPT } from '@api/types'
+import { GPT_ID } from '@api/types'
 
 export type EndpointType = 'GET' | 'POST' | 'PATCH' | 'DELETE'
 
@@ -52,7 +52,7 @@ export const QUERY_DEFAULTS = {
 	desc: 'Example description',
 	email: 'john.doe@example.com',
 	everywhere: 'false',
-	gptId: String(GPT_ID__LOREM_IPSUM_GPT),
+	gptId: String(GPT_ID.LOREM_IPSUM_GPT),
 	name: 'John Doe',
 	page: '1',
 	phone: '+123456789',
