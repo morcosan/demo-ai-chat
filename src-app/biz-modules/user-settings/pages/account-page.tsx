@@ -101,11 +101,11 @@ const AccountPage = () => {
 							))}
 						</div>
 
-						<img
-							src={payload.avatar}
-							alt=""
-							className="h-md-5 w-md-5 rounded-full border border-color-border-subtle bg-color-bg-field"
-						/>
+						<div className="h-md-5 w-md-5 rounded-full border border-color-border-subtle bg-color-bg-field">
+							{Boolean(payload.avatar) && (
+								<img src={payload.avatar} alt="" className="h-full w-full rounded-full" />
+							)}
+						</div>
 					</div>
 				</fieldset>
 

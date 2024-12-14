@@ -1,6 +1,6 @@
 import { ArgTypes } from '@storybook/csf'
 import '@utils/release'
-import './styles.css'
+import './styling/index.css'
 
 LOG('BUILD_MODE:', ENV__BUILD_MODE)
 LOG('BUILD_NUMBER:', ENV__BUILD_NUMBER)

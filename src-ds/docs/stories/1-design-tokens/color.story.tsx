@@ -36,7 +36,7 @@ export default {
 					{colors.map((color) => (
 						<div
 							key={color}
-							className="h-md-0 text-size-xs flex min-w-fit flex-1 items-start justify-start whitespace-nowrap"
+							className="flex h-md-0 min-w-fit flex-1 items-start justify-start whitespace-nowrap text-size-xs"
 							style={{ background: `var(${CssPrefix.COLOR}${color})` }}
 						>
 							<div className="rounded-xs bg-color-white-glass-7 px-xs-1 pb-xs-0 text-color-black">{color}</div>
@@ -49,7 +49,7 @@ export default {
 		return (
 			<DocsPage title="Color tokens">
 				<DocsHeader>Color palette</DocsHeader>
-				<DocsPlaygroundBase className="gap-xs-6 p-xs-9 flex flex-col">
+				<DocsPlaygroundBase className="flex flex-col gap-xs-6 p-xs-9">
 					{colorSlotFn(purples)}
 					{colorSlotFn(yellows)}
 					{colorSlotFn(reds)}
@@ -92,6 +92,9 @@ export default {
 										tsVar={`$color['${name}']`}
 										twVars={[`bg-color-${name}`, `text-color-${name}`, `border-color-${name}`]}
 										cssVar={`${CssPrefix.COLOR}${name}`}
+										tsSize="w-md-7"
+										twSize="w-md-7"
+										cssSize="w-md-7"
 										delay={DELAY}
 									/>
 								</td>
@@ -123,6 +126,9 @@ export default {
 										tsVar={`$color['${name}']`}
 										twVars={[`bg-color-${name}`, `text-color-${name}`, `border-color-${name}`]}
 										cssVar={`${CssPrefix.COLOR}${name}`}
+										tsSize="w-md-7"
+										twSize="w-md-7"
+										cssSize="w-md-7"
 										delay={DELAY}
 									/>
 								</td>

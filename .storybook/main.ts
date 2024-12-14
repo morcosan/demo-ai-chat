@@ -16,7 +16,7 @@ const config: StorybookConfig = {
 		'@storybook/addon-toolbars',
 	],
 
-	staticDirs: [`${ROOT_DIR}/src-ds/docs/public`],
+	staticDirs: [`${ROOT_DIR}/.storybook/public`],
 
 	framework: {
 		name: '@storybook/react-vite',

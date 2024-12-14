@@ -4,6 +4,7 @@
 		"lib": ["ES2020"],
 		"module": "ESNext",
 		"skipLibCheck": true,
+		"tsBuildInfoFile": "./node_modules/.cache/tooling.tsbuildinfo",
 
 		/* Bundler mode */
 		"moduleResolution": "bundler",

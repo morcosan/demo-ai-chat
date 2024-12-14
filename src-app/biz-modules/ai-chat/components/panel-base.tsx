@@ -3,7 +3,7 @@ import { PanelToolbar } from './panel-toolbar'
 
 interface Props extends ReactProps {
 	containerClass?: string
-	containerRef?: RefObject<HTMLDivElement>
+	containerRef?: RefObject<HTMLDivElement | null>
 	isChatView?: boolean
 	isPreview?: boolean
 	noContent?: boolean

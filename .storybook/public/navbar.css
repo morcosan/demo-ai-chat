@@ -57,20 +57,27 @@ label[for='storybook-explorer-searchfield'] + div {
 
 .search-field {
 	--padding: 32px;
+	position: relative !important;
+	box-shadow: none !important;
+	background: transparent !important;
+	padding: 0 !important;
 
-	& div:first-child {
+	& > div:first-child {
 		display: flex !important;
+		position: absolute !important;
+		top: 0 !important;
 		left: 2px !important;
 		justify-content: center !important;
 		width: var(--padding) !important;
 	}
 
 	& input {
-		box-shadow: none !important;
 		border: 1px solid var(--ds-color-grey-14) !important;
 		border-radius: var(--ds-radius-sm) !important;
 		background-color: var(--ds-color-hover-button-default) !important;
 		padding: var(--ds-spacing-xs-3) var(--padding) !important;
+		padding-right: calc(2 * var(--padding)) !important;
+		width: 100% !important;
 		height: unset !important;
 		color: var(--ds-color-white) !important;
 		font-size: var(--ds-font-size-sm) !important;
@@ -86,15 +93,24 @@ label[for='storybook-explorer-searchfield'] + div {
 		}
 
 		& + div {
-			display: flex !important;
+			position: absolute !important;
 			right: 2px !important;
-			justify-content: center !important;
 			margin: 1px !important;
-			width: var(--padding) !important;
 			height: calc(100% - 2px) !important;
 
-			&:hover {
-				background-color: var(--ds-color-hover-button-default) !important;
+			& div {
+				height: 100% !important;
+			}
+
+			& button {
+				display: flex !important;
+				justify-content: center !important;
+				width: var(--padding) !important;
+				height: 100% !important;
+
+				&:hover {
+					background-color: var(--ds-color-hover-button-default) !important;
+				}
 			}
 		}
 	}
