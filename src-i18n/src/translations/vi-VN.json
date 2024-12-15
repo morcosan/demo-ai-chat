@@ -2,13 +2,14 @@
 	"core": {
 		"action": {
 			"back": "Quay lại",
-			"backToHome": "Về trang chủ",
-			"changeLanguage": "Thay đổi ngôn ngữ",
+			"backToHome": "Quay về trang chủ",
+			"changeLanguage": "Đổi ngôn ngữ",
 			"close": "Đóng",
 			"collapse": "Thu gọn",
 			"copy": "Sao chép",
 			"delete": "Xóa",
 			"deselectAll": "Bỏ chọn tất cả",
+			"download": "Tải xuống",
 			"expand": "Mở rộng",
 			"goToUrl": "Đi đến {url}",
 			"hidePanel": "Ẩn bảng điều khiển",
@@ -16,13 +17,13 @@
 			"preview": "Xem trước",
 			"reload": "Tải lại",
 			"rename": "Đổi tên",
-			"resizePanel": "Điều chỉnh kích thước",
+			"resizePanel": "Thay đổi kích thước bảng",
 			"retry": "Thử lại",
 			"saveChanges": "Lưu thay đổi",
 			"search": "Tìm kiếm",
 			"searchMore": "Hiển thị thêm kết quả",
 			"selectAll": "Chọn tất cả",
-			"showPanel": "Hiển thị bảng điều khiển",
+			"showPanel": "Hiển thị bảng",
 			"signOut": "Đăng xuất"
 		},
 		"error": {
@@ -43,7 +44,7 @@
 			"designSystem": "Hệ thống thiết kế",
 			"errors": "Lỗi",
 			"europe": "Châu Âu",
-			"githubRepo": "Kho lưu trữ GitHub",
+			"githubRepo": "Kho GitHub",
 			"language": "Ngôn ngữ",
 			"levelHigh": "Cao",
 			"levelLow": "Thấp",
@@ -59,14 +60,14 @@
 			"requiredField": "(Bắt buộc)",
 			"result": "Kết quả",
 			"settings": "Cài đặt",
-			"uiLibrary": "Thư viện giao diện",
-			"uiTheme": "Giao diện"
+			"uiLibrary": "Thư viện UI",
+			"uiTheme": "Giao diện UI"
 		},
 		"placeholder": {
 			"search": "Tìm kiếm..."
 		},
 		"state": {
-			"dataSaved": "Dữ liệu đã được lưu",
+			"dataSaved": "Dữ liệu của bạn đã được lưu",
 			"deleting": "Đang xóa...",
 			"loading": "Đang tải...",
 			"searching": "Đang tìm kiếm...",
@@ -76,30 +77,31 @@
 	},
 	"aiChat": {
 		"action": {
-			"backToSubchats": "Quay lại phụ hội thoại",
+			"backToSubchats": "Quay lại chat phụ",
 			"closePreview": "Đóng xem trước",
-			"configureAgent": "Cấu hình tác nhân",
-			"confirmDeleteAgent": "Xác nhận xóa tác nhân",
-			"confirmDeleteChats": "Xác nhận xóa hội thoại",
-			"confirmRenameChat": "Xác nhận đổi tên hội thoại",
+			"configureAgent": "Cấu hình trợ lý",
+			"confirmDeleteAgent": "Xác nhận xóa trợ lý",
+			"confirmDeleteChats": "Xác nhận xóa các cuộc trò chuyện",
+			"confirmRenameChat": "Xác nhận đổi tên cuộc trò chuyện",
 			"copyCode": "Sao chép mã",
 			"copyMessage": "Sao chép tin nhắn",
-			"createAgent": "Tạo tác nhân",
-			"deleteAgent": "Xóa tác nhân",
-			"deleteSelectedChats": "Xóa hội thoại đã chọn",
-			"deselectChat": "Bỏ chọn hội thoại",
-			"manageAgents": "Quản lý tác nhân",
-			"manageChats": "Quản lý hội thoại",
-			"openChat": "Mở hội thoại",
-			"openSubchat_zero": "Tạo phụ hội thoại",
-			"openSubchat_other": "Mở phụ hội thoại ({count} tin nhắn)",
+			"createAgent": "Tạo trợ lý",
+			"deleteAgent": "Xóa trợ lý",
+			"deleteSelectedChats": "Xóa các cuộc trò chuyện đã chọn",
+			"deselectChat": "Bỏ chọn cuộc trò chuyện",
+			"downloadCode": "Tải xuống mã",
+			"manageAgents": "Quản lý trợ lý",
+			"manageChats": "Quản lý trò chuyện",
+			"openChat": "Mở trò chuyện",
+			"openSubchat_other": "Mở chat phụ ({count} tin nhắn)",
+			"openSubchat_zero": "Tạo chat phụ",
 			"previewCode": "Xem trước mã",
-			"searchChats": "Tìm kiếm hội thoại",
-			"selectChat": "Chọn hội thoại",
+			"searchChats": "Tìm kiếm trò chuyện",
+			"selectChat": "Chọn cuộc trò chuyện",
 			"sendMessage": "Gửi tin nhắn",
-			"showMoreAgents": "Hiển thị thêm tác nhân",
-			"showMoreChats": "Hiển thị thêm hội thoại",
-			"showSubchats": "Hiển thị phụ hội thoại ({count})",
+			"showMoreAgents": "Hiển thị thêm trợ lý",
+			"showMoreChats": "Hiển thị thêm trò chuyện",
+			"showSubchats": "Hiển thị chat phụ ({count})",
 			"startNewChat": "Bắt đầu cuộc trò chuyện mới",
 			"startSearching_one": "Nhập ít nhất {count} ký tự",
 			"startSearching_other": "Nhập ít nhất {count} ký tự"
@@ -114,34 +116,34 @@
 			"rammusGPT": "Hỗ trợ cảm xúc tốt nhất"
 		},
 		"error": {
-			"agentAvatar": "Bạn phải thêm ảnh đại diện cho tác nhân",
-			"agentName": "Bạn phải thêm tên cho tác nhân",
+			"agentAvatar": "Bạn phải thêm ảnh đại diện cho trợ lý",
+			"agentName": "Bạn phải thêm tên cho trợ lý",
 			"emptyMessage": "Tin nhắn của bạn trống",
 			"failedApiKey": "Có vấn đề với khóa API của bạn",
-			"failedMessage": "Có lỗi khi gửi tin nhắn của bạn"
+			"failedMessage": "Đã có vấn đề khi gửi tin nhắn của bạn"
 		},
 		"label": {
-			"agents": "Tác nhân",
-			"chatTitle": "Tiêu đề hội thoại",
-			"chats": "Hội thoại",
+			"agents": "Trợ lý",
+			"chatTitle": "Tiêu đề trò chuyện",
+			"chats": "Trò chuyện",
 			"codePreview": "Xem trước mã",
 			"creativityLevel": "Mức độ sáng tạo",
 			"customInstructions": "Hướng dẫn tùy chỉnh",
 			"gptModel": "Mô hình GPT",
-			"newAgent": "Tác nhân mới",
-			"newChat": "Hội thoại mới",
+			"newAgent": "Trợ lý mới",
+			"newChat": "Trò chuyện mới",
 			"newMessage": "Tin nhắn mới",
-			"noChats": "Không có hội thoại",
-			"noSubchats": "Không có phụ hội thoại",
-			"selectedAgent": "Tác nhân đã chọn",
+			"noChats": "Không có trò chuyện",
+			"noSubchats": "Không có chat phụ",
+			"selectedAgent": "Trợ lý đã chọn",
 			"selectedValue": "Giá trị đã chọn",
-			"subchats": "Phụ hội thoại",
+			"subchats": "Chat phụ",
 			"urlPreview": "Xem trước URL",
 			"xMessages_one": "1 tin nhắn",
 			"xMessages_other": "{count} tin nhắn",
+			"xSearchResults_other": "{count} kết quả tìm kiếm",
 			"xSearchResults_zero": "Không có kết quả tìm kiếm",
 			"xSearchResults_one": "{count} kết quả tìm kiếm",
-			"xSearchResults_other": "{count} kết quả tìm kiếm",
 			"xSelectedMessages_one": "Đã chọn 1 tin nhắn",
 			"xSelectedMessages_other": "Đã chọn {count} tin nhắn"
 		},
@@ -150,22 +152,22 @@
 			"rename": "Tự động tạo tên mới..."
 		},
 		"state": {
-			"loadingAgents": "Đang tải tác nhân...",
-			"loadingChats": "Đang tải hội thoại...",
+			"loadingAgents": "Đang tải trợ lý...",
+			"loadingChats": "Đang tải trò chuyện...",
 			"loadingGPTs": "Đang tải GPT...",
 			"loadingMessages": "Đang tải tin nhắn...",
 			"loadingPreviousMessages": "Đang tải tin nhắn trước...",
-			"loadingSubchats": "Đang tải phụ hội thoại...",
-			"renamingChat": "Đang đổi tên hội thoại...",
+			"loadingSubchats": "Đang tải chat phụ...",
+			"renamingChat": "Đang đổi tên trò chuyện...",
 			"thinking": "Đang suy nghĩ..."
 		},
 		"warning": {
 			"chromeGptInsideChrome": "Chrome GPT yêu cầu các cài đặt thử nghiệm sau:",
-			"chromeGptOutsideChrome": "Chrome GPT chỉ khả dụng trong trình duyệt Chrome",
-			"deletingAgent": "Tác nhân này sẽ bị xóa vĩnh viễn",
-			"deletingChats": "Các hội thoại này sẽ bị xóa vĩnh viễn",
+			"chromeGptOutsideChrome": "Chrome GPT chỉ có sẵn trong trình duyệt Chrome",
+			"deletingAgent": "Trợ lý này sẽ bị xóa vĩnh viễn",
+			"deletingChats": "Các cuộc trò chuyện này sẽ bị xóa vĩnh viễn",
 			"invalidGpt": "GPT không hợp lệ",
-			"missingApiKey": "Bạn phải cấu hình khóa API {name}"
+			"missingApiKey": "Bạn phải cấu hình khóa API {name} của bạn"
 		}
 	},
 	"userSettings": {
@@ -174,14 +176,14 @@
 			"manageBilling": "Quản lý thanh toán"
 		},
 		"error": {
-			"address": "Bạn phải nhập địa chỉ",
+			"address": "Bạn phải thêm địa chỉ",
 			"avatar": "Bạn phải thêm ảnh đại diện",
-			"city": "Bạn phải nhập thành phố",
-			"country": "Bạn phải nhập quốc gia",
-			"email": "Bạn phải nhập địa chỉ email",
-			"legalName": "Bạn phải nhập tên pháp lý",
-			"name": "Bạn phải nhập tên",
-			"postalCode": "Bạn phải nhập mã bưu chính"
+			"city": "Bạn phải thêm thành phố",
+			"country": "Bạn phải thêm quốc gia",
+			"email": "Bạn phải thêm địa chỉ email",
+			"legalName": "Bạn phải thêm tên pháp lý",
+			"name": "Bạn phải thêm tên",
+			"postalCode": "Bạn phải thêm mã bưu chính"
 		},
 		"label": {
 			"account": "Tài khoản",
@@ -196,7 +198,7 @@
 			"postalCode": "Mã bưu chính",
 			"private": "Riêng tư",
 			"public": "Công khai",
-			"vatNumber": "Mã số thuế"
+			"vatNumber": "Mã số thuế GTGT"
 		}
 	}
 }

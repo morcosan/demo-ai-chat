@@ -3,12 +3,13 @@
 		"action": {
 			"back": "Takaisin",
 			"backToHome": "Takaisin etusivulle",
-			"changeLanguage": "Vaihda kieltä",
+			"changeLanguage": "Vaihda kieli",
 			"close": "Sulje",
-			"collapse": "Pienennä",
+			"collapse": "Supista",
 			"copy": "Kopioi",
 			"delete": "Poista",
 			"deselectAll": "Poista kaikki valinnat",
+			"download": "Lataa",
 			"expand": "Laajenna",
 			"goToUrl": "Siirry {url}",
 			"hidePanel": "Piilota paneeli",
@@ -28,7 +29,7 @@
 		"error": {
 			"noChanges": "Ei muutoksia",
 			"nothingFound": "Ei tuloksia haulle \"{search}\"",
-			"unsent": "Lähettämättä"
+			"unsent": "Lähettämätön"
 		},
 		"label": {
 			"apiDocs": "API-dokumentaatio",
@@ -43,7 +44,7 @@
 			"designSystem": "Suunnittelujärjestelmä",
 			"errors": "Virheet",
 			"europe": "Eurooppa",
-			"githubRepo": "GitHub-repo",
+			"githubRepo": "GitHub-repositorio",
 			"language": "Kieli",
 			"levelHigh": "Korkea",
 			"levelLow": "Matala",
@@ -60,7 +61,7 @@
 			"result": "Tulos",
 			"settings": "Asetukset",
 			"uiLibrary": "Käyttöliittymäkirjasto",
-			"uiTheme": "Käyttöliittymäteema"
+			"uiTheme": "Käyttöliittymän teema"
 		},
 		"placeholder": {
 			"search": "Hae..."
@@ -88,12 +89,12 @@
 			"deleteAgent": "Poista agentti",
 			"deleteSelectedChats": "Poista valitut keskustelut",
 			"deselectChat": "Poista keskustelun valinta",
+			"downloadCode": "Lataa koodi",
 			"manageAgents": "Hallitse agentteja",
 			"manageChats": "Hallitse keskusteluja",
 			"openChat": "Avaa keskustelu",
-			"openSubchat_one": "Avaa alikeskustelu ({count} viesti)",
-			"openSubchat_other": "Avaa alikeskustelu ({count} viestiä)",
 			"openSubchat_zero": "Luo alikeskustelu",
+			"openSubchat_other": "Avaa alikeskustelu ({count} viestiä)",
 			"previewCode": "Esikatsele koodi",
 			"searchChats": "Hae keskusteluja",
 			"selectChat": "Valitse keskustelu",
@@ -109,16 +110,16 @@
 			"chatgpt4o": "Paras malli OpenAI:lta",
 			"chatgpt4oMini": "Edullisin malli OpenAI:lta",
 			"chromeGPT": "Sisäänrakennettu Chrome-selaimeen",
-			"claude35Haiku": "Edullisin malli Anthropicilta",
-			"claude35Sonnet": "Paras malli Anthropicilta",
+			"claude35Haiku": "Edullisin malli Anthropic:lta",
+			"claude35Sonnet": "Paras malli Anthropic:lta",
 			"loremIpsumGPT": "Älykkäin malli",
-			"rammusGPT": "Paras tunnetuki"
+			"rammusGPT": "Paras emotionaalinen tuki"
 		},
 		"error": {
 			"agentAvatar": "Sinun täytyy lisätä profiilikuva agentille",
 			"agentName": "Sinun täytyy lisätä nimi agentille",
 			"emptyMessage": "Viestisi on tyhjä",
-			"failedApiKey": "API-avaimessasi on ongelma",
+			"failedApiKey": "API-avaimesi kanssa on ongelma",
 			"failedMessage": "Viestisi lähettämisessä oli ongelma"
 		},
 		"label": {
@@ -140,9 +141,9 @@
 			"urlPreview": "URL-esikatselu",
 			"xMessages_one": "1 viesti",
 			"xMessages_other": "{count} viestiä",
+			"xSearchResults_zero": "Ei hakutuloksia",
 			"xSearchResults_one": "{count} hakutulos",
 			"xSearchResults_other": "{count} hakutulosta",
-			"xSearchResults_zero": "Ei hakutuloksia",
 			"xSelectedMessages_one": "1 viesti valittu",
 			"xSelectedMessages_other": "{count} viestiä valittu"
 		},
@@ -166,7 +167,7 @@
 			"deletingAgent": "Tämä agentti poistetaan pysyvästi",
 			"deletingChats": "Nämä keskustelut poistetaan pysyvästi",
 			"invalidGpt": "Virheellinen GPT",
-			"missingApiKey": "Sinun täytyy määrittää {name} API-avaimesi"
+			"missingApiKey": "Sinun täytyy määrittää {name} API-avain"
 		}
 	},
 	"userSettings": {

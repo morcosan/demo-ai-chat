@@ -8,19 +8,17 @@ export enum AiChatPreviewSource {
 
 export interface Store {
 	hasPreview: boolean
-	previewCode: string | null
-	previewLang: string | null
+	previewMarkdown: string | null
 	previewSource: AiChatPreviewSource
 	previewUrl: string | null
 	closePreview(): void
-	openCodePreview(code: string, lang: string, source: AiChatPreviewSource): void
+	openCodePreview(markdown: string, source: AiChatPreviewSource): void
 	openUrlPreview(url: string, source: AiChatPreviewSource): void
 }
 
 export const PreviewContext = createContext<Store>({
 	hasPreview: false,
-	previewCode: null,
-	previewLang: null,
+	previewMarkdown: null,
 	previewSource: AiChatPreviewSource.NONE,
 	previewUrl: null,
 	closePreview: () => {},

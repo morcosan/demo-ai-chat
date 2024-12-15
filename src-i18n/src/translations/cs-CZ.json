@@ -8,7 +8,8 @@
 			"collapse": "Sbalit",
 			"copy": "Kopírovat",
 			"delete": "Smazat",
-			"deselectAll": "Zrušit výběr všech",
+			"deselectAll": "Odznačit vše",
+			"download": "Stáhnout",
 			"expand": "Rozbalit",
 			"goToUrl": "Přejít na {url}",
 			"hidePanel": "Skrýt panel",
@@ -26,12 +27,12 @@
 			"signOut": "Odhlásit se"
 		},
 		"error": {
-			"noChanges": "Žádné změny",
+			"noChanges": "Nejsou žádné změny",
 			"nothingFound": "Pro \"{search}\" nebylo nic nalezeno",
 			"unsent": "Neodesláno"
 		},
 		"label": {
-			"apiDocs": "API Dokumentace",
+			"apiDocs": "API dokumentace",
 			"asia": "Asie",
 			"avatar": "Avatar",
 			"code": "Kód",
@@ -40,10 +41,10 @@
 			"darkTheme": "Tmavý",
 			"default": "Výchozí",
 			"description": "Popis",
-			"designSystem": "Design Systém",
+			"designSystem": "Designový systém",
 			"errors": "Chyby",
 			"europe": "Evropa",
-			"githubRepo": "GitHub Repozitář",
+			"githubRepo": "GitHub repozitář",
 			"language": "Jazyk",
 			"levelHigh": "Vysoká",
 			"levelLow": "Nízká",
@@ -59,8 +60,8 @@
 			"requiredField": "(Povinné)",
 			"result": "Výsledek",
 			"settings": "Nastavení",
-			"uiLibrary": "UI Knihovna",
-			"uiTheme": "UI Motiv"
+			"uiLibrary": "UI knihovna",
+			"uiTheme": "UI motiv"
 		},
 		"placeholder": {
 			"search": "Hledat..."
@@ -76,7 +77,7 @@
 	},
 	"aiChat": {
 		"action": {
-			"backToSubchats": "Zpět na subchaty",
+			"backToSubchats": "Zpět na podchaty",
 			"closePreview": "Zavřít náhled",
 			"configureAgent": "Konfigurovat agenta",
 			"confirmDeleteAgent": "Potvrdit smazání agenta",
@@ -87,25 +88,26 @@
 			"createAgent": "Vytvořit agenta",
 			"deleteAgent": "Smazat agenta",
 			"deleteSelectedChats": "Smazat vybrané chaty",
-			"deselectChat": "Zrušit výběr chatu",
+			"deselectChat": "Odznačit chat",
+			"downloadCode": "Stáhnout kód",
 			"manageAgents": "Spravovat agenty",
 			"manageChats": "Spravovat chaty",
 			"openChat": "Otevřít chat",
-			"openSubchat_one": "Otevřít subchat ({count} zpráva)",
-			"openSubchat_few": "Otevřít subchat ({count} zprávy)",
-			"openSubchat_other": "Otevřít subchat ({count} zpráv)",
-			"openSubchat_zero": "Vytvořit subchat",
+			"openSubchat_zero": "Vytvořit podchat",
+			"openSubchat_one": "Otevřít podchat ({count} zpráva)",
+			"openSubchat_few": "Otevřít podchat ({count} zprávy)",
+			"openSubchat_many": "Otevřít podchat ({count} zpráv)",
 			"previewCode": "Náhled kódu",
 			"searchChats": "Hledat chaty",
 			"selectChat": "Vybrat chat",
 			"sendMessage": "Odeslat zprávu",
 			"showMoreAgents": "Zobrazit více agentů",
 			"showMoreChats": "Zobrazit více chatů",
-			"showSubchats": "Zobrazit subchaty ({count})",
+			"showSubchats": "Zobrazit podchaty ({count})",
 			"startNewChat": "Začít novou konverzaci",
 			"startSearching_one": "Zadejte alespoň {count} znak",
 			"startSearching_few": "Zadejte alespoň {count} znaky",
-			"startSearching_other": "Zadejte alespoň {count} znaků"
+			"startSearching_many": "Zadejte alespoň {count} znaků"
 		},
 		"description": {
 			"chatgpt4o": "Nejlepší model od OpenAI",
@@ -114,14 +116,14 @@
 			"claude35Haiku": "Nejlevnější model od Anthropic",
 			"claude35Sonnet": "Nejlepší model od Anthropic",
 			"loremIpsumGPT": "Nejinteligentnější model",
-			"rammusGPT": "Nejlepší emoční podpora"
+			"rammusGPT": "Nejlepší emocionální podpora"
 		},
 		"error": {
 			"agentAvatar": "Musíte přidat avatar pro agenta",
 			"agentName": "Musíte přidat jméno pro agenta",
 			"emptyMessage": "Vaše zpráva je prázdná",
-			"failedApiKey": "Vyskytl se problém s vaším API klíčem",
-			"failedMessage": "Vyskytl se problém při doručování vaší zprávy"
+			"failedApiKey": "Nastal problém s Vaším API klíčem",
+			"failedMessage": "Nastal problém s doručením Vaší zprávy"
 		},
 		"label": {
 			"agents": "Agenti",
@@ -135,33 +137,33 @@
 			"newChat": "Nový chat",
 			"newMessage": "Nová zpráva",
 			"noChats": "Žádné chaty",
-			"noSubchats": "Žádné subchaty",
+			"noSubchats": "Žádné podchaty",
 			"selectedAgent": "Vybraný agent",
 			"selectedValue": "Vybraná hodnota",
-			"subchats": "Subchaty",
+			"subchats": "Podchaty",
 			"urlPreview": "Náhled URL",
-			"xMessages_one": "{count} zpráva",
+			"xMessages_one": "1 zpráva",
 			"xMessages_few": "{count} zprávy",
-			"xMessages_other": "{count} zpráv",
-			"xSearchResults_one": "{count} výsledek",
-			"xSearchResults_few": "{count} výsledky",
-			"xSearchResults_other": "{count} výsledků",
-			"xSearchResults_zero": "Žádné výsledky",
-			"xSelectedMessages_one": "{count} vybraná zpráva",
-			"xSelectedMessages_few": "{count} vybrané zprávy",
-			"xSelectedMessages_other": "{count} vybraných zpráv"
+			"xMessages_many": "{count} zpráv",
+			"xSearchResults_zero": "Žádné výsledky vyhledávání",
+			"xSearchResults_one": "{count} výsledek vyhledávání",
+			"xSearchResults_few": "{count} výsledky vyhledávání",
+			"xSearchResults_many": "{count} výsledků vyhledávání",
+			"xSelectedMessages_one": "1 zpráva vybrána",
+			"xSelectedMessages_few": "{count} zprávy vybrány",
+			"xSelectedMessages_many": "{count} zpráv vybráno"
 		},
 		"placeholder": {
 			"newMessage": "Mluvte s {name}...",
-			"rename": "Automaticky vygenerovat nový název..."
+			"rename": "Vygenerovat nový název automaticky..."
 		},
 		"state": {
 			"loadingAgents": "Načítání agentů...",
 			"loadingChats": "Načítání chatů...",
-			"loadingGPTs": "Načítání GPT...",
+			"loadingGPTs": "Načítání GPTs...",
 			"loadingMessages": "Načítání zpráv...",
 			"loadingPreviousMessages": "Načítání předchozích zpráv...",
-			"loadingSubchats": "Načítání subchatů...",
+			"loadingSubchats": "Načítání podchatů...",
 			"renamingChat": "Přejmenování chatu...",
 			"thinking": "Přemýšlení..."
 		},
@@ -171,7 +173,7 @@
 			"deletingAgent": "Tento agent bude trvale smazán",
 			"deletingChats": "Tyto chaty budou trvale smazány",
 			"invalidGpt": "Neplatný GPT",
-			"missingApiKey": "Musíte nakonfigurovat váš {name} API klíč"
+			"missingApiKey": "Musíte nakonfigurovat Váš {name} API klíč"
 		}
 	},
 	"userSettings": {
@@ -181,12 +183,12 @@
 		},
 		"error": {
 			"address": "Musíte přidat adresu",
-			"avatar": "Musíte přidat váš avatar",
+			"avatar": "Musíte přidat Váš avatar",
 			"city": "Musíte přidat město",
 			"country": "Musíte přidat zemi",
-			"email": "Musíte přidat vaši e-mailovou adresu",
+			"email": "Musíte přidat Vaši emailovou adresu",
 			"legalName": "Musíte přidat právní název",
-			"name": "Musíte přidat vaše jméno",
+			"name": "Musíte přidat Vaše jméno",
 			"postalCode": "Musíte přidat PSČ"
 		},
 		"label": {
@@ -196,7 +198,7 @@
 			"billing": "Fakturace",
 			"city": "Město",
 			"country": "Země",
-			"email": "E-mailová adresa",
+			"email": "Emailová adresa",
 			"legalName": "Právní název",
 			"phone": "Telefonní číslo",
 			"postalCode": "PSČ",

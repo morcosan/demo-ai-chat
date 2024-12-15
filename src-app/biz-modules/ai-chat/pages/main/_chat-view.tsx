@@ -55,7 +55,7 @@ export const ChatView = () => {
 
 	const onRetryMessage = () => postChatMessage(sentText, sentAgentId)
 
-	const onPreviewCode = (code: string, lang: string) => openCodePreview(code, lang, AiChatPreviewSource.CHAT)
+	const onPreviewCode = (markdown: string) => openCodePreview(markdown, AiChatPreviewSource.CHAT)
 	const onPreviewUrl = (url: string) => openUrlPreview(url, AiChatPreviewSource.CHAT)
 
 	const onScroll = debounce((event: UIEvent) => {

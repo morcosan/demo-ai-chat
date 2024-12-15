@@ -3,12 +3,13 @@
 		"action": {
 			"back": "Retour",
 			"backToHome": "Retour à l'accueil",
-			"changeLanguage": "Changer de langue",
+			"changeLanguage": "Changer la langue",
 			"close": "Fermer",
 			"collapse": "Réduire",
 			"copy": "Copier",
 			"delete": "Supprimer",
 			"deselectAll": "Tout désélectionner",
+			"download": "Télécharger",
 			"expand": "Développer",
 			"goToUrl": "Aller à {url}",
 			"hidePanel": "Masquer le panneau",
@@ -40,7 +41,7 @@
 			"darkTheme": "Sombre",
 			"default": "Par défaut",
 			"description": "Description",
-			"designSystem": "Design System",
+			"designSystem": "Système de design",
 			"errors": "Erreurs",
 			"europe": "Europe",
 			"githubRepo": "Dépôt GitHub",
@@ -54,7 +55,7 @@
 			"name": "Nom",
 			"navigationBar": "Barre de navigation",
 			"navigationMenu": "Menu de navigation",
-			"optionalField": "(Facultatif)",
+			"optionalField": "(Optionnel)",
 			"quickSettings": "Paramètres rapides",
 			"requiredField": "(Obligatoire)",
 			"result": "Résultat",
@@ -88,12 +89,13 @@
 			"deleteAgent": "Supprimer l'agent",
 			"deleteSelectedChats": "Supprimer les conversations sélectionnées",
 			"deselectChat": "Désélectionner la conversation",
+			"downloadCode": "Télécharger le code",
 			"manageAgents": "Gérer les agents",
 			"manageChats": "Gérer les conversations",
 			"openChat": "Ouvrir la conversation",
+			"openSubchat_zero": "Créer une sous-conversation",
 			"openSubchat_one": "Ouvrir la sous-conversation ({count} message)",
 			"openSubchat_other": "Ouvrir la sous-conversation ({count} messages)",
-			"openSubchat_zero": "Créer une sous-conversation",
 			"previewCode": "Aperçu du code",
 			"searchChats": "Rechercher des conversations",
 			"selectChat": "Sélectionner la conversation",
@@ -107,9 +109,9 @@
 		},
 		"description": {
 			"chatgpt4o": "Meilleur modèle d'OpenAI",
-			"chatgpt4oMini": "Modèle le moins cher d'OpenAI",
+			"chatgpt4oMini": "Modèle le plus économique d'OpenAI",
 			"chromeGPT": "Intégré au navigateur Chrome",
-			"claude35Haiku": "Modèle le moins cher d'Anthropic",
+			"claude35Haiku": "Modèle le plus économique d'Anthropic",
 			"claude35Sonnet": "Meilleur modèle d'Anthropic",
 			"loremIpsumGPT": "Modèle le plus intelligent",
 			"rammusGPT": "Meilleur support émotionnel"
@@ -138,16 +140,18 @@
 			"selectedValue": "Valeur sélectionnée",
 			"subchats": "Sous-conversations",
 			"urlPreview": "Aperçu de l'URL",
+			"xMessages_zero": "Aucun message",
 			"xMessages_one": "1 message",
 			"xMessages_other": "{count} messages",
-			"xSearchResults_one": "{count} résultat de recherche",
-			"xSearchResults_other": "{count} résultats de recherche",
-			"xSearchResults_zero": "Aucun résultat de recherche",
+			"xSearchResults_zero": "Aucun résultat",
+			"xSearchResults_one": "{count} résultat",
+			"xSearchResults_other": "{count} résultats",
+			"xSelectedMessages_zero": "Aucun message sélectionné",
 			"xSelectedMessages_one": "1 message sélectionné",
 			"xSelectedMessages_other": "{count} messages sélectionnés"
 		},
 		"placeholder": {
-			"newMessage": "Parler à {name}...",
+			"newMessage": "Parlez à {name}...",
 			"rename": "Générer un nouveau nom automatiquement..."
 		},
 		"state": {
@@ -179,7 +183,7 @@
 			"avatar": "Vous devez ajouter votre avatar",
 			"city": "Vous devez ajouter la ville",
 			"country": "Vous devez ajouter le pays",
-			"email": "Vous devez ajouter votre adresse e-mail",
+			"email": "Vous devez ajouter votre adresse email",
 			"legalName": "Vous devez ajouter le nom légal",
 			"name": "Vous devez ajouter votre nom",
 			"postalCode": "Vous devez ajouter le code postal"
@@ -191,13 +195,13 @@
 			"billing": "Facturation",
 			"city": "Ville",
 			"country": "Pays",
-			"email": "Adresse e-mail",
+			"email": "Adresse email",
 			"legalName": "Nom légal",
 			"phone": "Numéro de téléphone",
 			"postalCode": "Code postal",
 			"private": "Privé",
 			"public": "Public",
-			"vatNumber": "TVA"
+			"vatNumber": "Numéro de TVA"
 		}
 	}
 }

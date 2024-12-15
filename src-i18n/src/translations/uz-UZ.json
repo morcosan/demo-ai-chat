@@ -8,7 +8,8 @@
 			"collapse": "Yig'ish",
 			"copy": "Nusxalash",
 			"delete": "O'chirish",
-			"deselectAll": "Tanlovni bekor qilish",
+			"deselectAll": "Barchasini bekor qilish",
+			"download": "Yuklab olish",
 			"expand": "Kengaytirish",
 			"goToUrl": "{url}ga o'tish",
 			"hidePanel": "Panelni yashirish",
@@ -21,13 +22,13 @@
 			"saveChanges": "O'zgarishlarni saqlash",
 			"search": "Qidirish",
 			"searchMore": "Ko'proq natijalarni ko'rsatish",
-			"selectAll": "Hammasini tanlash",
+			"selectAll": "Barchasini tanlash",
 			"showPanel": "Panelni ko'rsatish",
 			"signOut": "Chiqish"
 		},
 		"error": {
 			"noChanges": "O'zgarishlar yo'q",
-			"nothingFound": "\"{search}\" bo'yicha hech narsa topilmadi",
+			"nothingFound": "\"{search}\" uchun hech narsa topilmadi",
 			"unsent": "Yuborilmagan"
 		},
 		"label": {
@@ -43,7 +44,7 @@
 			"designSystem": "Dizayn Tizimi",
 			"errors": "Xatolar",
 			"europe": "Yevropa",
-			"githubRepo": "GitHub Ombori",
+			"githubRepo": "GitHub Repozitoriyasi",
 			"language": "Til",
 			"levelHigh": "Yuqori",
 			"levelLow": "Past",
@@ -76,7 +77,7 @@
 	},
 	"aiChat": {
 		"action": {
-			"backToSubchats": "Sub-chatlarga qaytish",
+			"backToSubchats": "Subchatlarga qaytish",
 			"closePreview": "Ko'rib chiqishni yopish",
 			"configureAgent": "Agentni sozlash",
 			"confirmDeleteAgent": "Agentni o'chirishni tasdiqlash",
@@ -87,22 +88,24 @@
 			"createAgent": "Agent yaratish",
 			"deleteAgent": "Agentni o'chirish",
 			"deleteSelectedChats": "Tanlangan chatlarni o'chirish",
-			"deselectChat": "Chatni tanlovdan chiqarish",
+			"deselectChat": "Chatni bekor qilish",
+			"downloadCode": "Kodni yuklab olish",
 			"manageAgents": "Agentlarni boshqarish",
 			"manageChats": "Chatlarni boshqarish",
 			"openChat": "Chatni ochish",
-			"openSubchat_zero": "Sub-chat yaratish",
-			"openSubchat_other": "Sub-chatni ochish ({count} ta xabar)",
+			"openSubchat_one": "Subchatni ochish ({count} xabar)",
+			"openSubchat_other": "Subchatni ochish ({count} xabar)",
+			"openSubchat_zero": "Subchat yaratish",
 			"previewCode": "Kodni ko'rib chiqish",
 			"searchChats": "Chatlarni qidirish",
 			"selectChat": "Chatni tanlash",
 			"sendMessage": "Xabar yuborish",
 			"showMoreAgents": "Ko'proq agentlarni ko'rsatish",
 			"showMoreChats": "Ko'proq chatlarni ko'rsatish",
-			"showSubchats": "Sub-chatlarni ko'rsatish ({count})",
-			"startNewChat": "Yangi suhbat boshlash",
-			"startSearching_one": "Kamida {count} ta belgi kiriting",
-			"startSearching_other": "Kamida {count} ta belgi kiriting"
+			"showSubchats": "Subchatlarni ko'rsatish ({count})",
+			"startNewChat": "Yangi suhbatni boshlash",
+			"startSearching_one": "Kamida {count} belgi kiriting",
+			"startSearching_other": "Kamida {count} belgi kiriting"
 		},
 		"description": {
 			"chatgpt4o": "OpenAI'ning eng yaxshi modeli",
@@ -111,7 +114,7 @@
 			"claude35Haiku": "Anthropic'ning eng arzon modeli",
 			"claude35Sonnet": "Anthropic'ning eng yaxshi modeli",
 			"loremIpsumGPT": "Eng aqlli model",
-			"rammusGPT": "Eng yaxshi ruhiy qo'llab-quvvatlash"
+			"rammusGPT": "Eng yaxshi emotsional yordam"
 		},
 		"error": {
 			"agentAvatar": "Agent uchun avatar qo'shishingiz kerak",
@@ -124,7 +127,7 @@
 			"agents": "Agentlar",
 			"chatTitle": "Chat sarlavhasi",
 			"chats": "Chatlar",
-			"codePreview": "Kod ko'rinishi",
+			"codePreview": "Kod ko'rishi",
 			"creativityLevel": "Ijodkorlik darajasi",
 			"customInstructions": "Maxsus ko'rsatmalar",
 			"gptModel": "GPT modeli",
@@ -132,16 +135,16 @@
 			"newChat": "Yangi chat",
 			"newMessage": "Yangi xabar",
 			"noChats": "Chatlar yo'q",
-			"noSubchats": "Sub-chatlar yo'q",
+			"noSubchats": "Subchatlar yo'q",
 			"selectedAgent": "Tanlangan agent",
 			"selectedValue": "Tanlangan qiymat",
-			"subchats": "Sub-chatlar",
+			"subchats": "Subchatlar",
 			"urlPreview": "URL ko'rinishi",
-			"xMessages_one": "1 ta xabar",
-			"xMessages_other": "{count} ta xabar",
+			"xMessages_one": "{count} xabar",
+			"xMessages_other": "{count} xabar",
+			"xSearchResults_one": "{count} qidiruv natijasi",
+			"xSearchResults_other": "{count} qidiruv natijasi",
 			"xSearchResults_zero": "Qidiruv natijalari yo'q",
-			"xSearchResults_one": "{count} ta qidiruv natijasi",
-			"xSearchResults_other": "{count} ta qidiruv natijasi",
 			"xSelectedMessages_one": "1 ta xabar tanlandi",
 			"xSelectedMessages_other": "{count} ta xabar tanlandi"
 		},
@@ -155,31 +158,31 @@
 			"loadingGPTs": "GPTlar yuklanmoqda...",
 			"loadingMessages": "Xabarlar yuklanmoqda...",
 			"loadingPreviousMessages": "Oldingi xabarlar yuklanmoqda...",
-			"loadingSubchats": "Sub-chatlar yuklanmoqda...",
+			"loadingSubchats": "Subchatlar yuklanmoqda...",
 			"renamingChat": "Chat qayta nomlanmoqda...",
 			"thinking": "O'ylanmoqda..."
 		},
 		"warning": {
-			"chromeGptInsideChrome": "Chrome GPT uchun quyidagi tajribaviy sozlamalar kerak:",
+			"chromeGptInsideChrome": "Chrome GPT uchun ushbu tajribaviy sozlamalar kerak:",
 			"chromeGptOutsideChrome": "Chrome GPT faqat Chrome brauzerida mavjud",
 			"deletingAgent": "Bu agent butunlay o'chiriladi",
 			"deletingChats": "Bu chatlar butunlay o'chiriladi",
-			"invalidGpt": "Yaroqsiz GPT",
-			"missingApiKey": "Siz {name} API kalitingizni sozlashingiz kerak"
+			"invalidGpt": "Noto'g'ri GPT",
+			"missingApiKey": "{name} API kalitingizni sozlashingiz kerak"
 		}
 	},
 	"userSettings": {
 		"action": {
 			"manageAccount": "Hisobni boshqarish",
-			"manageBilling": "To'lovlarni boshqarish"
+			"manageBilling": "To'lovni boshqarish"
 		},
 		"error": {
 			"address": "Manzilni kiritishingiz kerak",
-			"avatar": "Avatarni qo'shishingiz kerak",
+			"avatar": "Avataringizni kiritishingiz kerak",
 			"city": "Shaharni kiritishingiz kerak",
 			"country": "Mamlakatni kiritishingiz kerak",
-			"email": "Email manzilingizni kiritishingiz kerak",
-			"legalName": "Yuridik nomni kiritishingiz kerak",
+			"email": "Elektron pochtangizni kiritishingiz kerak",
+			"legalName": "Huquqiy nomni kiritishingiz kerak",
 			"name": "Ismingizni kiritishingiz kerak",
 			"postalCode": "Pochta indeksini kiritishingiz kerak"
 		},
@@ -187,16 +190,16 @@
 			"account": "Hisob",
 			"address": "Manzil",
 			"apiKey": "{name} API kaliti",
-			"billing": "To'lovlar",
+			"billing": "To'lov",
 			"city": "Shahar",
 			"country": "Mamlakat",
-			"email": "Email manzil",
-			"legalName": "Yuridik nom",
+			"email": "Elektron pochta",
+			"legalName": "Huquqiy nom",
 			"phone": "Telefon raqami",
 			"postalCode": "Pochta indeksi",
 			"private": "Shaxsiy",
 			"public": "Ommaviy",
-			"vatNumber": "STIR"
+			"vatNumber": "QQS raqami"
 		}
 	}
 }

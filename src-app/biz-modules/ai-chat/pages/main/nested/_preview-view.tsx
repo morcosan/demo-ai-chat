@@ -1,7 +1,6 @@
 import { MarkdownCode } from '@app/library/release'
 import { Button, IconButton, NewTabSvg, ReloadSvg } from '@ds/release'
-import { formatCode } from '@utils/release'
-import hljs from 'highlight.js'
+import { MARKDOWN_REGEX } from '@utils/release'
 import { IframeHTMLAttributes, useEffect, useState } from 'react'
 import { PanelBase } from '../../../components/panel-base'
 import { AiChatPreviewSource, AiChatView, useAiChatLayout, useAiChatPreview } from '../../../state'
@@ -14,15 +13,17 @@ interface Props extends ReactProps {
 
 export const PreviewView = ({ isChatView }: Props) => {
 	const { activeView } = useAiChatLayout()
-	const { previewUrl, previewCode, previewLang, previewSource, closePreview } = useAiChatPreview()
+	const { previewUrl, previewMarkdown, previewSource, closePreview } = useAiChatPreview()
 	const [isVisible, setIsVisible] = useState(false)
 	const [iframeKey, setIframeKey] = useState(0)
 	const [showsResult, setShowsResult] = useState(false)
-	const [codeHtml, setCodeHtml] = useState('')
-	const [codeError, setCodeError] = useState('')
+
+	const codeMatch = previewMarkdown?.trim().match(MARKDOWN_REGEX) || []
+	const codeLang = (codeMatch[1] || '').split(' ')[0]
+	const codeSrc = codeMatch[2] || ''
 
 	const isUrl = Boolean(previewUrl)
-	const isCode = Boolean(previewCode && previewLang)
+	const isCode = Boolean(previewMarkdown)
 	const isSourceChat = previewSource === AiChatPreviewSource.CHAT
 	const isSourceSubchat = previewSource === AiChatPreviewSource.SUBCHAT
 	const isValidView = Boolean(
@@ -30,7 +31,7 @@ export const PreviewView = ({ isChatView }: Props) => {
 	)
 
 	const showsPreview = Boolean(isUrl || isCode) && isValidView
-	const showsCodeResult = isCode && RESULT_LANGUAGES.includes(previewLang || '')
+	const showsCodeResult = isCode && RESULT_LANGUAGES.includes(codeLang)
 	const showsToolbar = isUrl || (isCode && showsCodeResult)
 	const showsReload = isUrl || (isCode && showsResult)
 
@@ -46,21 +47,9 @@ export const PreviewView = ({ isChatView }: Props) => {
 		className: cx('mb-xs-2 w-full flex-1 rounded-sm border border-color-border-default bg-color-white'),
 	}
 
-	const updateCodeHtml = async () => {
-		if (!previewCode || !previewLang) return setCodeHtml('')
-
-		const format = await formatCode(previewCode, previewLang)
-		const lang = hljs.getLanguage(previewLang) ? previewLang : 'plaintext'
-		const html = hljs.highlight(format.code, { language: lang }).value
-
-		setCodeHtml(html)
-		setCodeError(format.error ? String(format.error) : '')
-	}
-
 	useEffect(() => {
 		setShowsResult(false)
-		updateCodeHtml()
-	}, [previewCode, previewLang])
+	}, [previewMarkdown])
 
 	useEffect(() => {
 		showsPreview ? setIsVisible(true) : wait(300).then(() => setIsVisible(false))
@@ -148,20 +137,12 @@ export const PreviewView = ({ isChatView }: Props) => {
 							<iframe
 								{...iframeProps}
 								key={iframeKey}
-								srcDoc={previewCode || ''}
+								srcDoc={codeSrc || ''}
 								sandbox="allow-scripts allow-same-origin allow-downloads allow-presentation"
 							/>
 						) : (
 							<div className="ds-markdown mb-xs-2 min-h-0 flex-1">
-								<MarkdownCode
-									html={codeHtml}
-									raw={previewCode!}
-									lang={previewLang!}
-									error={codeError}
-									fullHeight
-									noCollapse
-									noPreview
-								/>
+								<MarkdownCode markdown={previewMarkdown!} fullHeight noCollapse noPreview />
 							</div>
 						))}
 				</div>

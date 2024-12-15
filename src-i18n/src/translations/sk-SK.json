@@ -2,13 +2,14 @@
 	"core": {
 		"action": {
 			"back": "Späť",
-			"backToHome": "Späť na domovskú stránku",
+			"backToHome": "Späť na hlavnú stránku",
 			"changeLanguage": "Zmeniť jazyk",
 			"close": "Zavrieť",
 			"collapse": "Zbaliť",
 			"copy": "Kopírovať",
-			"delete": "Vymazať",
-			"deselectAll": "Zrušiť všetky výbery",
+			"delete": "Odstrániť",
+			"deselectAll": "Zrušiť výber všetkého",
+			"download": "Stiahnuť",
 			"expand": "Rozbaliť",
 			"goToUrl": "Prejsť na {url}",
 			"hidePanel": "Skryť panel",
@@ -16,7 +17,7 @@
 			"preview": "Náhľad",
 			"reload": "Obnoviť",
 			"rename": "Premenovať",
-			"resizePanel": "Zmeniť veľkosť panelu",
+			"resizePanel": "Zmeniť veľkosť panela",
 			"retry": "Skúsiť znova",
 			"saveChanges": "Uložiť zmeny",
 			"search": "Hľadať",
@@ -26,7 +27,7 @@
 			"signOut": "Odhlásiť sa"
 		},
 		"error": {
-			"noChanges": "Nie sú žiadne zmeny",
+			"noChanges": "Žiadne zmeny",
 			"nothingFound": "Nič sa nenašlo pre \"{search}\"",
 			"unsent": "Neodoslané"
 		},
@@ -40,7 +41,7 @@
 			"darkTheme": "Tmavý",
 			"default": "Predvolené",
 			"description": "Popis",
-			"designSystem": "Dizajnový systém",
+			"designSystem": "Systém dizajnu",
 			"errors": "Chyby",
 			"europe": "Európa",
 			"githubRepo": "GitHub Repozitár",
@@ -66,8 +67,8 @@
 			"search": "Hľadať..."
 		},
 		"state": {
-			"dataSaved": "Vaše údaje sú uložené",
-			"deleting": "Vymazávanie...",
+			"dataSaved": "Vaše dáta sú uložené",
+			"deleting": "Odstraňovanie...",
 			"loading": "Načítavanie...",
 			"searching": "Vyhľadávanie...",
 			"sending": "Odosielanie...",
@@ -85,19 +86,19 @@
 			"copyCode": "Kopírovať kód",
 			"copyMessage": "Kopírovať správu",
 			"createAgent": "Vytvoriť agenta",
-			"deleteAgent": "Vymazať agenta",
-			"deleteSelectedChats": "Vymazať vybrané konverzácie",
+			"deleteAgent": "Odstrániť agenta",
+			"deleteSelectedChats": "Odstrániť vybrané konverzácie",
 			"deselectChat": "Zrušiť výber konverzácie",
+			"downloadCode": "Stiahnuť kód",
 			"manageAgents": "Spravovať agentov",
 			"manageChats": "Spravovať konverzácie",
 			"openChat": "Otvoriť konverzáciu",
-			"openSubchat_zero": "Vytvoriť podkonverzáciu",
-			"openSubchat_one": "Otvoriť podkonverzáciu (1 správa)",
+			"openSubchat_one": "Otvoriť podkonverzáciu ({count} správa)",
 			"openSubchat_few": "Otvoriť podkonverzáciu ({count} správy)",
-			"openSubchat_many": "Otvoriť podkonverzáciu ({count} správ)",
 			"openSubchat_other": "Otvoriť podkonverzáciu ({count} správ)",
+			"openSubchat_zero": "Vytvoriť podkonverzáciu",
 			"previewCode": "Náhľad kódu",
-			"searchChats": "Vyhľadávať v konverzáciách",
+			"searchChats": "Vyhľadať konverzácie",
 			"selectChat": "Vybrať konverzáciu",
 			"sendMessage": "Odoslať správu",
 			"showMoreAgents": "Zobraziť viac agentov",
@@ -106,13 +107,12 @@
 			"startNewChat": "Začať novú konverzáciu",
 			"startSearching_one": "Napíšte aspoň {count} znak",
 			"startSearching_few": "Napíšte aspoň {count} znaky",
-			"startSearching_many": "Napíšte aspoň {count} znakov",
 			"startSearching_other": "Napíšte aspoň {count} znakov"
 		},
 		"description": {
 			"chatgpt4o": "Najlepší model od OpenAI",
 			"chatgpt4oMini": "Najlacnejší model od OpenAI",
-			"chromeGPT": "Vstavaný v prehliadači Chrome",
+			"chromeGPT": "Integrovaný v prehliadači Chrome",
 			"claude35Haiku": "Najlacnejší model od Anthropic",
 			"claude35Sonnet": "Najlepší model od Anthropic",
 			"loremIpsumGPT": "Najinteligentnejší model",
@@ -144,20 +144,17 @@
 			"urlPreview": "Náhľad URL",
 			"xMessages_one": "1 správa",
 			"xMessages_few": "{count} správy",
-			"xMessages_many": "{count} správ",
 			"xMessages_other": "{count} správ",
-			"xSearchResults_zero": "Žiadne výsledky vyhľadávania",
 			"xSearchResults_one": "{count} výsledok vyhľadávania",
 			"xSearchResults_few": "{count} výsledky vyhľadávania",
-			"xSearchResults_many": "{count} výsledkov vyhľadávania",
 			"xSearchResults_other": "{count} výsledkov vyhľadávania",
+			"xSearchResults_zero": "Žiadne výsledky vyhľadávania",
 			"xSelectedMessages_one": "1 vybraná správa",
 			"xSelectedMessages_few": "{count} vybrané správy",
-			"xSelectedMessages_many": "{count} vybraných správ",
 			"xSelectedMessages_other": "{count} vybraných správ"
 		},
 		"placeholder": {
-			"newMessage": "Písať správu pre {name}...",
+			"newMessage": "Rozprávajte sa s {name}...",
 			"rename": "Vygenerovať nový názov automaticky..."
 		},
 		"state": {
@@ -173,10 +170,10 @@
 		"warning": {
 			"chromeGptInsideChrome": "Chrome GPT vyžaduje tieto experimentálne nastavenia:",
 			"chromeGptOutsideChrome": "Chrome GPT je dostupný len v prehliadači Chrome",
-			"deletingAgent": "Tento agent bude natrvalo vymazaný",
-			"deletingChats": "Tieto konverzácie budú natrvalo vymazané",
+			"deletingAgent": "Tento agent bude natrvalo odstránený",
+			"deletingChats": "Tieto konverzácie budú natrvalo odstránené",
 			"invalidGpt": "Neplatné GPT",
-			"missingApiKey": "Musíte nakonfigurovať váš {name} API kľúč"
+			"missingApiKey": "Musíte nakonfigurovať svoj {name} API kľúč"
 		}
 	},
 	"userSettings": {
@@ -186,12 +183,12 @@
 		},
 		"error": {
 			"address": "Musíte pridať adresu",
-			"avatar": "Musíte pridať váš avatar",
+			"avatar": "Musíte pridať svoj avatar",
 			"city": "Musíte pridať mesto",
 			"country": "Musíte pridať krajinu",
-			"email": "Musíte pridať vašu emailovú adresu",
+			"email": "Musíte pridať svoju emailovú adresu",
 			"legalName": "Musíte pridať právny názov",
-			"name": "Musíte pridať vaše meno",
+			"name": "Musíte pridať svoje meno",
 			"postalCode": "Musíte pridať PSČ"
 		},
 		"label": {

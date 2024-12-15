@@ -9,7 +9,8 @@
 			"copy": "Kopieren",
 			"delete": "Löschen",
 			"deselectAll": "Alle abwählen",
-			"expand": "Erweitern",
+			"download": "Herunterladen",
+			"expand": "Ausklappen",
 			"goToUrl": "Zu {url} gehen",
 			"hidePanel": "Panel ausblenden",
 			"openMenu": "Menü öffnen",
@@ -17,16 +18,16 @@
 			"reload": "Neu laden",
 			"rename": "Umbenennen",
 			"resizePanel": "Panel-Größe ändern",
-			"retry": "Wiederholen",
+			"retry": "Erneut versuchen",
 			"saveChanges": "Änderungen speichern",
 			"search": "Suchen",
 			"searchMore": "Weitere Ergebnisse anzeigen",
 			"selectAll": "Alle auswählen",
-			"showPanel": "Panel anzeigen",
+			"showPanel": "Panel einblenden",
 			"signOut": "Abmelden"
 		},
 		"error": {
-			"noChanges": "Es gibt keine Änderungen",
+			"noChanges": "Keine Änderungen vorhanden",
 			"nothingFound": "Nichts gefunden für \"{search}\"",
 			"unsent": "Nicht gesendet"
 		},
@@ -43,7 +44,7 @@
 			"designSystem": "Design-System",
 			"errors": "Fehler",
 			"europe": "Europa",
-			"githubRepo": "GitHub-Repository",
+			"githubRepo": "GitHub Repository",
 			"language": "Sprache",
 			"levelHigh": "Hoch",
 			"levelLow": "Niedrig",
@@ -55,6 +56,7 @@
 			"navigationBar": "Navigationsleiste",
 			"navigationMenu": "Navigationsmenü",
 			"optionalField": "(Optional)",
+			"quickSettings": "Schnelleinstellungen",
 			"requiredField": "(Erforderlich)",
 			"result": "Ergebnis",
 			"settings": "Einstellungen",
@@ -66,11 +68,11 @@
 		},
 		"state": {
 			"dataSaved": "Ihre Daten sind gespeichert",
-			"deleting": "Wird gelöscht...",
-			"loading": "Wird geladen...",
-			"searching": "Wird gesucht...",
-			"sending": "Wird gesendet...",
-			"updating": "Wird aktualisiert..."
+			"deleting": "Lösche...",
+			"loading": "Lade...",
+			"searching": "Suche...",
+			"sending": "Sende...",
+			"updating": "Aktualisiere..."
 		}
 	},
 	"aiChat": {
@@ -87,6 +89,7 @@
 			"deleteAgent": "Agent löschen",
 			"deleteSelectedChats": "Ausgewählte Chats löschen",
 			"deselectChat": "Chat abwählen",
+			"downloadCode": "Code herunterladen",
 			"manageAgents": "Agenten verwalten",
 			"manageChats": "Chats verwalten",
 			"openChat": "Chat öffnen",
@@ -100,14 +103,14 @@
 			"showMoreAgents": "Weitere Agenten anzeigen",
 			"showMoreChats": "Weitere Chats anzeigen",
 			"showSubchats": "Subchats anzeigen ({count})",
-			"startNewChat": "Neue Konversation starten",
+			"startNewChat": "Neue Unterhaltung beginnen",
 			"startSearching_one": "Mindestens {count} Zeichen eingeben",
 			"startSearching_other": "Mindestens {count} Zeichen eingeben"
 		},
 		"description": {
 			"chatgpt4o": "Bestes Modell von OpenAI",
 			"chatgpt4oMini": "Günstigstes Modell von OpenAI",
-			"chromeGPT": "In Chrome-Browser eingebettet",
+			"chromeGPT": "In Chrome-Browser integriert",
 			"claude35Haiku": "Günstigstes Modell von Anthropic",
 			"claude35Sonnet": "Bestes Modell von Anthropic",
 			"loremIpsumGPT": "Intelligentestes Modell",
@@ -139,25 +142,25 @@
 			"urlPreview": "URL-Vorschau",
 			"xMessages_one": "1 Nachricht",
 			"xMessages_other": "{count} Nachrichten",
+			"xSearchResults_zero": "Keine Suchergebnisse",
 			"xSearchResults_one": "{count} Suchergebnis",
 			"xSearchResults_other": "{count} Suchergebnisse",
-			"xSearchResults_zero": "Keine Suchergebnisse",
 			"xSelectedMessages_one": "1 Nachricht ausgewählt",
 			"xSelectedMessages_other": "{count} Nachrichten ausgewählt"
 		},
 		"placeholder": {
-			"newMessage": "Mit {name} sprechen...",
+			"newMessage": "Sprechen Sie mit {name}...",
 			"rename": "Automatisch einen neuen Namen generieren..."
 		},
 		"state": {
-			"loadingAgents": "Agenten werden geladen...",
-			"loadingChats": "Chats werden geladen...",
-			"loadingGPTs": "GPTs werden geladen...",
-			"loadingMessages": "Nachrichten werden geladen...",
-			"loadingPreviousMessages": "Vorherige Nachrichten werden geladen...",
-			"loadingSubchats": "Subchats werden geladen...",
-			"renamingChat": "Chat wird umbenannt...",
-			"thinking": "Denkt nach..."
+			"loadingAgents": "Lade Agenten...",
+			"loadingChats": "Lade Chats...",
+			"loadingGPTs": "Lade GPTs...",
+			"loadingMessages": "Lade Nachrichten...",
+			"loadingPreviousMessages": "Lade vorherige Nachrichten...",
+			"loadingSubchats": "Lade Subchats...",
+			"renamingChat": "Benenne Chat um...",
+			"thinking": "Denke nach..."
 		},
 		"warning": {
 			"chromeGptInsideChrome": "Chrome GPT benötigt diese experimentellen Einstellungen:",

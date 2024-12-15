@@ -9,6 +9,7 @@
 			"copy": "복사",
 			"delete": "삭제",
 			"deselectAll": "전체 선택 해제",
+			"download": "다운로드",
 			"expand": "펼치기",
 			"goToUrl": "{url}로 이동",
 			"hidePanel": "패널 숨기기",
@@ -20,7 +21,7 @@
 			"retry": "다시 시도",
 			"saveChanges": "변경사항 저장",
 			"search": "검색",
-			"searchMore": "더 많은 결과 표시",
+			"searchMore": "더 많은 결과 보기",
 			"selectAll": "전체 선택",
 			"showPanel": "패널 표시",
 			"signOut": "로그아웃"
@@ -36,8 +37,8 @@
 			"avatar": "아바타",
 			"code": "코드",
 			"copied": "복사됨",
-			"custom": "사용자 지정",
-			"darkTheme": "어두운 테마",
+			"custom": "사용자 정의",
+			"darkTheme": "다크",
 			"default": "기본값",
 			"description": "설명",
 			"designSystem": "디자인 시스템",
@@ -50,10 +51,10 @@
 			"levelMedium": "중간",
 			"levelVeryHigh": "매우 높음",
 			"levelVeryLow": "매우 낮음",
-			"lightTheme": "밝은 테마",
+			"lightTheme": "라이트",
 			"name": "이름",
-			"navigationBar": "네비게이션 바",
-			"navigationMenu": "네비게이션 메뉴",
+			"navigationBar": "내비게이션 바",
+			"navigationMenu": "내비게이션 메뉴",
 			"optionalField": "(선택사항)",
 			"quickSettings": "빠른 설정",
 			"requiredField": "(필수)",
@@ -88,20 +89,22 @@
 			"deleteAgent": "에이전트 삭제",
 			"deleteSelectedChats": "선택한 채팅 삭제",
 			"deselectChat": "채팅 선택 해제",
+			"downloadCode": "코드 다운로드",
 			"manageAgents": "에이전트 관리",
 			"manageChats": "채팅 관리",
 			"openChat": "채팅 열기",
-			"openSubchat_other": "서브챗 열기 ({count}개의 메시지)",
+			"openSubchat_other": "서브챗 열기 (메시지 {count}개)",
 			"openSubchat_zero": "서브챗 만들기",
 			"previewCode": "코드 미리보기",
 			"searchChats": "채팅 검색",
 			"selectChat": "채팅 선택",
 			"sendMessage": "메시지 보내기",
-			"showMoreAgents": "더 많은 에이전트 표시",
-			"showMoreChats": "더 많은 채팅 표시",
-			"showSubchats": "서브챗 표시 ({count}개)",
+			"showMoreAgents": "더 많은 에이전트 보기",
+			"showMoreChats": "더 많은 채팅 보기",
+			"showSubchats": "서브챗 보기 ({count}개)",
 			"startNewChat": "새 대화 시작",
-			"startSearching_other": "최소 {count}자 입력"
+			"startSearching_other": "최소 {count}자 입력",
+			"startSearching_one": "최소 {count}자 입력"
 		},
 		"description": {
 			"chatgpt4o": "OpenAI의 최고 모델",
@@ -136,13 +139,16 @@
 			"selectedValue": "선택된 값",
 			"subchats": "서브챗",
 			"urlPreview": "URL 미리보기",
-			"xMessages_other": "{count}개의 메시지",
+			"xMessages_one": "메시지 1개",
+			"xMessages_other": "메시지 {count}개",
 			"xSearchResults_zero": "검색 결과 없음",
-			"xSearchResults_other": "{count}개의 검색 결과",
-			"xSelectedMessages_other": "{count}개의 메시지 선택됨"
+			"xSearchResults_one": "검색 결과 {count}개",
+			"xSearchResults_other": "검색 결과 {count}개",
+			"xSelectedMessages_one": "메시지 1개 선택됨",
+			"xSelectedMessages_other": "메시지 {count}개 선택됨"
 		},
 		"placeholder": {
-			"newMessage": "{name}와(과) 대화하기...",
+			"newMessage": "{name}에게 메시지 보내기...",
 			"rename": "새 이름 자동 생성..."
 		},
 		"state": {
@@ -153,14 +159,14 @@
 			"loadingPreviousMessages": "이전 메시지 로딩 중...",
 			"loadingSubchats": "서브챗 로딩 중...",
 			"renamingChat": "채팅 이름 변경 중...",
-			"thinking": "생각하는 중..."
+			"thinking": "생각 중..."
 		},
 		"warning": {
-			"chromeGptInsideChrome": "Chrome GPT는 다음 실험적 설정이 필요합니다:",
+			"chromeGptInsideChrome": "Chrome GPT는 다음 실험 설정이 필요합니다:",
 			"chromeGptOutsideChrome": "Chrome GPT는 Chrome 브라우저에서만 사용 가능합니다",
 			"deletingAgent": "이 에이전트는 영구적으로 삭제됩니다",
 			"deletingChats": "이 채팅들은 영구적으로 삭제됩니다",
-			"invalidGpt": "유효하지 않은 GPT",
+			"invalidGpt": "잘못된 GPT",
 			"missingApiKey": "{name} API 키를 구성해야 합니다"
 		}
 	},
@@ -192,7 +198,7 @@
 			"postalCode": "우편번호",
 			"private": "비공개",
 			"public": "공개",
-			"vatNumber": "부가가치세 등록번호"
+			"vatNumber": "사업자등록번호"
 		}
 	}
 }

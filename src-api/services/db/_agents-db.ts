@@ -20,11 +20,9 @@ import {
 	randomText,
 	randomTrue,
 } from '@utils/release'
-import { ChatGPT4o } from '../gpt/chatgpt-4o'
-import { ChatGPT4oMini } from '../gpt/chatgpt-4o-mini'
+import { ChatGPT4o, ChatGPT4oMini } from '../gpt/chatgpt'
 import { ChromeGPT } from '../gpt/chrome-gpt'
-import { Claude35Haiku } from '../gpt/claude-3-5-haiku'
-import { Claude35Sonnet } from '../gpt/claude-3-5-sonnet'
+import { Claude35Haiku, Claude35Sonnet } from '../gpt/claude'
 import { LoremIpsumGPT } from '../gpt/lorem-ipsum-gpt'
 import { RammusGPT } from '../gpt/rammus-gpt'
 

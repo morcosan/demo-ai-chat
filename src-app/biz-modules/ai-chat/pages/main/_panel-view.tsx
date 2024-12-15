@@ -46,7 +46,7 @@ export const PanelView = (props: Props) => {
 
 	const hidePanel = () => !hasPreview && onHidePanel()
 
-	const onPreviewCode = (code: string, lang: string) => openCodePreview(code, lang, AiChatPreviewSource.SUBCHAT)
+	const onPreviewCode = (markdown: string) => openCodePreview(markdown, AiChatPreviewSource.SUBCHAT)
 	const onPreviewUrl = (url: string) => openUrlPreview(url, AiChatPreviewSource.SUBCHAT)
 
 	useEffect(() => {

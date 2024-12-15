@@ -11,7 +11,7 @@ interface Props {
 	subchatId?: number
 	isSubchat?: boolean
 	onClickRetry?(): void
-	onPreviewCode?(code: string, lang: string): void
+	onPreviewCode?(markdown: string): void
 	onPreviewUrl?(url: string): void
 }
 

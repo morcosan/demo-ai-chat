@@ -5,10 +5,11 @@
 			"backToHome": "Tilbage til forsiden",
 			"changeLanguage": "Skift sprog",
 			"close": "Luk",
-			"collapse": "Fold sammen",
+			"collapse": "Sammenfold",
 			"copy": "Kopiér",
 			"delete": "Slet",
 			"deselectAll": "Fravælg alle",
+			"download": "Download",
 			"expand": "Udvid",
 			"goToUrl": "Gå til {url}",
 			"hidePanel": "Skjul panel",
@@ -16,7 +17,7 @@
 			"preview": "Forhåndsvisning",
 			"reload": "Genindlæs",
 			"rename": "Omdøb",
-			"resizePanel": "Tilpas panel",
+			"resizePanel": "Tilpas panelstørrelse",
 			"retry": "Prøv igen",
 			"saveChanges": "Gem ændringer",
 			"search": "Søg",
@@ -31,7 +32,7 @@
 			"unsent": "Ikke sendt"
 		},
 		"label": {
-			"apiDocs": "API-dokumentation",
+			"apiDocs": "API dokumentation",
 			"asia": "Asien",
 			"avatar": "Avatar",
 			"code": "Kode",
@@ -43,7 +44,7 @@
 			"designSystem": "Designsystem",
 			"errors": "Fejl",
 			"europe": "Europa",
-			"githubRepo": "GitHub-depot",
+			"githubRepo": "GitHub repository",
 			"language": "Sprog",
 			"levelHigh": "Høj",
 			"levelLow": "Lav",
@@ -55,11 +56,12 @@
 			"navigationBar": "Navigationslinje",
 			"navigationMenu": "Navigationsmenu",
 			"optionalField": "(Valgfri)",
+			"quickSettings": "Hurtigindstillinger",
 			"requiredField": "(Påkrævet)",
 			"result": "Resultat",
 			"settings": "Indstillinger",
-			"uiLibrary": "UI-bibliotek",
-			"uiTheme": "UI-tema"
+			"uiLibrary": "UI bibliotek",
+			"uiTheme": "UI tema"
 		},
 		"placeholder": {
 			"search": "Søg..."
@@ -87,6 +89,7 @@
 			"deleteAgent": "Slet agent",
 			"deleteSelectedChats": "Slet valgte chats",
 			"deselectChat": "Fravælg chat",
+			"downloadCode": "Download kode",
 			"manageAgents": "Administrer agenter",
 			"manageChats": "Administrer chats",
 			"openChat": "Åbn chat",
@@ -100,24 +103,24 @@
 			"showMoreAgents": "Vis flere agenter",
 			"showMoreChats": "Vis flere chats",
 			"showSubchats": "Vis subchats ({count})",
-			"startNewChat": "Start en ny samtale",
+			"startNewChat": "Start ny samtale",
 			"startSearching_one": "Skriv mindst {count} tegn",
 			"startSearching_other": "Skriv mindst {count} tegn"
 		},
 		"description": {
 			"chatgpt4o": "Bedste model fra OpenAI",
 			"chatgpt4oMini": "Billigste model fra OpenAI",
-			"chromeGPT": "Integreret i Chrome-browser",
+			"chromeGPT": "Indbygget i Chrome browser",
 			"claude35Haiku": "Billigste model fra Anthropic",
 			"claude35Sonnet": "Bedste model fra Anthropic",
 			"loremIpsumGPT": "Mest intelligente model",
-			"rammusGPT": "Bedste følelsesmæssige support"
+			"rammusGPT": "Bedste emotionelle støtte"
 		},
 		"error": {
 			"agentAvatar": "Du skal tilføje en avatar til agenten",
 			"agentName": "Du skal tilføje et navn til agenten",
 			"emptyMessage": "Din besked er tom",
-			"failedApiKey": "Der er et problem med din API-nøgle",
+			"failedApiKey": "Der er et problem med din API nøgle",
 			"failedMessage": "Der opstod et problem med at levere din besked"
 		},
 		"label": {
@@ -127,7 +130,7 @@
 			"codePreview": "Kodeforhåndsvisning",
 			"creativityLevel": "Kreativitetsniveau",
 			"customInstructions": "Tilpassede instruktioner",
-			"gptModel": "GPT-model",
+			"gptModel": "GPT model",
 			"newAgent": "Ny agent",
 			"newChat": "Ny chat",
 			"newMessage": "Ny besked",
@@ -136,12 +139,12 @@
 			"selectedAgent": "Valgt agent",
 			"selectedValue": "Valgt værdi",
 			"subchats": "Subchats",
-			"urlPreview": "URL-forhåndsvisning",
+			"urlPreview": "URL forhåndsvisning",
 			"xMessages_one": "1 besked",
 			"xMessages_other": "{count} beskeder",
+			"xSearchResults_zero": "Ingen søgeresultater",
 			"xSearchResults_one": "{count} søgeresultat",
 			"xSearchResults_other": "{count} søgeresultater",
-			"xSearchResults_zero": "Ingen søgeresultater",
 			"xSelectedMessages_one": "1 besked valgt",
 			"xSelectedMessages_other": "{count} beskeder valgt"
 		},
@@ -161,11 +164,11 @@
 		},
 		"warning": {
 			"chromeGptInsideChrome": "Chrome GPT kræver disse eksperimentelle indstillinger:",
-			"chromeGptOutsideChrome": "Chrome GPT er kun tilgængelig i Chrome-browseren",
+			"chromeGptOutsideChrome": "Chrome GPT er kun tilgængelig i Chrome browser",
 			"deletingAgent": "Denne agent vil blive permanent slettet",
 			"deletingChats": "Disse chats vil blive permanent slettet",
 			"invalidGpt": "Ugyldig GPT",
-			"missingApiKey": "Du skal konfigurere din {name} API-nøgle"
+			"missingApiKey": "Du skal konfigurere din {name} API nøgle"
 		}
 	},
 	"userSettings": {
@@ -186,7 +189,7 @@
 		"label": {
 			"account": "Konto",
 			"address": "Adresse",
-			"apiKey": "{name} API-nøgle",
+			"apiKey": "{name} API nøgle",
 			"billing": "Fakturering",
 			"city": "By",
 			"country": "Land",

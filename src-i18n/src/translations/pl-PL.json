@@ -9,6 +9,7 @@
 			"copy": "Kopiuj",
 			"delete": "Usuń",
 			"deselectAll": "Odznacz wszystko",
+			"download": "Pobierz",
 			"expand": "Rozwiń",
 			"goToUrl": "Przejdź do {url}",
 			"hidePanel": "Ukryj panel",
@@ -68,7 +69,7 @@
 			"dataSaved": "Twoje dane zostały zapisane",
 			"deleting": "Usuwanie...",
 			"loading": "Ładowanie...",
-			"searching": "Wyszukiwanie...",
+			"searching": "Szukanie...",
 			"sending": "Wysyłanie...",
 			"updating": "Aktualizowanie..."
 		}
@@ -87,6 +88,7 @@
 			"deleteAgent": "Usuń agenta",
 			"deleteSelectedChats": "Usuń wybrane czaty",
 			"deselectChat": "Odznacz czat",
+			"downloadCode": "Pobierz kod",
 			"manageAgents": "Zarządzaj agentami",
 			"manageChats": "Zarządzaj czatami",
 			"openChat": "Otwórz czat",
@@ -103,10 +105,10 @@
 			"showMoreChats": "Pokaż więcej czatów",
 			"showSubchats": "Pokaż subczaty ({count})",
 			"startNewChat": "Rozpocznij nową rozmowę",
-			"startSearching_one": "Wpisz co najmniej {count} znak",
-			"startSearching_few": "Wpisz co najmniej {count} znaki",
-			"startSearching_many": "Wpisz co najmniej {count} znaków",
-			"startSearching_other": "Wpisz co najmniej {count} znaków"
+			"startSearching_one": "Wpisz przynajmniej {count} znak",
+			"startSearching_few": "Wpisz przynajmniej {count} znaki",
+			"startSearching_many": "Wpisz przynajmniej {count} znaków",
+			"startSearching_other": "Wpisz przynajmniej {count} znaków"
 		},
 		"description": {
 			"chatgpt4o": "Najlepszy model od OpenAI",
