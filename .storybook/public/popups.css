@@ -4,6 +4,10 @@
 	background-color: var(--ds-color-bg-page) !important;
 	padding: var(--ds-spacing-xs-2) !important;
 
+	& span {
+		color: var(--ds-color-text-default) !important;
+	}
+
 	& > div {
 		max-height: unset !important;
 	}
@@ -32,6 +36,10 @@
 			color: var(--ds-color-text-default) !important;
 			font-weight: var(--ds-font-weight-sm) !important;
 			font-size: var(--ds-font-size-sm) !important;
+		}
+
+		&#list-item-tags-docs span {
+			color: var(--ds-color-text-link) !important;
 		}
 	}
 

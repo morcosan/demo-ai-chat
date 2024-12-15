@@ -134,7 +134,7 @@ export const CustomImpl = (rawProps: SelectFieldProps) => {
 			<ul role="listbox" css={cssOptionList} className={cx(!options.length && 'hidden')}>
 				{options.map((option: any, index: number) => (
 					<li
-						ref={(el) => index === currentIndex && el?.scrollIntoView({ block: 'nearest' })}
+						ref={(el) => (index === currentIndex ? el?.scrollIntoView({ block: 'nearest' }) : undefined)}
 						key={option[keyValue]}
 						id={`${props.id}-option-${index}`}
 						role="option"

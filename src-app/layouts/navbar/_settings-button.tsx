@@ -17,7 +17,9 @@ export const SettingsButton = ({ highlight, onClick }: Props) => {
 			highlight={highlight}
 			onClick={onClick}
 		>
-			<img src={account.avatar} alt="" className="mr-button-px-item h-sm-2 min-w-sm-2 rounded-full" />
+			{Boolean(account.avatar) && (
+				<img src={account.avatar} alt="" className="mr-button-px-item h-sm-2 min-w-sm-2 rounded-full" />
+			)}
 
 			<span className="line-clamp-1 flex flex-col leading-sm">
 				<span className="mb-px line-clamp-1 w-full text-size-sm">{account.name}</span>

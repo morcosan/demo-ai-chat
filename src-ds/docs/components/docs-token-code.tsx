@@ -45,7 +45,7 @@ export const DocsTokenCode = ({ iconSvg, value, size, loading }: Props) => {
 	) : (
 		<div className={cx('relative h-sm-4', size || 'w-md-8')}>
 			<button type="button" className={buttonClass} onClick={onClick}>
-				<code className="pointer-events-none flex !w-full items-center gap-xs-2 !bg-color-bg-page">
+				<code className="pointer-events-none flex !w-full items-center gap-xs-2 !border-0 !bg-color-bg-page">
 					<span className="ml-px mt-px block h-xs-6">{iconSvg}</span>
 					<span className="line-clamp-1">{value}</span>
 				</code>

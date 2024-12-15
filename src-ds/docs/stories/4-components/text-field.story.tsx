@@ -224,7 +224,9 @@ const meta: Meta<typeof TextField> = {
 
 		const EXAMPLES = useMemo(
 			() => (
-				<div className="flex flex-wrap items-center gap-xs-7 p-sm-0">
+				<label className="flex flex-wrap items-center gap-xs-7 p-sm-0">
+					<span className="sr-only">Label</span>
+
 					{fieldSizes.map((size, index) => (
 						<div key={size} className="mb-xs-7 flex flex-wrap gap-xs-7">
 							{multilines.map((multiline) => (
@@ -333,7 +335,7 @@ const meta: Meta<typeof TextField> = {
 							className="flex-1"
 						/>
 					</div>
-				</div>
+				</label>
 			),
 			[]
 		)

@@ -1,4 +1,4 @@
-import { forwardRef, ForwardRefRenderFunction, useImperativeHandle, useMemo } from 'react'
+import { forwardRef, ForwardRefRenderFunction, PropsWithoutRef, useImperativeHandle, useMemo } from 'react'
 
 export const useDefaults = <P extends Record<string, any>>(
 	rawProps: P,
@@ -19,7 +19,7 @@ export const useDefaults = <P extends Record<string, any>>(
 	}, [rawProps])
 }
 
-export const withRef = <P, T>(name: string, fn: ForwardRefRenderFunction<T, P>) => {
+export const withRef = <P, T>(name: string, fn: ForwardRefRenderFunction<T, PropsWithoutRef<P>>) => {
 	const component = forwardRef(fn)
 	component.displayName = name
 	return component

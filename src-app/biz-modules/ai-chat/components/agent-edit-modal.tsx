@@ -176,7 +176,9 @@ export const AgentEditModal = (props: Props) => {
 								onChange={(avatar: string) => setPayload({ ...payload, avatar })}
 							/>
 							<div className="ml-xs-6 mt-xs-6">
-								<img src={payload.avatar} alt="" className="h-sm-8 w-sm-8 rounded-full" />
+								{Boolean(payload.avatar) && (
+									<img src={payload.avatar} alt="" className="h-sm-8 w-sm-8 rounded-full" />
+								)}
 							</div>
 						</div>
 
