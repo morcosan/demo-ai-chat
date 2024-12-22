@@ -1,5 +1,5 @@
 import { IconButton, SendSvg, TextField, TextFieldRef } from '@ds/release'
-import { useCallback, useRef, useState } from 'react'
+import { useCallback, useRef } from 'react'
 import { Agent, GPT } from '../api'
 import { useSubmittable } from '../hooks/use-submittable'
 
@@ -13,25 +13,23 @@ interface Props {
 
 export const NewMessageField = (props: Props) => {
 	const { agent, gpt, listLoading, isChatView, onPostMessage } = props
-	const [inputValue, setInputValue] = useState<string>('')
-	const inputRef = useRef<TextFieldRef>(null)
+	const textFieldRef = useRef<TextFieldRef>(null)
 
-	const message = inputValue.trim()
 	const isLoading = listLoading === 'update'
 	const isDisabled = listLoading === 'full' || listLoading === 'more' || listLoading === 'error'
 
-	const onChange = (value: string) => setInputValue(value)
-
 	const onSubmit = useCallback(() => {
-		if (isDisabled || !gpt.enabled) return
-		if (listLoading || !message) return
+		if (isDisabled || !gpt.enabled || listLoading) return
 
-		onPostMessage(message, agent.id)
-		setInputValue('')
-		inputRef.current?.focus()
-	}, [message, agent.id, listLoading])
+		const message = textFieldRef.current?.getValue().trim()
+		if (message) {
+			onPostMessage(message, agent.id)
+			textFieldRef.current?.setValue('')
+			textFieldRef.current?.focus()
+		}
+	}, [agent.id, listLoading])
 
-	const onPressEnter = useSubmittable(onSubmit, [message, agent.id, listLoading])
+	const onPressEnter = useSubmittable(onSubmit, [agent.id, listLoading])
 
 	const onFocus = (event: ReactFocusEvent) => {
 		// On mobile, the field is covered by the floating keyboard
@@ -42,20 +40,20 @@ export const NewMessageField = (props: Props) => {
 
 	return (
 		<TextField
-			ref={inputRef}
-			id={isChatView ? 'field-chat' : 'field-subchat'}
+			ref={textFieldRef}
+			id={isChatView ? 'new-message-chat' : 'new-message-subchat'}
 			variant={isChatView ? 'primary' : 'secondary'}
 			size={isChatView ? 'xl' : 'lg'}
-			value={inputValue}
 			placeholder={t('aiChat.placeholder.newMessage', { name: agent.name })}
 			ariaLabel={t('aiChat.label.newMessage')}
-			slotRight={
+			suffix={
 				<IconButton
-					tooltip={isDisabled || !message ? t('aiChat.error.emptyMessage') : t('aiChat.action.sendMessage')}
+					tooltip={t('aiChat.action.sendMessage')}
 					variant={isChatView ? 'solid-primary' : 'solid-secondary'}
 					size={isChatView ? 'md' : 'sm'}
 					loading={isLoading}
 					disabled={!gpt.enabled || listLoading === 'error'}
+					className="self-end"
 					onClick={onSubmit}
 				>
 					<SendSvg className={isChatView ? 'h-xs-9' : 'h-xs-7'} />
@@ -67,7 +65,6 @@ export const NewMessageField = (props: Props) => {
 			invalid={!gpt.enabled}
 			className="w-full"
 			multiline
-			onChange={onChange}
 			onSubmit={onPressEnter}
 			onFocus={onFocus}
 		/>

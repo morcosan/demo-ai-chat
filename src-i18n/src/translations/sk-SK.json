@@ -121,7 +121,6 @@
 		"error": {
 			"agentAvatar": "Musíte pridať avatar pre agenta",
 			"agentName": "Musíte pridať meno pre agenta",
-			"emptyMessage": "Vaša správa je prázdna",
 			"failedApiKey": "Vyskytol sa problém s vašim API kľúčom",
 			"failedMessage": "Vyskytol sa problém pri doručovaní vašej správy"
 		},

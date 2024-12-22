@@ -19,7 +19,6 @@ export const ChatsPage = () => {
 	} = useAiChat()
 	const [selectedChats, setSelectedChats] = useState<Chat[]>([])
 	const [chatsToDelete, setChatsToDelete] = useState<Chat[]>([])
-	const [chatIdsToRename, setChatIdsToRename] = useState<number[]>([])
 	const [showsDeleteModal, setShowsDeleteModal] = useState(false)
 
 	const bulkChecked = selectedChats.length === allChats.length ? true : selectedChats.length === 0 ? false : null
@@ -59,16 +58,9 @@ export const ChatsPage = () => {
 		setSelectedChats([])
 	}
 
-	const onToggleRename = (chatId: number, chatIdsToRename: number[]) => {
-		chatIdsToRename.includes(chatId)
-			? setChatIdsToRename(chatIdsToRename.filter((id: number) => id !== chatId))
-			: setChatIdsToRename([...chatIdsToRename, chatId])
-	}
-
-	const onSubmitRename = (chatId: number, title: string, chatIdsToRename: number[]) => {
+	const onRename = (chatId: number, title: string) => {
 		title = title.replace(/\s*\n+\s*/g, ' ').replace(/\s+/g, ' ') // Remove new lines and spaces
 		updateChat(chatId, title)
-		onToggleRename(chatId, chatIdsToRename)
 	}
 
 	const slotChats = useMemo(
@@ -79,16 +71,14 @@ export const ChatsPage = () => {
 						key={chat.id}
 						chat={chat}
 						selected={selectedChats.some((other: Chat) => other.id === chat.id)}
-						renaming={chatIdsToRename.includes(chat.id)}
 						onDelete={() => onClickDeleteChat(chat)}
-						onRename={() => onToggleRename(chat.id, chatIdsToRename)}
 						onToggle={(selected: boolean) => onToggleChat(chat, selected)}
-						onSubmitRename={(title: string) => onSubmitRename(chat.id, title, chatIdsToRename)}
+						onRename={(title: string) => onRename(chat.id, title)}
 					/>
 				))}
 			</ul>
 		),
-		[allChats, selectedChats, chatIdsToRename]
+		[allChats, selectedChats]
 	)
 
 	const slotChatsToDelete = useMemo(
@@ -134,9 +124,8 @@ export const ChatsPage = () => {
 						<Button
 							variant="solid-danger"
 							size="xs"
-							className="ml-xs-9"
 							ariaDescription={t('aiChat.action.deleteSelectedChats')}
-							style={{ display: bulkChecked === false ? 'none' : 'block' }}
+							className={cx('ml-xs-9', bulkChecked === false ? 'hidden' : 'block')}
 							onClick={() => onClickDeleteBulk(selectedChats)}
 						>
 							{t('core.action.delete')}
@@ -172,8 +161,8 @@ export const ChatsPage = () => {
 			{/* DELETE MODAL */}
 			<Modal
 				opened={Boolean(chatsToDelete.length && showsDeleteModal)}
-				slotTitle={t('aiChat.action.confirmDeleteChats')}
-				slotAction={
+				title={t('aiChat.action.confirmDeleteChats')}
+				actions={
 					<Button variant="solid-danger" onClick={onConfirmDelete}>
 						{t('core.action.delete')}
 					</Button>

@@ -6,12 +6,26 @@ export const CSS__ABSOLUTE_OVERLAY: CSS = {
 	bottom: 0,
 }
 
+export const CSS__ABSOLUTE_CENTER: CSS = {
+	position: 'absolute',
+	top: '50%',
+	left: '50%',
+	transform: 'translate(-50%, -50%)',
+}
+
 export const CSS__FIXED_OVERLAY: CSS = {
 	position: 'fixed',
 	top: 0,
 	left: 0,
 	right: 0,
 	bottom: 0,
+}
+
+export const CSS__FIXED_CENTER: CSS = {
+	position: 'fixed',
+	top: '50%',
+	left: '50%',
+	transform: 'translate(-50%, -50%)',
 }
 
 export const CSS_A11Y_OUTLINE_PROXY: CSS = {

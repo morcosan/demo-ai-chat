@@ -7,29 +7,33 @@ import { useSubmittable } from '../../hooks/use-submittable'
 interface Props extends ReactProps {
 	chat: Chat
 	selected?: boolean
-	renaming?: boolean
 	onDelete?(): void
-	onRename?(): void
-	onSubmitRename?(title: string): void
+	onRename?(title: string): void
 	onToggle?(selected: boolean): void
 }
 
 export const ChatConfigItem = (props: Props) => {
-	const { chat, selected, renaming, onToggle, onRename, onDelete, onSubmitRename } = props
-	const [title, setTitle] = useState(chat.title)
+	const { chat, selected, onToggle, onDelete, onRename } = props
+	const [renaming, setRenaming] = useState(false)
 	const textFieldRef = useRef<TextFieldRef>(null)
 
 	const isGhost = chat.updating || chat.deleting
-	const isDifferent = title.trim() !== chat.title
-	const isInteractive = Boolean(onToggle || onRename || onDelete || onSubmitRename)
+	const isInteractive = Boolean(onToggle || onDelete || onRename)
 
-	const onPressEnter = useSubmittable(() => isDifferent && onSubmitRename?.(title), [title])
+	const onSubmitRename = () => {
+		const value = textFieldRef.current?.getValue().trim() || chat.title
+
+		if (value !== chat.title) {
+			onRename?.(value)
+		}
+		setRenaming(false)
+	}
+
+	const onToggleRename = () => setRenaming((value) => !value)
+	const onPressEnter = useSubmittable(onSubmitRename, [])
 
 	useEffect(() => {
-		if (renaming) {
-			setTitle(chat.title)
-			textFieldRef.current?.focus()
-		}
+		renaming && textFieldRef.current?.focus()
 	}, [renaming])
 
 	return (
@@ -68,23 +72,22 @@ export const ChatConfigItem = (props: Props) => {
 							ref={textFieldRef}
 							id={`${chat.id}-field`}
 							variant="primary"
-							value={title}
+							value={chat.title}
 							placeholder={t('aiChat.placeholder.rename')}
 							ariaLabel={t('aiChat.label.chatTitle')}
 							className="absolute-overlay bg-color-bg-card"
-							slotRight={
+							suffix={
 								<IconButton
-									tooltip={isDifferent ? t('aiChat.action.confirmRenameChat') : t('core.error.noChanges')}
+									tooltip={t('aiChat.action.confirmRenameChat')}
 									variant="solid-primary"
 									size="xs"
-									className="mr-xs-2 self-center"
-									onClick={() => isDifferent && onSubmitRename?.(title)}
+									className="mr-xs-2"
+									onClick={onSubmitRename}
 								>
 									<SendSvg className="h-xs-5" />
 								</IconButton>
 							}
 							multiline
-							onChange={setTitle}
 							onSubmit={onPressEnter}
 						/>
 					)}
@@ -99,7 +102,7 @@ export const ChatConfigItem = (props: Props) => {
 							size="sm"
 							className="mr-xs-0"
 							ariaDescription={chat.title}
-							onClick={onRename}
+							onClick={onToggleRename}
 						>
 							{renaming ? <CloseSvg className="w-xs-5" /> : <EditSvg className="w-xs-7" />}
 						</IconButton>

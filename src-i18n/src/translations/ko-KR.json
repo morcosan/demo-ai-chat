@@ -118,7 +118,6 @@
 		"error": {
 			"agentAvatar": "에이전트의 아바타를 추가해야 합니다",
 			"agentName": "에이전트의 이름을 추가해야 합니다",
-			"emptyMessage": "메시지가 비어 있습니다",
 			"failedApiKey": "API 키에 문제가 있습니다",
 			"failedMessage": "메시지 전송에 문제가 발생했습니다"
 		},

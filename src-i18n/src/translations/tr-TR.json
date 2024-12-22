@@ -117,7 +117,6 @@
 		"error": {
 			"agentAvatar": "Ajan için bir profil resmi eklemelisiniz",
 			"agentName": "Ajan için bir ad eklemelisiniz",
-			"emptyMessage": "Mesajınız boş",
 			"failedApiKey": "API anahtarınızla ilgili bir sorun var",
 			"failedMessage": "Mesajınızın iletilmesinde bir sorun oluştu"
 		},

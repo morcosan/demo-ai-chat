@@ -118,7 +118,6 @@
 		"error": {
 			"agentAvatar": "Sinun täytyy lisätä profiilikuva agentille",
 			"agentName": "Sinun täytyy lisätä nimi agentille",
-			"emptyMessage": "Viestisi on tyhjä",
 			"failedApiKey": "API-avaimesi kanssa on ongelma",
 			"failedMessage": "Viestisi lähettämisessä oli ongelma"
 		},

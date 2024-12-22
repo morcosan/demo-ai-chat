@@ -119,7 +119,6 @@
 		"error": {
 			"agentAvatar": "Du skal tilføje en avatar til agenten",
 			"agentName": "Du skal tilføje et navn til agenten",
-			"emptyMessage": "Din besked er tom",
 			"failedApiKey": "Der er et problem med din API nøgle",
 			"failedMessage": "Der opstod et problem med at levere din besked"
 		},

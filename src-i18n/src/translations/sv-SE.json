@@ -119,7 +119,6 @@
 		"error": {
 			"agentAvatar": "Du måste lägga till en profilbild för agenten",
 			"agentName": "Du måste lägga till ett namn för agenten",
-			"emptyMessage": "Ditt meddelande är tomt",
 			"failedApiKey": "Det är ett problem med din API-nyckel",
 			"failedMessage": "Det uppstod ett problem med att leverera ditt meddelande"
 		},

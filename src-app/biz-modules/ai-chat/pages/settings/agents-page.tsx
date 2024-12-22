@@ -136,8 +136,8 @@ const AgentsPage = () => {
 			{/* DELETE MODAL */}
 			<Modal
 				opened={Boolean(agentToEdit && showsDeleteModal)}
-				slotTitle={t('aiChat.action.confirmDeleteAgent')}
-				slotAction={
+				title={t('aiChat.action.confirmDeleteAgent')}
+				actions={
 					<Button variant="solid-danger" onClick={onConfirmDelete}>
 						{t('core.action.delete')}
 					</Button>

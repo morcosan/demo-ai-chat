@@ -118,7 +118,6 @@
 		"error": {
 			"agentAvatar": "Þú verður að bæta við prófílmynd fyrir umboðsaðilann",
 			"agentName": "Þú verður að bæta við nafni fyrir umboðsaðilann",
-			"emptyMessage": "Skilaboðin þín eru tóm",
 			"failedApiKey": "Það er vandamál með API lykilinn þinn",
 			"failedMessage": "Það kom upp vandamál við að senda skilaboðin þín"
 		},

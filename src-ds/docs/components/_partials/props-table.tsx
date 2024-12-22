@@ -1,26 +1,15 @@
 import { DocsHeader } from '@ds/docs/components/docs-header'
-import { renderHtml } from '@ds/docs/utilities/docs'
+import { getPropIndicator, renderHtml } from '@ds/docs/utilities/docs'
 
 interface Props {
+	header: string
 	propDefs: DocsPropDef[]
 }
 
-export const PropsTable = ({ propDefs }: Props) => {
-	const getNameFlag = (required?: boolean) => {
-		return required ? (
-			<span title="Required" className="cursor-default px-xs-3 font-weight-xl text-color-danger-page-text">
-				*
-			</span>
-		) : (
-			<span title="Optional" className="cursor-default px-xs-3 text-size-sm text-color-text-subtle">
-				?
-			</span>
-		)
-	}
-
+export const PropsTable = ({ header, propDefs }: Props) => {
 	return (
 		<>
-			<DocsHeader>Props</DocsHeader>
+			<DocsHeader>{header}</DocsHeader>
 
 			<table className="docs">
 				<thead>
@@ -36,7 +25,7 @@ export const PropsTable = ({ propDefs }: Props) => {
 						<tr key={propDef.name}>
 							<td>
 								<pre className="inline">{propDef.name}</pre>
-								{getNameFlag(propDef.required)}
+								{getPropIndicator(propDef.required)}
 							</td>
 							<td>
 								<code>{propDef.type}</code>

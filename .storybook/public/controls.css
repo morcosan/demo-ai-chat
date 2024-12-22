@@ -97,24 +97,7 @@
 			line-height: 0 !important;
 
 			& button[title='Reset controls'] {
-				position: absolute !important;
-				top: 6px !important;
-				right: 20px !important;
-				z-index: 1 !important;
-				width: var(--ds-spacing-sm-4) !important;
-				height: var(--ds-spacing-sm-4) !important;
-
-				& svg {
-					width: var(--ds-spacing-xs-7) !important;
-					height: var(--ds-spacing-xs-7) !important;
-				}
-
-				&:hover {
-					background-color: var(--ds-color-hover-text-default) !important;
-				}
-				&:active {
-					background-color: var(--ds-color-hover-text-pressed) !important;
-				}
+				display: none !important;
 			}
 		}
 
@@ -144,9 +127,6 @@
 					background-color: var(--ds-color-hover-text-pressed) !important;
 				}
 			}
-			& td:last-child button {
-				display: none !important;
-			}
 
 			& button + span {
 				position: relative !important;
@@ -155,6 +135,7 @@
 				color: var(--ds-color-text-subtle) !important;
 				font-weight: var(--ds-font-weight-md) !important;
 				font-size: var(--ds-font-size-xs) !important;
+				letter-spacing: 0.1em !important;
 
 				& svg {
 					margin-top: var(--ds-spacing-xs-0) !important;
@@ -257,6 +238,7 @@
 			}
 
 			& span {
+				transition: unset !important;
 				padding: var(--ds-spacing-xs-1) var(--ds-spacing-xs-4) !important;
 				color: var(--ds-color-text-subtle) !important;
 				font-size: var(--ds-font-size-xs) !important;
@@ -342,11 +324,19 @@
 
 /* Localhost toolbar */
 #save-from-controls {
+	z-index: var(--ds-z-index-sticky) !important;
+
 	& > div {
 		box-shadow: var(--ds-shadow-lg) !important;
 		border: none !important;
 		background-color: var(--ds-color-primary-card-bg) !important;
 		color: var(--ds-color-text-subtle) !important;
+
+		& div[data-short-label],
+		& button[aria-label^='Save'],
+		& button[aria-label^='Create'] {
+			display: none !important;
+		}
 
 		& button {
 			&:hover {

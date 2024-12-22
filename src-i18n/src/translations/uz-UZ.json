@@ -119,7 +119,6 @@
 		"error": {
 			"agentAvatar": "Agent uchun avatar qo'shishingiz kerak",
 			"agentName": "Agent uchun ism qo'shishingiz kerak",
-			"emptyMessage": "Xabaringiz bo'sh",
 			"failedApiKey": "API kalitingiz bilan muammo bor",
 			"failedMessage": "Xabaringizni yetkazishda muammo yuz berdi"
 		},

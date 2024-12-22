@@ -1,19 +1,19 @@
 import { FieldError, FieldLabel } from '@app/library/release'
 import { TextField, TextFieldProps } from '@ds/release'
 
+export interface Field {
+	id: string
+	label: string
+	optional?: boolean
+	props?: Partial<TextFieldProps>
+}
+
 interface Props extends ReactProps {
 	field: Field
 	value: string
 	error?: string
 	disabled?: boolean
 	onChange(value: string): void
-}
-
-export interface Field {
-	id: string
-	label: string
-	optional?: boolean
-	props?: Partial<TextFieldProps>
 }
 
 export const AgentEditField = (props: Props) => {

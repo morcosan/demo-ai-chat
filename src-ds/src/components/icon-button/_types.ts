@@ -1,3 +1,4 @@
+import { ReactNode } from 'react'
 import { LinkType } from '../_shared/types'
 
 export type IconButtonSize = 'xs' | 'sm' | 'md' | 'lg'
@@ -8,9 +9,17 @@ export type IconButtonVariant =
 	| 'solid-primary'
 	| 'solid-secondary'
 	| 'solid-danger'
+	| 'ghost-primary'
+	| 'ghost-secondary'
+	| 'ghost-danger'
 
-export interface IconButtonProps extends ReactProps {
+export interface IconButtonProps {
+	// Slots
+	children: ReactNode
 	tooltip: string
+	ariaDescription?: string
+
+	// Props
 	size?: IconButtonSize
 	variant?: IconButtonVariant
 	pressed?: boolean
@@ -18,7 +27,8 @@ export interface IconButtonProps extends ReactProps {
 	disabled?: boolean
 	linkHref?: string
 	linkType?: LinkType
-	ariaDescription?: string
+	className?: string
 
+	// Events
 	onClick?(event: ReactMouseEvent): void
 }

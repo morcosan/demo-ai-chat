@@ -1,6 +1,6 @@
 import { isA11yModePointer } from '@ds/release'
 import { Keyboard } from '@utils/release'
-import { useCallback, useState } from 'react'
+import { useCallback, useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { LinkType } from './types'
 
@@ -17,13 +17,12 @@ export const useClickable = (props: ClickableProps) => {
 	const [isPressed, setIsPressed] = useState(false)
 
 	const linkTarget = props.linkType === 'internal' ? '_self' : '_blank'
-	const isDisabled = props.disabled || props.loading
-	const tabIndex = isDisabled ? -1 : 0
+	const isNoop = props.disabled || props.loading
 
 	const onClick = useCallback(
 		(event: ReactMouseEvent) => {
-			if (isDisabled || props.linkType !== 'external') event.preventDefault()
-			if (isDisabled) return
+			if (isNoop || props.linkType !== 'external') event.preventDefault()
+			if (isNoop) return
 
 			props.onClick?.(event)
 
@@ -36,14 +35,15 @@ export const useClickable = (props: ClickableProps) => {
 				navigate(props.linkHref)
 			}
 		},
-		[isDisabled, props.linkType, props.linkHref, props.onClick]
+		[isNoop, props.linkType, props.linkHref, props.onClick]
 	)
 
-	const onMouseDown = () => setIsPressed(true)
+	const onMouseDown = () => !isNoop && setIsPressed(true)
 	const onMouseLeave = () => setIsPressed(false)
 	const onMouseUp = () => setIsPressed(false)
 
 	const onKeyDown = (event: ReactKeyboardEvent) => {
+		if (isNoop) return
 		if (event.key === Keyboard.SPACE || event.key === Keyboard.ENTER) {
 			event.preventDefault()
 			setIsPressed(true)
@@ -51,6 +51,7 @@ export const useClickable = (props: ClickableProps) => {
 	}
 
 	const onKeyUp = (event: ReactKeyboardEvent) => {
+		if (isNoop) return
 		if (event.key === Keyboard.SPACE || event.key === Keyboard.ENTER) {
 			const elem = event.target as HTMLButtonElement
 			elem.click()
@@ -58,9 +59,13 @@ export const useClickable = (props: ClickableProps) => {
 		}
 	}
 
+	useEffect(() => {
+		setIsPressed(false)
+	}, [isNoop])
+
 	const bindings = (() => {
 		const bindings: any = {
-			tabIndex,
+			'aria-disabled': isNoop,
 			onClick,
 			onMouseDown,
 			onMouseLeave,
@@ -78,11 +83,9 @@ export const useClickable = (props: ClickableProps) => {
 
 	return {
 		bindings,
-		isDisabled,
+		isNoop,
 		isPressed,
 		linkTarget,
-		tabIndex,
-
 		onClick,
 		onKeyDown,
 		onKeyUp,

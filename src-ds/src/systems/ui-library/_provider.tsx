@@ -1,9 +1,11 @@
 import { useUiTheme } from '@ds/release'
+import { MantineProvider } from '@mantine/core'
 import { ThemeProvider } from '@mui/material'
 import { ConfigProvider } from 'antd'
 import { useEffect, useMemo, useState } from 'react'
-import { ANT_DARK_THEME_CONFIG, ANT_LIGHT_THEME_CONFIG } from '../../styling/themes/ant-design'
-import { MUI_DARK_THEME_CONFIG, MUI_LIGHT_THEME_CONFIG } from '../../styling/themes/material-ui'
+import { ANT_DARK_THEME_CONFIG, ANT_DESIGN_CSS, ANT_LIGHT_THEME_CONFIG } from '../../styling/themes/ant-design'
+import { MANTINE_CSS, MANTINE_THEME } from '../../styling/themes/mantine'
+import { MUI_DARK_THEME_CONFIG, MUI_LIGHT_THEME_CONFIG } from '../../styling/themes/material'
 import { Caching } from './_caching'
 import { Context, Store } from './_context'
 
@@ -30,7 +32,7 @@ export const UiLibraryProvider = (props: Props) => {
 			return
 		}
 
-		const LIBRARIES: UiLibrary[] = ['custom', 'material', 'antdesign']
+		const LIBRARIES: UiLibrary[] = ['custom', 'mantine', 'material', 'antdesign']
 		const library = getCookie()
 
 		changeUiLibrary(library && LIBRARIES.includes(library) ? library : 'custom')
@@ -49,7 +51,22 @@ export const UiLibraryProvider = (props: Props) => {
 		<Context.Provider value={store}>
 			<Caching uiLibrary={uiLibrary}>
 				{uiLibrary === 'custom' && props.children}
-				{uiLibrary === 'antdesign' && <ConfigProvider theme={antTheme}>{props.children}</ConfigProvider>}
+
+				{uiLibrary === 'mantine' && (
+					<MantineProvider theme={MANTINE_THEME}>
+						<style>{MANTINE_CSS}</style>
+						{props.children}
+					</MantineProvider>
+				)}
+
+				{uiLibrary === 'antdesign' && (
+					/* Wave effect is not working in React 19 */
+					<ConfigProvider theme={antTheme} wave={{ disabled: true }}>
+						<style>{ANT_DESIGN_CSS}</style>
+						{props.children}
+					</ConfigProvider>
+				)}
+
 				{uiLibrary === 'material' && <ThemeProvider theme={muiTheme}>{props.children}</ThemeProvider>}
 			</Caching>
 		</Context.Provider>

@@ -1,8 +1,9 @@
 const waitHtmlUpdate = (callback) => {
-	wait(50).then(() => callback())
-	wait(300).then(() => callback())
-	wait(600).then(() => callback())
-	wait(1000).then(() => callback())
+	wait(50).then(callback)
+	wait(300).then(callback)
+	wait(600).then(callback)
+	wait(1000).then(callback)
+	wait(2000).then(callback)
 }
 
 // Storybook offers no CSS selector for selected global option

@@ -1,30 +1,28 @@
 import { DocsPage } from '@ds/docs/components/docs-page'
-import { createArgTypes } from '@ds/docs/setup'
+import { createArgDefaults, createArgTypes } from '@ds/docs/setup'
 import { Button, ButtonProps, ButtonVariant, LogoutSvg } from '@ds/release'
-import { action } from '@storybook/addon-actions'
 import type { Meta, StoryObj } from '@storybook/react'
 import { useMemo } from 'react'
 
 export const story: StoryObj<typeof Button> = {
-	args: {
-		// Slots
-		children: 'Test qyp',
-		// Props
-		size: 'md',
-		variant: 'solid-primary',
-		highlight: 'default',
-		loading: false,
-		disabled: false,
-		linkHref: '',
-		linkType: 'internal',
-		tooltip: 'Tooltip',
-		ariaDescription: 'Example description',
-		// Html
-		className: '',
-		style: {},
-		// Events
-		onClick: action('onClick'),
-	},
+	args: createArgDefaults<typeof Button>(
+		{
+			// Slots
+			children: 'Test qyp',
+			tooltip: 'Tooltip',
+			ariaDescription: 'Example description',
+			// Props
+			size: 'md',
+			variant: 'solid-primary',
+			highlight: 'default',
+			loading: false,
+			disabled: false,
+			linkHref: '',
+			linkType: 'internal',
+			className: '',
+		},
+		['onClick']
+	),
 }
 story.storyName = 'Button'
 
@@ -33,6 +31,7 @@ const meta: Meta<typeof Button> = {
 	title: 'Components / Button',
 
 	argTypes: createArgTypes<typeof Button>(
+		['children', 'tooltip', 'ariaDescription'],
 		{
 			size: ['xs', 'sm', 'md', 'lg'],
 			variant: [
@@ -54,19 +53,28 @@ const meta: Meta<typeof Button> = {
 			disabled: 'boolean',
 			linkHref: 'text',
 			linkType: ['internal', 'external', 'inactive'],
-			tooltip: 'text',
-			ariaDescription: 'text',
+			className: 'text',
 		},
-		['children'],
 		['onClick']
 	),
 
 	component: function Story(props: ButtonProps) {
-		const SLOTS: DocsSlotDef[] = [
+		const SLOTS: DocsPropDef[] = [
 			{
 				name: 'children',
+				type: 'ReactNode',
 				details: `Content to be rendered inside the button`,
 				required: true,
+			},
+			{
+				name: 'tooltip',
+				type: 'string',
+				details: `Text to be displayed as tooltip on hover / focus`,
+			},
+			{
+				name: 'ariaDescription',
+				type: 'string',
+				details: `Text used by screen reader as description for the button`,
 			},
 		]
 		const PROPS: DocsPropDef[] = [
@@ -82,7 +90,6 @@ const meta: Meta<typeof Button> = {
 				default: `'solid-primary'`,
 				details: `Property that determines color and highlight`,
 			},
-
 			{
 				name: 'highlight',
 				type: 'ButtonHighlight',
@@ -121,14 +128,9 @@ const meta: Meta<typeof Button> = {
 				`,
 			},
 			{
-				name: 'tooltip',
+				name: 'className',
 				type: 'string',
-				details: `Text to be displayed as tooltip on hover / focus`,
-			},
-			{
-				name: 'ariaDescription',
-				type: 'string',
-				details: `Text used by screen reader as description for the button`,
+				details: `CSS class attribute for the wrapper element`,
 			},
 		]
 		const EVENTS: DocsEventDef[] = [
@@ -174,9 +176,9 @@ const meta: Meta<typeof Button> = {
 		]
 		const EXAMPLES = useMemo(
 			() => (
-				<div className="flex flex-wrap items-center gap-xs-7 p-xs-9">
+				<div className="flex flex-wrap items-center gap-xs-7 p-xs-8">
 					{variants.map((variant) => (
-						<div key={variant} className="flex w-full flex-wrap items-center gap-xs-7">
+						<div key={variant} className="flex w-full flex-wrap items-center gap-xs-6">
 							<Button variant={variant} className="w-lg-4">
 								{svg} {variant}
 							</Button>

@@ -121,7 +121,6 @@
 		"error": {
 			"agentAvatar": "Musíte přidat avatar pro agenta",
 			"agentName": "Musíte přidat jméno pro agenta",
-			"emptyMessage": "Vaše zpráva je prázdná",
 			"failedApiKey": "Nastal problém s Vaším API klíčem",
 			"failedMessage": "Nastal problém s doručením Vaší zprávy"
 		},

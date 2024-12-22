@@ -121,7 +121,6 @@
 		"error": {
 			"agentAvatar": "Trebuie să adaugi un avatar pentru agent",
 			"agentName": "Trebuie să adaugi un nume pentru agent",
-			"emptyMessage": "Mesajul tău este gol",
 			"failedApiKey": "Există o problemă cu cheia ta API",
 			"failedMessage": "A apărut o problemă la livrarea mesajului tău"
 		},

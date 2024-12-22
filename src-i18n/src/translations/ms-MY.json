@@ -115,7 +115,6 @@
 		"error": {
 			"agentAvatar": "Anda mesti menambah avatar untuk ejen",
 			"agentName": "Anda mesti menambah nama untuk ejen",
-			"emptyMessage": "Mesej anda kosong",
 			"failedApiKey": "Terdapat masalah dengan kunci API anda",
 			"failedMessage": "Terdapat masalah menghantar mesej anda"
 		},

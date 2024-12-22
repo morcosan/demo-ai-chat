@@ -1,3 +1,4 @@
+import { ReactNode } from 'react'
 import { LinkType } from '../_shared/types'
 
 export type ButtonSize = 'xs' | 'sm' | 'md' | 'lg'
@@ -16,7 +17,13 @@ export type ButtonVariant =
 	| 'item-text-danger'
 export type ButtonHighlight = 'default' | 'pressed' | 'selected'
 
-export interface ButtonProps extends ReactProps {
+export interface ButtonProps {
+	// Slots
+	children: ReactNode
+	tooltip?: string
+	ariaDescription?: string
+
+	// Props
 	size?: ButtonSize
 	variant?: ButtonVariant
 	highlight?: ButtonHighlight
@@ -24,8 +31,8 @@ export interface ButtonProps extends ReactProps {
 	disabled?: boolean
 	linkHref?: string
 	linkType?: LinkType
-	tooltip?: string
-	ariaDescription?: string
+	className?: string
 
+	// Events
 	onClick?(event: ReactMouseEvent): void
 }

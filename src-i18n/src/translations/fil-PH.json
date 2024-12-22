@@ -118,7 +118,6 @@
 		"error": {
 			"agentAvatar": "Kailangan mong magdagdag ng avatar para sa agent",
 			"agentName": "Kailangan mong magdagdag ng pangalan para sa agent",
-			"emptyMessage": "Walang laman ang iyong mensahe",
 			"failedApiKey": "May problema sa iyong API key",
 			"failedMessage": "Nagkaroon ng problema sa pagpapadala ng iyong mensahe"
 		},

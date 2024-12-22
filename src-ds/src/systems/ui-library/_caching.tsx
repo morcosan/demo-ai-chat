@@ -6,16 +6,18 @@ interface Props extends ReactProps {
 	uiLibrary: UiLibrary
 }
 
-const createCssCache = (lib: UiLibrary) => createCache({ key: lib, prepend: true })
+const createCssCache = (lib: UiLibrary) => createCache({ key: `css-${lib}`, prepend: true })
 const getCssCache = (lib: UiLibrary) => {
 	if (lib === 'custom') return cacheCustom
-	if (lib === 'material') return cacheMaterial
+	if (lib === 'mantine') return cacheMantine
 	if (lib === 'antdesign') return cacheAntDesign
+	if (lib === 'material') return cacheMaterial
 	return cacheCustom
 }
 const cacheCustom = createCssCache('custom')
-const cacheMaterial = createCssCache('material')
+const cacheMantine = createCssCache('mantine')
 const cacheAntDesign = createCssCache('antdesign')
+const cacheMaterial = createCssCache('material')
 
 export const Caching = ({ uiLibrary, children }: Props) => {
 	const removeStyles = () => {

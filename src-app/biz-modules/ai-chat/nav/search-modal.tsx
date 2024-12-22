@@ -1,7 +1,7 @@
 import { LoadingText } from '@app/library/release'
 import { Button, Modal, SearchSvg, TextField, TextFieldRef } from '@ds/release'
 import { debounce } from 'lodash'
-import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
+import { useCallback, useEffect, useMemo, useRef } from 'react'
 import { Agent, MIN_SEARCH_LENGTH } from '../api'
 import { SearchResultItem } from '../components/items/search-result-item'
 import { StickyToolbar } from '../components/sticky-toolbar'
@@ -24,30 +24,11 @@ export const AiChatSearchModal = (props: Props) => {
 		setShowsSearch,
 	} = useAiChatSearch()
 	const { allAgentsForChat, loadMissingAgents } = useAiChatAgents()
-	const [searchValue, setSearchValue] = useState('')
-	const searchRef = useRef<TextFieldRef>(null)
+	const searchFieldRef = useRef<TextFieldRef>(null)
 
 	const submitSearch = useCallback(
 		debounce((value: string) => searchByKeyword(value.trim()), 500),
 		[]
-	)
-
-	const onChangeSearch = (value: string) => {
-		setSearchValue(value)
-		submitSearch(value)
-	}
-
-	const slotTitle = (
-		<TextField
-			ref={searchRef}
-			id="chat-search"
-			value={searchValue}
-			placeholder={t('core.placeholder.search')}
-			ariaLabel={t('aiChat.action.searchChats')}
-			slotLeft={<SearchSvg className="ml-xs-4 mr-xs-1 mt-px h-full w-xs-5 min-w-xs-5" />}
-			className="w-full font-weight-sm"
-			onChange={onChangeSearch}
-		/>
 	)
 
 	useEffect(() => {
@@ -59,6 +40,18 @@ export const AiChatSearchModal = (props: Props) => {
 			),
 		])
 	}, [searchResults])
+
+	const slotTitle = (
+		<TextField
+			ref={searchFieldRef}
+			id="chat-search"
+			placeholder={t('core.placeholder.search')}
+			ariaLabel={t('aiChat.action.searchChats')}
+			prefix={<SearchSvg className="ml-xs-4 mr-xs-1 mt-px h-full w-xs-5 min-w-xs-5" />}
+			className="w-full font-weight-sm"
+			onChange={submitSearch}
+		/>
+	)
 
 	const slotResults = useMemo(
 		() => (
@@ -84,9 +77,9 @@ export const AiChatSearchModal = (props: Props) => {
 		<Modal
 			opened={showsSearch}
 			width="lg"
-			slotTitle={slotTitle}
+			title={slotTitle}
 			noFooter
-			onOpened={() => searchRef.current?.focus()}
+			onOpened={() => searchFieldRef.current?.focus()}
 			onClose={() => setShowsSearch(false)}
 		>
 			{!searchKeyword ? (

@@ -32,5 +32,5 @@ declare global {
 
 	type A11yMode = 'default' | 'pointer'
 	type ColorTheme = 'light' | 'dark'
-	type UiLibrary = 'custom' | 'material' | 'antdesign'
+	type UiLibrary = 'custom' | 'mantine' | 'material' | 'antdesign'
 }

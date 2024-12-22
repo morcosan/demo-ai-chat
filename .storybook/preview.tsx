@@ -36,8 +36,9 @@ const preview: Preview = {
 			toolbar: {
 				items: [
 					{ value: 'custom', title: 'Custom', icon: 'markup' },
-					{ value: 'material', title: 'Material UI', icon: 'markup' },
+					{ value: 'mantine', title: 'Mantine', icon: 'markup' },
 					{ value: 'antdesign', title: 'Ant Design', icon: 'markup' },
+					{ value: 'material', title: 'Material UI', icon: 'markup' },
 				],
 				dynamicTitle: true,
 			},

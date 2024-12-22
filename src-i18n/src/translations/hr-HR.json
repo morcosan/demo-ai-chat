@@ -123,7 +123,6 @@
 		"error": {
 			"agentAvatar": "Morate dodati avatar za agenta",
 			"agentName": "Morate dodati ime za agenta",
-			"emptyMessage": "Vaša poruka je prazna",
 			"failedApiKey": "Postoji problem s vašim API ključem",
 			"failedMessage": "Došlo je do problema pri isporuci vaše poruke"
 		},
