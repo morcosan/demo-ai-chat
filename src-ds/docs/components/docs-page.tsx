@@ -1,18 +1,17 @@
 import { IconButton, MaximizeSvg, MinimizeSvg } from '@ds/release'
 import { ReactNode, useCallback, useEffect, useRef, useState } from 'react'
-import { renderHtml } from '../utilities/docs'
+import { HEADER_PROPS, HEADER_SLOTS, renderHtml } from '../utilities/docs'
 import { toggleControls } from '../utilities/storybook'
 import { EventsTable } from './_partials/events-table'
 import { MethodsTable } from './_partials/methods-table'
 import { PropsTable } from './_partials/props-table'
-import { SlotsTable } from './_partials/slots-table'
 import { DocsHeader } from './docs-header'
 import { DocsPlayground } from './docs-playground'
 import { DocsPlaygroundBase } from './docs-playground-base'
 
 interface ComponentSlots {
+	SLOTS?: DocsPropDef[]
 	PROPS?: DocsPropDef[]
-	SLOTS?: DocsSlotDef[]
 	EVENTS?: DocsEventDef[]
 	METHODS?: DocsMethodDef[]
 	TYPES?: string
@@ -69,8 +68,8 @@ export const DocsPage = ({ title, type, slots, children }: Props) => {
 								<DocsPlaygroundBase>{slots?.EXAMPLES}</DocsPlaygroundBase>
 							</>
 						)}
-						{Boolean(slots?.SLOTS) && <SlotsTable slotDefs={slots?.SLOTS || []} />}
-						{Boolean(slots?.PROPS) && <PropsTable propDefs={slots?.PROPS || []} />}
+						{Boolean(slots?.SLOTS) && <PropsTable header={HEADER_SLOTS} propDefs={slots?.SLOTS || []} />}
+						{Boolean(slots?.PROPS) && <PropsTable header={HEADER_PROPS} propDefs={slots?.PROPS || []} />}
 						{Boolean(slots?.EVENTS) && <EventsTable eventDefs={slots?.EVENTS || []} />}
 						{Boolean(slots?.METHODS) && <MethodsTable methodDefs={slots?.METHODS || []} />}
 						{Boolean(slots?.TYPES) && (

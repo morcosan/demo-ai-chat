@@ -119,7 +119,6 @@
 		"error": {
 			"agentAvatar": "Duhet të shtoni një avatar për agjentin",
 			"agentName": "Duhet të shtoni një emër për agjentin",
-			"emptyMessage": "Mesazhi juaj është bosh",
 			"failedApiKey": "Ka një problem me çelësin tuaj API",
 			"failedMessage": "Pati një problem në dërgimin e mesazhit tuaj"
 		},

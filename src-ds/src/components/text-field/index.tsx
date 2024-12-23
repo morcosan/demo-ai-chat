@@ -1,21 +1,17 @@
 import { useUiLibrary } from '@ds/release'
-import { withRef } from '@utils/release'
-import { Ref } from 'react'
-import { TextFieldProps, TextFieldRef } from './_types'
-import { AntImpl } from './impl/ant-impl'
+import { TextFieldProps } from './_types'
+import { AntDesignImpl } from './impl/ant-design-impl'
 import { CustomImpl } from './impl/custom-impl'
-import { MuiImpl } from './impl/mui-impl'
+import { MantineImpl } from './impl/mantine-impl'
+import { MaterialImpl } from './impl/material-impl'
 
 export type { TextFieldProps, TextFieldRef, TextFieldSize, TextFieldVariant } from './_types'
 
-const CustomImp = withRef('CustomImpl', CustomImpl)
-const MuiImp = withRef('MuiImpl', MuiImpl)
-const AntImp = withRef('AntImpl', AntImpl)
-
-export const TextField = withRef('TextField', (props: TextFieldProps, ref: Ref<TextFieldRef>) => {
+export const TextField = (props: TextFieldProps) => {
 	const { uiLibrary } = useUiLibrary()
 
-	if (uiLibrary === 'custom') return <CustomImp {...props} ref={ref} />
-	if (uiLibrary === 'material') return <MuiImp {...props} ref={ref} />
-	if (uiLibrary === 'antdesign') return <AntImp {...props} ref={ref} />
-})
+	if (uiLibrary === 'custom') return <CustomImpl {...props} />
+	if (uiLibrary === 'mantine') return <MantineImpl {...props} />
+	if (uiLibrary === 'antdesign') return <AntDesignImpl {...props} />
+	if (uiLibrary === 'material') return <MaterialImpl {...props} />
+}

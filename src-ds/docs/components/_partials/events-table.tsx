@@ -1,5 +1,5 @@
 import { DocsHeader } from '@ds/docs/components/docs-header'
-import { renderHtml } from '@ds/docs/utilities/docs'
+import { getPropIndicator, HEADER_EVENTS, renderHtml } from '@ds/docs/utilities/docs'
 
 interface Props {
 	eventDefs: DocsEventDef[]
@@ -8,7 +8,7 @@ interface Props {
 export const EventsTable = ({ eventDefs }: Props) => {
 	return (
 		<>
-			<DocsHeader>Events</DocsHeader>
+			<DocsHeader>{HEADER_EVENTS}</DocsHeader>
 
 			<table className="docs">
 				<thead>
@@ -22,7 +22,8 @@ export const EventsTable = ({ eventDefs }: Props) => {
 					{eventDefs.map((eventDef: DocsEventDef) => (
 						<tr key={eventDef.name}>
 							<td>
-								<pre>{eventDef.name}</pre>
+								<pre className="inline">{eventDef.name}</pre>
+								{getPropIndicator(false)}
 							</td>
 							<td>
 								{eventDef.params

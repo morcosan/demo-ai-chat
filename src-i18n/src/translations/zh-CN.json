@@ -118,7 +118,6 @@
 		"error": {
 			"agentAvatar": "您必须为助手添加头像",
 			"agentName": "您必须为助手添加名称",
-			"emptyMessage": "消息不能为空",
 			"failedApiKey": "您的 API 密钥有问题",
 			"failedMessage": "发送消息时出现问题"
 		},

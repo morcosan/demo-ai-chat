@@ -1,6 +1,6 @@
 import { AgentItem } from '@app/biz-modules/ai-chat/components/items/agent-item'
 import { NavListing } from '@app/biz-modules/ai-chat/components/nav-listing'
-import { AiChatSvg, Button, SearchSvg, useUiTheme } from '@ds/release'
+import { AiChatSvg, Button, IconButton, SearchSvg, useUiTheme } from '@ds/release'
 import { useEffect, useMemo } from 'react'
 import { useLocation, useSearchParams } from 'react-router-dom'
 import { Agent, Chat } from '../api'
@@ -70,15 +70,15 @@ export const AiChatNavMenu = (props: Props) => {
 		<>
 			<div className="flex items-center px-xs-2">
 				{/* SEARCH */}
-				<Button
+				<IconButton
 					tooltip={t('core.action.search')}
 					variant="ghost-primary"
 					size="sm"
-					className="mr-xs-2 w-button-h-sm min-w-button-h-sm p-0"
+					className="mr-xs-2"
 					onClick={() => setShowsSearch(true)}
 				>
 					<SearchSvg className="w-xs-6 min-w-xs-6" />
-				</Button>
+				</IconButton>
 
 				{/* NEW CHAT */}
 				<Button

@@ -6,12 +6,6 @@ declare interface DocsPropDef {
 	required?: boolean
 }
 
-declare interface DocsSlotDef {
-	name: string
-	details: string
-	required?: boolean
-}
-
 declare interface DocsEventDef {
 	name: string
 	details: string
@@ -25,8 +19,7 @@ declare interface DocsMethodDef {
 }
 
 declare type DocsControlProps<C> = Partial<Record<keyof JsxProps<C>, DocsControlType>>
-declare type DocsControlSlots<C> = Array<keyof JsxProps<C>>
-declare type DocsControlEvents<C> = Array<keyof JsxProps<C>>
+declare type DocsControlKeys<C> = Array<keyof JsxProps<C>>
 declare type DocsControlType =
 	| 'object'
 	| 'boolean'

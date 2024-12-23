@@ -1,5 +1,5 @@
 import { DocsPage } from '@ds/docs/components/docs-page'
-import { createArgTypes } from '@ds/docs/setup'
+import { createArgDefaults, createArgTypes } from '@ds/docs/setup'
 import {
 	IconButton,
 	IconButtonSize,
@@ -9,38 +9,34 @@ import {
 	TextFieldProps,
 	TextFieldSize,
 } from '@ds/release'
-import { action } from '@storybook/addon-actions'
 import type { Meta, StoryObj } from '@storybook/react'
 import { useMemo } from 'react'
 
 export const story: StoryObj<typeof TextField> = {
-	args: {
-		// Slots
-		slotLeft: '',
-		slotRight: '',
-		// Props
-		id: 'example-id',
-		variant: 'default',
-		size: 'md',
-		placeholder: 'Type some text',
-		ariaLabel: 'Example label',
-		ariaDescription: 'Example description',
-		maxLength: 0,
-		multiline: false,
-		minRows: 0,
-		maxRows: 0,
-		readonly: false,
-		disabled: false,
-		invalid: false,
-		// Html
-		className: '',
-		style: {},
-		// Events
-		onChange: action('onChange'),
-		onSubmit: action('onSubmit'),
-		onFocus: action('onFocus'),
-		onBlur: action('onBlur'),
-	},
+	args: createArgDefaults<typeof TextField>(
+		{
+			// Slots
+			value: '',
+			placeholder: 'Type some text',
+			ariaLabel: 'Example label',
+			ariaDescription: 'Example description',
+			prefix: '',
+			suffix: '',
+			// Props
+			id: 'example-id',
+			variant: 'default',
+			size: 'md',
+			maxLength: 0,
+			multiline: false,
+			minRows: 0,
+			maxRows: 0,
+			readonly: false,
+			disabled: false,
+			invalid: false,
+			className: '',
+		},
+		['onChange', 'onSubmit', 'onFocus', 'onBlur']
+	),
 }
 story.storyName = 'Text Field'
 
@@ -49,13 +45,11 @@ const meta: Meta<typeof TextField> = {
 	title: 'Components / Text Field',
 
 	argTypes: createArgTypes<typeof TextField>(
+		['value', 'placeholder', 'ariaLabel', 'ariaDescription', 'prefix', 'suffix'],
 		{
 			id: 'text',
 			variant: ['default', 'primary', 'secondary'],
 			size: ['sm', 'md', 'lg', 'xl'],
-			placeholder: 'text',
-			ariaLabel: 'text',
-			ariaDescription: 'text',
 			maxLength: 'number',
 			multiline: 'boolean',
 			minRows: 'number',
@@ -63,41 +57,13 @@ const meta: Meta<typeof TextField> = {
 			readonly: 'boolean',
 			disabled: 'boolean',
 			invalid: 'boolean',
+			className: 'text',
 		},
-		['slotLeft', 'slotRight'],
 		['onChange', 'onSubmit', 'onFocus', 'onBlur']
 	),
 
 	component: function Story(props: TextFieldProps) {
-		const SLOTS: DocsSlotDef[] = [
-			{
-				name: 'slotLeft',
-				details: `Content to be rendered inside the field, on the left`,
-			},
-			{
-				name: 'slotRight',
-				details: `Content to be rendered inside the field, on the right`,
-			},
-		]
-		const PROPS: DocsPropDef[] = [
-			{
-				name: 'id',
-				type: 'string',
-				details: `Unique HTML id attribute for the ^<input>^ or ^<textarea>^ element`,
-				required: true,
-			},
-			{
-				name: 'variant',
-				type: 'TextFieldVariant',
-				default: `'default'`,
-				details: `Property that determines active border color when the field is focused`,
-			},
-			{
-				name: 'size',
-				type: 'TextFieldSize',
-				default: `'md'`,
-				details: `Property that determines the height and padding for the field`,
-			},
+		const SLOTS: DocsPropDef[] = [
 			{
 				name: 'value',
 				type: 'string',
@@ -117,6 +83,36 @@ const meta: Meta<typeof TextField> = {
 				name: 'ariaDescription',
 				type: 'string',
 				details: `Text used by screen reader as description for the field`,
+			},
+			{
+				name: 'prefix',
+				type: 'ReactNode',
+				details: `Content to be rendered inside the field, on the left`,
+			},
+			{
+				name: 'suffix',
+				type: 'ReactNode',
+				details: `Content to be rendered inside the field, on the right`,
+			},
+		]
+		const PROPS: DocsPropDef[] = [
+			{
+				name: 'id',
+				type: 'string',
+				details: `Unique id attribute for the ^input^ / ^textarea^ element`,
+				required: true,
+			},
+			{
+				name: 'variant',
+				type: 'TextFieldVariant',
+				default: `'default'`,
+				details: `Property that determines active border color when the field is focused`,
+			},
+			{
+				name: 'size',
+				type: 'TextFieldSize',
+				default: `'md'`,
+				details: `Property that determines the height and padding for the field`,
 			},
 			{
 				name: 'maxLength',
@@ -164,10 +160,15 @@ const meta: Meta<typeof TextField> = {
 			{
 				name: 'invalid',
 				type: 'boolean',
+				default: 'false',
 				details: `Flag for displaying the error state`,
 			},
+			{
+				name: 'className',
+				type: 'string',
+				details: `CSS class attribute for the wrapper element`,
+			},
 		]
-
 		const EVENTS: DocsEventDef[] = [
 			{
 				name: 'onChange',
@@ -190,8 +191,16 @@ const meta: Meta<typeof TextField> = {
 				params: [`event: ReactFocusEvent`],
 			},
 		]
-
 		const METHODS: DocsMethodDef[] = [
+			{
+				name: 'setValue',
+				params: ['value: string'],
+				details: `Method that sets the current value of ^<input>^ or ^<textarea>^ element`,
+			},
+			{
+				name: 'getValue',
+				details: `Method that returns the current value of ^<input>^ or ^<textarea>^ element`,
+			},
 			{
 				name: 'focus',
 				details: `Method that triggers ^focus^ on the ^<input>^ or ^<textarea>^ element`,
@@ -201,12 +210,13 @@ const meta: Meta<typeof TextField> = {
 				details: `Method that triggers ^blur^ on the ^<input>^ or ^<textarea>^ element`,
 			},
 		]
-
 		const TYPES = `
 			type TextFieldVariant = 'default' | 'primary' | 'secondary'
 			type TextFieldSize = 'sm' | 'md' | 'lg' | 'xl'
 			
 			interface TextFieldRef {
+				setValue(value: string): void
+				getValue(): string
 				focus(): void
 				blur(): void
 			}
@@ -224,7 +234,7 @@ const meta: Meta<typeof TextField> = {
 
 		const EXAMPLES = useMemo(
 			() => (
-				<label className="flex flex-wrap items-center gap-xs-7 p-sm-0">
+				<label className="flex flex-wrap items-center gap-xs-7 p-sm-0" onClick={(e) => e.preventDefault()}>
 					<span className="sr-only">Label</span>
 
 					{fieldSizes.map((size, index) => (
@@ -242,7 +252,7 @@ const meta: Meta<typeof TextField> = {
 										id={`${size}2`}
 										size={size}
 										placeholder={`${multiline ? 'Multiline' : 'Default'} - ${size}`}
-										slotLeft={getSlot(buttonSizes[index])}
+										prefix={getSlot(buttonSizes[index])}
 										multiline={multiline}
 										className="flex-1"
 									/>
@@ -250,7 +260,7 @@ const meta: Meta<typeof TextField> = {
 										id={`${size}3`}
 										size={size}
 										placeholder={`${multiline ? 'Multiline' : 'Default'} - ${size}`}
-										slotRight={
+										suffix={
 											<>
 												{getSlot(buttonSizes[index])}
 												{getSlot(buttonSizes[index])}
@@ -263,7 +273,7 @@ const meta: Meta<typeof TextField> = {
 										id={`${size}4`}
 										size={size}
 										placeholder={`${multiline ? 'Multiline' : 'Default'} - ${size}`}
-										slotRight={getSlot(buttonSizes[index], 'solid-primary')}
+										suffix={getSlot(buttonSizes[index], 'solid-primary')}
 										multiline={multiline}
 										className="flex-1"
 									/>
@@ -317,21 +327,21 @@ const meta: Meta<typeof TextField> = {
 							id="variant-default"
 							variant="default"
 							placeholder="Variant - default"
-							slotRight={getSlot('sm', 'text-default')}
+							suffix={getSlot('sm', 'text-default')}
 							className="flex-1"
 						/>
 						<TextField
 							id="variant-primary"
 							variant="primary"
 							placeholder="Variant - primary"
-							slotRight={getSlot('sm', 'solid-primary')}
+							suffix={getSlot('sm', 'solid-primary')}
 							className="flex-1"
 						/>
 						<TextField
 							id="variant-secondary"
 							variant="secondary"
 							placeholder="Variant - secondary"
-							slotRight={getSlot('sm', 'solid-secondary')}
+							suffix={getSlot('sm', 'solid-secondary')}
 							className="flex-1"
 						/>
 					</div>

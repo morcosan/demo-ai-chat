@@ -118,7 +118,6 @@
 		"error": {
 			"agentAvatar": "Jums jāpievieno avatars aģentam",
 			"agentName": "Jums jāpievieno vārds aģentam",
-			"emptyMessage": "Jūsu ziņa ir tukša",
 			"failedApiKey": "Ir problēma ar jūsu API atslēgu",
 			"failedMessage": "Radās problēma ar jūsu ziņas piegādi"
 		},

@@ -118,7 +118,6 @@
 		"error": {
 			"agentAvatar": "Pead lisama agendile avatari",
 			"agentName": "Pead lisama agendile nime",
-			"emptyMessage": "Sinu sõnum on tühi",
 			"failedApiKey": "Sinu API võtmega on probleem",
 			"failedMessage": "Sinu sõnumi edastamisel tekkis probleem"
 		},

@@ -1,28 +1,28 @@
 import { DocsPage } from '@ds/docs/components/docs-page'
-import { createArgTypes } from '@ds/docs/setup'
+import { createArgDefaults, createArgTypes } from '@ds/docs/setup'
 import { IconButton, IconButtonProps, IconButtonVariant, LogoutSvg } from '@ds/release'
-import { action } from '@storybook/addon-actions'
 import type { Meta, StoryObj } from '@storybook/react'
 import { useMemo } from 'react'
 
 export const story: StoryObj<typeof IconButton> = {
-	args: {
-		// Props
-		tooltip: 'Tooltip',
-		size: 'md',
-		variant: 'text-default',
-		pressed: false,
-		loading: false,
-		disabled: false,
-		linkHref: '',
-		linkType: 'internal',
-		ariaDescription: 'Example description',
-		// Html
-		className: '',
-		style: {},
-		// Events
-		onClick: action('onClick'),
-	},
+	args: createArgDefaults<typeof IconButton>(
+		{
+			// Slots
+			children: '⭐',
+			tooltip: 'Tooltip',
+			ariaDescription: 'Example description',
+			// Props
+			size: 'md',
+			variant: 'text-default',
+			pressed: false,
+			loading: false,
+			disabled: false,
+			linkHref: '',
+			linkType: 'internal',
+			className: '',
+		},
+		['onClick']
+	),
 }
 story.storyName = 'Icon Button'
 
@@ -31,36 +31,51 @@ const meta: Meta<typeof IconButton> = {
 	title: 'Components / Icon Button',
 
 	argTypes: createArgTypes<typeof IconButton>(
+		['children', 'tooltip', 'ariaDescription'],
 		{
-			tooltip: 'text',
 			size: ['xs', 'sm', 'md', 'lg'],
-			variant: ['text-default', 'text-subtle', 'text-danger', 'solid-primary', 'solid-secondary', 'solid-danger'],
+			variant: [
+				'text-default',
+				'text-subtle',
+				'text-danger',
+				'solid-primary',
+				'solid-secondary',
+				'solid-danger',
+				'ghost-primary',
+				'ghost-secondary',
+				'ghost-danger',
+			],
 			pressed: 'boolean',
 			loading: 'boolean',
 			disabled: 'boolean',
 			linkHref: 'text',
 			linkType: ['internal', 'external', 'inactive'],
-			ariaDescription: 'text',
+			className: 'text',
 		},
-		[],
 		['onClick']
 	),
 
 	component: function Story(props: IconButtonProps) {
-		const SLOTS: DocsSlotDef[] = [
+		const SLOTS: DocsPropDef[] = [
 			{
 				name: 'children',
+				type: 'ReactNode',
 				details: `Icon to be rendered inside the button`,
 				required: true,
 			},
-		]
-		const PROPS: DocsPropDef[] = [
 			{
 				name: 'tooltip',
 				type: 'string',
 				details: `Text to be displayed as tooltip on hover / focus`,
 				required: true,
 			},
+			{
+				name: 'ariaDescription',
+				type: 'string',
+				details: `Text used by screen reader as description for the button`,
+			},
+		]
+		const PROPS: DocsPropDef[] = [
 			{
 				name: 'size',
 				type: 'IconButtonSize',
@@ -111,9 +126,9 @@ const meta: Meta<typeof IconButton> = {
 				`,
 			},
 			{
-				name: 'ariaDescription',
+				name: 'className',
 				type: 'string',
-				details: `Text used by screen reader as description for the button`,
+				details: `CSS class attribute for the wrapper element`,
 			},
 		]
 		const EVENTS: DocsEventDef[] = [
@@ -132,6 +147,9 @@ const meta: Meta<typeof IconButton> = {
 				| 'solid-primary'
 				| 'solid-secondary'
 				| 'solid-danger'
+				| 'ghost-primary'
+				| 'ghost-secondary'
+				| 'ghost-danger'
 			type LinkType = 'internal' | 'external' | 'inactive'
 		`
 
@@ -143,6 +161,9 @@ const meta: Meta<typeof IconButton> = {
 			'solid-primary',
 			'solid-secondary',
 			'solid-danger',
+			'ghost-primary',
+			'ghost-secondary',
+			'ghost-danger',
 		]
 		const EXAMPLES = useMemo(
 			() => (
@@ -182,7 +203,7 @@ const meta: Meta<typeof IconButton> = {
 
 		return (
 			<DocsPage title="Icon Button" type="component" slots={{ SLOTS, PROPS, EVENTS, TYPES, EXAMPLES }}>
-				<IconButton {...props}>{svg}</IconButton>
+				<IconButton {...props} />
 			</DocsPage>
 		)
 	},

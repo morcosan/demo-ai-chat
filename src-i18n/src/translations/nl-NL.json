@@ -118,7 +118,6 @@
 		"error": {
 			"agentAvatar": "Je moet een avatar toevoegen voor de agent",
 			"agentName": "Je moet een naam toevoegen voor de agent",
-			"emptyMessage": "Je bericht is leeg",
 			"failedApiKey": "Er is een probleem met je API sleutel",
 			"failedMessage": "Er was een probleem met het afleveren van je bericht"
 		},

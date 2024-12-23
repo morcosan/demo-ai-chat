@@ -1,5 +1,5 @@
 import { DocsHeader } from '@ds/docs/components/docs-header'
-import { renderHtml } from '@ds/docs/utilities/docs'
+import { HEADER_METHODS, renderHtml } from '@ds/docs/utilities/docs'
 
 interface Props {
 	methodDefs: DocsMethodDef[]
@@ -8,7 +8,7 @@ interface Props {
 export const MethodsTable = ({ methodDefs }: Props) => {
 	return (
 		<>
-			<DocsHeader>Methods</DocsHeader>
+			<DocsHeader>{HEADER_METHODS}</DocsHeader>
 
 			<table className="docs">
 				<thead>

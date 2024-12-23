@@ -119,7 +119,6 @@
 		"error": {
 			"agentAvatar": "Vous devez ajouter un avatar pour l'agent",
 			"agentName": "Vous devez ajouter un nom pour l'agent",
-			"emptyMessage": "Votre message est vide",
 			"failedApiKey": "Il y a un problème avec votre clé API",
 			"failedMessage": "Il y a eu un problème lors de l'envoi de votre message"
 		},

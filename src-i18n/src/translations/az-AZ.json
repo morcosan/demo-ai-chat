@@ -119,7 +119,6 @@
 		"error": {
 			"agentAvatar": "Agent üçün avatar əlavə etməlisiniz",
 			"agentName": "Agent üçün ad əlavə etməlisiniz",
-			"emptyMessage": "Mesajınız boşdur",
 			"failedApiKey": "API açarınızla bağlı problem var",
 			"failedMessage": "Mesajınızın çatdırılmasında problem yarandı"
 		},

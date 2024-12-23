@@ -1,87 +1,68 @@
-import { CloseSvg, IconButton } from '@ds/release'
 import { CSS__FIXED_OVERLAY, Keyboard, queryElementsWithTabIndex } from '@utils/release'
 import { useEffect, useRef, useState } from 'react'
 import { ModalProps } from '../_types'
-import { useModalBase } from './_base'
+import { ANIM_TIME, useBaseImpl } from './_base-impl'
 
 export const CustomImpl = (rawProps: ModalProps) => {
 	const {
-		ANIM_TIME__HIDE,
-		ANIM_TIME__SHOW,
-		calcWrapperPXY,
-		calcZIndex,
-		cssModalBase,
-		cssModalBody,
-		cssModalCloseX,
+		cssModalCard,
 		cssModalContent,
-		cssModalFooter,
-		cssModalTitle,
-		cssOverlayBase,
+		cssModalOverlay,
 		props,
-		slotFooter,
-		closeActiveIndex,
-		isActiveIndex,
-		openActiveIndex,
-		setZIndex,
-	} = useModalBase(rawProps)
-	const [modalIndex, setModalIndex] = useState(0)
+		slotContent,
+		stackIndex,
+		tokens,
+		isLastStackIndex,
+	} = useBaseImpl(rawProps)
+	const [isVisible, setIsVisible] = useState(false)
 	const modalRef = useRef<HTMLDivElement>(null)
 	const triggerRef = useRef<HTMLElement | null>(null)
 	const focusTrap1Ref = useRef<HTMLDivElement>(null)
 	const focusTrap2Ref = useRef<HTMLDivElement>(null)
 
-	const cssWrapper: CSS = {
+	const cssRoot: CSS = {
 		...CSS__FIXED_OVERLAY,
-		visibility: modalIndex ? 'visible' : 'hidden',
-		padding: calcWrapperPXY,
-		zIndex: calcZIndex,
-		transition: modalIndex ? 'none' : `visibility ${ANIM_TIME__HIDE}ms ease-in`,
+		visibility: isVisible ? 'visible' : 'hidden',
+		padding: tokens.modalMargin,
+		zIndex: tokens.modalZIndex,
+		transition: isVisible ? 'none' : `visibility ${ANIM_TIME.HIDE}ms ease-in`,
 	}
-
 	const cssOverlay: CSS = {
-		...cssOverlayBase,
-		opacity: modalIndex ? 1 : 0,
-		transition: modalIndex ? `opacity ${ANIM_TIME__SHOW}ms ease-out` : `opacity ${ANIM_TIME__HIDE}ms ease-in`,
+		...cssModalOverlay,
+		opacity: isVisible ? 1 : 0,
+		transition: isVisible ? `opacity ${ANIM_TIME.SHOW}ms ease-out` : `opacity ${ANIM_TIME.HIDE}ms ease-in`,
 	}
-
 	const cssModal: CSS = {
-		...cssModalBase,
+		...cssModalCard,
 		...cssModalContent,
-		transform: modalIndex ? 'translateY(0)' : `translateY(calc(-3 * ${calcWrapperPXY}))`,
-		transition: `transform ${ANIM_TIME__SHOW}ms ease-out`,
+		transform: isVisible ? 'translateY(0)' : `translateY(calc(-2 * ${tokens.modalMargin}))`,
+		transition: `transform ${ANIM_TIME.SHOW}ms ease-out`,
 	}
 
-	const openModal = () => {
-		if (modalIndex) return
+	const onOpenModal = () => {
+		if (isVisible) return
 
-		const index = openActiveIndex()
-		setModalIndex(index)
-		setZIndex(index)
-		wait(ANIM_TIME__SHOW).then(() => {
-			modalRef.current?.focus()
-			props.onOpened?.()
-		})
+		setIsVisible(true)
+		wait(ANIM_TIME.SHOW).then(props.onOpened)
+
+		wait(10).then(() => modalRef.current?.focus()) // Wait for html to be visible
 
 		triggerRef.current = document.activeElement as HTMLElement | null
 	}
 
-	const closeModal = () => {
-		if (!modalIndex) return
+	const onCloseModal = () => {
+		if (!isVisible) return
 
-		closeActiveIndex()
-		setModalIndex(0)
-		wait(ANIM_TIME__HIDE).then(() => {
-			setZIndex(0)
-			props.onClosed?.()
-		})
+		setIsVisible(false)
+		wait(ANIM_TIME.HIDE).then(props.onClosed)
 
 		triggerRef.current?.focus()
 	}
 
 	const onKeyDownWindow = (event: KeyboardEvent) => {
-		if (!isActiveIndex(modalIndex)) return
+		if (!isVisible || !isLastStackIndex(stackIndex)) return
 		if (event.key !== Keyboard.ESCAPE) return
-		if (props.noClose) return
+		if (props.noDismiss) return
 
 		event.stopPropagation()
 		props.onClose?.()
@@ -90,7 +71,7 @@ export const CustomImpl = (rawProps: ModalProps) => {
 	const onFocusInWindow = (event: FocusEvent) => {
 		const target = event.target as HTMLElement
 
-		if (!isActiveIndex(modalIndex)) return
+		if (!isVisible || !isLastStackIndex(stackIndex)) return
 		if (!target || !modalRef.current) return
 		if (modalRef.current.contains(target)) return
 
@@ -102,14 +83,12 @@ export const CustomImpl = (rawProps: ModalProps) => {
 		if (target === focusTrap2Ref.current) firstTarget.focus()
 	}
 
-	const onClickOverlay = () => !props.persistent && props.onClose?.()
-
 	useEffect(() => {
-		props.opened ? openModal() : closeModal()
+		props.opened ? onOpenModal() : onCloseModal()
 	}, [props.opened])
 
 	useEffect(() => {
-		if (modalIndex) {
+		if (isVisible) {
 			window.addEventListener('focusin', onFocusInWindow)
 			window.addEventListener('keydown', onKeyDownWindow)
 		}
@@ -117,39 +96,20 @@ export const CustomImpl = (rawProps: ModalProps) => {
 			window.removeEventListener('focusin', onFocusInWindow)
 			window.removeEventListener('keydown', onKeyDownWindow)
 		}
-	}, [modalIndex, props.noClose])
+	}, [isVisible, props.noDismiss, props.noClose])
 
 	return (
-		<div css={cssWrapper}>
+		<div css={cssRoot}>
 			{/* OVERLAY */}
-			<div css={cssOverlay} onClick={onClickOverlay} />
+			<div css={cssOverlay} onClick={() => !props.noDismiss && props.onClose?.()} />
 
 			{/* FOCUS TRAP */}
 			<div ref={focusTrap1Ref} tabIndex={0} />
 
 			{/* MODAL */}
-			<div ref={modalRef} tabIndex={-1} className={props.className} style={props.style} css={[cssModal]}>
-				{/* TITLE */}
-				<div css={cssModalTitle}>{props.slotTitle}</div>
-
-				{/* CLOSE-X */}
-				{!props.noClose && (
-					<IconButton
-						tooltip={t('core.action.close')}
-						variant="text-default"
-						css={cssModalCloseX}
-						onClick={props.onClose}
-					>
-						<CloseSvg className="h-xs-7" />
-					</IconButton>
-				)}
-
-				{/* BODY */}
-				<div css={cssModalBody}>{props.children}</div>
-
-				{/* FOOTER */}
-				<div css={cssModalFooter}>{slotFooter}</div>
-			</div>
+			<section ref={modalRef} role="dialog" tabIndex={-1} css={cssModal}>
+				{slotContent}
+			</section>
 
 			{/* FOCUS TRAP */}
 			<div ref={focusTrap2Ref} tabIndex={0} />

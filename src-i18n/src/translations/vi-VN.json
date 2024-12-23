@@ -118,7 +118,6 @@
 		"error": {
 			"agentAvatar": "Bạn phải thêm ảnh đại diện cho trợ lý",
 			"agentName": "Bạn phải thêm tên cho trợ lý",
-			"emptyMessage": "Tin nhắn của bạn trống",
 			"failedApiKey": "Có vấn đề với khóa API của bạn",
 			"failedMessage": "Đã có vấn đề khi gửi tin nhắn của bạn"
 		},

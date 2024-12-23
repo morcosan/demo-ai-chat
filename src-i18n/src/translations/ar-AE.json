@@ -126,7 +126,6 @@
 		"error": {
 			"agentAvatar": "يجب إضافة صورة رمزية للوكيل",
 			"agentName": "يجب إضافة اسم للوكيل",
-			"emptyMessage": "رسالتك فارغة",
 			"failedApiKey": "هناك مشكلة في مفتاح API الخاص بك",
 			"failedMessage": "حدثت مشكلة في إيصال رسالتك"
 		},

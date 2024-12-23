@@ -3,18 +3,22 @@ import { ReactNode } from 'react'
 export type ModalWidth = 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'full'
 export type ModalHeight = 'fit' | 'full'
 
-export interface ModalProps extends ReactProps {
+export interface ModalProps {
+	// Slots
+	title: ReactNode
+	children: ReactNode
+	actions?: ReactNode
+	extras?: ReactNode
+
+	// Props
 	opened: boolean
 	width?: ModalWidth
 	height?: ModalHeight
-	persistent?: boolean
+	noDismiss?: boolean
 	noClose?: boolean
 	noFooter?: boolean
 
-	slotTitle: ReactNode
-	slotAction?: ReactNode
-	slotExtra?: ReactNode
-
+	// Events
 	onOpened?(): void
 	onClose?(): void
 	onClosed?(): void

@@ -1,4 +1,6 @@
-import { ArgTypes } from '@storybook/csf'
+import { HEADER_EVENTS, HEADER_PROPS, HEADER_SLOTS } from '@ds/docs/utilities/docs'
+import { action } from '@storybook/addon-actions'
+import { ArgTypes, InputType } from '@storybook/csf'
 import '@utils/release'
 import './styling/index.css'
 
@@ -8,34 +10,33 @@ LOG('DS_VERSION:', ENV__DS_VERSION)
 LOG('USE_CSS_VARS:', ENV__USE_CSS_VARS)
 
 type Props<C> = DocsControlProps<C>
-type Slots<C> = DocsControlSlots<C>
-type Events<C> = DocsControlEvents<C>
+type Keys<C> = DocsControlKeys<C>
+type Defaults<C> = Partial<JsxProps<C>>
 
-export const createArgTypes = <C>(props: Props<C>, slots?: Slots<C>, events?: Events<C>) => {
+const createControl = (category: string, control?: DocsControlType, options?: any): InputType => ({
+	control,
+	options,
+	table: { category },
+})
+
+export const createArgTypes = <C>(slots: Keys<C>, props: Props<C>, events: Keys<C>) => {
 	const argTypes: ArgTypes = {}
 
-	if (slots) {
-		slots.forEach((key: keyof JsxProps<C>) => {
-			argTypes[key as string] = { control: 'text', table: { category: 'Slots' } }
-		})
-	}
+	slots.forEach((key: any) => (argTypes[key] = createControl(HEADER_SLOTS, 'text')))
 
 	Object.entries(props).forEach(([key, value]: [string, any]) => {
-		if (typeof value === 'object') {
-			argTypes[key] = { control: 'inline-radio', options: value, table: { category: 'Props' } }
-		} else {
-			argTypes[key] = { control: value, table: { category: 'Props' } }
-		}
+		argTypes[key] =
+			typeof value === 'object'
+				? createControl(HEADER_PROPS, 'inline-radio', value)
+				: createControl(HEADER_PROPS, value)
 	})
 
-	argTypes.className = { control: 'text', table: { category: 'HTML' } }
-	argTypes.style = { control: 'object', table: { category: 'HTML' } }
-
-	if (events) {
-		events.forEach((key: keyof JsxProps<C>) => {
-			argTypes[key as string] = { table: { category: 'Events' } }
-		})
-	}
+	events.forEach((key: any) => (argTypes[key] = createControl(HEADER_EVENTS)))
 
 	return argTypes
 }
+
+export const createArgDefaults = <C>(props: Defaults<C>, events?: Keys<C>) => ({
+	...props,
+	...events?.reduce((acc, event) => ({ ...acc, [event]: action(String(event)) }), {}),
+})

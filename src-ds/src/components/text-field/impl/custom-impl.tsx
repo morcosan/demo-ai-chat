@@ -1,9 +1,10 @@
-import { Ref, useCallback, useEffect } from 'react'
-import { TextFieldProps, TextFieldRef } from '../_types'
-import { InputElement, useTextFieldBase } from './_base'
+import { useCallback, useEffect, useImperativeHandle } from 'react'
+import { TextFieldProps } from '../_types'
+import { InputElement, useBaseImpl } from './_base-impl'
 
-export const CustomImpl = (rawProps: TextFieldProps, ref: Ref<TextFieldRef>) => {
-	const { props, cssInput, cssWrapper, inputRef, onKeyDown } = useTextFieldBase(rawProps, ref)
+export const CustomImpl = (rawProps: TextFieldProps) => {
+	const base = useBaseImpl(rawProps)
+	const { cssInput, cssPrefix, cssRoot, cssSuffix, inputBindings, inputRef, methods, props, onKeyDown } = base
 
 	const onChange = useCallback(
 		(event: ReactChangeEvent<InputElement>) => {
@@ -12,13 +13,6 @@ export const CustomImpl = (rawProps: TextFieldProps, ref: Ref<TextFieldRef>) => 
 		},
 		[props.minRows, props.maxRows, props.onChange]
 	)
-
-	useEffect(() => {
-		if (props.multiline && inputRef.current) {
-			inputRef.current.rows = props.minRows || 1
-			updateInputHeight()
-		}
-	}, [props.value, props.minRows, props.maxRows])
 
 	const updateInputHeight = () => {
 		const elem = inputRef.current
@@ -45,33 +39,46 @@ export const CustomImpl = (rawProps: TextFieldProps, ref: Ref<TextFieldRef>) => 
 		}
 	}
 
+	useEffect(() => {
+		if (props.multiline && inputRef.current) {
+			inputRef.current.rows = props.minRows || 1
+			updateInputHeight()
+		}
+	}, [props.minRows, props.maxRows])
+
+	useEffect(() => {
+		if (inputRef.current) {
+			inputRef.current.value = props.value || ''
+			props.multiline && updateInputHeight()
+		}
+	}, [props.value])
+
+	useImperativeHandle(props.ref, () => ({
+		...methods,
+		setValue: (value: string) => {
+			inputRef.current && (inputRef.current.value = value || '')
+			updateInputHeight()
+		},
+	}))
+
 	const bindings = {
+		...inputBindings,
+		ref: inputRef,
 		id: props.id,
-		value: props.value,
-		placeholder: props.placeholder,
-		'aria-label': props.ariaLabel,
-		'aria-description': props.ariaDescription,
-		maxLength: props.maxLength || undefined,
-		readOnly: props.readonly,
-		disabled: props.disabled,
 		css: cssInput,
 		onFocus: props.onFocus,
 		onBlur: props.onBlur,
-		onKeyDown,
-		onChange,
+		onKeyDown: onKeyDown,
+		onChange: onChange,
 	}
 
 	return (
-		<div css={cssWrapper} className={props.className} style={props.style}>
-			{props.slotLeft}
+		<div css={cssRoot} className={props.className}>
+			{Boolean(props.prefix) && <div css={cssPrefix}>{props.prefix}</div>}
 
-			{props.multiline ? (
-				<textarea ref={inputRef} rows={props.minRows} {...bindings} />
-			) : (
-				<input ref={inputRef} type="text" {...bindings} />
-			)}
+			{props.multiline ? <textarea rows={props.minRows} {...bindings} /> : <input type="text" {...bindings} />}
 
-			{props.slotRight}
+			{Boolean(props.suffix) && <div css={cssSuffix}>{props.suffix}</div>}
 		</div>
 	)
 }

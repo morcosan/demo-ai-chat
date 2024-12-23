@@ -1,19 +1,19 @@
 import { FieldError, FieldLabel } from '@app/library/release'
 import { TextField, TextFieldProps, useUiViewport } from '@ds/release'
 
+export interface Field<T> {
+	key: T
+	label: string
+	optional?: boolean
+	props?: Partial<TextFieldProps>
+}
+
 interface Props<T> extends ReactProps {
 	field: Field<T>
 	value: string
 	error?: string
 	disabled?: boolean
 	onChange(value: string): void
-}
-
-export interface Field<T> {
-	key: T
-	label: string
-	optional?: boolean
-	props?: Partial<TextFieldProps>
 }
 
 export const DataField = <T,>(props: Props<T>) => {

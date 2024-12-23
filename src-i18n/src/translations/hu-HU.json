@@ -118,7 +118,6 @@
 		"error": {
 			"agentAvatar": "Profilképet kell hozzáadnia az ágenshez",
 			"agentName": "Nevet kell adnia az ágensnek",
-			"emptyMessage": "Az üzenet üres",
 			"failedApiKey": "Probléma van az API kulcsával",
 			"failedMessage": "Probléma történt az üzenet kézbesítésekor"
 		},

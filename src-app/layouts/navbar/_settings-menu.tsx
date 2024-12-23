@@ -58,8 +58,9 @@ export const SettingsMenu = ({ onClickBack, onClickLanguage }: Props) => {
 					onChange={(event: SelectEvent) => changeUiLibrary(event.target?.value as UiLibrary)}
 				>
 					<option value={'custom' as UiLibrary}>{t('core.label.custom')}</option>
-					<option value={'material' as UiLibrary}>Material UI</option>
+					<option value={'mantine' as UiLibrary}>Mantine</option>
 					<option value={'antdesign' as UiLibrary}>Ant Design</option>
+					<option value={'material' as UiLibrary}>Material UI</option>
 				</select>
 			</div>
 
