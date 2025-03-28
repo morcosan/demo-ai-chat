@@ -11,7 +11,7 @@ const BREAKPOINT = Object.fromEntries(
 )
 
 export const UiViewportProvider = ({ children }: ReactProps) => {
-	const [viewportWidth, setViewportWidth] = useState(0)
+	const [viewportWidth, setViewportWidth] = useState(window.innerWidth)
 
 	const isViewportMinXS = viewportWidth >= BREAKPOINT['xs']
 	const isViewportMinSM = viewportWidth >= BREAKPOINT['sm']
@@ -38,7 +38,6 @@ export const UiViewportProvider = ({ children }: ReactProps) => {
 
 	useEffect(() => {
 		window.addEventListener('resize', onResizeWindow, true)
-		onResizeWindow()
 
 		return () => {
 			window.removeEventListener('resize', onResizeWindow, true)

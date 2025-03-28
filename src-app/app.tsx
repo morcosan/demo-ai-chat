@@ -26,13 +26,13 @@ type Type =
 const providers: Wrapper<Type>[] = [
 	{ elem: StrictMode },
 	{ elem: I18nProvider },
-	{ elem: AppLayoutProvider },
 	{ elem: AiChatProvider },
 	{ elem: UserAccountProvider },
 	{ elem: LoadingScreen },
 	{ elem: UiA11yProvider },
 	{ elem: UiViewportProvider },
 	{ elem: UiThemeProvider, props: { cookieKey: COOKIE_KEY.APP_COLOR_THEME } },
+	{ elem: AppLayoutProvider },
 	{ elem: AppStyling },
 	{ elem: UiLibraryProvider, props: { cookieKey: COOKIE_KEY.APP_UI_LIBRARY } }, // Must be last, it forces re-rendering
 ]
